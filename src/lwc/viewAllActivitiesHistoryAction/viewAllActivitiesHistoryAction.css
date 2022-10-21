@@ -1,0 +1,29 @@
+.filters{
+    display: flex;
+    justify-content: end;
+}
+.activities-container {
+    height: 100vh;
+    position: relative;
+    overflow-y: auto;
+}
+tr:first-child td{
+    padding-top: 10px;
+}
+
+td {
+    padding-bottom: 10px;
+}
+
+td:first-child{
+    width: 30%;
+    font-size: .75rem;
+    font-weight: 400;
+    padding-left: 10px;
+    color: rgb(68, 68, 68);
+}
+
+td:nth-child(2) {
+    color: rgb(3, 45, 96);
+    font-size: 13px;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <isExposed>true</isExposed>
+
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" type="String" label="Current Id" description="Id of the current record"/>
+            <property name="selectedAccountId" type="String" label="Selected Account Id" description="Id of the selected account"/>
+            <property name="selectedContactId" type="String" label="Selected Contact Id" description="Id of the selected contact"/>
+            <property name="createContact" type="Boolean" label="Create new contact?" description="Decision if to create new contact"/>
+            <property name="contactfields" type="String" label="New contact string" description="New contact"/>
+            <property name="newContact" type="@salesforce/schema/Contact" label="New contact" description="New contact"/>
+        </targetConfig>
+    </targetConfigs>
+
+</LightningComponentBundle>

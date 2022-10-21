@@ -1,0 +1,1243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Start_Up_Practice_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Start_Up_Practice_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Details: A start Up Practice is a privately-shared record related to an existing account.
+Use Case: A dentist working for that account is investigating the possibilities to start up their own clinic (in confidence with DS Sales Reps)
+TFUS-000003211</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>AccountType__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dental Clinic</fullName>
+                    <default>true</default>
+                    <label>Dental Clinic</label>
+                </value>
+                <value>
+                    <fullName>Dental Laboratory</fullName>
+                    <default>false</default>
+                    <label>Dental Laboratory</label>
+                </value>
+                <value>
+                    <fullName>Dental Support Organization</fullName>
+                    <default>false</default>
+                    <label>Dental Support Organization</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>New Practice (Account)</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Start Up Practices</relationshipLabel>
+        <relationshipName>Start_Up_Practices</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CancellationReasonDetails__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation Reason Details</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CancellationReason__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cancellation of Start-Up Plans</fullName>
+                    <default>false</default>
+                    <label>Cancellation of Start-Up Plans</label>
+                </value>
+                <value>
+                    <fullName>Lost to Competitor</fullName>
+                    <default>false</default>
+                    <label>Lost to Competitor</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Existing Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Start Up Practices</relationshipLabel>
+        <relationshipName>Start_Up_Practices</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CountryCode__c</fullName>
+        <defaultValue>CASE($User.User_Country__c,
+&quot;Australia&quot;,&quot;AU&quot;,
+&quot;Austria&quot;,&quot;AT&quot;,
+&quot;Belarus&quot;,&quot;BY&quot;,
+&quot;Belgium&quot;,&quot;BE&quot;,
+&quot;Brazil&quot;,&quot;BR&quot;,
+&quot;Canada&quot;, &quot;CA&quot;,
+&quot;Denmark&quot;,&quot;DK&quot;,
+&quot;Finland&quot;,&quot;FI&quot;,
+&quot;France&quot;,&quot;FR&quot;,
+&quot;Germany&quot;,&quot;DE&quot;,
+&quot;Holland&quot;,&quot;NL&quot;,
+&quot;India&quot;,&quot;IN&quot;,
+&quot;Italy&quot;,&quot;IT&quot;,
+&quot;Kazakhstan&quot;,&quot;KZ&quot;,
+&quot;Luxembourg&quot;,&quot;LU&quot;,
+&quot;New Zealand&quot;,&quot;NZ&quot;,
+&quot;Norway&quot;,&quot;NW&quot;,
+&quot;Portugal&quot;,&quot;PT&quot;,
+&quot;South Africa&quot;,&quot;ZA&quot;,
+&quot;Spain&quot;,&quot;SP&quot;,
+&quot;Sweden&quot;,&quot;SW&quot;,
+&quot;Switzerland&quot;,&quot;CH&quot;,
+&quot;UK&quot;, &quot;GB&quot;,
+&quot;Ukraine&quot;, &quot;UA&quot;,
+&quot;USA&quot;,&quot;US&quot;,
+&quot;Japan&quot;,&quot;JP&quot;,
+&quot;Turkey&quot;,&quot;R&quot;,
+&quot;UAE&quot;,&quot;&quot;,
+&quot;Vietnam&quot;,&quot;VN&quot;,
+&quot;Thailand&quot;,&quot;TH&quot;,
+&quot;Taiwan&quot;,&quot;TW&quot;,
+&quot;South Korea&quot;,&quot;KR&quot;,
+&quot;Slovakia&quot;,&quot;SK&quot;,
+&quot;Singapore&quot;,&quot;SI&quot;,
+&quot;Saudi Arabia&quot;,&quot;SA&quot;,
+&quot;Indonesia&quot;,&quot;ID&quot;,
+&quot;Hong Kong&quot;,&quot;HK&quot;,
+&quot;China&quot;,&quot;CN&quot;,
+&quot;Russia&quot;,&quot;RU&quot;,
+&quot;Poland&quot;,&quot;PO&quot;,
+&quot;Philippines&quot;,&quot;PH&quot;,
+&quot;HQ: SE&quot;)</defaultValue>
+        <externalId>false</externalId>
+        <label>Country Code</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Country_Code_2_digit</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FinanceCompany__c</fullName>
+        <externalId>false</externalId>
+        <label>Finance Company</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FirstName__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FitOutCompany__c</fullName>
+        <externalId>false</externalId>
+        <label>Fit-Out Company</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IdentifiedNeedsAndProducts__c</fullName>
+        <externalId>false</externalId>
+        <label>Identified Needs &amp; Products</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LastName__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Source__c</fullName>
+        <description>Direct (from the customer)
+Finance Company (for those start-up clinics the doctors work together with big Finance companies), 
+Fit-out Company/Design Agency/... (for those start up clinics the doctors work together with big Fit-out/Design companies), 
+Referral (from other existing customers)</description>
+        <externalId>false</externalId>
+        <label>Lead Source</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Design Agency</fullName>
+                    <default>false</default>
+                    <label>Design Agency</label>
+                </value>
+                <value>
+                    <fullName>Direct</fullName>
+                    <default>false</default>
+                    <label>Direct</label>
+                </value>
+                <value>
+                    <fullName>DS Internal</fullName>
+                    <default>false</default>
+                    <label>DS Internal</label>
+                </value>
+                <value>
+                    <fullName>Finance Company</fullName>
+                    <default>false</default>
+                    <label>Finance Company</label>
+                </value>
+                <value>
+                    <fullName>Fit-out Company</fullName>
+                    <default>false</default>
+                    <label>Fit-out Company</label>
+                </value>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                    <label>Marketing</label>
+                </value>
+                <value>
+                    <fullName>Referral</fullName>
+                    <default>false</default>
+                    <label>Referral</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mobile__c</fullName>
+        <externalId>false</externalId>
+        <label>Mobile</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>NDAAgreementSigned__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>NDA Agreement Signed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Obstacles__c</fullName>
+        <externalId>false</externalId>
+        <label>Obstacles</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OverallSalesBudget__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Sales Budget (Amount)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PlannedOpeningDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>When is your business expected to open?</inlineHelpText>
+        <label>Planned Opening Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PrivateEmail__c</fullName>
+        <externalId>false</externalId>
+        <label>Private Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductCategories__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Categories</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Consumables</fullName>
+                    <default>false</default>
+                    <label>Consumables</label>
+                </value>
+                <value>
+                    <fullName>Digital Group</fullName>
+                    <default>false</default>
+                    <label>Digital Group</label>
+                </value>
+                <value>
+                    <fullName>Endodontics</fullName>
+                    <default>false</default>
+                    <label>Endodontics</label>
+                </value>
+                <value>
+                    <fullName>Equipment &amp; Imaging</fullName>
+                    <default>false</default>
+                    <label>Equipment &amp; Imaging</label>
+                </value>
+                <value>
+                    <fullName>Implants</fullName>
+                    <default>false</default>
+                    <label>Implants</label>
+                </value>
+                <value>
+                    <fullName>Orthodontics</fullName>
+                    <default>false</default>
+                    <label>Orthodontics</label>
+                </value>
+                <value>
+                    <fullName>Prosthetics</fullName>
+                    <default>false</default>
+                    <label>Prosthetics</label>
+                </value>
+                <value>
+                    <fullName>Root To Crown</fullName>
+                    <default>false</default>
+                    <label>Root To Crown</label>
+                </value>
+                <value>
+                    <fullName>Single Unit Crown</fullName>
+                    <default>false</default>
+                    <label>Single Unit Crown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Specialty__c</fullName>
+        <externalId>false</externalId>
+        <label>Specialty</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>AccountType__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Crown &amp; Bridge Laboratory</fullName>
+                    <default>false</default>
+                    <label>Crown &amp; Bridge Laboratory</label>
+                </value>
+                <value>
+                    <fullName>Dental Association</fullName>
+                    <default>false</default>
+                    <label>Dental Association</label>
+                </value>
+                <value>
+                    <fullName>Denture Laboratory</fullName>
+                    <default>false</default>
+                    <label>Denture Laboratory</label>
+                </value>
+                <value>
+                    <fullName>Digital</fullName>
+                    <default>false</default>
+                    <label>Digital</label>
+                </value>
+                <value>
+                    <fullName>Endodontics</fullName>
+                    <default>false</default>
+                    <label>Endodontics</label>
+                </value>
+                <value>
+                    <fullName>Full Service Dental Laboratory</fullName>
+                    <default>false</default>
+                    <label>Full Service Dental Laboratory</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>General Practice</fullName>
+                    <default>false</default>
+                    <label>General Practice</label>
+                </value>
+                <value>
+                    <fullName>Headquarter</fullName>
+                    <default>false</default>
+                    <label>Headquarter</label>
+                </value>
+                <value>
+                    <fullName>Home Address</fullName>
+                    <default>false</default>
+                    <label>Home Address</label>
+                </value>
+                <value>
+                    <fullName>Hospital Laboratory</fullName>
+                    <default>false</default>
+                    <label>Hospital Laboratory</label>
+                </value>
+                <value>
+                    <fullName>Implants</fullName>
+                    <default>false</default>
+                    <label>Implants</label>
+                </value>
+                <value>
+                    <fullName>Lab Group</fullName>
+                    <default>false</default>
+                    <label>Lab Group</label>
+                </value>
+                <value>
+                    <fullName>Large Group</fullName>
+                    <default>false</default>
+                    <label>Large Group</label>
+                </value>
+                <value>
+                    <fullName>Mid Market Group</fullName>
+                    <default>false</default>
+                    <label>Mid Market Group</label>
+                </value>
+                <value>
+                    <fullName>Multi-Dentist Clinic</fullName>
+                    <default>false</default>
+                    <label>Multi-Dentist Clinic</label>
+                </value>
+                <value>
+                    <fullName>Ortho (retainers &amp; appliances)</fullName>
+                    <default>false</default>
+                    <label>Ortho (retainers &amp; appliances)</label>
+                </value>
+                <value>
+                    <fullName>Orthodontics</fullName>
+                    <default>false</default>
+                    <label>Orthodontics</label>
+                </value>
+                <value>
+                    <fullName>Preventive</fullName>
+                    <default>false</default>
+                    <label>Preventive</label>
+                </value>
+                <value>
+                    <fullName>Purchasing Group</fullName>
+                    <default>false</default>
+                    <label>Purchasing Group</label>
+                </value>
+                <value>
+                    <fullName>Removable (full &amp; partial dentures)</fullName>
+                    <default>false</default>
+                    <label>Removable (full &amp; partial dentures)</label>
+                </value>
+                <value>
+                    <fullName>Single Dentist Clinic</fullName>
+                    <default>false</default>
+                    <label>Single Dentist Clinic</label>
+                </value>
+                <value>
+                    <fullName>Small Group</fullName>
+                    <default>false</default>
+                    <label>Small Group</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <valueName>Endodontics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <valueName>General Practice</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <valueName>Home Address</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <valueName>Implants</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <valueName>Multi-Dentist Clinic</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <valueName>Orthodontics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <valueName>Preventive</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <valueName>Single Dentist Clinic</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Laboratory</controllingFieldValue>
+                <valueName>Crown &amp; Bridge Laboratory</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Laboratory</controllingFieldValue>
+                <valueName>Denture Laboratory</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Laboratory</controllingFieldValue>
+                <valueName>Digital</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Laboratory</controllingFieldValue>
+                <valueName>Full Service Dental Laboratory</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Laboratory</controllingFieldValue>
+                <valueName>General</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Laboratory</controllingFieldValue>
+                <valueName>Hospital Laboratory</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Laboratory</controllingFieldValue>
+                <valueName>Ortho (retainers &amp; appliances)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Laboratory</controllingFieldValue>
+                <valueName>Removable (full &amp; partial dentures)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Dental Association</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Headquarter</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Lab Group</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Large Group</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Mid Market Group</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Purchasing Group</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Small Group</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>StateProvince__c</fullName>
+        <externalId>false</externalId>
+        <label>State/Province</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Initial Discussions</fullName>
+                    <default>true</default>
+                    <label>Initial Discussions</label>
+                </value>
+                <value>
+                    <fullName>Identifying Needs</fullName>
+                    <default>false</default>
+                    <label>Identifying Needs</label>
+                </value>
+                <value>
+                    <fullName>Pricing Discussions</fullName>
+                    <default>false</default>
+                    <label>Pricing Discussions</label>
+                </value>
+                <value>
+                    <fullName>Parked/On Hold</fullName>
+                    <default>false</default>
+                    <label>Parked/On Hold</label>
+                </value>
+                <value>
+                    <fullName>Practice Created</fullName>
+                    <default>false</default>
+                    <label>Practice Created</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <externalId>false</externalId>
+        <label>Street</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>128</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TreatmentType__c</fullName>
+        <externalId>false</externalId>
+        <label>Treatment Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>AccountType__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bridge</fullName>
+                    <default>false</default>
+                    <label>Bridge</label>
+                </value>
+                <value>
+                    <fullName>Conservative dentistry</fullName>
+                    <default>false</default>
+                    <label>Conservative dentistry</label>
+                </value>
+                <value>
+                    <fullName>Crown</fullName>
+                    <default>false</default>
+                    <label>Crown</label>
+                </value>
+                <value>
+                    <fullName>Dental Implants</fullName>
+                    <default>false</default>
+                    <label>Dental Implants</label>
+                </value>
+                <value>
+                    <fullName>Dental Radiology</fullName>
+                    <default>false</default>
+                    <label>Dental Radiology</label>
+                </value>
+                <value>
+                    <fullName>Denture</fullName>
+                    <default>false</default>
+                    <label>Denture</label>
+                </value>
+                <value>
+                    <fullName>Endodontics</fullName>
+                    <default>false</default>
+                    <label>Endodontics</label>
+                </value>
+                <value>
+                    <fullName>Esthetic</fullName>
+                    <default>false</default>
+                    <label>Esthetic</label>
+                </value>
+                <value>
+                    <fullName>Implant Restorations</fullName>
+                    <default>false</default>
+                    <label>Implant Restorations</label>
+                </value>
+                <value>
+                    <fullName>Implant Surgery</fullName>
+                    <default>false</default>
+                    <label>Implant Surgery</label>
+                </value>
+                <value>
+                    <fullName>Implantology</fullName>
+                    <default>false</default>
+                    <label>Implantology</label>
+                </value>
+                <value>
+                    <fullName>Oral Maxillofacial Surgery</fullName>
+                    <default>false</default>
+                    <label>Oral Maxillofacial Surgery</label>
+                </value>
+                <value>
+                    <fullName>Orthodontics</fullName>
+                    <default>false</default>
+                    <label>Orthodontics</label>
+                </value>
+                <value>
+                    <fullName>Pediondontics/Pediatric Dentistry</fullName>
+                    <default>false</default>
+                    <label>Pediondontics/Pediatric Dentistry</label>
+                </value>
+                <value>
+                    <fullName>Pedodontics</fullName>
+                    <default>false</default>
+                    <label>Pedodontics</label>
+                </value>
+                <value>
+                    <fullName>Periodontics</fullName>
+                    <default>false</default>
+                    <label>Periodontics</label>
+                </value>
+                <value>
+                    <fullName>Preventive care</fullName>
+                    <default>false</default>
+                    <label>Preventive care</label>
+                </value>
+                <value>
+                    <fullName>Preventive Care/ Prophylaxis</fullName>
+                    <default>false</default>
+                    <label>Preventive Care/ Prophylaxis</label>
+                </value>
+                <value>
+                    <fullName>Prosthetics</fullName>
+                    <default>false</default>
+                    <label>Prosthetics</label>
+                </value>
+                <value>
+                    <fullName>Prosthodontics</fullName>
+                    <default>false</default>
+                    <label>Prosthodontics</label>
+                </value>
+                <value>
+                    <fullName>Referral Clinic</fullName>
+                    <default>false</default>
+                    <label>Referral Clinic</label>
+                </value>
+                <value>
+                    <fullName>Restorative</fullName>
+                    <default>false</default>
+                    <label>Restorative</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Conservative dentistry</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Dental Implants</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Dental Radiology</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Endodontics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Esthetic</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Implant Restorations</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Implant Surgery</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Implantology</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Oral Maxillofacial Surgery</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Orthodontics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Pediondontics/Pediatric Dentistry</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Pedodontics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Periodontics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Preventive care</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Preventive Care/ Prophylaxis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Prosthetics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Prosthodontics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Referral Clinic</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Clinic</controllingFieldValue>
+                <controllingFieldValue>Dental Support Organization</controllingFieldValue>
+                <valueName>Restorative</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Laboratory</controllingFieldValue>
+                <valueName>Bridge</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dental Laboratory</controllingFieldValue>
+                <valueName>Denture</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ZipPostalCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Zip/Postal Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>of_Dentists__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated # of Dentists</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>of_ProphylaxisChairs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText># of chairs used by a Hygienist</inlineHelpText>
+        <label>Estimated # of Prophylaxis Chairs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>of_Technicians__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated # of Technicians</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>of_TreatmentChairs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText># of chairs equipped for a Dentist (for restorations, Implants etc)</inlineHelpText>
+        <label>Estimated # of Treatment Chairs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Start Up Practice</label>
+    <listViews>
+        <fullName>All_Start_Up_Practices</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Status__c</columns>
+        <columns>CountryCode__c</columns>
+        <columns>Account__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Start-Up Practices</label>
+    </listViews>
+    <nameField>
+        <label>Start Up Practice Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Start Up Practices</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>FirstName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LastName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PlannedOpeningDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.LAST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>VR_AccountRequiredIfPracticeCreated</fullName>
+        <active>true</active>
+        <description>You must enter an account to &quot;close&quot; a start-up practice and define it as &quot;Practice Created&quot;</description>
+        <errorConditionFormula>AND(
+TEXT(Status__c) = &apos;Practice Created&apos;,
+ISBLANK(Account__c)
+)</errorConditionFormula>
+        <errorDisplayField>Account__c</errorDisplayField>
+        <errorMessage>You must link your Start-Up Practice to the right Account (&quot;New Practice&quot;), If you cannot find it when searching by the Practice Name, try the &quot;OneSF Id&quot;, or &quot;CIM360 Id&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VR_CancelationReason</fullName>
+        <active>true</active>
+        <description>Cancellation Reason is required if the status is Cancelled</description>
+        <errorConditionFormula>AND(
+ TEXT(Status__c) = &apos;Cancelled&apos;,
+ ISBLANK(TEXT(CancellationReason__c))
+)</errorConditionFormula>
+        <errorDisplayField>CancellationReason__c</errorDisplayField>
+        <errorMessage>Please choose a cancellation reason.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

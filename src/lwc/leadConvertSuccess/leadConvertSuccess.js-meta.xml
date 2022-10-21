@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <isExposed>true</isExposed>
+
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="accountid" type="String" label="Selected Account Id" description="Id of the selected account"/>
+            <property name="contactid" type="String" label="Selected Contact Id" description="Id of the selected contact"/>
+            <property name="salesleadid" type="String" label="Created sales lead id" description="Id of the created sales lead"/>
+            <property name="opportunityid" type="String" label="Created opportunity id" description="Id of the created opportunity"/>
+            <property name="campaignmemberid" type="String" label="Campaign member id" description="Id of the related campaign member"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

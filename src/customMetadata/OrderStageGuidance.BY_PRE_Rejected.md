@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>BY_PRE_Rejected</label>
+    <protected>false</protected>
+    <values>
+        <field>KeyFieldsOptional__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>KeyFieldsReadOnly__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>KeyFieldsTitle__c</field>
+        <value xsi:type="xsd:string">Key Fields</value>
+    </values>
+    <values>
+        <field>KeyFields__c</field>
+        <value xsi:type="xsd:string">[&quot;Campaign__c&quot;]</value>
+    </values>
+    <values>
+        <field>OrderStatus__c</field>
+        <value xsi:type="xsd:string">Rejected</value>
+    </values>
+    <values>
+        <field>Pricebook2Id__c</field>
+        <value xsi:type="xsd:string">01s6M000002LJyz</value>
+    </values>
+    <values>
+        <field>StageGuidanceTitle__c</field>
+        <value xsi:type="xsd:string">Deal cancled</value>
+    </values>
+    <values>
+        <field>StageGuidance__c</field>
+        <value xsi:type="xsd:string">The customer did not complete the purchase</value>
+    </values>
+</CustomMetadata>

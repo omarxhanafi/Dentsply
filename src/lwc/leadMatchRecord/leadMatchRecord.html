@@ -1,0 +1,39 @@
+<template>
+
+    <div style="border-color:rgb(229,229,229);border-width:1px;border-style:solid;padding:0.25rem;"> 
+        <div style="display:flex;padding:0 0.75rem 0 0.75rem;" class="slds-grid">
+        <div class="slds-size_1-of-6">
+         <span class="slds-radio" style="padding:0.75rem 0.75rem 0.75rem 0;">
+             <input type="radio" id="existingContact" name="contactRadio" value={recordId} onchange={selectRecord}/>
+             <label class="slds-radio__label" for="existingContact">
+                 <span class="slds-radio_faux"></span>
+                 <span class="slds-form-element__label">
+                 </span>
+            </label>
+            </span>
+        </div>
+        <div class="slds-size_5-of-6" style="padding-top:0.75rem;padding-bottom:0.75rem;">
+            <ul>
+                <template if:true={isContact}>
+                    <li>{con.FirstName} {con.LastName}</li>
+                    <template if:true={con.Email}>
+                        <li>{con.Email}</li>
+                    </template>
+                    <li>{confidence} <template if:true={reasons}>(<template iterator:it={reasons}>{it.value}<template key={it.value} if:false={it.last}>, </template></template>)</template><lightning-dynamic-icon type="strength" option={iconStrength} alternative-text="Strength"></lightning-dynamic-icon></li>
+                </template>
+                <template if:false={isContact}>
+                    <li>{name}</li>
+                    <template if:true={street}>
+                        <li>{street}, {postalcode} {city}</li>
+                    </template>
+                    <template if:false={street}>
+                        <li>{postalcode} {city}</li>
+                    </template>
+                    <li>{confidence} <template if:true={reasons}>(<template iterator:it={reasons}>{it.value}<template key={it.value} if:false={it.last}>, </template></template>)</template><lightning-dynamic-icon type="strength" option={iconStrength} alternative-text="Strength"></lightning-dynamic-icon></li>
+                </template>
+            </ul>
+        </div>    
+     </div>
+    </div> 
+    
+</template>

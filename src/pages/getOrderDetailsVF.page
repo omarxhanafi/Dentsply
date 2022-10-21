@@ -1,0 +1,20 @@
+<apex:page >
+    <style>
+        .sfdcBody {
+            padding: 0 0 0 0 !important
+        }
+    </style>
+    <apex:includeLightning />
+	<div id="auraLightning"></div>
+    <script>
+    $Lightning.use("c:getOrderDetailsLightningOutApp", function () {
+        $Lightning.createComponent(
+            "c:getOrderDetailsCmp", {
+                
+            },
+            "auraLightning",
+            function (cmp) {}
+        );
+    });
+    </script>
+</apex:page>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Settings for the Local Time App. Please update these settings from the Local Time Config tab instead of directly manipulating them here.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>tz__Abbreviation__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enable this option if you want to show time zone abbreviation next to the local time (PST, EST etc).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enable this option if you want to show time zone abbreviation next to the local time (PST, EST etc).</inlineHelpText>
+        <label>Time Zone Short Name</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>tz__Batch_Size__c</fullName>
+        <defaultValue>10</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Trigger record size limit. If the number of records in the trigger exceed this limit in a given transaction, the App will process all these records asynchronously. Else these records will be processed synchronously.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Trigger record size limit. If the number of records in the trigger exceed this limit in a given transaction, the App will process all these records asynchronously. Else these records will be processed synchronously.</inlineHelpText>
+        <label>Trigger Record Size</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>tz__Default_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The App will utilize this country for all records where the country/phone information is missing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The App will utilize this country for all records where the country/phone information is missing.</inlineHelpText>
+        <label>Default Country</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>tz__Default_Phone_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The App will utilize this phone code for all phone numbers where the country phone code (+1, +44 etc..) is missing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The App will utilize this phone code for all phone numbers where the country phone code (+1, +44 etc..) is missing.</inlineHelpText>
+        <label>Default Country Phone Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>tz__Frequency__c</fullName>
+        <defaultValue>60</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Input a value to indicate how frequently you want to update the time shown by the Local Time button.
+
+Negative values are not valid.
+
+Example: 10. This means the time value is updated every 10 seconds. If the current time is 10:20:10 AM, then the next value shown is 10:20:20 AM, and then 10:20:30 AM after 10 seconds and so on.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This value indicates how frequently you want to update the time shown by the Local Time button.
+A lower value will update the time value more frequently but might consume more browser resources than a higher frequency value.</inlineHelpText>
+        <label>Frequency (Seconds)</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>tz__Gadget_Time_Format__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Time display format for the Local Time gadget, Find Local Time button, and Lightning Component.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Time display format for the Local Time gadget, Find Local Time button, and Lightning Component.</inlineHelpText>
+        <label>Local Time Gadget Time Format</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>tz__Job_Start_Time__c</fullName>
+        <defaultValue>&quot;03&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Job Start Time</label>
+        <length>6</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>tz__Manual_Batch_Size__c</fullName>
+        <defaultValue>30</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Number of records to be processed by the manual mass update batch job.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of records to be processed by the manual mass update batch job.</inlineHelpText>
+        <label>Manual Batch Size</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Local Time App Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,538 @@
+<template>
+    <div class={orderItemsBoxClass}>
+        <div class="slds-size_6-of-6 slds-large-size_6-of-6">
+            <div class="slds-grid slds-wrap sticky-header slds-theme_shade">
+
+                <div class="slds-size_6-of-6 slds-large-size_6-of-6 slds-p-around_xx-small">
+                    <div class="slds-grid slds-wrap slds-grid_vertical-align-end">
+                        <template if:false={isMobile}>
+
+                            <div class="slds-size_7-of-12 slds-p-bottom_small">
+                                <div class="slds-grid slds-grid_vertical">
+                                    <template if:true={order.Pricebook2.ShowApprovalLevelOrderLine__c}>
+                                      <template if:true={order.SourceRecord__c}>   
+                                        <template if:true={order.SourceRecord__r.Tiered__c}>
+                                            <div class="slds-col">
+                                                <div class="slds-notify_container slds-is-relative">
+                                                    <div class="slds-notify slds-notify_toast slds-theme_warning slds-float_left" role="status" style="min-width:150px !important; margin:0.1rem; padding-top:0.3rem !important; padding-bottom:0.3rem !important;">
+                                                        <span class="slds-assistive-text">warning</span>
+                                                        <span class="slds-icon_container slds-m-right_small slds-no-flex slds-align-top" title="Description of icon when needed">
+                                                            <lightning-icon icon-name="utility:warning" alternative-text="Warning" title="Warning" size="small"></lightning-icon>
+                                                        </span>
+                                                        <h2 class="slds-text-heading_x-small">Please note! This customer is tiered.</h2>
+                                                    </div>   
+                                                </div>
+                                            </div>
+                                        </template>
+                                      </template>
+                                    </template>
+                                    <div class="slds-col" style="padding-top:0.5rem; align-items:flex-end;">
+                                        <template if:true={order.Pricebook2.Show_Discount_OM__c}>
+                                            <lightning-input  class="slds-float_left" value={discountInput}
+                                                placeholder={labels.enterDiscount} min="0" max={maxDiscount} data-index={index}
+                                                onchange={handleChangeDiscountInput} variant="label-hidden" >
+                                            </lightning-input>
+                                            
+                                            <lightning-button variant="brand" label={labels.applyCustomDiscount}
+                                                icon-name="utility:check" disabled={isDiscountSelected}
+                                                class="slds-m-left_xx-small slds-float_left" onclick={setCustomDiscount}>
+                                            </lightning-button>
+                                        </template>
+                                        <template if:false={isContractSelected}>
+                                            <lightning-button variant="brand" label={contractDiscountLabel}
+                                                disabled={isOrderItemsSelected}
+                                                icon-name="utility:contract" class="slds-m-left_xx-small slds-float_left"
+                                                onclick={setContractDiscount}>
+                                            </lightning-button>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-size_5-of-12 slds-p-bottom_small">
+                                <!--<p>Approval Level: {order.ApprovalLevel__c}</p>
+                                <template if:true={order.CouponCode__c}>
+                                    <p>Coupon code: {order.CouponCode__r.Name} <template if:true={couponCount}>({couponCount})</template></p>
+                                </template> -->
+                                <template if:true={order.Pricebook2.ShowApprovalLevelOrderLine__c}>
+                                    <lightning-tile label="Order summary" type="media" style="padding-top:0.5rem;" class="slds-float_right">
+                                        <lightning-icon slot="media" icon-name="standard:orders"></lightning-icon>
+                                        <p class="slds-truncate" title="Order total">Order Amount: <lightning-formatted-number value={orderTotal} format-style="currency" currency-code={order.CurrencyIsoCode}></lightning-formatted-number></p>
+                                        <p class="slds-truncate" title="Order total">{orderItemDiscountAmountLabel}: <lightning-formatted-number value={discountTotal} format-style="currency" currency-code={order.CurrencyIsoCode}></lightning-formatted-number></p>
+                                        <p class="slds-truncate" title="Approval level">{orderItemApprovalLevelLabel}: {approvalLevel}</p>
+                                    </lightning-tile>
+                                </template>
+
+                            </div>
+                        </template>
+                        <template if:true={isMobile}>
+                            <template if:true={order.Pricebook2.Show_Discount_OM__c}>
+                                <div class="slds-size_6-of-6 slds-grid slds-grid_vertical-align-end">
+                                    <div class="slds-form-element slds-col slds-grow slds-medium-size_4-of-8 slds-large-size_3-of-8">
+                                        <div>
+                                            <label class="slds-form-element__label" for="slider-id-01">Discount
+                                                %</label>
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-slider">
+                                                    <input id="slider-id-01" type="range" class="slds-slider__range"
+                                                        min=0 max={maxDiscount} step=1 data-index={index}
+                                                        oninput={handleChangeDiscountInput} title="Discount"
+                                                        value={discountInput} />
+                                                    <span class="slds-slider__value"
+                                                        aria-hidden="true">{discountInput}</span> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <template if:true={order.Pricebook2.Show_Discount_OM__c}>
+                                        <div class="slds-hide_large slds-col slds-grow-none">
+                                            <lightning-button-icon variant="brand" label={labels.applyCustomDiscount}
+                                                icon-name="utility:check" disabled={isDiscountSelected}
+                                                class="slds-m-right_xx-small" onclick={setCustomDiscount}></lightning-button-icon>
+                                        </div>
+                                        <div class="slds-show_large slds-col slds-grow-none">
+                                            <lightning-button variant="brand" label={labels.applyCustomDiscount}
+                                                icon-name="utility:check" disabled={isDiscountSelected}
+                                                class="slds-m-right_xx-small" onclick={setCustomDiscount}>
+                                            </lightning-button>
+                                        </div>
+                                    </template>
+                                    <template if:false={isContractSelected}>
+                                        <div class="slds-hide_medium slds-col slds-grow-none">
+                                            <lightning-button variant="brand" label={contractDiscountLabelCompact}
+                                                disabled={isOrderItemsSelected}
+                                                icon-name="utility:contract" class="slds-m-right_xx-small"
+                                                onclick={setContractDiscount}>
+                                            </lightning-button>
+                                        </div>
+                                        <div class="slds-show_medium slds-col slds-grow-none">
+                                            <lightning-button variant="brand" label={contractDiscountLabel}
+                                                disabled={isOrderItemsSelected}
+                                                icon-name="utility:contract" class="slds-m-right_xx-small"
+                                                onclick={setContractDiscount}>
+                                            </lightning-button>
+                                        </div>
+                                    </template>
+                                    <template if:true={order.Pricebook2.ShowApprovalLevelOrderLine__c}>
+                                        <div class="slds-show_medium slds-col slds-grow-none">
+                                            <lightning-tile label="Order summary" type="media">
+                                                <lightning-icon slot="media" icon-name="standard:orders"></lightning-icon>
+                                                <p class="slds-truncate" title="Order total">Order Amount: <lightning-formatted-number value={orderTotal}></lightning-formatted-number> {order.CurrencyIsoCode}</p>
+                                                <p class="slds-truncate" title="Order total">Discount Amount: <lightning-formatted-number value={discountTotal}></lightning-formatted-number> {order.CurrencyIsoCode}</p>
+                                                <p class="slds-truncate" title="Approval level">Approval level: {approvalLevel}</p>
+                                            </lightning-tile>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+                        </template>
+                        <div class="slds-size_6-of-6 slds-p-around_xxx-small slds-m-top_x-small slds-grid_vertical-align-center">
+                            <div class={selectAllCheckboxClass}>
+                                <template if:true={isMobile}>
+                                    <!-- <lightning-input type="checkbox-button" id="select-all-checkbox-button"
+                                        name="select-all-checkbox-button" label="select-all-checkbox-button"
+                                        checked={selectAll} disabled={enableSelection} variant="label-hidden"
+                                        onchange={handleSelectAllChange} class="slds-float_left">
+                                    </lightning-input> -->
+                                    <template if:true={order.Pricebook2.Show_Discount_OM__c}>
+                                        <template if:true={selectAll}>
+                                            <lightning-button-icon title="Select all" alternative-text="select all" size="large"
+                                                disabled={enableSelection} icon-name="utility:multi_select_checkbox" variant="bare"
+                                                onclick={handleSelectAllChange} class="slds-float_left">
+                                            </lightning-button-icon>
+                                        </template>
+                                        <template if:false={selectAll}>
+                                            <lightning-button-icon title="Select all" alternative-text="select all" size="large"
+                                                disabled={enableSelection} icon-name="utility:layers" variant="bare"
+                                                onclick={handleSelectAllChange} class="slds-float_left">
+                                            </lightning-button-icon>
+                                        </template>
+                                    </template>
+                                    <div for="select-all-checkbox-button" class="slds-float_left slds-m-top_small compact-label slds-checkbox_button__label">
+                                        <span class="slds-text-title_caps">{orderItemsCounter}</span>
+                                    </div>
+                                </template>
+                                <template if:false={isMobile}>
+                                    <template if:true={order.Pricebook2.Show_Discount_OM__c}>
+                                        <lightning-input type="checkbox" id="select-all-checkbox"
+                                            name="select-all-checkbox" label="select-all-checkbox"
+                                            checked={selectAll} disabled={enableSelection} variant="label-hidden"
+                                            onchange={handleSelectAllChange} class="slds-float_left">
+                                        </lightning-input>
+                                    </template>
+                                    <label for="select-all-checkbox" class="slds-checkbox__label compact-label">
+                                        <span class="slds-text-title_caps">{orderItemsCounter}</span>
+                                    </label>
+                                </template>
+                                <!-- <div class="slds-form-element__control">
+                                    <div class="slds-checkbox">
+                                        <input type="checkbox" name="select-all" id="checkbox-unique-id-73"
+                                            value="checkbox-unique-id-73" checked={selectAll} disabled={enableSelection}
+                                            onchange={handleSelectAllChange} data-index={index} />
+                                        <label class="slds-checkbox__label compact-label" for="checkbox-unique-id-73">
+                                            <span class="slds-checkbox_faux"></span>
+                                            <span class="slds-text-title_caps">{totalOrderItems}
+                                                Order Items</span>
+                                        </label>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <template if:true={paginationTalet}>
+                            <div class="slds-size_2-of-6 slds-large-size_2-of-6 slds-p-vertical_xxx-small">
+                                <lightning-button label={labels.previous} icon-name="utility:chevronleft"
+                                    onclick={handlePrevious} disabled={showFirstButton} class="slds-m-left_xx-small">
+                                </lightning-button>
+                            </div>
+                            <div class="slds-size_2-of-6 slds-large-size_2-of-6 slds-p-vertical_xxx-small">
+                                <div class="slds-align_absolute-center">{pageNumber} / {getTotalPages}</div>
+                            </div>
+                            <div class="slds-size_2-of-6 slds-large-size_2-of-6 slds-p-vertical_xxx-small">
+                                <lightning-button label={labels.next} class="slds-float_right slds-m-right_xx-small"
+                                    icon-name="utility:chevronright" icon-position="right" onclick={handleNext}
+                                    disabled={showLastButton}>
+                                </lightning-button>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <template if:true={orderItems}>
+                <div class={orderItemsInnerBoxClass}>
+                    <div class="slds-grid slds-wrap">
+                        <template for:each={orderItems} for:item="orderItem" for:index="index">
+                            <div class="slds-size_2-of-2 slds-large-size_2-of-2 slds-p-around_xxx-small" key={key}>
+                                <article class="slds-card slds-p-around_xx-small" key={key}>
+                                    <!--<lightning-tile label={orderItem.Name} href={orderItem.Url} data-index={index}
+                                        actions={orderItemTileActions} type="media" target="_blank"
+                                        onactiontriggered={handleOrderItemTileAction} class="slds-card">
+                                        <template if:true={order.Pricebook2.Show_Discount_OM__c}> -->
+                                            <lightning-card data-index={index}
+                                            actions={orderItemTileActions} target="_blank"
+                                            onactiontriggered={handleOrderItemTileAction} class="slds-card" variant="narrow">
+                                            <!--<template if:true={order.Pricebook2.Show_Discount_OM__c}> -->
+                                            <span slot="actions">
+                                                <template if:false={orderItem.EditMode}>
+                                                    <lightning-button-icon icon-name="utility:edit" alternative-text="Edit" class="slds-show_medium slds-m-left_xx-small" title="Edit" onclick={handleEditChange} value={orderItem.Id} data-index={index}></lightning-button-icon>
+                                                    <!--<lightning-button-icon icon-name="utility:down" variant="border-filled" alternative-text="Show More" class="slds-m-left_xx-small"></lightning-button-icon>    -->    
+                                                    <lightning-button-menu data-index={index} alternative-text="Show menu" variant="border-filled" onselect={handleOrderItemTileAction} class="slds-p-left_xx-small" menu-alignment="right">
+                                                        <lightning-menu-item data-index={index} value="edit" label={labels.orderItemEdit} icon-name="utility:edit" ></lightning-menu-item>
+                                                        <lightning-menu-item data-index={index} value="clone" label={labels.orderItemClone} icon-name="utility:copy" ></lightning-menu-item>
+                                                        <lightning-menu-item data-index={index} value="delete" label={labels.orderItemDelete} icon-name="utility:delete" ></lightning-menu-item>
+                                                    </lightning-button-menu>
+                                                </template>
+                                                <template if:true={orderItem.EditMode}>
+                                                    <lightning-button label={labels.orderItemCancel} title="Cancel" class="slds-m-left_x-small" onclick={handleEditChange} value={orderItem.Id} data-index={index}></lightning-button>
+                                                    <lightning-button variant="brand" label={labels.orderItemSave} title="Save" class="slds-m-left_x-small" data-index={index} onclick={updateOrderItem}></lightning-button>
+                                                </template>
+                                            </span>
+                                            <!--</template> -->
+                                            <span slot="title">
+                                                <!--<template if:true={isMobile}>
+                                                    <lightning-input class="slds-m-left_xx-small slds-float_left" type="checkbox-button" data-index={index}
+                                                        variant="label-hidden" checked={orderItem.isSelected}
+                                                        disabled={enableSelection} onchange={handleSelectChange}>
+                                                    </lightning-input>
+                                                </template> -->
+                                                <template if:false={isMobile}>
+                                                    <template if:true={order.Pricebook2.Show_Discount_OM__c}>
+                                                        <lightning-input class="slds-m-left_xx-small slds-float_left" type="checkbox" data-index={index}
+                                                            variant="label-hidden" checked={orderItem.isSelected}
+                                                            disabled={enableSelection} onchange={handleSelectChange}>
+                                                        </lightning-input>
+                                                    </template>
+                                                </template>
+                                                <p class="slds-text-align_left" style="display: inline;"><a href={orderItem.Url}>{orderItem.Name}</a><br/></p>
+                                                <p class="slds-text-body_regular slds-text-align_left slds-text-color_weak slds-truncate" style="display: inline;">
+                                                    <!--<div class="slds-text-body_small slds-truncate slds-text-color_weak"> -->
+                                                        {orderItem.LocalProductDescription__c}
+                                                </p>
+                                            </span>
+                                        
+                                        <div class="slds-hide_medium slds-grid">
+                                            <!--div class="slds-region_narrow m-top-negative"-->
+                                            <template if:true={order.Pricebook2.Show_Discount_OM__c}>
+                                                <div class="slds-region_narrow slds-m-top_none slds-col slds-size_1-of-6">
+                                                        <lightning-input class="slds-m-left_xx-small slds-float_left" type="checkbox-button" data-index={index}
+                                                            variant="label-hidden" checked={orderItem.isSelected}
+                                                            disabled={enableSelection} onchange={handleSelectChange}>
+                                                        </lightning-input>
+                                                </div>
+                                            </template>
+                                            <div class="slds-region_narrow slds-m-top_none slds-col slds-size_4-of-6">
+                                                <!--<template if:true={orderItem.LocalProductDescription__c}>-->
+                                                        <!--<div class="slds-page-header__name-meta slds-truncate slds-size_10-of-12">   -->                                                     <!--<div class="slds-text-body_small slds-truncate slds-text-color_weak slds-size_10-of-12"> -->
+                                                            <!--{orderItem.LocalProductDescription__c} -->
+                                                       <!-- </div>
+                                                </template> -->
+                                                
+                                                <dl class="slds-dl_horizontal slds-p-left_x-large">
+                                                    <dt class="slds-dl_horizontal__label">
+                                                        <p class="slds-truncate">Article Number:</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        {orderItem.Article__c}</dd>
+
+                                                    <dt class="slds-dl_horizontal__label">
+                                                        <p class="slds-truncate">{orderItemQuantityLabel}:</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        {orderItem.Quantity}</dd>
+
+                                                    <template if:false={order.Pricebook2.ShowPricingfromMicroServiceOM__c}>
+                                                        <template if:true={order.Pricebook2.Show_Price_OM__c}>
+                                                            <dt class="slds-dl_horizontal__label">
+                                                                <p class="slds-truncate">{orderItemUnitPriceLabel}:</p>
+                                                            </dt>
+                                                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                                {orderItem.UnitPrice} {orderItem.Currency}</dd>
+                                                        </template>                                                        
+                                                    </template>
+                                                    
+                                                    <template if:true={order.Pricebook2.ShowPricingfromMicroServiceOM__c}>
+                                                        <dt class="slds-dl_horizontal__label">
+                                                            <p class="slds-truncate">{orderItemRetailPriceLabel}:</p>
+                                                        </dt>
+                                                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                            {orderItem.AXRetailPrice__c} {orderItem.Currency}</dd>
+
+                                                        <dt class="slds-dl_horizontal__label">
+                                                            <p class="slds-truncate">{orderItemUnitPriceLabel}:</p>
+                                                        </dt>
+                                                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                            {orderItem.UnitPrice} {orderItem.Currency} ({orderItem.AXDiscount__c}  %)</dd>
+                                                    </template>
+                                                    
+                                                    <template if:true={order.Pricebook2.Show_Discount_OM__c}>
+                                                        <dt class="slds-dl_horizontal__label">
+                                                            <p class="slds-truncate">{orderItemDiscountLabel}:
+                                                            </p>
+                                                        </dt>
+                                                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                            {orderItem.Discount_Percent__c}%</dd>
+                                                    </template>
+
+                                                    <template if:true={order.Pricebook2.ShowPricingfromMicroServiceOM__c}>
+                                                            <dt class="slds-dl_horizontal__label">
+                                                                <p class="slds-truncate"><b>{orderItemTotalLineItemPriceLabel}:</b></p>
+                                                            </dt>
+                                                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                            <b>{orderItem.Total_Line_Item_Price__c} {orderItem.Currency}</b> </dd>
+                                                    </template>
+
+                                                    <template if:true={order.Pricebook2.Show_FOC_OM__c}>
+                                                        <template if:true={orderItem.Free_of_Charge_Delivery__c}>
+                                                            <dt class="slds-dl_horizontal__label">
+                                                                <p class="slds-truncate">{orderItemFOCLabel}:</p>
+                                                            </dt>
+                                                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                                {orderItem.Free_of_Charge_Delivery__c}</dd>
+                                                        </template>
+                                                    </template>
+                                                    <template if:true={order.Pricebook2.ShowApprovalLevelOrderLine__c}>
+                                                        <template if:false={orderItem.couponApproval}>
+                                                            <dt class="slds-dl_horizontal__label">
+                                                                <p class="slds-truncate">Approval Level:</p>
+                                                            </dt>
+                                                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                                
+                                                                <template if:false={orderItem.NoApprovalNeeded}>
+                                                                   <!--<template if:true={orderItem.Primary}> -->
+                                                                        <lightning-badge class="slds-badge_inverse slds-theme_error" label={orderItem.ApprovalLevel__c}>
+                                                                        </lightning-badge>
+                                                                    <!--</template>-->
+                                                                    <!--<template if:false={orderItem.Primary}>
+                                                                        <lightning-badge class="slds-badge_inverse slds-theme_error" label={secondaryApprovalLevel}>
+                                                                        </lightning-badge>
+                                                                    </template>-->
+                                                                </template>
+                                                                <template if:true={orderItem.NoApprovalNeeded}>
+                                                                    <lightning-badge label="No approval needed">
+                                                                    </lightning-badge>
+                                                                </template>
+                                                            </dd>
+                                                     </template>
+                                                     </template>       
+                                                </dl>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="slds-show_medium slds-grid">
+                                            <template if:true={isMobile}>
+                                                <template if:true={order.Pricebook2.Show_Discount_OM__c}>
+                                                <div class="slds-region_narrow slds-m-top_none slds-col slds-size_1-of-12">
+                                                      
+                                                    <lightning-input class="slds-m-left_xx-small slds-float_left" type="checkbox-button" data-index={index}
+                                                        variant="label-hidden" checked={orderItem.isSelected}
+                                                        disabled={enableSelection} onchange={handleSelectChange}>
+                                                    </lightning-input>
+                                                
+                                                </div>
+                                                </template>
+                                            </template>
+
+                                            <div class={marginTopNegativeClass}>
+                                                <template if:true={orderItem.LocalProductDescription__c}>
+                                                <!-- <template if:true={isMobile}> -->
+                                                    <!--<div class="slds-text-align_left slds-text-color_weak slds-truncate slds-size_10-of-12" style="padding-left:40px;">
+                                                        {orderItem.LocalProductDescription__c}
+                                                    </div> -->
+                                                <!-- </template> -->
+                                                
+                                                </template>
+                                                <ul class="slds-list_horizontal slds-has-dividers_right" style="padding-left:40px;">
+                                                    <li class="slds-item">{orderItem.Article__c}</li>
+
+                                                    <template if:false={orderItem.EditMode}>
+                                                        <li class="slds-item">{orderItemQuantityLabel}: {orderItem.Quantity}
+                                                        </li>
+                                                        
+                                                        <template if:true={order.Pricebook2.Show_Discount_OM__c}>
+                                                            <li class="slds-item">{orderItemDiscountLabel}: {orderItem.Discount_Percent__c}%
+                                                            </li>
+                                                        </template>
+                                                    </template>
+                                                    
+                                                    <template if:false={order.Pricebook2.ShowPricingfromMicroServiceOM__c}>
+                                                        <template if:true={order.Pricebook2.Show_Price_OM__c}>
+                                                            <li class="slds-item">{orderItemUnitPriceLabel}: {orderItem.UnitPrice} {orderItem.Currency}
+                                                            </li>
+                                                        </template>                                                        
+                                                    </template>
+                                                    
+                                                    <!--only for AX pricebooks create label -->
+                                                    <template if:true={order.Pricebook2.ShowPricingfromMicroServiceOM__c}>
+                                                        <li class="slds-item">{orderItemRetailPriceLabel}: {orderItem.AXRetailPrice__c} {orderItem.Currency} 
+                                                        </li>
+                                                        <li class="slds-item">{orderItemUnitPriceLabel}: {orderItem.UnitPrice} {orderItem.Currency} ({orderItem.AXDiscount__c}  %)
+                                                        </li>
+                                                    </template>
+                                                    
+                                                    
+                                                    <!--<template if:true={order.Pricebook2.Show_Discount_OM__c}>
+                                                        <li class="slds-item">{orderItemDiscountLabel}: {orderItem.Discount_Percent__c}% 
+                                                        </li>
+                                                    </template> -->
+                                                    <template if:true={order.Pricebook2.Show_Price_OM__c}>
+                                                        <li class="slds-item"> <b>{orderItemTotalLineItemPriceLabel}: {orderItem.Total_Line_Item_Price__c} {orderItem.Currency} </b>
+                                                        </li>
+                                                    </template>
+                                                    
+                                                    <template if:true={order.Pricebook2.Show_FOC_OM__c}>
+                                                        <template if:true={orderItem.Free_of_Charge_Delivery__c}>
+                                                            <li class="slds-item">{orderItemFOCLabel}:
+                                                                {orderItem.Free_of_Charge_Delivery__c}
+                                                            </li>
+                                                        </template>
+                                                    </template>
+                                                    <template if:true={order.Pricebook2.ShowApprovalLevelOrderLine__c}>
+                                                        <template if:false={orderItem.couponApproval}>
+                                                            <li class="slds-item">
+                                                                <template if:false={orderItem.NoApprovalNeeded}>
+                                                                    <template if:true={orderItem.Primary}>
+                                                                        <lightning-badge class="slds-badge_inverse slds-theme_error" label={orderItem.ApprovalLevel__c}>
+                                                                        </lightning-badge>
+                                                                    </template>
+                                                                    <template if:false={orderItem.Primary}>
+                                                                            <lightning-badge class='slds-badge slds-badge_inverse slds-theme_error' label={orderItem.LineApprovalLevel__c}> <!--{secondaryApprovalLevel} -->
+                                                                            </lightning-badge>
+                                                                    </template>
+                                                                </template>
+                                                                <template if:true={orderItem.NoApprovalNeeded}>
+                                                                    <lightning-badge label="No approval needed">
+                                                                    </lightning-badge>
+                                                                </template>
+                                                            </li>
+                                                        </template>
+                                                    </template>
+                                                    
+                                                </ul>
+                                                <ul class="slds-list_horizontal slds-has-dividers_right" style="padding-left:40px;">
+                                                    <li>
+                                                        <template if:true={orderItem.EditMode}>
+                                                            
+                                                            <lightning-input type="number" min="0" data-index={index}
+                                                            label={orderItemQuantityLabel} value={orderItem.Quantity} class="slds-float_left slds-p-top_xx-small"
+                                                            placeholder={labels.quantity} style="max-width:70px;font-size:0.75rem;" onchange={handleQuantityChange} step="1"
+                                                            >
+                                                            </lightning-input>
+
+
+                                                            <template if:true={order.Pricebook2.Show_Discount_OM__c}>
+                                                                <lightning-input type="number" min="-100" max="100" data-index={index}
+                                                                label={orderItemDiscountLabel} value={orderItem.Discount_Percent__c} class="slds-float_left slds-p-left_x-small slds-p-top_xx-small"
+                                                                placeholder={orderItemDiscountLabel} style="max-width:90px;font-size:0.75rem;" onchange={handleDiscountChange} formatter="decimal" step="0.0001"
+                                                                disabled={orderItem.FOC}
+                                                                >
+                                                                </lightning-input>
+                                                            </template>
+                                                            
+                                                            <template if:true={order.Pricebook2.Show_Price_OM__c}>
+                                                                <template if:true={order.Pricebook2.Show_Discount_OM__c}>
+                                                                    <lightning-input type="number" min="0" data-index={index}
+                                                                    label="Sales price" value={orderItem.CustomUnitPrice} class="slds-float_left slds-p-left_x-small slds-p-top_xx-small"
+                                                                    placeholder={orderItemDiscountLabel} style="max-width:90px;font-size:0.75rem;" onchange={handleUnitPriceChange} formatter="decimal" step="0.01"
+                                                                    disabled={orderItem.FOC}
+                                                                    >
+                                                                    </lightning-input>
+                                                                </template>
+                                                            </template>
+
+                                                            <template if:true={order.Pricebook2.ShowApprovalLevelOrderLine__c}>
+                                                                <template if:true={orderItem.showCoupon}>
+                                                                    <lightning-button-stateful
+                                                                    data-index={index}
+                                                                    label-when-off="Use offer"
+                                                                    label-when-on="Offer"
+                                                                    icon-name-when-off="utility:add"
+                                                                    icon-name-when-on="utility:check"
+                                                                    selected={orderItem.UseCoupon__c}
+                                                                    onclick={handleCouponChange} 
+                                                                    class="slds-float_left slds-p-left_x-small slds-form-element slds-p-top_xx-small"
+                                                                    style="padding-top: 1.6rem;">
+                                                                </lightning-button-stateful>
+                                                                </template>
+                                                            </template>
+                                                            </template>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-12">
+                                            </div>
+                                        </div>
+
+                                    </lightning-card> <!--lightning-tile -->
+                                </article>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <template if:true={pagination}>
+                    <div class="slds-grid slds-wrap slds-theme_shade sticky-footer">
+                        <div class="slds-size_2-of-6 slds-large-size_2-of-6 slds-p-vertical_xxx-small">
+                            <lightning-button label={labels.previous} icon-name="utility:chevronleft"
+                                onclick={handlePrevious} disabled={showFirstButton}>
+                            </lightning-button>
+                        </div>
+                        <div class="slds-size_2-of-6 slds-large-size_2-of-6 slds-p-vertical_xxx-small">
+                            <div class="slds-align_absolute-center">{pageNumber} / {getTotalPages}</div>
+                        </div>
+                        <div class="slds-size_2-of-6 slds-large-size_2-of-6 slds-p-vertical_xxx-small">
+                            <lightning-button label={labels.next} class="slds-float_right"
+                                icon-name="utility:chevronright" icon-position="right" onclick={handleNext}
+                                disabled={showLastButton}>
+                            </lightning-button>
+                        </div>
+                    </div>
+                </template>
+            </template>
+            <template if:true={loading}>
+                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+            </template>
+            <template if:true={itemToUpdate}>
+                <c-update-order-item-om-lwc onorderitemupdated={handleOrderItemUpdated} order={order}
+                    item-to-update={itemToUpdate} tile-action={currentTileAction}></c-update-order-item-om-lwc>
+            </template>
+        </div>
+    </div>
+</template>

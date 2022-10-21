@@ -1,0 +1,118 @@
+<template>
+
+    <div style="background-color:rgb(243, 242, 242);">
+        <div style="text-align:center;" class="slds-text-heading_large slds-p-around_medium">
+            <h2>Your lead has been converted</h2>
+           </div>    
+        <div class="subtitle" style="text-align:center;">
+            <span class="uiImage" data-aura-class="uiImage">
+                <img style="vertical-align: middle;height: 9rem;" src="/projRes/ui-lead-runtime-components/images/lead_convert_celebration@2x.gif" class="subtitle-image" alt=""/>
+            </span>
+        </div>
+        <div style="background-color:rgb(243, 242, 242);" class="slds-p-around_medium slds-grid slds-wrap">     
+        </div>
+
+
+        <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-around_small">
+                    <lightning-card title="Contact">
+
+                    <lightning-tile label={contactName} href={contactUrl} style="padding:0.75rem;">
+                    <!--<aura:set attribute="media">
+                        <lightning-icon iconName="standard:contact"/>
+                    </aura:set> -->
+                    <dl class="slds-dl_horizontal">
+                        <dt class="slds-dl_horizontal__label">
+                            <p class="slds-truncate" title="Account">Phone:</p>
+                        </dt>
+                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                            <p class="slds-truncate" title="Salesforce">{contactPhone}</p>
+                        </dd>
+                        <dt class="slds-dl_horizontal__label">
+                            <p class="slds-truncate" title="Email">Email:</p>
+                        </dt>
+                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                            <p class="slds-truncate">{contactEmail}</p>
+                        </dd>
+                    </dl>
+                    </lightning-tile>
+                            
+                    </lightning-card>
+                </div> 
+            <!-- Account -->
+            
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-around_small">
+                <lightning-card title="Account"> <!-- slds-p-around_medium-->
+                    
+                <lightning-tile label={accountName} href={accountUrl} style="padding:0.75rem;">
+                    <!--<aura:set attribute="media">
+                        <lightning:icon iconName="standard:account"/>
+                    </aura:set> -->
+                    <dl class="slds-dl_horizontal">
+                        <dt class="slds-dl_horizontal__label">
+                            <p class="slds-truncate" title="Email">Address</p>
+                        </dt>
+                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                            <p class="slds-truncate">{accountStreet}, {accountPostalcode} {accountCity}</p>
+                        </dd>
+                    </dl>
+                </lightning-tile>
+                        
+                </lightning-card>
+            </div>
+
+            <template if:true={salesLeadName}>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-around_small">
+                <lightning-card title="Sales Lead"> <!-- slds-p-around_medium-->
+                    
+                <lightning-tile label={salesLeadName} href={salesLeadUrl} style="padding:0.75rem;">
+
+                    <!--<dl class="slds-dl_horizontal">
+                        <dt class="slds-dl_horizontal__label">
+                            <p class="slds-truncate" title="Email">Address</p>
+                        </dt>
+                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                            <p class="slds-truncate">{accountStreet}, {accountPostalcode} {accountCity}</p>
+                        </dd>
+                    </dl> -->
+                </lightning-tile>
+                        
+                </lightning-card>
+            </div>
+            </template>
+
+            <template if:true={opportunityName}>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-around_small">
+                    <lightning-card title="Opportunity"> <!-- slds-p-around_medium-->
+                        
+                    <lightning-tile label={opportunityName} href={opportunityUrl} style="padding:0.75rem;">
+    
+                    </lightning-tile>
+                            
+                    </lightning-card>
+                </div>
+            </template>
+            
+            <template if:true={campaignmemberid}>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-around_small">
+                    <lightning-card title="Campaign Member"> <!-- slds-p-around_medium-->
+                        
+                    <lightning-tile label={contactName} href={campaignMemberUrl} style="padding:0.75rem;">
+    
+                    </lightning-tile>
+                            
+                    </lightning-card>
+                </div>
+            </template> 
+
+        </div>
+
+
+
+
+    </div> 
+    
+    
+
+    
+</template>

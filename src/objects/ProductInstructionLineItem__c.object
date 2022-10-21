@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>false</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>false</enableSharing>
+    <enableStreamingApi>false</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>ItemName__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Airscaler ZA-55 LM</fullName>
+                    <default>false</default>
+                    <label>Airscaler ZA-55 LM</label>
+                </value>
+                <value>
+                    <fullName>Airscaler ZA-55 LS</fullName>
+                    <default>false</default>
+                    <label>Airscaler ZA-55 LS</label>
+                </value>
+                <value>
+                    <fullName>BeeFill 2in1</fullName>
+                    <default>false</default>
+                    <label>BeeFill 2in1</label>
+                </value>
+                <value>
+                    <fullName>BeeFill Pack</fullName>
+                    <default>false</default>
+                    <label>BeeFill Pack</label>
+                </value>
+                <value>
+                    <fullName>Guttafusion Ofen</fullName>
+                    <default>false</default>
+                    <label>Guttafusion Ofen</label>
+                </value>
+                <value>
+                    <fullName>Raypex 6</fullName>
+                    <default>false</default>
+                    <label>Raypex 6</label>
+                </value>
+                <value>
+                    <fullName>Reciproc direct</fullName>
+                    <default>false</default>
+                    <label>Reciproc direct</label>
+                </value>
+                <value>
+                    <fullName>VDW.CONNECT Drive</fullName>
+                    <default>false</default>
+                    <label>VDW.CONNECT Drive</label>
+                </value>
+                <value>
+                    <fullName>VDW.CONNECT Locate</fullName>
+                    <default>false</default>
+                    <label>VDW.CONNECT Locate</label>
+                </value>
+                <value>
+                    <fullName>VDW.GOLD</fullName>
+                    <default>false</default>
+                    <label>VDW.GOLD</label>
+                </value>
+                <value>
+                    <fullName>VDW.GOLD Reciproc</fullName>
+                    <default>false</default>
+                    <label>VDW.GOLD Reciproc</label>
+                </value>
+                <value>
+                    <fullName>VDW.SILVER</fullName>
+                    <default>false</default>
+                    <label>VDW.SILVER</label>
+                </value>
+                <value>
+                    <fullName>VDW.SILVER Reciproc</fullName>
+                    <default>false</default>
+                    <label>VDW.SILVER Reciproc</label>
+                </value>
+                <value>
+                    <fullName>VDW.ULTRA</fullName>
+                    <default>false</default>
+                    <label>VDW.ULTRA</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ItemNo__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(ItemName__c,
+&apos;BeeFill 2in1&apos;, &apos;V040541000000&apos;,
+&apos;BeeFill Pack&apos;, &apos;V040544000000&apos;,
+&apos;Airscaler ZA-55 LM&apos;, &apos;V991443000000&apos;,
+&apos;Airscaler ZA-55 LS&apos;, &apos;V991444000000&apos;,
+&apos;Guttafusion Ofen&apos;, &apos;V041500000000&apos;,
+&apos;Raypex 6&apos;, &apos;V041113000000&apos;,
+&apos;Reciproc direct&apos;, &apos;V041090000000&apos;,
+&apos;VDW.GOLD&apos;, &apos;V041103000000&apos;,
+&apos;VDW.GOLD Reciproc&apos;, &apos;V041173000000&apos;,
+&apos;VDW.SILVER&apos;, &apos;V041153000000&apos;,
+&apos;VDW.SILVER Reciproc&apos;, &apos;V041163000000&apos;,
+&apos;VDW.ULTRA&apos;, &apos;V041400000501&apos;, 
+&apos;VDW.CONNECT Drive&apos;, &apos;V041183000000&apos;, 
+&apos;VDW.CONNECT Locate&apos;, &apos;M00CLOC000000&apos;,
+&apos;Not Found&apos;)</formula>
+        <label>Item No.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductInstruction__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Instruction</label>
+        <referenceTo>ProductInstruction__c</referenceTo>
+        <relationshipLabel>Product Instruction Line Items</relationshipLabel>
+        <relationshipName>Product_Instruction_Line_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>SerialNo__c</fullName>
+        <externalId>false</externalId>
+        <label>Serial No.</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Software_Update__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Software Update</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Product Instruction Line Item</label>
+    <nameField>
+        <displayFormat>Item-{0000}</displayFormat>
+        <label>Line Item #</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Product Instruction Line Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Software_Update_wrong_product</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( Software_Update__c = true, NOT(ISPICKVAL(ItemName__c, &quot;VDW.GOLD Reciproc&quot;)))</errorConditionFormula>
+        <errorDisplayField>Software_Update__c</errorDisplayField>
+        <errorMessage>Software Updates can only be selected for specific products.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

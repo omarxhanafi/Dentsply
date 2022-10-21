@@ -1,0 +1,59 @@
+<template>
+    <template if:true={loading}>
+        <lightning-spinner alternative-text="Loading" size="large" variant="brand">
+        </lightning-spinner>
+    </template>
+    <div class="activities-container" onscroll={scrollHandler}>
+        <div class="filters">
+            <lightning-input label="My Activities"  type="toggle" onchange={toggleMyActivities}>
+            </lightning-input>
+        </div>
+        <template for:each={data} for:item="activity">
+            <table class="slds-box slds-m-top_small" key={activity.Id}>
+                <tbody>
+                    <tr>
+                        <td>Subject</td>
+                        <td>{activity.Subject}</td>
+                    </tr>
+                    <tr>
+                        <td>Objective</td>
+                        <td>{activity.Objective__c}</td>
+                    </tr>
+                    <tr>
+                        <td>Related To</td>
+                        <template if:true={activity.What}>
+                        <td>{activity.What.Name}</td>
+                        </template>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>{activity.Owner.Name}</td>
+                    </tr>
+                    <tr>
+                        <td>Due Date</td>
+                        <td>{activity.ActivityDate}</td>
+                    </tr>
+                    <tr>
+                        <td>Event Status</td>
+                        <td>{activity.Event_Status__c}</td>
+                    </tr>
+                    <tr>
+                        <td>Task Status</td>
+                        <td>{activity.Status}</td>
+                    </tr>
+                    <tr>
+                        <td>Customer Facing Event</td>
+                        <td if:true={activity.Customer_Facing_Event__c}>
+                            <lightning-icon icon-name="utility:check" size="x-small">
+                            </lightning-icon>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Comments</td>
+                        <td>{activity.Description}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </template>
+    </div>
+</template>

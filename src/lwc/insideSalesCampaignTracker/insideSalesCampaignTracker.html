@@ -1,0 +1,134 @@
+<template>
+    <lightning-card title="">
+        <lightning-progress-indicator class="slds-m-vertical_xx-small" current-step={selectedStep} type="path" variant="brand">
+            <template for:each={steps} for:item="step">
+                <lightning-progress-step label={step.label} value={step.value} key={step.label}></lightning-progress-step>
+            </template>
+        </lightning-progress-indicator>
+       
+   
+        <template if:true={isStep1Active}> 
+            <!--data table step Select Campaigns-->
+            <div if:true={nonSelectedCampaignError} class="slds-notify slds-notify_alert slds-alert_error">
+                Please select at least one Campaign.
+            </div>
+            <div class="slds-m-vertical_xx-small slds-page-header">
+                <span class="slds-badge_lightest">Selected Campaigns:{selectedCampaignCount}</span>
+            </div>
+            
+            <lightning-datatable
+                        key-field="id"
+                        data={mappedCampaignsData}
+                        columns={step1Columns}
+                        selected-rows={selectedRows}
+                        onrowselection={handleCampaignSelection}>
+            </lightning-datatable>
+        </template>
+        <template if:true={isStep2Active}>
+            <div></div>
+            <div if:true={showContactError} class="slds-notify slds-notify_alert slds-alert_error">
+                {label.missingcontactountType}
+            </div>
+            <table class="selected-campaigns slds-table slds-table--bordered slds-table--cell-buffer slds-m-vertical_xx-medium">
+                <thead>
+                    <tr class="slds-text-title--caps">
+                        <th>
+                            <span class="slds-truncate slds-col slds-size_3-of-3" title="Campaign Name">Name</span>
+                        </th>
+                        <th>
+                            <span class="slds-truncate slds-col slds-size_2-of-3" title="Notes">Notes</span>
+                        </th>
+                        <th>
+                            <span class="slds-truncate slds-col slds-size_2-of-3 slds-scrollable_x" title="Activity Result">Activity Result</span>
+                        </th>
+                        <th>
+                            <span class="slds-truncate slds-col slds-size_2-of-3" title="Contact Type">Contact Type (*)</span>
+                        </th>
+                        <th>
+                            <span class="slds-truncate slds-col slds-size_2-of-3" title="Campaign Member Status">Member Status</span>
+                        </th>
+                        <th>
+                            <span class="slds-truncate" title="Offer Code(s)">Offer Code(s)</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={selectedRowsDetails} for:item="campaign">
+                        <tr class="selected-campaign" key={selectedRowsDetails.id}>
+                            <td scope="row" class="campaign-name">
+                                {campaign.name}
+                                <input class="slds-form-element" type="hidden" name="name" value={campaign.name}>
+                                <input class="slds-form-element" type="hidden" name="memberId" value={campaign.memberId}>
+                            </td>
+                            <td scope="row">
+                                <lightning-input class="slds-form-element" name="note" type="text" value={campaign.note}></lightning-input>
+                            </td>
+                            <td scope="row">
+                                <select class="slds-combobox__input slds-combobox__input-value slds-input_faux slds-m-top_small slds-form-element" name="activityResult">
+                                    <option value="" selected>Choose one</option>
+                                    <option for:each={activityResultOptions} for:item="activityResultOption" key={activityResultOption} value={activityResultOption.value}>{activityResultOption.label}</option>
+                                </select>
+                            </td>
+                            <td scope="row">
+                                <lightning-combobox class="slds-form-element" name="contactType" value={campaign.contactType} options={contactTypeOptions}
+                                onchange={handleContactTypeChange} placeholder="Choose one" ></lightning-combobox>
+                            </td>
+                            <td scope="row">
+                                <template if:false={campaign.isUnrelatedCampaign}>
+                                    <lightning-combobox class="slds-form-element" name="memberStatus" value={campaign.memberStatus} options={memberStatusOptions}
+                                        onchange={handleMemberStatusChange} placeholder="Choose one" read-only={campaign.isUnrelatedCampaign}></lightning-combobox>
+                                </template>
+                            </td>
+                            <td scope="row">
+                                <lightning-input class="slds-form-element" name="offerCodes" type="text" value={campaign.offerCodes} read-only="true"></lightning-input>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <div if:true={isStep2Loading}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+            <div></div>
+        </template>
+        <!--Follow up task-->
+        <template if:true={isStep3Active}>
+            <div if:true={showDateError} class="slds-notify slds-notify_alert slds-alert_error">
+                {followUpvalidation}
+            </div>
+            <div class="follow-up" if:true={displayFollowUpTask}>
+            <lightning-input type="date" name="DueDate" label="Due Date"  value={dueDate} onchange={handleDueDateChange}></lightning-input>
+            <lightning-input type="datetime" name="Reminder Time" label="Reminder Time" value={reminderTime} onchange={handleReminderTimeChange}>></lightning-input>
+            <lightning-input class="subject" name="Subject" label="Subject" type="text" value={subject} onchange={subjectChange}></lightning-input>
+            <lightning-input class="comments" name="Comments" label="Comments" type="text" value={comments} onchange={commentsChange}></lightning-input>               
+        
+        
+            </div>
+            <div if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+        </template>
+
+        <div class="slds-m-vertical_medium slds-text-align_right">
+            <template if:true={isStep2Active}>
+                <lightning-button label="Back" class="slds-m-left_x-small" onclick={handlePrev}></lightning-button>
+            </template>
+            <template if:true={isStep1Active}>
+                <lightning-button variant="brand" class="slds-m-left_x-small" label="Next" onclick={handleNext}></lightning-button>
+            </template>
+            <template if:true={isStep2Active}>
+                <lightning-button variant="brand" class="slds-m-left_x-small" label="Complete" onclick={handleComplete}></lightning-button>
+            </template>
+            <template if:true={isStep2Active}>
+                <lightning-button variant="brand" class="slds-m-left_x-small" label="Complete & Follow Up" onclick={handleCompleteandFollowUp}></lightning-button>
+            </template>
+            <template if:true={isStep3Active}>
+                <lightning-button variant="brand" class="slds-m-left_x-small" label="Cancel" onclick={handleCancel}></lightning-button>
+                <template if:true={displayFinish}>
+                    <lightning-button variant="brand" class="slds-m-left_x-small" label="Finish" onclick={handleFinish}></lightning-button>
+                </template>
+                
+            </template>
+        </div>
+    </lightning-card>
+</template>

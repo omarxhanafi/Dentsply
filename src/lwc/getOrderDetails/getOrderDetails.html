@@ -1,0 +1,204 @@
+<template>
+  <div class="slds-theme_default" style="position:relative;">
+    <lightning-card title={labels.GODTrackOrder}> 
+      <div class="slds-p-around_medium lgc-bg">
+        <template if:false={isSearchCompleted}> 
+        <lightning-input type="text" onchange={changeOrderNumber} value={orderNumber} label={labels.GODEnterERPOrderNumber}
+          placeholder={labels.GODTypeHere} required style="width: 260px;"></lightning-input>
+        <br>
+        <lightning-button disabled={disableButton} label={labels.GODCheckOrderDetails} 
+        onclick={handleCheckOrder} class="slds-m-left_x-small"></lightning-button>
+        </template>
+        <template if:true={isSearchCompleted}> 
+          <lightning-button disabled={disableButton} label={labels.GODSearchAgain}  
+        onclick={searchAgain} class="slds-m-left_x-small"></lightning-button>
+        </template>
+        <template if:true={isMobile}> 
+          <lightning-button  label="Cancel" variant="bare"
+                          onclick={closeQuickAction} ></lightning-button>
+        </template>
+        <br>
+      </div>
+      <template if:true={notSuccesfullReply}>
+        <div class="slds-p-around_medium lgc-bg">
+          {notSuccesfullReply}
+
+        </div>
+        
+      </template>
+      <template if:true={showDetails}>
+        <div class={scrollClass} style="height:350px;width: 100%;">
+          
+        <div class="slds-card-wrapper">
+          <template if:true={hideHeader}>
+            <lightning-card>
+              <h3 slot="title">
+                <lightning-icon icon-name="utility:fulfillment_order" size="medium"></lightning-icon>
+                {orderDetails.orderDetails.orderNumber}
+                <div>
+                  <lightning-badge label={orderDetails.orderDetails.orderStatus}></lightning-badge>
+                  <lightning-badge label={orderDetails.orderDetails.orderPlaced}></lightning-badge>
+                  <span class="slds-badge">{orderDetails.orderDetails.totalPrice}
+                    {orderDetails.orderDetails.currency}</span>
+                </div>
+              </h3>
+              <div slot="footer">
+                <p class="slds-p-horizontal_small"></p> <br>
+              </div>
+            </lightning-card>
+          </template>
+          <!--start orders-->
+          <template for:each={orderDetails.orderDetails.orders} for:item="order">
+            <div key={order.erpOrderNumber} class="slds-card slds-card_boundary">
+              <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center ">
+                  <div class="slds-media__figure">
+                    <lightning-icon icon-name="standard:orders" size="small"></lightning-icon>
+                  </div>
+                  <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                      <a href="#" class="slds-card__header-link " title="Order">
+                        <span>{order.erpOrderNumber} {labels.GODERPOrderNumber}</span>
+                      </a>
+                    </h2>
+                    <div>
+                      <lightning-badge label={order.orderStatus}></lightning-badge>
+                      <span class="slds-badge">{order.totalPrice} {order.currency}</span>
+                      <lightning-badge label={order.orderPlaced}></lightning-badge>
+                    </div>
+                  </div>
+                </header>
+              </div>
+              <!--start shipments-->
+              <template for:each={order.shipments} for:item="shipment">
+                <div key={shipment.shippingNumber}>
+                  <div class="slds-card__header slds-grid">
+                    <header class="slds-media slds-media_center ">
+                      <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:shipment" size="small"></lightning-icon>
+                      </div>
+                      <div class="slds-media__body">
+                        <h2 class="slds-card__header-title">
+                          <a href="#" class="slds-card__header-link " title="Shipments">
+                            <span>{shipment.shippingNumber} {labels.GODShipmentNumber} </span>
+                          </a>
+                          <div>
+                            <lightning-badge label={shipment.shipmentDate}></lightning-badge> 
+                          </div>
+                        </h2>
+                        <div class="slds-no-flex">
+                          <template for:each={shipment.trackingDetails} for:item="trackingDetail"> 
+                            <div key={trackingDetail.trackingURL}>
+                              <div>
+                                <lightning-button variant="Shipment track" label={trackingDetail.ButtonLabel}
+                                  onclick={shipmentTrackClick} data-id={trackingDetail.trackingURL} disabled={trackingDetail.ButtonDisable}
+                                  class="slds-m-left_x-small"></lightning-button>
+                              </div>
+                            </div>
+                          </template>
+                        </div>
+                      </div>
+                    </header>
+                  </div>
+                  <!--included items -->
+                  <lightning-layout multiple-rows="true" >
+                  <template for:each={shipment.lines} for:item="line">
+                    <div key={line.itemNumber}>
+                      <div class="slds-p-around_medium lgc-bg slds-card__body slds-card__body_inner ">
+                        <lightning-layout-item size="3"  >
+                        <lightning-tile>
+                          <div class="slds-clearfix">
+                            <a class="slds-float_left" href="javascript:void(0);">
+                              {line.itemDescription}
+                            </a>
+                          </div>
+                          <ul class="slds-list_horizontal slds-has-dividers_right">
+                            <li class="slds-item_label slds-text-color_weak" style="width:100px;">
+                              {labels.GODItemNumber}</li>
+                            <li class="slds-item_detail " style="width:100px;">{line.itemNumber} </li>
+                          </ul>
+                          <ul class="slds-list_horizontal slds-has-dividers_right">
+                            <li class="slds-item_label slds-text-color_weak " style="width:100px;">
+                              {labels.GODShippedQty}</li>
+                            <li class="slds-item_detail " style="width:100px;">{line.shippedQty} </li>
+                          </ul>
+                        </lightning-tile>
+                      </lightning-layout-item>
+                      </div>
+                    </div>
+                  </template>
+                </lightning-layout>
+                </div>
+              </template>
+              <template if:true={order.notFullyDelivered}>
+                <div class="slds-card__header slds-grid">
+                  <header class="slds-media slds-media_center ">
+
+                    <div class="slds-media__figure">
+                      <lightning-icon icon-name="standard:order_item" size="small"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                      <h2 class="slds-card__header-title">
+                        <a href="#" class="slds-card__header-link " title="OrderLine">
+                          <span>{order.erpOrderNumber} {order.labelToShow}</span>
+                        </a>
+                      </h2>
+                    </div>
+                  </header>
+                </div>
+                <lightning-layout multiple-rows="true" >
+
+                <div for:each={order.lines} for:item="line" key={order.erpOrderNumber}>
+                  <div class="slds-p-around_medium lgc-bg slds-card__body slds-card__body_inner ">
+                    <!--lightning-tile label={line.ItemDescription} style="width:100%;" target="_blank"-->
+                    <template if:false={line.isDelivered}>
+                      <!--shipment line details-->
+                      <lightning-layout-item size="4" >
+                      <lightning-tile>
+                        <div class="slds-clearfix">
+                          <a class="slds-float_left" href="javascript:void(0);">
+                            {line.itemDescription}
+                          </a>
+                        </div>
+                        <ul class="slds-list_horizontal slds-has-dividers_right">
+                          <li class="slds-item_label slds-text-color_weak " style="width:100px;">
+                            {labels.GODItemNumber} </li>
+                          <li class="slds-item_detail " style="width:100px;">{line.itemNumber} </li>
+                        </ul>
+                        <ul class="slds-list_horizontal">
+                          <li class="slds-item_label slds-text-color_weak " style="width:100px;">
+                            {labels.GODOrderedQty}</li>
+                          <li class="slds-item_detail " style="width:100px;">{line.orderedQty} </li>
+                        </ul>
+                        <ul class="slds-list_horizontal slds-has-dividers_right">
+                          <li class="slds-item_label slds-text-color_weak" style="width:100px;">
+                            {labels.GODRemainingQty}</li>
+                          <li class="slds-item_detail " style="width:100px;">{line.remainingQty} </li>
+                        </ul>
+                      </lightning-tile>
+                    </lightning-layout-item>
+                    </template>
+
+                  </div>
+
+
+
+                </div>
+                </lightning-layout>
+              </template>
+            </div>
+          </template>
+        </div>
+      </div>
+      </template>
+    
+    
+    </lightning-card>
+    
+  <!--/lightning-quick-action-panel-->
+  <template if:true={loading}>
+    <lightning-spinner  alternative-text="Loading" variant="brand" size="medium"></lightning-spinner>
+  
+  </template>
+  </div>
+</template>

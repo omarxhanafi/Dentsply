@@ -1,0 +1,9 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId"  controller="NewContractController">
+	<aura:attribute name="recordId" type="Id"/>
+	<aura:attribute name="ismodalClicked" type="Boolean"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+ 	
+	<lightning:flow aura:id="flowData"/>
+    
+    <c:createContractAction aura:id="createContractAction" ></c:createContractAction> 
+</aura:component>

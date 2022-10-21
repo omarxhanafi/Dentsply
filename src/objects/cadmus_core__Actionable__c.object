@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>MultiSelect_SourceField_API_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>MultiSelect SourceField API Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MultiSelect_Source_DataSource__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>MultiSelect Source DataSource</label>
+        <referenceTo>cadmus_core__Data_Source__c</referenceTo>
+        <relationshipLabel>Actionables (MultiSelect Source DataSource)</relationshipLabel>
+        <relationshipName>Actionables5</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>MultiSelect_Source_Guid__c</fullName>
+        <externalId>false</externalId>
+        <formula>MultiSelect_Source_DataSource__r.cadmus_core__CustomerDataSourceId__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MultiSelect Source Guid</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MultiSelect_Target_DataSource__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>MultiSelect Target DataSource</label>
+        <referenceTo>cadmus_core__Data_Source__c</referenceTo>
+        <relationshipLabel>Actionables (MultiSelect Target DataSource)</relationshipLabel>
+        <relationshipName>Actionables6</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>MultiSelect_Target_Guid__c</fullName>
+        <externalId>false</externalId>
+        <formula>MultiSelect_Target_DataSource__r.cadmus_core__CustomerDataSourceId__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MultiSelect Target Guid</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Action_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Action Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Action_Object__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Action Object</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Adobe_Sign_Recipient__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Who will receive this</inlineHelpText>
+        <label>Recipient</label>
+        <referenceTo>cadmus_core__Data_Source__c</referenceTo>
+        <relationshipLabel>Actionables (Recipient)</relationshipLabel>
+        <relationshipName>Actionables4</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Adobe_Sign_Template_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Adobe Sign template to use. Copy the identifier from the URL</inlineHelpText>
+        <label>Template Id</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Class__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Class to run</description>
+        <externalId>false</externalId>
+        <label>Class</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Doc_Config__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Doc Config</label>
+        <referenceTo>cadmus_core__Doc_Config__c</referenceTo>
+        <relationshipLabel>Actionables</relationshipLabel>
+        <relationshipName>Actionables</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__DocuSign_DataSource__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This links to the DataSource to use to get to the formula fiels that holds the parameter/querystring. Make sure the field is in the SOQL otherwise it will not be found.</inlineHelpText>
+        <label>DocuSign DataSource</label>
+        <referenceTo>cadmus_core__Data_Source__c</referenceTo>
+        <relationshipLabel>Actionables (DocuSign DataSource)</relationshipLabel>
+        <relationshipName>Actionables5</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__DocuSign_Parameters_For_Url__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>API name of the formula field that has the parameter- or querystring for DocuSign. The SourceId does not have to be added and the querystring should start with &apos;&amp;&apos;</inlineHelpText>
+        <label>DocuSign Parameters For Url</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Email_Bcc_Address_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email Bcc Address Field</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Email_Bcc_Addresses__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email Bcc Addresses</label>
+        <referenceTo>cadmus_core__Data_Source__c</referenceTo>
+        <relationshipLabel>Actionables (Email Bcc Addresses)</relationshipLabel>
+        <relationshipName>Actionables</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Email_Cc_Address_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email Cc Address Field</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Email_Cc_Addresses__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email Cc Addresses</label>
+        <referenceTo>cadmus_core__Data_Source__c</referenceTo>
+        <relationshipLabel>Actionables (Email Cc Addresses)</relationshipLabel>
+        <relationshipName>Actionables1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Email_Field_Bcc_Addresses_DataSource__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email Field Bcc Addresses DataSource</label>
+        <referenceTo>cadmus_core__Data_Source__c</referenceTo>
+        <relationshipLabel>Actionables (Email Field Bcc Addresses DataSource)</relationshipLabel>
+        <relationshipName>Email_Field_Bcc_Addresses_DataSource</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Email_Field_Cc_Addresses_DataSource__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email Field Cc Addresses DataSource</label>
+        <referenceTo>cadmus_core__Data_Source__c</referenceTo>
+        <relationshipLabel>Actionables (Email Field Cc Addresses DataSource)</relationshipLabel>
+        <relationshipName>Email_Field_Cc_Addresses_DataSource</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Email_Field_To_Addresses_DataSource__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email Field To Addresses DataSource</label>
+        <referenceTo>cadmus_core__Data_Source__c</referenceTo>
+        <relationshipLabel>Actionables (Email Field To Addresses DataSource)</relationshipLabel>
+        <relationshipName>Email_Field_To_Addresses_DataSource</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Email_Hide_User_Signature__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If the User has a Signature setup in his &quot;My Email Settings&quot; this will be shown in the mail. If you do not want this, you can just check the checkbox</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If the User has a Signature setup in his &quot;My Email Settings&quot; this will be shown in the mail. If you do not want this, you can just check the checkbox</inlineHelpText>
+        <label>Email Hide User Signature</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Email_Target_Object_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>API name of the field to use from the Email Target Object DataSource. This field should be the Id of a User/Lead/Contact!
+If left empty, it will assume that the DataSource returns a User/Lead/Contact record.
+If the DataSource does not return a User/Lead/Contact record and this field is empty. The Email Target Object will be ignored if possible. If not possible to ignore, an error is thrown.</inlineHelpText>
+        <label>Email Target Object Field</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Email_Target_Object__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Contact or User that will receive the email</inlineHelpText>
+        <label>Email Target Object</label>
+        <referenceTo>cadmus_core__Data_Source__c</referenceTo>
+        <relationshipLabel>Actionables (Email Target Object)</relationshipLabel>
+        <relationshipName>Actionables2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Email_Template_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The &quot;Template Unique Name&quot; of the Salesforce.com email template.</inlineHelpText>
+        <label>Email Template Unique Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Email_To_Address_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email To Address Field</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Email_To_Addresses__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email To Addresses</label>
+        <referenceTo>cadmus_core__Data_Source__c</referenceTo>
+        <relationshipLabel>Actionables (Email To Addresses)</relationshipLabel>
+        <relationshipName>Actionables3</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Flow_API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the Autolaunched Lightning Flow</inlineHelpText>
+        <label>Flow API Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Org_Wide_Email_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Display name of the Org Wide Email Address
+Leave empty to use the current user as sender</inlineHelpText>
+        <label>Org Wide Email Address Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Pack__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Pack</label>
+        <referenceTo>cadmus_core__Pack__c</referenceTo>
+        <relationshipLabel>Actionables</relationshipLabel>
+        <relationshipName>Actionables</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Reply_To__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This has to be a DataSource that selects a User, Contact or Lead. 
+Leave empty to not use</inlineHelpText>
+        <label>Reply To</label>
+        <referenceTo>cadmus_core__Data_Source__c</referenceTo>
+        <relationshipLabel>Actionables (Reply To)</relationshipLabel>
+        <relationshipName>Actionables6</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Static_Bcc_Email_Addresses__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Static Bcc Email Addresses</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Static_Cc_Email_Addresses__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Static Cc Email Addresses</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__Static_To_Email_Addresses__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>&quot;;&quot; seperated list of email address</inlineHelpText>
+        <label>Static To Email Addresses</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cadmus_core__When__c</fullName>
+        <deprecated>false</deprecated>
+        <description>When to execute this action. Before or after the document is generated</description>
+        <externalId>false</externalId>
+        <label>When</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BEFORE</fullName>
+                    <default>true</default>
+                    <label>BEGIN</label>
+                </value>
+                <value>
+                    <fullName>DATA_SOURCE</fullName>
+                    <default>false</default>
+                    <label>ON DATA SOURCE</label>
+                </value>
+                <value>
+                    <fullName>BEFORE_BUT_AFTER_DATASOURCES</fullName>
+                    <default>false</default>
+                    <label>AFTER DATASOURCES</label>
+                </value>
+                <value>
+                    <fullName>AFTER</fullName>
+                    <default>false</default>
+                    <label>AFTER GENERATION</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Actionable</label>
+    <nameField>
+        <label>Actionable Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Actionables</pluralLabel>
+    <recordTypes>
+        <fullName>MultiSelect_To_DataSource</fullName>
+        <active>true</active>
+        <description>Select a MultiSelect Picklist and get the values is a seperate LIST DataSource</description>
+        <label>MultiSelect To DataSource</label>
+        <picklistValues>
+            <picklist>cadmus_core__When__c</picklist>
+            <values>
+                <fullName>BEFORE_BUT_AFTER_DATASOURCES</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>cadmus_core__AdobeSign</fullName>
+        <active>true</active>
+        <description>Send document via AdobeSign</description>
+        <label>AdobeSign</label>
+        <picklistValues>
+            <picklist>cadmus_core__When__c</picklist>
+            <values>
+                <fullName>AFTER</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>cadmus_core__Auto_Email</fullName>
+        <active>true</active>
+        <description>Sends out your documents created by PDF Butler via mail. Uses a SFDC Template</description>
+        <label>Auto Email</label>
+        <picklistValues>
+            <picklist>cadmus_core__When__c</picklist>
+            <values>
+                <fullName>AFTER</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>cadmus_core__Auto_Email_for_Quick_Action</fullName>
+        <active>true</active>
+        <description>This actionable should be used with a Lightning Email Template. This action will open the Email Activity and prefill this with the Actionable data.</description>
+        <label>Auto Email for Quick Action</label>
+        <picklistValues>
+            <picklist>cadmus_core__When__c</picklist>
+            <values>
+                <fullName>AFTER</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>cadmus_core__DocuSign</fullName>
+        <active>true</active>
+        <description>Send document via DocuSign</description>
+        <label>DocuSign</label>
+        <picklistValues>
+            <picklist>cadmus_core__When__c</picklist>
+            <values>
+                <fullName>AFTER</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>cadmus_core__Email_DocConfig</fullName>
+        <active>true</active>
+        <description>This actionable should be used when the DocConfig is of type EMAIL. This action will send out the resulting email.</description>
+        <label>Email DocConfig</label>
+        <picklistValues>
+            <picklist>cadmus_core__When__c</picklist>
+            <values>
+                <fullName>AFTER</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>cadmus_core__Email_DocConfig_for_Quick_Action</fullName>
+        <active>true</active>
+        <description>This actionable should be used when the DocConfig is of type EMAIL. This action will open the Email Activity and prefill this with the Actionable data.</description>
+        <label>Email DocConfig for Quick Action</label>
+        <picklistValues>
+            <picklist>cadmus_core__When__c</picklist>
+            <values>
+                <fullName>AFTER</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>cadmus_core__Run_Class</fullName>
+        <active>true</active>
+        <description>Run a class that is inherits AbstractAfterActionable or AbstractBeforeActionable</description>
+        <label>Run Class</label>
+        <picklistValues>
+            <picklist>cadmus_core__When__c</picklist>
+            <values>
+                <fullName>AFTER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BEFORE</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>BEFORE_BUT_AFTER_DATASOURCES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DATA_SOURCE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>cadmus_core__Run_Lightning_Flow</fullName>
+        <active>true</active>
+        <description>Run a Lightning Flow with your custom logic</description>
+        <label>Run Lightning Flow</label>
+        <picklistValues>
+            <picklist>cadmus_core__When__c</picklist>
+            <values>
+                <fullName>AFTER</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

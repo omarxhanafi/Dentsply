@@ -1,0 +1,13 @@
+<aura:component controller="KOLInfoController" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    	<aura:attribute name="recordId" type="String" />
+    	<aura:attribute name="KOL" type="Expert__c" />
+      
+    <!--<CventEvents:contactLeadManagementTab aura:id="service" 
+                                          recordId="{!v.KOL.Contact__c}" 
+                                          objectApiName="Contact"
+                                          isSalesforceClassic="false"/>-->
+    
+	{!v.body}
+    
+</aura:component>

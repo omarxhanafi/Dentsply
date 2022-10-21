@@ -1,0 +1,49 @@
+<apex:page standardController="Opportunity" recordSetVar="opportunities" extensions="UpdateOpportunityOwnerCTRL" showHeader="false"
+ lightningStylesheets="true" >
+	<style>
+         .dataCol select {
+                 display: none;
+         }
+    </style>
+    <script>
+    	if({!isSuccess}){
+            showToast();
+        }
+        function showToast() {
+            sforce.one.showToast({
+                "title": "Success!",
+                "message": "{!mySelectedSize} record updated successfully.",
+                "type": "success"
+            });
+        }
+    </script>
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:form id="muform">
+        <apex:pageMessage summary="You have selected: {!mySelectedSize} record(s)" 
+            severity="info"
+                          id="mupms" />
+  <apex:pageBlock >
+      <apex:pageBlockSection >
+      <apex:inputField value="{!Opportunity.OwnerId}" />
+      </apex:pageBlockSection>
+      
+      <div class="slds-scope">
+            <p><b>The new owner </b>will also become the owner of these <b>records</b> related to that are owned by the current record owner</p>
+            <ul class="slds-list_dotted">
+            	<li>Notes and attachments</li>
+                <li>Open activities</li>
+            </ul>
+        </div>
+    <apex:pageBlockTable value="{!selected}" var="opp">
+        <apex:column value="{!opp.Name}"/>    
+      </apex:pageBlockTable>
+
+      <apex:pageBlockButtons location="bottom" >
+          <apex:commandButton action="{!Save}" value="Save" />
+          <apex:commandButton value="Cancel" action="{!cancel}" />
+      </apex:pageBlockButtons>
+    
+    </apex:pageBlock>  
+    
+    </apex:form>    
+</apex:page>

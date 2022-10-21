@@ -1,0 +1,1649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Lightning_Procedure_Tracker_Record</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Lightning_Procedure_Tracker_Record</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>Procedure_Tracker_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Procedure_Tracker_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>PracticeAccount__c</fields>
+        <fields>CreatedById</fields>
+        <fields>RegistrationDate__c</fields>
+        <label>Procedure Tracker Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Follow Up your Sales Lifecycle with step-by-step guided instructions. 
+#1 Procedure Type: Clear Aligners - suresmile</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>ActivationNeededby__c</fullName>
+        <defaultValue>Today() + 90</defaultValue>
+        <externalId>false</externalId>
+        <label>Activation Needed by</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Barrier__c</fullName>
+        <externalId>false</externalId>
+        <label>Barrier</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>My patients can&apos;t afford it</fullName>
+                    <default>false</default>
+                    <label>My patients can&apos;t afford it</label>
+                </value>
+                <value>
+                    <fullName>I need marketing support to build awareness with patients</fullName>
+                    <default>false</default>
+                    <label>I need marketing support to build awareness with patients</label>
+                </value>
+                <value>
+                    <fullName>My practice is already busy</fullName>
+                    <default>false</default>
+                    <label>My practice is already busy</label>
+                </value>
+                <value>
+                    <fullName>My practice is too busy</fullName>
+                    <default>false</default>
+                    <label>My practice is too busy</label>
+                </value>
+                <value>
+                    <fullName>I don’t want to feel like a sales person (clear aligner)</fullName>
+                    <default>false</default>
+                    <label>I don’t want to feel like a sales person (clear aligner)</label>
+                </value>
+                <value>
+                    <fullName>I need more training/support on Treatment Planning</fullName>
+                    <default>false</default>
+                    <label>I need more training/support on Treatment Planning</label>
+                </value>
+                <value>
+                    <fullName>Not that many patients are ASKING for it</fullName>
+                    <default>false</default>
+                    <label>Not that many patients are ASKING for it</label>
+                </value>
+                <value>
+                    <fullName>What cases are best for me and my practice?  &quot;Tell me what is right for me</fullName>
+                    <default>false</default>
+                    <label>What cases are best for me and my practice?  &quot;Tell me what is right for me</label>
+                </value>
+                <value>
+                    <fullName>I don’t want to learn another treatment planning software</fullName>
+                    <default>false</default>
+                    <label>I don’t want to learn another treatment planning software</label>
+                </value>
+                <value>
+                    <fullName>How do I bring in more patients?&quot; (New patients to the practice)</fullName>
+                    <default>false</default>
+                    <label>How do I bring in more patients?&quot; (New patients to the practice)</label>
+                </value>
+                <value>
+                    <fullName>I need more opportunities to bring up the clear aligners conversation</fullName>
+                    <default>false</default>
+                    <label>I need more opportunities to bring up the clear aligners conversation</label>
+                </value>
+                <value>
+                    <fullName>Patients already know about clear aligners and will ask if interested</fullName>
+                    <default>false</default>
+                    <label>Patients already know about clear aligners and will ask if interested</label>
+                </value>
+                <value>
+                    <fullName>1/3 GP&apos;s, currently not offering (or low volume) clear aligners don’t think they will make a profit</fullName>
+                    <default>false</default>
+                    <label>1/3 GP&apos;s, currently not offering (or low volume) clear aligners don’t think they will make a profit</label>
+                </value>
+                <value>
+                    <fullName>Need support for more complex cases (past Class I, relapse, and minor tooth movement cases)</fullName>
+                    <default>false</default>
+                    <label>Need support for more complex cases (past Class I, relapse, and minor tooth movement cases)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BusinessAssessment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Business Assessment/SureSmile Specialty Coordinator</inlineHelpText>
+        <label>Business Assessment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CIS__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Clinical Implementation Specialist</inlineHelpText>
+        <label>CIS</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Procedures_CIS</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CaseSelectionStaffRoles__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Appointment Time: 30 minutes.</inlineHelpText>
+        <label>Case Selection &amp; Staff Roles</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ChairsidePatientEducation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Chairside Patient Education</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ClinicalDevelopment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Clinical Development</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ClinicalEducation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Clinical Education Development/Retention Education</inlineHelpText>
+        <label>Clinical Education</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Procedures</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Dealer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Dealer</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The selected account must be a dealer (Account Type = &apos;Distributor&apos;)</errorMessage>
+            <filterItems>
+                <field>Account.OneAccount_Type__c</field>
+                <operation>equals</operation>
+                <value>Distributor, DNA Distributor</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Procedure Trackers (Dealer)</relationshipLabel>
+        <relationshipName>Procedure_Trackers</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DiscoveryGoalAssessment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Appointment Time: 30 minutes.</inlineHelpText>
+        <label>Discovery, Goal Assessment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Economics__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Economics</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FollowUpComments__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow-Up Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>IntraoralScanner__c</fullName>
+        <externalId>false</externalId>
+        <label>Intraoral Scanner in Use ?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DS - Omnican</fullName>
+                    <default>false</default>
+                    <label>DS - Omnican</label>
+                </value>
+                <value>
+                    <fullName>DS - Primescan</fullName>
+                    <default>false</default>
+                    <label>DS - Primescan</label>
+                </value>
+                <value>
+                    <fullName>DS - Primescan Conect</fullName>
+                    <default>false</default>
+                    <label>DS - Primescan Conect</label>
+                </value>
+                <value>
+                    <fullName>Align – Itero Element 5 D</fullName>
+                    <default>false</default>
+                    <label>Align – Itero Element 5 D</label>
+                </value>
+                <value>
+                    <fullName>Medit – i700</fullName>
+                    <default>false</default>
+                    <label>Medit – i700</label>
+                </value>
+                <value>
+                    <fullName>Planmeca – Emerald S</fullName>
+                    <default>false</default>
+                    <label>Planmeca – Emerald S</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LastActivityNotes__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(QBRHighL1toHighL2__c, NOTESQBRHighL1toHighL2__c ,
+IF(Peer2Peer__c, NOTESPeer2Peer__c ,
+IF(MarketingM2H__c, NOTESMarketingM2H__c ,
+IF(TeamCalibration__c, NOTESTeamCalibration__c ,
+IF(ClinicalDevelopment__c, NOTESClinicalDevelopment__c ,
+IF(PatientAcceptance__c, NOTESPatientAcceptance__c ,
+IF(QBRMediumtoHighL1__c, NOTESQBRMediumtoHighL1__c ,
+IF(Economics__c,  NOTESEconomics__c ,
+IF(PatientEducation__c, NOTESPatientEducation__c ,
+IF(ProcessAssessment__c, NOTESProcessAssessment__c,
+IF(BusinessAssessment__c, NOTESBusinessAssessment__c,
+IF(QBRLowtoMedium__c, NOTESQBRLowtoMedium__c ,
+IF(MarketingCampaign__c,  NOTESMarketingCampaign__c ,
+IF(ChairsidePatientEducation__c, NOTESChairsidePatientEducation__c ,
+IF(ProceduralEconomics__c, NOTESProceduralEconomics__c  ,
+IF(ClinicalEducation__c, NOTESClinicalEducation__c ,
+IF(Whoisyouridealalignerpatient__c,  NOTESWhoisyouridealalignerpatient__c ,
+IF(ResetTraining__c, NOTESResetTraining__c ,
+IF(ProceduralAssessment__c, NOTESProceduralAssessment__c ,
+IF(X3rdCaseReviewApproval__c, NOTES_3rdCaseReviewApproval__c ,
+IF(TeamMeetingReviewProcesses__c,NOTES_TeamMeetingReviewProcesses__c ,
+IF(X3rdcasesubmission__c, NOTES_3rdCaseSubmission__c ,
+IF(X2ndCaseReviewApproval__c, NOTES_2ndCaseReviewApproval__c ,
+IF(X2ndCaseSubmissionExternal__c, NOTES_2ndCaseSubmissionExternal__c  ,
+IF(TeamTrainingOrthodonticBenefitsRDH__c,  NOTES_TeamTrainingOrthodonticBenefit__c ,
+IF(X1stcasereviewapproval__c, NOTES_1stCaseReviewApproval__c ,
+IF(X1stCaseSubmissionWorkflowMarketing__c,  NOTES_1stCaseSubmissionWorkflowMkt__c ,
+IF(RecordsTrainingFinance__c,  NOTES_RecordsTrainingFinance__c ,
+IF(CaseSelectionStaffRoles__c,   NOTES_CaseSelectionStaffRoles__c ,
+IF(DiscoveryGoalAssessment__c,   NOTES_DiscoveryGoalAssessment__c ,
+IF(ObtainCreditCardInformation__c,  NOTESObtainCreditCardInformation__c ,
+&quot;&quot;)))))))))))))))))))))))))))))))</formula>
+        <label>Last Activity Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LastActivity__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(QBRHighL1toHighL2__c,&quot;QBR (High L1 to High L2)&quot;  ,
+IF(Peer2Peer__c,&quot;Peer 2 Peer&quot; ,
+IF(MarketingM2H__c,&quot;Marketing (M 2 H)&quot; ,
+IF(TeamCalibration__c,&quot;Team Calibration&quot;   ,
+IF(ClinicalDevelopment__c,&quot;Clinical Development&quot;  ,
+IF(PatientAcceptance__c,&quot;Patient Acceptance&quot;   ,
+IF(QBRMediumtoHighL1__c,&quot;QBR (Medium to High L1)&quot;  ,
+IF(Economics__c,&quot;Economics&quot;   ,
+IF(PatientEducation__c,&quot;Patient Education&quot;  ,
+IF(ProcessAssessment__c,&quot;Process Assessment&quot;  ,
+IF(BusinessAssessment__c,&quot;Business Assessment&quot; ,
+IF(QBRLowtoMedium__c,&quot;QBR (Low to Medium)&quot;  ,
+IF(MarketingCampaign__c,&quot;Marketing Campaign&quot;  ,
+IF(ChairsidePatientEducation__c,&quot;Chairside Patient Education&quot;  ,
+IF(ProceduralEconomics__c,&quot;Procedural Economics&quot;  ,
+IF(ClinicalEducation__c,&quot;Clinical Education&quot;  ,
+IF(Whoisyouridealalignerpatient__c,&quot;Who is your ideal aligner patient?&quot;  ,
+IF(ResetTraining__c,&quot;Reset Training&quot;  ,
+IF(ProceduralAssessment__c,&quot;Procedural Assessment&quot;  ,
+IF(X3rdCaseReviewApproval__c,&quot;3rd Case Review/Approval&quot;  ,
+IF(TeamMeetingReviewProcesses__c,&quot;Team Meeting - Review Processes&quot;  ,
+IF(X3rdcasesubmission__c, &quot;3rd Case Submission&quot; ,
+IF(X2ndCaseReviewApproval__c, &quot;2nd Case Review/Approval&quot;  ,
+IF(X2ndCaseSubmissionExternal__c, &quot;2nd Case Submission - External&quot; ,
+IF(TeamTrainingOrthodonticBenefitsRDH__c, &quot;Team Training Ortho Benefits RDH&quot;  ,
+IF(X1stcasereviewapproval__c,&quot;1st Case Review/Approval&quot;  ,
+IF(X1stCaseSubmissionWorkflowMarketing__c, &quot;1st Case Submission,Workflow &amp; Mkt&quot; ,
+IF(RecordsTrainingFinance__c, &quot;Records Training &amp; Finance&quot;  ,
+IF(CaseSelectionStaffRoles__c, &quot;Case Selection &amp; Staff Roles&quot;  ,
+IF(DiscoveryGoalAssessment__c, &quot;Discovery, Goal Assessment&quot;  ,
+IF(ObtainCreditCardInformation__c, &quot;Obtain Credit Card Information&quot;  ,
+&quot;&quot;)))))))))))))))))))))))))))))))</formula>
+        <label>Last Activity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MarketingCampaign__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Marketing Campaign</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MarketingM2H__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Marketing (M 2 H)</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NOTESBusinessAssessment__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Business Assessment/SureSmile Specialty Coordinator</inlineHelpText>
+        <label>NOTES: Business Assessment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESChairsidePatientEducation__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Chairside Patient Education</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESClinicalDevelopment__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Clinical Development</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESClinicalEducation__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Clinical Education Development/Retention Education</inlineHelpText>
+        <label>NOTES: Clinical Education</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESEconomics__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Economics</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESMarketingCampaign__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Marketing Campaign</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESMarketingM2H__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Marketing (M 2 H)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESObtainCreditCardInformation__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Obtain Credit Card Information</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESPatientAcceptance__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Patient Acceptance</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESPatientEducation__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Patient Education</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESPeer2Peer__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Peer 2 Peer</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESProceduralAssessment__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Procedural Assessment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESProceduralEconomics__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Procedural Economics</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESProcessAssessment__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Process Assessment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESQBRHighL1toHighL2__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: QBR (High L1 to High L2)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESQBRLowtoMedium__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: QBR (Low to Medium)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESQBRMediumtoHighL1__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: QBR (Medium to High L1)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESResetTraining__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Reset Training</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESTeamCalibration__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Team Calibration</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTESWhoisyouridealalignerpatient__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Who is your ideal aligner patient</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTES_1stCaseReviewApproval__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: 1st Case Review/Approval</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTES_1stCaseSubmissionWorkflowMkt__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: 1st Case Submission,Workflow &amp;Mkt</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTES_2ndCaseReviewApproval__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: 2nd Case Review/Approval</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTES_2ndCaseSubmissionExternal__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: 2nd Case Submission - External</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTES_3rdCaseReviewApproval__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: 3rd Case Review/Approval</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTES_3rdCaseSubmission__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: 3rd Case Submission</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTES_CaseSelectionStaffRoles__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Case Selection &amp; Staff Roles</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTES_DiscoveryGoalAssessment__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Discovery, Goal Assessment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTES_RecordsTrainingFinance__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Records Training &amp; Finance</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTES_TeamMeetingReviewProcesses__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Team Meeting - Review Processes</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOTES_TeamTrainingOrthodonticBenefit__c</fullName>
+        <externalId>false</externalId>
+        <label>NOTES: Team Training Ortho Benefits RDH</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NextActivity__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ObtainCreditCardInformation__c), &quot;Obtain Credit Card Information&quot;, 
+IF(NOT(DiscoveryGoalAssessment__c), &quot;Discovery, Goal Assessment&quot;, 
+IF(NOT(CaseSelectionStaffRoles__c), &quot;Case Selection &amp; Staff Roles&quot;,
+IF(NOT(RecordsTrainingFinance__c), &quot;Records Training &amp; Finance&quot;,
+IF(NOT(X1stCaseSubmissionWorkflowMarketing__c), &quot;1st Case Submission,Workflow &amp; Mkt&quot;,
+IF(NOT(X1stcasereviewapproval__c),&quot;1st Case Review/Approval&quot;,
+IF(NOT(TeamTrainingOrthodonticBenefitsRDH__c), &quot;Team Training Ortho Benefits RDH&quot;,
+IF(NOT(X2ndCaseSubmissionExternal__c), &quot;2nd Case Submission - External&quot;,
+IF(NOT(X2ndCaseReviewApproval__c), &quot;2nd Case Review/Approval&quot;,
+IF(NOT(X3rdcasesubmission__c), &quot;3rd Case Submission&quot;,
+IF(NOT(TeamMeetingReviewProcesses__c),&quot;Team Meeting - Review Processes&quot;,
+IF(NOT(X3rdCaseReviewApproval__c),&quot;3rd Case Review/Approval&quot;,
+IF(NOT(ProceduralAssessment__c),&quot;Procedural Assessment&quot;,
+IF(NOT(ResetTraining__c),&quot;Reset Training&quot;,
+IF(NOT(Whoisyouridealalignerpatient__c),&quot;Who is your ideal aligner patient?&quot;,
+IF(NOT(ClinicalEducation__c),&quot;Clinical Education&quot;,
+IF(NOT(ProceduralEconomics__c),&quot;Procedural Economics&quot;,
+IF(NOT(ChairsidePatientEducation__c),&quot;Chairside Patient Education&quot;,
+IF(NOT(MarketingCampaign__c),&quot;Marketing Campaign&quot;,
+IF(NOT(QBRLowtoMedium__c),&quot;QBR (Low to Medium)&quot;,
+IF(NOT(BusinessAssessment__c),&quot;Business Assessment&quot;,
+IF(NOT(ProcessAssessment__c),&quot;Process Assessment&quot;,
+IF(NOT(PatientEducation__c),&quot;Patient Education&quot;,
+IF(NOT(Economics__c),&quot;Economics&quot;,
+IF(NOT(QBRMediumtoHighL1__c),&quot;QBR (Medium to High L1)&quot;,
+IF(NOT(PatientAcceptance__c),&quot;Patient Acceptance&quot;,
+IF(NOT(ClinicalDevelopment__c),&quot;Clinical Development&quot;,
+IF(NOT(TeamCalibration__c),&quot;Team Calibration&quot;,
+IF(NOT(MarketingM2H__c),&quot;Marketing (M 2 H)&quot;,
+IF(NOT(Peer2Peer__c),&quot;Peer 2 Peer&quot;,
+IF(NOT(QBRHighL1toHighL2__c),&quot;QBR (High L1 to High L2)&quot;,
+&quot;&quot;)))))))))))))))))))))))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Next Activity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ObtainCreditCardInformation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Obtain Credit Card Information</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OtherIntraoralScannerinUse__c</fullName>
+        <externalId>false</externalId>
+        <label>Other - Intraoral Scanner in Use ?</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OtherimagingDeviceBrand__c</fullName>
+        <externalId>false</externalId>
+        <label>Other - Imaging Device Brand in Use ?</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentAccountInformation__c</fullName>
+        <externalId>false</externalId>
+        <formula>PracticeAccount__r.ParentAccountInformation__c</formula>
+        <label>Parent Account Information</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PatientAcceptance__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Patient Acceptance</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PatientEducation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Patient Education</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Peer2Peer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Peer 2 Peer</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PracticeAccount__c</fullName>
+        <externalId>false</externalId>
+        <label>Practice Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Procedures</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ProceduralAssessment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Procedural Assessment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ProceduralEconomics__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Procedural Economics</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ProcedureType__c</fullName>
+        <externalId>false</externalId>
+        <label>Procedure Type</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Clear Aligners</fullName>
+                    <default>true</default>
+                    <label>Clear Aligners</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ProcessAssessment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Process Assessment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>QBRHighL1toHighL2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>QBR (High L1 to High L2)</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>QBRLowtoMedium__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>QBR (Low to Medium)</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>QBRMediumtoHighL1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>QBR (Medium to High L1)</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RecordsTrainingFinance__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Appointment Time: 30 minutes.</inlineHelpText>
+        <label>Records Training &amp; Finance</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RegistrationDate__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <externalId>false</externalId>
+        <label>Registration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ResetTraining__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Reset Training</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SalesRep__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Rep</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Procedures</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Scanner_X_Ray_Technologies_in_use__c</fullName>
+        <externalId>false</externalId>
+        <label>Scanner / X-Ray Technologies in use ?</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SegmentClearAligner__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(PracticeAccount__r.Segment_Ortho_Clear_Aligners__c)</formula>
+        <label>Segment - Ortho Clear Aligners</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>30 days</fullName>
+                    <default>true</default>
+                    <label>30 days</label>
+                </value>
+                <value>
+                    <fullName>60 days</fullName>
+                    <default>false</default>
+                    <label>60 days</label>
+                </value>
+                <value>
+                    <fullName>90 days</fullName>
+                    <default>false</default>
+                    <label>90 days</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>High L1</fullName>
+                    <default>false</default>
+                    <label>High L1</label>
+                </value>
+                <value>
+                    <fullName>High L2</fullName>
+                    <default>false</default>
+                    <label>High L2</label>
+                </value>
+                <value>
+                    <fullName>Low: 30 days</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Low: 30 days</label>
+                </value>
+                <value>
+                    <fullName>Low: 60 days</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Low: 60 days</label>
+                </value>
+                <value>
+                    <fullName>Low: 90 days</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Low: 90 days</label>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>New</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>true</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Customer Registered</fullName>
+                    <default>false</default>
+                    <label>Customer Registered</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Successfully Onboarded</fullName>
+                    <default>false</default>
+                    <label>Successfully Onboarded</label>
+                </value>
+                <value>
+                    <fullName>Canceled</fullName>
+                    <default>false</default>
+                    <label>Canceled</label>
+                </value>
+                <value>
+                    <fullName>Customer Not Interested</fullName>
+                    <default>false</default>
+                    <label>Customer Not Interested</label>
+                </value>
+                <value>
+                    <fullName>Parked/On-Hold</fullName>
+                    <default>false</default>
+                    <label>Parked/On-Hold</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TeamCalibration__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Team Calibration</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TeamMeetingReviewProcesses__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Appointment Time: 60 minutes.</inlineHelpText>
+        <label>Team Meeting - Review Processes</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TeamTrainingOrthodonticBenefitsRDH__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Appointment Time: 45 minutes.</inlineHelpText>
+        <label>Team Training Ortho Benefits RDH</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Whoisyouridealalignerpatient__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Who is your ideal aligner patient?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>X1stCaseSubmissionWorkflowMarketing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Appointment Time: 30 minutes.</inlineHelpText>
+        <label>1st Case Submission,Workflow &amp; Mkt</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>X1stcasereviewapproval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Appointment Time: 30 minutes.</inlineHelpText>
+        <label>1st Case Review/Approval (CIS &amp; Rep)</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>X2ndCaseReviewApproval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Appointment Time: 30 minutes.</inlineHelpText>
+        <label>2nd  Case Review/Approval (CIS &amp; Rep)</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>X2ndCaseSubmissionExternal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Appointment Time: 15 minutes.</inlineHelpText>
+        <label>2nd Case Submission - External</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>X3rdCaseReviewApproval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Appointment Time: 30 minutes.</inlineHelpText>
+        <label>3rd Case Review/Approval (CIS &amp; Rep)</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>X3rdcasesubmission__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Appointment Time: 30 minutes.</inlineHelpText>
+        <label>3rd Case Submission</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>imagingDeviceBrandin_Use__c</fullName>
+        <externalId>false</externalId>
+        <label>imaging Device Brand in Use ?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DS</fullName>
+                    <default>false</default>
+                    <label>DS</label>
+                </value>
+                <value>
+                    <fullName>Planmeca</fullName>
+                    <default>false</default>
+                    <label>Planmeca</label>
+                </value>
+                <value>
+                    <fullName>Carestream</fullName>
+                    <default>false</default>
+                    <label>Carestream</label>
+                </value>
+                <value>
+                    <fullName>KaVo Kerr</fullName>
+                    <default>false</default>
+                    <label>KaVo Kerr</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>of_Cases_Submitted_the_first_6_months__c</fullName>
+        <externalId>false</externalId>
+        <label># of Cases Submitted the first 6 months</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Procedure Tracker</label>
+    <nameField>
+        <displayFormat>Track#{000}</displayFormat>
+        <label>Record Nr</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Procedure Trackers</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Clear_Aligners</fullName>
+        <active>true</active>
+        <label>Clear Aligners</label>
+        <picklistValues>
+            <picklist>Barrier__c</picklist>
+            <values>
+                <fullName>1%2F3 GP%27s%2C currently not offering %28or low volume%29 clear aligners don%E2%80%99t think they will make a profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How do I bring in more patients%3F%22 %28New patients to the practice%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I don%E2%80%99t want to feel like a sales person %28clear aligner%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I don%E2%80%99t want to learn another treatment planning software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I need marketing support to build awareness with patients</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I need more opportunities to bring up the clear aligners conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I need more training%2Fsupport on Treatment Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>My patients can%27t afford it</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>My practice is already busy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>My practice is too busy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need support for more complex cases %28past Class I%2C relapse%2C and minor tooth movement cases%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not that many patients are ASKING for it</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patients already know about clear aligners and will ask if interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>What cases are best for me and my practice%3F  %22Tell me what is right for me</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IntraoralScanner__c</picklist>
+            <values>
+                <fullName>Align %E2%80%93 Itero Element 5 D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS - Omnican</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS - Primescan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS - Primescan Conect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medit %E2%80%93 i700</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planmeca %E2%80%93 Emerald S</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ProcedureType__c</picklist>
+            <values>
+                <fullName>Clear Aligners</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>30 days</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>60 days</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90 days</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High L1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High L2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Not Interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Registered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parked%2FOn-Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successfully Onboarded</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>imagingDeviceBrandin_Use__c</picklist>
+            <values>
+                <fullName>Carestream</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KaVo Kerr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planmeca</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <searchResultsAdditionalFields>PracticeAccount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Stage__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SalesRep__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RegistrationDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

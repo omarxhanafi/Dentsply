@@ -1,0 +1,8 @@
+lightning-progress-step {
+    pointer-events: none;
+}
+
+.campaign-name {
+    width: 20%;
+    white-space: normal;
+}

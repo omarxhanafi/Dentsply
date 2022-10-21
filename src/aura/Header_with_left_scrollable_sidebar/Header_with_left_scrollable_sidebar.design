@@ -1,0 +1,12 @@
+<design:component>  
+    <flexipage:template >  
+        <flexipage:region name = "header" defaultwidth = "Medium"/>          
+        <flexipage:region name = "middle" defaultwidth = "Medium"/>          
+        <flexipage:region name = "left" defaultwidth = "Medium"/>  
+    </flexipage:template> 
+    <design:supportedFormFactors>
+        <design:supportedFormFactor type="Small"/>
+        <design:supportedFormFactor type="Large"/>
+    </design:supportedFormFactors>
+ 
+</design:component>

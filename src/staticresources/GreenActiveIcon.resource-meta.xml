@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>image/jpeg</contentType>
+    <description>Used on the Contact Object to visually identify the status of a contact.
+Currently deployed on the North America Contact Layout Page</description>
+</StaticResource>

@@ -1,0 +1,248 @@
+<!--	
+Author: 		Richard Trum (Glimt) 2019-11-27 (last modified by Richard Trum 2022-02-15)	
+Description:   	Component to select Non-ERP products (in a Hierarchy where the parent is the product's category)
+-->
+
+<aura:component controller="ProductProfilingHierarchyController" implements="lightning:availableForFlowScreens,force:hasRecordId,lightning:isUrlAddressable" access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="currentSelectedRows" type="Non_ERP_Products__c[]" default="[]" />
+    <aura:attribute name="currentSelectedRowsCount" type="Integer" default="0" />
+    <aura:attribute name="currentSelectedRowWrapper" type="ProductProfilingBundle[]" default="[]" />
+    <aura:attribute name="selectedRowsInTree" type="Object[]"/>
+    <aura:attribute name="selectionMap" type="Map" default="{}"/>
+    
+    <aura:attribute name="expandedRows" type="List" />
+    <aura:attribute name="expandActionLaunched" type="Boolean" default="false"/>
+    <aura:attribute name="prevExpandedRows" type="List" />
+    <aura:attribute name="gridWrapperColumns" type="List" />
+    <aura:attribute name="gridWrapperData" type="Object[]" />
+    <aura:attribute name="gridWrapperFilteredData" type="Object[]" />
+    <aura:attribute name="completeDataSet" type="Object[]" />    
+    <aura:attribute name="productProfilingData" type="Object[]"/>
+    <aura:attribute name="productProfilingRecords" type="Object[]"/>
+    <aura:attribute name="focusFilter" type="Boolean" default="false"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="hideFilters" type="Boolean" default="true"/>
+    <aura:attribute name="hideToggleFilters" type="Boolean" default="true"/>
+    <aura:attribute name="hideSelection" type="Boolean" default="true"/>
+    <aura:attribute name="dataLoaded" type="Boolean" default="false"/>
+
+    <aura:attribute name="activeFocusFilter" type="string" default="all"/>
+    <aura:attribute name="activeCompetitorFilter" type="string" default="all"/>
+    <aura:attribute name="categories" type="List" default="[]" />
+    <aura:attribute name="manufacturers" type="List" default="[]"/>
+    <aura:attribute name="localCategories" type="List" default="[]"/>
+    
+    <aura:attribute name="timer" type="Integer"/>
+        
+    <lightning:navigation aura:id="navService"/> 
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    
+    <aura:attribute name="options" type="List" default="[
+    {'label': '', 'value': ''},
+    {'label': 'Implants', 'value': 'Implants'},
+    {'label': 'Orthodontics', 'value': 'Orthodontics'},
+    {'label': 'Preventive', 'value': 'Preventive'},
+    {'label': 'Restorative', 'value': 'Restorative'},                                                    
+    {'label': 'Endodontics', 'value': 'Endodontics'},
+    {'label': 'Labratory', 'value': 'Labratory'},                                                    
+    {'label': 'Imaging', 'value': 'Imaging'},
+    {'label': 'CAD/CAM', 'value': 'CADCAM'},                                                    
+    {'label': 'Treatment Centers', 'value': 'Treatment Centers'}                                                    
+    ]"/>
+           
+    <div class="slds-grid slds-wrap">
+        <div class="slds-p-left_small slds-p-top_medium slds-size--6-of-12 slds-medium-size--6-of-12 slds-large-size--6-of-12 slds-p-bottom_medium">
+        	   <!-- <lightning:input onchange="{!c.newSearchTable}" type="search" label="Search" variant="label-hidden" placeholder="Enter search term" aura:id="SearchBox"/> -->
+        	   <lightning:input onchange="{!c.searchKeyChange}" type="search" label="Search" variant="label-hidden" placeholder="Enter search term" aura:id="searchBox"/>
+        <!-- {!c.searchChildren} -->
+        </div>
+        
+        <div class="slds-p-top_medium slds-p-left_small slds-size--6-of-12 slds-p-bottom_medium slds-grid">
+            	
+            	<div class="slds-size--1-of-12">
+            		<lightning:buttonIcon iconName="utility:filterList"  variant="border-filled" alternativeText="Filter" title="Filter" onclick="{!c.changeFilterDisplay}"/>
+                </div>
+            
+                <aura:if isTrue="{!$Browser.formFactor == 'DESKTOP'}">
+      			<div class="slds-p-left_small slds-size--8-of-12">
+                 <!--<div class="{!if(v.currentSelectedRowsCount == 0, 'slds-hide', 'slds-p-left_small slds-medium-size- -3-of-12')}"> --> 
+					<lightning:button variant="brand" onclick="{!c.changeSelectionDisplay}" label="{! 'Products selected (' + v.currentSelectedRowsCount + ')'}" disabled="{!if(v.currentSelectedRowsCount == 0, true, false)}"></lightning:button>
+                </div>    
+    			</aura:if>
+        
+        
+        </div>
+        
+
+        
+        <!-- Hidden category filter -->
+        <div class="slds-hide">
+               <lightning:combobox options="{!v.categories}" label="Categories" aura:id="categoryFilter" name="categoryFilter" onchange="{!c.filterTable}"/>
+        </div>
+		
+        <div class="{!if(v.hideFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size--1-of-1 slds-medium-size--3-of-12 slds-large-size--3-of-12')}">
+               <lightning:combobox aura:id="sbuFilter" variant="label-hidden" label="Product Group" placeholder="Select Product Group" options="{! v.options }" onchange="{!c.filterTable}"/>            
+        </div>
+        <div class="{!if(v.hideFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size--1-of-1 slds-medium-size--3-of-12 slds-large-size--3-of-12')}">
+               <lightning:combobox aura:id="manufactFilter" variant="label-hidden" label="Manufacturer" placeholder="Select Manufacturer" options="{! v.manufacturers }" onchange="{!c.filterTable}"/>            
+        </div>
+        <div class="{!if(v.hideFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size--1-of-1 slds-medium-size--3-of-12 slds-large-size--3-of-12')}">
+               <lightning:combobox aura:id="localCategoryFilter" variant="label-hidden" label="Local Category" placeholder="Select Local Category" options="{! v.localCategories}" onchange="{!c.filterTable}"/>            
+        </div>
+        
+        <div class="{!if(v.hideToggleFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size--1-of-1 slds-medium-size--6-of-12 slds-large-size--6-of-12')}">      
+            <lightning:input type="toggle" label="Only focus products" aura:id="focusFilter" name="focusFilter" onchange="{!c.filterTable}" value="focusFilter"/>
+        </div>
+        <div class="{!if(v.hideToggleFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size--1-of-1 slds-medium-size--6-of-12 slds-large-size--6-of-12')}">
+            <lightning:input type="toggle" label="Only DentplySirona products" aura:id="competitorFilter" name="competitorFilter" onchange="{!c.filterTable}" value="competitorFilter"/>
+        </div>
+        
+        
+		</div>
+    
+    <!--<aura:if isTrue="{!$Browser.formFactor == 'DESKTOP'}">
+      
+     <div class="{!if(v.currentSelectedRowsCount == 0, 'slds-hide', 'slds-p-left_small')}">  
+     <table class="slds-p-bottom_small">
+         <tr>
+         	<th> <lightning:button variant="brand" onclick="{!c.changeSelectionDisplay}" label="{! 'Products selected (' + v.currentSelectedRowsCount + ')'}"></lightning:button></th>
+         </tr>
+     </table>
+     </div> 
+    </aura:if> -->      
+    
+    <div style="{!if(v.hideFilters == true, 'height: 389px;','height: 300px;')}">
+    <div class="slds-scrollable--y" style="height: 100%;">
+        
+    <aura:if isTrue="{!v.showSpinner}">
+    	<lightning:spinner alternativeText="Loading" size="medium" />
+    </aura:if>   
+        
+    <!-- Desktop experience -->   
+        
+    <!--<aura:if isTrue="{!$Browser.formFactor == 'DESKTOP'}">
+       
+    <lightning:treeGrid
+        columns="{! v.gridWrapperColumns }"
+        data="{! v.gridWrapperFilteredData }"
+        keyField="nodeId"
+        aura:id="mytree"               
+        onrowselection="{!c.getSelectedRowsNew}"
+        onheaderaction="{!c.handleHeaderAction}"
+        ontoggle="{!c.getChildren}"                
+        />  -->
+    
+    <!-- Mobile experience -->   
+    <!--<aura:set attribute="else"> -->
+	<div class="slds-size_1-of-1">
+        
+        <!--<table>
+         <tr>
+         	<th>Products selected</th>
+         </tr>
+     	<aura:iteration items="{!v.currentSelectedRowWrapper}" var="wrap">
+        	<tr>
+            	<td>
+					<p>{!wrap.productName}</p>                
+                </td>
+            </tr>
+        </aura:iteration>   
+     </table>-->
+        
+        
+        <lightning:accordion aura:id="accordion" allowMultipleSectionsOpen="true" activeSectionName="{!v.expandedRows}" onsectiontoggle="{!c.getChildren}">
+        	<aura:iteration items="{!v.gridWrapperFilteredData }" var="currentProduct">
+        		<lightning:accordionSection name="{!currentProduct.nodeName}" label="{!currentProduct.nodeName}">
+                	<aura:set attribute="body">
+                    
+                    <table class="slds-table slds-table_fixed-layout slds-table--bordered slds-table--cell-buffer slds-size_1-of-1" role="grid">	
+                        <tbody>
+                        <aura:iteration items="{!currentProduct._children}" var="childProduct">
+    					<!--<tr style="{!if(!childProduct.competitor, 'background-color: #ebf7e6;', '')}"> -->
+                        <tr>    
+                        <th class="slds-size_3-of-12">
+                          	<lightning:input type="checkbox-button" value="{!childProduct}" label="Input" name="input2" onchange="{!c.getRowsMobile}" checked="{!childProduct.isSelected}" disabled="{!childProduct.isProfiled}"/>
+                        </th>     
+                                                        
+                        <th scope="row" class="slds-size_6-of-12">
+                        	<div id="{!childProduct.nodeId}" onclick="{!c.goToProduct}">
+                            <p id="{!childProduct.nodeId}" class="slds-truncate" title="{!childProduct.nodeName}"><b>{!childProduct.nodeName}</b>                                   
+                                <br/>
+                                <!--Added: {!if(childProduct.isProfiled, 'Yes', 'No')}  -->
+                                {!childProduct.manufacturer}
+                            </p>      
+                            </div>    
+                        </th>
+                        <th scope="row" class="slds-size_3-of-12">
+ 							<aura:if isTrue="{!childProduct.focusProduct}">
+                            	<!--<lightning:icon iconName="custom:custom76" alternativeText="Focus product"/> -->
+                                <lightning:icon iconName="utility:favorite" alternativeText="Focus product"/>
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!childProduct.competitor}">
+                                <aura:set attribute="else"> 
+                                <!--<lightning:icon iconName="custom:custom26" alternativeText="Competitor product"/>-->
+                                <span class="{!if(childProduct.focusProduct, 'slds-icon_container slds-p-left_x-small', 'slds-icon_container')}">    
+                                    <img class="slds-icon" src="{!$Resource.DS_logoIcon}" />
+                                </span>   
+                           		</aura:set>
+                            </aura:if>
+   
+                        </th>    
+                        </tr>    
+                   		</aura:iteration>
+                       	</tbody>        
+                    </table>        
+					 
+                	</aura:set>    
+            	</lightning:accordionSection>    
+            </aura:iteration>
+        </lightning:accordion>
+    </div>      
+    <!--</aura:set>
+    </aura:if>  --> 
+    </div>
+</div>
+    
+    	 <aura:if isTrue="{!v.hideSelection == false}">
+            <div> <!-- style="min-height: 640px" --> 
+                <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header slds-modal__header_empty">
+                            <lightning:buttonIcon iconName="utility:close" class="slds-modal__close" variant="bare-inverse" onclick="{!c.changeSelectionDisplay}"/>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium">
+                           <div class="slds-scrollable--y" style="height:100%;"> 
+  							<table style="height:80%;">         
+                                <aura:iteration items="{!v.currentSelectedRowWrapper}" var="wrap">
+                                    <tr>
+                                        <td>
+                                            <div class="slds-p-around_xxx-small">
+                                                <!--<lightning:pill label="{!wrap.productName}"></lightning:pill> -->
+                                                
+                                                    <lightning:card variant="Narrow" title="{!wrap.productName + ' (' + wrap.manufacturerName + ')'}" iconName="standard:product" class="slds-card_boundary">
+                                                        <aura:set attribute="actions">
+                                                            <lightning:buttonIcon value="{!wrap.productId}" aura:id="{!wrap.productId}" iconName="utility:close" variant="border-filled" alternativeText="Delete" onclick="{!c.deleteSelectedProduct}"/>
+                                                        </aura:set>
+                                                        <!--<p class="slds-p-horizontal_small">
+                                                            {!wrap.manufacturerName}
+                                                        </p> -->
+                                                    </lightning:card>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </aura:iteration>  
+                        </table>  
+                        </div>       
+                        </div>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div> 
+        </aura:if>    
+    
+</aura:component>

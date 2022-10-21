@@ -1,0 +1,77 @@
+<template>
+    <!--pricebook selection screen-->
+    <template if:true={showPriceBookmenu}>
+        <div  class="slds-scrollable">
+
+            <lightning-combobox required
+                                label={labels.PRICEBOOK}
+                                name="pricebook"
+                                value={selectedPricebookId}
+                                placeholder={labels.PRICEBOOK}
+                                options={pricebooksOptions}
+                                onchange={handlePricebookChange} >
+            </lightning-combobox>
+            <button class="slds-button slds-button_brand slds-button_stretch" disabled={lockUpdateButton} onclick={updateRecord}>{labels.UPDATE_QUOTE}</button>
+
+        </div>
+    </template>
+
+    <!--bundle selection screen-->
+
+    <template if:false={showPriceBookmenu}>
+        <lightning-input name="product-search" label={labels.SEARCH} onchange={handleFilterChange} type="search" value={filterWord}> </lightning-input>
+        <br>
+
+        <template for:each={bundles} for:item="bundle" for:index="index">
+
+            <div key={bundle.Id} >
+                <template if:false={bundle.hideFilteredItem}>
+                    <div class="slds-scrollable_y">
+                        <lightning-tile class="slds-box slds-box_small">
+
+                            <ul >
+                                <li>
+                                    <ul class="slds-list_horizontal slds-has-dividers_right ul-list">
+                                        <li class="slds-item">
+                                            <lightning-input type="checkbox" data-index={index}
+                                                             variant="label-hidden" class="slds-m-left_xx-small slds-float_left .slds-align_absolute-center"
+                                                             checked={bundle.isSelected} onchange={handleSelectChange} > </lightning-input>
+                                            <template if:false={isMobile}>
+                                                <lightning-button-icon class="download-button" variant="brand" disabled={bundle.disableFileId} icon-name="utility:download" data-index={index} onclick={handleDownload}  ></lightning-button-icon>
+                                            </template>
+                                            <lightning-button variant="base" label={bundle.Name} data-index={index} onclick={handleShowDetails} class="slds-m-left_xx-small"></lightning-button>
+                                        </li>
+                                        <li class="slds-item total-price">
+                                            <span class="slds-badge"> {bundle.Total_price__c} {bundle.CurrencyIsoCode}</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <!--ul class="slds-list_dotted "-->
+                                    <template if:true={bundle.showMaterials}>
+                                        <div class="materials slds-border_top">
+                                            <p class="slds-text-longform tile__title red-txt">
+                                                <lightning-formatted-text value={bundle.Description__c}></lightning-formatted-text>
+                                            </p>
+                                            <template for:each={bundle.Bill_of_Material__r} for:item="billMaterial" >
+                                                <div key={billMaterial.Id}>
+                                                    <ul class="slds-list_dotted ">
+                                                        <li > {billMaterial.Quantity__c} {billMaterial.Product__r.Name} • {billMaterial.Row_price__c} {billMaterial.CurrencyIsoCode} ( <template if:true={billMaterial.Discount__c}>{billMaterial.Discount__c}</template> <template if:false={billMaterial.Discount__c}>0</template> % )</li>
+                                                    </ul>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </template>
+                                </li>
+                            </ul>
+                        </lightning-tile>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <button class="slds-button slds-button_brand slds-button_stretch" onclick={handleInsertRecords} disabled={disableInsertButton}>{labels.INSERT_BUNDLES}</button>
+    </template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+</template>

@@ -1,0 +1,17 @@
+<aura:component implements="lightning:recordHomeTemplate">
+	<aura:attribute name = "header" type = "Aura.Component[]" description="Header region"/>    
+    <aura:attribute name = "middle" type = "Aura.Component[]" description="Main region"/>    
+    <aura:attribute name = "left" type = "Aura.Component[]" description="Scrollable sidebar region"/>    
+    <div>
+        <div>{!v.header}</div>
+        <lightning:layout class="slds-m-top_medium">
+            <lightning:layoutItem  size="4" flexibility="auto" >
+                <div class="slds-scrollable" style="height:70rem">{!v.left} </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" >
+                <div style="padding-left:0.75rem">{!v.middle}</div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+   
+</aura:component>

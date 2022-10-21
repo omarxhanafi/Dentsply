@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Event listener that&apos;s used to trigger auto-launched flow &quot;SFS: Call PDF Butler Apex Class&quot; so it passes the WO Id to apex class and the service report will be generated based on it</description>
+    <eventType>HighVolume</eventType>
+    <fields>
+        <fullName>WorkOrderId__c</fullName>
+        <description>This field is used to capture the work order id, that will be used in SFS: Call PDF Butler Apex Class auto launched flow</description>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>WorkOrderId</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>PDF Butler Generate Report</label>
+    <pluralLabel>PDF Butler Generate Reports</pluralLabel>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
+</CustomObject>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Case Flow configuration attributes</description>
+    <fields>
+        <fullName>AccountCountry__c</fullName>
+        <description>Two Characters country code. Combining countries is OK but each country must have only 1 record.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Account Country</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CreditProcess__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Full Credit Process</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Credit Process</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CustomAttribute_1__c</fullName>
+        <description>Text field can be used to pass additional attributes to be used as criteria or filters in the flow.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Custom Attribute 1</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DirectorApproval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Director Approval</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ExcludedCountries__c</fullName>
+        <description>Two Characters country code separated with semicolons</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Excluded Countries</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IncludedCountries__c</fullName>
+        <description>Two Characters country code separated with semicolons</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Included Countries</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LimitCloneCase__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Countries with Return and Credit Process can&apos;t clone cases with these types</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Limit Clone Case</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ManagerApproval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Manager Approval</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ManualApprovalSelection__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Allow users to select manually the approval steps</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Manual Approval Selection</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ReturnProcess__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Full return process</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Return Process</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SalesRepApproval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>SalesRep Approval</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TotalCreditReturnField__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The total amount without depending on the Articles records</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Total Credit/Return Field</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UserCountry__c</fullName>
+        <description>Additional Dimension for the country from the user perspective</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>User Country</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Service Cloud: Case Flow Config</label>
+    <pluralLabel>Service Cloud: Case Flow Configs</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>
