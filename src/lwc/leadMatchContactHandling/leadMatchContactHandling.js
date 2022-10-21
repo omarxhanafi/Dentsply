@@ -38,12 +38,7 @@ export default class LeadMatchContactHandling extends LightningElement {
     @track showMoreContacts;
     @api newContact = {};
     @api contactfields = '';
-    @track contactSelected;
-
-    @api
-    get showSpinner() {
-        return !this.shownContactList || this.shownContactList.length == 0;
-    }
+    @track contactSelected; 
 
     connectedCallback(){
         this.accountSelected = false;
@@ -62,12 +57,8 @@ export default class LeadMatchContactHandling extends LightningElement {
 
         inputList.push(input);
 
-        let d1 = new Date();
-
         findContacts({input: inputList})
             .then(result => {
-                console.log('time elapsed :' + (new Date().getTime() - d1.getTime()) / 1000);
-
                 console.log(result);
                 
 

@@ -9,13 +9,9 @@
                 </h2>
 
             <!--</div> -->
-
+        
                 <div class="slds-grid slds-gutters">
                     <div class="slds-col slds-size_8-of-8">
-
-                        <template if:true={showSpinner}>
-                            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
-                        </template>
 
                         <template for:each={shownContactList} for:item="item">
                             <table key={item.matchRecord.Id} style="margin-top:10px;margin-bottom:10px;">
