@@ -4,10 +4,9 @@
     <option name="connections">
       <list>
         <IlluminatedCloudConnection>
-          <option name="connectionName" value="Production" />
+          <option name="connectionName" value="DevNov" />
           <option name="connectionType" value="OAUTH" />
           <option name="defaultModuleName" value="Dentsply" />
-          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/Production/OfflineSymbolTable.zip" />
         </IlluminatedCloudConnection>
       </list>
     </option>

@@ -994,6 +994,19 @@ public with sharing class OrderManagement_CC {
 
     }
 
+    /*------------------------------------------------------------
+    Description:    Detects the user decimal separator base on his locale
+
+    Outputs:        String   The user decimal separator
+    ------------------------------------------------------------*/
+    @AuraEnabled
+    public static String getUserDecimalSeparator()
+    {
+        Decimal value = 1.1;
+        String formattedValue = value.format();
+        return formattedValue.substring(1, 2);
+    }
+
     /*@AuraEnabled
     public static Order refreshFormulasOrder(Order o){
         

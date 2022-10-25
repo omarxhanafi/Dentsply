@@ -5243,6 +5243,15 @@ VALUE(TEXT(Implant_commitment_perc_input__c))*0.01, 0)</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Owned_by_My_Direct_Reports__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Owner.ManagerId = $User.Id , True , False )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owned by My Direct Reports</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>OwnerExpirationNotice</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
@@ -6147,7 +6156,7 @@ IF((Row_discount_rev_mat__r.Max__c - Revenue_forecast__c)&gt;0, (Row_discount_re
         <fullName>SBQQ__SubscriptionQuantitiesCombined__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
-        <description>Select to combine quantities of Subscriptions for the same product into one line on Renewal Quotes and Legacy Amendments.</description>
+        <description>Select to combine quantities of Subscriptions for the same product into one line on Renewal Quotes and Amendments.</description>
         <externalId>false</externalId>
         <inlineHelpText>Select to combine quantities of Subscriptions for the same product into one line on Renewal Quotes and Amendments.</inlineHelpText>
         <label>Combine Subscription Quantities</label>
@@ -6572,6 +6581,33 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
         <language>de</language>
         <sharedTo>
             <group>DACH_ADMIN</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DE_Purchasing_Tiering_Contracts</fullName>
+        <columns>CONTRACT.CONTRACT_NUMBER</columns>
+        <columns>Contract_Model__c</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>SourceRecord__c</columns>
+        <columns>CONTRACT.START_DATE</columns>
+        <columns>CONTRACT.END_DATE</columns>
+        <columns>Approval_Status__c</columns>
+        <columns>CONTRACT.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTRACT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Contract.Purchasing_Contract_Turnover</value>
+        </filters>
+        <filters>
+            <field>Contract_Type__c</field>
+            <operation>equals</operation>
+            <value>Tier Dentist,Tier Lab</value>
+        </filters>
+        <label>DE: Purchasing Tiering Contracts</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DE_Customer_Service_Tier_contracts</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -14412,10 +14448,6 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
                 <default>false</default>
             </values>
             <values>
-                <fullName>Atlantis Abut%2E and Atlantis Suprastructure</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Atlantis Sales</fullName>
                 <default>false</default>
             </values>
@@ -17599,7 +17631,7 @@ TEXT( Status) = &quot;Draft&quot;</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>Prevent_Contract_Creation</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>only DE Implant sales reps should be able to create pricing contracts and also purchasing contracts that don&apos;t have the tier models (TFUS-000004795)</description>
         <errorConditionFormula>( LEFT( $UserRole.Name, 8) &lt;&gt; &quot;DE: IMPL&quot; &amp;&amp; 
 

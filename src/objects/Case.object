@@ -829,6 +829,21 @@
                     <label>Queue: FR: Support Suresmile</label>
                 </value>
                 <value>
+                    <fullName>00G6M0000040E3BUAU</fullName>
+                    <default>false</default>
+                    <label>Queue: IB: CS Pedidos</label>
+                </value>
+                <value>
+                    <fullName>00G6M000003RXN8UAO</fullName>
+                    <default>false</default>
+                    <label>Queue: IB: CS DSO</label>
+                </value>
+                <value>
+                    <fullName>00G6M000004GUchUAG</fullName>
+                    <default>false</default>
+                    <label>Queue: IB: SureSmile Support</label>
+                </value>
+                <value>
                     <fullName>00G6M000003RQgmUAG</fullName>
                     <default>false</default>
                     <label>Queue: IN: Customer Service</label>
@@ -972,11 +987,6 @@
                     <fullName>00G6M000004GUbyUAG</fullName>
                     <default>false</default>
                     <label>Queue: SureSmile - Berlin Support</label>
-                </value>
-                <value>
-                    <fullName>00G6M000003RXN8UAO</fullName>
-                    <default>false</default>
-                    <label>Queue: IB: Email2Case</label>
                 </value>
                 <value>
                     <fullName>00G6M000003RXqZUAW</fullName>
@@ -1221,6 +1231,8 @@
                 <controllingFieldValue>New Zealand</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
                 <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>Germany</controllingFieldValue>
@@ -1356,6 +1368,8 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
                 <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
@@ -1363,6 +1377,8 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
                 <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
@@ -1370,6 +1386,8 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
                 <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
@@ -1377,6 +1395,8 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
                 <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
@@ -1476,6 +1496,21 @@
                 <controllingFieldValue>New Zealand</controllingFieldValue>
                 <controllingFieldValue>Australia</controllingFieldValue>
                 <valueName>00G7Y000004znltUAA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>00G6M0000040E3BUAU</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>00G6M000003RXN8UAO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>00G6M000004GUchUAG</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Switzerland</controllingFieldValue>
@@ -10562,6 +10597,22 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <unique>false</unique>
     </fields>
     <listViews>
+        <fullName>ANZCustomerService</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <label>ANZ: Customer Service</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>ANZ_Shared_Services</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>ANZ_SureSmile_Support_Case</fullName>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>NAME</columns>
@@ -10742,7 +10793,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <language>en_US</language>
         <queue>BENELUX_SureSmile_Support</queue>
         <sharedTo>
-            <group>BENELUX_SureSmile_Support</group>
+            <group>BNL_SureSmile_Support</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -10909,9 +10960,10 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <columns>LastInboundEmailDate__c</columns>
         <columns>CORE.USERS.ALIAS</columns>
+        <columns>OWNER_NAME</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>CASES.CLOSED</field>
@@ -10977,7 +11029,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>NAME</columns>
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <columns>CASES.CLOSED_DATE</columns>
         <columns>LastInboundEmailDate__c</columns>
         <columns>LastEmailType__c</columns>
@@ -11052,13 +11104,41 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>BNL_Info_Customer_Service_All_Closed</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>LastInboundEmailDate__c</columns>
+        <columns>LastEmailType__c</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Support_Email__c</field>
+            <operation>equals</operation>
+            <value>BNL: Info Customer Service</value>
+        </filters>
+        <label>BNL: Info Customer Service (All Closed)</label>
+        <sharedTo>
+            <group>BNL_Info_Customer_Service</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>BNL_Info_Customer_Service_Case</fullName>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>ACCOUNT.NAME</columns>
         <columns>NAME</columns>
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <columns>LastInboundEmailDate__c</columns>
         <columns>LastEmailType__c</columns>
         <columns>CORE.USERS.ALIAS</columns>
@@ -11072,9 +11152,33 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <filters>
             <field>Support_Email__c</field>
             <operation>equals</operation>
-            <value>BNL : Info Customer Service</value>
+            <value>BNL: Info Customer Service</value>
         </filters>
-        <label>BNL: Info Customer Service</label>
+        <label>BNL: Info Customer Service (All Open)</label>
+        <sharedTo>
+            <group>BNL_Info_Customer_Service</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>BNL_Info_Customer_Service_Unassigned</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>LastInboundEmailDate__c</columns>
+        <columns>LastEmailType__c</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>BNL: Info Customer Service (Unassigned)</label>
+        <queue>BNL_Info_Customer_Service</queue>
         <sharedTo>
             <group>BNL_Info_Customer_Service</group>
         </sharedTo>
@@ -11280,6 +11384,36 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>BNL_Test</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>OWNER_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Solved &amp; Closed,Cancelled &amp; Closed,Solved,Closed,Cancelled,Completed,Solution Provided,Merged &amp; Cancelled,Merged</value>
+        </filters>
+        <filters>
+            <field>Account_Country__c</field>
+            <operation>equals</operation>
+            <value>BE,NL,LU</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>notContain</operation>
+            <value>#,BNL,Benelux</value>
+        </filters>
+        <label>BNL Test</label>
+        <sharedTo>
+            <role>Benelux_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>BeNeLux_Service_Complaint_Case</fullName>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>NAME</columns>
@@ -11298,11 +11432,19 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
     </listViews>
     <listViews>
         <fullName>CIM360_Queue_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
         <label>CIM360 Queue</label>
+        <language>en_US</language>
         <queue>CIM360_Queue</queue>
         <sharedTo>
-            <allInternalUsers></allInternalUsers>
+            <role>Dentsply_IH_CEO</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -11553,8 +11695,18 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>CRM_Team_LATIN_AMERICA_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>CRM Team LATIN AMERICA</label>
+        <queue>CRM_Team_LATIN_AMERICA</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>CRM_Team_My_Open_Case</fullName>
         <columns>CASES.CASE_NUMBER</columns>
+        <columns>related_Country__c</columns>
         <columns>CASES.STATUS</columns>
         <columns>Request_Type__c</columns>
         <columns>Teamforce_Product__c</columns>
@@ -11562,7 +11714,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.PRIORITY</columns>
         <columns>Due_Date__c</columns>
         <columns>PARENT.CASE_NUMBER</columns>
-        <columns>related_Country__c</columns>
         <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
         <columns>CRM_Analyst__c</columns>
         <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
@@ -11578,42 +11729,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <value>Case.CRM_Requests</value>
         </filters>
         <label>#CRM Team: My Open Case</label>
-        <sharedTo>
-            <role>Dentsply_IH_CEO</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>CRM_Team_My_Open_Case_without_parent</fullName>
-        <booleanFilter>1 AND 2 AND 3</booleanFilter>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>Request_Type__c</columns>
-        <columns>Teamforce_Product__c</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>CASES.PRIORITY</columns>
-        <columns>Due_Date__c</columns>
-        <columns>Next_Review_Date__c</columns>
-        <columns>PARENT.CASE_NUMBER</columns>
-        <columns>related_Country__c</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
-        <columns>CRM_Analyst__c</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>CASES.STATUS</field>
-            <operation>equals</operation>
-            <value>New,Active,Waiting For User Feedback</value>
-        </filters>
-        <filters>
-            <field>CASES.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Case.CRM_Requests</value>
-        </filters>
-        <filters>
-            <field>PARENT.CASE_NUMBER</field>
-            <operation>notEqual</operation>
-            <value>00478236</value>
-        </filters>
-        <label>#CRM Team: My Open Case without CFE</label>
         <language>en_US</language>
         <sharedTo>
             <role>Dentsply_IH_CEO</role>
@@ -11663,6 +11778,15 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <queue>CRM_Team_NON_RCO</queue>
         <sharedTo>
             <role>Dentsply_IH_CEO</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CRM_Team_Training_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>CRM Team Training</label>
+        <queue>CRM_Team_Training</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
         </sharedTo>
     </listViews>
     <listViews>
@@ -11724,7 +11848,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
         <filters>
@@ -11735,7 +11859,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <label>NA: SureSmile Support New Cases</label>
         <queue>NA_SureSmile_Support</queue>
         <sharedTo>
-            <group>NA_SureSmile_Support</group>
             <role>NA_CRM_Analyst</role>
         </sharedTo>
     </listViews>
@@ -11749,6 +11872,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>DACH: SureSmile Support</label>
         <language>en_US</language>
         <queue>DACH_SureSmile_Support</queue>
@@ -11782,39 +11910,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>DACH_active_CRM_Requests</fullName>
-        <booleanFilter>1 AND 2 AND 3</booleanFilter>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>Request_Type__c</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>CASES.PRIORITY</columns>
-        <columns>CREATEDBY_USER.ALIAS</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>OWNER_NAME</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>CASES.STATUS</field>
-            <operation>notEqual</operation>
-            <value>Closed,Solved &amp; Closed,Cancelled &amp; Closed</value>
-        </filters>
-        <filters>
-            <field>CREATEDBY_USER.ALIAS</field>
-            <operation>equals</operation>
-            <value>mschub,mkrem,LFran,srenz,agutm</value>
-        </filters>
-        <filters>
-            <field>CASES.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Case.CRM_Requests</value>
-        </filters>
-        <label>DACH: active CRM Requests</label>
-        <language>en_US</language>
-        <sharedTo>
-            <role>D_A_CH_CRM_Analyst</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
         <fullName>DE_DI_ATLANTIS_Support_Case</fullName>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>NAME</columns>
@@ -11824,6 +11919,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>DE: DI - ATLANTIS Support</label>
         <language>en_US</language>
         <queue>DE_DI_ATLANTIS_Support</queue>
@@ -11842,6 +11942,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>DE: DI - UPS Rückholung</label>
         <language>en_US</language>
         <queue>DE_DI_UPS_R_ckholung</queue>
@@ -11861,9 +11966,9 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
         <filters>
-            <field>CASES.CLOSED</field>
-            <operation>equals</operation>
-            <value>0</value>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
         </filters>
         <label>DE: DI - Web-Shop</label>
         <language>en_US</language>
@@ -11883,9 +11988,9 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
         <filters>
-            <field>CASES.CLOSED</field>
-            <operation>equals</operation>
-            <value>0</value>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
         </filters>
         <label>DE: DI - Wert Gutschrift</label>
         <language>en_US</language>
@@ -11908,6 +12013,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.CLOSED_DATE</columns>
         <columns>Account_Owner__c</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>DE: DI - Product Improvements</label>
         <language>en_US</language>
         <queue>DE_DI_Product_Improvements</queue>
@@ -11951,9 +12061,9 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
         <filters>
-            <field>CASES.CLOSED</field>
-            <operation>equals</operation>
-            <value>0</value>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
         </filters>
         <label>DE: DI - Retouren Gutschrift</label>
         <language>en_US</language>
@@ -12026,6 +12136,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>DE: DI - Service Reklamationen</label>
         <language>en_US</language>
         <queue>DE_DI_Service_Reklamationen</queue>
@@ -12033,29 +12148,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <group>DE_DI_Service_Reklamationen</group>
             <role>D_A_CH_CRM_Analyst</role>
         </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>DE_Status_Waiting_for_Internal_Feedback</fullName>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>CASES.CREATED_DATE</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Account_Country__c</field>
-            <operation>equals</operation>
-            <value>DE</value>
-        </filters>
-        <filters>
-            <field>CASES.STATUS</field>
-            <operation>equals</operation>
-            <value>Waiting For Internal Feedback</value>
-        </filters>
-        <label>DE: Status Waiting for Internal Feedback</label>
-        <language>en_US</language>
-        <sharedTo/>
     </listViews>
     <listViews>
         <fullName>DK_All_ServiceComplaint_excl_SIMPLANT</fullName>
@@ -12178,6 +12270,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>FR: Réclamations &amp; Retours</label>
         <language>en_US</language>
         <queue>FR_R_clamations_Retours</queue>
@@ -12195,6 +12292,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>FR: Service Clients</label>
         <language>en_US</language>
         <queue>FR_Service_Clients</queue>
@@ -12212,6 +12314,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>FR: Support Atlantis</label>
         <language>en_US</language>
         <queue>FR_Support_Atlantis</queue>
@@ -12229,6 +12336,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>FR: Support Clinique et Scientifique</label>
         <language>en_US</language>
         <queue>FR_Support_Clinique_et_Scientifique</queue>
@@ -12246,6 +12358,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>FR: Support Simplant</label>
         <language>en_US</language>
         <queue>FR_Support_Simplant</queue>
@@ -12263,6 +12380,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>FR: Support Suresmile</label>
         <language>en_US</language>
         <queue>FR_Suresmile_Support</queue>
@@ -12271,26 +12393,19 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>IBERIA_E2C</fullName>
+        <fullName>IBERIA_E2C_Case</fullName>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>NAME</columns>
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
-        <filterScope>Mine</filterScope>
-        <label>IBERIA: E2C</label>
+        <filterScope>Queue</filterScope>
+        <label>IB: CS DSO</label>
+        <queue>IB_CS_DSO</queue>
         <sharedTo>
             <group>IBERIA_E2C</group>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>IBERIA_E2C_Case</fullName>
-        <filterScope>Queue</filterScope>
-        <label>IBERIA: E2C</label>
-        <queue>IBERIA_E2C</queue>
-        <sharedTo>
-            <allInternalUsers></allInternalUsers>
         </sharedTo>
     </listViews>
     <listViews>
@@ -12308,6 +12423,46 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <queue>IB_SureSmile_Support</queue>
         <sharedTo>
             <group>IB_SureSmile_Support</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>IB_CS_Pedidos_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>IB: CS Pedidos</label>
+        <queue>IB_CS_Pedidos</queue>
+        <sharedTo>
+            <group>IBERIA_E2C</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>IDN_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Service_Complaint</value>
+        </filters>
+        <filters>
+            <field>Account_Country__c</field>
+            <operation>equals</operation>
+            <value>ID</value>
+        </filters>
+        <label>IDN: Cases</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>IDN_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -12329,32 +12484,32 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>IT_Back_Line_Suresmile_queue_Case</fullName>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>NAME</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE</columns>
-        <columns>CORE.USERS.ALIAS</columns>
+        <fullName>IN_SureSmile_Support_Case</fullName>
         <filterScope>Queue</filterScope>
-        <label>IT: Back Line Suresmile queue</label>
-        <language>en_US</language>
-        <queue>IT_Back_Line_Suresmile_queue</queue>
+        <label>IN: SureSmile Support</label>
+        <queue>IN_SureSmile_Support</queue>
         <sharedTo>
-            <group>IT_Back_Line_Suresmile_queue</group>
+            <allInternalUsers></allInternalUsers>
         </sharedTo>
     </listViews>
     <listViews>
         <fullName>IT_Back_Line_queue_Case</fullName>
         <columns>CASES.CASE_NUMBER</columns>
-        <columns>NAME</columns>
+        <columns>SLAStatusImage__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Complaint_Category__c</columns>
+        <columns>CASES.REASON</columns>
         <columns>CASES.SUBJECT</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>CASES.PRIORITY</columns>
         <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.STATUS</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>IT: Back Line queue</label>
         <language>en_US</language>
         <queue>IT_Back_Line_queue</queue>
@@ -12365,13 +12520,21 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
     <listViews>
         <fullName>IT_Customer_Service_Dealer_queue_Case</fullName>
         <columns>CASES.CASE_NUMBER</columns>
-        <columns>NAME</columns>
+        <columns>SLAStatusImage__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Complaint_Category__c</columns>
+        <columns>Complaint_Reason2__c</columns>
         <columns>CASES.SUBJECT</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>CASES.PRIORITY</columns>
         <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.STATUS</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>IT: Customer Service Dealer queue</label>
         <language>en_US</language>
         <queue>IT_Customer_Service_Dealer_queue</queue>
@@ -12380,51 +12543,40 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>IT_Front_Line_Return_not_Moovement_Case</fullName>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>NAME</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <filterScope>Queue</filterScope>
-        <label>IT: Front Line Return not Moovement</label>
-        <language>en_US</language>
-        <queue>IT_Front_Line_Return_not_Moovement</queue>
-        <sharedTo>
-            <group>IT_Front_Line_Return_not_Moovement</group>
-        </sharedTo>
-    </listViews>
-    <listViews>
         <fullName>IT_Front_Line_Suresmile_queue_Case</fullName>
         <columns>CASES.CASE_NUMBER</columns>
-        <columns>NAME</columns>
+        <columns>SLAStatusImage__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Complaint_Category__c</columns>
+        <columns>Complaint_Reason2__c</columns>
         <columns>CASES.SUBJECT</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>CASES.PRIORITY</columns>
         <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.STATUS</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
-        <label>IT: Front Line Suresmile queue</label>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
+        <label>IT: Digital queue</label>
         <language>en_US</language>
-        <queue>IT_Front_Line_Suresmile_queue</queue>
+        <queue>IT_Digital_queue</queue>
         <sharedTo>
-            <group>IT_Front_Line_Suresmile_queue</group>
+            <group>IT_Digital_queue</group>
         </sharedTo>
     </listViews>
     <listViews>
         <fullName>IT_SIMPLANT_Support</fullName>
-        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+        <booleanFilter>1 AND (2 OR 6 ) AND 3 AND 4 AND 5</booleanFilter>
         <columns>CASES.CASE_NUMBER</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>OWNER_NAME</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>NAME</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>CASES.TYPE</columns>
         <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>CASES.TYPE</columns>
+        <columns>CASES.STATUS</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>CASES.STATUS</field>
@@ -12449,118 +12601,68 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <filters>
             <field>Product_Line__c</field>
             <operation>equals</operation>
-            <value>SIMPLANT</value>
+            <value>Simplant</value>
+        </filters>
+        <filters>
+            <field>Account_Market__c</field>
+            <operation>equals</operation>
+            <value>IT</value>
         </filters>
         <label>IT: SIMPLANT Support</label>
         <language>en_US</language>
         <sharedTo>
             <role>BEX_SIMPLANT_Business_Support</role>
             <role>BEX_Technical_Support_Admin</role>
-            <role>IT_IMPL_Managing_Director</role>
-            <role>IT_SIMPLANT_Sales_Manager</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>IT_Samples_Clinical_Education_Case</fullName>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>NAME</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <filterScope>Queue</filterScope>
-        <label>IT: Samples Clinical Education</label>
-        <language>en_US</language>
-        <queue>IT_Samples_Clinical_Education</queue>
-        <sharedTo>
-            <group>IT_Samples_Clinical_Education</group>
         </sharedTo>
     </listViews>
     <listViews>
         <fullName>IT_Service_Complaints_Case</fullName>
         <columns>CASES.CASE_NUMBER</columns>
-        <columns>NAME</columns>
+        <columns>SLAStatusImage__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Complaint_Category__c</columns>
+        <columns>Complaint_Reason2__c</columns>
         <columns>CASES.SUBJECT</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>CASES.PRIORITY</columns>
         <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.STATUS</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>IT: Front Line queue</label>
         <language>en_US</language>
         <queue>IT_Front_Line_queue</queue>
         <sharedTo>
-            <roleAndSubordinates>IT_CRM_Analyst</roleAndSubordinates>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>IT_SureSmile_Support_Case</fullName>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>NAME</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <filterScope>Queue</filterScope>
-        <label>IT: SureSmile Support</label>
-        <language>en_US</language>
-        <queue>IT_SureSmile_Support</queue>
-        <sharedTo>
-            <group>IT_SureSmile_Support</group>
+            <group>IT_Front_Line_queue</group>
         </sharedTo>
     </listViews>
     <listViews>
         <fullName>IT_Technical_Customer_Support_Case</fullName>
         <columns>CASES.CASE_NUMBER</columns>
-        <columns>NAME</columns>
+        <columns>SLAStatusImage__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Complaint_Category__c</columns>
+        <columns>Complaint_Reason2__c</columns>
         <columns>CASES.SUBJECT</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>CASES.PRIORITY</columns>
         <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.STATUS</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>IT: Technical Customer Support</label>
         <language>en_US</language>
         <queue>IT_Technical_Customer_Support</queue>
         <sharedTo>
             <group>IT_Technical_Customer_Support</group>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>India_Lightning_project</fullName>
-        <booleanFilter>1 AND (2 AND 3)</booleanFilter>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>Request_Type__c</columns>
-        <columns>Teamforce_Product__c</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>CASES.PRIORITY</columns>
-        <columns>Due_Date__c</columns>
-        <columns>PARENT.CASE_NUMBER</columns>
-        <columns>related_Country__c</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
-        <columns>CRM_Analyst__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>CASES.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Case.CRM_Requests</value>
-        </filters>
-        <filters>
-            <field>CASES.SUBJECT</field>
-            <operation>startsWith</operation>
-            <value>Lightning UAT - India</value>
-        </filters>
-        <filters>
-            <field>Related_Deployment_Project__c</field>
-            <operation>contains</operation>
-            <value>India</value>
-        </filters>
-        <label>India Lightning project</label>
-        <sharedTo>
-            <role>MEA_India_Turkey</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -12890,7 +12992,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.STATUS</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <filterScope>Queue</filterScope>
         <filters>
             <field>CASES.STATUS</field>
@@ -12898,11 +13000,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <value>Solved,Closed</value>
         </filters>
         <label>NA: Azento Email-to-Case</label>
-        <language>en_US</language>
         <queue>NA_Azento</queue>
         <sharedTo>
             <group>NA_Azento</group>
             <role>Dentsply_IH_CEO</role>
+            <role>NA_Customer_Service_Implants</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -12938,6 +13040,39 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <label>NA: CRM Cases Closed Last 30 Days</label>
         <sharedTo>
             <role>Dentsply_IH_CEO</role>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_CRM_Open_Requests_Jill_Domenici</fullName>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <columns>Due_Date__c</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Request_Type__c</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CRM_Analyst__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>New,Active,Waiting For Customer Feedback,Waiting For User Feedback,Waiting For Internal Feedback</value>
+        </filters>
+        <filters>
+            <field>CRM_Analyst__c</field>
+            <operation>equals</operation>
+            <value>Jill Domenici</value>
+        </filters>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.CRM_Requests</value>
+        </filters>
+        <label>NA CRM Open Requests - Jill Domenici</label>
+        <sharedTo>
             <role>NA_CRM_Analyst</role>
         </sharedTo>
     </listViews>
@@ -13213,20 +13348,22 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
         <label>NA: DI Tier 1-2 Customer Service</label>
-        <language>en_US</language>
         <queue>NA_DI_Tier_1_2_Customer_Service</queue>
         <sharedTo>
+            <group>NA_DT_Chat_support</group>
+            <group>NA_DT_web_support</group>
             <roleAndSubordinates>NA_CRM_Analyst</roleAndSubordinates>
         </sharedTo>
     </listViews>
     <listViews>
         <fullName>NA_DT_Web_All_Assigned_Open_Email</fullName>
-        <booleanFilter>1 AND 3  AND ((2 AND 4) OR 5)</booleanFilter>
+        <booleanFilter>1 AND 3 AND 6  AND ((2 AND 4) OR 5)</booleanFilter>
         <columns>OWNER_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
         <columns>NAME</columns>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>CASES.ORIGIN</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
@@ -13256,6 +13393,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <operation>equals</operation>
             <value>NA: DT Web Support</value>
         </filters>
+        <filters>
+            <field>CASES.SUBJECT</field>
+            <operation>notContain</operation>
+            <value>Contact us about case bone quality</value>
+        </filters>
         <label>NA: DT Web All Assigned Open Email</label>
         <sharedTo>
             <group>NA_DT_web_support</group>
@@ -13268,7 +13410,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
         <filters>
@@ -13276,10 +13418,15 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <operation>equals</operation>
             <value>0</value>
         </filters>
-        <label>NA: DT web support</label>
+        <filters>
+            <field>CASES.SUBJECT</field>
+            <operation>notEqual</operation>
+            <value>Annual Leave</value>
+        </filters>
+        <label>NA: DT Web Support</label>
         <queue>NA_DT_web_support</queue>
         <sharedTo>
-            <roleAndSubordinates>NA_CRM_Analyst</roleAndSubordinates>
+            <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -13327,8 +13474,9 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <booleanFilter>(1 OR 4) AND 2 AND 3</booleanFilter>
         <columns>OWNER_NAME</columns>
         <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
         <columns>CASES.ORIGIN</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
@@ -13387,12 +13535,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
     </listViews>
     <listViews>
         <fullName>NA_Endo_Closed_Email_Cases_Inactive</fullName>
-        <booleanFilter>1 AND 2 AND 3</booleanFilter>
         <columns>OWNER_NAME</columns>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>CASES.ORIGIN</columns>
         <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <filterScope>Everything</filterScope>
@@ -13404,12 +13551,12 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <filters>
             <field>CASES.STATUS</field>
             <operation>notEqual</operation>
-            <value>Cancelled &amp; Closed,Closed</value>
+            <value>Solved &amp; Closed,Cancelled &amp; Closed,Closed,Merged &amp; Cancelled</value>
         </filters>
         <filters>
-            <field>CASES.ORIGIN</field>
-            <operation>equals</operation>
-            <value>Support email</value>
+            <field>CaseType__c</field>
+            <operation>notEqual</operation>
+            <value>Credit/rebill,Return</value>
         </filters>
         <label>NA: CS Inactive User Email Cases</label>
         <sharedTo>
@@ -13562,19 +13709,50 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>NA_Implants_Project_Team_Email_to_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.ORIGIN</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <filterScope>Queue</filterScope>
+        <label>NA: Implants Project Team Email-to-Case</label>
+        <queue>NA_Implants_Project_Team_Email_to_Case</queue>
+        <sharedTo>
+            <group>NA_Implants_Project_Team_Email_to_Case</group>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_Implants_Project_Team_Email_to_Case_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>NA: Implants Project Team Email-to-Case</label>
+        <queue>NA_Implants_Project_Team_Email_to_Case</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>NA_MIS_Case</fullName>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>NAME</columns>
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
-        <label>NA: MIS</label>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notContain</operation>
+            <value>Closed</value>
+        </filters>
+        <label>NA: MIS Email-to-Case</label>
         <queue>NA_MIS</queue>
         <sharedTo>
             <group>NA_MIS_Cases</group>
+            <role>NA_CRM_Analyst</role>
             <role>NA_Customer_Service_MIS</role>
         </sharedTo>
     </listViews>
@@ -13894,13 +14072,15 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.PRIORITY</columns>
         <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
+        <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
         <filterScope>Queue</filterScope>
         <label>NA: Simplant Email-to-Case</label>
-        <language>en_US</language>
         <queue>NA_Simplant</queue>
         <sharedTo>
             <group>NA_Simplant</group>
             <role>Dentsply_IH_CEO</role>
+            <role>NA_Customer_Service_Implants</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -13932,7 +14112,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
         <filters>
@@ -13941,12 +14121,12 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <value>Solved &amp; Closed,Solved,Closed</value>
         </filters>
         <label>NA: SureSmile Support</label>
-        <language>en_US</language>
         <queue>NA_SureSmile_Support</queue>
         <sharedTo>
             <group>AU_Suresmile_Team</group>
             <group>NA_SureSmile_Support</group>
             <role>NA_CRM_Analyst</role>
+            <role>NA_Customer_Service_Endo</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -14049,6 +14229,15 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <queue>PL_Suresmile_Support</queue>
         <sharedTo>
             <group>PL_Suresmile_Sharing</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RU_SureSmile_Support_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RU: SureSmile Support</label>
+        <queue>RU_SureSmile_Support</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
         </sharedTo>
     </listViews>
     <listViews>
@@ -14301,11 +14490,10 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
         <label>#SC: SureSmile - Digital Lab</label>
-        <language>en_US</language>
         <queue>SC_SureSmile_Digital_Lab</queue>
         <sharedTo>
             <group>SC_SureSmile_Digital_Lab</group>
@@ -14313,6 +14501,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <group>SC_SureSmile_Global_Support</group>
             <group>SC_SureSmile_Mfg_Mexicali</group>
             <group>SC_SureSmile_Mfg_Richardson</group>
+            <group>SC_Suresmile_Clinical_Assistance</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -14323,11 +14512,10 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
         <label>#SC: SureSmile - Engineering</label>
-        <language>en_US</language>
         <queue>SC_SureSmile_Engineering</queue>
         <sharedTo>
             <group>SC_SureSmile_Digital_Lab</group>
@@ -14335,6 +14523,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <group>SC_SureSmile_Global_Support</group>
             <group>SC_SureSmile_Mfg_Mexicali</group>
             <group>SC_SureSmile_Mfg_Richardson</group>
+            <group>SC_Suresmile_Clinical_Assistance</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -14356,7 +14545,12 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <label>#SC: SureSmile - Global Support</label>
         <queue>SC_SureSmile_Global_Support</queue>
         <sharedTo>
+            <group>SC_SureSmile_Digital_Lab</group>
+            <group>SC_SureSmile_Engineering</group>
             <group>SC_SureSmile_Global_Support</group>
+            <group>SC_SureSmile_Mfg_Mexicali</group>
+            <group>SC_SureSmile_Mfg_Richardson</group>
+            <group>SC_Suresmile_Clinical_Assistance</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -14427,11 +14621,10 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
         <label>#SC: SureSmile - Mfg Mexicali</label>
-        <language>en_US</language>
         <queue>SC_SureSmile_Mfg_Mexicali</queue>
         <sharedTo>
             <group>SC_SureSmile_Digital_Lab</group>
@@ -14439,6 +14632,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <group>SC_SureSmile_Global_Support</group>
             <group>SC_SureSmile_Mfg_Mexicali</group>
             <group>SC_SureSmile_Mfg_Richardson</group>
+            <group>SC_Suresmile_Clinical_Assistance</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -14449,11 +14643,10 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
         <label>#SC: SureSmile - Mfg Richardson</label>
-        <language>en_US</language>
         <queue>SC_SureSmile_Mfg_Richardson</queue>
         <sharedTo>
             <group>SC_SureSmile_Digital_Lab</group>
@@ -14461,6 +14654,30 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <group>SC_SureSmile_Global_Support</group>
             <group>SC_SureSmile_Mfg_Mexicali</group>
             <group>SC_SureSmile_Mfg_Richardson</group>
+            <group>SC_Suresmile_Clinical_Assistance</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SC_Suresmile_Clinical_Assistance_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>#SC: Suresmile - Clinical Assistance</label>
+        <queue>SC_Suresmile_Clinical_Assistance</queue>
+        <sharedTo>
+            <group>NA_SureSmile_Support</group>
+            <group>SC_SureSmile_Digital_Lab</group>
+            <group>SC_SureSmile_Engineering</group>
+            <group>SC_SureSmile_Global_Support</group>
+            <group>SC_SureSmile_Mfg_Mexicali</group>
+            <group>SC_SureSmile_Mfg_Richardson</group>
+            <group>SC_Suresmile_Clinical_Assistance</group>
+            <role>NA_CRM_Analyst</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -14486,6 +14703,48 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <language>en_US</language>
         <sharedTo>
             <roleAndSubordinates>SE_IMPL_Sales_Manager</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Team_AMERICAS_Created_Date_Range</fullName>
+        <columns>Due_Date__c</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Request_Type__c</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CRM_Analyst__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>notEqual</operation>
+            <value>Mike Pilgrim,Narda Hilton,Vicki Gaines,Siroforce Integration,Katarina Eckebrant</value>
+        </filters>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.CRM_Requests</value>
+        </filters>
+        <filters>
+            <field>Creator_Country__c</field>
+            <operation>equals</operation>
+            <value>USA,Brazil,Canada</value>
+        </filters>
+        <filters>
+            <field>CASES.CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>2/21/2022 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>CASES.CREATED_DATE</field>
+            <operation>lessOrEqual</operation>
+            <value>3/9/2022 12:00 AM</value>
+        </filters>
+        <label>Team: AMERICAS - Created Date Range</label>
+        <sharedTo>
+            <group>Global_CRM_Requests</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -14719,6 +14978,33 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>UK_IE_Tech_Support_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Service_Complaint</value>
+        </filters>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>UK/IE: Tech Support</label>
+        <queue>UK_IE_Tech_Support</queue>
+        <sharedTo>
+            <group>UK_IE_Tech_Support</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>UK_SIMPLANT_Support</fullName>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>CASES.CREATED_DATE</columns>
@@ -14803,6 +15089,22 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <queue>VN_Customer_Service</queue>
         <sharedTo>
             <roleAndSubordinates>VN_CRM_Analyst</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>ZA_Customer_Service_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>ZA: Customer Service</label>
+        <queue>ZA_Customer_Service</queue>
+        <sharedTo>
+            <group>ZA_Customer_Service</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -22291,6 +22593,10 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <default>false</default>
             </values>
             <values>
+                <fullName>00G6M0000040E3BUAU</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>00G6M0000040EIuUAM</fullName>
                 <default>false</default>
             </values>
@@ -22332,6 +22638,10 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </values>
             <values>
                 <fullName>00G6M000004GUcNUAW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>00G6M000004GUchUAG</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -29088,9 +29398,9 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <customTabListAdditionalFields>OWNER_NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>Account_Country__c</customTabListAdditionalFields>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <excludedStandardButtons>MassClose</excludedStandardButtons>
         <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
+        <excludedStandardButtons>MassClose</excludedStandardButtons>
+        <excludedStandardButtons>Forward</excludedStandardButtons>
         <lookupDialogsAdditionalFields>CASES.CASE_NUMBER</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CASES.SUBJECT</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>NAME</lookupDialogsAdditionalFields>

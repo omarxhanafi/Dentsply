@@ -5834,6 +5834,51 @@
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <valueName>MIS M4</valueName>
             </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS 4BONE BCH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS 4BONE RCM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS BONDBONE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS C1 B+ o C1B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS Lance +</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS Lance o EF5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS M4 o MF4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS SEVEN B+ o M7B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS V3 B+ o V3B</valueName>
+            </valueSettings>
         </valueSet>
         <visibleLines>6</visibleLines>
     </fields>
@@ -13831,7 +13876,7 @@
             <picklist>ActivityType__c</picklist>
             <values>
                 <fullName>In Person Meeting</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>Virtual Meeting</fullName>
@@ -16803,8 +16848,11 @@
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>Activity_Subtype_Empty</fullName>
-        <active>true</active>
-        <description>used to force Indonesian users to populate the Activity Subtype, when creating a report event</description>
+        <active>false</active>
+        <description>PAUSED on Oct 19 due to error when creating new Event. 
+
+______________
+used to force Indonesian users to populate the Activity Subtype, when creating a report event</description>
         <errorConditionFormula>AND(
 TEXT( $User.User_Country__c) =&quot;Indonesia&quot;,
 ISBLANK(TEXT(ActivitySubtype__c))

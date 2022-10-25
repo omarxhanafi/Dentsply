@@ -9442,6 +9442,7 @@ null)
         <columns>CORE.USERS.USERNAME</columns>
         <columns>CORE.USER_ROLE.NAME</columns>
         <columns>CORE.PROFILE.NAME</columns>
+        <columns>DEFAULT_CURRENCY</columns>
         <columns>Movex_Uer_ID__c</columns>
         <columns>CORE.USERS.LAST_LOGIN</columns>
         <columns>CREATED_DATE</columns>
@@ -9625,6 +9626,7 @@ null)
     </listViews>
     <listViews>
         <fullName>CIS_All_active_Users</fullName>
+        <columns>CREATED_DATE</columns>
         <columns>FULL_NAME</columns>
         <columns>CORE.USER_ROLE.NAME</columns>
         <columns>CORE.PROFILE.NAME</columns>
@@ -9877,8 +9879,8 @@ null)
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>Market__c</field>
-            <operation>equals</operation>
+            <field>User_Country__c</field>
+            <operation>contains</operation>
             <value>HQ</value>
         </filters>
         <filters>
@@ -9893,8 +9895,61 @@ null)
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>HQ_My_markets_users_no_login_14_days</fullName>
+        <booleanFilter>(1 or 5) AND 2 AND 3 AND 4 and 6 and 7</booleanFilter>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>User_Country__c</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>Product_Area__c</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.LAST_LOGIN</field>
+            <operation>lessThan</operation>
+            <value>LAST_N_DAYS:14</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>notEqual</operation>
+            <value>Chatter Free User</value>
+        </filters>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>notEqual</operation>
+            <value>HQ: DI Executive Management</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.LAST_LOGIN</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>CORE.USERS.USERNAME</field>
+            <operation>notContain</operation>
+            <value>Userinstock</value>
+        </filters>
+        <filters>
+            <field>Is_My_Market__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>HQ: My markets users no login &gt;14 days</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>CEE_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>IB_All_Users</fullName>
-        <booleanFilter>(1 OR 3) AND 2 AND 4</booleanFilter>
         <columns>CORE.USERS.FIRST_NAME</columns>
         <columns>CORE.USERS.LAST_NAME</columns>
         <columns>CORE.USERS.USERNAME</columns>
@@ -9906,24 +9961,14 @@ null)
         <columns>CORE.USERS.ACTIVE</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>CORE.USER_ROLE.NAME</field>
-            <operation>contains</operation>
-            <value>IB</value>
-        </filters>
-        <filters>
             <field>CORE.USERS.ACTIVE</field>
             <operation>equals</operation>
             <value>1</value>
         </filters>
         <filters>
-            <field>CORE.USERS.ADDRESS_COUNTRY</field>
+            <field>User_Country__c</field>
             <operation>equals</operation>
             <value>Spain,Portugal</value>
-        </filters>
-        <filters>
-            <field>CORE.PROFILE.NAME</field>
-            <operation>notContain</operation>
-            <value>BEX:</value>
         </filters>
         <label>IB: All Users</label>
         <language>en_US</language>
@@ -9966,6 +10011,7 @@ null)
         <columns>CORE.USER_ROLE.NAME</columns>
         <columns>CORE.USERS.ACTIVE</columns>
         <columns>Sales_Channel__c</columns>
+        <columns>IS_FROZEN</columns>
         <columns>Product_Area__c</columns>
         <columns>Movex_Uer_ID__c</columns>
         <columns>User_Country__c</columns>
@@ -10324,6 +10370,34 @@ null)
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>TW_Users</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>IS_FROZEN</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>Taiwan</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>TW: Users</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>TW_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>UK_All_Users</fullName>
         <columns>IS_FROZEN</columns>
         <columns>MARKETING_USER</columns>
@@ -10491,11 +10565,6 @@ null)
             <field>CORE.USERS.ACTIVE</field>
             <operation>equals</operation>
             <value>1</value>
-        </filters>
-        <filters>
-            <field>CORE.PROFILE.NAME</field>
-            <operation>notContain</operation>
-            <value>#Global: Clinical Affairs</value>
         </filters>
         <label>VN: users</label>
         <language>en_US</language>

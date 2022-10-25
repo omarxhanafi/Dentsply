@@ -1551,25 +1551,6 @@
         <language>en_US</language>
     </listViews>
     <listViews>
-        <fullName>Iberia</fullName>
-        <columns>MasterLabel</columns>
-        <columns>DeveloperName</columns>
-        <columns>NamespacePrefix</columns>
-        <columns>Brands__c</columns>
-        <columns>BrandsList__c</columns>
-        <columns>Category__c</columns>
-        <columns>Country__c</columns>
-        <columns>AssignOwnerFrom__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Country__c</field>
-            <operation>equals</operation>
-            <value>AD,ES,PT</value>
-        </filters>
-        <label>Iberia</label>
-        <language>en_US</language>
-    </listViews>
-    <listViews>
         <fullName>Norway_Settings</fullName>
         <columns>MasterLabel</columns>
         <columns>DeveloperName</columns>

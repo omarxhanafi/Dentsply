@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>Brands__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">INTEGO;Intego Ambidextrous;Intego Pro;Intego Pro Ambidextrous;Sinius;SiroCam;SiroCam UAF plus;Sirolaser;SIROLaser Advance;SIROLaser Blue;T1 Contra-angles;T1 Turbines;T2 Contra-angles;T2 Turbines;Axano</value>
     </values>
     <values>
         <field>Category__c</field>

@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>Brands__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">AH Plus;AH Temp;AlginX;Anaestadent;Apex Locator;Aquasil;Calibra;Cavitron;Ceram.x;Ceram. X Spectra ST;Ceram.x Spectra ST Flow;Cerec Consumables;Enhance;FlexAccess;Glidepath Files;GuttaCore;GuttaCore/Calamus;GuttaSmart;Hand file user;Inserts;Integrity</value>
     </values>
     <values>
         <field>Category__c</field>

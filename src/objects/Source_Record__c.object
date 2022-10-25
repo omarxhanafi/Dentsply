@@ -667,6 +667,37 @@ true, false)</formula>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
+    <listViews>
+        <fullName>US_Implant_Tier</fullName>
+        <columns>NAME</columns>
+        <columns>DiscountModel__c</columns>
+        <columns>DiscountModelDescription__c</columns>
+        <columns>Price_Group__c</columns>
+        <columns>PracticeID__c</columns>
+        <columns>PracticeSiteId__c</columns>
+        <columns>Tiered__c</columns>
+        <columns>Source_Id__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Company_Code__c</field>
+            <operation>equals</operation>
+            <value>US</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filters>
+        <filters>
+            <field>DiscountModel__c</field>
+            <operation>contains</operation>
+            <value>Tier</value>
+        </filters>
+        <label>US Implant Tier</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
     <nameField>
         <label>Account Name</label>
         <type>Text</type>

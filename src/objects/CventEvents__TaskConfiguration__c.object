@@ -179,6 +179,11 @@
                     <default>false</default>
                     <label>A certain number of days after the object is created</label>
                 </value>
+                <value>
+                    <fullName>Cvent activity timestamp</fullName>
+                    <default>false</default>
+                    <label>Cvent activity timestamp</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -428,11 +433,11 @@
     </nameField>
     <pluralLabel>Task Configurations</pluralLabel>
     <searchLayouts>
-        <excludedStandardButtons>New</excludedStandardButtons>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>New</excludedStandardButtons>
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
         <searchResultsAdditionalFields>CventEvents__TaskSubject__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CventEvents__IsActive__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>

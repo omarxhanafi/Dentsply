@@ -28,9 +28,14 @@
                                     </template>
                                     <div class="slds-col" style="padding-top:0.5rem; align-items:flex-end;">
                                         <template if:true={order.Pricebook2.Show_Discount_OM__c}>
-                                            <lightning-input  class="slds-float_left" value={discountInput}
-                                                placeholder={labels.enterDiscount} min="0" max={maxDiscount} data-index={index}
-                                                onchange={handleChangeDiscountInput} variant="label-hidden" >
+                                            <lightning-input    class="slds-float_left"
+                                                                value={discountInputValue}
+                                                                placeholder={labels.enterDiscount}
+                                                                min="0" max={maxDiscount}
+                                                                data-index={index}
+                                                                pattern={discountPattern}
+                                                                message-when-pattern-mismatch={labels.messageWhenPatternMisMatch}
+                                                                onchange={handleChangeDiscountInput} variant="label-hidden" >
                                             </lightning-input>
                                             
                                             <lightning-button variant="brand" label={labels.applyCustomDiscount}
@@ -56,8 +61,8 @@
                                 <template if:true={order.Pricebook2.ShowApprovalLevelOrderLine__c}>
                                     <lightning-tile label="Order summary" type="media" style="padding-top:0.5rem;" class="slds-float_right">
                                         <lightning-icon slot="media" icon-name="standard:orders"></lightning-icon>
-                                        <p class="slds-truncate" title="Order total">Order Amount: <lightning-formatted-number value={orderTotal} format-style="currency" currency-code={order.CurrencyIsoCode}></lightning-formatted-number></p>
-                                        <p class="slds-truncate" title="Order total">{orderItemDiscountAmountLabel}: <lightning-formatted-number value={discountTotal} format-style="currency" currency-code={order.CurrencyIsoCode}></lightning-formatted-number></p>
+                                        <p class="slds-truncate" title="Order total">Order Amount:&nbsp;<lightning-formatted-number value={orderTotal} format-style="currency" currency-code={order.CurrencyIsoCode}></lightning-formatted-number></p>
+                                        <p class="slds-truncate" title="Order total">{orderItemDiscountAmountLabel}:&nbsp;<lightning-formatted-number value={discountTotal} format-style="currency" currency-code={order.CurrencyIsoCode}></lightning-formatted-number></p>
                                         <p class="slds-truncate" title="Approval level">{orderItemApprovalLevelLabel}: {approvalLevel}</p>
                                     </lightning-tile>
                                 </template>
@@ -116,8 +121,8 @@
                                         <div class="slds-show_medium slds-col slds-grow-none">
                                             <lightning-tile label="Order summary" type="media">
                                                 <lightning-icon slot="media" icon-name="standard:orders"></lightning-icon>
-                                                <p class="slds-truncate" title="Order total">Order Amount: <lightning-formatted-number value={orderTotal}></lightning-formatted-number> {order.CurrencyIsoCode}</p>
-                                                <p class="slds-truncate" title="Order total">Discount Amount: <lightning-formatted-number value={discountTotal}></lightning-formatted-number> {order.CurrencyIsoCode}</p>
+                                                <p class="slds-truncate" title="Order total">Order Amount:&nbsp;<lightning-formatted-number value={orderTotal}></lightning-formatted-number> {order.CurrencyIsoCode}</p>
+                                                <p class="slds-truncate" title="Order total">Discount Amount:&nbsp;<lightning-formatted-number value={discountTotal}></lightning-formatted-number> {order.CurrencyIsoCode}</p>
                                                 <p class="slds-truncate" title="Approval level">Approval level: {approvalLevel}</p>
                                             </lightning-tile>
                                         </div>
@@ -281,42 +286,43 @@
                                                     <template if:false={order.Pricebook2.ShowPricingfromMicroServiceOM__c}>
                                                         <template if:true={order.Pricebook2.Show_Price_OM__c}>
                                                             <dt class="slds-dl_horizontal__label">
-                                                                <p class="slds-truncate">{orderItemUnitPriceLabel}:</p>
+                                                                <p class="slds-truncate">{orderItemUnitPriceLabel}:&nbsp;</p>
                                                             </dt>
                                                             <dd class="slds-dl_horizontal__detail slds-tile__meta">
-                                                                {orderItem.UnitPrice} {orderItem.Currency}</dd>
+                                                                <lightning-formatted-number value={orderItem.UnitPrice}></lightning-formatted-number>&nbsp;{orderItem.Currency}</dd>
                                                         </template>                                                        
                                                     </template>
                                                     
                                                     <template if:true={order.Pricebook2.ShowPricingfromMicroServiceOM__c}>
                                                         <dt class="slds-dl_horizontal__label">
-                                                            <p class="slds-truncate">{orderItemRetailPriceLabel}:</p>
+                                                            <p class="slds-truncate">{orderItemRetailPriceLabel}:&nbsp;</p>
                                                         </dt>
                                                         <dd class="slds-dl_horizontal__detail slds-tile__meta">
-                                                            {orderItem.AXRetailPrice__c} {orderItem.Currency}</dd>
+                                                            <lightning-formatted-number value={orderItem.AXRetailPrice__c}></lightning-formatted-number>&nbsp;{orderItem.Currency}</dd>
 
                                                         <dt class="slds-dl_horizontal__label">
-                                                            <p class="slds-truncate">{orderItemUnitPriceLabel}:</p>
+                                                            <p class="slds-truncate">{orderItemUnitPriceLabel}:&nbsp;</p>
                                                         </dt>
                                                         <dd class="slds-dl_horizontal__detail slds-tile__meta">
-                                                            {orderItem.UnitPrice} {orderItem.Currency} ({orderItem.AXDiscount__c}  %)</dd>
+                                                            <lightning-formatted-number value={orderItem.UnitPrice}></lightning-formatted-number>&nbsp;{orderItem.Currency} (<lightning-formatted-number value={orderItem.AXDiscount__c}></lightning-formatted-number>  %)</dd>
                                                     </template>
                                                     
                                                     <template if:true={order.Pricebook2.Show_Discount_OM__c}>
                                                         <dt class="slds-dl_horizontal__label">
-                                                            <p class="slds-truncate">{orderItemDiscountLabel}:
+                                                            <p class="slds-truncate">{orderItemDiscountLabel}:&nbsp;
                                                             </p>
                                                         </dt>
                                                         <dd class="slds-dl_horizontal__detail slds-tile__meta">
-                                                            {orderItem.Discount_Percent__c}%</dd>
+                                                            <lightning-formatted-number value={orderItem.Discount_Percent__c}></lightning-formatted-number>%
+                                                        </dd>
                                                     </template>
 
                                                     <template if:true={order.Pricebook2.ShowPricingfromMicroServiceOM__c}>
                                                             <dt class="slds-dl_horizontal__label">
-                                                                <p class="slds-truncate"><b>{orderItemTotalLineItemPriceLabel}:</b></p>
+                                                                <p class="slds-truncate"><b>{orderItemTotalLineItemPriceLabel}:&nbsp;</b></p>
                                                             </dt>
                                                             <dd class="slds-dl_horizontal__detail slds-tile__meta">
-                                                            <b>{orderItem.Total_Line_Item_Price__c} {orderItem.Currency}</b> </dd>
+                                                            <b><lightning-formatted-number value={orderItem.Total_Line_Item_Price__c}></lightning-formatted-number> {orderItem.Currency}</b> </dd>
                                                     </template>
 
                                                     <template if:true={order.Pricebook2.Show_FOC_OM__c}>
@@ -388,23 +394,24 @@
                                                         </li>
                                                         
                                                         <template if:true={order.Pricebook2.Show_Discount_OM__c}>
-                                                            <li class="slds-item">{orderItemDiscountLabel}: {orderItem.Discount_Percent__c}%
+                                                            <li class="slds-item">{orderItemDiscountLabel}:&nbsp;<lightning-formatted-number value={orderItem.Discount_Percent__c}></lightning-formatted-number>%
+
                                                             </li>
                                                         </template>
                                                     </template>
                                                     
                                                     <template if:false={order.Pricebook2.ShowPricingfromMicroServiceOM__c}>
                                                         <template if:true={order.Pricebook2.Show_Price_OM__c}>
-                                                            <li class="slds-item">{orderItemUnitPriceLabel}: {orderItem.UnitPrice} {orderItem.Currency}
+                                                            <li class="slds-item">{orderItemUnitPriceLabel}:&nbsp;<lightning-formatted-number value={orderItem.UnitPrice}></lightning-formatted-number>&nbsp;{orderItem.Currency}
                                                             </li>
                                                         </template>                                                        
                                                     </template>
                                                     
                                                     <!--only for AX pricebooks create label -->
                                                     <template if:true={order.Pricebook2.ShowPricingfromMicroServiceOM__c}>
-                                                        <li class="slds-item">{orderItemRetailPriceLabel}: {orderItem.AXRetailPrice__c} {orderItem.Currency} 
+                                                        <li class="slds-item">{orderItemRetailPriceLabel}:&nbsp;<lightning-formatted-number value={orderItem.AXRetailPrice__c}></lightning-formatted-number>&nbsp;{orderItem.Currency}
                                                         </li>
-                                                        <li class="slds-item">{orderItemUnitPriceLabel}: {orderItem.UnitPrice} {orderItem.Currency} ({orderItem.AXDiscount__c}  %)
+                                                        <li class="slds-item">{orderItemUnitPriceLabel}:&nbsp;<lightning-formatted-number value={orderItem.UnitPrice}></lightning-formatted-number>&nbsp;{orderItem.Currency} (<lightning-formatted-number value={orderItem.AXDiscount__c}></lightning-formatted-number>  %)
                                                         </li>
                                                     </template>
                                                     
@@ -414,7 +421,7 @@
                                                         </li>
                                                     </template> -->
                                                     <template if:true={order.Pricebook2.Show_Price_OM__c}>
-                                                        <li class="slds-item"> <b>{orderItemTotalLineItemPriceLabel}: {orderItem.Total_Line_Item_Price__c} {orderItem.Currency} </b>
+                                                        <li class="slds-item"> <b>{orderItemTotalLineItemPriceLabel}:&nbsp;<lightning-formatted-number value={orderItem.Total_Line_Item_Price__c}></lightning-formatted-number>&nbsp;{orderItem.Currency} </b>
                                                         </li>
                                                     </template>
                                                     
@@ -459,7 +466,7 @@
 
 
                                                             <template if:true={order.Pricebook2.Show_Discount_OM__c}>
-                                                                <lightning-input type="number" min="-100" max="100" data-index={index}
+                                                                <lightning-input type="number" min="0" max="100" data-index={index}
                                                                 label={orderItemDiscountLabel} value={orderItem.Discount_Percent__c} class="slds-float_left slds-p-left_x-small slds-p-top_xx-small"
                                                                 placeholder={orderItemDiscountLabel} style="max-width:90px;font-size:0.75rem;" onchange={handleDiscountChange} formatter="decimal" step="0.0001"
                                                                 disabled={orderItem.FOC}
@@ -469,7 +476,7 @@
                                                             
                                                             <template if:true={order.Pricebook2.Show_Price_OM__c}>
                                                                 <template if:true={order.Pricebook2.Show_Discount_OM__c}>
-                                                                    <lightning-input type="number" min="0" data-index={index}
+                                                                    <lightning-input type="number" min="0" max={orderItem.UnitPrice} data-index={index}
                                                                     label="Sales price" value={orderItem.CustomUnitPrice} class="slds-float_left slds-p-left_x-small slds-p-top_xx-small"
                                                                     placeholder={orderItemDiscountLabel} style="max-width:90px;font-size:0.75rem;" onchange={handleUnitPriceChange} formatter="decimal" step="0.01"
                                                                     disabled={orderItem.FOC}

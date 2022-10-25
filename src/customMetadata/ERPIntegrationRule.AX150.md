@@ -3,12 +3,24 @@
     <label>AX150</label>
     <protected>false</protected>
     <values>
+        <field>ACC_DefaultOwnerUserId__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>ACC_IsEnabled__c</field>
         <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
+        <field>ACC_MapToErpOwner__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>ACC_PracticeHrIdIsRequired__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
         <field>ADR_IsEnabled__c</field>
-        <value xsi:type="xsd:boolean">true</value>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>AR_CustomerGroup_IsExclusive__c</field>
@@ -23,12 +35,16 @@
         <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
-        <field>AttributeRecordsToCustomerAddress__c</field>
+        <field>Attr_UseCustomerFlagOnAddress__c</field>
         <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
-        <field>CIMIsEnabled__c</field>
+        <field>AttributeRecordsToCustomerAddress__c</field>
         <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>CIMIsEnabled__c</field>
+        <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
         <field>CMP_IsEnabled__c</field>
@@ -88,7 +104,7 @@
     </values>
     <values>
         <field>SA_AttributeSalesToCustomerAddress__c</field>
-        <value xsi:type="xsd:boolean">true</value>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>SA_CustomerGroup_IsExclusive__c</field>
@@ -128,7 +144,7 @@
     </values>
     <values>
         <field>SH_IsEnabled__c</field>
-        <value xsi:type="xsd:boolean">true</value>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>SourceIdERP__c</field>

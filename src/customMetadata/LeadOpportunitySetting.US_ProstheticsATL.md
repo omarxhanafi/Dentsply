@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>Brands__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">Atlantis</value>
     </values>
     <values>
         <field>Category__c</field>

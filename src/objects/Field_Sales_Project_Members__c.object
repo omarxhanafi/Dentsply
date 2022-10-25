@@ -4615,6 +4615,8 @@
     <label>Sales Lead</label>
     <listViews>
         <fullName>ALL_Open_Sales_Leads_inkl_Status</fullName>
+        <columns>ChannelPriority__c</columns>
+        <columns>Channel__c</columns>
         <columns>NAME</columns>
         <columns>Account__c</columns>
         <columns>Account_City__c</columns>
@@ -4676,6 +4678,31 @@
         <label>HK: All Sales Leads</label>
         <sharedTo>
             <roleAndSubordinatesInternal>HK_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>IT_Sales_Lead_By_Marketing</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Category__c</columns>
+        <columns>Brand__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Status__c</columns>
+        <columns>Sales_Rep__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Channel__c</field>
+            <operation>equals</operation>
+            <value>Marketing</value>
+        </filters>
+        <filters>
+            <field>UserCountry__c</field>
+            <operation>equals</operation>
+            <value>Italy</value>
+        </filters>
+        <label>IT: Sales Lead By Marketing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>IT_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -4770,18 +4797,17 @@
     </listViews>
     <listViews>
         <fullName>My_Open_Leads</fullName>
+        <columns>ChannelPriority__c</columns>
+        <columns>Channel__c</columns>
         <columns>NAME</columns>
         <columns>Account__c</columns>
         <columns>Category__c</columns>
         <columns>Brand__c</columns>
-        <columns>Campaign__c</columns>
-        <columns>Field_Sales_Project__c</columns>
+        <columns>CampaignTargetList__c</columns>
         <columns>CREATEDBY_USER</columns>
         <columns>Sales_Rep__c</columns>
-        <columns>Hot_prospect__c</columns>
         <columns>CREATED_DATE</columns>
         <columns>Source__c</columns>
-        <columns>Priority__c</columns>
         <columns>Status__c</columns>
         <columns>OneSFid__c</columns>
         <columns>Account_State_Province__c</columns>
@@ -4801,22 +4827,61 @@
             <operation>equals</operation>
             <value>1</value>
         </filters>
-        <label>My Open Sales Leads</label>
+        <label>My Open Sales Leads (More Details)</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Open_Program_Target_List_Leads</fullName>
+        <columns>Priority__c</columns>
+        <columns>NAME</columns>
+        <columns>OneSFid__c</columns>
+        <columns>Account__c</columns>
+        <columns>Account_City__c</columns>
+        <columns>Status__c</columns>
+        <columns>Category__c</columns>
+        <columns>Brand__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Field_Sales_Project__c</columns>
+        <columns>Source__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,In progress,Parked/OnHold</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Field_Sales_Project_Members__c.Outside_Sales_Lead</value>
+        </filters>
+        <filters>
+            <field>MyLead__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Field_Sales_Project__c</field>
+            <operation>contains</operation>
+            <value>SureSmile Target List</value>
+        </filters>
+        <label>NA: My Open SureSmile Target Leads</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>My_Open_Sales_Leads_Ad_hoc_Analysis</fullName>
+        <columns>Priority__c</columns>
         <columns>NAME</columns>
+        <columns>OneSFid__c</columns>
         <columns>Account__c</columns>
+        <columns>Account_City__c</columns>
+        <columns>Account_Postal_Code_Zip__c</columns>
+        <columns>Status__c</columns>
         <columns>Category__c</columns>
         <columns>Brand__c</columns>
-        <columns>Field_Sales_Project__c</columns>
-        <columns>Account_City__c</columns>
-        <columns>Hot_prospect__c</columns>
         <columns>CREATED_DATE</columns>
+        <columns>Field_Sales_Project__c</columns>
         <columns>Source__c</columns>
-        <columns>Priority__c</columns>
-        <columns>OneSFid__c</columns>
-        <columns>Status__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Status__c</field>
@@ -4836,13 +4901,11 @@
         <filters>
             <field>Source__c</field>
             <operation>equals</operation>
-            <value>Ad hoc analysis</value>
+            <value>Target Analysis</value>
         </filters>
         <label>My Open Sales Leads - Predictive Targets</label>
         <sharedTo>
-            <role>DNA_Shared_Services</role>
-            <role>NA_CRM_Analyst</role>
-            <territoryAndSubordinates>Global_Setup.US_Executives</territoryAndSubordinates>
+            <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -4853,6 +4916,7 @@
         <columns>Brand__c</columns>
         <columns>Campaign__c</columns>
         <columns>Account_City__c</columns>
+        <columns>Account_Postal_Code_Zip__c</columns>
         <columns>Hot_prospect__c</columns>
         <columns>CREATED_DATE</columns>
         <columns>Source__c</columns>
@@ -4884,6 +4948,33 @@
         <sharedTo>
             <roleAndSubordinatesInternal>DNA_CRMANALYST</roleAndSubordinatesInternal>
         </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Open_Sales_Leads_Homepage</fullName>
+        <columns>ChannelPriority__c</columns>
+        <columns>Channel__c</columns>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Brand__c</columns>
+        <columns>Status__c</columns>
+        <columns>CampaignTargetList__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,In progress,Parked/OnHold</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Field_Sales_Project_Members__c.Outside_Sales_Lead</value>
+        </filters>
+        <filters>
+            <field>MyLead__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My Open Sales Leads</label>
     </listViews>
     <listViews>
         <fullName>My_Open_Sales_Leads_inkl_Status</fullName>
@@ -5020,7 +5111,7 @@
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>USA_2021_Block_Targets</fullName>
+        <fullName>USA_2021_Restorative_Target_List</fullName>
         <columns>NAME</columns>
         <columns>Account__c</columns>
         <columns>Sales_Rep__c</columns>
@@ -5029,6 +5120,7 @@
         <columns>Account_City__c</columns>
         <columns>Account_Postal_Code_Zip__c</columns>
         <columns>Field_Sales_Project__c</columns>
+        <columns>OneSFid__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Status__c</field>
@@ -5043,9 +5135,9 @@
         <filters>
             <field>Field_Sales_Project__c</field>
             <operation>equals</operation>
-            <value>USA - 2021 - Block Targets</value>
+            <value>USA - 2022 - Restorative Target List</value>
         </filters>
-        <label>USA - 2021 - Block Targets</label>
+        <label>USA - 2022 - Restorative Target List</label>
         <sharedTo>
             <role>NA_CRM_Analyst</role>
             <roleAndSubordinatesInternal>DNA_CRMANALYST</roleAndSubordinatesInternal>
@@ -5053,7 +5145,7 @@
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>USA_2021_SpeedFire_Blocks_Targets</fullName>
+        <fullName>USA_2022_CA_CDM_Post_Attendees</fullName>
         <columns>NAME</columns>
         <columns>Account__c</columns>
         <columns>Sales_Rep__c</columns>
@@ -5062,6 +5154,7 @@
         <columns>Account_City__c</columns>
         <columns>Account_Postal_Code_Zip__c</columns>
         <columns>Field_Sales_Project__c</columns>
+        <columns>OneSFid__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Status__c</field>
@@ -5076,13 +5169,113 @@
         <filters>
             <field>Field_Sales_Project__c</field>
             <operation>equals</operation>
-            <value>USA - 2021 - SpeedFire Blocks Targets</value>
+            <value>USA - 2022 - Clinical Accelerator - Attendees Post Training</value>
         </filters>
-        <label>USA - 2021 - SpeedFire Blocks Targets</label>
+        <label>USA 2022 CA CDM - Post Attendees</label>
         <sharedTo>
             <role>NA_CRM_Analyst</role>
             <roleAndSubordinatesInternal>DNA_CRMANALYST</roleAndSubordinatesInternal>
             <roleAndSubordinatesInternal>US_Marketing_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_My_Open_Q4_SureSmile_Targets_Leads</fullName>
+        <columns>Priority__c</columns>
+        <columns>NAME</columns>
+        <columns>OneSFid__c</columns>
+        <columns>Account__c</columns>
+        <columns>Account_City__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Field_Sales_Project__c</columns>
+        <columns>Hot_prospect__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,In progress,Parked/OnHold</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Field_Sales_Project_Members__c.Outside_Sales_Lead</value>
+        </filters>
+        <filters>
+            <field>MyLead__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Field_Sales_Project__c</field>
+            <operation>contains</operation>
+            <value>SureSmile Target List</value>
+        </filters>
+        <filters>
+            <field>Hot_prospect__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>US: My Open Q4 SureSmile Targets Leads</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_Open_Q4_SureSmile_Targets_Leads_ALL</fullName>
+        <columns>Priority__c</columns>
+        <columns>NAME</columns>
+        <columns>OneSFid__c</columns>
+        <columns>Account__c</columns>
+        <columns>Account_City__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Field_Sales_Project__c</columns>
+        <columns>Hot_prospect__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,In progress,Parked/OnHold</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Field_Sales_Project_Members__c.Outside_Sales_Lead</value>
+        </filters>
+        <filters>
+            <field>Field_Sales_Project__c</field>
+            <operation>contains</operation>
+            <value>SureSmile Target List</value>
+        </filters>
+        <filters>
+            <field>Hot_prospect__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>US: Open Q4 SureSmile Target Leads - ALL</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>VN_All_Sales_Leads</fullName>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Category__c</columns>
+        <columns>Brand__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Sales_Rep__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>UserCountry__c</field>
+            <operation>equals</operation>
+            <value>Vietnam</value>
+        </filters>
+        <label>VN: All Sales Leads</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>VN_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <nameField>

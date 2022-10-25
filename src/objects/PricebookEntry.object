@@ -261,7 +261,7 @@ Product2.RecordType.Id &lt;&gt; &apos;0126M000000R5KX&apos;
     <validationRules>
         <fullName>NotAllowedToAddInPricebook</fullName>
         <active>true</active>
-        <errorConditionFormula>Pricebook2.ShowPricingfromMicroServiceOM__c
+        <errorConditionFormula>$UserRole.Id  &lt;&gt;  &quot;00E20000000qSiH&quot; &amp;&amp; Pricebook2.ShowPricingfromMicroServiceOM__c
 &amp;&amp;
 (Pricebook2.CompanyCode__c != Product2.Company_Code__c
 ||

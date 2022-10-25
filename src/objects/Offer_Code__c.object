@@ -410,9 +410,15 @@ TODAY() , &quot;Valid Offer Code&quot;, &quot;Expired&quot;))</formula>
         <columns>Start_Date__c</columns>
         <columns>Expiration_Date__c</columns>
         <columns>Type__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>Expiration_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2021</value>
+        </filters>
         <label>All Offer Codes</label>
-        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>Offer_Codes_Indonesia</fullName>

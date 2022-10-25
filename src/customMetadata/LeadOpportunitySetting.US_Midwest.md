@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>Brands__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">Automate;Carbide Burs;Diamond Burs;Midwest E/Plus/Pro;Stylus/Plus;Tradition/Plus;Axano</value>
     </values>
     <values>
         <field>Category__c</field>

@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>Brands__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">CEREC Full System MCX;CEREC Full System MCXL;CEREC Full System Upgrade;CEREC Hub;CEREC MC X;CEREC MC XL;CEREC Omnicam AC;CEREC Primemill Full System;CEREC Primescan AC;CEREC SpeedFire;Omnicam AC;Omnicam AC 2.0;Omnicam AF/AI;Primemill;Primescan AC</value>
     </values>
     <values>
         <field>Category__c</field>

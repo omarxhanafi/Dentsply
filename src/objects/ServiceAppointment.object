@@ -6744,6 +6744,16 @@
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>AdditionalComments__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Address</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>

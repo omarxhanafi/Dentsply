@@ -1439,6 +1439,35 @@ IF(NOT(QBRHighL1toHighL2__c),&quot;QBR (High L1 to High L2)&quot;,
         <unique>false</unique>
     </fields>
     <label>Procedure Tracker</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>PracticeAccount__c</columns>
+        <columns>Stage__c</columns>
+        <columns>SalesRep__c</columns>
+        <columns>RegistrationDate__c</columns>
+        <columns>LastActivity__c</columns>
+        <columns>NextActivity__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Suresmile_Trackers</fullName>
+        <columns>NAME</columns>
+        <columns>PracticeAccount__c</columns>
+        <columns>Stage__c</columns>
+        <columns>SalesRep__c</columns>
+        <columns>RegistrationDate__c</columns>
+        <columns>LastActivity__c</columns>
+        <columns>NextActivity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>ProcedureTracker__c.Clear_Aligners</value>
+        </filters>
+        <label>All Suresmile Trackers</label>
+    </listViews>
     <nameField>
         <displayFormat>Track#{000}</displayFormat>
         <label>Record Nr</label>

@@ -126,7 +126,7 @@
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>ProductRequestLineItem</compactLayoutAssignment>
     <compactLayouts>
         <fullName>ProductRequestLineItem</fullName>
         <fields>ProductRequestLineItemNumber</fields>

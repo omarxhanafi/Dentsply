@@ -182,7 +182,7 @@
     <fields>
         <fullName>CventEvents__FieldApiName__c</fullName>
         <deprecated>false</deprecated>
-        <description>Stores the SF field API name.</description>
+        <description>Stores SF field API name.</description>
         <externalId>false</externalId>
         <inlineHelpText>Stores the SF object API name.</inlineHelpText>
         <label>Field API Name</label>
@@ -232,15 +232,26 @@
     <fields>
         <fullName>CventEvents__ObjectApiName__c</fullName>
         <deprecated>false</deprecated>
-        <description>Stores the SF object API name.</description>
+        <description>Stores mnemonic Cvent object name (either &apos;EVENT&apos;, or &apos;CONTACT&apos;). Has been previously used to store SF object API name.</description>
         <externalId>false</externalId>
         <inlineHelpText>Stores the SF object API name.</inlineHelpText>
-        <label>Object API Name</label>
+        <label>Cvent Object</label>
         <length>60</length>
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__SyncAsLongTextArea__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if Cvent open ended text field is processed as SF long text area in order to avoid value truncation on data sync.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if Cvent open ended text field is processed as SF long text area in order to avoid value truncation on data sync.</inlineHelpText>
+        <label>Sync As Long Text Area</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>CventEvents__Type__c</fullName>
@@ -322,4 +333,15 @@
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
+    <webLinks>
+        <fullName>CventEvents__ChangeFieldType</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Change Field Type</masterLabel>
+        <openType>noSidebar</openType>
+        <page>CventEvents__CustomFieldTypeChange</page>
+        <protected>false</protected>
+    </webLinks>
 </CustomObject>
