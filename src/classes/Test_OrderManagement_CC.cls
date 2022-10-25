@@ -524,6 +524,50 @@ public with sharing class Test_OrderManagement_CC {
         }
     }
 
+    @isTest
+    private static void testCloneOrderWithPricingMicroServiceCallOutWithNoSourceRecord() {
+        // Set mock callout class
+        Test.setMock(HttpCalloutMock.class, new ProductPricingERPCallOutMock());
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
+        System.runAs(testUser) {
+            List<Pricebook2> pricebooks = TestDataFactory.returnPricebooks(1, 'BNL PRE');
+            pricebooks.get(0).ShowPricingfromMicroServiceOM__c = true;
+            pricebooks.get(0).SourceId__c = '2';
+            pricebooks.get(0).CompanyCode__c = '057';
+            pricebooks.get(0).Pricebook_Channel__c = 'Direct';
+            insert pricebooks;
+            List<Product2> products = TestDataFactory.returnProducts(1);
+            products.get(0).Company_Code__c = '057';
+            products.get(0).ERP_Source__c = 2;
+            products.get(0).Article__c = '0520055';
+            insert products;
+            List<PricebookEntry> pricebookEntries = TestDataFactory.createPricebookEntries(1, pricebooks, products);
+            List<Account> accounts = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
+            Account acc = [SELECT RecordType.DeveloperName FROM Account WHERE Id =: accounts.get(0).Id limit 1];
+            List<Order> orders = TestDataFactory.returnOrders(1, 'Direct_global_order', accounts);
+            orders.get(0).Pricebook2Id = pricebooks.get(0).Id;
+            insert orders;
+            List<OrderItem> orderItems = TestDataFactory.createOrderItems(1, orders, pricebookEntries);
+
+            Test.startTest();
+
+            Boolean isExceptionRaised = false;
+
+            try {
+                Order order = OrderManagement_CC.cloneOrder(orders.get(0).Id, '');
+            } catch (Exception e){
+                isExceptionRaised = true;
+            }
+
+            Test.stopTest();
+
+            DebugLog__c debugLog = [SELECT Message__c from DebugLog__c LIMIT 1];
+
+            System.assert(isExceptionRaised);
+            System.assertEquals(System.label.No_Source_Record, debugLog.Message__c);
+        }
+    }
+
    
 	
 }
