@@ -1,0 +1,3006 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Add</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Add</shortDescription>
+        <value>Add</value>
+    </labels>
+    <labels>
+        <fullName>Add_edit_dealer</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add/edit dealer</shortDescription>
+        <value>Add/edit dealer</value>
+    </labels>
+    <labels>
+        <fullName>Added</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Added</shortDescription>
+        <value>Added</value>
+    </labels>
+    <labels>
+        <fullName>Amount</fullName>
+        <categories>Service Cloud: Flow Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Amount</shortDescription>
+        <value>Amount</value>
+    </labels>
+    <labels>
+        <fullName>Assign_Case</fullName>
+        <categories>Service Cloud</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assign Case</shortDescription>
+        <value>You must assign this case to yourself to edit it, would you like to do that?</value>
+    </labels>
+    <labels>
+        <fullName>Assign_to_script</fullName>
+        <categories>Service Cloud: Flow Script</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assign_to_script</shortDescription>
+        <value>Who would you like to assign the case to?</value>
+    </labels>
+    <labels>
+        <fullName>BulkCFEs_Error_for_non_IN_Acc</fullName>
+        <categories>Event</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Event BulkCFEs Error for non IN Acc</shortDescription>
+        <value>You&apos;re not allowed to mass create CFEs</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_Cancel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_DefaultSubjectHint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Default Subject Hint</shortDescription>
+        <value>Leave the subject blank to have Salesforce use your default subject.</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_Delete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_Delete</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_Header_Calendar</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_Header_Calendar</shortDescription>
+        <value>CALENDAR</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_Header_CallReport</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_Header_CallReport</shortDescription>
+        <value>CALL REPORT</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_Header_CoTravel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_Header_CoTravel</shortDescription>
+        <value>CO-TRAVEL</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_Header_CustomerToMeet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_Header_CustomerToMeet</shortDescription>
+        <value>CUSTOMER TO MEET</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_Header_Educational</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_Header_Educational</shortDescription>
+        <value>EDUCATIONAL EVENT INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_Header_EventType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_Header_EventType</shortDescription>
+        <value>EVENT TYPE</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_Header_Invitees</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_Header_Invitees</shortDescription>
+        <value>INVITEES</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_Header_Objective</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_Header_Objective</shortDescription>
+        <value>OBJECTIVE</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_InviteesLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_InviteesLabel</shortDescription>
+        <value>Invitees</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_NoValue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_NoValue</shortDescription>
+        <value>- - None - -</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_NoneAvailable</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_NoneAvailable</shortDescription>
+        <value>This Event does not have an associated Call Report</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_PageTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_PageTitle</shortDescription>
+        <value>Event</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_Save</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_SearchPlaceholder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_SearchPlaceholder</shortDescription>
+        <value>Type to search...</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_SharedActivities_LimitReached</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_SharedActivities_LimitReached</shortDescription>
+        <value>You can&apos;t add anymore event relations to this event.</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_SharedActivities_MakePrimary</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_SharedActivities_MakePrimary</shortDescription>
+        <value>Make Primary</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_SharedActivities_NameFieldLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_SharedActivities_NameFieldLabel</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_SharedActivities_Remove</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_SharedActivities_Remove</shortDescription>
+        <value>Remove</value>
+    </labels>
+    <labels>
+        <fullName>CallReport_TapToPick</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CallReport_TapToPick</shortDescription>
+        <value>Tap to pick</value>
+    </labels>
+    <labels>
+        <fullName>CampMgmt_NoCampaignMemberErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CampMgmt No CampaignMember Error Message</shortDescription>
+        <value>The selected contact does not exist as a campaign member of the campaign.</value>
+    </labels>
+    <labels>
+        <fullName>CampMgmt_SaveButton</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CampMgmt Save Button</shortDescription>
+        <value>Save Sessions</value>
+    </labels>
+    <labels>
+        <fullName>CampMgmt_SavedSessions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CampMgmt Saved Sessions</shortDescription>
+        <value>Sessions saved successfully.</value>
+    </labels>
+    <labels>
+        <fullName>CampMgmt_SavingSessions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CampMgmt Saving Sessions</shortDescription>
+        <value>Saving sessions...</value>
+    </labels>
+    <labels>
+        <fullName>CampMgmt_SessionFormatString</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CampMgmt Session Format String</shortDescription>
+        <value>{0} ({1}/{2} seats occupied)</value>
+    </labels>
+    <labels>
+        <fullName>CampMgmt_SessionPrompt</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CampMgmt Session Prompt</shortDescription>
+        <value>Check the sessions in which this campaign member will participate:</value>
+    </labels>
+    <labels>
+        <fullName>Carrier</fullName>
+        <categories>Service Cloud: Flow Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Carrier</shortDescription>
+        <value>Carrier</value>
+    </labels>
+    <labels>
+        <fullName>Choose</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Choose</shortDescription>
+        <value>Choose</value>
+    </labels>
+    <labels>
+        <fullName>ContactTypeMandatory</fullName>
+        <categories>Inside sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact type mandatory</shortDescription>
+        <value>Please select a contact type for each Campaign.</value>
+    </labels>
+    <labels>
+        <fullName>ConvertedSalesLead</fullName>
+        <categories>Pipeline Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Converted Sales Lead</shortDescription>
+        <value>this sales lead has been converted into an Opportunity with the id</value>
+    </labels>
+    <labels>
+        <fullName>Create_contact</fullName>
+        <categories>Service Cloud: Flow Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create contact</shortDescription>
+        <value>Create New Contact?</value>
+    </labels>
+    <labels>
+        <fullName>Credit_Rebill</fullName>
+        <categories>Service Cloud: Flow Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Credit_Rebill</shortDescription>
+        <value>Credit Rebill</value>
+    </labels>
+    <labels>
+        <fullName>Customer_help</fullName>
+        <categories>Service Cloud: Flow Script</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>How may I help</shortDescription>
+        <value>How may I help you?</value>
+    </labels>
+    <labels>
+        <fullName>DC_Astra_Tech_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Astra_Tech_Type</shortDescription>
+        <value>Activity Type</value>
+    </labels>
+    <labels>
+        <fullName>DC_Attachments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Attachments</shortDescription>
+        <value>Attachments</value>
+    </labels>
+    <labels>
+        <fullName>DC_Attendees</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Attendees</shortDescription>
+        <value>Attendees</value>
+    </labels>
+    <labels>
+        <fullName>DC_Co_travel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Co_travel</shortDescription>
+        <value>Co-travel</value>
+    </labels>
+    <labels>
+        <fullName>DC_Description</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>DC_Friday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Friday</shortDescription>
+        <value>Friday</value>
+    </labels>
+    <labels>
+        <fullName>DC_MeetingSummary</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_MeetingSummary</shortDescription>
+        <value>Meeting Summary</value>
+    </labels>
+    <labels>
+        <fullName>DC_Monday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Monday</shortDescription>
+        <value>Monday</value>
+    </labels>
+    <labels>
+        <fullName>DC_Objective</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Objective</shortDescription>
+        <value>Objective</value>
+    </labels>
+    <labels>
+        <fullName>DC_Organizer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Organizer</shortDescription>
+        <value>Organizer</value>
+    </labels>
+    <labels>
+        <fullName>DC_RRULE_FORMAT_COMMON_DATE_SUFFIX</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_RRULE_FORMAT_COMMON_DATE_SUFFIX</shortDescription>
+        <value>effective {0} until {1}</value>
+    </labels>
+    <labels>
+        <fullName>DC_RRULE_FORMAT_COMMON_TIME_SUFFIX</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_RRULE_FORMAT_COMMON_TIME_SUFFIX</shortDescription>
+        <value>from {0} until {1} {2}</value>
+    </labels>
+    <labels>
+        <fullName>DC_RRULE_FORMAT_DAILY</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_RRULE_FORMAT_DAILY</shortDescription>
+        <value>Occurs every {0} day(s)</value>
+    </labels>
+    <labels>
+        <fullName>DC_RRULE_FORMAT_MONTHLY</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_RRULE_FORMAT_MONTHLY</shortDescription>
+        <value>Occurs on day {0} of every {1} month(s)</value>
+    </labels>
+    <labels>
+        <fullName>DC_RRULE_FORMAT_MONTHLY_Nth</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_RRULE_FORMAT_MONTHLY_Nth</shortDescription>
+        <value>Occurs on the {0} {1} of every {2} month(s)</value>
+    </labels>
+    <labels>
+        <fullName>DC_RRULE_FORMAT_WEEKDAY</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_RRULE_FORMAT_WEEKDAY</shortDescription>
+        <value>Occurs every weekday</value>
+    </labels>
+    <labels>
+        <fullName>DC_RRULE_FORMAT_WEEKLY</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_RRULE_FORMAT_WEEKLY</shortDescription>
+        <value>Occurs every {0} week(s) on {1}</value>
+    </labels>
+    <labels>
+        <fullName>DC_RRULE_FORMAT_YEARLY</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_RRULE_FORMAT_YEARLY</shortDescription>
+        <value>Occurs every {0} {1}</value>
+    </labels>
+    <labels>
+        <fullName>DC_RRULE_FORMAT_YEARLY_Nth</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_RRULE_FORMAT_YEARLY_Nth</shortDescription>
+        <value>Occurs on the {0} {1} of {2}</value>
+    </labels>
+    <labels>
+        <fullName>DC_Resources</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Resources</shortDescription>
+        <value>Resources</value>
+    </labels>
+    <labels>
+        <fullName>DC_Saturday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Saturday</shortDescription>
+        <value>Saturday</value>
+    </labels>
+    <labels>
+        <fullName>DC_Subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Subject</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>DC_Sunday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Sunday</shortDescription>
+        <value>Sunday</value>
+    </labels>
+    <labels>
+        <fullName>DC_TelephoneNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The label for the telephone number field in Outlook event invites</shortDescription>
+        <value>Telephone Number</value>
+    </labels>
+    <labels>
+        <fullName>DC_Thursday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Thursday</shortDescription>
+        <value>Thursday</value>
+    </labels>
+    <labels>
+        <fullName>DC_Tuesday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Tuesday</shortDescription>
+        <value>Tuesday</value>
+    </labels>
+    <labels>
+        <fullName>DC_WHEN_FORMAT_ALL_DAY_EVENT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_WHEN_FORMAT_ALL_DAY_EVENT</shortDescription>
+        <value>{0} All-Day Event</value>
+    </labels>
+    <labels>
+        <fullName>DC_Wednesday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Wednesday</shortDescription>
+        <value>Wednesday</value>
+    </labels>
+    <labels>
+        <fullName>DC_When</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_When</shortDescription>
+        <value>When</value>
+    </labels>
+    <labels>
+        <fullName>DC_Where</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DC_Where</shortDescription>
+        <value>Where</value>
+    </labels>
+    <labels>
+        <fullName>Date</fullName>
+        <categories>Service Cloud: Flow Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Date</shortDescription>
+        <value>Date</value>
+    </labels>
+    <labels>
+        <fullName>DatesMustBeFutureDates</fullName>
+        <categories>Inside sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dates must be future dates</shortDescription>
+        <value>Due Date and Reminder date must be Greater than today date.</value>
+    </labels>
+    <labels>
+        <fullName>DueDateAndSubjectMandatory</fullName>
+        <categories>Inside sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Due date and subject mandatory</shortDescription>
+        <value>Please set a Due date and a Subject.</value>
+    </labels>
+    <labels>
+        <fullName>EMPTY_FILE</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSV file is empty.</shortDescription>
+        <value>CSV file is empty.</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_JSON_BAD_FORMAT</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The provided Json String was badly formatted.</shortDescription>
+        <value>The provided Json String was badly formatted.</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_JSON_EMPTY</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No field values were found in the Json String.</shortDescription>
+        <value>No field values were found in the Json String.</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_OP_FAILED</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operation failed, please check messages!</shortDescription>
+        <value>Operation failed, please check messages!</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_REQUEST_FAILED_NO_ERROR</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Request failed with no specified error.</shortDescription>
+        <value>Request failed with no specified error.</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_UNAUTHORIZED_ENDPOINT</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unauthorized endpoint, please check Setup</shortDescription>
+        <value>Unauthorized endpoint, please check Setup</value>
+    </labels>
+    <labels>
+        <fullName>FILE_MISSING</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please provide a comma separated file.</shortDescription>
+        <value>Please provide a comma separated file.</value>
+    </labels>
+    <labels>
+        <fullName>GODCheckOrderDetails</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODCheckOrderDetails</shortDescription>
+        <value>Find Order</value>
+    </labels>
+    <labels>
+        <fullName>GODCheckOrderStatus</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODCheckOrderStatus</shortDescription>
+        <value>Check Order Status</value>
+    </labels>
+    <labels>
+        <fullName>GODERPOrderNumber</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODERPOrderNumber</shortDescription>
+        <value>ERP Order Number</value>
+    </labels>
+    <labels>
+        <fullName>GODEnterCountryCodeWith2Characters</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODEnterCountryCodeWith2Characters</shortDescription>
+        <value>Enter Country Code With 2 Characters</value>
+    </labels>
+    <labels>
+        <fullName>GODEnterERPOrderNumber</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODEnterERPOrderNumber</shortDescription>
+        <value>Enter ERP or Ecommerce Order Number</value>
+    </labels>
+    <labels>
+        <fullName>GODInsertOrderToSearch</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODInsertOrderToSearch</shortDescription>
+        <value>Insert Order To Search</value>
+    </labels>
+    <labels>
+        <fullName>GODItemNumber</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODItemNumber</shortDescription>
+        <value>Item Number:</value>
+    </labels>
+    <labels>
+        <fullName>GODNoShipmentTrack</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODNoShipmentTrack</shortDescription>
+        <value>No tracking available</value>
+    </labels>
+    <labels>
+        <fullName>GODOrderedQty</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODOrderedQty</shortDescription>
+        <value>Ordered Qty:</value>
+    </labels>
+    <labels>
+        <fullName>GODPendingOfDelivery</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODPendingOfDelivery</shortDescription>
+        <value>Pending Of Delivery</value>
+    </labels>
+    <labels>
+        <fullName>GODRemainingQty</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODRemainingQty</shortDescription>
+        <value>Remaining Qty:</value>
+    </labels>
+    <labels>
+        <fullName>GODSearchAgain</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODSearchAgain</shortDescription>
+        <value>Search Again</value>
+    </labels>
+    <labels>
+        <fullName>GODShipmentNumber</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODShipmentNumber</shortDescription>
+        <value>ShipmentNumber</value>
+    </labels>
+    <labels>
+        <fullName>GODShipmentTrack</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODShipmentTrack</shortDescription>
+        <value>Track Shipment</value>
+    </labels>
+    <labels>
+        <fullName>GODShippedQty</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODShippedQty</shortDescription>
+        <value>Shipped Qty:</value>
+    </labels>
+    <labels>
+        <fullName>GODTrackOrder</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODTrackOrder</shortDescription>
+        <value>Track Order</value>
+    </labels>
+    <labels>
+        <fullName>GODTypeHere</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODTypeHere</shortDescription>
+        <value>TypeHere...</value>
+    </labels>
+    <labels>
+        <fullName>GODTypeHereCountryCode</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODTypeHereCountryCode</shortDescription>
+        <value>Type here country code...</value>
+    </labels>
+    <labels>
+        <fullName>GODUndeliveryItems</fullName>
+        <categories>GetOrderDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GODUndeliveryItems</shortDescription>
+        <value>Undelivery Items</value>
+    </labels>
+    <labels>
+        <fullName>Go_to</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Go_to</shortDescription>
+        <value>Go to</value>
+    </labels>
+    <labels>
+        <fullName>Go_to_order</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Go to order</shortDescription>
+        <value>Go to order</value>
+    </labels>
+    <labels>
+        <fullName>INVALID_FILE_ROW_SIZE_DOESNT_MATCH</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The number of field values does not match the number of header fields on line</shortDescription>
+        <value>The number of field values does not match the number of header fields on line</value>
+    </labels>
+    <labels>
+        <fullName>InactiveAccountMessage</fullName>
+        <categories>LWCShowMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Inactive Account Message</shortDescription>
+        <value>Please, pay attention this Account is Inactive</value>
+    </labels>
+    <labels>
+        <fullName>Invitee_Available</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invitee Available</shortDescription>
+        <value>Available:</value>
+    </labels>
+    <labels>
+        <fullName>Invitee_Search_Prompt</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invitee Search Prompt</shortDescription>
+        <value>Start typing to search for invitees</value>
+    </labels>
+    <labels>
+        <fullName>Invitee_Selected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invitee Selected</shortDescription>
+        <value>Selected:</value>
+    </labels>
+    <labels>
+        <fullName>Invoice_number</fullName>
+        <categories>Service Cloud: Flow Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice number</shortDescription>
+        <value>Invoice number</value>
+    </labels>
+    <labels>
+        <fullName>KOLDeleteError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KOLDeleteError</shortDescription>
+        <value>You cannot delete contacts with KOL related information</value>
+    </labels>
+    <labels>
+        <fullName>LA_Chat_ExtendedHeader_ChatStateHeaderGreeting_04I0J000000TN1K_6589876</fullName>
+        <categories>Snap-ins</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LA_Chat_ExtendedHeader_ChatStateHeaderGreeting_04I0J000000TN1K_6589876</shortDescription>
+        <value>Thanks for Chatting with us.</value>
+    </labels>
+    <labels>
+        <fullName>LWCApprovalOrderItemsOrderProducts</fullName>
+        <categories>LWCApprovalOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LWCApprovalOrderItemsOrderProducts</shortDescription>
+        <value>Order Products</value>
+    </labels>
+    <labels>
+        <fullName>LWCApprovalOrderItemsShowAll</fullName>
+        <categories>LWCApprovalOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LWCApprovalOrderItemsShowAll</shortDescription>
+        <value>Show All Products</value>
+    </labels>
+    <labels>
+        <fullName>LineBreak</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LineBreak</shortDescription>
+        <value>-
+-</value>
+    </labels>
+    <labels>
+        <fullName>Ltng_Sync_CFE_NO_Accept_Decline</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ltng_Sync_CFE_NO_Accept_Decline</shortDescription>
+        <value>You Can Not Accept/Decline Event from Salesforce. Please Use Your Outlook Mailbox Calendar.</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CHECK_API_NAMES</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check the Api names!</shortDescription>
+        <value>Please check the Api names!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_EXISTS</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Make sure Custom Setting and Custom Metadata Types exists in the org!</shortDescription>
+        <value>Make sure Custom Setting and Custom Metadata Types exists in the org!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_FIELD_NAME_FORMAT</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check the format, Custom Setting.field and Custom Metadata Types.field</shortDescription>
+        <value>Please check the format, Custom Setting.field and Custom Metadata Types.field</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_FIELD_NAME_REQ</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Setting Name/Field Name and CMT/Field Name names are required!</shortDescription>
+        <value>Custom Setting Name/Field Name and CMT/Field Name names are required!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_MAPPING_REQ</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Setting Name, Custom Metadata Types and Json Mapping names are required!</shortDescription>
+        <value>Custom Setting Name, Custom Metadata Types and Json Mapping names are required!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_REQ</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Setting Api Name and Custom Metadata Types Api names are required!</shortDescription>
+        <value>Custom Setting Api Name and Custom Metadata Types Api names are required!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CUSTOM_SETTINGS_EXISTS</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Make sure Custom Setting exists in the org!</shortDescription>
+        <value>Make sure Custom Setting exists in the org!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_JSON_API_NAMES</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check the Api names in Json!</shortDescription>
+        <value>Please check the Api names in Json!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_JSON_FORMAT</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check the Json format!</shortDescription>
+        <value>Please check the Json format!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_MDT_END</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Metadata Types name should end with</shortDescription>
+        <value>Custom Metadata Types name should end with</value>
+    </labels>
+    <labels>
+        <fullName>MSG_MIGRATION_COMPLETED</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration Completed!</shortDescription>
+        <value>Migration Completed!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_MIGRATION_IN_PROGRESS</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration In Progress, check status under Deploy -&gt; Deployment Status, Job Id:</shortDescription>
+        <value>Migration In Progress, check status under Deploy -&gt; Deployment Status, Job Id:</value>
+    </labels>
+    <labels>
+        <fullName>MSG_NOT_SUPPORTED</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Not Supported!!!</shortDescription>
+        <value>Not Supported!!!</value>
+    </labels>
+    <labels>
+        <fullName>Missing_Info</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order Missing Info</shortDescription>
+        <value>Missing Information:</value>
+    </labels>
+    <labels>
+        <fullName>More</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: More</shortDescription>
+        <value>more</value>
+    </labels>
+    <labels>
+        <fullName>New_Account_Request_Primary_Contact_Section</fullName>
+        <categories>New Account Request</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New Account Request: Primary Contact Section</shortDescription>
+        <value>New Account Request: ERP Primary Contact Information</value>
+    </labels>
+    <labels>
+        <fullName>New_or_Replacement_Order</fullName>
+        <categories>Service Cloud: Flow Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New_or_Replacement_Order</shortDescription>
+        <value>New or Replacement Order</value>
+    </labels>
+    <labels>
+        <fullName>Next</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Next</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>Next_step_script</fullName>
+        <categories>Service Cloud: Flow Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Next_step_script</shortDescription>
+        <value>How would you like to proceed?</value>
+    </labels>
+    <labels>
+        <fullName>No_Source_Record</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: No Source Record</shortDescription>
+        <value>The original order is not assigned to a source Record - the assigned Pricebook requires a source record in order to call the external prices (Pricing Micro Services)</value>
+    </labels>
+    <labels>
+        <fullName>OD_Account_Col</fullName>
+        <categories>Dealer Box</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OD Account Col</shortDescription>
+        <value>Account</value>
+    </labels>
+    <labels>
+        <fullName>OD_Add_Dealer</fullName>
+        <categories>Dealer Box</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OD Add Dealer</shortDescription>
+        <value>Press &apos;+&apos; to add a new Distributor to the list</value>
+    </labels>
+    <labels>
+        <fullName>OD_Cancel</fullName>
+        <categories>Dealer Box</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OD Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>OD_City_Col</fullName>
+        <categories>Dealer Box</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OD City Col</shortDescription>
+        <value>City</value>
+    </labels>
+    <labels>
+        <fullName>OD_No_Distributors_Found</fullName>
+        <categories>Dealer Box</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OD No Distributors Found</shortDescription>
+        <value>No Distributors Found</value>
+    </labels>
+    <labels>
+        <fullName>OD_Search</fullName>
+        <categories>Dealer Box</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OD Search</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>OD_Search_Placeholder</fullName>
+        <categories>Dealer Box</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OD Search Placeholder</shortDescription>
+        <value>Search Distributors....</value>
+    </labels>
+    <labels>
+        <fullName>OD_Select_Dealer</fullName>
+        <categories>Dealer Box</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OD Select Dealer</shortDescription>
+        <value>Select  Distributor</value>
+    </labels>
+    <labels>
+        <fullName>OD_Selected_Items</fullName>
+        <categories>Dealer Box</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OD Selected Items</shortDescription>
+        <value>Distributor(s) Selected</value>
+    </labels>
+    <labels>
+        <fullName>OD_SubTitle</fullName>
+        <categories>Dealer Box</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OD SubTitle</shortDescription>
+        <value>Please add the Distributor working with the customer and select the chosen one for this order</value>
+    </labels>
+    <labels>
+        <fullName>OD_Title</fullName>
+        <categories>Dealer Box</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OD Title</shortDescription>
+        <value>Add Distributor</value>
+    </labels>
+    <labels>
+        <fullName>OD_Type_Col</fullName>
+        <categories>Dealer Box</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OD Type Col</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>OMNoPricebookAccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM No Pricebook Access</shortDescription>
+        <value>No Pricebooks available</value>
+    </labels>
+    <labels>
+        <fullName>OMNotERPPriceFound</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Not ERP price Found</shortDescription>
+        <value>ERP Pricing not available</value>
+    </labels>
+    <labels>
+        <fullName>OMNotERPProductFound</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Not ERP Product Found</shortDescription>
+        <value>ERP Product not available</value>
+    </labels>
+    <labels>
+        <fullName>OM_Add_More_Products</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Add More Products</shortDescription>
+        <value>Add more Products</value>
+    </labels>
+    <labels>
+        <fullName>OM_Add_Products</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Add Products</shortDescription>
+        <value>Add Products</value>
+    </labels>
+    <labels>
+        <fullName>OM_Apply_Contract_Discount</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Apply Contract Discount</shortDescription>
+        <value>Apply Contract Discount</value>
+    </labels>
+    <labels>
+        <fullName>OM_Apply_Custom_Discount</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Apply Custom Discount</shortDescription>
+        <value>Apply Custom Discount</value>
+    </labels>
+    <labels>
+        <fullName>OM_Apply_Discount</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Apply Discount</shortDescription>
+        <value>Apply Discount</value>
+    </labels>
+    <labels>
+        <fullName>OM_Cancel</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>OM_Clone_Order</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Clone Order</shortDescription>
+        <value>Clone</value>
+    </labels>
+    <labels>
+        <fullName>OM_Clone_Order_Deactivated_Price_Book</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Clone Order Deactivated Price Book</shortDescription>
+        <value>You can&apos;t clone this Order : The related Price Book is inactive.</value>
+    </labels>
+    <labels>
+        <fullName>OM_Clone_Order_Expired_Contract</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Clone Order  Expired Contract</shortDescription>
+        <value>The order cloned doesn&apos;t have a related Contract or the Contract is expired. Please select a contract if needed.</value>
+    </labels>
+    <labels>
+        <fullName>OM_Clone_Order_Success_Message</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Clone Order Success Message</shortDescription>
+        <value>Order Cloned Successfully</value>
+    </labels>
+    <labels>
+        <fullName>OM_Create_Order</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Create Order</shortDescription>
+        <value>Create Order</value>
+    </labels>
+    <labels>
+        <fullName>OM_Create_Order_Instructions</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Create Order Instructions</shortDescription>
+        <value>Select a Price Book for this order. You can add products only from a single Price Book to the order.</value>
+    </labels>
+    <labels>
+        <fullName>OM_Delete_Confirmation_Message</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Delete Confirmation Message</shortDescription>
+        <value>Do you want to remove this Order Item ?</value>
+    </labels>
+    <labels>
+        <fullName>OM_Discount_Greater_Message</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Discount Greater Message</shortDescription>
+        <value>greater than</value>
+    </labels>
+    <labels>
+        <fullName>OM_Discount_Instructions</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OLD OM Discount Instructions</shortDescription>
+        <value>To Confirm with Laura</value>
+    </labels>
+    <labels>
+        <fullName>OM_Enter_Discount</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Enter Discount</shortDescription>
+        <value>Enter Discount ....</value>
+    </labels>
+    <labels>
+        <fullName>OM_Go_to_Order</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Go to Order</shortDescription>
+        <value>Go to Order</value>
+    </labels>
+    <labels>
+        <fullName>OM_Message_When_Discount_Pattern_MisMatch</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid Input</shortDescription>
+        <value>Invalid Input</value>
+    </labels>
+    <labels>
+        <fullName>OM_Next</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Next</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>OM_No_Available_Currencies</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM No Available Currencies</shortDescription>
+        <value>No Currencies available for this Price Book</value>
+    </labels>
+    <labels>
+        <fullName>OM_No_Available_Pricebooks</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM No Available Pricebooks</shortDescription>
+        <value>No Available Price Books</value>
+    </labels>
+    <labels>
+        <fullName>OM_Order_Item_Clone</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Order Item Clone</shortDescription>
+        <value>Clone</value>
+    </labels>
+    <labels>
+        <fullName>OM_Order_Item_Created_Success</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Order Item Created Success</shortDescription>
+        <value>Order Items Added Successfully</value>
+    </labels>
+    <labels>
+        <fullName>OM_Order_Item_Delete</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Order Item Delete</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>OM_Order_Item_Deleted_Message</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Order Item Deleted Message</shortDescription>
+        <value>Order Item Deleted Successfully</value>
+    </labels>
+    <labels>
+        <fullName>OM_Order_Item_Edit</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Order Item Edit</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>OM_Order_Items_Found</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Order Items Found</shortDescription>
+        <value>Order Items</value>
+    </labels>
+    <labels>
+        <fullName>OM_Order_Items_Selected</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Order Items Selected</shortDescription>
+        <value>Order Items Selected</value>
+    </labels>
+    <labels>
+        <fullName>OM_Previous</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Previous</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>OM_Product_Group_1_Description</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Product Group 1 Description</shortDescription>
+        <value>Product Group 1 Description</value>
+    </labels>
+    <labels>
+        <fullName>OM_Product_Group_2_Description</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Product Group 2 Description</shortDescription>
+        <value>Product Group 2 Description</value>
+    </labels>
+    <labels>
+        <fullName>OM_Product_Group_3_Description</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Product Group 3 Description</shortDescription>
+        <value>Product Group 3 Description</value>
+    </labels>
+    <labels>
+        <fullName>OM_Product_Group_4_Description</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Product Group 4 Description</shortDescription>
+        <value>Product Group 4 Description</value>
+    </labels>
+    <labels>
+        <fullName>OM_Product_Search_Placeholder</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM 	Product Search Placeholder</shortDescription>
+        <value>Filter Products by Item Number, ERP Description, Local Description or Classification</value>
+    </labels>
+    <labels>
+        <fullName>OM_Products_Found</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Products Found</shortDescription>
+        <value>Products Found</value>
+    </labels>
+    <labels>
+        <fullName>OM_Products_Selected</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Products Selected</shortDescription>
+        <value>Products Selected</value>
+    </labels>
+    <labels>
+        <fullName>OM_Quantity</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Quantity</shortDescription>
+        <value>Quantity</value>
+    </labels>
+    <labels>
+        <fullName>OM_Search_Products_Instruction</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OLD OM Search Products Instruction</shortDescription>
+        <value>To confirm with Laura</value>
+    </labels>
+    <labels>
+        <fullName>OM_Select_All</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Select All</shortDescription>
+        <value>Select All</value>
+    </labels>
+    <labels>
+        <fullName>OM_Select_Contract</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Select Contract</shortDescription>
+        <value>Select Contract</value>
+    </labels>
+    <labels>
+        <fullName>OM_Select_Currency</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Select Currency</shortDescription>
+        <value>Select Currency</value>
+    </labels>
+    <labels>
+        <fullName>OM_Select_Order_Item_Validation</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Select Order Item  Validation</shortDescription>
+        <value>Please select at least 1 OrderItem</value>
+    </labels>
+    <labels>
+        <fullName>OM_Select_Pricebook</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Select Pricebook</shortDescription>
+        <value>Select Price Book</value>
+    </labels>
+    <labels>
+        <fullName>OM_Select_Product_Message</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Select Product Message</shortDescription>
+        <value>Please select at least 1 Product</value>
+    </labels>
+    <labels>
+        <fullName>OM_Show_Frequently_Ordered_Products</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Show Frequently Ordered Products</shortDescription>
+        <value>Show frequently ordered items</value>
+    </labels>
+    <labels>
+        <fullName>OM_Show_Order_Items</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Show Order Items</shortDescription>
+        <value>Show Order Items</value>
+    </labels>
+    <labels>
+        <fullName>OM_Update_Order_Item_Cancel</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Update Order Item Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>OM_Update_Order_Item_Clone_Title</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Update Order Item Clone Title</shortDescription>
+        <value>Clone Order Item</value>
+    </labels>
+    <labels>
+        <fullName>OM_Update_Order_Item_Edit_Title</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Update Order Item Edit Title</shortDescription>
+        <value>Edit Order item</value>
+    </labels>
+    <labels>
+        <fullName>OM_Update_Order_Item_Save</fullName>
+        <categories>OM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Update Order Item Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>OM_Update_Order_Items_Success_Message</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Update Order Items Success Message</shortDescription>
+        <value>Order Items Updated Successfully</value>
+    </labels>
+    <labels>
+        <fullName>Om_Order_Created_Success</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Om Order Created Success</shortDescription>
+        <value>The Order is Created successfully</value>
+    </labels>
+    <labels>
+        <fullName>One_Procedure_Tracker_Per_Account_and_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>One Procedure Tracker Per Account and Type</shortDescription>
+        <value>Duplicate not allowed: This account already has a procedure tracker of this type.</value>
+    </labels>
+    <labels>
+        <fullName>One_Workflow_Profiling_record_per_Account</fullName>
+        <categories>Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>One Workflow Profiling record per Account</shortDescription>
+        <value>It&apos;s only possible to create 1 Workflow Profiling record per Account.</value>
+    </labels>
+    <labels>
+        <fullName>OpenCases</fullName>
+        <categories>Service Cloud</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OpenCases</shortDescription>
+        <value>Open Cases</value>
+    </labels>
+    <labels>
+        <fullName>Order_Add_dealer</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Add dealer</shortDescription>
+        <value>Add dealer</value>
+    </labels>
+    <labels>
+        <fullName>Order_Approved</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Approved</shortDescription>
+        <value>has been approved.</value>
+    </labels>
+    <labels>
+        <fullName>Order_Approved_by</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Approved by</shortDescription>
+        <value>and approved by</value>
+    </labels>
+    <labels>
+        <fullName>Order_Confirmation</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Confirmation</shortDescription>
+        <value>Order confirmation</value>
+    </labels>
+    <labels>
+        <fullName>Order_Customer_details</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Customer details</shortDescription>
+        <value>Customer details</value>
+    </labels>
+    <labels>
+        <fullName>Order_Dear</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Dear</shortDescription>
+        <value>Dear</value>
+    </labels>
+    <labels>
+        <fullName>Order_Details</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Details</shortDescription>
+        <value>Order details</value>
+    </labels>
+    <labels>
+        <fullName>Order_Information</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Information</shortDescription>
+        <value>Order information</value>
+    </labels>
+    <labels>
+        <fullName>Order_New</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order New</shortDescription>
+        <value>A new order has been created by</value>
+    </labels>
+    <labels>
+        <fullName>Order_Please_note</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Please note</shortDescription>
+        <value>Please note that your order with the ID</value>
+    </labels>
+    <labels>
+        <fullName>Order_Quote</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order Quote</shortDescription>
+        <value>A new order quote has been created by</value>
+    </labels>
+    <labels>
+        <fullName>Order_Quote_Label</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order Quote Label</shortDescription>
+        <value>Order Quote</value>
+    </labels>
+    <labels>
+        <fullName>Order_Quote_thank</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order Quote:thank</shortDescription>
+        <value>Thank you for your order quote!</value>
+    </labels>
+    <labels>
+        <fullName>Order_Rejection</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Rejection Missing Info</shortDescription>
+        <value>ORDER REJECTED FOR MISSING INFO!!!</value>
+    </labels>
+    <labels>
+        <fullName>Order_Save_products</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Save products</shortDescription>
+        <value>Save products</value>
+    </labels>
+    <labels>
+        <fullName>Order_Select_dealer</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Select dealer</shortDescription>
+        <value>Select dealer</value>
+    </labels>
+    <labels>
+        <fullName>Order_Source_Record_Customer_ID</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Source Record Customer ID</shortDescription>
+        <value>AX Number from Source Record</value>
+    </labels>
+    <labels>
+        <fullName>Order_answer</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: answer</shortDescription>
+        <value>to approve/reject the order in Salesforce, or answer this email with YES/NO for approval/rejection.</value>
+    </labels>
+    <labels>
+        <fullName>Order_click1</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: click1</shortDescription>
+        <value>Click here</value>
+    </labels>
+    <labels>
+        <fullName>Order_dear_customer</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: dear customer</shortDescription>
+        <value>Dear</value>
+    </labels>
+    <labels>
+        <fullName>Order_direct</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order direct</shortDescription>
+        <value>Create order</value>
+    </labels>
+    <labels>
+        <fullName>Order_follow</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: follow</shortDescription>
+        <value>Please follow this link</value>
+    </labels>
+    <labels>
+        <fullName>Order_indirect</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order indirect</shortDescription>
+        <value>Dealer order</value>
+    </labels>
+    <labels>
+        <fullName>Order_rejected</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: rejected</shortDescription>
+        <value>has been rejected, and returned to you for adjustments and re-submission.</value>
+    </labels>
+    <labels>
+        <fullName>Order_rejected_missing_info</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: rejected missing info</shortDescription>
+        <value>has been rejected because of missing information and returned to you for adjustments and re-submission.</value>
+    </labels>
+    <labels>
+        <fullName>Order_review</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: review</shortDescription>
+        <value>to review the order and make any necessary adjustments.</value>
+    </labels>
+    <labels>
+        <fullName>Order_select_products</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Select products</shortDescription>
+        <value>Select products</value>
+    </labels>
+    <labels>
+        <fullName>Order_shipping</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: shipping</shortDescription>
+        <value>and is now being prepared for shipping.</value>
+    </labels>
+    <labels>
+        <fullName>Order_thank</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order:thank</shortDescription>
+        <value>Thank you for your order!</value>
+    </labels>
+    <labels>
+        <fullName>Order_waiting1</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order:waiting1</shortDescription>
+        <value>and is waiting for your approval.</value>
+    </labels>
+    <labels>
+        <fullName>Order_with</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: with</shortDescription>
+        <value>with the ID</value>
+    </labels>
+    <labels>
+        <fullName>Order_with_FOC_New</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order with FOC New</shortDescription>
+        <value>A new order, with free of charge products to be delivered, has been created by</value>
+    </labels>
+    <labels>
+        <fullName>Page</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Page</shortDescription>
+        <value>Page</value>
+    </labels>
+    <labels>
+        <fullName>PreventDeleteEmailMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent Delete EmailMessage</shortDescription>
+        <value>You are not allowed to delete emails attached to cases.</value>
+    </labels>
+    <labels>
+        <fullName>Previous</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: Previous</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>Product_Profiling_PRODUCT_INFO</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product Profiling PRODUCT INFO</shortDescription>
+        <value>PRODUCT INFO</value>
+    </labels>
+    <labels>
+        <fullName>Product_Profiling_PROFILING_INFO</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product Profiling PROFILING INFO</shortDescription>
+        <value>PROFILING INFO</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Approval_Request</fullName>
+        <categories>Global Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote: Approval Request</shortDescription>
+        <value>Approval Request - Quote</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Confirmation</fullName>
+        <categories>Global Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote: Confirmation</shortDescription>
+        <value>Order confirmation</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Contact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote: Contact</shortDescription>
+        <value>Contact Name</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Customer_details</fullName>
+        <categories>Global Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote: Customer details</shortDescription>
+        <value>Customer details</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Details</fullName>
+        <categories>Global Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote: Details</shortDescription>
+        <value>Quote Details</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Information</fullName>
+        <categories>Global Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote: Information</shortDescription>
+        <value>Quote Information</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Line_Item_No_Delete</fullName>
+        <categories>Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Line Item No Delete</shortDescription>
+        <value>Quote line items associated with bundles cannot be deleted, You must delete the Quote Line Bundle record instead.</value>
+    </labels>
+    <labels>
+        <fullName>Quote_New</fullName>
+        <categories>Global Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote: New</shortDescription>
+        <value>A new quote has been created by</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Template</fullName>
+        <categories>Global Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote: Template</shortDescription>
+        <value>Quote Template</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Value</fullName>
+        <categories>Global Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Value</shortDescription>
+        <value>Quote Amount</value>
+    </labels>
+    <labels>
+        <fullName>Quote_answer</fullName>
+        <categories>Global Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote: answer</shortDescription>
+        <value>To approve/reject the quote, please answer this email with YES/NO for approval/rejection.</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_DailyEveryWeekday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_DailyEveryWeekday</shortDescription>
+        <value>DailyEveryWeekday</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Daily_After</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Daily_After</shortDescription>
+        <value>day(s)</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Daily_Before</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Daily_Before</shortDescription>
+        <value>Every</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_EditSeries</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_EditSeries</shortDescription>
+        <value>Edit Series.</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Friday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Friday</shortDescription>
+        <value>Friday</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_InstanceNotice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_InstanceNotice</shortDescription>
+        <value>This event is part of a recurring series.</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_InstanceWarning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_InstanceWarning</shortDescription>
+        <value>Changes made to this occurrence may be over-written if the series is changed.</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Monday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Monday</shortDescription>
+        <value>Monday</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_MonthlyFixedDate_After</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_MonthlyFixedDate_After</shortDescription>
+        <value>month(s)</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_MonthlyFixedDate_AfterDayOfMonth</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_MonthlyFixedDate_AfterDayOfMonth</shortDescription>
+        <value>of every</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_MonthlyFixedDate_Before</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_MonthlyFixedDate_Before</shortDescription>
+        <value>On day</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Monthly_After</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Monthly_After</shortDescription>
+        <value>month(s)</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Monthly_AfterInstance</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Monthly_AfterInstance</shortDescription>
+        <value> </value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Monthly_Before</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Monthly_Before</shortDescription>
+        <value>On the</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Monthy_AfterDayOfWeek</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Monthy_AfterDayOfWeek</shortDescription>
+        <value>of every</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Saturday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Saturday</shortDescription>
+        <value>Saturday</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_SeriesWarning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_SeriesWarning</shortDescription>
+        <value>Are you about to change any of the following settings? If you do, the status of invitees for all events on or after today&apos;s date will be reset to Not Responded; you’ll lose messages sent with invitees’ responses and other changes to single future events; and links to future events will break. &lt;br /&gt;
+            - All-day event checkbox &lt;br/&gt;
+            - Start or end time &lt;br/&gt;
+            - Location &lt;br/&gt;
+            - Recurrence frequency &lt;br/&gt;
+            - Recurrence start or end date, if you send updates to invitees &lt;br/&gt;
+&lt;br/&gt;
+If you don’t send updates, and you only extend the recurrence end date, then future events won’t be affected.</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Sunday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Sunday</shortDescription>
+        <value>Sunday</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Thursday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Thursday</shortDescription>
+        <value>Thursday</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Title</shortDescription>
+        <value>RECURRENCE</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Tuesday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Tuesday</shortDescription>
+        <value>Tuesday</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_TypeDaily</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_TypeDaily</shortDescription>
+        <value>Daily</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_TypeMonthly</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_TypeMonthly</shortDescription>
+        <value>Monthly</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_TypeMonthlyFixedDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_TypeMonthlyFixedDate</shortDescription>
+        <value>MonthlyFixedDate</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_TypeNone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_TypeNone</shortDescription>
+        <value>None</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_TypeWeekly</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_TypeWeekly</shortDescription>
+        <value>Weekly</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_TypeYearly</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_TypeYearly</shortDescription>
+        <value>Yearly</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Wednesday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Wednesday</shortDescription>
+        <value>Wednesday</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Weekly_AfterInterval</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Weekly_AfterInterval</shortDescription>
+        <value>week(s) on</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Weekly_BeforeInterval</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Weekly_BeforeInterval</shortDescription>
+        <value>Recurs every</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_YearlyFixedDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_YearlyFixedDate</shortDescription>
+        <value>YearlyFixedDate</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_YearlyFixedDate_After</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_YearlyFixedDate_After</shortDescription>
+        <value> </value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_YearlyFixedDate_AfterMonth</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_YearlyFixedDate_AfterMonth</shortDescription>
+        <value> </value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_YearlyFixedDate_Before</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_YearlyFixedDate_Before</shortDescription>
+        <value>On every</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Yearly_After</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Yearly_After</shortDescription>
+        <value> </value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Yearly_AfterDayOfWeek</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Yearly_AfterDayOfWeek</shortDescription>
+        <value>of</value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Yearly_AfterInstance</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Yearly_AfterInstance</shortDescription>
+        <value> </value>
+    </labels>
+    <labels>
+        <fullName>Recurrence_Yearly_Before</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurrence_Yearly_Before</shortDescription>
+        <value>On the</value>
+    </labels>
+    <labels>
+        <fullName>SaveNew</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SaveNew</shortDescription>
+        <value>Save &amp; New</value>
+    </labels>
+    <labels>
+        <fullName>Send_survey_label</fullName>
+        <categories>Service Cloud: Flow Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send survey label</shortDescription>
+        <value>Send survey</value>
+    </labels>
+    <labels>
+        <fullName>Send_survey_script</fullName>
+        <categories>Service Cloud: Flow Script</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send_survey_script</shortDescription>
+        <value>Would you care to take part in a survey around this service?</value>
+    </labels>
+    <labels>
+        <fullName>TYPE_OPTION_NOT_SELECTED</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please choose a valid custom metadata type.</shortDescription>
+        <value>Please choose a valid custom metadata type.</value>
+    </labels>
+    <labels>
+        <fullName>View_Invoice</fullName>
+        <categories>Service Cloud</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View Invoice</shortDescription>
+        <value>View Invoice</value>
+    </labels>
+    <labels>
+        <fullName>WarningMessage</fullName>
+        <categories>LWCshowDuplicatCasesWarning</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WarningMessage</shortDescription>
+        <value>Potential Duplicate Cases found:</value>
+    </labels>
+    <labels>
+        <fullName>Welcome_script</fullName>
+        <categories>Service Cloud: Flow Script</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Welcome script</shortDescription>
+        <value>Welcome to DentsplySirona! Could I please just verify some details about you?</value>
+    </labels>
+    <labels>
+        <fullName>X_sbu_Email_New</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>X-sbu Email: new opport</shortDescription>
+        <value>New opportunity with the customer</value>
+    </labels>
+    <labels>
+        <fullName>add_bundle</fullName>
+        <categories>Add Bundles</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>add_bundle</shortDescription>
+        <value>Add Bundle</value>
+    </labels>
+    <labels>
+        <fullName>added_bundles</fullName>
+        <categories>Add Bundles</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>added_bundles</shortDescription>
+        <value>Added Items</value>
+    </labels>
+    <labels>
+        <fullName>cancel</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>chNone</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>chNone</shortDescription>
+        <value>--None--</value>
+    </labels>
+    <labels>
+        <fullName>details_hide</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: details_hide</shortDescription>
+        <value>Hide details</value>
+    </labels>
+    <labels>
+        <fullName>details_show</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: details_show</shortDescription>
+        <value>Show details</value>
+    </labels>
+    <labels>
+        <fullName>error_bundles</fullName>
+        <categories>Add Bundles</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>error_bundles</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>insert_bundles</fullName>
+        <categories>Add Bundles</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>insert_bundles</shortDescription>
+        <value>Insert Bundles</value>
+    </labels>
+    <labels>
+        <fullName>keyword</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: keyword</shortDescription>
+        <value>Keyword</value>
+    </labels>
+    <labels>
+        <fullName>msg_NoItemsAvailable1</fullName>
+        <categories>Equipment Booking</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Items available</shortDescription>
+        <value>We couldn&apos;t find any available</value>
+    </labels>
+    <labels>
+        <fullName>msg_NoItemsAvailable2</fullName>
+        <categories>Equipment Booking</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select New Dates</shortDescription>
+        <value>Please select other dates</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverrideTarget_Group_Information</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverrideTarget Group Information</shortDescription>
+        <value>Target Group Information</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_ACCOMMODATION</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride ACCOMMODATION</shortDescription>
+        <value>ACCOMMODATION</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_BUDGET_ACTUAL_COSTS_DETAILS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride BUDGET &amp; ACTUAL COSTS DETAILS</shortDescription>
+        <value>BUDGET &amp; ACTUAL COSTS DETAILS</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_BUDGET_ACTUAL_COST_DETAILS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride BUDGET &amp; ACTUAL COST DETAILS</shortDescription>
+        <value>BUDGET &amp; ACTUAL COST DETAILS</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_Budget_Actual_Cost_Information</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Budget &amp; Actual Cost Information</shortDescription>
+        <value>Budget &amp; Actual Cost Information</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_Budget_Actual_Revenue_Information</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Budget &amp; Actual Revenue Information</shortDescription>
+        <value>Budget &amp; Actual Revenue Information</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_CAMPAIGN_DETAILS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride CAMPAIGN DETAILS</shortDescription>
+        <value>CAMPAIGN DETAILS</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_CAMPAIGN_INFORMATION</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride CAMPAIGN INFORMATION</shortDescription>
+        <value>CAMPAIGN INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_CAMPAIGN_OBJECTIVES</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride CAMPAIGN OBJECTIVES</shortDescription>
+        <value>CAMPAIGN OBJECTIVES</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_Campaign_Participant_Information</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Campaign Participant Information</shortDescription>
+        <value>Campaign Participant Information</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_Description_Information</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Description Information</shortDescription>
+        <value>Description Information</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_Location_Accommodation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Location &amp; Accommodation</shortDescription>
+        <value>Location &amp; Accommodation</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_Migrated_Fields_from_old_implementation_SE_HQ_Only</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Migrated Fields from old implementation (SE HQ Only)</shortDescription>
+        <value>Migrated Fields from old implementation (SE HQ Only)</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_PARTICIPANT_AND_SEAT_MANAGEMENT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride PARTICIPANT AND SEAT MANAGEMENT</shortDescription>
+        <value>PARTICIPANT AND SEAT MANAGEMENT</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_PARTICIPATION_FEES_AND_COSTS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride PARTICIPATION FEES AND COSTS</shortDescription>
+        <value>PARTICIPATION FEES AND COSTS</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_PRODUCT_FOCUS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride PRODUCT FOCUS</shortDescription>
+        <value>PRODUCT FOCUS</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_Program_Will_later_be_replaced_with_the_information_entere</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Program - Will later be replaced with the information entere</shortDescription>
+        <value>Program - Will later be replaced with the information entered on the Event.</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_REVENUE_INFORMATION_PARTICIPATION_FEES</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride REVENUE INFORMATION (PARTICIPATION FEES)</shortDescription>
+        <value>REVENUE INFORMATION (PARTICIPATION FEES)</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_R_servation_de_mat_riel_SBU_IMPLANT_FR</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Réservation de matériel SBU IMPLANT (FR)</shortDescription>
+        <value>Réservation de matériel SBU IMPLANT (FR)</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_R_servation_de_materiel_et_Invitations_FR</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Réservation de materiel et Invitations (FR)</shortDescription>
+        <value>Réservation de materiel et Invitations (FR)</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_Reservation_de_mat_rial_ENDO_SBU_FR</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Reservation de matérial - ENDO SBU (FR)</shortDescription>
+        <value>Reservation de matérial - ENDO SBU (FR)</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_Reservation_de_mat_rial_Restorative_SBU_FR</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Reservation de matérial - Restorative SBU (FR)</shortDescription>
+        <value>Reservation de matérial - Restorative SBU (FR)</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_Reservation_de_mat_riel_SBU_EQUIPEMENT_FR</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Reservation de matériel - SBU EQUIPEMENT (FR)</shortDescription>
+        <value>Reservation de matériel - SBU EQUIPEMENT (FR)</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_Reservation_info_All_SBU_FR</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Reservation info All SBU (FR)</shortDescription>
+        <value>Reservation info All SBU (FR)</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_SESSION_INFORMATIO</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride LECTURE INFORMATION</shortDescription>
+        <value>LECTURE INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_SESSION_INFORMATION</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride SESSION INFORMATION</shortDescription>
+        <value>SESSION INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_Standard_Participation_Fee</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Standard Participation Fee</shortDescription>
+        <value>Standard Participation Fee</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_System_Information</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride System Information</shortDescription>
+        <value>System Information</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_TARGET_GROUP_DETAILS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride TARGET GROUP DETAILS</shortDescription>
+        <value>TARGET GROUP DETAILS</value>
+    </labels>
+    <labels>
+        <fullName>newCampaignOverride_Target_Group_Information</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>newCampaignOverride Target Group Information</shortDescription>
+        <value>Target Group Information</value>
+    </labels>
+    <labels>
+        <fullName>none_bundles</fullName>
+        <categories>Add Bundles</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>none_bundles</shortDescription>
+        <value>--None--</value>
+    </labels>
+    <labels>
+        <fullName>pricebook</fullName>
+        <categories>Add Bundles</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>pricebook</shortDescription>
+        <value>Pricebook</value>
+    </labels>
+    <labels>
+        <fullName>pricebookSelection</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: pricebookSelection</shortDescription>
+        <value>Select a price book for this order. You can add products only from a single price book to the order.</value>
+    </labels>
+    <labels>
+        <fullName>product_profiling_New_Product_Profiling</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product Profiling New Product Profiling</shortDescription>
+        <value>New Product Profiling</value>
+    </labels>
+    <labels>
+        <fullName>records_per_page</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: records_per_page</shortDescription>
+        <value>Records per page</value>
+    </labels>
+    <labels>
+        <fullName>save</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>scrInitialMessage_Info</fullName>
+        <categories>Sales Cloud: Create Case Flow</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrInitialMessage_Info</shortDescription>
+        <value>Click Next to create new case, which will be assigned automatically to the right team within your country.</value>
+    </labels>
+    <labels>
+        <fullName>scrMainCaseFields_CallScript</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrMainCaseFields_CallScript</shortDescription>
+        <value>How may I help you?</value>
+    </labels>
+    <labels>
+        <fullName>scrMainCaseFields_CaseOrigin</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrMainCaseFields_CaseOrigin</shortDescription>
+        <value>Case Origin</value>
+    </labels>
+    <labels>
+        <fullName>scrMainCaseFields_Description</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrMainCaseFields_Description</shortDescription>
+        <value>Case Description</value>
+    </labels>
+    <labels>
+        <fullName>scrMainCaseFields_Subject</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrMainCaseFields_Subject</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>scrOnAccount_SelectContact</fullName>
+        <categories>Sales Cloud: Create Case Flow</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrOnAccount_SelectContact</shortDescription>
+        <value>Select Contact</value>
+    </labels>
+    <labels>
+        <fullName>scrOnAccount_Title</fullName>
+        <categories>Sales Cloud: Create Case Flow</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrOnAccount_Title</shortDescription>
+        <value>Create new Case:</value>
+    </labels>
+    <labels>
+        <fullName>scrOnError_Title</fullName>
+        <categories>Sales Cloud: Create Case Flow</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrOnError_Title</shortDescription>
+        <value>Something went wrong! The system admin has been notified of this issue.</value>
+    </labels>
+    <labels>
+        <fullName>scrSelectContact_CallScript</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrSelectContact_CallScript</shortDescription>
+        <value>To whom you would like to assign the case to?</value>
+    </labels>
+    <labels>
+        <fullName>scrSelectContact_ContactEmail</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrSelectContact_ContactEmail</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>scrSelectContact_ContactName</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrSelectContact_ContactName</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>scrSelectContact_ContactPhone</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrSelectContact_ContactPhone</shortDescription>
+        <value>Phone</value>
+    </labels>
+    <labels>
+        <fullName>scrSelectContact_HowCollected</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrSelectContact_HowCollected</shortDescription>
+        <value>How Collected?</value>
+    </labels>
+    <labels>
+        <fullName>scrSelectContact_InsertMarketingConsentCollected</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrSelectContact_InsertMarketingConsentCollected</shortDescription>
+        <value>Insert Marketing Consent Collected</value>
+    </labels>
+    <labels>
+        <fullName>scrSelectContact_NewContact</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrSelectContact_NewContact</shortDescription>
+        <value>New Contact</value>
+    </labels>
+    <labels>
+        <fullName>scrSelectContact_SelectContact</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrSelectContact_SelectContact</shortDescription>
+        <value>Select Contact</value>
+    </labels>
+    <labels>
+        <fullName>scrSelectContact_WhenCollected</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrSelectContact_WhenCollected</shortDescription>
+        <value>When Collected?</value>
+    </labels>
+    <labels>
+        <fullName>scrSelectContact_WhereCollected</fullName>
+        <categories>Service Cloud 2.0</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scrSelectContact_WhereCollected</shortDescription>
+        <value>Where Collected?</value>
+    </labels>
+    <labels>
+        <fullName>scr_AvailableEquipment_Msg</fullName>
+        <categories>Equipment Booking</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Available Items</shortDescription>
+        <value>The following items have no active booking:</value>
+    </labels>
+    <labels>
+        <fullName>scr_AvailableEquipment_RadioButtons</fullName>
+        <categories>Equipment Booking</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Inventory Item</shortDescription>
+        <value>Select Available Equipment (Product Name | SKU | Serial #)</value>
+    </labels>
+    <labels>
+        <fullName>scr_BasicInfo_Contact</fullName>
+        <categories>Equipment Booking</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact</shortDescription>
+        <value>Contact</value>
+    </labels>
+    <labels>
+        <fullName>scr_BasicInfo_EndDate</fullName>
+        <categories>Equipment Booking</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scr_BasicInfo_EndDate</shortDescription>
+        <value>End Date</value>
+    </labels>
+    <labels>
+        <fullName>scr_BasicInfo_StartDate</fullName>
+        <categories>Equipment Booking</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scr_BasicInfo_StartDate</shortDescription>
+        <value>Start Date</value>
+    </labels>
+    <labels>
+        <fullName>search</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: search</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>search_bundle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>search_bundle</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>select</fullName>
+        <categories>Global Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order: select</shortDescription>
+        <value>Select</value>
+    </labels>
+    <labels>
+        <fullName>success_bundles</fullName>
+        <categories>Add Bundles</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>success_bundles</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>update_quote</fullName>
+        <categories>Add Bundles</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>update_quote</shortDescription>
+        <value>Update Quote</value>
+    </labels>
+    <labels>
+        <fullName>x_bu_email_created</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>x-bu email: created</shortDescription>
+        <value>A new opportunity has been created by</value>
+    </labels>
+    <labels>
+        <fullName>x_bu_owner_phone</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>x-bu owner: phone</shortDescription>
+        <value>phone number:</value>
+    </labels>
+    <labels>
+        <fullName>x_sbu_Opportunity_Assigned</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>x-sbu: Opportunity Assigned</shortDescription>
+        <value>The following opportunity has been assigned to you:</value>
+    </labels>
+    <labels>
+        <fullName>x_sbu_Opportunity_Closed</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>x-sbu: Opportunity Closed</shortDescription>
+        <value>The status of the following opportunity is:</value>
+    </labels>
+    <labels>
+        <fullName>xbu_email_list</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>xbu email:list</shortDescription>
+        <value>Below is the list of information given by the customer:</value>
+    </labels>
+    <labels>
+        <fullName>xbu_email_with</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>xbu email: with</shortDescription>
+        <value>with the Name</value>
+    </labels>
+    <labels>
+        <fullName>xbu_owner_email</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>xbu owner:email</shortDescription>
+        <value>and email:</value>
+    </labels>
+    <labels>
+        <fullName>xbu_owner_query</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>xbu owner:query</shortDescription>
+        <value>Any queries please liaise with</value>
+    </labels>
+    <labels>
+        <fullName>xbu_owner_title</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>xbu owner:title</shortDescription>
+        <value>with the title of</value>
+    </labels>
+    <labels>
+        <fullName>xsbu_Answer_Required</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>xsbu Answer Required</shortDescription>
+        <value>Please answer all required questions!</value>
+    </labels>
+    <labels>
+        <fullName>xsbu_Qualify_Another</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>xsbu Qualify Another</shortDescription>
+        <value>Would you like to qualify the prospect for another Product line?</value>
+    </labels>
+    <labels>
+        <fullName>xsbu_Reset</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>xsbu Reset</shortDescription>
+        <value>Reset</value>
+    </labels>
+    <labels>
+        <fullName>xsbu_Select_Answer</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>xsbu Select Answer</shortDescription>
+        <value>Select Answer</value>
+    </labels>
+    <labels>
+        <fullName>xsbu_Select_Product_Line</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>xsbu Select Product Line</shortDescription>
+        <value>Select Product Line</value>
+    </labels>
+    <labels>
+        <fullName>xsbu_Select_SBU</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>xsbu Select SBU</shortDescription>
+        <value>Select SBU</value>
+    </labels>
+    <labels>
+        <fullName>xsbu_Submit</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>xsbu Submit</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>xsbu_Thank_you_for_your_answer</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>xsbu Thank you for your answer</shortDescription>
+        <value>Thank you for your answer! Please press the link to view the created opportunity.</value>
+    </labels>
+    <labels>
+        <fullName>xsbu_assign_ETM_manually</fullName>
+        <categories>x-sbu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>xsbu_assign_ETM_manually</shortDescription>
+        <value>Assign the Opportunity to</value>
+    </labels>
+</CustomLabels>

@@ -2,11 +2,12 @@ import { LightningElement, track, api, wire } from 'lwc';
 import { handleApexError } from 'c/utils';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { getRecord, getFieldValue, deleteRecord } from 'lightning/uiRecordApi';
-import { getObjectInfo } from 'lightning/uiObjectInfoApi';
+import { getObjectInfo, getPicklistValues } from 'lightning/uiObjectInfoApi';
 import { NavigationMixin } from 'lightning/navigation';
 import FORM_FACTOR from '@salesforce/client/formFactor';
 import CALL_REPORT_OBJECT from '@salesforce/schema/Call_Report__c'
 import CALL_REPORT_EVENT_WHOIDS_FIELD from '@salesforce/schema/Call_Report__c.EventWhoIds__c';
+import ACTIVITY_TYPE_FIELD from '@salesforce/schema/Call_Report__c.ActivityType__c';
 import Id from '@salesforce/user/Id';
 
 const USER_FIELDS = ['User.User_Country__c', 'User.Default_CFE_SBUs__c', 'User.Default_Activity_Length_In_Minutes__c'];
@@ -37,7 +38,7 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
 
     @wire(getObjectInfo, { objectApiName: Event })
     eventObjectInfo;
-    //picklist 
+    //picklist
     // @wire(getCotravelPicklist)
     // coTravelPicklistValues;
 
@@ -56,6 +57,7 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
     @track callReportId;
     @track procedureTrackingObjectives;
     @track procedureTrackerSubject;
+    @track defaultCallReportActivityType;
 
     renderInputs;
 
@@ -81,6 +83,13 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
         }
     }
 
+    @wire(getPicklistValues, { recordTypeId: '$callReportRTId', fieldApiName: ACTIVITY_TYPE_FIELD })
+    getActivityPicklistDefaultValue({ error, data }) {
+        if (data) {
+            this.defaultCallReportActivityType = data.values.find(p => p.value == 'In Person Meeting')?.value;
+        }
+    }
+
     get callReportRTId() {
         let recordTypeId = '';
         if (this.callReportInfo.data) {
@@ -101,7 +110,7 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
             });
         })
 
-        
+
 
     }
     get userCountry() {
@@ -150,7 +159,7 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
         this._endTime = newEndTime;
         this.endTimeDirty = true;
     }
-    
+
     handleCoTravelChange(event){
         this.selectedCoTravelType = event.detail.value;
     }
@@ -158,7 +167,7 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
     connectedCallback() {
         // Might need to add case for 'Medium' since that is tablet form factor
         // this._mobileFormFactor = FORM_FACTOR == 'Small' ? true : false;
-        //if parent object is procedure tracker pre default some fields 
+        //if parent object is procedure tracker pre default some fields
         if(this.sObjectName === 'ProcedureTracker__c'){
             getProcedureTrackerData({recordId : this.recordId}).then((result) => {
                 this.procedureTrackingObjectives = result.LastActivity__c;
@@ -230,7 +239,7 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
         const sbuList = event.target.value.split(';');
         this.toggleSubSbuFieldVisibility(sbuList);
     }
-    
+
     handleLookupTypeChange(event) {
         this.initialSelection = [];
         this.errors = [];
@@ -260,7 +269,7 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
             this.toggleSubSbuFieldVisibility(sbuList);
             this.isInitialLoad = false;
             this.isLoading = false;
-        } 
+        }
         console.log('initialLoadSbu::'+this.userDefaultSbu);
     }
 
@@ -273,14 +282,14 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
     handleSaveAndNew(event) {
         this.isSaveAndNew = true;
     }
-    
+
     handleSubmit(event) {
         this.isLoading = true;
         event.preventDefault();
         const eventWhoIdsSelection = this.template.querySelector('c-lookup-lwc').getSelection();
         const fields = event.detail.fields;
         fields[CALL_REPORT_EVENT_WHOIDS_FIELD.fieldApiName] = JSON.stringify(eventWhoIdsSelection.map(element => element.id));
-        
+
         // this.checkForErrors();
         if (this.errors.length === 0) {
             this.template.querySelector('lightning-record-edit-form').submit(fields);
@@ -371,7 +380,7 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
 
         // const contactLookupField = this.template.querySelector('c-lookup-lwc');
         // contactLookupField.selection = [...this.initialSelection];
-        
+
         // this.connectedCallback();
         this.isLoading = false;
         this.isInitialLoad = true;
@@ -384,8 +393,8 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
         const selection = this.template.querySelector('c-lookup-lwc').getSelection();
         if (selection.length === 0) {
             this.errors = [{
-                    message: 'You must select a Contact before submitting!'
-                },
+                message: 'You must select a Contact before submitting!'
+            },
                 {
                     message: 'Please select a Contact and try again.'
                 }
