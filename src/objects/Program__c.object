@@ -187,6 +187,10 @@
     <label>Program</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Program_Description__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

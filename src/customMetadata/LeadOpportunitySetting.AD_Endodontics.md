@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">AH Plus;AH Temp;All Other Endo;All Other - Niti Rotary Files;All Other – Obturation;Apex Locator;Bioceramic;Bioceramic Sealer;C-Pilot;DT Post;EDDY;EDDY.Flex Cannula;FlexAccess;Glidepath Files;GuttaCore;GuttaCore/Calamus;Guttafusion;GuttaSmart;Hand file user;IQ/ProMark Motor;Irrigation Needle;Kits &amp;amp; Motors;Propex IQ;ProTaper Gold;ProTaper Next;ProTaper Ultimate;R-Pilot;Reciproc;Reciproc blue;Reciproc direct;TruNatomy;TruShape;Ultrasonics;VDW.1Seal;VDW.Gold Reciproc;VDW.Rotate;VDW.Silver Reciproc;VDW.Ultra;WaveOne Gold;Wave One Gold Glider;Vortex Blue;X-smart IQ;X-Smart Plus</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Endodontics</value>
     </values>

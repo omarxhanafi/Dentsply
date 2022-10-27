@@ -6575,6 +6575,33 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>DE_Purchasing_Tiering_Contracts</fullName>
+        <columns>CONTRACT.CONTRACT_NUMBER</columns>
+        <columns>Contract_Model__c</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>SourceRecord__c</columns>
+        <columns>CONTRACT.START_DATE</columns>
+        <columns>CONTRACT.END_DATE</columns>
+        <columns>Approval_Status__c</columns>
+        <columns>CONTRACT.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTRACT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Contract.Purchasing_Contract_Turnover</value>
+        </filters>
+        <filters>
+            <field>Contract_Type__c</field>
+            <operation>equals</operation>
+            <value>Tier Dentist,Tier Lab</value>
+        </filters>
+        <label>DE: Purchasing Tiering Contracts</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DE_Customer_Service_Tier_contracts</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>MyActivatedContracts</fullName>
         <filterScope>Mine</filterScope>
         <filters>
@@ -17599,7 +17626,7 @@ TEXT( Status) = &quot;Draft&quot;</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>Prevent_Contract_Creation</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>only DE Implant sales reps should be able to create pricing contracts and also purchasing contracts that don&apos;t have the tier models (TFUS-000004795)</description>
         <errorConditionFormula>( LEFT( $UserRole.Name, 8) &lt;&gt; &quot;DE: IMPL&quot; &amp;&amp; 
 

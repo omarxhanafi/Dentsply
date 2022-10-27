@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">Axeos;HELIODENT;Orthophos E;Schick 33;SICAT Suite;SiroCam;Sirolaser</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Digital</value>
     </values>

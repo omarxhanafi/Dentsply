@@ -1253,8 +1253,10 @@ Account__r.BillingStreet &amp;&quot; &quot;&amp; Account__r.BillingCity &amp;&qu
         <columns>Offices__c</columns>
         <columns>CREATEDBY_USER</columns>
         <columns>CREATED_DATE</columns>
+        <columns>Account_Address__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Account Plans</label>
+        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>NA_DSO_Account_Plans</fullName>

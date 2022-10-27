@@ -1222,6 +1222,30 @@ ISBLANK(TMFC_So_that__c),
     </fields>
     <label>TeamForce User Story</label>
     <listViews>
+        <fullName>All_Houssam_s_User_Stories_OPEN</fullName>
+        <columns>NAME</columns>
+        <columns>TMFC_I_want_to__c</columns>
+        <columns>Sandbox__c</columns>
+        <columns>Release__c</columns>
+        <columns>Project__c</columns>
+        <columns>TMFC_TeamForce_Epic__c</columns>
+        <columns>TMFC_User_Story_Priority__c</columns>
+        <columns>TMFC_Story_Points__c</columns>
+        <columns>TMFC_User_Story_Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER.LAST_NAME</field>
+            <operation>equals</operation>
+            <value>Adib</value>
+        </filters>
+        <filters>
+            <field>TMFC_User_Story_Status__c</field>
+            <operation>notEqual</operation>
+            <value>In Production - Closed,Cancelled</value>
+        </filters>
+        <label>All Houssam&apos;s User Stories (OPEN)</label>
+    </listViews>
+    <listViews>
         <fullName>All_Jenn_s_open_user_stories</fullName>
         <columns>NAME</columns>
         <columns>Type__c</columns>
@@ -1251,6 +1275,8 @@ ISBLANK(TMFC_So_that__c),
         <fullName>All_Majdi_s_User_Stories_OPEN</fullName>
         <columns>NAME</columns>
         <columns>TMFC_I_want_to__c</columns>
+        <columns>Release__c</columns>
+        <columns>Sandbox__c</columns>
         <columns>TMFC_TeamForce_Sprint__c</columns>
         <columns>Project__c</columns>
         <columns>TMFC_TeamForce_Epic__c</columns>
@@ -1275,6 +1301,7 @@ ISBLANK(TMFC_So_that__c),
         <columns>NAME</columns>
         <columns>OWNER.FIRST_NAME</columns>
         <columns>TMFC_I_want_to__c</columns>
+        <columns>Sandbox__c</columns>
         <columns>TMFC_User_Story_Priority__c</columns>
         <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
@@ -1376,6 +1403,7 @@ ISBLANK(TMFC_So_that__c),
         <fullName>All_Nisreen_s_User_Stories_OPEN</fullName>
         <columns>NAME</columns>
         <columns>TMFC_I_want_to__c</columns>
+        <columns>Sandbox__c</columns>
         <columns>TMFC_TeamForce_Sprint__c</columns>
         <columns>Project__c</columns>
         <columns>TMFC_TeamForce_Epic__c</columns>
@@ -1391,10 +1419,36 @@ ISBLANK(TMFC_So_that__c),
         <label>All Nisreen&apos;s User Stories (OPEN)</label>
     </listViews>
     <listViews>
+        <fullName>All_Omar_s_User_Stories_OPEN</fullName>
+        <columns>NAME</columns>
+        <columns>TMFC_I_want_to__c</columns>
+        <columns>Sandbox__c</columns>
+        <columns>ReleaseDate__c</columns>
+        <columns>TMFC_TeamForce_Sprint__c</columns>
+        <columns>Project__c</columns>
+        <columns>TMFC_TeamForce_Epic__c</columns>
+        <columns>TMFC_User_Story_Priority__c</columns>
+        <columns>TMFC_Story_Points__c</columns>
+        <columns>TMFC_User_Story_Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER.LAST_NAME</field>
+            <operation>equals</operation>
+            <value>Hanafi</value>
+        </filters>
+        <filters>
+            <field>TMFC_User_Story_Status__c</field>
+            <operation>notEqual</operation>
+            <value>In Production - Closed,Cancelled</value>
+        </filters>
+        <label>All Omar&apos;s User Stories (OPEN)</label>
+    </listViews>
+    <listViews>
         <fullName>All_Richard_s_User_Stories</fullName>
         <columns>NAME</columns>
         <columns>OWNER.FIRST_NAME</columns>
         <columns>TMFC_I_want_to__c</columns>
+        <columns>Sandbox__c</columns>
         <columns>TMFC_TeamForce_Sprint__c</columns>
         <columns>TMFC_User_Story_Priority__c</columns>
         <columns>TMFC_Story_Points__c</columns>
@@ -1435,11 +1489,11 @@ ISBLANK(TMFC_So_that__c),
         <columns>NAME</columns>
         <columns>Area__c</columns>
         <columns>TMFC_I_want_to__c</columns>
-        <columns>TMFC_TeamForce_Sprint__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Sandbox__c</columns>
         <columns>Project__c</columns>
         <columns>TMFC_TeamForce_Epic__c</columns>
         <columns>TMFC_User_Story_Priority__c</columns>
-        <columns>TMFC_Story_Points__c</columns>
         <columns>TMFC_User_Story_Notes__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
@@ -1518,6 +1572,27 @@ ISBLANK(TMFC_So_that__c),
         <label>April 5th 2022 release</label>
     </listViews>
     <listViews>
+        <fullName>August_16th_2022_release</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>TMFC_I_want_to__c</columns>
+        <columns>TMFC_Story_Points__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Sandbox__c</columns>
+        <columns>TMFC_User_Story_Notes__c</columns>
+        <columns>TMFC_User_Story_Priority__c</columns>
+        <columns>TMFC_User_Story_Status__c</columns>
+        <columns>Product__c</columns>
+        <columns>Project__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ReleaseDate__c</field>
+            <operation>equals</operation>
+            <value>8/16/2022</value>
+        </filters>
+        <label>August 16th 2022 release</label>
+    </listViews>
+    <listViews>
         <fullName>Bug_Fixes_Development_Queue_TMFC_TeamForce_User_Story</fullName>
         <filterScope>Queue</filterScope>
         <label>Bug Fixes - Development Queue</label>
@@ -1537,6 +1612,11 @@ ISBLANK(TMFC_So_that__c),
     </listViews>
     <listViews>
         <fullName>CIM360_Queue_TMFC_TeamForce_User_Story</fullName>
+        <columns>NAME</columns>
+        <columns>TMFC_I_want_to__c</columns>
+        <columns>Requester_Country__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Project__c</columns>
         <filterScope>Queue</filterScope>
         <label>CIM360 Queue</label>
         <queue>CIM360_Queue</queue>
@@ -2094,14 +2174,14 @@ ISBLANK(TMFC_So_that__c),
         <columns>TMFC_I_want_to__c</columns>
         <columns>TMFC_So_that__c</columns>
         <columns>TMFC_User_Story_Priority__c</columns>
+        <columns>TMFC_User_Story_Status__c</columns>
+        <columns>Type__c</columns>
         <columns>OWNER.LAST_NAME</columns>
         <columns>TMFC_As__c</columns>
         <columns>Area__c</columns>
-        <columns>Type__c</columns>
         <columns>Product__c</columns>
         <columns>Due_Date__c</columns>
         <columns>TMFC_User_Story_Text__c</columns>
-        <columns>TMFC_User_Story_Status__c</columns>
         <columns>Assigned_Sandbox__c</columns>
         <columns>CREATEDBY_USER</columns>
         <columns>CRM_Request__c</columns>
@@ -2127,6 +2207,25 @@ ISBLANK(TMFC_So_that__c),
             <value>In Production - Closed,Cancelled</value>
         </filters>
         <label>Integrations Team Backlog</label>
+    </listViews>
+    <listViews>
+        <fullName>July_21st_2022_release</fullName>
+        <columns>NAME</columns>
+        <columns>TMFC_I_want_to__c</columns>
+        <columns>TMFC_Story_Points__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Sandbox__c</columns>
+        <columns>TMFC_User_Story_Notes__c</columns>
+        <columns>TMFC_User_Story_Priority__c</columns>
+        <columns>TMFC_User_Story_Status__c</columns>
+        <columns>Project__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ReleaseDate__c</field>
+            <operation>equals</operation>
+            <value>7/19/2022</value>
+        </filters>
+        <label>July 19th 2022 release</label>
     </listViews>
     <listViews>
         <fullName>June_21st_2022_release</fullName>
@@ -2169,17 +2268,24 @@ ISBLANK(TMFC_So_that__c),
     <listViews>
         <fullName>My_User_Stories_not_closed_or_paused</fullName>
         <columns>NAME</columns>
+        <columns>TMFC_TeamForce_Epic__c</columns>
+        <columns>Sandbox__c</columns>
         <columns>Requester_Country__c</columns>
         <columns>TMFC_User_Story_Status__c</columns>
         <columns>TMFC_User_Story_Text__c</columns>
         <columns>Area__c</columns>
         <columns>Type__c</columns>
         <columns>Product__c</columns>
-        <filterScope>Mine</filterScope>
+        <filterScope>Everything</filterScope>
         <filters>
             <field>TMFC_User_Story_Status__c</field>
             <operation>equals</operation>
-            <value>New,Grooming,Backlog,Scheduled,Dev in Progress,Test in Progress,Ready to dev integrate,Ready for prod deploy</value>
+            <value>New,Submitted,Grooming,Backlog,Scheduled,Dev in Progress,Test in Progress,Ready to dev integrate,Ready for prod deploy</value>
+        </filters>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>contains</operation>
+            <value>yannick</value>
         </filters>
         <label>My User Stories - not closed or paused</label>
         <sharedTo>
@@ -2234,6 +2340,27 @@ ISBLANK(TMFC_So_that__c),
         <label>Next Release + Prod Changes since last</label>
     </listViews>
     <listViews>
+        <fullName>October_18th_2022_release</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>TMFC_I_want_to__c</columns>
+        <columns>TMFC_Story_Points__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Sandbox__c</columns>
+        <columns>TMFC_User_Story_Notes__c</columns>
+        <columns>TMFC_User_Story_Priority__c</columns>
+        <columns>TMFC_User_Story_Status__c</columns>
+        <columns>Product__c</columns>
+        <columns>Project__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ReleaseDate__c</field>
+            <operation>equals</operation>
+            <value>10/18/2022</value>
+        </filters>
+        <label>October 18th 2022 release</label>
+    </listViews>
+    <listViews>
         <fullName>Open_Bugs</fullName>
         <columns>NAME</columns>
         <columns>TMFC_I_want_to__c</columns>
@@ -2276,8 +2403,8 @@ ISBLANK(TMFC_So_that__c),
         <columns>NAME</columns>
         <columns>TMFC_I_want_to__c</columns>
         <columns>Sandbox__c</columns>
-        <columns>Release__c</columns>
         <columns>Project__c</columns>
+        <columns>Release__c</columns>
         <columns>TMFC_TeamForce_Epic__c</columns>
         <columns>TMFC_User_Story_Priority__c</columns>
         <columns>TMFC_Story_Points__c</columns>
@@ -2458,7 +2585,61 @@ ISBLANK(TMFC_So_that__c),
         <label>Sales Lead Process Phase 2</label>
     </listViews>
     <listViews>
+        <fullName>Sales_Marketing</fullName>
+        <columns>NAME</columns>
+        <columns>TMFC_User_Story_Text__c</columns>
+        <columns>TMFC_User_Story_Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TMFC_User_Story_Status__c</field>
+            <operation>equals</operation>
+            <value>New,Submitted,Grooming,Backlog,Scheduled,Dev in Progress,Test in Progress,Roadblock - paused,Ready to dev integrate,Ready for prod deploy</value>
+        </filters>
+        <filters>
+            <field>OWNER.ALIAS</field>
+            <operation>equals</operation>
+            <value>Sales/Marketing - Development Queue</value>
+        </filters>
+        <label>Sales &amp; Marketing</label>
+    </listViews>
+    <listViews>
+        <fullName>Sales_Marketing_Backlog</fullName>
+        <columns>NAME</columns>
+        <columns>Area__c</columns>
+        <columns>TMFC_I_want_to__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Platform__c</columns>
+        <columns>TMFC_User_Story_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Platform__c</field>
+            <operation>equals</operation>
+            <value>CPQ,Marketing,Sales</value>
+        </filters>
+        <filters>
+            <field>TMFC_User_Story_Status__c</field>
+            <operation>equals</operation>
+            <value>Grooming</value>
+        </filters>
+        <filters>
+            <field>Area__c</field>
+            <operation>notEqual</operation>
+            <value>Einstein Analytics,Engagement</value>
+        </filters>
+        <label>Sales/Marketing - Open Backlog</label>
+    </listViews>
+    <listViews>
         <fullName>Sales_Marketing_Development_Queue_TMFC_TeamForce_User_Story</fullName>
+        <columns>NAME</columns>
+        <columns>TMFC_I_want_to__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Platform__c</columns>
+        <columns>TMFC_User_Story_Status__c</columns>
         <filterScope>Queue</filterScope>
         <label>Sales/Marketing - Development Queue</label>
         <queue>Sales_Marketing_Development_Queue</queue>
@@ -2481,6 +2662,27 @@ ISBLANK(TMFC_So_that__c),
         <label>Epic: Security &amp; Authentication Process</label>
     </listViews>
     <listViews>
+        <fullName>September_20th_2022_release</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>TMFC_I_want_to__c</columns>
+        <columns>TMFC_Story_Points__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Sandbox__c</columns>
+        <columns>TMFC_User_Story_Notes__c</columns>
+        <columns>TMFC_User_Story_Priority__c</columns>
+        <columns>TMFC_User_Story_Status__c</columns>
+        <columns>Product__c</columns>
+        <columns>Project__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ReleaseDate__c</field>
+            <operation>equals</operation>
+            <value>9/20/2022</value>
+        </filters>
+        <label>September 20th 2022 release</label>
+    </listViews>
+    <listViews>
         <fullName>Service_Field_Service_Development_Queu_TMFC_TeamForce_User_Story</fullName>
         <filterScope>Queue</filterScope>
         <label>Service/Field Service - Development Queu</label>
@@ -2499,16 +2701,8 @@ ISBLANK(TMFC_So_that__c),
         <columns>CREATED_DATE</columns>
         <columns>Due_Date__c</columns>
         <columns>TMFC_Story_Points__c</columns>
-        <columns>Project__c</columns>
-        <columns>Requester_Country__c</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>TMFC_User_Story_Status__c</field>
-            <operation>notEqual</operation>
-            <value>In Production - Closed,Cancelled</value>
-        </filters>
         <label>All</label>
-        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>Transparency_Queue_TMFC_TeamForce_User_Story</fullName>

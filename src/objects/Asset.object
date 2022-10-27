@@ -1509,36 +1509,6 @@
         <type>Checkbox</type>
     </fields>
     <listViews>
-        <fullName>ANZNewAssetsLast7Days</fullName>
-        <columns>ArticleNumberSKU__c</columns>
-        <columns>ASSET.NAME</columns>
-        <columns>ASSET.SERIAL_NUMBER</columns>
-        <columns>ASSET.INSTALL_DATE</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>ASSET.CREATED_DATE</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>ASSET.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Asset.DS_Fixed_Asset</value>
-        </filters>
-        <filters>
-            <field>CREATEDBY_USER.ALIAS</field>
-            <operation>equals</operation>
-            <value>finte</value>
-        </filters>
-        <filters>
-            <field>ASSET.CREATED_DATE</field>
-            <operation>equals</operation>
-            <value>LAST_N_DAYS:7</value>
-        </filters>
-        <label>ANZ: New Assets Last 7 Days</label>
-        <sharedTo>
-            <role>Dentsply_IH_CEO</role>
-            <roleAndSubordinatesInternal>ANZ_CRM_Analyst</roleAndSubordinatesInternal>
-        </sharedTo>
-    </listViews>
-    <listViews>
         <fullName>AllAssets</fullName>
         <filterScope>Everything</filterScope>
         <label>All Assets</label>
@@ -1556,6 +1526,16 @@
             <field>ASSET.NAME</field>
             <operation>contains</operation>
             <value>CEREC</value>
+        </filters>
+        <filters>
+            <field>ASSET.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Asset.siroForceIntegration</value>
+        </filters>
+        <filters>
+            <field>ASSET.address_country</field>
+            <operation>equals</operation>
+            <value>DE</value>
         </filters>
         <label>CEREC Installed Machines</label>
         <sharedTo>

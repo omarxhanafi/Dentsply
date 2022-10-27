@@ -6744,6 +6744,16 @@
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>AdditionalComments__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Address</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -6780,6 +6790,33 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CannotCompleteReason__c</fullName>
+        <description>Updated manually or through the SFS: Service Appointment Status Transition flow. Synced with Work Orders</description>
+        <externalId>false</externalId>
+        <label>Cannot Complete Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Status</controllingField>
+            <restricted>true</restricted>
+            <valueSetName>CannotCompleteReason</valueSetName>
+            <valueSettings>
+                <controllingFieldValue>Cannot Complete</controllingFieldValue>
+                <valueName>Waiting Parts</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cannot Complete</controllingFieldValue>
+                <valueName>Waiting Technical Help</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cannot Complete</controllingFieldValue>
+                <valueName>Waiting Customer</valueName>
+            </valueSettings>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Comments__c</fullName>
@@ -7376,6 +7413,16 @@
         <fullName>Subject</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TF_AssignedToMe__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (FSSK__FSK_Assigned_Service_Resource__r.RelatedRecordId= $User.Id ,&quot;True&quot;,&quot;False&quot;)</formula>
+        <label>TF_AssignedToMe?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>TimeType__c</fullName>

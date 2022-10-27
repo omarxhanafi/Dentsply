@@ -795,8 +795,8 @@ public with sharing class AccountTriggerHelper {
         for (Account acc: newAccs) {
             //check number of entitlement per each account 
             Integer numberOfEntitlmentPerAcc = mapOfAccountIdToEntitlement.containsKey(acc.Id) ? mapOfAccountIdToEntitlement.get(acc.Id).size() : 0;
-            //create a new entitlement only for accounts having 1 or 0 entitlement
-            if (( numberOfEntitlmentPerAcc <= 1) && countrySLAIdsMap.containsKey(acc.Country__c)) { 
+            //create a new entitlement only for accounts having  0 entitlement
+            if (( numberOfEntitlmentPerAcc == 0) && countrySLAIdsMap.containsKey(acc.Country__c)) { 
                 //loop over the process related to the country to create entitlement for each process 
                 for(Id salesprocessId : countrySLAIdsMap.get(acc.Country__c)){
                     //check if current process already exist for this account if yes skip the creation if no proceed 

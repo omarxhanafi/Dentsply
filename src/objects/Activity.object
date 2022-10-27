@@ -2186,14 +2186,7 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone__c,&quot;&qu
         <filterScope>Delegated</filterScope>
         <label>20. Attività dei miei collaboratori</label>
         <language>en_US</language>
-        <sharedTo>
-            <role>IT_DI_Centro_RSM</role>
-            <role>IT_DI_Nord_Est_RSM</role>
-            <role>IT_DI_Nord_Ovest_RSM</role>
-            <role>IT_DI_Sud_RSM</role>
-            <role>IT_IMPL_Managing_Director</role>
-            <role>IT_IMPL_Sales_Manager</role>
-        </sharedTo>
+        <sharedTo/>
     </listViews>
     <listViews>
         <fullName>x20MeinedelegiertenAktivitten</fullName>
@@ -2236,9 +2229,7 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone__c,&quot;&qu
         <filterScope>Team</filterScope>
         <label>30. Attività del mio Team</label>
         <language>en_US</language>
-        <sharedTo>
-            <group>IT_DI_Managers</group>
-        </sharedTo>
+        <sharedTo/>
     </listViews>
     <listViews>
         <fullName>x30Lesactivitsdemonquipe</fullName>

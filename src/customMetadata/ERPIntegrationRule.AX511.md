@@ -19,6 +19,10 @@
         <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
+        <field>ACC_RetainExistingSalesforceOwnerId__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
         <field>ADR_IsEnabled__c</field>
         <value xsi:type="xsd:boolean">false</value>
     </values>

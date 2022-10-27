@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">Cavitron;NuPro;Purevac;SDR flow+;SmartLite Pro;Surefil one;Aquasil;Calibra;Palodent Plus;Prime &amp; Bond active;TPH;Tessera</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Consumables</value>
     </values>

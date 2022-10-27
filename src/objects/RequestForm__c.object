@@ -1357,6 +1357,18 @@
         <type>Phone</type>
     </fields>
     <fields>
+        <fullName>ProductInfo__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please Include SKU, Quantity, and Price</inlineHelpText>
+        <label>Product Info</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
         <fullName>ProductSKUInvolved__c</fullName>
         <description>Custom field that will be used by Tech Mails forms</description>
         <externalId>false</externalId>
@@ -1807,6 +1819,121 @@
         <visibleLines>3</visibleLines>
     </fields>
     <label>Request Form</label>
+    <listViews>
+        <fullName>ALL</fullName>
+        <columns>NAME</columns>
+        <columns>SBU__c</columns>
+        <columns>FormName__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>NA: All Request Forms (Testing)</label>
+        <sharedTo>
+            <group>NA_Endo</group>
+            <role>NA_Customer_Service_Endo</role>
+            <role>NA_Customer_Service_Tier_1</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_Accounting_GBS_Request_Forms_RequestForm</fullName>
+        <filterScope>Queue</filterScope>
+        <label>NA: Accounting GBS Request Forms</label>
+        <queue>NA_Accounting_GBS_Request_Forms</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_Consumables_York_Request_Forms_RequestForm</fullName>
+        <filterScope>Queue</filterScope>
+        <label>NA: Consumables York Request Forms</label>
+        <queue>NA_Consumables_York_Request_Forms</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_Endo_Request_Forms</fullName>
+        <columns>NAME</columns>
+        <columns>SBU__c</columns>
+        <columns>FormName__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
+        <label>NA: Endo</label>
+        <sharedTo>
+            <group>NA_Endo</group>
+            <role>NA_Customer_Service_Endo</role>
+            <role>NA_Customer_Service_Tier_1</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_Endo_Request_Forms_RequestForm</fullName>
+        <filterScope>Queue</filterScope>
+        <label>NA: Endo Request Forms</label>
+        <queue>NA_Endo_Request_Forms</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_Equipment_Charlotte_Request_Forms_RequestForm</fullName>
+        <filterScope>Queue</filterScope>
+        <label>NA: Equipment Charlotte Request Forms</label>
+        <queue>NA_Equipment_Charlotte_Request_Forms</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_Implant_Request_Forms_RequestForm</fullName>
+        <filterScope>Queue</filterScope>
+        <label>NA: Implant Request Forms</label>
+        <queue>NA_Implant_Request_Forms</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_JC_Warehouse_Request_Forms_RequestForm</fullName>
+        <filterScope>Queue</filterScope>
+        <label>NA: JC Warehouse Request Forms</label>
+        <queue>NA_JC_Warehouse_Request_Forms</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_MIS_Request_Forms_RequestForm</fullName>
+        <filterScope>Queue</filterScope>
+        <label>NA: MIS Request Forms</label>
+        <queue>NA_MIS_Request_Forms</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_Ortho_Request_Forms_RequestForm</fullName>
+        <filterScope>Queue</filterScope>
+        <label>NA: Ortho Request Forms</label>
+        <queue>NA_Ortho_Request_Forms</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <nameField>
         <displayFormat>RF-{00000}</displayFormat>
         <label>Request Form #</label>
