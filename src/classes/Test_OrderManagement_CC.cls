@@ -42,6 +42,19 @@ public with sharing class Test_OrderManagement_CC {
     }
 
     @isTest
+    private static void testGetUserDecimalSeparator() {
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
+        testUser.LocaleSidKey = 'tr'; // The Default Decimal Separator for Turkey is a comma.
+        update testUser;
+        System.runAs(testUser) {
+            Test.startTest();
+            String userDecimalSeparator = OrderManagement_CC.getUserDecimalSeparator();
+            Test.stopTest();
+            System.assertEquals(',',userDecimalSeparator);
+        }
+    }
+
+    @isTest
     private static void testUIThemeDisplayed() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
         System.runAs(testUser) {
