@@ -1,54 +1,58 @@
 <template>
 
-  <template if:false={accountSelected}>
-        
+    <template if:false={accountSelected}>
+
         <lightning-card variant="Narrow">
             <!--<div class="slds-text-heading_small"> -->
-                <h2 slot="title">Found Account Matches
-                    <lightning-helptext content="Matching details"></lightning-helptext>
-                </h2>
+            <h2 slot="title">Found Account Matches
+                <lightning-helptext content="Matching details"></lightning-helptext>
+            </h2>
 
             <!--</div> -->
-        
-                <div class="slds-grid slds-gutters">
-                    <div class="slds-col slds-size_8-of-8">
 
-                        <template for:each={shownContactList} for:item="item">
-                            <table key={item.matchRecord.Id} style="margin-top:10px;margin-bottom:10px;">
-                                <tr>
-                                    <td>
-                                        <c-lead-match-record confidence={item.matchScore} acc={item.matchRecord} recordid={item.matchRecord.Id} accountid={item.matchRecord.Id} objecttype="Account" onprogressvaluechange={handleAccountSelection}></c-lead-match-record> <!-- reasons={item.matchReasons} -->
-                                    </td>    
-                                </tr>    
-                            </table>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_8-of-8">
+
+                    <template if:true={showSpinner}>
+                        <lightning-spinner alternative-text="Loading account matches" size="medium"></lightning-spinner>
+                    </template>
+
+                    <template for:each={shownContactList} for:item="item">
+                        <table key={item.matchRecord.Id} style="margin-top:10px;margin-bottom:10px;">
+                            <tr>
+                                <td>
+                                    <c-lead-match-record confidence={item.matchScore} acc={item.matchRecord} recordid={item.matchRecord.Id} accountid={item.matchRecord.Id} objecttype="Account" onprogressvaluechange={handleAccountSelection}></c-lead-match-record> <!-- reasons={item.matchReasons} -->
+                                </td>
+                            </tr>
+                        </table>
+                    </template>
+
+                    <template if:true={matchContactList}>
+                        <template if:false={showMoreContacts}>
+                            <lightning-button label="Show more" title="Show more" onclick={handleShowMoreContacts} style="display: grid; width: 100%"></lightning-button>
                         </template>
-
-                        <template if:true={matchContactList}>
-                            <template if:false={showMoreContacts}>
-                                <lightning-button label="Show more" title="Show more" onclick={handleShowMoreContacts} style="display: grid; width: 100%"></lightning-button>
+                        <template if:true={showMoreContacts}>
+                            <template for:each={matchContactList} for:item="item">
+                                <table key={item.matchRecord.Id} style="margin-top:10px;margin-bottom:10px;">
+                                    <tr>
+                                        <td>
+                                            <c-lead-match-record confidence={item.matchScore} acc={item.matchRecord} recordid={item.matchRecord.Id} accountid={item.matchRecord.Id} objecttype="Account" onprogressvaluechange={handleAccountSelection}></c-lead-match-record> <!-- reasons={item.matchReasons} -->
+                                        </td>
+                                    </tr>
+                                </table>
                             </template>
-                            <template if:true={showMoreContacts}>
-                                <template for:each={matchContactList} for:item="item">
-                                    <table key={item.matchRecord.Id} style="margin-top:10px;margin-bottom:10px;">
-                                        <tr>
-                                            <td>
-                                                <c-lead-match-record confidence={item.matchScore} acc={item.matchRecord} recordid={item.matchRecord.Id} accountid={item.matchRecord.Id} objecttype="Account" onprogressvaluechange={handleAccountSelection}></c-lead-match-record> <!-- reasons={item.matchReasons} -->
-                                            </td>    
-                                        </tr>    
-                                    </table>
-                                </template>
-                                <lightning-button label="Show less" title="Show less" onclick={handleShowMoreContacts} style="display: grid; width: 100%"></lightning-button>
-                            </template>
+                            <lightning-button label="Show less" title="Show less" onclick={handleShowMoreContacts} style="display: grid; width: 100%"></lightning-button>
                         </template>
+                    </template>
 
-                    </div>
                 </div>
+            </div>
 
-                <lightning-record-edit-form object-api-name="Contact">
-                    <lightning-input-field field-name="AccountId" onchange={handleAccountLookupSelection}></lightning-input-field>
-                </lightning-record-edit-form>
+            <lightning-record-edit-form object-api-name="Contact">
+                <lightning-input-field field-name="AccountId" onchange={handleAccountLookupSelection}></lightning-input-field>
+            </lightning-record-edit-form>
 
-                <div style="height:10px;"></div>
+            <div style="height:10px;"></div>
 
 
 
@@ -57,81 +61,81 @@
 
     <template if:true={accountSelected}>
 
-        <lightning-card variant="Narrow"> 
+        <lightning-card variant="Narrow">
             <div class="slds-text-heading_small">
                 <h2>Selected Account</h2>
             </div>
 
-        <div style="border-color:rgb(229,229,229);border-width:1px;border-style:solid;padding:0.25rem;">
-            
-            <div style="display:flex;padding:0 0.75rem 0 0.75rem;" class="slds-grid">
-                <div class="slds-size_4-of-6" style="padding-top:0.75rem;padding-bottom:0.75rem;">
-                    <ul>
-                        <li>{accountName}</li>
-                        <template if:true={street}>
-                            <li>{accountStreet}, {accountPostalcode} {accountCity}</li>
-                        </template>
-                        <template if:false={street}>
-                            <li>{accountPostalcode} {accountCity}</li>
-                        </template>
-                    </ul>
-                </div>
-                <div class="slds-size_2-of-6" style="padding-top:0.75rem;padding-bottom:0.75rem;">
-                    <lightning-button label="Change" onclick={changeAccount}></lightning-button>  
+            <div style="border-color:rgb(229,229,229);border-width:1px;border-style:solid;padding:0.25rem;">
+
+                <div style="display:flex;padding:0 0.75rem 0 0.75rem;" class="slds-grid">
+                    <div class="slds-size_4-of-6" style="padding-top:0.75rem;padding-bottom:0.75rem;">
+                        <ul>
+                            <li>{accountName}</li>
+                            <template if:true={street}>
+                                <li>{accountStreet}, {accountPostalcode} {accountCity}</li>
+                            </template>
+                            <template if:false={street}>
+                                <li>{accountPostalcode} {accountCity}</li>
+                            </template>
+                        </ul>
+                    </div>
+                    <div class="slds-size_2-of-6" style="padding-top:0.75rem;padding-bottom:0.75rem;">
+                        <lightning-button label="Change" onclick={changeAccount}></lightning-button>
+                    </div>
                 </div>
             </div>
-        </div> 
         </lightning-card>
 
         <template if:false={contactSelected}>
-        <lightning-card variant="Narrow"> 
-            <div class="slds-text-heading_small">
-                <h2>Found Contact Matches</h2>
-            </div>
-        
+            <lightning-card variant="Narrow">
+                <div class="slds-text-heading_small">
+                    <h2>Found Contact Matches</h2>
+                </div>
+
                 <div class="slds-grid slds-gutters">
                     <div class="slds-col slds-size_8-of-8">
-                    <template if:false={createContact}>
-                        <template for:each={matchRelatedContactList} for:item="item">
-                            <table key={item.matchRecord.Id} style="margin-top:10px;margin-bottom:10px;">
-                                <tr>
-                                    <td>
-                                        <c-lead-match-record confidence={item.matchScore} con={item.matchRecord} recordid={item.matchRecord.Id} accountid={item.matchRecord.AccountId} objecttype="Contact" onprogressvaluechange={handleContactSelection}></c-lead-match-record> <!-- reasons={item.matchReasons} -->
-                                    </td>    
-                                </tr>    
-                            </table>
+                        <template if:false={createContact}>
+                            <template for:each={matchRelatedContactList} for:item="item">
+                                <table key={item.matchRecord.Id} style="margin-top:10px;margin-bottom:10px;">
+                                    <tr>
+                                        <td>
+                                            <c-lead-match-record confidence={item.matchScore} con={item.matchRecord} recordid={item.matchRecord.Id} accountid={item.matchRecord.AccountId} objecttype="Contact" onprogressvaluechange={handleContactSelection}></c-lead-match-record> <!-- reasons={item.matchReasons} -->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </template>
                         </template>
-                    </template>
 
                         <table>
                             <tr>
                                 <td>
-                                    <div style="border-color:rgb(229,229,229);border-width:1px;border-style:solid;padding:0.25rem;"> 
+                                    <div style="border-color:rgb(229,229,229);border-width:1px;border-style:solid;padding:0.25rem;">
                                         <div style="display:flex;padding:0 0.75rem 0 0.75rem;" class="slds-grid">
-                                        <div class="slds-size_1-of-6" style="padding-top:0.5rem;">
-                                            <lightning-input type="checkbox-button" label="Create new contact" onclick={handleNewContact}></lightning-input>
+                                            <div class="slds-size_1-of-6" style="padding-top:0.5rem;">
+                                                <lightning-input type="checkbox-button" label="Create new contact" onclick={handleNewContact}></lightning-input>
+                                            </div>
+                                            <div class="slds-size_5-of-6" style="padding-top:0.75rem;padding-bottom:0.75rem;">
+                                                <ul>
+                                                    <li>Create new contact</li>
+                                                    <template if:true={createContact}>
+                                                        <li>
+                                                            <lightning-record-edit-form object-api-name="Contact">
+                                                                <lightning-messages> </lightning-messages>
+                                                                <lightning-input-field field-name="Salutation" value={leadSalutation} onchange={updateNewContact}></lightning-input-field>
+                                                                <lightning-input-field field-name="FirstName" value={leadFirstName} onchange={updateNewContact}></lightning-input-field>
+                                                                <lightning-input-field field-name="LastName" value={leadLastName} onchange={updateNewContact}></lightning-input-field>
+                                                                <lightning-input-field field-name="Email" value={leadEmail} onchange={updateNewContact}></lightning-input-field>
+                                                                <lightning-input-field field-name="Profession__c" value={leadProfession} onchange={updateNewContact}></lightning-input-field>
+                                                                <lightning-input-field field-name="Preferred_Language__c" value={leadLanguage} onchange={updateNewContact}></lightning-input-field>
+                                                                <lightning-input-field field-name="AccountId" value={selectedAccountId} read-only="true"></lightning-input-field>
+                                                            </lightning-record-edit-form>
+                                                        </li>
+                                                    </template>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div class="slds-size_5-of-6" style="padding-top:0.75rem;padding-bottom:0.75rem;">
-                                            <ul>
-                                                <li>Create new contact</li>
-                                                <template if:true={createContact}>
-                                                    <li>
-                                                        <lightning-record-edit-form object-api-name="Contact">
-                                                            <lightning-messages> </lightning-messages>
-                                                            <lightning-input-field field-name="Salutation" value={leadSalutation} onchange={updateNewContact}></lightning-input-field>
-                                                            <lightning-input-field field-name="FirstName" value={leadFirstName} onchange={updateNewContact}></lightning-input-field>
-                                                            <lightning-input-field field-name="LastName" value={leadLastName} onchange={updateNewContact}></lightning-input-field>
-                                                            <lightning-input-field field-name="Email" value={leadEmail} onchange={updateNewContact}></lightning-input-field>
-                                                            <lightning-input-field field-name="Profession__c" value={leadProfession} onchange={updateNewContact}></lightning-input-field>
-                                                            <lightning-input-field field-name="Preferred_Language__c" value={leadLanguage} onchange={updateNewContact}></lightning-input-field>
-                                                            <lightning-input-field field-name="AccountId" value={selectedAccountId} read-only="true"></lightning-input-field>
-                                                        </lightning-record-edit-form>
-                                                    </li>
-                                                </template>
-                                            </ul>
-                                        </div>    
-                                     </div>
-                                    </div> 
+                                    </div>
                                 </td>
                             </tr>
 
@@ -141,35 +145,35 @@
                 </div>
                 <div style="height:10px;"></div>
 
-        </lightning-card>
+            </lightning-card>
         </template>
 
         <template if:true={contactSelected}>
 
-            <lightning-card variant="Narrow"> 
+            <lightning-card variant="Narrow">
                 <div class="slds-text-heading_small">
                     <h2>Selected Contact</h2>
                 </div>
-    
-            <div style="border-color:rgb(229,229,229);border-width:1px;border-style:solid;padding:0.25rem;">
-                
-                <div style="display:flex;padding:0 0.75rem 0 0.75rem;" class="slds-grid">
-                    <div class="slds-size_4-of-6" style="padding-top:0.75rem;padding-bottom:0.75rem;">
-                        <lightning-record-view-form record-id={selectedContactId} object-api-name="Contact">
-                            <lightning-output-field field-name="Name" variant="label-hidden"></lightning-output-field>
-                            <lightning-output-field field-name="Email" variant="label-hidden"></lightning-output-field>
-                        </lightning-record-view-form>
-                        <!--<ul>
-                            <li>{selectedContactId}</li>
-                        </ul>-->
-                    </div>
-                    <div class="slds-size_2-of-6" style="padding-top:0.75rem;padding-bottom:0.75rem;">
-                        <lightning-button label="Change" onclick={changeContact}></lightning-button>  
+
+                <div style="border-color:rgb(229,229,229);border-width:1px;border-style:solid;padding:0.25rem;">
+
+                    <div style="display:flex;padding:0 0.75rem 0 0.75rem;" class="slds-grid">
+                        <div class="slds-size_4-of-6" style="padding-top:0.75rem;padding-bottom:0.75rem;">
+                            <lightning-record-view-form record-id={selectedContactId} object-api-name="Contact">
+                                <lightning-output-field field-name="Name" variant="label-hidden"></lightning-output-field>
+                                <lightning-output-field field-name="Email" variant="label-hidden"></lightning-output-field>
+                            </lightning-record-view-form>
+                            <!--<ul>
+                                <li>{selectedContactId}</li>
+                            </ul>-->
+                        </div>
+                        <div class="slds-size_2-of-6" style="padding-top:0.75rem;padding-bottom:0.75rem;">
+                            <lightning-button label="Change" onclick={changeContact}></lightning-button>
+                        </div>
                     </div>
                 </div>
-            </div> 
             </lightning-card>
-            </template>
+        </template>
 
     </template>
 
@@ -188,5 +192,5 @@
     </lightning-accordion-section>
 
 </lightning-accordion> -->
-    
+
 </template>
