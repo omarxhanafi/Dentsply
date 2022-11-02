@@ -2048,19 +2048,6 @@ All Other Login Info: Username: track@us.dentsply.com, Password: centiro</inline
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>PDFButlerEmailDistributionList__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>PDF Butler Email Distribution List</label>
-        <referenceTo>Account</referenceTo>
-        <relationshipLabel>Orders (PDF Butler Email Distribution List)</relationshipLabel>
-        <relationshipName>Orders1</relationshipName>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>PDFButlerLocale__c</fullName>
         <externalId>false</externalId>
         <formula>TEXT($User.LocaleSidKey)</formula>
@@ -3654,14 +3641,11 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <columns>Order_Amount_global__c</columns>
         <columns>total_discount_on_the_order_c__c</columns>
         <columns>ORDERS.EFFECTIVE_DATE</columns>
-        <columns>CORE.USERS.FIRST_NAME</columns>
-        <columns>CORE.USERS.LAST_NAME</columns>
         <columns>Total_of_Products_on_this_Order__c</columns>
         <columns>UserCountryETM__c</columns>
         <columns>User_Geography__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Orders</label>
-        <language>en_US</language>
         <sharedTo>
             <roleAndSubordinates>Benelux_CRM_Analyst</roleAndSubordinates>
         </sharedTo>
@@ -3709,6 +3693,232 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>CA_CS_INBOX_ALL_Pending</fullName>
+        <booleanFilter>2 AND 3 AND 4 AND 5 AND (6 OR (7 AND 8) OR 1)</booleanFilter>
+        <columns>Customer_Service_Received__c</columns>
+        <columns>ORDERS.LAST_UPDATE</columns>
+        <columns>ORDERS.STATUS</columns>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>ORDERS.EFFECTIVE_DATE</columns>
+        <columns>Customer_Service_Rep_Responsible__c</columns>
+        <columns>Shipping_Method__c</columns>
+        <columns>Total_of_Products_on_this_Order__c</columns>
+        <columns>ORDER.SHIPPING_STATE</columns>
+        <columns>PRICEBOOK2.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Location__c</field>
+            <operation>startsWith</operation>
+            <value>CS Inbox -</value>
+        </filters>
+        <filters>
+            <field>ORDER.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Order.Direct_global_order</value>
+        </filters>
+        <filters>
+            <field>CS_Inbox_Approved__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>PRICEBOOK2.NAME</field>
+            <operation>startsWith</operation>
+            <value>CA IMP</value>
+        </filters>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Created,Activated,Rejected</value>
+        </filters>
+        <filters>
+            <field>Regional_Manager_Approved__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>total_discount_on_the_order_c__c</field>
+            <operation>equals</operation>
+            <value>0.0</value>
+        </filters>
+        <filters>
+            <field>Waive_Shipping_Charges__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>CA: CS INBOX ALL Pending</label>
+        <sharedTo>
+            <group>NA_DI_Customer_Service_and_Mgmt</group>
+            <role>DNA_Shared_Services</role>
+            <role>NA_CRM_Analyst</role>
+            <role>NA_Customer_Service_Implants</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CA_MIS_Orders_for_Processing</fullName>
+        <booleanFilter>2 AND (1 OR 3)</booleanFilter>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>CreatedByName__c</columns>
+        <columns>submitted_date__c</columns>
+        <columns>Customer_Service_Received__c</columns>
+        <columns>ORDERS.TOTAL_AMOUNT</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>equals</operation>
+            <value>Processing</value>
+        </filters>
+        <filters>
+            <field>PRICEBOOK2.NAME</field>
+            <operation>equals</operation>
+            <value>CA MIS Orders</value>
+        </filters>
+        <filters>
+            <field>total_discount_on_the_order_c__c</field>
+            <operation>equals</operation>
+            <value>0.0</value>
+        </filters>
+        <label>CA: MIS Orders for Processing - DNU</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CA_NCO_Orders_Completed</fullName>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>CreatedByName__c</columns>
+        <columns>submitted_date__c</columns>
+        <columns>Customer_Service_Date_Time_Completed__c</columns>
+        <columns>ORDERS.TOTAL_AMOUNT</columns>
+        <columns>ORDERS.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Order_Type__c</field>
+            <operation>equals</operation>
+            <value>Discount on Demand</value>
+        </filters>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>equals</operation>
+            <value>Activated</value>
+        </filters>
+        <filters>
+            <field>PRICEBOOK2.NAME</field>
+            <operation>equals</operation>
+            <value>CA Consumables NCO</value>
+        </filters>
+        <label>CA: NCO Orders - Completed</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+            <roleAndSubordinatesInternal>CA_Executives</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CA_NCO_Orders_NOT_Submitted</fullName>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>CreatedByName__c</columns>
+        <columns>submitted_date__c</columns>
+        <columns>ORDERS.TOTAL_AMOUNT</columns>
+        <columns>ORDERS.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Order_Type__c</field>
+            <operation>equals</operation>
+            <value>Discount on Demand</value>
+        </filters>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>equals</operation>
+            <value>Created</value>
+        </filters>
+        <filters>
+            <field>PRICEBOOK2.NAME</field>
+            <operation>equals</operation>
+            <value>CA Consumables NCO</value>
+        </filters>
+        <label>CA: NCO Orders - NOT Submitted</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+            <roleAndSubordinatesInternal>CA_Executives</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CA_NCO_Orders_Rejected</fullName>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>CreatedByName__c</columns>
+        <columns>submitted_date__c</columns>
+        <columns>ORDERS.TOTAL_AMOUNT</columns>
+        <columns>ORDERS.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Order_Type__c</field>
+            <operation>equals</operation>
+            <value>Discount on Demand</value>
+        </filters>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>equals</operation>
+            <value>Rejected</value>
+        </filters>
+        <filters>
+            <field>PRICEBOOK2.NAME</field>
+            <operation>equals</operation>
+            <value>CA Consumables NCO</value>
+        </filters>
+        <label>CA: NCO Orders - Rejected</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+            <roleAndSubordinatesInternal>CA_Executives</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CA_NCO_Orders_for_Processing</fullName>
+        <booleanFilter>1 AND 3 AND (2 OR 4) AND 5</booleanFilter>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>CreatedByName__c</columns>
+        <columns>submitted_date__c</columns>
+        <columns>Customer_Service_Received__c</columns>
+        <columns>ORDERS.TOTAL_AMOUNT</columns>
+        <columns>ORDERS.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Order_Type__c</field>
+            <operation>equals</operation>
+            <value>Discount on Demand</value>
+        </filters>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>equals</operation>
+            <value>Processing</value>
+        </filters>
+        <filters>
+            <field>PRICEBOOK2.NAME</field>
+            <operation>equals</operation>
+            <value>CA Consumables NCO</value>
+        </filters>
+        <filters>
+            <field>Total_Order_Discount__c</field>
+            <operation>lessOrEqual</operation>
+            <value>CAD 500</value>
+        </filters>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Created,Activated,Rejected</value>
+        </filters>
+        <label>CA: NCO Orders for Processing</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+            <roleAndSubordinatesInternal>CA_Executives</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>CIS_All_Orders</fullName>
         <columns>ORDERS.ORDER_NUMBER</columns>
         <columns>SALES.ACCOUNT.NAME</columns>
@@ -3731,19 +3941,18 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
     </listViews>
     <listViews>
         <fullName>CS_INBOX_ALL</fullName>
-        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+        <booleanFilter>(1 OR (5 AND 7) OR (8 AND 9 AND 10)) AND 2 AND 3 AND 4 AND 6</booleanFilter>
         <columns>Customer_Service_Received__c</columns>
         <columns>ORDERS.LAST_UPDATE</columns>
         <columns>ORDERS.STATUS</columns>
         <columns>ORDERS.ORDER_NUMBER</columns>
         <columns>SALES.ACCOUNT.NAME</columns>
-        <columns>Prospect_at_the_point_of_order_entry__c</columns>
         <columns>ORDERS.EFFECTIVE_DATE</columns>
         <columns>Customer_Service_Rep_Responsible__c</columns>
         <columns>Shipping_Method__c</columns>
         <columns>Total_of_Products_on_this_Order__c</columns>
-        <columns>SIMPLANT_CS_Approval_Required__c</columns>
         <columns>ORDER.SHIPPING_STATE</columns>
+        <columns>PRICEBOOK2.NAME</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Location__c</field>
@@ -3763,7 +3972,37 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <filters>
             <field>PRICEBOOK2.NAME</field>
             <operation>startsWith</operation>
-            <value>US IMP,CA IMP</value>
+            <value>US IMP,CA IMP,US Implants</value>
+        </filters>
+        <filters>
+            <field>ApprovalLevelInt__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Created,Activated,Rejected</value>
+        </filters>
+        <filters>
+            <field>PRICEBOOK2.NAME</field>
+            <operation>equals</operation>
+            <value>US Implants Pricing</value>
+        </filters>
+        <filters>
+            <field>total_discount_on_the_order_c__c</field>
+            <operation>equals</operation>
+            <value>0.0</value>
+        </filters>
+        <filters>
+            <field>Waive_Shipping_Charges__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Pricebook_Name__c</field>
+            <operation>startsWith</operation>
+            <value>US IMP Implant,CA IMP Implants</value>
         </filters>
         <label>NA: CS INBOX ALL Pending</label>
         <sharedTo>
@@ -3816,6 +4055,36 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <language>en_US</language>
         <sharedTo>
             <group>NA_DI_Customer_Service_and_Mgmt</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Copy_of_CA_NCO_Orders_Pending</fullName>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>CreatedByName__c</columns>
+        <columns>submitted_date__c</columns>
+        <columns>ORDERS.TOTAL_AMOUNT</columns>
+        <columns>ORDERS.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Order_Type__c</field>
+            <operation>equals</operation>
+            <value>Discount on Demand</value>
+        </filters>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <filters>
+            <field>PRICEBOOK2.NAME</field>
+            <operation>equals</operation>
+            <value>CA Consumables NCO</value>
+        </filters>
+        <label>CA: NCO Orders - Pending</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+            <roleAndSubordinatesInternal>CA_Executives</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -4124,6 +4393,19 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>HK_My_Orders</fullName>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>ORDERS.EFFECTIVE_DATE</columns>
+        <columns>ORDERS.TOTAL_AMOUNT</columns>
+        <columns>ORDERS.STATUS</columns>
+        <filterScope>Mine</filterScope>
+        <label>HK: My Orders</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>HK_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>IB_Implant_and_Ortho_Orders_Activated</fullName>
         <columns>ORDERS.ORDER_NUMBER</columns>
         <columns>SALES.ACCOUNT.NAME</columns>
@@ -4410,35 +4692,228 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>MEAIT_All_Orders</fullName>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>CONTRACT.CONTRACT_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>ORDERS.EFFECTIVE_DATE</columns>
+        <columns>ORDERS.TOTAL_AMOUNT</columns>
+        <columns>ORDERS.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <label>MEAIT: All Orders</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>MEA_India_Turkey</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_CS_INBOX_ALL_Pending_v2</fullName>
+        <booleanFilter>((1 AND (8 OR 9)) OR (2 AND 4) OR (5 AND 6 AND 7)) AND 3 AND 10</booleanFilter>
+        <columns>Customer_Service_Received__c</columns>
+        <columns>ORDERS.LAST_UPDATE</columns>
+        <columns>ORDERS.STATUS</columns>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>ORDERS.EFFECTIVE_DATE</columns>
+        <columns>Customer_Service_Rep_Responsible__c</columns>
+        <columns>Shipping_Method__c</columns>
+        <columns>Total_of_Products_on_this_Order__c</columns>
+        <columns>ORDER.SHIPPING_STATE</columns>
+        <columns>PRICEBOOK2.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Location__c</field>
+            <operation>startsWith</operation>
+            <value>CS Inbox -</value>
+        </filters>
+        <filters>
+            <field>ApprovalLevelInt__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Created,Activated,Rejected</value>
+        </filters>
+        <filters>
+            <field>PRICEBOOK2.NAME</field>
+            <operation>equals</operation>
+            <value>US Implants Pricing</value>
+        </filters>
+        <filters>
+            <field>total_discount_on_the_order_c__c</field>
+            <operation>equals</operation>
+            <value>0.0</value>
+        </filters>
+        <filters>
+            <field>Waive_Shipping_Charges__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Pricebook_Name__c</field>
+            <operation>startsWith</operation>
+            <value>US IMP Implant,CA IMP Implants</value>
+        </filters>
+        <filters>
+            <field>ApprovalLevelInt__c</field>
+            <operation>lessThan</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Regional_Manager_Approved__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>ORDER.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Order.Direct_global_order</value>
+        </filters>
+        <label>NA: CS INBOX ALL Pending v2</label>
+        <sharedTo>
+            <group>NA_DI_Customer_Service_and_Mgmt</group>
+            <role>DNA_Shared_Services</role>
+            <role>NA_CRM_Analyst</role>
+            <role>NA_Customer_Service_Implants</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_CS_INBOX_ALL_Pending_v3</fullName>
+        <columns>Customer_Service_Received__c</columns>
+        <columns>ORDERS.LAST_UPDATE</columns>
+        <columns>ORDERS.STATUS</columns>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>ORDERS.EFFECTIVE_DATE</columns>
+        <columns>Total_of_Products_on_this_Order__c</columns>
+        <columns>Customer_Service_Rep_Responsible__c</columns>
+        <columns>Shipping_Method__c</columns>
+        <columns>ORDER.SHIPPING_STATE</columns>
+        <columns>PRICEBOOK2.NAME</columns>
+        <columns>ORDERS.CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Created,Activated,Rejected</value>
+        </filters>
+        <filters>
+            <field>Pricebook_Name__c</field>
+            <operation>startsWith</operation>
+            <value>US IMP,CA IMP</value>
+        </filters>
+        <filters>
+            <field>ORDER.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Order.Direct_global_order</value>
+        </filters>
+        <filters>
+            <field>ProcessStatus__c</field>
+            <operation>equals</operation>
+            <value>Customer Service Processing</value>
+        </filters>
+        <label>NA: CS INBOX ALL Pending v3</label>
+        <sharedTo>
+            <group>NA_DI_Customer_Service_and_Mgmt</group>
+            <role>DNA_Shared_Services</role>
+            <role>NA_CRM_Analyst</role>
+            <role>NA_Customer_Service_Implants</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>NA_IMP_ASD_Pending</fullName>
-        <booleanFilter>1 AND 2 AND 3</booleanFilter>
         <columns>ORDERS.ORDER_NUMBER</columns>
         <columns>SALES.ACCOUNT.NAME</columns>
         <columns>ORDERS.TOTAL_AMOUNT</columns>
         <columns>ORDERS.EFFECTIVE_DATE</columns>
         <columns>ORDERS.STATUS</columns>
         <columns>Waive_Shipping_Charges__c</columns>
+        <columns>ProcessStatus__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>Location__c</field>
-            <operation>equals</operation>
-            <value>Area Director Pending</value>
+            <field>ProcessStatus__c</field>
+            <operation>contains</operation>
+            <value>Area Director Approval,VP Approval</value>
         </filters>
         <filters>
-            <field>Areas_Director_Approved__c</field>
+            <field>Pricebook_Name__c</field>
+            <operation>startsWith</operation>
+            <value>US Imp,CA Imp</value>
+        </filters>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>equals</operation>
+            <value>Processing</value>
+        </filters>
+        <label>NA: IMP ASD and VP - PENDING- Test</label>
+        <sharedTo>
+            <group>NA_DI_Customer_Service_and_Mgmt</group>
+            <role>DNA_Shared_Services</role>
+            <role>Dentsply_IH_CEO</role>
+            <role>NA_CRM_Analyst</role>
+            <role>NA_Customer_Service_Implants</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_Implants_New_Orders</fullName>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR (5 AND 6) OR (7 AND 8))</booleanFilter>
+        <columns>Customer_Service_Received__c</columns>
+        <columns>ORDERS.LAST_UPDATE</columns>
+        <columns>ORDERS.STATUS</columns>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>ORDERS.EFFECTIVE_DATE</columns>
+        <columns>Customer_Service_Rep_Responsible__c</columns>
+        <columns>Shipping_Method__c</columns>
+        <columns>Total_of_Products_on_this_Order__c</columns>
+        <columns>ORDER.SHIPPING_STATE</columns>
+        <columns>PRICEBOOK2.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CS_Inbox_Approved__c</field>
             <operation>equals</operation>
             <value>0</value>
         </filters>
         <filters>
-            <field>Area_Director_Approval_Required__c</field>
+            <field>PRICEBOOK2.NAME</field>
+            <operation>equals</operation>
+            <value>US Implants Pricing</value>
+        </filters>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Created,Activated,Rejected</value>
+        </filters>
+        <filters>
+            <field>ApprovalLevelInt__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>ApprovalLevelInt__c</field>
             <operation>equals</operation>
             <value>1</value>
         </filters>
-        <label>NA: IMP ASD Pending - DO NOT USE</label>
+        <filters>
+            <field>Regional_Manager_Approved__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>ApprovalLevelInt__c</field>
+            <operation>equals</operation>
+            <value>2</value>
+        </filters>
+        <filters>
+            <field>Areas_Director_Approved__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>NA: Implants New Orders</label>
         <sharedTo>
-            <group>NA_DI_Customer_Service_and_Mgmt</group>
-            <role>Dentsply_IH_CEO</role>
             <role>NA_CRM_Analyst</role>
+            <role>NA_Customer_Service_Implants</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -4579,6 +5054,7 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
     </listViews>
     <listViews>
         <fullName>REGIONAL_MANAGER_ALL_PENDING</fullName>
+        <booleanFilter>2 AND 3 AND 4 AND 5 AND ((6 AND 7) OR 1 OR 8)</booleanFilter>
         <columns>Order_Owner__c</columns>
         <columns>Direct_Manager__c</columns>
         <columns>ORDERS.ORDER_NUMBER</columns>
@@ -4587,7 +5063,7 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <columns>ORDERS.EFFECTIVE_DATE</columns>
         <columns>ORDERS.STATUS</columns>
         <columns>Total_of_Products_on_this_Order__c</columns>
-        <columns>Location__c</columns>
+        <columns>ProcessStatus__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Location__c</field>
@@ -4597,19 +5073,45 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <filters>
             <field>PRICEBOOK2.NAME</field>
             <operation>startsWith</operation>
-            <value>US IMP</value>
+            <value>US IMP,CA IMP</value>
         </filters>
         <filters>
             <field>ORDER.RECORDTYPE</field>
             <operation>equals</operation>
             <value>Order.Direct_global_order</value>
         </filters>
-        <label>REGIONAL MANAGER ALL PENDING</label>
+        <filters>
+            <field>ORDERS.EFFECTIVE_DATE</field>
+            <operation>greaterThan</operation>
+            <value>12/31/2021</value>
+        </filters>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Created,Activated,Rejected</value>
+        </filters>
+        <filters>
+            <field>ApprovalLevelInt__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Regional_Manager_Approved__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>ProcessStatus__c</field>
+            <operation>contains</operation>
+            <value>Manager Approval</value>
+        </filters>
+        <label>US: Regional Manager - PENDING</label>
         <sharedTo>
             <group>NA_DI_Area_Sales_Director_Queue</group>
             <group>NA_DI_Customer_Service_and_Mgmt</group>
-            <group>NA_DI_Melissa_Sagendorph</group>
             <group>USC_Regional_Business_Managers</group>
+            <role>NA_CRM_Analyst</role>
+            <role>NA_Customer_Service_Implants</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -4746,6 +5248,7 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <columns>ORDER.RECORDTYPE</columns>
         <columns>Customer_Service_Received__c</columns>
         <columns>ORDERS.STATUS</columns>
+        <columns>ProcessStatus__c</columns>
         <columns>ORDERS.ORDER_NUMBER</columns>
         <columns>SALES.ACCOUNT.NAME</columns>
         <columns>ORDERS.EFFECTIVE_DATE</columns>

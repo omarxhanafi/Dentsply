@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
+        <fullName>ACC_DefaultOwnerUserId__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Default owner&apos;s user ID</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>ACC_IsEnabled__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <fieldManageability>DeveloperControlled</fieldManageability>
         <label>Upload Accounts?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ACC_MapToErpOwner__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Map ownership to ERP accounts?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ACC_PracticeHrIdIsRequired__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Require Practice HR ID?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ACC_RetainExistingSalesforceOwnerId__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Retain the Salesforce Account&apos;s current Owner ID ahead of any other ownership assignment logic</inlineHelpText>
+        <label>Retain existing Salesforce owner ID</label>
         <type>Checkbox</type>
     </fields>
     <fields>
@@ -38,6 +73,14 @@
         <externalId>false</externalId>
         <fieldManageability>DeveloperControlled</fieldManageability>
         <label>Upload Accounts Receivables?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Attr_UseCustomerFlagOnAddress__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Use CustomerFlag on Address?</label>
         <type>Checkbox</type>
     </fields>
     <fields>
@@ -161,6 +204,11 @@
                     <label>070</label>
                 </value>
                 <value>
+                    <fullName>079</fullName>
+                    <default>false</default>
+                    <label>079</label>
+                </value>
+                <value>
                     <fullName>080</fullName>
                     <default>false</default>
                     <label>080</label>
@@ -199,6 +247,11 @@
                     <fullName>131</fullName>
                     <default>false</default>
                     <label>131</label>
+                </value>
+                <value>
+                    <fullName>134</fullName>
+                    <default>false</default>
+                    <label>134</label>
                 </value>
                 <value>
                     <fullName>135</fullName>
@@ -281,14 +334,39 @@
                     <label>394</label>
                 </value>
                 <value>
+                    <fullName>467</fullName>
+                    <default>false</default>
+                    <label>467</label>
+                </value>
+                <value>
+                    <fullName>4703</fullName>
+                    <default>false</default>
+                    <label>4703</label>
+                </value>
+                <value>
+                    <fullName>4709</fullName>
+                    <default>false</default>
+                    <label>4709</label>
+                </value>
+                <value>
                     <fullName>500</fullName>
                     <default>false</default>
                     <label>500</label>
                 </value>
                 <value>
+                    <fullName>511</fullName>
+                    <default>false</default>
+                    <label>511</label>
+                </value>
+                <value>
                     <fullName>550</fullName>
                     <default>false</default>
                     <label>550</label>
+                </value>
+                <value>
+                    <fullName>5675</fullName>
+                    <default>false</default>
+                    <label>5675</label>
                 </value>
                 <value>
                     <fullName>613</fullName>
@@ -314,6 +392,11 @@
                     <fullName>776</fullName>
                     <default>false</default>
                     <label>776</label>
+                </value>
+                <value>
+                    <fullName>9520</fullName>
+                    <default>false</default>
+                    <label>9520</label>
                 </value>
                 <value>
                     <fullName>AT</fullName>
@@ -726,6 +809,26 @@
                     <fullName>49</fullName>
                     <default>false</default>
                     <label>49</label>
+                </value>
+                <value>
+                    <fullName>18</fullName>
+                    <default>false</default>
+                    <label>18</label>
+                </value>
+                <value>
+                    <fullName>56</fullName>
+                    <default>false</default>
+                    <label>56</label>
+                </value>
+                <value>
+                    <fullName>57</fullName>
+                    <default>false</default>
+                    <label>57</label>
+                </value>
+                <value>
+                    <fullName>75</fullName>
+                    <default>false</default>
+                    <label>75</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

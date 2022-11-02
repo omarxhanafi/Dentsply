@@ -383,7 +383,7 @@ public with sharing class OrderManagement_CC {
         }
         catch (Exception e) {
             DebugLog.addException(e, 'OrderManagement_CC.cloneOrder');
-            throw new AuraHandledException(e.getMessage());
+            throw new AuraHandledException(e.getMessage());    
         }
     }
     /*------------------------------------------------------------  
@@ -566,7 +566,7 @@ public with sharing class OrderManagement_CC {
         } catch (Exception e) {
             DebugLog.addException(e, 'OrderManagement_CC.createOrder');
             system.debug('OrderManagement_CC.createOrder'+ e.getMessage());
-            throw new AuraHandledException(e.getMessage());
+            throw new AuraHandledException(e.getMessage());    
         }
     }
     @AuraEnabled
@@ -898,7 +898,7 @@ public with sharing class OrderManagement_CC {
                 List<string> codeERPSplit = orderDetail.Account.GDWUniqueKey_CustomerMaster__c.split('_');
                 If(codeERPSplit[0] == '2'){
                     codeERPId = codeERPSplit[2];
-                }
+                }                
             }
             ProductPricingERPCallOutWrapper.ProductPricingResponse priceResponse = ProductPricingERPCallOutResponse.ProductPricingERPCallOutResponse(codeERPId, orderDetail.CurrencyIsoCode, orderDetail.Pricebook2.CompanyCode__c , prodPriceRequests);
             return priceResponse;

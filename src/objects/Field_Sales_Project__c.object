@@ -4434,6 +4434,34 @@
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>Endo_Targets_Lists_Active_and_Inactive</fullName>
+        <columns>Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Description__c</columns>
+        <columns>Category__c</columns>
+        <columns>BrandPicklist__c</columns>
+        <columns>Brand__c</columns>
+        <columns>Source__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>startsWith</operation>
+            <value>USA</value>
+        </filters>
+        <filters>
+            <field>Category__c</field>
+            <operation>equals</operation>
+            <value>Endodontics</value>
+        </filters>
+        <label>Endo Targets Lists - Active and Inactive</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+            <roleAndSubordinatesInternal>DNA_CRMANALYST</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>My_Active_Projects</fullName>
         <columns>NAME</columns>
         <columns>Description__c</columns>
@@ -4462,6 +4490,20 @@
         <language>en_US</language>
     </listViews>
     <listViews>
+        <fullName>TW_All_Target_Lists</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>UserCountry__c</field>
+            <operation>equals</operation>
+            <value>Taiwan</value>
+        </filters>
+        <label>TW: All Target Lists</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>TW_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>USA_Initiatives</fullName>
         <columns>Status__c</columns>
         <columns>AllowUsersToAddNewLeads__c</columns>
@@ -4472,6 +4514,7 @@
         <columns>Description__c</columns>
         <columns>Category__c</columns>
         <columns>Brand__c</columns>
+        <columns>RECORDTYPE</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>NAME</field>

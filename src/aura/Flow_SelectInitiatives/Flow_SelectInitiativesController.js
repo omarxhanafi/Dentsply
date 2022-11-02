@@ -7,8 +7,6 @@
         });
         action.setCallback(this, function(result){
             var state = result.getState();
-            console.log('isVisible',isVisible);
-           // component.isValid() &&
             if ( state === "SUCCESS"){
                 var resultList = result.getReturnValue();                
                 component.set("v.userList", resultList);

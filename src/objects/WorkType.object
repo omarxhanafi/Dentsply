@@ -208,6 +208,11 @@
     </fields>
     <listViews>
         <fullName>All_WorkTypes</fullName>
+        <columns>Name</columns>
+        <columns>EstimatedDuration</columns>
+        <columns>DurationType</columns>
+        <columns>FSL__Exact_Appointments__c</columns>
+        <columns>ShouldAutoCreateSvcAppt</columns>
         <filterScope>Everything</filterScope>
         <label>All Work Types</label>
     </listViews>

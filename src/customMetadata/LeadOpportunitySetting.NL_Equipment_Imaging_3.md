@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">Sinius;Intego Pro;INTEGO;TENEO;Axano</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Equipment &amp; Imaging</value>
     </values>

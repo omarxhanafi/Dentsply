@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">INTEGO;Intego Ambidextrous;Intego Pro;Intego Pro Ambidextrous;Sinius;SiroCam;SiroCam UAF plus;Sirolaser;SIROLaser Advance;SIROLaser Blue;T1 Contra-angles;T1 Turbines;T2 Contra-angles;T2 Turbines</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Equipment &amp; Imaging</value>
     </values>
@@ -40,7 +36,7 @@
     </values>
     <values>
         <field>ShowManualSalesLeadOwnerAssignment__c</field>
-        <value xsi:type="xsd:boolean">false</value>
+        <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
         <field>UserRoles__c</field>

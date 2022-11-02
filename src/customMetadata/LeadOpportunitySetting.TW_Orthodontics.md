@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">Drufo;Other;Propel Acceledent;Propel Excellerator;Propel VPro;SureSmile Advanced;SureSmile Aligner;SureSmile IDB;SureSmile Ortho;Suresmile Wire</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Orthodontics</value>
     </values>

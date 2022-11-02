@@ -4154,7 +4154,8 @@ to be specified in the invoice</description>
             <operation>equals</operation>
             <value>ENDO</value>
         </filters>
-        <label>ENDO Acct Requests NOT YET SUBMITTED</label>
+        <label>NA: ENDO Acct Requests NOT YET SUBMITTED</label>
+        <language>en_US</language>
         <sharedTo>
             <role>NA_Customer_Service_Endo</role>
         </sharedTo>
@@ -4249,9 +4250,9 @@ to be specified in the invoice</description>
     <listViews>
         <fullName>IT_Account_Maintenance_Team_Account_Create_Change_Request</fullName>
         <columns>NAME</columns>
-        <columns>Creator_Country__c</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Pending_Order__c</columns>
         <columns>CREATEDBY_USER</columns>
-        <columns>Status__c</columns>
         <columns>CimId__c</columns>
         <columns>CREATED_DATE</columns>
         <columns>Changed_Account_Name__c</columns>
@@ -4273,12 +4274,14 @@ to be specified in the invoice</description>
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>Iberia_Account_Maintenance_Team_Account_Create_Change_Request</fullName>
+        <fullName>Iberia_Account_Maintenance_Team</fullName>
+        <columns>NAME</columns>
         <filterScope>Queue</filterScope>
-        <label>Iberia Account Maintenance Team</label>
+        <label>Iberia: Account Maintenance Team</label>
+        <language>en_US</language>
         <queue>Iberia_Account_Maintenance_Team</queue>
         <sharedTo>
-            <allInternalUsers></allInternalUsers>
+            <group>Iberia_Account_Maintenance_Team</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -4292,6 +4295,36 @@ to be specified in the invoice</description>
         <queue>Indonesia_Account_Maintenance_Team</queue>
         <sharedTo>
             <roleAndSubordinatesInternal>IDN_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MENA_AMT_with_Status</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Name__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Approval_Status__c</columns>
+        <columns>Account_Type__c</columns>
+        <columns>Specialty__c</columns>
+        <columns>User_Country__c</columns>
+        <filterScope>Queue</filterScope>
+        <label>MENA: AMT with Status</label>
+        <language>en_US</language>
+        <queue>MENA_Account_Maintenance_Team</queue>
+        <sharedTo>
+            <group>MENA_Account_Maintenance_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MENA_Account_Maintenance_Team_Account_Create_Change_Request</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Queue</filterScope>
+        <label>MENA: Account Maintenance Team</label>
+        <queue>MENA_Account_Maintenance_Team</queue>
+        <sharedTo>
+            <group>MENA_Account_Maintenance_Team</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -4428,6 +4461,16 @@ to be specified in the invoice</description>
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>SA_Account_Maintenance_Team_Account_Create_Change_Request</fullName>
+        <columns>NAME</columns>
+        <filterScope>Queue</filterScope>
+        <label>ZA: Account Maintenance Team</label>
+        <queue>ZA_Account_Maintenance_Team</queue>
+        <sharedTo>
+            <group>ZA_Account_Maintenance_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>SE_Pending_Account_Requests</fullName>
         <columns>NAME</columns>
         <columns>CREATEDBY_USER</columns>
@@ -4463,6 +4506,37 @@ to be specified in the invoice</description>
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>TR_Account_Maintenance_Team_Account_Create_Change_Request</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </filters>
+        <label>TR: Account Maintenance Team</label>
+        <language>en_US</language>
+        <queue>TR_Account_Maintenance_Team</queue>
+        <sharedTo>
+            <group>TR_Account_Maintenance_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Taiwan_Account_Maintenance_Team_Account_Create_Change_Request</fullName>
+        <columns>NAME</columns>
+        <filterScope>Queue</filterScope>
+        <label>Taiwan: Account Maintenance Team</label>
+        <queue>Taiwan_Account_Maintenance_Team</queue>
+        <sharedTo>
+            <group>TW_Account_Maintenance_Team</group>
+            <role>TW_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>Thailand_Account_Maintenance_Team_Account_Create_Change_Request</fullName>
         <columns>NAME</columns>
         <filterScope>Queue</filterScope>
@@ -4470,6 +4544,17 @@ to be specified in the invoice</description>
         <queue>Thailand_Account_Maintenance_Team</queue>
         <sharedTo>
             <roleAndSubordinatesInternal>TH_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>UA_Account_Maintenance_Team_Account_Create_Change_Request</fullName>
+        <columns>NAME</columns>
+        <filterScope>Queue</filterScope>
+        <label>UA: Account Maintenance Team</label>
+        <language>en_US</language>
+        <queue>UA_Account_Maintenance_Team</queue>
+        <sharedTo>
+            <role>UA_Shared_Services_CE</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -4494,6 +4579,17 @@ to be specified in the invoice</description>
         <language>en_US</language>
         <sharedTo>
             <roleAndSubordinates>UK_IE_CRM_Analyst</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Vietnam_Account_Maintenance_Team_Account_Create_Change_Request</fullName>
+        <columns>NAME</columns>
+        <filterScope>Queue</filterScope>
+        <label>Vietnam: Account Maintenance Team</label>
+        <language>en_US</language>
+        <queue>Vietnam_Account_Maintenance_Team</queue>
+        <sharedTo>
+            <group>Vietnam_Account_Maintenance_Team</group>
         </sharedTo>
     </listViews>
     <nameField>

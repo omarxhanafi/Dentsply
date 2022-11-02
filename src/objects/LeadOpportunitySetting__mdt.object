@@ -40,16 +40,6 @@
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
-        <fullName>Brands__c</fullName>
-        <externalId>false</externalId>
-        <fieldManageability>DeveloperControlled</fieldManageability>
-        <label>Brands</label>
-        <length>255</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Category__c</fullName>
         <externalId>false</externalId>
         <fieldManageability>SubscriberControlled</fieldManageability>
@@ -1474,7 +1464,6 @@
         <columns>DeveloperName</columns>
         <columns>Category__c</columns>
         <columns>BrandsList__c</columns>
-        <columns>Brands__c</columns>
         <columns>NamespacePrefix</columns>
         <columns>Country__c</columns>
         <columns>UserRoles__c</columns>
@@ -1485,14 +1474,14 @@
     <listViews>
         <fullName>DACH_Settings</fullName>
         <columns>Country__c</columns>
-        <columns>MasterLabel</columns>
-        <columns>DeveloperName</columns>
         <columns>Category__c</columns>
-        <columns>Brands__c</columns>
+        <columns>MasterLabel</columns>
         <columns>ShowDistributor__c</columns>
         <columns>AssignOwnerFrom__c</columns>
         <columns>UserRoles__c</columns>
         <columns>BrandsList__c</columns>
+        <columns>DefaultCampaignOwner__c</columns>
+        <columns>ShowManualSalesLeadOwnerAssignment__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Country__c</field>
@@ -1500,6 +1489,24 @@
             <value>AT,CH,DE</value>
         </filters>
         <label>DACH_Settings</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Default_Country_Owners</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>DefaultCampaignOwner__c</columns>
+        <columns>BrandsList__c</columns>
+        <columns>Category__c</columns>
+        <columns>Country__c</columns>
+        <columns>ShowManualSalesLeadOwnerAssignment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DefaultCampaignOwner__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Default Country Owners</label>
         <language>en_US</language>
     </listViews>
     <listViews>
@@ -1531,12 +1538,30 @@
         <language>en_US</language>
     </listViews>
     <listViews>
+        <fullName>France_Settings</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>DefaultCampaignOwner__c</columns>
+        <columns>DefaultLeadOwner__c</columns>
+        <columns>BrandsList__c</columns>
+        <columns>Category__c</columns>
+        <columns>ShowManualSalesLeadOwnerAssignment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DeveloperName</field>
+            <operation>startsWith</operation>
+            <value>FR</value>
+        </filters>
+        <label>France_Settings</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
         <fullName>IT_Settings</fullName>
         <columns>Country__c</columns>
         <columns>MasterLabel</columns>
         <columns>DeveloperName</columns>
         <columns>Category__c</columns>
-        <columns>Brands__c</columns>
         <columns>ShowDistributor__c</columns>
         <columns>AssignOwnerFrom__c</columns>
         <columns>UserRoles__c</columns>
@@ -1551,22 +1576,23 @@
         <language>en_US</language>
     </listViews>
     <listViews>
-        <fullName>Iberia</fullName>
+        <fullName>Iberia_Lead_Opportunity</fullName>
         <columns>MasterLabel</columns>
         <columns>DeveloperName</columns>
         <columns>NamespacePrefix</columns>
-        <columns>Brands__c</columns>
-        <columns>BrandsList__c</columns>
-        <columns>Category__c</columns>
-        <columns>Country__c</columns>
+        <columns>DefaultLeadOwner__c</columns>
         <columns>AssignOwnerFrom__c</columns>
+        <columns>Category__c</columns>
+        <columns>ShowDistributor__c</columns>
+        <columns>UserRoles__c</columns>
+        <columns>ShowManualSalesLeadOwnerAssignment__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Country__c</field>
             <operation>equals</operation>
             <value>AD,ES,PT</value>
         </filters>
-        <label>Iberia</label>
+        <label>Iberia Lead &amp; Opportunity</label>
         <language>en_US</language>
     </listViews>
     <listViews>
@@ -1584,15 +1610,53 @@
         <language>en_US</language>
     </listViews>
     <listViews>
+        <fullName>Rows_with_Dealer_Assignement</fullName>
+        <columns>MasterLabel</columns>
+        <columns>ShowDistributor__c</columns>
+        <columns>AssignOwnerFrom__c</columns>
+        <columns>DeveloperName</columns>
+        <columns>BrandsList__c</columns>
+        <columns>Category__c</columns>
+        <columns>Country__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AssignOwnerFrom__c</field>
+            <operation>equals</operation>
+            <value>Dealer</value>
+        </filters>
+        <label>Rows with Dealer Assignement</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Rows_with_Sales_Lead_Owner_Assignement</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>BrandsList__c</columns>
+        <columns>Category__c</columns>
+        <columns>Country__c</columns>
+        <columns>ShowManualSalesLeadOwnerAssignment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ShowManualSalesLeadOwnerAssignment__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Rows with Sales Lead Owner Assignement</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
         <fullName>Sweden_Settings</fullName>
         <columns>MasterLabel</columns>
         <columns>DeveloperName</columns>
         <columns>NamespacePrefix</columns>
+        <columns>DefaultCampaignOwner__c</columns>
+        <columns>DefaultLeadOwner__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>DeveloperName</field>
             <operation>contains</operation>
-            <value>Sweden</value>
+            <value>SE_</value>
         </filters>
         <label>Sweden_Settings</label>
         <language>en_US</language>

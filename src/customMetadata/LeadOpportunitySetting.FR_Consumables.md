@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">SDR flow+;Palodent 360;Ceram.x;Ceram.x Spectra ST;Ceram.x Spectra ST Flow;Prime &amp; Bond active;SmartLite Pro;Aquasil;Calibra;Integrity;Surefil one;Tessera</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Consumables</value>
     </values>
@@ -40,7 +36,7 @@
     </values>
     <values>
         <field>ShowManualSalesLeadOwnerAssignment__c</field>
-        <value xsi:type="xsd:boolean">false</value>
+        <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
         <field>UserRoles__c</field>

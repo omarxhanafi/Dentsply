@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">Aquasil;Calibra;Ceram.x;Ceram. X Spectra ST;Ceram.x Spectra ST Flow;Cerec Consumables;Enhance;Palodent 360;Palodent Plus;Palodent V3;Prime &amp; Bond active;Prime and Bond;SDR flow+;SmartCem2;SmartLite Pro;Surefil one;Surefil SDR;Tessera;TPH;AlginX;Anaestadent;Cavitron;Inserts;Integrity;NuPro;Oraqix;Oxivir;Purevac;RDH;Resurge Bath</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Consumables</value>
     </values>

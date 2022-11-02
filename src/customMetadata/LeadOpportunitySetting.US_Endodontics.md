@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">X-smart IQ;GuttaCore;IQ/ProMark Motor;ProTaper Gold;ProTaper Next;ProTaper Ultimate;TruNatomy;WaveOne Gold</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Endodontics</value>
     </values>

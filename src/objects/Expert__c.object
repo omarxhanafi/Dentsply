@@ -3236,6 +3236,20 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
         <filterScope>Mine</filterScope>
         <label>My Experts</label>
     </listViews>
+    <listViews>
+        <fullName>TH_KOL_Information</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Country__c</field>
+            <operation>equals</operation>
+            <value>TH</value>
+        </filters>
+        <label>TH: KOL Information</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>TH_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
     <nameField>
         <label>KOL Information</label>
         <trackFeedHistory>false</trackFeedHistory>

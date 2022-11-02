@@ -6744,6 +6744,16 @@
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>AdditionalComments__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Address</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -6773,13 +6783,41 @@
         <fullName>CancellationRejectionReason__c</fullName>
         <description>Indicate why service appointment got cancelled/rejected</description>
         <externalId>false</externalId>
-        <label>Cancellation/Rejection Reason</label>
+        <inlineHelpText>Should be populated by Contractors if they rejected a Service Appointment</inlineHelpText>
+        <label>Rejection Reason</label>
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CannotCompleteReason__c</fullName>
+        <description>Updated manually or through the SFS: Service Appointment Status Transition flow. Synced with Work Orders</description>
+        <externalId>false</externalId>
+        <label>Cannot Complete Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Status</controllingField>
+            <restricted>true</restricted>
+            <valueSetName>CannotCompleteReason</valueSetName>
+            <valueSettings>
+                <controllingFieldValue>Cannot Complete</controllingFieldValue>
+                <valueName>Waiting Parts</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cannot Complete</controllingFieldValue>
+                <valueName>Waiting Technical Help</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cannot Complete</controllingFieldValue>
+                <valueName>Waiting Customer</valueName>
+            </valueSettings>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Comments__c</fullName>
@@ -7378,6 +7416,16 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>TF_AssignedToMe__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (FSSK__FSK_Assigned_Service_Resource__r.RelatedRecordId= $User.Id ,&quot;True&quot;,&quot;False&quot;)</formula>
+        <label>TF_AssignedToMe?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>TimeType__c</fullName>
         <description>Custom picklist value that will be used to indicate if the job  that&apos;s being performed within this service appointment is chargeable or not</description>
         <externalId>false</externalId>
@@ -7420,14 +7468,101 @@
         <type>Lookup</type>
     </fields>
     <listViews>
+        <fullName>AllServiceAppointments</fullName>
+        <columns>Name</columns>
+        <columns>Account</columns>
+        <columns>FSSK__FSK_Work_Order__c</columns>
+        <columns>WorkType</columns>
+        <columns>ServiceTerritory</columns>
+        <columns>FSSK__FSK_Assigned_Service_Resource__c</columns>
+        <columns>SchedStartTime</columns>
+        <columns>SchedEndTime</columns>
+        <columns>Status</columns>
+        <columns>CreatedDate</columns>
+        <columns>CreatedBy</columns>
+        <filterScope>Everything</filterScope>
+        <label>#All Service Appointments</label>
+    </listViews>
+    <listViews>
         <fullName>All_ServiceAppointments</fullName>
+        <columns>Name</columns>
+        <columns>Account</columns>
+        <columns>FSSK__FSK_Work_Order__c</columns>
+        <columns>WorkType</columns>
+        <columns>ServiceTerritory</columns>
+        <columns>FSSK__FSK_Assigned_Service_Resource__c</columns>
+        <columns>SchedStartTime</columns>
+        <columns>SchedEndTime</columns>
+        <columns>Status</columns>
+        <columns>CreatedDate</columns>
+        <columns>CreatedBy</columns>
         <filterScope>Everything</filterScope>
         <label>All Service Appointments</label>
+    </listViews>
+    <listViews>
+        <fullName>FieldServiceMobile</fullName>
+        <booleanFilter>(1 OR 2 ) AND 3</booleanFilter>
+        <columns>Subject</columns>
+        <columns>Status</columns>
+        <columns>Contact</columns>
+        <columns>Name</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>SchedStartTime</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:14</value>
+        </filters>
+        <filters>
+            <field>SchedStartTime</field>
+            <operation>equals</operation>
+            <value>NEXT_N_DAYS:30</value>
+        </filters>
+        <filters>
+            <field>TF_AssignedToMe__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filters>
+        <label>Field Service Mobile</label>
+    </listViews>
+    <listViews>
+        <fullName>MyServiceAppointments</fullName>
+        <columns>Name</columns>
+        <columns>Account</columns>
+        <columns>FSSK__FSK_Work_Order__c</columns>
+        <columns>WorkType</columns>
+        <columns>FSSK__FSK_Assigned_Service_Resource__c</columns>
+        <columns>Status</columns>
+        <columns>SchedStartTime</columns>
+        <columns>SchedEndTime</columns>
+        <columns>CreatedDate</columns>
+        <columns>CreatedBy</columns>
+        <filterScope>Mine</filterScope>
+        <label># My Service Appointments</label>
     </listViews>
     <listViews>
         <fullName>My_ServiceAppointments</fullName>
         <filterScope>Mine</filterScope>
         <label>My Service Appointments</label>
+    </listViews>
+    <listViews>
+        <fullName>SoftwareHelpDeskSA</fullName>
+        <columns>Name</columns>
+        <columns>Account</columns>
+        <columns>FSSK__FSK_Work_Order__c</columns>
+        <columns>WorkType</columns>
+        <columns>FSSK__FSK_Assigned_Service_Resource__c</columns>
+        <columns>SchedStartTime</columns>
+        <columns>SchedEndTime</columns>
+        <columns>Status</columns>
+        <columns>CreatedDate</columns>
+        <columns>CreatedBy</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ServiceTerritory</field>
+            <operation>equals</operation>
+            <value>AU: Software HelpDesk</value>
+        </filters>
+        <label># Software HelpDesk SA</label>
     </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>ParentRecord</customTabListAdditionalFields>

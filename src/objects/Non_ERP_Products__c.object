@@ -706,6 +706,29 @@ IF(TEXT($User.Market__c)=&quot;Italy&quot; &amp;&amp; TEXT(Product_Market_Mappin
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>Iberia</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <columns>OBJECT_ID</columns>
+        <columns>ProductGroupText__c</columns>
+        <columns>Manufacturer__c</columns>
+        <columns>Competitor_Product__c</columns>
+        <columns>NAME</columns>
+        <columns>Product_Category__c</columns>
+        <columns>KeyProduct__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Market__c</field>
+            <operation>equals</operation>
+            <value>Iberia</value>
+        </filters>
+        <filters>
+            <field>Countries__c</field>
+            <operation>equals</operation>
+            <value>AD,ES,PT</value>
+        </filters>
+        <label>Iberia</label>
+    </listViews>
+    <listViews>
         <fullName>Manufacturer_Empty</fullName>
         <columns>NAME</columns>
         <columns>Market__c</columns>

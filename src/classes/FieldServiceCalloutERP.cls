@@ -4,7 +4,7 @@ Description:    This is a controller for Biztalk integration.
 History         Tobas Nygren 20220905: Added LocationId, WorkOrderNumber and Discount (Products Consumed) to query for additional info sent to AX.
                 Tobias Nygren 20220920: Added Service_Type__c on Work Order Header, and removed Service_Type__c on WorkOrderLineItem level.
                 Tobias Nygren 20221014: Replaced Duration for Quantity on Work Order Line Item.
-
+                Roberto Narbona 29221028: Added product name, Asset Serial number and order description in workOrdersToSend query.
 --------------------------------------------------------------------------------------------------------*/
 
 public with sharing class FieldServiceCalloutERP {
@@ -17,7 +17,7 @@ public with sharing class FieldServiceCalloutERP {
         List< WorkOrder > workOrdersToSend = new List<WorkOrder>();
         List< ProductRequest > productRequestsToSend = new List<ProductRequest>();
         if(objectType == 'WorkOrder'){
-            workOrdersToSend = [SELECT Id, ERPJSONVersion__c, WorkOrderNumber, ServiceType__c, SourceRecord__r.Company_Code__c , SourceRecord__r.Customer_Id__c, SourceRecord__r.Location_Id__c, CurrencyIsoCode, EndDate, Status, Describewhathasbeendone__c, WorkType.Name, Asset.Name, (SELECT Id, CurrencyIsoCode, Discount, Quantity,  WorkOrderId, Product2.Article__c, Product2.Company_Code__c FROM WorkOrderLineItems ), (SELECT Id, CurrencyIsoCode, QuantityConsumed, Discount, WorkOrderId, Product2.Article__c, Product2.Company_Code__c, ProductItem.SerialNumber__c, ProductItem.BatchNumber__c, ProductItem.Location.ERPWarehouseId__c, ProductItem.ERPWarehouse__c FROM ProductsConsumed) FROM WorkOrder WHERE id IN: recordIds];
+            workOrdersToSend = [SELECT Id, ERPJSONVersion__c, WorkOrderNumber, ServiceType__c, SourceRecord__r.Company_Code__c , SourceRecord__r.Customer_Id__c, SourceRecord__r.Location_Id__c, CurrencyIsoCode, EndDate, Status, Describewhathasbeendone__c, WorkType.Name, Asset.Name, Asset.Product2.Article__c, Asset.Product2.Name, Asset.SerialNumber, Description, (SELECT Id, CurrencyIsoCode, Discount, Quantity,  WorkOrderId, Product2.Article__c, Product2.Company_Code__c FROM WorkOrderLineItems ), (SELECT Id, CurrencyIsoCode, QuantityConsumed, Discount, WorkOrderId, Product2.Article__c, Product2.Company_Code__c, ProductItem.SerialNumber__c, ProductItem.BatchNumber__c, ProductItem.Location.ERPWarehouseId__c, ProductItem.ERPWarehouse__c FROM ProductsConsumed) FROM WorkOrder WHERE id IN: recordIds];
         }
         if(objectType == 'ProductRequest'){
             productRequestsToSend = [ SELECT Id, ERPJSONVersion__c, ProductRequestNumber, TF_CustomerRequestNumber__c, DestinationLocation.ERPWarehouseId__c, SourceLocation.ERPWarehouseId__c, DestinationLocation.ParentLocation.ERPWarehouseId__c, (SELECT Id, ProductRequestLineItemNumber, ParentId, Product2.Article__c, Product2.Company_Code__c, QuantityRequested, Status FROM ProductRequestLineItems) FROM ProductRequest WHERE id IN: recordIds ];

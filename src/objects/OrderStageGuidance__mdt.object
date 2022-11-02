@@ -125,6 +125,24 @@
         <visibleLines>3</visibleLines>
     </fields>
     <label>Order Stage Guidance</label>
+    <listViews>
+        <fullName>All_Details</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>KeyFields__c</columns>
+        <columns>KeyFieldsReadOnly__c</columns>
+        <columns>KeyFieldsOptional__c</columns>
+        <columns>KeyFieldsTitle__c</columns>
+        <columns>OrderStatus__c</columns>
+        <columns>Pricebook2Id__c</columns>
+        <columns>StageGuidance__c</columns>
+        <columns>StageGuidanceTitle__c</columns>
+        <columns>IsProtected</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Details</label>
+        <language>en_US</language>
+    </listViews>
     <pluralLabel>Order Stage Guidance</pluralLabel>
     <visibility>Public</visibility>
 </CustomObject>

@@ -215,6 +215,24 @@
         <language>en_US</language>
     </listViews>
     <listViews>
+        <fullName>Created_last_7_Days</fullName>
+        <columns>NAME</columns>
+        <columns>Merge_Failure_Reason__c</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>Master_OneSFID__c</columns>
+        <columns>Child_OneSFID__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Accounts_Are_Merged__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:7</value>
+        </filters>
+        <label>Created last 7 Days</label>
+    </listViews>
+    <listViews>
         <fullName>Failed_merge_requests_no_action</fullName>
         <columns>NAME</columns>
         <columns>Merge_Failure_Reason__c</columns>
@@ -230,7 +248,7 @@
             <operation>equals</operation>
             <value>0</value>
         </filters>
-        <label>Failed merge requests - no action</label>
+        <label>Failed merge requests</label>
         <sharedTo>
             <role>Dentsply_IH_CEO</role>
         </sharedTo>

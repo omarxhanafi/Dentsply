@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">All Other - Niti Rotary Files;All Other – Obturation;All Other Endo;Apex Locator;FlexAccess;Glidepath Files;GuttaCore;GuttaCore/Calamus;GuttaSmart;Hand file user;IQ/ProMark Motor;Kits &amp; Motors;Propex IQ;ProTaper Gold;ProTaper Next;ProTaper Ultimate;TruNatomy;TruShape;Vortex Blue;Wave One Gold Glider;WaveOne Gold;X-smart IQ;X-Smart Plus</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Endodontics</value>
     </values>

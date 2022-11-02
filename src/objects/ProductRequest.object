@@ -268,6 +268,13 @@ DON&apos;T ADD TO PAGE LAYOUT</description>
     </fields>
     <listViews>
         <fullName>All_ProductRequests</fullName>
+        <columns>Name</columns>
+        <columns>SourceLocation</columns>
+        <columns>DestinationLocation</columns>
+        <columns>WorkOrder</columns>
+        <columns>Status</columns>
+        <columns>ERPOrderStatus__c</columns>
+        <columns>CreatedBy</columns>
         <filterScope>Everything</filterScope>
         <label>All Product Requests</label>
     </listViews>
@@ -275,6 +282,47 @@ DON&apos;T ADD TO PAGE LAYOUT</description>
         <fullName>My_ProductRequests</fullName>
         <filterScope>Mine</filterScope>
         <label>My Product Requests</label>
+    </listViews>
+    <listViews>
+        <fullName>ProductRequestsSenttoERP</fullName>
+        <columns>Name</columns>
+        <columns>SourceLocation</columns>
+        <columns>DestinationLocation</columns>
+        <columns>WorkOrder</columns>
+        <columns>CreatedDate</columns>
+        <columns>CreatedBy</columns>
+        <columns>SendToERPDate__c</columns>
+        <columns>ERPOrderStatus__c</columns>
+        <columns>ERPOrderNumber__c</columns>
+        <columns>ERPReturnMessage__c</columns>
+        <columns>Status</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SendToERPDate__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>#Product Requests Sent to ERP</label>
+    </listViews>
+    <listViews>
+        <fullName>SubmittedProductRequestsForReview</fullName>
+        <columns>Name</columns>
+        <columns>SourceLocation</columns>
+        <columns>DestinationLocation</columns>
+        <columns>WorkOrder</columns>
+        <columns>Status</columns>
+        <columns>CreatedDate</columns>
+        <columns>CreatedBy</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <filters>
+            <field>SendToERPDate__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>#Submitted Product Requests For Review</label>
     </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>LastModifiedDate</customTabListAdditionalFields>
