@@ -25,6 +25,7 @@
     <aura:attribute name="selectedUsers" type="User" />
     <aura:attribute name="ChoosenUserId" type="String" />
     <aura:attribute name="isManualAssignmentChecked" type="Boolean" default="false"/>
+    <aura:attribute name="isDealerMandatoryOutput" type="Boolean" default="false"/>
     <!--Declare Event Handlers--> 
    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
    <!-- User interface -->

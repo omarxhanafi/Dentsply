@@ -183,7 +183,7 @@ public with sharing class UsersInAccountTerritories {
     @AuraEnabled
     public static List<LeadOpportunitySetting__mdt> getSalesLeadSettings(String category, String country){
         
-        List<LeadOpportunitySetting__mdt> settings = [SELECT DeveloperName, Category__c, Country__c, ShowDistributor__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE (Category__c =:category AND Country__c =: country)];
+        List<LeadOpportunitySetting__mdt> settings = [SELECT DeveloperName, Category__c, Country__c, BrandsList__c, ShowDistributor__c, Dealer_Distributor_is_Mandatory__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE (Category__c =:category AND Country__c =: country)];
         
         return settings;
     }
