@@ -24,14 +24,28 @@ public with sharing class FindLeadMatch {
         List<SObject> matchRecords = new List<SObject>();
         
         if(recordObject == 'Contact'){
-            List<Lead> lead = [SELECT Id, FirstName, LastName, PostalCode, Country, Email FROM Lead WHERE Id =: recordId];
+            List<Lead> lead = [SELECT Id, FirstName, LastName, PostalCode, Country, Country_Code_3_digit__c, Email FROM Lead WHERE Id =: recordId];
             List<Contact> contact = [SELECT Id, FirstName, LastName, AccountId, Email FROM Contact WHERE Id =: recordId];
             if(contact.size()>0){
                 originalRecord = contact[0];
             }
-            List<leadMatchResult> conRes = FindLeadMatch.customContactDuplicateSearch(recordId);
 
-            List<leadMatchResult> accRes = FindLeadMatch.customAccountDuplicateSearch(recordId);
+            List<CountryCodeMap__mdt> countryCodeList = null;
+
+            if(!lead.isEmpty()){
+                // Checking if there's a country on the lead
+                if(String.isNotBlank(lead[0].Country_Code_3_digit__c)){
+                    countryCodeList = [
+                            SELECT Country_Code_3_digit__c, Country_Code_2_digit__c, Country_Code_full__c
+                            FROM CountryCodeMap__mdt
+                            WHERE Country_Code_3_digit__c = :lead[0].Country_Code_3_digit__c
+                    ];
+                }
+            }
+
+            List<leadMatchResult> conRes = FindLeadMatch.customContactDuplicateSearch(recordId, !countryCodeList.isEmpty() ? countryCodeList[0] : null);
+
+            List<leadMatchResult> accRes = FindLeadMatch.customAccountDuplicateSearch(recordId, !countryCodeList.isEmpty() ? countryCodeList[0] : null);
 
             output.addAll(conRes);
             output.addAll(accRes);
@@ -143,12 +157,13 @@ public with sharing class FindLeadMatch {
         return output;      
         
     }
-     /*------------------------------------------------------------	
+     /*---------------------------------------------------------------------------------------------------------------------------------------
 	 Author: Richard Trum (Glimt) 2019-11-28 	
 	 Description: find account that matchs the current lead record	
-	 Inputs: Id of the lead to look for similar data in accounts  
-	 ------------------------------------------------------------*/
-      public static List<leadMatchResult> customAccountDuplicateSearch(String recordId){
+	 Inputs: recordId : Id of the lead to look for similar data in accounts
+	         countryCodeMap : Custom metadata containing the lead's country in different formats (2 digit, 3 digit and full name)
+	 ---------------------------------------------------------------------------------------------------------------------------------------*/
+      public static List<leadMatchResult> customAccountDuplicateSearch(String recordId, CountryCodeMap__mdt countryCodeMap){
           List<Account> result = new List<Account>();
           List<leadMatchResult> results = new List<LeadMatchResult>();
           
@@ -156,8 +171,23 @@ public with sharing class FindLeadMatch {
           
           List<Account> initialSearch = new List<Account>();
 
+          String leadCountry2DigitCode = null;
+
+          if(countryCodeMap != null){
+              // We get the country's 2 digit code from the custom metadata
+              leadCountry2DigitCode = countryCodeMap.Country_Code_2_digit__c;
+          }
+
           if(acc.PostalCode != null && acc.PostalCode != ''){
-              initialSearch = [SELECT Id, Name, ETM2_Street_Address__c , BillingCountry, ETM2_Zip_Code__c  FROM Account WHERE ETM2_Zip_Code__c =: acc.PostalCode AND Id !=: recordId];    
+              String accountPostalCode = acc.PostalCode;
+              String accountSearchQuery = 'SELECT Id, Name, ETM2_Street_Address__c , BillingCountry, ETM2_Zip_Code__c  FROM Account WHERE ETM2_Zip_Code__c =: accountPostalCode AND Id !=: recordId';
+
+              if(String.isNotBlank(leadCountry2DigitCode)){
+                  // We filter by the lead's country if it exists
+                  accountSearchQuery += ' AND Country__c = :leadCountry2DigitCode';
+              }
+
+              initialSearch = Database.query(accountSearchQuery);
           }
 
           Map<String, Account> initialSearchMap = new Map<String, Account>();
@@ -283,33 +313,52 @@ public with sharing class FindLeadMatch {
           
       }
       
-    	/*------------------------------------------------------------	
+    	/*---------------------------------------------------------------------------------------------------------------------------------------
 	 	Author: Richard Trum (Glimt) 2019-11-28 	
 	 	Description: find Contacts that matchs the current lead record	
-	 	Inputs: Id of the lead to look for similar data in Contacts  
-	 	------------------------------------------------------------*/
-    	  public static List<leadMatchResult> customContactDuplicateSearch(String recordId){
+	 	Inputs: Id of the lead to look for similar data in Contacts
+	 	        countryCodeMap : Custom metadata containing the lead's country in different formats (2 digit, 3 digit and full name)
+	    ---------------------------------------------------------------------------------------------------------------------------------------*/
+    	  public static List<leadMatchResult> customContactDuplicateSearch(String recordId, CountryCodeMap__mdt countryCodeMap){
           List<Account> result = new List<Account>();
-          
+
           //Contact con = [SELECT Id, FirstName, LastName, Full_Name__c, Email, Phone, Account.BillingPostalCode, Account.BillingCountry FROM Contact WHERE Id =: recordId LIMIT 1];
           Lead con = [SELECT Id, Name, FirstName, LastName, Email, Phone, Street, City, Country, PostalCode FROM Lead WHERE Id =: recordId LIMIT 1];
-               
-          //result.add(con);
+
+          String leadCountryFullName = null;
+
+              if(countryCodeMap != null){
+              // We get the country's full name from the custom metadata
+              leadCountryFullName = countryCodeMap.Country_Code_full__c;
+          }
+
+          String contactSearchQuery = null;
           
           List<Contact> initialSearch = new List<Contact>();
 
+          // Initializing search parameters for the contact dynamic SOQL query
+          String leadPostalCode = con.PostalCode;
+          String leadEmail = con.Email;
+
           if(con.PostalCode != null && con.Email != null){
-                initialSearch = [SELECT Id, FirstName, LastName, Full_Name__c, Email, Phone, AccountId FROM Contact WHERE (Account.BillingPostalCode =: con.PostalCode OR Email =: con.Email OR (FirstName LIKE: '%' + con.FirstName + '%') OR (LastName LIKE: '%' + con.LastName + '%')) AND Id !=: recordId]; //Account.BillingPostalCode =: con.PostalCode AND Account.BillingCity =: con.City
+              contactSearchQuery = 'SELECT Id, FirstName, LastName, Full_Name__c, Email, Phone, AccountId FROM Contact WHERE (Account.BillingPostalCode = :leadPostalCode OR Email = :leadEmail OR (FirstName LIKE \'%' + String.escapeSingleQuotes(con.FirstName) + '%\') OR (LastName LIKE \'%' + String.escapeSingleQuotes(con.LastName) + '%\')) AND Id !=: recordId'; //Account.BillingPostalCode =: con.PostalCode AND Account.BillingCity =: con.City
           }
           else if(con.PostalCode == null && con.Email != null){
-                initialSearch = [SELECT Id, FirstName, LastName, Full_Name__c, Email, Phone, AccountId FROM Contact WHERE (Email =: con.Email OR (FirstName LIKE: '%' + con.FirstName + '%') OR (LastName LIKE: '%' + con.LastName + '%')) AND Id !=: recordId]; //Account.BillingPostalCode =: con.PostalCode AND Account.BillingCity =: con.City
+              contactSearchQuery = 'SELECT Id, FirstName, LastName, Full_Name__c, Email, Phone, AccountId FROM Contact WHERE (Email = :leadEmail OR (FirstName LIKE \'%' + String.escapeSingleQuotes(con.FirstName) + '%\') OR (LastName LIKE \'%' + String.escapeSingleQuotes(con.LastName) + '%\')) AND Id !=: recordId';
           }
           else if(con.PostalCode != null && con.Email == null){
-                initialSearch = [SELECT Id, FirstName, LastName, Full_Name__c, Email, Phone, AccountId FROM Contact WHERE (Account.BillingPostalCode =: con.PostalCode OR (FirstName LIKE: '%' + con.FirstName + '%') OR (LastName LIKE: '%' + con.LastName + '%')) AND Id !=: recordId];
+              contactSearchQuery = 'SELECT Id, FirstName, LastName, Full_Name__c, Email, Phone, AccountId FROM Contact WHERE (Account.BillingPostalCode = :leadPostalCode OR (FirstName LIKE \'%' + String.escapeSingleQuotes(con.FirstName) + '%\') OR (LastName LIKE \'%' + String.escapeSingleQuotes(con.LastName) + '%\')) AND Id !=: recordId';
           }
           else{
-                initialSearch = [SELECT Id, FirstName, LastName, Full_Name__c, Email, Phone, AccountId FROM Contact WHERE ((FirstName LIKE: '%' + con.FirstName + '%') OR (LastName LIKE: '%' + con.LastName + '%')) AND Id !=: recordId];
+              contactSearchQuery = 'SELECT Id, FirstName, LastName, Full_Name__c, Email, Phone, AccountId FROM Contact WHERE ((FirstName LIKE \'%' + String.escapeSingleQuotes(con.FirstName) + '%\') OR (LastName LIKE \'%' + String.escapeSingleQuotes(con.LastName) + '%\')) AND Id !=: recordId';
           }
+
+          // We filter by the lead's country if it exists
+          if(String.isNotBlank(leadCountryFullName)){
+              contactSearchQuery += ' AND Country__c = :leadCountryFullName';
+          }
+
+          initialSearch = Database.query(contactSearchQuery);
 
           List<AccountContactRelation> relations = [SELECT Id, ContactId, AccountId, Contact.FirstName, Contact.LastName, Contact.Full_Name__c, Contact.Email, Contact.Phone FROM AccountContactRelation WHERE Account.BillingPostalCode =: con.PostalCode AND IsDirect = false AND IsActive = true AND ContactId !=: recordId];
 
