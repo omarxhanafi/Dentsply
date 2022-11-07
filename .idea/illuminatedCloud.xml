@@ -7,7 +7,6 @@
           <option name="connectionName" value="UAT" />
           <option name="connectionType" value="OAUTH" />
           <option name="defaultModuleName" value="Dentsply" />
-          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/UAT/OfflineSymbolTable.zip" />
         </IlluminatedCloudConnection>
       </list>
     </option>
