@@ -30,22 +30,26 @@ public with sharing class FindLeadMatch {
                 originalRecord = contact[0];
             }
 
-            List<CountryCodeMap__mdt> countryCodeList = null;
+            CountryCodeMap__mdt countryCodeMap = null;
 
             if(!lead.isEmpty()){
                 // Checking if there's a country on the lead
                 if(String.isNotBlank(lead[0].Country_Code_3_digit__c)){
-                    countryCodeList = [
+                    List<CountryCodeMap__mdt> countryCodeList = [
                             SELECT Country_Code_3_digit__c, Country_Code_2_digit__c, Country_Code_full__c
                             FROM CountryCodeMap__mdt
                             WHERE Country_Code_3_digit__c = :lead[0].Country_Code_3_digit__c
                     ];
+
+                    if(!countryCodeList.isEmpty()){
+                        countryCodeMap = countryCodeList[0];
+                    }
                 }
             }
 
-            List<leadMatchResult> conRes = FindLeadMatch.customContactDuplicateSearch(recordId, !countryCodeList.isEmpty() ? countryCodeList[0] : null);
+            List<leadMatchResult> conRes = FindLeadMatch.customContactDuplicateSearch(recordId, countryCodeMap);
 
-            List<leadMatchResult> accRes = FindLeadMatch.customAccountDuplicateSearch(recordId, !countryCodeList.isEmpty() ? countryCodeList[0] : null);
+            List<leadMatchResult> accRes = FindLeadMatch.customAccountDuplicateSearch(recordId, countryCodeMap);
 
             output.addAll(conRes);
             output.addAll(accRes);
@@ -319,7 +323,7 @@ public with sharing class FindLeadMatch {
 	 	Inputs: Id of the lead to look for similar data in Contacts
 	 	        countryCodeMap : Custom metadata containing the lead's country in different formats (2 digit, 3 digit and full name)
 	    ---------------------------------------------------------------------------------------------------------------------------------------*/
-    	  public static List<leadMatchResult> customContactDuplicateSearch(String recordId, CountryCodeMap__mdt countryCodeMap){
+      public static List<leadMatchResult> customContactDuplicateSearch(String recordId, CountryCodeMap__mdt countryCodeMap){
           List<Account> result = new List<Account>();
 
           //Contact con = [SELECT Id, FirstName, LastName, Full_Name__c, Email, Phone, Account.BillingPostalCode, Account.BillingCountry FROM Contact WHERE Id =: recordId LIMIT 1];
