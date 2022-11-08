@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/FindLeadMatch.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/FindLeadMatch.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/HOTFIX/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/HOTFIX/OfflineSymbolTable.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/leadMatchContactHandling/leadMatchContactHandling.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/leadMatchContactHandling/leadMatchContactHandling.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/leadMatchContactHandling/leadMatchContactHandling.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/leadMatchContactHandling/leadMatchContactHandling.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,11 +93,6 @@
                 <ConnectionWorkspaceSettings />
               </value>
             </entry>
-            <entry key="DevDec">
-              <value>
-                <ConnectionWorkspaceSettings />
-              </value>
-            </entry>
             <entry key="DevHub">
               <value>
                 <ConnectionWorkspaceSettings />
@@ -139,8 +136,6 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:FINDLEADMATCH" value="1667918476732" />
-                      <entry key="APEXCLASS:TEST_FINDLEADMATCH" value="1667919100165" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:LEADMATCHCONTACTHANDLING" value="1666942750000" />
                     </map>
                   </option>
@@ -299,13 +294,14 @@
         </option>
         <option name="logAnalyzerSettings">
           <LogAnalyzerSettings>
+            <option name="selectedTabIndex" value="1" />
             <option name="splitterProportion" value="0.12698413" />
           </LogAnalyzerSettings>
         </option>
         <option name="retrieveAndMergeDefault" value="false" />
         <option name="soqlQuerySettings">
           <SoqlQuerySettings>
-            <option name="resultsSplitterProportion" value="0.6006711" />
+            <option name="resultsSplitterProportion" value="0.8811881" />
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
@@ -315,9 +311,7 @@
                   <option name="name" value="SOQL Query 2" />
                 </SoqlQuerySavedDocument>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT count(Id) from Contact" />
-                  <option name="connectionName" value="Production" />
-                  <option name="connectionType" value="OAUTH" />
+                  <option name="body" value="SELECT Id, Name, ETM2_Street_Address__c , BillingCountry, ETM2_Zip_Code__c  FROM Account WHERE ETM2_Zip_Code__c = '48010' AND Id != '00Q3G000002B60QUAS'" />
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
               </list>
@@ -356,7 +350,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Apex Unit Tests.Test_findLeadMatch.testExecuteLeadSearch">
+  <component name="RunManager" selected="Apex Unit Tests.All Tests">
     <configuration name="FindLeadMatchTest.executeLeadMatchSearchTest" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -482,56 +476,8 @@
       <option name="workflowLogLevel" value="ERROR" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_findLeadMatch.testExecuteLeadSearch" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="FINER" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="HOTFIX" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="ERROR" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="true" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_findLeadMatch" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="ERROR" />
-      <option name="profilingLogLevel" value="ERROR" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="ERROR" />
-      <option name="testClassToTestMethodNames">
-        <map>
-          <entry key="Test_findLeadMatch">
-            <value>
-              <set>
-                <option value="testExecuteLeadSearch" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="ERROR" />
-      <option name="visualforceLogLevel" value="FINE" />
-      <option name="waveLogLevel" value="ERROR" />
-      <option name="workflowLogLevel" value="ERROR" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Apex Unit Tests.Test_findLeadMatch.testExecuteLeadSearch" />
         <item itemvalue="Apex Unit Tests.FindLeadMatchTest.executeLeadMatchSearchTest" />
         <item itemvalue="Apex Unit Tests.Test_OrderManagement_CC" />
         <item itemvalue="Apex Unit Tests.Test_OneDSCanadaTermsAndConditions_CC" />
@@ -577,7 +523,6 @@
       <workItem from="1666865716350" duration="2247000" />
       <workItem from="1666942122747" duration="495000" />
       <workItem from="1666942628611" duration="316000" />
-      <workItem from="1667916334243" duration="3563000" />
     </task>
     <servers />
   </component>
@@ -600,19 +545,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="ApexOfflineDebuggerLocalBreakpointType">
           <url>file://$PROJECT_DIR$/src/classes/FindLeadMatch.cls</url>
-          <line>53</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ApexOfflineDebuggerLocalBreakpointType">
-          <url>file://$PROJECT_DIR$/src/classes/FindLeadMatch.cls</url>
-          <line>36</line>
-          <option name="timeStamp" value="36" />
+          <line>159</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Dentsply$Test_findLeadMatch_testExecuteLeadSearch.ic2" NAME="HOTFIX Coverage Results" MODIFIED="1667918143842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="HOTFIX" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OrderManagement_CC_testCloneOrderWithPricingMicroServiceCallOutWithNoSourceRecord.ic2" NAME="DevNov Coverage Results" MODIFIED="1666690699780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
