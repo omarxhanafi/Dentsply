@@ -663,62 +663,23 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
                 List<CampaignMember>  campaignMemberToUpdateList=new List<CampaignMember>();
                 
                 //Sales Lead creation    
-                if(!memberIdWithLead.values().isempty()){	
+                if(!memberIdWithLead.values().isempty()){
                     
-                    //Check if any open opportunities exist for each account/category combination
-                    
-                    Map<Id, Field_Sales_Project_Members__c> salesLeadsToInsert = new Map<Id, Field_Sales_Project_Members__c>();
-                    Map<Id, String> campaignMembersWithExistingOpp = new Map<Id, String> ();
-                    
-                    for(String cmId : memberIdWithLead.keySet()){
-                        Field_Sales_Project_Members__c salesLead = memberIdWithLead.get(cmId);
-                        List<Opportunity> accOppList = new List<Opportunity>();
-                        accOppList = salesLead.Account__c != null &&  oppMap != null ? oppMap.get(salesLead.Account__c): null;
-                        
-                        if(accOppList != null && !accOppList.isempty()){
-                            system.debug('aqui4:'+ salesLead.Brand__c);
-                            Boolean matchFound = false;
-                            for(Opportunity o : accOppList){
-                                if(o.NA_Brand__c == salesLead.Brand__c){
-                                    matchFound = true;
-                                    campaignMembersWithExistingOpp.put(cmId, o.Id);
-                                }
-                            }
-                            
-                            if(matchFound == false){
-                                salesLeadsToInsert.put(cmId, salesLead);
-                            }
-                        }
-                        else{
-                            salesLeadsToInsert.put(cmId, salesLead);
-                        }
-                    }
-                    
-                    System.debug(salesLeadsToInsert);
+                    System.debug(memberIdWithLead);
                             
                     try{
-                        Insert salesLeadsToInsert.values();
+                        Insert memberIdWithLead.values();
                     }
                     catch(Exception e){
                         DebugLog.addException(e, 'CampaignMemberTriggerHelper.createOpportunities. Sales Lead not created.');
                         //DebugLog.addError(e.getMessage());
                     }
                     
-                    for(CampaignMember campaignMemberToUpdate :[SELECT ID, SalesLead__c FROM CampaignMember WHERE Id IN: salesLeadsToInsert.keySet()]){
-                        campaignMemberToUpdate.SalesLead__c = salesLeadsToInsert.get(campaignMemberToUpdate.Id).Id;
+                    for(CampaignMember campaignMemberToUpdate :[SELECT ID, SalesLead__c FROM CampaignMember WHERE Id IN: memberIdWithLead.keySet()]){
+                        campaignMemberToUpdate.SalesLead__c = memberIdWithLead.get(campaignMemberToUpdate.Id).Id;
                         campaignMemberToUpdateList.add(campaignMemberToUpdate);
                     }
-                    
-                    if(!campaignMembersWithExistingOpp.isEmpty()){
-                        for(CampaignMember campaignMemberToUpdate : [SELECT Id, Opportunity__c FROM CampaignMember WHERE Id IN: campaignMembersWithExistingOpp.keySet()]){
-                            campaignMemberToUpdate.Opportunity__c = campaignMembersWithExistingOpp.get(campaignMemberToUpdate.Id);
-                            campaignMemberToUpdateList.add(campaignMemberToUpdate);
-                        }
-                    }
-                }    
-                
-                
-                
+                }
                 
                 if(!campaignMemberToUpdateList.isempty()){	
                     try{
