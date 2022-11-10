@@ -192,6 +192,7 @@ public with sharing class FindLeadMatch {
             }
 
             initialSearch = Database.query(accountSearchQuery);
+
         }
 
         Map<String, Account> initialSearchMap = new Map<String, Account>();
@@ -279,7 +280,7 @@ public with sharing class FindLeadMatch {
                 String comparePostalCode = initialSearch[i].ETM2_Zip_Code__c;
                 Integer zipDist = -1;
 
-                if(accPostalcode != null){
+                if(accPostalcode != null && comparePostalCode != null){
                     zipDist = accPostalcode.getLevenshteinDistance(comparePostalCode, 2);
                 }
 
