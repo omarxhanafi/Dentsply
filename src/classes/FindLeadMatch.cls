@@ -253,7 +253,7 @@ public with sharing class FindLeadMatch {
                 String accStreet = acc.Street;
                 String compareStreet = initialSearch[i].ETM2_Street_Address__c;
                 Integer streetDist = -1;
-                if(accStreet != null){
+                if(accStreet != null && compareStreet != null){
                     streetDist = accStreet.getLevenshteinDistance(compareStreet, 4);
                 }
 
@@ -413,7 +413,7 @@ public with sharing class FindLeadMatch {
             String conName = con.Name;
             String compareName = initialSearch[i].Full_Name__c;
             Integer dist = -1;
-            if(conName != null){
+            if(conName != null && compareName != null){
                 dist = conName.getLevenshteinDistance(compareName, 4);
             }
             System.debug(initialSearch[i].Email + ' - ' + con.Email);
@@ -486,7 +486,7 @@ public with sharing class FindLeadMatch {
             String conName = con.Name;
             String compareIndName = rel.Contact.Full_Name__c;
             Integer dist = -1;
-            if(conName != null){
+            if(conName != null && compareIndName != null){
                 dist = conName.getLevenshteinDistance(compareIndName, 2);
             }
 
@@ -573,7 +573,9 @@ public with sharing class FindLeadMatch {
             String compareName = c.Full_Name__c;
             Integer dist = -1;
 
-            dist = leadName.getLevenshteinDistance(compareName, 2);
+            if(compareName != null){
+                dist = leadName.getLevenshteinDistance(compareName, 2);
+            }
 
             leadMatchResult lrm = new leadMatchResult();
             List<String> reasons = new List<String>();
@@ -623,7 +625,9 @@ public with sharing class FindLeadMatch {
             String compareName = acr.Contact.Full_Name__c;
             Integer dist = -1;
 
-            dist = leadName.getLevenshteinDistance(compareName, 2);
+            if(compareName != null){
+                dist = leadName.getLevenshteinDistance(compareName, 2);
+            }
 
             if(lead.Email != null && lead.Email == acr.Contact.Email){
 
