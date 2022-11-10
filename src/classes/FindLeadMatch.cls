@@ -36,7 +36,7 @@ public with sharing class FindLeadMatch {
                 // Checking if there's a country on the lead
                 if(String.isNotBlank(lead[0].Country_Code_3_digit__c)){
                     List<CountryCodeMap__mdt> countryCodeList = [
-                            SELECT Country_Code_3_digit__c, Country_Code_2_digit__c, Country_Code_full__c
+                            SELECT Country_Code_3_digit__c, Country_Code_2_digit__c
                             FROM CountryCodeMap__mdt
                             WHERE Country_Code_3_digit__c = :lead[0].Country_Code_3_digit__c
                     ];
@@ -329,11 +329,11 @@ public with sharing class FindLeadMatch {
           //Contact con = [SELECT Id, FirstName, LastName, Full_Name__c, Email, Phone, Account.BillingPostalCode, Account.BillingCountry FROM Contact WHERE Id =: recordId LIMIT 1];
           Lead con = [SELECT Id, Name, FirstName, LastName, Email, Phone, Street, City, Country, PostalCode FROM Lead WHERE Id =: recordId LIMIT 1];
 
-          String leadCountryFullName = null;
+          String leadCountry2DigitCode = null;
 
               if(countryCodeMap != null){
-              // We get the country's full name from the custom metadata
-              leadCountryFullName = countryCodeMap.Country_Code_full__c;
+              // We get the country's 2 digit code from the custom metadata
+                  leadCountry2DigitCode = countryCodeMap.Country_Code_2_digit__c;
           }
 
           String contactSearchQuery = null;
@@ -358,8 +358,8 @@ public with sharing class FindLeadMatch {
           }
 
           // We filter by the lead's country if it exists
-          if(String.isNotBlank(leadCountryFullName)){
-              contactSearchQuery += ' AND Country__c = :leadCountryFullName';
+          if(String.isNotBlank(leadCountry2DigitCode)){
+              contactSearchQuery += ' AND Account.Country__c = :leadCountry2DigitCode';
           }
 
           initialSearch = Database.query(contactSearchQuery);
