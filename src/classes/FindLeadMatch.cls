@@ -359,9 +359,9 @@ public with sharing class FindLeadMatch {
         }
 
         // We filter by the lead's country if it exists
-        if(String.isNotBlank(leadCountry2DigitCode)){
-            contactSearchQuery += ' AND Account.Country__c = :leadCountry2DigitCode';
-        }
+//        if(String.isNotBlank(leadCountry2DigitCode)){
+//            contactSearchQuery += ' AND Account.Country__c = :leadCountry2DigitCode';
+//        }
 
         initialSearch = Database.query(contactSearchQuery);
 
