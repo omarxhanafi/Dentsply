@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/HOTFIX/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/HOTFIX/OfflineSymbolTable.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/leadMatchContactHandling/leadMatchContactHandling.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/leadMatchContactHandling/leadMatchContactHandling.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/leadMatchContactHandling/leadMatchContactHandling.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/leadMatchContactHandling/leadMatchContactHandling.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/FindLeadMatch.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/FindLeadMatch.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +134,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
+                      <entry key="APEXCLASS:FINDLEADMATCH" value="1668077305474" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:LEADMATCHCONTACTHANDLING" value="1666942750000" />
                     </map>
                   </option>
@@ -295,7 +294,7 @@
         <option name="logAnalyzerSettings">
           <LogAnalyzerSettings>
             <option name="selectedTabIndex" value="1" />
-            <option name="splitterProportion" value="0.12698413" />
+            <option name="splitterProportion" value="0.31142858" />
           </LogAnalyzerSettings>
         </option>
         <option name="retrieveAndMergeDefault" value="false" />
@@ -523,6 +522,7 @@
       <workItem from="1666865716350" duration="2247000" />
       <workItem from="1666942122747" duration="495000" />
       <workItem from="1666942628611" duration="316000" />
+      <workItem from="1668077108109" duration="1787000" />
     </task>
     <servers />
   </component>
@@ -540,18 +540,8 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ApexOfflineDebuggerLocalBreakpointType">
-          <url>file://$PROJECT_DIR$/src/classes/FindLeadMatch.cls</url>
-          <line>159</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Dentsply$Test_findLeadMatch_testExecuteLeadSearch.ic2" NAME="HOTFIX Coverage Results" MODIFIED="1667918143842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="HOTFIX" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OrderManagement_CC_testCloneOrderWithPricingMicroServiceCallOutWithNoSourceRecord.ic2" NAME="DevNov Coverage Results" MODIFIED="1666690699780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
