@@ -204,8 +204,10 @@ public with sharing class FindLeadMatch {
         //SOSL
         List<list<SObject>> accountSearchList = new List<List<SObject>>();
         if(acc.Company != null){
-            accountSearchList = [FIND:acc.Company IN ALL FIELDS RETURNING Account(Name, ETM2_Street_Address__c, BillingCity, ETM2_Zip_Code__c)];
-            System.debug('SOSL result: ' + accountSearchList[0]);
+            if(acc.Company.length() > 1){
+                accountSearchList = [FIND:acc.Company IN ALL FIELDS RETURNING Account(Name, ETM2_Street_Address__c, BillingCity, ETM2_Zip_Code__c)];
+                System.debug('SOSL result: ' + accountSearchList[0]);
+            }
         }
 
         Map<String, Double> accountIds = new Map<String, Double>();
@@ -359,9 +361,9 @@ public with sharing class FindLeadMatch {
         }
 
         // We filter by the lead's country if it exists
-        if(String.isNotBlank(leadCountry2DigitCode)){
-            contactSearchQuery += ' AND Account.Country__c = :leadCountry2DigitCode';
-        }
+//        if(String.isNotBlank(leadCountry2DigitCode)){
+//            contactSearchQuery += ' AND Account.Country__c = :leadCountry2DigitCode';
+//        }
 
         initialSearch = Database.query(contactSearchQuery);
 
