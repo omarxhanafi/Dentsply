@@ -1,4 +1,4 @@
-public with sharing class GuidanceRendererController {
+public without sharing class GuidanceRendererController {
     @AuraEnabled
     public static string getGuidanceDetails(String parentId, String nextActivity){
         try {
@@ -11,13 +11,12 @@ public with sharing class GuidanceRendererController {
             if(currentProcedure != null){
                 System.debug('currentProcedure'+currentProcedure);
                 //get meta data with the next activity
-                GuidanceRenderer__mdt guidances; 
+                GuidanceRenderer__mdt guidances;
                 if(Test.IsRunningTest()){
                 	guidances =  [Select Id,Country__c, Guidance_Content__c, NextActivity__c From GuidanceRenderer__mdt Where  isTest__c = true];
+					System.debug('guidances1' + guidances);
                 }else{
-                guidances =  [Select Id,Country__c, Guidance_Content__c, NextActivity__c From GuidanceRenderer__mdt 
-                                                                                            Where Country__c=: currentProcedure.PracticeAccount__r.Country__c AND 
-                                                                                            NextActivity__c=:nextActivity AND RecordTypeDeveloperName__c =: currentRecordType.DeveloperName];
+                guidances =  [Select Id,Country__c, Guidance_Content__c, NextActivity__c From GuidanceRenderer__mdt Where Country__c=: currentProcedure.PracticeAccount__r.Country__c AND NextActivity__c=:nextActivity AND RecordTypeDeveloperName__c =: currentRecordType.DeveloperName];
                 }
                 System.debug('guidances'+guidances);
                 if(guidances != null){

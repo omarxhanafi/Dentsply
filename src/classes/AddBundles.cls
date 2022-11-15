@@ -13,7 +13,14 @@ public with sharing class AddBundles {
     public static List<Product_bundle__c> getPricebookBundles(String pricebookId) {
         
         List<Product_bundle__c> bundles = new List<Product_bundle__c>();
-        bundles = [ SELECT Id, Total_price__c, Name, CurrencyIsoCode, Description__c, (SELECT Name, Quantity__c, Product__r.Name, Row_price__c, Id, Discount__c, CurrencyIsoCode FROM Bill_of_Material__r), (SELECT Id, ContentDocumentId FROM AttachedContentDocuments ORDER BY CreatedDate DESC NULLS FIRST)  FROM Product_bundle__c WHERE Price_Book__c =: pricebookId AND Active__c = true];
+        bundles = [
+                SELECT Id, Total_price__c, Name, CurrencyIsoCode, Description__c,
+                        (SELECT Name, Quantity__c, Product__r.Name, Row_price__c, Id, Discount__c, CurrencyIsoCode FROM Bill_of_Material__r),
+                        (SELECT Id, ContentDocumentId FROM AttachedContentDocuments ORDER BY CreatedDate DESC NULLS FIRST)
+                FROM Product_bundle__c
+                WHERE Price_Book__c = :pricebookId AND Active__c = true
+                ORDER BY Name ASC
+        ];
         return(bundles);
     }
 

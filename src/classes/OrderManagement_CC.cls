@@ -1,13 +1,19 @@
 /*-------------------------------------------------------------------------------------------------------
 Author:         Ahmed loudrassi (Salesforce) 20200215
 Description:    OrderManagementCmp Controller Class
-Test Class:     Test_OrderManagement_CC
+Test Class:     _OrderManagement_CC
 History:
 210716          modified to support ERP callouts new methods added -> prodPricingERPCallOut, getSourceRecords
 210426          modified getProducts() to return list ordered on Article__c
 201015          Added readAccess check on getPriceBooks()
 ----------------------------------------------------------------------------------------*/
 public with sharing class OrderManagement_CC {
+
+    /*----------------------------------------------------------------
+    Description:    Custom exception for the OrderManagement_CC class
+    ----------------------------------------------------------------*/
+    public class OrderManagementException extends Exception {}
+
     /*------------------------------------------------------------  
     Description:    Method to select the current User uITheme.
     Inputs:         
@@ -230,15 +236,16 @@ public with sharing class OrderManagement_CC {
             List <ProductPricingERPCallOutWrapper.ProductEntry> pricingProdsRequest = new List<ProductPricingERPCallOutWrapper.ProductEntry>();
             List <ProductPricingERPCallOutWrapper.ProductEntry> dupPricingProdsRequest = new List<ProductPricingERPCallOutWrapper.ProductEntry>();
 
-
-
             set<String> uniqueProds = new set<string>();
             set<String> dupProds = new set<string>();
+
+
             for(OrderItem orderItem : clonedOrderItems) {
+
                 if(orderItem.PricebookEntry.IsActive && order.Pricebook2.ShowPricingfromMicroServiceOM__c == false) {
                     pricebookEntriesIds.add(orderItem.PricebookEntryId);
-                } 
-                
+                }
+
                 if(orderItem.PricebookEntry.IsActive && order.Pricebook2.ShowPricingfromMicroServiceOM__c == true) {
                     ProductPricingERPCallOutWrapper.ProductEntry prodRequest = new ProductPricingERPCallOutWrapper.ProductEntry();
                     prodRequest.productId = orderItem.Product2.Article__c;
@@ -269,15 +276,22 @@ public with sharing class OrderManagement_CC {
                     }
                 }
             }
+
+
+
             Map<Id, PricebookEntry> pricebookEntries = new Map<Id, PricebookEntry>();
             if(! pricebookEntriesIds.isEmpty()){
                 for(PricebookEntry priceEntry : [SELECT Id,Product2Id, UnitPrice FROM PricebookEntry WHERE Id IN :pricebookEntriesIds]){
                     pricebookEntries.put(priceEntry.Id,priceEntry);
                 }
             }
+
+
+
             ProductPricingERPCallOutWrapper.ProductPricingResponse prices = new ProductPricingERPCallOutWrapper.ProductPricingResponse();
+
             if(! pricingProdsRequest.isEmpty()){
-                prices = ProdPricingERPCallOut(Order.Id, pricingProdsRequest );
+                prices = getProductPricingERPCalloutResponse(Order.Id, pricingProdsRequest );
                 Integer i = 0;
                 for(ProductPricingERPCallOutWrapper.Entries priceBack: prices.entries){
                     for(ProductPricingERPCallOutWrapper.ProductEntry prod: pricingProdsRequest){
@@ -288,9 +302,12 @@ public with sharing class OrderManagement_CC {
                     }
                 }
             }
+
+
+
             ProductPricingERPCallOutWrapper.ProductPricingResponse dupPrices = new ProductPricingERPCallOutWrapper.ProductPricingResponse();
             if(! dupPricingProdsRequest.isEmpty()){
-                dupPrices = ProdPricingERPCallOut(Order.Id, dupPricingProdsRequest );
+                dupPrices = getProductPricingERPCalloutResponse(Order.Id, dupPricingProdsRequest );
                 Integer i = 0;
                 for(ProductPricingERPCallOutWrapper.Entries priceBack: dupPrices.entries){
                     for(ProductPricingERPCallOutWrapper.ProductEntry prod: dupPricingProdsRequest){
@@ -302,7 +319,12 @@ public with sharing class OrderManagement_CC {
                 }
                 prices.entries.addAll(dupPrices.entries);
             }
+
+
             insert clonedOrder;
+
+
+
             for(OrderItem orderItem : clonedOrderItems) {
                 
                 if(orderItem.PricebookEntry.IsActive && order.Pricebook2.ShowPricingfromMicroServiceOM__c == false){
@@ -383,7 +405,7 @@ public with sharing class OrderManagement_CC {
         }
         catch (Exception e) {
             DebugLog.addException(e, 'OrderManagement_CC.cloneOrder');
-            throw new AuraHandledException(e.getMessage());
+            throw new AuraHandledException(e.getMessage());    
         }
     }
     /*------------------------------------------------------------  
@@ -420,7 +442,7 @@ public with sharing class OrderManagement_CC {
                 prodRequest.quantity = orderItemToCloneList[0].Quantity.intValue();
                 pricingProdsRequest.add(prodRequest);
                 ProductPricingERPCallOutWrapper.ProductPricingResponse prices = new ProductPricingERPCallOutWrapper.ProductPricingResponse();
-                prices = ProdPricingERPCallOut(orderItemToCloneList[0].OrderId, pricingProdsRequest);
+                prices = getProductPricingERPCalloutResponse(orderItemToCloneList[0].OrderId, pricingProdsRequest);
                 orderItemToCloneList[0].UnitPrice = prices.Entries[0].basePrice;
                 orderItemToCloneList[0].AXRetailPrice__c = prices.Entries[0].retailPrice;
 
@@ -566,7 +588,7 @@ public with sharing class OrderManagement_CC {
         } catch (Exception e) {
             DebugLog.addException(e, 'OrderManagement_CC.createOrder');
             system.debug('OrderManagement_CC.createOrder'+ e.getMessage());
-            throw new AuraHandledException(e.getMessage());
+            throw new AuraHandledException(e.getMessage());    
         }
     }
     @AuraEnabled
@@ -882,29 +904,47 @@ public with sharing class OrderManagement_CC {
 
 
 
-    /* ERP pricing Callout method*/
+    /*----------------------------------------------------------------------------------------
+    Description:    Method to get product pricings related to the parent based on a callout
+    Inputs:          @param parentId
+                     @param prodPriceRequests
+    ----------------------------------------------------------------------------------------*/
     @AuraEnabled
     public static ProductPricingERPCallOutWrapper.ProductPricingResponse ProdPricingERPCallOut(ID parentId, list<ProductPricingERPCallOutWrapper.ProductEntry> prodPriceRequests ) {
         try {
-            string codeERPId = '';
-            order orderDetail = [SELECT Id, Account.GDWUniqueKey_CustomerMaster__c, Account.RecordTypeId, Account.RecordType.DeveloperName, SourceRecord__r.Customer_Id__c , CurrencyIsoCode , 	Pricebook2.CompanyCode__c FROM order WHERE Id =: parentId LIMIT 1];
-            If(Schema.SObjectType.Account.getRecordTypeInfosById().get(orderDetail.Account.RecordTypeId).getDeveloperName() == 'CIM_Account'){
-            //If(orderDetail.Account.RecordType.DeveloperName == 'CIM_Account'){
-                
-                codeERPId = orderDetail.SourceRecord__r.Customer_Id__c;
-            }
-            If(Schema.SObjectType.Account.getRecordTypeInfosById().get(orderDetail.Account.RecordTypeId).getDeveloperName() == 'ERP_Account'){
-            //If(orderDetail.Account.RecordType.DeveloperName == 'ERP_Account'){
-                List<string> codeERPSplit = orderDetail.Account.GDWUniqueKey_CustomerMaster__c.split('_');
-                If(codeERPSplit[0] == '2'){
-                    codeERPId = codeERPSplit[2];
-                }
-            }
-            ProductPricingERPCallOutWrapper.ProductPricingResponse priceResponse = ProductPricingERPCallOutResponse.ProductPricingERPCallOutResponse(codeERPId, orderDetail.CurrencyIsoCode, orderDetail.Pricebook2.CompanyCode__c , prodPriceRequests);
-            return priceResponse;
+            return getProductPricingERPCalloutResponse(parentId, prodPriceRequests);
         } catch (Exception e) {
             DebugLog.addException(e, 'OrderManagement_CC.ProdPricingERPCallOut');
             throw new AuraHandledException(e.getMessage());
+        }
+    }
+
+    /* ERP pricing Callout method*/
+    private static ProductPricingERPCallOutWrapper.ProductPricingResponse getProductPricingERPCalloutResponse(Id parentId, List<ProductPricingERPCallOutWrapper.ProductEntry> prodPriceRequests) {
+        try {
+            string codeERPId = '';
+            order orderDetail = [SELECT Id, Account.GDWUniqueKey_CustomerMaster__c, Account.RecordTypeId, Account.RecordType.DeveloperName, SourceRecord__r.Customer_Id__c, CurrencyIsoCode, Pricebook2.CompanyCode__c FROM order WHERE Id = :parentId LIMIT 1];
+            If (Schema.SObjectType.Account.getRecordTypeInfosById().get(orderDetail.Account.RecordTypeId).getDeveloperName() == 'CIM_Account') {
+                //If(orderDetail.Account.RecordType.DeveloperName == 'CIM_Account'){
+
+                codeERPId = orderDetail.SourceRecord__r.Customer_Id__c;
+
+                if (String.isBlank(codeERPId)) {
+                    throw new OrderManagementException(System.label.No_Source_Record);
+                }
+            }
+            If (Schema.SObjectType.Account.getRecordTypeInfosById().get(orderDetail.Account.RecordTypeId).getDeveloperName() == 'ERP_Account') {
+                //If(orderDetail.Account.RecordType.DeveloperName == 'ERP_Account'){
+                List<string> codeERPSplit = orderDetail.Account.GDWUniqueKey_CustomerMaster__c.split('_');
+                If (codeERPSplit[0] == '2') {
+                    codeERPId = codeERPSplit[2];
+                }
+            }
+            ProductPricingERPCallOutWrapper.ProductPricingResponse priceResponse = ProductPricingERPCallOutResponse.ProductPricingERPCallOutResponse(codeERPId, orderDetail.CurrencyIsoCode, orderDetail.Pricebook2.CompanyCode__c, prodPriceRequests);
+            return priceResponse;
+        } catch (Exception e) {
+            DebugLog.addException(e, 'OrderManagement_CC.getProductPricingERPCalloutResponse');
+            throw new OrderManagementException(e.getMessage());
         }
     }
 
@@ -952,6 +992,19 @@ public with sharing class OrderManagement_CC {
 
         return om;
 
+    }
+
+    /*------------------------------------------------------------
+    Description:    Detects the user decimal separator base on his locale
+
+    Outputs:        String   The user decimal separator
+    ------------------------------------------------------------*/
+    @AuraEnabled
+    public static String getUserDecimalSeparator()
+    {
+        Decimal value = 1.1;
+        String formattedValue = value.format();
+        return formattedValue.substring(1, 2);
     }
 
     /*@AuraEnabled
