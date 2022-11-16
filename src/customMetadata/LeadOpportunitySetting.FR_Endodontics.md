@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">ProTaper Gold;AH Plus;WaveOne Gold;Reciproc Blue;X-smart;Propex IQ;TruNatomy;ProTaper Ultimate;Guttafusion</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Endodontics</value>
     </values>
@@ -40,7 +36,7 @@
     </values>
     <values>
         <field>ShowManualSalesLeadOwnerAssignment__c</field>
-        <value xsi:type="xsd:boolean">false</value>
+        <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
         <field>UserRoles__c</field>

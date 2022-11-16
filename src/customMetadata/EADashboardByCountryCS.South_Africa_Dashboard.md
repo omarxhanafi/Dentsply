@@ -8,11 +8,11 @@
     </values>
     <values>
         <field>AccountInsideSalesDashboardFilter__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">{&apos;datasets&apos;:{&apos;AccountSalesDetail&apos;:[{&apos;fields&apos;:[&apos;ac.Id&apos;], &apos;filter&apos;:{&apos;operator&apos;: &apos;matches&apos;, &apos;values&apos;:[&apos;#recordId#&apos;]}}]}}</value>
     </values>
     <values>
         <field>AccountInsideSalesDashboard__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">South_Africa_Sales_Account_Page</value>
     </values>
     <values>
         <field>AccountMarketingDashboardFilter__c</field>
@@ -24,11 +24,11 @@
     </values>
     <values>
         <field>AccountOutsideSalesDashboardFilter__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">{&apos;datasets&apos;:{&apos;AccountSalesDetail&apos;:[{&apos;fields&apos;:[&apos;ac.Id&apos;], &apos;filter&apos;:{&apos;operator&apos;: &apos;matches&apos;, &apos;values&apos;:[&apos;#recordId#&apos;]}}]}}</value>
     </values>
     <values>
         <field>AccountOutsideSalesDashboard__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">South_Africa_Sales_Account_Page</value>
     </values>
     <values>
         <field>AccountPlanDashboard__c</field>
@@ -48,11 +48,11 @@
     </values>
     <values>
         <field>AccountServiceDashboardFilter__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">{&apos;datasets&apos;:{&apos;AccountSalesDetail&apos;:[{&apos;fields&apos;:[&apos;ac.Id&apos;], &apos;filter&apos;:{&apos;operator&apos;: &apos;matches&apos;, &apos;values&apos;:[&apos;#recordId#&apos;]}}]}}</value>
     </values>
     <values>
         <field>AccountServiceDashboard__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">South_Africa_Sales_Account_Page</value>
     </values>
     <values>
         <field>CountryCode__c</field>

@@ -1,3 +1,6 @@
+<aura:component implements="lightning:availableForFlowScreens" controller="UsersInAccountTerritories">
+    <aura:attribute name="recordId" type="String" access="global" />
+    <aura:attribute name="accountId" type="String" access="global" />
     <aura:attribute name="fieldN" type="String" access="global" default="Dealer__c"/>
     <aura:attribute name="defaultVal" type="String" access="global"/>
     <aura:attribute name="objType" type="String" access="global" default="Field_Sales_Project_Members__c"/>

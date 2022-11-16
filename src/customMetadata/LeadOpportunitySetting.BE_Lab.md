@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">Cercon;Cercon ML</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Prosthetics</value>
     </values>

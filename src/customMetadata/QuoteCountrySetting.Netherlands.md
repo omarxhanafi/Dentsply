@@ -8,6 +8,6 @@
     </values>
     <values>
         <field>QuoteTemplate__c</field>
-        <value xsi:type="xsd:string">Quote Template: Netherlands</value>
+        <value xsi:type="xsd:string">Quote Template: Netherlands/Luxembourg</value>
     </values>
 </CustomMetadata>

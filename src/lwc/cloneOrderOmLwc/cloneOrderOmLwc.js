@@ -42,14 +42,13 @@ export default class CloneOrderOmLwc extends NavigationMixin(LightningElement) {
     }
     cloneOrder() {
         this.loading = true;
-
         cloneOrder({orderId : this.order.Id, contractId : this.selectedContractId})
         .then(result => {
             showToast(this, this.userUiTheme, 'Success', result.OrderNumber + ' : ' + this.labels.orderCloneSuccess , 'success');
             goToRecord(this.userUiTheme, result.Id, this);
         })
         .catch(error => {
-            showToast(this, this.userUiTheme, 'Error', !!error.body.stackTrace ? error.body.message + error.body.stackTrace : error.body.message , 'error');
+            showToast(this, this.userUiTheme, 'Error', error.body.message + error.body.stackTrace , 'error');
             this.loading = false;
         });
     }

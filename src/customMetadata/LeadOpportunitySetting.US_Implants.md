@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">ANKYLOS;ATIS EV;Azento Astra Tech;DS PrimeTaper;Ossix;Simplant;XiVE</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Implants</value>
     </values>

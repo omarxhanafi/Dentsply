@@ -3,7 +3,23 @@
     <label>SAP Zhermack</label>
     <protected>false</protected>
     <values>
+        <field>ACC_DefaultOwnerUserId__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>ACC_IsEnabled__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>ACC_MapToErpOwner__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>ACC_PracticeHrIdIsRequired__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>ACC_RetainExistingSalesforceOwnerId__c</field>
         <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
@@ -23,6 +39,10 @@ CH</value>
     <values>
         <field>AR_IsEnabled__c</field>
         <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Attr_UseCustomerFlagOnAddress__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>AttributeRecordsToCustomerAddress__c</field>

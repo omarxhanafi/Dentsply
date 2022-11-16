@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">DefaultCountryOwner</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Others</value>
     </values>
@@ -24,11 +20,11 @@
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>
-        <value xsi:type="xsd:string">0126M000000cpRY</value>
+        <value xsi:type="xsd:string">0056M000009egxL</value>
     </values>
     <values>
         <field>DefaultLeadOwner__c</field>
-        <value xsi:type="xsd:string">0126M000000cpRY</value>
+        <value xsi:type="xsd:string">0056M000009egxL</value>
     </values>
     <values>
         <field>IsTest__c</field>

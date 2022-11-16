@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">Sinius</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:type="xsd:string">Sinius</value>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Consumables</value>
     </values>

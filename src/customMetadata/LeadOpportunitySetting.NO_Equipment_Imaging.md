@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">SiroCam;UAF plus;Sirolaser;SIROLaser Advance;SIROLaser Blue;T1 Contra-angles;T1 Turbines;T2 Contra-angles;T2 Turbines;TENEO;USBCAM;XIOS AE;XIOS Scan;XIOS Supreme;SICAT Suite;Sinius;SiroCam;Axano</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Equipment &amp; Imaging</value>
     </values>

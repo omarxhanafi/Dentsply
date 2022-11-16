@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">Cerec Consumables;CEREC MTL;CEREC Primemill Full System;CEREC Primescan AC;CEREC SpeedFire;Omnicam AC 2.0;Primescan;CEREC MTL Zirconia;Primeprint</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Digital</value>
     </values>

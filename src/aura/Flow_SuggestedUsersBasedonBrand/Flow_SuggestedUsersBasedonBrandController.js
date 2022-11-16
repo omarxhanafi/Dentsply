@@ -85,14 +85,16 @@
                 cmp.set("v.isVisible", true);
                 var resultList = result.getReturnValue();                
                 cmp.set("v.userList", resultList);
-                console.log('resultList',resultList);
-                for(var i=0 ; i<=resultList.length ; i++){
-                    if(i == 0){
-                        resultList[i].isChecked = true; 
-                        var selectedMemberId = resultList[i].UserId;
-                        cmp.set("v.ChoosenUserId", selectedMemberId);
-                    }else{
-                        resultList[i].isChecked = false; 
+                console.log('resultList',resultList)
+                if(resultList){
+                    for(var i=0 ; i< resultList.length ; i++){
+                        if(i == 0){
+                            resultList[i].isChecked = true; 
+                            var selectedMemberId = resultList[i].UserId;
+                            cmp.set("v.ChoosenUserId", selectedMemberId);
+                        }else{
+                            resultList[i].isChecked = false; 
+                        }
                     }
                 }
                

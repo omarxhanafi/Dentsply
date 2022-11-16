@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">Bluecam;CEREC Full System MCX;CEREC Full System MCXL;CEREC Full System Upgrade;CEREC Primemill Full System;CEREC Primescan AC;CEREC SpeedFire;Hub;MCX;MCX Upgrade;MCXL;MCXL Upgrade;Omni Connect;Omni Only;Omni Upgrade;Omnicam AC 2.0;Primemill;Primescan;Tessera</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Digital</value>
     </values>
