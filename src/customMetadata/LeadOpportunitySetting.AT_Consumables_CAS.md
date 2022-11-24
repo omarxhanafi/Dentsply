@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <label>AT_Consumables_(CAS)</label>
+    <label>AT_Consumables_(Digital Lab + CAS)</label>
     <protected>false</protected>
     <values>
         <field>AssignOwnerFrom__c</field>
@@ -40,6 +40,6 @@
     </values>
     <values>
         <field>UserRoles__c</field>
-        <value xsi:type="xsd:string">Sales Rep (CAS)</value>
+        <value xsi:type="xsd:string">Sales Rep (Digital Lab + CAS)</value>
     </values>
 </CustomMetadata>

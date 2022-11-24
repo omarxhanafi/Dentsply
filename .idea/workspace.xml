@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+    <list default="true" id="07844e19-e296-40cb-936d-b563ad6bf62a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IlluminatedCloud/SureSmile/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/SureSmile/OfflineSymbolTable.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.js-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.js-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/CountryCodeMap.TaiwanProvinceofChina.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/CountryCodeMap.TaiwanProvinceofChina.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.US_1st_Case_Review_Approval.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.US_1st_Case_Review_Approval.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.US_Procedural_Assessment.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.US_Procedural_Assessment.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.US_Team_MeetingReview_Processes.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.US_Team_MeetingReview_Processes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/LeadOpportunitySetting.AT_Consumables_CAS.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/LeadOpportunitySetting.AT_Consumables_CAS.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/objects/GuidanceRenderer__mdt.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/GuidanceRenderer__mdt.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/ProcedureTracker__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/ProcedureTracker__c.object" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,11 +179,127 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:GUIDANCERENDERERCONTROLLER" value="1668612368257" />
-                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.COUNTRY__C" value="1668680026000" />
-                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.GUIDANCE_CONTENT__C" value="1668680026000" />
-                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.ISTEST__C" value="1668680026000" />
-                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.NEXTACTIVITY__C" value="1668680026000" />
-                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.RECORDTYPEDEVELOPERNAME__C" value="1668680026000" />
+                      <entry key="COMPACTLAYOUT:PROCEDURETRACKER__C.PROCEDURE_TRACKER_COMPACT_LAYOUT" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.COUNTRY__C" value="1669044263000" />
+                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.GUIDANCE_CONTENT__C" value="1669044264000" />
+                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.ISTEST__C" value="1669044264000" />
+                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.NEXTACTIVITY__C" value="1669044264000" />
+                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.RECORDTYPEDEVELOPERNAME__C" value="1669044264000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.ACTIVATIONNEEDEDBY__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.BARRIER__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.BUSINESSASSESSMENT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.CASESELECTIONSTAFFROLES__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.CHAIRSIDEPATIENTEDUCATION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.CIS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.CLINICALDEVELOPMENT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.CLINICALEDUCATION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.CONTACT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.DEALER__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.DISCOVERYGOALASSESSMENT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.ECONOMICS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.FOLLOWUPCOMMENTS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.IMAGINGDEVICEBRANDIN_USE__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.INTRAORALSCANNER__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.LASTACTIVITYNOTES__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.LASTACTIVITY__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.MARKETINGCAMPAIGN__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.MARKETINGM2H__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NEXTACTIVITY__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES030DAYS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES120PLUSDAYS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES3060DAYS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES6090DAYS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES90120DAYS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESBUSINESSASSESSMENT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESCHAIRSIDEPATIENTEDUCATION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESCLINICALDEVELOPMENT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESCLINICALEDUCATION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESECONOMICS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESMARKETINGCAMPAIGN__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESMARKETINGM2H__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESOBTAINCREDITCARDINFORMATION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESPATIENTACCEPTANCE__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESPATIENTEDUCATION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESPEER2PEER__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESPROCEDURALASSESSMENT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESPROCEDURALECONOMICS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESPROCESSASSESSMENT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESQBRHIGHL1TOHIGHL2__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESQBRLOWTOMEDIUM__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESQBRMEDIUMTOHIGHL1__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESRESETTRAINING__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESTEAMCALIBRATION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTESWHOISYOURIDEALALIGNERPATIENT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES_1STCASEREVIEWAPPROVAL__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES_1STCASESUBMISSIONWORKFLOWMKT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES_2NDCASEREVIEWAPPROVAL__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES_2NDCASESUBMISSIONEXTERNAL__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES_3RDCASEREVIEWAPPROVAL__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES_3RDCASESUBMISSION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES_CASESELECTIONSTAFFROLES__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES_DISCOVERYGOALASSESSMENT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES_RECORDSTRAININGFINANCE__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES_TEAMMEETINGREVIEWPROCESSES__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.NOTES_TEAMTRAININGORTHODONTICBENEFIT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.OBTAINCREDITCARDINFORMATION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.OF_CASES_SUBMITTED_THE_FIRST_6_MONTHS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.OTHERIMAGINGDEVICEBRAND__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.OTHERINTRAORALSCANNERINUSE__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.PARENTACCOUNTINFORMATION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.PATIENTACCEPTANCE__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.PATIENTEDUCATION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.PEER2PEER__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.PRACTICEACCOUNT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.PROCEDURALASSESSMENT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.PROCEDURALECONOMICS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.PROCEDURETYPE__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.PROCESSASSESSMENT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.QBRHIGHL1TOHIGHL2__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.QBRLOWTOMEDIUM__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.QBRMEDIUMTOHIGHL1__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.RECORDSTRAININGFINANCE__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.REGISTRATIONDATE__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.RESETTRAINING__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.SALESREP__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.SCANNER_X_RAY_TECHNOLOGIES_IN_USE__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.SEGMENTCLEARALIGNER__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.STAGE__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.STATUS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.TEAMCALIBRATION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.TEAMMEETINGREVIEWPROCESSES__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.TEAMTRAININGORTHODONTICBENEFITSRDH__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.WHOISYOURIDEALALIGNERPATIENT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X10SUBMITSECONDCASE__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X11TRAINCOMPLETESECONDCASEREVIEW__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X12SUBMITTHIRDCASE__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X13TRAINCOMPLETETHIRDCASEREVIEW__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X14TRAINCLINICALAPPSINTEGRATIONS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X15TRAINCASEMANAGEMENT__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X16LAUNCHSURESMILEDAY__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X17COMPLETESURESMILEBUSINESSREVIEW__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X18REVIEWPRACTICEINTEGRATION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X19DISCUSSPATIENTFINANCING__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X1EXPERIENCESURESMILE__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X1STCASEREVIEWAPPROVAL__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X1STCASESUBMISSIONWORKFLOWMARKETING__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X20REVIEWCASEEXPANSIONOPPORTUNITIES__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X21ACCELERATIONBESTPRACTICES__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X22JOINSTARTSTUDYCLUB__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X23CONNECTWITHSURESMILEMENTOR__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X24JOINSURESMILECONNECTIONSPROGRAM__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X25STARTCONTINUOUSEDUCATION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X2NDCASEREVIEWAPPROVAL__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X2NDCASESUBMISSIONEXTERNAL__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X2REGISTER__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X3DELIVERWELCOMETOSURESMILEFAMILY__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X3RDCASEREVIEWAPPROVAL__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X3RDCASESUBMISSION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X4COMPLETESURESMILEDISCOVERY__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X5CONNECTWITHSURESMILEAMBASSADOR__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X6HELPCLINICFIND3PATIENTS__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X7STARTNEWPRACTICEORIENTATION__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X8TRAINSUBMITFIRSTCASE__C" value="1669033209000" />
+                      <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.X9TRAINCOMPLETEFIRSTCASEREVIEW__C" value="1669033209000" />
                       <entry key="CUSTOMMETADATA:GUIDANCERENDERER.TEST_RECORD" value="1668611078000" />
                       <entry key="CUSTOMMETADATA:GUIDANCERENDERER.US_1ST_CASE_REVIEWAL_APPROVAL" value="1668611078000" />
                       <entry key="CUSTOMMETADATA:GUIDANCERENDERER.US_1ST_CASE_REVIEW_APPROVAL" value="1668611078000" />
@@ -213,11 +333,15 @@
                       <entry key="CUSTOMMETADATA:GUIDANCERENDERER.US_TEAM_MEETING_REVIEW_PROCESSES" value="1668611078000" />
                       <entry key="CUSTOMMETADATA:GUIDANCERENDERER.US_TEAM_TRAINING_ORTHODONTIC_BENEFITS" value="1668611078000" />
                       <entry key="CUSTOMMETADATA:GUIDANCERENDERER.US_WHO_IS_YOUR_IDEAL_ALIGNER_PATIENT" value="1668611078000" />
-                      <entry key="CUSTOMOBJECT:GUIDANCERENDERER__MDT" value="1668680026000" />
-                      <entry key="LISTVIEW:GUIDANCERENDERER__MDT.ALL_GUIDANCE" value="1668680026000" />
+                      <entry key="CUSTOMOBJECT:GUIDANCERENDERER__MDT" value="1669044264000" />
+                      <entry key="CUSTOMOBJECT:PROCEDURETRACKER__C" value="1669033209000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:GUIDANCERENDERER" value="1669034956312" />
+                      <entry key="LISTVIEW:GUIDANCERENDERER__MDT.ALL_GUIDANCE" value="1669044264000" />
+                      <entry key="RECORDTYPE:PROCEDURETRACKER__C.CLEAR_ALIGNERS" value="1669033209000" />
+                      <entry key="RECORDTYPE:PROCEDURETRACKER__C.CLEAR_ALIGNERS_GLOBAL" value="1669033209000" />
                     </map>
                   </option>
-                  <option name="lastBuildScope" value="CONTEXT" />
+                  <option name="lastBuildScope" value="CUSTOM" />
                   <option name="lastBuildViewToggles">
                     <map>
                       <entry key="DEPLOY">
@@ -4296,6 +4420,7 @@
                       <option value="metadata://CustomMetadata/Team_setup.US1" />
                       <option value="metadata://CustomMetadata/Team_setup.US2" />
                       <option value="metadata://CustomMetadata/testInCountry1__InCountryAuth.OAuth_RU_MT" />
+                      <option value="metadata://CustomObject/ProcedureTracker__c" />
                     </set>
                   </option>
                   <option name="lastDeploymentOptions">
@@ -4389,7 +4514,7 @@
         </option>
         <option name="logAnalyzerSettings">
           <LogAnalyzerSettings>
-            <option name="splitterProportion" value="0.3034483" />
+            <option name="splitterProportion" value="0.4675768" />
           </LogAnalyzerSettings>
         </option>
         <option name="retrieveAndMergeDefault" value="false" />
