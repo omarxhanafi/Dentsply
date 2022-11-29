@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07844e19-e296-40cb-936d-b563ad6bf62a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js-meta.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IlluminatedCloud/SureSmile/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/SureSmile/OfflineSymbolTable.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/CountryCodeMap.TaiwanProvinceofChina.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/CountryCodeMap.TaiwanProvinceofChina.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.US_1st_Case_Review_Approval.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.US_1st_Case_Review_Approval.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.US_Procedural_Assessment.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.US_Procedural_Assessment.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.US_Team_MeetingReview_Processes.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.US_Team_MeetingReview_Processes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/LeadOpportunitySetting.AT_Consumables_CAS.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/LeadOpportunitySetting.AT_Consumables_CAS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/GuidanceRenderer__mdt.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/GuidanceRenderer__mdt.object" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/ProcedureTracker__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/ProcedureTracker__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Test_GuidanceRendererController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_GuidanceRendererController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +178,8 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:GUIDANCERENDERERCONTROLLER" value="1668612368257" />
+                      <entry key="APEXCLASS:GUIDANCERENDERERCONTROLLER" value="1669717800096" />
+                      <entry key="APEXCLASS:TEST_GUIDANCERENDERERCONTROLLER" value="1669717997152" />
                       <entry key="COMPACTLAYOUT:PROCEDURETRACKER__C.PROCEDURE_TRACKER_COMPACT_LAYOUT" value="1669033209000" />
                       <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.COUNTRY__C" value="1669044263000" />
                       <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.GUIDANCE_CONTENT__C" value="1669044264000" />
@@ -335,6 +336,7 @@
                       <entry key="CUSTOMMETADATA:GUIDANCERENDERER.US_WHO_IS_YOUR_IDEAL_ALIGNER_PATIENT" value="1668611078000" />
                       <entry key="CUSTOMOBJECT:GUIDANCERENDERER__MDT" value="1669044264000" />
                       <entry key="CUSTOMOBJECT:PROCEDURETRACKER__C" value="1669033209000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:BESTPRACTICESLWC" value="1669716052926" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:GUIDANCERENDERER" value="1669034956312" />
                       <entry key="LISTVIEW:GUIDANCERENDERER__MDT.ALL_GUIDANCE" value="1669044264000" />
                       <entry key="RECORDTYPE:PROCEDURETRACKER__C.CLEAR_ALIGNERS" value="1669033209000" />
@@ -4514,7 +4516,7 @@
         </option>
         <option name="logAnalyzerSettings">
           <LogAnalyzerSettings>
-            <option name="splitterProportion" value="0.4675768" />
+            <option name="splitterProportion" value="0.37195122" />
           </LogAnalyzerSettings>
         </option>
         <option name="retrieveAndMergeDefault" value="false" />
@@ -4742,7 +4744,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="" />
+      <changelist id="07844e19-e296-40cb-936d-b563ad6bf62a" name="Changes" comment="" />
       <created>1665483827298</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -4777,6 +4779,7 @@
       <workItem from="1666336983621" duration="1453000" />
       <workItem from="1668605042907" duration="3729000" />
       <workItem from="1668610847584" duration="4136000" />
+      <workItem from="1669717093392" duration="859000" />
     </task>
     <servers />
   </component>
@@ -4809,7 +4812,7 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_findLeadMatch_testExecuteLeadSearch.ic2" NAME="HOTFIX Coverage Results" MODIFIED="1667918143842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="HOTFIX" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OrderManagement_CC_testCloneOrderWithPricingMicroServiceCallOutWithNoSourceRecord.ic2" NAME="DevNov Coverage Results" MODIFIED="1666690699780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_GuidanceRendererController.ic2" NAME="SureSmile Coverage Results" MODIFIED="1668682042458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_GuidanceRendererController.ic2" NAME="SureSmile Coverage Results" MODIFIED="1669718040013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
   </component>
 </project>

@@ -8,7 +8,6 @@ export default class GuidanceRenderer extends LightningElement {
 guidanceDetails;
 nextActivity;
 currentNextActivity;
-title = 'Guidance & Tools';
 isVisible = false;
     @wire(getRecord, { recordId: '$recordId', fields: FIELDS })
     wiredRecord({ error, data }) {

@@ -1,0 +1,16 @@
+<template>
+        <template if:true={bestPractices}>
+            <lightning-accordion allow-multiple-sections-open
+                                 active-section-name={activeSections}>
+                    <template for:each={bestPractices} for:item="eachBestPractice">
+                        <lightning-accordion-section key={eachBestPractice.Id} name={eachBestPractice.Id} label={eachBestPractice.BestPracticeLabel__c}>
+                            <lightning-formatted-rich-text value={eachBestPractice.BestPracticeContent__c}></lightning-formatted-rich-text>
+                        </lightning-accordion-section>
+                    </template>
+            </lightning-accordion>
+        </template>
+
+        <template if:true={error}>
+            {error}
+        </template>
+</template>
