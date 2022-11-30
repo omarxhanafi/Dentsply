@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07844e19-e296-40cb-936d-b563ad6bf62a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js-meta.xml" afterDir="false" />
+    <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHandler.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHandler.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/triggers/SalesAnalyticsTrigger.trigger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/triggers/SalesAnalyticsTrigger.trigger-meta.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/SureSmile/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/SureSmile/OfflineSymbolTable.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Test_GuidanceRendererController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_GuidanceRendererController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +178,10 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:GUIDANCERENDERERCONTROLLER" value="1669717800096" />
+                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHANDLER" value="1669819715881" />
+                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHELPER" value="1669819703720" />
                       <entry key="APEXCLASS:TEST_GUIDANCERENDERERCONTROLLER" value="1669717997152" />
+                      <entry key="APEXTRIGGER:SALESANALYTICSTRIGGER" value="1669815317000" />
                       <entry key="COMPACTLAYOUT:PROCEDURETRACKER__C.PROCEDURE_TRACKER_COMPACT_LAYOUT" value="1669033209000" />
                       <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.COUNTRY__C" value="1669044263000" />
                       <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.GUIDANCE_CONTENT__C" value="1669044264000" />
@@ -4522,16 +4524,22 @@
         <option name="retrieveAndMergeDefault" value="false" />
         <option name="soqlQuerySettings">
           <SoqlQuerySettings>
-            <option name="resultsSplitterProportion" value="0.4814815" />
+            <option name="resultsSplitterProportion" value="0.91935486" />
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="" />
+                  <option name="body" value="SELECT ID, LocalSKUKey__c, LastModifiedDate, Account__c FROM Sales_Analytics__c WHERE LocalSKUKey__c = '2_155_DIGI-500153' LIMIT 50" />
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 1" />
+                </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="Select ProcedureType__c from ProcedureTracker__c group by ProcedureType__c" />
+                  <option name="name" value="SOQL Query 2" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="0" />
+            <option name="selectedSavedDocumentIndex" value="1" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -4560,13 +4568,18 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ohanafi/IdeaProjects/Dentsply&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ohanafi/IdeaProjects/Dentsply/src/classes&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.29852837&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/classes" />
+    </key>
+  </component>
   <component name="RunManager" selected="Apex Unit Tests.Test_GuidanceRendererController">
     <configuration name="FindLeadMatchTest.executeLeadMatchSearchTest" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
@@ -4744,7 +4757,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="07844e19-e296-40cb-936d-b563ad6bf62a" name="Changes" comment="" />
+      <changelist id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="" />
       <created>1665483827298</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -4780,6 +4793,10 @@
       <workItem from="1668605042907" duration="3729000" />
       <workItem from="1668610847584" duration="4136000" />
       <workItem from="1669717093392" duration="859000" />
+      <workItem from="1669794837761" duration="513000" />
+      <workItem from="1669816574725" duration="125000" />
+      <workItem from="1669816714697" duration="146000" />
+      <workItem from="1669816872807" duration="2539000" />
     </task>
     <servers />
   </component>

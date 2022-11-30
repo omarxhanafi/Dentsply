@@ -15,7 +15,7 @@ export default class BestPracticesLwc extends LightningElement {
         if (data) {
             this.bestPractices = data;
             if(this.bestPractices.length > 0){
-                this.activeSections.push(this.bestPractices[0].Id);
+                // this.activeSections.push(this.bestPractices[0].Id);
             }
         } else if (error) {
             this.error = error;
