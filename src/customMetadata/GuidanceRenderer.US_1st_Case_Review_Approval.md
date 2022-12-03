@@ -8,111 +8,63 @@
     </values>
     <values>
         <field>Guidance_Content__c</field>
-        <value xsi:type="xsd:string">&lt;p&gt;&lt;span style=&quot;font-size:20px&quot;&gt;&lt;strong&gt;Experience&amp;nbsp;SureSmile​&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;font-size:16px&quot;&gt;&lt;strong&gt;Objective​&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;Schedule a day to deliver the&amp;nbsp;SureSmile&amp;nbsp;Experience. On this day, you will deliver the reasons to believe in&amp;nbsp;SureSmile&amp;nbsp;highlighting:​&lt;/p&gt;
-
-&lt;ul&gt;
-	&lt;li&gt;
-	&lt;p&gt;Optimized workflow for improved efficiency​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Customized treatment plans developed by our highly trained Digital Lab specialists​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Aligners that can deliver more predictability1​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Treatment planning with connected dental solutions​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Reduced treatment times that may improve practice profitability​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Products that provide an end-to-end solution for more comfort, convenience, and value to differentiate.&amp;nbsp;&amp;nbsp;​&lt;/p&gt;
-	&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;​&lt;/p&gt;
-
-&lt;p&gt;As a Dentsply Sirona brand,&amp;nbsp;SureSmile&amp;nbsp;differentiates among other aligner brands to bring you a truly complete practice integration for a&amp;nbsp;streamlined workflow. This a product presentation. The PRIMARY OBJECTIVE is for the&amp;nbsp;doctor to register on this day.&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;font-size:16px&quot;&gt;&lt;strong&gt;Resources&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;table border=&quot;0&quot; cellpadding=&quot;1&quot; cellspacing=&quot;1&quot; style=&quot;width:500px&quot;&gt;
-	&lt;tbody&gt;
-		&lt;tr&gt;
-			&lt;td&gt;
-			&lt;ul&gt;
-				&lt;li&gt;
-				&lt;p&gt;Insert link to marketing materials for presentation&amp;nbsp;​&lt;/p&gt;
-				&lt;/li&gt;
-				&lt;li&gt;
-				&lt;p&gt;Insert link to digital brochures​&lt;/p&gt;
-				&lt;/li&gt;
-				&lt;li&gt;
-				&lt;p&gt;Insert link to lunch n learn materials​&lt;/p&gt;
-				&lt;/li&gt;
-				&lt;li&gt;
-				&lt;p&gt;Insert link for SureSmile product PPT (SureSmile Aligner for GPs)​&lt;/p&gt;
-				&lt;/li&gt;
-				&lt;li&gt;
-				&lt;p&gt;Insert link for SureSmile messaging presentation​&lt;/p&gt;
-				&lt;/li&gt;
-				&lt;li&gt;
-				&lt;p&gt;Insert link to order demo materials​&lt;/p&gt;
-				&lt;/li&gt;
-				&lt;li&gt;
-				&lt;p&gt;Insert ink to Demo database​&lt;/p&gt;
-				&lt;/li&gt;
-				&lt;li&gt;
-				&lt;p&gt;Insert link Dummy patient account​&lt;/p&gt;
-				&lt;/li&gt;
-				&lt;li&gt;
-				&lt;p&gt;Insert link to Doctor Testimonials&lt;/p&gt;
-				&lt;/li&gt;
-			&lt;/ul&gt;
-			&lt;/td&gt;
-			&lt;td&gt;
-			&lt;p&gt;On-Demand Videos:​&lt;/p&gt;
-
-			&lt;ul&gt;
-				&lt;li&gt;
-				&lt;p&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-gb/academy/videos/video.html?video=/education/videos/upload/S/ORTH-PODCAST-SURESMILE-EN-DESI0634-QURESHI-V5.mp4&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Clear Aligners with SureSmile. What Every Dentist Should Know - Dr.&amp;nbsp;&lt;/a&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-gb/academy/videos/video.html?video=/education/videos/upload/S/ORTH-PODCAST-SURESMILE-EN-DESI0634-QURESHI-V5.mp4&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Tif Qureshi&lt;/a&gt;​&lt;/p&gt;
-				&lt;/li&gt;
-				&lt;li&gt;
-				&lt;p&gt;&lt;a href=&quot;https://youtu.be/I7EkrrIP7Dk&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;&amp;quot;With Dentsply Sirona all my workflows are integrated and seamless&amp;quot; -&amp;nbsp;&lt;/a&gt;&lt;a href=&quot;https://youtu.be/I7EkrrIP7Dk&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Dr. Mona Patel&lt;/a&gt;​&lt;/p&gt;
-				&lt;/li&gt;
-				&lt;li&gt;
-				&lt;p&gt;&lt;a href=&quot;https://youtu.be/XV27jmzkLAk&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Why Dr. James Taylor Choose SureSmile Aligners&lt;/a&gt;&amp;nbsp;​&lt;/p&gt;
-				&lt;/li&gt;
-				&lt;li&gt;
-				&lt;p&gt;&lt;a href=&quot;https://youtu.be/lhdJsSaUts0&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Practicing Efficiently with Dr. Meena&amp;nbsp;&lt;/a&gt;&lt;a href=&quot;https://youtu.be/lhdJsSaUts0&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Barsoum&lt;/a&gt;&amp;nbsp;​&lt;/p&gt;
-				&lt;/li&gt;
-				&lt;li&gt;
-				&lt;p&gt;&lt;a href=&quot;https://youtu.be/79mVg2GDf-o&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;&amp;quot;Makes our lives easier as a clinician&amp;quot; - Dr. Meena&amp;nbsp;&lt;/a&gt;&lt;a href=&quot;https://youtu.be/79mVg2GDf-o&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Barsoum&lt;/a&gt;​&lt;/p&gt;
-				&lt;/li&gt;
-				&lt;li&gt;
-				&lt;p&gt;&lt;a href=&quot;https://s3.amazonaws.com/media-p.slid.es/videos/1482492/hZEDHsbG/improving_patient_compliance_and_oral_health_with_dr.mp4&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;&amp;ldquo;Improving Patient Compliance with Oral Health&amp;rdquo; &amp;ndash; Dr. Meena&amp;nbsp;&lt;/a&gt;&lt;a href=&quot;https://s3.amazonaws.com/media-p.slid.es/videos/1482492/hZEDHsbG/improving_patient_compliance_and_oral_health_with_dr.mp4&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Barsoum&lt;/a&gt;​&lt;/p&gt;
-				&lt;/li&gt;
-				&lt;li&gt;
-				&lt;p&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/discover/discover-by-brand/suresmile-aligners/suresmile-stories.html&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;SureSmile Clear Aligner Stories | Dentsply Sirona USA&lt;/a&gt;​&lt;/p&gt;
-				&lt;/li&gt;
-			&lt;/ul&gt;
-			&lt;/td&gt;
-		&lt;/tr&gt;
-	&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;</value>
+        <value xsi:type="xsd:string">&lt;div&gt;
+                    &lt;div&gt;
+                        &lt;h3 style=&quot;text-align: center;&quot;&gt;1st Case ReviewApproval (Week 1-4)&lt;/strong&gt;
+                        &lt;/h3&gt;
+                        &lt;p&gt;&lt;br&gt;&lt;/p&gt;
+                        &lt;p&gt;Review and Order the 1st Case with CIS Webinar&lt;/span&gt;&lt;/p&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;Discuss last week’s assignment&lt;/li&gt;
+                            &lt;li&gt;Review the 1st case with CIS on virtual call&lt;/li&gt;
+                            &lt;li&gt;Show the Doctor the different features and functions of the software&lt;/li&gt;
+                            &lt;li&gt;Help Doctor determine a workflow for reviewing cases&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;p&gt;&lt;strong&gt;Assignment (Assign at least 1 item)&lt;/strong&gt;&lt;/p&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;Set goal for # of patients with a specific talk track/strategy (smile Questionnaire/ PCS
+                                Model/FAB model, etc.) over the next 2 weeks&lt;/li&gt;
+                            &lt;li&gt;Write down the names of all ortho conversations had between now and the next meeting.
+                                Keep track of the type of case they would be&lt;/li&gt;
+                            &lt;li&gt;Hand out 10 number of smile questionnaires over the next 2 weeks…&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;p style=&quot;text-align: center;&quot;&gt;TOOLS&lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;Video Content &lt;/strong&gt;&lt;/p&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener&quot; href=&quot;https://suresmileu.com/list-content/0F098F90-946A-409B-A049-D69CEB68BF79/B14220A6-C50C-4174-A17D-26C7D4652E30&quot;&gt;SureSmile&amp;nbsp;Aligner
+                                    Navigation&lt;/a&gt;​&lt;/li&gt;
+                            &lt;li&gt;Accessing your database​&lt;/li&gt;
+                            &lt;li&gt;Navigating the Clinic Overview​&lt;/li&gt;
+                            &lt;li&gt;Rest of videos&amp;nbsp;self study​&lt;/li&gt;
+                            &lt;li&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener&quot; href=&quot;https://suresmileu.com/list-content/0F098F90-946A-409B-A049-D69CEB68BF79/9085D9B7-A0C1-4904-B392-D9145FF0DFE2&quot;&gt;Ordering
+                                    a Case&lt;/a&gt;​&lt;/li&gt;
+                            &lt;li&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener&quot; href=&quot;https://suresmileu.com/list-content/F45EFB40-9197-45C5-8AD4-363D4666FAEC/521D6A24-8DA9-4119-B9E0-0DDFA45DC014&quot;&gt;Setup
+                                    &amp;amp; Staging Review&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;p&gt;Digital&lt;/strong&gt;&lt;/p&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;SMA&lt;ul&gt;
+                                    &lt;li&gt;Edetail&lt;/li&gt;
+                                    &lt;li&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener&quot; href=&quot;https://app.learnermobile.com/card-content?pageid=54a4674f-f014-4027-9e14-9ae7c64cd486&quot;&gt;Smile
+                                            Questionnaire&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;p&gt;Printable&lt;/strong&gt;&lt;/p&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;SureSmile&amp;nbsp;Aligner Submitting a&amp;nbsp;case&lt;/li&gt;
+                            &lt;li&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener&quot; href=&quot;https://premiumlearnermobileblob.blob.core.windows.net/7f1cc0ed-940e-445c-afc0-338a762dd85a/efff9f5c-4b70-4bc1-aef4-56143b56d528.pdf&quot;&gt;SureSmile&amp;nbsp;Aligner
+                                    Prescription&amp;nbsp;Form Job Aid&lt;/a&gt;​&lt;/li&gt;
+                            &lt;li&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener&quot; href=&quot;https://premiumlearnermobileblob.blob.core.windows.net/7f1cc0ed-940e-445c-afc0-338a762dd85a/2218f785-1544-40f5-a8e8-320e77ec6859.pdf&quot;&gt;SureSmile&amp;nbsp;Aligner
+                                    IFU&lt;/a&gt;​&lt;/li&gt;
+                            &lt;li&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener&quot; href=&quot;https://suresmileu.com/card-content?pageid=8634f812-8327-494c-8c88-2fb69b4efced&quot;&gt;SureSmile&amp;nbsp;Aligner
+                                    Process&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;CustomPoint&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;</value>
     </values>
     <values>
         <field>NextActivity__c</field>

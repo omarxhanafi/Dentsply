@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHandler.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHandler.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/triggers/SalesAnalyticsTrigger.trigger" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/triggers/SalesAnalyticsTrigger.trigger-meta.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +18,7 @@
         <entry key="Dentsply">
           <value>
             <ModuleWorkspaceSettings>
-              <option name="moduleContentsLastModified" value="1665487913286" />
+              <option name="moduleContentsLastModified" value="1670068666178" />
             </ModuleWorkspaceSettings>
           </value>
         </entry>
@@ -179,7 +172,7 @@
                     <map>
                       <entry key="APEXCLASS:GUIDANCERENDERERCONTROLLER" value="1669717800096" />
                       <entry key="APEXCLASS:SALESANALYTICSTRIGGERHANDLER" value="1669819715881" />
-                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHELPER" value="1669819703720" />
+                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHELPER" value="1669820251253" />
                       <entry key="APEXCLASS:TEST_GUIDANCERENDERERCONTROLLER" value="1669717997152" />
                       <entry key="APEXTRIGGER:SALESANALYTICSTRIGGER" value="1669815317000" />
                       <entry key="COMPACTLAYOUT:PROCEDURETRACKER__C.PROCEDURE_TRACKER_COMPACT_LAYOUT" value="1669033209000" />
@@ -4796,7 +4789,7 @@
       <workItem from="1669794837761" duration="513000" />
       <workItem from="1669816574725" duration="125000" />
       <workItem from="1669816714697" duration="146000" />
-      <workItem from="1669816872807" duration="2539000" />
+      <workItem from="1669816872807" duration="4229000" />
     </task>
     <servers />
   </component>

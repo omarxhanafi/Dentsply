@@ -24,7 +24,7 @@
     </values>
     <values>
         <field>DefaultLeadOwner__c</field>
-        <value xsi:type="xsd:string">0050J000008R02u</value>
+        <value xsi:type="xsd:string">0050J000008Qhus</value>
     </values>
     <values>
         <field>IsTest__c</field>
