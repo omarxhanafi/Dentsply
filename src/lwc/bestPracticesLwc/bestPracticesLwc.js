@@ -4,6 +4,8 @@ import getBestPractices from '@salesforce/apex/GuidanceRendererController.getBes
 export default class BestPracticesLwc extends LightningElement {
 
     @api recordId;
+    @api playbookHeightInRem;
+
     isVisible = true;
 
     activeSections = [];
@@ -14,9 +16,6 @@ export default class BestPracticesLwc extends LightningElement {
     wiredBestPractices({ error, data }) {
         if (data) {
             this.bestPractices = data;
-            if(this.bestPractices.length > 0){
-                // this.activeSections.push(this.bestPractices[0].Id);
-            }
         } else if (error) {
             this.error = error;
             console.log("error", error);

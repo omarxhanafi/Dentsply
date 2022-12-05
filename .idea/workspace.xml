@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/lwc/showPdfById/showPdfById.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/showPdfById/showPdfById.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/showPdfById/showPdfById.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/showPdfById/showPdfById.js-meta.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js-meta.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,8 +338,9 @@
                       <entry key="CUSTOMMETADATA:GUIDANCERENDERER.US_WHO_IS_YOUR_IDEAL_ALIGNER_PATIENT" value="1668611078000" />
                       <entry key="CUSTOMOBJECT:GUIDANCERENDERER__MDT" value="1669044264000" />
                       <entry key="CUSTOMOBJECT:PROCEDURETRACKER__C" value="1669033209000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:BESTPRACTICESLWC" value="1669716052926" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:BESTPRACTICESLWC" value="1670073799165" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:GUIDANCERENDERER" value="1669034956312" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:SHOWPDFBYID" value="1670071921000" />
                       <entry key="LISTVIEW:GUIDANCERENDERER__MDT.ALL_GUIDANCE" value="1669044264000" />
                       <entry key="RECORDTYPE:PROCEDURETRACKER__C.CLEAR_ALIGNERS" value="1669033209000" />
                       <entry key="RECORDTYPE:PROCEDURETRACKER__C.CLEAR_ALIGNERS_GLOBAL" value="1669033209000" />
@@ -957,6 +965,31 @@
                       <option value="metadata://CustomMetadata/Event_Fields.Objective_c" />
                       <option value="metadata://CustomMetadata/Event_Fields.SBU_c" />
                       <option value="metadata://CustomMetadata/Event_Fields.ShowAs" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_10_Submit_Second_Case" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_11_Train_Complete_Second_Case" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_12_Submit_Third_Case" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_13_Train_Complete_Third_Case" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_14_Train_Clinical_Apps" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_15_Train_Case_Management" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_16_Launch_SureSmile_Day" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_17_Complete_SureSmile_Business" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_18_Review_Practice_Integration" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_19_Discuss_Patient_Financing" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_1_Experience_SureSmile" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_20_Review_Case_Expansion" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_21_Provide_Acceleration" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_22_Join_or_Start_Study_Club" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_23_Connect_with_SureSmile_Mentor" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_24_Join_SureSmile_Connections" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_25_Start_Continuous_Education" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_2_Register" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_3_Deliver_Welcome_to_SS_Family" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_4_Complete_SureSmile_Discovery" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_5_Connect_with_SS_Ambassador" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_6_Help_Clinic_Find_3_Patients" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_7_Start_New_Practice_Orientation" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_8_Train_Submit_First_Case" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.Global_9_Train_and_Complete_First_Case" />
                       <option value="metadata://CustomMetadata/GuidanceRenderer.Test_record" />
                       <option value="metadata://CustomMetadata/GuidanceRenderer.US_1st_Case_Review_Approval" />
                       <option value="metadata://CustomMetadata/GuidanceRenderer.US_1st_Case_Submission_Marketing" />
@@ -964,6 +997,7 @@
                       <option value="metadata://CustomMetadata/GuidanceRenderer.US_2nd_Case_Submission_External_Mrktg" />
                       <option value="metadata://CustomMetadata/GuidanceRenderer.US_3rd_Case_Reviewal_Approval" />
                       <option value="metadata://CustomMetadata/GuidanceRenderer.US_3rd_Case_Submission" />
+                      <option value="metadata://CustomMetadata/GuidanceRenderer.US_Business_Assessment" />
                       <option value="metadata://CustomMetadata/GuidanceRenderer.US_Case_Selection_Staff_Roles" />
                       <option value="metadata://CustomMetadata/GuidanceRenderer.US_Chairside_Patient_Education" />
                       <option value="metadata://CustomMetadata/GuidanceRenderer.US_Clinical_Development" />
@@ -2199,7 +2233,7 @@
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.AT_Implants_Digital_Material" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.AT_Implants_IMPL" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.AT_Orthodontics_SureSmile" />
-                      <option value="metadata://CustomMetadata/LeadOpportunitySetting.AT_Prosthetics_CAS" />
+                      <option value="metadata://CustomMetadata/LeadOpportunitySetting.AT_Prosthetics_Digital_Lab_CAS" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.AT_Prosthetics_Digital_Material" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.AT_Prosthetics_Digital_Systems" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.AU_Consumables" />
@@ -2224,6 +2258,13 @@
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.BE_Preventive" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.BE_Restorative" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.BE_Treatment_Centers" />
+                      <option value="metadata://CustomMetadata/LeadOpportunitySetting.BR_Consumables_Endodontics" />
+                      <option value="metadata://CustomMetadata/LeadOpportunitySetting.BR_Digital_Group" />
+                      <option value="metadata://CustomMetadata/LeadOpportunitySetting.BR_Imaging" />
+                      <option value="metadata://CustomMetadata/LeadOpportunitySetting.BR_Implants" />
+                      <option value="metadata://CustomMetadata/LeadOpportunitySetting.BR_Orthodontics" />
+                      <option value="metadata://CustomMetadata/LeadOpportunitySetting.BR_Prosthetics_Implants" />
+                      <option value="metadata://CustomMetadata/LeadOpportunitySetting.BR_TCI_Hygiene" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.CA_Consumables" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.CA_DefaultCountryOwner" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.CA_Digital" />
@@ -2317,8 +2358,6 @@
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.GB_Imaging" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.GB_Implants" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.GB_Orthodontics" />
-                      <option value="metadata://CustomMetadata/LeadOpportunitySetting.GB_Prosthetics_Implants" />
-                      <option value="metadata://CustomMetadata/LeadOpportunitySetting.GB_TCI_Hygiene" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.IE_Consumables_Endodontics" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.IE_DefaultCountryOwner" />
                       <option value="metadata://CustomMetadata/LeadOpportunitySetting.IE_Digital_Group" />
@@ -3930,6 +3969,16 @@
                       <option value="metadata://CustomMetadata/OrderStageGuidance.USC_Prosthetics_DOD_Created" />
                       <option value="metadata://CustomMetadata/OrderStageGuidance.USC_Restorative_DODCreated" />
                       <option value="metadata://CustomMetadata/PricingMicroServiceCallOut.CallDetails" />
+                      <option value="metadata://CustomMetadata/ProcedureTrackingBestPractices.Best_Practice_for_Targeting" />
+                      <option value="metadata://CustomMetadata/ProcedureTrackingBestPractices.Best_Practices_for_a_SS_Registration" />
+                      <option value="metadata://CustomMetadata/ProcedureTrackingBestPractices.Best_Practices_for_Growing_Utilization" />
+                      <option value="metadata://CustomMetadata/ProcedureTrackingBestPractices.Best_Practices_for_Successful_Onboarding" />
+                      <option value="metadata://CustomMetadata/ProcedureTrackingBestPractices.Best_Practices_for_SureSmile_Beyond_90" />
+                      <option value="metadata://CustomMetadata/ProcedureTrackingBestPractices.Best_Practices_for_SureSmile_Event_Day" />
+                      <option value="metadata://CustomMetadata/ProcedureTrackingBestPractices.Best_Practices_to_Getting_Started" />
+                      <option value="metadata://CustomMetadata/ProcedureTrackingBestPractices.BP_for_a_Successful_SS_Integration" />
+                      <option value="metadata://CustomMetadata/ProcedureTrackingBestPractices.How_to_Start_the_SureSmile_Conversation" />
+                      <option value="metadata://CustomMetadata/ProcedureTrackingBestPractices.SureSmile_Commercial_Playbook" />
                       <option value="metadata://CustomMetadata/QuoteCountrySetting.Austria" />
                       <option value="metadata://CustomMetadata/QuoteCountrySetting.Belgium" />
                       <option value="metadata://CustomMetadata/QuoteCountrySetting.France" />
@@ -4417,7 +4466,6 @@
                       <option value="metadata://CustomMetadata/Team_setup.US1" />
                       <option value="metadata://CustomMetadata/Team_setup.US2" />
                       <option value="metadata://CustomMetadata/testInCountry1__InCountryAuth.OAuth_RU_MT" />
-                      <option value="metadata://CustomObject/ProcedureTracker__c" />
                     </set>
                   </option>
                   <option name="lastDeploymentOptions">
@@ -4517,7 +4565,7 @@
         <option name="retrieveAndMergeDefault" value="false" />
         <option name="soqlQuerySettings">
           <SoqlQuerySettings>
-            <option name="resultsSplitterProportion" value="0.91935486" />
+            <option name="resultsSplitterProportion" value="0.9435484" />
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
@@ -4527,7 +4575,7 @@
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="Select ProcedureType__c from ProcedureTracker__c group by ProcedureType__c" />
+                  <option name="body" value="select id, VersionData from ContentVersion" />
                   <option name="name" value="SOQL Query 2" />
                 </SoqlQuerySavedDocument>
               </list>
@@ -4555,21 +4603,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ohanafi/IdeaProjects/Dentsply/src/classes&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.29852837&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "last_opened_file_path": "/Users/ohanafi/IdeaProjects/Dentsply/src/lwc",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.29852837",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/lwc" />
       <recent name="$PROJECT_DIR$/src/classes" />
     </key>
   </component>
@@ -4789,7 +4838,7 @@
       <workItem from="1669794837761" duration="513000" />
       <workItem from="1669816574725" duration="125000" />
       <workItem from="1669816714697" duration="146000" />
-      <workItem from="1669816872807" duration="4229000" />
+      <workItem from="1669816872807" duration="6897000" />
     </task>
     <servers />
   </component>
