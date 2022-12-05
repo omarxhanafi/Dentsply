@@ -18,7 +18,7 @@
 	&lt;p&gt;Emphasis importance of completing the&amp;nbsp;SureSmile&amp;nbsp;3n3.&amp;nbsp;It&amp;rsquo;s&amp;nbsp;like learning how to ride a bike.&amp;nbsp;You will&amp;nbsp;need time to&amp;nbsp;perfect the process, but practice in a short of amount of time is the key to success and taking your new skills to&amp;nbsp;new opportunities!​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Doctors who follow our training schedule are the doctors who see the most success.&amp;nbsp;They are&amp;nbsp;more comfortable&amp;nbsp;and efficient with the workflow from integration. Use this time to truly understand the&amp;nbsp;SureSmile&amp;nbsp;system.​&lt;/p&gt;
+	&lt;p&gt;Doctors who follow our training schedule are the doctors who see the most success and have a retention rate of over 70%. &amp;nbsp;They are more comfortable and confident with the workflow and become efficient much quicker.&lt;/p&gt;
 	&lt;/li&gt;
 &lt;/ul&gt;</value>
     </values>

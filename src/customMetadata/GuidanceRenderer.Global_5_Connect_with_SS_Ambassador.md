@@ -18,7 +18,11 @@
 
 &lt;p&gt;Connect your doctor with a&amp;nbsp;SureSmile&amp;nbsp;Advocate to discuss onboarding best practices, tips and tricks for success, and why&amp;nbsp;SureSmile. The&amp;nbsp;SureSmile&amp;nbsp;Specialist will connect their new practice with a&amp;nbsp;SureSmile&amp;nbsp;Advocate who will schedule a&amp;nbsp;telephone call to discuss their own&amp;nbsp;SureSmile&amp;nbsp;90 experience and successes.&amp;nbsp;​&lt;/p&gt;
 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
 &lt;p&gt;The goal of this peer-to-peer connection is to give confidence to the new practice and help them understand that choosing&amp;nbsp;SureSmile&amp;nbsp;to start aligner therapy has never been easier with a closely monitored and guided New Practice Onboarding&amp;nbsp;process. The&amp;nbsp;SureSmile&amp;nbsp;system can improve their patient&amp;rsquo;s journey by providing a better treatment experience delivering&amp;nbsp;an end-to-end solution that can bring more comfort, convenience, value and ultimately grow their practice.&amp;nbsp;​&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;p&gt;The suggested call time is 20 minutes with a maximum of 4 to 5 of your new doctors whose next step is to start the New&amp;nbsp;Practice Onboarding stage. The call agenda should focus on roughly on 10 minutes of&amp;nbsp;SureSmile&amp;nbsp;advocacy and 10&amp;nbsp;minutes of Q&amp;amp;A / discussion.&amp;nbsp;&amp;nbsp;​&lt;/p&gt;
 

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js" afterDir="false" />
     </list>
@@ -335,7 +333,7 @@
                       <entry key="CUSTOMMETADATA:GUIDANCERENDERER.US_WHO_IS_YOUR_IDEAL_ALIGNER_PATIENT" value="1668611078000" />
                       <entry key="CUSTOMOBJECT:GUIDANCERENDERER__MDT" value="1669044264000" />
                       <entry key="CUSTOMOBJECT:PROCEDURETRACKER__C" value="1669033209000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:BESTPRACTICESLWC" value="1670234531000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:BESTPRACTICESLWC" value="1670236020144" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:GUIDANCERENDERER" value="1669034956312" />
                       <entry key="LISTVIEW:GUIDANCERENDERER__MDT.ALL_GUIDANCE" value="1669044264000" />
                       <entry key="RECORDTYPE:PROCEDURETRACKER__C.CLEAR_ALIGNERS" value="1669033209000" />
@@ -755,7 +753,7 @@
       <workItem from="1669794837761" duration="513000" />
       <workItem from="1669816574725" duration="125000" />
       <workItem from="1669816714697" duration="146000" />
-      <workItem from="1669816872807" duration="9946000" />
+      <workItem from="1669816872807" duration="10721000" />
     </task>
     <servers />
   </component>

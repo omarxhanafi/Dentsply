@@ -6,13 +6,16 @@
         <field>BestPracticeContent__c</field>
         <value xsi:type="xsd:string">&lt;ul&gt;
 	&lt;li&gt;
-	&lt;p&gt;Demonstrate.&amp;nbsp;Show participants how to perform each step.&amp;nbsp;​&lt;/p&gt;
+	&lt;p&gt;75% retain by practice by doing and 80% retain by teaching others / immediate use*&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Describe.&amp;nbsp;Ask them to tell you in their own words what they have just seen.​&lt;/p&gt;
+	&lt;p&gt;&lt;strong&gt;Demonstrate&lt;/strong&gt;.&amp;nbsp;Show participants how to perform each step.&amp;nbsp;​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Ask.&amp;nbsp;Ask questions about your demonstration to ensure participants understand the key points. Then, answer any related&amp;nbsp;questions they have.​&lt;/p&gt;
+	&lt;p&gt;&lt;strong&gt;Describe&lt;/strong&gt;.&amp;nbsp;Ask them to tell you in their own words what they have just seen.​&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;strong&gt;Ask&lt;/strong&gt;.&amp;nbsp;Ask questions about your demonstration to ensure participants understand the key points. Then, answer any related&amp;nbsp;questions they have.​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
 	&lt;p&gt;Practice.&amp;nbsp;Once you believe the participants are ready, give each participant the chance to show you what they learned.​&lt;/p&gt;
@@ -23,7 +26,13 @@
 	&lt;li&gt;
 	&lt;p&gt;Monitor.&amp;nbsp;Continue to check that participants have learned everything they need to know and are performing all the steps&amp;nbsp;correctly to avoid frustrations. If the clinic is unable to maintain the 1 case per month cadence, they may need reviews and&amp;nbsp;a periodic knowledge check can help to ensure continuous confidence.&amp;nbsp;​&lt;/p&gt;
 	&lt;/li&gt;
-&lt;/ul&gt;</value>
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;font-size:10px&quot;&gt;*National Training Laboratories Learning Pyramid&lt;/span&gt;&lt;/p&gt;</value>
     </values>
     <values>
         <field>BestPracticeLabel__c</field>

@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>BestPracticeContent__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">https://dentsplysirona.my.salesforce.com/sfc/p/200000001dDc/a/6M000000CIf5/hr3hpMU6Y7w.9BNuhhhxFFxDEfq17nwYz.mfpkBPg5E</value>
     </values>
     <values>
         <field>BestPracticeLabel__c</field>
