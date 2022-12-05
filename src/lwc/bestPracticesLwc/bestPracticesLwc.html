@@ -2,10 +2,11 @@
         <template if:true={bestPractices}>
             <lightning-accordion allow-multiple-sections-open
                                  active-section-name={activeSections}>
-                    <lightning-accordion-section name='Playbook' label='SureSmile Commercial Playbook'>
-                        <!-- TODO make file-id a dynamic field -->
-                        <c-show-pdf-by-id file-id='0691l0000020eoOAAQ' height-in-rem={playbookHeightInRem}></c-show-pdf-by-id>
-                    </lightning-accordion-section>
+                    <template if:true={playbookUrl}>
+                        <lightning-accordion-section name='Playbook' label='SureSmile Commercial Playbook'>
+                            <iframe src={playbookUrl} style={pdfHeight}></iframe>
+                        </lightning-accordion-section>
+                    </template>
                     <template for:each={bestPractices} for:item="eachBestPractice">
                         <lightning-accordion-section key={eachBestPractice.Id} name={eachBestPractice.Id} label={eachBestPractice.BestPracticeLabel__c}>
                             <lightning-formatted-rich-text value={eachBestPractice.BestPracticeContent__c}></lightning-formatted-rich-text>
