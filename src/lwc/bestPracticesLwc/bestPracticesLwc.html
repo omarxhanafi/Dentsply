@@ -2,11 +2,11 @@
         <template if:true={bestPractices}>
             <lightning-accordion allow-multiple-sections-open
                                  active-section-name={activeSections}>
-                    <template if:true={playbookUrl}>
+                    <template if:true={pdfLinkURL}>
                         <lightning-accordion-section name='Playbook' label='SureSmile Commercial Playbook'>
-                            <a href={playbookUrl} target="_blank">{openPlaybook}</a>
+                            <a class="slds-button slds-button_brand" href={pdfLinkURL} target="_blank">{pdfLinkLabel}</a>
                             <p>&nbsp;</p>
-                            <iframe src={playbookUrl} style={pdfHeight}></iframe>
+                            <iframe src={pdfLinkURL} style={pdfHeight}></iframe>
                         </lightning-accordion-section>
                     </template>
                     <template for:each={bestPractices} for:item="eachBestPractice">

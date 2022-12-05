@@ -26,12 +26,12 @@
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;Link to How to Become a SureSmile Advocate&lt;/li&gt;
-	&lt;li&gt;Link to How to Become a SureSmile Mentor&lt;/li&gt;
-	&lt;li&gt;Link to On-Demand Training Program Requirements&lt;/li&gt;
-	&lt;li&gt;Link to SureSmile Connections Agreement&lt;/li&gt;
-	&lt;li&gt;Link to Presentation Modules&lt;/li&gt;
-	&lt;li&gt;Insert Link to SureSmile TTT Program&lt;/li&gt;
+	&lt;li&gt;How to Become a SureSmile Advocate&lt;/li&gt;
+	&lt;li&gt;How to Become a SureSmile Mentor&lt;/li&gt;
+	&lt;li&gt;On-Demand Training Program Requirements&lt;/li&gt;
+	&lt;li&gt;SureSmile Connections Agreement&lt;/li&gt;
+	&lt;li&gt;Presentation Modules&lt;/li&gt;
+	&lt;li&gt;SureSmile TTT Program&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;

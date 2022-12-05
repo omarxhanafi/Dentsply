@@ -30,7 +30,7 @@
 
 &lt;ul&gt;
 	&lt;li&gt;&lt;a href=&quot;https://web.cvent.com/p/4879fe2c-a6f1-41c6-9181-5ed4d3a70af2/requests_events/626df62e-99dd-410a-bf80-6c68e890137f/?goToSMMFormId=626df62e-99dd-410a-bf80-6c68e890137f&quot;&gt;Requests and Events (cvent.com)&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;Insert link to SureSmile Education calendar&lt;/li&gt;
+	&lt;li&gt;SureSmile Education calendar&lt;/li&gt;
 	&lt;li&gt;CDOCS program&lt;/li&gt;
 	&lt;li&gt;Susan to look at our video gallery&lt;/li&gt;
 &lt;/ul&gt;

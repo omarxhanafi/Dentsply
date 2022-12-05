@@ -29,13 +29,13 @@
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;Insert link to&amp;nbsp;SureSmile&amp;nbsp;Day in-clinic marketing materials​&lt;/li&gt;
-	&lt;li&gt;Insert link to&amp;nbsp;SureSmile&amp;nbsp;Day social media ads​&lt;/li&gt;
-	&lt;li&gt;Insert link to SureSmile Day email template​&lt;/li&gt;
-	&lt;li&gt;Insert link to SureSmile Day Best Practices​&lt;/li&gt;
-	&lt;li&gt;Insert link to SureSmile Day promotional postcard​&lt;/li&gt;
-	&lt;li&gt;Insert link to SureSmile Day website introduction content (US)​&lt;/li&gt;
-	&lt;li&gt;Insert link to SureSmile Day overview (refer: US)​&lt;/li&gt;
+	&lt;li&gt;SureSmile&amp;nbsp;Day in-clinic marketing materials​&lt;/li&gt;
+	&lt;li&gt;SureSmile&amp;nbsp;Day social media ads​&lt;/li&gt;
+	&lt;li&gt;SureSmile Day email template​&lt;/li&gt;
+	&lt;li&gt;SureSmile Day Best Practices​&lt;/li&gt;
+	&lt;li&gt;SureSmile Day promotional postcard​&lt;/li&gt;
+	&lt;li&gt;SureSmile Day website introduction content (US)​&lt;/li&gt;
+	&lt;li&gt;SureSmile Day overview (refer: US)​&lt;/li&gt;
 	&lt;li&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/blog-article.html/content/newsroom/en/local-news/us/2021/suresmile--spotlight--park-avenue-dental-patient-event.html?utm_content=Main_CTA&amp;amp;utm_source=eloqua&amp;amp;utm_medium=email&amp;amp;utm_campaign=2021_USA_EN_ENT_NSL_SPE_12_6_SPE&amp;amp;utm_email=2021_12_6_ORT_USA&amp;amp;utm_contact=CDSEM000000863211&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Blog Article - Park Avenue Dental Patient Event&lt;/a&gt;​&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -87,7 +87,6 @@
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
 &lt;!-- &lt;p&gt;&lt;strong&gt;&lt;span style=&quot;font-size:14px&quot;&gt;Best Practices for&amp;nbsp;SureSmile&amp;nbsp;Event Day​&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;

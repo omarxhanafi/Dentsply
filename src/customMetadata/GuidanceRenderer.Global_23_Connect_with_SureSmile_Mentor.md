@@ -29,7 +29,7 @@
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;Insert Link to SureSmile Mentor List&lt;/li&gt;
+	&lt;li&gt;SureSmile Mentor List&lt;/li&gt;
 	&lt;li&gt;IAS program&lt;/li&gt;
 	&lt;li&gt;Case Review program (Hocine / Local)&lt;/li&gt;
 	&lt;li&gt;Clinical Corner with Dr. Bankhead&lt;/li&gt;

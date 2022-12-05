@@ -32,13 +32,13 @@
 
 &lt;ul&gt;
 	&lt;li&gt;&lt;a href=&quot;https://login.suresmile.com/login&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Create new SureSmile account&lt;/a&gt;&amp;nbsp;​&lt;/li&gt;
-	&lt;li&gt;Insert link to&amp;nbsp;SureSmile&amp;nbsp;Clinician brochure​&lt;/li&gt;
-	&lt;li&gt;Insert link to Aligner Sell Sheet​&lt;/li&gt;
-	&lt;li&gt;Insert link to Retainers Sell Sheet​&lt;/li&gt;
-	&lt;li&gt;Insert link to&amp;nbsp;SureSmile&amp;nbsp;Integration VPro brochure​&lt;/li&gt;
-	&lt;li&gt;Insert link to&amp;nbsp;SureSmile&amp;nbsp;VPro Tracking Tool brochure​&lt;/li&gt;
-	&lt;li&gt;Insert link to current promotional offers​&lt;/li&gt;
-	&lt;li&gt;Insert link to subscribe to&amp;nbsp;SureSmile&amp;nbsp;communications​&lt;/li&gt;
+	&lt;li&gt;SureSmile Clinician brochure​&lt;/li&gt;
+	&lt;li&gt;Aligner Sell Sheet​&lt;/li&gt;
+	&lt;li&gt;Retainers Sell Sheet​&lt;/li&gt;
+	&lt;li&gt;SureSmile Integration VPro brochure​&lt;/li&gt;
+	&lt;li&gt;SureSmile VPro Tracking Tool brochure​&lt;/li&gt;
+	&lt;li&gt;Current promotional offers​&lt;/li&gt;
+	&lt;li&gt;Subscribe to SureSmile communications​&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
@@ -49,7 +49,7 @@
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;The&amp;nbsp;SureSmile&amp;nbsp;Specialist&amp;nbsp;should refer to this list as action items and follow-up activity to be completed before&amp;nbsp;moving to the next step​&lt;/p&gt;
+&lt;p&gt;The&amp;nbsp;&lt;strong&gt;SureSmile&amp;nbsp;Specialist&amp;nbsp;&lt;/strong&gt;should refer to this list as action items and follow-up activity to be completed before&amp;nbsp;moving to the next step​&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
@@ -103,24 +103,24 @@
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;
-	&lt;p&gt;Remind doctors it&amp;rsquo;s an easy 4-step process and if there are any issues, there&amp;rsquo;s a PDF instruction sheet they can click&amp;nbsp;to from the login page (click on &amp;ldquo;Looking to Add a New User to Your Account&amp;rdquo;).&amp;nbsp;SureSmile&amp;rsquo;s&amp;nbsp;registration&amp;rsquo;s process is&amp;nbsp;1/3 the steps of Invisalign&amp;nbsp;&amp;nbsp;​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;For Aligner platform practices, they can go to&amp;nbsp;&lt;a href=&quot;https://login.suresmile.com/login&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;https://login.suresmile.com/login&lt;/a&gt;&amp;nbsp;or&amp;nbsp;&lt;a href=&quot;http://www.suresmile.com/&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;www.suresmile.com&lt;/a&gt;&amp;nbsp;and click on&amp;nbsp;&amp;ldquo;DOCTOR LOGIN&amp;rdquo;​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;The doctor can only register for Aligner platform online. For Ortho platform or Advanced platform practices an invite&amp;nbsp;will need to be sent from Customer Service&amp;nbsp;​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;If the doctor has not received a confirmation email after activation, make sure they check their junk email. The&amp;nbsp;activation email will come from&amp;nbsp;&lt;a href=&quot;mailto:sureweb@suresmile.com&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;sureweb@suresmile.com&lt;/a&gt;​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;If the doctor is still uncertain about our advantages, remind them that with Invisalign you must go through training first&amp;nbsp;before you can even register. The SureSmile 90 experience is hands-on training, and you can start immediately!&amp;nbsp;Active learning is the fastest way to learn and retain. Have you heard of the Learning Pyramid* &amp;ndash; 75% of information&amp;nbsp;is retained when you practice by doing.&amp;nbsp;​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Introduce CADCAM / Equipment team to initiate or refresh&amp;nbsp;Primescan&amp;nbsp;training&amp;nbsp;​&lt;/p&gt;
-	&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Remind doctors it&amp;rsquo;s an easy 4-step process and if there are any issues, there&amp;rsquo;s a PDF instruction sheet they can click&amp;nbsp;to from the login page (click on &amp;ldquo;Looking to Add a New User to Your Account&amp;rdquo;).&amp;nbsp;SureSmile&amp;rsquo;s&amp;nbsp;registration&amp;rsquo;s process is&amp;nbsp;1/3 the steps of Invisalign&amp;nbsp;&amp;nbsp;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For Aligner platform practices, they can go to&amp;nbsp;&lt;a href=&quot;https://login.suresmile.com/login&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;https://login.suresmile.com/login&lt;/a&gt;&amp;nbsp;or&amp;nbsp;&lt;a href=&quot;http://www.suresmile.com/&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;www.suresmile.com&lt;/a&gt;&amp;nbsp;and click on&amp;nbsp;&amp;ldquo;DOCTOR LOGIN&amp;rdquo;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The doctor can only register for Aligner platform online. For Ortho platform or Advanced platform practices an invite&amp;nbsp;will need to be sent from Customer Service&amp;nbsp;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the doctor has not received a confirmation email after activation, make sure they check their junk email. The&amp;nbsp;activation email will come from&amp;nbsp;&lt;a href=&quot;mailto:sureweb@suresmile.com&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;sureweb@suresmile.com&lt;/a&gt;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the doctor is still uncertain about our advantages, remind them that with Invisalign you must go through training first&amp;nbsp;before you can even register. The SureSmile 90 experience is hands-on training, and you can start immediately!&amp;nbsp;Active learning is the fastest way to learn and retain. Have you heard of the Learning Pyramid* &amp;ndash; 75% of information&amp;nbsp;is retained when you practice by doing.&amp;nbsp;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Introduce CADCAM / Equipment team to initiate or refresh&amp;nbsp;Primescan&amp;nbsp;training&amp;nbsp;​&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;​&lt;/p&gt;

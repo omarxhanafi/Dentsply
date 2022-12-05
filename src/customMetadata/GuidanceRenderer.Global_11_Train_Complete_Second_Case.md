@@ -36,7 +36,7 @@
 
 &lt;ul&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to&amp;nbsp;SureSmile&amp;nbsp;Case Review Program​&lt;/p&gt;
+	&lt;p&gt;SureSmile&amp;nbsp;Case Review Program​&lt;/p&gt;
 	&lt;/li&gt;
 &lt;/ul&gt;
 

@@ -29,8 +29,8 @@
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;Link to Beyond 90 Business Review&lt;/li&gt;
-	&lt;li&gt;Link to clinic marketing collateral&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;Beyond 90 Business Review&lt;/li&gt;
+	&lt;li&gt;Clinic marketing collateral&amp;nbsp;&lt;/li&gt;
 	&lt;li&gt;Introduction IAS&lt;/li&gt;
 	&lt;li&gt;Practice Integration videos (DS Academy)&lt;/li&gt;
 	&lt;li&gt;Practice Integration videos (Mona Patel)&lt;/li&gt;
@@ -89,9 +89,9 @@
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;Link to Practice Integration Guide (might live in SureSmileU)&lt;/li&gt;
-	&lt;li&gt;Link to office manager integration guide (invoicing)&lt;/li&gt;
-	&lt;li&gt;Link to Patient Financing options&lt;/li&gt;
+	&lt;li&gt;Practice Integration Guide (might live in SureSmileU)&lt;/li&gt;
+	&lt;li&gt;Office manager integration guide (invoicing)&lt;/li&gt;
+	&lt;li&gt;Patient Financing options&lt;/li&gt;
 	&lt;li&gt;On-Demand Videos&lt;/li&gt;
 	&lt;li&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/course.html?pagePath=/content/dentsply-sirona-dt/us/en/academy/courses/course/2021/increasing-roi-success-with-suresmile-aligners&quot;&gt;Increasing ROI Success with SureSmile Aligners (Dentsply Sirona Academy)&lt;/a&gt;&lt;/li&gt;
 	&lt;li&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/course.html?pagePath=/content/dentsply-sirona-dt/us/en/academy/courses/course/2021/ds-study-club--tips-for-seamless-clear-aligner-integration-with-&amp;amp;utm_content=Main_CTA&amp;amp;utm_source=eloqua&amp;amp;utm_medium=email&amp;amp;utm_campaign=2022_USA_EN_ENT_NSL_EDU_4_11&amp;amp;utm_email=2022_4_11_EDU_USA_Weekly&amp;amp;utm_contact=CDSEM000000863211&quot;&gt;Tips for Seamless Clear Aligner Integration with Your Digital Scanner (Dentsply Sirona Academy)&lt;/a&gt;&lt;/li&gt;

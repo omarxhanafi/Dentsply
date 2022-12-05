@@ -75,7 +75,7 @@
                         };
                     } else {
                         bestPracticesList =  [
-                                Select Id, Country__c, BestPracticeContent__c, BestPracticeLabel__c, DeveloperName, Order__c
+                                Select Id, Country__c, BestPracticeContent__c, BestPracticeLabel__c, DeveloperName, Order__c, PDFLinkURL__c, PDFLinkLabel__c
                                 From ProcedureTrackingBestPractices__mdt
                                 Order by Order__c
                         ];

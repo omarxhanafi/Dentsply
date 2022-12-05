@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>BestPracticeContent__c</field>
-        <value xsi:type="xsd:string">https://dentsplysirona.my.salesforce.com/sfc/p/200000001dDc/a/6M000000CIf5/hr3hpMU6Y7w.9BNuhhhxFFxDEfq17nwYz.mfpkBPg5E</value>
+        <value xsi:nil="true"/>
     </values>
     <values>
         <field>BestPracticeLabel__c</field>
@@ -17,5 +17,13 @@
     <values>
         <field>Order__c</field>
         <value xsi:type="xsd:double">0.0</value>
+    </values>
+    <values>
+        <field>PDFLinkLabel__c</field>
+        <value xsi:type="xsd:string">Open Playbook</value>
+    </values>
+    <values>
+        <field>PDFLinkURL__c</field>
+        <value xsi:type="xsd:string">https://dentsplysirona.my.salesforce.com/sfc/p/200000001dDc/a/6M000000CIf5/hr3hpMU6Y7w.9BNuhhhxFFxDEfq17nwYz.mfpkBPg5E</value>
     </values>
 </CustomMetadata>

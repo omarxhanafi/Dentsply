@@ -16,7 +16,7 @@
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;Now that the doctor has decided to take the next&amp;nbsp;SureSmile&amp;nbsp;step and join our&amp;nbsp;SureSmile&amp;nbsp;Family, the&amp;nbsp;SureSmile&amp;nbsp;Specialist and&amp;nbsp;SureSmile&amp;nbsp;Customer Care&amp;nbsp;should ensure they connect with their new customer within&amp;nbsp;24-48&amp;nbsp;hours&amp;nbsp;of their registration.&amp;nbsp;Don&amp;rsquo;t&amp;nbsp;lose the chance to connect while&amp;nbsp;they are&amp;nbsp;newly registered. Welcome them and celebrate&amp;nbsp;their first step to differentiating their practice by starting aligner therapy or switching to an end-to-end solution that&amp;nbsp;provides a better treatment experience.&amp;nbsp;​&lt;/p&gt;
+&lt;p&gt;Now that the doctor has decided to take the next&amp;nbsp;SureSmile&amp;nbsp;step and join our&amp;nbsp;SureSmile&amp;nbsp;Family, the&amp;nbsp;&lt;strong&gt;SureSmile&amp;nbsp;Specialist&lt;/strong&gt; and&amp;nbsp;SureSmile&amp;nbsp;Customer Care&amp;nbsp;should ensure they connect with their new customer within&amp;nbsp;24-48&amp;nbsp;hours&amp;nbsp;of their registration.&amp;nbsp;Don&amp;rsquo;t&amp;nbsp;lose the chance to connect while&amp;nbsp;they are&amp;nbsp;newly registered. Welcome them and celebrate&amp;nbsp;their first step to differentiating their practice by starting aligner therapy or switching to an end-to-end solution that&amp;nbsp;provides a better treatment experience.&amp;nbsp;​&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
@@ -28,25 +28,25 @@
 
 &lt;ul&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to Customer Welcome email&amp;nbsp;​&lt;/p&gt;
+	&lt;p&gt;Customer Welcome email&amp;nbsp;​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to product brochures​&lt;/p&gt;
+	&lt;p&gt;Product brochures​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to website copy​&lt;/p&gt;
+	&lt;p&gt;Website copy​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to social media content​&lt;/p&gt;
+	&lt;p&gt;Social media content​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to in-clinic marketing material​&lt;/p&gt;
+	&lt;p&gt;In-clinic marketing material​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to patient new services email template&amp;nbsp;​&lt;/p&gt;
+	&lt;p&gt;Patient new services email template&amp;nbsp;​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to referral bonus communication template (suggestion)​&lt;/p&gt;
+	&lt;p&gt;Referral bonus communication template (suggestion)​&lt;/p&gt;
 	&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -58,7 +58,7 @@
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;The&amp;nbsp;SureSmile&amp;nbsp;Specialist&amp;nbsp;should refer to this list as action items and follow-up activity to be completed before&amp;nbsp;moving to the next step. Checklist list is listed in order of action.&amp;nbsp;​&lt;/p&gt;
+&lt;p&gt;The&amp;nbsp;&lt;strong&gt;SureSmile&amp;nbsp;Specialist&lt;/strong&gt;&amp;nbsp;should refer to this list as action items and follow-up activity to be completed before&amp;nbsp;moving to the next step. Checklist list is listed in order of action.&amp;nbsp;​&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 

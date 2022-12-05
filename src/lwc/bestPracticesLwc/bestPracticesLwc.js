@@ -1,6 +1,5 @@
 import { LightningElement, api,wire } from 'lwc';
 import getBestPractices from '@salesforce/apex/GuidanceRendererController.getBestPractices';
-import openPlaybook from '@salesforce/label/c.Procedure_Tracker_BP_Open_Playbook';
 
 
 export default class BestPracticesLwc extends LightningElement {
@@ -13,7 +12,8 @@ export default class BestPracticesLwc extends LightningElement {
     activeSections = [];
 
     bestPractices;
-    playbookUrl;
+    pdfLinkURL;
+    pdfLinkLabel;
 
     error;
 
@@ -30,8 +30,9 @@ export default class BestPracticesLwc extends LightningElement {
             let playbookIndex = this.bestPractices.findIndex(bp => bp.DeveloperName?.includes('SureSmile_Commercial_Playbook'));
 
             if(playbookIndex != -1) {
-                // Once found, we assign the URL to be displayed
-                this.playbookUrl = this.bestPractices[playbookIndex].BestPracticeContent__c;
+                // Once found, we assign the URL/label to be displayed
+                this.pdfLinkURL = this.bestPractices[playbookIndex].PDFLinkURL__c;
+                this.pdfLinkLabel = this.bestPractices[playbookIndex].PDFLinkLabel__c;
 
                 // We remove the playbook from the best practices list as it is displayed differently
                 this.bestPractices.splice(playbookIndex, 1);

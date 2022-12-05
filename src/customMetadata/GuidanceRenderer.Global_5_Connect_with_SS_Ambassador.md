@@ -16,7 +16,7 @@
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;Connect your doctor with a&amp;nbsp;SureSmile&amp;nbsp;Advocate to discuss onboarding best practices, tips and tricks for success, and why&amp;nbsp;SureSmile. The&amp;nbsp;SureSmile&amp;nbsp;Specialist will connect their new practice with a&amp;nbsp;SureSmile&amp;nbsp;Advocate who will schedule a&amp;nbsp;telephone call to discuss their own&amp;nbsp;SureSmile&amp;nbsp;90 experience and successes.&amp;nbsp;​&lt;/p&gt;
+&lt;p&gt;Connect your doctor with a&amp;nbsp;&lt;strong&gt;SureSmile&amp;nbsp;Advocate&lt;/strong&gt; to discuss onboarding best practices, tips and tricks for success, and why&amp;nbsp;SureSmile. The&amp;nbsp;&lt;strong&gt;SureSmile&amp;nbsp;Specialist&lt;/strong&gt; will connect their new practice with a&amp;nbsp;&lt;strong&gt;SureSmile&amp;nbsp;Advocate&lt;/strong&gt; who will schedule a&amp;nbsp;telephone call to discuss their own&amp;nbsp;SureSmile&amp;nbsp;90 experience and successes.&amp;nbsp;​&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
@@ -36,16 +36,16 @@
 
 &lt;ul&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to How to Start&amp;nbsp;SureSmile&amp;nbsp;Connections Program​&lt;/p&gt;
+	&lt;p&gt;How to Start&amp;nbsp;SureSmile&amp;nbsp;Connections Program​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to SureSmile Connections Agreement​&lt;/p&gt;
+	&lt;p&gt;SureSmile Connections Agreement​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to list of SureSmile Advocates​&lt;/p&gt;
+	&lt;p&gt;List of SureSmile Advocates​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to SureSmile Advocate Plaque​&lt;/p&gt;
+	&lt;p&gt;SureSmile Advocate Plaque​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
 	&lt;p&gt;&lt;a href=&quot;https://www.surveymonkey.com/r/N2X5STT&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;SureSmile Connections Advocate Call Survey&lt;/a&gt;​&lt;/p&gt;
@@ -66,7 +66,7 @@
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;The&amp;nbsp;Sales Representative&amp;nbsp;should refer to this list as action items and follow-up activity to be completed before&amp;nbsp;moving to the next step. Checklist list is listed in order of action.&amp;nbsp;​​&lt;/p&gt;
+&lt;p&gt;The&amp;nbsp;&lt;strong&gt;Sales Representative&lt;/strong&gt;&amp;nbsp;should refer to this list as action items and follow-up activity to be completed before&amp;nbsp;moving to the next step. Checklist list is listed in order of action.&amp;nbsp;​​&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 

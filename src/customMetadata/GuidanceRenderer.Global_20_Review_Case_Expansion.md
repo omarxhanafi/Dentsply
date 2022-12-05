@@ -62,11 +62,11 @@
 	&lt;li&gt;&lt;a href=&quot;https://premiumlearnermobileblob.blob.core.windows.net/7f1cc0ed-940e-445c-afc0-338a762dd85a/8c890666-b9e2-4c21-a9d8-d2cf2d83a4b2.pdf&quot;&gt;Case Selection Guide&lt;/a&gt;&lt;/li&gt;
 	&lt;li&gt;&lt;a href=&quot;https://app.learnermobile.com/list-content/458B7FB4-2928-467D-A146-2330733DBDDF/E707FEA4-EA74-4A6C-92DE-3EAD36E9D579&quot;&gt;Case Selection with Dr. Bankhead&lt;/a&gt; (SureSmileU)&lt;/li&gt;
 	&lt;li&gt;Case Selection for the Integration (available early Q2 DS Academy)&lt;/li&gt;
-	&lt;li&gt;Link to different malocclusions (Practice Integration Guide)&lt;/li&gt;
+	&lt;li&gt;Different malocclusions (Practice Integration Guide)&lt;/li&gt;
 	&lt;li&gt;Dr. Bankhead&amp;rsquo;s Clinical Corner Program (not available)&lt;/li&gt;
-	&lt;li&gt;Insert link to LIVE Case Review Program Overview&lt;/li&gt;
+	&lt;li&gt;LIVE Case Review Program Overview&lt;/li&gt;
 	&lt;li&gt;IAS Program (where available)&lt;/li&gt;
-	&lt;li&gt;Insert link to Introduce SureSmile Aligner Customer Journey (on DS Academy)&lt;/li&gt;
+	&lt;li&gt;Introduce SureSmile Aligner Customer Journey (on DS Academy)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;

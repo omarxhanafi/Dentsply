@@ -52,4 +52,12 @@
         <field>Order__c</field>
         <value xsi:type="xsd:double">9.0</value>
     </values>
+    <values>
+        <field>PDFLinkLabel__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>PDFLinkURL__c</field>
+        <value xsi:nil="true"/>
+    </values>
 </CustomMetadata>

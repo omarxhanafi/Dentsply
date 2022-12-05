@@ -57,34 +57,34 @@
 
 &lt;ul&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to marketing materials for presentation&amp;nbsp;​&lt;/p&gt;
+	&lt;p&gt;Marketing materials for presentation&amp;nbsp;​&lt;/p&gt;
 
 	&lt;ul&gt;
 		&lt;li&gt;
-		&lt;p&gt;Insert link to digital brochures​&lt;/p&gt;
+		&lt;p&gt;Digital brochures​&lt;/p&gt;
 		&lt;/li&gt;
 		&lt;li&gt;
-		&lt;p&gt;Insert link to lunch n learn materials​&lt;/p&gt;
+		&lt;p&gt;Lunch n learn materials​&lt;/p&gt;
 		&lt;/li&gt;
 	&lt;/ul&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link for SureSmile product PPT (SureSmile Aligner for GPs)​&lt;/p&gt;
+	&lt;p&gt;SureSmile product PPT (SureSmile Aligner for GPs)​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link for SureSmile messaging presentation​&lt;/p&gt;
+	&lt;p&gt;SureSmile messaging presentation​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to order demo materials​&lt;/p&gt;
+	&lt;p&gt;Order demo materials​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert ink to Demo database​&lt;/p&gt;
+	&lt;p&gt;Demo database​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link Dummy patient account​&lt;/p&gt;
+	&lt;p&gt;Dummy patient account​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to Doctor Testimonials&lt;/p&gt;
+	&lt;p&gt;Doctor Testimonials&lt;/p&gt;
 	&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -126,7 +126,7 @@
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;The&amp;nbsp;SureSmile&amp;nbsp;Specialist&amp;nbsp;should refer to this list as action items and follow-up activity to be completed before&amp;nbsp;moving to the next step. Checklist list is listed in order of action.&amp;nbsp;​&lt;/p&gt;
+&lt;p&gt;The&amp;nbsp;&lt;strong&gt;SureSmile&amp;nbsp;Specialist&lt;/strong&gt;&amp;nbsp;should refer to this list as action items and follow-up activity to be completed before&amp;nbsp;moving to the next step. Checklist list is listed in order of action.&amp;nbsp;​&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 

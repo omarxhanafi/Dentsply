@@ -27,9 +27,9 @@
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;Insert link to &amp;ldquo;How to Start a Study Club&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;How to Start a Study Club&lt;/p&gt;
 
-&lt;p&gt;Insert link to patient education materials&lt;/p&gt;
+&lt;p&gt;Patient education materials&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://dentsplysirona.sharepoint.com/sites/RichardsonTX-Internal-Training/Shared%20Documents/Forms/AllItems.aspx?ct=1666627045612&amp;amp;or=Teams%2DHL&amp;amp;ga=1&amp;amp;id=%2Fsites%2FRichardsonTX%2DInternal%2DTraining%2FShared%20Documents%2FExecution%2FLevel%20I%20course&amp;amp;viewid=47b9190f%2Dcae3%2D4cfd%2Db5eb%2D710e44f396b1&quot;&gt;RichardsonTX-Internal-Training - Level I course - All Documents (sharepoint.com)&lt;/a&gt;&lt;/p&gt;
 

@@ -16,7 +16,7 @@
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;The&amp;nbsp;SureSmile&amp;nbsp;Specialist&amp;nbsp;schedules an appointment to start the&amp;nbsp;SureSmile&amp;nbsp;Discovery process with their new&amp;nbsp;customer. During this appointment, you and the doctor, will define practice goals (aligner and overall), how to target&amp;nbsp;potential aligner candidates, case selection and tracking, set expectations, and setup training calendar. Show your&amp;nbsp;new customer you are here as their partner throughout their path to&amp;nbsp;SureSmile&amp;nbsp;Integration.&amp;nbsp;​&lt;/p&gt;
+&lt;p&gt;The&amp;nbsp;&lt;strong&gt;SureSmile&amp;nbsp;Specialist&lt;/strong&gt;&amp;nbsp;schedules an appointment to start the&amp;nbsp;SureSmile&amp;nbsp;Discovery process with their new&amp;nbsp;customer. During this appointment, you and the doctor, will define practice goals (aligner and overall), how to target&amp;nbsp;potential aligner candidates, case selection and tracking, set expectations, and setup training calendar. Show your&amp;nbsp;new customer you are here as their partner throughout their path to&amp;nbsp;SureSmile&amp;nbsp;Integration.&amp;nbsp;​&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
@@ -28,16 +28,16 @@
 
 &lt;ul&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to&amp;nbsp;SureSmile&amp;nbsp;Discovery Practice Tracker​&lt;/p&gt;
+	&lt;p&gt;SureSmile&amp;nbsp;Discovery Practice Tracker​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to Patient Financing / SureSmile Financing​&lt;/p&gt;
+	&lt;p&gt;Patient Financing / SureSmile Financing​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Link to SureSmile Practice Value calculator​&lt;/p&gt;
+	&lt;p&gt;SureSmile Practice Value calculator​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Insert link to SureSmile Doc-Box (doctor resources)​&lt;/p&gt;
+	&lt;p&gt;SureSmile Doc-Box (doctor resources)​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
 	&lt;p&gt;&lt;a href=&quot;https://www.suresmileu.com/public/card-content?pageid=392E1F9C-FDA3-4B22-A084-1EA96B142986&amp;amp;bucketid=trending&amp;amp;buckettype=home&amp;amp;buckettitle=Trending&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Clear Aligner Case Library (suresmileu.com)&lt;/a&gt;​&lt;/p&gt;
@@ -114,7 +114,7 @@
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;The&amp;nbsp;SureSmile&amp;nbsp;Specialist&amp;nbsp;should refer to this list as action items and follow-up activity to be completed before&amp;nbsp;moving to the next step. Checklist list is listed in order of action.&amp;nbsp;​&lt;/p&gt;
+&lt;p&gt;The&amp;nbsp;&lt;strong&gt;SureSmile&amp;nbsp;Specialist&lt;/strong&gt;&amp;nbsp;should refer to this list as action items and follow-up activity to be completed before&amp;nbsp;moving to the next step. Checklist list is listed in order of action.&amp;nbsp;​&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
@@ -198,21 +198,21 @@
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;
-	&lt;p&gt;Check with staff and see if anyone is a potential candidate.&amp;nbsp;They will&amp;nbsp;be the best practice champions. When they&amp;nbsp;talk about&amp;nbsp;SureSmile&amp;nbsp;treatment with a patient, they can easily pull their mask down and show how easy and&amp;nbsp;comfortable it is.&amp;nbsp;​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Discuss starting the first 3-5 cases with family and friends.&amp;nbsp;They will&amp;nbsp;be more patient with the doctor as he/she&amp;nbsp;learns and defines the new workflow. The ROI will come down the road with reduced refinements, treatment time&amp;nbsp;and increased referrals!&amp;nbsp;​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Start with mild cases that allow for uninhibited learning of the software. If the practice starts with more complex&amp;nbsp;cases, the focus shifts to treatment mechanics instead of becoming comfortable with the software, working with&amp;nbsp;the digital lab, and learning to treatment plan.&amp;nbsp;​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Emphasis importance of completing the&amp;nbsp;SureSmile&amp;nbsp;3n3.&amp;nbsp;It&amp;rsquo;s&amp;nbsp;like learning how to ride a bike.&amp;nbsp;You will&amp;nbsp;need time to&amp;nbsp;perfect the process, but practice in a short of amount of time is the key to success and taking your new skills to&amp;nbsp;new opportunities!​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Doctors who follow our training schedule are the doctors who see the most success.&amp;nbsp;They are&amp;nbsp;more comfortable&amp;nbsp;and efficient with the workflow from integration. Use this time to truly understand the&amp;nbsp;SureSmile&amp;nbsp;system.​&lt;/p&gt;
-	&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Check with staff and see if anyone is a potential candidate.&amp;nbsp;They will&amp;nbsp;be the best practice champions. When they&amp;nbsp;talk about&amp;nbsp;SureSmile&amp;nbsp;treatment with a patient, they can easily pull their mask down and show how easy and&amp;nbsp;comfortable it is.&amp;nbsp;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Discuss starting the first 3-5 cases with family and friends.&amp;nbsp;They will&amp;nbsp;be more patient with the doctor as he/she&amp;nbsp;learns and defines the new workflow. The ROI will come down the road with reduced refinements, treatment time&amp;nbsp;and increased referrals!&amp;nbsp;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Start with mild cases that allow for uninhibited learning of the software. If the practice starts with more complex&amp;nbsp;cases, the focus shifts to treatment mechanics instead of becoming comfortable with the software, working with&amp;nbsp;the digital lab, and learning to treatment plan.&amp;nbsp;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Emphasis importance of completing the&amp;nbsp;SureSmile&amp;nbsp;3n3.&amp;nbsp;It&amp;rsquo;s&amp;nbsp;like learning how to ride a bike.&amp;nbsp;You will&amp;nbsp;need time to&amp;nbsp;perfect the process, but practice in a short of amount of time is the key to success and taking your new skills to&amp;nbsp;new opportunities!​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Doctors who follow our training schedule are the doctors who see the most success.&amp;nbsp;They are&amp;nbsp;more comfortable&amp;nbsp;and efficient with the workflow from integration. Use this time to truly understand the&amp;nbsp;SureSmile&amp;nbsp;system.​&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;​​&lt;/p&gt; --&gt;</value>
