@@ -9,6 +9,11 @@
 */
 
 public without Sharing class ChangeOwner {
+
+    /*---------------------------------------------------------------
+    Description:    Change the owner of a task identified by its id
+    Inputs:         @param taskId
+    ---------------------------------------------------------------*/
     @AuraEnabled
     public static Task changeOwnerMethod(Id taskId) {
         try {
