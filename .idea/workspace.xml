@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/SureSmile/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/SureSmile/OfflineSymbolTable.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_19_Discuss_Patient_Financing.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_20_Review_Case_Expansion.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_21_Provide_Acceleration.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_22_Join_or_Start_Study_Club.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_23_Connect_with_SureSmile_Mentor.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_24_Join_SureSmile_Connections.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_25_Start_Continuous_Education.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/objects/GuidanceRenderer__mdt.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/GuidanceRenderer__mdt.object" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -347,7 +352,7 @@
                       <entry key="RECORDTYPE:PROCEDURETRACKER__C.CLEAR_ALIGNERS_GLOBAL" value="1669033209000" />
                     </map>
                   </option>
-                  <option name="lastBuildScope" value="CUSTOM" />
+                  <option name="lastBuildScope" value="CONTEXT" />
                   <option name="lastBuildViewToggles">
                     <map>
                       <entry key="DELETE">
@@ -4851,7 +4856,8 @@
       <workItem from="1669816574725" duration="125000" />
       <workItem from="1669816714697" duration="146000" />
       <workItem from="1669816872807" duration="14056000" />
-      <workItem from="1670486453611" duration="424000" />
+      <workItem from="1670486453611" duration="631000" />
+      <workItem from="1670507805174" duration="522000" />
     </task>
     <servers />
   </component>

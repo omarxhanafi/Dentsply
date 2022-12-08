@@ -1,44 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <label>Global 20. Review Case Expansion</label>
+    <label>Global 19. Review Case Expansion</label>
     <protected>false</protected>
     <values>
-        <field>Country__c</field>
+        <field>CountryList__c</field>
         <value xsi:type="xsd:string">AD;AE;AF;AG;AI;AL;AM;AN;AO;AQ;AR;AS;AT;AU;AW;AX;AZ;BA;BB;BD;BE;BF;BG;BH;BI;BJ;BL;BM;BN;BO;BQ;BR;BS;BT;BV;BW;BY;BZ;CC;CD;CF;CG;CH;CI;CK;CL;CM;CN;CO;CR;CS;CU;CV;CW;CX;CY;CZ;DE;DJ;DK;DM;DO;DZ;EC;EE;EG;EH;ER;ES;ET;FI;FJ;FK;FM;FO;FR;GA;GB;GD;GE;GF;GG;GH;GI;GL;GM;GN;GP;GQ;GR;GS;GT;GU;GW;GY;HK;HM;HN;HR;HT;HU;ID;IE;IL;IM;IN;IO;IOZ;IQ;IR;IS;IT;JE;JM;JO;JP;KE;KG;KH;KI;KM;KN;KP;KR;KW;KY;KZ;LA;LB;LC;LI;LK;LR;LS;LT;LU;LV;LY;MA;MC;MD;ME;MF;MG;MH;MK;ML;MM;MN;MO;MP;MQ;MR;MS;MT;MU;MV;MW;MX;MY;MZ;NA;NC;NE;NF;NG;NI;NL;NO;NP;NR;NU;NZ;OM;PA;PE;PF;PG;PH;PK;PL;PM;PN;PR;PS;PT;PW;PY;QA;RE;RO;RS;RU;RW;SA;SB;SC;SD;SE;SG;SH;SI;SJ;SK;SL;SM;SN;SO;SR;SS;ST;SV;SX;SY;SZ;TC;TD;TF;TG;TH;TJ;TK;TL;TM;TN;TO;TR;TT;TV;TW;TZ;UA;UG;UM;UY;UZ;VA;VC;VE;WF;VG;VI;VN;WS;VU;XK;YE;YT;ZA;ZM;ZW</value>
     </values>
     <values>
         <field>Guidance_Content__c</field>
-        <value xsi:type="xsd:string">&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;font-size:16px&quot;&gt;Practice Integration&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;font-size:14px&quot;&gt;&lt;strong&gt;Best Practices for Encouraging Advocacy&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;Treatment is now completed and hopefully the patient is fully satisfied with their new SureSmile Smile. What is next? Is the patient using a SureSmile Retainer? If they are, the patient&amp;rsquo;s orthodontic journey continues with the practice. Help the practice understand that treatment is not over and ensuring a Sure Smile requires continuous compliance with a SureSmile Retainer. It is important to&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;After Treatment&lt;/p&gt;
-
-&lt;ul&gt;
-	&lt;li&gt;Email&amp;nbsp;
-	&lt;ul&gt;
-		&lt;li&gt;Surveys/feedback on appointments&lt;/li&gt;
-		&lt;li&gt;Congratulations / Beginning Maintenance Journey&amp;nbsp;&amp;nbsp;&lt;/li&gt;
-	&lt;/ul&gt;
-	&lt;/li&gt;
-	&lt;li&gt;Social Media Before &amp;amp; After Post Examples&lt;/li&gt;
-	&lt;li&gt;Testimonial Examples&lt;/li&gt;
-	&lt;li&gt;Referral Program Ideas&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;font-size:16px&quot;&gt;Case Expansion&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+        <value xsi:type="xsd:string">&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;font-size:16px&quot;&gt;Case Expansion&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
@@ -62,11 +32,11 @@
 	&lt;li&gt;&lt;a href=&quot;https://premiumlearnermobileblob.blob.core.windows.net/7f1cc0ed-940e-445c-afc0-338a762dd85a/8c890666-b9e2-4c21-a9d8-d2cf2d83a4b2.pdf&quot;&gt;Case Selection Guide&lt;/a&gt;&lt;/li&gt;
 	&lt;li&gt;&lt;a href=&quot;https://app.learnermobile.com/list-content/458B7FB4-2928-467D-A146-2330733DBDDF/E707FEA4-EA74-4A6C-92DE-3EAD36E9D579&quot;&gt;Case Selection with Dr. Bankhead&lt;/a&gt; (SureSmileU)&lt;/li&gt;
 	&lt;li&gt;Case Selection for the Integration (available early Q2 DS Academy)&lt;/li&gt;
-	&lt;li&gt;Different malocclusions (Practice Integration Guide)&lt;/li&gt;
+	&lt;li&gt;Link to different malocclusions (Practice Integration Guide)&lt;/li&gt;
 	&lt;li&gt;Dr. Bankhead&amp;rsquo;s Clinical Corner Program (not available)&lt;/li&gt;
-	&lt;li&gt;LIVE Case Review Program Overview&lt;/li&gt;
+	&lt;li&gt;Insert link to LIVE Case Review Program Overview&lt;/li&gt;
 	&lt;li&gt;IAS Program (where available)&lt;/li&gt;
-	&lt;li&gt;Introduce SureSmile Aligner Customer Journey (on DS Academy)&lt;/li&gt;
+	&lt;li&gt;Insert link to Introduce SureSmile Aligner Customer Journey (on DS Academy)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
@@ -111,7 +81,7 @@
     </values>
     <values>
         <field>NextActivity__c</field>
-        <value xsi:type="xsd:string">20. Review Case Expansion Opportunities</value>
+        <value xsi:type="xsd:string">19. Review Case Expansion</value>
     </values>
     <values>
         <field>RecordTypeDeveloperName__c</field>
