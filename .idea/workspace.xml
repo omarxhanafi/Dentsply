@@ -3,37 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/SureSmile/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/SureSmile/OfflineSymbolTable.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_10_Submit_Second_Case.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_10_Submit_Second_Case.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_11_Train_Complete_Second_Case.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_11_Train_Complete_Second_Case.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_12_Submit_Third_Case.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_12_Submit_Third_Case.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_13_Train_Complete_Third_Case.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_13_Train_Complete_Third_Case.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_16_Launch_SureSmile_Day.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_16_Launch_SureSmile_Day.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_17_Complete_SureSmile_Business.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_17_Complete_SureSmile_Business.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_1_Experience_SureSmile.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_1_Experience_SureSmile.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_20_Review_Case_Expansion.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_20_Review_Case_Expansion.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_22_Join_or_Start_Study_Club.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_22_Join_or_Start_Study_Club.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_23_Connect_with_SureSmile_Mentor.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_23_Connect_with_SureSmile_Mentor.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_24_Join_SureSmile_Connections.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_24_Join_SureSmile_Connections.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_25_Start_Continuous_Education.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_25_Start_Continuous_Education.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_2_Register.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_2_Register.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_3_Deliver_Welcome_to_SS_Family.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_3_Deliver_Welcome_to_SS_Family.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_4_Complete_SureSmile_Discovery.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_4_Complete_SureSmile_Discovery.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_5_Connect_with_SS_Ambassador.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_5_Connect_with_SS_Ambassador.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_8_Train_Submit_First_Case.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_8_Train_Submit_First_Case.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_9_Train_and_Complete_First_Case.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_9_Train_and_Complete_First_Case.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.BP_for_a_Successful_SS_Integration.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.BP_for_a_Successful_SS_Integration.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practice_for_Targeting.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practice_for_Targeting.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practices_for_Growing_Utilization.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practices_for_Growing_Utilization.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practices_for_Successful_Onboarding.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practices_for_Successful_Onboarding.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practices_for_SureSmile_Beyond_90.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practices_for_SureSmile_Beyond_90.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practices_for_SureSmile_Event_Day.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practices_for_SureSmile_Event_Day.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practices_for_a_SS_Registration.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practices_for_a_SS_Registration.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practices_to_Getting_Started.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practices_to_Getting_Started.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.How_to_Start_the_SureSmile_Conversation.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.How_to_Start_the_SureSmile_Conversation.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.SureSmile_Commercial_Playbook.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.SureSmile_Commercial_Playbook.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/bestPracticesLwc/bestPracticesLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/GuidanceRenderer__mdt.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/GuidanceRenderer__mdt.object" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,17 +173,18 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:GUIDANCERENDERERCONTROLLER" value="1670244924276" />
+                      <entry key="APEXCLASS:GUIDANCERENDERERCONTROLLER" value="1670486582128" />
                       <entry key="APEXCLASS:SALESANALYTICSTRIGGERHANDLER" value="1669819715881" />
                       <entry key="APEXCLASS:SALESANALYTICSTRIGGERHELPER" value="1669820251253" />
                       <entry key="APEXCLASS:TEST_GUIDANCERENDERERCONTROLLER" value="1669717997152" />
                       <entry key="APEXTRIGGER:SALESANALYTICSTRIGGER" value="1669815317000" />
                       <entry key="COMPACTLAYOUT:PROCEDURETRACKER__C.PROCEDURE_TRACKER_COMPACT_LAYOUT" value="1669033209000" />
-                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.COUNTRY__C" value="1669044263000" />
-                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.GUIDANCE_CONTENT__C" value="1669044264000" />
-                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.ISTEST__C" value="1669044264000" />
-                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.NEXTACTIVITY__C" value="1669044264000" />
-                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.RECORDTYPEDEVELOPERNAME__C" value="1669044264000" />
+                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.COUNTRYLIST__C" value="1670486175000" />
+                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.COUNTRY__C" value="1670432057000" />
+                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.GUIDANCE_CONTENT__C" value="1670486175000" />
+                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.ISTEST__C" value="1670486175000" />
+                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.NEXTACTIVITY__C" value="1670486175000" />
+                      <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.RECORDTYPEDEVELOPERNAME__C" value="1670486175000" />
                       <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.ACTIVATIONNEEDEDBY__C" value="1669033209000" />
                       <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.BARRIER__C" value="1669033209000" />
                       <entry key="CUSTOMFIELD:PROCEDURETRACKER__C.BUSINESSASSESSMENT__C" value="1669033209000" />
@@ -365,11 +338,11 @@
                       <entry key="CUSTOMMETADATA:GUIDANCERENDERER.US_TEAM_MEETING_REVIEW_PROCESSES" value="1668611078000" />
                       <entry key="CUSTOMMETADATA:GUIDANCERENDERER.US_TEAM_TRAINING_ORTHODONTIC_BENEFITS" value="1668611078000" />
                       <entry key="CUSTOMMETADATA:GUIDANCERENDERER.US_WHO_IS_YOUR_IDEAL_ALIGNER_PATIENT" value="1668611078000" />
-                      <entry key="CUSTOMOBJECT:GUIDANCERENDERER__MDT" value="1669044264000" />
+                      <entry key="CUSTOMOBJECT:GUIDANCERENDERER__MDT" value="1670486175000" />
                       <entry key="CUSTOMOBJECT:PROCEDURETRACKER__C" value="1669033209000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:BESTPRACTICESLWC" value="1670245641313" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:GUIDANCERENDERER" value="1669034956312" />
-                      <entry key="LISTVIEW:GUIDANCERENDERER__MDT.ALL_GUIDANCE" value="1669044264000" />
+                      <entry key="LISTVIEW:GUIDANCERENDERER__MDT.ALL_GUIDANCE" value="1670486175000" />
                       <entry key="RECORDTYPE:PROCEDURETRACKER__C.CLEAR_ALIGNERS" value="1669033209000" />
                       <entry key="RECORDTYPE:PROCEDURETRACKER__C.CLEAR_ALIGNERS_GLOBAL" value="1669033209000" />
                     </map>
@@ -4641,19 +4614,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "last_opened_file_path": "/Users/ohanafi/IdeaProjects/Dentsply/src/lwc/bestPracticesLwc",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.29852837",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ohanafi/IdeaProjects/Dentsply/src/lwc/bestPracticesLwc&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29852837&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/lwc/bestPracticesLwc" />
@@ -4878,6 +4851,7 @@
       <workItem from="1669816574725" duration="125000" />
       <workItem from="1669816714697" duration="146000" />
       <workItem from="1669816872807" duration="14056000" />
+      <workItem from="1670486453611" duration="424000" />
     </task>
     <servers />
   </component>

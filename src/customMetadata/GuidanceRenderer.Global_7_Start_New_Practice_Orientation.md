@@ -3,7 +3,7 @@
     <label>Global 7. Start New Practice Orientation</label>
     <protected>false</protected>
     <values>
-        <field>Country__c</field>
+        <field>CountryList__c</field>
         <value xsi:type="xsd:string">AD;AE;AF;AG;AI;AL;AM;AN;AO;AQ;AR;AS;AT;AU;AW;AX;AZ;BA;BB;BD;BE;BF;BG;BH;BI;BJ;BL;BM;BN;BO;BQ;BR;BS;BT;BV;BW;BY;BZ;CC;CD;CF;CG;CH;CI;CK;CL;CM;CN;CO;CR;CS;CU;CV;CW;CX;CY;CZ;DE;DJ;DK;DM;DO;DZ;EC;EE;EG;EH;ER;ES;ET;FI;FJ;FK;FM;FO;FR;GA;GB;GD;GE;GF;GG;GH;GI;GL;GM;GN;GP;GQ;GR;GS;GT;GU;GW;GY;HK;HM;HN;HR;HT;HU;ID;IE;IL;IM;IN;IO;IOZ;IQ;IR;IS;IT;JE;JM;JO;JP;KE;KG;KH;KI;KM;KN;KP;KR;KW;KY;KZ;LA;LB;LC;LI;LK;LR;LS;LT;LU;LV;LY;MA;MC;MD;ME;MF;MG;MH;MK;ML;MM;MN;MO;MP;MQ;MR;MS;MT;MU;MV;MW;MX;MY;MZ;NA;NC;NE;NF;NG;NI;NL;NO;NP;NR;NU;NZ;OM;PA;PE;PF;PG;PH;PK;PL;PM;PN;PR;PS;PT;PW;PY;QA;RE;RO;RS;RU;RW;SA;SB;SC;SD;SE;SG;SH;SI;SJ;SK;SL;SM;SN;SO;SR;SS;ST;SV;SX;SY;SZ;TC;TD;TF;TG;TH;TJ;TK;TL;TM;TN;TO;TR;TT;TV;TW;TZ;UA;UG;UM;UY;UZ;VA;VC;VE;WF;VG;VI;VN;WS;VU;XK;YE;YT;ZA;ZM;ZW</value>
     </values>
     <values>
@@ -151,19 +151,19 @@
 	&lt;p&gt;Complete New Practice Orientation channel with doctor&amp;nbsp;and staff&amp;nbsp;​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Identify a SureSmile coordinator​&lt;/p&gt;
+	&lt;p&gt;Identify a&amp;nbsp;SureSmile&amp;nbsp;coordinator​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
 	&lt;p&gt;Verify SureSmileU.com credentials&amp;nbsp;​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Ensure if DS scanner case connect portal connected​&lt;/p&gt;
+	&lt;p&gt;Ensure that DS scanner case connect portal is&amp;nbsp;connected​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
 	&lt;p&gt;Initiate online training and assign Case Submission&amp;nbsp;channel&amp;nbsp;​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Optional: email digital photo job aid, scanner job aid,&amp;nbsp;scanner requirements job aid, case selection guide,&amp;nbsp;patient experience guide, and smile questionnaire&amp;nbsp;​&lt;/p&gt;
+	&lt;p&gt;Optional: reinforce training sections:&amp;nbsp;&lt;a href=&quot;https://suresmileu.com/card-content?pageid=F59E7FE0-C1B0-4664-AA1F-826FA9E396C7&amp;amp;bucketid=C477B4D4-FD2F-4CAE-B90C-551CB4CE8DC1&amp;amp;buckettype=channel&amp;amp;buckettitle=New%20Practice%20Orientation&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;How to Take Quality Photos&lt;/a&gt;,&amp;nbsp;&lt;a href=&quot;https://suresmileu.com/card-content?pageid=D5D50B96-D6D5-49CB-BCA1-9EA5E607EFA9&amp;amp;bucketid=C477B4D4-FD2F-4CAE-B90C-551CB4CE8DC1&amp;amp;buckettype=channel&amp;amp;buckettitle=New%20Practice%20Orientation&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Primescan Omnicam Scanning&lt;/a&gt;,&amp;nbsp;&lt;a href=&quot;https://suresmileu.com/card-content?pageid=FD27D820-3921-45C5-9D76-883F1B97122E&amp;amp;bucketid=C477B4D4-FD2F-4CAE-B90C-551CB4CE8DC1&amp;amp;buckettype=channel&amp;amp;buckettitle=New%20Practice%20Orientation&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;X-Ray and CBCT Settings&lt;/a&gt;,&amp;nbsp;&lt;a href=&quot;https://suresmileu.com/card-content?pageid=7B5F306E-EAC8-4E2C-9071-9DAE7AB74EEF&amp;amp;bucketid=C477B4D4-FD2F-4CAE-B90C-551CB4CE8DC1&amp;amp;buckettype=channel&amp;amp;buckettitle=New%20Practice%20Orientation&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Case Selection Assessment&lt;/a&gt;,&amp;nbsp;&lt;a href=&quot;https://suresmileu.com/card-content?pageid=90C4A8FF-0335-42AC-BD5C-444AA14DB9C2&amp;amp;bucketid=C477B4D4-FD2F-4CAE-B90C-551CB4CE8DC1&amp;amp;buckettype=channel&amp;amp;buckettitle=New%20Practice%20Orientation&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Patient Photos&lt;/a&gt;, and&amp;nbsp;&lt;a href=&quot;https://suresmileu.com/card-content?pageid=5CB1F6E8-4036-492A-BD81-4254CD02FCE9&amp;amp;bucketid=C477B4D4-FD2F-4CAE-B90C-551CB4CE8DC1&amp;amp;buckettype=channel&amp;amp;buckettitle=New%20Practice%20Orientation&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Taking Quality Digital Impressions&lt;/a&gt;​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
 	&lt;p&gt;Discuss treatment pricing options​&lt;/p&gt;
@@ -181,7 +181,7 @@
 	&lt;p&gt;Help doctor enter credit card info for case submissions&amp;nbsp;​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Review 90 Day Program (refer to page 12)​&lt;/p&gt;
+	&lt;p&gt;Review 90 Day Program​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
 	&lt;p&gt;Schedule case Submission call, coordinate with CIS for&amp;nbsp;intro call&amp;nbsp; (3 x 1 hour call)​&lt;/p&gt;
@@ -194,9 +194,6 @@
 	&lt;/li&gt;
 	&lt;li&gt;
 	&lt;p&gt;Provide and show marketing materials and support tools​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Ensure doctor has registered with IAS or participated in&amp;nbsp;DS Academy courses to get started​&lt;/p&gt;
 	&lt;/li&gt;
 &lt;/ul&gt;
 

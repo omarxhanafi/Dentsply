@@ -3,7 +3,7 @@
     <label>Global 17. Complete SureSmile Business</label>
     <protected>false</protected>
     <values>
-        <field>Country__c</field>
+        <field>CountryList__c</field>
         <value xsi:type="xsd:string">AD;AE;AF;AG;AI;AL;AM;AN;AO;AQ;AR;AS;AT;AU;AW;AX;AZ;BA;BB;BD;BE;BF;BG;BH;BI;BJ;BL;BM;BN;BO;BQ;BR;BS;BT;BV;BW;BY;BZ;CC;CD;CF;CG;CH;CI;CK;CL;CM;CN;CO;CR;CS;CU;CV;CW;CX;CY;CZ;DE;DJ;DK;DM;DO;DZ;EC;EE;EG;EH;ER;ES;ET;FI;FJ;FK;FM;FO;FR;GA;GB;GD;GE;GF;GG;GH;GI;GL;GM;GN;GP;GQ;GR;GS;GT;GU;GW;GY;HK;HM;HN;HR;HT;HU;ID;IE;IL;IM;IN;IO;IOZ;IQ;IR;IS;IT;JE;JM;JO;JP;KE;KG;KH;KI;KM;KN;KP;KR;KW;KY;KZ;LA;LB;LC;LI;LK;LR;LS;LT;LU;LV;LY;MA;MC;MD;ME;MF;MG;MH;MK;ML;MM;MN;MO;MP;MQ;MR;MS;MT;MU;MV;MW;MX;MY;MZ;NA;NC;NE;NF;NG;NI;NL;NO;NP;NR;NU;NZ;OM;PA;PE;PF;PG;PH;PK;PL;PM;PN;PR;PS;PT;PW;PY;QA;RE;RO;RS;RU;RW;SA;SB;SC;SD;SE;SG;SH;SI;SJ;SK;SL;SM;SN;SO;SR;SS;ST;SV;SX;SY;SZ;TC;TD;TF;TG;TH;TJ;TK;TL;TM;TN;TO;TR;TT;TV;TW;TZ;UA;UG;UM;UY;UZ;VA;VC;VE;WF;VG;VI;VN;WS;VU;XK;YE;YT;ZA;ZM;ZW</value>
     </values>
     <values>
@@ -18,6 +18,8 @@
 
 &lt;p&gt;Review SureSmile Discovery Goals and update SureSmile Business Review where needed if clinic goals have changed. Based on responses, go over situationally-relevant questions (select the questions from the list that you feel are applicable). The goal of this review is to understand where the doctor, staff, and practice want to go with the new product / service they are now offering. With this information, you can help them reach their goals with a customized approach and ultimately success with SureSmile.&amp;nbsp;&lt;/p&gt;
 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
 &lt;p&gt;You will be taking the practice on their SureSmile journey based on this review. After the review, you should schedule quarterly business reviews to ensure tracking and updating of their SureSmile journey.&amp;nbsp;&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
@@ -29,12 +31,42 @@
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;Beyond 90 Business Review&lt;/li&gt;
-	&lt;li&gt;Clinic marketing collateral&amp;nbsp;&lt;/li&gt;
-	&lt;li&gt;Introduction IAS&lt;/li&gt;
-	&lt;li&gt;Practice Integration videos (DS Academy)&lt;/li&gt;
-	&lt;li&gt;Practice Integration videos (Mona Patel)&lt;/li&gt;
-	&lt;li&gt;Connect with SureSmile Ambassador (if needed)&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;Beyond 90 Business Review&amp;nbsp;&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;Introduce IAS (where available)&amp;nbsp;&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;Connect with SureSmile Ambassador (if needed)&amp;nbsp;&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/orthodontics.html&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Orthodontic Courses (DS Academy)&lt;/a&gt;&amp;nbsp;&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	&lt;p&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/digital-dentistry.html&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Digital Dentistry Courses (DS Academy)&lt;/a&gt;&amp;nbsp;&lt;/p&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;
+		&lt;p&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/academy-course-details.html?cfpath=/content/dam/master/content-fragments/us/en/courses-events/on-demand/2021/creating-the-on-demand-dental-practice-leveraging-expansion-of&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Creating the On Demand Dental Practice: Leveraging Expansion of Workflow with Primescan&lt;/a&gt;&amp;nbsp;&lt;/p&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+		&lt;p&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/academy-course-details.html?cfpath=/content/dam/master/content-fragments/us/en/courses-events/on-demand/2021/enhancing-digital-workflows-with-integrated-technology&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Enhancing Digital Workflows with Integrated Technology&lt;/a&gt;&amp;nbsp;&lt;/p&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+		&lt;p&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/academy-course-details.html?cfpath=/content/dam/master/content-fragments/us/en/courses-events/on-demand/2020/the-benefits-of-digital-dentistry-pre-and-post&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;The Benefits of Digital Dentistry, Pre and Post COVID&lt;/a&gt;&amp;nbsp;&lt;/p&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+		&lt;p&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/academy-course-details.html?cfpath=/content/dam/master/content-fragments/us/en/courses-events/on-demand/2021/everything-starts-with-a-scan&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Everything Starts with a Scan&lt;/a&gt;&amp;nbsp;&lt;/p&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+		&lt;p&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/academy-course-details.html?cfpath=/content/dam/master/content-fragments/us/en/courses-events/on-demand/2021/digital-impressions-for-healthy-smiles-on-demand&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Digital Impressions for Healthy Smiles On-Demand&lt;/a&gt;&amp;nbsp;&lt;/p&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+		&lt;p&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/academy-course-details.html?cfpath=/content/dam/master/content-fragments/us/en/courses-events/on-demand/2020/the-advantages-of-using-digital-tools-in-a-dental&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;The Advantages of Using Digital Tools in a Dental Team (CAD/CAM focus)&lt;/a&gt;&amp;nbsp;&lt;/p&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
@@ -45,7 +77,7 @@
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;The SureSmile Specialist should refer to this list as action items and follow-up activity to be completed before moving to the next step&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;SureSmile Specialist&lt;/strong&gt; should refer to this list as action items and follow-up activity to be completed before moving to the next step&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
@@ -64,37 +96,6 @@
 		&lt;li&gt;Deep dive check-in to ensure a positive and on-target customer journey&lt;/li&gt;
 	&lt;/ul&gt;
 	&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;font-size:16px&quot;&gt;Review Practice Integration&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;font-size:14px&quot;&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;Now that the practice is confident with the SureSmile software, your next step is to support continuous adoption and acceleration with the Practice Integration Guide. Review the Integration Guide with the practice, bringing awareness to the insight-driven patient education tools SureSmile offers to help grow the practice&amp;rsquo;s clear aligner business. Highlight the how-to instructions developed to help the practice implement their patient education plan with ease and integrate SureSmile successfully with new and existing patients. Support creating more demand and reducing obstacles to acceptance .&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;font-size:14px&quot;&gt;&lt;strong&gt;Resources&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;ul&gt;
-	&lt;li&gt;Practice Integration Guide (might live in SureSmileU)&lt;/li&gt;
-	&lt;li&gt;Office manager integration guide (invoicing)&lt;/li&gt;
-	&lt;li&gt;Patient Financing options&lt;/li&gt;
-	&lt;li&gt;On-Demand Videos&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/course.html?pagePath=/content/dentsply-sirona-dt/us/en/academy/courses/course/2021/increasing-roi-success-with-suresmile-aligners&quot;&gt;Increasing ROI Success with SureSmile Aligners (Dentsply Sirona Academy)&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/course.html?pagePath=/content/dentsply-sirona-dt/us/en/academy/courses/course/2021/ds-study-club--tips-for-seamless-clear-aligner-integration-with-&amp;amp;utm_content=Main_CTA&amp;amp;utm_source=eloqua&amp;amp;utm_medium=email&amp;amp;utm_campaign=2022_USA_EN_ENT_NSL_EDU_4_11&amp;amp;utm_email=2022_4_11_EDU_USA_Weekly&amp;amp;utm_contact=CDSEM000000863211&quot;&gt;Tips for Seamless Clear Aligner Integration with Your Digital Scanner (Dentsply Sirona Academy)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;</value>

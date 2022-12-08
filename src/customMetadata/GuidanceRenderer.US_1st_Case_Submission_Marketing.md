@@ -3,7 +3,7 @@
     <label>US 1st Case Submission &amp; Marketing</label>
     <protected>false</protected>
     <values>
-        <field>Country__c</field>
+        <field>CountryList__c</field>
         <value xsi:type="xsd:string">US</value>
     </values>
     <values>

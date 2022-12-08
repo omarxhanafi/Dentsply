@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
-        <fullName>Country__c</fullName>
+        <fullName>CountryList__c</fullName>
         <externalId>false</externalId>
         <fieldManageability>DeveloperControlled</fieldManageability>
-        <label>Country</label>
+        <label>Country List</label>
         <length>32768</length>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
@@ -275,39 +275,29 @@
                     <label>18. Review Practice Integration</label>
                 </value>
                 <value>
-                    <fullName>19. Discuss Patient Financing</fullName>
+                    <fullName>19. Review Case Expansion Opportunities</fullName>
                     <default>false</default>
-                    <label>19. Discuss Patient Financing</label>
+                    <label>19. Review Case Expansion Opportunities</label>
                 </value>
                 <value>
-                    <fullName>20. Review Case Expansion Opportunities</fullName>
+                    <fullName>20. Join or Start Study Club</fullName>
                     <default>false</default>
-                    <label>20. Review Case Expansion Opportunities</label>
+                    <label>20. Join or Start Study Club</label>
                 </value>
                 <value>
-                    <fullName>21. Provide Acceleration Best Practices</fullName>
+                    <fullName>21. Connect with SureSmile Mentor</fullName>
                     <default>false</default>
-                    <label>21. Provide Acceleration Best Practices</label>
+                    <label>21. Connect with SureSmile Mentor</label>
                 </value>
                 <value>
-                    <fullName>22. Join or Start Study Club</fullName>
+                    <fullName>22. Join SureSmile Connections Program</fullName>
                     <default>false</default>
-                    <label>22. Join or Start Study Club</label>
+                    <label>22. Join SureSmile Connections Program</label>
                 </value>
                 <value>
-                    <fullName>23. Connect with SureSmile Mentor</fullName>
+                    <fullName>23. Start Continuous Education</fullName>
                     <default>false</default>
-                    <label>23. Connect with SureSmile Mentor</label>
-                </value>
-                <value>
-                    <fullName>24. Join SureSmile Connections Program</fullName>
-                    <default>false</default>
-                    <label>24. Join SureSmile Connections Program</label>
-                </value>
-                <value>
-                    <fullName>25. Start Continuous Education</fullName>
-                    <default>false</default>
-                    <label>25. Start Continuous Education</label>
+                    <label>23. Start Continuous Education</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

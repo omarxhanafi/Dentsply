@@ -3,7 +3,7 @@
     <label>Global 5. Connect with SS Ambassador</label>
     <protected>false</protected>
     <values>
-        <field>Country__c</field>
+        <field>CountryList__c</field>
         <value xsi:type="xsd:string">AD;AE;AF;AG;AI;AL;AM;AN;AO;AQ;AR;AS;AT;AU;AW;AX;AZ;BA;BB;BD;BE;BF;BG;BH;BI;BJ;BL;BM;BN;BO;BQ;BR;BS;BT;BV;BW;BY;BZ;CC;CD;CF;CG;CH;CI;CK;CL;CM;CN;CO;CR;CS;CU;CV;CW;CX;CY;CZ;DE;DJ;DK;DM;DO;DZ;EC;EE;EG;EH;ER;ES;ET;FI;FJ;FK;FM;FO;FR;GA;GB;GD;GE;GF;GG;GH;GI;GL;GM;GN;GP;GQ;GR;GS;GT;GU;GW;GY;HK;HM;HN;HR;HT;HU;ID;IE;IL;IM;IN;IO;IOZ;IQ;IR;IS;IT;JE;JM;JO;JP;KE;KG;KH;KI;KM;KN;KP;KR;KW;KY;KZ;LA;LB;LC;LI;LK;LR;LS;LT;LU;LV;LY;MA;MC;MD;ME;MF;MG;MH;MK;ML;MM;MN;MO;MP;MQ;MR;MS;MT;MU;MV;MW;MX;MY;MZ;NA;NC;NE;NF;NG;NI;NL;NO;NP;NR;NU;NZ;OM;PA;PE;PF;PG;PH;PK;PL;PM;PN;PR;PS;PT;PW;PY;QA;RE;RO;RS;RU;RW;SA;SB;SC;SD;SE;SG;SH;SI;SJ;SK;SL;SM;SN;SO;SR;SS;ST;SV;SX;SY;SZ;TC;TD;TF;TG;TH;TJ;TK;TL;TM;TN;TO;TR;TT;TV;TW;TZ;UA;UG;UM;UY;UZ;VA;VC;VE;WF;VG;VI;VN;WS;VU;XK;YE;YT;ZA;ZM;ZW</value>
     </values>
     <values>
@@ -36,16 +36,16 @@
 
 &lt;ul&gt;
 	&lt;li&gt;
-	&lt;p&gt;How to Start&amp;nbsp;SureSmile&amp;nbsp;Connections Program​&lt;/p&gt;
+	&lt;p&gt;&lt;a href=&quot;https://dentsplysirona.my.salesforce.com/sfc/p/200000001dDc/a/6M000000CKkS/K7JFea6q9O50I9.GrqISP_.kHS2myfQEmi3HCS8YhR8&quot;&gt;How to Start&amp;nbsp;SureSmile&amp;nbsp;Connections Program​&lt;/a&gt;&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;SureSmile Connections Agreement​&lt;/p&gt;
+	&lt;p&gt;&lt;a href=&quot;https://dentsplysirona.my.salesforce.com/sfc/p/200000001dDc/a/6M000000CKkI/8Nc0fmQDutI8FhOpdEnUh.gXu7xnaFgjG9LYHHfudRY&quot;&gt;SureSmile Connections Agreement​&lt;/a&gt;&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
 	&lt;p&gt;List of SureSmile Advocates​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;SureSmile Advocate Plaque​&lt;/p&gt;
+	&lt;p&gt;&lt;a href=&quot;https://dentsplysirona.my.salesforce.com/sfc/p/200000001dDc/a/6M000000CKkX/Sf3nlDhnOIFH_vsCLVHIu_5pSUs3Kaf1cUOS6756XvM&quot;&gt;SureSmile Advocate Plaque​&lt;/a&gt;&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
 	&lt;p&gt;&lt;a href=&quot;https://www.surveymonkey.com/r/N2X5STT&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;SureSmile Connections Advocate Call Survey&lt;/a&gt;​&lt;/p&gt;

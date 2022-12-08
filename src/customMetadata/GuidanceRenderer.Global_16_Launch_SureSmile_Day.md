@@ -3,7 +3,7 @@
     <label>Global 16. Launch SureSmile Day</label>
     <protected>false</protected>
     <values>
-        <field>Country__c</field>
+        <field>CountryList__c</field>
         <value xsi:type="xsd:string">AD;AE;AF;AG;AI;AL;AM;AN;AO;AQ;AR;AS;AT;AU;AW;AX;AZ;BA;BB;BD;BE;BF;BG;BH;BI;BJ;BL;BM;BN;BO;BQ;BR;BS;BT;BV;BW;BY;BZ;CC;CD;CF;CG;CH;CI;CK;CL;CM;CN;CO;CR;CS;CU;CV;CW;CX;CY;CZ;DE;DJ;DK;DM;DO;DZ;EC;EE;EG;EH;ER;ES;ET;FI;FJ;FK;FM;FO;FR;GA;GB;GD;GE;GF;GG;GH;GI;GL;GM;GN;GP;GQ;GR;GS;GT;GU;GW;GY;HK;HM;HN;HR;HT;HU;ID;IE;IL;IM;IN;IO;IOZ;IQ;IR;IS;IT;JE;JM;JO;JP;KE;KG;KH;KI;KM;KN;KP;KR;KW;KY;KZ;LA;LB;LC;LI;LK;LR;LS;LT;LU;LV;LY;MA;MC;MD;ME;MF;MG;MH;MK;ML;MM;MN;MO;MP;MQ;MR;MS;MT;MU;MV;MW;MX;MY;MZ;NA;NC;NE;NF;NG;NI;NL;NO;NP;NR;NU;NZ;OM;PA;PE;PF;PG;PH;PK;PL;PM;PN;PR;PS;PT;PW;PY;QA;RE;RO;RS;RU;RW;SA;SB;SC;SD;SE;SG;SH;SI;SJ;SK;SL;SM;SN;SO;SR;SS;ST;SV;SX;SY;SZ;TC;TD;TF;TG;TH;TJ;TK;TL;TM;TN;TO;TR;TT;TV;TW;TZ;UA;UG;UM;UY;UZ;VA;VC;VE;WF;VG;VI;VN;WS;VU;XK;YE;YT;ZA;ZM;ZW</value>
     </values>
     <values>
@@ -18,7 +18,9 @@
 
 &lt;p&gt;Celebrate Integration with LIVE Open House event​.&lt;/p&gt;
 
-&lt;p&gt;SureSmile&amp;nbsp;Specialist&amp;nbsp;supports practice to launch&amp;nbsp;SureSmile&amp;nbsp;Day. This is a patient event designed to launch&amp;nbsp;SureSmile&amp;nbsp;into the practice. Typically, it is an Open House event scheduled for 3-4 hours. The practice could setup&amp;nbsp;raffles, food and drinks, and promotions for case acceptance on day of event.&amp;nbsp;SureSmile&amp;nbsp;day should be focused on&amp;nbsp;introducing&amp;nbsp;SureSmile&amp;nbsp;aligners to existing patients, scanning patients, and getting case acceptances.&amp;nbsp;​&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SureSmile&amp;nbsp;Specialist&lt;/strong&gt;&amp;nbsp;supports practice to launch&amp;nbsp;SureSmile&amp;nbsp;Day. This is a patient event designed to launch&amp;nbsp;SureSmile&amp;nbsp;into the practice. Typically, it is an Open House event scheduled for &lt;strong&gt;3-4 hours&lt;/strong&gt;. The practice could setup&amp;nbsp;raffles, food and drinks, and promotions for case acceptance on day of event.&amp;nbsp;SureSmile&amp;nbsp;day should be focused on&amp;nbsp;introducing&amp;nbsp;SureSmile&amp;nbsp;aligners to existing patients, scanning patients, and getting case acceptances.&amp;nbsp;​&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
@@ -32,11 +34,10 @@
 	&lt;li&gt;SureSmile&amp;nbsp;Day in-clinic marketing materials​&lt;/li&gt;
 	&lt;li&gt;SureSmile&amp;nbsp;Day social media ads​&lt;/li&gt;
 	&lt;li&gt;SureSmile Day email template​&lt;/li&gt;
-	&lt;li&gt;SureSmile Day Best Practices​&lt;/li&gt;
-	&lt;li&gt;SureSmile Day promotional postcard​&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://dentsplysirona.my.salesforce.com/sfc/p/200000001dDc/a/6M000000CKhz/1wPVccqJaFTH18VCzIr7ljixhQ7hk52lIuThCMXzqWY&quot;&gt;SureSmile Day Best Practices​&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://dentsplysirona.my.salesforce.com/sfc/p/200000001dDc/a/6M000000CKi9/YKJl4PTmZ4jq2ZhF8iPSPBbxU5K4f9.utMGnmVBOtxU&quot;&gt;SureSmile Day promotional postcard​&lt;/a&gt;&lt;/li&gt;
 	&lt;li&gt;SureSmile Day website introduction content (US)​&lt;/li&gt;
 	&lt;li&gt;SureSmile Day overview (refer: US)​&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/blog-article.html/content/newsroom/en/local-news/us/2021/suresmile--spotlight--park-avenue-dental-patient-event.html?utm_content=Main_CTA&amp;amp;utm_source=eloqua&amp;amp;utm_medium=email&amp;amp;utm_campaign=2021_USA_EN_ENT_NSL_SPE_12_6_SPE&amp;amp;utm_email=2021_12_6_ORT_USA&amp;amp;utm_contact=CDSEM000000863211&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Blog Article - Park Avenue Dental Patient Event&lt;/a&gt;​&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
@@ -72,15 +73,18 @@
 	&lt;/li&gt;
 	&lt;li&gt;
 	&lt;p&gt;Request additional scanner for scanning efficiency.&amp;nbsp;​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Request collaboration from CAD/CAM partners​&lt;/p&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;
+		&lt;p&gt;Request collaboration from CAD/CAM partners​&lt;/p&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
 	&lt;p&gt;Schedule SureSmile Business Review​&lt;/p&gt;
 	&lt;/li&gt;
 	&lt;li&gt;
-	&lt;p&gt;Ask practice to complete the SureSmile 90 Experience&amp;nbsp;survey. Ensure they are aware that their onboarding was&amp;nbsp;titled SureSmile 90&amp;nbsp;&lt;a href=&quot;https://www.research.net/r/C5KTNCW&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;https://www.research.net/r/C5KTNCW&lt;/a&gt;&lt;/p&gt;
+	&lt;p&gt;Ask practice to complete the SureSmile 90 Experience&amp;nbsp;survey. Ensure they are aware that their onboarding was&amp;nbsp;titled&amp;nbsp;&lt;a href=&quot;https://www.research.net/r/C5KTNCW&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;SureSmile 90 Survey&lt;/a&gt;&lt;/p&gt;
 	&lt;/li&gt;
 &lt;/ul&gt;
 
