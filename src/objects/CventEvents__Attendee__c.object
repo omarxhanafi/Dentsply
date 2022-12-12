@@ -155,7 +155,7 @@
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
-    <description>Represents the Event defined in Cvent.</description>
+    <description>Represents the attendee of an event.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>true</enableFeeds>
@@ -259,6 +259,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>CventEvents__AttendingFormat__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Attendee Format</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>CventEvents__BalanceDue__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -344,6 +356,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>CventEvents__EventCheckInDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Event Check-In Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>CventEvents__EventStartDate__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -400,12 +422,46 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>CventEvents__GroupConfirmationNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Group Confirmation Number</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__InternalNote__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Internal Note</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>CventEvents__IsFreeloader__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
         <description>Represents whether the Attendee is guest or not.</description>
         <externalId>false</externalId>
         <label>Guest</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsGroupLeader__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Group Leader</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -483,6 +539,18 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>CventEvents__ReferenceId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Reference Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>CventEvents__RegistrationDate__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -505,11 +573,35 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>CventEvents__RegistrationPathName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Registration Path</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>CventEvents__RegistrationType__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Registration Type</label>
         <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__RespondedThrough__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Responded Through</label>
+        <length>200</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
@@ -602,7 +694,23 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>CventEvents__UnsubscribedFromEvent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Unsubscribed From Event</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
     <label>Attendee</label>
+    <listViews>
+        <fullName>CVENT_Attendees_with_Profisee_ID</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>CVENT Attendees with Profisee ID</label>
+    </listViews>
     <listViews>
         <fullName>CventEvents__All</fullName>
         <columns>NAME</columns>
@@ -631,11 +739,11 @@
         <customTabListAdditionalFields>CventEvents__Attended__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
         <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
-        <excludedStandardButtons>New</excludedStandardButtons>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>New</excludedStandardButtons>
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
         <lookupDialogsAdditionalFields>CventEvents__AttendeeName__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CventEvents__Email__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CventEvents__EventTitle__c</lookupDialogsAdditionalFields>

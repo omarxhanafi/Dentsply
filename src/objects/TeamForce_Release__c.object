@@ -195,6 +195,21 @@
         <type>Date</type>
     </fields>
     <label>TeamForce Release</label>
+    <listViews>
+        <fullName>Open_or_Future</fullName>
+        <columns>NAME</columns>
+        <columns>DevelopmentFreezeDate__c</columns>
+        <columns>StagingStartDate__c</columns>
+        <columns>CommunicationDate__c</columns>
+        <columns>ReleaseDate__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ReleaseDate__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Open or Future</label>
+    </listViews>
     <nameField>
         <label>TeamForce Release Name</label>
         <type>Text</type>

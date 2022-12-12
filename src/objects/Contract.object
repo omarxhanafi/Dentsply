@@ -3200,6 +3200,41 @@
                     <default>false</default>
                     <label>3 of 4: Digital Impression + Structure Material + SureSmile</label>
                 </value>
+                <value>
+                    <fullName>OMNI</fullName>
+                    <default>false</default>
+                    <label>OMNI</label>
+                </value>
+                <value>
+                    <fullName>OMNI Plus</fullName>
+                    <default>false</default>
+                    <label>OMNI Plus</label>
+                </value>
+                <value>
+                    <fullName>PRIME</fullName>
+                    <default>false</default>
+                    <label>PRIME</label>
+                </value>
+                <value>
+                    <fullName>PRIME Plus</fullName>
+                    <default>false</default>
+                    <label>PRIME Plus</label>
+                </value>
+                <value>
+                    <fullName>PRO</fullName>
+                    <default>false</default>
+                    <label>PRO</label>
+                </value>
+                <value>
+                    <fullName>PRO Plus</fullName>
+                    <default>false</default>
+                    <label>PRO Plus</label>
+                </value>
+                <value>
+                    <fullName>LEGEND</fullName>
+                    <default>false</default>
+                    <label>LEGEND</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Abutment Quantity (Discount)</controllingFieldValue>
@@ -3409,6 +3444,34 @@
                 <controllingFieldValue>Simplant Voucher</controllingFieldValue>
                 <valueName>Voucher - Wafers</valueName>
             </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DSO</controllingFieldValue>
+                <valueName>OMNI</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DSO</controllingFieldValue>
+                <valueName>OMNI Plus</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DSO</controllingFieldValue>
+                <valueName>PRIME</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DSO</controllingFieldValue>
+                <valueName>PRIME Plus</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DSO</controllingFieldValue>
+                <valueName>PRO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DSO</controllingFieldValue>
+                <valueName>PRO Plus</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DSO</controllingFieldValue>
+                <valueName>LEGEND</valueName>
+            </valueSettings>
         </valueSet>
     </fields>
     <fields>
@@ -3585,6 +3648,11 @@ TEXT(Contract_Value_D__c) &amp;&quot; &quot;&amp; Contract_Unit__c)</formula>
                     <fullName>Tier Lab</fullName>
                     <default>false</default>
                     <label>Tier Lab</label>
+                </value>
+                <value>
+                    <fullName>DSO</fullName>
+                    <default>false</default>
+                    <label>DSO</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -5194,6 +5262,19 @@ VALUE(TEXT(Implant_commitment_perc_input__c))*0.01, 0)</formula>
         <type>Percent</type>
     </fields>
     <fields>
+        <fullName>Network__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Network</label>
+        <referenceTo>Network__c</referenceTo>
+        <relationshipLabel>Contracts</relationshipLabel>
+        <relationshipName>Contracts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>New_customer__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -5241,6 +5322,15 @@ VALUE(TEXT(Implant_commitment_perc_input__c))*0.01, 0)</formula>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owned_by_My_Direct_Reports__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Owner.ManagerId = $User.Id , True , False )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owned by My Direct Reports</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>OwnerExpirationNotice</fullName>
@@ -6572,6 +6662,33 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
         <language>de</language>
         <sharedTo>
             <group>DACH_ADMIN</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DE_Purchasing_Tiering_Contracts</fullName>
+        <columns>CONTRACT.CONTRACT_NUMBER</columns>
+        <columns>Contract_Model__c</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>SourceRecord__c</columns>
+        <columns>CONTRACT.START_DATE</columns>
+        <columns>CONTRACT.END_DATE</columns>
+        <columns>Approval_Status__c</columns>
+        <columns>CONTRACT.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTRACT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Contract.Purchasing_Contract_Turnover</value>
+        </filters>
+        <filters>
+            <field>Contract_Type__c</field>
+            <operation>equals</operation>
+            <value>Tier Dentist,Tier Lab</value>
+        </filters>
+        <label>DE: Purchasing Tiering Contracts</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>DE_Customer_Service_Tier_contracts</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -14303,6 +14420,10 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
                 <default>false</default>
             </values>
             <values>
+                <fullName>LEGEND</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Lab Sales 10%2E000 %E2%82%AC %284%25%29</fullName>
                 <default>false</default>
             </values>
@@ -14320,6 +14441,30 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
             </values>
             <values>
                 <fullName>Lab Sales 5%2E000 %E2%82%AC %283%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMNI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMNI Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRIME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRIME Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRO Plus</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14412,11 +14557,11 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
                 <default>false</default>
             </values>
             <values>
-                <fullName>Atlantis Abut%2E and Atlantis Suprastructure</fullName>
+                <fullName>Atlantis Sales</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Atlantis Sales</fullName>
+                <fullName>DSO</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17599,7 +17744,7 @@ TEXT( Status) = &quot;Draft&quot;</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>Prevent_Contract_Creation</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>only DE Implant sales reps should be able to create pricing contracts and also purchasing contracts that don&apos;t have the tier models (TFUS-000004795)</description>
         <errorConditionFormula>( LEFT( $UserRole.Name, 8) &lt;&gt; &quot;DE: IMPL&quot; &amp;&amp; 
 

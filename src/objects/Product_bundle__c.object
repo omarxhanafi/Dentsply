@@ -281,8 +281,32 @@
     <label>Product bundle</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Price_Book__c</columns>
+        <columns>Total_price__c</columns>
+        <columns>Total_Discount__c</columns>
+        <columns>FixedPrice__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Iberia_Bundles</fullName>
+        <columns>NAME</columns>
+        <columns>Price_Book__c</columns>
+        <columns>Total_price__c</columns>
+        <columns>Total_Discount__c</columns>
+        <columns>FixedPrice__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Price_Book__c</field>
+            <operation>contains</operation>
+            <value>Iberia</value>
+        </filters>
+        <label>Iberia Bundles</label>
     </listViews>
     <nameField>
         <label>Product bundle Name</label>

@@ -179,6 +179,11 @@
                     <default>false</default>
                     <label>A certain number of days after the object is created</label>
                 </value>
+                <value>
+                    <fullName>Cvent activity timestamp</fullName>
+                    <default>false</default>
+                    <label>Cvent activity timestamp</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

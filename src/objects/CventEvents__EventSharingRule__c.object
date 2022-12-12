@@ -277,11 +277,11 @@
     </nameField>
     <pluralLabel>Event Sharing Rules</pluralLabel>
     <searchLayouts>
-        <excludedStandardButtons>New</excludedStandardButtons>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>New</excludedStandardButtons>
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
         <searchResultsAdditionalFields>CventEvents__Title__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CventEvents__Description__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CventEvents__IsActive__c</searchResultsAdditionalFields>

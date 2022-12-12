@@ -806,6 +806,11 @@
                     <default>false</default>
                     <label>Other</label>
                 </value>
+                <value>
+                    <fullName>DSO Network</fullName>
+                    <default>false</default>
+                    <label>DSO Network</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -913,6 +918,11 @@
                     <fullName>International</fullName>
                     <default>false</default>
                     <label>International</label>
+                </value>
+                <value>
+                    <fullName>DSO Network</fullName>
+                    <default>false</default>
+                    <label>DSO Network</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1940,6 +1950,10 @@ IF( Xof_Account_Network_Members__c &gt; 10 &amp;&amp; Xof_Account_Network_Member
                 <default>false</default>
             </values>
             <values>
+                <fullName>DSO Network</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Endodontic Referral Network</fullName>
                 <default>false</default>
             </values>
@@ -1954,6 +1968,10 @@ IF( Xof_Account_Network_Members__c &gt; 10 &amp;&amp; Xof_Account_Network_Member
         </picklistValues>
         <picklistValues>
             <picklist>Network_Type__c</picklist>
+            <values>
+                <fullName>DSO Network</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>Lab Customers Network</fullName>
                 <default>false</default>

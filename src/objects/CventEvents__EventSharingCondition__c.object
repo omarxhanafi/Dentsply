@@ -203,14 +203,14 @@
                     <label>not equals</label>
                 </value>
                 <value>
-                    <fullName>contains</fullName>
+                    <fullName>greater than</fullName>
                     <default>false</default>
-                    <label>contains</label>
+                    <label>greater than</label>
                 </value>
                 <value>
-                    <fullName>does not contain</fullName>
+                    <fullName>greater or equal than</fullName>
                     <default>false</default>
-                    <label>does not contain</label>
+                    <label>greater or equal than</label>
                 </value>
                 <value>
                     <fullName>less than</fullName>
@@ -223,14 +223,14 @@
                     <label>less or equal than</label>
                 </value>
                 <value>
-                    <fullName>greater than</fullName>
+                    <fullName>contains</fullName>
                     <default>false</default>
-                    <label>greater than</label>
+                    <label>contains</label>
                 </value>
                 <value>
-                    <fullName>greater or equal than</fullName>
+                    <fullName>does not contain</fullName>
                     <default>false</default>
-                    <label>greater or equal than</label>
+                    <label>does not contain</label>
                 </value>
                 <value>
                     <fullName>in</fullName>
@@ -241,6 +241,16 @@
                     <fullName>not in</fullName>
                     <default>false</default>
                     <label>not in</label>
+                </value>
+                <value>
+                    <fullName>includes any</fullName>
+                    <default>false</default>
+                    <label>includes any</label>
+                </value>
+                <value>
+                    <fullName>includes all</fullName>
+                    <default>false</default>
+                    <label>includes all</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -287,11 +297,11 @@
     </nameField>
     <pluralLabel>Event Sharing Conditions</pluralLabel>
     <searchLayouts>
-        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
         <searchResultsAdditionalFields>CventEvents__EventSharingRule__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CventEvents__Field__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CventEvents__Operator__c</searchResultsAdditionalFields>

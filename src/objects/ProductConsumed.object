@@ -131,13 +131,11 @@
         <fullName>ProductConsumedCompactLayout</fullName>
         <fields>ProductConsumedNumber</fields>
         <fields>ArticleSKU__c</fields>
-        <fields>Product2Id</fields>
+        <fields>ProductName__c</fields>
         <fields>ProductItemId</fields>
         <fields>QuantityConsumed</fields>
         <fields>LocationERPWarehouseID__c</fields>
         <fields>WorkOrderId</fields>
-        <fields>ListPrice</fields>
-        <fields>Discount</fields>
         <label>Product Consumed Compact Layout</label>
     </compactLayouts>
     <enableFeeds>false</enableFeeds>
@@ -221,12 +219,33 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>ProductName__c</fullName>
+        <description>Custom field to bring the product name from the Product Item. This should be placed in the layout and not the standard one, which allows the users to add products from the price book instead of the Product Item</description>
+        <externalId>false</externalId>
+        <formula>ProductItem.Product2.Name</formula>
+        <label>Product Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>QuantityConsumed</fullName>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>QuantityUnitOfMeasure</fullName>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SerialNumber__c</fullName>
+        <externalId>false</externalId>
+        <formula>ProductItem.SerialNumber__c</formula>
+        <label>Serial Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Subtotal</fullName>
@@ -268,7 +287,7 @@
         <lookupPhoneDialogsAdditionalFields>ProductItem</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>PricebookEntry</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>ArticleSKU__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Product2</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ProductName__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ProductItem</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>QuantityConsumed</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LocationERPWarehouseID__c</searchResultsAdditionalFields>

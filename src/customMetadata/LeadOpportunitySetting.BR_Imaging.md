@@ -27,6 +27,10 @@
         <value xsi:nil="true"/>
     </values>
     <values>
+        <field>DefaultProcedureTrackerOwnerId__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>IsTest__c</field>
         <value xsi:type="xsd:boolean">false</value>
     </values>

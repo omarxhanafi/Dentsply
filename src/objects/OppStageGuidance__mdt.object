@@ -136,6 +136,11 @@
                     <default>false</default>
                     <label>Digital Group</label>
                 </value>
+                <value>
+                    <fullName>Digital Services</fullName>
+                    <default>false</default>
+                    <label>Digital Services</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -1659,7 +1664,7 @@
         <language>en_US</language>
     </listViews>
     <listViews>
-        <fullName>DE</fullName>
+        <fullName>DACH_dealer_comm</fullName>
         <columns>MasterLabel</columns>
         <columns>Country__c</columns>
         <columns>Object__c</columns>
@@ -1677,7 +1682,39 @@
             <operation>equals</operation>
             <value>DE</value>
         </filters>
-        <label>DE</label>
+        <filters>
+            <field>RecordTypeDeveloperName__c</field>
+            <operation>equals</operation>
+            <value>Dealer_Community</value>
+        </filters>
+        <label>DACH (dealer comm.)</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>DACH_w_o_comm</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Country__c</columns>
+        <columns>Object__c</columns>
+        <columns>Category__c</columns>
+        <columns>OppStage__c</columns>
+        <columns>StageGuidance__c</columns>
+        <columns>StageGuidanceDescr__c</columns>
+        <columns>FieldsToDisplay__c</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>DeveloperName</columns>
+        <columns>CountrySelect__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Country__c</field>
+            <operation>equals</operation>
+            <value>DE</value>
+        </filters>
+        <filters>
+            <field>RecordTypeDeveloperName__c</field>
+            <operation>notEqual</operation>
+            <value>Dealer_Community</value>
+        </filters>
+        <label>DACH (w/o comm.)</label>
         <language>en_US</language>
     </listViews>
     <listViews>
@@ -1701,6 +1738,73 @@
             <value>FR</value>
         </filters>
         <label>FR</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>IT</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Country__c</columns>
+        <columns>Object__c</columns>
+        <columns>Category__c</columns>
+        <columns>OppStage__c</columns>
+        <columns>StageGuidance__c</columns>
+        <columns>StageGuidanceDescr__c</columns>
+        <columns>FieldsToDisplay__c</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>DeveloperName</columns>
+        <columns>CountrySelect__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Country__c</field>
+            <operation>equals</operation>
+            <value>IT</value>
+        </filters>
+        <label>IT</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Iberia</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Country__c</columns>
+        <columns>Object__c</columns>
+        <columns>Category__c</columns>
+        <columns>OppStage__c</columns>
+        <columns>StageGuidance__c</columns>
+        <columns>StageGuidanceDescr__c</columns>
+        <columns>FieldsToDisplay__c</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>DeveloperName</columns>
+        <columns>CountrySelect__c</columns>
+        <columns>RecordTypeDeveloperName__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Country__c</field>
+            <operation>equals</operation>
+            <value>AD,ES,PT</value>
+        </filters>
+        <label>Iberia</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Sales_Lead_Stage_Guidance</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Country__c</columns>
+        <columns>Object__c</columns>
+        <columns>Category__c</columns>
+        <columns>OppStage__c</columns>
+        <columns>StageGuidance__c</columns>
+        <columns>StageGuidanceDescr__c</columns>
+        <columns>FieldsToDisplay__c</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>DeveloperName</columns>
+        <columns>CountrySelect__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Object__c</field>
+            <operation>contains</operation>
+            <value>Sales</value>
+        </filters>
+        <label>Sales Lead Stage Guidance</label>
         <language>en_US</language>
     </listViews>
     <listViews>

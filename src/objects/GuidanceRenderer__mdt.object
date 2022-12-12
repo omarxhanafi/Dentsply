@@ -215,9 +215,9 @@
                     <label>6. Help Clinic Find 3 Patients</label>
                 </value>
                 <value>
-                    <fullName>7. Start New Practice Orientation</fullName>
+                    <fullName>7. Start New Practice Onboarding</fullName>
                     <default>false</default>
-                    <label>7. Start New Practice Orientation</label>
+                    <label>7. Start New Practice Onboarding</label>
                 </value>
                 <value>
                     <fullName>8. Train &amp; Submit First Case</fullName>
@@ -299,6 +299,70 @@
                     <default>false</default>
                     <label>23. Start Continuous Education</label>
                 </value>
+                <value>
+                    <fullName>11. Train &amp; Complete Second Case Review
+                        12. Submit Third Case</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>11. Train &amp; Complete Second Case Review
+                        12. Submit Third Case</label>
+                </value>
+                <value>
+                    <fullName>19. Discuss Patient Financing</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>19. Discuss Patient Financing</label>
+                </value>
+                <value>
+                    <fullName>19. Review Case Expansion Opportunities</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>19. Review Case Expansion Opportunities</label>
+                </value>
+                <value>
+                    <fullName>20. Review Case Expansion Opportunities</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>20. Review Case Expansion Opportunities</label>
+                </value>
+                <value>
+                    <fullName>21. Provide Acceleration Best Practices</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>21. Provide Acceleration Best Practices</label>
+                </value>
+                <value>
+                    <fullName>22. Join or Start Study Club</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>22. Join or Start Study Club</label>
+                </value>
+                <value>
+                    <fullName>23. Connect with SureSmile Mentor</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>23. Connect with SureSmile Mentor</label>
+                </value>
+                <value>
+                    <fullName>24. Join SureSmile Connections Program</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>24. Join SureSmile Connections Program</label>
+                </value>
+                <value>
+                    <fullName>25. Start Continuous Education</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>25. Start Continuous Education</label>
+                </value>
+                <value>
+                    <fullName>9. Train &amp; Complete First Case Review
+                        10. Submit Second Case</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>9. Train &amp; Complete First Case Review
+                        10. Submit Second Case</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -329,6 +393,36 @@
         <columns>NamespacePrefix</columns>
         <filterScope>Everything</filterScope>
         <label>All Guidance</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Global_Guidance</fullName>
+        <columns>MasterLabel</columns>
+        <columns>NextActivity__c</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RecordTypeDeveloperName__c</field>
+            <operation>equals</operation>
+            <value>Clear_Aligners_Global</value>
+        </filters>
+        <label>Global Guidance</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>USCA_Guidance</fullName>
+        <columns>MasterLabel</columns>
+        <columns>NextActivity__c</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RecordTypeDeveloperName__c</field>
+            <operation>equals</operation>
+            <value>Clear_Aligners</value>
+        </filters>
+        <label>US/CA Guidance</label>
         <language>en_US</language>
     </listViews>
     <pluralLabel>GuidancesProcedureTracker</pluralLabel>

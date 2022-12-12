@@ -126,7 +126,15 @@
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>ServiceCrewCompactLayout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>ServiceCrewCompactLayout</fullName>
+        <fields>Name</fields>
+        <fields>CrewSize</fields>
+        <fields>FSL__GanttColor__c</fields>
+        <fields>OwnerId</fields>
+        <label>Service Crew Compact Layout</label>
+    </compactLayouts>
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fields>

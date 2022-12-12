@@ -5298,6 +5298,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
+                <controllingFieldValue>Equipment</controllingFieldValue>
                 <valueName>Axano</valueName>
             </valueSettings>
             <valueSettings>
@@ -5413,7 +5414,6 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             <valueSettings>
                 <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
                 <controllingFieldValue>Treatment Centers</controllingFieldValue>
-                <controllingFieldValue>Equipment</controllingFieldValue>
                 <valueName>TENEO</valueName>
             </valueSettings>
             <valueSettings>
@@ -6042,6 +6042,17 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Implants</controllingFieldValue>
+                <controllingFieldValue>Digital Solutions</controllingFieldValue>
+                <controllingFieldValue>ATLANTIS</controllingFieldValue>
+                <valueName>Atlantis Abutments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Implants</controllingFieldValue>
+                <controllingFieldValue>ATLANTIS</controllingFieldValue>
+                <valueName>Atlantis Suprastructures</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Implants</controllingFieldValue>
                 <valueName>Azento Astra Tech</valueName>
             </valueSettings>
             <valueSettings>
@@ -6147,11 +6158,6 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Digital Solutions</controllingFieldValue>
-                <controllingFieldValue>ATLANTIS</controllingFieldValue>
-                <valueName>Atlantis Abutments</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Digital Solutions</controllingFieldValue>
                 <valueName>Immediate Smile</valueName>
             </valueSettings>
             <valueSettings>
@@ -6177,10 +6183,6 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             <valueSettings>
                 <controllingFieldValue>ATLANTIS</controllingFieldValue>
                 <valueName>ACB with ASA</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>ATLANTIS</controllingFieldValue>
-                <valueName>Atlantis Suprastructures</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>InLab</controllingFieldValue>
@@ -11868,9 +11870,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         </filters>
         <label>#All X-SBU Opportunities</label>
         <language>en_US</language>
-        <sharedTo>
-            <group>Global_X_SBU_Prospecting</group>
-        </sharedTo>
+        <sharedTo/>
     </listViews>
     <listViews>
         <fullName>HK_All_Opportunities</fullName>
@@ -11941,6 +11941,29 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>My_Open_Opportunities_Homepage</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>NA_Brand__c</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Lightning_Pipeline_Opportunity</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>notEqual</operation>
+            <value>Closed Lost,Closed Won</value>
+        </filters>
+        <label>My Open Opportunities</label>
+    </listViews>
+    <listViews>
         <fullName>My_Opportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -11979,6 +12002,131 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>My_Team_s_OPEN_OPPS_closing_This_month</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>NA_Brand__c</columns>
+        <columns>NA_Category__c</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>Dealer__c</columns>
+        <columns>Created_by_Manager__c</columns>
+        <columns>Prospect__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Owned_by_My_Direct_Reports__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_YEAR</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>notEqual</operation>
+            <value>Closed Lost,Closed Won</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>My Team&apos;s OPEN OPPS closing This month</label>
+        <sharedTo>
+            <territory>Global_Setup.US_D0101_Long_Island</territory>
+            <territory>Global_Setup.US_D0102_Hartford_CT</territory>
+            <territory>Global_Setup.US_D0103_Boston</territory>
+            <territory>Global_Setup.US_D0104_Albany</territory>
+            <territory>Global_Setup.US_D0105_Providence_RI</territory>
+            <territory>Global_Setup.US_D0106_Portland_ME</territory>
+            <territory>Global_Setup.US_D0107_White_Plains_NY</territory>
+            <territory>Global_Setup.US_D0108_Newark</territory>
+            <territory>Global_Setup.US_D0109_Metro_NY</territory>
+            <territory>Global_Setup.US_D0201_Scranton</territory>
+            <territory>Global_Setup.US_D0202_Wilmington_DE</territory>
+            <territory>Global_Setup.US_D0203_Philadelphia</territory>
+            <territory>Global_Setup.US_D0204_Buffalo_Syracuse</territory>
+            <territory>Global_Setup.US_D0205_Pittsburgh</territory>
+            <territory>Global_Setup.US_D0206_Baltimore_North</territory>
+            <territory>Global_Setup.US_D0207_Baltimore_South</territory>
+            <territory>Global_Setup.US_D0208_Washington_DC</territory>
+            <territory>Global_Setup.US_D0209_Richmond_VA</territory>
+            <territory>Global_Setup.US_D0301_Greensboro_Roanoke</territory>
+            <territory>Global_Setup.US_D0302_Knoxville_TN</territory>
+            <territory>Global_Setup.US_D0303_Columbus_OH</territory>
+            <territory>Global_Setup.US_D0304_Charlotte_NC</territory>
+            <territory>Global_Setup.US_D0305_Raleigh_NC</territory>
+            <territory>Global_Setup.US_D0306_Greenville_SC</territory>
+            <territory>Global_Setup.US_D0307_Columbia_SC</territory>
+            <territory>Global_Setup.US_D0308_Nashville</territory>
+            <territory>Global_Setup.US_D0309_Louisville</territory>
+            <territory>Global_Setup.US_D0310_Cincinnati</territory>
+            <territory>Global_Setup.US_D0401_Atlanta_North</territory>
+            <territory>Global_Setup.US_D0402_Atlanta_South</territory>
+            <territory>Global_Setup.US_D0403_Jacksonville</territory>
+            <territory>Global_Setup.US_D0404_Orlando</territory>
+            <territory>Global_Setup.US_D0405_New_Orleans</territory>
+            <territory>Global_Setup.US_D0406_Miami</territory>
+            <territory>Global_Setup.US_D0407_Ft_Lauderdale</territory>
+            <territory>Global_Setup.US_D0408_Tampa_Bay</territory>
+            <territory>Global_Setup.US_D0409_Birmingham_AL</territory>
+            <territory>Global_Setup.US_D0501_Cleveland</territory>
+            <territory>Global_Setup.US_D0502_Detroit</territory>
+            <territory>Global_Setup.US_D0503_Indianapolis</territory>
+            <territory>Global_Setup.US_D0504_Chicago_South</territory>
+            <territory>Global_Setup.US_D0505_Lansing_MI</territory>
+            <territory>Global_Setup.US_D0506_Grand_Rapids_MI</territory>
+            <territory>Global_Setup.US_D0507_Milwaukee_North</territory>
+            <territory>Global_Setup.US_D0508_Des_Moines</territory>
+            <territory>Global_Setup.US_D0509_Chicago_North</territory>
+            <territory>Global_Setup.US_D0510_Milwaukee_South</territory>
+            <territory>Global_Setup.US_D0601_Kansas_City</territory>
+            <territory>Global_Setup.US_D0602_Central_IL</territory>
+            <territory>Global_Setup.US_D0603_Omaha</territory>
+            <territory>Global_Setup.US_D0604_Minneapolis_East</territory>
+            <territory>Global_Setup.US_D0605_Minneapolis_West</territory>
+            <territory>Global_Setup.US_D0606_St_Louis</territory>
+            <territory>Global_Setup.US_D0607_Denver_North</territory>
+            <territory>Global_Setup.US_D0608_Denver_South</territory>
+            <territory>Global_Setup.US_D0701_Little_Rock</territory>
+            <territory>Global_Setup.US_D0702_Oklahoma_City</territory>
+            <territory>Global_Setup.US_D0703_Albuquerque</territory>
+            <territory>Global_Setup.US_D0704_Houston_South</territory>
+            <territory>Global_Setup.US_D0705_Austin_TX</territory>
+            <territory>Global_Setup.US_D0706_Dallas</territory>
+            <territory>Global_Setup.US_D0707_Ft_Worth</territory>
+            <territory>Global_Setup.US_D0708_Houston_North</territory>
+            <territory>Global_Setup.US_D0709_San_Antonio</territory>
+            <territory>Global_Setup.US_D0801_Spokane</territory>
+            <territory>Global_Setup.US_D0802_Boise</territory>
+            <territory>Global_Setup.US_D0803_Sacramento</territory>
+            <territory>Global_Setup.US_D0804_San_Francisco</territory>
+            <territory>Global_Setup.US_D0805_Napa</territory>
+            <territory>Global_Setup.US_D0806_Salem_OR</territory>
+            <territory>Global_Setup.US_D0807_Portland_OR</territory>
+            <territory>Global_Setup.US_D0808_Seattle_South</territory>
+            <territory>Global_Setup.US_D0809_Seattle_North_AK</territory>
+            <territory>Global_Setup.US_D0810_Salt_Lake_City</territory>
+            <territory>Global_Setup.US_D0901_San_Jose</territory>
+            <territory>Global_Setup.US_D0902_Hawaii</territory>
+            <territory>Global_Setup.US_D0903_Las_Vegas</territory>
+            <territory>Global_Setup.US_D0904_Phoenix_North</territory>
+            <territory>Global_Setup.US_D0905_Phoenix_South</territory>
+            <territory>Global_Setup.US_D0906_Los_Angeles</territory>
+            <territory>Global_Setup.US_D0907_Santa_Barbara</territory>
+            <territory>Global_Setup.US_D0908_Riverside_CA</territory>
+            <territory>Global_Setup.US_D0909_Anaheim</territory>
+            <territory>Global_Setup.US_D0910_San_Diego</territory>
+            <territory>Global_Setup.US_D0911_Fresno</territory>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>My_Team_s_Open_Opps_RM</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -11993,6 +12141,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <columns>Dealer__c</columns>
         <columns>Created_by_Manager__c</columns>
         <columns>Prospect__c</columns>
+        <columns>OverallNotes__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Owned_by_My_Direct_Reports__c</field>
@@ -12026,6 +12175,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <columns>CORE.USERS.FULL_NAME</columns>
         <columns>CREATEDBY_USER.ALIAS</columns>
         <columns>Created_by_Manager__c</columns>
+        <columns>OverallNotes__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>NA_Brand__c</field>
@@ -12046,8 +12196,8 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <columns>OPPORTUNITY.STAGE_NAME</columns>
         <columns>OPPORTUNITY.CLOSE_DATE</columns>
         <columns>ACCOUNT.NAME</columns>
-        <columns>Account_Strategy__c</columns>
         <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OverallNotes__c</columns>
         <columns>CORE.USERS.FULL_NAME</columns>
         <filterScope>Mine</filterScope>
         <filters>
@@ -12061,7 +12211,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             <value>0</value>
         </filters>
         <label>NA: My Opportunities To Be Updated</label>
-        <language>en_US</language>
         <sharedTo>
             <group>NA_DI_US_and_Canada_Sales</group>
         </sharedTo>
@@ -12091,7 +12240,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             <value>Closed Lost,Closed Won</value>
         </filters>
         <label>My Open Opportunities (Owned by Me)</label>
-        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>RM_Opptys_Created_by_My_Direct_Reports</fullName>
@@ -12102,6 +12250,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <columns>OPPORTUNITY.STAGE_NAME</columns>
         <columns>OPPORTUNITY.CLOSE_DATE</columns>
         <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OverallNotes__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Created_by_My_Direct_Reports__c</field>
@@ -12198,6 +12347,58 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>Test_for_Opp_Team_view</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>NA_Brand__c</columns>
+        <columns>NA_Category__c</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>Dealer__c</columns>
+        <columns>Created_by_Manager__c</columns>
+        <columns>Prospect__c</columns>
+        <filterScope>SalesTeam</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_YEAR</value>
+        </filters>
+        <label>Test for Opp Team view</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>UK_My_Open_Opportunities</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>NA_Brand__c</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>Dealer__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Lightning_Pipeline_Opportunity</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>notEqual</operation>
+            <value>Closed Lost,Closed Won</value>
+        </filters>
+        <label>UK My  Open Opportunities</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>UK_IE_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>UK_My_X_SBU_Leads_Created_for_Equipment</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -12237,11 +12438,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <columns>OPPORTUNITY.CLOSE_DATE</columns>
         <columns>OPPORTUNITY.STAGE_NAME</columns>
         <columns>CORE.USERS.FULL_NAME</columns>
-        <columns>CFEs_Last_6_Months_D__c</columns>
         <columns>NA_Category__c</columns>
         <columns>NA_Brand__c</columns>
+        <columns>OverallNotes__c</columns>
         <columns>Dealer__c</columns>
-        <columns>OPPORTUNITY.AGE_IN_DAYS</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>OPPORTUNITY.CLOSED</field>
@@ -12251,6 +12451,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <label>NA: All Open Opportunities</label>
         <sharedTo>
             <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>VN_All_Opportunities</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>Vietnam</value>
+        </filters>
+        <label>VN: All Opportunities</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>VN_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -12264,6 +12483,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <columns>OPPORTUNITY.CLOSED</columns>
         <columns>OPPORTUNITY.WON</columns>
         <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
         <filterScope>Everything</filterScope>
         <label>#All Opportunities</label>
     </listViews>
@@ -73427,7 +73647,10 @@ TEXT( Account.Country__c ) = &quot;VA&quot;))</errorConditionFormula>
   RecordTypeId  = &quot;01220000000PiO4&quot; ||
   RecordTypeId  = &quot;0120J000000cmdX&quot; ) &amp;&amp; 
 ( TEXT(Account.Country__c) = &quot;FR&quot; ||
-  TEXT(Account.Country__c) = &quot;MC&quot; )</errorConditionFormula>
+  TEXT(Account.Country__c) = &quot;MC&quot; ||
+  TEXT(Account.Country__c) = &quot;AD&quot; ||
+  TEXT(Account.Country__c) = &quot;ES&quot; ||
+  TEXT(Account.Country__c) = &quot;PT&quot;)</errorConditionFormula>
         <errorMessage>You can&apos;t edit opportunities that have been created with record types that are valid only for Salesforce-Classic countries</errorMessage>
     </validationRules>
     <validationRules>

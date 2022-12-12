@@ -309,7 +309,67 @@ TODAY() , &quot;Valid Offer Code&quot;, &quot;Expired&quot;))</formula>
         <valueSet>
             <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Australia</fullName>
+                    <default>false</default>
+                    <label>Australia</label>
+                </value>
+                <value>
+                    <fullName>Austria - Lab</fullName>
+                    <default>false</default>
+                    <label>Austria - Lab</label>
+                </value>
+                <value>
+                    <fullName>​​​​​​Austria - PRE</fullName>
+                    <default>false</default>
+                    <label>​​​​​​Austria - PRE</label>
+                </value>
+                <value>
+                    <fullName>CAN - DNA Inside Sales</fullName>
+                    <default>false</default>
+                    <label>CAN - DNA Inside Sales</label>
+                </value>
+                <value>
+                    <fullName>Germany - Lab</fullName>
+                    <default>false</default>
+                    <label>Germany - Lab</label>
+                </value>
+                <value>
+                    <fullName>Germany - PRE</fullName>
+                    <default>false</default>
+                    <label>Germany - PRE</label>
+                </value>
+                <value>
+                    <fullName>Hong Kong</fullName>
+                    <default>false</default>
+                    <label>Hong Kong</label>
+                </value>
+                <value>
+                    <fullName>Iberia - Ambassador</fullName>
+                    <default>false</default>
+                    <label>Iberia - Ambassador</label>
+                </value>
+                <value>
+                    <fullName>Iberia - Telesales</fullName>
+                    <default>false</default>
+                    <label>Iberia - Telesales</label>
+                </value>
+                <value>
+                    <fullName>Indonesia</fullName>
+                    <default>false</default>
+                    <label>Indonesia</label>
+                </value>
+                <value>
+                    <fullName>Italy - indirect</fullName>
+                    <default>false</default>
+                    <label>Italy - indirect</label>
+                </value>
+                <value>
+                    <fullName>New Zealand</fullName>
+                    <default>false</default>
+                    <label>New Zealand</label>
+                </value>
                 <value>
                     <fullName>USA- DNA TeleSales Core</fullName>
                     <default>false</default>
@@ -326,9 +386,9 @@ TODAY() , &quot;Valid Offer Code&quot;, &quot;Expired&quot;))</formula>
                     <label>USA - Endo Maillefer</label>
                 </value>
                 <value>
-                    <fullName>CAN - DNA Inside Sales</fullName>
+                    <fullName>USA - Implants</fullName>
                     <default>false</default>
-                    <label>CAN - DNA Inside Sales</label>
+                    <label>USA - Implants</label>
                 </value>
                 <value>
                     <fullName>USA - Inside Sales ENDO</fullName>
@@ -336,54 +396,9 @@ TODAY() , &quot;Valid Offer Code&quot;, &quot;Expired&quot;))</formula>
                     <label>USA - Inside Sales ENDO</label>
                 </value>
                 <value>
-                    <fullName>USA - Implants</fullName>
-                    <default>false</default>
-                    <label>USA - Implants</label>
-                </value>
-                <value>
                     <fullName>USA - Sales</fullName>
                     <default>false</default>
                     <label>USA - Sales</label>
-                </value>
-                <value>
-                    <fullName>Iberia - Ambassador</fullName>
-                    <default>false</default>
-                    <label>Iberia - Ambassador</label>
-                </value>
-                <value>
-                    <fullName>Iberia - Telesales</fullName>
-                    <default>false</default>
-                    <label>Iberia - Telesales</label>
-                </value>
-                <value>
-                    <fullName>Germany - Lab</fullName>
-                    <default>false</default>
-                    <label>Germany - Lab</label>
-                </value>
-                <value>
-                    <fullName>Germany - PRE</fullName>
-                    <default>false</default>
-                    <label>Germany - PRE</label>
-                </value>
-                <value>
-                    <fullName>Austria - Lab</fullName>
-                    <default>false</default>
-                    <label>Austria - Lab</label>
-                </value>
-                <value>
-                    <fullName>​​​​​​Austria - PRE</fullName>
-                    <default>false</default>
-                    <label>​​​​​​Austria - PRE</label>
-                </value>
-                <value>
-                    <fullName>Indonesia</fullName>
-                    <default>false</default>
-                    <label>Indonesia</label>
-                </value>
-                <value>
-                    <fullName>Italy - indirect</fullName>
-                    <default>false</default>
-                    <label>Italy - indirect</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -410,9 +425,15 @@ TODAY() , &quot;Valid Offer Code&quot;, &quot;Expired&quot;))</formula>
         <columns>Start_Date__c</columns>
         <columns>Expiration_Date__c</columns>
         <columns>Type__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>Expiration_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2021</value>
+        </filters>
         <label>All Offer Codes</label>
-        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>Offer_Codes_Indonesia</fullName>

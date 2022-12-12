@@ -1654,6 +1654,16 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>FSL__InJeopardyReason__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>FSL__InJeopardy__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>IsBundle</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -1789,6 +1799,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>State</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>StatusCategory</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -1875,16 +1890,6 @@
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>State</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>FSL__InJeopardy__c</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
             <field>City</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -1894,20 +1899,10 @@
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
-        <displayedFields>
-            <field>FSL__InJeopardyReason__c</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
         <label>Crew Management</label>
     </fieldSets>
     <fieldSets>
         <fullName>FSL__CrewManagementTooltip</fullName>
-        <availableFields>
-            <field>AccountId</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
         <availableFields>
             <field>ActualDuration</field>
             <isFieldManaged>false</isFieldManaged>
@@ -2213,12 +2208,17 @@
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
-        <availableFields>
+        <description>Crew Management Tooltip</description>
+        <displayedFields>
+            <field>AccountId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
             <field>WorkTypeId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
-        </availableFields>
-        <description>Crew Management Tooltip</description>
+        </displayedFields>
         <displayedFields>
             <field>SchedStartTime</field>
             <isFieldManaged>false</isFieldManaged>
@@ -4019,16 +4019,6 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>CreatedById</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
-            <field>CreatedDate</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
             <field>Description</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -4115,16 +4105,6 @@
         </availableFields>
         <availableFields>
             <field>FSL__IsMultiDay__c</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
-            <field>LastModifiedById</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
-            <field>LastModifiedDate</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -4299,6 +4279,26 @@
             <isRequired>false</isRequired>
         </availableFields>
         <description>Preview box for a service in the service list</description>
+        <displayedFields>
+            <field>LastModifiedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
         <label>Service Appointment List Preview</label>
     </fieldSets>
     <fieldSets>
@@ -4618,11 +4618,6 @@
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
-        <availableFields>
-            <field>WorkTypeId</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
         <description>Fields shown in service resource calendar VF page</description>
         <displayedFields>
             <field>SchedStartTime</field>
@@ -4636,6 +4631,11 @@
         </displayedFields>
         <displayedFields>
             <field>AccountId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>WorkTypeId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
@@ -5054,6 +5054,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>DueDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>Duration</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -5065,6 +5070,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Duration_In_Minutes__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>EarliestStartTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -5239,11 +5249,6 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>ServiceNote</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
             <field>ServiceTerritoryId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -5288,11 +5293,6 @@
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
-        <availableFields>
-            <field>WorkTypeId</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
         <description>Gantt map</description>
         <displayedFields>
             <field>AppointmentNumber</field>
@@ -5310,12 +5310,12 @@
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>EarliestStartTime</field>
+            <field>WorkTypeId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>DueDate</field>
+            <field>ServiceNote</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
@@ -6019,7 +6019,27 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ActualEndTime</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>ActualStartTime</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__Appointment_Grade__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>ArrivalWindowEndTime</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>ArrivalWindowStartTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -6325,22 +6345,12 @@
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>ArrivalWindowStartTime</field>
+            <field>FSSK__FSK_Mobile_Start_Time__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>ArrivalWindowEndTime</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>ActualStartTime</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>ActualEndTime</field>
+            <field>FSSK__FSK_Mobile_End_Time__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
@@ -6744,6 +6754,16 @@
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>AdditionalComments__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Address</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -6764,6 +6784,18 @@
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>AssignedResources__c</fullName>
+        <description>Showing Assigned Resource/s names.</description>
+        <externalId>false</externalId>
+        <label>Assigned Resource/s</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>BundlePolicyId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -6773,13 +6805,41 @@
         <fullName>CancellationRejectionReason__c</fullName>
         <description>Indicate why service appointment got cancelled/rejected</description>
         <externalId>false</externalId>
-        <label>Cancellation/Rejection Reason</label>
+        <inlineHelpText>Should be populated by Contractors if they rejected a Service Appointment</inlineHelpText>
+        <label>Rejection Reason</label>
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CannotCompleteReason__c</fullName>
+        <description>Updated manually or through the SFS: Service Appointment Status Transition flow. Synced with Work Orders</description>
+        <externalId>false</externalId>
+        <label>Cannot Complete Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Status</controllingField>
+            <restricted>true</restricted>
+            <valueSetName>CannotCompleteReason</valueSetName>
+            <valueSettings>
+                <controllingFieldValue>Cannot Complete</controllingFieldValue>
+                <valueName>Waiting Parts</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cannot Complete</controllingFieldValue>
+                <valueName>Waiting Technical Help</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cannot Complete</controllingFieldValue>
+                <valueName>Waiting Customer</valueName>
+            </valueSettings>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Comments__c</fullName>
@@ -7352,6 +7412,7 @@
     </fields>
     <fields>
         <fullName>ServiceNote</fullName>
+        <inlineHelpText>Internal Comments</inlineHelpText>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
     </fields>
@@ -7376,6 +7437,17 @@
         <fullName>Subject</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TF_AssignedToMe__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (FSSK__FSK_Assigned_Service_Resource__r.RelatedRecordId= $User.Id ,&quot;True&quot;,IF(CONTAINS(AssignedResources__c,$User.Full_Name__c),&quot;True&quot;,&quot;False&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>TF_AssignedToMe?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>TimeType__c</fullName>
@@ -7407,7 +7479,8 @@
         <fullName>WorkDone__c</fullName>
         <description>This field will be used by field technicians to write what&apos;s the work they completed/done at the customer site</description>
         <externalId>false</externalId>
-        <label>Describe what has been done</label>
+        <inlineHelpText>Describe what has been done</inlineHelpText>
+        <label>Work Done</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -7429,6 +7502,18 @@
         <filterScope>Mine</filterScope>
         <label>My Service Appointments</label>
     </listViews>
+    <profileSearchLayouts>
+        <fields>Name</fields>
+        <fields>Account</fields>
+        <fields>ServiceTerritory</fields>
+        <fields>WorkType</fields>
+        <fields>ParentRecord</fields>
+        <fields>Status</fields>
+        <fields>ArrivalWindowStartTime</fields>
+        <fields>ArrivalWindowEndTime</fields>
+        <fields>WorkDone__c</fields>
+        <profileName>Lightning Field Service</profileName>
+    </profileSearchLayouts>
     <searchLayouts>
         <customTabListAdditionalFields>ParentRecord</customTabListAdditionalFields>
         <customTabListAdditionalFields>ParentRecordType</customTabListAdditionalFields>
@@ -7445,6 +7530,7 @@
         <lookupPhoneDialogsAdditionalFields>Status</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ArrivalWindowStartTime</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ArrivalWindowEndTime</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>FSSK__FSK_Assigned_Service_Resource__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ParentRecord</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ParentRecordType</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Status</searchResultsAdditionalFields>

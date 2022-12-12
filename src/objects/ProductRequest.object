@@ -171,7 +171,7 @@
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Number</type>
         <unique>false</unique>
     </fields>
@@ -182,7 +182,7 @@
         <label>ERP Order Number</label>
         <length>50</length>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -193,7 +193,7 @@
         <label>ERP Order Status</label>
         <length>100</length>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -203,7 +203,7 @@
         <externalId>false</externalId>
         <label>ERP Return Message</label>
         <length>1000</length>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>LongTextArea</type>
         <visibleLines>4</visibleLines>
     </fields>
@@ -221,7 +221,7 @@
         <externalId>false</externalId>
         <label>Send To ERP Date</label>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>DateTime</type>
     </fields>
     <fields>
@@ -240,7 +240,7 @@
     </fields>
     <fields>
         <fullName>Status</fullName>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -285,6 +285,8 @@ DON&apos;T ADD TO PAGE LAYOUT</description>
         <customTabListAdditionalFields>SourceLocation</customTabListAdditionalFields>
         <customTabListAdditionalFields>Case</customTabListAdditionalFields>
         <customTabListAdditionalFields>Account</customTabListAdditionalFields>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
         <lookupDialogsAdditionalFields>LastModifiedDate</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>LastModifiedBy</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>WorkOrder</lookupDialogsAdditionalFields>
@@ -308,5 +310,5 @@ DON&apos;T ADD TO PAGE LAYOUT</description>
         <searchResultsAdditionalFields>SendToERPDate__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ERPOrderStatus__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Private</sharingModel>
 </CustomObject>

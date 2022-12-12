@@ -118,7 +118,16 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>ServiceResourceCompactLayout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>ServiceResourceCompactLayout</fullName>
+        <fields>Name</fields>
+        <fields>RelatedRecordId</fields>
+        <fields>ResourceType</fields>
+        <fields>LocationId</fields>
+        <fields>IsActive</fields>
+        <label>Service Resource Compact Layout</label>
+    </compactLayouts>
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fieldSets>
@@ -804,6 +813,24 @@
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
+    <listViews>
+        <fullName>All_Active_Service_Resources</fullName>
+        <columns>Name</columns>
+        <columns>RelatedRecord</columns>
+        <columns>ResourceType</columns>
+        <columns>IsActive</columns>
+        <columns>LastModifiedBy</columns>
+        <columns>LastModifiedDate</columns>
+        <columns>FSL__GanttLabel__c</columns>
+        <columns>Location</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsActive</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active Service Resources</label>
+    </listViews>
     <listViews>
         <fullName>All_ServiceResources</fullName>
         <columns>Name</columns>

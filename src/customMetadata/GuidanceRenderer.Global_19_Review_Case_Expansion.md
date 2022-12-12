@@ -29,24 +29,25 @@
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;&lt;a href=&quot;https://premiumlearnermobileblob.blob.core.windows.net/7f1cc0ed-940e-445c-afc0-338a762dd85a/8c890666-b9e2-4c21-a9d8-d2cf2d83a4b2.pdf&quot;&gt;Case Selection Guide&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;https://app.learnermobile.com/list-content/458B7FB4-2928-467D-A146-2330733DBDDF/E707FEA4-EA74-4A6C-92DE-3EAD36E9D579&quot;&gt;Case Selection with Dr. Bankhead&lt;/a&gt; (SureSmileU)&lt;/li&gt;
-	&lt;li&gt;Case Selection for the Integration (available early Q2 DS Academy)&lt;/li&gt;
-	&lt;li&gt;Link to different malocclusions (Practice Integration Guide)&lt;/li&gt;
-	&lt;li&gt;Dr. Bankhead&amp;rsquo;s Clinical Corner Program (not available)&lt;/li&gt;
-	&lt;li&gt;Insert link to LIVE Case Review Program Overview&lt;/li&gt;
-	&lt;li&gt;IAS Program (where available)&lt;/li&gt;
-	&lt;li&gt;Insert link to Introduce SureSmile Aligner Customer Journey (on DS Academy)&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://suresmileu.com/card-content?pageid=7B5F306E-EAC8-4E2C-9071-9DAE7AB74EEF&amp;amp;bucketid=C477B4D4-FD2F-4CAE-B90C-551CB4CE8DC1&amp;amp;buckettype=channel&amp;amp;buckettitle=New%20Practice%20Orientation&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Case Selection Assessment&lt;/a&gt;&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://app.learnermobile.com/list-content/458B7FB4-2928-467D-A146-2330733DBDDF/E707FEA4-EA74-4A6C-92DE-3EAD36E9D579&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Case Selection with Dr. Bankhead&lt;/a&gt; (SureSmileU)&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;SureSmile Aligner Customer Educational Journey&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;Case Review Program Overview&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;IAS Program &amp;nbsp;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;p&gt;&lt;span style=&quot;font-size:14px&quot;&gt;&lt;strong&gt;On-Demand Videos:&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
 &lt;ul&gt;
-	&lt;li&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/academy-course-details.html?cfpath=/content/dam/master/content-fragments/us/en/courses-events/on-demand/2022/aesthetics-built-to-last-aligner-therapy&quot;&gt;Aesthetics Built to Last: Aligner Therapy in the General Practice with Dr. Tif Qureshi&lt;/a&gt;&amp;nbsp;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/academy-course-details.html?cfpath=/content/dam/master/content-fragments/us/en/courses-events/on-demand/2021/everything-starts-with-a-scan&quot;&gt;Everything Starts with a Scan&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/academy-course-details.html?cfpath=/content/dam/master/content-fragments/us/en/courses-events/on-demand/2021/creating-the-on-demand-dental-practice-leveraging-expansion-of&quot;&gt;Creating the On Demand Dental Practice: Leveraging Expansion of Workflow with Primescan&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/academy-course-details.html?cfpath=/content/dam/master/content-fragments/us/en/courses-events/on-demand/2022/aesthetics-built-to-last-aligner-therapy&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Aesthetics Built to Last: Aligner Therapy in the General Practice with Dr. Tif Qureshi&lt;/a&gt;&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/academy-course-details.html?cfpath=/content/dam/master/content-fragments/us/en/courses-events/on-demand/2021/everything-starts-with-a-scan&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Everything Starts with a Scan&lt;/a&gt;&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/academy/courses/academy-course-details.html?cfpath=/content/dam/master/content-fragments/us/en/courses-events/on-demand/2021/creating-the-on-demand-dental-practice-leveraging-expansion-of&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Creating the On Demand Dental Practice: Leveraging Expansion of Workflow with Primescan&lt;/a&gt;&amp;nbsp;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
@@ -57,23 +58,21 @@
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;The SureSmile Specialist should refer to this list as action items and follow-up activity to be completed before moving to the next step&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;SureSmile Specialist&lt;/strong&gt; should refer to this list as action items and follow-up activity to be completed before moving to the next step&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;Refer to the SureSmile Business Review and re-confirm with the doctor their goals for case types and expansion&lt;/li&gt;
-	&lt;li&gt;Review Case Selection Guide to support better understanding of case options&lt;/li&gt;
-	&lt;li&gt;Review Case Selection video with Dr. Bankhead if needed&lt;/li&gt;
-	&lt;li&gt;Place practice on a schedule to advance their case expansion based on their goals and feedback after reviewing Case Selection Guide and Dr. Bankhead&amp;rsquo;s video&lt;/li&gt;
-	&lt;li&gt;Review Integration Case Selection on DS Academy&amp;nbsp;&lt;/li&gt;
-	&lt;li&gt;Invite doctor to participate in Dr. Bankhead&amp;rsquo;s Clinical Corner (if available)&lt;/li&gt;
-	&lt;li&gt;Invite doctor to participate in LIVE Case Reviews with SureSmile&amp;rsquo;s Clinical Experts&lt;/li&gt;
-	&lt;li&gt;If available, connect doctor with local Case Review program&lt;/li&gt;
-	&lt;li&gt;Review SureSmile Aligner Customer Journey course on DS Academy. Schedule if needed especially courses that will aid doctor in gaining aligner confidence&lt;/li&gt;
-	&lt;li&gt;Set plan for case expansion from mild to moderate to complex cases&amp;nbsp;&lt;/li&gt;
-	&lt;li&gt;Set borders for when cases may need to be referred&lt;/li&gt;
-	&lt;li&gt;Setup time for Advanced Primescan training coordinating with DS CAM/CAM team&lt;/li&gt;
+	&lt;li&gt;Refer to the SureSmile Business Review and re-confirm with the doctor their goals for case types and expansion&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;Review &lt;a href=&quot;https://suresmileu.com/card-content?pageid=7B5F306E-EAC8-4E2C-9071-9DAE7AB74EEF&amp;amp;bucketid=C477B4D4-FD2F-4CAE-B90C-551CB4CE8DC1&amp;amp;buckettype=channel&amp;amp;buckettitle=New%20Practice%20Orientation&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Case Selection Assessment&lt;/a&gt; support better understanding of case options&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;Review &lt;a href=&quot;https://app.learnermobile.com/list-content/458B7FB4-2928-467D-A146-2330733DBDDF/E707FEA4-EA74-4A6C-92DE-3EAD36E9D579&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Case Selection with Dr. Bankhead&lt;/a&gt; if needed&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;Place practice on a schedule to advance their case expansion based on their goals and feedback after reviewing Case Selection Guide and Dr. Bankhead&amp;rsquo;s video&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;Invite doctor to participate in LIVE Case Reviews with SureSmile&amp;rsquo;s Clinical Experts&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;If available, connect doctor with local Case Review program&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;Review SureSmile Aligner Educational Customer Journey course on DS Academy. Schedule if needed especially courses that will aid doctor in gaining aligner confidence&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;Set plan for case expansion from mild to moderate to complex cases &amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;Set borders for when cases may need to be referred&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;Setup time for Advanced Primescan training coordinating with DS CAD/CAM team&amp;nbsp;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;

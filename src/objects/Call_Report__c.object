@@ -1852,13 +1852,14 @@
                 <valueName>Scanner</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>UK</controllingFieldValue>
+                <controllingFieldValue>Germany</controllingFieldValue>
+                <valueName>Primescan Connect</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <valueName>Primeprint</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <valueName>Primescan Connect</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Italy</controllingFieldValue>
@@ -5833,6 +5834,51 @@
             <valueSettings>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <valueName>MIS M4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS 4BONE BCH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS 4BONE RCM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS BONDBONE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS C1 B+ o C1B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS Lance +</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS Lance o EF5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS M4 o MF4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS SEVEN B+ o M7B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS V3 B+ o V3B</valueName>
             </valueSettings>
         </valueSet>
         <visibleLines>6</visibleLines>
@@ -13458,7 +13504,6 @@
                 <controllingFieldValue>Austria</controllingFieldValue>
                 <controllingFieldValue>Belgium</controllingFieldValue>
                 <controllingFieldValue>BEX</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>Denmark</controllingFieldValue>
                 <controllingFieldValue>Distributor Markets</controllingFieldValue>
                 <controllingFieldValue>Finland</controllingFieldValue>
@@ -13489,6 +13534,7 @@
                 <controllingFieldValue>Italy</controllingFieldValue>
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Austria</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>France</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
@@ -16801,17 +16847,6 @@
     </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
-    <validationRules>
-        <fullName>Activity_Subtype_Empty</fullName>
-        <active>true</active>
-        <description>used to force Indonesian users to populate the Activity Subtype, when creating a report event</description>
-        <errorConditionFormula>AND(
-TEXT( $User.User_Country__c) =&quot;Indonesia&quot;,
-ISBLANK(TEXT(ActivitySubtype__c))
-)</errorConditionFormula>
-        <errorDisplayField>ActivitySubtype__c</errorDisplayField>
-        <errorMessage>You need to specify the Activity Subtype in order to report this event.</errorMessage>
-    </validationRules>
     <validationRules>
         <fullName>Product_Group_Empty</fullName>
         <active>false</active>

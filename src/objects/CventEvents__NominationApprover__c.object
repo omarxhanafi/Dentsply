@@ -144,6 +144,7 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
+    <description>Represent the decision maker for a nomination process.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -330,11 +331,11 @@
     </nameField>
     <pluralLabel>Nomination Approvers</pluralLabel>
     <searchLayouts>
-        <excludedStandardButtons>New</excludedStandardButtons>
-        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>New</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
         <searchResultsAdditionalFields>CventEvents__Nomination__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CventEvents__Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CventEvents__Level__c</searchResultsAdditionalFields>

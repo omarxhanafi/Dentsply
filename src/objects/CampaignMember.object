@@ -114,16 +114,22 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Lightning_Campaign_Member_Page_Layout</content>
         <formFactor>Large</formFactor>
-        <type>Default</type>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Lightning_Campaign_Member_Page_Layout</content>
         <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
@@ -175,7 +181,9 @@ Account.tz__Local_Time_Short__c)</formula>
         <fullName>AccountNewTab__c</fullName>
         <description>Open the account as a separate new browser tab.</description>
         <externalId>false</externalId>
-        <formula>HYPERLINK(&apos;/&apos;+Account__r.Id, Account__r.Name , &quot;_blank&quot;)</formula>
+        <formula>IF(NOT(ISBLANK(ContactId)),
+HYPERLINK(&apos;/&apos;+Account__r.Id, Account__r.Name , &quot;_blank&quot;),
+HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula>
         <inlineHelpText>Open the account as a separate new browser tab.</inlineHelpText>
         <label>Account (New Tab)</label>
         <required>false</required>
@@ -727,21 +735,6 @@ Account.tz__Local_Time_Short__c)</formula>
                     <fullName>Drufo</fullName>
                     <default>false</default>
                     <label>Drufo</label>
-                </value>
-                <value>
-                    <fullName>DS Core</fullName>
-                    <default>false</default>
-                    <label>DS Core</label>
-                </value>
-                <value>
-                    <fullName>DS Core Care</fullName>
-                    <default>false</default>
-                    <label>DS Core Care</label>
-                </value>
-                <value>
-                    <fullName>DS Core Create</fullName>
-                    <default>false</default>
-                    <label>DS Core Create</label>
                 </value>
                 <value>
                     <fullName>DS PrimeTaper</fullName>
@@ -3351,18 +3344,6 @@ CampaignID+Member email</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>DS Core</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DS Core Care</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DS Core Create</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>DS PrimeTaper</fullName>
                 <default>false</default>
             </values>
@@ -4591,18 +4572,6 @@ CampaignID+Member email</description>
             </values>
             <values>
                 <fullName>DAC Universal S</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DS Core</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DS Core Care</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DS Core Create</fullName>
                 <default>false</default>
             </values>
             <values>

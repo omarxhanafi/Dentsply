@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">Atlantis;MGuide;Simplant;Simplant Planning Service;Simplant Pro</value>
+        <value xsi:type="xsd:string">Atlantis;Atlantis Abutments;Atlantis Suprastructures;MGuide;Simplant;Simplant Planning Service;Simplant Pro</value>
     </values>
     <values>
         <field>Category__c</field>
@@ -25,6 +25,10 @@
     <values>
         <field>DefaultLeadOwner__c</field>
         <value xsi:type="xsd:string">0056M00000A13Ys</value>
+    </values>
+    <values>
+        <field>DefaultProcedureTrackerOwnerId__c</field>
+        <value xsi:nil="true"/>
     </values>
     <values>
         <field>IsTest__c</field>
