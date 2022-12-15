@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_SalesAnalyticsTrigger.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_SalesAnalyticsTrigger.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHandler.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/triggers/SalesAnalyticsTrigger.trigger" beforeDir="false" afterPath="$PROJECT_DIR$/src/triggers/SalesAnalyticsTrigger.trigger" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +134,11 @@
                 <ConnectionWorkspaceSettings />
               </value>
             </entry>
+            <entry key="HOTFIX">
+              <value>
+                <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
             <entry key="Iberia">
               <value>
                 <ConnectionWorkspaceSettings>
@@ -172,10 +182,11 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:GUIDANCERENDERERCONTROLLER" value="1670486582128" />
-                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHANDLER" value="1669819715881" />
-                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHELPER" value="1669820251253" />
+                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHANDLER" value="1671017272726" />
+                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHELPER" value="1671017467498" />
                       <entry key="APEXCLASS:TEST_GUIDANCERENDERERCONTROLLER" value="1669717997152" />
-                      <entry key="APEXTRIGGER:SALESANALYTICSTRIGGER" value="1669815317000" />
+                      <entry key="APEXCLASS:TEST_SALESANALYTICSTRIGGER" value="1671017272726" />
+                      <entry key="APEXTRIGGER:SALESANALYTICSTRIGGER" value="1671017274267" />
                       <entry key="COMPACTLAYOUT:PROCEDURETRACKER__C.PROCEDURE_TRACKER_COMPACT_LAYOUT" value="1669033209000" />
                       <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.COUNTRYLIST__C" value="1670508438000" />
                       <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.COUNTRY__C" value="1670432057000" />
@@ -5580,7 +5591,9 @@
       <workItem from="1669816714697" duration="146000" />
       <workItem from="1669816872807" duration="14056000" />
       <workItem from="1670486453611" duration="631000" />
-      <workItem from="1670507805174" duration="2921000" />
+      <workItem from="1670507805174" duration="9122000" />
+      <workItem from="1670854245927" duration="3225000" />
+      <workItem from="1671008129348" duration="8289000" />
     </task>
     <servers />
   </component>

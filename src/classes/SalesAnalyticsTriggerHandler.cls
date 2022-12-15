@@ -1,8 +1,11 @@
-/*------------------------------------------------------------  
-Author:         Omar HANAFI  20221130
-Description:    Sales Analytics Trigger Handler Class.
-
-------------------------------------------------------------*/
+/**
+ * @Author          Omar (ohanafi@salesforce.com)
+ * @Description     Sales Analytics Trigger Handler Class.
+ * @Test-Class      Test_SalesAnalyticsHandlerTrigger
+ *
+ * @History
+ * 30-11-2022   Omar     Create new Trigger Handler Class
+ */
 
 public with sharing class SalesAnalyticsTriggerHandler extends TriggerHandler{
     private List<Sales_Analytics__c> oldSalesAnalyticsList, newSalesAnalyticsList;
@@ -16,7 +19,7 @@ public with sharing class SalesAnalyticsTriggerHandler extends TriggerHandler{
     }
     
     protected override void beforeInsert() {
-        SalesAnalyticsTriggerHelper.createProcedureTrackers(newSalesAnalyticsList);
+//        SalesAnalyticsTriggerHelper.createProcedureTrackers(newSalesAnalyticsList);
     }
     
     protected override void beforeUpdate() {
