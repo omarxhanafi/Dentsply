@@ -18,10 +18,8 @@ public with sharing class SalesAnalyticsTriggerHandler extends TriggerHandler{
         newSalesAnalyticsMap = (Map<Id, Sales_Analytics__c>) Trigger.newMap;
     }
     
-    protected override void beforeInsert() {
-//        SalesAnalyticsTriggerHelper.createProcedureTrackers(newSalesAnalyticsList);
+    protected override void afterInsert() {
+        SalesAnalyticsTriggerHelper.createProcedureTrackers(newSalesAnalyticsList);
     }
-    
-    protected override void beforeUpdate() {
-    }
+
 }

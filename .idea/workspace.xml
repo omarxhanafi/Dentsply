@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/Test_SalesAnalyticsTrigger.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Test_SalesAnalyticsTrigger.cls-meta.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHandler.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/triggers/SalesAnalyticsTrigger.trigger" beforeDir="false" afterPath="$PROJECT_DIR$/src/triggers/SalesAnalyticsTrigger.trigger" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,17 +40,8 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="apexLogLevel" value="FINEST" />
-                  <option name="calloutsLogLevel" value="FINEST" />
-                  <option name="databaseLogLevel" value="FINEST" />
+                  <option name="body" value="Sales_Analytics__c sls = new Sales_Analytics__c(&#10;        Account__c = '0011l00001HrETdAAN'&#10;);&#10;&#10;insert sls;" />
                   <option name="name" value="Anonymous Apex 1" />
-                  <option name="nbaLogLevel" value="FINEST" />
-                  <option name="profilingLogLevel" value="FINEST" />
-                  <option name="systemLogLevel" value="FINEST" />
-                  <option name="validationLogLevel" value="FINEST" />
-                  <option name="visualforceLogLevel" value="FINEST" />
-                  <option name="waveLogLevel" value="FINEST" />
-                  <option name="workflowLogLevel" value="FINEST" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
@@ -182,8 +169,8 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:GUIDANCERENDERERCONTROLLER" value="1670486582128" />
-                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHANDLER" value="1671017272726" />
-                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHELPER" value="1671017467498" />
+                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHANDLER" value="1671099390125" />
+                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHELPER" value="1671099290421" />
                       <entry key="APEXCLASS:TEST_GUIDANCERENDERERCONTROLLER" value="1669717997152" />
                       <entry key="APEXCLASS:TEST_SALESANALYTICSTRIGGER" value="1671017272726" />
                       <entry key="APEXTRIGGER:SALESANALYTICSTRIGGER" value="1671017274267" />
@@ -5319,18 +5306,26 @@
         <option name="retrieveAndMergeDefault" value="false" />
         <option name="soqlQuerySettings">
           <SoqlQuerySettings>
-            <option name="resultsSplitterProportion" value="0.35222673" />
+            <option name="resultsSplitterProportion" value="0.6965944" />
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT ID, LocalSKUKey__c, LastModifiedDate, Account__c FROM Sales_Analytics__c WHERE LocalSKUKey__c = '2_155_DIGI-500153' LIMIT 50" />
-                  <option name="connectionName" value="Production" />
+                  <option name="body" value="Select id, objectid, SobjectType, Territory2Id from ObjectTerritory2Association" />
+                  <option name="connectionName" value="SureSmile" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="select userid, user.name, RoleInTerritory2 from UserTerritory2Association where Territory2Id in ('0MI0J000000bls1WAA', '0MI0J000000fxcTWAQ', '0MI6M00000007ZsWAI', '0MI6M00000007ZxWAI', '0MI6M00000007a2WAA', '0MI6M00000007a7WAA', '0MI6M00000007aCWAQ', '0MI6M000000LLndWAG')" />
+                  <option name="name" value="SOQL Query 2" />
+                </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="select id from Sales_Analytics__c" />
+                  <option name="name" value="SOQL Query 3" />
+                </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="0" />
+            <option name="selectedSavedDocumentIndex" value="1" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -5593,7 +5588,7 @@
       <workItem from="1670486453611" duration="631000" />
       <workItem from="1670507805174" duration="9122000" />
       <workItem from="1670854245927" duration="3225000" />
-      <workItem from="1671008129348" duration="8289000" />
+      <workItem from="1671008129348" duration="12704000" />
     </task>
     <servers />
   </component>
@@ -5618,6 +5613,11 @@
           <url>file://$PROJECT_DIR$/src/classes/FindLeadMatch.cls</url>
           <line>196</line>
           <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ApexOfflineDebuggerLocalBreakpointType">
+          <url>file://$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls</url>
+          <line>25</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

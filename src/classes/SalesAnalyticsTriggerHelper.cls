@@ -18,7 +18,6 @@ public with sharing class SalesAnalyticsTriggerHelper {
          */
 
     public static void createProcedureTrackers(List<Sales_Analytics__c> newSalesAnalyticsList) {
-        // TODO retrieve the country filter custom metadata once available
 
         // Init procedure tracker list
         List<ProcedureTracker__c> procedureTrackerList = new List<ProcedureTracker__c>();
@@ -32,26 +31,46 @@ public with sharing class SalesAnalyticsTriggerHelper {
         // Init role set
         Set<String> roleSet = new Set<String>();
 
-        // Getting sets of all account ids and countries related to all the invoices
+        // TODO retrieve the country filter custom metadata once available
+
+
+        // TODO SKU filter
+
+        // Getting a set of all account ids related to all the invoices
         for(Sales_Analytics__c eachSalesAnalytic : newSalesAnalyticsList){
             accountIdSet.add(eachSalesAnalytic.Account__c);
-            countrySet.add(eachSalesAnalytic.Account__r.Country__c);
         }
+
+        // Query for account countries
+        List<Account> accountList = [SELECT Id, Country__c FROM Account WHERE Id in :accountIdSet];
+
+        // Getting a set of all account countries related to all the invoices
+        for(Account eachAccount : accountList){
+            if(eachAccount.Country__c != null){
+                countrySet.add(eachAccount.Country__c);
+            }
+        }
+
+        System.debug('accountIdSet : ' + accountIdSet);
+        System.debug('countrySet : ' + countrySet);
 
         // Getting a list of all territories related to the account ids
         List<ObjectTerritory2Association> objectTerritoryAssociations = [SELECT Id, ObjectId, SobjectType, Territory2Id
             FROM ObjectTerritory2Association
             WHERE ObjectId in :accountIdSet
         ];
+        System.debug('objectTerritoryAssociations : ' + objectTerritoryAssociations);
 
         Set<Id> territoryIdSet = new Set<Id>();
 
         for(ObjectTerritory2Association eachAssociation : objectTerritoryAssociations){
             territoryIdSet.add(eachAssociation.Territory2Id);
         }
+        System.debug('territoryIdSet : ' + territoryIdSet);
 
         // We get a list of lead & opportunity settings custom metadata related to the countries
         List<LeadOpportunitySetting__mdt> leadOpportunitySettingsList = getSureSmileLeadOpportunitySettingsByCountry(countrySet);
+        System.debug('leadOpportunitySettingsList : ' + leadOpportunitySettingsList);
 
         // Creating a list of all roles from the custom metadata
         for(LeadOpportunitySetting__mdt eachLeadOpportunitySetting : leadOpportunitySettingsList){
@@ -59,12 +78,14 @@ public with sharing class SalesAnalyticsTriggerHelper {
                 roleSet.addAll(eachLeadOpportunitySetting.UserRoles__c.split(';'));
             }
         }
+        System.debug('roleSet : ' + roleSet);
 
         // We get a list of all users based on the list of territories and roles
         List<UserTerritory2Association> usersInTerritoryList = [SELECT UserId, User.Name, Territory2Id, RoleInTerritory2, IsActive
             FROM UserTerritory2Association
             WHERE Territory2Id in :territoryIdSet AND RoleInTerritory2 in :roleSet
         ];
+        System.debug('usersInTerritoryList : ' + usersInTerritoryList);
 
         // Procedure tracker creation
         for(Sales_Analytics__c eachSalesAnalytic : newSalesAnalyticsList){
@@ -74,7 +95,7 @@ public with sharing class SalesAnalyticsTriggerHelper {
 
             // Eventually have a field on the account with the registration date and transform the current field to a custom formula instead
             eachProcedureTracker.RegistrationDate__c = eachSalesAnalytic.Invoice_Date__c;
-            eachProcedureTracker.ActivationNeededby__c = eachSalesAnalytic.Invoice_Date__c.addMonths(3);
+            eachProcedureTracker.ActivationNeededby__c = eachSalesAnalytic.Invoice_Date__c != null ? eachSalesAnalytic.Invoice_Date__c.addMonths(3) : null;
 
             // Territory Id of the current invoice
             Id invoiceTerritoryId;
@@ -127,6 +148,8 @@ public with sharing class SalesAnalyticsTriggerHelper {
             procedureTrackerList.add(eachProcedureTracker);
         }
 
+        System.debug('procedureTrackerList : ' + procedureTrackerList);
+
 //        try {
 //            Database.insert(procedureTrackerList, false);
 //        } catch (DmlException e){
@@ -173,11 +196,19 @@ public with sharing class SalesAnalyticsTriggerHelper {
 
         for (LeadOpportunitySetting__mdt eachLeadOpportunitySetting : leadOpportunitySettingsList) {
             List<String> brandsList = eachLeadOpportunitySetting.BrandsList__c.split(';');
+            Boolean brandCheck = false;
             if (!brandsList.isEmpty()) {
                 // We check if the custom metadata has a SureSmile brand
-                if (brandsList.contains('SureSmile')) {
-                    filteredLeadOpportunitySettingsList.add(eachLeadOpportunitySetting);
+                for(String eachBrand : brandsList){
+                    if(eachBrand.contains('SureSmile')){
+                        brandCheck = true;
+                        break;
+                    }
                 }
+            }
+            if(brandCheck){
+                // If true we add it to the list of lead & opportunity settings
+                filteredLeadOpportunitySettingsList.add(eachLeadOpportunitySetting);
             }
         }
 
