@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHandler.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +40,18 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="Sales_Analytics__c sls = new Sales_Analytics__c(&#10;        Account__c = '0011l00001HrETdAAN'&#10;);&#10;&#10;insert sls;" />
+                  <option name="apexLogLevel" value="FINEST" />
+                  <option name="body" value="Sales_Analytics__c sls = new Sales_Analytics__c(&#10;        Account__c = '0011l00001JGvdAAAT'&#10;);&#10;&#10;insert sls;" />
+                  <option name="calloutsLogLevel" value="FINEST" />
+                  <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 1" />
+                  <option name="nbaLogLevel" value="FINEST" />
+                  <option name="profilingLogLevel" value="FINEST" />
+                  <option name="systemLogLevel" value="FINEST" />
+                  <option name="validationLogLevel" value="FINEST" />
+                  <option name="visualforceLogLevel" value="FINEST" />
+                  <option name="waveLogLevel" value="FINEST" />
+                  <option name="workflowLogLevel" value="FINEST" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
@@ -170,7 +180,7 @@
                     <map>
                       <entry key="APEXCLASS:GUIDANCERENDERERCONTROLLER" value="1670486582128" />
                       <entry key="APEXCLASS:SALESANALYTICSTRIGGERHANDLER" value="1671099390125" />
-                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHELPER" value="1671099290421" />
+                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHELPER" value="1671447956783" />
                       <entry key="APEXCLASS:TEST_GUIDANCERENDERERCONTROLLER" value="1669717997152" />
                       <entry key="APEXCLASS:TEST_SALESANALYTICSTRIGGER" value="1671017272726" />
                       <entry key="APEXTRIGGER:SALESANALYTICSTRIGGER" value="1671017274267" />
@@ -5589,6 +5599,8 @@
       <workItem from="1670507805174" duration="9122000" />
       <workItem from="1670854245927" duration="3225000" />
       <workItem from="1671008129348" duration="12704000" />
+      <workItem from="1671193789832" duration="217000" />
+      <workItem from="1671194011926" duration="23455000" />
     </task>
     <servers />
   </component>
@@ -5616,7 +5628,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ApexOfflineDebuggerLocalBreakpointType">
           <url>file://$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls</url>
-          <line>25</line>
+          <line>23</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>

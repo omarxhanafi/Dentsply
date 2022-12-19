@@ -9,14 +9,12 @@
 
 public with sharing class SalesAnalyticsTriggerHelper {
 
-
     /**
          * createProcedureTrackers Creates procedure trackers for the provided sales analytics list
          * @author ohanafi@salesforce.com | 30-11-2022
          *
          * @param newSalesAnalyticsList   List of Sales Analytics
          */
-
     public static void createProcedureTrackers(List<Sales_Analytics__c> newSalesAnalyticsList) {
 
         // Init procedure tracker list
@@ -31,40 +29,33 @@ public with sharing class SalesAnalyticsTriggerHelper {
         // Init role set
         Set<String> roleSet = new Set<String>();
 
-        // TODO retrieve the country filter custom metadata once available
-
-
         // TODO SKU filter
 
-        // Getting a set of all account ids related to all the invoices
+        // Filter Sales Analytics by custom metadata countries
+        newSalesAnalyticsList = getFilteredSalesAnalyticsByCountry(newSalesAnalyticsList);
+
+        // Getting a set of all account ids related to the filtered invoices
         for(Sales_Analytics__c eachSalesAnalytic : newSalesAnalyticsList){
             accountIdSet.add(eachSalesAnalytic.Account__c);
         }
 
         // Query for account countries
-        List<Account> accountList = [SELECT Id, Country__c FROM Account WHERE Id in :accountIdSet];
+        Map<Id, Account> accountCountriesMap = new Map<Id, Account>([SELECT Id, Country__c FROM Account WHERE Id in :accountIdSet]);
 
-        // Getting a set of all account countries related to all the invoices
-        for(Account eachAccount : accountList){
-            if(eachAccount.Country__c != null){
-                countrySet.add(eachAccount.Country__c);
-            }
+        // Getting a set of all countries related to the filtered invoices
+        for(Id eachAccountId : accountCountriesMap.keySet()){
+            countrySet.add(accountCountriesMap.get(eachAccountId).Country__c);
         }
 
         System.debug('accountIdSet : ' + accountIdSet);
         System.debug('countrySet : ' + countrySet);
 
-        // Getting a list of all territories related to the account ids
-        List<ObjectTerritory2Association> objectTerritoryAssociations = [SELECT Id, ObjectId, SobjectType, Territory2Id
-            FROM ObjectTerritory2Association
-            WHERE ObjectId in :accountIdSet
-        ];
-        System.debug('objectTerritoryAssociations : ' + objectTerritoryAssociations);
-
+        // Init territory id set
         Set<Id> territoryIdSet = new Set<Id>();
 
-        for(ObjectTerritory2Association eachAssociation : objectTerritoryAssociations){
-            territoryIdSet.add(eachAssociation.Territory2Id);
+        // Getting a list of all territories related to the account ids
+        for(ObjectTerritory2Association objectTerritory : [SELECT Territory2Id FROM ObjectTerritory2Association WHERE ObjectId in :accountIdSet]) {
+            territoryIdSet.add(objectTerritory.Territory2Id);
         }
         System.debug('territoryIdSet : ' + territoryIdSet);
 
@@ -74,7 +65,7 @@ public with sharing class SalesAnalyticsTriggerHelper {
 
         // Creating a list of all roles from the custom metadata
         for(LeadOpportunitySetting__mdt eachLeadOpportunitySetting : leadOpportunitySettingsList){
-            if(eachLeadOpportunitySetting.UserRoles__c != null){
+            if(String.isNotBlank(eachLeadOpportunitySetting.UserRoles__c)){
                 roleSet.addAll(eachLeadOpportunitySetting.UserRoles__c.split(';'));
             }
         }
@@ -97,14 +88,13 @@ public with sharing class SalesAnalyticsTriggerHelper {
             eachProcedureTracker.RegistrationDate__c = eachSalesAnalytic.Invoice_Date__c;
             eachProcedureTracker.ActivationNeededby__c = eachSalesAnalytic.Invoice_Date__c != null ? eachSalesAnalytic.Invoice_Date__c.addMonths(3) : null;
 
-            // Territory Id of the current invoice
-            Id invoiceTerritoryId;
+            // Territory Id Set of the current invoice
+            Set<Id> invoiceTerritoryIdSet = new Set<Id>();
 
-            // We search for the territory associated with the current invoice based on the account id
+            // We search for the territories associated with the current invoice based on the account id
             for(ObjectTerritory2Association eachTerritoryAssociation : objectTerritoryAssociations){
                 if(eachTerritoryAssociation.ObjectId == eachSalesAnalytic.Account__c){
-                    invoiceTerritoryId = eachTerritoryAssociation.Territory2Id;
-                    break;
+                    invoiceTerritoryIdSet.add(eachTerritoryAssociation.Territory2Id);
                 }
             }
 
@@ -114,8 +104,11 @@ public with sharing class SalesAnalyticsTriggerHelper {
             // User roles associated to the current invoice
             Set<String> invoiceRoleSet = new Set<String>();
 
+            // We get the invoice country
+            String invoiceCountry = accountCountriesMap.get(eachSalesAnalytic.Account__c)?.Country__c;
+
             for(LeadOpportunitySetting__mdt eachLeadOpportunitySetting : leadOpportunitySettingsList){
-                if(eachLeadOpportunitySetting.Country__c == eachSalesAnalytic.Account__r.Country__c){
+                if(eachLeadOpportunitySetting.Country__c == invoiceCountry){
                     // Assigning the custom metadata
                     invoiceLeadOpportunitySetting = eachLeadOpportunitySetting;
                     if(eachLeadOpportunitySetting.UserRoles__c != null){
@@ -131,9 +124,9 @@ public with sharing class SalesAnalyticsTriggerHelper {
                 // We assign the DefaultProcedureTrackerOwnerId__c before searching for the users by territory
                 eachProcedureTracker.SalesRep__c = invoiceLeadOpportunitySetting.DefaultProcedureTrackerOwnerId__c;
 
-                if(invoiceTerritoryId != null && !invoiceRoleSet.isEmpty() && !usersInTerritoryList.isEmpty()){
+                if(!invoiceTerritoryIdSet.isEmpty() && !invoiceRoleSet.isEmpty() && !usersInTerritoryList.isEmpty()){
                     for(UserTerritory2Association eachUserInTerritory : usersInTerritoryList){
-                        if(eachUserInTerritory.Territory2Id == invoiceTerritoryId && invoiceRoleSet.contains(eachUserInTerritory.RoleInTerritory2)){
+                        if(invoiceTerritoryIdSet.contains(eachUserInTerritory.Territory2Id) && invoiceRoleSet.contains(eachUserInTerritory.RoleInTerritory2)){
                             // We assign the territory user as the owner
                             eachProcedureTracker.SalesRep__c = eachUserInTerritory.UserId;
                         }
@@ -150,11 +143,57 @@ public with sharing class SalesAnalyticsTriggerHelper {
 
         System.debug('procedureTrackerList : ' + procedureTrackerList);
 
-//        try {
-//            Database.insert(procedureTrackerList, false);
-//        } catch (DmlException e){
-//            DebugLog.addException(e, 'Error while creating the procedure tracker');
-//        }
+        try {
+            List<Database.SaveResult> result = Database.insert(procedureTrackerList, false);
+            System.debug('Save result : ' + result);
+        } catch (DmlException e){
+            System.debug(e.getMessage());
+            DebugLog.addException(e, 'Error while creating the procedure tracker');
+        }
+    }
+
+    /**
+         * getFilteredSalesAnalyticsByCountry Return a list of filtered sales analytics by country
+         * @author ohanafi@salesforce.com | 16-12-2022
+         *
+         * @param salesAnalyticsList   List of Sales Analytics
+         *
+         * @return List<Sales_Analytics__c> - Filtered list of Sales analytics by country
+         */
+    private static List<Sales_Analytics__c> getFilteredSalesAnalyticsByCountry(List<Sales_Analytics__c> salesAnalyticsList) {
+        List<Sales_Analytics__c> filteredSalesAnalyticsList = new List<Sales_Analytics__c>();
+
+        // Set of account Ids
+        Set<Id> accountIdSet = new Set<Id>();
+
+        // Getting a set of all account ids related to all the invoices
+        for(Sales_Analytics__c eachSalesAnalytic : salesAnalyticsList){
+            accountIdSet.add(eachSalesAnalytic.Account__c);
+        }
+
+        // Query for account countries
+        Map<Id, Account> accountCountriesMap = new Map<Id, Account>([SELECT Id, Country__c FROM Account WHERE Id in :accountIdSet]);
+
+        // Getting the list of Procedure_Tracker_Country__mdt custom metadata
+        List<Procedure_Tracker_Country__mdt> procedureTrackerCountryList = [SELECT Id, Country__c FROM Procedure_Tracker_Country__mdt];
+
+        List<String> procedureTrackerCountryCodes = new List<String>();
+
+        // Getting a list of country codes
+        for (Procedure_Tracker_Country__mdt eachProcedureTrackerCountry : procedureTrackerCountryList) {
+            procedureTrackerCountryCodes.add(eachProcedureTrackerCountry.Country__c);
+        }
+
+        for(Sales_Analytics__c eachSalesAnalytic : salesAnalyticsList){
+            if(accountCountriesMap.containsKey(eachSalesAnalytic.Account__c)){
+                // We check if the country list contains the Sales analytics country
+                if(procedureTrackerCountryCodes.contains(accountCountriesMap.get(eachSalesAnalytic.Account__c).Country__c)){
+                    filteredSalesAnalyticsList.add(eachSalesAnalytic);
+                }
+            }
+        }
+
+        return filteredSalesAnalyticsList;
     }
 
 
