@@ -325,6 +325,11 @@
                     <label>AH Plus</label>
                 </value>
                 <value>
+                    <fullName>AH Plus Bioceramic Sealer</fullName>
+                    <default>false</default>
+                    <label>AH Plus Bioceramic Sealer</label>
+                </value>
+                <value>
                     <fullName>AH Temp</fullName>
                     <default>false</default>
                     <label>AH Temp</label>
@@ -452,6 +457,7 @@
                 <value>
                     <fullName>Bioceramic Sealer</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Bioceramic Sealer</label>
                 </value>
                 <value>
@@ -2075,6 +2081,10 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
+                <valueName>AH Plus Bioceramic Sealer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endodontics</controllingFieldValue>
                 <valueName>AH Temp</valueName>
             </valueSettings>
             <valueSettings>
@@ -2096,10 +2106,6 @@
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
                 <valueName>Bioceramic</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Endodontics</controllingFieldValue>
-                <valueName>Bioceramic Sealer</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
@@ -2903,7 +2909,10 @@
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>UAE</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
+                <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
+                <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>Ireland</controllingFieldValue>
                 <controllingFieldValue>Belarus</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
@@ -2948,6 +2957,7 @@
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Latvia</controllingFieldValue>
                 <controllingFieldValue>Lithuania</controllingFieldValue>
+                <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Malta</controllingFieldValue>
                 <controllingFieldValue>Oman</controllingFieldValue>
                 <controllingFieldValue>Philippines</controllingFieldValue>
@@ -2955,9 +2965,11 @@
                 <controllingFieldValue>Romania</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
                 <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
+                <controllingFieldValue>Thailand</controllingFieldValue>
                 <valueName>Digital Group</valueName>
             </valueSettings>
             <valueSettings>
@@ -3103,6 +3115,7 @@
                 <controllingFieldValue>UAE</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>Ireland</controllingFieldValue>
@@ -3372,81 +3385,53 @@
                 <valueName>Prosthetics</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <valueName>Digital</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>DEX</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Latvia</controllingFieldValue>
                 <controllingFieldValue>Lithuania</controllingFieldValue>
                 <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Romania</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
                 <valueName>Class II</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <valueName>Equipment</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>DEX</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Latvia</controllingFieldValue>
                 <controllingFieldValue>Lithuania</controllingFieldValue>
                 <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Romania</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
                 <valueName>Root To Crown</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>DEX</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Latvia</controllingFieldValue>
                 <controllingFieldValue>Lithuania</controllingFieldValue>
                 <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Romania</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
                 <valueName>Single Unit Crown</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Digital</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Equipment</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Canada</controllingFieldValue>
@@ -3754,6 +3739,17 @@
         <trackHistory>false</trackHistory>
         <trackTrending>true</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderNo__c</fullName>
+        <externalId>false</externalId>
+        <label>Order No</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Order__c</fullName>
@@ -4599,6 +4595,17 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>VoucherCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Voucher Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>X3rd_Party_Source__c</fullName>
@@ -6576,6 +6583,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>AH Temp</fullName>
                 <default>false</default>
             </values>
@@ -6673,10 +6684,6 @@
             </values>
             <values>
                 <fullName>Bioceramic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8126,14 +8133,15 @@ TEXT( Account__r.Country__c ) = &quot;VA&quot;))</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>OnlyOwnerCanChangeRecord</fullName>
-        <active>true</active>
+        <active>false</active>
+        <description>TEMPORARILY DEACTIVATED 
+SALESFORCE LIMITATION: TFUS-000005104</description>
         <errorConditionFormula>AND(
 NOT(ISNEW()), 
-OR($User.Id &lt;&gt; Sales_Rep__c, ISCHANGED(Sales_Rep__c)),
-$User.Id &lt;&gt; PRIORVALUE(Sales_Rep__c), 
+NOT($User.Id = PRIORVALUE(Sales_Rep__c)),
 NOT(CONTAINS($User.Profile__c, &apos;#System:&apos;)),
 NOT(CONTAINS($User.Profile__c, &apos;CRM Analyst&apos;)),
-AND ($User.Id = Sales_Rep__r.ManagerId, ISCHANGED(Sales_Rep__c))
+NOT($Permission.canEditSalesLeads)
 )</errorConditionFormula>
         <errorMessage>Sorry! Only the owner of the sales lead is allowed to change it at this point.</errorMessage>
     </validationRules>

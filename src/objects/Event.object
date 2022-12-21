@@ -2134,6 +2134,19 @@ CASE( User_Country__c ,
         <errorMessage>Please enter information about your Customer Facing Event either in call notes or what products were discussed.</errorMessage>
     </validationRules>
     <webLinks>
+        <fullName>Clone_Custom</fullName>
+        <availability>online</availability>
+        <description>Custom Clone button to allow event with only one attendee to be cloned.</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>{!URLFOR($Action.Event.Clone, Event.Id)}</url>
+    </webLinks>
+    <webLinks>
         <fullName>Edit_Classic</fullName>
         <availability>online</availability>
         <description>New button (2021) for Classic Users to Use the CallReportEvent when editing an existing event</description>

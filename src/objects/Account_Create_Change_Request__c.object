@@ -555,6 +555,7 @@
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Senegal</controllingFieldValue>
                 <controllingFieldValue>Iran</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
@@ -609,6 +610,7 @@
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Senegal</controllingFieldValue>
                 <controllingFieldValue>Iran</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
@@ -663,6 +665,7 @@
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Senegal</controllingFieldValue>
                 <controllingFieldValue>Iran</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
@@ -717,6 +720,7 @@
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Senegal</controllingFieldValue>
                 <controllingFieldValue>Iran</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
@@ -772,6 +776,7 @@
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Senegal</controllingFieldValue>
                 <controllingFieldValue>Iran</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
@@ -828,6 +833,7 @@
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Senegal</controllingFieldValue>
                 <controllingFieldValue>Iran</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
@@ -884,6 +890,7 @@
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Senegal</controllingFieldValue>
                 <controllingFieldValue>Iran</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
@@ -939,6 +946,7 @@
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Senegal</controllingFieldValue>
                 <controllingFieldValue>Iran</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
@@ -994,6 +1002,7 @@
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Senegal</controllingFieldValue>
                 <controllingFieldValue>Iran</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
@@ -1047,6 +1056,7 @@
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Senegal</controllingFieldValue>
                 <controllingFieldValue>Iran</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
@@ -1100,6 +1110,7 @@
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Senegal</controllingFieldValue>
                 <controllingFieldValue>Iran</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
@@ -1155,6 +1166,7 @@
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Senegal</controllingFieldValue>
                 <controllingFieldValue>Iran</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
@@ -3792,6 +3804,7 @@ to be specified in the invoice</description>
 &quot;Philippines&quot;,&quot;Philippines&quot;,
 &quot;Portugal&quot;,&quot;Portugal&quot;,
 &quot;Poland&quot;,&quot;Poland&quot;,
+&quot;Qatar&quot;,&quot;Qatar&quot;,
 &quot;Russia&quot;,&quot;Russia&quot;,
 &quot;Saudi Arabia&quot;,&quot;Saudi Arabia&quot;,
 &quot;Singapore&quot;,&quot;Singapore&quot;,

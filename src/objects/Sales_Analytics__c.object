@@ -837,9 +837,9 @@ D= Dealer Discount (this value is still a bit undefined and believed to be only 
     <listViews>
         <fullName>All</fullName>
         <columns>LocalSKUKey__c</columns>
+        <columns>NAME</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
-        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>AllAX</fullName>

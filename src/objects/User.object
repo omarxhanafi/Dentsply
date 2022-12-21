@@ -2136,6 +2136,15 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Edit_Sales_Lead__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Allow the user to edit Sales Leads. If set to True, the User will be excluded from the Sales Lead Validation Rule.</description>
+        <externalId>false</externalId>
+        <label>Edit Sales Lead?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Edit_report_package__c</fullName>
         <externalId>false</externalId>
         <formula>HYPERLINK(&apos;/apex/UserToReportPackageVF?id=&apos; &amp; Id, &apos;Edit report package&apos;, &apos;self&apos;)</formula>
@@ -4735,6 +4744,11 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
                     <label>Endodontics</label>
                 </value>
                 <value>
+                    <fullName>Field Service Technician</fullName>
+                    <default>false</default>
+                    <label>Field Service Technician</label>
+                </value>
+                <value>
                     <fullName>Finance</fullName>
                     <default>false</default>
                     <label>Finance</label>
@@ -4875,6 +4889,11 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
                     <label>Specialist</label>
                 </value>
                 <value>
+                    <fullName>Technical Customer Support</fullName>
+                    <default>false</default>
+                    <label>Technical Customer Support</label>
+                </value>
+                <value>
                     <fullName>Technical Support</fullName>
                     <default>false</default>
                     <label>Technical Support</label>
@@ -4918,10 +4937,20 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>New Zealand</controllingFieldValue>
+                <controllingFieldValue>Australia</controllingFieldValue>
+                <valueName>Field Service Technician</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>New Zealand</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
                 <controllingFieldValue>Australia</controllingFieldValue>
                 <valueName>Sales Manager</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>New Zealand</controllingFieldValue>
+                <controllingFieldValue>Australia</controllingFieldValue>
+                <valueName>Technical Customer Support</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Portugal</controllingFieldValue>

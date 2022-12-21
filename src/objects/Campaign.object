@@ -1654,6 +1654,11 @@
                     <label>AH Plus</label>
                 </value>
                 <value>
+                    <fullName>AH Plus Bioceramic Sealer</fullName>
+                    <default>false</default>
+                    <label>AH Plus Bioceramic Sealer</label>
+                </value>
+                <value>
                     <fullName>AH Temp</fullName>
                     <default>false</default>
                     <label>AH Temp</label>
@@ -1781,6 +1786,7 @@
                 <value>
                     <fullName>Bioceramic Sealer</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Bioceramic Sealer</label>
                 </value>
                 <value>
@@ -5534,7 +5540,7 @@
         <type>Picklist</type>
         <valueSet>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
                     <fullName>ALL</fullName>
                     <default>false</default>
@@ -5584,6 +5590,11 @@
                     <fullName>Distributor Markets</fullName>
                     <default>false</default>
                     <label>Distributor Markets</label>
+                </value>
+                <value>
+                    <fullName>Egypt</fullName>
+                    <default>false</default>
+                    <label>Egypt</label>
                 </value>
                 <value>
                     <fullName>Finland</fullName>
@@ -5641,9 +5652,19 @@
                     <label>Japan</label>
                 </value>
                 <value>
+                    <fullName>Kazakhstan</fullName>
+                    <default>false</default>
+                    <label>Kazakhstan</label>
+                </value>
+                <value>
                     <fullName>Korea</fullName>
                     <default>false</default>
                     <label>Korea</label>
+                </value>
+                <value>
+                    <fullName>Kuwait</fullName>
+                    <default>false</default>
+                    <label>Kuwait</label>
                 </value>
                 <value>
                     <fullName>Luxembourg</fullName>
@@ -5654,6 +5675,11 @@
                     <fullName>Malaysia</fullName>
                     <default>false</default>
                     <label>Malaysia</label>
+                </value>
+                <value>
+                    <fullName>Morocco</fullName>
+                    <default>false</default>
+                    <label>Morocco</label>
                 </value>
                 <value>
                     <fullName>New Zealand</fullName>
@@ -5679,6 +5705,11 @@
                     <fullName>Portugal</fullName>
                     <default>false</default>
                     <label>Portugal</label>
+                </value>
+                <value>
+                    <fullName>Qatar</fullName>
+                    <default>false</default>
+                    <label>Qatar</label>
                 </value>
                 <value>
                     <fullName>Russia</fullName>
@@ -5749,26 +5780,6 @@
                     <fullName>USA</fullName>
                     <default>false</default>
                     <label>USA</label>
-                </value>
-                <value>
-                    <fullName>Egypt</fullName>
-                    <default>false</default>
-                    <label>Egypt</label>
-                </value>
-                <value>
-                    <fullName>Kuwait</fullName>
-                    <default>false</default>
-                    <label>Kuwait</label>
-                </value>
-                <value>
-                    <fullName>Kazakhstan</fullName>
-                    <default>false</default>
-                    <label>Kazakhstan</label>
-                </value>
-                <value>
-                    <fullName>Qatar</fullName>
-                    <default>false</default>
-                    <label>Qatar</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -30273,6 +30284,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Malaysia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morocco</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -55070,6 +55085,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>AH Temp</fullName>
                 <default>false</default>
             </values>
@@ -55167,10 +55186,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Bioceramic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -56293,6 +56308,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Monaco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morocco</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -57983,6 +58002,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Malaysia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morocco</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -60781,6 +60804,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>AH Temp</fullName>
                 <default>false</default>
             </values>
@@ -60878,10 +60905,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Bioceramic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -62000,6 +62023,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Monaco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morocco</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -63690,6 +63717,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Malaysia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morocco</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -65756,15 +65787,19 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Closed - Cancelled</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Closed - Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -69313,6 +69348,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Malaysia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morocco</fullName>
                 <default>false</default>
             </values>
             <values>

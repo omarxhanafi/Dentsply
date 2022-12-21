@@ -840,6 +840,15 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Submitted_for_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for Approval Process. Not editable by users</description>
+        <externalId>false</externalId>
+        <label>Submitted for Approval</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>

@@ -1408,6 +1408,14 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Dealer_Distributor_is_Mandatory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Dealer/Distributor is Mandatory</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>DefaultCampaignOwner__c</fullName>
         <externalId>false</externalId>
         <fieldManageability>DeveloperControlled</fieldManageability>
@@ -1450,7 +1458,7 @@
         <defaultValue>true</defaultValue>
         <externalId>false</externalId>
         <fieldManageability>SubscriberControlled</fieldManageability>
-        <label>Show Distributor</label>
+        <label>Show Dealer/Distributor Search</label>
         <type>Checkbox</type>
     </fields>
     <fields>
@@ -1632,6 +1640,8 @@
         <columns>Category__c</columns>
         <columns>DefaultCampaignOwner__c</columns>
         <columns>DefaultLeadOwner__c</columns>
+        <columns>DefaultProcedureTrackerOwnerId__c</columns>
+        <columns>UserRoles__c</columns>
         <columns>BrandsList__c</columns>
         <filterScope>Everything</filterScope>
         <filters>

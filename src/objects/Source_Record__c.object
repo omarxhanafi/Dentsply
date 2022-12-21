@@ -752,13 +752,25 @@ true, false)</formula>
         <fields>NAME</fields>
         <fields>SearchInfo__c</fields>
         <fields>CIM_Account__c</fields>
-        <fields>Source_Id__c</fields>
+        <fields>Source_Address__c</fields>
         <fields>Customer_Id__c</fields>
         <fields>Company_Code__c</fields>
         <fields>Status__c</fields>
         <fields>Location_Id__c</fields>
         <fields>PracticeSiteId__c</fields>
         <fields>PracticeHRID__c</fields>
+        <profileName>Lightning Sales Rep</profileName>
+    </profileSearchLayouts>
+    <profileSearchLayouts>
+        <fields>NAME</fields>
+        <fields>SearchInfo__c</fields>
+        <fields>CIM_Account__c</fields>
+        <fields>Source_Id__c</fields>
+        <fields>Customer_Id__c</fields>
+        <fields>Company_Code__c</fields>
+        <fields>Status__c</fields>
+        <fields>Location_Id__c</fields>
+        <fields>Source_Address__c</fields>
         <profileName>Lightning Field Service</profileName>
     </profileSearchLayouts>
     <recordTypes>
@@ -840,12 +852,12 @@ true, false)</formula>
         <customTabListAdditionalFields>CIM_Account__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Source_Id__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Customer_Id__c</customTabListAdditionalFields>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Forward</excludedStandardButtons>
         <lookupDialogsAdditionalFields>CIM_Account__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Source_Id__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Customer_Id__c</lookupDialogsAdditionalFields>
@@ -857,13 +869,13 @@ true, false)</formula>
         <searchFilterFields>Customer_Id__c</searchFilterFields>
         <searchResultsAdditionalFields>SearchInfo__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CIM_Account__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Source_Id__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Customer_Id__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Company_Code__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Location_Id__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>PracticeSiteId__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>PracticeHRID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Source_Address__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>

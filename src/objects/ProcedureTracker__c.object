@@ -181,6 +181,16 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>AutomaticallyCreated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Automatically Created?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Barrier__c</fullName>
         <externalId>false</externalId>
         <label>Barrier</label>
@@ -1112,6 +1122,7 @@
         <externalId>false</externalId>
         <label>Practice Account</label>
         <referenceTo>Account</referenceTo>
+        <relationshipLabel>Procedure Trackers</relationshipLabel>
         <relationshipName>Procedures</relationshipName>
         <relationshipOrder>0</relationshipOrder>
         <reparentableMasterDetail>false</reparentableMasterDetail>
@@ -1233,6 +1244,20 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SalesAnalytics__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Analytics</label>
+        <referenceTo>Sales_Analytics__c</referenceTo>
+        <relationshipLabel>Procedure Trackers</relationshipLabel>
+        <relationshipName>Procedure_Trackers</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>SalesRep__c</fullName>

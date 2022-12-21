@@ -965,6 +965,18 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>AccountPostalCode__c</fullName>
+        <description>TFUS-000005101
+Account.ETM2_Zip_Code__c</description>
+        <externalId>false</externalId>
+        <formula>Account.ETM2_Zip_Code__c</formula>
+        <label>Account Postal Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>AccountProgramMember__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</description>
@@ -977,6 +989,18 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AccountStateCity__c</fullName>
+        <description>TFUS-000005101
+Account.ETM2_State_City__c</description>
+        <externalId>false</externalId>
+        <formula>Account.ETM2_State_City__c</formula>
+        <label>Account State &amp; City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Account_Country_Ortho__c</fullName>
@@ -1679,6 +1703,19 @@ IF(AND(RecordType.Id = &apos;0120J000000jnHR&apos;, ISPICKVAL(Account_Plan_Type_
     </fields>
     <fields>
         <fullName>CampaignId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Campaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
@@ -3909,6 +3946,11 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                     <label>AH Plus</label>
                 </value>
                 <value>
+                    <fullName>AH Plus Bioceramic Sealer</fullName>
+                    <default>false</default>
+                    <label>AH Plus Bioceramic Sealer</label>
+                </value>
+                <value>
                     <fullName>AH Temp</fullName>
                     <default>false</default>
                     <label>AH Temp</label>
@@ -4032,11 +4074,6 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                     <fullName>Bioceramic</fullName>
                     <default>false</default>
                     <label>Bioceramic</label>
-                </value>
-                <value>
-                    <fullName>Bioceramic Sealer</fullName>
-                    <default>false</default>
-                    <label>Bioceramic Sealer</label>
                 </value>
                 <value>
                     <fullName>Bluecam</fullName>
@@ -5824,10 +5861,6 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
-                <valueName>Bioceramic Sealer</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Endodontics</controllingFieldValue>
                 <valueName>C-Pilot</valueName>
             </valueSettings>
             <valueSettings>
@@ -6392,6 +6425,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
@@ -6445,6 +6479,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -6452,8 +6487,12 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
+                <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
+                <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Ireland</controllingFieldValue>
                 <controllingFieldValue>Italy</controllingFieldValue>
@@ -6494,20 +6533,25 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
+                <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
+                <controllingFieldValue>Malaysia</controllingFieldValue>
                 <valueName>Digital Group</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
+                <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Ireland</controllingFieldValue>
@@ -6557,6 +6601,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -6564,6 +6609,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
@@ -6617,6 +6663,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -6624,10 +6671,12 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Ireland</controllingFieldValue>
                 <controllingFieldValue>Italy</controllingFieldValue>
@@ -6674,6 +6723,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -6681,6 +6731,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
@@ -6734,6 +6785,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -6741,6 +6793,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
@@ -6794,6 +6847,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -6801,6 +6855,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
@@ -6854,6 +6909,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -6875,51 +6931,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Finland</controllingFieldValue>
                 <controllingFieldValue>Holland</controllingFieldValue>
                 <controllingFieldValue>DEX</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
                 <valueName>Restorative</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <valueName>Digital</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>DEX</controllingFieldValue>
-                <valueName>Class II</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <valueName>Equipment</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>DEX</controllingFieldValue>
-                <valueName>Root To Crown</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>DEX</controllingFieldValue>
-                <valueName>Single Unit Crown</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Brazil</controllingFieldValue>
@@ -6998,7 +7010,35 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             <valueSettings>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>DEX</controllingFieldValue>
+                <valueName>Class II</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <valueName>Digital</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <valueName>Equipment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
                 <valueName>Others</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>DEX</controllingFieldValue>
+                <valueName>Root To Crown</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>DEX</controllingFieldValue>
+                <valueName>Single Unit Crown</valueName>
             </valueSettings>
         </valueSet>
     </fields>
@@ -7521,6 +7561,17 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OrderNo__c</fullName>
+        <externalId>false</externalId>
+        <label>Order No</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Orthodontics__c</fullName>
@@ -10952,6 +11003,17 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VoucherCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Voucher Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Was_the_Decision_Maker_Present__c</fullName>
@@ -34913,6 +34975,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                 <default>false</default>
             </values>
             <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>AH Temp</fullName>
                 <default>false</default>
             </values>
@@ -35006,10 +35072,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>Bioceramic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -41110,6 +41172,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                 <default>false</default>
             </values>
             <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>AH Temp</fullName>
                 <default>false</default>
             </values>
@@ -41207,10 +41273,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>Bioceramic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>

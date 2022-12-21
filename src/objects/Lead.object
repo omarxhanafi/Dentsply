@@ -3065,6 +3065,71 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>IDSBrand__c</fullName>
+        <externalId>false</externalId>
+        <label>IDS Brand</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IDSCampaign__c</fullName>
+        <externalId>false</externalId>
+        <label>IDS Campaign</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IDSDealer__c</fullName>
+        <externalId>false</externalId>
+        <label>IDS Dealer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IDSDescription__c</fullName>
+        <externalId>false</externalId>
+        <label>IDS Description</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>IDSURLSource__c</fullName>
+        <externalId>false</externalId>
+        <label>IDS URL Source</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IDSVoucherCode__c</fullName>
+        <externalId>false</externalId>
+        <label>IDS Voucher Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>I_m_working_with_the_following_imp_syst__c</fullName>
         <externalId>false</externalId>
         <label>I&apos;m working with the following imp.syst:</label>

@@ -592,6 +592,10 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>xSBU</controllingFieldValue>
+                <valueName>Digital Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>xSBU</controllingFieldValue>
                 <valueName>Equipment</valueName>
             </valueSettings>
             <valueSettings>

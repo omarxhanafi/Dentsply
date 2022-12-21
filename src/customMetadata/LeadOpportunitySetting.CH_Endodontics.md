@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">AH Plus;AH Temp;All Other Endo;All Other - Niti Rotary Files;All Other – Obturation;Apex Locator;Bioceramic;Bioceramic Sealer;Glidepath Files;GuttaCore;GuttaCore/Calamus;GuttaSmart;Kits &amp; Motors;Propex IQ;ProTaper Gold;ProTaper Next;ProTaper Ultimate;Irrigation Needle</value>
+        <value xsi:type="xsd:string">AH Plus;AH Temp;All Other Endo;All Other - Niti Rotary Files;All Other – Obturation;Apex Locator;Bioceramic;AH Plus Bioceramic Sealer;Glidepath Files;GuttaCore;GuttaCore/Calamus;GuttaSmart;Kits &amp; Motors;Propex IQ;ProTaper Gold;ProTaper Next;ProTaper Ultimate;Irrigation Needle</value>
     </values>
     <values>
         <field>Category__c</field>
@@ -17,6 +17,10 @@
     <values>
         <field>Country__c</field>
         <value xsi:type="xsd:string">CH</value>
+    </values>
+    <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>

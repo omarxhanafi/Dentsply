@@ -3,11 +3,15 @@
     <label>Belgium</label>
     <protected>false</protected>
     <values>
+        <field>AlternateQuoteTemplate__c</field>
+        <value xsi:type="xsd:string">Quote Template: Belgium (FR)</value>
+    </values>
+    <values>
         <field>CountryCode__c</field>
         <value xsi:type="xsd:string">BE</value>
     </values>
     <values>
         <field>QuoteTemplate__c</field>
-        <value xsi:type="xsd:string">Quote Template: Belgium (Dutch)</value>
+        <value xsi:type="xsd:string">Quote Template: Belgium (NL)</value>
     </values>
 </CustomMetadata>

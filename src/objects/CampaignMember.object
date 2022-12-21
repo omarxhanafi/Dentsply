@@ -388,6 +388,11 @@ HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula
                     <label>AH Plus</label>
                 </value>
                 <value>
+                    <fullName>AH Plus Bioceramic Sealer</fullName>
+                    <default>false</default>
+                    <label>AH Plus Bioceramic Sealer</label>
+                </value>
+                <value>
                     <fullName>AH Temp</fullName>
                     <default>false</default>
                     <label>AH Temp</label>
@@ -515,6 +520,7 @@ HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula
                 <value>
                     <fullName>Bioceramic Sealer</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Bioceramic Sealer</label>
                 </value>
                 <value>
@@ -2275,6 +2281,16 @@ AND(INCLUDES(Campaign.SBU_Focus__c,&quot;Intruments&quot;),Contact.Account.CFEs_
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>IDSContact__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>IDSContact</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
         <fullName>Implant_Lost_Comparison__c</fullName>
         <description>The field checks the Implant Lost date of the Campaign and sets different  status &quot;lost before/after Campaign&quot;. Use in reports to check lost accounts. If the Account is not Lost the field is blank</description>
         <externalId>false</externalId>
@@ -3051,6 +3067,16 @@ CampaignID+Member email</description>
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>VoucherCode__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>VoucherCode</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
         <fullName>of_Guests_including_participant__c</fullName>
         <externalId>false</externalId>
         <label>Room Type</label>
@@ -3093,6 +3119,10 @@ CampaignID+Member email</description>
             </values>
             <values>
                 <fullName>AH Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3193,10 +3223,6 @@ CampaignID+Member email</description>
             </values>
             <values>
                 <fullName>Bioceramic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4327,6 +4353,10 @@ CampaignID+Member email</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>AH Temp</fullName>
                 <default>false</default>
             </values>
@@ -4424,10 +4454,6 @@ CampaignID+Member email</description>
             </values>
             <values>
                 <fullName>Bioceramic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>

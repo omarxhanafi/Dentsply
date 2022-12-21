@@ -19,6 +19,10 @@
         <value xsi:type="xsd:string">DE</value>
     </values>
     <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
         <field>DefaultCampaignOwner__c</field>
         <value xsi:type="xsd:string">0056M00000A13XL</value>
     </values>

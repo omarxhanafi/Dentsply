@@ -4349,11 +4349,6 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
                     <label>DBSWIN</label>
                 </value>
                 <value>
-                    <fullName>DentalPlanit</fullName>
-                    <default>false</default>
-                    <label>DentalPlanit</label>
-                </value>
-                <value>
                     <fullName>Digital Lab</fullName>
                     <default>false</default>
                     <label>Digital Lab</label>
@@ -4544,31 +4539,6 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
                     <label>Sidexis XG</label>
                 </value>
                 <value>
-                    <fullName>SimPlant &lt;14</fullName>
-                    <default>false</default>
-                    <label>SimPlant &lt;14</label>
-                </value>
-                <value>
-                    <fullName>SimPlant 14</fullName>
-                    <default>false</default>
-                    <label>SimPlant 14</label>
-                </value>
-                <value>
-                    <fullName>SimPlant 15</fullName>
-                    <default>false</default>
-                    <label>SimPlant 15</label>
-                </value>
-                <value>
-                    <fullName>SimPlant 16</fullName>
-                    <default>false</default>
-                    <label>SimPlant 16</label>
-                </value>
-                <value>
-                    <fullName>SimPlant 17</fullName>
-                    <default>false</default>
-                    <label>SimPlant 17</label>
-                </value>
-                <value>
                     <fullName>SimPlant 18</fullName>
                     <default>false</default>
                     <label>SimPlant 18</label>
@@ -4700,10 +4670,6 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Simplant</controllingFieldValue>
-                <valueName>DentalPlanit</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Simplant</controllingFieldValue>
                 <valueName>Implant Library</valueName>
             </valueSettings>
             <valueSettings>
@@ -4725,26 +4691,6 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
             <valueSettings>
                 <controllingFieldValue>Simplant</controllingFieldValue>
                 <valueName>Reduction guide</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Simplant</controllingFieldValue>
-                <valueName>SimPlant &lt;14</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Simplant</controllingFieldValue>
-                <valueName>SimPlant 14</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Simplant</controllingFieldValue>
-                <valueName>SimPlant 15</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Simplant</controllingFieldValue>
-                <valueName>SimPlant 16</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Simplant</controllingFieldValue>
-                <valueName>SimPlant 17</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Simplant</controllingFieldValue>
@@ -8792,11 +8738,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <controllingFieldValue>3D Endo 1.0</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>3D view</valueName>
             </valueSettings>
             <valueSettings>
@@ -8812,12 +8753,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <controllingFieldValue>CMP</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
                 <controllingFieldValue>Mflow</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>DentalPlanit</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <controllingFieldValue>Team-Up (iPad app)</controllingFieldValue>
                 <controllingFieldValue>OnlineShop</controllingFieldValue>
                 <valueName>Crash</valueName>
@@ -8864,11 +8799,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <controllingFieldValue>Microsite</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Certification</valueName>
             </valueSettings>
             <valueSettings>
@@ -8888,11 +8818,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <controllingFieldValue>Microsite</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Floating license server</valueName>
             </valueSettings>
             <valueSettings>
@@ -8912,11 +8837,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <controllingFieldValue>Mflow</controllingFieldValue>
                 <controllingFieldValue>Mguide</controllingFieldValue>
                 <controllingFieldValue>Msoft</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <controllingFieldValue>Team-Up (iPad app)</controllingFieldValue>
                 <controllingFieldValue>SIMPLANT Guide</controllingFieldValue>
                 <valueName>General question</valueName>
@@ -8934,12 +8854,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <controllingFieldValue>Atlantis Editor</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
                 <controllingFieldValue>Msoft</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
                 <controllingFieldValue>Implant Library</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <controllingFieldValue>Team-Up (iPad app)</controllingFieldValue>
                 <valueName>Installation</valueName>
             </valueSettings>
@@ -8959,22 +8874,12 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <controllingFieldValue>Microsite</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Open dicom files</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Microsite</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Open project</valueName>
             </valueSettings>
             <valueSettings>
@@ -8987,11 +8892,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Microsite</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <controllingFieldValue>OnlineShop</controllingFieldValue>
                 <valueName>Print</valueName>
             </valueSettings>
@@ -9003,11 +8903,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <controllingFieldValue>Microsite</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Save project</valueName>
             </valueSettings>
             <valueSettings>
@@ -9037,12 +8932,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
                 <controllingFieldValue>Mflow</controllingFieldValue>
                 <controllingFieldValue>Msoft</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>DentalPlanit</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <controllingFieldValue>Team-Up (iPad app)</controllingFieldValue>
                 <controllingFieldValue>OnlineShop</controllingFieldValue>
                 <valueName>Training</valueName>
@@ -9058,193 +8947,98 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>1-1-1-1</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Dia</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Dual scan</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>FastTrack</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>File Sharing</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Graft volume</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
                 <controllingFieldValue>Mflow</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <controllingFieldValue>OnlineShop</controllingFieldValue>
                 <valueName>Guide ordering</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Hardlock key</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>License server outdated/invalid</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Nerve</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Optical scan</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Panoramic curve</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>PlanAssist</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Registration (PW, CCK)</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Review planning</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Segmentation</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>SimPlant view</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Team-Up</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18.5</controllingFieldValue>
-                <controllingFieldValue>SimPlant 14</controllingFieldValue>
-                <controllingFieldValue>SimPlant 15</controllingFieldValue>
-                <controllingFieldValue>SimPlant 16</controllingFieldValue>
-                <controllingFieldValue>SimPlant 17</controllingFieldValue>
-                <controllingFieldValue>SimPlant &lt;14</controllingFieldValue>
                 <valueName>Virtual teeth</valueName>
             </valueSettings>
             <valueSettings>
@@ -9384,7 +9178,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <controllingFieldValue>Mflow</controllingFieldValue>
                 <controllingFieldValue>Mguide</controllingFieldValue>
                 <controllingFieldValue>Msoft</controllingFieldValue>
-                <controllingFieldValue>DentalPlanit</controllingFieldValue>
                 <controllingFieldValue>SIMPLANT Guide</controllingFieldValue>
                 <valueName>On hold follow up</valueName>
             </valueSettings>
@@ -9466,7 +9259,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>mySimPlant</controllingFieldValue>
-                <controllingFieldValue>DentalPlanit</controllingFieldValue>
                 <valueName>Case creation</valueName>
             </valueSettings>
             <valueSettings>
@@ -9476,7 +9268,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <valueSettings>
                 <controllingFieldValue>mySimPlant</controllingFieldValue>
                 <controllingFieldValue>CMP</controllingFieldValue>
-                <controllingFieldValue>DentalPlanit</controllingFieldValue>
                 <valueName>Upload files</valueName>
             </valueSettings>
             <valueSettings>
@@ -9486,14 +9277,12 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <valueSettings>
                 <controllingFieldValue>CMP</controllingFieldValue>
                 <controllingFieldValue>Mflow</controllingFieldValue>
-                <controllingFieldValue>DentalPlanit</controllingFieldValue>
                 <controllingFieldValue>OnlineShop</controllingFieldValue>
                 <valueName>Password/login lost</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>CMP</controllingFieldValue>
                 <controllingFieldValue>Mflow</controllingFieldValue>
-                <controllingFieldValue>DentalPlanit</controllingFieldValue>
                 <controllingFieldValue>SureWeb/SureScan</controllingFieldValue>
                 <controllingFieldValue>OnlineShop</controllingFieldValue>
                 <valueName>Registration</valueName>
@@ -9739,14 +9528,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <valueSettings>
                 <controllingFieldValue>Practice Network</controllingFieldValue>
                 <valueName>Ports Blocked</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>DentalPlanit</controllingFieldValue>
-                <valueName>Download project</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>DentalPlanit</controllingFieldValue>
-                <valueName>Profile</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Setups</controllingFieldValue>
@@ -15628,10 +15409,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <default>false</default>
             </values>
             <values>
-                <fullName>DentalPlanit</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>ISM</fullName>
                 <default>false</default>
             </values>
@@ -15653,26 +15430,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </values>
             <values>
                 <fullName>SIMPLANT Guide</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant %3C14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 15</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 16</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 17</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17321,10 +17078,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <default>false</default>
             </values>
             <values>
-                <fullName>DentalPlanit</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>ISM</fullName>
                 <default>false</default>
             </values>
@@ -17346,26 +17099,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </values>
             <values>
                 <fullName>SIMPLANT Guide</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant %3C14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 15</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 16</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 17</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19416,10 +19149,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <default>false</default>
             </values>
             <values>
-                <fullName>DentalPlanit</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Hardware components</fullName>
                 <default>false</default>
             </values>
@@ -19453,26 +19182,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </values>
             <values>
                 <fullName>SIMPLANT Guide</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant %3C14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 15</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 16</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 17</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -21337,10 +21046,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <default>false</default>
             </values>
             <values>
-                <fullName>DentalPlanit</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>ISM</fullName>
                 <default>false</default>
             </values>
@@ -21362,26 +21067,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </values>
             <values>
                 <fullName>SIMPLANT Guide</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant %3C14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 15</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 16</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 17</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23186,6 +22871,10 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <default>false</default>
             </values>
             <values>
+                <fullName>Over Ordered</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Password Issue</fullName>
                 <default>false</default>
             </values>
@@ -23374,10 +23063,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <default>false</default>
             </values>
             <values>
-                <fullName>DentalPlanit</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Digital Lab</fullName>
                 <default>false</default>
             </values>
@@ -23511,26 +23196,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </values>
             <values>
                 <fullName>Sidexis XG</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant %3C14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 15</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 16</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 17</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26737,10 +26402,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <default>false</default>
             </values>
             <values>
-                <fullName>DentalPlanit</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Hardware components</fullName>
                 <default>false</default>
             </values>
@@ -26774,26 +26435,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </values>
             <values>
                 <fullName>SIMPLANT Guide</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant %3C14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 15</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 16</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 17</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -28613,10 +28254,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <picklistValues>
             <picklist>Digital_Product__c</picklist>
             <values>
-                <fullName>DentalPlanit</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>ISM</fullName>
                 <default>false</default>
             </values>
@@ -28634,26 +28271,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </values>
             <values>
                 <fullName>SIMPLANT Guide</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant %3C14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 15</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 16</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SimPlant 17</fullName>
                 <default>false</default>
             </values>
             <values>

@@ -100,16 +100,22 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Lightning_Task_Record_Page</content>
         <formFactor>Large</formFactor>
-        <type>Default</type>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Lightning_Task_Record_Page</content>
         <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
@@ -121,9 +127,10 @@
         <fields>Last_Modified__c</fields>
         <label>Lightning Task Compact Layout</label>
     </compactLayouts>
-    <enableFeeds>false</enableFeeds>
+    <enableFeeds>true</enableFeeds>
     <fields>
         <fullName>ActivityDate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>CallDisposition</fullName>
@@ -139,12 +146,15 @@
     </fields>
     <fields>
         <fullName>CompletedDateTime</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>CurrencyIsoCode</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Email</fullName>
@@ -157,9 +167,11 @@
     </fields>
     <fields>
         <fullName>IsVisibleInSelfService</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -167,6 +179,7 @@
     </fields>
     <fields>
         <fullName>Priority</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -177,10 +190,12 @@
     </fields>
     <fields>
         <fullName>Status</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Subject</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -188,6 +203,7 @@
     </fields>
     <fields>
         <fullName>Type</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -404,6 +420,7 @@
         </filters>
         <label>ENCODED:{!FilterNames.Task_UnscheduledTasks}</label>
     </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypes>
         <fullName>CTI_Call</fullName>
         <active>true</active>
@@ -464,11 +481,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Order%3A Sales Team Inside</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Sent email%2Ffax</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Shared Insight</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survey%2FEvaluation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1014,11 +1039,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Order%3A Sales Team Inside</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Sent email%2Ffax</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Shared Insight</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survey%2FEvaluation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1565,11 +1598,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Order%3A Sales Team Inside</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Sent email%2Ffax</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Shared Insight</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survey%2FEvaluation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2083,11 +2124,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Order%3A Sales Team Inside</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Sent email%2Ffax</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Shared Insight</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survey%2FEvaluation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
