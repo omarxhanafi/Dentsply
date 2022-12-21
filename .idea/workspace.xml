@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/BatchCreateProcedureTrackers.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHandler.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHandler.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/BatchCreateProcedureTrackers.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Test_SalesAnalyticsTrigger.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Test_SalesAnalyticsTrigger.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/triggers/SalesAnalyticsTrigger.trigger" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/triggers/SalesAnalyticsTrigger.trigger-meta.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +48,7 @@
               <list>
                 <AnonymousApexSavedDocument>
                   <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="Sales_Analytics__c sls = new Sales_Analytics__c(&#10;        Account__c = '0011l00001JGvdAAAT'&#10;);&#10;&#10;insert sls;" />
+                  <option name="body" value="Sales_Analytics__c sls = new Sales_Analytics__c(&#10;        Account__c = '0011l00001JGvdAAAT',&#10;        LocalSKUKey__c = '2_155_DIGI-500152',&#10;        Invoice_Date__c = Date.today()&#10;);&#10;&#10;insert sls;" />
                   <option name="calloutsLogLevel" value="FINEST" />
                   <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 1" />
@@ -53,9 +60,51 @@
                   <option name="waveLogLevel" value="FINEST" />
                   <option name="workflowLogLevel" value="FINEST" />
                 </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="apexLogLevel" value="FINEST" />
+                  <option name="body" value="Integer nbrOfDays = 3;&#10;&#10;// Getting the list of Procedure_Tracker_Country__mdt custom metadata&#10;List&lt;Procedure_Tracker_Country__mdt&gt; procedureTrackerCountryList = [SELECT Id, Country__c FROM Procedure_Tracker_Country__mdt];&#10;&#10;List&lt;String&gt; procedureTrackerCountryCodes = new List&lt;String&gt;();&#10;&#10;// Getting a list of country codes&#10;for (Procedure_Tracker_Country__mdt eachProcedureTrackerCountry : procedureTrackerCountryList) {&#10;    procedureTrackerCountryCodes.add(eachProcedureTrackerCountry.Country__c);&#10;}&#10;&#10;// Get all Sales Analytics records that were created within the specified number of days, have no active procedure tracker linked to them and have a country within the ProcedureTrackerCountry__mdt&#10;String query = 'SELECT Id, Account__c, Account__r.Country__c, Invoice_Date__c ' +&#10;        'FROM Sales_Analytics__c ' +&#10;        'WHERE CreatedDate = LAST_N_DAYS:' + nbrOfDays + ' ' +&#10;        'AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE Status__c = \'Active\') ' +&#10;        'AND Account__r.Country__c in :procedureTrackerCountryCodes ' +&#10;        'AND LocalSKUKey__c IN (\'2_155_DIGI-500152\', \'2_155_DIGI-500153\', \'2_155_DIGI-500159\')';&#10;&#10;System.debug(Database.query(query).size());" />
+                  <option name="calloutsLogLevel" value="FINEST" />
+                  <option name="databaseLogLevel" value="FINEST" />
+                  <option name="name" value="Anonymous Apex 2" />
+                  <option name="nbaLogLevel" value="FINEST" />
+                  <option name="profilingLogLevel" value="FINEST" />
+                  <option name="systemLogLevel" value="FINEST" />
+                  <option name="validationLogLevel" value="FINEST" />
+                  <option name="visualforceLogLevel" value="FINEST" />
+                  <option name="waveLogLevel" value="FINEST" />
+                  <option name="workflowLogLevel" value="FINEST" />
+                </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="apexLogLevel" value="FINEST" />
+                  <option name="body" value="List&lt;Sales_Analytics__c&gt; salesAnalytics = [SELECT id from Sales_Analytics__c];&#10;&#10;delete salesAnalytics;" />
+                  <option name="calloutsLogLevel" value="FINEST" />
+                  <option name="databaseLogLevel" value="FINEST" />
+                  <option name="name" value="Anonymous Apex 3" />
+                  <option name="nbaLogLevel" value="FINEST" />
+                  <option name="profilingLogLevel" value="FINEST" />
+                  <option name="systemLogLevel" value="FINEST" />
+                  <option name="validationLogLevel" value="FINEST" />
+                  <option name="visualforceLogLevel" value="FINEST" />
+                  <option name="waveLogLevel" value="FINEST" />
+                  <option name="workflowLogLevel" value="FINEST" />
+                </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="apexLogLevel" value="FINEST" />
+                  <option name="body" value="BatchCreateProcedureTrackers batch = new BatchCreateProcedureTrackers(2);&#10;Database.executeBatch(batch, 200); // 200 is the batch size, you can adjust this value as needed&#10;    " />
+                  <option name="calloutsLogLevel" value="FINEST" />
+                  <option name="databaseLogLevel" value="FINEST" />
+                  <option name="name" value="Anonymous Apex 4" />
+                  <option name="nbaLogLevel" value="FINEST" />
+                  <option name="profilingLogLevel" value="FINEST" />
+                  <option name="systemLogLevel" value="FINEST" />
+                  <option name="validationLogLevel" value="FINEST" />
+                  <option name="visualforceLogLevel" value="FINEST" />
+                  <option name="waveLogLevel" value="FINEST" />
+                  <option name="workflowLogLevel" value="FINEST" />
+                </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="0" />
+            <option name="selectedSavedDocumentIndex" value="1" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionWorkspaceSettings">
@@ -178,12 +227,9 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
+                      <entry key="APEXCLASS:BATCHCREATEPROCEDURETRACKERS" value="1671545513000" />
                       <entry key="APEXCLASS:GUIDANCERENDERERCONTROLLER" value="1670486582128" />
-                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHANDLER" value="1671099390125" />
-                      <entry key="APEXCLASS:SALESANALYTICSTRIGGERHELPER" value="1671447956783" />
                       <entry key="APEXCLASS:TEST_GUIDANCERENDERERCONTROLLER" value="1669717997152" />
-                      <entry key="APEXCLASS:TEST_SALESANALYTICSTRIGGER" value="1671017272726" />
-                      <entry key="APEXTRIGGER:SALESANALYTICSTRIGGER" value="1671017274267" />
                       <entry key="COMPACTLAYOUT:PROCEDURETRACKER__C.PROCEDURE_TRACKER_COMPACT_LAYOUT" value="1669033209000" />
                       <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.COUNTRYLIST__C" value="1670508438000" />
                       <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.COUNTRY__C" value="1670432057000" />
@@ -5310,7 +5356,7 @@
         </option>
         <option name="logAnalyzerSettings">
           <LogAnalyzerSettings>
-            <option name="splitterProportion" value="0.37195122" />
+            <option name="splitterProportion" value="0.43934426" />
           </LogAnalyzerSettings>
         </option>
         <option name="retrieveAndMergeDefault" value="false" />
@@ -5320,17 +5366,19 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="Select id, objectid, SobjectType, Territory2Id from ObjectTerritory2Association" />
-                  <option name="connectionName" value="SureSmile" />
-                  <option name="connectionType" value="OAUTH" />
+                  <option name="body" value="SELECT Count(Id) FROM Sales_Analytics__c WHERE CreatedDate = LAST_N_DAYS:3 AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE Status__c = 'Active') AND Account__r.Country__c IN ('US','BE')" />
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select userid, user.name, RoleInTerritory2 from UserTerritory2Association where Territory2Id in ('0MI0J000000bls1WAA', '0MI0J000000fxcTWAQ', '0MI6M00000007ZsWAI', '0MI6M00000007ZxWAI', '0MI6M00000007a2WAA', '0MI6M00000007a7WAA', '0MI6M00000007aCWAQ', '0MI6M000000LLndWAG')" />
+                  <option name="body" value="SELECT Count(Id) FROM Sales_Analytics__c WHERE CreatedDate = LAST_N_DAYS:30 AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE Status__c = 'Active') AND Account__r.Country__c IN ('US','BE') AND LocalSKUKey__c IN ('2_155_DIGI-500152', '2_155_DIGI-500153', '2_155_DIGI-500159')" />
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 2" />
                 </SoqlQuerySavedDocument>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select id from Sales_Analytics__c" />
+                  <option name="body" value="Select count(id) from Sales_Analytics__c where LocalSKUKey__c LIKE '%DIGI-500152' AND LocalSKUKey__c != '2_155_DIGI-500152'" />
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 3" />
                 </SoqlQuerySavedDocument>
               </list>
@@ -5600,7 +5648,12 @@
       <workItem from="1670854245927" duration="3225000" />
       <workItem from="1671008129348" duration="12704000" />
       <workItem from="1671193789832" duration="217000" />
-      <workItem from="1671194011926" duration="23455000" />
+      <workItem from="1671194011926" duration="24119000" />
+      <workItem from="1671534099709" duration="4274000" />
+      <workItem from="1671541199456" duration="605000" />
+      <workItem from="1671542501932" duration="677000" />
+      <workItem from="1671543728046" duration="2737000" />
+      <workItem from="1671607906415" duration="648000" />
     </task>
     <servers />
   </component>
@@ -5622,14 +5675,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="ApexOfflineDebuggerLocalBreakpointType">
-          <url>file://$PROJECT_DIR$/src/classes/FindLeadMatch.cls</url>
-          <line>196</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ApexOfflineDebuggerLocalBreakpointType">
-          <url>file://$PROJECT_DIR$/src/classes/SalesAnalyticsTriggerHelper.cls</url>
-          <line>23</line>
-          <option name="timeStamp" value="32" />
+          <url>file://$PROJECT_DIR$/src/classes/BatchCreateProcedureTrackers.cls</url>
+          <line>38</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
