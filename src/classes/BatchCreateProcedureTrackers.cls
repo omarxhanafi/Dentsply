@@ -8,30 +8,39 @@
  */
 global class BatchCreateProcedureTrackers implements Database.Batchable<sObject> {
 
-    private Integer nbrOfDays;
-
-    global BatchCreateProcedureTrackers(Integer nbrOfDays) {
-        this.nbrOfDays = nbrOfDays;
-    }
-
     global Database.QueryLocator start(Database.BatchableContext bc) {
-        // Getting the list of Procedure_Tracker_Country__mdt custom metadata
-        List<Procedure_Tracker_Country__mdt> procedureTrackerCountryList = [SELECT Id, Country__c FROM Procedure_Tracker_Country__mdt];
+        // Getting the list of ProcedureTrackerCreationSetting__mdt custom metadata
+        List<ProcedureTrackerCreationSetting__mdt> procedureTrackerCreationSettings;
 
+        if(!Test.isRunningTest()){
+            procedureTrackerCreationSettings = [SELECT Id, CountryList__c, NumberOfDays__c FROM ProcedureTrackerCreationSetting__mdt];
+        } else {
+            // Mock data for testing
+            procedureTrackerCreationSettings = new List<ProcedureTrackerCreationSetting__mdt>{
+                    new ProcedureTrackerCreationSetting__mdt(
+                            CountryList__c = 'US;BE',
+                            NumberOfDays__c = 7
+                    )
+            };
+        }
+
+        // Init Batch Parameters
         List<String> procedureTrackerCountryCodes = new List<String>();
+        Integer nbrOfDays = 7;
 
-        // Getting a list of country codes
-        for (Procedure_Tracker_Country__mdt eachProcedureTrackerCountry : procedureTrackerCountryList) {
-            procedureTrackerCountryCodes.add(eachProcedureTrackerCountry.Country__c);
+        // Getting a list of country codes & number of days
+        if (!procedureTrackerCreationSettings.isEmpty()) {
+            procedureTrackerCountryCodes = procedureTrackerCreationSettings[0].CountryList__c.split(';');
+            nbrOfDays = (Integer) procedureTrackerCreationSettings[0].NumberOfDays__c;
         }
 
         // Get all Sales Analytics records that were created within the specified number of days, have no active procedure tracker linked to them and have a country within the ProcedureTrackerCountry__mdt
         String query = 'SELECT Id, Account__c, Account__r.Country__c, Invoice_Date__c ' +
                 'FROM Sales_Analytics__c ' +
-                'WHERE CreatedDate = LAST_N_DAYS:' + this.nbrOfDays + ' ' +
-                'AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE Status__c = \'Active\') ' +
+                'WHERE Invoice_Date__c = LAST_N_DAYS:' + nbrOfDays + ' ' +
+                'AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c) ' +
                 'AND Account__r.Country__c IN :procedureTrackerCountryCodes ' +
-                'AND LocalSKUKey__c IN (\'2_155_DIGI-500152\', \'2_155_DIGI-500153\', \'2_155_DIGI-500159\')';
+                'AND Product__r.Article__c IN (\'DIGI-500152\', \'DIGI-500153\', \'DIGI-500159\')';
         return Database.getQueryLocator(query);
     }
 
@@ -161,12 +170,14 @@ global class BatchCreateProcedureTrackers implements Database.Batchable<sObject>
 
         System.debug('procedureTrackerList : ' + procedureTrackerList);
 
-        List<Database.SaveResult> result = Database.insert(procedureTrackerList, false);
-        System.debug('Save result : ' + result);
+        // Insert procedure trackers
+        List<Database.SaveResult> results = Database.insert(procedureTrackerList, false);
+
+        System.debug('Save result : ' + results);
     }
 
     global void finish(Database.BatchableContext bc) {
-        DebugLog.addInfo('Batch finished successfuly: BatchCreateProcedureTrackers JobId:', bc.getJobId());
+        DebugLog.addInfo('Batch finished successfully: BatchCreateProcedureTrackers JobId:', bc.getJobId());
     }
 
 
@@ -192,10 +203,10 @@ global class BatchCreateProcedureTrackers implements Database.Batchable<sObject>
             // Mock data for testing
             leadOpportunitySettingsList = new List<LeadOpportunitySetting__mdt>{
                     new LeadOpportunitySetting__mdt(
-                            Label = 'AD_Orthodontics',
-                            DeveloperName = 'AD_Orthodontics',
+                            Label = 'BE_Orthodontics',
+                            DeveloperName = 'BE_Orthodontics',
                             Category__c = 'Orthodontics',
-                            Country__c = 'AD',
+                            Country__c = 'BE',
                             UserRoles__c = 'Sales Rep (Main Contact)',
                             BrandsList__c = 'SureSmile Aligner'
                     )

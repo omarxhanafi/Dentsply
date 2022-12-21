@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/ScheduleCreateProcedureTrackers.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/ScheduleCreateProcedureTrackers.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_BatchCreateProcedureTrackers.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_BatchCreateProcedureTrackers.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_ScheduleCreateProcedureTrackers.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_ScheduleCreateProcedureTrackers.cls-meta.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/BatchCreateProcedureTrackers.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/BatchCreateProcedureTrackers.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ScheduleCreateProcedureTrackers.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ScheduleCreateProcedureTrackers.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +45,7 @@
               <list>
                 <AnonymousApexSavedDocument>
                   <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="Sales_Analytics__c sls = new Sales_Analytics__c(&#10;        Account__c = '0011l00001JGvdAAAT',&#10;        LocalSKUKey__c = '2_155_DIGI-500152',&#10;        Invoice_Date__c = Date.today()&#10;);&#10;&#10;insert sls;" />
+                  <option name="body" value="Sales_Analytics__c sls = new Sales_Analytics__c(&#10;        Account__c = '0011l00001JGvdAAAT',&#10;        Product__c = '01t1l000007pG8FAAU',&#10;        Invoice_Date__c = Date.today()&#10;);&#10;&#10;insert sls;" />
                   <option name="calloutsLogLevel" value="FINEST" />
                   <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 1" />
@@ -56,7 +59,7 @@
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
                   <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="Integer nbrOfDays = 3;&#10;&#10;// Getting the list of Procedure_Tracker_Country__mdt custom metadata&#10;List&lt;Procedure_Tracker_Country__mdt&gt; procedureTrackerCountryList = [SELECT Id, Country__c FROM Procedure_Tracker_Country__mdt];&#10;&#10;List&lt;String&gt; procedureTrackerCountryCodes = new List&lt;String&gt;();&#10;&#10;// Getting a list of country codes&#10;for (Procedure_Tracker_Country__mdt eachProcedureTrackerCountry : procedureTrackerCountryList) {&#10;    procedureTrackerCountryCodes.add(eachProcedureTrackerCountry.Country__c);&#10;}&#10;&#10;// Get all Sales Analytics records that were created within the specified number of days, have no active procedure tracker linked to them and have a country within the ProcedureTrackerCountry__mdt&#10;String query = 'SELECT Id, Account__c, Account__r.Country__c, Invoice_Date__c ' +&#10;        'FROM Sales_Analytics__c ' +&#10;        'WHERE CreatedDate = LAST_N_DAYS:' + nbrOfDays + ' ' +&#10;        'AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE Status__c = \'Active\') ' +&#10;        'AND Account__r.Country__c in :procedureTrackerCountryCodes ' +&#10;        'AND LocalSKUKey__c IN (\'2_155_DIGI-500152\', \'2_155_DIGI-500153\', \'2_155_DIGI-500159\')';&#10;&#10;System.debug(Database.query(query).size());" />
+                  <option name="body" value="List&lt;ProcedureTrackerCreationSetting__mdt&gt; procedureTrackerCreationSettings = [SELECT Id, CountryList__c, NumberOfDays__c FROM ProcedureTrackerCreationSetting__mdt];&#10;&#10;// Init Batch Parameters&#10;List&lt;String&gt; procedureTrackerCountryCodes = new List&lt;String&gt;();&#10;&#10;Integer nbrOfDays = 7;&#10;&#10;// Getting a list of country codes &amp; number of days&#10;if (!procedureTrackerCreationSettings.isEmpty()) {&#10;    procedureTrackerCountryCodes = procedureTrackerCreationSettings[0].CountryList__c.split(';');&#10;    nbrOfDays = (Integer) procedureTrackerCreationSettings[0].NumberOfDays__c;&#10;}&#10;&#10;// Get all Sales Analytics records that were created within the specified number of days, have no active procedure tracker linked to them and have a country within the ProcedureTrackerCountry__mdt&#10;String query = 'SELECT Id, Account__c, Account__r.Country__c, Invoice_Date__c ' +&#10;        'FROM Sales_Analytics__c ' +&#10;        'WHERE CreatedDate = LAST_N_DAYS:' + nbrOfDays + ' ' +&#10;        'AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c) ' +&#10;        'AND Account__r.Country__c IN :procedureTrackerCountryCodes ' +&#10;        'AND Product__r.Article__c IN (\'DIGI-500152\', \'DIGI-500153\', \'DIGI-500159\')';&#10;&#10;System.debug(Database.query(query).size());" />
                   <option name="calloutsLogLevel" value="FINEST" />
                   <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 2" />
@@ -84,7 +87,7 @@
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
                   <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="BatchCreateProcedureTrackers batch = new BatchCreateProcedureTrackers(2);&#10;Database.executeBatch(batch, 200); // 200 is the batch size, you can adjust this value as needed&#10;    " />
+                  <option name="body" value="BatchCreateProcedureTrackers batch = new BatchCreateProcedureTrackers();&#10;Database.executeBatch(batch, 200); // 200 is the batch size, you can adjust this value as needed&#10;    " />
                   <option name="calloutsLogLevel" value="FINEST" />
                   <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 4" />
@@ -98,7 +101,7 @@
                 </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="1" />
+            <option name="selectedSavedDocumentIndex" value="0" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionWorkspaceSettings">
@@ -221,9 +224,12 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:BATCHCREATEPROCEDURETRACKERS" value="1671611832698" />
+                      <entry key="APEXCLASS:BATCHCREATEPROCEDURETRACKERS" value="1671629935744" />
                       <entry key="APEXCLASS:GUIDANCERENDERERCONTROLLER" value="1670486582128" />
+                      <entry key="APEXCLASS:SCHEDULECREATEPROCEDURETRACKERS" value="1671622270155" />
+                      <entry key="APEXCLASS:TEST_BATCHCREATEPROCEDURETRACKERS" value="1671630278070" />
                       <entry key="APEXCLASS:TEST_GUIDANCERENDERERCONTROLLER" value="1669717997152" />
+                      <entry key="APEXCLASS:TEST_SCHEDULECREATEPROCEDURETRACKERS" value="1671630362000" />
                       <entry key="COMPACTLAYOUT:PROCEDURETRACKER__C.PROCEDURE_TRACKER_COMPACT_LAYOUT" value="1669033209000" />
                       <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.COUNTRYLIST__C" value="1670508438000" />
                       <entry key="CUSTOMFIELD:GUIDANCERENDERER__MDT.COUNTRY__C" value="1670432057000" />
@@ -5370,14 +5376,14 @@
                   <option name="name" value="SOQL Query 2" />
                 </SoqlQuerySavedDocument>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="Select count(id) from Sales_Analytics__c where LocalSKUKey__c LIKE '%DIGI-500152' AND LocalSKUKey__c != '2_155_DIGI-500152'" />
+                  <option name="body" value="select AssociationCause from ObjectTerritory2Association group by AssociationCause" />
                   <option name="connectionName" value="Production" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 3" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="1" />
+            <option name="selectedSavedDocumentIndex" value="2" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -5420,7 +5426,7 @@
       <recent name="$PROJECT_DIR$/src/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Apex Unit Tests.Test_GuidanceRendererController">
+  <component name="RunManager" selected="Apex Unit Tests.Test_ScheduleCreateProcedureTrackers">
     <configuration name="FindLeadMatchTest.executeLeadMatchSearchTest" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -5468,6 +5474,53 @@
       <option name="workflowLogLevel" value="FINEST" />
       <method v="2" />
     </configuration>
+    <configuration name="Test_BatchCreateProcedureTrackers.testBatchCreateProcedureTrackers" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="connectionName" value="SureSmile" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_BatchCreateProcedureTrackers" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map>
+          <entry key="Test_BatchCreateProcedureTrackers">
+            <value>
+              <set>
+                <option value="testBatchCreateProcedureTrackers" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test_GuidanceRendererController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -5485,45 +5538,6 @@
             <value>
               <set>
                 <option value="Test_GuidanceRendererController" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map />
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_OneDSCanadaTermsAndConditions_CC" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="SureSmile" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_OneDSCanadaTermsAndConditions_CC" />
               </set>
             </value>
           </entry>
@@ -5585,12 +5599,52 @@
       <option name="workflowLogLevel" value="ERROR" />
       <method v="2" />
     </configuration>
+    <configuration name="Test_ScheduleCreateProcedureTrackers" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="connectionName" value="SureSmile" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_ScheduleCreateProcedureTrackers" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map />
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Apex Unit Tests.Test_ScheduleCreateProcedureTrackers" />
+        <item itemvalue="Apex Unit Tests.Test_BatchCreateProcedureTrackers.testBatchCreateProcedureTrackers" />
         <item itemvalue="Apex Unit Tests.Test_GuidanceRendererController" />
         <item itemvalue="Apex Unit Tests.FindLeadMatchTest.executeLeadMatchSearchTest" />
         <item itemvalue="Apex Unit Tests.Test_OrderManagement_CC" />
-        <item itemvalue="Apex Unit Tests.Test_OneDSCanadaTermsAndConditions_CC" />
       </list>
     </recent_temporary>
   </component>
@@ -5647,7 +5701,7 @@
       <workItem from="1671541199456" duration="605000" />
       <workItem from="1671542501932" duration="677000" />
       <workItem from="1671543728046" duration="2737000" />
-      <workItem from="1671607906415" duration="1884000" />
+      <workItem from="1671607906415" duration="10610000" />
     </task>
     <servers />
   </component>
@@ -5670,7 +5724,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="ApexOfflineDebuggerLocalBreakpointType">
           <url>file://$PROJECT_DIR$/src/classes/BatchCreateProcedureTrackers.cls</url>
-          <line>38</line>
+          <line>47</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
@@ -5680,7 +5734,7 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_findLeadMatch_testExecuteLeadSearch.ic2" NAME="HOTFIX Coverage Results" MODIFIED="1667918143842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="HOTFIX" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OrderManagement_CC_testCloneOrderWithPricingMicroServiceCallOutWithNoSourceRecord.ic2" NAME="DevNov Coverage Results" MODIFIED="1666690699780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_GuidanceRendererController.ic2" NAME="SureSmile Coverage Results" MODIFIED="1669718040013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_BatchCreateProcedureTrackers_testBatchCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671629496446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
   </component>
 </project>
