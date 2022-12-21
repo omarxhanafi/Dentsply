@@ -103,7 +103,8 @@ global class BatchCreateProcedureTrackers implements Database.Batchable<sObject>
                     PracticeAccount__c = eachSalesAnalytic.Account__c,
                     RegistrationDate__c = eachSalesAnalytic.Invoice_Date__c,    // Eventually have a field on the account with the registration date and transform the current field to a custom formula instead
                     ActivationNeededby__c = eachSalesAnalytic.Invoice_Date__c != null ? eachSalesAnalytic.Invoice_Date__c.addMonths(3) : null,
-                    Sales_Analytics__c = eachSalesAnalytic.Id,             // We link the sales analytics to the procedure tracker
+                    SalesAnalytics__c = eachSalesAnalytic.Id,             // We link the sales analytics to the procedure tracker
+                    AutomaticallyCreated__c = true,
                     x1ExperienceSureSmile__c = true,
                     x2Register__c = true
             );
