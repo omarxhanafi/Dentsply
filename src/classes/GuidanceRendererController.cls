@@ -1,4 +1,31 @@
-    public without sharing class GuidanceRendererController {
+/**
+ * @Author          Nihad (naoussar@salesforce.com)
+ * @Description     The GuidanceRendererController class is a Apex class that is used to retrieve guidance details and best practices
+ *                  information for a given Procedure Tracker record. The guidance details are retrieved based on the next activity of
+ *                  the Procedure Tracker record and the country of the associated Practice Account. The best practices information is
+ *                  retrieved based on the country of the associated Practice Account.
+ * @Test-Class      Test_GuidanceRendererController
+ *
+ * @History
+ * 14-09-2022   Nihad     Created the GuidanceRendererController class
+ * 17-11-2022   Omar      Changed the getGuidanceDetails to support the list of countries and created getBestPractices Method (TFUS-000005045 - TFUS-000005106)
+ */
+public without sharing class GuidanceRendererController {
+
+        /**
+            * getGuidanceDetails is a method that retrieves the guidance details for a given Procedure Tracker record.
+            *
+            * @Author          Nihad (naosusar@salesforce.com)
+            * @Description     Retrieves the guidance details for a given Procedure Tracker record.
+            * @History
+            * 14-09-2022   Nihad     Created the getGuidanceDetails method
+            * 17-11-2022   Omar      Support for a list of countries (TFUS-000005045)
+            *
+            * @param parentId The Id of the Procedure Tracker record for which the guidance details are being retrieved.
+            * @param nextActivity The next activity of the Procedure Tracker record for which the guidance details are being retrieved.
+            *
+            * @return The guidance details for the given Procedure Tracker record.
+            */
         @AuraEnabled
         public static string getGuidanceDetails(String parentId, String nextActivity){
             try {
@@ -50,6 +77,18 @@
             }
         }
 
+        /**
+             * getBestPractices is a method that retrieves the best practices information for a given Procedure Tracker record.
+             *
+             * @Author          Omar (ohanafi@salesforce.com)
+             * @Description     Retrieves the best practices information for a given Procedure Tracker record.
+             * @History
+             * 29-11-2022   Omar     Created the getBestPractices method (TFUS-000005106)
+             *
+             * @param parentId The Id of the Procedure Tracker record for which the best practices information is being retrieved.
+             *
+             * @return A list of best practices information for the given Procedure Tracker record.
+             */
         @AuraEnabled(cacheable = true)
         public static List<ProcedureTrackingBestPractices__mdt> getBestPractices(String parentId){
             try {
