@@ -15,7 +15,7 @@ public without sharing class GuidanceRendererController {
         /**
             * getGuidanceDetails is a method that retrieves the guidance details for a given Procedure Tracker record.
             *
-            * @Author          Nihad (naosusar@salesforce.com)
+            * @Author          Nihad (naoussar@salesforce.com)
             * @Description     Retrieves the guidance details for a given Procedure Tracker record.
             * @History
             * 14-09-2022   Nihad     Created the getGuidanceDetails method
@@ -37,16 +37,16 @@ public without sharing class GuidanceRendererController {
 
                 if(currentProcedure != null){
                     //get meta data with the next activity
-                    List<GuidanceRenderer__mdt> guidances;
+                    List<GuidanceRenderer__mdt> guidanceList;
 
                     if(Test.IsRunningTest()){
-                        guidances =  [
+                        guidanceList =  [
                                 Select Id,CountryList__c, Guidance_Content__c, NextActivity__c
                                 From GuidanceRenderer__mdt
                                 Where  isTest__c = true
                         ];
                     } else {
-                        guidances =  [
+                        guidanceList =  [
                                 Select Id,CountryList__c, Guidance_Content__c, NextActivity__c
                                 From GuidanceRenderer__mdt
                                 Where  NextActivity__c=:nextActivity
@@ -54,7 +54,7 @@ public without sharing class GuidanceRendererController {
                         ];
                     }
 
-                    for(GuidanceRenderer__mdt eachGuidance : guidances){
+                    for(GuidanceRenderer__mdt eachGuidance : guidanceList){
                         if(String.isNotBlank(eachGuidance.CountryList__c)){
                             // We get the list of countries associated to the custom metadata, which is a semicolon seperated list
                             List<String> countryList = eachGuidance.CountryList__c.split(';');

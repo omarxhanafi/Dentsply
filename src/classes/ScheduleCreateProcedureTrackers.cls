@@ -8,6 +8,6 @@
  */
 global class ScheduleCreateProcedureTrackers implements Schedulable {
     global void execute (SchedulableContext ctx){
-        Database.executeBatch(new BatchCreateProcedureTrackers());
+        Database.executeBatch(new BatchCreateProcedureTrackers(), 200);
     }
 }
