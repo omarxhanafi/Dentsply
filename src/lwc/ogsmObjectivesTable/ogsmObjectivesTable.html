@@ -5,15 +5,15 @@
             onobjectivecreated={newObjectiveHandle}
             >
         </c-ogsm-new-objectives>
-    </div> 
-    
+    </div>
+
     <c-custom-datatable
         data={records}
         columns={columns}
         key-field="id"
         onrichtextchange={richTextChengeHandle}
         onpicklistchanged={picklistChangeHandle}
-        onrowaction={handleRowAction} 
+        onrowaction={handleRowAction}
         onsave={handleSave}
         hide-checkbox-column
         >
