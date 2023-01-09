@@ -126,7 +126,19 @@
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>Product_Item_Compact_Layouts</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Product_Item_Compact_Layouts</fullName>
+        <fields>ProductItemNumber</fields>
+        <fields>ArticleSKU__c</fields>
+        <fields>Product2Id</fields>
+        <fields>SerialNumber__c</fields>
+        <fields>QuantityOnHand</fields>
+        <fields>LocationId</fields>
+        <fields>ERPWarehouse__c</fields>
+        <fields>BatchNumber__c</fields>
+        <label>Product Item Compact Layouts</label>
+    </compactLayouts>
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
@@ -226,6 +238,7 @@
     <fields>
         <fullName>SerialNumber__c</fullName>
         <externalId>false</externalId>
+        <inlineHelpText>Custom Serial Number used by Field Service users</inlineHelpText>
         <label>Serial Number</label>
         <length>255</length>
         <required>false</required>
@@ -297,19 +310,47 @@
         <columns>Location</columns>
         <columns>QuantityOnHand</columns>
         <columns>SerialNumber</columns>
+        <columns>CreatedBy</columns>
+        <columns>LastModifiedDate</columns>
         <filterScope>Everything</filterScope>
         <label>All Product Items</label>
-        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>My_ProductItems</fullName>
         <filterScope>Mine</filterScope>
         <label>My Product Items</label>
     </listViews>
+    <profileSearchLayouts>
+        <fields>Name</fields>
+        <fields>ArticleSKU__c</fields>
+        <fields>Product2</fields>
+        <fields>SerialNumber__c</fields>
+        <fields>QuantityOnHand</fields>
+        <fields>Location</fields>
+        <fields>ERPWarehouse__c</fields>
+        <fields>BatchNumber__c</fields>
+        <fields>LastModifiedDate</fields>
+        <profileName>Lightning Field Service</profileName>
+    </profileSearchLayouts>
+    <profileSearchLayouts>
+        <fields>Name</fields>
+        <fields>ArticleSKU__c</fields>
+        <fields>Product2</fields>
+        <fields>QuantityOnHand</fields>
+        <fields>Location</fields>
+        <fields>SerialNumber__c</fields>
+        <fields>ERPWarehouse__c</fields>
+        <fields>BatchNumber__c</fields>
+        <fields>Status__c</fields>
+        <fields>LastModifiedDate</fields>
+        <profileName>#System: System Administrator</profileName>
+    </profileSearchLayouts>
     <searchLayouts>
         <customTabListAdditionalFields>Product2</customTabListAdditionalFields>
         <customTabListAdditionalFields>Location</customTabListAdditionalFields>
         <customTabListAdditionalFields>QuantityOnHand</customTabListAdditionalFields>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
         <lookupDialogsAdditionalFields>Product2</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Location</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>QuantityOnHand</lookupDialogsAdditionalFields>
@@ -318,10 +359,11 @@
         <lookupPhoneDialogsAdditionalFields>QuantityOnHand</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>ArticleSKU__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Product2</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>ERPWarehouse__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>QuantityOnHand</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>SerialNumber</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>BatchNumber__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>QuantityOnHand</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LastModifiedDate</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Location</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

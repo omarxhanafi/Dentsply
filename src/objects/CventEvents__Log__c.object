@@ -144,7 +144,7 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
-    <description>Event logging object.</description>
+    <description>Cvent app logging object.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>false</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -410,7 +410,7 @@
         <filters>
             <field>CventEvents__Level__c</field>
             <operation>equals</operation>
-            <value>User</value>
+            <value>User,Business,Internal</value>
         </filters>
         <label>All</label>
     </listViews>
@@ -490,7 +490,7 @@
         <filters>
             <field>CventEvents__Severity__c</field>
             <operation>equals</operation>
-            <value>Error</value>
+            <value>Partial Error,Error</value>
         </filters>
         <filters>
             <field>CREATED_DATE</field>

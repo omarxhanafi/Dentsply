@@ -47,7 +47,7 @@ export default class EventCallReportWidget extends LightningElement {
     @track isDirty = false;
     @track saveAndComplete = false;
     disableSaveAndComplete = false;
-
+    updatedToCompleted = false;
 
     // Get current User.User_Country__c to be used in Call_Report__c.Assigned_To_User_Country__c
     @wire(getRecord, { recordId: '$userId', fields: USER_FIELDS })
@@ -83,14 +83,14 @@ export default class EventCallReportWidget extends LightningElement {
             this.disableSaveAndComplete = data.Event_Status__c === 'Completed';
         } else if (error) {
             this.isLoading = false;
+            this.error = handleApexError({ error: error });
             const evt = new ShowToastEvent({
-                title: 'Error',
-                message: this.error,
+                title: this.error.message,
+                message: this.error.detail,
                 variant: 'error',
                 mode: 'dismissable'
             });
             this.dispatchEvent(evt);
-            this.error = handleApexError({ error: error });
         }
     }
 
@@ -110,21 +110,41 @@ export default class EventCallReportWidget extends LightningElement {
         }
     } */
 
+    async handleSuccess(event) {
+        const callReport = event.detail;
+        if (this.saveAndComplete) {
+            await this.setEventToCompleted();
+        }
+        if(this.saveAndComplete && this.updatedToCompleted)
+        {
+            const refreshView = new CustomEvent('reload');
+            this.dispatchEvent(refreshView);
+        }
+        this.eventSbu = callReport.fields[CALL_REPORT_PRODUCT_GROUP_FIELD.fieldApiName] ? callReport.fields[CALL_REPORT_PRODUCT_GROUP_FIELD.fieldApiName].value : '';
+        this.isDirty = false;
+        this.saveAndComplete = false;
+        this.isLoading = false;
+        this.isEditMode = false;
+    }
+
+
     async setEventToCompleted() {
         try {
             const completedEvent = await completeEvent({ recordId: this.recordId });
+
             this.disableSaveAndComplete = true;
+            this.updatedToCompleted = true;
             getRecordNotifyChange([{ recordId: this.recordId }]);
-            const refreshView = new CustomEvent('refreshview');
-            this.dispatchEvent(refreshView);
-            // this.getEventFields();
+            console.log('completedEvent updated');
+            console.table(completedEvent);
             this.isLoading = false;
         } catch (error) {
+            console.error('Error returnd while trying to update Event obj')
             this.isLoading = false;
             this.error = handleApexError({ error: error });
             const evt = new ShowToastEvent({
-                title: 'Error',
-                message: this.error,
+                title:  this.error.message,
+                message: this.error.detail,
                 variant: 'error',
                 mode: 'dismissable'
             });
@@ -194,22 +214,7 @@ export default class EventCallReportWidget extends LightningElement {
         this.handleUserSubmit();
     }
     
-    handleSuccess(event) {
-        const callReport = event.detail;
-        if (this.saveAndComplete) {
-            this.setEventToCompleted();
-            this.saveAndComplete = false;
-        } 
-        // this.isLoading = false;
-        this.eventSbu = callReport.fields[CALL_REPORT_PRODUCT_GROUP_FIELD.fieldApiName] ? callReport.fields[CALL_REPORT_PRODUCT_GROUP_FIELD.fieldApiName].value : '';
-        this.isEditMode = false;
-        this.error = null;
-        this.isDirty = false;
-        const refreshView = new CustomEvent('refreshview');
-        this.dispatchEvent(refreshView);
-        console.log('eventCallReportWidgetSuccess::'+JSON.stringify(callReport));
-    }
-    
+
     handleError(event) {
         this.saveAndComplete = false;
         this.isLoading = false;

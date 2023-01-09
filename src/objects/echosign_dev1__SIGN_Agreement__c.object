@@ -2028,6 +2028,8 @@ TEXT(echosign_dev1__Status__c))</formula>
         <columns>echosign_dev1__Data_Mapping_Error__c</columns>
         <columns>echosign_dev1__Data_Mapping_Result__c</columns>
         <columns>echosign_dev1__Trigger_Process_Template__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>echosign_dev1__Contract__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

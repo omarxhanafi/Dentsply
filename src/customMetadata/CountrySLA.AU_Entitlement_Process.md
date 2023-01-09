@@ -10,4 +10,8 @@
         <field>Entitlement_Process__c</field>
         <value xsi:type="xsd:string">ANZ: Service Cloud IT - SLA</value>
     </values>
+    <values>
+        <field>FallbackEntitlementRecord__c</field>
+        <value xsi:nil="true"/>
+    </values>
 </CustomMetadata>

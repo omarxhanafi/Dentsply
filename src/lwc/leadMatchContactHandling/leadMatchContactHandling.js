@@ -38,7 +38,8 @@ export default class LeadMatchContactHandling extends LightningElement {
     @track showMoreContacts;
     @api newContact = {};
     @api contactfields = '';
-    @track contactSelected; 
+    @track contactSelected;
+    @track showSpinner = true;
 
     connectedCallback(){
         this.accountSelected = false;
@@ -57,10 +58,16 @@ export default class LeadMatchContactHandling extends LightningElement {
 
         inputList.push(input);
 
+        let d1 = new Date();
+
         findContacts({input: inputList})
             .then(result => {
+                this.showSpinner = false;
+
+                console.log('time elapsed :' + (new Date().getTime() - d1.getTime()) / 1000);
+
                 console.log(result);
-                
+
 
                 for(var i in result){
                     if(i<=2){
@@ -74,13 +81,13 @@ export default class LeadMatchContactHandling extends LightningElement {
                 console.log('Shown accounts: ' + this.shownContactList);
 
                 if(result[0].matchConfidence > 75){
-                        this.selectedAccountId = result[0].matchRecord.Id;
-                        this.accountSelected = true;
+                    this.selectedAccountId = result[0].matchRecord.Id;
+                    this.accountSelected = true;
 
-                        let accId = result[0].matchRecord.Id;
-                        let leadId = this.recordId;
+                    let accId = result[0].matchRecord.Id;
+                    let leadId = this.recordId;
 
-                        findRelatedContacts({leadId: leadId, accountId: accId})
+                    findRelatedContacts({leadId: leadId, accountId: accId})
                         .then(result => {
                             console.log(result);
                             this.matchRelatedContactList = result;
@@ -93,7 +100,7 @@ export default class LeadMatchContactHandling extends LightningElement {
                             if(result[0].matchConfidence > 75){
                                 this.contactSelected = true;
                                 this.selectedContactId = result[0].matchRecord.Id;
-                            }  
+                            }
 
                         })
                         .catch((error) => {
@@ -118,7 +125,7 @@ export default class LeadMatchContactHandling extends LightningElement {
     get accountStreet() {
         return getFieldValue(this.selectedAccount.data, ACCOUNT_STREET);
     }
-    
+
     get accountPostalcode() {
         return getFieldValue(this.selectedAccount.data, ACCOUNT_POSTALCODE);
     }
@@ -155,46 +162,46 @@ export default class LeadMatchContactHandling extends LightningElement {
     }
 
     handleAccountSelection(event) {
-      this.progressValue = event.detail;
-      this.selectedAccountId = event.detail;
-      console.log('Collected progress value: ' + this.progressValue);
-      
-      var leadId = this.recordId;
-      var accId = this.progressValue;
+        this.progressValue = event.detail;
+        this.selectedAccountId = event.detail;
+        console.log('Collected progress value: ' + this.progressValue);
 
-      findRelatedContacts({leadId: leadId, accountId: accId})
-      .then(result => {
-          console.log(result);
-          this.matchRelatedContactList = result;
-          this.accountSelected = true;
-      })
-      .catch((error) => {
-          console.log(error);
-      });
+        var leadId = this.recordId;
+        var accId = this.progressValue;
+
+        findRelatedContacts({leadId: leadId, accountId: accId})
+            .then(result => {
+                console.log(result);
+                this.matchRelatedContactList = result;
+                this.accountSelected = true;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
 
     }
 
     handleAccountLookupSelection(event) {
         this.selectedAccountId = String(event.detail.value);
         console.log('Collected account lookup value: ' + this.selectedAccountId);
-        
+
         var leadId = this.recordId;
         var accId = String(event.detail.value);
 
         console.log('Lead: ' + leadId);
         console.log('Account: ' + accId);
-  
+
         findRelatedContacts({leadId: leadId, accountId: accId})
-        .then(result => {
-            console.log(result);
-            this.matchRelatedContactList = result;
-            this.accountSelected = true;
-        })
-        .catch(error => {
-            console.log(error);
-        });
-  
-      }
+            .then(result => {
+                console.log(result);
+                this.matchRelatedContactList = result;
+                this.accountSelected = true;
+            })
+            .catch(error => {
+                console.log(error);
+            });
+
+    }
 
 
     changeAccount(event){
@@ -207,8 +214,8 @@ export default class LeadMatchContactHandling extends LightningElement {
     }
 
     handleNewContact(event){
-       console.log('New contact: ' + event.target.checked);
-       if(event.target.checked == true){ 
+        console.log('New contact: ' + event.target.checked);
+        if(event.target.checked == true){
             this.createContact = true;
             this.selectedContactId = null;
 
@@ -223,10 +230,10 @@ export default class LeadMatchContactHandling extends LightningElement {
             this.newContact = fields;
             console.log(this.newContact);
 
-       }
-       else{
+        }
+        else{
             this.createContact = false;
-       } 
+        }
     }
 
     handleContactSelection(event){

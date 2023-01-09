@@ -172,6 +172,7 @@
     </fields>
     <fields>
         <fullName>ERPWarehouseId__c</fullName>
+        <caseSensitive>false</caseSensitive>
         <description>This field will be used as a reference to get Location names as what it exist in AX</description>
         <externalId>true</externalId>
         <label>ERP Warehouse Id</label>
@@ -179,7 +180,7 @@
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
-        <unique>false</unique>
+        <unique>true</unique>
     </fields>
     <fields>
         <fullName>ExternalReference</fullName>
@@ -281,6 +282,11 @@
         <lookupPhoneDialogsAdditionalFields>VisitorAddress</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>LocationType</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>VisitorAddress</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IsMobile</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IsInventoryLocation</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ERPWarehouseId__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CompanyCode__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ParentLocation</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>Read</sharingModel>
 </CustomObject>

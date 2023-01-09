@@ -9066,6 +9066,9 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone_F__c,&quot;&
         <columns>CONTACT.PHONE1</columns>
         <columns>CONTACT.EMAIL</columns>
         <columns>CONTACT.TITLE</columns>
+        <columns>Key_Opinion_Leader_D_JP__c</columns>
+        <columns>Active_KOL__c</columns>
+        <columns>KOL_UK_IE__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Inactive__c</field>
@@ -9296,24 +9299,6 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone_F__c,&quot;&
         <sharedTo>
             <roleAndSubordinatesInternal>VN_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>x10Imieireferentiattivi</fullName>
-        <columns>FULL_NAME</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>ACCOUNT.SITE</columns>
-        <columns>CONTACT.TITLE</columns>
-        <columns>CONTACT.PHONE1</columns>
-        <columns>CONTACT.LAST_ACTIVITY</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>Inactive__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <label>IT: I miei referenti attivi</label>
-        <language>de</language>
-        <sharedTo/>
     </listViews>
     <listViews>
         <fullName>x10MescontactsActif</fullName>

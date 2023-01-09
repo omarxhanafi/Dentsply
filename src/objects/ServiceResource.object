@@ -118,7 +118,16 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>ServiceResourceCompactLayout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>ServiceResourceCompactLayout</fullName>
+        <fields>Name</fields>
+        <fields>RelatedRecordId</fields>
+        <fields>ResourceType</fields>
+        <fields>LocationId</fields>
+        <fields>IsActive</fields>
+        <label>Service Resource Compact Layout</label>
+    </compactLayouts>
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fieldSets>
@@ -364,7 +373,7 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>Id</field>
+            <field>FSL__GanttLabel__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -414,6 +423,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>RelatedRecordId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ResourceType</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -440,12 +454,12 @@
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>FSL__GanttLabel__c</field>
+            <field>Id</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>RelatedRecordId</field>
+            <field>IsContractor__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
@@ -484,6 +498,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsCapacityBased</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>IsOptimizationCapable</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -495,16 +514,6 @@
         </availableFields>
         <availableFields>
             <field>LastModifiedDate</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
-            <field>LocationId</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
-            <field>Name</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -545,12 +554,22 @@
         </availableFields>
         <description>Resource Gantt Filter</description>
         <displayedFields>
-            <field>IsCapacityBased</field>
+            <field>IsActive</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>IsActive</field>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IsContractor__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LocationId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
@@ -574,7 +593,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>Description</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__Efficiency__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>FSL__GanttLabel__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -605,11 +634,6 @@
         </availableFields>
         <availableFields>
             <field>LastModifiedDate</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
-            <field>LocationId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -655,17 +679,17 @@
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
+            <field>LocationId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
             <field>ResourceType</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>FSL__GanttLabel__c</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>Description</field>
+            <field>IsContractor__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
@@ -804,6 +828,53 @@
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
+    <fields>
+        <fullName>TF_ResourceName__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( TEXT(ResourceType)= &apos;C&apos;,ServiceCrew.Name, RelatedRecord.Full_Name__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>TF Resource Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>ANZ_Contractors</fullName>
+        <columns>Name</columns>
+        <columns>RelatedRecord</columns>
+        <columns>ResourceType</columns>
+        <columns>IsActive</columns>
+        <columns>LastModifiedBy</columns>
+        <columns>LastModifiedDate</columns>
+        <columns>FSL__GanttLabel__c</columns>
+        <columns>Location</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsContractor__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>ANZ: Contractors</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Service_Resources</fullName>
+        <columns>Name</columns>
+        <columns>RelatedRecord</columns>
+        <columns>ResourceType</columns>
+        <columns>IsActive</columns>
+        <columns>LastModifiedBy</columns>
+        <columns>LastModifiedDate</columns>
+        <columns>FSL__GanttLabel__c</columns>
+        <columns>Location</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsActive</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active Service Resources</label>
+    </listViews>
     <listViews>
         <fullName>All_ServiceResources</fullName>
         <columns>Name</columns>

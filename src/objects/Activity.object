@@ -239,6 +239,11 @@
                     <label>Order: Placed with TSR</label>
                 </value>
                 <value>
+                    <fullName>Order: Sales Team Inside</fullName>
+                    <default>false</default>
+                    <label>Order: Sales Team Inside</label>
+                </value>
+                <value>
                     <fullName>Sent email/fax</fullName>
                     <default>false</default>
                     <label>Sent email/fax</label>
@@ -247,6 +252,11 @@
                     <fullName>Shared Insight</fullName>
                     <default>false</default>
                     <label>Shared Insight</label>
+                </value>
+                <value>
+                    <fullName>Survey/Evaluation</fullName>
+                    <default>false</default>
+                    <label>Survey/Evaluation</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -675,6 +685,15 @@ Temp workaround brought to mitigate the Edit Std Page</description>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>CourseOrEventPromotion__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Highlights that the Sales Reps have discussed courses or events promotion.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Highlights that the Sales Reps have discussed courses or events promotion.</inlineHelpText>
+        <label>Course/Event Promotion</label>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Courses__c</fullName>
@@ -2186,14 +2205,7 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone__c,&quot;&qu
         <filterScope>Delegated</filterScope>
         <label>20. Attività dei miei collaboratori</label>
         <language>en_US</language>
-        <sharedTo>
-            <role>IT_DI_Centro_RSM</role>
-            <role>IT_DI_Nord_Est_RSM</role>
-            <role>IT_DI_Nord_Ovest_RSM</role>
-            <role>IT_DI_Sud_RSM</role>
-            <role>IT_IMPL_Managing_Director</role>
-            <role>IT_IMPL_Sales_Manager</role>
-        </sharedTo>
+        <sharedTo/>
     </listViews>
     <listViews>
         <fullName>x20MeinedelegiertenAktivitten</fullName>
@@ -2236,9 +2248,7 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone__c,&quot;&qu
         <filterScope>Team</filterScope>
         <label>30. Attività del mio Team</label>
         <language>en_US</language>
-        <sharedTo>
-            <group>IT_DI_Managers</group>
-        </sharedTo>
+        <sharedTo/>
     </listViews>
     <listViews>
         <fullName>x30Lesactivitsdemonquipe</fullName>

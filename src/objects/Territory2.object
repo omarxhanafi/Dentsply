@@ -413,4 +413,307 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <listViews>
+        <fullName>Canada</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>Territory_Division__c</columns>
+        <columns>TERRITORY_TYPE.NAME</columns>
+        <columns>Territory_Level__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>CAN,CA:</value>
+        </filters>
+        <label>Canada</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Temp_CAN_ORTHO</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>FORECAST_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>CA</value>
+        </filters>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>contains</operation>
+            <value>ORTHO,ORTCA</value>
+        </filters>
+        <label>Temp - Search</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_CCO_NA</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>Territory_Division__c</columns>
+        <columns>TERRITORY_TYPE.NAME</columns>
+        <columns>Territory_Level__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>US: CCO NAM,US: CCO KAM,US CCO SAS,US: CCO TECH,US: CCO S</value>
+        </filters>
+        <label>US: NAM &amp; KAM</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_CCO_T</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>FORECAST_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>US: CCO - T,US: CCO Tele</value>
+        </filters>
+        <label>US: Telesales</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_CER</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>Territory_Division__c</columns>
+        <columns>Territory_Level__c</columns>
+        <columns>TERRITORY_TYPE.NAME</columns>
+        <columns>SBU_POC__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>US: CER,US: CCE</value>
+        </filters>
+        <label>US: CEREC</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_D01</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>FORECAST_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>US: D01</value>
+        </filters>
+        <label>US: D01</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_D02</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>FORECAST_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>US: D02</value>
+        </filters>
+        <label>US: D02</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_D04</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>FORECAST_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>US: D04</value>
+        </filters>
+        <label>US: D04</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_D06</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>FORECAST_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>US: D06</value>
+        </filters>
+        <label>US: D06</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_D07</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>FORECAST_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>US: D07</value>
+        </filters>
+        <label>US: D07</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_D08</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>FORECAST_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>US: D08</value>
+        </filters>
+        <label>US: D08</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_D09</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>FORECAST_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>US: D09</value>
+        </filters>
+        <label>US: D09</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_DS0X</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>FORECAST_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>US: DS0</value>
+        </filters>
+        <label>US: DS0X (ADRs)</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_DST</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>FORECAST_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>US: DST,US: Dist</value>
+        </filters>
+        <label>US: DST Team</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_IAM</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>FORECAST_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>US: RCO - IA,US: RCO - ISM</value>
+        </filters>
+        <label>US: IAM &amp; ISMTEC</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_IMG</fullName>
+        <columns>TERR_NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ROLLUP_DESCRIPTION</columns>
+        <columns>Territory_Division__c</columns>
+        <columns>Territory_Level__c</columns>
+        <columns>TERRITORY_TYPE.NAME</columns>
+        <columns>SBU_POC__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>startsWith</operation>
+            <value>US: Imag,US: IMG</value>
+        </filters>
+        <label>US: IMG</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
 </CustomObject>

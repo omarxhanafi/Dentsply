@@ -11,16 +11,16 @@
         <value xsi:type="xsd:string">FlexAccess;Glidepath Files;GuttaCore;GuttaCore/Calamus;GuttaSmart;IQ/ProMark Motor;Propex IQ;ProTaper Gold;ProTaper Next;ProTaper Ultimate;TruNatomy;TruShape;Vortex Blue;Wave One Gold Glider;WaveOne Gold;X-smart IQ;X-Smart Plus</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Endodontics</value>
     </values>
     <values>
         <field>Country__c</field>
         <value xsi:type="xsd:string">VA</value>
+    </values>
+    <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>

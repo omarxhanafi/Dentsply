@@ -376,7 +376,7 @@ public with sharing class CampaignTriggerHelper {
 
             for(Campaign camp : newCampaignList){  
                 if(camp.recordTypeId == digitalId && currentUser == eloquaIntegrationUser && ((System.Trigger.isInsert == true ) || (camp.OwnerId == eloquaIntegrationUserId && System.Trigger.isInsert == false ))){
-                camp.OwnerId = settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#'+camp.Brands__c).DefaultCampaignOwner__c != null ? settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#'+camp.Brands__c).DefaultCampaignOwner__c : settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#DefaultCountryOwner').DefaultCampaignOwner__c;
+                camp.OwnerId = settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#'+camp.Brands__c) != null && settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#'+camp.Brands__c).DefaultCampaignOwner__c != null ? settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#'+camp.Brands__c).DefaultCampaignOwner__c : settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#DefaultCountryOwner').DefaultCampaignOwner__c;
                 }
             }
         }

@@ -11,16 +11,16 @@
         <value xsi:type="xsd:string">Orthophos E;Orthophos S 2D;Orthophos S 3D;Orthophos SL 2D;Orthophos SL 3D;Axeos;XIOS Supreme;XIOS AE;Heliodent Plus</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Equipment &amp; Imaging</value>
     </values>
     <values>
         <field>Country__c</field>
         <value xsi:type="xsd:string">FR</value>
+    </values>
+    <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>
@@ -40,7 +40,7 @@
     </values>
     <values>
         <field>ShowManualSalesLeadOwnerAssignment__c</field>
-        <value xsi:type="xsd:boolean">false</value>
+        <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
         <field>UserRoles__c</field>

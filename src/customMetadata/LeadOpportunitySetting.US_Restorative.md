@@ -11,16 +11,16 @@
         <value xsi:type="xsd:string">SDR flow+;SmartLite Pro;Surefil one;Aquasil;Calibra;Palodent Plus;Prime &amp; Bond active;TPH;Tessera;SmartCem2;Palodent 360</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Consumables</value>
     </values>
     <values>
         <field>Country__c</field>
         <value xsi:type="xsd:string">US</value>
+    </values>
+    <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>

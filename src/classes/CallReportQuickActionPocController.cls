@@ -12,7 +12,7 @@
 **/
 public with sharing class CallReportQuickActionPocController {
     @AuraEnabled
-    public static String createEvent(Id callReportId, Id eventWhatId, String coTravel) {
+    public static String createEvent(Id callReportId, Id eventWhatId, String coTravel, Boolean courseOrEventPromotion) {
         Call_Report__c callReport = [
             SELECT Id, StartDateTime__c, EndDateTime__c, ProductGroup__c, EventWhoIds__c, CreatedById, ActivityType__c, ActivitySubtype__c, Subject__c
             FROM Call_Report__c
@@ -70,7 +70,8 @@ public with sharing class CallReportQuickActionPocController {
             , Subject = callReport.Subject__c
             , Event_Status__c = 'Completed'
             , Location = locationStringFormatted
-            ,Co_travel__c = coTravel
+            , CourseOrEventPromotion__c = courseOrEventPromotion
+            , Co_travel__c = coTravel
         );
 
         try {

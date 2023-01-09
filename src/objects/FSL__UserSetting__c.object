@@ -150,7 +150,7 @@
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>false</enableReports>
-    <enableSearch>false</enableSearch>
+    <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
@@ -705,6 +705,18 @@
     <label>User Setting</label>
     <listViews>
         <fullName>FSL__All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>FSL__Date_Horizon_Properties__c</columns>
+        <columns>FSL__FavoriteTerritories__c</columns>
+        <columns>FSL__Gantt_View_Start_Hour__c</columns>
+        <columns>FSL__Gantt_View_Finish_Hour__c</columns>
+        <columns>FSL__Include_Weekends__c</columns>
+        <columns>FSL__Lock_Gantt__c</columns>
+        <columns>FSL__Match_Gantt_Dates__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>FSL__User__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

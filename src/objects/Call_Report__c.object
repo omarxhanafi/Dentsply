@@ -583,6 +583,16 @@
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>CourseOrEventPromotion__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Highlights that the Sales Reps have discussed courses or events promotion.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Highlights that the Sales Reps have discussed courses or events promotion.</inlineHelpText>
+        <label>Course/Event Promotion</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Courses__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -923,6 +933,11 @@
                     <label>Cerec MCXL</label>
                 </value>
                 <value>
+                    <fullName>CEREC MTL Zirconia</fullName>
+                    <default>false</default>
+                    <label>CEREC MTL Zirconia</label>
+                </value>
+                <value>
                     <fullName>CEREC Omnicam</fullName>
                     <default>false</default>
                     <label>CEREC Omnicam</label>
@@ -966,6 +981,16 @@
                     <fullName>CEREC SpeedFire</fullName>
                     <default>false</default>
                     <label>CEREC SpeedFire</label>
+                </value>
+                <value>
+                    <fullName>CEREC Tessera</fullName>
+                    <default>false</default>
+                    <label>CEREC Tessera</label>
+                </value>
+                <value>
+                    <fullName>CEREC Zirconia+</fullName>
+                    <default>false</default>
+                    <label>CEREC Zirconia+</label>
                 </value>
                 <value>
                     <fullName>Consumables</fullName>
@@ -1560,6 +1585,30 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <valueName>CEREC MTL Zirconia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <valueName>CEREC Tessera</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <valueName>CEREC Zirconia+</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Belarus</controllingFieldValue>
@@ -1676,6 +1725,16 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <valueName>Primeprint</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
@@ -1694,6 +1753,16 @@
                 <controllingFieldValue>Spain</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
                 <valueName>Primescan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>UK</controllingFieldValue>
+                <controllingFieldValue>Germany</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <valueName>Primescan Connect</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
@@ -1850,15 +1919,6 @@
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>France</controllingFieldValue>
                 <valueName>Scanner</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <valueName>Primeprint</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <valueName>Primescan Connect</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Italy</controllingFieldValue>
@@ -2216,6 +2276,11 @@
                     <label>PTG Procedural Workflow</label>
                 </value>
                 <value>
+                    <fullName>PTUL Procedural Workflow</fullName>
+                    <default>false</default>
+                    <label>PTUL Procedural Workflow</label>
+                </value>
+                <value>
                     <fullName>Raypex 6</fullName>
                     <default>false</default>
                     <label>Raypex 6</label>
@@ -2513,6 +2578,25 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>UK</controllingFieldValue>
+                <controllingFieldValue>Thailand</controllingFieldValue>
+                <controllingFieldValue>Brazil</controllingFieldValue>
+                <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>Malaysia</controllingFieldValue>
+                <controllingFieldValue>Germany</controllingFieldValue>
+                <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>Taiwan</controllingFieldValue>
+                <controllingFieldValue>India</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>Austria</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <valueName>AH Plus</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
@@ -2598,6 +2682,16 @@
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
                 <valueName>Hands Files</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <valueName>Irrigation Needle</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
@@ -2763,6 +2857,14 @@
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
                 <valueName>PTG Procedural Workflow</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <valueName>PTUL Procedural Workflow</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
@@ -2933,20 +3035,6 @@
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>Austria</controllingFieldValue>
                 <valueName>VDW.Ultra</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>India</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
-                <valueName>AH Plus</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
@@ -3444,11 +3532,6 @@
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
                 <valueName>AH+ Biosealer</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Portugal</controllingFieldValue>
-                <controllingFieldValue>Spain</controllingFieldValue>
-                <valueName>Irrigation Needle</valueName>
             </valueSettings>
         </valueSet>
         <visibleLines>6</visibleLines>
@@ -4827,6 +4910,11 @@
                     <label>Omincam</label>
                 </value>
                 <value>
+                    <fullName>OmniTaper</fullName>
+                    <default>false</default>
+                    <label>OmniTaper</label>
+                </value>
+                <value>
                     <fullName>Ossix</fullName>
                     <default>false</default>
                     <label>Ossix</label>
@@ -5503,6 +5591,14 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <valueName>OmniTaper</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>UK</controllingFieldValue>
@@ -5578,9 +5674,7 @@
                 <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
                 <valueName>Aquasil</valueName>
             </valueSettings>
             <valueSettings>
@@ -5833,6 +5927,51 @@
             <valueSettings>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <valueName>MIS M4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS 4BONE BCH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS 4BONE RCM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS BONDBONE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS C1 B+ o C1B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS Lance +</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS Lance o EF5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS M4 o MF4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS SEVEN B+ o M7B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>MIS V3 B+ o V3B</valueName>
             </valueSettings>
         </valueSet>
         <visibleLines>6</visibleLines>
@@ -7133,6 +7272,11 @@
                     <label>SureSmile</label>
                 </value>
                 <value>
+                    <fullName>Suresmile 3D Model Export</fullName>
+                    <default>false</default>
+                    <label>Suresmile 3D Model Export</label>
+                </value>
+                <value>
                     <fullName>SureSmile 90</fullName>
                     <default>false</default>
                     <label>SureSmile 90</label>
@@ -7148,9 +7292,29 @@
                     <label>Suresmile Aligner</label>
                 </value>
                 <value>
+                    <fullName>Suresmile DIY Aligner</fullName>
+                    <default>false</default>
+                    <label>Suresmile DIY Aligner</label>
+                </value>
+                <value>
+                    <fullName>Suresmile Full Service Aligner</fullName>
+                    <default>false</default>
+                    <label>Suresmile Full Service Aligner</label>
+                </value>
+                <value>
                     <fullName>Suresmile IDB</fullName>
                     <default>false</default>
                     <label>Suresmile IDB</label>
+                </value>
+                <value>
+                    <fullName>Suresmile Labial Wires</fullName>
+                    <default>false</default>
+                    <label>Suresmile Labial Wires</label>
+                </value>
+                <value>
+                    <fullName>Suresmile Lingual Wires</fullName>
+                    <default>false</default>
+                    <label>Suresmile Lingual Wires</label>
                 </value>
                 <value>
                     <fullName>SureSmile Ortho</fullName>
@@ -7457,7 +7621,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -7555,7 +7718,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -7589,7 +7751,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -7623,7 +7784,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -7657,7 +7817,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -7691,7 +7850,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -7725,7 +7883,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -7839,7 +7996,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -7872,7 +8028,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -7905,7 +8060,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -7938,7 +8092,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -7970,7 +8123,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -8038,7 +8190,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -8070,7 +8221,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -8102,7 +8252,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -8134,7 +8283,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -8166,7 +8314,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -8198,7 +8345,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -8231,7 +8377,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -8263,7 +8408,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -8430,7 +8574,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -8462,7 +8605,6 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -8574,6 +8716,7 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Switzerland</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>Italy</controllingFieldValue>
                 <controllingFieldValue>New Zealand</controllingFieldValue>
@@ -8887,7 +9030,6 @@
             <valueSettings>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -9182,7 +9324,6 @@
             <valueSettings>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -9400,10 +9541,32 @@
                 <valueName>Zirbra</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Suresmile 3D Model Export</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Italy</controllingFieldValue>
                 <valueName>Suresmile advanced</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Suresmile DIY Aligner</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Suresmile Full Service Aligner</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Suresmile Labial Wires</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Suresmile Lingual Wires</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Italy</controllingFieldValue>
                 <valueName>V-pro</valueName>
             </valueSettings>
@@ -10694,6 +10857,7 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Sweden</controllingFieldValue>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -10701,9 +10865,13 @@
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>India</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Norway</controllingFieldValue>
                 <controllingFieldValue>Denmark</controllingFieldValue>
                 <controllingFieldValue>Finland</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
                 <valueName>Cercon ht</valueName>
             </valueSettings>
             <valueSettings>
@@ -10896,6 +11064,29 @@
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
+                <controllingFieldValue>Brazil</controllingFieldValue>
+                <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>Kazakhstan</controllingFieldValue>
+                <controllingFieldValue>Malaysia</controllingFieldValue>
+                <controllingFieldValue>Belarus</controllingFieldValue>
+                <controllingFieldValue>Ukraine</controllingFieldValue>
+                <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>Taiwan</controllingFieldValue>
+                <controllingFieldValue>Japan</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <valueName>CERCON</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
@@ -11070,24 +11261,6 @@
                 <controllingFieldValue>Italy</controllingFieldValue>
                 <controllingFieldValue>Austria</controllingFieldValue>
                 <valueName>ceramic furnace</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>Kazakhstan</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>Belarus</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Portugal</controllingFieldValue>
-                <controllingFieldValue>Spain</controllingFieldValue>
-                <valueName>CERCON</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
@@ -12566,6 +12739,19 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Switzerland</controllingFieldValue>
+                <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>Thailand</controllingFieldValue>
+                <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>Malaysia</controllingFieldValue>
+                <controllingFieldValue>Germany</controllingFieldValue>
+                <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>India</controllingFieldValue>
+                <controllingFieldValue>Poland</controllingFieldValue>
+                <controllingFieldValue>Austria</controllingFieldValue>
+                <valueName>Aquasil</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>Austria</controllingFieldValue>
@@ -12578,18 +12764,6 @@
                 <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <valueName>Alginate ZH</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>India</controllingFieldValue>
-                <controllingFieldValue>Poland</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
-                <valueName>Aquasil</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
@@ -13458,7 +13632,6 @@
                 <controllingFieldValue>Austria</controllingFieldValue>
                 <controllingFieldValue>Belgium</controllingFieldValue>
                 <controllingFieldValue>BEX</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>Denmark</controllingFieldValue>
                 <controllingFieldValue>Distributor Markets</controllingFieldValue>
                 <controllingFieldValue>Finland</controllingFieldValue>
@@ -13467,6 +13640,23 @@
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
                 <valueName>Teneo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>Switzerland</controllingFieldValue>
+                <controllingFieldValue>Germany</controllingFieldValue>
+                <controllingFieldValue>Italy</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>Poland</controllingFieldValue>
+                <controllingFieldValue>Austria</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>France</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <valueName>Axano</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
@@ -13482,17 +13672,6 @@
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
                 <valueName>SIM UNITS</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Italy</controllingFieldValue>
-                <controllingFieldValue>Poland</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>France</controllingFieldValue>
-                <controllingFieldValue>Portugal</controllingFieldValue>
-                <controllingFieldValue>Spain</controllingFieldValue>
-                <valueName>Axano</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
@@ -13929,6 +14108,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Kazakhstan</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Kuwait</fullName>
                 <default>false</default>
             </values>
@@ -14176,6 +14359,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>CEREC MTL Zirconia</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>CEREC Materials</fullName>
                 <default>false</default>
             </values>
@@ -14213,6 +14400,14 @@
             </values>
             <values>
                 <fullName>CEREC SpeedFire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC Tessera</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC Zirconia%2B</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14556,6 +14751,10 @@
             </values>
             <values>
                 <fullName>PTG Procedural Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PTUL Procedural Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15110,6 +15309,10 @@
             </values>
             <values>
                 <fullName>Omincam</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OmniTaper</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16801,17 +17004,6 @@
     </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
-    <validationRules>
-        <fullName>Activity_Subtype_Empty</fullName>
-        <active>true</active>
-        <description>used to force Indonesian users to populate the Activity Subtype, when creating a report event</description>
-        <errorConditionFormula>AND(
-TEXT( $User.User_Country__c) =&quot;Indonesia&quot;,
-ISBLANK(TEXT(ActivitySubtype__c))
-)</errorConditionFormula>
-        <errorDisplayField>ActivitySubtype__c</errorDisplayField>
-        <errorMessage>You need to specify the Activity Subtype in order to report this event.</errorMessage>
-    </validationRules>
     <validationRules>
         <fullName>Product_Group_Empty</fullName>
         <active>false</active>

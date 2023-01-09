@@ -325,6 +325,11 @@
                     <label>AH Plus</label>
                 </value>
                 <value>
+                    <fullName>AH Plus Bioceramic Sealer</fullName>
+                    <default>false</default>
+                    <label>AH Plus Bioceramic Sealer</label>
+                </value>
+                <value>
                     <fullName>AH Temp</fullName>
                     <default>false</default>
                     <label>AH Temp</label>
@@ -452,6 +457,7 @@
                 <value>
                     <fullName>Bioceramic Sealer</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Bioceramic Sealer</label>
                 </value>
                 <value>
@@ -2075,6 +2081,10 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
+                <valueName>AH Plus Bioceramic Sealer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endodontics</controllingFieldValue>
                 <valueName>AH Temp</valueName>
             </valueSettings>
             <valueSettings>
@@ -2096,10 +2106,6 @@
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
                 <valueName>Bioceramic</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Endodontics</controllingFieldValue>
-                <valueName>Bioceramic Sealer</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
@@ -2247,6 +2253,11 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Equipment</controllingFieldValue>
+                <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
+                <valueName>Axano</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equipment</controllingFieldValue>
                 <valueName>Carbide Burs</valueName>
             </valueSettings>
             <valueSettings>
@@ -2294,11 +2305,6 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Equipment</controllingFieldValue>
-                <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
-                <valueName>TENEO</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Equipment</controllingFieldValue>
                 <valueName>Tradition/Plus</valueName>
             </valueSettings>
             <valueSettings>
@@ -2308,10 +2314,6 @@
             <valueSettings>
                 <controllingFieldValue>Equipment</controllingFieldValue>
                 <valueName>XIOS Select</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
-                <valueName>Axano</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
@@ -2364,6 +2366,10 @@
             <valueSettings>
                 <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
                 <valueName>T2 Turbines</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
+                <valueName>TENEO</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
@@ -2903,7 +2909,10 @@
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>UAE</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
+                <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
+                <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>Ireland</controllingFieldValue>
                 <controllingFieldValue>Belarus</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
@@ -2948,6 +2957,7 @@
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Latvia</controllingFieldValue>
                 <controllingFieldValue>Lithuania</controllingFieldValue>
+                <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Malta</controllingFieldValue>
                 <controllingFieldValue>Oman</controllingFieldValue>
                 <controllingFieldValue>Philippines</controllingFieldValue>
@@ -2955,9 +2965,11 @@
                 <controllingFieldValue>Romania</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
                 <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
+                <controllingFieldValue>Thailand</controllingFieldValue>
                 <valueName>Digital Group</valueName>
             </valueSettings>
             <valueSettings>
@@ -3103,6 +3115,7 @@
                 <controllingFieldValue>UAE</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>Ireland</controllingFieldValue>
@@ -3372,81 +3385,53 @@
                 <valueName>Prosthetics</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <valueName>Digital</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>DEX</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Latvia</controllingFieldValue>
                 <controllingFieldValue>Lithuania</controllingFieldValue>
                 <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Romania</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
                 <valueName>Class II</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <valueName>Equipment</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>DEX</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Latvia</controllingFieldValue>
                 <controllingFieldValue>Lithuania</controllingFieldValue>
                 <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Romania</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
                 <valueName>Root To Crown</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>DEX</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Latvia</controllingFieldValue>
                 <controllingFieldValue>Lithuania</controllingFieldValue>
                 <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Romania</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
                 <valueName>Single Unit Crown</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Digital</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Equipment</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Canada</controllingFieldValue>
@@ -3754,6 +3739,17 @@
         <trackHistory>false</trackHistory>
         <trackTrending>true</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderNo__c</fullName>
+        <externalId>false</externalId>
+        <label>Order No</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Order__c</fullName>
@@ -4601,6 +4597,17 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>VoucherCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Voucher Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>X3rd_Party_Source__c</fullName>
         <description>Used to indicate the source of the lead - text for flexibility of the data</description>
         <externalId>false</externalId>
@@ -4615,6 +4622,8 @@
     <label>Sales Lead</label>
     <listViews>
         <fullName>ALL_Open_Sales_Leads_inkl_Status</fullName>
+        <columns>ChannelPriority__c</columns>
+        <columns>Channel__c</columns>
         <columns>NAME</columns>
         <columns>Account__c</columns>
         <columns>Account_City__c</columns>
@@ -4676,6 +4685,31 @@
         <label>HK: All Sales Leads</label>
         <sharedTo>
             <roleAndSubordinatesInternal>HK_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>IT_Sales_Lead_By_Marketing</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Category__c</columns>
+        <columns>Brand__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Status__c</columns>
+        <columns>Sales_Rep__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Channel__c</field>
+            <operation>equals</operation>
+            <value>Marketing</value>
+        </filters>
+        <filters>
+            <field>UserCountry__c</field>
+            <operation>equals</operation>
+            <value>Italy</value>
+        </filters>
+        <label>IT: Sales Lead By Marketing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>IT_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -4770,21 +4804,21 @@
     </listViews>
     <listViews>
         <fullName>My_Open_Leads</fullName>
+        <columns>ChannelPriority__c</columns>
+        <columns>Channel__c</columns>
         <columns>NAME</columns>
         <columns>Account__c</columns>
         <columns>Category__c</columns>
         <columns>Brand__c</columns>
-        <columns>Campaign__c</columns>
-        <columns>Field_Sales_Project__c</columns>
+        <columns>CampaignTargetList__c</columns>
         <columns>CREATEDBY_USER</columns>
         <columns>Sales_Rep__c</columns>
-        <columns>Hot_prospect__c</columns>
         <columns>CREATED_DATE</columns>
         <columns>Source__c</columns>
-        <columns>Priority__c</columns>
         <columns>Status__c</columns>
         <columns>OneSFid__c</columns>
         <columns>Account_State_Province__c</columns>
+        <columns>AccountVisitingCity__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Status__c</field>
@@ -4801,22 +4835,61 @@
             <operation>equals</operation>
             <value>1</value>
         </filters>
-        <label>My Open Sales Leads</label>
+        <label>My Open Sales Leads (More Details)</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Open_Program_Target_List_Leads</fullName>
+        <columns>Priority__c</columns>
+        <columns>NAME</columns>
+        <columns>OneSFid__c</columns>
+        <columns>Account__c</columns>
+        <columns>Account_City__c</columns>
+        <columns>Status__c</columns>
+        <columns>Category__c</columns>
+        <columns>Brand__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Field_Sales_Project__c</columns>
+        <columns>Source__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,In progress,Parked/OnHold</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Field_Sales_Project_Members__c.Outside_Sales_Lead</value>
+        </filters>
+        <filters>
+            <field>MyLead__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Field_Sales_Project__c</field>
+            <operation>contains</operation>
+            <value>SureSmile Target List</value>
+        </filters>
+        <label>NA: My Open SureSmile Target Leads</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>My_Open_Sales_Leads_Ad_hoc_Analysis</fullName>
+        <columns>Priority__c</columns>
         <columns>NAME</columns>
+        <columns>OneSFid__c</columns>
         <columns>Account__c</columns>
+        <columns>Account_City__c</columns>
+        <columns>Account_Postal_Code_Zip__c</columns>
+        <columns>Status__c</columns>
         <columns>Category__c</columns>
         <columns>Brand__c</columns>
-        <columns>Field_Sales_Project__c</columns>
-        <columns>Account_City__c</columns>
-        <columns>Hot_prospect__c</columns>
         <columns>CREATED_DATE</columns>
+        <columns>Field_Sales_Project__c</columns>
         <columns>Source__c</columns>
-        <columns>Priority__c</columns>
-        <columns>OneSFid__c</columns>
-        <columns>Status__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Status__c</field>
@@ -4836,13 +4909,11 @@
         <filters>
             <field>Source__c</field>
             <operation>equals</operation>
-            <value>Ad hoc analysis</value>
+            <value>Target Analysis</value>
         </filters>
         <label>My Open Sales Leads - Predictive Targets</label>
         <sharedTo>
-            <role>DNA_Shared_Services</role>
-            <role>NA_CRM_Analyst</role>
-            <territoryAndSubordinates>Global_Setup.US_Executives</territoryAndSubordinates>
+            <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -4853,6 +4924,7 @@
         <columns>Brand__c</columns>
         <columns>Campaign__c</columns>
         <columns>Account_City__c</columns>
+        <columns>Account_Postal_Code_Zip__c</columns>
         <columns>Hot_prospect__c</columns>
         <columns>CREATED_DATE</columns>
         <columns>Source__c</columns>
@@ -4884,6 +4956,33 @@
         <sharedTo>
             <roleAndSubordinatesInternal>DNA_CRMANALYST</roleAndSubordinatesInternal>
         </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Open_Sales_Leads_Homepage</fullName>
+        <columns>ChannelPriority__c</columns>
+        <columns>Channel__c</columns>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Brand__c</columns>
+        <columns>Status__c</columns>
+        <columns>CampaignTargetList__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,In progress,Parked/OnHold</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Field_Sales_Project_Members__c.Outside_Sales_Lead</value>
+        </filters>
+        <filters>
+            <field>MyLead__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My Open Sales Leads</label>
     </listViews>
     <listViews>
         <fullName>My_Open_Sales_Leads_inkl_Status</fullName>
@@ -5001,6 +5100,36 @@
         <label>Sales Lead Created by Me</label>
     </listViews>
     <listViews>
+        <fullName>Sales_Leads_Digital_Marketing</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Category__c</columns>
+        <columns>Brand__c</columns>
+        <columns>Campaign__c</columns>
+        <columns>Account_City__c</columns>
+        <columns>Hot_prospect__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Source__c</columns>
+        <columns>Priority__c</columns>
+        <columns>OneSFid__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Field_Sales_Project_Members__c.Outside_Sales_Lead</value>
+        </filters>
+        <filters>
+            <field>Source__c</field>
+            <operation>equals</operation>
+            <value>Email campaign,Trade show,Web Form,Webinar</value>
+        </filters>
+        <label>Sales Leads - Digital Marketing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>US_Marketing_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>TH_All_Sales_Leads</fullName>
         <columns>Account__c</columns>
         <columns>Status__c</columns>
@@ -5020,7 +5149,7 @@
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>USA_2021_Block_Targets</fullName>
+        <fullName>USA_2021_Restorative_Target_List</fullName>
         <columns>NAME</columns>
         <columns>Account__c</columns>
         <columns>Sales_Rep__c</columns>
@@ -5029,6 +5158,7 @@
         <columns>Account_City__c</columns>
         <columns>Account_Postal_Code_Zip__c</columns>
         <columns>Field_Sales_Project__c</columns>
+        <columns>OneSFid__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Status__c</field>
@@ -5043,9 +5173,9 @@
         <filters>
             <field>Field_Sales_Project__c</field>
             <operation>equals</operation>
-            <value>USA - 2021 - Block Targets</value>
+            <value>USA - 2022 - Restorative Target List</value>
         </filters>
-        <label>USA - 2021 - Block Targets</label>
+        <label>USA - 2022 - Restorative Target List</label>
         <sharedTo>
             <role>NA_CRM_Analyst</role>
             <roleAndSubordinatesInternal>DNA_CRMANALYST</roleAndSubordinatesInternal>
@@ -5053,7 +5183,7 @@
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>USA_2021_SpeedFire_Blocks_Targets</fullName>
+        <fullName>USA_2022_CA_CDM_Post_Attendees</fullName>
         <columns>NAME</columns>
         <columns>Account__c</columns>
         <columns>Sales_Rep__c</columns>
@@ -5062,6 +5192,7 @@
         <columns>Account_City__c</columns>
         <columns>Account_Postal_Code_Zip__c</columns>
         <columns>Field_Sales_Project__c</columns>
+        <columns>OneSFid__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Status__c</field>
@@ -5076,13 +5207,224 @@
         <filters>
             <field>Field_Sales_Project__c</field>
             <operation>equals</operation>
-            <value>USA - 2021 - SpeedFire Blocks Targets</value>
+            <value>USA - 2022 - Clinical Accelerator - Attendees Post Training</value>
         </filters>
-        <label>USA - 2021 - SpeedFire Blocks Targets</label>
+        <label>USA 2022 CA CDM - Post Attendees</label>
         <sharedTo>
             <role>NA_CRM_Analyst</role>
             <roleAndSubordinatesInternal>DNA_CRMANALYST</roleAndSubordinatesInternal>
             <roleAndSubordinatesInternal>US_Marketing_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_My_Blue_Assist_Leads_ALL</fullName>
+        <columns>Priority__c</columns>
+        <columns>NAME</columns>
+        <columns>OneSFid__c</columns>
+        <columns>Account__c</columns>
+        <columns>Account_City__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Field_Sales_Project__c</columns>
+        <columns>Hot_prospect__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,In progress,Parked/OnHold,Completed,Cancelled,Expired</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Field_Sales_Project_Members__c.Outside_Sales_Lead</value>
+        </filters>
+        <filters>
+            <field>MyLead__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Field_Sales_Project__c</field>
+            <operation>equals</operation>
+            <value>USA - 2022 - Blue Assist List,USA - 2022 - SureSmile Blue Assist List</value>
+        </filters>
+        <label>US: My Blue Assist Leads - ALL</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_My_Leads_ALL_Open_Closed</fullName>
+        <columns>Channel__c</columns>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Brand__c</columns>
+        <columns>Status__c</columns>
+        <columns>CampaignTargetList__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Field_Sales_Project_Members__c.Outside_Sales_Lead</value>
+        </filters>
+        <filters>
+            <field>MyLead__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_YEAR</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Expired</value>
+        </filters>
+        <label>US: My Leads - ALL (Open &amp; Closed) CY</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_My_Open_Blue_Assist_Leads</fullName>
+        <columns>Priority__c</columns>
+        <columns>NAME</columns>
+        <columns>OneSFid__c</columns>
+        <columns>Account__c</columns>
+        <columns>Account_City__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Field_Sales_Project__c</columns>
+        <columns>Hot_prospect__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,In progress,Parked/OnHold</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Field_Sales_Project_Members__c.Outside_Sales_Lead</value>
+        </filters>
+        <filters>
+            <field>MyLead__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Field_Sales_Project__c</field>
+            <operation>equals</operation>
+            <value>USA - 2022 - Blue Assist List,USA - 2022 - SureSmile Blue Assist List</value>
+        </filters>
+        <label>US: My Open Blue Assist Leads</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_My_Open_Q4_SureSmile_Targets_Leads</fullName>
+        <columns>Priority__c</columns>
+        <columns>NAME</columns>
+        <columns>OneSFid__c</columns>
+        <columns>Account__c</columns>
+        <columns>Account_City__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Field_Sales_Project__c</columns>
+        <columns>Hot_prospect__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,In progress,Parked/OnHold</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Field_Sales_Project_Members__c.Outside_Sales_Lead</value>
+        </filters>
+        <filters>
+            <field>MyLead__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Field_Sales_Project__c</field>
+            <operation>contains</operation>
+            <value>SureSmile Target List</value>
+        </filters>
+        <filters>
+            <field>Hot_prospect__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>US: My Open Q4 SureSmile Targets Leads</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>US_Open_Q4_SureSmile_Targets_Leads_ALL</fullName>
+        <columns>Priority__c</columns>
+        <columns>NAME</columns>
+        <columns>OneSFid__c</columns>
+        <columns>Account__c</columns>
+        <columns>Account_City__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Field_Sales_Project__c</columns>
+        <columns>Hot_prospect__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,In progress,Parked/OnHold</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Field_Sales_Project_Members__c.Outside_Sales_Lead</value>
+        </filters>
+        <filters>
+            <field>Field_Sales_Project__c</field>
+            <operation>contains</operation>
+            <value>SureSmile Target List</value>
+        </filters>
+        <filters>
+            <field>Hot_prospect__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>US: Open Q4 SureSmile Target Leads - ALL</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>VN_All_Sales_Leads</fullName>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Category__c</columns>
+        <columns>Brand__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Sales_Rep__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>UserCountry__c</field>
+            <operation>equals</operation>
+            <value>Vietnam</value>
+        </filters>
+        <label>VN: All Sales Leads</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>VN_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <nameField>
@@ -6279,6 +6621,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>AH Temp</fullName>
                 <default>false</default>
             </values>
@@ -6376,10 +6722,6 @@
             </values>
             <values>
                 <fullName>Bioceramic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7773,7 +8115,13 @@
         <fullName>Completed_Sales_Lead</fullName>
         <active>true</active>
         <description>Do not allow to set a Sales Lead to completed if the Sales Lead has no relation to an Order, Opportunity or Account Program (Member)</description>
-        <errorConditionFormula>( !ISPICKVAL(Account__r.Country__c, &apos;DE&apos;))
+        <errorConditionFormula>( !ISPICKVAL(Account__r.Country__c ,&apos;BE&apos;))
+&amp;&amp;
+( !ISPICKVAL(Account__r.Country__c ,&apos;NL&apos;))
+&amp;&amp;
+( !ISPICKVAL(Account__r.Country__c ,&apos;LU&apos;))
+&amp;&amp;
+( !ISPICKVAL(Account__r.Country__c, &apos;DE&apos;))
 &amp;&amp;
 (!ISPICKVAL( Account__r.Country__c, &apos;AT&apos;))
 &amp;&amp;
@@ -7823,14 +8171,15 @@ TEXT( Account__r.Country__c ) = &quot;VA&quot;))</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>OnlyOwnerCanChangeRecord</fullName>
-        <active>true</active>
+        <active>false</active>
+        <description>TEMPORARILY DEACTIVATED 
+SALESFORCE LIMITATION: TFUS-000005104</description>
         <errorConditionFormula>AND(
 NOT(ISNEW()), 
-OR($User.Id &lt;&gt; Sales_Rep__c, ISCHANGED(Sales_Rep__c)),
-$User.Id &lt;&gt; PRIORVALUE(Sales_Rep__c), 
+NOT($User.Id = PRIORVALUE(Sales_Rep__c)),
 NOT(CONTAINS($User.Profile__c, &apos;#System:&apos;)),
 NOT(CONTAINS($User.Profile__c, &apos;CRM Analyst&apos;)),
-AND ($User.Id = Sales_Rep__r.ManagerId, ISCHANGED(Sales_Rep__c))
+NOT($Permission.canEditSalesLeads)
 )</errorConditionFormula>
         <errorMessage>Sorry! Only the owner of the sales lead is allowed to change it at this point.</errorMessage>
     </validationRules>

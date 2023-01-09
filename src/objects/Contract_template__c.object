@@ -236,6 +236,7 @@
         <columns>Discount_additional__c</columns>
         <columns>Discount_contract__c</columns>
         <columns>Type_Contract__c</columns>
+        <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
         <language>en_US</language>

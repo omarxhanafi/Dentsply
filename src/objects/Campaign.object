@@ -1654,6 +1654,11 @@
                     <label>AH Plus</label>
                 </value>
                 <value>
+                    <fullName>AH Plus Bioceramic Sealer</fullName>
+                    <default>false</default>
+                    <label>AH Plus Bioceramic Sealer</label>
+                </value>
+                <value>
                     <fullName>AH Temp</fullName>
                     <default>false</default>
                     <label>AH Temp</label>
@@ -1781,6 +1786,7 @@
                 <value>
                     <fullName>Bioceramic Sealer</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Bioceramic Sealer</label>
                 </value>
                 <value>
@@ -5534,7 +5540,7 @@
         <type>Picklist</type>
         <valueSet>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
                     <fullName>ALL</fullName>
                     <default>false</default>
@@ -5584,6 +5590,11 @@
                     <fullName>Distributor Markets</fullName>
                     <default>false</default>
                     <label>Distributor Markets</label>
+                </value>
+                <value>
+                    <fullName>Egypt</fullName>
+                    <default>false</default>
+                    <label>Egypt</label>
                 </value>
                 <value>
                     <fullName>Finland</fullName>
@@ -5641,9 +5652,19 @@
                     <label>Japan</label>
                 </value>
                 <value>
+                    <fullName>Kazakhstan</fullName>
+                    <default>false</default>
+                    <label>Kazakhstan</label>
+                </value>
+                <value>
                     <fullName>Korea</fullName>
                     <default>false</default>
                     <label>Korea</label>
+                </value>
+                <value>
+                    <fullName>Kuwait</fullName>
+                    <default>false</default>
+                    <label>Kuwait</label>
                 </value>
                 <value>
                     <fullName>Luxembourg</fullName>
@@ -5654,6 +5675,11 @@
                     <fullName>Malaysia</fullName>
                     <default>false</default>
                     <label>Malaysia</label>
+                </value>
+                <value>
+                    <fullName>Morocco</fullName>
+                    <default>false</default>
+                    <label>Morocco</label>
                 </value>
                 <value>
                     <fullName>New Zealand</fullName>
@@ -5679,6 +5705,11 @@
                     <fullName>Portugal</fullName>
                     <default>false</default>
                     <label>Portugal</label>
+                </value>
+                <value>
+                    <fullName>Qatar</fullName>
+                    <default>false</default>
+                    <label>Qatar</label>
                 </value>
                 <value>
                     <fullName>Russia</fullName>
@@ -5749,26 +5780,6 @@
                     <fullName>USA</fullName>
                     <default>false</default>
                     <label>USA</label>
-                </value>
-                <value>
-                    <fullName>Egypt</fullName>
-                    <default>false</default>
-                    <label>Egypt</label>
-                </value>
-                <value>
-                    <fullName>Kuwait</fullName>
-                    <default>false</default>
-                    <label>Kuwait</label>
-                </value>
-                <value>
-                    <fullName>Kazakhstan</fullName>
-                    <default>false</default>
-                    <label>Kazakhstan</label>
-                </value>
-                <value>
-                    <fullName>Qatar</fullName>
-                    <default>false</default>
-                    <label>Qatar</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -17424,37 +17435,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>DE_All_Campaigns</fullName>
-        <columns>CAMPAIGN.NAME</columns>
-        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
-        <columns>CAMPAIGN.START_DATE</columns>
-        <columns>Campaign_City__c</columns>
-        <columns>Campaign_Country__c</columns>
-        <columns>Campaign_Owner__c</columns>
-        <columns>Campaign_Category__c</columns>
-        <columns>CAMPAIGN.STATUS</columns>
-        <columns>Project_ID__c</columns>
-        <columns>of_Event_Attendees__c</columns>
-        <columns>of_Available_Event_Seats__c</columns>
-        <columns>Campaign_Coordinator__c</columns>
-        <columns>Campaign_Approver__c</columns>
-        <columns>External_Organizer_City__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>CAMPAIGN.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Campaign.DI_Campaign,Campaign.DI_Campaign_Session</value>
-        </filters>
-        <filters>
-            <field>Creator_User_Country__c</field>
-            <operation>equals</operation>
-            <value>Germany,Switzerland</value>
-        </filters>
-        <label>DE: All Campaigns</label>
-        <language>en_US</language>
-        <sharedTo/>
-    </listViews>
-    <listViews>
         <fullName>DK_Upcoming_Events</fullName>
         <booleanFilter>(1 AND 2 AND 3 AND 4) OR (5 AND 4)</booleanFilter>
         <columns>CAMPAIGN.NAME</columns>
@@ -17537,11 +17517,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
         <filters>
             <field>Owner_User_Country__c</field>
             <operation>contains</operation>
-            <value>Sweden,finland,denmark,norway</value>
+            <value>Sweden,Finland,Denmark,Norway</value>
         </filters>
         <filters>
             <field>CAMPAIGN.NAME</field>
-            <operation>equals</operation>
+            <operation>contains</operation>
             <value>Nordic,Nordics</value>
         </filters>
         <label>FI: Upcoming Events</label>
@@ -17741,6 +17721,7 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
     </listViews>
     <listViews>
         <fullName>HQ_My_Campaigns</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
         <columns>CAMPAIGN.NAME</columns>
         <columns>CAMPAIGN.RECORDTYPE</columns>
         <columns>Campaign_Country__c</columns>
@@ -17759,7 +17740,12 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
         <filters>
             <field>CAMPAIGN.RECORDTYPE</field>
             <operation>equals</operation>
-            <value>Campaign.DI_Campaign,Campaign.DI_Parent_Campaign</value>
+            <value>Campaign.Inside_Sales_Campaign,Campaign.DI_Campaign,Campaign.DI_Parent_Campaign</value>
+        </filters>
+        <filters>
+            <field>CAMPAIGN.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Campaign.Digital_Marketing_Campaign,Campaign.InPersonEventCampaign</value>
         </filters>
         <label>#All My Campaigns</label>
         <language>en_US</language>
@@ -17837,7 +17823,7 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
         <filters>
             <field>CAMPAIGN.RECORDTYPE</field>
             <operation>equals</operation>
-            <value>Campaign.DI_Campaign,Campaign.DI_Parent_Campaign,Campaign.DI_Campaign_Session</value>
+            <value>Campaign.DI_Campaign,Campaign.Digital_Marketing_Campaign</value>
         </filters>
         <filters>
             <field>Creator_User_Country__c</field>
@@ -17941,10 +17927,7 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
         <sharedTo>
             <role>CIS_CRM_Analyst</role>
             <role>CIS_Managning_Director</role>
-            <role>KZ_Managing_Director</role>
-            <role>KZ_PREP_Sales_Manager</role>
             <role>KZ_PREP_Sales_Team</role>
-            <role>KZ_UA_EQUIP_Sales_Manager</role>
             <role>MEA_India_Turkey</role>
         </sharedTo>
     </listViews>
@@ -18213,12 +18196,12 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             <role>CIS_CRM_Analyst</role>
             <role>CIS_Managning_Director</role>
             <role>MEA_India_Turkey</role>
-            <role>RU_EQUIP_Sales_Manager</role>
             <role>RU_EQUIP_Sales_Team</role>
             <role>RU_IMPL_Sales_Manager_Moscow</role>
             <role>RU_IMPL_Sales_Manager_Other_Regions</role>
             <role>RU_IMPL_Sales_Team_Moscow</role>
             <role>RU_IMPL_Sales_Team_Other_Regions</role>
+            <role>RU_KZ_EQUIP_Sales_Manager</role>
             <role>RU_KZ_PRE_Sales_Manager</role>
             <role>RU_LAB_Sales_Manager</role>
             <role>RU_LAB_Sales_Team</role>
@@ -18227,7 +18210,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             <role>RU_ORTHO_Sales_Team</role>
             <role>RU_PRE_Sales_Team</role>
             <role>RU_Shared_Services</role>
-            <role>UA_Shared_Services</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -18332,6 +18314,31 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>TW_All_In_Person_and_Virtual_Event_Camp</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>CAMPAIGN.BUDGETED_COST</columns>
+        <columns>CAMPAIGN.ACTUAL_COST</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Campaign.InPersonEventCampaign</value>
+        </filters>
+        <filters>
+            <field>Campaign_Country__c</field>
+            <operation>equals</operation>
+            <value>Taiwan</value>
+        </filters>
+        <label>TW: All In-Person and Virtual Event Camp</label>
+        <sharedTo>
+            <group>TW_All_Country_Campaign_Access</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>UA_All_Campaigns_from_2022</fullName>
         <columns>CAMPAIGN.NAME</columns>
         <columns>CORE.USERS.FIRST_NAME</columns>
@@ -18366,10 +18373,8 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             <role>CIS_CRM_Analyst</role>
             <role>CIS_Managning_Director</role>
             <role>MEA_India_Turkey</role>
-            <role>UA_Managing_Director</role>
             <role>UA_PREP_Sales_Manager</role>
             <role>UA_PREP_Sales_Team</role>
-            <role>UA_Shared_Services</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -30279,6 +30284,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Malaysia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morocco</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -55076,6 +55085,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>AH Temp</fullName>
                 <default>false</default>
             </values>
@@ -55173,10 +55186,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Bioceramic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -56302,6 +56311,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
+                <fullName>Morocco</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Nepal</fullName>
                 <default>false</default>
             </values>
@@ -57127,7 +57140,7 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Sales Lead</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -57989,6 +58002,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Malaysia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morocco</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -60787,6 +60804,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>AH Temp</fullName>
                 <default>false</default>
             </values>
@@ -60884,10 +60905,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Bioceramic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -62009,6 +62026,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
+                <fullName>Morocco</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Nepal</fullName>
                 <default>false</default>
             </values>
@@ -62834,7 +62855,7 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Sales Lead</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -63696,6 +63717,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Malaysia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morocco</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -65762,15 +65787,19 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Closed - Cancelled</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Closed - Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -69319,6 +69348,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Malaysia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morocco</fullName>
                 <default>false</default>
             </values>
             <values>

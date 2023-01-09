@@ -14,16 +14,16 @@
             </template>
         </div>
         <div class="slds-form slds-form_stacked slds-p-horizontal_medium">
-            <!-- <template if:true={error}>
+            <!--<template if:true={error}>
                 <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
                     <h2>{error.message}</h2>
                 </div>
                 <p class="slds-text-title slds-text-color_error slds-p-around_x-small">{error.detail}</p>
-            </template> -->
+            </template>-->
             <!-- EDIT FORM -->
             <template if:true={isEditMode}>
                 <lightning-record-edit-form record-id={callReportId} object-api-name="Call_Report__c"
-                    onload={handleFormLoad} onsubmit={handleSubmit} onsuccess={handleSuccess} onerror={handleError}>
+                    onload={handleFormLoad} onsuccess={handleSuccess} onerror={handleError}>
                     <lightning-input-field field-name="Call_Notes__c"></lightning-input-field>
                     <lightning-input-field class="productGroup" field-name="ProductGroup__c"
                         value={productGroupEditForm} onchange={handleSbuInputChange}></lightning-input-field>

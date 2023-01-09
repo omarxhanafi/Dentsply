@@ -11,7 +11,7 @@ private class Test_UsersInAccountTerritories {
 	@testSetup
     private static void setup() {
         TestDataFactory.createBypassCustomSetting();
-        List<User> userList = TestDataFactory.returnUsers(1, 'System Administrator');
+        List<User> userList = TestDataFactory.returnUsers(1, '#System: System Administrator');
         insert userList;
         TestDataFactory.createGlobalIntegrationSettings(userList);
         TestDataFactory.createDefaultOrgLevelBypassPB();
@@ -85,5 +85,41 @@ private class Test_UsersInAccountTerritories {
         return account1;
         
     }
+
+    /**
+     *  Tests the UsersInAccountTerritories.getSuggestedUsers() method. it is used in the New Sales Lead (Lwc) Action
+     */
+    @isTest
+    private static void testGetSuggestedUsers()
+    {
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
+        System.runAs(testUser)
+        {
+            // Given
+            List<Account> accounts = TestDataFactory.returnAccounts(2, 'CIM_Account', testUser.Id);
+            accounts[0].Country__c = 'BE';
+            accounts[1].Country__c = 'DE';
+            insert accounts;
+
+            // When
+            Test.startTest();
+            List<UserTerritory2Association> suggestedUsersFromAcc =
+                    UsersInAccountTerritories.getSuggestedUsers(accounts[0].Id,'Implants','ANKYLOS',null);
+
+            List<UserTerritory2Association> suggestedUsersNothingFound =
+                    UsersInAccountTerritories.getSuggestedUsers(accounts[1].Id,'notfound','notfound',null);
+            Test.stopTest();
+
+            // Then
+            System.assert(!suggestedUsersFromAcc.isEmpty(),'Empty List of suggested users');
+            System.assert(!suggestedUsersNothingFound.isEmpty(),'Empty List of suggested users');
+            System.assertEquals(testUser.Id,suggestedUsersNothingFound[0].UserId,'Current User not suggested');
+        }
+    }
+
+
+
+
+
     
 }

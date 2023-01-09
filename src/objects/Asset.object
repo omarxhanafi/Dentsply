@@ -364,6 +364,17 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>CombinedFields__c</fullName>
+        <description>Combining the Product Name and Serial number to make it easier for the Service Cloud users to select the correct Asset</description>
+        <externalId>false</externalId>
+        <formula>Name&amp;&quot; | &quot;&amp;SerialNumber</formula>
+        <label>Combined Fields</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Competitor_Product__c</fullName>
         <externalId>false</externalId>
         <formula>Product_Name__r.Competitor_Product__c</formula>
@@ -527,6 +538,16 @@
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Number</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>ParentId</fullName>
@@ -1414,6 +1435,17 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>ServiceAgreement__c</fullName>
+        <description>Temp field until we migrate the Service Agreement records</description>
+        <externalId>false</externalId>
+        <label>Service Agreement</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>ShipToParty__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -1509,13 +1541,16 @@
         <type>Checkbox</type>
     </fields>
     <listViews>
-        <fullName>ANZNewAssetsLast7Days</fullName>
+        <fullName>ANZAssetsCreatedLast30DAYS</fullName>
         <columns>ArticleNumberSKU__c</columns>
         <columns>ASSET.NAME</columns>
         <columns>ASSET.SERIAL_NUMBER</columns>
         <columns>ASSET.INSTALL_DATE</columns>
         <columns>ACCOUNT.NAME</columns>
+        <columns>PRODUCT2.NAME</columns>
+        <columns>Invoice_Number__c</columns>
         <columns>ASSET.CREATED_DATE</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>ASSET.RECORDTYPE</field>
@@ -1523,16 +1558,11 @@
             <value>Asset.DS_Fixed_Asset</value>
         </filters>
         <filters>
-            <field>CREATEDBY_USER.ALIAS</field>
-            <operation>equals</operation>
-            <value>finte</value>
-        </filters>
-        <filters>
             <field>ASSET.CREATED_DATE</field>
             <operation>equals</operation>
-            <value>LAST_N_DAYS:7</value>
+            <value>LAST_N_DAYS:30</value>
         </filters>
-        <label>ANZ: New Assets Last 7 Days</label>
+        <label>ANZ: Assets Created Last 30 DAYS</label>
         <sharedTo>
             <role>Dentsply_IH_CEO</role>
             <roleAndSubordinatesInternal>ANZ_CRM_Analyst</roleAndSubordinatesInternal>
@@ -1556,6 +1586,16 @@
             <field>ASSET.NAME</field>
             <operation>contains</operation>
             <value>CEREC</value>
+        </filters>
+        <filters>
+            <field>ASSET.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Asset.siroForceIntegration</value>
+        </filters>
+        <filters>
+            <field>ASSET.address_country</field>
+            <operation>equals</operation>
+            <value>DE</value>
         </filters>
         <label>CEREC Installed Machines</label>
         <sharedTo>
@@ -1965,6 +2005,10 @@
             </values>
             <values>
                 <fullName>Ordered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suspended</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

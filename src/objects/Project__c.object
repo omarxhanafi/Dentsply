@@ -550,56 +550,6 @@ if( Go_Live_date__c &lt;= TODAY(),4,0))))</formula>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>2020 - Q1</fullName>
-                    <default>false</default>
-                    <label>2020 - Q1</label>
-                </value>
-                <value>
-                    <fullName>2020 - Q2</fullName>
-                    <default>false</default>
-                    <label>2020 - Q2</label>
-                </value>
-                <value>
-                    <fullName>2020 - Q3</fullName>
-                    <default>false</default>
-                    <label>2020 - Q3</label>
-                </value>
-                <value>
-                    <fullName>2020 - Q4</fullName>
-                    <default>false</default>
-                    <label>2020 - Q4</label>
-                </value>
-                <value>
-                    <fullName>2021 - Q1</fullName>
-                    <default>false</default>
-                    <label>2021 - Q1</label>
-                </value>
-                <value>
-                    <fullName>2021 - Q2</fullName>
-                    <default>false</default>
-                    <label>2021 - Q2</label>
-                </value>
-                <value>
-                    <fullName>2021 - Q3</fullName>
-                    <default>false</default>
-                    <label>2021 - Q3</label>
-                </value>
-                <value>
-                    <fullName>2021 - Q4</fullName>
-                    <default>false</default>
-                    <label>2021 - Q4</label>
-                </value>
-                <value>
-                    <fullName>2022 - Q1</fullName>
-                    <default>false</default>
-                    <label>2022 - Q1</label>
-                </value>
-                <value>
-                    <fullName>2022 - Q2</fullName>
-                    <default>false</default>
-                    <label>2022 - Q2</label>
-                </value>
-                <value>
                     <fullName>2022 - Q3</fullName>
                     <default>false</default>
                     <label>2022 - Q3</label>
@@ -608,6 +558,106 @@ if( Go_Live_date__c &lt;= TODAY(),4,0))))</formula>
                     <fullName>2022 - Q4</fullName>
                     <default>false</default>
                     <label>2022 - Q4</label>
+                </value>
+                <value>
+                    <fullName>2023 - Q1</fullName>
+                    <default>false</default>
+                    <label>2023 - Q1</label>
+                </value>
+                <value>
+                    <fullName>2023 - Q2</fullName>
+                    <default>false</default>
+                    <label>2023 - Q2</label>
+                </value>
+                <value>
+                    <fullName>2023 - Q3</fullName>
+                    <default>false</default>
+                    <label>2023 - Q3</label>
+                </value>
+                <value>
+                    <fullName>2023 - Q4</fullName>
+                    <default>false</default>
+                    <label>2023 - Q4</label>
+                </value>
+                <value>
+                    <fullName>2024 - Q1</fullName>
+                    <default>false</default>
+                    <label>2024 - Q1</label>
+                </value>
+                <value>
+                    <fullName>2024 - Q2</fullName>
+                    <default>false</default>
+                    <label>2024 - Q2</label>
+                </value>
+                <value>
+                    <fullName>2024 - Q3</fullName>
+                    <default>false</default>
+                    <label>2024 - Q3</label>
+                </value>
+                <value>
+                    <fullName>2024 - Q4</fullName>
+                    <default>false</default>
+                    <label>2024 - Q4</label>
+                </value>
+                <value>
+                    <fullName>2020 - Q1</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>2020 - Q1</label>
+                </value>
+                <value>
+                    <fullName>2020 - Q2</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>2020 - Q2</label>
+                </value>
+                <value>
+                    <fullName>2020 - Q3</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>2020 - Q3</label>
+                </value>
+                <value>
+                    <fullName>2020 - Q4</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>2020 - Q4</label>
+                </value>
+                <value>
+                    <fullName>2021 - Q1</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>2021 - Q1</label>
+                </value>
+                <value>
+                    <fullName>2021 - Q2</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>2021 - Q2</label>
+                </value>
+                <value>
+                    <fullName>2021 - Q3</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>2021 - Q3</label>
+                </value>
+                <value>
+                    <fullName>2021 - Q4</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>2021 - Q4</label>
+                </value>
+                <value>
+                    <fullName>2022 - Q1</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>2022 - Q1</label>
+                </value>
+                <value>
+                    <fullName>2022 - Q2</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>2022 - Q2</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1577,14 +1627,14 @@ Paused - Stopped on waiting for approval, paused for restart require approval. P
     <label>Project</label>
     <listViews>
         <fullName>All_Open_Projcts</fullName>
-        <columns>Project_Size__c</columns>
         <columns>NAME</columns>
+        <columns>Project_Status__c</columns>
         <columns>OWNER.FIRST_NAME</columns>
         <columns>Country__c</columns>
         <columns>Start_date__c</columns>
         <columns>End_date__c</columns>
-        <columns>Project_Status__c</columns>
-        <columns>CREATED_DATE</columns>
+        <columns>Go_Live_date__c</columns>
+        <columns>Project_Size__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>RECORDTYPE</field>
@@ -1594,7 +1644,11 @@ Paused - Stopped on waiting for approval, paused for restart require approval. P
         <filters>
             <field>Project_Status__c</field>
             <operation>notEqual</operation>
-            <value>Completed,Cancelled</value>
+            <value>Completed,Cancelled,Paused</value>
+        </filters>
+        <filters>
+            <field>Number_Of_New_Licenses__c</field>
+            <operation>equals</operation>
         </filters>
         <label>All Open Projects</label>
         <language>en_US</language>
@@ -1996,51 +2050,43 @@ Paused - Stopped on waiting for approval, paused for restart require approval. P
         <picklistValues>
             <picklist>Intended_Start_Date__c</picklist>
             <values>
-                <fullName>2020 - Q1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2020 - Q2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2020 - Q3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2020 - Q4</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q4</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2022 - Q1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2022 - Q2</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>2022 - Q3</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>2022 - Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2514,51 +2560,43 @@ Paused - Stopped on waiting for approval, paused for restart require approval. P
         <picklistValues>
             <picklist>Intended_Start_Date__c</picklist>
             <values>
-                <fullName>2020 - Q1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2020 - Q2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2020 - Q3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2020 - Q4</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q4</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2022 - Q1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2022 - Q2</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>2022 - Q3</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>2022 - Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3031,51 +3069,43 @@ Paused - Stopped on waiting for approval, paused for restart require approval. P
         <picklistValues>
             <picklist>Intended_Start_Date__c</picklist>
             <values>
-                <fullName>2020 - Q1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2020 - Q2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2020 - Q3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2020 - Q4</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q4</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2022 - Q1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2022 - Q2</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>2022 - Q3</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>2022 - Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3548,51 +3578,43 @@ Paused - Stopped on waiting for approval, paused for restart require approval. P
         <picklistValues>
             <picklist>Intended_Start_Date__c</picklist>
             <values>
-                <fullName>2020 - Q1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2020 - Q2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2020 - Q3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2020 - Q4</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2021 - Q4</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2022 - Q1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2022 - Q2</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>2022 - Q3</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>2022 - Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2023 - Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2024 - Q4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

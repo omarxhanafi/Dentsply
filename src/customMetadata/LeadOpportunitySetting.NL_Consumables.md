@@ -8,11 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">Cavitron;NuPro;Purevac;SDR flow+;SmartLite Pro;Surefil one;Aquasil;Calibra;Palodent Plus;Prime &amp; Bond active;TPH;Tessera</value>
-    </values>
-    <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">Cavitron;NuPro;Purevac;SDR flow+;SmartLite Pro;Surefil one;Aquasil;Calibra;Palodent Plus;Prime &amp; Bond active;TPH;Tessera;Ceram.x Spectra ST Flow</value>
     </values>
     <values>
         <field>Category__c</field>
@@ -21,6 +17,10 @@
     <values>
         <field>Country__c</field>
         <value xsi:type="xsd:string">NL</value>
+    </values>
+    <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>

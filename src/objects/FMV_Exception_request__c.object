@@ -330,9 +330,10 @@
         <fullName>Uniquely_qualified_reason__c</fullName>
         <externalId>false</externalId>
         <label>Uniquely qualified reason</label>
-        <required>false</required>
+        <length>25000</length>
         <trackTrending>false</trackTrending>
-        <type>TextArea</type>
+        <type>LongTextArea</type>
+        <visibleLines>7</visibleLines>
     </fields>
     <label>FMV Exception request</label>
     <nameField>

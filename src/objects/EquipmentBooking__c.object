@@ -663,6 +663,7 @@
         <columns>EndDate__c</columns>
         <columns>Product__c</columns>
         <columns>EquipmentSerialNumber__c</columns>
+        <columns>DeliveryDate__c</columns>
         <columns>Status__c</columns>
         <columns>CREATED_DATE</columns>
         <filterScope>Queue</filterScope>
@@ -688,6 +689,7 @@
         <columns>EndDate__c</columns>
         <columns>Product__c</columns>
         <columns>EquipmentSerialNumber__c</columns>
+        <columns>DeliveryDate__c</columns>
         <columns>Status__c</columns>
         <columns>CREATED_DATE</columns>
         <filterScope>Queue</filterScope>
@@ -713,6 +715,7 @@
         <columns>EndDate__c</columns>
         <columns>Product__c</columns>
         <columns>EquipmentSerialNumber__c</columns>
+        <columns>DeliveryDate__c</columns>
         <columns>Status__c</columns>
         <columns>CREATED_DATE</columns>
         <filterScope>Queue</filterScope>
@@ -738,6 +741,7 @@
         <columns>EndDate__c</columns>
         <columns>Product__c</columns>
         <columns>EquipmentSerialNumber__c</columns>
+        <columns>DeliveryDate__c</columns>
         <columns>Status__c</columns>
         <columns>CREATED_DATE</columns>
         <filterScope>Queue</filterScope>
@@ -848,11 +852,11 @@
         <excludedStandardButtons>Import</excludedStandardButtons>
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>New</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
         <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>Forward</excludedStandardButtons>
         <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>BookingType__c</searchResultsAdditionalFields>

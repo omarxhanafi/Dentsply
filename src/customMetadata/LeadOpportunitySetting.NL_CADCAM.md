@@ -8,11 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">CEREC Primescan;CEREC Primemill Full System;SpeedFire</value>
-    </values>
-    <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">CEREC Primescan;CEREC Primemill Full System;SpeedFire;Primescan Connect;Other;Primescan AC</value>
     </values>
     <values>
         <field>Category__c</field>
@@ -21,6 +17,10 @@
     <values>
         <field>Country__c</field>
         <value xsi:type="xsd:string">NL</value>
+    </values>
+    <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>
@@ -40,7 +40,7 @@
     </values>
     <values>
         <field>ShowManualSalesLeadOwnerAssignment__c</field>
-        <value xsi:type="xsd:boolean">false</value>
+        <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
         <field>UserRoles__c</field>

@@ -2458,6 +2458,16 @@
         <columns>Company_Code__c</columns>
         <columns>PRODUCT2.LAST_UPDATE</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>Company_Code__c</field>
+            <operation>equals</operation>
+            <value>US10</value>
+        </filters>
+        <filters>
+            <field>Article__c</field>
+            <operation>equals</operation>
+            <value>REDLCAB-8</value>
+        </filters>
         <label>All</label>
     </listViews>
     <listViews>
@@ -2496,9 +2506,7 @@
         </filters>
         <label>HQ: Equipment Products</label>
         <language>en_US</language>
-        <sharedTo>
-            <group>Global_X_SBU_Prospecting</group>
-        </sharedTo>
+        <sharedTo/>
     </listViews>
     <listViews>
         <fullName>Japan_Products</fullName>

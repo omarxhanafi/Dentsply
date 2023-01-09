@@ -11,16 +11,16 @@
         <value xsi:type="xsd:string">XG3D;XG 3D READY;SL3D;SL2D;SiroCam;SICAT Suite;SCHICK USB INTERFACE;Schick Sensors;Schick 33;Orthophos SL 3D;Orthophos SL 2D;Orthophos S 3D;Orthophos S 2D;HELIODENT;GALILEOS;Axeos;3D Upgrade;3D Upgrade</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Digital</value>
     </values>
     <values>
         <field>Country__c</field>
         <value xsi:type="xsd:string">CA</value>
+    </values>
+    <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>

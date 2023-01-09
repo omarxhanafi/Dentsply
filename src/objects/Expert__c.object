@@ -281,16 +281,6 @@
                     <label>CEREC Omnicam AC</label>
                 </value>
                 <value>
-                    <fullName>CEREC Omnciam AF</fullName>
-                    <default>false</default>
-                    <label>CEREC Omnicam AF</label>
-                </value>
-                <value>
-                    <fullName>CEREC Omnciam AI</fullName>
-                    <default>false</default>
-                    <label>CEREC Omnicam AI</label>
-                </value>
-                <value>
                     <fullName>CEREC Omnciam Connect DI</fullName>
                     <default>false</default>
                     <label>CEREC Omnicam Connect DI</label>
@@ -301,24 +291,9 @@
                     <label>CEREC Primescan</label>
                 </value>
                 <value>
-                    <fullName>CEREC PrimeMill</fullName>
+                    <fullName>Primescan Connect</fullName>
                     <default>false</default>
-                    <label>CEREC PrimeMill</label>
-                </value>
-                <value>
-                    <fullName>CEREC Software</fullName>
-                    <default>false</default>
-                    <label>CEREC Software</label>
-                </value>
-                <value>
-                    <fullName>Connect Software</fullName>
-                    <default>false</default>
-                    <label>Connect Software</label>
-                </value>
-                <value>
-                    <fullName>CEREC Ortho Software</fullName>
-                    <default>false</default>
-                    <label>CEREC Ortho Software</label>
+                    <label>Primescan Connect</label>
                 </value>
                 <value>
                     <fullName>CEREC Milling Units MC / MC X</fullName>
@@ -326,14 +301,19 @@
                     <label>CEREC Milling Units MC / MC X</label>
                 </value>
                 <value>
-                    <fullName>CEREC Milling Units  XL  / MC X</fullName>
+                    <fullName>CEREC Milling Units MC XL</fullName>
                     <default>false</default>
-                    <label>CEREC Milling Units  XL  / MC X</label>
+                    <label>CEREC Milling Units MC XL</label>
                 </value>
                 <value>
-                    <fullName>CEREC Milling Units  PP / MC X</fullName>
+                    <fullName>CEREC Milling Units PP</fullName>
                     <default>false</default>
-                    <label>CEREC Milling Units  PP / MC X</label>
+                    <label>CEREC Milling Units PP</label>
+                </value>
+                <value>
+                    <fullName>Primemill</fullName>
+                    <default>false</default>
+                    <label>Primemill</label>
                 </value>
                 <value>
                     <fullName>CEREC SpeedFire</fullName>
@@ -341,13 +321,106 @@
                     <label>CEREC SpeedFire</label>
                 </value>
                 <value>
+                    <fullName>Primeprint</fullName>
+                    <default>false</default>
+                    <label>Primeprint</label>
+                </value>
+                <value>
+                    <fullName>CEREC Software</fullName>
+                    <default>false</default>
+                    <label>CEREC Software</label>
+                </value>
+                <value>
+                    <fullName>CEREC Ortho Software</fullName>
+                    <default>false</default>
+                    <label>CEREC Ortho Software</label>
+                </value>
+                <value>
+                    <fullName>OraCheck</fullName>
+                    <default>false</default>
+                    <label>OraCheck</label>
+                </value>
+                <value>
+                    <fullName>DS Core</fullName>
+                    <default>false</default>
+                    <label>DS Core</label>
+                </value>
+                <value>
+                    <fullName>DS Core Create</fullName>
+                    <default>false</default>
+                    <label>DS Core Create</label>
+                </value>
+                <value>
+                    <fullName>DS Core Care</fullName>
+                    <default>false</default>
+                    <label>DS Core Care</label>
+                </value>
+                <value>
+                    <fullName>CEREC Tessera</fullName>
+                    <default>false</default>
+                    <label>CEREC Tessera</label>
+                </value>
+                <value>
+                    <fullName>CEREC Zirconia + / MTL</fullName>
+                    <default>false</default>
+                    <label>CEREC Zirconia + / MTL</label>
+                </value>
+                <value>
+                    <fullName>CEREC Guide 2</fullName>
+                    <default>false</default>
+                    <label>CEREC Guide 2</label>
+                </value>
+                <value>
+                    <fullName>CEREC Guide 3</fullName>
+                    <default>false</default>
+                    <label>CEREC Guide 3</label>
+                </value>
+                <value>
+                    <fullName>CEREC Milling Units  PP / MC X</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>CEREC Milling Units  PP / MC X</label>
+                </value>
+                <value>
+                    <fullName>CEREC Milling Units  XL  / MC X</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>CEREC Milling Units  XL  / MC X</label>
+                </value>
+                <value>
+                    <fullName>CEREC Omnciam AF</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>CEREC Omnciam AF</label>
+                </value>
+                <value>
+                    <fullName>CEREC Omnciam AI</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>CEREC Omnciam AI</label>
+                </value>
+                <value>
+                    <fullName>CEREC PrimeMill</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>CEREC PrimeMill</label>
+                </value>
+                <value>
                     <fullName>CEREC Zirconia incl. CEREC Zirconia Meso</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>CEREC Zirconia incl. CEREC Zirconia Meso</label>
+                </value>
+                <value>
+                    <fullName>Connect Software</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Connect Software</label>
                 </value>
                 <value>
                     <fullName>DS Hub</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>DS Hub</label>
                 </value>
             </valueSetDefinition>
@@ -587,9 +660,9 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Protaper NEXT</fullName>
+                    <fullName>ProTaper NEXT</fullName>
                     <default>false</default>
-                    <label>Protaper NEXT</label>
+                    <label>ProTaper NEXT</label>
                 </value>
                 <value>
                     <fullName>Hands Files</fullName>
@@ -597,9 +670,39 @@
                     <label>Hands Files</label>
                 </value>
                 <value>
-                    <fullName>Protaper GOLD</fullName>
+                    <fullName>ProTaper GOLD</fullName>
                     <default>false</default>
-                    <label>Protaper GOLD</label>
+                    <label>ProTaper GOLD</label>
+                </value>
+                <value>
+                    <fullName>ProTaper Ultimate</fullName>
+                    <default>false</default>
+                    <label>ProTaper Ultimate</label>
+                </value>
+                <value>
+                    <fullName>AH Plus Sealer</fullName>
+                    <default>false</default>
+                    <label>AH Plus Sealer</label>
+                </value>
+                <value>
+                    <fullName>AH Plus Bioceramic Sealer</fullName>
+                    <default>false</default>
+                    <label>AH Plus Bioceramic Sealer</label>
+                </value>
+                <value>
+                    <fullName>Conform Fit GP</fullName>
+                    <default>false</default>
+                    <label>Conform Fit GP</label>
+                </value>
+                <value>
+                    <fullName>X-Smart Pro+</fullName>
+                    <default>false</default>
+                    <label>X-Smart Pro+</label>
+                </value>
+                <value>
+                    <fullName>EndoActivator (Irrigation)</fullName>
+                    <default>false</default>
+                    <label>EndoActivator (Irrigation)</label>
                 </value>
                 <value>
                     <fullName>WaveOne GOLD</fullName>
@@ -971,9 +1074,29 @@ Definition of a global KOL is if they are either an international speaker, a tho
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
+                    <fullName>Axeos</fullName>
+                    <default>false</default>
+                    <label>Axeos</label>
+                </value>
+                <value>
+                    <fullName>Orthophos S</fullName>
+                    <default>false</default>
+                    <label>Orthophos S</label>
+                </value>
+                <value>
                     <fullName>Orthophos SL</fullName>
                     <default>false</default>
                     <label>Orthophos SL</label>
+                </value>
+                <value>
+                    <fullName>Orthophos S 3D</fullName>
+                    <default>false</default>
+                    <label>Orthophos S 3D</label>
+                </value>
+                <value>
+                    <fullName>Orthophos SL 3D</fullName>
+                    <default>false</default>
+                    <label>Orthophos SL 3D</label>
                 </value>
                 <value>
                     <fullName>Orthophos XG</fullName>
@@ -989,11 +1112,6 @@ Definition of a global KOL is if they are either an international speaker, a tho
                     <fullName>Sidexis 4</fullName>
                     <default>false</default>
                     <label>Sidexis 4</label>
-                </value>
-                <value>
-                    <fullName>Sidexis 4 v. 4.3</fullName>
-                    <default>false</default>
-                    <label>Sidexis 4 v. 4.3</label>
                 </value>
                 <value>
                     <fullName>Sidexis XG</fullName>
@@ -1034,11 +1152,6 @@ Definition of a global KOL is if they are either an international speaker, a tho
                     <fullName>SiroCam</fullName>
                     <default>false</default>
                     <label>SiroCam</label>
-                </value>
-                <value>
-                    <fullName>SiroLaser AdvancePlus</fullName>
-                    <default>false</default>
-                    <label>SiroLaser AdvancePlus</label>
                 </value>
                 <value>
                     <fullName>SICAT Air</fullName>
@@ -1083,7 +1196,20 @@ Definition of a global KOL is if they are either an international speaker, a tho
                 <value>
                     <fullName>Fona</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Fona</label>
+                </value>
+                <value>
+                    <fullName>Sidexis 4 v. 4.3</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Sidexis 4 v. 4.3</label>
+                </value>
+                <value>
+                    <fullName>SiroLaser AdvancePlus</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SiroLaser AdvancePlus</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1108,11 +1234,6 @@ Definition of a global KOL is if they are either an international speaker, a tho
                     <label>Ankylos</label>
                 </value>
                 <value>
-                    <fullName>Astra Tech Implant SystemTX</fullName>
-                    <default>false</default>
-                    <label>Astra Tech Implant System TX</label>
-                </value>
-                <value>
                     <fullName>Astra Tech Implant System Profile</fullName>
                     <default>false</default>
                     <label>Astra Tech Implant System Profile</label>
@@ -1126,6 +1247,16 @@ Definition of a global KOL is if they are either an international speaker, a tho
                     <fullName>Astra Tech Implant System EV with SmartFix</fullName>
                     <default>false</default>
                     <label>Astra Tech Implant System EV with SmartFix</label>
+                </value>
+                <value>
+                    <fullName>DS PrimeTaper EV</fullName>
+                    <default>false</default>
+                    <label>DS PrimeTaper EV</label>
+                </value>
+                <value>
+                    <fullName>DS OmniTaper EV</fullName>
+                    <default>false</default>
+                    <label>DS OmniTaper EV</label>
                 </value>
                 <value>
                     <fullName>Smartfix</fullName>
@@ -1227,6 +1358,12 @@ Definition of a global KOL is if they are either an international speaker, a tho
                     <default>false</default>
                     <label>MGuide</label>
                 </value>
+                <value>
+                    <fullName>Astra Tech Implant SystemTX</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Astra Tech Implant SystemTX</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>6</visibleLines>
@@ -1254,6 +1391,16 @@ Definition of a global KOL is if they are either an international speaker, a tho
             <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
+                <value>
+                    <fullName>DAC Universal D</fullName>
+                    <default>false</default>
+                    <label>DAC Universal D</label>
+                </value>
+                <value>
+                    <fullName>DAC Universal S</fullName>
+                    <default>false</default>
+                    <label>DAC Universal S</label>
+                </value>
                 <value>
                     <fullName>High Speed Air-Driven Handpieces</fullName>
                     <default>false</default>
@@ -1563,6 +1710,31 @@ Definition of a global KOL is if they are either an international speaker, a tho
                     <label>Spacefile</label>
                 </value>
                 <value>
+                    <fullName>SureSmile Retainer</fullName>
+                    <default>false</default>
+                    <label>SureSmile Retainer</label>
+                </value>
+                <value>
+                    <fullName>Vpro</fullName>
+                    <default>false</default>
+                    <label>Vpro</label>
+                </value>
+                <value>
+                    <fullName>Brackets</fullName>
+                    <default>false</default>
+                    <label>Brackets</label>
+                </value>
+                <value>
+                    <fullName>Attachments</fullName>
+                    <default>false</default>
+                    <label>Attachments</label>
+                </value>
+                <value>
+                    <fullName>Photos and X-rays</fullName>
+                    <default>false</default>
+                    <label>Photos and X-rays</label>
+                </value>
+                <value>
                     <fullName>Adhesives</fullName>
                     <default>false</default>
                     <label>Adhesives</label>
@@ -1576,11 +1748,6 @@ Definition of a global KOL is if they are either an international speaker, a tho
                     <fullName>Omnicam</fullName>
                     <default>false</default>
                     <label>Omnicam</label>
-                </value>
-                <value>
-                    <fullName>CCO System</fullName>
-                    <default>false</default>
-                    <label>CCO System</label>
                 </value>
                 <value>
                     <fullName>SureSmile Aligners</fullName>
@@ -1608,19 +1775,28 @@ Definition of a global KOL is if they are either an international speaker, a tho
                     <label>Drufomat</label>
                 </value>
                 <value>
-                    <fullName>InOvation Brackets (R, X &amp; C)</fullName>
+                    <fullName>All Twin Brackets</fullName>
                     <default>false</default>
-                    <label>InOvation Brackets (R, X &amp; C)</label>
+                    <isActive>false</isActive>
+                    <label>All Twin Brackets</label>
+                </value>
+                <value>
+                    <fullName>CCO System</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>CCO System</label>
                 </value>
                 <value>
                     <fullName>In-Ovation X</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>In-Ovation X</label>
                 </value>
                 <value>
-                    <fullName>All Twin Brackets</fullName>
+                    <fullName>InOvation Brackets (R, X &amp; C)</fullName>
                     <default>false</default>
-                    <label>All Twin Brackets</label>
+                    <isActive>false</isActive>
+                    <label>InOvation Brackets (R, X &amp; C)</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2066,6 +2242,31 @@ Definition of a global KOL is if they are either an international speaker, a tho
                     <label>Acrylics</label>
                 </value>
                 <value>
+                    <fullName>Lucitone Digital Print Denture</fullName>
+                    <default>false</default>
+                    <label>Lucitone Digital Print Denture</label>
+                </value>
+                <value>
+                    <fullName>Lucitone Digital IPN 3D Premium Tooth</fullName>
+                    <default>false</default>
+                    <label>Lucitone Digital IPN 3D Premium Tooth</label>
+                </value>
+                <value>
+                    <fullName>Lucitone Digital Print 3D Denture Base</fullName>
+                    <default>false</default>
+                    <label>Lucitone Digital Print 3D Denture Base</label>
+                </value>
+                <value>
+                    <fullName>Lucitone Digital Value 3D Economy Tooth &amp; Trial Placement</fullName>
+                    <default>false</default>
+                    <label>Lucitone Digital Value 3D Economy Tooth &amp; Trial Placement</label>
+                </value>
+                <value>
+                    <fullName>Dentsply Sirona Digital Cure-Large Capacity Unit</fullName>
+                    <default>false</default>
+                    <label>Dentsply Sirona Digital Cure-Large Capacity Unit</label>
+                </value>
+                <value>
                     <fullName>All Ceramics</fullName>
                     <default>false</default>
                     <label>All Ceramics</label>
@@ -2134,16 +2335,6 @@ Definition of a global KOL is if they are either an international speaker, a tho
                     <fullName>Veneers</fullName>
                     <default>false</default>
                     <label>Veneers</label>
-                </value>
-                <value>
-                    <fullName>TruExpression</fullName>
-                    <default>false</default>
-                    <label>TruExpression</label>
-                </value>
-                <value>
-                    <fullName>TruByte</fullName>
-                    <default>false</default>
-                    <label>TruByte</label>
                 </value>
                 <value>
                     <fullName>Veroform</fullName>
@@ -2256,19 +2447,34 @@ Definition of a global KOL is if they are either an international speaker, a tho
                     <label>Multimat Cube</label>
                 </value>
                 <value>
+                    <fullName>3rd Party Furnace</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>3rd Party Furnace</label>
+                </value>
+                <value>
                     <fullName>Multimat NTX</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Multimat NTX</label>
+                </value>
+                <value>
+                    <fullName>TruByte</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>TruByte</label>
+                </value>
+                <value>
+                    <fullName>TruExpression</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>TruExpression</label>
                 </value>
                 <value>
                     <fullName>inFire Sinter Furnace</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>inFire Sinter Furnace</label>
-                </value>
-                <value>
-                    <fullName>3rd Party Furnace</fullName>
-                    <default>false</default>
-                    <label>3rd Party Furnace</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2332,6 +2538,21 @@ Definition of a global KOL is if they are either an international speaker, a tho
                     <label>Impression Materials</label>
                 </value>
                 <value>
+                    <fullName>Curing Lights</fullName>
+                    <default>false</default>
+                    <label>Curing Lights</label>
+                </value>
+                <value>
+                    <fullName>Bulk Fill Resins</fullName>
+                    <default>false</default>
+                    <label>Bulk Fill Resins</label>
+                </value>
+                <value>
+                    <fullName>Mixer/Amalgamator</fullName>
+                    <default>false</default>
+                    <label>Mixer/Amalgamator</label>
+                </value>
+                <value>
                     <fullName>Composites</fullName>
                     <default>false</default>
                     <label>Composites</label>
@@ -2364,6 +2585,7 @@ Definition of a global KOL is if they are either an international speaker, a tho
                 <value>
                     <fullName>Burs</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Burs</label>
                 </value>
             </valueSetDefinition>
@@ -2587,6 +2809,11 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
+                    <fullName>Axano</fullName>
+                    <default>false</default>
+                    <label>Axano</label>
+                </value>
+                <value>
                     <fullName>Teneo</fullName>
                     <default>false</default>
                     <label>Teneo</label>
@@ -2767,9 +2994,19 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>VDW Endo System</fullName>
+                    <fullName>VDW.Rotate</fullName>
                     <default>false</default>
-                    <label>VDW Endo System</label>
+                    <label>VDW.Rotate</label>
+                </value>
+                <value>
+                    <fullName>VDW.Gold</fullName>
+                    <default>false</default>
+                    <label>VDW.Gold</label>
+                </value>
+                <value>
+                    <fullName>Guttafusion</fullName>
+                    <default>false</default>
+                    <label>Guttafusion</label>
                 </value>
                 <value>
                     <fullName>Reciproc</fullName>
@@ -2802,19 +3039,27 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                     <label>Eddy</label>
                 </value>
                 <value>
-                    <fullName>VDW Ultra</fullName>
+                    <fullName>BeeFill 2 in 1</fullName>
                     <default>false</default>
-                    <label>VDW Ultra</label>
+                    <label>BeeFill 2 in 1</label>
                 </value>
                 <value>
                     <fullName>Guttafushion</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Guttafushion</label>
                 </value>
                 <value>
-                    <fullName>BeeFill 2 in 1</fullName>
+                    <fullName>VDW Endo System</fullName>
                     <default>false</default>
-                    <label>BeeFill 2 in 1</label>
+                    <isActive>false</isActive>
+                    <label>VDW Endo System</label>
+                </value>
+                <value>
+                    <fullName>VDW Ultra</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>VDW Ultra</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3236,6 +3481,20 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
         <filterScope>Mine</filterScope>
         <label>My Experts</label>
     </listViews>
+    <listViews>
+        <fullName>TH_KOL_Information</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Country__c</field>
+            <operation>equals</operation>
+            <value>TH</value>
+        </filters>
+        <label>TH: KOL Information</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>TH_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
     <nameField>
         <label>KOL Information</label>
         <trackFeedHistory>false</trackFeedHistory>
@@ -3251,11 +3510,11 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
         <picklistValues>
             <picklist>Cad_Cam__c</picklist>
             <values>
-                <fullName>CEREC Milling Units  PP %2F MC X</fullName>
+                <fullName>CEREC Guide 2</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CEREC Milling Units  XL  %2F MC X</fullName>
+                <fullName>CEREC Guide 3</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3263,15 +3522,15 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
+                <fullName>CEREC Milling Units MC XL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC Milling Units PP</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>CEREC Omnciam AC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>CEREC Omnciam AF</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>CEREC Omnciam AI</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3280,10 +3539,6 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
             </values>
             <values>
                 <fullName>CEREC Ortho Software</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>CEREC PrimeMill</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3299,22 +3554,62 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
-                <fullName>CEREC Zirconia incl%2E CEREC Zirconia Meso</fullName>
+                <fullName>CEREC Tessera</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Connect Software</fullName>
+                <fullName>CEREC Zirconia %2B %2F MTL</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>DS Hub</fullName>
+                <fullName>DS Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS Core Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS Core Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OraCheck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primemill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primeprint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primescan Connect</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
             <picklist>Endodontics_specialties__c</picklist>
             <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AH Plus Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Calamus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conform Fit GP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EndoActivator %28Irrigation%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3330,15 +3625,19 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
+                <fullName>ProTaper GOLD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ProTaper NEXT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ProTaper Ultimate</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Proglider</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Protaper GOLD</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Protaper NEXT</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3359,6 +3658,10 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
             </values>
             <values>
                 <fullName>X-Smart PLUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-Smart Pro%2B</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3495,7 +3798,7 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
-                <fullName>Fona</fullName>
+                <fullName>Axeos</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3511,7 +3814,19 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
+                <fullName>Orthophos S</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orthophos S 3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Orthophos SL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orthophos SL 3D</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3555,10 +3870,6 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
-                <fullName>Sidexis 4 v%2E 4%2E3</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Sidexis XG</fullName>
                 <default>false</default>
             </values>
@@ -3568,10 +3879,6 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
             </values>
             <values>
                 <fullName>SiroCam</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SiroLaser AdvancePlus</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3614,15 +3921,19 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
-                <fullName>Astra Tech Implant SystemTX</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Azento</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Conus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS OmniTaper EV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS PrimeTaper EV</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3688,6 +3999,14 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
         </picklistValues>
         <picklistValues>
             <picklist>Instruments__c</picklist>
+            <values>
+                <fullName>DAC Universal D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DAC Universal S</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>Electric Systems and Attachments</fullName>
                 <default>false</default>
@@ -4540,11 +4859,11 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
-                <fullName>All Twin Brackets</fullName>
+                <fullName>Attachments</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>CCO System</fullName>
+                <fullName>Brackets</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4560,15 +4879,11 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
-                <fullName>In-Ovation X</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>InOvation Brackets %28R%2C X %26 C%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Omnicam</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photos and X-rays</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4584,7 +4899,15 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
+                <fullName>SureSmile Retainer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>SureSmile Wires</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vpro</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4796,10 +5119,6 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
-                <fullName>3rd Party Furnace</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>3rd Party Intraoral Scanner</fullName>
                 <default>false</default>
             </values>
@@ -4852,6 +5171,10 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
+                <fullName>Dentsply Sirona Digital Cure-Large Capacity Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Denture Types</fullName>
                 <default>false</default>
             </values>
@@ -4892,11 +5215,23 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
-                <fullName>Multimat Cube</fullName>
+                <fullName>Lucitone Digital IPN 3D Premium Tooth</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Multimat NTX</fullName>
+                <fullName>Lucitone Digital Print 3D Denture Base</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lucitone Digital Print Denture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lucitone Digital Value 3D Economy Tooth %26 Trial Placement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multimat Cube</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4924,14 +5259,6 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
-                <fullName>TruByte</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>TruExpression</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>VIPI</fullName>
                 <default>false</default>
             </values>
@@ -4955,10 +5282,6 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <fullName>in Lab CAD SW</fullName>
                 <default>false</default>
             </values>
-            <values>
-                <fullName>inFire Sinter Furnace</fullName>
-                <default>false</default>
-            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Restorative__c</picklist>
@@ -4967,7 +5290,7 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
-                <fullName>Burs</fullName>
+                <fullName>Bulk Fill Resins</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4976,6 +5299,10 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
             </values>
             <values>
                 <fullName>Composites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Curing Lights</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4988,6 +5315,10 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
             </values>
             <values>
                 <fullName>Matrix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mixer%2FAmalgamator</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5056,6 +5387,10 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
         </picklistValues>
         <picklistValues>
             <picklist>Treatment_Center__c</picklist>
+            <values>
+                <fullName>Axano</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>C-Generation</fullName>
                 <default>false</default>
@@ -5187,7 +5522,7 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
-                <fullName>Guttafushion</fullName>
+                <fullName>Guttafusion</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5207,11 +5542,11 @@ IF( Tier1_Criteria__c &gt;3,&quot;TIER 1&quot;, IF( Tier2_Criteria__c &gt;2,&quo
                 <default>false</default>
             </values>
             <values>
-                <fullName>VDW Endo System</fullName>
+                <fullName>VDW%2EGold</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>VDW Ultra</fullName>
+                <fullName>VDW%2ERotate</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

@@ -17,6 +17,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>CventEvents__CventObject__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores mnemonic Cvent object name (either &apos;EVENT&apos;, &apos;SESSION&apos;, &apos;CONTACT&apos;, &apos;ATTENDEE&apos; or &apos;RESPONDENT&apos;).</description>
+        <externalId>false</externalId>
+        <label>Cvent Object</label>
+        <length>64</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>CventEvents__DefaultValue__c</fullName>
         <deprecated>false</deprecated>
         <description>Value which is filled in the target field in case the source field value is empty.</description>

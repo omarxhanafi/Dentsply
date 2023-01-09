@@ -1476,6 +1476,24 @@
         <type>Checkbox</type>
     </fields>
     <label>GuidanceProcedureTracking</label>
+    <listViews>
+        <fullName>US_Guidance</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>Guidance_Content__c</columns>
+        <columns>NextActivity__c</columns>
+        <columns>RecordTypeDeveloperName__c</columns>
+        <columns>Country__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Country__c</field>
+            <operation>equals</operation>
+            <value>US</value>
+        </filters>
+        <label>US Guidance</label>
+        <language>en_US</language>
+    </listViews>
     <pluralLabel>GuidancesProcedureTracker</pluralLabel>
     <visibility>Public</visibility>
 </CustomObject>

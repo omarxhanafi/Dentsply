@@ -204,57 +204,7 @@
         <fullName>PersonalInfo_EPIM</fullName>
         <description>Fieldset for User Field Masking</description>
         <displayedFields>
-            <field>Phone</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>BadgeText</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>Longitude</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>SenderEmail</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>Latitude</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>City</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>Fax</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>PostalCode</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>Street</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>SenderName</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>Email</field>
+            <field>Title</field>
             <isFieldManaged>true</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
@@ -264,82 +214,12 @@
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>Country</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>Title</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>FirstName</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>EmployeeNumber</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
             <field>Name</field>
             <isFieldManaged>true</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>GeocodeAccuracy</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>Division</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>Signature</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>LastName</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>FederationIdentifier</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>AboutMe</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>Alias</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>Username</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>MobilePhone</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>ManagerId</field>
-            <isFieldManaged>true</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>CompanyName</field>
+            <field>SenderEmail</field>
             <isFieldManaged>true</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
@@ -349,7 +229,42 @@
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>State</field>
+            <field>Alias</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastName</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FirstName</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Username</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Signature</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Division</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FederationIdentifier</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>EmployeeNumber</field>
             <isFieldManaged>true</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
@@ -364,6 +279,10 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>AboutMe</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+    </fields>
+    <fields>
         <fullName>Actual_Sales_LY__c</fullName>
         <description>Sales LY on Accounts owned by the rep. Used in Italy to group reps into categories by size. Updated manually. If more countries would use this field, update this description accordingly</description>
         <externalId>false</externalId>
@@ -375,6 +294,14 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Address</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Alias</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Area_Manager_DI_DE__c</fullName>
@@ -427,6 +354,18 @@
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>CallCenterId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CommunityNickname</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>CompanyName</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
         <fullName>ComputerId__c</fullName>
         <description>DO NOT DELETE - Used for Encore Integration</description>
         <externalId>false</externalId>
@@ -436,6 +375,11 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Country_Code_3_digit__c</fullName>
@@ -649,6 +593,10 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>DefaultGroupNotificationFrequency</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
         <fullName>Default_Activity_Length_In_Minutes__c</fullName>
         <description>The number of minutes that an activity or task duration should default to.</description>
         <externalId>false</externalId>
@@ -693,6 +641,18 @@
         <label>Default Event Update Calendar</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DelegatedApproverId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Department</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>DigestFrequency</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Digital_Region_D_UK__c</fullName>
@@ -2098,6 +2058,10 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Division</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
         <fullName>DoNotFreeze__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Field used by an Apex Batch that will freeze users that didn&apos;t login for a certain amount of time. The apex batch does not include the users flagged as &quot;do not freeze&quot;</description>
@@ -2136,6 +2100,15 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Edit_Sales_Lead__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Allow the user to edit Sales Leads. If set to True, the User will be excluded from the Sales Lead Validation Rule.</description>
+        <externalId>false</externalId>
+        <label>Edit Sales Lead?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Edit_report_package__c</fullName>
         <externalId>false</externalId>
         <formula>HYPERLINK(&apos;/apex/UserToReportPackageVF?id=&apos; &amp; Id, &apos;Edit report package&apos;, &apos;self&apos;)</formula>
@@ -2144,6 +2117,18 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>EmailEncodingKey</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>EmployeeNumber</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Endodontics_User__c</fullName>
@@ -2162,6 +2147,10 @@
         <label>Exclude from login history report</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Extension</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>FSSK__FSK_FSL_Resource_Type__c</fullName>
@@ -2211,6 +2200,14 @@ When an admin creates or updates user records, the SFS Resource Type field on th
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Fax</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>FederationIdentifier</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>FieldSalesRatioPerc__c</fullName>
@@ -2285,6 +2282,19 @@ Note that administrative time should not be deducted.</inlineHelpText>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>IndividualId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>IsActive</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>IsSystemControlled</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
         <fullName>Is_Active__c</fullName>
         <description>Standard fields are not available for Account Reports, only Custom Owner fields are included</description>
         <externalId>false</externalId>
@@ -2323,6 +2333,14 @@ Note that administrative time should not be deducted.</inlineHelpText>
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LanguageLocaleKey</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>LocaleSidKey</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>ManagerId</fullName>
@@ -2546,6 +2564,10 @@ Note that administrative time should not be deducted.</inlineHelpText>
         </valueSet>
     </fields>
     <fields>
+        <fullName>MobilePhone</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
         <fullName>Mobile_User__c</fullName>
         <defaultValue>false</defaultValue>
         <description>This is to enabled reporting on activities to see whether or not the user is set up for Mobile</description>
@@ -2559,7 +2581,7 @@ Note that administrative time should not be deducted.</inlineHelpText>
         <caseSensitive>false</caseSensitive>
         <externalId>false</externalId>
         <label>ERP User ID</label>
-        <length>12</length>
+        <length>15</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
@@ -2810,6 +2832,10 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Name</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
         <fullName>National_Admin__c</fullName>
         <description>Users with information in this field will receive information adressed to National Admins</description>
         <externalId>false</externalId>
@@ -2865,6 +2891,14 @@ IF(
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>PortalRole</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Preventive_User__c</fullName>
@@ -2925,6 +2959,11 @@ null)</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>ProfileId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Profile__c</fullName>
         <description>used to display profile name when data is extracted by dataloader</description>
         <externalId>false</externalId>
@@ -2955,6 +2994,14 @@ null)</formula>
             <valueSetName>Questionnaire_Type</valueSetName>
         </valueSet>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ReceivesAdminInfoEmails</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>ReceivesInfoEmails</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Region__c</fullName>
@@ -4559,6 +4606,14 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>SenderEmail</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>SenderName</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
         <fullName>Service_Cloud_Special_Permissions__c</fullName>
         <externalId>false</externalId>
         <label>Service Cloud Special Permissions</label>
@@ -4592,6 +4647,22 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Signature</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>StayInTouchNote</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>StayInTouchSignature</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>StayInTouchSubject</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Team_Setup_ID__c</fullName>
@@ -4735,6 +4806,11 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
                     <label>Endodontics</label>
                 </value>
                 <value>
+                    <fullName>Field Service Technician</fullName>
+                    <default>false</default>
+                    <label>Field Service Technician</label>
+                </value>
+                <value>
                     <fullName>Finance</fullName>
                     <default>false</default>
                     <label>Finance</label>
@@ -4875,6 +4951,11 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
                     <label>Specialist</label>
                 </value>
                 <value>
+                    <fullName>Technical Customer Support</fullName>
+                    <default>false</default>
+                    <label>Technical Customer Support</label>
+                </value>
+                <value>
                     <fullName>Technical Support</fullName>
                     <default>false</default>
                     <label>Technical Support</label>
@@ -4918,10 +4999,20 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>New Zealand</controllingFieldValue>
+                <controllingFieldValue>Australia</controllingFieldValue>
+                <valueName>Field Service Technician</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>New Zealand</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
                 <controllingFieldValue>Australia</controllingFieldValue>
                 <valueName>Sales Manager</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>New Zealand</controllingFieldValue>
+                <controllingFieldValue>Australia</controllingFieldValue>
+                <valueName>Technical Customer Support</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Portugal</controllingFieldValue>
@@ -8861,6 +8952,14 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
         </valueSet>
     </fields>
     <fields>
+        <fullName>TimeZoneSidKey</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Title</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
         <fullName>US_TeleSales_Team_Name__c</fullName>
         <description>Used for US DNA TeleSales Reportin</description>
         <externalId>false</externalId>
@@ -8870,6 +8969,14 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UserRoleId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UserSubtype</fullName>
     </fields>
     <fields>
         <fullName>UserUnique__c</fullName>
@@ -9203,6 +9310,10 @@ Sales Manager = Regional Sales Mgrs, Division Sales Mgrs, National Sales Mgrs</i
         </valueSet>
     </fields>
     <fields>
+        <fullName>Username</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
         <fullName>View_All_EA_Products__c</fullName>
         <externalId>false</externalId>
         <label>View All EA Products</label>
@@ -9349,6 +9460,10 @@ null)
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>WorkspaceId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>echosign_dev1__EchoSign_Allow_Delegated_Sending__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
@@ -9442,6 +9557,7 @@ null)
         <columns>CORE.USERS.USERNAME</columns>
         <columns>CORE.USER_ROLE.NAME</columns>
         <columns>CORE.PROFILE.NAME</columns>
+        <columns>DEFAULT_CURRENCY</columns>
         <columns>Movex_Uer_ID__c</columns>
         <columns>CORE.USERS.LAST_LOGIN</columns>
         <columns>CREATED_DATE</columns>
@@ -9625,6 +9741,7 @@ null)
     </listViews>
     <listViews>
         <fullName>CIS_All_active_Users</fullName>
+        <columns>CREATED_DATE</columns>
         <columns>FULL_NAME</columns>
         <columns>CORE.USER_ROLE.NAME</columns>
         <columns>CORE.PROFILE.NAME</columns>
@@ -9732,32 +9849,6 @@ null)
         <sharedTo>
             <group>DI_System_Administrators</group>
         </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>Frozen_Users</fullName>
-        <columns>UPDATEDBY_USER.NAME</columns>
-        <columns>FULL_NAME</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>CORE.USERS.USERNAME</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>CORE.USERS.LAST_LOGIN</columns>
-        <columns>CORE.USER_ROLE.NAME</columns>
-        <columns>CORE.USERS.ACTIVE</columns>
-        <columns>CORE.PROFILE.NAME</columns>
-        <columns>MANAGER</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>IS_FROZEN</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <filters>
-            <field>CORE.USERS.ACTIVE</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <label>Active Frozen Users</label>
-        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>Frozen_Users_pending_deactivation</fullName>
@@ -9875,10 +9966,11 @@ null)
         <columns>CORE.USERS.LAST_LOGIN</columns>
         <columns>Movex_Uer_ID__c</columns>
         <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.ADDRESS_COUNTRY</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>Market__c</field>
-            <operation>equals</operation>
+            <field>User_Country__c</field>
+            <operation>contains</operation>
             <value>HQ</value>
         </filters>
         <filters>
@@ -9893,22 +9985,23 @@ null)
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>IB_All_Users</fullName>
-        <booleanFilter>(1 OR 3) AND 2 AND 4</booleanFilter>
-        <columns>CORE.USERS.FIRST_NAME</columns>
-        <columns>CORE.USERS.LAST_NAME</columns>
+        <fullName>HQ_My_markets_users_no_login_14_days</fullName>
+        <booleanFilter>(1 or 5) AND 2 AND 3 AND 4 and 6 and 7</booleanFilter>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
         <columns>CORE.USERS.USERNAME</columns>
         <columns>CORE.USERS.LAST_LOGIN</columns>
-        <columns>CORE.USER_ROLE.NAME</columns>
-        <columns>CORE.PROFILE.NAME</columns>
-        <columns>Manager_workaround__c</columns>
+        <columns>CREATED_DATE</columns>
         <columns>User_Country__c</columns>
-        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>Product_Area__c</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>CORE.USER_ROLE.NAME</field>
-            <operation>contains</operation>
-            <value>IB</value>
+            <field>CORE.USERS.LAST_LOGIN</field>
+            <operation>lessThan</operation>
+            <value>LAST_N_DAYS:14</value>
         </filters>
         <filters>
             <field>CORE.USERS.ACTIVE</field>
@@ -9916,16 +10009,66 @@ null)
             <value>1</value>
         </filters>
         <filters>
-            <field>CORE.USERS.ADDRESS_COUNTRY</field>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>notEqual</operation>
+            <value>Chatter Free User</value>
+        </filters>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>notEqual</operation>
+            <value>HQ: DI Executive Management</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.LAST_LOGIN</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>CORE.USERS.USERNAME</field>
+            <operation>notContain</operation>
+            <value>Userinstock</value>
+        </filters>
+        <filters>
+            <field>Is_My_Market__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>HQ: My markets users no login &gt;14 days</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>CEE_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>IB_CSl_Users</fullName>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>IS_FROZEN</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>Manager_workaround__c</columns>
+        <columns>User_Country__c</columns>
+        <columns>MARKETING_USER</columns>
+        <columns>Service_Cloud_Special_Permissions__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>User_Country__c</field>
             <operation>equals</operation>
             <value>Spain,Portugal</value>
         </filters>
         <filters>
             <field>CORE.PROFILE.NAME</field>
-            <operation>notContain</operation>
-            <value>BEX:</value>
+            <operation>equals</operation>
+            <value>Lightning Service Cloud</value>
         </filters>
-        <label>IB: All Users</label>
+        <label>IB: CS Users</label>
         <language>en_US</language>
         <sharedTo>
             <group>DI_System_Administrators</group>
@@ -9966,6 +10109,7 @@ null)
         <columns>CORE.USER_ROLE.NAME</columns>
         <columns>CORE.USERS.ACTIVE</columns>
         <columns>Sales_Channel__c</columns>
+        <columns>IS_FROZEN</columns>
         <columns>Product_Area__c</columns>
         <columns>Movex_Uer_ID__c</columns>
         <columns>User_Country__c</columns>
@@ -9987,6 +10131,51 @@ null)
             <value>IT:</value>
         </filters>
         <label>IT: All Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Iberia_Users</fullName>
+        <columns>IS_FROZEN</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>Default_CFE_SBUs__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>Portugal,Spain</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Iberia Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Inactive_Users_SM</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>UPDATEDBY_USER.NAME</columns>
+        <columns>MANAGER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Inactive Users</label>
         <language>en_US</language>
     </listViews>
     <listViews>
@@ -10025,6 +10214,25 @@ null)
         <sharedTo>
             <group>DI_System_Administrators</group>
         </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>KOL_Italy</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.LAST_NAME</field>
+            <operation>equals</operation>
+            <value>Nasti,Siragusa,Colosimo,Manusia,Gallo,Zullo,Palombi,Stella,Fiore</value>
+        </filters>
+        <label>KOL Italy</label>
+        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>NA_Indirect_Customer_Service_Agent_Or</fullName>
@@ -10324,6 +10532,34 @@ null)
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>TW_Users</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>IS_FROZEN</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>Taiwan</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>TW: Users</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>TW_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>UK_All_Users</fullName>
         <columns>IS_FROZEN</columns>
         <columns>MARKETING_USER</columns>
@@ -10379,6 +10615,7 @@ null)
         <columns>Sales_Channel__c</columns>
         <columns>National_Admin__c</columns>
         <columns>MARKETING_USER</columns>
+        <columns>SBU_Ratio_ORTH__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>User_Country__c</field>
@@ -10491,11 +10728,6 @@ null)
             <field>CORE.USERS.ACTIVE</field>
             <operation>equals</operation>
             <value>1</value>
-        </filters>
-        <filters>
-            <field>CORE.PROFILE.NAME</field>
-            <operation>notContain</operation>
-            <value>#Global: Clinical Affairs</value>
         </filters>
         <label>VN: users</label>
         <language>en_US</language>

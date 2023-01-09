@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>AccountInsideSalesDashboard__c</field>
-        <value xsi:type="xsd:string">Germany_Sales_Account_Page1</value>
+        <value xsi:type="xsd:string">Germany_Inside_Sales_Account_Page</value>
     </values>
     <values>
         <field>AccountMarketingDashboardFilter__c</field>
@@ -72,11 +72,11 @@
     </values>
     <values>
         <field>HomeInsideSalesDashboardFilter__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">{&apos;datasets&apos;:{&apos;AccountSalesDetail&apos;:[{&apos;fields&apos;:[&apos;ac.Id&apos;], &apos;filter&apos;:{&apos;operator&apos;: &apos;matches&apos;, &apos;values&apos;:[&apos;#recordId#&apos;]}}]}}</value>
     </values>
     <values>
         <field>HomeInsideSalesDashboard__c</field>
-        <value xsi:type="xsd:string">Germany_Sales_Account_Page</value>
+        <value xsi:type="xsd:string">Germany_Inside_Sales_Account_Page</value>
     </values>
     <values>
         <field>HomeMarketingDashboardFilter__c</field>

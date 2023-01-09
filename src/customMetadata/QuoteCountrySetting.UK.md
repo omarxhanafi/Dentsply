@@ -3,6 +3,10 @@
     <label>UK</label>
     <protected>false</protected>
     <values>
+        <field>AlternateQuoteTemplate__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>CountryCode__c</field>
         <value xsi:type="xsd:string">GB</value>
     </values>

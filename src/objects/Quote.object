@@ -170,15 +170,23 @@
         <label>Acceptance Date/Time</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>DateTime</type>
     </fields>
     <fields>
         <fullName>AccountId</fullName>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AdditionalAddress</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>AdditionalName</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Approval_Status__c</fullName>
@@ -188,6 +196,7 @@
         <label>Approval Status</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -229,11 +238,18 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>Approval Submission DateTime</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>BillingAddress</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>BillingName</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Brand__c</fullName>
@@ -245,18 +261,26 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>ContactId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
         <fullName>ContractId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Delivery__c</fullName>
@@ -264,6 +288,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>Delivery</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -330,13 +355,16 @@ Can also be used along with the Last Approval action DateTime to see time from s
     <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Discount</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Email</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>ExchangeRate__c</fullName>
@@ -348,16 +376,19 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>ExpirationDate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>GrandListTotal__c</fullName>
@@ -366,10 +397,12 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <summarizedField>QuoteLineItem.TotalListPrice__c</summarizedField>
         <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
         <type>Summary</type>
     </fields>
     <fields>
         <fullName>GrandTotal</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>GrandTotalDeduction__c</fullName>
@@ -380,6 +413,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Percent</type>
     </fields>
     <fields>
@@ -389,6 +423,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <summarizedField>QuoteLineItem.TotalPriceVAT__c</summarizedField>
         <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
         <type>Summary</type>
     </fields>
     <fields>
@@ -399,11 +434,13 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <summarizedField>QuoteLineItem.TotalUnitPrice__c</summarizedField>
         <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
         <type>Summary</type>
     </fields>
     <fields>
         <fullName>IsSyncing</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Last_Approval_Action_DateTime__c</fullName>
@@ -412,6 +449,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>Last Approval Action DateTime</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>DateTime</type>
     </fields>
     <fields>
@@ -424,11 +462,13 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <relationshipName>Quotes</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
         <fullName>LineItemCount</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Manager__c</fullName>
@@ -440,6 +480,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <relationshipName>Quotes</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -452,16 +493,19 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>Name</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>OpportunityId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>MasterDetail</type>
     </fields>
     <fields>
@@ -474,12 +518,14 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -505,6 +551,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>PDF Bulter Locale</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -518,11 +565,16 @@ Can also be used along with the Last Approval action DateTime to see time from s
 &quot;Proforma Kurumsal&quot;, &quot;TurkeyProforma&quot;,
 &quot;Proforma Kurumsal no VAT&quot;, &quot;TurkeyProforma&quot;,
 &quot;sözleşme&quot;, &quot;TurkeyAgreement&quot;,
+&quot;Quote Template: Austria&quot;, &quot;Austria&quot;,
+&quot;Quote Template: Belgium (FR)&quot;, &quot;Belgium_FR&quot;,
+&quot;Quote Template: Belgium (NL)&quot;, &quot;Belgium_NL&quot;,
 &quot;Quote Template: España&quot;, &quot;Spain&quot;,
 &quot;Quote Template: España DSO&quot;, &quot;SpainDSO&quot;,
+&quot;Quote Template: España PrimeSolution&quot;, &quot;SpainPrimeSolution&quot;,
 &quot;Quote Template: France&quot;, &quot;France&quot;,
 &quot;Quote Template: Germany&quot;, &quot;Germany&quot;,
-&quot;Quote Template: Netherlands&quot;, &quot;Netherlands&quot;,
+&quot;Quote Template: Luxembourg&quot;, &quot;Luxembourg&quot;,
+&quot;Quote Template: Netherlands&quot;, &quot;Luxembourg&quot;,
 &quot;Quote Template: Portugal&quot;, &quot;Portugal&quot;,
 &quot;Quote Template: Portugal DSO&quot;, &quot;PortugalDSO&quot;,
 &quot;Quote Template: UK&quot;, &quot;UK&quot;,
@@ -530,6 +582,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>PDF Bulter Template</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -539,6 +592,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>Payment Terms</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -595,6 +649,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
     <fields>
         <fullName>Phone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>QuoteLinesDiscountChanged__c</fullName>
@@ -609,11 +664,18 @@ Can also be used along with the Last Approval action DateTime to see time from s
         </summaryFilterItems>
         <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
         <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>QuoteToAddress</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>QuoteToName</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>SelectQuoteTemplate__c</fullName>
@@ -621,12 +683,13 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>Select Quote Template</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <controllingField>UserCountry__c</controllingField>
             <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
                     <fullName>Fiyat Teklifi</fullName>
                     <default>false</default>
@@ -653,9 +716,43 @@ Can also be used along with the Last Approval action DateTime to see time from s
                     <label>Proforma Kurumsal no VAT</label>
                 </value>
                 <value>
-                    <fullName>sözleşme</fullName>
+                    <fullName>Quote Template: Andorra</fullName>
                     <default>false</default>
-                    <label>sözleşme</label>
+                    <isActive>false</isActive>
+                    <label>Quote Template: Andorra</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Austria</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Austria</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Belgium</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Quote Template: Belgium</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Belgium (Dutch)</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Quote Template: Belgium (Dutch)</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Belgium (FR)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Belgium (FR)</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Belgium (French)</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Quote Template: Belgium (French)</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Belgium (NL)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Belgium (NL)</label>
                 </value>
                 <value>
                     <fullName>Quote Template: España</fullName>
@@ -665,7 +762,13 @@ Can also be used along with the Last Approval action DateTime to see time from s
                 <value>
                     <fullName>Quote Template: España DSO</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Quote Template: España DSO</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: España PrimeSolution</fullName>
+                    <default>false</default>
+                    <label>Quote Template: España PrimeSolution</label>
                 </value>
                 <value>
                     <fullName>Quote Template: France</fullName>
@@ -678,9 +781,20 @@ Can also be used along with the Last Approval action DateTime to see time from s
                     <label>Quote Template: Germany</label>
                 </value>
                 <value>
+                    <fullName>Quote Template: Luxembourg</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Luxembourg</label>
+                </value>
+                <value>
                     <fullName>Quote Template: Netherlands</fullName>
                     <default>false</default>
                     <label>Quote Template: Netherlands</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Netherlands/Luxembourg</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Quote Template: Netherlands/Luxembourg</label>
                 </value>
                 <value>
                     <fullName>Quote Template: Portugal</fullName>
@@ -690,6 +804,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
                 <value>
                     <fullName>Quote Template: Portugal DSO</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Quote Template: Portugal DSO</label>
                 </value>
                 <value>
@@ -698,10 +813,10 @@ Can also be used along with the Last Approval action DateTime to see time from s
                     <label>Quote Template: UK</label>
                 </value>
                 <value>
-                    <fullName>Quote Template: Andorra</fullName>
+                    <fullName>sözleşme</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
-                    <label>Quote Template: Andorra</label>
+                    <label>sözleşme</label>
                 </value>
             </valueSetDefinition>
             <valueSettings>
@@ -780,7 +895,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
                 <controllingFieldValue>Malta</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Oman</controllingFieldValue>
-                <valueName>Fiyat Teklifi</valueName>
+                <valueName>Quote Template: Luxembourg</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Jordan</controllingFieldValue>
@@ -791,715 +906,6 @@ Can also be used along with the Last Approval action DateTime to see time from s
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Croatia</controllingFieldValue>
-                <controllingFieldValue>Cameroun</controllingFieldValue>
-                <controllingFieldValue>Qatar</controllingFieldValue>
-                <controllingFieldValue>Senegal</controllingFieldValue>
-                <controllingFieldValue>Romania</controllingFieldValue>
-                <controllingFieldValue>Iran</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Iraq</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
-                <controllingFieldValue>Libya</controllingFieldValue>
-                <controllingFieldValue>Yemen</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>China</controllingFieldValue>
-                <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Cyprus</controllingFieldValue>
-                <controllingFieldValue>South Africa</controllingFieldValue>
-                <controllingFieldValue>Czech Republic</controllingFieldValue>
-                <controllingFieldValue>Denmark</controllingFieldValue>
-                <controllingFieldValue>Estonia</controllingFieldValue>
-                <controllingFieldValue>Finland</controllingFieldValue>
-                <controllingFieldValue>France</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Bahrain</controllingFieldValue>
-                <controllingFieldValue>Belgium</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Tunisia</controllingFieldValue>
-                <controllingFieldValue>Turkey</controllingFieldValue>
-                <controllingFieldValue>Greece</controllingFieldValue>
-                <controllingFieldValue>UAE</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>India</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
-                <controllingFieldValue>Holland</controllingFieldValue>
-                <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Israel</controllingFieldValue>
-                <controllingFieldValue>Italy</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Algeria</controllingFieldValue>
-                <controllingFieldValue>Morocco</controllingFieldValue>
-                <controllingFieldValue>Distributor Markets</controllingFieldValue>
-                <controllingFieldValue>Kuwait</controllingFieldValue>
-                <controllingFieldValue>Latvia</controllingFieldValue>
-                <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Mauritius</controllingFieldValue>
-                <controllingFieldValue>Maldives</controllingFieldValue>
-                <controllingFieldValue>Pakistan</controllingFieldValue>
-                <controllingFieldValue>HQ: DE</controllingFieldValue>
-                <controllingFieldValue>BEX</controllingFieldValue>
-                <controllingFieldValue>HQ: NL</controllingFieldValue>
-                <controllingFieldValue>Belarus</controllingFieldValue>
-                <controllingFieldValue>Luxembourg</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Egypt</controllingFieldValue>
-                <controllingFieldValue>Oman</controllingFieldValue>
-                <valueName>Fiyat Teklifi no VAT</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Jordan</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Norway</controllingFieldValue>
-                <controllingFieldValue>Lebanon</controllingFieldValue>
-                <controllingFieldValue>Poland</controllingFieldValue>
-                <controllingFieldValue>Kazakhstan</controllingFieldValue>
-                <controllingFieldValue>Croatia</controllingFieldValue>
-                <controllingFieldValue>Cameroun</controllingFieldValue>
-                <controllingFieldValue>Qatar</controllingFieldValue>
-                <controllingFieldValue>Senegal</controllingFieldValue>
-                <controllingFieldValue>Romania</controllingFieldValue>
-                <controllingFieldValue>Iran</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Iraq</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
-                <controllingFieldValue>Libya</controllingFieldValue>
-                <controllingFieldValue>Yemen</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>China</controllingFieldValue>
-                <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Cyprus</controllingFieldValue>
-                <controllingFieldValue>South Africa</controllingFieldValue>
-                <controllingFieldValue>Czech Republic</controllingFieldValue>
-                <controllingFieldValue>Denmark</controllingFieldValue>
-                <controllingFieldValue>Estonia</controllingFieldValue>
-                <controllingFieldValue>Finland</controllingFieldValue>
-                <controllingFieldValue>France</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Bahrain</controllingFieldValue>
-                <controllingFieldValue>Belgium</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Tunisia</controllingFieldValue>
-                <controllingFieldValue>Turkey</controllingFieldValue>
-                <controllingFieldValue>Greece</controllingFieldValue>
-                <controllingFieldValue>UAE</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>India</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
-                <controllingFieldValue>Holland</controllingFieldValue>
-                <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Israel</controllingFieldValue>
-                <controllingFieldValue>Italy</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Algeria</controllingFieldValue>
-                <controllingFieldValue>Morocco</controllingFieldValue>
-                <controllingFieldValue>Distributor Markets</controllingFieldValue>
-                <controllingFieldValue>Kuwait</controllingFieldValue>
-                <controllingFieldValue>Latvia</controllingFieldValue>
-                <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Mauritius</controllingFieldValue>
-                <controllingFieldValue>Maldives</controllingFieldValue>
-                <controllingFieldValue>Pakistan</controllingFieldValue>
-                <controllingFieldValue>HQ: DE</controllingFieldValue>
-                <controllingFieldValue>BEX</controllingFieldValue>
-                <controllingFieldValue>HQ: NL</controllingFieldValue>
-                <controllingFieldValue>Belarus</controllingFieldValue>
-                <controllingFieldValue>Luxembourg</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Egypt</controllingFieldValue>
-                <controllingFieldValue>Oman</controllingFieldValue>
-                <valueName>Fiyat Teklifi Short</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Jordan</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Norway</controllingFieldValue>
-                <controllingFieldValue>Lebanon</controllingFieldValue>
-                <controllingFieldValue>Poland</controllingFieldValue>
-                <controllingFieldValue>Kazakhstan</controllingFieldValue>
-                <controllingFieldValue>Croatia</controllingFieldValue>
-                <controllingFieldValue>Cameroun</controllingFieldValue>
-                <controllingFieldValue>Qatar</controllingFieldValue>
-                <controllingFieldValue>Senegal</controllingFieldValue>
-                <controllingFieldValue>Romania</controllingFieldValue>
-                <controllingFieldValue>Iran</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Iraq</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
-                <controllingFieldValue>Libya</controllingFieldValue>
-                <controllingFieldValue>Yemen</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>China</controllingFieldValue>
-                <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Cyprus</controllingFieldValue>
-                <controllingFieldValue>South Africa</controllingFieldValue>
-                <controllingFieldValue>Czech Republic</controllingFieldValue>
-                <controllingFieldValue>Denmark</controllingFieldValue>
-                <controllingFieldValue>Estonia</controllingFieldValue>
-                <controllingFieldValue>Finland</controllingFieldValue>
-                <controllingFieldValue>France</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Bahrain</controllingFieldValue>
-                <controllingFieldValue>Belgium</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Tunisia</controllingFieldValue>
-                <controllingFieldValue>Turkey</controllingFieldValue>
-                <controllingFieldValue>Greece</controllingFieldValue>
-                <controllingFieldValue>UAE</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>India</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
-                <controllingFieldValue>Holland</controllingFieldValue>
-                <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Israel</controllingFieldValue>
-                <controllingFieldValue>Italy</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Algeria</controllingFieldValue>
-                <controllingFieldValue>Morocco</controllingFieldValue>
-                <controllingFieldValue>Distributor Markets</controllingFieldValue>
-                <controllingFieldValue>Kuwait</controllingFieldValue>
-                <controllingFieldValue>Latvia</controllingFieldValue>
-                <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Mauritius</controllingFieldValue>
-                <controllingFieldValue>Maldives</controllingFieldValue>
-                <controllingFieldValue>Pakistan</controllingFieldValue>
-                <controllingFieldValue>HQ: DE</controllingFieldValue>
-                <controllingFieldValue>BEX</controllingFieldValue>
-                <controllingFieldValue>HQ: NL</controllingFieldValue>
-                <controllingFieldValue>Belarus</controllingFieldValue>
-                <controllingFieldValue>Luxembourg</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Egypt</controllingFieldValue>
-                <controllingFieldValue>Oman</controllingFieldValue>
-                <valueName>Proforma Kurumsal</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Jordan</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Norway</controllingFieldValue>
-                <controllingFieldValue>Lebanon</controllingFieldValue>
-                <controllingFieldValue>Poland</controllingFieldValue>
-                <controllingFieldValue>Kazakhstan</controllingFieldValue>
-                <controllingFieldValue>Croatia</controllingFieldValue>
-                <controllingFieldValue>Cameroun</controllingFieldValue>
-                <controllingFieldValue>Qatar</controllingFieldValue>
-                <controllingFieldValue>Senegal</controllingFieldValue>
-                <controllingFieldValue>Romania</controllingFieldValue>
-                <controllingFieldValue>Iran</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Iraq</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
-                <controllingFieldValue>Libya</controllingFieldValue>
-                <controllingFieldValue>Yemen</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>China</controllingFieldValue>
-                <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Cyprus</controllingFieldValue>
-                <controllingFieldValue>South Africa</controllingFieldValue>
-                <controllingFieldValue>Czech Republic</controllingFieldValue>
-                <controllingFieldValue>Denmark</controllingFieldValue>
-                <controllingFieldValue>Estonia</controllingFieldValue>
-                <controllingFieldValue>Finland</controllingFieldValue>
-                <controllingFieldValue>France</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Bahrain</controllingFieldValue>
-                <controllingFieldValue>Belgium</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Tunisia</controllingFieldValue>
-                <controllingFieldValue>Turkey</controllingFieldValue>
-                <controllingFieldValue>Greece</controllingFieldValue>
-                <controllingFieldValue>UAE</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>India</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
-                <controllingFieldValue>Holland</controllingFieldValue>
-                <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Israel</controllingFieldValue>
-                <controllingFieldValue>Italy</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Algeria</controllingFieldValue>
-                <controllingFieldValue>Morocco</controllingFieldValue>
-                <controllingFieldValue>Distributor Markets</controllingFieldValue>
-                <controllingFieldValue>Kuwait</controllingFieldValue>
-                <controllingFieldValue>Latvia</controllingFieldValue>
-                <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Mauritius</controllingFieldValue>
-                <controllingFieldValue>Maldives</controllingFieldValue>
-                <controllingFieldValue>Pakistan</controllingFieldValue>
-                <controllingFieldValue>HQ: DE</controllingFieldValue>
-                <controllingFieldValue>BEX</controllingFieldValue>
-                <controllingFieldValue>HQ: NL</controllingFieldValue>
-                <controllingFieldValue>Belarus</controllingFieldValue>
-                <controllingFieldValue>Luxembourg</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Egypt</controllingFieldValue>
-                <controllingFieldValue>Oman</controllingFieldValue>
-                <valueName>Proforma Kurumsal no VAT</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Jordan</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Norway</controllingFieldValue>
-                <controllingFieldValue>Lebanon</controllingFieldValue>
-                <controllingFieldValue>Poland</controllingFieldValue>
-                <controllingFieldValue>Kazakhstan</controllingFieldValue>
-                <controllingFieldValue>Croatia</controllingFieldValue>
-                <controllingFieldValue>Cameroun</controllingFieldValue>
-                <controllingFieldValue>Qatar</controllingFieldValue>
-                <controllingFieldValue>Senegal</controllingFieldValue>
-                <controllingFieldValue>Romania</controllingFieldValue>
-                <controllingFieldValue>Iran</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Iraq</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
-                <controllingFieldValue>Libya</controllingFieldValue>
-                <controllingFieldValue>Yemen</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>China</controllingFieldValue>
-                <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Cyprus</controllingFieldValue>
-                <controllingFieldValue>South Africa</controllingFieldValue>
-                <controllingFieldValue>Czech Republic</controllingFieldValue>
-                <controllingFieldValue>Denmark</controllingFieldValue>
-                <controllingFieldValue>Estonia</controllingFieldValue>
-                <controllingFieldValue>Finland</controllingFieldValue>
-                <controllingFieldValue>France</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Bahrain</controllingFieldValue>
-                <controllingFieldValue>Belgium</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Tunisia</controllingFieldValue>
-                <controllingFieldValue>Turkey</controllingFieldValue>
-                <controllingFieldValue>Greece</controllingFieldValue>
-                <controllingFieldValue>UAE</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>India</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
-                <controllingFieldValue>Holland</controllingFieldValue>
-                <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Israel</controllingFieldValue>
-                <controllingFieldValue>Italy</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Algeria</controllingFieldValue>
-                <controllingFieldValue>Morocco</controllingFieldValue>
-                <controllingFieldValue>Distributor Markets</controllingFieldValue>
-                <controllingFieldValue>Kuwait</controllingFieldValue>
-                <controllingFieldValue>Latvia</controllingFieldValue>
-                <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Mauritius</controllingFieldValue>
-                <controllingFieldValue>Maldives</controllingFieldValue>
-                <controllingFieldValue>Pakistan</controllingFieldValue>
-                <controllingFieldValue>HQ: DE</controllingFieldValue>
-                <controllingFieldValue>BEX</controllingFieldValue>
-                <controllingFieldValue>HQ: NL</controllingFieldValue>
-                <controllingFieldValue>Belarus</controllingFieldValue>
-                <controllingFieldValue>Luxembourg</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Egypt</controllingFieldValue>
-                <controllingFieldValue>Oman</controllingFieldValue>
-                <valueName>sözleşme</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Jordan</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Norway</controllingFieldValue>
-                <controllingFieldValue>Lebanon</controllingFieldValue>
-                <controllingFieldValue>Poland</controllingFieldValue>
-                <controllingFieldValue>Kazakhstan</controllingFieldValue>
-                <controllingFieldValue>Croatia</controllingFieldValue>
-                <controllingFieldValue>Portugal</controllingFieldValue>
-                <controllingFieldValue>Cameroun</controllingFieldValue>
-                <controllingFieldValue>Qatar</controllingFieldValue>
-                <controllingFieldValue>Senegal</controllingFieldValue>
-                <controllingFieldValue>Romania</controllingFieldValue>
-                <controllingFieldValue>Iran</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Iraq</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
-                <controllingFieldValue>Libya</controllingFieldValue>
-                <controllingFieldValue>Yemen</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>China</controllingFieldValue>
-                <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Cyprus</controllingFieldValue>
-                <controllingFieldValue>South Africa</controllingFieldValue>
-                <controllingFieldValue>Czech Republic</controllingFieldValue>
-                <controllingFieldValue>Spain</controllingFieldValue>
-                <controllingFieldValue>Denmark</controllingFieldValue>
-                <controllingFieldValue>Estonia</controllingFieldValue>
-                <controllingFieldValue>Finland</controllingFieldValue>
-                <controllingFieldValue>France</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Bahrain</controllingFieldValue>
-                <controllingFieldValue>Belgium</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Tunisia</controllingFieldValue>
-                <controllingFieldValue>Turkey</controllingFieldValue>
-                <controllingFieldValue>Greece</controllingFieldValue>
-                <controllingFieldValue>UAE</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>India</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
-                <controllingFieldValue>Holland</controllingFieldValue>
-                <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Israel</controllingFieldValue>
-                <controllingFieldValue>Italy</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Algeria</controllingFieldValue>
-                <controllingFieldValue>Morocco</controllingFieldValue>
-                <controllingFieldValue>Distributor Markets</controllingFieldValue>
-                <controllingFieldValue>Kuwait</controllingFieldValue>
-                <controllingFieldValue>Latvia</controllingFieldValue>
-                <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Mauritius</controllingFieldValue>
-                <controllingFieldValue>Maldives</controllingFieldValue>
-                <controllingFieldValue>Pakistan</controllingFieldValue>
-                <controllingFieldValue>HQ: DE</controllingFieldValue>
-                <controllingFieldValue>BEX</controllingFieldValue>
-                <controllingFieldValue>HQ: NL</controllingFieldValue>
-                <controllingFieldValue>Belarus</controllingFieldValue>
-                <controllingFieldValue>Luxembourg</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Egypt</controllingFieldValue>
-                <controllingFieldValue>Oman</controllingFieldValue>
-                <valueName>Quote Template: España</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Jordan</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Norway</controllingFieldValue>
-                <controllingFieldValue>Lebanon</controllingFieldValue>
-                <controllingFieldValue>Poland</controllingFieldValue>
-                <controllingFieldValue>Kazakhstan</controllingFieldValue>
-                <controllingFieldValue>Croatia</controllingFieldValue>
-                <controllingFieldValue>Portugal</controllingFieldValue>
-                <controllingFieldValue>Cameroun</controllingFieldValue>
-                <controllingFieldValue>Qatar</controllingFieldValue>
-                <controllingFieldValue>Senegal</controllingFieldValue>
-                <controllingFieldValue>Romania</controllingFieldValue>
-                <controllingFieldValue>Iran</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Iraq</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
-                <controllingFieldValue>Libya</controllingFieldValue>
-                <controllingFieldValue>Yemen</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>China</controllingFieldValue>
-                <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Cyprus</controllingFieldValue>
-                <controllingFieldValue>South Africa</controllingFieldValue>
-                <controllingFieldValue>Czech Republic</controllingFieldValue>
-                <controllingFieldValue>Spain</controllingFieldValue>
-                <controllingFieldValue>Denmark</controllingFieldValue>
-                <controllingFieldValue>Estonia</controllingFieldValue>
-                <controllingFieldValue>Finland</controllingFieldValue>
-                <controllingFieldValue>France</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Bahrain</controllingFieldValue>
-                <controllingFieldValue>Belgium</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Tunisia</controllingFieldValue>
-                <controllingFieldValue>Turkey</controllingFieldValue>
-                <controllingFieldValue>Greece</controllingFieldValue>
-                <controllingFieldValue>UAE</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>India</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
-                <controllingFieldValue>Holland</controllingFieldValue>
-                <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Israel</controllingFieldValue>
-                <controllingFieldValue>Italy</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Algeria</controllingFieldValue>
-                <controllingFieldValue>Morocco</controllingFieldValue>
-                <controllingFieldValue>Distributor Markets</controllingFieldValue>
-                <controllingFieldValue>Kuwait</controllingFieldValue>
-                <controllingFieldValue>Latvia</controllingFieldValue>
-                <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Mauritius</controllingFieldValue>
-                <controllingFieldValue>Maldives</controllingFieldValue>
-                <controllingFieldValue>Pakistan</controllingFieldValue>
-                <controllingFieldValue>HQ: DE</controllingFieldValue>
-                <controllingFieldValue>BEX</controllingFieldValue>
-                <controllingFieldValue>HQ: NL</controllingFieldValue>
-                <controllingFieldValue>Belarus</controllingFieldValue>
-                <controllingFieldValue>Luxembourg</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Egypt</controllingFieldValue>
-                <controllingFieldValue>Oman</controllingFieldValue>
-                <valueName>Quote Template: España DSO</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Jordan</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Norway</controllingFieldValue>
-                <controllingFieldValue>Lebanon</controllingFieldValue>
-                <controllingFieldValue>Poland</controllingFieldValue>
-                <controllingFieldValue>Kazakhstan</controllingFieldValue>
-                <controllingFieldValue>Croatia</controllingFieldValue>
-                <controllingFieldValue>Portugal</controllingFieldValue>
-                <controllingFieldValue>Cameroun</controllingFieldValue>
-                <controllingFieldValue>Qatar</controllingFieldValue>
-                <controllingFieldValue>Senegal</controllingFieldValue>
-                <controllingFieldValue>Romania</controllingFieldValue>
-                <controllingFieldValue>Iran</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Iraq</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
-                <controllingFieldValue>Libya</controllingFieldValue>
-                <controllingFieldValue>Yemen</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>China</controllingFieldValue>
-                <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Cyprus</controllingFieldValue>
-                <controllingFieldValue>South Africa</controllingFieldValue>
-                <controllingFieldValue>Czech Republic</controllingFieldValue>
-                <controllingFieldValue>Denmark</controllingFieldValue>
-                <controllingFieldValue>Estonia</controllingFieldValue>
-                <controllingFieldValue>Finland</controllingFieldValue>
-                <controllingFieldValue>France</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Bahrain</controllingFieldValue>
-                <controllingFieldValue>Belgium</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Tunisia</controllingFieldValue>
-                <controllingFieldValue>Turkey</controllingFieldValue>
-                <controllingFieldValue>Greece</controllingFieldValue>
-                <controllingFieldValue>UAE</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>India</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
-                <controllingFieldValue>Holland</controllingFieldValue>
-                <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Israel</controllingFieldValue>
-                <controllingFieldValue>Italy</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Algeria</controllingFieldValue>
-                <controllingFieldValue>Morocco</controllingFieldValue>
-                <controllingFieldValue>Distributor Markets</controllingFieldValue>
-                <controllingFieldValue>Kuwait</controllingFieldValue>
-                <controllingFieldValue>Latvia</controllingFieldValue>
-                <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Mauritius</controllingFieldValue>
-                <controllingFieldValue>Maldives</controllingFieldValue>
-                <controllingFieldValue>Pakistan</controllingFieldValue>
-                <controllingFieldValue>HQ: DE</controllingFieldValue>
-                <controllingFieldValue>BEX</controllingFieldValue>
-                <controllingFieldValue>HQ: NL</controllingFieldValue>
-                <controllingFieldValue>Belarus</controllingFieldValue>
-                <controllingFieldValue>Luxembourg</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Egypt</controllingFieldValue>
-                <controllingFieldValue>Oman</controllingFieldValue>
-                <valueName>Quote Template: France</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Jordan</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Norway</controllingFieldValue>
-                <controllingFieldValue>Lebanon</controllingFieldValue>
-                <controllingFieldValue>Poland</controllingFieldValue>
-                <controllingFieldValue>Kazakhstan</controllingFieldValue>
-                <controllingFieldValue>Croatia</controllingFieldValue>
-                <controllingFieldValue>Portugal</controllingFieldValue>
-                <controllingFieldValue>Cameroun</controllingFieldValue>
-                <controllingFieldValue>Qatar</controllingFieldValue>
-                <controllingFieldValue>Senegal</controllingFieldValue>
-                <controllingFieldValue>Romania</controllingFieldValue>
-                <controllingFieldValue>Iran</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Iraq</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
-                <controllingFieldValue>Libya</controllingFieldValue>
-                <controllingFieldValue>Yemen</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>China</controllingFieldValue>
-                <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Cyprus</controllingFieldValue>
-                <controllingFieldValue>South Africa</controllingFieldValue>
-                <controllingFieldValue>Czech Republic</controllingFieldValue>
-                <controllingFieldValue>Denmark</controllingFieldValue>
-                <controllingFieldValue>Estonia</controllingFieldValue>
-                <controllingFieldValue>Finland</controllingFieldValue>
-                <controllingFieldValue>France</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Bahrain</controllingFieldValue>
-                <controllingFieldValue>Belgium</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Tunisia</controllingFieldValue>
-                <controllingFieldValue>Turkey</controllingFieldValue>
-                <controllingFieldValue>Greece</controllingFieldValue>
-                <controllingFieldValue>UAE</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>India</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
-                <controllingFieldValue>Holland</controllingFieldValue>
-                <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Israel</controllingFieldValue>
-                <controllingFieldValue>Italy</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Algeria</controllingFieldValue>
-                <controllingFieldValue>Morocco</controllingFieldValue>
-                <controllingFieldValue>Distributor Markets</controllingFieldValue>
-                <controllingFieldValue>Kuwait</controllingFieldValue>
-                <controllingFieldValue>Latvia</controllingFieldValue>
-                <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Mauritius</controllingFieldValue>
-                <controllingFieldValue>Maldives</controllingFieldValue>
-                <controllingFieldValue>Pakistan</controllingFieldValue>
-                <controllingFieldValue>HQ: DE</controllingFieldValue>
-                <controllingFieldValue>BEX</controllingFieldValue>
-                <controllingFieldValue>HQ: NL</controllingFieldValue>
-                <controllingFieldValue>Belarus</controllingFieldValue>
-                <controllingFieldValue>Luxembourg</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Egypt</controllingFieldValue>
-                <controllingFieldValue>Oman</controllingFieldValue>
-                <valueName>Quote Template: Germany</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Jordan</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Norway</controllingFieldValue>
-                <controllingFieldValue>Lebanon</controllingFieldValue>
-                <controllingFieldValue>Poland</controllingFieldValue>
-                <controllingFieldValue>Kazakhstan</controllingFieldValue>
-                <controllingFieldValue>Croatia</controllingFieldValue>
-                <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Cameroun</controllingFieldValue>
                 <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Senegal</controllingFieldValue>
@@ -1570,270 +976,113 @@ Can also be used along with the Last Approval action DateTime to see time from s
                 <valueName>Quote Template: Netherlands</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Jordan</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Norway</controllingFieldValue>
-                <controllingFieldValue>Lebanon</controllingFieldValue>
-                <controllingFieldValue>Poland</controllingFieldValue>
-                <controllingFieldValue>Kazakhstan</controllingFieldValue>
-                <controllingFieldValue>Croatia</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
-                <controllingFieldValue>Cameroun</controllingFieldValue>
-                <controllingFieldValue>Qatar</controllingFieldValue>
-                <controllingFieldValue>Senegal</controllingFieldValue>
-                <controllingFieldValue>Romania</controllingFieldValue>
-                <controllingFieldValue>Iran</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Iraq</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
-                <controllingFieldValue>Libya</controllingFieldValue>
-                <controllingFieldValue>Yemen</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>China</controllingFieldValue>
-                <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Cyprus</controllingFieldValue>
-                <controllingFieldValue>South Africa</controllingFieldValue>
-                <controllingFieldValue>Czech Republic</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
-                <controllingFieldValue>Denmark</controllingFieldValue>
-                <controllingFieldValue>Estonia</controllingFieldValue>
-                <controllingFieldValue>Finland</controllingFieldValue>
-                <controllingFieldValue>France</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Bahrain</controllingFieldValue>
-                <controllingFieldValue>Belgium</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Tunisia</controllingFieldValue>
-                <controllingFieldValue>Turkey</controllingFieldValue>
-                <controllingFieldValue>Greece</controllingFieldValue>
-                <controllingFieldValue>UAE</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>India</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
-                <controllingFieldValue>Holland</controllingFieldValue>
-                <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Israel</controllingFieldValue>
-                <controllingFieldValue>Italy</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Algeria</controllingFieldValue>
-                <controllingFieldValue>Morocco</controllingFieldValue>
-                <controllingFieldValue>Distributor Markets</controllingFieldValue>
-                <controllingFieldValue>Kuwait</controllingFieldValue>
-                <controllingFieldValue>Latvia</controllingFieldValue>
-                <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Mauritius</controllingFieldValue>
-                <controllingFieldValue>Maldives</controllingFieldValue>
-                <controllingFieldValue>Pakistan</controllingFieldValue>
-                <controllingFieldValue>HQ: DE</controllingFieldValue>
-                <controllingFieldValue>BEX</controllingFieldValue>
-                <controllingFieldValue>HQ: NL</controllingFieldValue>
-                <controllingFieldValue>Belarus</controllingFieldValue>
-                <controllingFieldValue>Luxembourg</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Egypt</controllingFieldValue>
-                <controllingFieldValue>Oman</controllingFieldValue>
+                <valueName>Quote Template: España</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <valueName>Quote Template: España PrimeSolution</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
                 <valueName>Quote Template: Portugal</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Jordan</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Norway</controllingFieldValue>
-                <controllingFieldValue>Lebanon</controllingFieldValue>
-                <controllingFieldValue>Poland</controllingFieldValue>
-                <controllingFieldValue>Kazakhstan</controllingFieldValue>
-                <controllingFieldValue>Croatia</controllingFieldValue>
-                <controllingFieldValue>Portugal</controllingFieldValue>
-                <controllingFieldValue>Cameroun</controllingFieldValue>
-                <controllingFieldValue>Qatar</controllingFieldValue>
-                <controllingFieldValue>Senegal</controllingFieldValue>
-                <controllingFieldValue>Romania</controllingFieldValue>
-                <controllingFieldValue>Iran</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Iraq</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
-                <controllingFieldValue>Libya</controllingFieldValue>
-                <controllingFieldValue>Yemen</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>China</controllingFieldValue>
-                <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Cyprus</controllingFieldValue>
-                <controllingFieldValue>South Africa</controllingFieldValue>
-                <controllingFieldValue>Czech Republic</controllingFieldValue>
-                <controllingFieldValue>Spain</controllingFieldValue>
-                <controllingFieldValue>Denmark</controllingFieldValue>
-                <controllingFieldValue>Estonia</controllingFieldValue>
-                <controllingFieldValue>Finland</controllingFieldValue>
                 <controllingFieldValue>France</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Bahrain</controllingFieldValue>
-                <controllingFieldValue>Belgium</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Tunisia</controllingFieldValue>
-                <controllingFieldValue>Turkey</controllingFieldValue>
-                <controllingFieldValue>Greece</controllingFieldValue>
-                <controllingFieldValue>UAE</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>India</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
-                <controllingFieldValue>Holland</controllingFieldValue>
-                <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Israel</controllingFieldValue>
-                <controllingFieldValue>Italy</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Algeria</controllingFieldValue>
-                <controllingFieldValue>Morocco</controllingFieldValue>
-                <controllingFieldValue>Distributor Markets</controllingFieldValue>
-                <controllingFieldValue>Kuwait</controllingFieldValue>
-                <controllingFieldValue>Latvia</controllingFieldValue>
-                <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Mauritius</controllingFieldValue>
-                <controllingFieldValue>Maldives</controllingFieldValue>
-                <controllingFieldValue>Pakistan</controllingFieldValue>
-                <controllingFieldValue>HQ: DE</controllingFieldValue>
-                <controllingFieldValue>BEX</controllingFieldValue>
-                <controllingFieldValue>HQ: NL</controllingFieldValue>
-                <controllingFieldValue>Belarus</controllingFieldValue>
-                <controllingFieldValue>Luxembourg</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Egypt</controllingFieldValue>
-                <controllingFieldValue>Oman</controllingFieldValue>
-                <valueName>Quote Template: Portugal DSO</valueName>
+                <valueName>Quote Template: France</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Jordan</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>Norway</controllingFieldValue>
-                <controllingFieldValue>Lebanon</controllingFieldValue>
-                <controllingFieldValue>Poland</controllingFieldValue>
-                <controllingFieldValue>Kazakhstan</controllingFieldValue>
-                <controllingFieldValue>Croatia</controllingFieldValue>
-                <controllingFieldValue>Portugal</controllingFieldValue>
-                <controllingFieldValue>Cameroun</controllingFieldValue>
-                <controllingFieldValue>Qatar</controllingFieldValue>
-                <controllingFieldValue>Senegal</controllingFieldValue>
-                <controllingFieldValue>Romania</controllingFieldValue>
-                <controllingFieldValue>Iran</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Iraq</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
-                <controllingFieldValue>Libya</controllingFieldValue>
-                <controllingFieldValue>Yemen</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>China</controllingFieldValue>
-                <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Cyprus</controllingFieldValue>
-                <controllingFieldValue>South Africa</controllingFieldValue>
-                <controllingFieldValue>Czech Republic</controllingFieldValue>
-                <controllingFieldValue>Denmark</controllingFieldValue>
-                <controllingFieldValue>Estonia</controllingFieldValue>
-                <controllingFieldValue>Finland</controllingFieldValue>
-                <controllingFieldValue>France</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Bahrain</controllingFieldValue>
-                <controllingFieldValue>Belgium</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Sweden</controllingFieldValue>
                 <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Tunisia</controllingFieldValue>
-                <controllingFieldValue>Turkey</controllingFieldValue>
-                <controllingFieldValue>Greece</controllingFieldValue>
-                <controllingFieldValue>UAE</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>India</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
-                <controllingFieldValue>Holland</controllingFieldValue>
-                <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Israel</controllingFieldValue>
-                <controllingFieldValue>Italy</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Algeria</controllingFieldValue>
-                <controllingFieldValue>Morocco</controllingFieldValue>
-                <controllingFieldValue>Distributor Markets</controllingFieldValue>
-                <controllingFieldValue>Kuwait</controllingFieldValue>
-                <controllingFieldValue>Latvia</controllingFieldValue>
-                <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Mauritius</controllingFieldValue>
-                <controllingFieldValue>Maldives</controllingFieldValue>
-                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>HQ: DE</controllingFieldValue>
-                <controllingFieldValue>BEX</controllingFieldValue>
+                <valueName>Quote Template: Austria</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Austria</controllingFieldValue>
+                <controllingFieldValue>Switzerland</controllingFieldValue>
+                <controllingFieldValue>Germany</controllingFieldValue>
+                <controllingFieldValue>HQ: DE</controllingFieldValue>
+                <valueName>Quote Template: Germany</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium</controllingFieldValue>
+                <controllingFieldValue>Holland</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
-                <controllingFieldValue>Belarus</controllingFieldValue>
                 <controllingFieldValue>Luxembourg</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
-                <controllingFieldValue>Malta</controllingFieldValue>
-                <controllingFieldValue>Egypt</controllingFieldValue>
-                <controllingFieldValue>Oman</controllingFieldValue>
+                <valueName>Quote Template: Belgium (FR)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium</controllingFieldValue>
+                <controllingFieldValue>Holland</controllingFieldValue>
+                <controllingFieldValue>HQ: NL</controllingFieldValue>
+                <controllingFieldValue>Luxembourg</controllingFieldValue>
+                <valueName>Quote Template: Belgium (NL)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <valueName>Fiyat Teklifi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <valueName>Fiyat Teklifi no VAT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <valueName>Fiyat Teklifi Short</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <valueName>Proforma Kurumsal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <valueName>Proforma Kurumsal no VAT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>UK</controllingFieldValue>
                 <valueName>Quote Template: UK</valueName>
             </valueSettings>
         </valueSet>
     </fields>
     <fields>
+        <fullName>ShippingAddress</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>ShippingHandling</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>ShippingName</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Status</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Subtotal</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Tax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>TotalPrice</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>UserCountry__c</fullName>
@@ -1902,6 +1151,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>User Country</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -1914,6 +1164,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>Warranty Period</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -1957,18 +1208,19 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <relationshipName>Quotes1</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <listViews>
-        <fullName>mine</fullName>
+        <fullName>All</fullName>
         <columns>QUOTE.NAME</columns>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>QUOTE.ISSYNCING</columns>
         <columns>QUOTE.EXPIRATIONDATE</columns>
         <columns>QUOTE.SUBTOTAL</columns>
         <columns>QUOTE.TOTALPRICE</columns>
-        <filterScope>Mine</filterScope>
-        <label>My Quotes</label>
+        <filterScope>Everything</filterScope>
+        <label>All Quotes</label>
     </listViews>
     <listViews>
         <fullName>mine</fullName>
@@ -1982,6 +1234,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>My Quotes</label>
     </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>GenericQuote</fullName>
         <active>true</active>
@@ -2118,11 +1371,23 @@ Can also be used along with the Last Approval action DateTime to see time from s
                 <default>false</default>
             </values>
             <values>
+                <fullName>Quote Template%3A Austria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Template%3A Belgium %28FR%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Template%3A Belgium %28NL%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Quote Template%3A España</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Quote Template%3A España DSO</fullName>
+                <fullName>Quote Template%3A España PrimeSolution</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -2134,6 +1399,10 @@ Can also be used along with the Last Approval action DateTime to see time from s
                 <default>false</default>
             </values>
             <values>
+                <fullName>Quote Template%3A Luxembourg</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Quote Template%3A Netherlands</fullName>
                 <default>false</default>
             </values>
@@ -2142,15 +1411,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
                 <default>false</default>
             </values>
             <values>
-                <fullName>Quote Template%3A Portugal DSO</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Quote Template%3A UK</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>sözleşme</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2552,4 +1813,19 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <searchResultsAdditionalFields>QUOTE.TOTALPRICE</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>ContactMandatoryForBENELUX</fullName>
+        <active>true</active>
+        <description>TFUS-000005122 : Quote&apos;s Contact mandatory for Benelux.</description>
+        <errorConditionFormula>AND(
+  OR ( 
+        TEXT(Opportunity.Account.Country__c) = &apos;LU&apos;,
+        TEXT(Opportunity.Account.Country__c) = &apos;NL&apos;,
+        TEXT(Opportunity.Account.Country__c) = &apos;BE&apos;
+   ), 
+    ISBLANK(ContactId)
+)</errorConditionFormula>
+        <errorDisplayField>ContactId</errorDisplayField>
+        <errorMessage>Complete this field. (You must select a contact upon saving)</errorMessage>
+    </validationRules>
 </CustomObject>

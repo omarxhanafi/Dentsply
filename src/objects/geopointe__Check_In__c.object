@@ -748,6 +748,29 @@
         <label>Created Today</label>
         <language>en_US</language>
     </listViews>
+    <listViews>
+        <fullName>geopointe__Today1</fullName>
+        <columns>NAME</columns>
+        <columns>geopointe__Who__c</columns>
+        <columns>geopointe__When__c</columns>
+        <columns>geopointe__Where_Latitude__c</columns>
+        <columns>geopointe__Where_Longitude__c</columns>
+        <columns>geopointe__What_ID__c</columns>
+        <columns>geopointe__What_Text__c</columns>
+        <columns>geopointe__Why_Type__c</columns>
+        <columns>geopointe__Why_Text__c</columns>
+        <columns>geopointe__Distance_from_What_ID_kilometers__c</columns>
+        <columns>geopointe__Distance_from_What_ID_miles__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Created Today</label>
+        <language>en_US</language>
+    </listViews>
     <nameField>
         <displayFormat>CHK_IN-{00000}</displayFormat>
         <label>Record #</label>

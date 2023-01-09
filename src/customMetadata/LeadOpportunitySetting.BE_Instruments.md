@@ -11,16 +11,16 @@
         <value xsi:type="xsd:string">T1 Turbines;T2 Contra-angles;DAC Universal</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Equipment &amp; Imaging</value>
     </values>
     <values>
         <field>Country__c</field>
         <value xsi:type="xsd:string">BE</value>
+    </values>
+    <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>

@@ -28,8 +28,12 @@ public with sharing class Test_QuoteTriggerHandler {
         System.runAs(testUser) {
 
             List<Account> acc = TestDataFactory.returnAccounts(1, 'Non_ERP_Account', testUser.Id);
-            acc[0].Country__c = 'PT';
+            acc[0].Country__c = 'BE';
             insert acc;
+
+            Contact contact = TestDataFactory.returnContacts(1, 'ContactGlobal', testUser.Id).get(0);
+            contact.AccountId = acc[0].Id;
+            insert contact;
 
             List<Opportunity> opp = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
             opp[0].CurrencyIsoCode = 'USD';
@@ -42,14 +46,16 @@ public with sharing class Test_QuoteTriggerHandler {
             Quote quote = TestDataFactory.returnQuotes(1).get(0);
             quote.OpportunityId = opp[0].Id;
             quote.Pricebook2Id = pricebook[0].Id;
+            quote.UserCountry__c = 'Belgium';
+            quote.ContactId = contact.Id;
 
             Test.startTest();
             insert quote;
             Test.stopTest();
 
             Quote quoteResult = [SELECT SelectQuoteTemplate__c FROM Quote WHERE Id= :quote.Id];
-            QuoteCountrySetting__mdt quoteSetting = [   SELECT QuoteTemplate__c FROM QuoteCountrySetting__mdt
-                                                        WHERE CountryCode__c = 'PT'];
+            QuoteCountrySetting__mdt quoteSetting = [   SELECT QuoteTemplate__c,AlternateQuoteTemplate__c FROM QuoteCountrySetting__mdt
+                                                        WHERE CountryCode__c = 'BE'];
 
             System.assertEquals(quoteSetting.QuoteTemplate__c, quoteResult.SelectQuoteTemplate__c, 'Wrong quote Template value');
         }

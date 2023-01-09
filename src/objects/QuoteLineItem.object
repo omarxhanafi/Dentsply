@@ -116,6 +116,7 @@ This is (1-BasePrice/RetailPrice)*100</description>
         <precision>11</precision>
         <required>false</required>
         <scale>8</scale>
+        <trackHistory>false</trackHistory>
         <type>Percent</type>
     </fields>
     <fields>
@@ -126,6 +127,7 @@ This is (1-BasePrice/RetailPrice)*100</description>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
@@ -133,13 +135,16 @@ This is (1-BasePrice/RetailPrice)*100</description>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Can Be Deleted</label>
+        <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Description</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Discount</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>DiscountedUnitPrice__c</fullName>
@@ -150,6 +155,7 @@ This is (1-BasePrice/RetailPrice)*100</description>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
@@ -160,10 +166,16 @@ This is (1-BasePrice/RetailPrice)*100</description>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>LineNumber</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>ListPrice</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>NetPrice__c</fullName>
@@ -174,20 +186,25 @@ This is (1-BasePrice/RetailPrice)*100</description>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>Product2Id</fullName>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
         <fullName>ProductCode</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Quantity</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>QuoteId</fullName>
+        <trackHistory>false</trackHistory>
         <type>MasterDetail</type>
     </fields>
     <fields>
@@ -199,6 +216,7 @@ This is (1-BasePrice/RetailPrice)*100</description>
         <relationshipLabel>Quote Line Items</relationshipLabel>
         <relationshipName>Quote_Line_Items</relationshipName>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -210,13 +228,16 @@ This can come from the Bundle pricing, AX microservice or if from nowhere else i
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>ServiceDate</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Subtotal</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>TariffCode__c</fullName>
@@ -224,6 +245,7 @@ This can come from the Bundle pricing, AX microservice or if from nowhere else i
         <formula>Product2.TariffCode__c</formula>
         <label>Tariff Code</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -235,6 +257,7 @@ This can come from the Bundle pricing, AX microservice or if from nowhere else i
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
@@ -245,6 +268,7 @@ This can come from the Bundle pricing, AX microservice or if from nowhere else i
         <precision>11</precision>
         <required>false</required>
         <scale>8</scale>
+        <trackHistory>false</trackHistory>
         <type>Percent</type>
     </fields>
     <fields>
@@ -256,10 +280,12 @@ Calculated by the record-triggered Flow</description>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>TotalPrice</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>TotalPriceVAT__c</fullName>
@@ -268,6 +294,7 @@ Calculated by the record-triggered Flow</description>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
@@ -278,10 +305,12 @@ Calculated by the record-triggered Flow</description>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>UnitPrice</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>VATAmountNumeric__c</fullName>
@@ -290,6 +319,7 @@ Calculated by the record-triggered Flow</description>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
     </fields>
@@ -300,6 +330,7 @@ Calculated by the record-triggered Flow</description>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
@@ -308,6 +339,7 @@ Calculated by the record-triggered Flow</description>
         <label>VATRateText</label>
         <length>50</length>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -319,6 +351,7 @@ Calculated by the record-triggered Flow</description>
         <precision>3</precision>
         <required>false</required>
         <scale>0</scale>
+        <trackHistory>false</trackHistory>
         <type>Percent</type>
     </fields>
     <sharingModel>ControlledByParent</sharingModel>

@@ -2,6 +2,30 @@
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Stores the quotes configuration based on the country</description>
     <fields>
+        <fullName>AlternateQuoteTemplate__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Alternate Quote Template</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Quote Template: Belgium (FR)</fullName>
+                    <default>true</default>
+                    <label>Quote Template: Belgium (FR)</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Belgium (NL)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Belgium (NL)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>CountryCode__c</fullName>
         <description>The quote&apos;s Account country code.</description>
         <externalId>false</externalId>
@@ -1296,6 +1320,37 @@
             <valueSetDefinition>
                 <sorted>true</sorted>
                 <value>
+                    <fullName>Quote Template: Austria</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Austria</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Belgium</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Quote Template: Belgium</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Belgium (Dutch)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Belgium (Dutch)</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Belgium (FR)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Belgium (FR)</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Belgium (French)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Belgium (French)</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Belgium (NL)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Belgium (NL)</label>
+                </value>
+                <value>
                     <fullName>Quote Template: España</fullName>
                     <default>true</default>
                     <label>Quote Template: España</label>
@@ -1311,9 +1366,20 @@
                     <label>Quote Template: Germany</label>
                 </value>
                 <value>
+                    <fullName>Quote Template: Luxembourg</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Luxembourg</label>
+                </value>
+                <value>
                     <fullName>Quote Template: Netherlands</fullName>
                     <default>false</default>
                     <label>Quote Template: Netherlands</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Netherlands/Luxembourg</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Quote Template: Netherlands/Luxembourg</label>
                 </value>
                 <value>
                     <fullName>Quote Template: Portugal</fullName>
@@ -1331,12 +1397,12 @@
     <label>Quote Country Setting</label>
     <listViews>
         <fullName>All</fullName>
-        <columns>MasterLabel</columns>
         <columns>DeveloperName</columns>
+        <columns>MasterLabel</columns>
         <columns>CountryCode__c</columns>
         <columns>QuoteTemplate__c</columns>
         <filterScope>Everything</filterScope>
-        <label>All Quote Country Settings</label>
+        <label>All</label>
         <language>en_US</language>
     </listViews>
     <pluralLabel>Quote Country Settings</pluralLabel>
