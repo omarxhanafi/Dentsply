@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Test_GuidanceRendererController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_GuidanceRendererController.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +226,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="FLOW:PROCEDURE_TRACKER_AFTER_HANDLER" value="1673354742000" />
+                      <entry key="FLOW:PROCEDURE_TRACKER_AFTER_HANDLER" value="1673355873000" />
                     </map>
                   </option>
                   <option name="lastBuildScope" value="CONTEXT" />
@@ -5619,8 +5617,8 @@
                   <option name="splitterProportion" value="0.309509" />
                 </SoqlQuerySavedDocument>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select DeveloperName, id from CustomNotificationType" />
-                  <option name="connectionName" value="UAT" />
+                  <option name="body" value="select DeveloperName from recordtype where SobjectType = 'Account'" />
+                  <option name="connectionName" value="StgJan" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 7" />
                 </SoqlQuerySavedDocument>
@@ -5669,7 +5667,7 @@
       <recent name="$PROJECT_DIR$/src/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Apex Unit Tests.Test_ScheduleCreateProcedureTrackers">
+  <component name="RunManager" selected="Apex Unit Tests.Test_GuidanceRendererController">
     <configuration name="FindLeadMatchTest.executeLeadMatchSearchTest" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -5883,9 +5881,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Apex Unit Tests.Test_GuidanceRendererController" />
         <item itemvalue="Apex Unit Tests.Test_ScheduleCreateProcedureTrackers" />
         <item itemvalue="Apex Unit Tests.Test_BatchCreateProcedureTrackers.testBatchCreateProcedureTrackers" />
-        <item itemvalue="Apex Unit Tests.Test_GuidanceRendererController" />
         <item itemvalue="Apex Unit Tests.FindLeadMatchTest.executeLeadMatchSearchTest" />
         <item itemvalue="Apex Unit Tests.Test_OrderManagement_CC" />
       </list>
@@ -5947,7 +5945,7 @@
       <workItem from="1671607906415" duration="11609000" />
       <workItem from="1672741662585" duration="129000" />
       <workItem from="1672741816115" duration="8075000" />
-      <workItem from="1673345326124" duration="3638000" />
+      <workItem from="1673345326124" duration="5045000" />
     </task>
     <servers />
   </component>

@@ -23,7 +23,7 @@ public class Test_GuidanceRendererController {
         System.runAs(testUser)
         {
             Account acc = [SELECT id,Country__c FROM Account LIMIT 1];
-            acc.Country__c = 'US';
+            acc.Country__c = 'BE';
             update acc;
             ProcedureTracker__c testProcedureTracker = new ProcedureTracker__c(PracticeAccount__c = acc.Id,
                     ObtainCreditCardInformation__c  = true);
