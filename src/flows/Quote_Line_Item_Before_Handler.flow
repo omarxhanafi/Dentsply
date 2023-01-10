@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <description>TFUS-000005172 - VAT with decimals compatibility</description>
+    <formulas>
+        <description>Checks if Base Price exists - if not uses ListPrice</description>
+        <name>BasePriceLogic</name>
+        <dataType>Currency</dataType>
+        <expression>BLANKVALUE({!$Record.BasePrice__c},{!$Record.PricebookEntry.UnitPrice})</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>UnitPrice - (UnitPrice * Discount)</description>
+        <name>DiscountedUnitPrice</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.UnitPrice} * ( 1 - BLANKVALUE({!$Record.Discount},0) / 100 )</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>Quantity * (BasePrice__c - NetPrice__c)</description>
+        <name>ExtraAppliedDiscount</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.Quantity} * ({!BasePriceLogic} - {!DiscountedUnitPrice})</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>Quantity_X_ListPrice</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.PricebookEntry.UnitPrice}* {!$Record.Quantity}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>Checks if Retail Price exists otherwise uses ListPrice</description>
+        <name>RetailPriceLogic</name>
+        <dataType>Currency</dataType>
+        <expression>BLANKVALUE({!$Record.RetailPrice__c},{!$Record.PricebookEntry.UnitPrice})</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>Quantity * (RetailPrice__c - NetPrice__c)</description>
+        <name>TotalDiscountAmount</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.Quantity} * ({!RetailPriceLogic} - {!DiscountedUnitPrice})</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>(net Price - Retail Price)/Retail Price</description>
+        <name>TotalDiscountPerc</name>
+        <dataType>Number</dataType>
+        <expression>(({!RetailPriceLogic}-{!DiscountedUnitPrice})/{!RetailPriceLogic})*100</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>TotalPriceWVAT</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.UnitPrice} * ( 1 - BLANKVALUE({!$Record.Discount},0) / 100 )*{!$Record.Quantity} + {!VATAmount}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>TotalUnitPrice</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.Quantity}*{!$Record.UnitPrice}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>VAT_ES</name>
+        <dataType>Number</dataType>
+        <expression>IF( AND (
+            LEFT({!$Record.Quote.Opportunity.Account.BillingPostalCode}, 2) &lt;&gt; &apos;35&apos;,
+            LEFT({!$Record.Quote.Opportunity.Account.BillingPostalCode}, 2) &lt;&gt; &apos;38&apos;,
+            LEFT({!$Record.Quote.Opportunity.Account.BillingPostalCode}, 2) &lt;&gt; &apos;AD&apos;,
+            LEFT({!$Record.Quote.Opportunity.Account.BillingPostalCode}, 2) &lt;&gt; &apos;51&apos;,
+            LEFT({!$Record.Quote.Opportunity.Account.BillingPostalCode}, 2) &lt;&gt; &apos;52&apos;
+            ),
+            {!$Record.Product2.VAT__c} / 100,
+            0)</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>VAT_LU</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.Product2.AlternateVAT__c} / 100</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>VAT_PT</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.Product2.AlternateVAT__c} / 100</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>VAT_TR</name>
+        <dataType>Number</dataType>
+        <expression>IF ( ISBLANK ({!$Record.Quote.LeasingAccount__c}),
+            {!$Record.Product2.VAT__c} / 100,
+            if (ISBLANK({!$Record.Product2.AlternateVAT__c}),
+            {!$Record.Product2.VAT__c} / 100,
+            {!$Record.Product2.AlternateVAT__c} / 100
+            )
+            )</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>VATAmount</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.UnitPrice} * ( 1 - BLANKVALUE({!$Record.Discount},0) / 100 ) * {!$Record.Quantity} * BLANKVALUE({!VATCalculation},0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>VATCalculation</name>
+        <dataType>Number</dataType>
+        <expression>CASE ( {!$Record.Quote.Opportunity.Account.Country__c},
+            &apos;ES&apos;, {!VAT_ES} ,
+            &apos;PT&apos;, {!VAT_PT} ,
+            &apos;TR&apos;, {!VAT_TR} ,
+            &apos;LU&apos;, {!VAT_LU} ,
+            &apos;AD&apos;, 0,
+            {!$Record.Product2.VAT__c} / 100)</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>VATCalculationinPercent</name>
+        <dataType>Number</dataType>
+        <expression>{!VATCalculation} * 100</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>VATRateText</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!VATCalculationinPercent})</expression>
+    </formulas>
+    <interviewLabel>Quote Line Item: Before Handler {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Quote Line Item: Before Handler</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Quote_Line_Item_Fields</name>
+        <label>Update Quote Line Item Fields</label>
+        <locationX>752</locationX>
+        <locationY>359</locationY>
+        <inputAssignments>
+            <field>BasePrice__c</field>
+            <value>
+                <elementReference>BasePriceLogic</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ExtraAppliedDiscount__c</field>
+            <value>
+                <elementReference>ExtraAppliedDiscount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>NetPrice__c</field>
+            <value>
+                <elementReference>DiscountedUnitPrice</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RetailPrice__c</field>
+            <value>
+                <elementReference>RetailPriceLogic</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TotalDiscountAmount__c</field>
+            <value>
+                <elementReference>TotalDiscountAmount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TotalDiscountPercentage__c</field>
+            <value>
+                <elementReference>TotalDiscountPerc</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TotalListPrice__c</field>
+            <value>
+                <elementReference>Quantity_X_ListPrice</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TotalPriceVAT__c</field>
+            <value>
+                <elementReference>TotalPriceWVAT</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TotalUnitPrice__c</field>
+            <value>
+                <elementReference>TotalUnitPrice</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VATAmountNumeric__c</field>
+            <value>
+                <elementReference>VATAmount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VATAmount__c</field>
+            <value>
+                <elementReference>VATAmount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VATRateText__c</field>
+            <value>
+                <elementReference>VATRateText</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VATRate__c</field>
+            <value>
+                <elementReference>VATCalculationinPercent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>626</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Update_Quote_Line_Item_Fields</targetReference>
+        </connector>
+        <object>QuoteLineItem</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

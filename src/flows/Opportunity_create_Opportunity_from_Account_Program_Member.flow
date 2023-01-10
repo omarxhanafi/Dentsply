@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <description>TFUS-000003990 : create Opp from an Account Program Member</description>
+    <interviewLabel>Opportunity: {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity: create Opportunity from Account Program Member</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Get the Account Id (and Program Member Id) from the Account Program Member</description>
+        <name>Get_Account_From_Account_Program_Member</name>
+        <label>Get Account From Account Program Member</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Opportunity_Create_opportunity_from_account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>LoyaltyProgramParticipant__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Account_From_Account_Program_Member</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Opportunity_Create_opportunity_from_account</name>
+        <label>Opportunity: Create opportunity from account</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <flowName>Opportunity_CreateOppFromAccount</flowName>
+        <inputAssignments>
+            <name>accountId</name>
+            <value>
+                <elementReference>Get_Account_From_Account_Program_Member.Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>AccountProgramMemberId</name>
+            <value>
+                <elementReference>Get_Account_From_Account_Program_Member.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>Get_Account_From_Account_Program_Member.Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>
