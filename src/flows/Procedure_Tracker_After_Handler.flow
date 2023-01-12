@@ -11,7 +11,7 @@
         <inputParameters>
             <name>customNotifTypeId</name>
             <value>
-                <stringValue>0ML7a0000008hz8GAA</stringValue>
+                <stringValue>0ML0E0000000OJnWAM</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -121,12 +121,12 @@
     <textTemplates>
         <name>PT_Notification_Body</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>A new Procedure Tracker has been assigned to you</text>
+        <text>A new Procedure Tracker related to {!$Record.PracticeAccount__r.Name} has been assigned to you</text>
     </textTemplates>
     <textTemplates>
         <name>PT_Notification_Title</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>A Procedure Tracker has been assigned to you</text>
+        <text>New Procedure Tracker : {!$Record.Name}</text>
     </textTemplates>
     <variables>
         <name>Recipient_IDs</name>
