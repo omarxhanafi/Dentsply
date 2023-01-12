@@ -40,7 +40,8 @@ global class BatchCreateProcedureTrackers implements Database.Batchable<sObject>
                 'WHERE Invoice_Date__c = LAST_N_DAYS:' + nbrOfDays + ' ' +
                 'AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE ProcedureType__c = \'Clear Aligners\') ' +
                 'AND Account__r.Country__c IN :procedureTrackerCountryCodes ' +
-                'AND Product__r.Article__c IN (\'DIGI-500152\', \'DIGI-500153\', \'DIGI-500159\')' +
+                'AND Product__r.Article__c IN (\'DIGI-500152\', \'DIGI-500153\', \'DIGI-500159\') ' +
+                'AND Quantity__c > 0 ' +
                 'ORDER BY Invoice_Date__c ASC';
 
         return Database.getQueryLocator(query);

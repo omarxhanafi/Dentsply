@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Test_GuidanceRendererController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_GuidanceRendererController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/BatchCreateProcedureTrackers.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/BatchCreateProcedureTrackers.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,36 +44,16 @@
                   <option name="name" value="Anonymous Apex 1" />
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
-                  <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="List&lt;ProcedureTrackerCreationSetting__mdt&gt; procedureTrackerCreationSettings = [SELECT Id, CountryList__c, NumberOfDays__c FROM ProcedureTrackerCreationSetting__mdt];&#10;&#10;// Init Batch Parameters&#10;List&lt;String&gt; procedureTrackerCountryCodes = new List&lt;String&gt;();&#10;&#10;Integer nbrOfDays = 7;&#10;&#10;// Getting a list of country codes &amp; number of days&#10;if (!procedureTrackerCreationSettings.isEmpty()) {&#10;    procedureTrackerCountryCodes = procedureTrackerCreationSettings[0].CountryList__c.split(';');&#10;    nbrOfDays = (Integer) procedureTrackerCreationSettings[0].NumberOfDays__c;&#10;}&#10;&#10;// Get all Sales Analytics records that were created within the specified number of days, have no active procedure tracker linked to them and have a country within the ProcedureTrackerCountry__mdt&#10;String query = 'SELECT Id, Account__c, Account__r.Country__c, Invoice_Date__c ' +&#10;        'FROM Sales_Analytics__c ' +&#10;        'WHERE Invoice_Date__c = LAST_N_DAYS:' + nbrOfDays + ' ' +&#10;        'AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE ProcedureType__c = \'Clear Aligners\') ' +&#10;        'AND Account__r.Country__c IN :procedureTrackerCountryCodes ' +&#10;        'AND Product__r.Article__c IN (\'DIGI-500152\', \'DIGI-500153\', \'DIGI-500159\')';&#10;&#10;System.debug(Database.query(query).size());" />
-                  <option name="calloutsLogLevel" value="FINEST" />
+                  <option name="body" value="List&lt;ProcedureTrackerCreationSetting__mdt&gt; procedureTrackerCreationSettings = [SELECT Id, CountryList__c, NumberOfDays__c FROM ProcedureTrackerCreationSetting__mdt];&#10;&#10;// Init Batch Parameters&#10;List&lt;String&gt; procedureTrackerCountryCodes = new List&lt;String&gt;();&#10;&#10;Integer nbrOfDays = 7;&#10;&#10;// Getting a list of country codes &amp; number of days&#10;if (!procedureTrackerCreationSettings.isEmpty()) {&#10;    procedureTrackerCountryCodes = procedureTrackerCreationSettings[0].CountryList__c.split(';');&#10;    nbrOfDays = (Integer) procedureTrackerCreationSettings[0].NumberOfDays__c;&#10;}&#10;&#10;// Get all Sales Analytics records that were created within the specified number of days, have no active procedure tracker linked to them and have a country within the ProcedureTrackerCountry__mdt&#10;String query = 'SELECT Id, Account__c, Account__r.Country__c, Invoice_Date__c ' +&#10;        'FROM Sales_Analytics__c ' +&#10;        'WHERE Invoice_Date__c = LAST_N_DAYS:' + nbrOfDays + ' ' +&#10;        'AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE ProcedureType__c = \'Clear Aligners\') ' +&#10;        'AND Account__r.Country__c IN :procedureTrackerCountryCodes ' +&#10;        'AND Product__r.Article__c IN (\'DIGI-500152\', \'DIGI-500153\', \'DIGI-500159\') ' +&#10;        'AND Quantity__c &gt; 0 ' +&#10;        'ORDER BY Invoice_Date__c ASC';&#10;&#10;System.debug(Database.query(query).size());" />
                   <option name="connectionName" value="StgJan" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 2" />
-                  <option name="nbaLogLevel" value="FINEST" />
-                  <option name="profilingLogLevel" value="FINEST" />
-                  <option name="systemLogLevel" value="FINEST" />
-                  <option name="validationLogLevel" value="FINEST" />
-                  <option name="visualforceLogLevel" value="FINEST" />
-                  <option name="waveLogLevel" value="FINEST" />
-                  <option name="workflowLogLevel" value="FINEST" />
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
-                  <option name="apexLogLevel" value="FINEST" />
                   <option name="body" value="BatchCreateProcedureTrackers batch = new BatchCreateProcedureTrackers();&#10;Database.executeBatch(batch, 200); // 200 is the batch size, you can adjust this value as needed&#10;    " />
-                  <option name="calloutsLogLevel" value="FINEST" />
                   <option name="connectionName" value="StgJan" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 4" />
-                  <option name="nbaLogLevel" value="FINEST" />
-                  <option name="profilingLogLevel" value="FINEST" />
-                  <option name="systemLogLevel" value="FINEST" />
-                  <option name="validationLogLevel" value="FINEST" />
-                  <option name="visualforceLogLevel" value="FINEST" />
-                  <option name="waveLogLevel" value="FINEST" />
-                  <option name="workflowLogLevel" value="FINEST" />
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
                   <option name="apexLogLevel" value="FINEST" />
@@ -92,13 +72,12 @@
                   <option name="workflowLogLevel" value="FINEST" />
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
-                  <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="//Account acc = new Account(Name = 'Test Acc BE', Country__c = 'BE');&#10;//insert acc;&#10;//System.debug(acc);&#10;&#10;Product2 prod = new Product2(Name = 'Test Product', Article__c = 'DIGI-500153');&#10;&#10;insert prod;&#10;&#10;System.debug(prod);" />
+                  <option name="body" value="//insert new Product2(Name = 'Test Product ', Article__c = 'DIGI-500153'); 01t0E00000CxAlrQAF&#10;&#10;List&lt;Account&gt; accs = new List&lt;Account&gt;();&#10;&#10;for(Integer i = 0; i&lt;10; i++){&#10;    accs.add(new Account(Name = 'Test Acc ' + i, Country__c = 'BE'));&#10;}&#10;&#10;insert accs;&#10;&#10;List&lt;Sales_Analytics__c&gt; invoices = new List&lt;Sales_Analytics__c&gt;();&#10;&#10;for(Integer i = 0; i&lt;10; i++){&#10;    invoices.add(new Sales_Analytics__c(&#10;            Account__c = accs[i].Id,&#10;            Product__c = '01t0E00000CxAlrQAF',&#10;            Invoice_Date__c = Date.today()&#10;    ));&#10;}&#10;&#10;insert invoices;&#10;&#10;System.debug(accs);&#10;System.debug(invoices);&#10;" />
                   <option name="name" value="Anonymous Apex 3" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="2" />
+            <option name="selectedSavedDocumentIndex" value="1" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionWorkspaceSettings">
@@ -226,6 +205,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
+                      <entry key="APEXCLASS:TEST_GUIDANCERENDERERCONTROLLER" value="1673358702288" />
                       <entry key="FLOW:PROCEDURE_TRACKER_AFTER_HANDLER" value="1673355873000" />
                     </map>
                   </option>
@@ -5580,30 +5560,6 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Count(Id) FROM Sales_Analytics__c WHERE CreatedDate = LAST_N_DAYS:3 AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE Status__c = 'Active') AND Account__r.Country__c IN ('US','BE')" />
-                  <option name="name" value="SOQL Query 1" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Count(Id) FROM Sales_Analytics__c WHERE CreatedDate = LAST_N_DAYS:30 AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE Status__c = 'Active') AND Account__r.Country__c IN ('US','BE') AND LocalSKUKey__c IN ('2_155_DIGI-500152', '2_155_DIGI-500153', '2_155_DIGI-500159')" />
-                  <option name="connectionName" value="Production" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 2" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Id, Name FROM RecordType WHERE SObjectType = 'ProcedureTracker__c'" />
-                  <option name="name" value="SOQL Query 5" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="" />
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 6" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="select count(id) from ProcedureTracker__c where CreatedDate = LAST_N_DAYS:6" />
-                  <option name="name" value="SOQL Query 6" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
                   <option name="body" value="SELECT Id, Account__c, Account__r.Country__c, Account__r.Name, Invoice_Date__c, Product__r.Article__c&#10;        FROM Sales_Analytics__c &#10;        WHERE Invoice_Date__c = LAST_N_DAYS:7 AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE ProcedureType__c = 'Clear Aligners') AND Account__r.Country__c IN ('US','BE', 'IT', 'AT') AND Product__r.Article__c IN ('DIGI-500152', 'DIGI-500153', 'DIGI-500159') Order by Account__r.Name ASC " />
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
@@ -5617,14 +5573,12 @@
                   <option name="splitterProportion" value="0.309509" />
                 </SoqlQuerySavedDocument>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select DeveloperName from recordtype where SobjectType = 'Account'" />
-                  <option name="connectionName" value="StgJan" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 7" />
+                  <option name="body" value="select id, DeveloperName from CustomNotificationType where DeveloperName = 'ProcedureTrackerAssignment'" />
+                  <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="7" />
+            <option name="selectedSavedDocumentIndex" value="2" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -5945,7 +5899,8 @@
       <workItem from="1671607906415" duration="11609000" />
       <workItem from="1672741662585" duration="129000" />
       <workItem from="1672741816115" duration="8075000" />
-      <workItem from="1673345326124" duration="5045000" />
+      <workItem from="1673345326124" duration="6595000" />
+      <workItem from="1673398050733" duration="1272000" />
     </task>
     <servers />
   </component>
@@ -5968,7 +5923,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="ApexOfflineDebuggerLocalBreakpointType">
           <url>file://$PROJECT_DIR$/src/classes/BatchCreateProcedureTrackers.cls</url>
-          <line>49</line>
+          <line>50</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
@@ -5979,6 +5934,7 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OrderManagement_CC_testCloneOrderWithPricingMicroServiceCallOutWithNoSourceRecord.ic2" NAME="DevNov Coverage Results" MODIFIED="1666690699780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_GuidanceRendererController.ic2" NAME="StgJan Coverage Results" MODIFIED="1673358717485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
   </component>
 </project>
