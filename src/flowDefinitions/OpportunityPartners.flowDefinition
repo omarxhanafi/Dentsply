@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>28</activeVersionNumber>
+    <description>To Assign Owners based on ETM2 and Partners based on Preferred dealer</description>
+    <masterLabel>xSBU: OppOwner&amp;Partners</masterLabel>
+</FlowDefinition>

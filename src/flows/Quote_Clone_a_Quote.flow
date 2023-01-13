@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Clone a quote along with its line items</description>
+        <name>Clone_Quote_Action</name>
+        <label>Clone Quote Action</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <actionName>QuoteFlowController</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Open_Clone</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>ids</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>cloneId</assignToReference>
+            <name>output</name>
+        </outputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Open new quote clone</description>
+        <name>Open_Clone</name>
+        <label>Open Clone</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <actionName>c:navigateToRecord</actionName>
+        <actionType>component</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>cloneId</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <description>Screen Flow that uses an Apex action to Clone a quote along with its line items</description>
+    <interviewLabel>Quote: {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Quote: Clone a Quote</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Clone_Quote_Action</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Store the quote clone Id</description>
+        <name>cloneId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Quote Id</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentRecord</elementReference>
+        </value>
+    </variables>
+</Flow>

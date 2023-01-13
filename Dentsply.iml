@@ -35,6 +35,15 @@
                       <option name="name" value="CustomObject" />
                     </MetadataType>
                     <MetadataType>
+                      <option name="name" value="Flow" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="FlowCategory" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="FlowDefinition" />
+                    </MetadataType>
+                    <MetadataType>
                       <option name="name" value="LightningComponentBundle" />
                     </MetadataType>
                     <MetadataType>

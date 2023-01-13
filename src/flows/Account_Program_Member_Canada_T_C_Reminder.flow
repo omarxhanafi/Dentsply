@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>chatterPost</name>
+        <label>chatterPost</label>
+        <locationX>1095</locationX>
+        <locationY>652</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>textChatterMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>hasCustomerAccepted</name>
+        <label>hasCustomerAccepted</label>
+        <locationX>1087</locationX>
+        <locationY>396</locationY>
+        <defaultConnector>
+            <targetReference>chatterPost</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>customerAcceptedFalse</defaultConnectorLabel>
+        <rules>
+            <name>customerAcceptedTrue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AcceptedTermsAndConditions__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>customerAcceptedTrue</label>
+        </rules>
+    </decisions>
+    <description>TFUS-000002864
+TFUS-000002865</description>
+    <interviewLabel>Account Program Member: Canada T&amp;C Reminder {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account Program Member: Canada T&amp;C Reminder</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>969</locationX>
+        <locationY>48</locationY>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Subtype__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>One DS</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Subtype__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>One DSO</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Subtype__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>One DS Pro</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Subtype__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Lab Alliance</stringValue>
+            </value>
+        </filters>
+        <object>LoyaltyProgramParticipant__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <scheduledPaths>
+            <name>Follow_up_Reminder</name>
+            <connector>
+                <targetReference>hasCustomerAccepted</targetReference>
+            </connector>
+            <label>Follow-up Reminder</label>
+            <offsetNumber>7</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>CreatedDate</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>textChatterMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Record.Contact__r.Full_Name__c} has not yet accepted the terms and conditions for {!$Record.LoyaltyProgram__r.Name}.
+Please follow up on the response. @[{!$Record.SalesRep__c}]</text>
+    </textTemplates>
+</Flow>

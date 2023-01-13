@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>80</activeVersionNumber>
+    <description>The main flow for Case Management in Service Cloud. Includes the case stages and scripts.</description>
+    <masterLabel>Case: Create Case ver2</masterLabel>
+</FlowDefinition>
