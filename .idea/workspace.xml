@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/ogsmObjectivesTable/ogsmObjectivesTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/ogsmObjectivesTable/ogsmObjectivesTable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/ogsmObjectivesTable/ogsmObjectivesTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/ogsmObjectivesTable/ogsmObjectivesTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Test_AccountTrigger.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_AccountTrigger.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Test_BatchSetAccountSubSegmentation.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_BatchSetAccountSubSegmentation.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +90,8 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
+                      <entry key="APEXCLASS:TEST_ACCOUNTTRIGGER" value="1673603054096" />
+                      <entry key="APEXCLASS:TEST_BATCHSETACCOUNTSUBSEGMENTATION" value="1673603581187" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:INSIDESALESCAMPAIGNTRACKER" value="1673263280000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:OGSMOBJECTIVESTABLE" value="1673284249649" />
                     </map>
@@ -5810,7 +5812,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Apex Unit Tests.All Tests">
+  <component name="RunManager" selected="Apex Unit Tests.Test_NewContractController.testEligibilityOfCreation">
     <configuration name="FindLeadMatchTest.executeLeadMatchSearchTest" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -5858,7 +5860,7 @@
       <option name="workflowLogLevel" value="FINEST" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_OneDSCanadaTermsAndConditions_CC" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="Test_AccountTrigger.testSetAccountSubSegmentationInsert" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
@@ -5874,7 +5876,7 @@
           <entry key="Dentsply">
             <value>
               <set>
-                <option value="Test_OneDSCanadaTermsAndConditions_CC" />
+                <option value="Test_AccountTrigger" />
               </set>
             </value>
           </entry>
@@ -5888,7 +5890,15 @@
       </option>
       <option name="systemLogLevel" value="DEBUG" />
       <option name="testClassToTestMethodNames">
-        <map />
+        <map>
+          <entry key="Test_AccountTrigger">
+            <value>
+              <set>
+                <option value="testSetAccountSubSegmentationInsert" />
+              </set>
+            </value>
+          </entry>
+        </map>
       </option>
       <option name="testSuiteName" />
       <option name="validationLogLevel" value="INFO" />
@@ -5897,50 +5907,154 @@
       <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_OrderManagement_CC" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="Test_AccountTrigger.testSetAccountSubSegmentationUpdate" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="FINEST" />
+      <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
       <option name="connectionName" value="DevFeb" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
       <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="true" />
+      <option name="logLevelsInitialized" value="false" />
       <option name="moduleToTestClassNames">
         <map>
           <entry key="Dentsply">
             <value>
               <set>
-                <option value="Test_OrderManagement_CC" />
+                <option value="Test_AccountTrigger" />
               </set>
             </value>
           </entry>
         </map>
       </option>
-      <option name="nbaLogLevel" value="ERROR" />
-      <option name="profilingLogLevel" value="ERROR" />
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="systemLogLevel" value="FINEST" />
+      <option name="systemLogLevel" value="DEBUG" />
       <option name="testClassToTestMethodNames">
-        <map />
+        <map>
+          <entry key="Test_AccountTrigger">
+            <value>
+              <set>
+                <option value="testSetAccountSubSegmentationUpdate" />
+              </set>
+            </value>
+          </entry>
+        </map>
       </option>
       <option name="testSuiteName" />
-      <option name="validationLogLevel" value="ERROR" />
-      <option name="visualforceLogLevel" value="FINE" />
-      <option name="waveLogLevel" value="ERROR" />
-      <option name="workflowLogLevel" value="ERROR" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_BatchSetAccountSubSegmentation.testBatchSetAccountSubSegmentation" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="connectionName" value="DevFeb" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_BatchSetAccountSubSegmentation" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map>
+          <entry key="Test_BatchSetAccountSubSegmentation">
+            <value>
+              <set>
+                <option value="testBatchSetAccountSubSegmentation" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_NewContractController.testEligibilityOfCreation" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="connectionName" value="DevFeb" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_NewContractController" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map>
+          <entry key="Test_NewContractController">
+            <value>
+              <set>
+                <option value="testEligibilityOfCreation" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Apex Unit Tests.Test_NewContractController.testEligibilityOfCreation" />
+        <item itemvalue="Apex Unit Tests.Test_BatchSetAccountSubSegmentation.testBatchSetAccountSubSegmentation" />
+        <item itemvalue="Apex Unit Tests.Test_AccountTrigger.testSetAccountSubSegmentationUpdate" />
+        <item itemvalue="Apex Unit Tests.Test_AccountTrigger.testSetAccountSubSegmentationInsert" />
         <item itemvalue="Apex Unit Tests.FindLeadMatchTest.executeLeadMatchSearchTest" />
-        <item itemvalue="Apex Unit Tests.Test_OrderManagement_CC" />
-        <item itemvalue="Apex Unit Tests.Test_OneDSCanadaTermsAndConditions_CC" />
       </list>
     </recent_temporary>
   </component>
@@ -5982,7 +6096,7 @@
       <workItem from="1666336983621" duration="1453000" />
       <workItem from="1673253314539" duration="69000" />
       <workItem from="1673253385502" duration="9414000" />
-      <workItem from="1673283879898" duration="710000" />
+      <workItem from="1673283879898" duration="1055000" />
     </task>
     <servers />
   </component>
@@ -6013,9 +6127,11 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Dentsply$Test_findLeadMatch_testExecuteLeadSearch.ic2" NAME="HOTFIX Coverage Results" MODIFIED="1667918143842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="HOTFIX" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_BatchSetAccountSubSegmentation_testBatchSetAccountSubSegmentation.ic2" NAME="DevFeb Coverage Results" MODIFIED="1673603587922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevFeb" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OrderManagement_CC_testCloneOrderWithPricingMicroServiceCallOutWithNoSourceRecord.ic2" NAME="DevNov Coverage Results" MODIFIED="1666690699780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_ProcedureTrackerTriggerHelper_testcheckUniqueness.ic2" NAME="StgJan Coverage Results" MODIFIED="1673520387472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
   </component>
 </project>

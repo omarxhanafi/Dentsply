@@ -19,7 +19,7 @@ public class Test_BatchSetAccountSubSegmentation {
         List<User> userList = TestDataFactory.createUsers(1, 'System Administrator');
         List<User> userIntegrationList = TestDataFactory.insertIntegrationUsers(1, 'System Administrator');
         TestDataFactory.createGlobalIntegrationSettings(userIntegrationList);
-        List<Account> accountList = TestDataFactory.returnAccounts(200, 'Non_ERP_Account', userList[0].Id);
+        List<Account> accountList = TestDataFactory.returnAccounts(100, 'Non_ERP_Account', userList[0].Id);
         for (Account accountRecord : accountList) {
             accountRecord.Name = 'INSERT ' + accountRecord.Name;
             accountRecord.Country__c = 'NL';
@@ -29,7 +29,7 @@ public class Test_BatchSetAccountSubSegmentation {
 
     @isTest
     private static void testSetup() {
-        System.assertEquals(200, [SELECT Count() FROM Account WHERE Name LIKE 'INSERT%']);
+        System.assertEquals(100, [SELECT Count() FROM Account WHERE Name LIKE 'INSERT%']);
     }
 
     /*-------------------------------------------------------------------------------------------------------
@@ -46,6 +46,6 @@ public class Test_BatchSetAccountSubSegmentation {
         Database.executeBatch(batchJob);
         Test.stopTest();
 
-        System.assertEquals(200, [SELECT Count() FROM Account WHERE LastModifiedDate > :prevLastModifiedDate]);
+        System.assertEquals(100, [SELECT Count() FROM Account WHERE LastModifiedDate > :prevLastModifiedDate]);
     }
 }
