@@ -272,6 +272,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Endodontics</fullName>
                 <default>false</default>
             </values>

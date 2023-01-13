@@ -603,7 +603,7 @@
             <targetReference>Get_campaign</targetReference>
         </connector>
     </start>
-    <status>Obsolete</status>
+    <status>Draft</status>
     <variables>
         <name>CreateNewInitiative</name>
         <dataType>Boolean</dataType>

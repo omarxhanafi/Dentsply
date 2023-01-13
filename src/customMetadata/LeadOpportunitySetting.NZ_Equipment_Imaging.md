@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">Axano;Axeos;DAC D; DAC Premium;DAC Professional;DAC Universal;Heliodent Plus;INTEGO;Intego Ambidextrous;Intego Pro;Intego Pro Ambidexextrous;Orthopos E;Orthopos S 2D;Orthopos S 3D;Orthopos SL 2D;Orthopos SL 3D;SICAT Suite;Sinius;SiroCam;SiroCam UAF plus;Sirolaser;SIROLaser Advance;SIROLaser Blue;T1 Contra-angles;T2 Contra-angles;T2 Turbines;TENEO;USBCAM;XIOS AE;XIOS Scan;XIOS Supreme</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Equipment &amp; Imaging</value>
     </values>
@@ -23,12 +19,16 @@
         <value xsi:type="xsd:string">NZ</value>
     </values>
     <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
         <field>DefaultCampaignOwner__c</field>
-        <value xsi:type="xsd:string">0126M000000cpRY</value>
+        <value xsi:type="xsd:string">0056M000009egxL</value>
     </values>
     <values>
         <field>DefaultLeadOwner__c</field>
-        <value xsi:type="xsd:string">0126M000000cpRY</value>
+        <value xsi:type="xsd:string">0056M000009egxL</value>
     </values>
     <values>
         <field>IsTest__c</field>

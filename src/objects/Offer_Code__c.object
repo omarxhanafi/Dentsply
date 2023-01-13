@@ -227,12 +227,13 @@ TODAY() , &quot;Valid Offer Code&quot;, &quot;Expired&quot;))</formula>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <controllingField>UserCountry__c</controllingField>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
-                    <fullName>Retention</fullName>
+                    <fullName>Ad Hoc</fullName>
                     <default>false</default>
-                    <label>Retention</label>
+                    <label>Ad Hoc</label>
                 </value>
                 <value>
                     <fullName>Adoption</fullName>
@@ -240,16 +241,376 @@ TODAY() , &quot;Valid Offer Code&quot;, &quot;Expired&quot;))</formula>
                     <label>Adoption</label>
                 </value>
                 <value>
-                    <fullName>Ad Hoc</fullName>
+                    <fullName>At Risk</fullName>
                     <default>false</default>
-                    <label>Ad Hoc</label>
+                    <label>At Risk</label>
+                </value>
+                <value>
+                    <fullName>Hibernation</fullName>
+                    <default>false</default>
+                    <label>Hibernation</label>
+                </value>
+                <value>
+                    <fullName>National Promotion</fullName>
+                    <default>false</default>
+                    <label>National Promotion</label>
+                </value>
+                <value>
+                    <fullName>Needs Attention</fullName>
+                    <default>false</default>
+                    <label>Needs Attention</label>
                 </value>
                 <value>
                     <fullName>Promotion</fullName>
                     <default>false</default>
                     <label>Promotion</label>
                 </value>
+                <value>
+                    <fullName>Retention</fullName>
+                    <default>false</default>
+                    <label>Retention</label>
+                </value>
             </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Jordan</controllingFieldValue>
+                <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>New Zealand</controllingFieldValue>
+                <controllingFieldValue>Norway</controllingFieldValue>
+                <controllingFieldValue>Lebanon</controllingFieldValue>
+                <controllingFieldValue>Poland</controllingFieldValue>
+                <controllingFieldValue>Kazakhstan</controllingFieldValue>
+                <controllingFieldValue>Croatia</controllingFieldValue>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
+                <controllingFieldValue>Senegal</controllingFieldValue>
+                <controllingFieldValue>Romania</controllingFieldValue>
+                <controllingFieldValue>Iran</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
+                <controllingFieldValue>Iraq</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <controllingFieldValue>Libya</controllingFieldValue>
+                <controllingFieldValue>Yemen</controllingFieldValue>
+                <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>China</controllingFieldValue>
+                <controllingFieldValue>Slovakia</controllingFieldValue>
+                <controllingFieldValue>Cyprus</controllingFieldValue>
+                <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>Czech Republic</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <controllingFieldValue>Denmark</controllingFieldValue>
+                <controllingFieldValue>Estonia</controllingFieldValue>
+                <controllingFieldValue>Finland</controllingFieldValue>
+                <controllingFieldValue>France</controllingFieldValue>
+                <controllingFieldValue>Australia</controllingFieldValue>
+                <controllingFieldValue>Austria</controllingFieldValue>
+                <controllingFieldValue>Bahrain</controllingFieldValue>
+                <controllingFieldValue>Belgium</controllingFieldValue>
+                <controllingFieldValue>Brazil</controllingFieldValue>
+                <controllingFieldValue>Sweden</controllingFieldValue>
+                <controllingFieldValue>Switzerland</controllingFieldValue>
+                <controllingFieldValue>Taiwan</controllingFieldValue>
+                <controllingFieldValue>Thailand</controllingFieldValue>
+                <controllingFieldValue>Germany</controllingFieldValue>
+                <controllingFieldValue>Tunisia</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>Greece</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Ukraine</controllingFieldValue>
+                <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>Hungary</controllingFieldValue>
+                <controllingFieldValue>India</controllingFieldValue>
+                <controllingFieldValue>Indonesia</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>UK</controllingFieldValue>
+                <controllingFieldValue>Holland</controllingFieldValue>
+                <controllingFieldValue>HQ: SE</controllingFieldValue>
+                <controllingFieldValue>Israel</controllingFieldValue>
+                <controllingFieldValue>Italy</controllingFieldValue>
+                <controllingFieldValue>Japan</controllingFieldValue>
+                <controllingFieldValue>Algeria</controllingFieldValue>
+                <controllingFieldValue>Morocco</controllingFieldValue>
+                <controllingFieldValue>Distributor Markets</controllingFieldValue>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>Latvia</controllingFieldValue>
+                <controllingFieldValue>Lithuania</controllingFieldValue>
+                <controllingFieldValue>Mauritius</controllingFieldValue>
+                <controllingFieldValue>Maldives</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
+                <controllingFieldValue>HQ: DE</controllingFieldValue>
+                <controllingFieldValue>BEX</controllingFieldValue>
+                <controllingFieldValue>HQ: NL</controllingFieldValue>
+                <controllingFieldValue>Belarus</controllingFieldValue>
+                <controllingFieldValue>Luxembourg</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
+                <controllingFieldValue>Malaysia</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
+                <controllingFieldValue>Malta</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Oman</controllingFieldValue>
+                <valueName>Ad Hoc</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Jordan</controllingFieldValue>
+                <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>New Zealand</controllingFieldValue>
+                <controllingFieldValue>Norway</controllingFieldValue>
+                <controllingFieldValue>Lebanon</controllingFieldValue>
+                <controllingFieldValue>Poland</controllingFieldValue>
+                <controllingFieldValue>Kazakhstan</controllingFieldValue>
+                <controllingFieldValue>Croatia</controllingFieldValue>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
+                <controllingFieldValue>Senegal</controllingFieldValue>
+                <controllingFieldValue>Romania</controllingFieldValue>
+                <controllingFieldValue>Iran</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
+                <controllingFieldValue>Iraq</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <controllingFieldValue>Libya</controllingFieldValue>
+                <controllingFieldValue>Yemen</controllingFieldValue>
+                <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>China</controllingFieldValue>
+                <controllingFieldValue>Slovakia</controllingFieldValue>
+                <controllingFieldValue>Cyprus</controllingFieldValue>
+                <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>Czech Republic</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <controllingFieldValue>Denmark</controllingFieldValue>
+                <controllingFieldValue>Estonia</controllingFieldValue>
+                <controllingFieldValue>Finland</controllingFieldValue>
+                <controllingFieldValue>France</controllingFieldValue>
+                <controllingFieldValue>Australia</controllingFieldValue>
+                <controllingFieldValue>Austria</controllingFieldValue>
+                <controllingFieldValue>Bahrain</controllingFieldValue>
+                <controllingFieldValue>Belgium</controllingFieldValue>
+                <controllingFieldValue>Brazil</controllingFieldValue>
+                <controllingFieldValue>Sweden</controllingFieldValue>
+                <controllingFieldValue>Switzerland</controllingFieldValue>
+                <controllingFieldValue>Taiwan</controllingFieldValue>
+                <controllingFieldValue>Thailand</controllingFieldValue>
+                <controllingFieldValue>Germany</controllingFieldValue>
+                <controllingFieldValue>Tunisia</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>Greece</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Ukraine</controllingFieldValue>
+                <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>Hungary</controllingFieldValue>
+                <controllingFieldValue>India</controllingFieldValue>
+                <controllingFieldValue>Indonesia</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>UK</controllingFieldValue>
+                <controllingFieldValue>Holland</controllingFieldValue>
+                <controllingFieldValue>HQ: SE</controllingFieldValue>
+                <controllingFieldValue>Israel</controllingFieldValue>
+                <controllingFieldValue>Italy</controllingFieldValue>
+                <controllingFieldValue>Japan</controllingFieldValue>
+                <controllingFieldValue>Algeria</controllingFieldValue>
+                <controllingFieldValue>Morocco</controllingFieldValue>
+                <controllingFieldValue>Distributor Markets</controllingFieldValue>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>Latvia</controllingFieldValue>
+                <controllingFieldValue>Lithuania</controllingFieldValue>
+                <controllingFieldValue>Mauritius</controllingFieldValue>
+                <controllingFieldValue>Maldives</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
+                <controllingFieldValue>HQ: DE</controllingFieldValue>
+                <controllingFieldValue>BEX</controllingFieldValue>
+                <controllingFieldValue>HQ: NL</controllingFieldValue>
+                <controllingFieldValue>Belarus</controllingFieldValue>
+                <controllingFieldValue>Luxembourg</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
+                <controllingFieldValue>Malaysia</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
+                <controllingFieldValue>Malta</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Oman</controllingFieldValue>
+                <valueName>Adoption</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Jordan</controllingFieldValue>
+                <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>New Zealand</controllingFieldValue>
+                <controllingFieldValue>Norway</controllingFieldValue>
+                <controllingFieldValue>Lebanon</controllingFieldValue>
+                <controllingFieldValue>Poland</controllingFieldValue>
+                <controllingFieldValue>Kazakhstan</controllingFieldValue>
+                <controllingFieldValue>Croatia</controllingFieldValue>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
+                <controllingFieldValue>Senegal</controllingFieldValue>
+                <controllingFieldValue>Romania</controllingFieldValue>
+                <controllingFieldValue>Iran</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
+                <controllingFieldValue>Iraq</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <controllingFieldValue>Libya</controllingFieldValue>
+                <controllingFieldValue>Yemen</controllingFieldValue>
+                <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>China</controllingFieldValue>
+                <controllingFieldValue>Slovakia</controllingFieldValue>
+                <controllingFieldValue>Cyprus</controllingFieldValue>
+                <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>Czech Republic</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <controllingFieldValue>Denmark</controllingFieldValue>
+                <controllingFieldValue>Estonia</controllingFieldValue>
+                <controllingFieldValue>Finland</controllingFieldValue>
+                <controllingFieldValue>France</controllingFieldValue>
+                <controllingFieldValue>Australia</controllingFieldValue>
+                <controllingFieldValue>Austria</controllingFieldValue>
+                <controllingFieldValue>Bahrain</controllingFieldValue>
+                <controllingFieldValue>Belgium</controllingFieldValue>
+                <controllingFieldValue>Brazil</controllingFieldValue>
+                <controllingFieldValue>Sweden</controllingFieldValue>
+                <controllingFieldValue>Switzerland</controllingFieldValue>
+                <controllingFieldValue>Taiwan</controllingFieldValue>
+                <controllingFieldValue>Thailand</controllingFieldValue>
+                <controllingFieldValue>Germany</controllingFieldValue>
+                <controllingFieldValue>Tunisia</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>Greece</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Ukraine</controllingFieldValue>
+                <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>Hungary</controllingFieldValue>
+                <controllingFieldValue>India</controllingFieldValue>
+                <controllingFieldValue>Indonesia</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>UK</controllingFieldValue>
+                <controllingFieldValue>Holland</controllingFieldValue>
+                <controllingFieldValue>HQ: SE</controllingFieldValue>
+                <controllingFieldValue>Israel</controllingFieldValue>
+                <controllingFieldValue>Italy</controllingFieldValue>
+                <controllingFieldValue>Japan</controllingFieldValue>
+                <controllingFieldValue>Algeria</controllingFieldValue>
+                <controllingFieldValue>Morocco</controllingFieldValue>
+                <controllingFieldValue>Distributor Markets</controllingFieldValue>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>Latvia</controllingFieldValue>
+                <controllingFieldValue>Lithuania</controllingFieldValue>
+                <controllingFieldValue>Mauritius</controllingFieldValue>
+                <controllingFieldValue>Maldives</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
+                <controllingFieldValue>HQ: DE</controllingFieldValue>
+                <controllingFieldValue>BEX</controllingFieldValue>
+                <controllingFieldValue>HQ: NL</controllingFieldValue>
+                <controllingFieldValue>Belarus</controllingFieldValue>
+                <controllingFieldValue>Luxembourg</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
+                <controllingFieldValue>Malaysia</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
+                <controllingFieldValue>Malta</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Oman</controllingFieldValue>
+                <valueName>Promotion</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Jordan</controllingFieldValue>
+                <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>New Zealand</controllingFieldValue>
+                <controllingFieldValue>Norway</controllingFieldValue>
+                <controllingFieldValue>Lebanon</controllingFieldValue>
+                <controllingFieldValue>Poland</controllingFieldValue>
+                <controllingFieldValue>Kazakhstan</controllingFieldValue>
+                <controllingFieldValue>Croatia</controllingFieldValue>
+                <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Cameroun</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
+                <controllingFieldValue>Senegal</controllingFieldValue>
+                <controllingFieldValue>Romania</controllingFieldValue>
+                <controllingFieldValue>Iran</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
+                <controllingFieldValue>Iraq</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <controllingFieldValue>Libya</controllingFieldValue>
+                <controllingFieldValue>Yemen</controllingFieldValue>
+                <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>China</controllingFieldValue>
+                <controllingFieldValue>Slovakia</controllingFieldValue>
+                <controllingFieldValue>Cyprus</controllingFieldValue>
+                <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>Czech Republic</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <controllingFieldValue>Denmark</controllingFieldValue>
+                <controllingFieldValue>Estonia</controllingFieldValue>
+                <controllingFieldValue>Finland</controllingFieldValue>
+                <controllingFieldValue>France</controllingFieldValue>
+                <controllingFieldValue>Australia</controllingFieldValue>
+                <controllingFieldValue>Austria</controllingFieldValue>
+                <controllingFieldValue>Bahrain</controllingFieldValue>
+                <controllingFieldValue>Belgium</controllingFieldValue>
+                <controllingFieldValue>Brazil</controllingFieldValue>
+                <controllingFieldValue>Sweden</controllingFieldValue>
+                <controllingFieldValue>Switzerland</controllingFieldValue>
+                <controllingFieldValue>Taiwan</controllingFieldValue>
+                <controllingFieldValue>Thailand</controllingFieldValue>
+                <controllingFieldValue>Germany</controllingFieldValue>
+                <controllingFieldValue>Tunisia</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <controllingFieldValue>Greece</controllingFieldValue>
+                <controllingFieldValue>UAE</controllingFieldValue>
+                <controllingFieldValue>Ukraine</controllingFieldValue>
+                <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>Hungary</controllingFieldValue>
+                <controllingFieldValue>India</controllingFieldValue>
+                <controllingFieldValue>Indonesia</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>UK</controllingFieldValue>
+                <controllingFieldValue>Holland</controllingFieldValue>
+                <controllingFieldValue>HQ: SE</controllingFieldValue>
+                <controllingFieldValue>Israel</controllingFieldValue>
+                <controllingFieldValue>Italy</controllingFieldValue>
+                <controllingFieldValue>Japan</controllingFieldValue>
+                <controllingFieldValue>Algeria</controllingFieldValue>
+                <controllingFieldValue>Morocco</controllingFieldValue>
+                <controllingFieldValue>Distributor Markets</controllingFieldValue>
+                <controllingFieldValue>Kuwait</controllingFieldValue>
+                <controllingFieldValue>Latvia</controllingFieldValue>
+                <controllingFieldValue>Lithuania</controllingFieldValue>
+                <controllingFieldValue>Mauritius</controllingFieldValue>
+                <controllingFieldValue>Maldives</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
+                <controllingFieldValue>HQ: DE</controllingFieldValue>
+                <controllingFieldValue>BEX</controllingFieldValue>
+                <controllingFieldValue>HQ: NL</controllingFieldValue>
+                <controllingFieldValue>Belarus</controllingFieldValue>
+                <controllingFieldValue>Luxembourg</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
+                <controllingFieldValue>Malaysia</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
+                <controllingFieldValue>Malta</controllingFieldValue>
+                <controllingFieldValue>Egypt</controllingFieldValue>
+                <controllingFieldValue>Oman</controllingFieldValue>
+                <valueName>Retention</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>At Risk</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Hibernation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>National Promotion</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Needs Attention</valueName>
+            </valueSettings>
         </valueSet>
     </fields>
     <fields>
@@ -309,7 +670,72 @@ TODAY() , &quot;Valid Offer Code&quot;, &quot;Expired&quot;))</formula>
         <valueSet>
             <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Australia</fullName>
+                    <default>false</default>
+                    <label>Australia</label>
+                </value>
+                <value>
+                    <fullName>Austria - Lab</fullName>
+                    <default>false</default>
+                    <label>Austria - Lab</label>
+                </value>
+                <value>
+                    <fullName>​​​​​​Austria - PRE</fullName>
+                    <default>false</default>
+                    <label>​​​​​​Austria - PRE</label>
+                </value>
+                <value>
+                    <fullName>CAN - DNA Inside Sales</fullName>
+                    <default>false</default>
+                    <label>CAN - DNA Inside Sales</label>
+                </value>
+                <value>
+                    <fullName>Germany - Inside Sales PRE</fullName>
+                    <default>false</default>
+                    <label>Germany - Inside Sales PRE</label>
+                </value>
+                <value>
+                    <fullName>Germany - Lab</fullName>
+                    <default>false</default>
+                    <label>Germany - Lab</label>
+                </value>
+                <value>
+                    <fullName>Germany - PRE</fullName>
+                    <default>false</default>
+                    <label>Germany - PRE</label>
+                </value>
+                <value>
+                    <fullName>Hong Kong</fullName>
+                    <default>false</default>
+                    <label>Hong Kong</label>
+                </value>
+                <value>
+                    <fullName>Iberia - Ambassador</fullName>
+                    <default>false</default>
+                    <label>Iberia - Ambassador</label>
+                </value>
+                <value>
+                    <fullName>Iberia - Telesales</fullName>
+                    <default>false</default>
+                    <label>Iberia - Telesales</label>
+                </value>
+                <value>
+                    <fullName>Indonesia</fullName>
+                    <default>false</default>
+                    <label>Indonesia</label>
+                </value>
+                <value>
+                    <fullName>Italy - indirect</fullName>
+                    <default>false</default>
+                    <label>Italy - indirect</label>
+                </value>
+                <value>
+                    <fullName>New Zealand</fullName>
+                    <default>false</default>
+                    <label>New Zealand</label>
+                </value>
                 <value>
                     <fullName>USA- DNA TeleSales Core</fullName>
                     <default>false</default>
@@ -326,9 +752,9 @@ TODAY() , &quot;Valid Offer Code&quot;, &quot;Expired&quot;))</formula>
                     <label>USA - Endo Maillefer</label>
                 </value>
                 <value>
-                    <fullName>CAN - DNA Inside Sales</fullName>
+                    <fullName>USA - Implants</fullName>
                     <default>false</default>
-                    <label>CAN - DNA Inside Sales</label>
+                    <label>USA - Implants</label>
                 </value>
                 <value>
                     <fullName>USA - Inside Sales ENDO</fullName>
@@ -336,56 +762,85 @@ TODAY() , &quot;Valid Offer Code&quot;, &quot;Expired&quot;))</formula>
                     <label>USA - Inside Sales ENDO</label>
                 </value>
                 <value>
-                    <fullName>USA - Implants</fullName>
-                    <default>false</default>
-                    <label>USA - Implants</label>
-                </value>
-                <value>
                     <fullName>USA - Sales</fullName>
                     <default>false</default>
                     <label>USA - Sales</label>
                 </value>
-                <value>
-                    <fullName>Iberia - Ambassador</fullName>
-                    <default>false</default>
-                    <label>Iberia - Ambassador</label>
-                </value>
-                <value>
-                    <fullName>Iberia - Telesales</fullName>
-                    <default>false</default>
-                    <label>Iberia - Telesales</label>
-                </value>
-                <value>
-                    <fullName>Germany - Lab</fullName>
-                    <default>false</default>
-                    <label>Germany - Lab</label>
-                </value>
-                <value>
-                    <fullName>Germany - PRE</fullName>
-                    <default>false</default>
-                    <label>Germany - PRE</label>
-                </value>
-                <value>
-                    <fullName>Austria - Lab</fullName>
-                    <default>false</default>
-                    <label>Austria - Lab</label>
-                </value>
-                <value>
-                    <fullName>​​​​​​Austria - PRE</fullName>
-                    <default>false</default>
-                    <label>​​​​​​Austria - PRE</label>
-                </value>
-                <value>
-                    <fullName>Indonesia</fullName>
-                    <default>false</default>
-                    <label>Indonesia</label>
-                </value>
-                <value>
-                    <fullName>Italy - indirect</fullName>
-                    <default>false</default>
-                    <label>Italy - indirect</label>
-                </value>
             </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UserCountry__c</fullName>
+        <defaultValue>CASE($User.User_Country__c,
+&quot;Australia&quot;,&quot;Australia&quot;,
+&quot;Austria&quot;,&quot;Austria&quot;,
+&quot;Belarus&quot;,&quot;Belarus&quot;,
+&quot;Belgium&quot;,&quot;Belgium&quot;,
+&quot;Brazil&quot;,&quot;Brazil&quot;,
+&quot;Canada&quot;, &quot;Canada&quot;,
+&quot;China&quot;,&quot;China&quot;,
+&quot;Denmark&quot;,&quot;Denmark&quot;,
+&quot;Finland&quot;,&quot;Finland&quot;,
+&quot;France&quot;,&quot;France&quot;,
+&quot;Germany&quot;,&quot;Germany&quot;,
+&quot;Holland&quot;,&quot;Holland&quot;,
+&quot;Hong Kong&quot;,&quot;Hong Kong&quot;,
+&quot;India&quot;,&quot;India&quot;,
+&quot;Indonesia&quot;,&quot;Indonesia&quot;,
+&quot;Italy&quot;,&quot;Italy&quot;,
+&quot;Kuwait&quot;,&quot;Kuwait&quot;,
+&quot;Egypt&quot;,&quot;Egypt&quot;,
+&quot;Jordan&quot;,&quot;Jordan&quot;,
+&quot;Algeria&quot;,&quot;Algeria&quot;,
+&quot;Tunisia&quot;,&quot;Tunisia&quot;,
+&quot;Cameroun&quot;,&quot;Cameroun&quot;,
+&quot;Senegal &quot;,&quot;Senegal &quot;,
+&quot;Oman&quot;,&quot;Oman&quot;,
+&quot;Iran&quot;,&quot;Iran&quot;,
+&quot;Iraq&quot;,&quot; Iraq&quot;,
+&quot;Libya&quot;,&quot;Libya&quot;,
+&quot;Yemen&quot;,&quot;Yemen&quot;,
+&quot;Bahrain&quot;,&quot;Bahrain&quot;,
+&quot;Mauritius&quot;,&quot;Mauritius&quot;,
+&quot;Maldives&quot;,&quot;Maldives&quot;,
+&quot;Japan&quot;,&quot;Japan&quot;,
+&quot;Kazakhstan&quot;,&quot;Kazakhstan&quot;,
+&quot;Lebanon&quot;,&quot;Lebanon&quot;,
+&quot;Luxembourg&quot;,&quot;Luxembourg&quot;,
+&quot;Malaysia&quot;,&quot;Malaysia&quot;,
+&quot;Morocco&quot;,&quot;Morocco&quot;,
+&quot;New Zealand&quot;,&quot;New Zealand&quot;,
+&quot;Norway&quot;,&quot;Norway&quot;,
+&quot;Philippines&quot;,&quot;Philippines&quot;,
+&quot;Portugal&quot;,&quot;Portugal&quot;,
+&quot;Poland&quot;,&quot;Poland&quot;,
+&quot;Russia&quot;,&quot;Russia&quot;,
+&quot;Saudi Arabia&quot;,&quot;Saudi Arabia&quot;,
+&quot;Singapore&quot;,&quot;Singapore&quot;,
+&quot;Slovakia&quot;,&quot;Slovakia&quot;,
+&quot;South Africa&quot;,&quot;South Africa&quot;,
+&quot;South Korea&quot;,&quot;South Korea&quot;,
+&quot;Spain&quot;,&quot;Spain&quot;,
+&quot;Sweden&quot;,&quot;Sweden&quot;,
+&quot;Switzerland&quot;,&quot;Switzerland&quot;,
+&quot;Taiwan&quot;,&quot;Taiwan&quot;,
+&quot;Thailand&quot;,&quot;Thailand&quot;,
+&quot;Turkey&quot;,&quot;Turkey&quot;,
+&quot;UAE&quot;,&quot;UAE&quot;,
+&quot;UK&quot;, &quot;UK&quot;,
+&quot;Ukraine&quot;, &quot;Ukraine&quot;,
+&quot;USA&quot;,&quot;USA&quot;,
+&quot;Vietnam&quot;,&quot;Vietnam&quot;,
+&quot;HQ: SE&quot;)</defaultValue>
+        <externalId>false</externalId>
+        <label>User Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Country_Code_full</valueSetName>
         </valueSet>
     </fields>
     <label>Offer Code</label>
@@ -410,9 +865,15 @@ TODAY() , &quot;Valid Offer Code&quot;, &quot;Expired&quot;))</formula>
         <columns>Start_Date__c</columns>
         <columns>Expiration_Date__c</columns>
         <columns>Type__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>Expiration_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2021</value>
+        </filters>
         <label>All Offer Codes</label>
-        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>Offer_Codes_Indonesia</fullName>

@@ -354,6 +354,17 @@
         <visibleLines>3</visibleLines>
     </fields>
     <label>Debug Log</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>ErrorType__c</columns>
+        <columns>Cause__c</columns>
+        <columns>Comments__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <displayFormat>Log # {0000}</displayFormat>
         <label>Debug Log Name</label>

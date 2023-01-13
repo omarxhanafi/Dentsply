@@ -180,6 +180,46 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>CIMSourceStatus__c</fullName>
+        <description>Shows the CIM360 status - not to confuse with the status from the source it self, like e.g. the ERP status. this is the status set in CIM360, to handle the CIM360 work and status.</description>
+        <externalId>false</externalId>
+        <label>CIM Source Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Changed</fullName>
+                    <default>false</default>
+                    <label>Changed</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>Deleted</fullName>
+                    <default>false</default>
+                    <label>Deleted</label>
+                </value>
+                <value>
+                    <fullName>Exclude from Queue</fullName>
+                    <default>false</default>
+                    <label>Exclude from Queue</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>CIM_Account__c</fullName>
         <externalId>false</externalId>
         <label>CIM Account</label>
@@ -217,7 +257,7 @@
         <fullName>Combined_Fields__c</fullName>
         <description>To concatenate values from the source record to display in the Service cloud</description>
         <externalId>false</externalId>
-        <formula>IF(TEXT(Source_Id__c)=&quot;&quot;,&quot;Err:Blank Source ID&quot;,Case(Text(Source_Id__c),&quot;63&quot;,&quot;CRM Data&quot;,&quot;7&quot;,&quot;BPCS&quot;,&quot;1&quot;,&quot;M3&quot;,&quot;30&quot;,&quot;Distributors&quot;,&quot;62&quot;,&quot;Ecommerce&quot;,&quot;2&quot;,&quot;AX&quot;,&quot;31&quot;,&quot;SAP&quot;,&quot;60&quot;,&quot;SFDC&quot;,&quot;Other&quot;)&amp;&quot; | &quot;&amp;Customer_Id__c&amp;&quot; | &quot;&amp;Name)</formula>
+        <formula>IF(TEXT(Source_Id__c)=&quot;&quot;,&quot;Err:Blank Source ID&quot;,Case(Text(Source_Id__c),&quot;63&quot;,&quot;CRM Data&quot;,&quot;7&quot;,&quot;BPCS&quot;,&quot;1&quot;,&quot;M3&quot;,&quot;30&quot;,&quot;Distributors&quot;,&quot;62&quot;,&quot;Ecommerce&quot;,&quot;2&quot;,&quot;AX&quot;,&quot;31&quot;,&quot;SAP&quot;,&quot;60&quot;,&quot;SFDC&quot;,&quot;64&quot;,&quot;SIROFORCE&quot;,&quot;Other&quot;)&amp;&quot; | &quot;&amp;Customer_Id__c&amp;&quot; | &quot;&amp;Name&amp;&quot; | Location ID &quot;&amp;Location_Id__c)</formula>
         <label>Combined Fields</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -558,6 +598,11 @@ TFUS-000003377</description>
                     <default>false</default>
                     <label>SFDC</label>
                 </value>
+                <value>
+                    <fullName>64</fullName>
+                    <default>false</default>
+                    <label>SIROFORCE</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -667,16 +712,96 @@ true, false)</formula>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
+    <listViews>
+        <fullName>US_Implant_Tier</fullName>
+        <columns>NAME</columns>
+        <columns>DiscountModel__c</columns>
+        <columns>DiscountModelDescription__c</columns>
+        <columns>Price_Group__c</columns>
+        <columns>PracticeID__c</columns>
+        <columns>PracticeSiteId__c</columns>
+        <columns>Tiered__c</columns>
+        <columns>Source_Id__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Company_Code__c</field>
+            <operation>equals</operation>
+            <value>US</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filters>
+        <filters>
+            <field>DiscountModel__c</field>
+            <operation>contains</operation>
+            <value>Tier</value>
+        </filters>
+        <label>US Implant Tier</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
     <nameField>
         <label>Account Name</label>
         <type>Text</type>
     </nameField>
     <pluralLabel>Source Records</pluralLabel>
+    <profileSearchLayouts>
+        <fields>NAME</fields>
+        <fields>SearchInfo__c</fields>
+        <fields>CIM_Account__c</fields>
+        <fields>Source_Address__c</fields>
+        <fields>Customer_Id__c</fields>
+        <fields>Company_Code__c</fields>
+        <fields>Status__c</fields>
+        <fields>Location_Id__c</fields>
+        <fields>PracticeSiteId__c</fields>
+        <fields>PracticeHRID__c</fields>
+        <profileName>Lightning Sales Rep</profileName>
+    </profileSearchLayouts>
+    <profileSearchLayouts>
+        <fields>NAME</fields>
+        <fields>SearchInfo__c</fields>
+        <fields>CIM_Account__c</fields>
+        <fields>Source_Id__c</fields>
+        <fields>Customer_Id__c</fields>
+        <fields>Company_Code__c</fields>
+        <fields>Status__c</fields>
+        <fields>Location_Id__c</fields>
+        <fields>Source_Address__c</fields>
+        <profileName>Lightning Field Service</profileName>
+    </profileSearchLayouts>
     <recordTypes>
         <fullName>Source_Record</fullName>
         <active>true</active>
         <compactLayoutAssignment>Source_Record_Lightning_Compact_Layout</compactLayoutAssignment>
         <label>Source Record</label>
+        <picklistValues>
+            <picklist>CIMSourceStatus__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Changed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deleted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclude from Queue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Source_Id__c</picklist>
             <values>
@@ -728,12 +853,12 @@ true, false)</formula>
         <customTabListAdditionalFields>CIM_Account__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Source_Id__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Customer_Id__c</customTabListAdditionalFields>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Forward</excludedStandardButtons>
         <lookupDialogsAdditionalFields>CIM_Account__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Source_Id__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Customer_Id__c</lookupDialogsAdditionalFields>
@@ -745,13 +870,13 @@ true, false)</formula>
         <searchFilterFields>Customer_Id__c</searchFilterFields>
         <searchResultsAdditionalFields>SearchInfo__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CIM_Account__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Source_Id__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Customer_Id__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Company_Code__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Location_Id__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>PracticeSiteId__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>PracticeHRID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Source_Address__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>

@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>CountrySelect__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">DE;AT;CH</value>
     </values>
     <values>
         <field>Country__c</field>

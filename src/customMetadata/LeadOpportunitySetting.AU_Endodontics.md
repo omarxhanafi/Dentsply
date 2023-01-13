@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">AH Plus;AH Temp;Apex Locator;Bioceramic;FlexAccess;Glidepath Files;GuttaCore;GuttaCore/Calamus;Guttasmart;Hand file user;IQ/ProMark Motor;Kits &amp; Motors;Propex IQ;ProTaper Gold;ProTaper Next;ProTaper Ultimate;TruNatomy;TruShape;Ultrasonics;WaveOne Gold;WaveOne Gold Glider;Vortex Blue;X-smart IQ;X-Smart Plus</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Endodontics</value>
     </values>
@@ -23,12 +19,16 @@
         <value xsi:type="xsd:string">AU</value>
     </values>
     <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
         <field>DefaultCampaignOwner__c</field>
-        <value xsi:type="xsd:string">0126M000000cpRY</value>
+        <value xsi:type="xsd:string">0056M000009egxL</value>
     </values>
     <values>
         <field>DefaultLeadOwner__c</field>
-        <value xsi:type="xsd:string">0126M000000cpRY</value>
+        <value xsi:type="xsd:string">0056M000009egxL</value>
     </values>
     <values>
         <field>IsTest__c</field>

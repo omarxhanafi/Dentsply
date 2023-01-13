@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">AlginX;Anaestadent;Aquasil;Calibra;Cavitron;Ceram.x;Ceram.x Spectra ST;Ceram.x Spectra ST Flow;Cerec Consumables;Enhance;Inserts;Integrity;NuPro;Oraqix;Oxivir;Palodent 360;Palodent Plus;Palodent V3;Prime &amp; Bond active;Prime and Bond;Purevac;RDH;Resurge Bath;SDR flow+;SDR flow+;SmartCem2;SmartLite Pro;Surefil one;Surefil SDR;Tessera;TPH</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Consumables</value>
     </values>
@@ -23,12 +19,16 @@
         <value xsi:type="xsd:string">NZ</value>
     </values>
     <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
         <field>DefaultCampaignOwner__c</field>
-        <value xsi:type="xsd:string">0126M000000cpRY</value>
+        <value xsi:type="xsd:string">0056M000009egxL</value>
     </values>
     <values>
         <field>DefaultLeadOwner__c</field>
-        <value xsi:type="xsd:string">0126M000000cpRY</value>
+        <value xsi:type="xsd:string">0056M000009egxL</value>
     </values>
     <values>
         <field>IsTest__c</field>

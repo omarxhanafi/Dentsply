@@ -4882,8 +4882,9 @@
         <columns>NAME</columns>
         <columns>LAST_UPDATE</columns>
         <columns>CRM_Analyst__c</columns>
-        <columns>CTIPL__c</columns>
         <columns>LocalCRMAnalyst__c</columns>
+        <columns>Country_Manager__c</columns>
+        <columns>CTIPL__c</columns>
         <columns>SalesCloud__c</columns>
         <columns>ServiceCloud__c</columns>
         <filterScope>Everything</filterScope>
@@ -4893,21 +4894,19 @@
             <value>APAC</value>
         </filters>
         <label>APAC</label>
-        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
-        <columns>OWNER.FIRST_NAME</columns>
-        <columns>OWNER.LAST_NAME</columns>
-        <columns>Country_Manager__c</columns>
-        <columns>CRM_Analyst__c</columns>
-        <columns>Platform__c</columns>
+        <columns>SFDCUsers__c</columns>
         <columns>RCO__c</columns>
         <columns>Region__c</columns>
+        <columns>HUB__c</columns>
+        <columns>Platform__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>CRM_Analyst__c</columns>
+        <columns>Country_Manager__c</columns>
         <columns>SBU_Information__c</columns>
-        <columns>ERP_Company_Code__c</columns>
-        <columns>SFDCUsers__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
         <language>en_US</language>

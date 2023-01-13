@@ -982,7 +982,7 @@
         <filters>
             <field>PRICEBOOK2.NAME</field>
             <operation>startsWith</operation>
-            <value>US,Sirona,Standard,NA</value>
+            <value>US,Sirona,Standard,NA,CA</value>
         </filters>
         <label>All Active US Pricebooks</label>
         <sharedTo>

@@ -214,7 +214,7 @@
         <externalId>false</externalId>
         <inlineHelpText>Indicates the Nomination Rule order on the level.</inlineHelpText>
         <label>Sort Order</label>
-        <precision>1</precision>
+        <precision>2</precision>
         <required>true</required>
         <scale>0</scale>
         <trackTrending>false</trackTrending>
@@ -244,6 +244,16 @@
                     <fullName>Public Group</fullName>
                     <default>false</default>
                     <label>Public Group</label>
+                </value>
+                <value>
+                    <fullName>Account Owner</fullName>
+                    <default>false</default>
+                    <label>Account Owner</label>
+                </value>
+                <value>
+                    <fullName>Record Owner</fullName>
+                    <default>false</default>
+                    <label>Record Owner</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

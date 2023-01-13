@@ -531,7 +531,7 @@
         <dataType>DateTime</dataType>
         <expression>{!StartTime} - (1/1440)</expression>
     </formulas>
-    <interviewLabel>SFS: Service Appointment Status Transition</interviewLabel>
+    <interviewLabel>SFS: Service Appointment Status Transition {!$Flow.CurrentDateTime}</interviewLabel>
     <label>SFS: Service Appointment Status Transition</label>
     <processMetadataValues>
         <name>BuilderType</name>

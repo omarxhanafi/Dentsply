@@ -56,7 +56,7 @@
     </values>
     <values>
         <field>CountryCode__c</field>
-        <value xsi:type="xsd:string">Default</value>
+        <value xsi:type="xsd:string">IOZ</value>
     </values>
     <values>
         <field>CountryFullName__c</field>
@@ -92,7 +92,7 @@
     </values>
     <values>
         <field>HomeOutsideSalesDashboard__c</field>
-        <value xsi:type="xsd:string">DRAFT_India_Sales_Home_Page</value>
+        <value xsi:type="xsd:string">MENA_Sales_Home_Page</value>
     </values>
     <values>
         <field>HomeServiceDashboardFilter__c</field>

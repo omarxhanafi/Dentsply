@@ -11,16 +11,16 @@
         <value xsi:type="xsd:string">All Ceramics;Celtra Duo;Celtra Press;Cercon;Cercon ML;Digital Dentures;Economy Teeth;Full Lab System;HIPA;InEos X5;InFire;InLab MC X5;InLab MC XL;InLab Profire;InLab Software;MCX5;Midline Teeth;PMMA/Wax;Porcelain;Premium Teeth;Vitallium;Zirconia;Lucitone Digital Print Dentures</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Prosthetics</value>
     </values>
     <values>
         <field>Country__c</field>
         <value xsi:type="xsd:string">SE</value>
+    </values>
+    <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>

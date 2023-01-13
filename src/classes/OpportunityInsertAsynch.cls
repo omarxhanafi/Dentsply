@@ -25,7 +25,7 @@ public class OpportunityInsertAsynch implements Queueable {
 
         //Loop all opportunities to create
         for (CampaignMemberTriggerHelper.oppWrapper opportunity : opportunities) {
-            
+
             Opportunity opp = opportunity.opp;
             List<OpportunityTeamMember> oppMembers = opportunity.oppMembers;
 
@@ -53,23 +53,23 @@ public class OpportunityInsertAsynch implements Queueable {
                 System.debug(e);
             }
 
-    }
-            
+        }
+
 
         //identifying campaign members to update, assigning the right opportunity ID and updating the record.
-        
+
         for(CampaignMember campaignMemberToUpdate :[SELECT ID, Opportunity__c FROM CampaignMember WHERE Id IN: memberIdWithOpp.keySet()]){
             campaignMemberToUpdate.Opportunity__c = memberIdWithOpp.get(campaignMemberToUpdate.Id).Id;
             campaignMemberToUpdateList.add(campaignMemberToUpdate);
         }
 
-        if(campaignMemberToUpdateList.size()>0){	
+        if(campaignMemberToUpdateList.size()>0){
             try{
                 update campaignMemberToUpdateList;
             }
             catch(Exception e){
                 DebugLog.addError(e.getMessage());
             }
-        }  
+        }
     }
 }

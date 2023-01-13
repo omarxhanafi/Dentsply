@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>DocumentPublicLink__c</field>
-        <value xsi:type="xsd:string">https://dentsplysirona.my.salesforce.com/sfc/p/200000001dDc/a/6M000000QHtg/UhYL7awmZEYHhzKlEk45hsjUeUd1dU04Fve4LXcOK.o</value>
+        <value xsi:type="xsd:string">https://dentsplysirona.my.salesforce.com/sfc/p/200000001dDc/a/6M000000CZGS/9izm.a_AbtKfDTQ8gH.plqAi_sz4JD4F6eNxfxUUyZY</value>
     </values>
     <values>
         <field>InfoText__c</field>

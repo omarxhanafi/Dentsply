@@ -8,7 +8,6 @@ History
 ----------------------------------------------------------------------------------------*/
 public with sharing class QuoteTriggerHelper {
 
-
     /*------------------------------------------------------------
     Description:    Loop country setting records to find the quote correspondent template
     Inputs:         @param  quotes          New Quote records just inserted
@@ -22,8 +21,57 @@ public with sharing class QuoteTriggerHelper {
 
         Map<Id, Opportunity> quoteOpportunityMap = populateQuoteOpportunityMap(quotes, opportunities);
 
+        // The contact preferred language is needed, we will do a query to get the information and add it to our quotes instances
+        putContactPreferredLanguage(quotes);
+
         setPredefinedValues(quotes, quoteOpportunityMap);
     }
+
+    /**
+     * The method gets the preferred language for each quote's contact.
+     * We need this information to select the right quote template in a later step (setPredefinedValues method)
+     *
+     * @author hadib@salesforce.com | 05-12-2022
+     *
+     * @param quotes    The new quotes (in the before insert context)
+     */
+    private static void putContactPreferredLanguage(List<Quote> quotes)
+    {
+        // Here, we need the Quote.Contact.Preferred_Language__c.
+        // We have the contact Id but we don't have yet the new quote Id as we are in before insert context
+        // So, we will retrieve the preferred languages using the contact Ids
+
+        // Getting all the contact Ids
+        Set<Id> contactIds = new Set<Id>();
+        for (Quote newQuote : quotes)
+        {
+            contactIds.add(newQuote.ContactId);
+        }
+
+        // If we have contacts linked to one of our new quotes being insert:
+        if(!contactIds.isEmpty())
+        {
+            // Retrieve their preferred languages
+            Map<Id, Contact> contactsMap = new Map<Id, Contact>([
+                    SELECT Preferred_Language__c
+                    FROM Contact
+                    WHERE Id IN :contactIds]);
+
+            // And put this information in the quotes to be used after in setPredefinedValues method
+            for (Quote newQuote : quotes)
+            {
+                if(newQuote.ContactId != null)
+                {
+                    String contactPreferredLanguage = contactsMap.get(newQuote.ContactId).Preferred_Language__c;
+
+                    // We are filling the Preferred_Language__c on the quote records
+                    // to avoid using maps across all the class and stick to just quotes instances
+                    newQuote.Contact = new Contact(Preferred_Language__c = contactPreferredLanguage);
+                }
+            }
+        }
+    }
+
 
 
     /*------------------------------------------------------------
@@ -36,7 +84,7 @@ public with sharing class QuoteTriggerHelper {
     ------------------------------------------------------------*/
     public static void setPredefinedValues(List<Quote> quotes, Map<Id, Opportunity> quoteOpportunityMap)
     {
-        List<QuoteCountrySetting__mdt> quoteSettings = [SELECT CountryCode__c, QuoteTemplate__c FROM QuoteCountrySetting__mdt];
+        List<QuoteCountrySetting__mdt> quoteSettings = [SELECT CountryCode__c, QuoteTemplate__c, AlternateQuoteTemplate__c FROM QuoteCountrySetting__mdt];
 
         for (Quote newQuote : quotes)
         {
@@ -82,9 +130,19 @@ public with sharing class QuoteTriggerHelper {
     {
         for (QuoteCountrySetting__mdt countrySetting : quoteCountrySettings)
         {
+            // As of now, We expect one unique record for each country. Therefore, we will break once we found one.
             if(accountCountryCode == countrySetting.CountryCode__c)
             {
-                newQuote.SelectQuoteTemplate__c = countrySetting.QuoteTemplate__c;
+                // Only one special case for (BE;'French)'. We will use alternate value
+                if(accountCountryCode == 'BE' && newQuote.Contact.Preferred_Language__c == 'French')
+                {
+                    newQuote.SelectQuoteTemplate__c = countrySetting.AlternateQuoteTemplate__c;
+                }
+                else
+                {
+                    newQuote.SelectQuoteTemplate__c = countrySetting.QuoteTemplate__c;
+                }
+                break;
             }
         }
     }

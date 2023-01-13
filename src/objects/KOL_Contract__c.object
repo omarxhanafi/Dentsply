@@ -3124,18 +3124,22 @@ Lectures at major meetings MAY require more time</inlineHelpText>
     </fields>
     <label>KOL Contract</label>
     <listViews>
-        <fullName>All_KOL_Contracts</fullName>
-        <columns>CREATEDBY_USER</columns>
-        <columns>Status__c</columns>
+        <fullName>All_Open_KOL_Contracts</fullName>
         <columns>NAME</columns>
-        <columns>Type_of_Contract__c</columns>
-        <columns>Contact__c</columns>
-        <columns>Account__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>KOLContractOwner__c</columns>
+        <columns>Status__c</columns>
         <columns>Start_Date__c</columns>
         <columns>End_Date__c</columns>
-        <columns>Duration_of_enlargement__c</columns>
+        <columns>Lectures__c</columns>
+        <columns>Lectures_Remaining__c</columns>
         <filterScope>Everything</filterScope>
-        <label>All KOL Contracts</label>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Expired,Terminated/Cancelled</value>
+        </filters>
+        <label>All Open KOL Contracts</label>
         <language>en_US</language>
         <sharedTo>
             <group>ClinicalAffairs</group>
@@ -3159,8 +3163,38 @@ Lectures at major meetings MAY require more time</inlineHelpText>
         <label>Contracts Due within 30 days</label>
     </listViews>
     <listViews>
+        <fullName>My_open_KOL_Contracts</fullName>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <columns>KOLContractOwner__c</columns>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Lectures__c</columns>
+        <columns>Lectures_Remaining__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Expired,Terminated/Cancelled</value>
+        </filters>
+        <filters>
+            <field>MyContract__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My open KOL Contracts</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ClinicalAffairs</group>
+            <group>Global_Clinical_Affairs</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>New_Contracts_Created_last_30_days</fullName>
         <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>End_Date__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>CREATED_DATE</field>
@@ -3168,6 +3202,7 @@ Lectures at major meetings MAY require more time</inlineHelpText>
             <value>LAST_N_DAYS:30</value>
         </filters>
         <label>New Contracts Created last 30 days</label>
+        <language>en_US</language>
     </listViews>
     <nameField>
         <label>KOL Contract Name</label>

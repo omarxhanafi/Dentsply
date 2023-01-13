@@ -114,16 +114,22 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Lightning_Campaign_Member_Page_Layout</content>
         <formFactor>Large</formFactor>
-        <type>Default</type>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Lightning_Campaign_Member_Page_Layout</content>
         <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
@@ -175,7 +181,9 @@ Account.tz__Local_Time_Short__c)</formula>
         <fullName>AccountNewTab__c</fullName>
         <description>Open the account as a separate new browser tab.</description>
         <externalId>false</externalId>
-        <formula>HYPERLINK(&apos;/&apos;+Account__r.Id, Account__r.Name , &quot;_blank&quot;)</formula>
+        <formula>IF(NOT(ISBLANK(ContactId)),
+HYPERLINK(&apos;/&apos;+Account__r.Id, Account__r.Name , &quot;_blank&quot;),
+HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula>
         <inlineHelpText>Open the account as a separate new browser tab.</inlineHelpText>
         <label>Account (New Tab)</label>
         <required>false</required>
@@ -380,6 +388,11 @@ Account.tz__Local_Time_Short__c)</formula>
                     <label>AH Plus</label>
                 </value>
                 <value>
+                    <fullName>AH Plus Bioceramic Sealer</fullName>
+                    <default>false</default>
+                    <label>AH Plus Bioceramic Sealer</label>
+                </value>
+                <value>
                     <fullName>AH Temp</fullName>
                     <default>false</default>
                     <label>AH Temp</label>
@@ -507,6 +520,7 @@ Account.tz__Local_Time_Short__c)</formula>
                 <value>
                     <fullName>Bioceramic Sealer</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Bioceramic Sealer</label>
                 </value>
                 <value>
@@ -684,7 +698,6 @@ Account.tz__Local_Time_Short__c)</formula>
                 <value>
                     <fullName>DAC D</fullName>
                     <default>false</default>
-                    <isActive>false</isActive>
                     <label>DAC D</label>
                 </value>
                 <value>
@@ -727,21 +740,6 @@ Account.tz__Local_Time_Short__c)</formula>
                     <fullName>Drufo</fullName>
                     <default>false</default>
                     <label>Drufo</label>
-                </value>
-                <value>
-                    <fullName>DS Core</fullName>
-                    <default>false</default>
-                    <label>DS Core</label>
-                </value>
-                <value>
-                    <fullName>DS Core Care</fullName>
-                    <default>false</default>
-                    <label>DS Core Care</label>
-                </value>
-                <value>
-                    <fullName>DS Core Create</fullName>
-                    <default>false</default>
-                    <label>DS Core Create</label>
                 </value>
                 <value>
                     <fullName>DS PrimeTaper</fullName>
@@ -2282,6 +2280,16 @@ AND(INCLUDES(Campaign.SBU_Focus__c,&quot;Intruments&quot;),Contact.Account.CFEs_
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>IDSContact__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>IDSContact</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
         <fullName>Implant_Lost_Comparison__c</fullName>
         <description>The field checks the Implant Lost date of the Campaign and sets different  status &quot;lost before/after Campaign&quot;. Use in reports to check lost accounts. If the Account is not Lost the field is blank</description>
         <externalId>false</externalId>
@@ -3058,6 +3066,16 @@ CampaignID+Member email</description>
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>VoucherCode__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>VoucherCode</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
         <fullName>of_Guests_including_participant__c</fullName>
         <externalId>false</externalId>
         <label>Room Type</label>
@@ -3100,6 +3118,10 @@ CampaignID+Member email</description>
             </values>
             <values>
                 <fullName>AH Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3200,10 +3222,6 @@ CampaignID+Member email</description>
             </values>
             <values>
                 <fullName>Bioceramic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3348,18 +3366,6 @@ CampaignID+Member email</description>
             </values>
             <values>
                 <fullName>DAC Universal S</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DS Core</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DS Core Care</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DS Core Create</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4346,6 +4352,10 @@ CampaignID+Member email</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>AH Temp</fullName>
                 <default>false</default>
             </values>
@@ -4443,10 +4453,6 @@ CampaignID+Member email</description>
             </values>
             <values>
                 <fullName>Bioceramic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4591,18 +4597,6 @@ CampaignID+Member email</description>
             </values>
             <values>
                 <fullName>DAC Universal S</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DS Core</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DS Core Care</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DS Core Create</fullName>
                 <default>false</default>
             </values>
             <values>

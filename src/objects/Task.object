@@ -100,16 +100,22 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Lightning_Task_Record_Page</content>
         <formFactor>Large</formFactor>
-        <type>Default</type>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Lightning_Task_Record_Page</content>
         <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
@@ -121,9 +127,10 @@
         <fields>Last_Modified__c</fields>
         <label>Lightning Task Compact Layout</label>
     </compactLayouts>
-    <enableFeeds>false</enableFeeds>
+    <enableFeeds>true</enableFeeds>
     <fields>
         <fullName>ActivityDate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>CallDisposition</fullName>
@@ -139,12 +146,15 @@
     </fields>
     <fields>
         <fullName>CompletedDateTime</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>CurrencyIsoCode</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Email</fullName>
@@ -157,9 +167,11 @@
     </fields>
     <fields>
         <fullName>IsVisibleInSelfService</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -167,6 +179,7 @@
     </fields>
     <fields>
         <fullName>Priority</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -177,10 +190,12 @@
     </fields>
     <fields>
         <fullName>Status</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Subject</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -188,6 +203,7 @@
     </fields>
     <fields>
         <fullName>Type</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -198,6 +214,24 @@
         <fullName>WhoId</fullName>
         <type>Lookup</type>
     </fields>
+    <listViews>
+        <fullName>All_Tasks_Owned_by_Me</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>PRIORITY</columns>
+        <columns>STATUS</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Mine</filterScope>
+        <label>All Tasks Owned by Me</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+            <roleAndSubordinatesInternal>DNA_CRMANALYST</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
     <listViews>
         <fullName>CompletedTasks</fullName>
         <columns>SUBJECT</columns>
@@ -252,7 +286,7 @@
         <label>DACH: VDW Customer Care Team</label>
         <queue>DACH_VDW_Customer_Care_Team</queue>
         <sharedTo>
-            <allInternalUsers></allInternalUsers>
+            <group>DACH_VDW_Customer_Care_Team</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -268,6 +302,31 @@
         <columns>UPDATEDBY_USER.ALIAS</columns>
         <filterScope>Delegated</filterScope>
         <label>ENCODED:{!FilterNames.Task_DelegatedTasks}</label>
+    </listViews>
+    <listViews>
+        <fullName>IB_Equipment_Installation_Task</fullName>
+        <columns>SUBJECT</columns>
+        <columns>Objective__c</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <columns>Location_Was_Automatically_Calculated__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>STATUS</field>
+            <operation>equals</operation>
+            <value>Not Started</value>
+        </filters>
+        <label>IB: Equipment Installation</label>
+        <queue>IB_Equipment_Installation</queue>
+        <sharedTo>
+            <group>IB_Equipment_Installation</group>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>OpenTasks</fullName>
@@ -347,6 +406,38 @@
         <label>ENCODED:{!FilterNames.Task_RecurringTasks}</label>
     </listViews>
     <listViews>
+        <fullName>SureSmile_Lead_Gen_Open_Tasks</fullName>
+        <columns>DUE_DATE</columns>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>STATUS</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IS_CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>LAST_N_DAYS:30</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.FIRST_NAME</field>
+            <operation>equals</operation>
+            <value>Brenaaya,Kiason,Tahrae</value>
+        </filters>
+        <label>SureSmile Lead Gen - Open Tasks</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+            <role>NA_Customer_Service_Ortho</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>TodaysTasks</fullName>
         <columns>SUBJECT</columns>
         <columns>WHO_NAME</columns>
@@ -404,6 +495,7 @@
         </filters>
         <label>ENCODED:{!FilterNames.Task_UnscheduledTasks}</label>
     </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypes>
         <fullName>CTI_Call</fullName>
         <active>true</active>
@@ -464,11 +556,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Order%3A Sales Team Inside</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Sent email%2Ffax</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Shared Insight</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survey%2FEvaluation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1014,11 +1114,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Order%3A Sales Team Inside</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Sent email%2Ffax</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Shared Insight</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survey%2FEvaluation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1565,11 +1673,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Order%3A Sales Team Inside</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Sent email%2Ffax</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Shared Insight</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survey%2FEvaluation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2083,11 +2199,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Order%3A Sales Team Inside</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Sent email%2Ffax</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Shared Insight</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survey%2FEvaluation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

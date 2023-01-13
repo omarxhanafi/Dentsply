@@ -871,39 +871,40 @@ IF(ObtainCreditCardInformation__c, &quot;Obtain Credit Card Information&quot;  ,
     </fields>
     <fields>
         <fullName>NextActivity__c</fullName>
+        <description>TFUS-000005060</description>
         <externalId>false</externalId>
-        <formula>IF(NOT(ObtainCreditCardInformation__c), &quot;Obtain Credit Card Information&quot;, 
-IF(NOT(DiscoveryGoalAssessment__c), &quot;Discovery, Goal Assessment&quot;, 
-IF(NOT(CaseSelectionStaffRoles__c), &quot;Case Selection &amp; Staff Roles&quot;,
-IF(NOT(RecordsTrainingFinance__c), &quot;Records Training &amp; Finance&quot;,
-IF(NOT(X1stCaseSubmissionWorkflowMarketing__c), &quot;1st Case Submission,Workflow &amp; Mkt&quot;,
-IF(NOT(X1stcasereviewapproval__c),&quot;1st Case Review/Approval&quot;,
-IF(NOT(TeamTrainingOrthodonticBenefitsRDH__c), &quot;Team Training Ortho Benefits RDH&quot;,
-IF(NOT(X2ndCaseSubmissionExternal__c), &quot;2nd Case Submission - External&quot;,
-IF(NOT(X2ndCaseReviewApproval__c), &quot;2nd Case Review/Approval&quot;,
-IF(NOT(X3rdcasesubmission__c), &quot;3rd Case Submission&quot;,
-IF(NOT(TeamMeetingReviewProcesses__c),&quot;Team Meeting - Review Processes&quot;,
-IF(NOT(X3rdCaseReviewApproval__c),&quot;3rd Case Review/Approval&quot;,
-IF(NOT(ProceduralAssessment__c),&quot;Procedural Assessment&quot;,
-IF(NOT(ResetTraining__c),&quot;Reset Training&quot;,
-IF(NOT(Whoisyouridealalignerpatient__c),&quot;Who is your ideal aligner patient?&quot;,
-IF(NOT(ClinicalEducation__c),&quot;Clinical Education&quot;,
-IF(NOT(ProceduralEconomics__c),&quot;Procedural Economics&quot;,
-IF(NOT(ChairsidePatientEducation__c),&quot;Chairside Patient Education&quot;,
-IF(NOT(MarketingCampaign__c),&quot;Marketing Campaign&quot;,
-IF(NOT(QBRLowtoMedium__c),&quot;QBR (Low to Medium)&quot;,
-IF(NOT(BusinessAssessment__c),&quot;Business Assessment&quot;,
-IF(NOT(ProcessAssessment__c),&quot;Process Assessment&quot;,
-IF(NOT(PatientEducation__c),&quot;Patient Education&quot;,
-IF(NOT(Economics__c),&quot;Economics&quot;,
-IF(NOT(QBRMediumtoHighL1__c),&quot;QBR (Medium to High L1)&quot;,
-IF(NOT(PatientAcceptance__c),&quot;Patient Acceptance&quot;,
-IF(NOT(ClinicalDevelopment__c),&quot;Clinical Development&quot;,
-IF(NOT(TeamCalibration__c),&quot;Team Calibration&quot;,
-IF(NOT(MarketingM2H__c),&quot;Marketing (M 2 H)&quot;,
-IF(NOT(Peer2Peer__c),&quot;Peer 2 Peer&quot;,
-IF(NOT(QBRHighL1toHighL2__c),&quot;QBR (High L1 to High L2)&quot;,
-&quot;&quot;)))))))))))))))))))))))))))))))</formula>
+        <formula>IF(QBRHighL1toHighL2__c,&quot;No next activity identified.&quot;,
+IF(Peer2Peer__c,&quot;QBR (High L1 to High L2)&quot;,
+IF(MarketingM2H__c,&quot;Peer 2 Peer&quot;,
+IF(TeamCalibration__c,&quot;Marketing (M 2 H)&quot;,
+IF(ClinicalDevelopment__c,&quot;Team Calibration&quot;,
+IF(PatientAcceptance__c,&quot;Clinical Development&quot;,
+IF(QBRMediumtoHighL1__c,&quot;Patient Acceptance&quot;,
+IF(Economics__c,&quot;QBR (Medium to High L1)&quot;,
+IF(PatientEducation__c,&quot;Economics&quot;,
+IF(ProcessAssessment__c,&quot;Patient Education&quot;,
+IF(BusinessAssessment__c,&quot;Process Assessment&quot;,
+IF(QBRLowtoMedium__c,&quot;Business Assessment&quot;,
+IF(MarketingCampaign__c,&quot;QBR (Low to Medium)&quot;,
+IF(ChairsidePatientEducation__c,&quot;Marketing Campaign&quot;,
+IF(ProceduralEconomics__c,&quot;Chairside Patient Education&quot;,
+IF(ClinicalEducation__c,&quot;Procedural Economics&quot;,
+IF(Whoisyouridealalignerpatient__c,&quot;Clinical Education&quot;,
+IF(ResetTraining__c,&quot;Who is your ideal aligner patient?&quot;,
+IF(ProceduralAssessment__c,&quot;Reset Training&quot;,
+IF(X3rdCaseReviewApproval__c,&quot;Procedural Assessment&quot;,
+IF(TeamMeetingReviewProcesses__c,&quot;3rd Case Review/Approval&quot;,
+IF(X3rdcasesubmission__c,&quot;Team Meeting - Review Processes&quot;,
+IF(X2ndCaseReviewApproval__c, &quot;3rd Case Submission&quot;,
+IF(X2ndCaseSubmissionExternal__c, &quot;2nd Case Review/Approval&quot;,
+IF(TeamTrainingOrthodonticBenefitsRDH__c, &quot;2nd Case Submission - External&quot;,
+IF(X1stcasereviewapproval__c,&quot;Team Training Ortho Benefits RDH&quot;,
+IF(X1stCaseSubmissionWorkflowMarketing__c, &quot;1st Case Review/Approval&quot;,
+IF(RecordsTrainingFinance__c, &quot;1st Case Submission,Workflow &amp; Mkt&quot;,
+IF(CaseSelectionStaffRoles__c, &quot;Records Training &amp; Finance&quot;,
+IF(DiscoveryGoalAssessment__c, &quot;Case Selection &amp; Staff Roles&quot;,
+IF(ObtainCreditCardInformation__c, &quot;Discovery, Goal Assessment&quot;,
+ &quot;Obtain Credit Card Information&quot;)))))))))))))))))))))))))))))))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Next Activity</label>
         <required>false</required>
@@ -1439,6 +1440,36 @@ IF(NOT(QBRHighL1toHighL2__c),&quot;QBR (High L1 to High L2)&quot;,
         <unique>false</unique>
     </fields>
     <label>Procedure Tracker</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>PracticeAccount__c</columns>
+        <columns>Stage__c</columns>
+        <columns>SalesRep__c</columns>
+        <columns>RegistrationDate__c</columns>
+        <columns>LastActivity__c</columns>
+        <columns>NextActivity__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Suresmile_Trackers</fullName>
+        <columns>NAME</columns>
+        <columns>PracticeAccount__c</columns>
+        <columns>Stage__c</columns>
+        <columns>SalesRep__c</columns>
+        <columns>RegistrationDate__c</columns>
+        <columns>Contact__c</columns>
+        <columns>LastActivity__c</columns>
+        <columns>NextActivity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>ProcedureTracker__c.Clear_Aligners</value>
+        </filters>
+        <label>All Suresmile Trackers</label>
+    </listViews>
     <nameField>
         <displayFormat>Track#{000}</displayFormat>
         <label>Record Nr</label>

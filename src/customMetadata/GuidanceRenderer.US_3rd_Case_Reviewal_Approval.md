@@ -68,7 +68,7 @@
     </values>
     <values>
         <field>NextActivity__c</field>
-        <value xsi:type="xsd:string">2nd Case Review/Approval</value>
+        <value xsi:type="xsd:string">3rd Case Review/Approval</value>
     </values>
     <values>
         <field>RecordTypeDeveloperName__c</field>

@@ -15,4 +15,5 @@
     	<design:attribute name="buydateOutput" label="Output buy date"/>
     	<design:attribute name="ChoosenUserId" label="Choosen User Id"/>
     	<design:attribute name="dealerOutput" label="Output dealer Id"/>
+		<design:attribute name="isDealerMandatoryOutput" label="Output is dealer mandatory"/>
 </design:component>

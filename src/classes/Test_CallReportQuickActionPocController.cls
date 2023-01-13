@@ -56,7 +56,7 @@ public without sharing class Test_CallReportQuickActionPocController {
         Test.startTest();
         System.runAs(testUser) {
             insert callReportToInsert;
-            createdEventId = CallReportQuickActionPocController.createEvent(callReportToInsert.Id, testContact.Id, 'Manager');
+            createdEventId = CallReportQuickActionPocController.createEvent(callReportToInsert.Id, testContact.Id, 'Manager', false);
         }
         System.assertEquals(Schema.Event.SObjectType, createdEventId.getSobjectType());
         Test.stopTest();

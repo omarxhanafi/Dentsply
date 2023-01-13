@@ -1176,7 +1176,6 @@
         <sortOrder>Asc</sortOrder>
         <valueField>Id</valueField>
     </dynamicChoiceSets>
-    <environments>Default</environments>
     <formulas>
         <description>TFUS-000003033</description>
         <name>EFA_formulaContractEndDate</name>

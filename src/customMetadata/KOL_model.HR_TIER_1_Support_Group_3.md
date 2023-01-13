@@ -8,15 +8,15 @@
     </values>
     <values>
         <field>Currency__c</field>
-        <value xsi:type="xsd:string">HRK</value>
+        <value xsi:type="xsd:string">EUR</value>
     </values>
     <values>
         <field>Max__c</field>
-        <value xsi:type="xsd:double">320.0</value>
+        <value xsi:type="xsd:double">45.0</value>
     </values>
     <values>
         <field>Min__c</field>
-        <value xsi:type="xsd:double">290.0</value>
+        <value xsi:type="xsd:double">40.0</value>
     </values>
     <values>
         <field>ProfessionGroup__c</field>

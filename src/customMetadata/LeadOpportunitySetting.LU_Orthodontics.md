@@ -11,16 +11,16 @@
         <value xsi:type="xsd:string">SureSmile Aligner;Drufo;SureSmile Advanced;SureSmile IDB;SureSmile Ortho;Suresmile Wire</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Orthodontics</value>
     </values>
     <values>
         <field>Country__c</field>
         <value xsi:type="xsd:string">LU</value>
+    </values>
+    <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>

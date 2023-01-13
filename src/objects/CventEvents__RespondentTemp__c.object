@@ -1266,6 +1266,75 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Foodpreferences__c</fullName>
+        <externalId>false</externalId>
+        <label>Food preferences</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Gluten Free</fullName>
+                    <default>false</default>
+                    <label>Gluten Free</label>
+                </value>
+                <value>
+                    <fullName>Multiple or other; please contact me.</fullName>
+                    <default>false</default>
+                    <label>Multiple or other; please contact me.</label>
+                </value>
+                <value>
+                    <fullName>No Beef</fullName>
+                    <default>false</default>
+                    <label>No Beef</label>
+                </value>
+                <value>
+                    <fullName>No Eggs or Dairy</fullName>
+                    <default>false</default>
+                    <label>No Eggs or Dairy</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>No Nuts</fullName>
+                    <default>false</default>
+                    <label>No Nuts</label>
+                </value>
+                <value>
+                    <fullName>No Pork</fullName>
+                    <default>false</default>
+                    <label>No Pork</label>
+                </value>
+                <value>
+                    <fullName>No Shellfish</fullName>
+                    <default>false</default>
+                    <label>No Shellfish</label>
+                </value>
+                <value>
+                    <fullName>Pescatarian</fullName>
+                    <default>false</default>
+                    <label>Pescatarian</label>
+                </value>
+                <value>
+                    <fullName>Vegan</fullName>
+                    <default>false</default>
+                    <label>Vegan</label>
+                </value>
+                <value>
+                    <fullName>Vegetarian</fullName>
+                    <default>false</default>
+                    <label>Vegetarian</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>GDCNumber__c</fullName>
         <externalId>false</externalId>
         <label>GDC Number</label>
@@ -1324,6 +1393,11 @@
                     <fullName>CDT</fullName>
                     <default>false</default>
                     <label>CDT</label>
+                </value>
+                <value>
+                    <fullName>GDC</fullName>
+                    <default>false</default>
+                    <label>GDC</label>
                 </value>
                 <value>
                     <fullName>NPI</fullName>

@@ -51,7 +51,7 @@
                     </template>
 
                     <template if:true={renderInputs}>
-                        <lightning-input-field field-name="ActivityType__c" required=true></lightning-input-field>
+                        <lightning-input-field field-name="ActivityType__c" value={defaultCallReportActivityType} required=true></lightning-input-field>
                         <lightning-input-field field-name="ActivitySubtype__c"></lightning-input-field>
                         <lightning-input-field field-name="Call_Notes__c" value={procedureTrackingObjectives}></lightning-input-field>
                         <c-lookup-lwc selection={initialSelection} errors={errors} onsearch={handleSearch}
@@ -80,6 +80,7 @@
                             value={userCountry}></lightning-input-field>
                         <!--co-traveling -->
                      <lightning-combobox label="Co-Travel" options={coTravelTypes} onchange={handleCoTravelChange}></lightning-combobox>
+                     <lightning-input-field field-name="CourseOrEventPromotion__c"> </lightning-input-field>
                       <lightning-input-field field-name="ProductGroup__c" value={userDefaultSbu}
                             onchange={handleSbuInputChange}></lightning-input-field>
                         <lightning-input-field class="impl slds-hide" field-name="Products_discussed_IMPL__c"></lightning-input-field>

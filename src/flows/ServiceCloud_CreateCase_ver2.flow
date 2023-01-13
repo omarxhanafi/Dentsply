@@ -2446,6 +2446,20 @@
                             </rightValue>
                         </conditions>
                         <conditions>
+                            <leftValueReference>RunningUser.User_Country__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Australia</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>RunningUser.User_Country__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>New Zealand</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
                             <leftValueReference>Case.SBU__c</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>

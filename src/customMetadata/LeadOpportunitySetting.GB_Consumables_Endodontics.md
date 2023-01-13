@@ -8,11 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">AH Plus;AH Temp;AlginX;Anaestadent;Apex Locator;Aquasil;Calibra;Cavitron;Ceram.x;Ceram. X Spectra ST;Ceram.x Spectra ST Flow;Cerec Consumables;Enhance;FlexAccess;Glidepath Files;GuttaCore;GuttaCore/Calamus;GuttaSmart;Hand file user;Inserts;Integrity;IQ/ProMark Motor;Kits &amp; Motors;NuPro;Oraqix;Palodent 360;Palodent Plus;Palodent V3;Prime &amp; Bond active;Prime and Bond;Propex IQ;ProTaper Gold;ProTaper Next;Purevac;RDH;Resurge Bath;SDR flow+;SmartLite Pro;Surefil one;Surefil SDR;Tessera;TPH;TruNatomy;Ultrasonics;WaveOne Gold;Wave One Gold Glider;Vortex Blue;X-smart IQ;X-Smart Plus;Cavitron;Purevac;Anaestadent;Oraqix;NuPro;Ultrasonics;RDH;Resurge Bath</value>
-    </values>
-    <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">AH Plus;AH Temp;AlginX;Anaestadent;Apex Locator;Aquasil;Calibra;Cavitron;Ceram.x;Ceram. X Spectra ST;Ceram.x Spectra ST Flow;Cerec Consumables;Enhance;FlexAccess;Glidepath Files;GuttaCore;GuttaCore/Calamus;GuttaSmart;Hand file user;Inserts;Integrity;IQ/ProMark Motor;Kits &amp; Motors;NuPro;Oraqix;Palodent 360;Palodent Plus;Palodent V3;Prime &amp; Bond active;Prime and Bond;Propex IQ;ProTaper Gold;ProTaper Next;Purevac;RDH;Resurge Bath;SDR flow+;SmartLite Pro;Surefil one;Surefil SDR;Tessera;TPH;TruNatomy;Ultrasonics;WaveOne Gold;Wave One Gold Glider;Vortex Blue;X-smart IQ;X-Smart Plus;Cavitron;Purevac;Anaestadent;Oraqix;NuPro;Ultrasonics;RDH;Resurge Bath;All Other Endo</value>
     </values>
     <values>
         <field>Category__c</field>
@@ -21,6 +17,10 @@
     <values>
         <field>Country__c</field>
         <value xsi:type="xsd:string">GB</value>
+    </values>
+    <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>
@@ -40,7 +40,7 @@
     </values>
     <values>
         <field>ShowManualSalesLeadOwnerAssignment__c</field>
-        <value xsi:type="xsd:boolean">false</value>
+        <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
         <field>UserRoles__c</field>

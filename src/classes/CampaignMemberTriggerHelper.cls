@@ -13,6 +13,7 @@ History
 20220602   Miguel Coimbra.  Updated method updateCampaignMembersInfo to assign the CampaignMemberOwner__c field to the Campaign Owner.  
 20072022   Roberto Narbona            TFUS-000004576
 20220825   Miguel Coimbra.  TFUS-000004715 
+20221205   Roberto Narbona   IDS logic introduced.
 ----------------------------------------------------------------------------------------*/
 public class CampaignMemberTriggerHelper {
     private static final String SOBJECT_CAMPAIGN = 'Campaign';
@@ -177,10 +178,9 @@ Inputs:         @param newCampaignMembers
 ------------------------------------------------------------*/
     
     public static void createOpportunities(List<CampaignMember> newCampaignMembers, Map<Id, CampaignMember> oldCampaignMemberMap, Boolean overrideHasResponded) {
-        
+        Boolean isIDSIntegrationUser = UserInfo.getName() == 'IDS Integration' ? true : false;
         BatchSettings__c settings = BatchSettings__c.getInstance('Default');
         if (Test.isRunningTest() || settings.CampMgmtCampaignMemberTriggerIsEnabled__c){  
-            System.debug(newCampaignMembers);
             List<RecordType> oppRT = [SELECT Id, Name FROM RecordType WHERE sObjectType='Opportunity' AND DeveloperName='Lightning_Pipeline_Opportunity'];
             List<RecordType> oppDealerRT = [SELECT Id, Name FROM RecordType WHERE sObjectType='Opportunity' AND DeveloperName='Dealer_Community'];
             
@@ -385,14 +385,19 @@ Inputs:         @param newCampaignMembers
                         }
                     }
                     
+                    
+                    //Added for IDS tradeshow integration updates
+                   
+                    Boolean isIDSLogic = oldCampaignMemberMap != null && ((campaignMember.ContactId != null && oldCampaignMemberMap.get(campaignMember.Id).ContactId != null && campaignMember.ContactId != oldCampaignMemberMap.get(campaignMember.Id).ContactId ) || (isIDSIntegrationUser && ((oldCampaignMemberMap.get(campaignMember.Id).VoucherCode__c != campaignMember.VoucherCode__c) || (oldCampaignMemberMap.get(campaignMember.Id).Brand__c != campaignMember.Brand__c) || (oldCampaignMemberMap.get(campaignMember.Id).Dealer__c != campaignMember.Dealer__c)))) ;
                     //SALES LEAD CONVERSION
-                    if(convertTo == 'Sales Lead' && (recordType == 'Digital_Marketing_Campaign' || recordType == 'InPersonEventCampaign')  && campaignMember.ContactId != null && campaignMember.HasResponded == true && (respondedBefore == false || overrideHasResponded == true)){ //&& (contacts.get(campaignMember.ContactId).Account.Country__c == 'US' || contacts.get(campaignMember.ContactId).Account.Country__c == 'CA')
+                    if(convertTo == 'Sales Lead' && (recordType == 'Digital_Marketing_Campaign' || recordType == 'InPersonEventCampaign')  && campaignMember.ContactId != null && campaignMember.HasResponded == true && (respondedBefore == false || overrideHasResponded == true || isIDSLogic)){ //&& (contacts.get(campaignMember.ContactId).Account.Country__c == 'US' || contacts.get(campaignMember.ContactId).Account.Country__c == 'CA')
                         Field_Sales_Project_Members__c lead = new Field_Sales_Project_Members__c();
                         lead.Status__c = 'New';
                         //lead.Source__c = 'Email Campaign'; //campaigns.get(campaignMember.CampaignId).Source_Origin__c != null ? campaigns.get(campaignMember.CampaignId).Source_Origin__c : null;
                         lead.Source__c = campaigns.get(campaignMember.CampaignId).Source_Origin__c != null ? campaigns.get(campaignMember.CampaignId).Source_Origin__c : null;
                         //Potentially comment out these lines in case no brand should be assigned
                         String brand = campaignMember.Brand__c;
+                        lead.VoucherCode__c = campaignMember.VoucherCode__c;
                         
                         if(brand == null || brand == ''){                    
                             brand = campaigns.get(campaignMember.CampaignId).Brands__c;
@@ -483,7 +488,7 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
                     }
                     
                     //OPPORTUNITY CONVERSION
-                    if(convertTo == 'Opportunity' && (recordType == 'Digital_Marketing_Campaign' || recordType == 'InPersonEventCampaign') && campaignMember.ContactId != null && campaignMember.HasResponded == true && (respondedBefore == false || overrideHasResponded == true)){
+                    if(convertTo == 'Opportunity' && (recordType == 'Digital_Marketing_Campaign' || recordType == 'InPersonEventCampaign') && campaignMember.ContactId != null && campaignMember.HasResponded == true && (respondedBefore == false || overrideHasResponded == true || isIDSLogic)){
                         String brand = campaignMember.Brand__c;
                         If(brand == null){
                             brand = campaigns.get(campaignMember.CampaignId).Brands__c;
@@ -502,10 +507,12 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
                             //opp.LeadSource = 'Email Campaign'; //campaigns.get(campaignMember.CampaignId).Source_Origin__c != null ? campaigns.get(campaignMember.CampaignId).Source_Origin__c : null;
                             opp.LeadSource = campaigns.get(campaignMember.CampaignId).Source_Origin__c != null ? campaigns.get(campaignMember.CampaignId).Source_Origin__c : null;
                         	opp.CampaignId = campaignMember.CampaignId;
+                        	opp.Campaign__c = campaignMember.CampaignId; //Added to have related list in campaigns page layout.
                             opp.CloseDate = Date.today().addMonths(3);
                             opp.Primary_Contact__c = campaignMember.ContactId;    
                             opp.ContactId = campaignMember.ContactId;
                             opp.CustomerNotes__c = campaignMember.Description__c;
+                        	opp.VoucherCode__c = campaignMember.VoucherCode__c;
                             
                             //Please note! This logic is now built around the CMDT CountryCodeMap__mdt
                             String accountCountry = contacts.get(campaignMember.ContactId).Account.Country__c;
@@ -719,6 +726,7 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
         String eloquaIntegrationUser = 'Eloqua Integration';
         String currentUser = UserInfo.getName();
         String eloquaIntegrationUserId = UserInfo.getName() == eloquaIntegrationUser ? UserInfo.getUserId() : null;
+        
         if(currentUser == eloquaIntegrationUser){
             
             Set<String> countriesSet2Digit = new Set<String>();
@@ -767,7 +775,7 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
                 if(campMemb.LeadId != null && campMemb.recordTypeId == digitalId && leadsData.get(campMemb.LeadId).OwnerId == eloquaIntegrationUserId){
                     Lead leadToAdd = new Lead();
                     leadToAdd.Id = campMemb.LeadId;
-                    leadToAdd.OwnerId = settingsMap.get(countryCode3DigitKeyMap.get(leadsData.get(campMemb.LeadId).Country_Code_3_digit__c).Country_Code_2_digit__c + '#' + campaignsData.get(campMemb.CampaignId).Brands__c).DefaultLeadOwner__c != null ? settingsMap.get(countryCode3DigitKeyMap.get(leadsData.get(campMemb.LeadId).Country_Code_3_digit__c).Country_Code_2_digit__c + '#' + campaignsData.get(campMemb.CampaignId).Brands__c).DefaultLeadOwner__c : settingsMap.get(countryCode3DigitKeyMap.get(leadsData.get(campMemb.LeadId).Country_Code_3_digit__c).Country_Code_2_digit__c + '#DefaultCountryOwner').DefaultLeadOwner__c;
+                    leadToAdd.OwnerId = settingsMap.get(countryCode3DigitKeyMap.get(leadsData.get(campMemb.LeadId).Country_Code_3_digit__c).Country_Code_2_digit__c + '#' + campaignsData.get(campMemb.CampaignId).Brands__c) != null && settingsMap.get(countryCode3DigitKeyMap.get(leadsData.get(campMemb.LeadId).Country_Code_3_digit__c).Country_Code_2_digit__c + '#' + campaignsData.get(campMemb.CampaignId).Brands__c).DefaultLeadOwner__c != null ? settingsMap.get(countryCode3DigitKeyMap.get(leadsData.get(campMemb.LeadId).Country_Code_3_digit__c).Country_Code_2_digit__c + '#' + campaignsData.get(campMemb.CampaignId).Brands__c).DefaultLeadOwner__c : settingsMap.get(countryCode3DigitKeyMap.get(leadsData.get(campMemb.LeadId).Country_Code_3_digit__c).Country_Code_2_digit__c + '#DefaultCountryOwner').DefaultLeadOwner__c;
                     leadsToUpdate.add(leadToAdd);
                 }
             if (! leadsToUpdate.isempty())

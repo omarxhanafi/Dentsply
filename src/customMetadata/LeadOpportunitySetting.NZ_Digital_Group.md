@@ -11,10 +11,6 @@
         <value xsi:type="xsd:string">CERECE Full System MCX;CEREC Full System MCXL;CEREC Full System Upgrade;CEREC Hub;CEREC MTL;CEREC MC X;CEREC MC XL;CEREC Omnicam AC;CEREC Primemill Full System;CEREC Primescan AC;CEREC SpeedFire;Omnicam AC;Omnicam AC 2.0;Omnicam AF/AI;Primemill;Primescan</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Digital Group</value>
     </values>
@@ -23,12 +19,16 @@
         <value xsi:type="xsd:string">NZ</value>
     </values>
     <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
         <field>DefaultCampaignOwner__c</field>
-        <value xsi:type="xsd:string">0126M000000cpRY</value>
+        <value xsi:type="xsd:string">0056M000009egxL</value>
     </values>
     <values>
         <field>DefaultLeadOwner__c</field>
-        <value xsi:type="xsd:string">0126M000000cpRY</value>
+        <value xsi:type="xsd:string">0056M000009egxL</value>
     </values>
     <values>
         <field>IsTest__c</field>

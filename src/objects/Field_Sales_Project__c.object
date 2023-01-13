@@ -2651,9 +2651,24 @@
                     <label>DAC D</label>
                 </value>
                 <value>
+                    <fullName>DAC Premium</fullName>
+                    <default>false</default>
+                    <label>DAC Premium</label>
+                </value>
+                <value>
+                    <fullName>DAC Professional</fullName>
+                    <default>false</default>
+                    <label>DAC Professional</label>
+                </value>
+                <value>
                     <fullName>DAC Universal D</fullName>
                     <default>false</default>
                     <label>DAC Universal D</label>
+                </value>
+                <value>
+                    <fullName>DAC Universal S</fullName>
+                    <default>false</default>
+                    <label>DAC Universal S</label>
                 </value>
                 <value>
                     <fullName>Diamond Burs</fullName>
@@ -3489,6 +3504,7 @@
                 <controllingFieldValue>Libya</controllingFieldValue>
                 <controllingFieldValue>Yemen</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>China</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
@@ -3539,6 +3555,7 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Jordan</controllingFieldValue>
+                <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>New Zealand</controllingFieldValue>
                 <controllingFieldValue>Norway</controllingFieldValue>
                 <controllingFieldValue>Lebanon</controllingFieldValue>
@@ -3554,6 +3571,8 @@
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
                 <controllingFieldValue>Libya</controllingFieldValue>
                 <controllingFieldValue>Yemen</controllingFieldValue>
+                <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>China</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
@@ -3568,13 +3587,16 @@
                 <controllingFieldValue>Sweden</controllingFieldValue>
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
+                <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>Tunisia</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>UAE</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
+                <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
                 <controllingFieldValue>India</controllingFieldValue>
+                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>UK</controllingFieldValue>
                 <controllingFieldValue>Holland</controllingFieldValue>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
@@ -3591,6 +3613,7 @@
                 <controllingFieldValue>Belarus</controllingFieldValue>
                 <controllingFieldValue>Luxembourg</controllingFieldValue>
                 <controllingFieldValue>Philippines</controllingFieldValue>
+                <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Malta</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
@@ -3617,6 +3640,7 @@
                 <controllingFieldValue>Libya</controllingFieldValue>
                 <controllingFieldValue>Yemen</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>China</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
@@ -3685,6 +3709,7 @@
                 <controllingFieldValue>Libya</controllingFieldValue>
                 <controllingFieldValue>Yemen</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>China</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
@@ -3752,6 +3777,7 @@
                 <controllingFieldValue>Libya</controllingFieldValue>
                 <controllingFieldValue>Yemen</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>China</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
@@ -3775,6 +3801,7 @@
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
                 <controllingFieldValue>India</controllingFieldValue>
+                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>UK</controllingFieldValue>
                 <controllingFieldValue>Holland</controllingFieldValue>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
@@ -3818,6 +3845,7 @@
                 <controllingFieldValue>Libya</controllingFieldValue>
                 <controllingFieldValue>Yemen</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>China</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
@@ -3886,6 +3914,7 @@
                 <controllingFieldValue>Libya</controllingFieldValue>
                 <controllingFieldValue>Yemen</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>China</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
@@ -3954,6 +3983,7 @@
                 <controllingFieldValue>Libya</controllingFieldValue>
                 <controllingFieldValue>Yemen</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
+                <controllingFieldValue>China</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
@@ -4003,75 +4033,48 @@
                 <valueName>Prosthetics</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <valueName>Digital</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
                 <controllingFieldValue>Romania</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Latvia</controllingFieldValue>
                 <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Malta</controllingFieldValue>
                 <valueName>Class II</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
                 <controllingFieldValue>Romania</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Latvia</controllingFieldValue>
                 <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Malta</controllingFieldValue>
                 <valueName>Root To Crown</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
                 <controllingFieldValue>Romania</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Latvia</controllingFieldValue>
                 <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Philippines</controllingFieldValue>
-                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Malta</controllingFieldValue>
                 <valueName>Single Unit Crown</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Digital</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <valueName>Equipment</valueName>
             </valueSettings>
@@ -4434,6 +4437,34 @@
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>Endo_Targets_Lists_Active_and_Inactive</fullName>
+        <columns>Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Description__c</columns>
+        <columns>Category__c</columns>
+        <columns>BrandPicklist__c</columns>
+        <columns>Brand__c</columns>
+        <columns>Source__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>startsWith</operation>
+            <value>USA</value>
+        </filters>
+        <filters>
+            <field>Category__c</field>
+            <operation>equals</operation>
+            <value>Endodontics</value>
+        </filters>
+        <label>Endo Targets Lists - Active and Inactive</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+            <roleAndSubordinatesInternal>DNA_CRMANALYST</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>My_Active_Projects</fullName>
         <columns>NAME</columns>
         <columns>Description__c</columns>
@@ -4462,6 +4493,20 @@
         <language>en_US</language>
     </listViews>
     <listViews>
+        <fullName>TW_All_Target_Lists</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>UserCountry__c</field>
+            <operation>equals</operation>
+            <value>Taiwan</value>
+        </filters>
+        <label>TW: All Target Lists</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>TW_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>USA_Initiatives</fullName>
         <columns>Status__c</columns>
         <columns>AllowUsersToAddNewLeads__c</columns>
@@ -4472,6 +4517,7 @@
         <columns>Description__c</columns>
         <columns>Category__c</columns>
         <columns>Brand__c</columns>
+        <columns>RECORDTYPE</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>NAME</field>
@@ -7643,7 +7689,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>DAC Premium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DAC Professional</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>DAC Universal D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DAC Universal S</fullName>
                 <default>false</default>
             </values>
             <values>

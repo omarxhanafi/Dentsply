@@ -965,6 +965,18 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>AccountPostalCode__c</fullName>
+        <description>TFUS-000005101
+Account.ETM2_Zip_Code__c</description>
+        <externalId>false</externalId>
+        <formula>Account.ETM2_Zip_Code__c</formula>
+        <label>Account Postal Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>AccountProgramMember__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</description>
@@ -977,6 +989,18 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AccountStateCity__c</fullName>
+        <description>TFUS-000005101
+Account.ETM2_State_City__c</description>
+        <externalId>false</externalId>
+        <formula>Account.ETM2_State_City__c</formula>
+        <label>Account State &amp; City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Account_Country_Ortho__c</fullName>
@@ -1679,6 +1703,19 @@ IF(AND(RecordType.Id = &apos;0120J000000jnHR&apos;, ISPICKVAL(Account_Plan_Type_
     </fields>
     <fields>
         <fullName>CampaignId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Campaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
@@ -3909,6 +3946,11 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                     <label>AH Plus</label>
                 </value>
                 <value>
+                    <fullName>AH Plus Bioceramic Sealer</fullName>
+                    <default>false</default>
+                    <label>AH Plus Bioceramic Sealer</label>
+                </value>
+                <value>
                     <fullName>AH Temp</fullName>
                     <default>false</default>
                     <label>AH Temp</label>
@@ -4032,11 +4074,6 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                     <fullName>Bioceramic</fullName>
                     <default>false</default>
                     <label>Bioceramic</label>
-                </value>
-                <value>
-                    <fullName>Bioceramic Sealer</fullName>
-                    <default>false</default>
-                    <label>Bioceramic Sealer</label>
                 </value>
                 <value>
                     <fullName>Bluecam</fullName>
@@ -4197,6 +4234,11 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                     <fullName>C-Pilot</fullName>
                     <default>false</default>
                     <label>C-Pilot</label>
+                </value>
+                <value>
+                    <fullName>DAC D</fullName>
+                    <default>false</default>
+                    <label>DAC D</label>
                 </value>
                 <value>
                     <fullName>DAC Premium</fullName>
@@ -5298,6 +5340,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
+                <controllingFieldValue>Equipment</controllingFieldValue>
                 <valueName>Axano</valueName>
             </valueSettings>
             <valueSettings>
@@ -5307,11 +5350,23 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
+                <valueName>DAC D</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
                 <valueName>DAC Premium</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
                 <valueName>DAC Professional</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
+                <valueName>DAC Universal D</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
+                <valueName>DAC Universal S</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
@@ -5413,7 +5468,6 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             <valueSettings>
                 <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
                 <controllingFieldValue>Treatment Centers</controllingFieldValue>
-                <controllingFieldValue>Equipment</controllingFieldValue>
                 <valueName>TENEO</valueName>
             </valueSettings>
             <valueSettings>
@@ -5800,6 +5854,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
+                <valueName>AH Plus Bioceramic Sealer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endodontics</controllingFieldValue>
                 <valueName>AH Temp</valueName>
             </valueSettings>
             <valueSettings>
@@ -5821,10 +5879,6 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
                 <valueName>Bioceramic</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Endodontics</controllingFieldValue>
-                <valueName>Bioceramic Sealer</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
@@ -6042,6 +6096,17 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Implants</controllingFieldValue>
+                <controllingFieldValue>Digital Solutions</controllingFieldValue>
+                <controllingFieldValue>ATLANTIS</controllingFieldValue>
+                <valueName>Atlantis Abutments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Implants</controllingFieldValue>
+                <controllingFieldValue>ATLANTIS</controllingFieldValue>
+                <valueName>Atlantis Suprastructures</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Implants</controllingFieldValue>
                 <valueName>Azento Astra Tech</valueName>
             </valueSettings>
             <valueSettings>
@@ -6147,11 +6212,6 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Digital Solutions</controllingFieldValue>
-                <controllingFieldValue>ATLANTIS</controllingFieldValue>
-                <valueName>Atlantis Abutments</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Digital Solutions</controllingFieldValue>
                 <valueName>Immediate Smile</valueName>
             </valueSettings>
             <valueSettings>
@@ -6177,10 +6237,6 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             <valueSettings>
                 <controllingFieldValue>ATLANTIS</controllingFieldValue>
                 <valueName>ACB with ASA</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>ATLANTIS</controllingFieldValue>
-                <valueName>Atlantis Suprastructures</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>InLab</controllingFieldValue>
@@ -6390,6 +6446,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
@@ -6443,6 +6500,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -6450,8 +6508,12 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
+                <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
+                <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Ireland</controllingFieldValue>
                 <controllingFieldValue>Italy</controllingFieldValue>
@@ -6492,20 +6554,25 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
+                <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
+                <controllingFieldValue>Malaysia</controllingFieldValue>
                 <valueName>Digital Group</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
+                <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Ireland</controllingFieldValue>
@@ -6555,6 +6622,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -6562,6 +6630,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
@@ -6615,6 +6684,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -6622,10 +6692,12 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
+                <controllingFieldValue>Indonesia</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Ireland</controllingFieldValue>
                 <controllingFieldValue>Italy</controllingFieldValue>
@@ -6672,6 +6744,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -6679,6 +6752,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
@@ -6732,6 +6806,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -6739,6 +6814,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
@@ -6792,6 +6868,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -6799,6 +6876,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Oman</controllingFieldValue>
+                <controllingFieldValue>Philippines</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
@@ -6852,6 +6930,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>South Korea</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -6873,51 +6952,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Finland</controllingFieldValue>
                 <controllingFieldValue>Holland</controllingFieldValue>
                 <controllingFieldValue>DEX</controllingFieldValue>
-                <controllingFieldValue>Japan</controllingFieldValue>
                 <valueName>Restorative</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Singapore</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Hong Kong</controllingFieldValue>
-                <controllingFieldValue>Malaysia</controllingFieldValue>
-                <valueName>Digital</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>DEX</controllingFieldValue>
-                <valueName>Class II</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <valueName>Equipment</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>DEX</controllingFieldValue>
-                <valueName>Root To Crown</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>New Zealand</controllingFieldValue>
-                <controllingFieldValue>DEX</controllingFieldValue>
-                <valueName>Single Unit Crown</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Brazil</controllingFieldValue>
@@ -6996,7 +7031,35 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             <valueSettings>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>DEX</controllingFieldValue>
+                <valueName>Class II</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <valueName>Digital</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <valueName>Equipment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
                 <valueName>Others</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>DEX</controllingFieldValue>
+                <valueName>Root To Crown</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>DEX</controllingFieldValue>
+                <valueName>Single Unit Crown</valueName>
             </valueSettings>
         </valueSet>
     </fields>
@@ -7519,6 +7582,17 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OrderNo__c</fullName>
+        <externalId>false</externalId>
+        <label>Order No</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Orthodontics__c</fullName>
@@ -10952,6 +11026,17 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>VoucherCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Voucher Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Was_the_Decision_Maker_Present__c</fullName>
         <externalId>false</externalId>
         <label>Was the Decision Maker Present?</label>
@@ -11721,6 +11806,63 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <type>Checkbox</type>
     </fields>
     <listViews>
+        <fullName>AE_All_IMPL_Opportunities</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSED</columns>
+        <columns>OPPORTUNITY.WON</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>UAE</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.FULL_NAME</field>
+            <operation>equals</operation>
+            <value>Abdulqader Altoubeh,John Agustin,Abdullah Jumah,George Mahfood,Michael Tagaro</value>
+        </filters>
+        <label>AE: All IMPL Opportunities</label>
+        <sharedTo>
+            <group>AE_IMPL_commercial</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AE_All_Opportunities_UAE</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSED</columns>
+        <columns>OPPORTUNITY.WON</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>UAE</value>
+        </filters>
+        <label>AE: All Opportunities - UAE</label>
+        <sharedTo>
+            <role>MEA_Managing_Director</role>
+            <role>MENA_All_countries</role>
+            <role>MENA_Clinical_Affair</role>
+            <role>MENA_Product_Specialists</role>
+            <role>MENA_Product_function_Shared_Service</role>
+            <role>MENA_TR_Product_function_Shared_Service</role>
+            <roleAndSubordinatesInternal>AE_Managing_Director</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>ANZ_All_Opportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>CORE.USERS.FULL_NAME</columns>
@@ -11849,6 +11991,35 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>EG_All_Opportunities_Egypt</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSED</columns>
+        <columns>OPPORTUNITY.WON</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>Egypt</value>
+        </filters>
+        <label>EG: All Opportunities - Egypt</label>
+        <sharedTo>
+            <role>MEA_Managing_Director</role>
+            <role>MENA_All_countries</role>
+            <role>MENA_Clinical_Affair</role>
+            <role>MENA_Product_Specialists</role>
+            <role>MENA_Product_function_Shared_Service</role>
+            <role>MENA_TR_Product_function_Shared_Service</role>
+            <roleAndSubordinatesInternal>EG_Commercial_Leader</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>Global_X_SBU_Opportunities</fullName>
         <columns>CORE.USERS.FULL_NAME</columns>
         <columns>OPPORTUNITY.CREATED_DATE</columns>
@@ -11868,9 +12039,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         </filters>
         <label>#All X-SBU Opportunities</label>
         <language>en_US</language>
-        <sharedTo>
-            <group>Global_X_SBU_Prospecting</group>
-        </sharedTo>
+        <sharedTo/>
     </listViews>
     <listViews>
         <fullName>HK_All_Opportunities</fullName>
@@ -11900,6 +12069,30 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <label>HK: All Opportunities</label>
         <sharedTo>
             <roleAndSubordinatesInternal>HK_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>IN_All_Opportunities_India</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSED</columns>
+        <columns>OPPORTUNITY.WON</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>India</value>
+        </filters>
+        <label>IN: All Opportunities India</label>
+        <sharedTo>
+            <role>MEA_Managing_Director</role>
+            <role>ZA_IN_Product_Function_Shared_Service</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -11941,6 +12134,161 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>JO_IR_LY_All_Opportunities</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSED</columns>
+        <columns>OPPORTUNITY.WON</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>Jordan,Iraq</value>
+        </filters>
+        <label>JO+IR+LY: All Opportunities</label>
+        <sharedTo>
+            <role>JO_IR_LY</role>
+            <role>MEA_Managing_Director</role>
+            <role>MENA_All_countries</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>KW_All_Opportunities_Kuwait</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSED</columns>
+        <columns>OPPORTUNITY.WON</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>Kuwait</value>
+        </filters>
+        <label>KW: All Opportunities - Kuwait</label>
+        <sharedTo>
+            <role>KW_OM_BH_MV_QA_PK_Sales_Manager</role>
+            <role>MEA_Managing_Director</role>
+            <role>MENA_All_countries</role>
+            <role>MENA_Clinical_Affair</role>
+            <role>MENA_Product_Specialists</role>
+            <role>MENA_Product_function_Shared_Service</role>
+            <role>MENA_TR_Product_function_Shared_Service</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>LB_IR_All_Opportunities</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSED</columns>
+        <columns>OPPORTUNITY.WON</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>Lebanon,Iran</value>
+        </filters>
+        <label>LB+IR: All Opportunities</label>
+        <sharedTo>
+            <role>LB_IR_Sales_Manager</role>
+            <role>MEA_Managing_Director</role>
+            <role>MENA_All_countries</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MA_SN_All_Opportunities</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSED</columns>
+        <columns>OPPORTUNITY.WON</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>Morocco</value>
+        </filters>
+        <label>MA+SN: All Opportunities</label>
+        <sharedTo>
+            <role>MA_SN_Sales_Manager</role>
+            <role>MEA_Managing_Director</role>
+            <role>MENA_All_countries</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MENA_All_Opportunities</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSED</columns>
+        <columns>OPPORTUNITY.WON</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>Egypt,Kuwait,Saudi Arabia,UAE,Lebanon,Morocco,Algeria,Tunisia,Cameroun,Senegal,Iran,Iraq,Libya</value>
+        </filters>
+        <label>MENA All Opportunities</label>
+        <sharedTo>
+            <role>MEA_Managing_Director</role>
+            <role>MENA_All_countries</role>
+            <role>MENA_Clinical_Affair</role>
+            <role>MENA_Product_Specialists</role>
+            <role>MENA_Product_function_Shared_Service</role>
+            <role>MENA_TR_Product_function_Shared_Service</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Open_Opportunities_Homepage</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>NA_Brand__c</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Lightning_Pipeline_Opportunity</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>notEqual</operation>
+            <value>Closed Lost,Closed Won</value>
+        </filters>
+        <label>My Open Opportunities</label>
+    </listViews>
+    <listViews>
         <fullName>My_Opportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -11979,6 +12327,131 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>My_Team_s_OPEN_OPPS_closing_This_month</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>NA_Brand__c</columns>
+        <columns>NA_Category__c</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>Dealer__c</columns>
+        <columns>Created_by_Manager__c</columns>
+        <columns>Prospect__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Owned_by_My_Direct_Reports__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_YEAR</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>notEqual</operation>
+            <value>Closed Lost,Closed Won</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>My Team&apos;s OPEN OPPS closing This month</label>
+        <sharedTo>
+            <territory>Global_Setup.US_D0101_Long_Island</territory>
+            <territory>Global_Setup.US_D0102_Hartford_CT</territory>
+            <territory>Global_Setup.US_D0103_Boston</territory>
+            <territory>Global_Setup.US_D0104_Albany</territory>
+            <territory>Global_Setup.US_D0105_Providence_RI</territory>
+            <territory>Global_Setup.US_D0106_Portland_ME</territory>
+            <territory>Global_Setup.US_D0107_White_Plains_NY</territory>
+            <territory>Global_Setup.US_D0108_Newark</territory>
+            <territory>Global_Setup.US_D0109_Metro_NY</territory>
+            <territory>Global_Setup.US_D0201_Scranton</territory>
+            <territory>Global_Setup.US_D0202_Wilmington_DE</territory>
+            <territory>Global_Setup.US_D0203_Philadelphia</territory>
+            <territory>Global_Setup.US_D0204_Buffalo_Syracuse</territory>
+            <territory>Global_Setup.US_D0205_Pittsburgh</territory>
+            <territory>Global_Setup.US_D0206_Baltimore_North</territory>
+            <territory>Global_Setup.US_D0207_Baltimore_South</territory>
+            <territory>Global_Setup.US_D0208_Washington_DC</territory>
+            <territory>Global_Setup.US_D0209_Richmond_VA</territory>
+            <territory>Global_Setup.US_D0301_Greensboro_Roanoke</territory>
+            <territory>Global_Setup.US_D0302_Knoxville_TN</territory>
+            <territory>Global_Setup.US_D0303_Columbus_OH</territory>
+            <territory>Global_Setup.US_D0304_Charlotte_NC</territory>
+            <territory>Global_Setup.US_D0305_Raleigh_NC</territory>
+            <territory>Global_Setup.US_D0306_Greenville_SC</territory>
+            <territory>Global_Setup.US_D0307_Columbia_SC</territory>
+            <territory>Global_Setup.US_D0308_Nashville</territory>
+            <territory>Global_Setup.US_D0309_Louisville</territory>
+            <territory>Global_Setup.US_D0310_Cincinnati</territory>
+            <territory>Global_Setup.US_D0401_Atlanta_North</territory>
+            <territory>Global_Setup.US_D0402_Atlanta_South</territory>
+            <territory>Global_Setup.US_D0403_Jacksonville</territory>
+            <territory>Global_Setup.US_D0404_Orlando</territory>
+            <territory>Global_Setup.US_D0405_New_Orleans</territory>
+            <territory>Global_Setup.US_D0406_Miami</territory>
+            <territory>Global_Setup.US_D0407_Ft_Lauderdale</territory>
+            <territory>Global_Setup.US_D0408_Tampa_Bay</territory>
+            <territory>Global_Setup.US_D0409_Birmingham_AL</territory>
+            <territory>Global_Setup.US_D0501_Cleveland</territory>
+            <territory>Global_Setup.US_D0502_Detroit</territory>
+            <territory>Global_Setup.US_D0503_Indianapolis</territory>
+            <territory>Global_Setup.US_D0504_Chicago_South</territory>
+            <territory>Global_Setup.US_D0505_Lansing_MI</territory>
+            <territory>Global_Setup.US_D0506_Grand_Rapids_MI</territory>
+            <territory>Global_Setup.US_D0507_Milwaukee_North</territory>
+            <territory>Global_Setup.US_D0508_Des_Moines</territory>
+            <territory>Global_Setup.US_D0509_Chicago_North</territory>
+            <territory>Global_Setup.US_D0510_Milwaukee_South</territory>
+            <territory>Global_Setup.US_D0601_Kansas_City</territory>
+            <territory>Global_Setup.US_D0602_Central_IL</territory>
+            <territory>Global_Setup.US_D0603_Omaha</territory>
+            <territory>Global_Setup.US_D0604_Minneapolis_East</territory>
+            <territory>Global_Setup.US_D0605_Minneapolis_West</territory>
+            <territory>Global_Setup.US_D0606_St_Louis</territory>
+            <territory>Global_Setup.US_D0607_Denver_North</territory>
+            <territory>Global_Setup.US_D0608_Denver_South</territory>
+            <territory>Global_Setup.US_D0701_Little_Rock</territory>
+            <territory>Global_Setup.US_D0702_Oklahoma_City</territory>
+            <territory>Global_Setup.US_D0703_Albuquerque</territory>
+            <territory>Global_Setup.US_D0704_Houston_South</territory>
+            <territory>Global_Setup.US_D0705_Austin_TX</territory>
+            <territory>Global_Setup.US_D0706_Dallas</territory>
+            <territory>Global_Setup.US_D0707_Ft_Worth</territory>
+            <territory>Global_Setup.US_D0708_Houston_North</territory>
+            <territory>Global_Setup.US_D0709_San_Antonio</territory>
+            <territory>Global_Setup.US_D0801_Spokane</territory>
+            <territory>Global_Setup.US_D0802_Boise</territory>
+            <territory>Global_Setup.US_D0803_Sacramento</territory>
+            <territory>Global_Setup.US_D0804_San_Francisco</territory>
+            <territory>Global_Setup.US_D0805_Napa</territory>
+            <territory>Global_Setup.US_D0806_Salem_OR</territory>
+            <territory>Global_Setup.US_D0807_Portland_OR</territory>
+            <territory>Global_Setup.US_D0808_Seattle_South</territory>
+            <territory>Global_Setup.US_D0809_Seattle_North_AK</territory>
+            <territory>Global_Setup.US_D0810_Salt_Lake_City</territory>
+            <territory>Global_Setup.US_D0901_San_Jose</territory>
+            <territory>Global_Setup.US_D0902_Hawaii</territory>
+            <territory>Global_Setup.US_D0903_Las_Vegas</territory>
+            <territory>Global_Setup.US_D0904_Phoenix_North</territory>
+            <territory>Global_Setup.US_D0905_Phoenix_South</territory>
+            <territory>Global_Setup.US_D0906_Los_Angeles</territory>
+            <territory>Global_Setup.US_D0907_Santa_Barbara</territory>
+            <territory>Global_Setup.US_D0908_Riverside_CA</territory>
+            <territory>Global_Setup.US_D0909_Anaheim</territory>
+            <territory>Global_Setup.US_D0910_San_Diego</territory>
+            <territory>Global_Setup.US_D0911_Fresno</territory>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>My_Team_s_Open_Opps_RM</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -11993,6 +12466,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <columns>Dealer__c</columns>
         <columns>Created_by_Manager__c</columns>
         <columns>Prospect__c</columns>
+        <columns>OverallNotes__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Owned_by_My_Direct_Reports__c</field>
@@ -12026,6 +12500,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <columns>CORE.USERS.FULL_NAME</columns>
         <columns>CREATEDBY_USER.ALIAS</columns>
         <columns>Created_by_Manager__c</columns>
+        <columns>OverallNotes__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>NA_Brand__c</field>
@@ -12046,8 +12521,8 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <columns>OPPORTUNITY.STAGE_NAME</columns>
         <columns>OPPORTUNITY.CLOSE_DATE</columns>
         <columns>ACCOUNT.NAME</columns>
-        <columns>Account_Strategy__c</columns>
         <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OverallNotes__c</columns>
         <columns>CORE.USERS.FULL_NAME</columns>
         <filterScope>Mine</filterScope>
         <filters>
@@ -12061,7 +12536,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             <value>0</value>
         </filters>
         <label>NA: My Opportunities To Be Updated</label>
-        <language>en_US</language>
         <sharedTo>
             <group>NA_DI_US_and_Canada_Sales</group>
         </sharedTo>
@@ -12091,7 +12565,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             <value>Closed Lost,Closed Won</value>
         </filters>
         <label>My Open Opportunities (Owned by Me)</label>
-        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>RM_Opptys_Created_by_My_Direct_Reports</fullName>
@@ -12102,6 +12575,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <columns>OPPORTUNITY.STAGE_NAME</columns>
         <columns>OPPORTUNITY.CLOSE_DATE</columns>
         <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OverallNotes__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Created_by_My_Direct_Reports__c</field>
@@ -12122,6 +12596,36 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <sharedTo>
             <role>NA_CRM_Analyst</role>
             <territoryAndSubordinates>Global_Setup.US_Executives</territoryAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SA_All_Opportunities_Saudi_Arabia</fullName>
+        <columns>Dealer_s_Sales_Rep__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSED</columns>
+        <columns>OPPORTUNITY.WON</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>Saudi Arabia</value>
+        </filters>
+        <label>SA: All Opportunities - Saudi Arabia</label>
+        <sharedTo>
+            <role>MEA_Managing_Director</role>
+            <role>MENA_All_countries</role>
+            <role>MENA_Clinical_Affair</role>
+            <role>MENA_Product_Specialists</role>
+            <role>MENA_Product_function_Shared_Service</role>
+            <role>MENA_TR_Product_function_Shared_Service</role>
+            <roleAndSubordinatesInternal>SA_Managing_Director</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -12169,6 +12673,30 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>Sales_Lead_Owner</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.FULL_NAME</field>
+            <operation>equals</operation>
+            <value>Daiani Wetter - Inactive</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Opportunity Owner for bulk Change</label>
+        <sharedTo>
+            <role>BR_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>TH_All_Opportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -12195,6 +12723,132 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <label>TH: All Opportunities</label>
         <sharedTo>
             <roleAndSubordinatesInternal>TH_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>TR_All_Opportunities_Turkey</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSED</columns>
+        <columns>OPPORTUNITY.WON</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>India</value>
+        </filters>
+        <label>TR: All Opportunities Turkey</label>
+        <sharedTo>
+            <role>MEA_Managing_Director</role>
+            <role>MENA_TR_Product_function_Shared_Service</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>TW_Consumables_Opportunities_Closed</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Dealer__c</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.TYPE</columns>
+        <columns>NA_Category__c</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>OPPORTUNITY.LAST_ACTIVITY</columns>
+        <columns>CrossSellOpportunity__c</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <filterScope>Team</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>Taiwan</value>
+        </filters>
+        <label>TW: Consumables Opportunities Closed</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>TW_Consumables_Sales_Manager</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>TW_Consumables_Opportunities_Proces</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Dealer__c</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.TYPE</columns>
+        <columns>OPPORTUNITY.PROBABILITY</columns>
+        <columns>NA_Category__c</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CrossSellOpportunity__c</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>OPPORTUNITY.LAST_ACTIVITY</columns>
+        <filterScope>Team</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>Taiwan</value>
+        </filters>
+        <label>TW: Consumables Opportunities Processing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>TW_Consumables_Sales_Manager</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Test_for_Opp_Team_view</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>NA_Brand__c</columns>
+        <columns>NA_Category__c</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>Dealer__c</columns>
+        <columns>Created_by_Manager__c</columns>
+        <columns>Prospect__c</columns>
+        <filterScope>SalesTeam</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_YEAR</value>
+        </filters>
+        <label>Test for Opp Team view</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>UK_My_Open_Opportunities</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>NA_Brand__c</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>Dealer__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Lightning_Pipeline_Opportunity</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>notEqual</operation>
+            <value>Closed Lost,Closed Won</value>
+        </filters>
+        <label>UK My  Open Opportunities</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>UK_IE_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -12237,11 +12891,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <columns>OPPORTUNITY.CLOSE_DATE</columns>
         <columns>OPPORTUNITY.STAGE_NAME</columns>
         <columns>CORE.USERS.FULL_NAME</columns>
-        <columns>CFEs_Last_6_Months_D__c</columns>
         <columns>NA_Category__c</columns>
         <columns>NA_Brand__c</columns>
+        <columns>OverallNotes__c</columns>
         <columns>Dealer__c</columns>
-        <columns>OPPORTUNITY.AGE_IN_DAYS</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>OPPORTUNITY.CLOSED</field>
@@ -12251,6 +12904,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <label>NA: All Open Opportunities</label>
         <sharedTo>
             <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>VN_All_Opportunities</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>Vietnam</value>
+        </filters>
+        <label>VN: All Opportunities</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>VN_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -12264,6 +12936,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <columns>OPPORTUNITY.CLOSED</columns>
         <columns>OPPORTUNITY.WON</columns>
         <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
         <filterScope>Everything</filterScope>
         <label>#All Opportunities</label>
     </listViews>
@@ -34693,6 +35366,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                 <default>false</default>
             </values>
             <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>AH Temp</fullName>
                 <default>false</default>
             </values>
@@ -34786,10 +35463,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>Bioceramic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -40890,6 +41563,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                 <default>false</default>
             </values>
             <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>AH Temp</fullName>
                 <default>false</default>
             </values>
@@ -40987,10 +41664,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>Bioceramic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Bioceramic Sealer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -73427,7 +74100,10 @@ TEXT( Account.Country__c ) = &quot;VA&quot;))</errorConditionFormula>
   RecordTypeId  = &quot;01220000000PiO4&quot; ||
   RecordTypeId  = &quot;0120J000000cmdX&quot; ) &amp;&amp; 
 ( TEXT(Account.Country__c) = &quot;FR&quot; ||
-  TEXT(Account.Country__c) = &quot;MC&quot; )</errorConditionFormula>
+  TEXT(Account.Country__c) = &quot;MC&quot; ||
+  TEXT(Account.Country__c) = &quot;AD&quot; ||
+  TEXT(Account.Country__c) = &quot;ES&quot; ||
+  TEXT(Account.Country__c) = &quot;PT&quot;)</errorConditionFormula>
         <errorMessage>You can&apos;t edit opportunities that have been created with record types that are valid only for Salesforce-Classic countries</errorMessage>
     </validationRules>
     <validationRules>

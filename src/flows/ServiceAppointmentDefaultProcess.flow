@@ -146,7 +146,7 @@
             </processMetadataValues>
             <name>MobileTimes</name>
             <value>
-                <elementReference>formula_11_myRule_10_A1_0771421528</elementReference>
+                <elementReference>formula_11_myRule_10_A1_1189587019</elementReference>
             </value>
         </inputParameters>
     </actionCalls>
@@ -404,7 +404,7 @@
             </processMetadataValues>
             <name>MobileTimes</name>
             <value>
-                <elementReference>formula_16_myRule_15_A1_1790900264</elementReference>
+                <elementReference>formula_16_myRule_15_A1_7097937627</elementReference>
             </value>
         </inputParameters>
     </actionCalls>
@@ -845,7 +845,7 @@
             </processMetadataValues>
             <name>Notification_Type_Id</name>
             <value>
-                <elementReference>formula_6_myRule_5_A1_1082013174</elementReference>
+                <elementReference>formula_6_myRule_5_A1_7141061734</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -1479,7 +1479,7 @@
                 <stringValue>IF(ISCHANGED([ServiceAppointment].FSSK__FSK_Mobile_Start_Time__c), true, false) </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_11_myRule_10_A1_0771421528</name>
+        <name>formula_11_myRule_10_A1_1189587019</name>
         <dataType>Boolean</dataType>
         <expression>IF(ISCHANGED({!myVariable_current.FSSK__FSK_Mobile_Start_Time__c}), true, false)</expression>
     </formulas>
@@ -1490,7 +1490,7 @@
                 <stringValue>IF(ISCHANGED([ServiceAppointment].FSSK__FSK_Mobile_End_Time__c ), true, false)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_16_myRule_15_A1_1790900264</name>
+        <name>formula_16_myRule_15_A1_7097937627</name>
         <dataType>Boolean</dataType>
         <expression>IF(ISCHANGED({!myVariable_current.FSSK__FSK_Mobile_End_Time__c} ), true, false)</expression>
     </formulas>
@@ -1501,7 +1501,7 @@
                 <stringValue>$Setup.FSSK__FSK_FSL_Starter_Kit__c.FSSK__Custom_Notification_Type_Id__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_6_myRule_5_A1_1082013174</name>
+        <name>formula_6_myRule_5_A1_7141061734</name>
         <dataType>String</dataType>
         <expression>{!$Setup.FSSK__FSK_FSL_Starter_Kit__c.FSSK__Custom_Notification_Type_Id__c}</expression>
     </formulas>
@@ -1965,7 +1965,7 @@ NOT(ISBLANK({!myVariable_current.SchedStartTime}))
         <object>ServiceAppointment</object>
     </recordUpdates>
     <startElementReference>myDecision</startElementReference>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>myCollection_myRule_20_A1recipientIds</name>
         <dataType>String</dataType>

@@ -76,7 +76,7 @@
     </values>
     <values>
         <field>HomeInsideSalesDashboard__c</field>
-        <value xsi:type="xsd:string">Iberia_Sales_Home_Page_v2</value>
+        <value xsi:type="xsd:string">Iberia_Inside_Sales_Account_Page_v2</value>
     </values>
     <values>
         <field>HomeMarketingDashboardFilter__c</field>

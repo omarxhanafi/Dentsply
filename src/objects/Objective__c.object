@@ -152,7 +152,7 @@
     <description>This account plan is based on the &quot;OGSM&quot; strategic planning methodology: an OGSM is a written and easily communicated statement of an organization’s Objective, Goals, Strategies and Measures. OGSM brings alignment, transparency of priorities and metrics that define success.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
+    <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
@@ -170,6 +170,7 @@
         <relationshipName>Account_Plan_Objectives</relationshipName>
         <relationshipOrder>0</relationshipOrder>
         <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>MasterDetail</type>
@@ -180,6 +181,7 @@
         <externalId>false</externalId>
         <label>Business Unit</label>
         <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -242,6 +244,7 @@
 Goals are numbers that define what success looks like, usually financial and/or operational, it makes the Objective visible in measurable terms.</inlineHelpText>
         <label>Goals</label>
         <length>300</length>
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -252,6 +255,7 @@ Goals are numbers that define what success looks like, usually financial and/or 
         <externalId>false</externalId>
         <label>Action Plan</label>
         <length>300</length>
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -264,6 +268,7 @@ Goals are numbers that define what success looks like, usually financial and/or 
 Strategies are words that provide explanations and descriptions of specific choices that focus an organization’s plans toward accomplishing the desired Objective and Goals</inlineHelpText>
         <label>Strategies &amp; Initiatives</label>
         <length>300</length>
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -276,6 +281,7 @@ Strategies are words that provide explanations and descriptions of specific choi
 Measures are numbers that define an organization’s progress toward delivering a Strategy. Each Strategy should have no more than two or three Measures that define whether the Strategy is effective and is having the desired impact. Each Measure is tracked to determine the progress of a Strategy, and used to make decisions regarding any necessary adjustments.</inlineHelpText>
         <label>Measures</label>
         <length>300</length>
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -288,6 +294,7 @@ Measures are numbers that define an organization’s progress toward delivering 
  The Objective should define the playing field and the rules for winning. An Objective is a constant and meaningful reminder to the organization about what success looks like in the future. An effective Objective statement is not generic; it is a customized, business-specific view of where the business is headed.</inlineHelpText>
         <label>Objective</label>
         <length>300</length>
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -298,6 +305,7 @@ Measures are numbers that define an organization’s progress toward delivering 
         <externalId>false</externalId>
         <label>Status Notes</label>
         <length>300</length>
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -308,6 +316,7 @@ Measures are numbers that define an organization’s progress toward delivering 
         <externalId>false</externalId>
         <label>Status</label>
         <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -352,6 +361,7 @@ Measures are numbers that define an organization’s progress toward delivering 
     <nameField>
         <displayFormat>OB-{000}</displayFormat>
         <label>Objective #</label>
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>

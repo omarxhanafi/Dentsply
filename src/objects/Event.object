@@ -1964,23 +1964,23 @@ Case no : 00487797  // Case: 00627926</description>
     <validationRules>
         <fullName>NA_Activity_TypeSubtype_at_Complete</fullName>
         <active>true</active>
-        <description>For North America, Activity Type and subtype must be completed when an Event is set to Completed</description>
-        <errorConditionFormula>AND(   Customer_Facing_Event__c =TRUE,
-TEXT( Event_Status__c )= &quot;Completed&quot;,
-
-OR(
-TEXT( $User.Market__c) =&quot;NA&quot;,
-TEXT( $User.Market__c) =&quot;Japan&quot;
-),
-
-OR(
-ISBLANK(TEXT(Astra_Tech_Type__c )),
-ISBLANK(TEXT(Activity_Subtype__c))
-)
-
+        <description>For USA, Canada, and Indonesia, the Activity Type+Subtype must be filled if it&apos;s a customer-facing event.</description>
+        <errorConditionFormula>AND(
+	Customer_Facing_Event__c = TRUE
+	,
+	OR(
+		TEXT( $User.User_Country__c) = &quot;USA&quot;,
+		TEXT( $User.User_Country__c) = &quot;Canada&quot;,
+		TEXT( $User.User_Country__c) = &quot;Indonesia&quot;
+	)
+	,
+	OR(
+		ISBLANK(TEXT(Astra_Tech_Type__c )),
+		ISBLANK(TEXT(Activity_Subtype__c))
+	)
 )</errorConditionFormula>
-        <errorDisplayField>Astra_Tech_Type__c</errorDisplayField>
-        <errorMessage>Please add an Activity Type and Activity Subtype to this Event to complete it.</errorMessage>
+        <errorDisplayField>Activity_Subtype__c</errorDisplayField>
+        <errorMessage>Please add an Activity Subtype to this Event.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>NA_Associate_w_Contact_Lead_AND_Acc_OptY</fullName>
@@ -2133,6 +2133,19 @@ CASE( User_Country__c ,
 )</errorConditionFormula>
         <errorMessage>Please enter information about your Customer Facing Event either in call notes or what products were discussed.</errorMessage>
     </validationRules>
+    <webLinks>
+        <fullName>Clone_Custom</fullName>
+        <availability>online</availability>
+        <description>Custom Clone button to allow event with only one attendee to be cloned.</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>{!URLFOR($Action.Event.Clone, Event.Id)}</url>
+    </webLinks>
     <webLinks>
         <fullName>Edit_Classic</fullName>
         <availability>online</availability>

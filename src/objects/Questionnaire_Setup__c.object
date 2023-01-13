@@ -592,6 +592,10 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>xSBU</controllingFieldValue>
+                <valueName>Digital Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>xSBU</controllingFieldValue>
                 <valueName>Equipment</valueName>
             </valueSettings>
             <valueSettings>
@@ -675,9 +679,9 @@
         <columns>Create_Opportunity__c</columns>
         <columns>Default_User__c</columns>
         <columns>Owner_Of_Opportunity__c</columns>
+        <columns>Status__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
-        <language>en_US</language>
     </listViews>
     <nameField>
         <label>Questionnaire Name</label>

@@ -593,6 +593,26 @@
         </valueSet>
     </fields>
     <label>KOL model</label>
+    <listViews>
+        <fullName>KROATIA</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>Currency__c</columns>
+        <columns>Max__c</columns>
+        <columns>Min__c</columns>
+        <columns>ProfessionGroup__c</columns>
+        <columns>Professor__c</columns>
+        <columns>Tier__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Country__c</field>
+            <operation>equals</operation>
+            <value>HR</value>
+        </filters>
+        <label>KROATIA</label>
+        <language>en_US</language>
+    </listViews>
     <pluralLabel>KOL models</pluralLabel>
     <visibility>Public</visibility>
 </CustomObject>

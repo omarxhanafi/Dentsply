@@ -3,6 +3,7 @@
     <apiVersion>55.0</apiVersion>
     <description>TFUS-000004637 - Update with correct VAT caldulation. The VAT calculation was done on non-discounted price.
 TFUS-000005064 - added Retail Price and Base Price as additional field updates (calculation already existed)</description>
+    <environments>Default</environments>
     <formulas>
         <description>Checks if Base Price exists - if not uses ListPrice</description>
         <name>BasePriceLogic</name>

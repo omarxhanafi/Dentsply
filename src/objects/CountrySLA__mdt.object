@@ -23,6 +23,17 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>FallbackEntitlementRecord__c</fullName>
+        <description>Default entitlement record to be set on cases created through email2case and is not assigned to a contact</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Fallback Entitlement Record</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <label>Service Cloud: Country SLA</label>
     <pluralLabel>Service Cloud: Countries SLA</pluralLabel>
     <visibility>Public</visibility>

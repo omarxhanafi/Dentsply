@@ -82,14 +82,14 @@ export default class InsideSalesCampaignTracker extends NavigationMixin(Lightnin
             return mappedCampaign;
             console.log('mappedCampaign',mappedCampaign);
         })
-        //remove comments on the following code to make TFUS-000004772 
-        /*this.mappedCampaignsData.unshift({
+
+        this.mappedCampaignsData.unshift({
             id:'Unrelated',
             memberId:'test',
             name:'Activity Unrelated to a Campaign',
             memberStatus:'Not Available',
             isUnrelatedCampaign : true
-        });*/
+        });
         
     }
 

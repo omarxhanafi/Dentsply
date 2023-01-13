@@ -270,6 +270,50 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>geopointe__RPC_Business_End_Of_Day__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>geopointe__Route_Plan_Configuration__r.geopointe__End_Of_Day__c</formula>
+        <label>Business Close Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>geopointe__RPC_Business_End_Of_Lunch__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>geopointe__Route_Plan_Configuration__r.geopointe__End_Of_Lunch__c</formula>
+        <label>Business Lunch End Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>geopointe__RPC_Business_Start_Of_Day__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>geopointe__Route_Plan_Configuration__r.geopointe__Start_Of_Day__c</formula>
+        <label>Business Open Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>geopointe__RPC_Business_Start_Of_Lunch__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>geopointe__Route_Plan_Configuration__r.geopointe__Start_Of_Lunch__c</formula>
+        <label>Business Lunch Start Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>geopointe__RPC_Completed_Child_Relationship_Name__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -615,6 +659,15 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>geopointe__RPC_Use_Business_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>geopointe__Route_Plan_Configuration__r.geopointe__Use_Location_Visit_Hours__c</formula>
+        <label>Use Location Visit Hours</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>geopointe__RPC_Use_Location_Visit_Hours__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
@@ -668,6 +721,17 @@
         <formula>geopointe__Route_Plan_Configuration__r.geopointe__Visiting_Hours__c</formula>
         <inlineHelpText>Defines the days and hours during which visits can be made. Use JSON and 24-hour format: {&quot;Mon&quot;:(&quot;08:00&quot;,&quot;17:30&quot;),&quot;Tue&quot;:(&quot;07:30&quot;,&quot;13:00&quot;)}</inlineHelpText>
         <label>Visiting Hours</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>geopointe__Records_With_Incorrect_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Records With Incorrect Business Hours</label>
+        <length>255</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>

@@ -11,16 +11,16 @@
         <value xsi:type="xsd:string">Automate;Carbide Burs;LS Attachments;Midwest E/Plus/Pro;Phoenix;Rhino;Shorty;Stylus/Plus;Tradition/Plus</value>
     </values>
     <values>
-        <field>Brands__c</field>
-        <value xsi:nil="true"/>
-    </values>
-    <values>
         <field>Category__c</field>
         <value xsi:type="xsd:string">Equipment</value>
     </values>
     <values>
         <field>Country__c</field>
         <value xsi:type="xsd:string">CA</value>
+    </values>
+    <values>
+        <field>Dealer_Distributor_is_Mandatory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>

@@ -55,22 +55,6 @@
     </actionCalls>
     <apiVersion>51.0</apiVersion>
     <assignments>
-        <name>Assign_Account_id_from_Account_program_member</name>
-        <label>Assign Account id from Account program member</label>
-        <locationX>2232</locationX>
-        <locationY>3233</locationY>
-        <assignmentItems>
-            <assignToReference>accountId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>InitAcc.Account__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Get_account_details</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Assign_lead_details</name>
         <label>Assign lead details</label>
         <locationX>2569</locationX>
@@ -421,7 +405,7 @@
     <assignments>
         <name>Set_accountId_from_Contact</name>
         <label>Set accountId from Contact</label>
-        <locationX>1478</locationX>
+        <locationX>1476</locationX>
         <locationY>4565</locationY>
         <assignmentItems>
             <assignToReference>accountId</assignToReference>
@@ -449,29 +433,6 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Set_accountId_from_program_member</name>
-        <label>Set accountId from Program Member</label>
-        <locationX>1881</locationX>
-        <locationY>3235</locationY>
-        <assignmentItems>
-            <assignToReference>accountId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Account_InProgramMemberContext.recordId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>InitAcc.Account__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Account_InProgramMemberContext.recordId</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Get_account_details</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>SetAccountContactFromMember</name>
         <label>Set account &amp; contact from member</label>
         <locationX>1495</locationX>
@@ -481,13 +442,6 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>InitAcc.Account__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>GetAccountProgramMember.Account__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -833,61 +787,6 @@
         </rules>
     </decisions>
     <decisions>
-        <description>Sets the account id flow variables if we are in the context of Account Program Member</description>
-        <name>Store_Account_Id_if_In_Program_Member_Context</name>
-        <label>Store Account Id if In Program Member Context</label>
-        <locationX>2056</locationX>
-        <locationY>3393</locationY>
-        <defaultConnector>
-            <targetReference>Get_account_details</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Not In Program Member Context (Default)</defaultConnectorLabel>
-        <rules>
-            <name>In_Account_Program_Member_Context_Account_selected</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>ObjectType</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>a5t</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Account_InProgramMemberContext.recordId</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Set_accountId_from_program_member</targetReference>
-            </connector>
-            <label>In Account Program Member Context - Account selected</label>
-        </rules>
-        <rules>
-            <name>In_Account_Program_Member_Context_No_Account_selected</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Account_InProgramMemberContext.recordId</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ObjectType</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>a5t</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Assign_Account_id_from_Account_program_member</targetReference>
-            </connector>
-            <label>In Account Program Member Context - No Account selected</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>WhereQuestionsFound</name>
         <label>Where questions found?</label>
         <locationX>5025</locationX>
@@ -950,16 +849,10 @@ Marketing Campaign Follow-Up</description>
         <picklistField>Source__c</picklistField>
         <picklistObject>Field_Sales_Project_Members__c</picklistObject>
     </dynamicChoiceSets>
-    <environments>Default</environments>
     <formulas>
         <name>AccCountry</name>
         <dataType>String</dataType>
         <expression>&quot;&amp; TEXT(Get_account_details.Country__c) &amp; &quot;</expression>
-    </formulas>
-    <formulas>
-        <name>AccountValueInProgramMemberContext</name>
-        <dataType>String</dataType>
-        <expression>{!Account_InProgramMemberContext.recordId}</expression>
     </formulas>
     <formulas>
         <name>CategoryBrandMissingFormula</name>
@@ -1283,7 +1176,7 @@ Marketing Campaign Follow-Up</description>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Store_Account_Id_if_In_Program_Member_Context</targetReference>
+            <targetReference>Get_account_details</targetReference>
         </connector>
         <fields>
             <name>LeadScript</name>
@@ -1330,42 +1223,6 @@ Marketing Campaign Follow-Up</description>
             </visibilityRule>
         </fields>
         <fields>
-            <name>Account_InProgramMemberContext</name>
-            <extensionName>c:flow_lookupLwc</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>label</name>
-                <value>
-                    <stringValue>Account</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>isMultiEntry</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>sObjectName</name>
-                <value>
-                    <stringValue>Account</stringValue>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>ObjectType</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <stringValue>a5t</stringValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
             <name>ContactLwcLookup</name>
             <extensionName>c:flow_lookupLwc</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -1394,15 +1251,15 @@ Marketing Campaign Follow-Up</description>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>accountId</name>
-                <value>
-                    <elementReference>accountId</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
                 <name>recordId</name>
                 <value>
                     <elementReference>formulaContactId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>accountId</name>
+                <value>
+                    <elementReference>accountId</elementReference>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1418,23 +1275,6 @@ Marketing Campaign Follow-Up</description>
                     </rightValue>
                 </conditions>
             </visibilityRule>
-        </fields>
-        <fields>
-            <name>Product_interest_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Product_interest_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>12</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
             <name>HotLeadInit</name>

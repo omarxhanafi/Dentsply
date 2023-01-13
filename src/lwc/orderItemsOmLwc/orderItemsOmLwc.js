@@ -16,6 +16,7 @@ import getOrderItems from '@salesforce/apex/OrderManagement_CC.getOrderItems';
 import updateOrderItems from '@salesforce/apex/OrderManagement_CC.insertOrderItems';
 import deleteOrderItem from '@salesforce/apex/OrderManagement_CC.deleteOrderItem';
 import refreshFormulas from '@salesforce/apex/OrderManagement_CC.refreshFormulas';
+import getUserDecimalSeparator from '@salesforce/apex/OrderManagement_CC.getUserDecimalSeparator';
 //import refreshOrderFormulas from '@salesforce/apex/OrderManagement_CC.refreshFormulasOrder';
 //Custom Labels
 import selectAll from '@salesforce/label/c.OM_Select_All';
@@ -38,6 +39,7 @@ import orderItemDelete from '@salesforce/label/c.OM_Order_Item_Delete';
 import orderItemEdit from '@salesforce/label/c.OM_Order_Item_Edit';
 import orderItemSave from '@salesforce/label/c.OM_Update_Order_Item_Save';
 import orderItemCancel from '@salesforce/label/c.OM_Update_Order_Item_Cancel'
+import messageWhenPatternMisMatch from '@salesforce/label/c.OM_Message_When_Discount_Pattern_MisMatch'
 export default class OrderItemsOmLwc extends LightningElement {
     @api userUiTheme;
     @api order;
@@ -53,11 +55,16 @@ export default class OrderItemsOmLwc extends LightningElement {
     @track pageSize = 200;
     @track pageNumber = 1;
     @track defaultValue = '';
+    @track discountInputValue = this.isMobile ? 0 : '';
     @track discountInput = this.isMobile ? 0 : '';
     @track loading = true;
     @track selectAll = false;
     @track secondaryApprovalLevel = "No approval needed";
     @track approvalLevel = "No approval needed";
+    patternMismatch = false;
+    decimalSeparator = '.';
+    discountPattern = "^\\d*\\.?\\d+$";
+
     @track labels = {
         selectAll,
         applyDiscount,
@@ -78,7 +85,8 @@ export default class OrderItemsOmLwc extends LightningElement {
         orderItemDelete,
         orderItemEdit,
         orderItemSave,
-        orderItemCancel
+        orderItemCancel,
+        messageWhenPatternMisMatch
     };
     // new
     @track orderItemTileActions = [
@@ -101,11 +109,24 @@ export default class OrderItemsOmLwc extends LightningElement {
     currentTileAction;
     @track orderItemObjectInfo;
     // end new
-    
-    connectedCallback() {
-        
-        this.getOrderItemsCounter();
 
+    connectedCallback() {
+        this.getOrderItemsCounter();
+        this.getDecimalSeparator();
+    }
+
+    /**
+     * Detects the user decimal separator through apex method getUserDecimalSeparator
+     * Sets the pattern to validate against the discount input
+     */
+    getDecimalSeparator(){
+        getUserDecimalSeparator().then(result => {
+                this.decimalSeparator = result;
+                if(result === ',')
+                {
+                    this.discountPattern = "^\\d*,?\\d+$";
+                }
+        })
     }
 
     @wire(getObjectInfo, { objectApiName: ORDER_ITEM_OBJECT })
@@ -294,6 +315,7 @@ export default class OrderItemsOmLwc extends LightningElement {
             if(result === 'SUCCESS') {
                 showToast(this, this.userUiTheme, 'Success', orderItems.length + ' ' + this.labels.updateOrderItemsSuccessMessage, 'success');
                 this.getOrderItemsCounter();
+                this.discountInputValue = this.isMobile ? 0 : '';
                 this.discountInput = this.isMobile ? 0 : '';
             } else {
                 showToast(this, this.userUiTheme, 'ERROR', result, 'error');
@@ -358,8 +380,8 @@ export default class OrderItemsOmLwc extends LightningElement {
     get isOrderItemsSelected() {
         return !this.orderItems.some(orderItem => orderItem.isSelected);
     }
-    get isDiscountSelected() {
-        return !(this.discountInput && !this.isOrderItemsSelected) || this.discountInput > this.maxDiscount;
+    get isDiscountSelected(){
+        return !(this.discountInput && !this.isOrderItemsSelected) || this.discountInput > this.maxDiscount || this.patternMismatch;
     }
     get isContractSelected() {
         return !this.order.Contract;
@@ -377,12 +399,35 @@ export default class OrderItemsOmLwc extends LightningElement {
             this.orderItems[i].isSelected = this.selectAll;
         }
     }
-    handleChangeDiscountInput(event) {
-        this.discountInput = event.target.value;
+
+    /**
+     * 'onchange' Event Handle for Discount input
+     * If the user enters an invalid input, we update this.patternMismatch, therefore the Apply button is deactivated
+     * Supports Special case to parse comma separated floats
+     * @param event - onchange event
+     */
+    handleChangeDiscountInput(event)
+    {
+        // Disable 'Apply Custom Discount' if pattern is mismatching
+        let regexPattern = new RegExp(this.discountPattern);
+        this.patternMismatch = !regexPattern.test(event.target.value);
+
+        // Parsing the input value
+        if(this.decimalSeparator === ',')
+        {
+            let formattedInput = event.target.value;
+            if(event.target.value.indexOf(',') != -1)
+            {
+                formattedInput = formattedInput.replace(/,/g,'.');
+            }
+            this.discountInput = parseFloat(formattedInput);
+        }
+        else
+        {
+            this.discountInput = parseFloat(event.target.value);
+        }
     }
-    /*updateOrderItem() {
-        this.loading = true;
-    }*/
+
     openUpdateOrderItemForm(event) {
         this.itemToUpdate = this.orderItems[event.target.dataset.index];
     }

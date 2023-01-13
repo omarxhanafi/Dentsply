@@ -238,27 +238,27 @@
                                                     <template if:false={orderItem.disableSelectedAndQuantityBox}> 
                                                         <template if:false={order.Pricebook2.ShowPricingfromMicroServiceOM__c}>
                                                             <dt class="slds-dl_horizontal__label">
-                                                                <p class="slds-truncate">{priceBookEntryUnitPriceLabel}:</p>
+                                                                <p class="slds-truncate">{priceBookEntryUnitPriceLabel}:&nbsp;</p>
                                                             </dt>
                                                             <dd class="slds-dl_horizontal__detail slds-tile__meta">
-                                                                {orderItem.UnitPrice} {orderItem.Currency}</dd>
+                                                                <lightning-formatted-number value={orderItem.UnitPrice}></lightning-formatted-number>&nbsp;{orderItem.Currency}</dd>
                                                         </template>  
                                                     
                                                     <template if:true={order.Pricebook2.ShowPricingfromMicroServiceOM__c}>
                                                         <dt class="slds-dl_horizontal__label">
-                                                            <p class="slds-truncate">{orderItemRetailPriceLabel}:</p>
+                                                            <p class="slds-truncate">{orderItemRetailPriceLabel}:&nbsp;</p>
                                                         </dt>
                                                         <dd class="slds-dl_horizontal__detail slds-tile__meta">
-                                                            {orderItem.AXRetailPrice__c} {orderItem.Currency}</dd>
+                                                            <lightning-formatted-number value={orderItem.AXRetailPrice__c}></lightning-formatted-number>&nbsp;{orderItem.Currency}</dd>
                                                         <dt class="slds-dl_horizontal__label">
-                                                            <p class="slds-truncate">{priceBookEntryUnitPriceLabel}:</p>
+                                                            <p class="slds-truncate">{priceBookEntryUnitPriceLabel}:&nbsp;</p>
                                                         </dt>
                                                         <dd class="slds-dl_horizontal__detail slds-tile__meta">
-                                                            {orderItem.UnitPrice} {orderItem.Currency} ({orderItem.AXDiscount__c}  %)</dd>
+                                                            <lightning-formatted-number value={orderItem.UnitPrice}></lightning-formatted-number>&nbsp;{orderItem.Currency} (<lightning-formatted-number value={orderItem.AXDiscount__c}></lightning-formatted-number>  %)</dd>
                                                     </template>
                                                     </template>
                                                     <template if:true={orderItem.disableSelectedAndQuantityBox}>
-                                                        <p style="color:red"> {orderItem.AXRetailPrice__c} </p>                                                        
+                                                        <p style="color:red"> <lightning-formatted-number value={orderItem.AXRetailPrice__c}></lightning-formatted-number> </p>
                                                     </template>
                                                     <!-- <template if:true={orderItem.LocalProductDescription__c}>
                                                         <dt class="slds-dl_horizontal__label">
@@ -283,23 +283,23 @@
                                                 <template if:false={orderItem.disableSelectedAndQuantityBox}>
                                                     <template if:false={order.Pricebook2.ShowPricingfromMicroServiceOM__c}>
                                                         <template if:true={order.Pricebook2.Show_Price_OM__c}>
-                                                            <li class="slds-item"> {orderItemUnitPriceLabel}:
-                                                                {orderItem.UnitPrice}
-                                                                {orderItem.Currency}</li>
+                                                            <li class="slds-item"> {orderItemUnitPriceLabel}:&nbsp;
+                                                                <lightning-formatted-number value={orderItem.UnitPrice}></lightning-formatted-number>
+                                                                &nbsp;{orderItem.Currency}</li>
                                                         </template>
                                                             
                                                     </template>
                                                     
                                                     <template if:true={order.Pricebook2.ShowPricingfromMicroServiceOM__c}>
-                                                        <li class="slds-item">{orderItemRetailPriceLabel}: {orderItem.AXRetailPrice__c} {orderItem.Currency}
+                                                        <li class="slds-item">{orderItemRetailPriceLabel}:&nbsp;<lightning-formatted-number value={orderItem.AXRetailPrice__c}></lightning-formatted-number> &nbsp;{orderItem.Currency}
                                                         </li>
-                                                        <li class="slds-item"> {orderItemUnitPriceLabel}:
-                                                            {orderItem.UnitPrice}
-                                                            {orderItem.Currency} ({orderItem.AXDiscount__c}  %)</li>                                         
+                                                        <li class="slds-item"> {orderItemUnitPriceLabel}:&nbsp;
+                                                            <lightning-formatted-number value={orderItem.UnitPrice}></lightning-formatted-number>
+                                                            &nbsp;{orderItem.Currency} (<lightning-formatted-number value={orderItem.AXDiscount__c}></lightning-formatted-number>  %)</li>
                                                     </template>
                                                 </template>
                                                 <template if:true={orderItem.disableSelectedAndQuantityBox}>
-                                                    <li class="slds-item" style="color:red"> {orderItem.AXRetailPrice__c} 
+                                                    <li class="slds-item" style="color:red"> <lightning-formatted-number value={orderItem.AXRetailPrice__c}></lightning-formatted-number>
                                                     </li>  
                                                 </template>
                                                 <!-- <template if:true={orderItem.LocalProductDescription__c}>
