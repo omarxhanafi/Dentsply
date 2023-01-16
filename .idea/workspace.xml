@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/classes/Test_BatchCreateProcedureTrackers.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_BatchCreateProcedureTrackers.cls" afterDir="false" />
-    </list>
+    <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,13 +42,13 @@
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
                   <option name="body" value="List&lt;ProcedureTrackerCreationSetting__mdt&gt; procedureTrackerCreationSettings = [SELECT Id, CountryList__c, NumberOfDays__c FROM ProcedureTrackerCreationSetting__mdt];&#10;&#10;// Init Batch Parameters&#10;List&lt;String&gt; procedureTrackerCountryCodes = new List&lt;String&gt;();&#10;&#10;Integer nbrOfDays = 7;&#10;&#10;// Getting a list of country codes &amp; number of days&#10;if (!procedureTrackerCreationSettings.isEmpty()) {&#10;    procedureTrackerCountryCodes = procedureTrackerCreationSettings[0].CountryList__c.split(';');&#10;    nbrOfDays = (Integer) procedureTrackerCreationSettings[0].NumberOfDays__c;&#10;}&#10;&#10;// Get all Sales Analytics records that were created within the specified number of days, have no active procedure tracker linked to them and have a country within the ProcedureTrackerCountry__mdt&#10;String query = 'SELECT Id, Account__c, Account__r.Country__c, Invoice_Date__c ' +&#10;        'FROM Sales_Analytics__c ' +&#10;        'WHERE Invoice_Date__c = LAST_N_DAYS:' + nbrOfDays + ' ' +&#10;        'AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE ProcedureType__c = \'Clear Aligners\') ' +&#10;        'AND Account__r.Country__c IN :procedureTrackerCountryCodes ' +&#10;        'AND Product__r.Article__c IN (\'DIGI-500152\', \'DIGI-500153\', \'DIGI-500159\') ' +&#10;        'AND Quantity__c &gt; 0 ' +&#10;        'ORDER BY Invoice_Date__c ASC';&#10;&#10;System.debug(Database.query(query).size());" />
-                  <option name="connectionName" value="StgJan" />
+                  <option name="connectionName" value="SureSmile" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="Anonymous Apex 2" />
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
                   <option name="body" value="BatchCreateProcedureTrackers batch = new BatchCreateProcedureTrackers();&#10;Database.executeBatch(batch, 200); // 200 is the batch size, you can adjust this value as needed&#10;    " />
-                  <option name="connectionName" value="StgJan" />
+                  <option name="connectionName" value="SureSmile" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="Anonymous Apex 4" />
                 </AnonymousApexSavedDocument>
@@ -209,6 +207,7 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:BATCHCREATEPROCEDURETRACKERS" value="1673520299998" />
+                      <entry key="APEXCLASS:TEST_BATCHCREATEPROCEDURETRACKERS" value="1673859442143" />
                       <entry key="APEXCLASS:TEST_GUIDANCERENDERERCONTROLLER" value="1673358702288" />
                       <entry key="APEXCLASS:TEST_PROCEDURETRACKERTRIGGERHELPER" value="1673520299998" />
                       <entry key="FLOW:PROCEDURE_TRACKER_AFTER_HANDLER" value="1673355873000" />
@@ -5572,7 +5571,7 @@
                 </SoqlQuerySavedDocument>
                 <SoqlQuerySavedDocument>
                   <option name="body" value="select SalesAnalytics__c from ProcedureTracker__c where CreatedDate = LAST_N_DAYS:1" />
-                  <option name="connectionName" value="StgJan" />
+                  <option name="connectionName" value="SureSmile" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 4" />
                   <option name="splitterProportion" value="0.309509" />
@@ -5632,7 +5631,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="FINEST" />
       <option name="calloutsLogLevel" value="FINEST" />
-      <option name="connectionName" value="StgJan" />
+      <option name="connectionName" value="SureSmile" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="FINEST" />
@@ -5679,7 +5678,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="StgJan" />
+      <option name="connectionName" value="SureSmile" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -5726,7 +5725,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="StgJan" />
+      <option name="connectionName" value="SureSmile" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -5765,7 +5764,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="StgJan" />
+      <option name="connectionName" value="SureSmile" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -5812,7 +5811,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="StgJan" />
+      <option name="connectionName" value="SureSmile" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -5933,12 +5932,12 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Dentsply$Test_findLeadMatch_testExecuteLeadSearch.ic2" NAME="HOTFIX Coverage Results" MODIFIED="1667918143842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="HOTFIX" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OrderManagement_CC_testCloneOrderWithPricingMicroServiceCallOutWithNoSourceRecord.ic2" NAME="DevNov Coverage Results" MODIFIED="1666690699780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_ProcedureTrackerTriggerHelper_testcheckUniqueness.ic2" NAME="StgJan Coverage Results" MODIFIED="1673520387472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_NewContractController_testEligibilityOfCreation.ic2" NAME="DevFeb Coverage Results" MODIFIED="1673603932022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevFeb" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_GuidanceRendererController.ic2" NAME="SureSmile Coverage Results" MODIFIED="1669718040013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_BatchCreateProcedureTrackers_testBatchCreateProcedureTrackers.ic2" NAME="StgJan Coverage Results" MODIFIED="1673859457008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
   </component>
 </project>
