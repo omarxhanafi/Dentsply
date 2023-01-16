@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <assignments>
+        <name>Add_found_products_to_the_trial_opportunity</name>
+        <label>Add found products to the trial opportunity</label>
+        <locationX>568</locationX>
+        <locationY>45</locationY>
+        <assignmentItems>
+            <assignToReference>var_UsedInLoop_Current_Product_Used.Trial_Tender__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Input_var_opp_id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>var_UsedInLoop_Current_Product_Used.Non_ERP_Product__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>var_usedInLoop_Product_profiling.Product_Name__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_profiling_product_to_opp</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_profiling_product_to_opp</name>
+        <label>Add profiling product to opp</label>
+        <locationX>573</locationX>
+        <locationY>177</locationY>
+        <assignmentItems>
+            <assignToReference>SobjColl_CurrentProductsUsed</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>var_UsedInLoop_Current_Product_Used</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_found_products_profile_to_the_opp_current_products_used</targetReference>
+        </connector>
+    </assignments>
+    <description>When creating a Trial &amp; Tender Opportunity this flow looks up the associated contact and adds all profiled products frrom the contact to the opportunity.</description>
+    <interviewLabel>TrialAndTenders_Current_Products_Use_Assignment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>TrialAndTenders_Current_Products_Use_Assignment</label>
+    <loops>
+        <name>Assign_found_products_profile_to_the_opp_current_products_used</name>
+        <label>Assign found products profile to the opp current products used</label>
+        <locationX>359</locationX>
+        <locationY>45</locationY>
+        <assignNextValueToReference>var_usedInLoop_Product_profiling</assignNextValueToReference>
+        <collectionReference>SobjColl_Product_Profiling</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_found_products_to_the_trial_opportunity</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>create_Current_product_used</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>create_Current_product_used</name>
+        <label>create Current product used</label>
+        <locationX>365</locationX>
+        <locationY>240</locationY>
+        <inputReference>SobjColl_CurrentProductsUsed</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Find_Product_profiling_for_the_contact</name>
+        <label>Find Product profiling for the contact</label>
+        <locationX>143</locationX>
+        <locationY>49</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_found_products_profile_to_the_opp_current_products_used</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Contact__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Input_Contact_Id</elementReference>
+            </value>
+        </filters>
+        <object>Product_Profiling__c</object>
+        <outputReference>SobjColl_Product_Profiling</outputReference>
+        <queriedFields>Product_Name__c</queriedFields>
+    </recordLookups>
+    <startElementReference>Find_Product_profiling_for_the_contact</startElementReference>
+    <status>Active</status>
+    <variables>
+        <description>ID of contact related to the opportunity thats starts the flow. 
+Needed to find product profiling for this contact</description>
+        <name>Input_Contact_Id</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Opportunity (Trial &amp; Tender) ID that starts the flow.</description>
+        <name>Input_var_opp_id</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Used to set the Current Products Used to the same as on the COntact Profiling</description>
+        <name>SobjColl_CurrentProductsUsed</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Current_products_used__c</objectType>
+    </variables>
+    <variables>
+        <description>Used to capture all IDs of related products profiled</description>
+        <name>SobjColl_Product_Profiling</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Product_Profiling__c</objectType>
+    </variables>
+    <variables>
+        <description>used in loop to add the products profiled as current products used</description>
+        <name>var_UsedInLoop_Current_Product_Used</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Current_products_used__c</objectType>
+    </variables>
+    <variables>
+        <description>used when looping through found product profiling and assigned them as current products used.</description>
+        <name>var_usedInLoop_Product_profiling</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Product_Profiling__c</objectType>
+    </variables>
+</Flow>

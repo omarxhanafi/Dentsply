@@ -12,8 +12,11 @@ public class Test_ProcedureTrackerTriggerHelper {
         User user = TestDataFactory.createUsers(1, '#System: System Administrator')[0]; 
         System.runas(user) {        
             Account currentAccount = TestDataFactory.createAccounts(1, 'CIM_Account', user.Id)[0];
+            currentAccount.Country__c = 'BE';
+            update currentAccount;
+
             ProcedureTracker__c pt1 = new ProcedureTracker__c(PracticeAccount__c = currentAccount.Id, 
-                                                                RecordTypeId = Schema.SObjectType.ProcedureTracker__c.getRecordTypeInfosByName().get('Clear Aligners').getRecordTypeId(), 
+                                                                RecordTypeId = Schema.SObjectType.ProcedureTracker__c.getRecordTypeInfosByName().get('Clear Aligners - Global').getRecordTypeId(),
                                                                 ProcedureType__c  = 'Clear Aligners');
             insert pt1;
             System.debug('miguser'+user.Alias);
@@ -22,7 +25,7 @@ public class Test_ProcedureTrackerTriggerHelper {
             Test.startTest(); 
             try{
                 ProcedureTracker__c pt2 = new ProcedureTracker__c(PracticeAccount__c = currentAccount.Id,                                                                
-                                                                RecordTypeId = Schema.SObjectType.ProcedureTracker__c.getRecordTypeInfosByName().get('Clear Aligners').getRecordTypeId(), 
+                                                                RecordTypeId = Schema.SObjectType.ProcedureTracker__c.getRecordTypeInfosByName().get('Clear Aligners - Global').getRecordTypeId(),
                                                                 ProcedureType__c  = 'Clear Aligners');
                 insert pt2;
                 System.debug('mig2'+ pt2);

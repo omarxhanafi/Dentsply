@@ -38,7 +38,12 @@ public without sharing class Test_BatchCreateProcedureTrackers {
             insert testProduct[0];
 
             // Create test sales analytics records
-            Sales_Analytics__c testSalesAnalytics = new Sales_Analytics__c(Account__c = testAccount[0].Id, Product__c = testProduct[0].Id, Invoice_Date__c = Date.today().addDays(-5));
+            Sales_Analytics__c testSalesAnalytics = new Sales_Analytics__c(
+                    Account__c = testAccount[0].Id,
+                    Product__c = testProduct[0].Id,
+                    Invoice_Date__c = Date.today().addDays(-5),
+                    Quantity__c = 1
+            );
 
             insert testSalesAnalytics;
 

@@ -40,20 +40,16 @@ global class BatchCreateProcedureTrackers implements Database.Batchable<sObject>
                 'WHERE Invoice_Date__c = LAST_N_DAYS:' + nbrOfDays + ' ' +
                 'AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE ProcedureType__c = \'Clear Aligners\') ' +
                 'AND Account__r.Country__c IN :procedureTrackerCountryCodes ' +
-                'AND Product__r.Article__c IN (\'DIGI-500152\', \'DIGI-500153\', \'DIGI-500159\')' +
+                'AND Product__r.Article__c IN (\'DIGI-500152\', \'DIGI-500153\', \'DIGI-500159\') ' +
+                'AND Quantity__c > 0 ' +
                 'ORDER BY Invoice_Date__c ASC';
 
         return Database.getQueryLocator(query);
     }
 
     global void execute(Database.BatchableContext bc, List<Sales_Analytics__c> scope) {
-        System.debug('Scope : ' + scope);
-        System.debug('Scope Size : ' + scope.size());
-
         // Remove duplicates based on the account
         scope = getDeduplicatedInvoices(scope);
-
-        System.debug('Deduplicated Scope Size : ' + scope.size());
 
         // Init procedure tracker list
         List<ProcedureTracker__c> procedureTrackerList = new List<ProcedureTracker__c>();
@@ -73,26 +69,20 @@ global class BatchCreateProcedureTrackers implements Database.Batchable<sObject>
             countrySet.add(eachSalesAnalytic.Account__r.Country__c);
         }
 
-        System.debug('accountIdSet : ' + accountIdSet);
-        System.debug('countrySet : ' + countrySet);
-
         // Getting a list of all territories related to the account ids
         List<ObjectTerritory2Association> objectTerritoryAssociations = [SELECT Id, ObjectId, SobjectType, Territory2Id
         FROM ObjectTerritory2Association
         WHERE ObjectId in :accountIdSet
         ];
-        System.debug('objectTerritoryAssociations : ' + objectTerritoryAssociations);
 
         Set<Id> territoryIdSet = new Set<Id>();
 
         for(ObjectTerritory2Association eachAssociation : objectTerritoryAssociations){
             territoryIdSet.add(eachAssociation.Territory2Id);
         }
-        System.debug('territoryIdSet : ' + territoryIdSet);
 
         // We get a list of lead & opportunity settings custom metadata related to the countries
         List<LeadOpportunitySetting__mdt> leadOpportunitySettingsList = getSureSmileLeadOpportunitySettingsByCountry(countrySet);
-        System.debug('leadOpportunitySettingsList : ' + leadOpportunitySettingsList);
 
         // Creating a list of all roles from the custom metadata
         for(LeadOpportunitySetting__mdt eachLeadOpportunitySetting : leadOpportunitySettingsList){
@@ -100,14 +90,12 @@ global class BatchCreateProcedureTrackers implements Database.Batchable<sObject>
                 roleSet.addAll(eachLeadOpportunitySetting.UserRoles__c.split(';'));
             }
         }
-        System.debug('roleSet : ' + roleSet);
 
         // We get a list of all users based on the list of territories and roles
         List<UserTerritory2Association> usersInTerritoryList = [SELECT UserId, User.Name, Territory2Id, RoleInTerritory2, IsActive
         FROM UserTerritory2Association
         WHERE Territory2Id in :territoryIdSet AND RoleInTerritory2 in :roleSet
         ];
-        System.debug('usersInTerritoryList : ' + usersInTerritoryList);
 
         // We get the list of procedure tracker record types
         List<RecordType> ptRecordTypes = [SELECT Id, Name FROM RecordType WHERE SObjectType = 'ProcedureTracker__c'];
@@ -191,9 +179,6 @@ global class BatchCreateProcedureTrackers implements Database.Batchable<sObject>
             procedureTrackerList.add(eachProcedureTracker);
         }
 
-        System.debug('procedureTrackerList : ' + procedureTrackerList);
-        System.debug('procedureTrackerList Size : ' + procedureTrackerList.size());
-
         // Insert procedure trackers
         List<Database.SaveResult> results = Database.insert(procedureTrackerList, false);
 
@@ -207,7 +192,6 @@ global class BatchCreateProcedureTrackers implements Database.Batchable<sObject>
                     ProcedureTracker__c eachProcedureTracker = procedureTrackerList[i];
                     Id invoiceId = eachProcedureTracker.SalesAnalytics__c;
                     errorList.add('Error occurred while inserting a procedure tracker for the following invoice ID: ' + invoiceId + ': ' + error.getMessage());
-                    System.debug('Error occurred while inserting a procedure tracker for the following invoice ID: ' + invoiceId + ': ' + error.getMessage());
                 }
             }
         }
@@ -216,7 +200,6 @@ global class BatchCreateProcedureTrackers implements Database.Batchable<sObject>
             DebugLog.addError(errorList.toString());
         }
 
-        System.debug('Save result : ' + results);
     }
 
 

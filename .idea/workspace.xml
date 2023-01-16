@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/BatchCreateProcedureTrackers.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/BatchCreateProcedureTrackers.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ScheduleCreateProcedureTrackers.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ScheduleCreateProcedureTrackers.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Test_BatchCreateProcedureTrackers.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_BatchCreateProcedureTrackers.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +18,7 @@
         <entry key="Dentsply">
           <value>
             <ModuleWorkspaceSettings>
-              <option name="moduleContentsLastModified" value="1670068666178" />
+              <option name="moduleContentsLastModified" value="1673354351193" />
             </ModuleWorkspaceSettings>
           </value>
         </entry>
@@ -41,18 +38,19 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="Sales_Analytics__c sls = new Sales_Analytics__c(&#10;        Account__c = '0011l00001JGvdAAAT',&#10;        Product__c = '01t1l000007pG8FAAU',&#10;        Invoice_Date__c = Date.today()&#10;);&#10;&#10;insert sls;" />
+                  <option name="apexLogLevel" value="FINEST" />
+                  <option name="body" value="Sales_Analytics__c sls = new Sales_Analytics__c(&#10;        Account__c = '0010E00001Qfe2FQAR',&#10;        Product__c = '01t0E00000CxAlrQAF',&#10;        Invoice_Date__c = Date.today()&#10;);&#10;&#10;insert sls;" />
                   <option name="name" value="Anonymous Apex 1" />
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="List&lt;ProcedureTrackerCreationSetting__mdt&gt; procedureTrackerCreationSettings = [SELECT Id, CountryList__c, NumberOfDays__c FROM ProcedureTrackerCreationSetting__mdt];&#10;&#10;// Init Batch Parameters&#10;List&lt;String&gt; procedureTrackerCountryCodes = new List&lt;String&gt;();&#10;&#10;Integer nbrOfDays = 7;&#10;&#10;// Getting a list of country codes &amp; number of days&#10;if (!procedureTrackerCreationSettings.isEmpty()) {&#10;    procedureTrackerCountryCodes = procedureTrackerCreationSettings[0].CountryList__c.split(';');&#10;    nbrOfDays = (Integer) procedureTrackerCreationSettings[0].NumberOfDays__c;&#10;}&#10;&#10;// Get all Sales Analytics records that were created within the specified number of days, have no active procedure tracker linked to them and have a country within the ProcedureTrackerCountry__mdt&#10;String query = 'SELECT Id, Account__c, Account__r.Country__c, Invoice_Date__c ' +&#10;        'FROM Sales_Analytics__c ' +&#10;        'WHERE Invoice_Date__c = LAST_N_DAYS:' + nbrOfDays + ' ' +&#10;        'AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE ProcedureType__c = \'Clear Aligners\') ' +&#10;        'AND Account__r.Country__c IN :procedureTrackerCountryCodes ' +&#10;        'AND Product__r.Article__c IN (\'DIGI-500152\', \'DIGI-500153\', \'DIGI-500159\')';&#10;&#10;System.debug(Database.query(query).size());" />
-                  <option name="connectionName" value="UAT" />
+                  <option name="body" value="List&lt;ProcedureTrackerCreationSetting__mdt&gt; procedureTrackerCreationSettings = [SELECT Id, CountryList__c, NumberOfDays__c FROM ProcedureTrackerCreationSetting__mdt];&#10;&#10;// Init Batch Parameters&#10;List&lt;String&gt; procedureTrackerCountryCodes = new List&lt;String&gt;();&#10;&#10;Integer nbrOfDays = 7;&#10;&#10;// Getting a list of country codes &amp; number of days&#10;if (!procedureTrackerCreationSettings.isEmpty()) {&#10;    procedureTrackerCountryCodes = procedureTrackerCreationSettings[0].CountryList__c.split(';');&#10;    nbrOfDays = (Integer) procedureTrackerCreationSettings[0].NumberOfDays__c;&#10;}&#10;&#10;// Get all Sales Analytics records that were created within the specified number of days, have no active procedure tracker linked to them and have a country within the ProcedureTrackerCountry__mdt&#10;String query = 'SELECT Id, Account__c, Account__r.Country__c, Invoice_Date__c ' +&#10;        'FROM Sales_Analytics__c ' +&#10;        'WHERE Invoice_Date__c = LAST_N_DAYS:' + nbrOfDays + ' ' +&#10;        'AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE ProcedureType__c = \'Clear Aligners\') ' +&#10;        'AND Account__r.Country__c IN :procedureTrackerCountryCodes ' +&#10;        'AND Product__r.Article__c IN (\'DIGI-500152\', \'DIGI-500153\', \'DIGI-500159\') ' +&#10;        'AND Quantity__c &gt; 0 ' +&#10;        'ORDER BY Invoice_Date__c ASC';&#10;&#10;System.debug(Database.query(query).size());" />
+                  <option name="connectionName" value="StgJan" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="Anonymous Apex 2" />
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
                   <option name="body" value="BatchCreateProcedureTrackers batch = new BatchCreateProcedureTrackers();&#10;Database.executeBatch(batch, 200); // 200 is the batch size, you can adjust this value as needed&#10;    " />
-                  <option name="connectionName" value="UAT" />
+                  <option name="connectionName" value="StgJan" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="Anonymous Apex 4" />
                 </AnonymousApexSavedDocument>
@@ -72,9 +70,17 @@
                   <option name="waveLogLevel" value="FINEST" />
                   <option name="workflowLogLevel" value="FINEST" />
                 </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="body" value="//insert new Product2(Name = 'Test Product ', Article__c = 'DIGI-500153'); 01t0E00000CxAlrQAF&#10;&#10;List&lt;Account&gt; accs = new List&lt;Account&gt;();&#10;&#10;for(Integer i = 0; i&lt;10; i++){&#10;    accs.add(new Account(Name = 'Test Acc ' + i, Country__c = 'BE'));&#10;}&#10;&#10;insert accs;&#10;&#10;List&lt;Sales_Analytics__c&gt; invoices = new List&lt;Sales_Analytics__c&gt;();&#10;&#10;for(Integer i = 0; i&lt;10; i++){&#10;    invoices.add(new Sales_Analytics__c(&#10;            Account__c = accs[i].Id,&#10;            Product__c = '01t0E00000CxAlrQAF',&#10;            Invoice_Date__c = Date.today()&#10;    ));&#10;}&#10;&#10;insert invoices;&#10;&#10;System.debug(accs);&#10;System.debug(invoices);&#10;" />
+                  <option name="name" value="Anonymous Apex 3" />
+                </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="body" value="system.debug(Schema.SObjectType.ProcedureTracker__c.getRecordTypeInfosByName());" />
+                  <option name="name" value="Anonymous Apex 6" />
+                </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="2" />
+            <option name="selectedSavedDocumentIndex" value="5" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionWorkspaceSettings">
@@ -108,6 +114,11 @@
               </value>
             </entry>
             <entry key="DentsplyPlaygroundOmar">
+              <value>
+                <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
+            <entry key="DevFeb">
               <value>
                 <ConnectionWorkspaceSettings />
               </value>
@@ -190,6 +201,211 @@
             <entry key="Production">
               <value>
                 <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
+            <entry key="StgJan">
+              <value>
+                <ConnectionWorkspaceSettings>
+                  <option name="buildSuccessDatesBySourceRootRelativePath">
+                    <map>
+                      <entry key="APEXCLASS:BATCHCREATEPROCEDURETRACKERS" value="1673520299998" />
+                      <entry key="APEXCLASS:TEST_GUIDANCERENDERERCONTROLLER" value="1673358702288" />
+                      <entry key="APEXCLASS:TEST_PROCEDURETRACKERTRIGGERHELPER" value="1673520299998" />
+                      <entry key="FLOW:PROCEDURE_TRACKER_AFTER_HANDLER" value="1673355873000" />
+                    </map>
+                  </option>
+                  <option name="lastBuildScope" value="CUSTOM" />
+                  <option name="lastBuildViewToggles">
+                    <map>
+                      <entry key="DEPLOY">
+                        <value>
+                          <BuildViewToggles>
+                            <option name="showLocalAndServer" value="true" />
+                            <option name="showLocalOnly" value="true" />
+                            <option name="showServerOnly" value="false" />
+                            <option name="showSubscribedByParent" value="true" />
+                            <option name="showSubscribedOnly" value="true" />
+                          </BuildViewToggles>
+                        </value>
+                      </entry>
+                      <entry key="RETRIEVE">
+                        <value>
+                          <BuildViewToggles>
+                            <option name="showLocalAndServer" value="true" />
+                            <option name="showLocalOnly" value="false" />
+                            <option name="showServerOnly" value="true" />
+                            <option name="showSubscribedByParent" value="true" />
+                            <option name="showSubscribedOnly" value="true" />
+                          </BuildViewToggles>
+                        </value>
+                      </entry>
+                    </map>
+                  </option>
+                  <option name="lastCustomSelectionUrls">
+                    <set>
+                      <option value="metadata://Flow/Account_Default_Process_Builder" />
+                      <option value="metadata://Flow/Account_NewEvent_CFE2_0" />
+                      <option value="metadata://Flow/Account_Plan_Default_Process_Builder" />
+                      <option value="metadata://Flow/Account_Program_Member_Activation_Chatter_Post" />
+                      <option value="metadata://Flow/Account_Program_Member_Canada_T_C_Reminder" />
+                      <option value="metadata://Flow/Account_Program_Member_Consultation_Interview" />
+                      <option value="metadata://Flow/Account_Program_Member_Registration" />
+                      <option value="metadata://Flow/Account_Request_Default_Process_Builder" />
+                      <option value="metadata://Flow/AccountRequest_Create_Share_Record" />
+                      <option value="metadata://Flow/AddBundles" />
+                      <option value="metadata://Flow/Advanced_Profiling_Default_Process_Builder" />
+                      <option value="metadata://Flow/ArticleNumberDefaultProcessBuilder" />
+                      <option value="metadata://Flow/AssignedResourceDefaultProcessBuilder" />
+                      <option value="metadata://Flow/Auto_Submit_Resource_Absence_for_Approval" />
+                      <option value="metadata://Flow/Business_Courtesies_On_Record_Change" />
+                      <option value="metadata://Flow/Campaign_Default_Process_Builder" />
+                      <option value="metadata://Flow/Campaign_Default_Process_Builder_Scheduled_Action_1" />
+                      <option value="metadata://Flow/Campaign_Default_Process_Builder_Scheduled_Action_2" />
+                      <option value="metadata://Flow/Campaign_Default_Process_Builder_Scheduled_Action_3" />
+                      <option value="metadata://Flow/Campaign_Default_Process_Builder_Scheduled_Action_4" />
+                      <option value="metadata://Flow/Campaign_Manager_Reminder" />
+                      <option value="metadata://Flow/Campaign_Member_Default_Process_Builder" />
+                      <option value="metadata://Flow/Case_Add_articles" />
+                      <option value="metadata://Flow/Case_After_Handler" />
+                      <option value="metadata://Flow/Case_Before_Handler" />
+                      <option value="metadata://Flow/Case_Default_Process_Builder" />
+                      <option value="metadata://Flow/Case_Update_Return_Case" />
+                      <option value="metadata://Flow/case_updated" />
+                      <option value="metadata://Flow/CaseClone" />
+                      <option value="metadata://Flow/CH_DE_Implant_Rescue_Service" />
+                      <option value="metadata://Flow/Change_User_Story_Owner" />
+                      <option value="metadata://Flow/Change_User_Story_Status" />
+                      <option value="metadata://Flow/Chat_Transcript_Contact_Assignment" />
+                      <option value="metadata://Flow/Chat_Transcript_Set_Account_Id" />
+                      <option value="metadata://Flow/Coaching_Report_Sharing_Process" />
+                      <option value="metadata://Flow/Contact_Create_Event_With_Defaults" />
+                      <option value="metadata://Flow/Contact_Email_Tracking" />
+                      <option value="metadata://Flow/Contact_NewEvent_CFE2_0" />
+                      <option value="metadata://Flow/Contact_NewEventTEST" />
+                      <option value="metadata://Flow/Contract_Default_Process_Builder" />
+                      <option value="metadata://Flow/Contract_Default_Process_Builder_Scheduled_Action_1" />
+                      <option value="metadata://Flow/Contract_DS_Activate_Send_for_Signature" />
+                      <option value="metadata://Flow/Contract_Find_movex_template" />
+                      <option value="metadata://Flow/Contract_find_previous" />
+                      <option value="metadata://Flow/Contract_NewPricingContract" />
+                      <option value="metadata://Flow/Contract_SendPricingContractEmail" />
+                      <option value="metadata://Flow/Contract_Summarize_sales" />
+                      <option value="metadata://Flow/Contract_update_allowed_discount" />
+                      <option value="metadata://Flow/Contract_Update_sales_history" />
+                      <option value="metadata://Flow/Contract_UpdateSalesData" />
+                      <option value="metadata://Flow/Convert2Asset" />
+                      <option value="metadata://Flow/CountOrderforOrderToCFE" />
+                      <option value="metadata://Flow/Create_KOL_contract" />
+                      <option value="metadata://Flow/Create_KOL_FMV_Exception" />
+                      <option value="metadata://Flow/create_lead_from_workflow_profiling" />
+                      <option value="metadata://Flow/CTI_call_updates" />
+                      <option value="metadata://Flow/DefaultProductInstructionFlow" />
+                      <option value="metadata://Flow/Delete_personal_information_on_Campaign_Member_after_ended_Campaign" />
+                      <option value="metadata://Flow/DNA_Campaign_Flow" />
+                      <option value="metadata://Flow/EmailMessageDefaultProcess" />
+                      <option value="metadata://Flow/Equipment_Booking_Available_Product_Items" />
+                      <option value="metadata://Flow/Equipment_Booking_New_Booking_Request" />
+                      <option value="metadata://Flow/EquipmentBooking_RecordTriggers" />
+                      <option value="metadata://Flow/EquipmentBooking_VDWDemoAndLoanProcess" />
+                      <option value="metadata://Flow/Event_Default_Process_Builder" />
+                      <option value="metadata://Flow/EventAndTaskCreatorInfoUpdate" />
+                      <option value="metadata://Flow/Field_Service_ERP_Callout" />
+                      <option value="metadata://Flow/Find_KOL_FMV_model" />
+                      <option value="metadata://Flow/FSSK__Add_Asset_to_Maintenance_Plan" />
+                      <option value="metadata://Flow/FSSK__Field_Service_Mobile_Status_Transition" />
+                      <option value="metadata://Flow/FSSK__FSK_Actual_Times_Capturing" />
+                      <option value="metadata://Flow/FSSK__FSK_Cancelation_Canned_Notification" />
+                      <option value="metadata://Flow/FSSK__FSK_Canned_Notification_Dispatched" />
+                      <option value="metadata://Flow/FSSK__FSK_Exclude_Resource_On_Rejection" />
+                      <option value="metadata://Flow/FSSK__FSK_Populate_Custom_Work_Order_Lookup" />
+                      <option value="metadata://Flow/FSSK__FSK_Reflect_Actual_Times_on_Gantt" />
+                      <option value="metadata://Flow/FSSK__FSK_Resource_Deactivation" />
+                      <option value="metadata://Flow/FSSK__FSK_Service_Appointment" />
+                      <option value="metadata://Flow/FSSK__FSK_Set_Assign_Resource_On_Service_Appointment" />
+                      <option value="metadata://Flow/FSSK__FSK_Set_Assign_Service_Resource_On_Service_Appointment" />
+                      <option value="metadata://Flow/FSSK__FSK_Set_Gantt_Label_Concatenation" />
+                      <option value="metadata://Flow/FSSK__FSK_Update_Work_Order_Child_Records" />
+                      <option value="metadata://Flow/FSSK__FSK_Work_Order_Process" />
+                      <option value="metadata://Flow/geopointe__Get_User_Location" />
+                      <option value="metadata://Flow/Global_order_Update_dealer_prices" />
+                      <option value="metadata://Flow/KOL_Contract_Set_currency_on_Deliverables" />
+                      <option value="metadata://Flow/KOL_Create_deliverable" />
+                      <option value="metadata://Flow/KOLInformation_DefaultPB" />
+                      <option value="metadata://Flow/Lead_Convert_lead" />
+                      <option value="metadata://Flow/Lead_ConvertStandardLead" />
+                      <option value="metadata://Flow/Lead_Create_lead_from_account" />
+                      <option value="metadata://Flow/Lead_Create_lead_from_campaign" />
+                      <option value="metadata://Flow/Lead_CreateOrder" />
+                      <option value="metadata://Flow/LoyaltyProgramParticipant_Default_Process_Builder" />
+                      <option value="metadata://Flow/NewProspect" />
+                      <option value="metadata://Flow/OneDS_Flow_1" />
+                      <option value="metadata://Flow/OneDs_Mobile" />
+                      <option value="metadata://Flow/Opportunity_create_Opportunity_from_Account_Program_Member" />
+                      <option value="metadata://Flow/Opportunity_create_opportunity_from_Workflow_Profiling" />
+                      <option value="metadata://Flow/Opportunity_CreateOppFromAccount" />
+                      <option value="metadata://Flow/Opportunity_Default_Process_Builder" />
+                      <option value="metadata://Flow/Opportunity_Default_Process_Builder_Scheduled_Action_1_Hong_Kong_inactive" />
+                      <option value="metadata://Flow/Opportunity_NewEvent_CFE2_0" />
+                      <option value="metadata://Flow/OpportunityPartners" />
+                      <option value="metadata://Flow/Order_Default_Process_Builder" />
+                      <option value="metadata://Flow/Order_India" />
+                      <option value="metadata://Flow/Order_Update_allowed_discount" />
+                      <option value="metadata://Flow/OrderProduct_Default_Process_Builder" />
+                      <option value="metadata://Flow/Parse_Multi_Select" />
+                      <option value="metadata://Flow/pdf2" />
+                      <option value="metadata://Flow/Procedure_Tracker_After_Handler" />
+                      <option value="metadata://Flow/Procedure_Tracker_Before_Handler" />
+                      <option value="metadata://Flow/Product_Profiling_Create_Product_Profiling_from_Contact" />
+                      <option value="metadata://Flow/QuestionnaireProductTrials" />
+                      <option value="metadata://Flow/Quote_Clone_a_Quote" />
+                      <option value="metadata://Flow/Quote_Line_Item_Before_Handler" />
+                      <option value="metadata://Flow/Sales_Lead_Default_Process_Builder" />
+                      <option value="metadata://Flow/SalesCloud_ScrFlow_to_Create_Case_From_Account_or_Contact" />
+                      <option value="metadata://Flow/SalesLead_NewEvent_CFE2_0" />
+                      <option value="metadata://Flow/ServiceAppointmentDefaultProcess" />
+                      <option value="metadata://Flow/ServiceCloud_CreateCase_ver2" />
+                      <option value="metadata://Flow/ServiceCloud_ScrFlow_CreateCase_FromAccountOrContact" />
+                      <option value="metadata://Flow/Set_Account_Site_on_Location_Object" />
+                      <option value="metadata://Flow/Set_Multiple_Sessions_logistic_details_on_session" />
+                      <option value="metadata://Flow/Set_Product_Std_Price_to_1_for_all_new_products" />
+                      <option value="metadata://Flow/SFSAddAssettoMaintenancePlan" />
+                      <option value="metadata://Flow/SFSCannedNotificationDispatch" />
+                      <option value="metadata://Flow/SFSCreateServiceAppointment" />
+                      <option value="metadata://Flow/SFSPopulateCustomAssignedServiceResourceLookup" />
+                      <option value="metadata://Flow/SFSPopulateCustomWorkOrderLookup" />
+                      <option value="metadata://Flow/SFSReflectActualTimesonGantt" />
+                      <option value="metadata://Flow/SFSSASetGanttLabel" />
+                      <option value="metadata://Flow/SFSServiceAppointmentStatusTransition" />
+                      <option value="metadata://Flow/SFSUpdateActualTimeFields" />
+                      <option value="metadata://Flow/SFSUpdateWorkOrderChildRecords" />
+                      <option value="metadata://Flow/SFSUploadPicturesinFSMobileApp" />
+                      <option value="metadata://Flow/Strategic_Goals_Default_Proces_Builder" />
+                      <option value="metadata://Flow/Target_List_Default_Process_Builder" />
+                      <option value="metadata://Flow/Target_List_Scheduled_Expire_Sales_Leads" />
+                      <option value="metadata://Flow/Task_Set_Creator_Info_On_Create" />
+                      <option value="metadata://Flow/TeamForce_Defect" />
+                      <option value="metadata://Flow/TeamForce_Populate_CRM_Analyst_field" />
+                      <option value="metadata://Flow/Template_CreateRecordWithPopulatedValues2" />
+                      <option value="metadata://Flow/TFUS_ProductionDate" />
+                      <option value="metadata://Flow/TrialAndTenders_Current_Products_Use_Assignment" />
+                      <option value="metadata://Flow/Update_User_Story_Status" />
+                      <option value="metadata://Flow/UpdateChatterforOppTeamMember" />
+                      <option value="metadata://Flow/US_Azento_update_price_in_opportunity_product" />
+                      <option value="metadata://Flow/User_Default_Process_Builder" />
+                      <option value="metadata://Flow/Users_Unfreeze_User" />
+                      <option value="metadata://Flow/WorkOrderCreatedUpdated" />
+                      <option value="metadata://CustomNotificationType/AcceptedServiceAppointment" />
+                      <option value="metadata://CustomNotificationType/NewDefect" />
+                      <option value="metadata://CustomNotificationType/One_DS_Activated" />
+                      <option value="metadata://CustomNotificationType/One_DS_Terms_Conditions_Signed" />
+                      <option value="metadata://CustomNotificationType/ProcedureTrackerAssignment" />
+                      <option value="metadata://CustomNotificationType/ServiceCloudCaseAssignment" />
+                    </set>
+                  </option>
+                  <option name="lastDeploymentOptions">
+                    <DeploymentOptions />
+                  </option>
+                </ConnectionWorkspaceSettings>
               </value>
             </entry>
             <entry key="SureSmile">
@@ -5260,6 +5476,8 @@
                       <entry key="APEXCLASS:FINDLEADMATCH" value="1666282436152" />
                       <entry key="APEXCLASS:FINDLEADMATCHTEST" value="1666272735994" />
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1666193185822" />
+                      <entry key="CUSTOMNOTIFICATIONTYPE:PROCEDURETRACKERASSIGNMENT" value="1673354718000" />
+                      <entry key="FLOW:PROCEDURE_TRACKER_AFTER_HANDLER" value="1673354795000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CLONEORDEROMLWC" value="1666105134000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:LEADMATCHCONTACTHANDLING" value="1666342848000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:SELECTPRODUCTSOMLWC" value="1666187952046" />
@@ -5343,33 +5561,9 @@
         <option name="retrieveAndMergeDefault" value="false" />
         <option name="soqlQuerySettings">
           <SoqlQuerySettings>
-            <option name="resultsSplitterProportion" value="0.6965944" />
+            <option name="resultsSplitterProportion" value="0.58350515" />
             <option name="savedDocuments">
               <list>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Count(Id) FROM Sales_Analytics__c WHERE CreatedDate = LAST_N_DAYS:3 AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE Status__c = 'Active') AND Account__r.Country__c IN ('US','BE')" />
-                  <option name="name" value="SOQL Query 1" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Count(Id) FROM Sales_Analytics__c WHERE CreatedDate = LAST_N_DAYS:30 AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE Status__c = 'Active') AND Account__r.Country__c IN ('US','BE') AND LocalSKUKey__c IN ('2_155_DIGI-500152', '2_155_DIGI-500153', '2_155_DIGI-500159')" />
-                  <option name="connectionName" value="Production" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 2" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Id, Name FROM RecordType WHERE SObjectType = 'ProcedureTracker__c'" />
-                  <option name="name" value="SOQL Query 5" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="" />
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 6" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="select count(id) from ProcedureTracker__c where CreatedDate = LAST_N_DAYS:6" />
-                  <option name="name" value="SOQL Query 6" />
-                </SoqlQuerySavedDocument>
                 <SoqlQuerySavedDocument>
                   <option name="body" value="SELECT Id, Account__c, Account__r.Country__c, Account__r.Name, Invoice_Date__c, Product__r.Article__c&#10;        FROM Sales_Analytics__c &#10;        WHERE Invoice_Date__c = LAST_N_DAYS:7 AND Account__c NOT IN (SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE ProcedureType__c = 'Clear Aligners') AND Account__r.Country__c IN ('US','BE', 'IT', 'AT') AND Product__r.Article__c IN ('DIGI-500152', 'DIGI-500153', 'DIGI-500159') Order by Account__r.Name ASC " />
                   <option name="connectionName" value="UAT" />
@@ -5378,13 +5572,18 @@
                 </SoqlQuerySavedDocument>
                 <SoqlQuerySavedDocument>
                   <option name="body" value="select SalesAnalytics__c from ProcedureTracker__c where CreatedDate = LAST_N_DAYS:1" />
-                  <option name="connectionName" value="UAT" />
+                  <option name="connectionName" value="StgJan" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 4" />
+                  <option name="splitterProportion" value="0.309509" />
+                </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="select id, DeveloperName from CustomNotificationType where DeveloperName = 'ProcedureTrackerAssignment'" />
+                  <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="5" />
+            <option name="selectedSavedDocumentIndex" value="2" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -5427,13 +5626,13 @@
       <recent name="$PROJECT_DIR$/src/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Apex Unit Tests.Test_ScheduleCreateProcedureTrackers">
+  <component name="RunManager" selected="Apex Unit Tests.Test_BatchCreateProcedureTrackers.testBatchCreateProcedureTrackers">
     <configuration name="FindLeadMatchTest.executeLeadMatchSearchTest" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="FINEST" />
       <option name="calloutsLogLevel" value="FINEST" />
-      <option name="connectionName" value="SureSmile" />
+      <option name="connectionName" value="StgJan" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="FINEST" />
@@ -5480,7 +5679,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="SureSmile" />
+      <option name="connectionName" value="StgJan" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -5527,7 +5726,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="SureSmile" />
+      <option name="connectionName" value="StgJan" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -5561,43 +5760,51 @@
       <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_OrderManagement_CC" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="Test_ProcedureTrackerTriggerHelper.testcheckUniqueness" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="FINEST" />
+      <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="SureSmile" />
+      <option name="connectionName" value="StgJan" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
       <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="true" />
+      <option name="logLevelsInitialized" value="false" />
       <option name="moduleToTestClassNames">
         <map>
           <entry key="Dentsply">
             <value>
               <set>
-                <option value="Test_OrderManagement_CC" />
+                <option value="Test_ProcedureTrackerTriggerHelper" />
               </set>
             </value>
           </entry>
         </map>
       </option>
-      <option name="nbaLogLevel" value="ERROR" />
-      <option name="profilingLogLevel" value="ERROR" />
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="systemLogLevel" value="FINEST" />
+      <option name="systemLogLevel" value="DEBUG" />
       <option name="testClassToTestMethodNames">
-        <map />
+        <map>
+          <entry key="Test_ProcedureTrackerTriggerHelper">
+            <value>
+              <set>
+                <option value="testcheckUniqueness" />
+              </set>
+            </value>
+          </entry>
+        </map>
       </option>
       <option name="testSuiteName" />
-      <option name="validationLogLevel" value="ERROR" />
-      <option name="visualforceLogLevel" value="FINE" />
-      <option name="waveLogLevel" value="ERROR" />
-      <option name="workflowLogLevel" value="ERROR" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
     <configuration name="Test_ScheduleCreateProcedureTrackers" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
@@ -5605,7 +5812,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="SureSmile" />
+      <option name="connectionName" value="StgJan" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -5641,11 +5848,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Apex Unit Tests.Test_ScheduleCreateProcedureTrackers" />
         <item itemvalue="Apex Unit Tests.Test_BatchCreateProcedureTrackers.testBatchCreateProcedureTrackers" />
+        <item itemvalue="Apex Unit Tests.Test_ProcedureTrackerTriggerHelper.testcheckUniqueness" />
         <item itemvalue="Apex Unit Tests.Test_GuidanceRendererController" />
+        <item itemvalue="Apex Unit Tests.Test_ScheduleCreateProcedureTrackers" />
         <item itemvalue="Apex Unit Tests.FindLeadMatchTest.executeLeadMatchSearchTest" />
-        <item itemvalue="Apex Unit Tests.Test_OrderManagement_CC" />
       </list>
     </recent_temporary>
   </component>
@@ -5705,6 +5912,8 @@
       <workItem from="1671607906415" duration="11609000" />
       <workItem from="1672741662585" duration="129000" />
       <workItem from="1672741816115" duration="8075000" />
+      <workItem from="1673345326124" duration="6595000" />
+      <workItem from="1673398050733" duration="1829000" />
     </task>
     <servers />
   </component>
@@ -5722,22 +5931,14 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ApexOfflineDebuggerLocalBreakpointType">
-          <url>file://$PROJECT_DIR$/src/classes/BatchCreateProcedureTrackers.cls</url>
-          <line>49</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Dentsply$Test_findLeadMatch_testExecuteLeadSearch.ic2" NAME="HOTFIX Coverage Results" MODIFIED="1667918143842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="HOTFIX" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OrderManagement_CC_testCloneOrderWithPricingMicroServiceCallOutWithNoSourceRecord.ic2" NAME="DevNov Coverage Results" MODIFIED="1666690699780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_ProcedureTrackerTriggerHelper_testcheckUniqueness.ic2" NAME="StgJan Coverage Results" MODIFIED="1673520387472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_NewContractController_testEligibilityOfCreation.ic2" NAME="DevFeb Coverage Results" MODIFIED="1673603932022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevFeb" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_GuidanceRendererController.ic2" NAME="SureSmile Coverage Results" MODIFIED="1669718040013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
   </component>
 </project>
