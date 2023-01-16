@@ -215,7 +215,7 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>23-01-13 : Not allow lead conversion if an account and contact are not selected</description>
+    <description>23-01-13 : TFUS-000004998 - Not allow lead conversion if an account and contact are not selected</description>
     <environments>Default</environments>
     <formulas>
         <name>convertedContactId</name>
