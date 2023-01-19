@@ -62,8 +62,7 @@ export default class OgsmObjectivesTable extends NavigationMixin(LightningElemen
     objectivesInfo({ data, error }) {
         if (data) {
              this.columns = [
-                 {label: "#", fieldName: 'Name', type: 'richText', typeAttributes:
-                 { iseditable: true },editable : true,wrapText: true, fixedWidth : 100},
+                 {label: "#", fieldName: 'Name', type: 'richText', wrapText: true, fixedWidth : 100},
                 {label: data.fields.Objective__c.label, fieldName: 'Objective__c', type: 'richText', typeAttributes:
                 { iseditable: true },editable : true,wrapText: true, initialWidth : 120},
                 {label: data.fields.Goals__c.label, fieldName: 'Goals__c', type: 'richText', typeAttributes:
