@@ -14,31 +14,16 @@
                 <option name="types">
                   <set>
                     <MetadataType>
-                      <option name="name" value="ApexClass" />
+                      <option name="name" value="Flow" />
                     </MetadataType>
                     <MetadataType>
-                      <option name="name" value="ApexComponent" />
+                      <option name="name" value="FlowCategory" />
                     </MetadataType>
                     <MetadataType>
-                      <option name="name" value="ApexPage" />
+                      <option name="name" value="FlowDefinition" />
                     </MetadataType>
                     <MetadataType>
-                      <option name="name" value="ApexTrigger" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="AuraDefinitionBundle" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="CustomMetadata" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="CustomObject" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="LightningComponentBundle" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="StaticResource" />
+                      <option name="name" value="FlowTest" />
                     </MetadataType>
                   </set>
                 </option>

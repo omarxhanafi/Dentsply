@@ -1,0 +1,15 @@
+<template>
+    <lightning-record-edit-form object-api-name="Opportunity" record-type-id={recordTypeId}>
+        <div class="slds-form-element">
+            <lightning-input-field field-name="StageName" value={stageName} onchange={handleStageNameChange}></lightning-input-field>
+        </div>
+        <template if:true={showWinLossFields}>
+            <div class="slds-form-element">
+                <lightning-input-field field-name="Win_Loss_Reason__c" onchange={handleWinLossReasonChange}></lightning-input-field>
+            </div>
+            <div class="slds-form-element">
+                <lightning-input-field field-name="Win_Loss_Description__c" onchange={handleWinLossDescriptionChange}></lightning-input-field>
+            </div>
+        </template>
+    </lightning-record-edit-form>
+</template>

@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/lwc/ogsmObjectivesTable/ogsmObjectivesTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/ogsmObjectivesTable/ogsmObjectivesTable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/opportunityWinLossLwc/opportunityWinLossLwc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/opportunityWinLossLwc/opportunityWinLossLwc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/opportunityWinLossLwc/opportunityWinLossLwc.js-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/DevFeb/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/DevFeb/OfflineSymbolTable.zip" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +22,7 @@
         <entry key="Dentsply">
           <value>
             <ModuleWorkspaceSettings>
-              <option name="moduleContentsLastModified" value="1665487913286" />
+              <option name="moduleContentsLastModified" value="1674485794833" />
             </ModuleWorkspaceSettings>
           </value>
         </entry>
@@ -92,11 +96,23 @@
                       <entry key="APEXCLASS:TEST_BATCHSETACCOUNTSUBSEGMENTATION" value="1673603581187" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:INSIDESALESCAMPAIGNTRACKER" value="1673263280000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:OGSMOBJECTIVESTABLE" value="1673284249649" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:OPPORTUNITYWINLOSSLWC" value="1674483011000" />
                     </map>
                   </option>
-                  <option name="lastBuildScope" value="CUSTOM" />
+                  <option name="lastBuildScope" value="CONTEXT" />
                   <option name="lastBuildViewToggles">
                     <map>
+                      <entry key="DEPLOY">
+                        <value>
+                          <BuildViewToggles>
+                            <option name="showLocalAndServer" value="true" />
+                            <option name="showLocalOnly" value="true" />
+                            <option name="showServerOnly" value="false" />
+                            <option name="showSubscribedByParent" value="true" />
+                            <option name="showSubscribedOnly" value="true" />
+                          </BuildViewToggles>
+                        </value>
+                      </entry>
                       <entry key="RETRIEVE">
                         <value>
                           <BuildViewToggles>
@@ -5579,6 +5595,9 @@
                       <option value="metadata://ApexTrigger/WorkOrderTrigger" />
                     </set>
                   </option>
+                  <option name="lastDeploymentOptions">
+                    <DeploymentOptions />
+                  </option>
                 </ConnectionWorkspaceSettings>
               </value>
             </entry>
@@ -5672,6 +5691,7 @@
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1666193185822" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CLONEORDEROMLWC" value="1666105134000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:LEADMATCHCONTACTHANDLING" value="1666342848000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:OPPORTUNITYWINLOSSLWC" value="1674485464000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:SELECTPRODUCTSOMLWC" value="1666187952046" />
                     </map>
                   </option>
@@ -5769,7 +5789,9 @@
                   <option name="name" value="SOQL Query 2" />
                 </SoqlQuerySavedDocument>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Id, Name, ETM2_Street_Address__c , BillingCountry, ETM2_Zip_Code__c  FROM Account WHERE ETM2_Zip_Code__c = '48010' AND Id != '00Q3G000002B60QUAS'" />
+                  <option name="body" value="select DeveloperName from RecordType where id = '0120J00000079nDQAQ'" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
               </list>
@@ -6095,6 +6117,8 @@
       <workItem from="1673253314539" duration="69000" />
       <workItem from="1673253385502" duration="9414000" />
       <workItem from="1673283879898" duration="1055000" />
+      <workItem from="1674201283042" duration="1866000" />
+      <workItem from="1674471316562" duration="3837000" />
     </task>
     <servers />
   </component>
