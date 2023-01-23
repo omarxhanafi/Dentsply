@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>24</activeVersionNumber>
+    <description>To Convert Products on Won Opportunity to Assets, or update the commission as it goes</description>
+    <masterLabel>xSBU: Convert2Asset&amp;Commission</masterLabel>
+</FlowDefinition>

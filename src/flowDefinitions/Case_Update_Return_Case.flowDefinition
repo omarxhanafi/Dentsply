@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>32</activeVersionNumber>
+    <description>Appears on Case Record Page Layout if the Case Type is Return, used to update special information and to trigger the Add Articles flow as a subflow</description>
+    <masterLabel>Case: Update Return Case</masterLabel>
+</FlowDefinition>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>14</activeVersionNumber>
+    <description>Used as a subflow within Update Return Case flow, this will allow users to add articles to a return case and assign all the required information</description>
+    <masterLabel>Case: Add articles</masterLabel>
+</FlowDefinition>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>Follow_Up_Reminder</name>
+        <label>Follow-Up Reminder</label>
+        <locationX>182</locationX>
+        <locationY>288</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Sales_Rep</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Follow_Up__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales Rep</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Task</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Sales Rep</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Follow_Up_Reminder_0</name>
+        <label>Follow-Up Reminder</label>
+        <locationX>710</locationX>
+        <locationY>288</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Customer_Care_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Follow_Up__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer Care</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Case_0</targetReference>
+            </connector>
+            <label>Customer Care</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>Formula_Case_Subject</name>
+        <dataType>String</dataType>
+        <expression>&apos;Serviceanruf nach Einweisung &apos; &amp; {!$Record.Name}</expression>
+    </formulas>
+    <formulas>
+        <name>Formula_Task_DueDate</name>
+        <dataType>Date</dataType>
+        <expression>{!$Record.InstructionDate__c} + 28</expression>
+    </formulas>
+    <formulas>
+        <name>Formula_Task_Subject</name>
+        <dataType>String</dataType>
+        <expression>&apos;Product Instruction Follow-Up &apos; &amp; {!$Record.Name}</expression>
+    </formulas>
+    <interviewLabel>Default Product Instruction Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Default Product Instruction Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Case_0</name>
+        <label>Create Case</label>
+        <locationX>578</locationX>
+        <locationY>408</locationY>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CaseType__c</field>
+            <value>
+                <stringValue>General support/question</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Complaint_Category__c</field>
+            <value>
+                <stringValue>Customer Interaction</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Complaint_Reason2__c</field>
+            <value>
+                <stringValue>Order follow up &amp; tracking</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <stringValue>00G6M000003RUefUAG</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Product_Line__c</field>
+            <value>
+                <stringValue>Other Endo</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>01220000000AvOOAA0</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBU__c</field>
+            <value>
+                <stringValue>ENDO</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>Formula_Case_Subject</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Task</name>
+        <label>Create Task</label>
+        <locationX>50</locationX>
+        <locationY>408</locationY>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>Formula_Task_DueDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>01220000000ANY0AAO</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>Formula_Task_Subject</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Follow_Up_Reminder</targetReference>
+        </connector>
+        <object>ProductInstruction__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>Path_8Weeks</name>
+            <connector>
+                <targetReference>Follow_Up_Reminder_0</targetReference>
+            </connector>
+            <label>Run After 8 Weeks Instruction Date</label>
+            <offsetNumber>56</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>InstructionDate__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>TaskRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
+    </variables>
+</Flow>

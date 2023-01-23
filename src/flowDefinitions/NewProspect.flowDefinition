@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>22</activeVersionNumber>
+    <description>To pick the correct user based on ETM</description>
+    <masterLabel>xSBU: ETM</masterLabel>
+</FlowDefinition>
