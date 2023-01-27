@@ -7227,7 +7227,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
         <object>Case</object>
     </recordUpdates>
     <startElementReference>isChangedDecision40_myRule_39_OwnerId</startElementReference>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>

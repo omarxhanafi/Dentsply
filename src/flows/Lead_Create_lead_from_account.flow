@@ -1607,7 +1607,7 @@ Marketing Campaign Follow-Up</description>
             <targetReference>Get_current_user</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <textTemplates>
         <name>CatBrandWarning</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>

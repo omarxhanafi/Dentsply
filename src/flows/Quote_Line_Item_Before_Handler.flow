@@ -247,5 +247,5 @@ TFUS-000005064 - added Retail Price and Base Price as additional field updates (
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
 </Flow>

@@ -215,12 +215,18 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>23-01-13 : TFUS-000004998 - Not allow lead conversion if an account and contact are not selected</description>
+    <description>23-01-27 : TFUS-000005198 - Be able to convert a lead without unhandled error message when the contact title is missing
+23-01-13 : TFUS-000004998 - Not allow lead conversion if an account and contact are not selected</description>
     <environments>Default</environments>
     <formulas>
         <name>convertedContactId</name>
         <dataType>String</dataType>
         <expression>IF({!contactMatches.createContact} = true, {!ConvertLeadNewContact}, {!contactMatches.selectedContactId})</expression>
+    </formulas>
+    <formulas>
+        <name>FlowFaultMessage</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE( {!$Flow.FaultMessage}, &quot;An Apex error occurred: leadConvert.ConvertLeadActionException: &quot;, &quot;&quot; )</expression>
     </formulas>
     <formulas>
         <name>recordPrefix</name>
@@ -394,8 +400,8 @@
     <screens>
         <name>Error_create_contact</name>
         <label>Error create contact</label>
-        <locationX>612</locationX>
-        <locationY>1262</locationY>
+        <locationX>622</locationX>
+        <locationY>1185</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -404,11 +410,9 @@
         </connector>
         <fields>
             <name>Error_message</name>
-            <fieldText>&lt;pre class=&quot;ql-syntax&quot; spellcheck=&quot;false&quot;&gt;Sorry an error occur please try again
+            <fieldText>&lt;pre class=&quot;ql-syntax&quot; spellcheck=&quot;false&quot;&gt;Sorry an error occured please try again
 
-{!$Flow.FaultMessage}
-
-
+{!FlowFaultMessage}
 
 &lt;/pre&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
@@ -608,7 +612,7 @@
             <targetReference>CheckObjecType</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <textTemplates>
         <name>AccountOrContactEmptyMessage</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
