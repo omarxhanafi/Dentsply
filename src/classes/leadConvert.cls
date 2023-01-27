@@ -2,7 +2,8 @@ global with sharing class leadConvert {
     
     @InvocableMethod(label='Convert Lead' description='Converts a lead to an account/contact' category='Lead')
   	public static List<String> convertLead(List<ConvertLeadRequest> input) {
-			System.debug('Init lead convert');
+        try {
+            System.debug('Init lead convert');
             Database.LeadConvert lc = new Database.LeadConvert();
             lc.setLeadId(input[0].leadId);
         	lc.setConvertedStatus(input[0].convertedStatus);
@@ -34,7 +35,7 @@ global with sharing class leadConvert {
                 /*if(input[0].convertToPersonAccount != null && input[0].convertToPersonAccount){
                     lc.setRelatedPersonAccountId(input[0].accountId);
                 }*/
-                
+                    
     		}
 
             if (input[0].overWriteLeadSource != null && input[0].overWriteLeadSource) {
@@ -48,17 +49,8 @@ global with sharing class leadConvert {
 
             Database.LeadConvertResult lcr = null;
 
-            try {
                  lcr = Database.convertLead(lc, true);
-            } catch (Exception e) {
-                String errorMessage = e.getMessage();
-                if(errorMessage.contains('Please make sure to fill in the Title for this Contact')){
-                    // Display the specific error message
-                    throw new ConvertLeadActionException('Please make sure to fill in the Title for this Contact');
-                } else {
-                    throw new ConvertLeadActionException(errorMessage);
-                }
-            }
+
 
             if (lcr.isSuccess()) {
                 List<String> result = new List<String>();
@@ -80,6 +72,17 @@ global with sharing class leadConvert {
                 System.debug(lcr.getErrors()[0].getMessage());
                 throw new ConvertLeadActionException(lcr.getErrors()[0].getMessage());
             }
+
+        } catch (Exception e) {
+            String errorMessage = e.getMessage();
+            // Check if the error is related to the contact validation rule
+            if(errorMessage.contains('Please make sure to fill in the Title for this Contact')){
+                // Display the specific error message
+                throw new ConvertLeadActionException('Please make sure to fill in the Title for this Contact');
+            } else {
+                throw new ConvertLeadActionException(errorMessage);
+            }
+        }
         
     }
     
