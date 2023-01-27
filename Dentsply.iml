@@ -8,27 +8,8 @@
         <option name="defaultSourceRootUrl" value="file://$MODULE_DIR$/src" />
         <option name="moduleContents">
           <ModuleContents>
-            <option name="contentSelectionType" value="SELECTED" />
-            <option name="manifest">
-              <Manifest>
-                <option name="types">
-                  <set>
-                    <MetadataType>
-                      <option name="name" value="Flow" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="FlowCategory" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="FlowDefinition" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="FlowTest" />
-                    </MetadataType>
-                  </set>
-                </option>
-              </Manifest>
-            </option>
+            <option name="contentSelectionType" value="PACKAGE_XML" />
+            <option name="packageXmlRelativePath" value="src/package.xml" />
           </ModuleContents>
         </option>
       </configuration>
