@@ -45,26 +45,39 @@ global with sharing class leadConvert {
               lc.setSendNotificationEmail(input[0].sendEmailToOwner);
             }
             System.debug(lc);
-        
-            Database.LeadConvertResult lcr = Database.convertLead(lc, true);
+
+            Database.LeadConvertResult lcr = null;
+
+            try {
+                 lcr = Database.convertLead(lc, true);
+            } catch (Exception e) {
+                String errorMessage = e.getMessage();
+                if(errorMessage.contains('Please make sure to fill in the Title for this Contact')){
+                    // Display the specific error message
+                    throw new ConvertLeadActionException('Please make sure to fill in the Title for this Contact');
+                } else {
+                    throw new ConvertLeadActionException(errorMessage);
+                }
+            }
+
             if (lcr.isSuccess()) {
-                  List<String> result = new List<String>();
-                	String contactId = lcr.getContactId();
-                	System.debug('Contact id: ' + contactId);
-                	if(contactId != ''){
-                    	result.add(lcr.getContactId());
-                	}
-                	else{
-                		result.add(lcr.getAccountId());
-                    }    
-                  //
-                  /*ConvertLeadActionResult result = new ConvertLeadActionResult();
-                  result.accountId = lcr.getAccountId();
-                  result.contactId = lcr.getContactId();
-                  result.opportunityId = lcr.getOpportunityId();*/
-                  return result;
+                List<String> result = new List<String>();
+                String contactId = lcr.getContactId();
+                System.debug('Contact id: ' + contactId);
+                if(contactId != ''){
+                    result.add(lcr.getContactId());
+                }
+                else{
+                    result.add(lcr.getAccountId());
+                }
+                //
+                /*ConvertLeadActionResult result = new ConvertLeadActionResult();
+                result.accountId = lcr.getAccountId();
+                result.contactId = lcr.getContactId();
+                result.opportunityId = lcr.getOpportunityId();*/
+                return result;
             } else {
-              	System.debug(lcr.getErrors()[0].getMessage());
+                System.debug(lcr.getErrors()[0].getMessage());
                 throw new ConvertLeadActionException(lcr.getErrors()[0].getMessage());
             }
         
