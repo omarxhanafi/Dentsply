@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <label>Global 1. Experience SureSmile</label>
-    <protected>false</protected>
-    <values>
-        <field>CountryList__c</field>
-        <value xsi:type="xsd:string">AD;AE;AF;AG;AI;AL;AM;AN;AO;AQ;AR;AS;AT;AU;AW;AX;AZ;BA;BB;BD;BE;BF;BG;BH;BI;BJ;BL;BM;BN;BO;BQ;BR;BS;BT;BV;BW;BY;BZ;CC;CD;CF;CG;CH;CI;CK;CL;CM;CN;CO;CR;CS;CU;CV;CW;CX;CY;CZ;DE;DJ;DK;DM;DO;DZ;EC;EE;EG;EH;ER;ES;ET;FI;FJ;FK;FM;FO;FR;GA;GB;GD;GE;GF;GG;GH;GI;GL;GM;GN;GP;GQ;GR;GS;GT;GU;GW;GY;HK;HM;HN;HR;HT;HU;ID;IE;IL;IM;IN;IO;IOZ;IQ;IR;IS;IT;JE;JM;JO;JP;KE;KG;KH;KI;KM;KN;KP;KR;KW;KY;KZ;LA;LB;LC;LI;LK;LR;LS;LT;LU;LV;LY;MA;MC;MD;ME;MF;MG;MH;MK;ML;MM;MN;MO;MP;MQ;MR;MS;MT;MU;MV;MW;MX;MY;MZ;NA;NC;NE;NF;NG;NI;NL;NO;NP;NR;NU;NZ;OM;PA;PE;PF;PG;PH;PK;PL;PM;PN;PR;PS;PT;PW;PY;QA;RE;RO;RS;RU;RW;SA;SB;SC;SD;SE;SG;SH;SI;SJ;SK;SL;SM;SN;SO;SR;SS;ST;SV;SX;SY;SZ;TC;TD;TF;TG;TH;TJ;TK;TL;TM;TN;TO;TR;TT;TV;TW;TZ;UA;UG;UM;UY;UZ;VA;VC;VE;WF;VG;VI;VN;WS;VU;XK;YE;YT;ZA;ZM;ZW</value>
-    </values>
-    <values>
-        <field>Guidance_Content__c</field>
-        <value xsi:type="xsd:string">&lt;p&gt;&lt;span style=&quot;font-size:20px&quot;&gt;&lt;strong&gt;Experience&amp;nbsp;SureSmile​&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+  <label>Global 1. Experience SureSmile</label>
+  <protected>false</protected>
+  <values>
+    <field>CountryList__c</field>
+    <value xsi:type="xsd:string">AD;AE;AF;AG;AI;AL;AM;AN;AO;AQ;AR;AS;AT;AU;AW;AX;AZ;BA;BB;BD;BE;BF;BG;BH;BI;BJ;BL;BM;BN;BO;BQ;BR;BS;BT;BV;BW;BY;BZ;CC;CD;CF;CG;CH;CI;CK;CL;CM;CN;CO;CR;CS;CU;CV;CW;CX;CY;CZ;DE;DJ;DK;DM;DO;DZ;EC;EE;EG;EH;ER;ES;ET;FI;FJ;FK;FM;FO;FR;GA;GB;GD;GE;GF;GG;GH;GI;GL;GM;GN;GP;GQ;GR;GS;GT;GU;GW;GY;HK;HM;HN;HR;HT;HU;ID;IE;IL;IM;IN;IO;IOZ;IQ;IR;IS;IT;JE;JM;JO;JP;KE;KG;KH;KI;KM;KN;KP;KR;KW;KY;KZ;LA;LB;LC;LI;LK;LR;LS;LT;LU;LV;LY;MA;MC;MD;ME;MF;MG;MH;MK;ML;MM;MN;MO;MP;MQ;MR;MS;MT;MU;MV;MW;MX;MY;MZ;NA;NC;NE;NF;NG;NI;NL;NO;NP;NR;NU;NZ;OM;PA;PE;PF;PG;PH;PK;PL;PM;PN;PR;PS;PT;PW;PY;QA;RE;RO;RS;RU;RW;SA;SB;SC;SD;SE;SG;SH;SI;SJ;SK;SL;SM;SN;SO;SR;SS;ST;SV;SX;SY;SZ;TC;TD;TF;TG;TH;TJ;TK;TL;TM;TN;TO;TR;TT;TV;TW;TZ;UA;UG;UM;UY;UZ;VA;VC;VE;WF;VG;VI;VN;WS;VU;XK;YE;YT;ZA;ZM;ZW</value>
+  </values>
+  <values>
+    <field>Guidance_Content__c</field>
+    <value xsi:type="xsd:string">&lt;p&gt;&lt;span style="font-size:20px"&gt;&lt;strong&gt;Experience&amp;nbsp;SureSmile​&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;&lt;span style=&quot;font-size:16px&quot;&gt;&lt;strong&gt;Objective​&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size:16px"&gt;&lt;strong&gt;Objective​&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
@@ -23,24 +23,24 @@
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;
-	&lt;p&gt;Optimized workflow for improved efficiency​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Customized treatment plans developed by our highly trained Digital Lab specialists​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Aligners that can deliver more predictability&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Treatment planning with connected dental solutions​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Reduced treatment times that may improve practice profitability​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;Products that provide an end-to-end solution for more comfort, convenience, and value to differentiate.&amp;nbsp;&amp;nbsp;​&lt;/p&gt;
-	&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Optimized workflow for improved efficiency​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Customized treatment plans developed by our highly trained Digital Lab specialists​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Aligners that can deliver more predictability&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Treatment planning with connected dental solutions​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reduced treatment times that may improve practice profitability​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Products that provide an end-to-end solution for more comfort, convenience, and value to differentiate.&amp;nbsp;&amp;nbsp;​&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;​&lt;/p&gt;
@@ -51,13 +51,13 @@
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;&lt;span style=&quot;font-size:16px&quot;&gt;&lt;strong&gt;Resources&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size:16px"&gt;&lt;strong&gt;Resources&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;
-	&lt;p&gt;Marketing materials for presentation&amp;nbsp;​&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Marketing materials for presentation&amp;nbsp;​&lt;/p&gt;
 
 	&lt;ul&gt;
 		&lt;li&gt;
@@ -90,39 +90,39 @@
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;font-size:14px&quot;&gt;On-Demand Videos:​&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span style="font-size:14px"&gt;On-Demand Videos:​&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;
-	&lt;p&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-gb/academy/videos/video.html?video=/education/videos/upload/S/ORTH-PODCAST-SURESMILE-EN-DESI0634-QURESHI-V5.mp4&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Clear Aligners with SureSmile. What Every Dentist Should Know - Dr.&amp;nbsp;Tif Qureshi&lt;/a&gt;&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;&lt;a href=&quot;https://youtu.be/I7EkrrIP7Dk&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;&amp;quot;With Dentsply Sirona all my workflows are integrated and seamless&amp;quot; -&amp;nbsp;Dr. Mona Patel&lt;/a&gt;​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;&lt;a href=&quot;https://youtu.be/XV27jmzkLAk&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Why Dr. James Taylor Choose SureSmile Aligners&lt;/a&gt;&amp;nbsp;​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;&lt;a href=&quot;https://youtu.be/lhdJsSaUts0&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;Practicing Efficiently with Dr. Meena&amp;nbsp;Barsoum&lt;/a&gt;&amp;nbsp;​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;&lt;a href=&quot;https://youtu.be/79mVg2GDf-o&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;&amp;quot;Makes our lives easier as a clinician&amp;quot; - Dr. Meena&amp;nbsp;Barsoum&lt;/a&gt;​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;&lt;a href=&quot;https://s3.amazonaws.com/media-p.slid.es/videos/1482492/hZEDHsbG/improving_patient_compliance_and_oral_health_with_dr.mp4&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;&amp;ldquo;Improving Patient Compliance with Oral Health&amp;rdquo; &amp;ndash; Dr. Meena&amp;nbsp;Barsoum&lt;/a&gt;​&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;&lt;a href=&quot;https://www.dentsplysirona.com/en-us/discover/discover-by-brand/suresmile-aligners/suresmile-stories.html&quot; rel=&quot;noreferrer&quot; target=&quot;_blank&quot;&gt;SureSmile Clear Aligner Stories | Dentsply Sirona USA&lt;/a&gt;​&lt;/p&gt;
-	&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.dentsplysirona.com/en-gb/academy/videos/video.html?video=/education/videos/upload/S/ORTH-PODCAST-SURESMILE-EN-DESI0634-QURESHI-V5.mp4" rel="noreferrer" target="_blank"&gt;Clear Aligners with SureSmile. What Every Dentist Should Know - Dr.&amp;nbsp;Tif Qureshi&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://youtu.be/I7EkrrIP7Dk" rel="noreferrer" target="_blank"&gt;&amp;quot;With Dentsply Sirona all my workflows are integrated and seamless&amp;quot; -&amp;nbsp;Dr. Mona Patel&lt;/a&gt;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://youtu.be/XV27jmzkLAk" rel="noreferrer" target="_blank"&gt;Why Dr. James Taylor Choose SureSmile Aligners&lt;/a&gt;&amp;nbsp;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://youtu.be/lhdJsSaUts0" rel="noreferrer" target="_blank"&gt;Practicing Efficiently with Dr. Meena&amp;nbsp;Barsoum&lt;/a&gt;&amp;nbsp;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://youtu.be/79mVg2GDf-o" rel="noreferrer" target="_blank"&gt;&amp;quot;Makes our lives easier as a clinician&amp;quot; - Dr. Meena&amp;nbsp;Barsoum&lt;/a&gt;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://s3.amazonaws.com/media-p.slid.es/videos/1482492/hZEDHsbG/improving_patient_compliance_and_oral_health_with_dr.mp4" rel="noreferrer" target="_blank"&gt;&amp;ldquo;Improving Patient Compliance with Oral Health&amp;rdquo; &amp;ndash; Dr. Meena&amp;nbsp;Barsoum&lt;/a&gt;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.dentsplysirona.com/en-us/discover/discover-by-brand/suresmile-aligners/suresmile-stories.html" rel="noreferrer" target="_blank"&gt;SureSmile Clear Aligner Stories | Dentsply Sirona USA&lt;/a&gt;​&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;&lt;span style=&quot;font-size:16px&quot;&gt;&lt;strong&gt;Visit Checklist​&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size:16px"&gt;&lt;strong&gt;Visit Checklist​&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
@@ -131,8 +131,8 @@
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;
-	&lt;p&gt;Schedule in-office visit to deliver Experience SureSmile&amp;nbsp;presentation&amp;nbsp;​&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Schedule in-office visit to deliver Experience SureSmile&amp;nbsp;presentation&amp;nbsp;​&lt;/p&gt;
 
 	&lt;ul&gt;
 		&lt;li&gt;
@@ -188,17 +188,17 @@
 &lt;/ul&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;</value>
-    </values>
-    <values>
-        <field>NextActivity__c</field>
-        <value xsi:type="xsd:string">1. Experience SureSmile</value>
-    </values>
-    <values>
-        <field>RecordTypeDeveloperName__c</field>
-        <value xsi:type="xsd:string">Clear_Aligners_Global</value>
-    </values>
-    <values>
-        <field>isTest__c</field>
-        <value xsi:type="xsd:boolean">false</value>
-    </values>
+</values>
+<values>
+<field>NextActivity__c</field>
+<value xsi:type="xsd:string">1. Experience SureSmile</value>
+</values>
+<values>
+<field>RecordTypeDeveloperName__c</field>
+<value xsi:type="xsd:string">Clear_Aligners_Global</value>
+</values>
+<values>
+<field>isTest__c</field>
+<value xsi:type="xsd:boolean">false</value>
+</values>
 </CustomMetadata>

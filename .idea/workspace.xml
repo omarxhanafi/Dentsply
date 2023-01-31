@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="" />
+    <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_13_Train_Complete_Third_Case.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_13_Train_Complete_Third_Case.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_14_Train_Clinical_Apps.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_14_Train_Clinical_Apps.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_16_Launch_SureSmile_Day.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_16_Launch_SureSmile_Day.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_17_Complete_SureSmile_Business.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_17_Complete_SureSmile_Business.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_19_Review_Case_Expansion.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_19_Review_Case_Expansion.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_1_Experience_SureSmile.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_1_Experience_SureSmile.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_20_Join_or_Start_Study_Club.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_20_Join_or_Start_Study_Club.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_21_Connect_with_SureSmile_Mentor.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_21_Connect_with_SureSmile_Mentor.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_22_Join_SureSmile_Connections.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_22_Join_SureSmile_Connections.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_23_Start_Continuous_Education.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_23_Start_Continuous_Education.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_2_Register.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_2_Register.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_3_Deliver_Welcome_to_SS_Family.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_3_Deliver_Welcome_to_SS_Family.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_5_Connect_with_SS_Ambassador.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_5_Connect_with_SS_Ambassador.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_8_Train_Submit_First_Case.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_8_Train_Submit_First_Case.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_9_Train_and_Complete_First_Case.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/GuidanceRenderer.Global_9_Train_and_Complete_First_Case.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practices_for_Successful_Onboarding.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMetadata/ProcedureTrackingBestPractices.Best_Practices_for_Successful_Onboarding.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,7 +179,28 @@
             </entry>
             <entry key="HOTFIX">
               <value>
-                <ConnectionWorkspaceSettings />
+                <ConnectionWorkspaceSettings>
+                  <option name="buildSuccessDatesBySourceRootRelativePath">
+                    <map>
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_13_TRAIN_COMPLETE_THIRD_CASE" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_14_TRAIN_CLINICAL_APPS" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_16_LAUNCH_SURESMILE_DAY" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_17_COMPLETE_SURESMILE_BUSINESS" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_19_REVIEW_CASE_EXPANSION" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_1_EXPERIENCE_SURESMILE" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_20_JOIN_OR_START_STUDY_CLUB" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_21_CONNECT_WITH_SURESMILE_MENTOR" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_22_JOIN_SURESMILE_CONNECTIONS" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_23_START_CONTINUOUS_EDUCATION" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_2_REGISTER" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_3_DELIVER_WELCOME_TO_SS_FAMILY" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_5_CONNECT_WITH_SS_AMBASSADOR" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_8_TRAIN_SUBMIT_FIRST_CASE" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:GUIDANCERENDERER.GLOBAL_9_TRAIN_AND_COMPLETE_FIRST_CASE" value="1675159498000" />
+                      <entry key="CUSTOMMETADATA:PROCEDURETRACKINGBESTPRACTICES.BEST_PRACTICES_FOR_SUCCESSFUL_ONBOARDING" value="1675159531000" />
+                    </map>
+                  </option>
+                </ConnectionWorkspaceSettings>
               </value>
             </entry>
             <entry key="Iberia">
@@ -189,6 +228,11 @@
                     </map>
                   </option>
                 </ConnectionWorkspaceSettings>
+              </value>
+            </entry>
+            <entry key="Lead">
+              <value>
+                <ConnectionWorkspaceSettings />
               </value>
             </entry>
             <entry key="New Connection">
@@ -5913,6 +5957,7 @@
       <workItem from="1672741816115" duration="8075000" />
       <workItem from="1673345326124" duration="6595000" />
       <workItem from="1673398050733" duration="1829000" />
+      <workItem from="1675159361409" duration="335000" />
     </task>
     <servers />
   </component>
@@ -5935,9 +5980,11 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OrderManagement_CC_testCloneOrderWithPricingMicroServiceCallOutWithNoSourceRecord.ic2" NAME="DevNov Coverage Results" MODIFIED="1666690699780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_ProcedureTrackerTriggerHelper_testcheckUniqueness.ic2" NAME="StgJan Coverage Results" MODIFIED="1673520387472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_NewContractController_testEligibilityOfCreation.ic2" NAME="DevFeb Coverage Results" MODIFIED="1673603932022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevFeb" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_GuidanceRendererController.ic2" NAME="SureSmile Coverage Results" MODIFIED="1669718040013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchCreateProcedureTrackers_testBatchCreateProcedureTrackers.ic2" NAME="StgJan Coverage Results" MODIFIED="1673859457008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_BatchSetAccountSubSegmentation.ic2" NAME="Production Coverage Results" MODIFIED="1674815707650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Production" CONNECTION_TYPE="OAUTH" />
   </component>
 </project>
