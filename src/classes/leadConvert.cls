@@ -49,7 +49,11 @@ global with sharing class leadConvert {
 
             Database.LeadConvertResult lcr = null;
 
-                 lcr = Database.convertLead(lc, true);
+            Database.DMLOptions dmlOpts = new Database.DMLOptions();
+            dmlOpts.duplicateRuleHeader.allowSave = true;
+            dmlOpts.optAllOrNone = true;
+
+            lcr = Database.convertLead(lc, dmlOpts);
 
 
             if (lcr.isSuccess()) {
