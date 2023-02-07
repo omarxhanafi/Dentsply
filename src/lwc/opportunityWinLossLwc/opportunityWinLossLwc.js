@@ -9,8 +9,16 @@ export default class OpportunityWinLossLwc extends LightningElement {
 
     showWinLossFields = false;
 
+    connectedCallback() {
+        this.handleShowWinLossFields();
+    }
+
     handleStageNameChange(event) {
         this.stageName = event.target.value;
+        this.handleShowWinLossFields();
+    }
+
+    handleShowWinLossFields() {
         if (this.stageName === 'Closed Won' || this.stageName === 'Closed Lost') {
             this.showWinLossFields = true;
         } else {
