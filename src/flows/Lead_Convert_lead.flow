@@ -286,8 +286,8 @@
     <assignments>
         <name>Set_owner_not_assigned</name>
         <label>Set owner not assigned</label>
-        <locationX>1392</locationX>
-        <locationY>383</locationY>
+        <locationX>1400</locationX>
+        <locationY>337</locationY>
         <assignmentItems>
             <assignToReference>OwnerNotAssigned</assignToReference>
             <operator>Assign</operator>
@@ -297,6 +297,22 @@
         </assignmentItems>
         <connector>
             <targetReference>SelectOwnerScreen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SetOppValidationRuleTriggered</name>
+        <label>Set Opp Validation Rule Triggered</label>
+        <locationX>1400</locationX>
+        <locationY>838</locationY>
+        <assignmentItems>
+            <assignToReference>OppValidationRuleTriggered</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opportunity_details</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -458,6 +474,31 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Opportunity_Validation_Rule_Triggered</name>
+        <label>Is Opportunity Validation Rule Triggered?</label>
+        <locationX>1514</locationX>
+        <locationY>847</locationY>
+        <defaultConnector>
+            <targetReference>scrErrorMessage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Validation_Rule_Triggered</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Flow.FaultMessage</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>You must enter a Win/Loss Description upon closing an Opportunity related to Pricemescan Connect</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetOppValidationRuleTriggered</targetReference>
+            </connector>
+            <label>Opportunity Validation Rule Triggered</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_owner_assigned</name>
         <label>Is owner assigned?</label>
         <locationX>1392</locationX>
@@ -561,6 +602,11 @@ Converting Sales Leads into Opportunities
         <dataType>String</dataType>
         <expression>IF( OR( {!Get_lead.Sales_Rep__c}!= null, {!Get_lead.Sales_Rep__c} != &apos;&apos;), {!Get_lead.Sales_Rep__c}, {!$User.Id})</expression>
     </formulas>
+    <formulas>
+        <name>ValidationRuleCheck</name>
+        <dataType>String</dataType>
+        <expression>&quot;Create_opportunity.errors[0].message&quot;</expression>
+    </formulas>
     <interviewLabel>Lead: Convert lead {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Lead: Convert lead</label>
     <loops>
@@ -606,7 +652,7 @@ Converting Sales Leads into Opportunities
             <targetReference>Update_initiative_account</targetReference>
         </connector>
         <faultConnector>
-            <targetReference>scrErrorMessage</targetReference>
+            <targetReference>Is_Opportunity_Validation_Rule_Triggered</targetReference>
         </faultConnector>
         <inputReference>Opp2Create</inputReference>
     </recordCreates>
@@ -826,6 +872,30 @@ Converting Sales Leads into Opportunities
         <connector>
             <targetReference>ManualNameDecision</targetReference>
         </connector>
+        <fields>
+            <name>OppValidationRuleAlert</name>
+            <extensionName>c:LightningPage_WarningMessage</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>You must enter a Win/Loss Description upon closing an Opportunity related to Primescan Connect</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>OppValidationRuleTriggered</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>OppScript</name>
             <extensionName>c:ServiceCloud_FlowScript</extensionName>
@@ -1078,7 +1148,7 @@ Converting Sales Leads into Opportunities
         <allowPause>true</allowPause>
         <fields>
             <name>msgError</name>
-            <fieldText>&lt;p&gt;Something went wrong in the Flow, please contact your administrator and provide the following details:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Something went wrong in the Flow, please contact your administrator and provide the following details:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1234,6 +1304,16 @@ Converting Sales Leads into Opportunities
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>OpportunityContactRole</objectType>
+    </variables>
+    <variables>
+        <name>OppValidationRuleTriggered</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
     </variables>
     <variables>
         <name>Owner</name>
