@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/flowDefinitions/Case_Default_Process_Builder.flowDefinition" beforeDir="false" afterPath="$PROJECT_DIR$/src/flowDefinitions/Case_Default_Process_Builder.flowDefinition" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flowDefinitions/Lead_Convert_lead.flowDefinition" beforeDir="false" afterPath="$PROJECT_DIR$/src/flowDefinitions/Lead_Convert_lead.flowDefinition" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flowDefinitions/Lead_Create_lead_from_account.flowDefinition" beforeDir="false" afterPath="$PROJECT_DIR$/src/flowDefinitions/Lead_Create_lead_from_account.flowDefinition" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flowDefinitions/Procedure_Tracker_Before_Handler.flowDefinition" beforeDir="false" afterPath="$PROJECT_DIR$/src/flowDefinitions/Procedure_Tracker_Before_Handler.flowDefinition" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flowDefinitions/Quote_Line_Item_Before_Handler.flowDefinition" beforeDir="false" afterPath="$PROJECT_DIR$/src/flowDefinitions/Quote_Line_Item_Before_Handler.flowDefinition" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flowDefinitions/SFSServiceAppointmentStatusTransition.flowDefinition" beforeDir="false" afterPath="$PROJECT_DIR$/src/flowDefinitions/SFSServiceAppointmentStatusTransition.flowDefinition" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flowDefinitions/User_Default_Process_Builder.flowDefinition" beforeDir="false" afterPath="$PROJECT_DIR$/src/flowDefinitions/User_Default_Process_Builder.flowDefinition" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flows/Case_Default_Process_Builder.flow" beforeDir="false" afterPath="$PROJECT_DIR$/src/flows/Case_Default_Process_Builder.flow" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flows/Lead_Convert_lead.flow" beforeDir="false" afterPath="$PROJECT_DIR$/src/flows/Lead_Convert_lead.flow" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flows/Lead_Create_lead_from_account.flow" beforeDir="false" afterPath="$PROJECT_DIR$/src/flows/Lead_Create_lead_from_account.flow" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flows/Procedure_Tracker_Before_Handler.flow" beforeDir="false" afterPath="$PROJECT_DIR$/src/flows/Procedure_Tracker_Before_Handler.flow" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flows/Quote_Line_Item_Before_Handler.flow" beforeDir="false" afterPath="$PROJECT_DIR$/src/flows/Quote_Line_Item_Before_Handler.flow" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flows/SFSServiceAppointmentStatusTransition.flow" beforeDir="false" afterPath="$PROJECT_DIR$/src/flows/SFSServiceAppointmentStatusTransition.flow" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flows/User_Default_Process_Builder.flow" beforeDir="false" afterPath="$PROJECT_DIR$/src/flows/User_Default_Process_Builder.flow" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/flowLookupLwcController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/flowLookupLwcController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/flow_lookupLwc/flow_lookupLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/flow_lookupLwc/flow_lookupLwc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,10 +90,12 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
+                      <entry key="APEXCLASS:FLOWLOOKUPLWCCONTROLLER" value="1675866890216" />
                       <entry key="APEXCLASS:TEST_ACCOUNTTRIGGER" value="1673603054096" />
                       <entry key="APEXCLASS:TEST_BATCHSETACCOUNTSUBSEGMENTATION" value="1673603581187" />
                       <entry key="APEXCLASS:TEST_NEWCONTRACTCONTROLLER" value="1674815796133" />
                       <entry key="FLOW:LEAD_CONVERT_LEAD" value="1674487016000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:FLOW_LOOKUPLWC" value="1675864746297" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:INSIDESALESCAMPAIGNTRACKER" value="1673263280000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:OGSMOBJECTIVESTABLE" value="1673284249649" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:OPPORTUNITYWINLOSSLWC" value="1675765717538" />
@@ -626,9 +617,13 @@
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="select Name from profile where id = '00e20000001Ygwu'" />
+                  <option name="name" value="SOQL Query 5" />
+                </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="1" />
+            <option name="selectedSavedDocumentIndex" value="4" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
