@@ -79,12 +79,18 @@ global with sharing class leadConvert {
 
         } catch (Exception e) {
             String errorMessage = e.getMessage();
-            // Check if the error is related to the contact validation rule
-            if(errorMessage.contains('Please make sure to fill in the Title for this Contact')){
-                // Display the specific error message
-                throw new ConvertLeadActionException('Please make sure to fill in the Title for this Contact');
-            } else {
+            Integer startIndex = errorMessage.indexOf(':', errorMessage.indexOf(':') + 1) + 2;
+            if (startIndex == -1) {
                 throw new ConvertLeadActionException(errorMessage);
+            } else {
+                String filteredMessage = errorMessage.substring(startIndex);
+                Integer endIndex = filteredMessage.indexOf(':');
+
+                if(endIndex != -1){
+                    filteredMessage = filteredMessage.substring(0, endIndex);
+                }
+
+                throw new ConvertLeadActionException(filteredMessage);
             }
         }
         
