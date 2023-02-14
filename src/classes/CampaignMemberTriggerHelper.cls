@@ -120,7 +120,7 @@ Inputs:         @param newCampaignMembers
         Map<Id,Campaign> campaigns =
             new Map<Id,Campaign> ([SELECT Id, RecordTypeId, OwnerId FROM  Campaign WHERE Id in :campaignIds]);
         for(CampaignMember campaignMember : newCampaignMembers) {
-			// TFUS-000004342: Fill in the Campaign Owner if needed TFUS-000004715
+            // TFUS-000004342: Fill in the Campaign Owner if needed TFUS-000004715
             if (campaignMember.CampaignMemberOwner__c == null){
                 campaignMember.CampaignMemberOwner__c  = campaigns.get(campaignMember.CampaignId).OwnerId ;
             }
@@ -180,7 +180,7 @@ Inputs:         @param newCampaignMembers
     public static void createOpportunities(List<CampaignMember> newCampaignMembers, Map<Id, CampaignMember> oldCampaignMemberMap, Boolean overrideHasResponded) {
         Boolean isIDSIntegrationUser = UserInfo.getName() == 'IDS Integration' ? true : false;
         BatchSettings__c settings = BatchSettings__c.getInstance('Default');
-        if (Test.isRunningTest() || settings.CampMgmtCampaignMemberTriggerIsEnabled__c){  
+        if (Test.isRunningTest() || settings.CampMgmtCampaignMemberTriggerIsEnabled__c){
             List<RecordType> oppRT = [SELECT Id, Name FROM RecordType WHERE sObjectType='Opportunity' AND DeveloperName='Lightning_Pipeline_Opportunity'];
             List<RecordType> oppDealerRT = [SELECT Id, Name FROM RecordType WHERE sObjectType='Opportunity' AND DeveloperName='Dealer_Community'];
             
@@ -208,7 +208,7 @@ Inputs:         @param newCampaignMembers
                 //}
             }
             
-            //Get all Campaigns related to the included Campaign Members 
+            //Get all Campaigns related to the included Campaign Members
             Map<Id, Campaign> campaigns = new Map<Id, Campaign>(
                 [SELECT Id, RecordTypeId, Source_Origin__c, OwnerId, Brands__c, Convert_To__c, RecordType.DeveloperName, AssignRepFromDealer__c, Include_in_Dealer_Community__c, Notify_Dealer_Sales_Rep_by_Email__c from Campaign where Id in :campaignIds]
             );
@@ -227,32 +227,32 @@ Inputs:         @param newCampaignMembers
             Map<String,List<String>> dependentPicklistSalesLeadCategoryBrandMap = categorySalesLeadDependencyRuleCheck == true ? GlobalUtils.getDependentPicklistValues(Field_Sales_Project_Members__c.Brand__c) : null;
             Map<String,List<String>> dependentPicklistOpportunityCountryCategoryMap = categoryOppDependencyRuleCheck == true ? GlobalUtils.getDependentPicklistValues(Opportunity.NA_Category__c) : null;
             Map<String,List<String>> dependentPicklistOpportunityCategoryBrandMap = categoryOppDependencyRuleCheck == true ? GlobalUtils.getDependentPicklistValues(Opportunity.NA_Brand__c) : null;
-
+            
             if(recordTypeCheck == true){
                 Map<Id, Lead> stdLeads = new Map<Id, Lead>();
-                    
+                
                 //Get all Leads related to the included Campaign Members
                 if(stdLeadIds != null){
                     for(Lead stdLead : [SELECT Id, ConvertedAccountId from Lead where Id in :stdLeadIds])
                         stdLeads.put(stdLead.Id, stdLead);
-                } 
-               
+                }
+                
                 
                 //Get all Contacts related to the included Campaign Members
                 Map<Id, Contact> contacts = new Map<Id, Contact>(
                     [SELECT Id, AccountId, Account.Country__c from Contact where Id in :contactIds]
                 );
                 
-                //Add all related accounts to the accountIds set    
+                //Add all related accounts to the accountIds set
                 for(Contact c : contacts.values()){
                     accountIds.add(c.AccountId);
-                }     
+                }
                 
                 //Get all Dealers related to the included Campaign Members
                 Map<Id, Account> dealers = new Map<Id, Account>(
-                    [SELECT Id, Name, 
+                    [SELECT Id, Name,
                      (SELECT AccountId, ContactId, IsActive, IsDirect, Roles, Specialty__c, Contact.Email, Contact.Legacy_ID__c FROM AccountContactRelations),
-                     (SELECT AccountId, RoleInTerritory2, UserId FROM AccountUserTerritory2Views) 
+                     (SELECT AccountId, RoleInTerritory2, UserId FROM AccountUserTerritory2Views)
                      FROM Account WHERE Id IN: dealerIds]
                 );
                 
@@ -261,22 +261,22 @@ Inputs:         @param newCampaignMembers
                 Map<Id, List<UserTerritory2Association>> dealerUserMap = new Map<Id, List<UserTerritory2Association>>();
                 
                 Map<Id, Id> externalDealerUserMap = new Map<Id, Id>();
-                Set<Id> externalDealerContacts = new Set<Id>();    
+                Set<Id> externalDealerContacts = new Set<Id>();
                 if(dealers.size()>0){
                     for(Account dealer : dealers.values()){
                         for(AccountContactRelation rel : dealer.AccountContactRelations){
                             externalDealerContacts.add(rel.ContactId);
-                        }    
+                        }
                     }
-                    List<User> externalDealerUsers = new List<User>();    
-                    if(externalDealerContacts!=null){    
+                    List<User> externalDealerUsers = new List<User>();
+                    if(externalDealerContacts!=null){
                         externalDealerUsers = [SELECT Id, ContactId FROM User WHERE ContactId IN: externalDealerContacts];
                         for(User externalUser : externalDealerUsers){
                             externalDealerUserMap.put(externalUser.ContactId, externalUser.Id);
-                        }        
-                    }    
+                        }
+                    }
                     
-                }    
+                }
                 
                 if(!Test.isRunningTest()){
                     dealerUserMap = UsersInAccountTerritories.getUsersFromMultipleAccounts(dealerIdList);
@@ -291,7 +291,7 @@ Inputs:         @param newCampaignMembers
                 
                 List<Id> accountIdList = new List<Id>();
                 accountIdList.addAll(accountIds);
-                Map<Id, List<UserTerritory2Association>> customerUserMap = new Map<Id, List<UserTerritory2Association>>(); 
+                Map<Id, List<UserTerritory2Association>> customerUserMap = new Map<Id, List<UserTerritory2Association>>();
                 if(!Test.isRunningTest()){
                     customerUserMap = UsersInAccountTerritories.getUsersFromMultipleAccounts(accountIdList);
                 }
@@ -340,7 +340,7 @@ Inputs:         @param newCampaignMembers
                         for(String brand : brandList){
                             settingsMap.put(brand, setting);
                         }
-                    } 
+                    }
                     else if(setting.BrandsList__c != null){
                         String brands = setting.BrandsList__c;
                         String[] brandList = brands.split(';');
@@ -350,7 +350,7 @@ Inputs:         @param newCampaignMembers
                     }
                     else{
                         settingsMap.put(setting.Category__c, setting);
-                    }    
+                    }
                 }
                 
                 Map<String, String> userCountryMap = new Map<String, String>();
@@ -387,7 +387,7 @@ Inputs:         @param newCampaignMembers
                     
                     
                     //Added for IDS tradeshow integration updates
-                   
+                    
                     Boolean isIDSLogic = oldCampaignMemberMap != null && ((campaignMember.ContactId != null && oldCampaignMemberMap.get(campaignMember.Id).ContactId != null && campaignMember.ContactId != oldCampaignMemberMap.get(campaignMember.Id).ContactId ) || (isIDSIntegrationUser && ((oldCampaignMemberMap.get(campaignMember.Id).VoucherCode__c != campaignMember.VoucherCode__c) || (oldCampaignMemberMap.get(campaignMember.Id).Brand__c != campaignMember.Brand__c) || (oldCampaignMemberMap.get(campaignMember.Id).Dealer__c != campaignMember.Dealer__c)))) ;
                     //SALES LEAD CONVERSION
                     if(convertTo == 'Sales Lead' && (recordType == 'Digital_Marketing_Campaign' || recordType == 'InPersonEventCampaign')  && campaignMember.ContactId != null && campaignMember.HasResponded == true && (respondedBefore == false || overrideHasResponded == true || isIDSLogic)){ //&& (contacts.get(campaignMember.ContactId).Account.Country__c == 'US' || contacts.get(campaignMember.ContactId).Account.Country__c == 'CA')
@@ -399,17 +399,17 @@ Inputs:         @param newCampaignMembers
                         String brand = campaignMember.Brand__c;
                         lead.VoucherCode__c = campaignMember.VoucherCode__c;
                         
-                        if(brand == null || brand == ''){                    
+                        if(brand == null || brand == ''){
                             brand = campaigns.get(campaignMember.CampaignId).Brands__c;
                         }
                         
                         if(campaignMember.Dealer__c != null){
                             lead.Dealer__c = campaignMember.Dealer__c;
                         }
-                        /*               
+                        /*
 Boolean containsBrand = settingsMap.containsKey(brand);
 if(containsBrand == false){
-campaignMember.addError('A Sales Lead could unfortunately not be created. A matching setting seems to be missing for the selected Brand/Category.');                     	
+campaignMember.addError('A Sales Lead could unfortunately not be created. A matching setting seems to be missing for the selected Brand/Category.');
 }
 */
                         //Please note! This logic is now built around the CMDT CountryCodeMap__mdt
@@ -422,7 +422,7 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
                         
                         Lead.Category__c =  GlobalUtils.getCategoryFromBrand(userCountry ,brand ,dependentPicklistSalesLeadCountryCategoryMap,dependentPicklistSalesLeadCategoryBrandMap);
                         System.debug('Lead category: ' + Lead.Category__c);
-
+                        
                         Lead.Brand__c = brand;
                         lead.Account__c = campaignMember.LeadId == null ? contacts.get(campaignMember.ContactId).AccountId : stdLeads.get(campaignMember.LeadId).ConvertedAccountId;
                         lead.Contact__c = campaignMember.ContactId;
@@ -442,7 +442,7 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
                         
                         if(Test.isRunningTest()){
                             UserTerritory2Association accUser = new UserTerritory2Association();
-                            accUser.RoleInTerritory2 = 'Sales Rep (CERC)'; 
+                            accUser.RoleInTerritory2 = 'Sales Rep (CERC)';
                             accUsers.add(accUser);
                         }
                         else{
@@ -453,16 +453,16 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
                                 if(roleMap.contains(user.RoleInTerritory2)){
                                     lead.Sales_Rep__c = user.UserId;
                                 }
-                            }    
+                            }
                         }
-
+                        
                         //Check internal sales reps assigned through the dealer account's territories
                         List<UserTerritory2Association> dealerUsers = new List<UserTerritory2Association>();
                         if(dealers != null && assignFromDealer == true){
                             
                             if(Test.isRunningTest()){
                                 UserTerritory2Association dealerUser = new UserTerritory2Association();
-                                dealerUser.RoleInTerritory2 = 'Sales Rep (CERC)'; 
+                                dealerUser.RoleInTerritory2 = 'Sales Rep (CERC)';
                                 dealerusers.add(dealerUser);
                             }
                             else{
@@ -471,11 +471,11 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
                         }
                         
                         if(dealerUsers != null && assignFromDealer == true){
-                            for(UserTerritory2Association user:dealerUsers){    
+                            for(UserTerritory2Association user:dealerUsers){
                                 if(roleMap.contains(user.RoleInTerritory2)){
                                     lead.Sales_Rep__c = user.UserId;
                                 }
-                            }              
+                            }
                         }
                         
                         if(lead.Sales_Rep__c == null){
@@ -493,175 +493,175 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
                         If(brand == null){
                             brand = campaigns.get(campaignMember.CampaignId).Brands__c;
                         }
-                            
-                            Opportunity opp = new Opportunity();
-                            if(includeInCommunity == 'Yes'){
-                                opp.RecordTypeId = oppDealerRT[0].Id;
-                                opp.StageName = 'Registered'; 
+                        
+                        Opportunity opp = new Opportunity();
+                        if(includeInCommunity == 'Yes'){
+                            opp.RecordTypeId = oppDealerRT[0].Id;
+                            opp.StageName = 'Registered';
+                        }
+                        else{
+                            opp.RecordTypeId = oppRT[0].Id;
+                            opp.StageName = '1. Needs analysis';
+                        }
+                        
+                        //opp.LeadSource = 'Email Campaign'; //campaigns.get(campaignMember.CampaignId).Source_Origin__c != null ? campaigns.get(campaignMember.CampaignId).Source_Origin__c : null;
+                        opp.LeadSource = campaigns.get(campaignMember.CampaignId).Source_Origin__c != null ? campaigns.get(campaignMember.CampaignId).Source_Origin__c : null;
+                        opp.CampaignId = campaignMember.CampaignId;
+                        opp.Campaign__c = campaignMember.CampaignId; //Added to have related list in campaigns page layout.
+                        opp.CloseDate = Date.today().addMonths(3);
+                        opp.Primary_Contact__c = campaignMember.ContactId;
+                        opp.ContactId = campaignMember.ContactId;
+                        opp.CustomerNotes__c = campaignMember.Description__c;
+                        opp.VoucherCode__c = campaignMember.VoucherCode__c;
+                        
+                        //Please note! This logic is now built around the CMDT CountryCodeMap__mdt
+                        String accountCountry = contacts.get(campaignMember.ContactId).Account.Country__c;
+                        String userCountry = userCountryMap.get(accountCountry);
+                        if(userCountry != null){
+                            opp.User_Country__c = userCountry;
+                        }
+                        
+                        
+                        opp.NA_Brand__c = campaignMember.Brand__c;
+                        //The dealer assignment need to be collected from the Campaign Member
+                        if(campaignMember.Dealer__c != null){
+                            opp.Dealer__c = campaignMember.Dealer__c;
+                        }
+                        
+                        String pricebookId = '';
+                        pricebookId = pricebookSettingMap.get(contacts.get(campaignMember.ContactId).Account.Country__c);
+                        
+                        if(pricebookId != ''){
+                            opp.Pricebook2Id = pricebookId;
+                        }
+                        
+                        //In case the Brand field is empty on the Campaign Member, collect it from the Campaign instead
+                        if(opp.NA_Brand__c == null || opp.NA_Brand__c == ''){
+                            opp.NA_Brand__c = campaigns.get(campaignMember.CampaignId).Brands__c;
+                        }
+                        
+                        opp.AccountId = campaignMember.LeadId == null ? contacts.get(campaignMember.ContactId).AccountId  : stdLeads.get(campaignMember.LeadId).ConvertedAccountId;
+                        
+                        List<AccountContactRelation> dealerContacts = new List<AccountContactRelation>();
+                        if(dealers!= null){
+                            Account dealerAcc = dealers.get(opp.Dealer__c);
+                            if(dealerAcc != null){
+                                dealerContacts =  dealers.get(opp.Dealer__c).AccountContactRelations;
                             }
-                            else{
-                                opp.RecordTypeId = oppRT[0].Id;
-                                opp.StageName = '1. Needs analysis';    
-                            }                
+                        }
+                        
+                        Map<Id, OpportunityTeamMember> oppMembers = new Map<Id, OpportunityTeamMember>();
+                        String assignment = '';
+                        if(settingsMap.get(opp.NA_Brand__c) != null){
+                            //opp.NA_Category__c = settingsMap.get(opp.NA_Brand__c).Category__c;
                             
-                            //opp.LeadSource = 'Email Campaign'; //campaigns.get(campaignMember.CampaignId).Source_Origin__c != null ? campaigns.get(campaignMember.CampaignId).Source_Origin__c : null;
-                            opp.LeadSource = campaigns.get(campaignMember.CampaignId).Source_Origin__c != null ? campaigns.get(campaignMember.CampaignId).Source_Origin__c : null;
-                        	opp.CampaignId = campaignMember.CampaignId;
-                        	opp.Campaign__c = campaignMember.CampaignId; //Added to have related list in campaigns page layout.
-                            opp.CloseDate = Date.today().addMonths(3);
-                            opp.Primary_Contact__c = campaignMember.ContactId;    
-                            opp.ContactId = campaignMember.ContactId;
-                            opp.CustomerNotes__c = campaignMember.Description__c;
-                        	opp.VoucherCode__c = campaignMember.VoucherCode__c;
-                            
-                            //Please note! This logic is now built around the CMDT CountryCodeMap__mdt
-                            String accountCountry = contacts.get(campaignMember.ContactId).Account.Country__c;
-                            String userCountry = userCountryMap.get(accountCountry);
-                            if(userCountry != null){
-                                opp.User_Country__c = userCountry;
+                            //Check assignment based on category
+                            assignment = settingsMap.get(opp.NA_Brand__c).AssignOwnerFrom__c;
+                        }
+                        opp.NA_Category__c = GlobalUtils.getCategoryFromBrand(userCountry ,brand ,dependentPicklistOpportunityCountryCategoryMap , dependentPicklistOpportunityCategoryBrandMap);
+                        Set<String> roleMap = new Set<String>();
+                        if(settingsMap.get(opp.NA_Brand__c) != null && settingsMap.get(opp.NA_Brand__c).UserRoles__c != null){
+                            String roleList = settingsMap.get(opp.NA_Brand__c).UserRoles__c;
+                            String[] roles = roleList.split(';');
+                            for(String role:roles){
+                                roleMap.add(role);
                             }
-                            
-                            
-                            opp.NA_Brand__c = campaignMember.Brand__c;
-                            //The dealer assignment need to be collected from the Campaign Member
-                            if(campaignMember.Dealer__c != null){
-                                opp.Dealer__c = campaignMember.Dealer__c;
-                            }
-                            
-                            String pricebookId = '';
-                            pricebookId = pricebookSettingMap.get(contacts.get(campaignMember.ContactId).Account.Country__c);
-                            
-                            if(pricebookId != ''){
-                                opp.Pricebook2Id = pricebookId;
-                            }
-                            
-                            //In case the Brand field is empty on the Campaign Member, collect it from the Campaign instead
-                            if(opp.NA_Brand__c == null || opp.NA_Brand__c == ''){                    
-                                opp.NA_Brand__c = campaigns.get(campaignMember.CampaignId).Brands__c;
-                            }
-                            
-                            opp.AccountId = campaignMember.LeadId == null ? contacts.get(campaignMember.ContactId).AccountId  : stdLeads.get(campaignMember.LeadId).ConvertedAccountId;
-
-                            List<AccountContactRelation> dealerContacts = new List<AccountContactRelation>();
-                            if(dealers!= null){
-                                Account dealerAcc = dealers.get(opp.Dealer__c);                    
-                                if(dealerAcc != null){
-                                    dealerContacts =  dealers.get(opp.Dealer__c).AccountContactRelations;
-                                }    
-                            }
-                            
-                            Map<Id, OpportunityTeamMember> oppMembers = new Map<Id, OpportunityTeamMember>();
-                            String assignment = '';
-                            if(settingsMap.get(opp.NA_Brand__c) != null){
-                                //opp.NA_Category__c = settingsMap.get(opp.NA_Brand__c).Category__c;    
-                                
-                                //Check assignment based on category
-                                assignment = settingsMap.get(opp.NA_Brand__c).AssignOwnerFrom__c;
-                            }
-                            opp.NA_Category__c = GlobalUtils.getCategoryFromBrand(userCountry ,brand ,dependentPicklistOpportunityCountryCategoryMap , dependentPicklistOpportunityCategoryBrandMap);
-                            Set<String> roleMap = new Set<String>();
-                        	if(settingsMap.get(opp.NA_Brand__c) != null && settingsMap.get(opp.NA_Brand__c).UserRoles__c != null){
-                                String roleList = settingsMap.get(opp.NA_Brand__c).UserRoles__c;
-                            	String[] roles = roleList.split(';');
-                           		for(String role:roles){
-                                	roleMap.add(role);
+                        }
+                        
+                        
+                        
+                        //Check internal sales reps assigned through the customer account's territories
+                        List<UserTerritory2Association> accUsers = new List<UserTerritory2Association>();
+                        
+                        if(Test.isRunningTest()){
+                            UserTerritory2Association accUser = new UserTerritory2Association();
+                            accUser.RoleInTerritory2 = 'Sales Rep (CERC)';
+                            accUsers.add(accUser);
+                        }
+                        else{
+                            accUsers = customerUserMap.get(opp.AccountId);
+                        }
+                        
+                        //Check internal users assigned through the customer's ETM
+                        if(accUsers != null && assignFromDealer != true){
+                            for(UserTerritory2Association user:accUsers){
+                                if(roleMap.contains(user.RoleInTerritory2)){
+                                    OpportunityTeamMember omAcc = new OpportunityTeamMember();
+                                    opp.OwnerId = user.UserId;
+                                    omAcc.UserId = user.UserId;
+                                    omAcc.TeamMemberRole = 'Sales Representative';
+                                    omAcc.OpportunityAccessLevel = 'Edit';
+                                    oppMembers.put(omAcc.UserId, omAcc);
                                 }
                             }
-                            
-                            
-                            
-                            //Check internal sales reps assigned through the customer account's territories
-                            List<UserTerritory2Association> accUsers = new List<UserTerritory2Association>();
+                        }
+                        
+                        //Check internal sales reps assigned through the dealer account's territories
+                        List<UserTerritory2Association> dealerUsers = new List<UserTerritory2Association>();
+                        if(dealers != null && assignFromDealer == true){
                             
                             if(Test.isRunningTest()){
-                                UserTerritory2Association accUser = new UserTerritory2Association();
-                                accUser.RoleInTerritory2 = 'Sales Rep (CERC)'; 
-                                accUsers.add(accUser);
+                                UserTerritory2Association dealerUser = new UserTerritory2Association();
+                                dealerUser.RoleInTerritory2 = 'Sales Rep (CERC)';
+                                dealerusers.add(dealerUser);
                             }
                             else{
-                                accUsers = customerUserMap.get(opp.AccountId);
+                                dealerUsers = dealerUserMap.get(opp.Dealer__c);
                             }
-                            
-                            //Check internal users assigned through the customer's ETM    
-                            if(accUsers != null && assignFromDealer != true){
-                                for(UserTerritory2Association user:accUsers){
-                                    if(roleMap.contains(user.RoleInTerritory2)){
-                                        OpportunityTeamMember omAcc = new OpportunityTeamMember();
-                                        opp.OwnerId = user.UserId;
-                                        omAcc.UserId = user.UserId;
-                                        omAcc.TeamMemberRole = 'Sales Representative';
-                                        omAcc.OpportunityAccessLevel = 'Edit';
-                                        oppMembers.put(omAcc.UserId, omAcc);
-                                    }
-                                }    
-                            }   
-                            
-                            //Check internal sales reps assigned through the dealer account's territories
-                            List<UserTerritory2Association> dealerUsers = new List<UserTerritory2Association>();
-                            if(dealers != null && assignFromDealer == true){
-                                
-                                if(Test.isRunningTest()){
-                                    UserTerritory2Association dealerUser = new UserTerritory2Association();
-                                    dealerUser.RoleInTerritory2 = 'Sales Rep (CERC)'; 
-                                    dealerusers.add(dealerUser);
-                                }
-                                else{
-                                    dealerUsers = dealerUserMap.get(opp.Dealer__c);
+                        }
+                        
+                        if(dealerUsers != null && assignFromDealer == true){
+                            for(UserTerritory2Association user:dealerUsers){
+                                if(roleMap.contains(user.RoleInTerritory2)){
+                                    OpportunityTeamMember omDealerInt = new OpportunityTeamMember();
+                                    opp.OwnerId = user.UserId;
+                                    omDealerInt.UserId = user.UserId;
+                                    omDealerInt.TeamMemberRole = 'Sales Representative';
+                                    omDealerInt.OpportunityAccessLevel = 'Edit';
+                                    oppMembers.put(omDealerInt.UserId, omDealerInt);
                                 }
                             }
-                            
-                            if(dealerUsers != null && assignFromDealer == true){
-                                for(UserTerritory2Association user:dealerUsers){    
-                                    if(roleMap.contains(user.RoleInTerritory2)){
-                                        OpportunityTeamMember omDealerInt = new OpportunityTeamMember();
-                                        opp.OwnerId = user.UserId;
-                                        omDealerInt.UserId = user.UserId;
-                                        omDealerInt.TeamMemberRole = 'Sales Representative';
-                                        omDealerInt.OpportunityAccessLevel = 'Edit';
-                                        oppMembers.put(omDealerInt.UserId, omDealerInt);
-                                    }
-                                }              
-                            }
-                            
-                            if(includeInCommunity == 'Yes'){
-                                if(dealerContacts != null){ 
-                                    for(AccountContactRelation rel : dealerContacts){
-                                        if(rel.Specialty__c != null){
-                                            if(roleMap.contains(rel.Specialty__c)){
-                                                
-                                                OpportunityTeamMember omDealerExt = new OpportunityTeamMember();
-                                                
-                                                omDealerExt.UserId = externalDealerUserMap.get(rel.ContactId);
-                                                omDealerExt.OpportunityAccessLevel = 'Edit';
-                                                omDealerExt.TeamMemberRole = 'Dealer Sales Rep';
-                                                System.debug(omDealerExt);
-                                                if(omDealerExt.UserId != null){
-                                                    opp.OwnerId = externalDealerUserMap.get(rel.ContactId);
-                                                    oppMembers.put(omDealerExt.UserId, omDealerExt);
-                                                }
-                                                
+                        }
+                        
+                        if(includeInCommunity == 'Yes'){
+                            if(dealerContacts != null){
+                                for(AccountContactRelation rel : dealerContacts){
+                                    if(rel.Specialty__c != null){
+                                        if(roleMap.contains(rel.Specialty__c)){
+                                            
+                                            OpportunityTeamMember omDealerExt = new OpportunityTeamMember();
+                                            
+                                            omDealerExt.UserId = externalDealerUserMap.get(rel.ContactId);
+                                            omDealerExt.OpportunityAccessLevel = 'Edit';
+                                            omDealerExt.TeamMemberRole = 'Dealer Sales Rep';
+                                            System.debug(omDealerExt);
+                                            if(omDealerExt.UserId != null){
+                                                opp.OwnerId = externalDealerUserMap.get(rel.ContactId);
+                                                oppMembers.put(omDealerExt.UserId, omDealerExt);
                                             }
+                                            
                                         }
                                     }
                                 }
-                                else{
-                                    opp.OwnerId = campaigns.get(campaignMember.CampaignId).OwnerId;
-                                }      
                             }
-                            
-                            
-                            //Assign opportunities to the Campaign owner in case of exceptions
-                            if(opp.OwnerId == null){
+                            else{
                                 opp.OwnerId = campaigns.get(campaignMember.CampaignId).OwnerId;
                             }
-                            
-                            OppWrapper oppRecord = new OppWrapper();
-                            oppRecord.opp = opp;
-                            
-                            oppRecord.oppMembers = oppMembers.values();
-                            oppRecord.CampaignMemberIdUpdate = campaignMember.Id;
-                            oppList.add(oppRecord);
-                            
+                        }
+                        
+                        
+                        //Assign opportunities to the Campaign owner in case of exceptions
+                        if(opp.OwnerId == null){
+                            opp.OwnerId = campaigns.get(campaignMember.CampaignId).OwnerId;
+                        }
+                        
+                        OppWrapper oppRecord = new OppWrapper();
+                        oppRecord.opp = opp;
+                        
+                        oppRecord.oppMembers = oppMembers.values();
+                        oppRecord.CampaignMemberIdUpdate = campaignMember.Id;
+                        oppList.add(oppRecord);
+                        
                     }
                 }
                 
@@ -669,11 +669,11 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
                 
                 List<CampaignMember>  campaignMemberToUpdateList=new List<CampaignMember>();
                 
-                //Sales Lead creation    
+                //Sales Lead creation
                 if(!memberIdWithLead.values().isempty()){
                     
                     System.debug(memberIdWithLead);
-                            
+                    
                     try{
                         Insert memberIdWithLead.values();
                     }
@@ -682,20 +682,32 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
                         //DebugLog.addError(e.getMessage());
                     }
                     
-                    for(CampaignMember campaignMemberToUpdate :[SELECT ID, SalesLead__c FROM CampaignMember WHERE Id IN: memberIdWithLead.keySet()]){
+                    for(CampaignMember campaignMemberToUpdate :[SELECT ID, VoucherCode__c, Dealer__c, Description__c, URL_Source__c, CampaignId, ContactId, SalesLead__c FROM CampaignMember WHERE Id IN: memberIdWithLead.keySet()]){
                         campaignMemberToUpdate.SalesLead__c = memberIdWithLead.get(campaignMemberToUpdate.Id).Id;
+                        if(isIDSIntegrationUser == false){
+                            
+                            campaignMemberToUpdate.VoucherCode__c = oldCampaignMemberMap != null && oldCampaignMemberMap.get(campaignMemberToUpdate.Id) != null && oldCampaignMemberMap.get(campaignMemberToUpdate.Id).VoucherCode__c != null ? oldCampaignMemberMap.get(campaignMemberToUpdate.Id).VoucherCode__c : campaignMemberToUpdate.VoucherCode__c;
+                            campaignMemberToUpdate.Dealer__c = oldCampaignMemberMap != null && oldCampaignMemberMap.get(campaignMemberToUpdate.Id) != null && oldCampaignMemberMap.get(campaignMemberToUpdate.Id).Dealer__c != null ? oldCampaignMemberMap.get(campaignMemberToUpdate.Id).Dealer__c : campaignMemberToUpdate.Dealer__c; 
+                            campaignMemberToUpdate.Description__c = oldCampaignMemberMap != null && oldCampaignMemberMap.get(campaignMemberToUpdate.Id) != null && oldCampaignMemberMap.get(campaignMemberToUpdate.Id).Description__c != null ? oldCampaignMemberMap.get(campaignMemberToUpdate.Id).Description__c : campaignMemberToUpdate.Description__c; 
+                            campaignMemberToUpdate.URL_Source__c = oldCampaignMemberMap != null && oldCampaignMemberMap.get(campaignMemberToUpdate.Id) != null && oldCampaignMemberMap.get(campaignMemberToUpdate.Id).URL_Source__c != null ? oldCampaignMemberMap.get(campaignMemberToUpdate.Id).URL_Source__c : campaignMemberToUpdate.URL_Source__c; 
+                            if(campaignMemberToUpdate.ContactId != null){
+                                campaignMemberToUpdate.IDSContact__c = campaignMemberToUpdate.ContactId + '+' + campaignMemberToUpdate.CampaignId ;
+                            }
+                        }
+                        
+                        
                         campaignMemberToUpdateList.add(campaignMemberToUpdate);
                     }
                 }
                 
-                if(!campaignMemberToUpdateList.isempty()){	
+                if(!campaignMemberToUpdateList.isempty()){
                     try{
                         update campaignMemberToUpdateList;
                     }
                     catch(Exception e){
                         DebugLog.addError(e.getMessage());
                     }
-                }  
+                }
                 
                 
                 
@@ -705,29 +717,30 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
                     OpportunityInsertAsynch oppInsert = new OpportunityInsertAsynch(oppList);
                     ID jobID = System.enqueueJob(oppInsert);
                 }
-            }    
+            }
         }
         
     }
     
-    public class oppWrapper{        
+    public class oppWrapper{
         public Opportunity opp;
         public List<OpportunityTeamMember> oppMembers;
         public String CampaignMemberIdUpdate;
     }
-
+    
     //set default owner
     public static void leadOwnerAssignment(List<CampaignMember> newCampaignMemberList){
         String digitalId = GlobalUtils.getRecordTypeId('CampaignMember', 'Digital_Marketing_Campaign_Member');
+        String recordTypeIDS = GlobalUtils.getRecordTypeId('CampaignMember', 'InPersonEventCampaignMember');
         
-        //String currentUser = UserInfo.getUserId();
-        //String eloquaIntegrationUserId = '0056M00000A14bnQAB';
-
         String eloquaIntegrationUser = 'Eloqua Integration';
+		String IDS_INTEGRATION_USER = 'IDS Integration';
+
         String currentUser = UserInfo.getName();
-        String eloquaIntegrationUserId = UserInfo.getName() == eloquaIntegrationUser ? UserInfo.getUserId() : null;
+        //eloquaIntegrationUserId -> Contains any integration User ID
+        String eloquaIntegrationUserId = UserInfo.getName() == eloquaIntegrationUser || IDS_INTEGRATION_USER == UserInfo.getName() ? UserInfo.getUserId() : null;
         
-        if(currentUser == eloquaIntegrationUser){
+        if(currentUser == eloquaIntegrationUser || currentUser == IDS_INTEGRATION_USER){
             
             Set<String> countriesSet2Digit = new Set<String>();
             Map<String, CountryCodeMap__mdt> countryCode3DigitKeyMap = new Map<String, CountryCodeMap__mdt>();
@@ -737,8 +750,8 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
             }
             Set<String> leadIds = new Set<String>();
             Set<String> campsIds = new Set<String>();
-            for(CampaignMember campMemb : newCampaignMemberList){  
-                if(campMemb.LeadId != null && campMemb.recordTypeId == digitalId && eloquaIntegrationUser == currentUser ){
+            for(CampaignMember campMemb : newCampaignMemberList){
+                if(campMemb.LeadId != null && (campMemb.recordTypeId == digitalId || campMemb.RecordTypeId == recordTypeIDS) && (eloquaIntegrationUser == currentUser || IDS_INTEGRATION_USER == UserInfo.getName() )){
                     leadIds.add(campMemb.LeadId);
                     campsIds.add(campMemb.CampaignId);
                     countriesSet2Digit.add(countryCode3DigitKeyMap.get(campMemb.Country_Code_3_digit__c).Country_Code_2_digit__c);
@@ -746,16 +759,16 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
             }
             
             //if(! leadIds.isempty()){
-                Map<Id, Lead> leadsData =  new Map<Id, Lead> ([SELECT Id, OwnerId, Country_Code_3_digit__c FROM Lead WHERE Id in :leadIds]);
+            Map<Id, Lead> leadsData =  new Map<Id, Lead> ([SELECT Id, OwnerId, Country_Code_3_digit__c FROM Lead WHERE Id in :leadIds]);
             //}
             //if(! leadIds.campsIds()){
-                Map<Id, Campaign> campaignsData =  new Map<Id, Campaign> ([SELECT Id, Brands__c, Country_Code_3_digit__c FROM Campaign WHERE Id in :campsIds]);
+            Map<Id, Campaign> campaignsData =  new Map<Id, Campaign> ([SELECT Id, Brands__c, Country_Code_3_digit__c FROM Campaign WHERE Id in :campsIds]);
             //}
-
+            
             LeadOpportunitySetting__mdt[] oppSettings = new LeadOpportunitySetting__mdt[]{};
-            if(Test.IsRunningTest()){
-                oppSettings = [SELECT DeveloperName, DefaultLeadOwner__c, BrandsList__c, Country__c, DefaultCampaignOwner__c, UserRoles__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE IsTest__c =: true];
-            }
+                if(Test.IsRunningTest()){
+                    oppSettings = [SELECT DeveloperName, DefaultLeadOwner__c, BrandsList__c, Country__c, DefaultCampaignOwner__c, UserRoles__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE IsTest__c =: true];
+                }
             else{
                 oppSettings = [SELECT DeveloperName, DefaultLeadOwner__c, BrandsList__c, Country__c, DefaultCampaignOwner__c, UserRoles__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE Country__c IN: countriesSet2Digit AND IsTest__c =: false];
             }
@@ -771,24 +784,25 @@ campaignMember.addError('A Sales Lead could unfortunately not be created. A matc
                 }
             }
             List<Lead> leadsToUpdate = new List<Lead>();
-            for(CampaignMember campMemb : newCampaignMemberList){  
-                if(campMemb.LeadId != null && campMemb.recordTypeId == digitalId && leadsData.get(campMemb.LeadId).OwnerId == eloquaIntegrationUserId){
+            for(CampaignMember campMemb : newCampaignMemberList){
+                if(campMemb.LeadId != null && (campMemb.recordTypeId == digitalId || campMemb.RecordTypeId == recordTypeIDS)  && (leadsData.get(campMemb.LeadId).OwnerId == eloquaIntegrationUserId || leadsData.get(campMemb.LeadId).OwnerId == IDS_INTEGRATION_USER )){
                     Lead leadToAdd = new Lead();
                     leadToAdd.Id = campMemb.LeadId;
                     leadToAdd.OwnerId = settingsMap.get(countryCode3DigitKeyMap.get(leadsData.get(campMemb.LeadId).Country_Code_3_digit__c).Country_Code_2_digit__c + '#' + campaignsData.get(campMemb.CampaignId).Brands__c) != null && settingsMap.get(countryCode3DigitKeyMap.get(leadsData.get(campMemb.LeadId).Country_Code_3_digit__c).Country_Code_2_digit__c + '#' + campaignsData.get(campMemb.CampaignId).Brands__c).DefaultLeadOwner__c != null ? settingsMap.get(countryCode3DigitKeyMap.get(leadsData.get(campMemb.LeadId).Country_Code_3_digit__c).Country_Code_2_digit__c + '#' + campaignsData.get(campMemb.CampaignId).Brands__c).DefaultLeadOwner__c : settingsMap.get(countryCode3DigitKeyMap.get(leadsData.get(campMemb.LeadId).Country_Code_3_digit__c).Country_Code_2_digit__c + '#DefaultCountryOwner').DefaultLeadOwner__c;
                     leadsToUpdate.add(leadToAdd);
                 }
-            if (! leadsToUpdate.isempty())
-                update leadsToUpdate;            
+                if (! leadsToUpdate.isempty())
+                    update leadsToUpdate;
             }
         }
     }
 
-
-
-
-
-
+    
+    
+    
+    
+    
+    
     
     /*------------------------------------------------------------
 Description:    Method for creating CFEs based on Campaign Member related to Physical/Virtual Event Campaigns (TFUS-[...]3395)
@@ -798,7 +812,7 @@ Inputs:         @param newCampaignMembers
     /*public static void createCFE(List<CampaignMember> newCampaignMembers, Map<Id, CampaignMember> oldCampaignMemberMap) {
 
 BatchSettings__c settings = BatchSettings__c.getInstance('Default');
-if (Test.isRunningTest() || settings.CampMgmtCampaignMemberTriggerIsEnabled__c){  
+if (Test.isRunningTest() || settings.CampMgmtCampaignMemberTriggerIsEnabled__c){
 
 Set<Id> campaignIds = new Set<Id>();
 Set<Id> contactIds = new Set<Id>();
@@ -820,7 +834,7 @@ for(Campaign cmp : campaigns.values()){
 if(cmp.RecordType.DeveloperName == 'InPersonEventCampaign'){
 recordTypeCheck = true;
 }
-}        
+}
 
 if(recordTypeCheck == true){
 
@@ -841,7 +855,7 @@ cfe.ActivityDate = Date.today();
 cfe.Status = 'Completed';
 cfeList.add(cfe);
 
-}    
+}
 
 try{
 insert cfeList;

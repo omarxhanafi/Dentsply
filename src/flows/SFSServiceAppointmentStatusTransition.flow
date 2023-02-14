@@ -124,7 +124,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>Service_Appointment.WorkDone__c</assignToReference>
+            <assignToReference>Service_Appointment.WorkDone2__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Describe_what_has_been_done</elementReference>
@@ -497,7 +497,7 @@
             <label>In Progress</label>
         </rules>
     </decisions>
-    <description>Mobile users can update the status of their service appointments while adhering to the permitted status flow +TFUS-000004775 + Add Start Time and End Time + cannot Complete Reason on SA + Remove Time Type Reference + Update WO Status on Incompletion + Fix Actual Duration + Update ScheduledTime with Mobile Times</description>
+    <description>Mobile users can update the status of their service appointments while adhering to the permitted status flow +TFUS-000004775 + Add Start Time and End Time + cannot Complete Reason on SA + Remove Time Type Reference + Update WO Status on Incompletion + Fix Actual Duration + Update ScheduledTime with Mobile Times + Fix WorkDone</description>
     <dynamicChoiceSets>
         <name>CannotCompleteReason</name>
         <dataType>Picklist</dataType>
@@ -531,7 +531,7 @@
         <dataType>DateTime</dataType>
         <expression>{!StartTime} - (1/1440)</expression>
     </formulas>
-    <interviewLabel>SFS: Service Appointment Status Transition {!$Flow.CurrentDateTime}</interviewLabel>
+    <interviewLabel>SFS: Service Appointment Status Transition</interviewLabel>
     <label>SFS: Service Appointment Status Transition</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -595,10 +595,10 @@
         <queriedFields>FSSK__FSK_Work_Order__c</queriedFields>
         <queriedFields>ActualDuration</queriedFields>
         <queriedFields>ActualEndTime</queriedFields>
-        <queriedFields>WorkDone__c</queriedFields>
         <queriedFields>ServiceNote</queriedFields>
         <queriedFields>SchedStartTime</queriedFields>
         <queriedFields>SchedEndTime</queriedFields>
+        <queriedFields>WorkDone2__c</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>GetWO</name>
@@ -735,7 +735,7 @@
         </connector>
         <fields>
             <name>Describe_what_has_been_done</name>
-            <fieldText>Describe what has been done</fieldText>
+            <fieldText>Work Done</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <isRequired>false</isRequired>
         </fields>
@@ -798,7 +798,7 @@
             <targetReference>Get_Preferences</targetReference>
         </connector>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
     <variables>
         <name>Current_Status</name>
         <dataType>String</dataType>

@@ -212,6 +212,18 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>OrgId__c</fullName>
+        <description>This field is use to show send to ERP button only in prod org</description>
+        <externalId>false</externalId>
+        <formula>$Organization.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Org Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>OwnerId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
@@ -274,6 +286,7 @@ DON&apos;T ADD TO PAGE LAYOUT</description>
         <columns>WorkOrder</columns>
         <columns>Status</columns>
         <columns>ERPOrderStatus__c</columns>
+        <columns>ERPOrderNumber__c</columns>
         <columns>CreatedBy</columns>
         <filterScope>Everything</filterScope>
         <label>All Product Requests</label>

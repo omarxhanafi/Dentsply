@@ -17,25 +17,45 @@ public class Test_GuidanceRendererController {
         
         
     }
-	@isTest
+    @isTest
     public static void testGetGuidanceDetails(){
-        
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
-        System.runAs(testUser) 
+        System.runAs(testUser)
         {
             Account acc = [SELECT id,Country__c FROM Account LIMIT 1];
-            acc.Country__c = 'US';
+            acc.Country__c = 'BE';
             update acc;
             ProcedureTracker__c testProcedureTracker = new ProcedureTracker__c(PracticeAccount__c = acc.Id,
-                                                                               ObtainCreditCardInformation__c  = true);
+                    ObtainCreditCardInformation__c  = true);
             insert testProcedureTracker;
-            
+
             Test.startTest();
-                String contentOfGuidance = GuidanceRendererController.getGuidanceDetails(testProcedureTracker.Id,'Obtain Credit Card Information');
+            String contentOfGuidance = GuidanceRendererController.getGuidanceDetails(testProcedureTracker.Id,'Obtain Credit Card Information');
             Test.stopTest();
             System.assertNotEquals('',contentOfGuidance);
         }
-        
-                          
+    }
+
+    @isTest
+    public static void testGetBestPractices(){
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
+        System.runAs(testUser)
+        {
+            Account acc = [SELECT id,Country__c FROM Account LIMIT 1];
+            acc.Country__c = 'BE';
+
+            update acc;
+
+            ProcedureTracker__c testProcedureTracker = new ProcedureTracker__c(PracticeAccount__c = acc.Id,
+                    ObtainCreditCardInformation__c  = true);
+
+            insert testProcedureTracker;
+
+            Test.startTest();
+            List<ProcedureTrackingBestPractices__mdt> bestPracticesList = GuidanceRendererController.getBestPractices(testProcedureTracker.Id);
+            Test.stopTest();
+
+            System.assertEquals(1, bestPracticesList.size());
+        }
     }
 }

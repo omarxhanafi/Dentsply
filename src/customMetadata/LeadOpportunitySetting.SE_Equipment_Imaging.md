@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">SiroCam;UAF plus;Sirolaser;SIROLaser Advance;SIROLaser Blue;T1 Contra-angles;T1 Turbines;T2 Contra-angles;T2 Turbines;TENEO;USBCAM;XIOS AE;XIOS Scan;XIOS Supreme;SICAT Suite;Sinius;SiroCam;Axano</value>
+        <value xsi:type="xsd:string">SiroCam;UAF plus;Sirolaser;SIROLaser Advance;SIROLaser Blue;T1 Contra-angles;T1 Turbines;T2 Contra-angles;T2 Turbines;TENEO;USBCAM;XIOS AE;XIOS Scan;XIOS Supreme;SICAT Suite;Sinius;SiroCam;Axano;INTEGO</value>
     </values>
     <values>
         <field>Category__c</field>
@@ -29,6 +29,10 @@
     <values>
         <field>DefaultLeadOwner__c</field>
         <value xsi:type="xsd:string">0050J000008Qhus</value>
+    </values>
+    <values>
+        <field>DefaultProcedureTrackerOwnerId__c</field>
+        <value xsi:nil="true"/>
     </values>
     <values>
         <field>IsTest__c</field>

@@ -34,10 +34,13 @@ public with sharing class FieldServiceCalloutERPTest {
             workOrderId.add(workOrder[0].Id);
             Test.startTest();
                 Boolean updateCompletes = FieldServiceCalloutERP.updateRecord(workOrderId, 'this is a message');
-            	Boolean updateJSONVersion = FieldServiceCalloutERP.updateJSONVersion(workOrderId);
+            	String processOrDup = FieldServiceCalloutERP.checkIfSentBefore(workOrder[0].Id);
+            	String processOrDup2 = FieldServiceCalloutERP.checkIfSentBefore(workOrder[0].Id);
+
             Test.stopTest();
             System.assertEquals(true, updateCompletes, 'Updates have been completed when workorder');
-            System.assertEquals(true, updateJSONVersion, 'JSON order has been updated for workorder');
+            System.assertEquals('processing', processOrDup, 'process call out');
+            System.assertEquals('alreadySent', processOrDup2, 'dup no process call out');
 
         }
     }
@@ -50,10 +53,12 @@ public with sharing class FieldServiceCalloutERPTest {
             productRequestId.add(productRequest[0].Id);
             Test.startTest();
                 Boolean updateCompletes2 = FieldServiceCalloutERP.updateRecord(productRequestId, 'this is a message');
-            	Boolean updateJSONVersion = FieldServiceCalloutERP.updateJSONVersion(productRequestId);
+            	String processOrDup = FieldServiceCalloutERP.checkIfSentBefore(productRequest[0].Id);
+            	String processOrDup2 = FieldServiceCalloutERP.checkIfSentBefore(productRequest[0].Id);
             Test.stopTest();
             System.assertEquals(true, updateCompletes2, 'Updates have been completed when Product Request');
-                        System.assertEquals(true, updateJSONVersion, 'JSON order has been updated for product request');
+            System.assertEquals('processing', processOrDup, 'process call out');
+            System.assertEquals('alreadySent', processOrDup2, 'dup no process call out');
 
         }
     }

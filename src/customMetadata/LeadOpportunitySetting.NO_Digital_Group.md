@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">CEREC Hub;CEREC MTL;CEREC MC X;CEREC MC XL;CEREC Omnicam AC;CEREC Primemill Full System;CEREC Primescan AC;CEREC SpeedFire;Omnicam AC;Omnicam AC 2.0;Omnicam AF/AI;CEREC MTL Zirconia</value>
+        <value xsi:type="xsd:string">CEREC Hub;CEREC MTL;CEREC MC X;CEREC MC XL;CEREC Omnicam AC;CEREC Primemill Full System;CEREC Primescan AC;CEREC SpeedFire;Omnicam AC;Omnicam AC 2.0;Omnicam AF/AI;CEREC MTL Zirconia; CEREC Full System MCX; CEREC Full System Upgrade;CEREC Primescan AC;Primescan Connect;Primescan; Primemill; Other</value>
     </values>
     <values>
         <field>Category__c</field>
@@ -29,6 +29,10 @@
     <values>
         <field>DefaultLeadOwner__c</field>
         <value xsi:type="xsd:string">0050J000008Qhus</value>
+    </values>
+    <values>
+        <field>DefaultProcedureTrackerOwnerId__c</field>
+        <value xsi:nil="true"/>
     </values>
     <values>
         <field>IsTest__c</field>

@@ -131,47 +131,59 @@
     <fields>
         <fullName>ActivityDate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>CallDisposition</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>CallDurationInSeconds</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>CallObject</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>CallType</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>CompletedDateTime</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>CurrencyIsoCode</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Email</fullName>
     </fields>
     <fields>
         <fullName>IsRecurrence</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>IsReminderSet</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>IsVisibleInSelfService</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -180,22 +192,27 @@
     <fields>
         <fullName>Priority</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>RecurrenceInterval</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>RecurrenceRegeneratedType</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Status</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Subject</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -204,14 +221,17 @@
     <fields>
         <fullName>Type</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>WhatId</fullName>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
         <fullName>WhoId</fullName>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <listViews>
@@ -496,6 +516,7 @@
         <label>ENCODED:{!FilterNames.Task_UnscheduledTasks}</label>
     </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>CTI_Call</fullName>
         <active>true</active>
@@ -552,11 +573,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Order%3A Placed with TSR</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Order%3A Sales Team Inside</fullName>
+                <fullName>Order%3A Placed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -937,6 +954,10 @@
         <picklistValues>
             <picklist>User_Country__c</picklist>
             <values>
+                <fullName>Algeria</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Australia</fullName>
                 <default>false</default>
             </values>
@@ -1110,11 +1131,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Order%3A Placed with TSR</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Order%3A Sales Team Inside</fullName>
+                <fullName>Order%3A Placed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1494,6 +1511,10 @@
         </picklistValues>
         <picklistValues>
             <picklist>User_Country__c</picklist>
+            <values>
+                <fullName>Algeria</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>Australia</fullName>
                 <default>false</default>
@@ -1669,11 +1690,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Order%3A Placed with TSR</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Order%3A Sales Team Inside</fullName>
+                <fullName>Order%3A Placed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -2022,6 +2039,10 @@
         <picklistValues>
             <picklist>User_Country__c</picklist>
             <values>
+                <fullName>Algeria</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Australia</fullName>
                 <default>false</default>
             </values>
@@ -2195,11 +2216,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Order%3A Placed with TSR</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Order%3A Sales Team Inside</fullName>
+                <fullName>Order%3A Placed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -2587,6 +2604,10 @@
         </picklistValues>
         <picklistValues>
             <picklist>User_Country__c</picklist>
+            <values>
+                <fullName>Algeria</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>Australia</fullName>
                 <default>false</default>

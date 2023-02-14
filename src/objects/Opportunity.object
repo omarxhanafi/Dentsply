@@ -6491,6 +6491,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>India</controllingFieldValue>
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
@@ -6551,6 +6552,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>India</controllingFieldValue>
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
@@ -6613,6 +6615,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>India</controllingFieldValue>
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
@@ -6675,6 +6678,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>India</controllingFieldValue>
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
@@ -6735,6 +6739,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>India</controllingFieldValue>
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
@@ -6797,6 +6802,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>India</controllingFieldValue>
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
@@ -6859,6 +6865,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>India</controllingFieldValue>
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
@@ -6921,6 +6928,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>India</controllingFieldValue>
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
@@ -10656,6 +10664,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
 &quot;Philippines&quot;,&quot;Philippines&quot;,
 &quot;Portugal&quot;,&quot;Portugal&quot;,
 &quot;Poland&quot;,&quot;Poland&quot;,
+&quot;Qatar&quot;,&quot;Qatar&quot;,
 &quot;Russia&quot;,&quot;Russia&quot;,
 &quot;Saudi Arabia&quot;,&quot;Saudi Arabia&quot;,
 &quot;Singapore&quot;,&quot;Singapore&quot;,
@@ -11012,6 +11021,11 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                     <fullName>Maldives</fullName>
                     <default>false</default>
                     <label>Maldives</label>
+                </value>
+                <value>
+                    <fullName>Qatar</fullName>
+                    <default>false</default>
+                    <label>Qatar</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -12684,7 +12698,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <filters>
             <field>CORE.USERS.FULL_NAME</field>
             <operation>equals</operation>
-            <value>Daiani Wetter - Inactive</value>
+            <value>Adam cartwright</value>
         </filters>
         <filters>
             <field>OPPORTUNITY.CLOSED</field>
@@ -12972,6 +12986,163 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Everything</filterScope>
         <label>#All New This Week</label>
+    </listViews>
+    <listViews>
+        <fullName>ZA_All_Opportunities_South_Africa</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CLOSED</columns>
+        <columns>OPPORTUNITY.WON</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>South Africa</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Lightning_Pipeline_Opportunity</value>
+        </filters>
+        <label>ZA: All Opportunities - South Africa</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>MEA_Managing_Director</roleAndSubordinatesInternal>
+            <territoryAndSubordinates>Global_Setup.South_Africa</territoryAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>ZA_All_Opportunities_created_last_week</fullName>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>South Africa</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Lightning_Pipeline_Opportunity</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_MONTH</value>
+        </filters>
+        <label>ZA: All Opportunities created last month</label>
+        <sharedTo>
+            <group>ZA_Commercial_leaders</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>ZA_All_Opportunities_created_this_month</fullName>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>South Africa</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Lightning_Pipeline_Opportunity</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>ZA: All Opportunities created this month</label>
+        <sharedTo>
+            <group>ZA_Commercial_leaders</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>ZA_All_Opportunities_created_this_week</fullName>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>South Africa</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Lightning_Pipeline_Opportunity</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>ZA: All Opportunities created this week</label>
+        <sharedTo>
+            <group>ZA_Commercial_leaders</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>ZA_All_Opportunities_to_be_closed_CQ</fullName>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>OverallNotes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Country__c</field>
+            <operation>equals</operation>
+            <value>South Africa</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Lightning_Pipeline_Opportunity</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_QUARTER</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>notEqual</operation>
+            <value>Closed Lost,Closed Won</value>
+        </filters>
+        <label>ZA: All Opportunities to be closed CQ</label>
+        <sharedTo>
+            <group>ZA_Commercial_leaders</group>
+        </sharedTo>
     </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypeTrackHistory>false</recordTypeTrackHistory>
@@ -14452,6 +14623,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>Portugal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qatar</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -43753,6 +43928,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>Portugal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qatar</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -74130,11 +74309,31 @@ TEXT( Account.Country__c ) = &quot;VA&quot;))</errorConditionFormula>
         <errorMessage>You can&apos;t change the closing date for this GROW opportunity</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>WinLossDescriptionRequiredIfPrimescan</fullName>
+        <active>false</active>
+        <description>TFUS-000005071
+As a sales manager, I want to make sure I can see win/loss reason for opps, so that I can get insighst and also share with product teams and marketing on why we win/lose</description>
+        <errorConditionFormula>AND(
+ $Setup.GlobalBypassProcessesSettings__c.RunValidationRules__c,
+ TEXT(NA_Brand__c) = &apos;Primescan Connect&apos;,
+ Win_Loss_Description__c = &apos;&apos;,
+ IsClosed = true
+)</errorConditionFormula>
+        <errorDisplayField>Win_Loss_Description__c</errorDisplayField>
+        <errorMessage>You must enter a Win/Loss Description upon closing an Opportunity related to Pricemescan Connect.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>WinLoss_Reason_Required</fullName>
         <active>false</active>
-        <description>TFUS-000003353 Win/Loss Reason Mandatory when Stage is Closed Lost or Closed Won</description>
-        <errorConditionFormula>AND(OR(ISPICKVAL(StageName, &quot;Closed Lost&quot;), ISPICKVAL(StageName, &quot;Closed Won&quot;)), ISPICKVAL(Win_Loss_Reason__c, &quot;&quot;))</errorConditionFormula>
-        <errorMessage>Please add Win/Loss Reason</errorMessage>
+        <description>TFUS-000003353 Win/Loss Reason Mandatory when Stage is Closed Lost or Closed Won
+TFUS-000005071</description>
+        <errorConditionFormula>AND(
+$Setup.GlobalBypassProcessesSettings__c.RunValidationRules__c,
+OR(ISPICKVAL(StageName, &quot;Closed Lost&quot;), ISPICKVAL(StageName, &quot;Closed Won&quot;)), 
+ISPICKVAL(Win_Loss_Reason__c, &quot;&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>Win_Loss_Reason__c</errorDisplayField>
+        <errorMessage>You must choose a Win/Loss Reason upon closing an Opportunity.</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Business_Plan_Report</fullName>

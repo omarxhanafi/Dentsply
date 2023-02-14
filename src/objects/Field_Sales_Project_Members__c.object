@@ -2892,6 +2892,7 @@
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
@@ -2959,6 +2960,7 @@
                 <controllingFieldValue>UK</controllingFieldValue>
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
@@ -3028,6 +3030,7 @@
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
@@ -3097,6 +3100,7 @@
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
@@ -3164,6 +3168,7 @@
                 <controllingFieldValue>UK</controllingFieldValue>
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
@@ -3233,6 +3238,7 @@
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
@@ -3302,6 +3308,7 @@
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
@@ -3371,6 +3378,7 @@
                 <controllingFieldValue>Maldives</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
+                <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
@@ -3794,6 +3802,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>OwnerManagerId__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sales_Rep__r.ManagerId</formula>
+        <label>Owner&apos;s Manager Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>ParkedOnHoldAssignedDate__c</fullName>
         <externalId>false</externalId>
         <label>&quot;Parked/On Hold&quot; Assigned Date</label>
@@ -3838,7 +3856,12 @@
             <controllingField>Status__c</controllingField>
             <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Competition</fullName>
+                    <default>false</default>
+                    <label>Competition</label>
+                </value>
                 <value>
                     <fullName>Converted</fullName>
                     <default>false</default>
@@ -3853,6 +3876,12 @@
                     <fullName>Lost interest</fullName>
                     <default>false</default>
                     <label>Lost interest</label>
+                </value>
+                <value>
+                    <fullName>Place (Level of Service Delivery)</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Place (Level of Service Delivery)</label>
                 </value>
                 <value>
                     <fullName>Price</fullName>
@@ -3870,21 +3899,15 @@
                     <label>Promotion</label>
                 </value>
                 <value>
-                    <fullName>Unqualified / Not Relevant</fullName>
-                    <default>false</default>
-                    <label>Unqualified / Not Relevant</label>
-                </value>
-                <value>
-                    <fullName>Place (Level of Service Delivery)</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Place (Level of Service Delivery)</label>
-                </value>
-                <value>
                     <fullName>Unqualified</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
                     <label>Unqualified</label>
+                </value>
+                <value>
+                    <fullName>Unqualified / Not Relevant</fullName>
+                    <default>false</default>
+                    <label>Unqualified / Not Relevant</label>
                 </value>
             </valueSetDefinition>
             <valueSettings>
@@ -3900,6 +3923,10 @@
             <valueSettings>
                 <controllingFieldValue>Completed</controllingFieldValue>
                 <valueName>Promotion</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cancelled</controllingFieldValue>
+                <valueName>Competition</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Cancelled</controllingFieldValue>
@@ -4237,6 +4264,7 @@
 &quot;Philippines&quot;,&quot;Philippines&quot;,
 &quot;Portugal&quot;,&quot;Portugal&quot;,
 &quot;Poland&quot;,&quot;Poland&quot;,
+&quot;Qatar&quot;,&quot;Qatar&quot;,
 &quot;Russia&quot;,&quot;Russia&quot;,
 &quot;Saudi Arabia&quot;,&quot;Saudi Arabia&quot;,
 &quot;Singapore&quot;,&quot;Singapore&quot;,
@@ -4594,6 +4622,11 @@
                     <fullName>Maldives</fullName>
                     <default>false</default>
                     <label>Maldives</label>
+                </value>
+                <value>
+                    <fullName>Qatar</fullName>
+                    <default>false</default>
+                    <label>Qatar</label>
                 </value>
                 <value>
                     <fullName>U.A.E</fullName>
@@ -5446,6 +5479,35 @@
             <roleAndSubordinatesInternal>VN_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
+    <listViews>
+        <fullName>ZA_All_Open_Leads</fullName>
+        <columns>NAME</columns>
+        <columns>Sales_Rep__c</columns>
+        <columns>Field_Sales_Project__c</columns>
+        <columns>Account__c</columns>
+        <columns>Category__c</columns>
+        <columns>Brand__c</columns>
+        <columns>Account_City__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Hot_prospect__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Source__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,In progress,Parked/OnHold,Completed,Cancelled,Expired</value>
+        </filters>
+        <filters>
+            <field>UserCountry__c</field>
+            <operation>equals</operation>
+            <value>South Africa</value>
+        </filters>
+        <label>ZA: All Sales Leads</label>
+        <sharedTo>
+            <territoryAndSubordinates>Global_Setup.South_Africa</territoryAndSubordinates>
+        </sharedTo>
+    </listViews>
     <nameField>
         <displayFormat>Ld-{0000000}</displayFormat>
         <label>LD ID</label>
@@ -6256,6 +6318,10 @@
         <picklistValues>
             <picklist>Result__c</picklist>
             <values>
+                <fullName>Competition</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Converted</fullName>
                 <default>false</default>
             </values>
@@ -6533,6 +6599,10 @@
             </values>
             <values>
                 <fullName>Portugal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qatar</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7741,6 +7811,10 @@
         <picklistValues>
             <picklist>Result__c</picklist>
             <values>
+                <fullName>Competition</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Converted</fullName>
                 <default>false</default>
             </values>
@@ -8025,6 +8099,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Qatar</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Romania</fullName>
                 <default>false</default>
             </values>
@@ -8190,17 +8268,17 @@ TEXT( Account__r.Country__c ) = &quot;VA&quot;))</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>OnlyOwnerCanChangeRecord</fullName>
-        <active>false</active>
-        <description>TEMPORARILY DEACTIVATED 
-SALESFORCE LIMITATION: TFUS-000005104</description>
+        <active>true</active>
+        <description>TFUS-000005104</description>
         <errorConditionFormula>AND(
 NOT(ISNEW()), 
 NOT($User.Id = PRIORVALUE(Sales_Rep__c)),
+NOT($User.Id = PRIORVALUE(OwnerManagerId__c)),
 NOT(CONTAINS($User.Profile__c, &apos;#System:&apos;)),
 NOT(CONTAINS($User.Profile__c, &apos;CRM Analyst&apos;)),
 NOT($Permission.canEditSalesLeads)
 )</errorConditionFormula>
-        <errorMessage>Sorry! Only the owner of the sales lead is allowed to change it at this point.</errorMessage>
+        <errorMessage>Sorry! Only the owner and its manager are allowed to change this sales lead at this point.</errorMessage>
     </validationRules>
     <visibility>Public</visibility>
     <webLinks>

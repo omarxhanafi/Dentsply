@@ -262,7 +262,7 @@ public with sharing class UsersInAccountTerritories {
      * @param accountId         Account Id
      * @param categoryInput     CategoryInput category name selected by the user
      * @param brandInput        Brand name selected by the user
-     * @param dealerId          Selected dealer on teh UI
+     * @param dealerId          Selected dealer on the UI
      *
      * @return List<UserTerritory2Association> - Users to suggest as owner
      */
@@ -278,8 +278,7 @@ public with sharing class UsersInAccountTerritories {
         try
         {
             // Step 2 - We will add more suggested user only if the user has selected both required fields (category & brand)
-            //          If he does, we will provide new suggested users based on
-            //          a- if we have an existing leadOpp Settings for the combination of (Account Country,category,brand)
+            //          If he does, we will provide new suggested users based on whether we have an existing leadOpp Settings for the combination of (Account Country,category,brand)
             //              YES -> we check in the settings the field AssignOwnerFrom__c
             //                          Then we order the suggested users based on their role and the role specified in the settings
             //              NO  -> we return all the sales team assigned to both account + dealer (if selected)
@@ -295,7 +294,7 @@ public with sharing class UsersInAccountTerritories {
                 LeadOpportunitySetting__mdt leadOppSettings = getLeadOppSettings(currentAccount,categoryInput,brandInput);
 
                 // We retrieved by (category,Account Country). Then we will filter by (brand), and we return one record.
-                List<ObjectTerritory2Association> filteredTerritories;
+                List<ObjectTerritory2Association> filteredTerritories = new List<ObjectTerritory2Association>();
                 if (leadOppSettings != null)
                 {
                     // We can filter by dealer || account. (The custom metadata field AssignOwnerFrom__c)

@@ -3,8 +3,8 @@
     <actionCalls>
         <name>ConvertLeadExistingContact</name>
         <label>Convert lead</label>
-        <locationX>964</locationX>
-        <locationY>1358</locationY>
+        <locationX>578</locationX>
+        <locationY>1094</locationY>
         <actionName>leadConvert</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -46,8 +46,8 @@
     <actionCalls>
         <name>ConvertLeadNewContact</name>
         <label>Convert lead</label>
-        <locationX>348</locationX>
-        <locationY>1142</locationY>
+        <locationX>50</locationX>
+        <locationY>1094</locationY>
         <actionName>leadConvert</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -85,26 +85,10 @@
     </actionCalls>
     <apiVersion>54.0</apiVersion>
     <assignments>
-        <name>Account_Or_Contact_Empty</name>
-        <label>Account Or Contact Empty</label>
-        <locationX>890</locationX>
-        <locationY>902</locationY>
-        <assignmentItems>
-            <assignToReference>AccountOrContactEmpty</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Screen_ConvertLead</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>AssignLeadCampaignMember</name>
         <label>Assign lead Id</label>
-        <locationX>524</locationX>
-        <locationY>446</locationY>
+        <locationX>182</locationX>
+        <locationY>398</locationY>
         <assignmentItems>
             <assignToReference>leadId</assignToReference>
             <operator>Assign</operator>
@@ -119,8 +103,8 @@
     <assignments>
         <name>AssignLeadId</name>
         <label>Assign lead id</label>
-        <locationX>788</locationX>
-        <locationY>326</locationY>
+        <locationX>446</locationX>
+        <locationY>278</locationY>
         <assignmentItems>
             <assignToReference>leadId</assignToReference>
             <operator>Assign</operator>
@@ -133,43 +117,11 @@
         </connector>
     </assignments>
     <decisions>
-        <name>Account_Contact_Not_Empty</name>
-        <label>Account &amp; Contact Not Empty</label>
-        <locationX>1130</locationX>
-        <locationY>989</locationY>
-        <defaultConnector>
-            <targetReference>Account_Or_Contact_Empty</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>contactMatches.selectedAccountId</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>contactMatches.selectedContactId</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>ConvertLeadExistingContact</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
         <description>t</description>
         <name>CheckObjecType</name>
         <label>Check object type</label>
-        <locationX>656</locationX>
-        <locationY>206</locationY>
+        <locationX>314</locationX>
+        <locationY>158</locationY>
         <defaultConnector>
             <targetReference>AssignLeadId</targetReference>
         </defaultConnector>
@@ -193,10 +145,10 @@
     <decisions>
         <name>DESC_CreateContact</name>
         <label>Create new contact?</label>
-        <locationX>656</locationX>
-        <locationY>1022</locationY>
+        <locationX>314</locationX>
+        <locationY>974</locationY>
         <defaultConnector>
-            <targetReference>Account_Contact_Not_Empty</targetReference>
+            <targetReference>ConvertLeadExistingContact</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -215,18 +167,11 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>23-01-27 : TFUS-000005198 - Be able to convert a lead without unhandled error message when the contact title is missing
-23-01-13 : TFUS-000004998 - Not allow lead conversion if an account and contact are not selected</description>
-    <environments>Default</environments>
+    <description>22-08-22 : Add a fault path to handle contact creation error</description>
     <formulas>
         <name>convertedContactId</name>
         <dataType>String</dataType>
         <expression>IF({!contactMatches.createContact} = true, {!ConvertLeadNewContact}, {!contactMatches.selectedContactId})</expression>
-    </formulas>
-    <formulas>
-        <name>FlowFaultMessage</name>
-        <dataType>String</dataType>
-        <expression>SUBSTITUTE( {!$Flow.FaultMessage}, &quot;An Apex error occurred: leadConvert.ConvertLeadActionException: &quot;, &quot;&quot; )</expression>
     </formulas>
     <formulas>
         <name>recordPrefix</name>
@@ -244,7 +189,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -257,8 +202,8 @@
     <recordLookups>
         <name>GetCampaignMember</name>
         <label>Get Campaign Member</label>
-        <locationX>656</locationX>
-        <locationY>1574</locationY>
+        <locationX>314</locationX>
+        <locationY>1514</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Screen_ConvertSuccess</targetReference>
@@ -280,8 +225,8 @@
     <recordLookups>
         <name>GetCampaignMemberInit</name>
         <label>Get Campaign Member</label>
-        <locationX>524</locationX>
-        <locationY>326</locationY>
+        <locationX>182</locationX>
+        <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>AssignLeadCampaignMember</targetReference>
@@ -301,8 +246,8 @@
     <recordLookups>
         <name>GetLead</name>
         <label>Get lead</label>
-        <locationX>656</locationX>
-        <locationY>662</locationY>
+        <locationX>314</locationX>
+        <locationY>614</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>UpdateEmailConsent</targetReference>
@@ -322,8 +267,8 @@
     <recordUpdates>
         <name>UpdateCreatedContact</name>
         <label>Update created contact</label>
-        <locationX>348</locationX>
-        <locationY>1262</locationY>
+        <locationX>50</locationX>
+        <locationY>1214</locationY>
         <connector>
             <targetReference>GetCampaignMember</targetReference>
         </connector>
@@ -376,8 +321,8 @@
     <recordUpdates>
         <name>UpdateEmailConsent</name>
         <label>Update email consent</label>
-        <locationX>656</locationX>
-        <locationY>782</locationY>
+        <locationX>314</locationX>
+        <locationY>734</locationY>
         <connector>
             <targetReference>Screen_ConvertLead</targetReference>
         </connector>
@@ -400,8 +345,8 @@
     <screens>
         <name>Error_create_contact</name>
         <label>Error create contact</label>
-        <locationX>622</locationX>
-        <locationY>1185</locationY>
+        <locationX>314</locationX>
+        <locationY>1214</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -410,9 +355,11 @@
         </connector>
         <fields>
             <name>Error_message</name>
-            <fieldText>&lt;pre class=&quot;ql-syntax&quot; spellcheck=&quot;false&quot;&gt;Sorry an error occured please try again
+            <fieldText>&lt;pre class=&quot;ql-syntax&quot; spellcheck=&quot;false&quot;&gt;Sorry an error occur please try again
 
-{!FlowFaultMessage}
+{!$Flow.FaultMessage}
+
+
 
 &lt;/pre&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
@@ -423,38 +370,14 @@
     <screens>
         <name>Screen_ConvertLead</name>
         <label>Convert lead</label>
-        <locationX>656</locationX>
-        <locationY>902</locationY>
+        <locationX>314</locationX>
+        <locationY>854</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>DESC_CreateContact</targetReference>
         </connector>
-        <fields>
-            <name>AccountOrContactEmptyWarning</name>
-            <extensionName>c:LightningPage_WarningMessage</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>label</name>
-                <value>
-                    <elementReference>AccountOrContactEmptyMessage</elementReference>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>AccountOrContactEmpty</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <booleanValue>true</booleanValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
         <fields>
             <name>Screen_ConvertLead_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -559,8 +482,8 @@
     <screens>
         <name>Screen_ConvertSuccess</name>
         <label>Success</label>
-        <locationX>656</locationX>
-        <locationY>1694</locationY>
+        <locationX>314</locationX>
+        <locationY>1634</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -606,25 +529,13 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>530</locationX>
-        <locationY>48</locationY>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>CheckObjecType</targetReference>
         </connector>
     </start>
     <status>Active</status>
-    <textTemplates>
-        <name>AccountOrContactEmptyMessage</name>
-        <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>You should select an account and contact in order to continue.</text>
-    </textTemplates>
-    <variables>
-        <name>AccountOrContactEmpty</name>
-        <dataType>Boolean</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
     <variables>
         <name>leadId</name>
         <dataType>String</dataType>

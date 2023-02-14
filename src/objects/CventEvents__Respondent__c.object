@@ -368,11 +368,11 @@
         <customTabListAdditionalFields>CventEvents__Status__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
         <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
-        <excludedStandardButtons>New</excludedStandardButtons>
-        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>New</excludedStandardButtons>
         <lookupDialogsAdditionalFields>CventEvents__RespondentName__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CventEvents__Email__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CventEvents__Company__c</lookupDialogsAdditionalFields>

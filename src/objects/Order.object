@@ -4776,6 +4776,50 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>NA_CS_INBOX_MIS_ALL_Pending</fullName>
+        <columns>Customer_Service_Received__c</columns>
+        <columns>ORDERS.LAST_UPDATE</columns>
+        <columns>ORDERS.STATUS</columns>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>ORDERS.EFFECTIVE_DATE</columns>
+        <columns>Total_of_Products_on_this_Order__c</columns>
+        <columns>Customer_Service_Rep_Responsible__c</columns>
+        <columns>Shipping_Method__c</columns>
+        <columns>ORDER.SHIPPING_STATE</columns>
+        <columns>PRICEBOOK2.NAME</columns>
+        <columns>ORDERS.CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Created,Activated,Rejected</value>
+        </filters>
+        <filters>
+            <field>Pricebook_Name__c</field>
+            <operation>startsWith</operation>
+            <value>US MIS Implants</value>
+        </filters>
+        <filters>
+            <field>ORDER.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Order.Direct_global_order</value>
+        </filters>
+        <filters>
+            <field>ProcessStatus__c</field>
+            <operation>equals</operation>
+            <value>Customer Service Processing</value>
+        </filters>
+        <label>NA: CS INBOX MIS ALL Pending</label>
+        <sharedTo>
+            <group>NA_DI_Customer_Service_and_Mgmt</group>
+            <role>DNA_Shared_Services</role>
+            <role>NA_CRM_Analyst</role>
+            <role>NA_Customer_Service_Implants</role>
+            <role>NA_Customer_Service_MIS</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>NA_IMP_ASD_Pending</fullName>
         <columns>ORDERS.ORDER_NUMBER</columns>
         <columns>SALES.ACCOUNT.NAME</columns>
@@ -4868,6 +4912,25 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <sharedTo>
             <role>NA_CRM_Analyst</role>
             <role>NA_Customer_Service_Implants</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_My_Orders_Created_by_Me_ALL</fullName>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>ORDERS.EFFECTIVE_DATE</columns>
+        <columns>ORDERS.TOTAL_AMOUNT</columns>
+        <columns>ORDERS.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Created_by_me__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>NA: My Orders (Created by Me) - ALL</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+            <roleAndSubordinatesInternal>DNA_Shared_Services</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>

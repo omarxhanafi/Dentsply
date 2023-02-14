@@ -499,6 +499,16 @@
                     <label>ATLANTIS ISUS</label>
                 </value>
                 <value>
+                    <fullName>DS PrimeTaper</fullName>
+                    <default>false</default>
+                    <label>DS PrimeTaper</label>
+                </value>
+                <value>
+                    <fullName>DS OmniTaper</fullName>
+                    <default>false</default>
+                    <label>DS OmniTaper</label>
+                </value>
+                <value>
                     <fullName>Frialit</fullName>
                     <default>false</default>
                     <label>Frialit</label>
@@ -542,6 +552,11 @@
                     <fullName>OSSIX</fullName>
                     <default>false</default>
                     <label>OSSIX</label>
+                </value>
+                <value>
+                    <fullName>Prothèse EV Family</fullName>
+                    <default>false</default>
+                    <label>Prothèse EV Family</label>
                 </value>
                 <value>
                     <fullName>SIMPLANT</fullName>
@@ -1623,6 +1638,18 @@
                 <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>New Zealand</controllingFieldValue>
                 <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>France</controllingFieldValue>
+                <valueName>DS PrimeTaper</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>France</controllingFieldValue>
+                <valueName>DS OmniTaper</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>France</controllingFieldValue>
+                <valueName>Prothèse EV Family</valueName>
             </valueSettings>
         </valueSet>
         <visibleLines>8</visibleLines>
@@ -17241,9 +17268,56 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
         <filters>
             <field>CAMPAIGN.START_DATE</field>
             <operation>equals</operation>
-            <value>THIS_YEAR</value>
+            <value>LAST_YEAR</value>
         </filters>
         <label>All UK Campaigns 2022</label>
+        <sharedTo>
+            <roleAndSubordinates>UK_IE_CRM_Analyst</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_UK_Campaigns_2023</fullName>
+        <columns>Owner_User_Country__c</columns>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>Campaign_City__c</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>Campaign_Category__c</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>Project_ID__c</columns>
+        <columns>of_Event_Attendees__c</columns>
+        <columns>of_Available_Event_Seats__c</columns>
+        <columns>Campaign_Coordinator__c</columns>
+        <columns>Campaign_Approver__c</columns>
+        <columns>Campaign_Owner__c</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Campaign.DI_Campaign_Session,Campaign.DI_Campaign,Campaign.DI_Mailing,Campaign.DI_Parent_Campaign</value>
+        </filters>
+        <filters>
+            <field>CAMPAIGN.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>CAMPAIGN.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Cancelled</value>
+        </filters>
+        <filters>
+            <field>Owner_User_Country__c</field>
+            <operation>equals</operation>
+            <value>UK</value>
+        </filters>
+        <filters>
+            <field>CAMPAIGN.START_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_YEAR</value>
+        </filters>
+        <label>All UK Campaigns 2023</label>
         <sharedTo>
             <roleAndSubordinates>UK_IE_CRM_Analyst</roleAndSubordinates>
         </sharedTo>
@@ -27418,6 +27492,14 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
+                <fullName>DS OmniTaper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS PrimeTaper</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Frialit</fullName>
                 <default>false</default>
             </values>
@@ -27455,6 +27537,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prothèse EV Family</fullName>
                 <default>false</default>
             </values>
             <values>

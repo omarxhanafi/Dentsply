@@ -1059,11 +1059,11 @@
         <externalId>false</externalId>
         <inlineHelpText>Appears in the Invoice information.</inlineHelpText>
         <label>Work Done</label>
-        <length>3000</length>
+        <length>4000</length>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
-        <visibleLines>3</visibleLines>
+        <visibleLines>5</visibleLines>
     </fields>
     <fields>
         <fullName>Description</fullName>
@@ -1251,6 +1251,18 @@
         <fullName>MinimumCrewSize</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OrgId__c</fullName>
+        <description>This field is use to show send to ERP button only in prod org</description>
+        <externalId>false</externalId>
+        <formula>$Organization.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Org Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>

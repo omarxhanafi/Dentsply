@@ -1007,27 +1007,28 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>DMD</fullName>
-                    <default>false</default>
-                    <label>DMD</label>
-                </value>
+                <sorted>true</sorted>
                 <value>
                     <fullName>DDS</fullName>
                     <default>false</default>
                     <label>DDS</label>
                 </value>
                 <value>
-                    <fullName>RDH</fullName>
+                    <fullName>DMD</fullName>
                     <default>false</default>
-                    <label>RDH</label>
+                    <label>DMD</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
                     <label>Other</label>
+                </value>
+                <value>
+                    <fullName>RDH</fullName>
+                    <default>false</default>
+                    <label>RDH</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1168,8 +1169,9 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
                     <fullName>-</fullName>
                     <default>false</default>
@@ -1179,6 +1181,11 @@
                     <fullName>Internal</fullName>
                     <default>false</default>
                     <label>Internal</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
                 </value>
                 <value>
                     <fullName>Sales/ Marketing Event</fullName>
@@ -1194,11 +1201,6 @@
                     <fullName>Training/ Education</fullName>
                     <default>false</default>
                     <label>Training/ Education</label>
-                </value>
-                <value>
-                    <fullName>N/A</fullName>
-                    <default>false</default>
-                    <label>N/A</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3510,6 +3512,11 @@
                     <label>Preventive</label>
                 </value>
                 <value>
+                    <fullName>Primeprint</fullName>
+                    <default>false</default>
+                    <label>Primeprint</label>
+                </value>
+                <value>
                     <fullName>R2C</fullName>
                     <default>false</default>
                     <label>R2C</label>
@@ -3667,17 +3674,18 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Yes</fullName>
-                    <default>false</default>
-                    <label>Yes</label>
-                </value>
+                <sorted>true</sorted>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
                     <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3690,17 +3698,18 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Dentsply Sirona</fullName>
-                    <default>false</default>
-                    <label>Dentsply Sirona</label>
-                </value>
+                <sorted>true</sorted>
                 <value>
                     <fullName>3rd Party</fullName>
                     <default>false</default>
                     <label>3rd Party</label>
+                </value>
+                <value>
+                    <fullName>Dentsply Sirona</fullName>
+                    <default>false</default>
+                    <label>Dentsply Sirona</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3713,23 +3722,9 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>US Dollar</fullName>
-                    <default>false</default>
-                    <label>US Dollar</label>
-                </value>
-                <value>
-                    <fullName>Canadian Dollar</fullName>
-                    <default>false</default>
-                    <label>Canadian Dollar</label>
-                </value>
-                <value>
-                    <fullName>Euro</fullName>
-                    <default>false</default>
-                    <label>Euro</label>
-                </value>
+                <sorted>true</sorted>
                 <value>
                     <fullName>Australian Dollar</fullName>
                     <default>false</default>
@@ -3744,6 +3739,11 @@
                     <fullName>British Pound</fullName>
                     <default>false</default>
                     <label>British Pound</label>
+                </value>
+                <value>
+                    <fullName>Canadian Dollar</fullName>
+                    <default>false</default>
+                    <label>Canadian Dollar</label>
                 </value>
                 <value>
                     <fullName>Chilean Peso</fullName>
@@ -3764,6 +3764,11 @@
                     <fullName>Danish Krone</fullName>
                     <default>false</default>
                     <label>Danish Krone</label>
+                </value>
+                <value>
+                    <fullName>Euro</fullName>
+                    <default>false</default>
+                    <label>Euro</label>
                 </value>
                 <value>
                     <fullName>Hong Kong Dollar</fullName>
@@ -3876,9 +3881,20 @@
                     <label>Turkish Lira</label>
                 </value>
                 <value>
+                    <fullName>US Dollar</fullName>
+                    <default>false</default>
+                    <label>US Dollar</label>
+                </value>
+                <value>
                     <fullName>Vietnamese Dong</fullName>
                     <default>false</default>
                     <label>Vietnamese Dong</label>
+                </value>
+                <value>
+                    <fullName>日本円</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>日本円</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -6527,6 +6543,7 @@
                 <value>
                     <fullName>DS Hosted Event (with training)</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>DS Hosted Event (with training)</label>
                 </value>
                 <value>
@@ -7276,6 +7293,7 @@
     </fields>
     <fields>
         <fullName>Lab__c</fullName>
+        <defaultValue>null</defaultValue>
         <externalId>false</externalId>
         <label>Lab</label>
         <required>false</required>
@@ -7285,9 +7303,9 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Test</fullName>
-                    <default>false</default>
-                    <label>Test</label>
+                    <fullName>null</fullName>
+                    <default>true</default>
+                    <label>null</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -8106,12 +8124,13 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
-                    <fullName>Equipment and Instruments</fullName>
+                    <fullName>Consumables</fullName>
                     <default>false</default>
-                    <label>Equipment and Instruments</label>
+                    <label>Consumables</label>
                 </value>
                 <value>
                     <fullName>Digital</fullName>
@@ -8119,9 +8138,9 @@
                     <label>Digital</label>
                 </value>
                 <value>
-                    <fullName>Consumables</fullName>
+                    <fullName>Equipment and Instruments</fullName>
                     <default>false</default>
-                    <label>Consumables</label>
+                    <label>Equipment and Instruments</label>
                 </value>
                 <value>
                     <fullName>Implants</fullName>
@@ -8139,12 +8158,13 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
-                    <fullName>Equipment and Instruments</fullName>
+                    <fullName>Consumables</fullName>
                     <default>false</default>
-                    <label>Equipment and Instruments</label>
+                    <label>Consumables</label>
                 </value>
                 <value>
                     <fullName>Digital</fullName>
@@ -8152,9 +8172,9 @@
                     <label>Digital</label>
                 </value>
                 <value>
-                    <fullName>Consumables</fullName>
+                    <fullName>Equipment and Instruments</fullName>
                     <default>false</default>
-                    <label>Consumables</label>
+                    <label>Equipment and Instruments</label>
                 </value>
                 <value>
                     <fullName>Implants</fullName>
@@ -8172,12 +8192,13 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
-                    <fullName>Equipment and Instruments</fullName>
+                    <fullName>Consumables</fullName>
                     <default>false</default>
-                    <label>Equipment and Instruments</label>
+                    <label>Consumables</label>
                 </value>
                 <value>
                     <fullName>Digital</fullName>
@@ -8185,9 +8206,9 @@
                     <label>Digital</label>
                 </value>
                 <value>
-                    <fullName>Consumables</fullName>
+                    <fullName>Equipment and Instruments</fullName>
                     <default>false</default>
-                    <label>Consumables</label>
+                    <label>Equipment and Instruments</label>
                 </value>
                 <value>
                     <fullName>Implants</fullName>
@@ -8978,12 +8999,33 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>APAC</fullName>
+                    <default>false</default>
+                    <label>APAC</label>
+                </value>
                 <value>
                     <fullName>DACH</fullName>
                     <default>false</default>
                     <label>DACH</label>
+                </value>
+                <value>
+                    <fullName>Eastern</fullName>
+                    <default>false</default>
+                    <label>Eastern</label>
+                </value>
+                <value>
+                    <fullName>LATAM</fullName>
+                    <default>false</default>
+                    <label>LATAM</label>
+                </value>
+                <value>
+                    <fullName>North America</fullName>
+                    <default>false</default>
+                    <label>North America</label>
                 </value>
                 <value>
                     <fullName>Northern</fullName>
@@ -8996,24 +9038,16 @@
                     <label>Southern</label>
                 </value>
                 <value>
-                    <fullName>Eastern</fullName>
+                    <fullName>독일.오스트리아.스위스</fullName>
                     <default>false</default>
-                    <label>Eastern</label>
+                    <isActive>false</isActive>
+                    <label>독일.오스트리아.스위스</label>
                 </value>
                 <value>
-                    <fullName>APAC</fullName>
+                    <fullName>북아메리카</fullName>
                     <default>false</default>
-                    <label>APAC</label>
-                </value>
-                <value>
-                    <fullName>LATAM</fullName>
-                    <default>false</default>
-                    <label>LATAM</label>
-                </value>
-                <value>
-                    <fullName>North America</fullName>
-                    <default>false</default>
-                    <label>North America</label>
+                    <isActive>false</isActive>
+                    <label>북아메리카</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -9766,27 +9800,18 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
-                    <fullName>US</fullName>
+                    <fullName>APAC</fullName>
                     <default>false</default>
-                    <label>US</label>
+                    <label>APAC</label>
                 </value>
                 <value>
-                    <fullName>Canada</fullName>
+                    <fullName>Australia/NZ</fullName>
                     <default>false</default>
-                    <label>Canada</label>
-                </value>
-                <value>
-                    <fullName>Germany/Austria</fullName>
-                    <default>false</default>
-                    <label>Germany/Austria</label>
-                </value>
-                <value>
-                    <fullName>Switzerland</fullName>
-                    <default>false</default>
-                    <label>Switzerland</label>
+                    <label>Australia/NZ</label>
                 </value>
                 <value>
                     <fullName>Benelux</fullName>
@@ -9794,24 +9819,24 @@
                     <label>Benelux</label>
                 </value>
                 <value>
-                    <fullName>Nordic</fullName>
+                    <fullName>Brazil</fullName>
                     <default>false</default>
-                    <label>Nordic</label>
+                    <label>Brazil</label>
                 </value>
                 <value>
-                    <fullName>Poland/CEE</fullName>
+                    <fullName>Canada</fullName>
                     <default>false</default>
-                    <label>Poland/CEE</label>
+                    <label>Canada</label>
                 </value>
                 <value>
-                    <fullName>Italy</fullName>
+                    <fullName>China</fullName>
                     <default>false</default>
-                    <label>Italy</label>
+                    <label>China</label>
                 </value>
                 <value>
-                    <fullName>Iberia</fullName>
+                    <fullName>Cyprus</fullName>
                     <default>false</default>
-                    <label>Iberia</label>
+                    <label>Cyprus</label>
                 </value>
                 <value>
                     <fullName>France</fullName>
@@ -9819,19 +9844,24 @@
                     <label>France</label>
                 </value>
                 <value>
-                    <fullName>Russia/CIS</fullName>
+                    <fullName>Germany/Austria</fullName>
                     <default>false</default>
-                    <label>Russia/CIS</label>
+                    <label>Germany/Austria</label>
                 </value>
                 <value>
-                    <fullName>Middle East / North Africa</fullName>
+                    <fullName>Greece</fullName>
                     <default>false</default>
-                    <label>Middle East / North Africa</label>
+                    <label>Greece</label>
                 </value>
                 <value>
-                    <fullName>Turkey</fullName>
+                    <fullName>Hong Kong</fullName>
                     <default>false</default>
-                    <label>Turkey</label>
+                    <label>Hong Kong</label>
+                </value>
+                <value>
+                    <fullName>Iberia</fullName>
+                    <default>false</default>
+                    <label>Iberia</label>
                 </value>
                 <value>
                     <fullName>India</fullName>
@@ -9839,14 +9869,14 @@
                     <label>India</label>
                 </value>
                 <value>
-                    <fullName>South Africa</fullName>
+                    <fullName>Israel</fullName>
                     <default>false</default>
-                    <label>South Africa</label>
+                    <label>Israel</label>
                 </value>
                 <value>
-                    <fullName>China</fullName>
+                    <fullName>Italy</fullName>
                     <default>false</default>
-                    <label>China</label>
+                    <label>Italy</label>
                 </value>
                 <value>
                     <fullName>Japan</fullName>
@@ -9859,29 +9889,9 @@
                     <label>Korea</label>
                 </value>
                 <value>
-                    <fullName>Australia/NZ</fullName>
+                    <fullName>Malta</fullName>
                     <default>false</default>
-                    <label>Australia/NZ</label>
-                </value>
-                <value>
-                    <fullName>Taiwan</fullName>
-                    <default>false</default>
-                    <label>Taiwan</label>
-                </value>
-                <value>
-                    <fullName>Hong Kong</fullName>
-                    <default>false</default>
-                    <label>Hong Kong</label>
-                </value>
-                <value>
-                    <fullName>South East Asia</fullName>
-                    <default>false</default>
-                    <label>South East Asia</label>
-                </value>
-                <value>
-                    <fullName>Brazil</fullName>
-                    <default>false</default>
-                    <label>Brazil</label>
+                    <label>Malta</label>
                 </value>
                 <value>
                     <fullName>Mexico</fullName>
@@ -9889,9 +9899,54 @@
                     <label>Mexico</label>
                 </value>
                 <value>
+                    <fullName>Middle East / North Africa</fullName>
+                    <default>false</default>
+                    <label>Middle East / North Africa</label>
+                </value>
+                <value>
+                    <fullName>Nordic</fullName>
+                    <default>false</default>
+                    <label>Nordic</label>
+                </value>
+                <value>
                     <fullName>Other Latin America CCO</fullName>
                     <default>false</default>
                     <label>Other Latin America CCO</label>
+                </value>
+                <value>
+                    <fullName>Poland/CEE</fullName>
+                    <default>false</default>
+                    <label>Poland/CEE</label>
+                </value>
+                <value>
+                    <fullName>Russia/CIS</fullName>
+                    <default>false</default>
+                    <label>Russia/CIS</label>
+                </value>
+                <value>
+                    <fullName>South Africa</fullName>
+                    <default>false</default>
+                    <label>South Africa</label>
+                </value>
+                <value>
+                    <fullName>South East Asia</fullName>
+                    <default>false</default>
+                    <label>South East Asia</label>
+                </value>
+                <value>
+                    <fullName>Switzerland</fullName>
+                    <default>false</default>
+                    <label>Switzerland</label>
+                </value>
+                <value>
+                    <fullName>Taiwan</fullName>
+                    <default>false</default>
+                    <label>Taiwan</label>
+                </value>
+                <value>
+                    <fullName>Turkey</fullName>
+                    <default>false</default>
+                    <label>Turkey</label>
                 </value>
                 <value>
                     <fullName>UK &amp; Ireland</fullName>
@@ -9899,9 +9954,9 @@
                     <label>UK &amp; Ireland</label>
                 </value>
                 <value>
-                    <fullName>UKD North</fullName>
+                    <fullName>UKD Academy</fullName>
                     <default>false</default>
-                    <label>UKD North</label>
+                    <label>UKD Academy</label>
                 </value>
                 <value>
                     <fullName>UKD East</fullName>
@@ -9909,24 +9964,9 @@
                     <label>UKD East</label>
                 </value>
                 <value>
-                    <fullName>UKD Ireland</fullName>
+                    <fullName>UKD Internal</fullName>
                     <default>false</default>
-                    <label>UKD Ireland</label>
-                </value>
-                <value>
-                    <fullName>UKD West</fullName>
-                    <default>false</default>
-                    <label>UKD West</label>
-                </value>
-                <value>
-                    <fullName>UKD Academy</fullName>
-                    <default>false</default>
-                    <label>UKD Academy</label>
-                </value>
-                <value>
-                    <fullName>UKD National</fullName>
-                    <default>false</default>
-                    <label>UKD National</label>
+                    <label>UKD Internal</label>
                 </value>
                 <value>
                     <fullName>UKD International</fullName>
@@ -9934,34 +9974,35 @@
                     <label>UKD International</label>
                 </value>
                 <value>
-                    <fullName>UKD Internal</fullName>
+                    <fullName>UKD Ireland</fullName>
                     <default>false</default>
-                    <label>UKD Internal</label>
+                    <label>UKD Ireland</label>
                 </value>
                 <value>
-                    <fullName>APAC</fullName>
+                    <fullName>UKD National</fullName>
                     <default>false</default>
-                    <label>APAC</label>
+                    <label>UKD National</label>
                 </value>
                 <value>
-                    <fullName>Greece</fullName>
+                    <fullName>UKD North</fullName>
                     <default>false</default>
-                    <label>Greece</label>
+                    <label>UKD North</label>
                 </value>
                 <value>
-                    <fullName>Cyprus</fullName>
+                    <fullName>UKD West</fullName>
                     <default>false</default>
-                    <label>Cyprus</label>
+                    <label>UKD West</label>
                 </value>
                 <value>
-                    <fullName>Malta</fullName>
+                    <fullName>US</fullName>
                     <default>false</default>
-                    <label>Malta</label>
+                    <label>US</label>
                 </value>
                 <value>
-                    <fullName>Israel</fullName>
+                    <fullName>미국</fullName>
                     <default>false</default>
-                    <label>Israel</label>
+                    <isActive>false</isActive>
+                    <label>미국</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -9974,42 +10015,14 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
-                    <fullName>Equipment and Instruments - Treatment Centers</fullName>
+                    <fullName>CAD/CAM</fullName>
                     <default>false</default>
-                    <label>Equipment and Instruments - Treatment Centers</label>
-                </value>
-                <value>
-                    <fullName>Equipment and Instruments - Imaging</fullName>
-                    <default>false</default>
-                    <label>Equipment and Instruments - Imaging</label>
-                </value>
-                <value>
-                    <fullName>Equipment and Instruments - Instruments</fullName>
-                    <default>false</default>
-                    <label>Equipment and Instruments - Instruments</label>
-                </value>
-                <value>
-                    <fullName>Digital - CAD/CAM</fullName>
-                    <default>false</default>
-                    <label>Digital - CAD/CAM</label>
-                </value>
-                <value>
-                    <fullName>Digital - Orthodontics</fullName>
-                    <default>false</default>
-                    <label>Digital - Orthodontics</label>
-                </value>
-                <value>
-                    <fullName>Consumables - Preventive</fullName>
-                    <default>false</default>
-                    <label>Consumables - Preventive</label>
-                </value>
-                <value>
-                    <fullName>Consumables - Restorative</fullName>
-                    <default>false</default>
-                    <label>Consumables - Restorative</label>
+                    <isActive>false</isActive>
+                    <label>CAD/CAM</label>
                 </value>
                 <value>
                     <fullName>Consumables - Endodontics</fullName>
@@ -10022,9 +10035,92 @@
                     <label>Consumables - Lab</label>
                 </value>
                 <value>
+                    <fullName>Consumables - Preventive</fullName>
+                    <default>false</default>
+                    <label>Consumables - Preventive</label>
+                </value>
+                <value>
+                    <fullName>Consumables - Restorative</fullName>
+                    <default>false</default>
+                    <label>Consumables - Restorative</label>
+                </value>
+                <value>
+                    <fullName>Digital - CAD/CAM</fullName>
+                    <default>false</default>
+                    <label>Digital - CAD/CAM</label>
+                </value>
+                <value>
+                    <fullName>Digital - Orthodontics</fullName>
+                    <default>false</default>
+                    <label>Digital - Orthodontics</label>
+                </value>
+                <value>
+                    <fullName>Endodontics</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Endodontics</label>
+                </value>
+                <value>
+                    <fullName>Equipment and Instruments - Imaging</fullName>
+                    <default>false</default>
+                    <label>Equipment and Instruments - Imaging</label>
+                </value>
+                <value>
+                    <fullName>Equipment and Instruments - Instruments</fullName>
+                    <default>false</default>
+                    <label>Equipment and Instruments - Instruments</label>
+                </value>
+                <value>
+                    <fullName>Equipment and Instruments - Treatment Centers</fullName>
+                    <default>false</default>
+                    <label>Equipment and Instruments - Treatment Centers</label>
+                </value>
+                <value>
+                    <fullName>Imaging</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Imaging</label>
+                </value>
+                <value>
                     <fullName>Implants</fullName>
                     <default>false</default>
                     <label>Implants</label>
+                </value>
+                <value>
+                    <fullName>Instruments</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Instruments</label>
+                </value>
+                <value>
+                    <fullName>Lab</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Lab</label>
+                </value>
+                <value>
+                    <fullName>Orthodontics</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Orthodontics</label>
+                </value>
+                <value>
+                    <fullName>Preventive</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Preventive</label>
+                </value>
+                <value>
+                    <fullName>Restorative</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Restorative</label>
+                </value>
+                <value>
+                    <fullName>Treatment Centers</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Treatment Centers</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -10149,32 +10245,23 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>APAC</fullName>
+                    <default>false</default>
+                    <label>APAC</label>
+                </value>
                 <value>
                     <fullName>DACH</fullName>
                     <default>false</default>
                     <label>DACH</label>
                 </value>
                 <value>
-                    <fullName>Northern</fullName>
-                    <default>false</default>
-                    <label>Northern</label>
-                </value>
-                <value>
-                    <fullName>Southern</fullName>
-                    <default>false</default>
-                    <label>Southern</label>
-                </value>
-                <value>
                     <fullName>Eastern</fullName>
                     <default>false</default>
                     <label>Eastern</label>
-                </value>
-                <value>
-                    <fullName>APAC</fullName>
-                    <default>false</default>
-                    <label>APAC</label>
                 </value>
                 <value>
                     <fullName>LATAM</fullName>
@@ -10185,6 +10272,16 @@
                     <fullName>North America</fullName>
                     <default>false</default>
                     <label>North America</label>
+                </value>
+                <value>
+                    <fullName>Northern</fullName>
+                    <default>false</default>
+                    <label>Northern</label>
+                </value>
+                <value>
+                    <fullName>Southern</fullName>
+                    <default>false</default>
+                    <label>Southern</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -10788,32 +10885,18 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
-                    <fullName>US</fullName>
+                    <fullName>APAC</fullName>
                     <default>false</default>
-                    <label>US</label>
+                    <label>APAC</label>
                 </value>
                 <value>
-                    <fullName>Canada</fullName>
+                    <fullName>Australia/NZ</fullName>
                     <default>false</default>
-                    <label>Canada</label>
-                </value>
-                <value>
-                    <fullName>Germany/Austria</fullName>
-                    <default>false</default>
-                    <label>Germany/Austria</label>
-                </value>
-                <value>
-                    <fullName>Switzerland</fullName>
-                    <default>false</default>
-                    <label>Switzerland</label>
-                </value>
-                <value>
-                    <fullName>UK</fullName>
-                    <default>false</default>
-                    <label>UK</label>
+                    <label>Australia/NZ</label>
                 </value>
                 <value>
                     <fullName>Benelux</fullName>
@@ -10821,24 +10904,24 @@
                     <label>Benelux</label>
                 </value>
                 <value>
-                    <fullName>Nordic</fullName>
+                    <fullName>Brazil</fullName>
                     <default>false</default>
-                    <label>Nordic</label>
+                    <label>Brazil</label>
                 </value>
                 <value>
-                    <fullName>Poland/CEE</fullName>
+                    <fullName>Canada</fullName>
                     <default>false</default>
-                    <label>Poland/CEE</label>
+                    <label>Canada</label>
                 </value>
                 <value>
-                    <fullName>Italy</fullName>
+                    <fullName>China</fullName>
                     <default>false</default>
-                    <label>Italy</label>
+                    <label>China</label>
                 </value>
                 <value>
-                    <fullName>Iberia</fullName>
+                    <fullName>Cyprus</fullName>
                     <default>false</default>
-                    <label>Iberia</label>
+                    <label>Cyprus</label>
                 </value>
                 <value>
                     <fullName>France</fullName>
@@ -10846,19 +10929,24 @@
                     <label>France</label>
                 </value>
                 <value>
-                    <fullName>Russia/CIS</fullName>
+                    <fullName>Germany/Austria</fullName>
                     <default>false</default>
-                    <label>Russia/CIS</label>
+                    <label>Germany/Austria</label>
                 </value>
                 <value>
-                    <fullName>Middle East / North Africa</fullName>
+                    <fullName>Greece</fullName>
                     <default>false</default>
-                    <label>Middle East / North Africa</label>
+                    <label>Greece</label>
                 </value>
                 <value>
-                    <fullName>Turkey</fullName>
+                    <fullName>Hong Kong</fullName>
                     <default>false</default>
-                    <label>Turkey</label>
+                    <label>Hong Kong</label>
+                </value>
+                <value>
+                    <fullName>Iberia</fullName>
+                    <default>false</default>
+                    <label>Iberia</label>
                 </value>
                 <value>
                     <fullName>India</fullName>
@@ -10866,14 +10954,14 @@
                     <label>India</label>
                 </value>
                 <value>
-                    <fullName>South Africa</fullName>
+                    <fullName>Israel</fullName>
                     <default>false</default>
-                    <label>South Africa</label>
+                    <label>Israel</label>
                 </value>
                 <value>
-                    <fullName>China</fullName>
+                    <fullName>Italy</fullName>
                     <default>false</default>
-                    <label>China</label>
+                    <label>Italy</label>
                 </value>
                 <value>
                     <fullName>Japan</fullName>
@@ -10886,29 +10974,9 @@
                     <label>Korea</label>
                 </value>
                 <value>
-                    <fullName>Australia/NZ</fullName>
+                    <fullName>Malta</fullName>
                     <default>false</default>
-                    <label>Australia/NZ</label>
-                </value>
-                <value>
-                    <fullName>Taiwan</fullName>
-                    <default>false</default>
-                    <label>Taiwan</label>
-                </value>
-                <value>
-                    <fullName>Hong Kong</fullName>
-                    <default>false</default>
-                    <label>Hong Kong</label>
-                </value>
-                <value>
-                    <fullName>South East Asia</fullName>
-                    <default>false</default>
-                    <label>South East Asia</label>
-                </value>
-                <value>
-                    <fullName>Brazil</fullName>
-                    <default>false</default>
-                    <label>Brazil</label>
+                    <label>Malta</label>
                 </value>
                 <value>
                     <fullName>Mexico</fullName>
@@ -10916,9 +10984,59 @@
                     <label>Mexico</label>
                 </value>
                 <value>
+                    <fullName>Middle East / North Africa</fullName>
+                    <default>false</default>
+                    <label>Middle East / North Africa</label>
+                </value>
+                <value>
+                    <fullName>Nordic</fullName>
+                    <default>false</default>
+                    <label>Nordic</label>
+                </value>
+                <value>
                     <fullName>Other Latin America CCO</fullName>
                     <default>false</default>
                     <label>Other Latin America CCO</label>
+                </value>
+                <value>
+                    <fullName>Poland/CEE</fullName>
+                    <default>false</default>
+                    <label>Poland/CEE</label>
+                </value>
+                <value>
+                    <fullName>Russia/CIS</fullName>
+                    <default>false</default>
+                    <label>Russia/CIS</label>
+                </value>
+                <value>
+                    <fullName>South Africa</fullName>
+                    <default>false</default>
+                    <label>South Africa</label>
+                </value>
+                <value>
+                    <fullName>South East Asia</fullName>
+                    <default>false</default>
+                    <label>South East Asia</label>
+                </value>
+                <value>
+                    <fullName>Switzerland</fullName>
+                    <default>false</default>
+                    <label>Switzerland</label>
+                </value>
+                <value>
+                    <fullName>Taiwan</fullName>
+                    <default>false</default>
+                    <label>Taiwan</label>
+                </value>
+                <value>
+                    <fullName>Turkey</fullName>
+                    <default>false</default>
+                    <label>Turkey</label>
+                </value>
+                <value>
+                    <fullName>UK</fullName>
+                    <default>false</default>
+                    <label>UK</label>
                 </value>
                 <value>
                     <fullName>UK &amp; Ireland</fullName>
@@ -10926,9 +11044,9 @@
                     <label>UK &amp; Ireland</label>
                 </value>
                 <value>
-                    <fullName>UKD North</fullName>
+                    <fullName>UKD Academy</fullName>
                     <default>false</default>
-                    <label>UKD North</label>
+                    <label>UKD Academy</label>
                 </value>
                 <value>
                     <fullName>UKD East</fullName>
@@ -10936,24 +11054,9 @@
                     <label>UKD East</label>
                 </value>
                 <value>
-                    <fullName>UKD West</fullName>
+                    <fullName>UKD Internal</fullName>
                     <default>false</default>
-                    <label>UKD West</label>
-                </value>
-                <value>
-                    <fullName>UKD Ireland</fullName>
-                    <default>false</default>
-                    <label>UKD Ireland</label>
-                </value>
-                <value>
-                    <fullName>UKD Academy</fullName>
-                    <default>false</default>
-                    <label>UKD Academy</label>
-                </value>
-                <value>
-                    <fullName>UKD National</fullName>
-                    <default>false</default>
-                    <label>UKD National</label>
+                    <label>UKD Internal</label>
                 </value>
                 <value>
                     <fullName>UKD International</fullName>
@@ -10961,34 +11064,35 @@
                     <label>UKD International</label>
                 </value>
                 <value>
-                    <fullName>UKD Internal</fullName>
+                    <fullName>UKD Ireland</fullName>
                     <default>false</default>
-                    <label>UKD Internal</label>
+                    <label>UKD Ireland</label>
                 </value>
                 <value>
-                    <fullName>APAC</fullName>
+                    <fullName>UKD National</fullName>
                     <default>false</default>
-                    <label>APAC</label>
+                    <label>UKD National</label>
                 </value>
                 <value>
-                    <fullName>Greece</fullName>
+                    <fullName>UKD North</fullName>
                     <default>false</default>
-                    <label>Greece</label>
+                    <label>UKD North</label>
                 </value>
                 <value>
-                    <fullName>Cyprus</fullName>
+                    <fullName>UKD West</fullName>
                     <default>false</default>
-                    <label>Cyprus</label>
+                    <label>UKD West</label>
                 </value>
                 <value>
-                    <fullName>Malta</fullName>
+                    <fullName>US</fullName>
                     <default>false</default>
-                    <label>Malta</label>
+                    <label>US</label>
                 </value>
                 <value>
-                    <fullName>Israel</fullName>
+                    <fullName>독일/오스트리아</fullName>
                     <default>false</default>
-                    <label>Israel</label>
+                    <isActive>false</isActive>
+                    <label>독일/오스트리아</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -11001,42 +11105,14 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
-                    <fullName>Equipment and Instruments - Treatment Centers</fullName>
+                    <fullName>CAD/CAM</fullName>
                     <default>false</default>
-                    <label>Equipment and Instruments - Treatment Centers</label>
-                </value>
-                <value>
-                    <fullName>Equipment and Instruments - Imaging</fullName>
-                    <default>false</default>
-                    <label>Equipment and Instruments - Imaging</label>
-                </value>
-                <value>
-                    <fullName>Equipment and Instruments - Instruments</fullName>
-                    <default>false</default>
-                    <label>Equipment and Instruments - Instruments</label>
-                </value>
-                <value>
-                    <fullName>Digital - CAD/CAM</fullName>
-                    <default>false</default>
-                    <label>Digital - CAD/CAM</label>
-                </value>
-                <value>
-                    <fullName>Digital - Orthodontics</fullName>
-                    <default>false</default>
-                    <label>Digital - Orthodontics</label>
-                </value>
-                <value>
-                    <fullName>Consumables - Preventive</fullName>
-                    <default>false</default>
-                    <label>Consumables - Preventive</label>
-                </value>
-                <value>
-                    <fullName>Consumables - Restorative</fullName>
-                    <default>false</default>
-                    <label>Consumables - Restorative</label>
+                    <isActive>false</isActive>
+                    <label>CAD/CAM</label>
                 </value>
                 <value>
                     <fullName>Consumables - Endodontics</fullName>
@@ -11049,9 +11125,92 @@
                     <label>Consumables - Lab</label>
                 </value>
                 <value>
+                    <fullName>Consumables - Preventive</fullName>
+                    <default>false</default>
+                    <label>Consumables - Preventive</label>
+                </value>
+                <value>
+                    <fullName>Consumables - Restorative</fullName>
+                    <default>false</default>
+                    <label>Consumables - Restorative</label>
+                </value>
+                <value>
+                    <fullName>Digital - CAD/CAM</fullName>
+                    <default>false</default>
+                    <label>Digital - CAD/CAM</label>
+                </value>
+                <value>
+                    <fullName>Digital - Orthodontics</fullName>
+                    <default>false</default>
+                    <label>Digital - Orthodontics</label>
+                </value>
+                <value>
+                    <fullName>Endodontics</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Endodontics</label>
+                </value>
+                <value>
+                    <fullName>Equipment and Instruments - Imaging</fullName>
+                    <default>false</default>
+                    <label>Equipment and Instruments - Imaging</label>
+                </value>
+                <value>
+                    <fullName>Equipment and Instruments - Instruments</fullName>
+                    <default>false</default>
+                    <label>Equipment and Instruments - Instruments</label>
+                </value>
+                <value>
+                    <fullName>Equipment and Instruments - Treatment Centers</fullName>
+                    <default>false</default>
+                    <label>Equipment and Instruments - Treatment Centers</label>
+                </value>
+                <value>
+                    <fullName>Imaging</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Imaging</label>
+                </value>
+                <value>
                     <fullName>Implants</fullName>
                     <default>false</default>
                     <label>Implants</label>
+                </value>
+                <value>
+                    <fullName>Instruments</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Instruments</label>
+                </value>
+                <value>
+                    <fullName>Lab</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Lab</label>
+                </value>
+                <value>
+                    <fullName>Orthodontics</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Orthodontics</label>
+                </value>
+                <value>
+                    <fullName>Preventive</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Preventive</label>
+                </value>
+                <value>
+                    <fullName>Restorative</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Restorative</label>
+                </value>
+                <value>
+                    <fullName>Treatment Centers</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Treatment Centers</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -11176,32 +11335,23 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>APAC</fullName>
+                    <default>false</default>
+                    <label>APAC</label>
+                </value>
                 <value>
                     <fullName>DACH</fullName>
                     <default>false</default>
                     <label>DACH</label>
                 </value>
                 <value>
-                    <fullName>Northern</fullName>
-                    <default>false</default>
-                    <label>Northern</label>
-                </value>
-                <value>
-                    <fullName>Southern</fullName>
-                    <default>false</default>
-                    <label>Southern</label>
-                </value>
-                <value>
                     <fullName>Eastern</fullName>
                     <default>false</default>
                     <label>Eastern</label>
-                </value>
-                <value>
-                    <fullName>APAC</fullName>
-                    <default>false</default>
-                    <label>APAC</label>
                 </value>
                 <value>
                     <fullName>LATAM</fullName>
@@ -11212,6 +11362,16 @@
                     <fullName>North America</fullName>
                     <default>false</default>
                     <label>North America</label>
+                </value>
+                <value>
+                    <fullName>Northern</fullName>
+                    <default>false</default>
+                    <label>Northern</label>
+                </value>
+                <value>
+                    <fullName>Southern</fullName>
+                    <default>false</default>
+                    <label>Southern</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

@@ -157,8 +157,8 @@
         <label>Procedure Tracker Compact Layout</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>Follow Up your Sales Lifecycle with step-by-step guided instructions. 
-#1 Procedure Type: Clear Aligners - suresmile</description>
+    <description>Follow Up your Sales Lifecycle with step-by-step guided instructions.
+        #1 Procedure Type: Clear Aligners - suresmile</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>true</enableFeeds>
@@ -179,6 +179,16 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AutomaticallyCreated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Automatically Created?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Barrier__c</fullName>
@@ -457,37 +467,37 @@
         <fullName>LastActivityNotes__c</fullName>
         <externalId>false</externalId>
         <formula>IF(QBRHighL1toHighL2__c, NOTESQBRHighL1toHighL2__c ,
-IF(Peer2Peer__c, NOTESPeer2Peer__c ,
-IF(MarketingM2H__c, NOTESMarketingM2H__c ,
-IF(TeamCalibration__c, NOTESTeamCalibration__c ,
-IF(ClinicalDevelopment__c, NOTESClinicalDevelopment__c ,
-IF(PatientAcceptance__c, NOTESPatientAcceptance__c ,
-IF(QBRMediumtoHighL1__c, NOTESQBRMediumtoHighL1__c ,
-IF(Economics__c,  NOTESEconomics__c ,
-IF(PatientEducation__c, NOTESPatientEducation__c ,
-IF(ProcessAssessment__c, NOTESProcessAssessment__c,
-IF(BusinessAssessment__c, NOTESBusinessAssessment__c,
-IF(QBRLowtoMedium__c, NOTESQBRLowtoMedium__c ,
-IF(MarketingCampaign__c,  NOTESMarketingCampaign__c ,
-IF(ChairsidePatientEducation__c, NOTESChairsidePatientEducation__c ,
-IF(ProceduralEconomics__c, NOTESProceduralEconomics__c  ,
-IF(ClinicalEducation__c, NOTESClinicalEducation__c ,
-IF(Whoisyouridealalignerpatient__c,  NOTESWhoisyouridealalignerpatient__c ,
-IF(ResetTraining__c, NOTESResetTraining__c ,
-IF(ProceduralAssessment__c, NOTESProceduralAssessment__c ,
-IF(X3rdCaseReviewApproval__c, NOTES_3rdCaseReviewApproval__c ,
-IF(TeamMeetingReviewProcesses__c,NOTES_TeamMeetingReviewProcesses__c ,
-IF(X3rdcasesubmission__c, NOTES_3rdCaseSubmission__c ,
-IF(X2ndCaseReviewApproval__c, NOTES_2ndCaseReviewApproval__c ,
-IF(X2ndCaseSubmissionExternal__c, NOTES_2ndCaseSubmissionExternal__c  ,
-IF(TeamTrainingOrthodonticBenefitsRDH__c,  NOTES_TeamTrainingOrthodonticBenefit__c ,
-IF(X1stcasereviewapproval__c, NOTES_1stCaseReviewApproval__c ,
-IF(X1stCaseSubmissionWorkflowMarketing__c,  NOTES_1stCaseSubmissionWorkflowMkt__c ,
-IF(RecordsTrainingFinance__c,  NOTES_RecordsTrainingFinance__c ,
-IF(CaseSelectionStaffRoles__c,   NOTES_CaseSelectionStaffRoles__c ,
-IF(DiscoveryGoalAssessment__c,   NOTES_DiscoveryGoalAssessment__c ,
-IF(ObtainCreditCardInformation__c,  NOTESObtainCreditCardInformation__c ,
-&quot;&quot;)))))))))))))))))))))))))))))))</formula>
+            IF(Peer2Peer__c, NOTESPeer2Peer__c ,
+            IF(MarketingM2H__c, NOTESMarketingM2H__c ,
+            IF(TeamCalibration__c, NOTESTeamCalibration__c ,
+            IF(ClinicalDevelopment__c, NOTESClinicalDevelopment__c ,
+            IF(PatientAcceptance__c, NOTESPatientAcceptance__c ,
+            IF(QBRMediumtoHighL1__c, NOTESQBRMediumtoHighL1__c ,
+            IF(Economics__c,  NOTESEconomics__c ,
+            IF(PatientEducation__c, NOTESPatientEducation__c ,
+            IF(ProcessAssessment__c, NOTESProcessAssessment__c,
+            IF(BusinessAssessment__c, NOTESBusinessAssessment__c,
+            IF(QBRLowtoMedium__c, NOTESQBRLowtoMedium__c ,
+            IF(MarketingCampaign__c,  NOTESMarketingCampaign__c ,
+            IF(ChairsidePatientEducation__c, NOTESChairsidePatientEducation__c ,
+            IF(ProceduralEconomics__c, NOTESProceduralEconomics__c  ,
+            IF(ClinicalEducation__c, NOTESClinicalEducation__c ,
+            IF(Whoisyouridealalignerpatient__c,  NOTESWhoisyouridealalignerpatient__c ,
+            IF(ResetTraining__c, NOTESResetTraining__c ,
+            IF(ProceduralAssessment__c, NOTESProceduralAssessment__c ,
+            IF(X3rdCaseReviewApproval__c, NOTES_3rdCaseReviewApproval__c ,
+            IF(TeamMeetingReviewProcesses__c,NOTES_TeamMeetingReviewProcesses__c ,
+            IF(X3rdcasesubmission__c, NOTES_3rdCaseSubmission__c ,
+            IF(X2ndCaseReviewApproval__c, NOTES_2ndCaseReviewApproval__c ,
+            IF(X2ndCaseSubmissionExternal__c, NOTES_2ndCaseSubmissionExternal__c  ,
+            IF(TeamTrainingOrthodonticBenefitsRDH__c,  NOTES_TeamTrainingOrthodonticBenefit__c ,
+            IF(X1stcasereviewapproval__c, NOTES_1stCaseReviewApproval__c ,
+            IF(X1stCaseSubmissionWorkflowMarketing__c,  NOTES_1stCaseSubmissionWorkflowMkt__c ,
+            IF(RecordsTrainingFinance__c,  NOTES_RecordsTrainingFinance__c ,
+            IF(CaseSelectionStaffRoles__c,   NOTES_CaseSelectionStaffRoles__c ,
+            IF(DiscoveryGoalAssessment__c,   NOTES_DiscoveryGoalAssessment__c ,
+            IF(ObtainCreditCardInformation__c,  NOTESObtainCreditCardInformation__c ,
+            &quot;&quot;)))))))))))))))))))))))))))))))</formula>
         <label>Last Activity Notes</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -498,38 +508,66 @@ IF(ObtainCreditCardInformation__c,  NOTESObtainCreditCardInformation__c ,
     <fields>
         <fullName>LastActivity__c</fullName>
         <externalId>false</externalId>
-        <formula>IF(QBRHighL1toHighL2__c,&quot;QBR (High L1 to High L2)&quot;  ,
-IF(Peer2Peer__c,&quot;Peer 2 Peer&quot; ,
-IF(MarketingM2H__c,&quot;Marketing (M 2 H)&quot; ,
-IF(TeamCalibration__c,&quot;Team Calibration&quot;   ,
-IF(ClinicalDevelopment__c,&quot;Clinical Development&quot;  ,
-IF(PatientAcceptance__c,&quot;Patient Acceptance&quot;   ,
-IF(QBRMediumtoHighL1__c,&quot;QBR (Medium to High L1)&quot;  ,
-IF(Economics__c,&quot;Economics&quot;   ,
-IF(PatientEducation__c,&quot;Patient Education&quot;  ,
-IF(ProcessAssessment__c,&quot;Process Assessment&quot;  ,
-IF(BusinessAssessment__c,&quot;Business Assessment&quot; ,
-IF(QBRLowtoMedium__c,&quot;QBR (Low to Medium)&quot;  ,
-IF(MarketingCampaign__c,&quot;Marketing Campaign&quot;  ,
-IF(ChairsidePatientEducation__c,&quot;Chairside Patient Education&quot;  ,
-IF(ProceduralEconomics__c,&quot;Procedural Economics&quot;  ,
-IF(ClinicalEducation__c,&quot;Clinical Education&quot;  ,
-IF(Whoisyouridealalignerpatient__c,&quot;Who is your ideal aligner patient?&quot;  ,
-IF(ResetTraining__c,&quot;Reset Training&quot;  ,
-IF(ProceduralAssessment__c,&quot;Procedural Assessment&quot;  ,
-IF(X3rdCaseReviewApproval__c,&quot;3rd Case Review/Approval&quot;  ,
-IF(TeamMeetingReviewProcesses__c,&quot;Team Meeting - Review Processes&quot;  ,
-IF(X3rdcasesubmission__c, &quot;3rd Case Submission&quot; ,
-IF(X2ndCaseReviewApproval__c, &quot;2nd Case Review/Approval&quot;  ,
-IF(X2ndCaseSubmissionExternal__c, &quot;2nd Case Submission - External&quot; ,
-IF(TeamTrainingOrthodonticBenefitsRDH__c, &quot;Team Training Ortho Benefits RDH&quot;  ,
-IF(X1stcasereviewapproval__c,&quot;1st Case Review/Approval&quot;  ,
-IF(X1stCaseSubmissionWorkflowMarketing__c, &quot;1st Case Submission,Workflow &amp; Mkt&quot; ,
-IF(RecordsTrainingFinance__c, &quot;Records Training &amp; Finance&quot;  ,
-IF(CaseSelectionStaffRoles__c, &quot;Case Selection &amp; Staff Roles&quot;  ,
-IF(DiscoveryGoalAssessment__c, &quot;Discovery, Goal Assessment&quot;  ,
-IF(ObtainCreditCardInformation__c, &quot;Obtain Credit Card Information&quot;  ,
-&quot;&quot;)))))))))))))))))))))))))))))))</formula>
+        <formula>If (RecordType.DeveloperName = &apos;Clear_Aligners&apos;,
+
+    IF(QBRHighL1toHighL2__c,&quot;QBR (High L1 to High L2)&quot;,
+    IF(Peer2Peer__c,&quot;Peer 2 Peer&quot;,
+    IF(MarketingM2H__c,&quot;Marketing (M 2 H)&quot;,
+    IF(TeamCalibration__c,&quot;Team Calibration&quot;,
+    IF(ClinicalDevelopment__c,&quot;Clinical Development&quot;,
+    IF(PatientAcceptance__c,&quot;Patient Acceptance&quot;,
+    IF(QBRMediumtoHighL1__c,&quot;QBR (Medium to High L1)&quot;,
+    IF(Economics__c,&quot;Economics&quot;,
+    IF(PatientEducation__c,&quot;Patient Education&quot;,
+    IF(ProcessAssessment__c,&quot;Process Assessment&quot;,
+    IF(BusinessAssessment__c,&quot;Business Assessment&quot;,
+    IF(QBRLowtoMedium__c,&quot;QBR (Low to Medium)&quot;,
+    IF(MarketingCampaign__c,&quot;Marketing Campaign&quot;,
+    IF(ChairsidePatientEducation__c,&quot;Chairside Patient Education&quot;,
+    IF(ProceduralEconomics__c,&quot;Procedural Economics&quot;,
+    IF(ClinicalEducation__c,&quot;Clinical Education&quot;,
+    IF(Whoisyouridealalignerpatient__c,&quot;Who is your ideal aligner patient?&quot;,
+    IF(ResetTraining__c,&quot;Reset Training&quot;,
+    IF(ProceduralAssessment__c,&quot;Procedural Assessment&quot;,
+    IF(X3rdCaseReviewApproval__c,&quot;3rd Case Review/Approval&quot;,
+    IF(TeamMeetingReviewProcesses__c,&quot;Team Meeting - Review Processes&quot;,
+    IF(X3rdcasesubmission__c,&quot;3rd Case Submission&quot;,
+    IF(X2ndCaseReviewApproval__c, &quot;2nd Case Review/Approval&quot;,
+    IF(X2ndCaseSubmissionExternal__c, &quot;2nd Case Submission - External&quot;,
+    IF(TeamTrainingOrthodonticBenefitsRDH__c, &quot;Team Training Ortho Benefits RDH&quot;,
+    IF(X1stcasereviewapproval__c,&quot;1st Case Review/Approval&quot;,
+    IF(X1stCaseSubmissionWorkflowMarketing__c, &quot;1st Case Submission,Workflow &amp; Mkt&quot;,
+    IF(RecordsTrainingFinance__c, &quot;Records Training &amp; Finance&quot;,
+    IF(CaseSelectionStaffRoles__c, &quot;Case Selection &amp; Staff Roles&quot;,
+    IF(DiscoveryGoalAssessment__c, &quot;Discovery, Goal Assessment&quot;,
+    IF(ObtainCreditCardInformation__c, &quot;Obtain Credit Card Information&quot;,
+    &quot;None&quot;)))))))))))))))))))))))))))))))
+    ,
+
+    IF(x23StartContinuousEducation__c,&quot;23. Start Continuous Education&quot;,
+    IF(x22JoinSuresmileConnectionsProgram__c,&quot;22. Join SureSmile Connections Program&quot;,
+    IF(x21ConnectwithSuresmileMentor__c,&quot;21. Connect with SureSmile Mentor&quot;,
+    IF(x20JoinStartStudyClub__c,&quot;20. Join or Start Study Club&quot;,
+    IF(x19ReviewCaseExpansion__c,&quot;19. Review Case Expansion&quot;,
+    IF(x18ReviewPracticeIntegration__c,&quot;18. Review Practice Integration&quot;,
+    IF(x17CompleteSureSmileBusinessReview__c,&quot;17. Complete SureSmile Business Review&quot;,
+    IF(x16LaunchSureSmileDay__c,&quot;16. Launch SureSmile Day&quot;,
+    IF(x15TrainCaseManagement__c,&quot;15. Train Case Management&quot;,
+    IF(x14TrainClinicalAppsIntegrations__c,&quot;14. Train Clinical Apps &amp; Integrations&quot;,
+    IF(x13TrainCompleteThirdCaseReview__c,&quot;13. Train &amp; Complete Third Case Review&quot;,
+    IF(x12SubmitThirdCase__c,&quot;12. Submit Third Case&quot;,
+    IF(x11TrainCompleteSecondCaseReview__c,&quot;11. Train &amp; Complete Second Case Review&quot;,
+    IF(x10SubmitSecondCase__c,&quot;10. Submit Second Case&quot;,
+    IF(x9TrainCompleteFirstCaseReview__c,&quot;9. Train &amp; Complete First Case Review&quot;,
+    IF(x8TrainSubmitFirstCase__c,&quot;8. Train &amp; Submit First Case&quot;,
+    IF(x7StartNewPracticeOnboarding__c,&quot;7. Start New Practice Onboarding&quot;,
+    IF(x6HelpClinicFind3Patients__c,&quot;6. Help Clinic Find 3 Patients&quot;,
+    IF(x5ConnectwithSureSmileAmbassador__c,&quot;5. Connect with SureSmile Ambassador&quot;,
+    IF(x4CompleteSureSmileDiscovery__c,&quot;4. Complete SureSmile Discovery&quot;,
+    IF(x3DeliverWelcometoSureSmileFamily__c,&quot;3. Deliver Welcome to SureSmile Family&quot;,
+    IF(x2Register__c,&quot;2. Register&quot;,
+    IF(x1ExperienceSureSmile__c,&quot;1. Experience SureSmile&quot;,
+    &quot;None&quot;))))))))))))))))))))))))</formula>
         <label>Last Activity</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -553,6 +591,15 @@ IF(ObtainCreditCardInformation__c, &quot;Obtain Credit Card Information&quot;  ,
         <externalId>false</externalId>
         <label>Marketing (M 2 H)</label>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MyTracker__c</fullName>
+        <externalId>false</externalId>
+        <formula>SalesRep__c =  $User.Id</formula>
+        <label>My Tracker ?</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -873,45 +920,127 @@ IF(ObtainCreditCardInformation__c, &quot;Obtain Credit Card Information&quot;  ,
         <fullName>NextActivity__c</fullName>
         <description>TFUS-000005060</description>
         <externalId>false</externalId>
-        <formula>IF(QBRHighL1toHighL2__c,&quot;No next activity identified.&quot;,
-IF(Peer2Peer__c,&quot;QBR (High L1 to High L2)&quot;,
-IF(MarketingM2H__c,&quot;Peer 2 Peer&quot;,
-IF(TeamCalibration__c,&quot;Marketing (M 2 H)&quot;,
-IF(ClinicalDevelopment__c,&quot;Team Calibration&quot;,
-IF(PatientAcceptance__c,&quot;Clinical Development&quot;,
-IF(QBRMediumtoHighL1__c,&quot;Patient Acceptance&quot;,
-IF(Economics__c,&quot;QBR (Medium to High L1)&quot;,
-IF(PatientEducation__c,&quot;Economics&quot;,
-IF(ProcessAssessment__c,&quot;Patient Education&quot;,
-IF(BusinessAssessment__c,&quot;Process Assessment&quot;,
-IF(QBRLowtoMedium__c,&quot;Business Assessment&quot;,
-IF(MarketingCampaign__c,&quot;QBR (Low to Medium)&quot;,
-IF(ChairsidePatientEducation__c,&quot;Marketing Campaign&quot;,
-IF(ProceduralEconomics__c,&quot;Chairside Patient Education&quot;,
-IF(ClinicalEducation__c,&quot;Procedural Economics&quot;,
-IF(Whoisyouridealalignerpatient__c,&quot;Clinical Education&quot;,
-IF(ResetTraining__c,&quot;Who is your ideal aligner patient?&quot;,
-IF(ProceduralAssessment__c,&quot;Reset Training&quot;,
-IF(X3rdCaseReviewApproval__c,&quot;Procedural Assessment&quot;,
-IF(TeamMeetingReviewProcesses__c,&quot;3rd Case Review/Approval&quot;,
-IF(X3rdcasesubmission__c,&quot;Team Meeting - Review Processes&quot;,
-IF(X2ndCaseReviewApproval__c, &quot;3rd Case Submission&quot;,
-IF(X2ndCaseSubmissionExternal__c, &quot;2nd Case Review/Approval&quot;,
-IF(TeamTrainingOrthodonticBenefitsRDH__c, &quot;2nd Case Submission - External&quot;,
-IF(X1stcasereviewapproval__c,&quot;Team Training Ortho Benefits RDH&quot;,
-IF(X1stCaseSubmissionWorkflowMarketing__c, &quot;1st Case Review/Approval&quot;,
-IF(RecordsTrainingFinance__c, &quot;1st Case Submission,Workflow &amp; Mkt&quot;,
-IF(CaseSelectionStaffRoles__c, &quot;Records Training &amp; Finance&quot;,
-IF(DiscoveryGoalAssessment__c, &quot;Case Selection &amp; Staff Roles&quot;,
-IF(ObtainCreditCardInformation__c, &quot;Discovery, Goal Assessment&quot;,
- &quot;Obtain Credit Card Information&quot;)))))))))))))))))))))))))))))))</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <formula>If (RecordType.DeveloperName = &apos;Clear_Aligners&apos;,
+
+    IF(QBRHighL1toHighL2__c,&quot;No next activity identified.&quot;,
+    IF(Peer2Peer__c,&quot;QBR (High L1 to High L2)&quot;,
+    IF(MarketingM2H__c,&quot;Peer 2 Peer&quot;,
+    IF(TeamCalibration__c,&quot;Marketing (M 2 H)&quot;,
+    IF(ClinicalDevelopment__c,&quot;Team Calibration&quot;,
+    IF(PatientAcceptance__c,&quot;Clinical Development&quot;,
+    IF(QBRMediumtoHighL1__c,&quot;Patient Acceptance&quot;,
+    IF(Economics__c,&quot;QBR (Medium to High L1)&quot;,
+    IF(PatientEducation__c,&quot;Economics&quot;,
+    IF(ProcessAssessment__c,&quot;Patient Education&quot;,
+    IF(BusinessAssessment__c,&quot;Process Assessment&quot;,
+    IF(QBRLowtoMedium__c,&quot;Business Assessment&quot;,
+    IF(MarketingCampaign__c,&quot;QBR (Low to Medium)&quot;,
+    IF(ChairsidePatientEducation__c,&quot;Marketing Campaign&quot;,
+    IF(ProceduralEconomics__c,&quot;Chairside Patient Education&quot;,
+    IF(ClinicalEducation__c,&quot;Procedural Economics&quot;,
+    IF(Whoisyouridealalignerpatient__c,&quot;Clinical Education&quot;,
+    IF(ResetTraining__c,&quot;Who is your ideal aligner patient?&quot;,
+    IF(ProceduralAssessment__c,&quot;Reset Training&quot;,
+    IF(X3rdCaseReviewApproval__c,&quot;Procedural Assessment&quot;,
+    IF(TeamMeetingReviewProcesses__c,&quot;3rd Case Review/Approval&quot;,
+    IF(X3rdcasesubmission__c,&quot;Team Meeting - Review Processes&quot;,
+    IF(X2ndCaseReviewApproval__c, &quot;3rd Case Submission&quot;,
+    IF(X2ndCaseSubmissionExternal__c, &quot;2nd Case Review/Approval&quot;,
+    IF(TeamTrainingOrthodonticBenefitsRDH__c, &quot;2nd Case Submission - External&quot;,
+    IF(X1stcasereviewapproval__c,&quot;Team Training Ortho Benefits RDH&quot;,
+    IF(X1stCaseSubmissionWorkflowMarketing__c, &quot;1st Case Review/Approval&quot;,
+    IF(RecordsTrainingFinance__c, &quot;1st Case Submission,Workflow &amp; Mkt&quot;,
+    IF(CaseSelectionStaffRoles__c, &quot;Records Training &amp; Finance&quot;,
+    IF(DiscoveryGoalAssessment__c, &quot;Case Selection &amp; Staff Roles&quot;,
+    IF(ObtainCreditCardInformation__c, &quot;Discovery, Goal Assessment&quot;,
+    &quot;Obtain Credit Card Information&quot;)))))))))))))))))))))))))))))))
+    ,
+
+    IF(x23StartContinuousEducation__c,&quot;No next activity identified.&quot;,
+    IF(x22JoinSuresmileConnectionsProgram__c,&quot;23. Start Continuous Education&quot;,
+    IF(x21ConnectwithSuresmileMentor__c,&quot;22. Join SureSmile Connections Program&quot;,
+    IF(x20JoinStartStudyClub__c,&quot;21. Connect with SureSmile Mentor&quot;,
+    IF(x19ReviewCaseExpansion__c,&quot;20. Join or Start Study Club&quot;,
+    IF(x18ReviewPracticeIntegration__c,&quot;19. Review Case Expansion&quot;,
+    IF(x17CompleteSureSmileBusinessReview__c,&quot;18. Review Practice Integration&quot;,
+    IF(x16LaunchSureSmileDay__c,&quot;17. Complete SureSmile Business Review&quot;,
+    IF(x15TrainCaseManagement__c,&quot;16. Launch SureSmile Day&quot;,
+    IF(x14TrainClinicalAppsIntegrations__c,&quot;15. Train Case Management&quot;,
+    IF(x13TrainCompleteThirdCaseReview__c,&quot;14. Train Clinical Apps &amp; Integrations&quot;,
+    IF(x12SubmitThirdCase__c,&quot;13. Train &amp; Complete Third Case Review&quot;,
+    IF(x11TrainCompleteSecondCaseReview__c,&quot;12. Submit Third Case&quot;,
+    IF(x10SubmitSecondCase__c,&quot;11. Train &amp; Complete Second Case Review&quot;,
+    IF(x9TrainCompleteFirstCaseReview__c,&quot;10. Submit Second Case&quot;,
+    IF(x8TrainSubmitFirstCase__c,&quot;9. Train &amp; Complete First Case Review&quot;,
+    IF(x7StartNewPracticeOnboarding__c,&quot;8. Train &amp; Submit First Case&quot;,
+    IF(x6HelpClinicFind3Patients__c,&quot;7. Start New Practice Onboarding&quot;,
+    IF(x5ConnectwithSureSmileAmbassador__c,&quot;6. Help Clinic Find 3 Patients&quot;,
+    IF(x4CompleteSureSmileDiscovery__c,&quot;5. Connect with SureSmile Ambassador&quot;,
+    IF(x3DeliverWelcometoSureSmileFamily__c,&quot;4. Complete SureSmile Discovery&quot;,
+    IF(x2Register__c,&quot;3. Deliver Welcome to SureSmile Family&quot;,
+    IF(x1ExperienceSureSmile__c,&quot;2. Register&quot;,
+    &quot;1. Experience SureSmile&quot;))))))))))))))))))))))))</formula>
         <label>Next Activity</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notes030days__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes: 0 - 30 days</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Notes120plusdays__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes: 120 days+</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Notes3060days__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes: 30 - 60 days</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Notes6090days__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes: 60 - 90 days</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Notes90120days__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes: 90 - 120 days</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>ObtainCreditCardInformation__c</fullName>
@@ -993,6 +1122,7 @@ IF(ObtainCreditCardInformation__c, &quot;Discovery, Goal Assessment&quot;,
         <externalId>false</externalId>
         <label>Practice Account</label>
         <referenceTo>Account</referenceTo>
+        <relationshipLabel>Procedure Trackers</relationshipLabel>
         <relationshipName>Procedures</relationshipName>
         <relationshipOrder>0</relationshipOrder>
         <reparentableMasterDetail>false</reparentableMasterDetail>
@@ -1116,6 +1246,20 @@ IF(ObtainCreditCardInformation__c, &quot;Discovery, Goal Assessment&quot;,
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>SalesAnalytics__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Analytics</label>
+        <referenceTo>Sales_Analytics__c</referenceTo>
+        <relationshipLabel>Procedure Trackers</relationshipLabel>
+        <relationshipName>Procedure_Trackers</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>SalesRep__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -1200,6 +1344,31 @@ IF(ObtainCreditCardInformation__c, &quot;Discovery, Goal Assessment&quot;,
                     <label>High L2</label>
                 </value>
                 <value>
+                    <fullName>Registration</fullName>
+                    <default>false</default>
+                    <label>Registration</label>
+                </value>
+                <value>
+                    <fullName>Welcome &amp; Clinical Engagement</fullName>
+                    <default>false</default>
+                    <label>Welcome &amp; Clinical Engagement</label>
+                </value>
+                <value>
+                    <fullName>New Practice Onboarding</fullName>
+                    <default>false</default>
+                    <label>New Practice Onboarding</label>
+                </value>
+                <value>
+                    <fullName>Practice Integration &amp; Growth Plan</fullName>
+                    <default>false</default>
+                    <label>Practice Integration &amp; Growth Plan</label>
+                </value>
+                <value>
+                    <fullName>Case Mentoring</fullName>
+                    <default>false</default>
+                    <label>Case Mentoring</label>
+                </value>
+                <value>
                     <fullName>Low: 30 days</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
@@ -1260,9 +1429,9 @@ IF(ObtainCreditCardInformation__c, &quot;Discovery, Goal Assessment&quot;,
                     <label>Successfully Onboarded</label>
                 </value>
                 <value>
-                    <fullName>Canceled</fullName>
+                    <fullName>Cancelled</fullName>
                     <default>false</default>
-                    <label>Canceled</label>
+                    <label>Cancelled</label>
                 </value>
                 <value>
                     <fullName>Customer Not Interested</fullName>
@@ -1439,6 +1608,236 @@ IF(ObtainCreditCardInformation__c, &quot;Discovery, Goal Assessment&quot;,
         <type>Number</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>x10SubmitSecondCase__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>10. Submit Second Case</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x11TrainCompleteSecondCaseReview__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>11. Train &amp; Complete Second Case Review</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x12SubmitThirdCase__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>12. Submit Third Case</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x13TrainCompleteThirdCaseReview__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>13. Train &amp; Complete Third Case Review</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x14TrainClinicalAppsIntegrations__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>14. Train Clinical Apps &amp; Integrations</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x15TrainCaseManagement__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>15. Train Case Management</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x16LaunchSureSmileDay__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>16. Launch SureSmile Day</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x17CompleteSureSmileBusinessReview__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>17. Complete SureSmile Business Review</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x18ReviewPracticeIntegration__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>18. Review Practice Integration</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x19ReviewCaseExpansion__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>19. Review Case Expansion</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x1ExperienceSureSmile__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>1. Experience SureSmile</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x20JoinStartStudyClub__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>20. Join or Start Study Club</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x21ConnectwithSuresmileMentor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>21. Connect with SureSmile Mentor</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x22JoinSuresmileConnectionsProgram__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>22. Join SureSmile Connections Program</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x23StartContinuousEducation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>23. Start Continuous Education</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x2Register__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>2. Register</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x3DeliverWelcometoSureSmileFamily__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>3. Deliver Welcome to SureSmile Family</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x4CompleteSureSmileDiscovery__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>4. Complete SureSmile Discovery</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x5ConnectwithSureSmileAmbassador__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>5. Connect with SureSmile Ambassador</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x6HelpClinicFind3Patients__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>6. Help Clinic Find 3 Patients</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x7StartNewPracticeOnboarding__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>7. Start New Practice Onboarding</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x8TrainSubmitFirstCase__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>8. Train &amp; Submit First Case</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>x9TrainCompleteFirstCaseReview__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>9. Train &amp; Complete First Case Review</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
     <label>Procedure Tracker</label>
     <listViews>
         <fullName>All</fullName>
@@ -1464,11 +1863,142 @@ IF(ObtainCreditCardInformation__c, &quot;Discovery, Goal Assessment&quot;,
         <columns>NextActivity__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
+            <field>ProcedureType__c</field>
+            <operation>equals</operation>
+            <value>Clear Aligners</value>
+        </filters>
+        <label>All Suresmile Trackers</label>
+    </listViews>
+    <listViews>
+        <fullName>Automated_Created_Suresmile_Trackers</fullName>
+        <columns>NAME</columns>
+        <columns>PracticeAccount__c</columns>
+        <columns>Stage__c</columns>
+        <columns>SalesRep__c</columns>
+        <columns>RegistrationDate__c</columns>
+        <columns>Contact__c</columns>
+        <columns>SalesAnalytics__c</columns>
+        <columns>LastActivity__c</columns>
+        <columns>NextActivity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ProcedureType__c</field>
+            <operation>equals</operation>
+            <value>Clear Aligners</value>
+        </filters>
+        <filters>
+            <field>AutomaticallyCreated__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Automated-Created Suresmile Trackers</label>
+        <sharedTo>
+            <role>Dentsply_IH_CEO</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Global_Suresmile_Trackers</fullName>
+        <columns>NAME</columns>
+        <columns>PracticeAccount__c</columns>
+        <columns>Stage__c</columns>
+        <columns>SalesRep__c</columns>
+        <columns>RegistrationDate__c</columns>
+        <columns>Contact__c</columns>
+        <columns>LastActivity__c</columns>
+        <columns>NextActivity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ProcedureType__c</field>
+            <operation>equals</operation>
+            <value>Clear Aligners</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>notEqual</operation>
+            <value>ProcedureTracker__c.Clear_Aligners</value>
+        </filters>
+        <label>Global Suresmile Trackers</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>Dentsply_IH_CEO</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Suresmile_Trackers</fullName>
+        <columns>NAME</columns>
+        <columns>PracticeAccount__c</columns>
+        <columns>Stage__c</columns>
+        <columns>SalesRep__c</columns>
+        <columns>RegistrationDate__c</columns>
+        <columns>Contact__c</columns>
+        <columns>LastActivity__c</columns>
+        <columns>NextActivity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>MyTracker__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>ProcedureType__c</field>
+            <operation>equals</operation>
+            <value>Clear Aligners</value>
+        </filters>
+        <label>My Suresmile Trackers</label>
+    </listViews>
+    <listViews>
+        <fullName>US_Suresmile_Trackers</fullName>
+        <columns>NAME</columns>
+        <columns>PracticeAccount__c</columns>
+        <columns>Stage__c</columns>
+        <columns>SalesRep__c</columns>
+        <columns>RegistrationDate__c</columns>
+        <columns>Contact__c</columns>
+        <columns>LastActivity__c</columns>
+        <columns>NextActivity__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ProcedureType__c</field>
+            <operation>equals</operation>
+            <value>Clear Aligners</value>
+        </filters>
+        <filters>
             <field>RECORDTYPE</field>
             <operation>equals</operation>
             <value>ProcedureTracker__c.Clear_Aligners</value>
         </filters>
-        <label>All Suresmile Trackers</label>
+        <label>US Suresmile Trackers</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+            <roleAndSubordinatesInternal>DNA_CRMANALYST</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Unassigned_Suresmile_Trackers</fullName>
+        <columns>NAME</columns>
+        <columns>AutomaticallyCreated__c</columns>
+        <columns>PracticeAccount__c</columns>
+        <columns>Stage__c</columns>
+        <columns>SalesRep__c</columns>
+        <columns>RegistrationDate__c</columns>
+        <columns>Contact__c</columns>
+        <columns>LastActivity__c</columns>
+        <columns>NextActivity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SalesRep__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>ProcedureType__c</field>
+            <operation>equals</operation>
+            <value>Clear Aligners</value>
+        </filters>
+        <label>Unassigned Suresmile Trackers</label>
+        <sharedTo>
+            <role>Dentsply_IH_CEO</role>
+        </sharedTo>
     </listViews>
     <nameField>
         <displayFormat>Track#{000}</displayFormat>
@@ -1483,7 +2013,7 @@ IF(ObtainCreditCardInformation__c, &quot;Discovery, Goal Assessment&quot;,
     <recordTypes>
         <fullName>Clear_Aligners</fullName>
         <active>true</active>
-        <label>Clear Aligners</label>
+        <label>Clear Aligners - US</label>
         <picklistValues>
             <picklist>Barrier__c</picklist>
             <values>
@@ -1619,7 +2149,186 @@ IF(ObtainCreditCardInformation__c, &quot;Discovery, Goal Assessment&quot;,
                 <default>true</default>
             </values>
             <values>
-                <fullName>Canceled</fullName>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Not Interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Registered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parked%2FOn-Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successfully Onboarded</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>imagingDeviceBrandin_Use__c</picklist>
+            <values>
+                <fullName>Carestream</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KaVo Kerr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planmeca</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Clear_Aligners_Global</fullName>
+        <active>true</active>
+        <label>Clear Aligners - Global</label>
+        <picklistValues>
+            <picklist>Barrier__c</picklist>
+            <values>
+                <fullName>1%2F3 GP%27s%2C currently not offering %28or low volume%29 clear aligners don%E2%80%99t think they will make a profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How do I bring in more patients%3F%22 %28New patients to the practice%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I don%E2%80%99t want to feel like a sales person %28clear aligner%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I don%E2%80%99t want to learn another treatment planning software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I need marketing support to build awareness with patients</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I need more opportunities to bring up the clear aligners conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I need more training%2Fsupport on Treatment Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>My patients can%27t afford it</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>My practice is already busy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>My practice is too busy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need support for more complex cases %28past Class I%2C relapse%2C and minor tooth movement cases%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not that many patients are ASKING for it</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patients already know about clear aligners and will ask if interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>What cases are best for me and my practice%3F  %22Tell me what is right for me</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IntraoralScanner__c</picklist>
+            <values>
+                <fullName>Align %E2%80%93 Itero Element 5 D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS - Omnican</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS - Primescan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS - Primescan Conect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medit %E2%80%93 i700</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planmeca %E2%80%93 Emerald S</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ProcedureType__c</picklist>
+            <values>
+                <fullName>Clear Aligners</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Case Mentoring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Practice Onboarding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Practice Integration %26 Growth Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Registration</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Welcome %26 Clinical Engagement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1676,5 +2385,30 @@ IF(ObtainCreditCardInformation__c, &quot;Discovery, Goal Assessment&quot;,
         <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>AccountCountryIsRequired</fullName>
+        <active>true</active>
+        <description>Avoid having trackers associated with accounts w/o country.</description>
+        <errorConditionFormula>ISBLANK(TEXT(PracticeAccount__r.Country__c))</errorConditionFormula>
+        <errorDisplayField>PracticeAccount__c</errorDisplayField>
+        <errorMessage>The associated practice account must have a country.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>UsAccountsMustBeAssociatedToUSRecordType</fullName>
+        <active>true</active>
+        <description>If The Associated Practice Account country is Us, the user has to Select the US Model Record Type.</description>
+        <errorConditionFormula>OR (
+  AND(
+    TEXT(PracticeAccount__r.Country__c) = &apos;US&apos;,
+    RecordType.DeveloperName &lt;&gt; &apos;Clear_Aligners&apos;
+  ),
+  AND(
+    TEXT(PracticeAccount__r.Country__c) &lt;&gt; &apos;US&apos;,
+    RecordType.DeveloperName = &apos;Clear_Aligners&apos;
+  )
+)</errorConditionFormula>
+        <errorDisplayField>PracticeAccount__c</errorDisplayField>
+        <errorMessage>US Accounts must be assigned to the &quot;Clear Aligners - US&quot;  Record Type, any other country must be assigned to the &quot;Clear Aligners - Global&quot; Record Type.</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

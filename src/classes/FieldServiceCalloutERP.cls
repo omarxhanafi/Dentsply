@@ -88,39 +88,41 @@ public with sharing class FieldServiceCalloutERP {
     }
 
 
+    
     @AuraEnabled
-    public static Boolean updateJSONVersion( List<Id> recordIds) {
-        List< WorkOrder > workOrdersToUpdate = new List<WorkOrder>();
-        List< WorkOrder > updatedWorkOrders = new List<WorkOrder>();
-
-        List< ProductRequest > productRequestsToUpdate = new List<ProductRequest>();
-        List< ProductRequest > updatedProductRequests = new List<ProductRequest>();
-
-        try {
-            String objectType = String.valueOf(recordIds[0].getSObjectType());
-            if(objectType == 'WorkOrder'){
-                workOrdersToUpdate = [ SELECT Id, ERPJSONVersion__c FROM WorkOrder WHERE id IN: recordIds];
-                for( WorkOrder wO : workOrdersToUpdate){
-                    WorkOrder orderToAdd = new WorkOrder( Id = wO.Id, ERPJSONVersion__c = wO.ERPJSONVersion__c == null ? 1 : wO.ERPJSONVersion__c + 1, ERPReturnMessage__c = '' , ERPOrderStatus__c = '', ERPOrderNumber__c = '');
-                    updatedWorkOrders.add(orderToAdd);
-                }
-                update updatedWorkOrders;
-
+    public static String checkIfSentBefore( Id recordId ) {
+        //This method is actually doing the callout. 
+        String returnMessage;
+        String objectType = String.valueOf(recordId.getSObjectType());
+        WorkOrder workOrderToCheck = new WorkOrder();
+        ProductRequest productRequestToCheck = new ProductRequest();
+        if(objectType == 'WorkOrder'){
+            workOrderToCheck = [SELECT Id, ERPJSONVersion__c, ERPReturnMessage__c  FROM WorkOrder WHERE id =: recordId LIMIT 1];
+            if(workOrderToCheck.ERPJSONVersion__c == 0 || (workOrderToCheck.ERPJSONVersion__c > 0 && workOrderToCheck.ERPReturnMessage__c != null && workOrderToCheck.ERPReturnMessage__c.contains('Error'))){
+                returnMessage = 'processing' ;
+                workOrderToCheck.ERPJSONVersion__c = workOrderToCheck.ERPJSONVersion__c == null ? 1 : workOrderToCheck.ERPJSONVersion__c + 1;
+                workOrderToCheck.ERPReturnMessage__c = '';
+                workOrderToCheck.ERPOrderStatus__c = '';
+                workOrderToCheck.ERPOrderNumber__c = '';
+                update workOrderToCheck;
+            } else {
+                returnMessage = 'alreadySent' ;
             }
-            if(objectType == 'ProductRequest'){
-                productRequestsToUpdate = [ SELECT Id, ERPJSONVersion__c FROM ProductRequest WHERE id IN: recordIds];
-                for( ProductRequest pR : productRequestsToUpdate){
-                    ProductRequest prodRequestToAdd = new ProductRequest( Id = pR.Id, ERPJSONVersion__c = pR.ERPJSONVersion__c == null ? 1 : pR.ERPJSONVersion__c + 1, ERPReturnMessage__c = '', ERPOrderStatus__c = '', ERPOrderNumber__c = '');
-                    updatedProductRequests.add(prodRequestToAdd);
-                }
-                update updatedProductRequests;
+        }
+        if(objectType == 'ProductRequest'){
+            productRequestToCheck = [ SELECT Id, ERPJSONVersion__c, ERPReturnMessage__c FROM ProductRequest WHERE id =: recordId LIMIT 1 ];
+            if(productRequestToCheck.ERPJSONVersion__c == 0 || (productRequestToCheck.ERPJSONVersion__c > 0 && productRequestToCheck.ERPReturnMessage__c != null && productRequestToCheck.ERPReturnMessage__c.contains('Error'))){
+                returnMessage = 'processing' ;
+                productRequestToCheck.ERPJSONVersion__c = productRequestToCheck.ERPJSONVersion__c == null ? 1 : productRequestToCheck.ERPJSONVersion__c + 1;
+                productRequestToCheck.ERPReturnMessage__c = '';
+                productRequestToCheck.ERPOrderStatus__c = '';
+                productRequestToCheck.ERPOrderNumber__c = '';
+                update productRequestToCheck;
+            } else {
+                returnMessage = 'alreadySent' ;
             }
+        }
 
-            return(true);
-        }
-        catch (Exception e) {
-            DebugLog.addException(e, 'FieldServiceCalloutERP.updateRecord');
-            throw new AuraHandledException(e.getMessage());    
-        }
+        return returnMessage;
     }
 }

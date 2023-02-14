@@ -24,11 +24,15 @@
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>
-        <value xsi:type="xsd:string">0056M000009dKzc</value>
+        <value xsi:type="xsd:string">00520000000wIkM</value>
     </values>
     <values>
         <field>DefaultLeadOwner__c</field>
-        <value xsi:type="xsd:string">0056M000009dKzc</value>
+        <value xsi:type="xsd:string">00520000000wIkM</value>
+    </values>
+    <values>
+        <field>DefaultProcedureTrackerOwnerId__c</field>
+        <value xsi:nil="true"/>
     </values>
     <values>
         <field>IsTest__c</field>

@@ -7496,6 +7496,19 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>WorkDone2__c</fullName>
+        <description>TFUS-000005257: To replace the original field WorkDone__c.
+This field will be used by field technicians to write what&apos;s the work they completed/done at the customer site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe what has been done. (Will be copied to the invoice)</inlineHelpText>
+        <label>Work Done</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
         <fullName>WorkDone__c</fullName>
         <description>This field will be used by field technicians to write what&apos;s the work they completed/done at the customer site</description>
         <externalId>false</externalId>
@@ -7528,6 +7541,27 @@
         <columns>CreatedBy</columns>
         <filterScope>Everything</filterScope>
         <label>#All Service Appointments</label>
+    </listViews>
+    <listViews>
+        <fullName>All_SA_Admin_Test</fullName>
+        <columns>Name</columns>
+        <columns>Account</columns>
+        <columns>FSSK__FSK_Work_Order__c</columns>
+        <columns>WorkType</columns>
+        <columns>ServiceTerritory</columns>
+        <columns>FSSK__FSK_Assigned_Service_Resource__c</columns>
+        <columns>SchedStartTime</columns>
+        <columns>SchedEndTime</columns>
+        <columns>Status</columns>
+        <columns>CreatedDate</columns>
+        <columns>CreatedBy</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TF_AssignedToMe__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filters>
+        <label>*All SA - Admin Test</label>
     </listViews>
     <listViews>
         <fullName>FieldServiceMobile</fullName>

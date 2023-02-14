@@ -468,7 +468,7 @@
         <filters>
             <field>TERR_NAME</field>
             <operation>startsWith</operation>
-            <value>US: CCO NAM,US: CCO KAM,US CCO SAS,US: CCO TECH,US: CCO S</value>
+            <value>US: CCO NAM,US: CCO KAM,US CCO SAS,US: CCO TECH,US: CCO S,US:CCO - NAREG</value>
         </filters>
         <label>US: NAM &amp; KAM</label>
         <language>en_US</language>

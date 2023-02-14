@@ -234,14 +234,9 @@
                     <label>No Order: Too Much Inventory</label>
                 </value>
                 <value>
-                    <fullName>Order: Placed with TSR</fullName>
+                    <fullName>Order: Placed</fullName>
                     <default>false</default>
-                    <label>Order: Placed with TSR</label>
-                </value>
-                <value>
-                    <fullName>Order: Sales Team Inside</fullName>
-                    <default>false</default>
-                    <label>Order: Sales Team Inside</label>
+                    <label>Order: Placed</label>
                 </value>
                 <value>
                     <fullName>Sent email/fax</fullName>
@@ -1509,6 +1504,11 @@ IF(left( WhoId,3)=&quot;00Q&quot;,&quot;Lead&quot;,
         <valueSet>
             <valueSetDefinition>
                 <sorted>true</sorted>
+                <value>
+                    <fullName>Algeria</fullName>
+                    <default>false</default>
+                    <label>Algeria</label>
+                </value>
                 <value>
                     <fullName>Australia</fullName>
                     <default>false</default>

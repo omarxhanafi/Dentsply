@@ -245,7 +245,7 @@
         <externalId>false</externalId>
         <inlineHelpText>This text will be printed upon printing your quote</inlineHelpText>
         <label>Quote Description</label>
-        <length>10000</length>
+        <length>20000</length>
         <trackTrending>false</trackTrending>
         <type>Html</type>
         <visibleLines>25</visibleLines>
@@ -307,6 +307,26 @@
             <value>Iberia</value>
         </filters>
         <label>Iberia Bundles</label>
+    </listViews>
+    <listViews>
+        <fullName>UK_BUNDLE</fullName>
+        <columns>NAME</columns>
+        <columns>Price_Book__c</columns>
+        <columns>Total_price__c</columns>
+        <columns>Total_Discount__c</columns>
+        <columns>FixedPrice__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Price_Book__c</field>
+            <operation>contains</operation>
+            <value>UK</value>
+        </filters>
+        <label>UK  BUNDLE!!!!</label>
+        <sharedTo>
+            <role>UK_IE_CRM_Analyst</role>
+        </sharedTo>
     </listViews>
     <nameField>
         <label>Product bundle Name</label>

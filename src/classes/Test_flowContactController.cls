@@ -72,7 +72,23 @@
         Test.stopTest(); 
             
         }
-        
+
+        @IsTest
+        private static void accountLookupTest()
+        {
+            User user1 = [SELECT Id FROM User WHERE Username LIKE 'TestUser%' LIMIT 1];
+            System.runas(user1)
+            {
+                List<Account> acc = TestDataFactory.createAccounts(1, 'CIM_Account', user1.Id);
+                List<String> searchObj = new List<String>();
+                searchObj.add('Account');
+                List<String> selectedIds = new List<String>();
+                Test.startTest();
+                List<LookupSearchResult> result = flowLookupLwcController.search('TestAccount0', selectedIds,acc[0].Id, searchObj);
+                Test.stopTest();
+            }
+        }
+
         @IsTest
         private static void contactRecentlyViewedTest(){
         User user1 = [SELECT Id FROM User WHERE Username LIKE 'TestUser%' LIMIT 1];

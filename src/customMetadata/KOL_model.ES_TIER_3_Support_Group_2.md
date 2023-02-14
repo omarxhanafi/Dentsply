@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>Max__c</field>
-        <value xsi:type="xsd:double">45.0</value>
+        <value xsi:type="xsd:double">50.0</value>
     </values>
     <values>
         <field>Min__c</field>

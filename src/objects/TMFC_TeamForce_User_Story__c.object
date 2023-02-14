@@ -2092,8 +2092,29 @@ ISBLANK(TMFC_So_that__c),
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>February_21st_2023_release</fullName>
+        <columns>NAME</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Type__c</columns>
+        <columns>TMFC_I_want_to__c</columns>
+        <columns>TMFC_Story_Points__c</columns>
+        <columns>Sandbox__c</columns>
+        <columns>TMFC_User_Story_Notes__c</columns>
+        <columns>TMFC_User_Story_Priority__c</columns>
+        <columns>TMFC_User_Story_Status__c</columns>
+        <columns>Product__c</columns>
+        <columns>Project__c</columns>
+        <columns>TMFC_Manual_Steps_Post_Deployment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ReleaseDate__c</field>
+            <operation>equals</operation>
+            <value>2/21/2023</value>
+        </filters>
+        <label>February 21st 2023 release</label>
+    </listViews>
+    <listViews>
         <fullName>Field_Service_Stories</fullName>
-        <booleanFilter>1 OR 2</booleanFilter>
         <columns>NAME</columns>
         <columns>TMFC_User_Story_Text__c</columns>
         <columns>OWNER.FIRST_NAME</columns>
@@ -2105,14 +2126,9 @@ ISBLANK(TMFC_So_that__c),
         <columns>LAST_UPDATE</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>Project__c</field>
+            <field>Product__c</field>
             <operation>equals</operation>
-            <value>ANZ: Field Service</value>
-        </filters>
-        <filters>
-            <field>Project__c</field>
-            <operation>equals</operation>
-            <value>ANZ: Service Cloud</value>
+            <value>Field Service</value>
         </filters>
         <label>ANZ: SC &amp; FS Stories</label>
     </listViews>
@@ -2290,6 +2306,28 @@ ISBLANK(TMFC_So_that__c),
             <value>6/21/2022</value>
         </filters>
         <label>June 21st 2022 release</label>
+    </listViews>
+    <listViews>
+        <fullName>March_21st_2023_release</fullName>
+        <columns>NAME</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Type__c</columns>
+        <columns>TMFC_I_want_to__c</columns>
+        <columns>TMFC_Story_Points__c</columns>
+        <columns>Sandbox__c</columns>
+        <columns>TMFC_User_Story_Notes__c</columns>
+        <columns>TMFC_User_Story_Priority__c</columns>
+        <columns>TMFC_User_Story_Status__c</columns>
+        <columns>Product__c</columns>
+        <columns>Project__c</columns>
+        <columns>TMFC_Manual_Steps_Post_Deployment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ReleaseDate__c</field>
+            <operation>equals</operation>
+            <value>3/21/2023</value>
+        </filters>
+        <label>March 21st 2023 release</label>
     </listViews>
     <listViews>
         <fullName>May_17th_2022_release</fullName>
@@ -2790,11 +2828,6 @@ ISBLANK(TMFC_So_that__c),
         <columns>Due_Date__c</columns>
         <columns>TMFC_Story_Points__c</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>OWNER.FIRST_NAME</field>
-            <operation>equals</operation>
-            <value>Joey</value>
-        </filters>
         <label>All</label>
     </listViews>
     <listViews>

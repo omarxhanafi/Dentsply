@@ -22,6 +22,21 @@
                     <default>false</default>
                     <label>Quote Template: Belgium (NL)</label>
                 </value>
+                <value>
+                    <fullName>Quote Template: Switzerland (DE)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Switzerland (DE)</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Switzerland (FR)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Switzerland (FR)</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Switzerland (IT)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Switzerland (IT)</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -1385,6 +1400,21 @@
                     <fullName>Quote Template: Portugal</fullName>
                     <default>false</default>
                     <label>Quote Template: Portugal</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Switzerland (DE)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Switzerland (DE)</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Switzerland (FR)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Switzerland (FR)</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Switzerland (IT)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Switzerland (IT)</label>
                 </value>
                 <value>
                     <fullName>Quote Template: UK</fullName>

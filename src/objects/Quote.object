@@ -170,15 +170,23 @@
         <label>Acceptance Date/Time</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>DateTime</type>
     </fields>
     <fields>
         <fullName>AccountId</fullName>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AdditionalAddress</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>AdditionalName</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Approval_Status__c</fullName>
@@ -188,6 +196,7 @@
         <label>Approval Status</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -229,11 +238,18 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>Approval Submission DateTime</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>BillingAddress</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>BillingName</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Brand__c</fullName>
@@ -245,18 +261,26 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>ContactId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
         <fullName>ContractId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Delivery__c</fullName>
@@ -264,6 +288,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>Delivery</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -330,13 +355,16 @@ Can also be used along with the Last Approval action DateTime to see time from s
     <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Discount</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Email</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>ExchangeRate__c</fullName>
@@ -348,16 +376,19 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>ExpirationDate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>GrandListTotal__c</fullName>
@@ -366,10 +397,12 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <summarizedField>QuoteLineItem.TotalListPrice__c</summarizedField>
         <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
         <type>Summary</type>
     </fields>
     <fields>
         <fullName>GrandTotal</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>GrandTotalDeduction__c</fullName>
@@ -380,6 +413,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Percent</type>
     </fields>
     <fields>
@@ -389,6 +423,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <summarizedField>QuoteLineItem.TotalPriceVAT__c</summarizedField>
         <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
         <type>Summary</type>
     </fields>
     <fields>
@@ -399,11 +434,13 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <summarizedField>QuoteLineItem.TotalUnitPrice__c</summarizedField>
         <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
         <type>Summary</type>
     </fields>
     <fields>
         <fullName>IsSyncing</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Last_Approval_Action_DateTime__c</fullName>
@@ -412,6 +449,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>Last Approval Action DateTime</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>DateTime</type>
     </fields>
     <fields>
@@ -424,11 +462,13 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <relationshipName>Quotes</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
         <fullName>LineItemCount</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Manager__c</fullName>
@@ -440,6 +480,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <relationshipName>Quotes</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -452,16 +493,19 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>Name</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>OpportunityId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>MasterDetail</type>
     </fields>
     <fields>
@@ -474,37 +518,47 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
         <fullName>PDFBulterLocale__c</fullName>
         <externalId>false</externalId>
         <formula>CASE( SelectQuoteTemplate__c ,
-            &quot;Fiyat Teklifi&quot;, &quot;tr_TR&quot;,
-            &quot;Fiyat Teklifi no VAT&quot;, &quot;tr_TR&quot;,
-            &quot;Fiyat Teklifi Short&quot;, &quot;tr_TR&quot;,
-            &quot;Proforma Kurumsal&quot;, &quot;tr_TR&quot;,
-            &quot;Proforma Kurumsal no VAT&quot;, &quot;tr_TR&quot;,
-            &quot;sözleşme&quot;, &quot;tr_TR&quot;,
-            &quot;Quote Template: España&quot;, &quot;es_ES&quot;,
-            &quot;Quote Template: España DSO&quot;, &quot;es_ES&quot;,
-            &quot;Quote Template: France&quot;, &quot;fr_FR&quot;,
-            &quot;Quote Template: Germany&quot;, &quot;de_DE&quot;,
-            &quot;Quote Template: Netherlands&quot;, &quot;nl_NL&quot;,
-            &quot;Quote Template: Portugal&quot;, &quot;pt_PT&quot;,
-            &quot;Quote Template: Portugal DSO&quot;, &quot;pt_PT&quot;,
-            &quot;Quote Template: Andorra&quot;, &quot;ca_AD&quot;,
-            &quot;Quote Template: UK&quot;, &quot;en_GB&quot;,
-            TEXT($User.LanguageLocaleKey))</formula>
+&quot;Fiyat Teklifi&quot;, &quot;tr_TR&quot;,
+&quot;Fiyat Teklifi no VAT&quot;, &quot;tr_TR&quot;,
+&quot;Fiyat Teklifi Short&quot;, &quot;tr_TR&quot;,
+&quot;Proforma Kurumsal&quot;, &quot;tr_TR&quot;,
+&quot;Proforma Kurumsal no VAT&quot;, &quot;tr_TR&quot;,
+&quot;sözleşme&quot;, &quot;tr_TR&quot;,
+&quot;Quote Template: Austria&quot;, &quot;de_AT&quot;,
+&quot;Quote Template: Belgium (FR)&quot;, &quot;fr_BE&quot;,
+&quot;Quote Template: Belgium (NL)&quot;, &quot;nl_BE&quot;,
+&quot;Quote Template: España&quot;, &quot;es_ES&quot;,
+&quot;Quote Template: España DSO&quot;, &quot;es_ES&quot;,
+&quot;Quote Template: España PrimeSolution&quot;, &quot;es_ES&quot;,
+&quot;Quote Template: France&quot;, &quot;fr_FR&quot;,
+&quot;Quote Template: Germany&quot;, &quot;de_DE&quot;,
+&quot;Quote Template: Luxembourg&quot;, &quot;fr_LU&quot;,
+&quot;Quote Template: Netherlands&quot;, &quot;nl_NL&quot;,
+&quot;Quote Template: Portugal&quot;, &quot;pt_PT&quot;,
+&quot;Quote Template: Portugal DSO&quot;, &quot;pt_PT&quot;,
+&quot;Quote Template: Switzerland (DE)&quot;, &quot;de_CH&quot;,
+&quot;Quote Template: Switzerland (FR)&quot;, &quot;fr_CH&quot;,
+&quot;Quote Template: Switzerland (IT)&quot;, &quot;it_CH&quot;,
+&quot;Quote Template: UK&quot;, &quot;en_GB&quot;,
+TEXT($User.LanguageLocaleKey))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>PDF Bulter Locale</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -527,14 +581,18 @@ Can also be used along with the Last Approval action DateTime to see time from s
 &quot;Quote Template: France&quot;, &quot;France&quot;,
 &quot;Quote Template: Germany&quot;, &quot;Germany&quot;,
 &quot;Quote Template: Luxembourg&quot;, &quot;Luxembourg&quot;,
-&quot;Quote Template: Netherlands&quot;, &quot;Luxembourg&quot;,
+&quot;Quote Template: Netherlands&quot;, &quot;Netherlands&quot;,
 &quot;Quote Template: Portugal&quot;, &quot;Portugal&quot;,
 &quot;Quote Template: Portugal DSO&quot;, &quot;PortugalDSO&quot;,
+&quot;Quote Template: Switzerland (DE)&quot;, &quot;Switzerland_DE&quot;,
+&quot;Quote Template: Switzerland (FR)&quot;, &quot;Switzerland_FR&quot;,
+&quot;Quote Template: Switzerland (IT)&quot;, &quot;Switzerland_IT&quot;,
 &quot;Quote Template: UK&quot;, &quot;UK&quot;,
 &quot;Global&quot;)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>PDF Bulter Template</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -544,6 +602,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>Payment Terms</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -600,6 +659,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
     <fields>
         <fullName>Phone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>QuoteLinesDiscountChanged__c</fullName>
@@ -614,11 +674,18 @@ Can also be used along with the Last Approval action DateTime to see time from s
         </summaryFilterItems>
         <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
         <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>QuoteToAddress</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>QuoteToName</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>SelectQuoteTemplate__c</fullName>
@@ -626,6 +693,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>Select Quote Template</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <controllingField>UserCountry__c</controllingField>
@@ -750,6 +818,21 @@ Can also be used along with the Last Approval action DateTime to see time from s
                     <label>Quote Template: Portugal DSO</label>
                 </value>
                 <value>
+                    <fullName>Quote Template: Switzerland (DE)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Switzerland (DE)</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Switzerland (FR)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Switzerland (FR)</label>
+                </value>
+                <value>
+                    <fullName>Quote Template: Switzerland (IT)</fullName>
+                    <default>false</default>
+                    <label>Quote Template: Switzerland (IT)</label>
+                </value>
+                <value>
                     <fullName>Quote Template: UK</fullName>
                     <default>false</default>
                     <label>Quote Template: UK</label>
@@ -763,24 +846,15 @@ Can also be used along with the Last Approval action DateTime to see time from s
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Jordan</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>New Zealand</controllingFieldValue>
                 <controllingFieldValue>Norway</controllingFieldValue>
-                <controllingFieldValue>Lebanon</controllingFieldValue>
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Croatia</controllingFieldValue>
-                <controllingFieldValue>Cameroun</controllingFieldValue>
-                <controllingFieldValue>Qatar</controllingFieldValue>
-                <controllingFieldValue>Senegal</controllingFieldValue>
                 <controllingFieldValue>Romania</controllingFieldValue>
-                <controllingFieldValue>Iran</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Iraq</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
-                <controllingFieldValue>Libya</controllingFieldValue>
-                <controllingFieldValue>Yemen</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>China</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
@@ -793,39 +867,24 @@ Can also be used along with the Last Approval action DateTime to see time from s
                 <controllingFieldValue>France</controllingFieldValue>
                 <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Bahrain</controllingFieldValue>
                 <controllingFieldValue>Belgium</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Tunisia</controllingFieldValue>
-                <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Greece</controllingFieldValue>
-                <controllingFieldValue>UAE</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
                 <controllingFieldValue>India</controllingFieldValue>
                 <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
                 <controllingFieldValue>Holland</controllingFieldValue>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
                 <controllingFieldValue>Israel</controllingFieldValue>
                 <controllingFieldValue>Italy</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Algeria</controllingFieldValue>
-                <controllingFieldValue>Morocco</controllingFieldValue>
                 <controllingFieldValue>Distributor Markets</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Latvia</controllingFieldValue>
                 <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Mauritius</controllingFieldValue>
-                <controllingFieldValue>Maldives</controllingFieldValue>
-                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>HQ: DE</controllingFieldValue>
                 <controllingFieldValue>BEX</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
@@ -841,24 +900,15 @@ Can also be used along with the Last Approval action DateTime to see time from s
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Jordan</controllingFieldValue>
-                <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>New Zealand</controllingFieldValue>
                 <controllingFieldValue>Norway</controllingFieldValue>
-                <controllingFieldValue>Lebanon</controllingFieldValue>
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Croatia</controllingFieldValue>
-                <controllingFieldValue>Cameroun</controllingFieldValue>
-                <controllingFieldValue>Qatar</controllingFieldValue>
-                <controllingFieldValue>Senegal</controllingFieldValue>
                 <controllingFieldValue>Romania</controllingFieldValue>
-                <controllingFieldValue>Iran</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
-                <controllingFieldValue>Iraq</controllingFieldValue>
                 <controllingFieldValue>Canada</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
-                <controllingFieldValue>Libya</controllingFieldValue>
-                <controllingFieldValue>Yemen</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>China</controllingFieldValue>
                 <controllingFieldValue>Slovakia</controllingFieldValue>
@@ -871,39 +921,24 @@ Can also be used along with the Last Approval action DateTime to see time from s
                 <controllingFieldValue>France</controllingFieldValue>
                 <controllingFieldValue>Australia</controllingFieldValue>
                 <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Bahrain</controllingFieldValue>
                 <controllingFieldValue>Belgium</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Germany</controllingFieldValue>
-                <controllingFieldValue>Tunisia</controllingFieldValue>
-                <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>Greece</controllingFieldValue>
-                <controllingFieldValue>UAE</controllingFieldValue>
-                <controllingFieldValue>Ukraine</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
                 <controllingFieldValue>India</controllingFieldValue>
                 <controllingFieldValue>Indonesia</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>UK</controllingFieldValue>
                 <controllingFieldValue>Holland</controllingFieldValue>
                 <controllingFieldValue>HQ: SE</controllingFieldValue>
                 <controllingFieldValue>Israel</controllingFieldValue>
                 <controllingFieldValue>Italy</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
-                <controllingFieldValue>Algeria</controllingFieldValue>
-                <controllingFieldValue>Morocco</controllingFieldValue>
                 <controllingFieldValue>Distributor Markets</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
                 <controllingFieldValue>Latvia</controllingFieldValue>
                 <controllingFieldValue>Lithuania</controllingFieldValue>
-                <controllingFieldValue>Mauritius</controllingFieldValue>
-                <controllingFieldValue>Maldives</controllingFieldValue>
-                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>HQ: DE</controllingFieldValue>
                 <controllingFieldValue>BEX</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
@@ -938,14 +973,12 @@ Can also be used along with the Last Approval action DateTime to see time from s
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>HQ: DE</controllingFieldValue>
                 <valueName>Quote Template: Austria</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>HQ: DE</controllingFieldValue>
                 <valueName>Quote Template: Germany</valueName>
@@ -963,6 +996,18 @@ Can also be used along with the Last Approval action DateTime to see time from s
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Luxembourg</controllingFieldValue>
                 <valueName>Quote Template: Belgium (NL)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Switzerland</controllingFieldValue>
+                <valueName>Quote Template: Switzerland (DE)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Switzerland</controllingFieldValue>
+                <valueName>Quote Template: Switzerland (FR)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Switzerland</controllingFieldValue>
+                <valueName>Quote Template: Switzerland (IT)</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Turkey</controllingFieldValue>
@@ -991,29 +1036,40 @@ Can also be used along with the Last Approval action DateTime to see time from s
         </valueSet>
     </fields>
     <fields>
+        <fullName>ShippingAddress</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>ShippingHandling</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>ShippingName</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Status</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Subtotal</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Tax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>TotalPrice</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>UserCountry__c</fullName>
@@ -1082,6 +1138,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>User Country</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -1094,6 +1151,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>Warranty Period</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -1137,6 +1195,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <relationshipName>Quotes1</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <listViews>
@@ -1162,6 +1221,7 @@ Can also be used along with the Last Approval action DateTime to see time from s
         <label>My Quotes</label>
     </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>GenericQuote</fullName>
         <active>true</active>
@@ -1335,6 +1395,18 @@ Can also be used along with the Last Approval action DateTime to see time from s
             </values>
             <values>
                 <fullName>Quote Template%3A Portugal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Template%3A Switzerland %28DE%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Template%3A Switzerland %28FR%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Template%3A Switzerland %28IT%29</fullName>
                 <default>false</default>
             </values>
             <values>

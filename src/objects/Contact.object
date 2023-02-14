@@ -3407,6 +3407,12 @@ Rest .... Europe</description>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>GenderIdentity</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Gender__c</fullName>
         <externalId>false</externalId>
         <label>Gender</label>
@@ -6062,6 +6068,12 @@ Important to make sure FR,ES, IT and DE have translated the global picklist valu
         </valueSet>
     </fields>
     <fields>
+        <fullName>Pronouns</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Publications__c</fullName>
         <description>Moritz 2019-02-20: I think this field was country specific and is not needed anymore. Case 00167417</description>
         <externalId>false</externalId>
@@ -8351,6 +8363,11 @@ False&apos; if the owner of contact is different than the account</description>
             <valueSetDefinition>
                 <sorted>true</sorted>
                 <value>
+                    <fullName>Algeria</fullName>
+                    <default>false</default>
+                    <label>Algeria</label>
+                </value>
+                <value>
                     <fullName>Australia</fullName>
                     <default>false</default>
                     <label>Australia</label>
@@ -8464,6 +8481,11 @@ False&apos; if the owner of contact is different than the account</description>
                     <fullName>Portugal</fullName>
                     <default>false</default>
                     <label>Portugal</label>
+                </value>
+                <value>
+                    <fullName>Qatar</fullName>
+                    <default>false</default>
+                    <label>Qatar</label>
                 </value>
                 <value>
                     <fullName>Singapore</fullName>
@@ -13118,6 +13140,10 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone_F__c,&quot;&
         <picklistValues>
             <picklist>User_Country__c</picklist>
             <values>
+                <fullName>Algeria</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Australia</fullName>
                 <default>false</default>
             </values>
@@ -13187,6 +13213,10 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone_F__c,&quot;&
             </values>
             <values>
                 <fullName>Portugal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qatar</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16483,6 +16513,10 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone_F__c,&quot;&
         <picklistValues>
             <picklist>User_Country__c</picklist>
             <values>
+                <fullName>Algeria</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Australia</fullName>
                 <default>false</default>
             </values>
@@ -16552,6 +16586,10 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone_F__c,&quot;&
             </values>
             <values>
                 <fullName>Portugal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qatar</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26061,6 +26099,10 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone_F__c,&quot;&
         <picklistValues>
             <picklist>User_Country__c</picklist>
             <values>
+                <fullName>Algeria</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Australia</fullName>
                 <default>false</default>
             </values>
@@ -26134,6 +26176,10 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone_F__c,&quot;&
             </values>
             <values>
                 <fullName>Portugal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qatar</fullName>
                 <default>false</default>
             </values>
             <values>

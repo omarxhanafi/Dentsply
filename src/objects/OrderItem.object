@@ -380,6 +380,18 @@ IF(Discount_Percent__c   = 0, &quot;NO APPROVAL NEEDED&quot;,
         <fullName>ListPrice</fullName>
     </fields>
     <fields>
+        <fullName>LowerGuidance__c</fullName>
+        <description>#5314 - Margin Guidance Calculation Process</description>
+        <externalId>false</externalId>
+        <label>Lower Guidance (%)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>MTF_EvaluationNumber__c</fullName>
         <defaultValue>0</defaultValue>
         <externalId>false</externalId>
@@ -456,6 +468,30 @@ IF(Discount_Percent__c   = 0, &quot;NO APPROVAL NEEDED&quot;,
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MarginGuidance__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Margin Guidance</label>
+        <referenceTo>MarginGuidance__c</referenceTo>
+        <relationshipLabel>Order Products</relationshipLabel>
+        <relationshipName>Order_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Margin__c</fullName>
+        <description>#5314 - Margin Guidance Calculation Process</description>
+        <externalId>false</externalId>
+        <label>Margin</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
@@ -1474,6 +1510,17 @@ PricebookEntry.Product2.D_Level2__c &amp; &apos;-&apos; &amp; PricebookEntry.Pro
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>UpperGuidance__c</fullName>
+        <description>#5314 - Margin Guidance Calculation Process</description>
+        <externalId>false</externalId>
+        <label>Upper Guidance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
         <fullName>UseCoupon__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1512,6 +1559,54 @@ PricebookEntry.Product2.D_Level2__c &amp; &apos;-&apos; &amp; PricebookEntry.Pro
         <scale>2</scale>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Weight__c</fullName>
+        <description>#5314 - Margin Guidance Calculation Process</description>
+        <externalId>false</externalId>
+        <label>Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>8</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WeightedLowerGuidance__c</fullName>
+        <description>#5314 - Margin Guidance Calculation Process</description>
+        <externalId>false</externalId>
+        <label>Weighted Lower Guidance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>8</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WeightedMargin__c</fullName>
+        <description>#5314 - Margin Guidance Calculation Process</description>
+        <externalId>false</externalId>
+        <label>Weighted Margin</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>8</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WeightedUpperGuidance__c</fullName>
+        <description>#5314 - Margin Guidance Calculation Process</description>
+        <externalId>false</externalId>
+        <label>Weighted Upper Guidance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>8</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <validationRules>
         <fullName>Can_Not_Pick_Header_Specials</fullName>

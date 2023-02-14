@@ -391,6 +391,11 @@
             <valueSettings>
                 <controllingFieldValue>Account Change Request</controllingFieldValue>
                 <controllingFieldValue>Account Creation Request</controllingFieldValue>
+                <valueName>QA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Account Change Request</controllingFieldValue>
+                <controllingFieldValue>Account Creation Request</controllingFieldValue>
                 <valueName>RU</valueName>
             </valueSettings>
             <valueSettings>
@@ -4255,7 +4260,6 @@ to be specified in the invoice</description>
             <value>Created,Submitted,Processing</value>
         </filters>
         <label>IN: Account Maintenance Team</label>
-        <language>en_US</language>
         <sharedTo>
             <group>IN_Account_Maintenance_Team</group>
         </sharedTo>

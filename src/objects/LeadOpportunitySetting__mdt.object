@@ -1436,6 +1436,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>DefaultProcedureTrackerOwnerId__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Default Procedure Tracker Owner Id</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>IsTest__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1640,6 +1650,24 @@
             <value>Norway</value>
         </filters>
         <label>Norway_Settings</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>ProcedureTrackersOwner</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>Category__c</columns>
+        <columns>BrandsList__c</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>DefaultProcedureTrackerOwnerId__c</columns>
+        <columns>Country__c</columns>
+        <columns>UserRoles__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DefaultProcedureTrackerOwnerId__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>With a Procedure Tracker Owner</label>
         <language>en_US</language>
     </listViews>
     <listViews>

@@ -6614,7 +6614,7 @@ CampaignID+Member email</description>
     <validationRules>
         <fullName>Not_null_email_contact_member</fullName>
         <active>true</active>
-        <errorConditionFormula>Campaign.RecordType.DeveloperName = &apos;Digital_Marketing_Campaign&apos; &amp;&amp;  ContactId != null  &amp;&amp;  Contact.Email = &apos;&apos;</errorConditionFormula>
+        <errorConditionFormula>Campaign.RecordType.DeveloperName = &apos;Digital_Marketing_Campaign&apos; &amp;&amp;  ContactId != null  &amp;&amp;  Contact.Email = &apos;&apos; &amp;&amp;  $User.Full_Name__c != &apos;Eloqua Integration&apos;</errorConditionFormula>
         <errorMessage>One contact does not have email address. Please update the email in the contact before adding it to a digital campaign.</errorMessage>
     </validationRules>
     <validationRules>

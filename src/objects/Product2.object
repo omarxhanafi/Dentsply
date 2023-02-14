@@ -313,9 +313,9 @@
         <fullName>AlternateVAT__c</fullName>
         <externalId>false</externalId>
         <label>Alternate VAT</label>
-        <precision>18</precision>
+        <precision>5</precision>
         <required>false</required>
-        <scale>0</scale>
+        <scale>2</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Number</type>
@@ -2442,9 +2442,9 @@
         <fullName>VAT__c</fullName>
         <externalId>false</externalId>
         <label>VAT</label>
-        <precision>18</precision>
+        <precision>5</precision>
         <required>false</required>
-        <scale>0</scale>
+        <scale>2</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Number</type>

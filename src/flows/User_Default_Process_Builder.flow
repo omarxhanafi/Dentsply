@@ -279,7 +279,7 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Organization.Id == &apos;00D0E000000Atff&apos; 
+                <stringValue>$Organization.Id == &apos;00D200000001dDc&apos; 
 &amp;&amp; [User].FederationIdentifier !=&quot;&quot;
 &amp;&amp;(
    (ISNEW() ) 
@@ -290,7 +290,7 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
         </processMetadataValues>
         <name>formula_myRule_7</name>
         <dataType>Boolean</dataType>
-        <expression>{!$Organization.Id} == &apos;00D0E000000Atff&apos; 
+        <expression>{!$Organization.Id} == &apos;00D200000001dDc&apos; 
 &amp;&amp; {!myVariable_current.FederationIdentifier} !=&quot;&quot;
 &amp;&amp;(
    (ISNEW() ) 
@@ -563,7 +563,7 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
         <object>User</object>
     </recordUpdates>
     <startElementReference>myDecision</startElementReference>
-    <status>Obsolete</status>
+    <status>Active</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>

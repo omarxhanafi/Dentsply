@@ -20,45 +20,71 @@ export default class Flow_lookupLwc extends LightningElement {
     errors = [];
     recentlyViewed = [];
 
-    newRecordOptions = [
-        { value: 'Contact', label: 'New Contact'}
-    ];
+    newRecordOptions = [ ];
+    objectsToSearch = [ ];
 
 
     /**
-     * Loads recently viewed records and set them as default lookpup search results (optional)
-    */
-         @wire(getRecentlyViewed, { accountId: '$accountId', recordId: '$recordId'})
-         getRecentlyViewed({ data }) {
-             console.log('Recently viewed: ', data);
-             if (data) {
-                 this.recentlyViewed = data;
-                 this.initLookupDefaultResults();
-             }
-         }
+     * Loads recently viewed records and set them as default lookup search results (optional)
+     */
+    @wire(getRecentlyViewed, {accountId: '$accountId', recordId: '$recordId'})
+    getRecentlyViewed({data}) {
+        console.log('Recently viewed: ', data);
+        if (data) {
+            this.recentlyViewed = data;
+            this.initLookupDefaultResults();
+        }
+    }
 
     connectedCallback(){
-
+        this.initLookup();
         //this.initLookupDefaultResults();
     }
 
+    /**
+     * Initializes the lookup component by adding new record options and objects to search based on the sObjectName attribute.
+     */
+    initLookup(){
+        if (this.sObjectName.includes('Contact'))
+        {
+            this.newRecordOptions.push({ value: 'Contact', label: 'New Contact' });
+            this.objectsToSearch.push('Contact');
+        }
+        if (this.sObjectName.includes('Account'))
+        {
+            this.newRecordOptions.push({ value: 'Account', label: 'New Account' });
+            this.objectsToSearch.push('Account');
+        }
+    }
+
+    /**
+     * Handles a lookup search by calling the apexSearch method and passing it the searchTerm, accountId, and objectsToSearch.
+     * It then sets the search results on the lookup component.
+     * @param event - The search event
+     */
     async handleLookupSearch(event) {
-        console.log('Handling lookup search');
-        let objectsToSearch = [];
-        objectsToSearch.push('Contact');
         let searchTerm = event.detail;
-        console.log('Search string: ' + JSON.stringify(searchTerm.searchTerm));
-        
-        try {
-            const searchResults = await apexSearch({searchTerm: searchTerm.searchTerm, accountId: this.accountId, searchObjects: objectsToSearch});
+
+        try
+        {
+            const searchResults = await apexSearch({searchTerm:     searchTerm.searchTerm,
+                                                            contactAccountId:      this.accountId,
+                                                            searchObjects:  this.objectsToSearch});
+
             this.template.querySelector('c-lookup').setSearchResults(searchResults);
-        } catch (error) {
+        }
+        catch (error)
+        {
             console.error('Lookup error', JSON.stringify(error));
             this.errors = [error];
         }
 
-    } 
-    
+    }
+
+    /**
+     * Handles a change in the selection of the lookup component by checking for errors and storing the value in the recordId attribute.
+     * @param event - The selection change event
+     */
     handleLookupSelectionChange(event) {
         this.checkForErrors();
         const value = this.template.querySelector('c-lookup').getSelection();
@@ -67,8 +93,13 @@ export default class Flow_lookupLwc extends LightningElement {
         this.recordId = value[0].id;
         console.log('Assigned the following id: ' + this.recordId);
 
-    }  
-    
+    }
+
+    /**
+     * Initializes the default results for the lookup component based on the recentlyViewed attribute.
+     * If the length of the recentlyViewed list is 1, it sets the initialSelection attribute on the lookup component.
+     * If the length of the recentlyViewed list is greater than 1, it sets the default results on the lookup component.
+     */
     initLookupDefaultResults() {
         // Make sure that the lookup is present and if so, set its default results
         const lookup = this.template.querySelector('c-lookup');
@@ -88,8 +119,11 @@ export default class Flow_lookupLwc extends LightningElement {
             }
         }
     }
-    
 
+    /**
+     * Validates the current selection of the c-lookup component.
+     * If the selection is empty or if the selection is larger than the maxSelectionSize property, it shows errors
+     */
     checkForErrors() {
         this.errors = [];
         const selection = this.template.querySelector('c-lookup').getSelection();

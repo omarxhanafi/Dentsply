@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>AccountInsideSalesDashboardFilter__c</field>
-        <value xsi:type="xsd:string">{&apos;datasets&apos;:{&apos;AccountSalesDetail&apos;:[{&apos;fields&apos;:[&apos;ac.Id&apos;], &apos;filter&apos;:{&apos;operator&apos;: &apos;matches&apos;, &apos;values&apos;:[&apos;#recordId#&apos;]}}]}}</value>
+        <value xsi:type="xsd:string">{&apos;datasets&apos;:{&apos;AccountSalesDetail_NA&apos;:[{&apos;fields&apos;:[&apos;Account.Id&apos;], &apos;filter&apos;:{&apos;operator&apos;: &apos;matches&apos;, &apos;values&apos;:[&apos;#recordId#&apos;]}}]}}</value>
     </values>
     <values>
         <field>AccountInsideSalesDashboard__c</field>
@@ -24,7 +24,7 @@
     </values>
     <values>
         <field>AccountOutsideSalesDashboardFilter__c</field>
-        <value xsi:type="xsd:string">{&apos;datasets&apos;:{&apos;AccountSalesDetail&apos;:[{&apos;fields&apos;:[&apos;ac.Id&apos;], &apos;filter&apos;:{&apos;operator&apos;: &apos;matches&apos;, &apos;values&apos;:[&apos;#recordId#&apos;]}}]}}</value>
+        <value xsi:type="xsd:string">{&apos;datasets&apos;:{&apos;AccountSalesDetail_NA&apos;:[{&apos;fields&apos;:[&apos;Account.Id&apos;], &apos;filter&apos;:{&apos;operator&apos;: &apos;matches&apos;, &apos;values&apos;:[&apos;#recordId#&apos;]}}]}}</value>
     </values>
     <values>
         <field>AccountOutsideSalesDashboard__c</field>
@@ -48,7 +48,7 @@
     </values>
     <values>
         <field>AccountServiceDashboardFilter__c</field>
-        <value xsi:type="xsd:string">{&apos;datasets&apos;:{&apos;AccountSalesDetail&apos;:[{&apos;fields&apos;:[&apos;ac.Id&apos;], &apos;filter&apos;:{&apos;operator&apos;: &apos;matches&apos;, &apos;values&apos;:[&apos;#recordId#&apos;]}}]}}</value>
+        <value xsi:type="xsd:string">{&apos;datasets&apos;:{&apos;AccountSalesDetail_NA&apos;:[{&apos;fields&apos;:[&apos;Account.Id&apos;], &apos;filter&apos;:{&apos;operator&apos;: &apos;matches&apos;, &apos;values&apos;:[&apos;#recordId#&apos;]}}]}}</value>
     </values>
     <values>
         <field>AccountServiceDashboard__c</field>

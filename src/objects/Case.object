@@ -998,6 +998,11 @@
                     <default>false</default>
                     <label>Queue: SureSmile - Berlin Support</label>
                 </value>
+                <value>
+                    <fullName>00G6M000003RXdL</fullName>
+                    <default>false</default>
+                    <label>Queue: SureSmile - Clinical Assistance</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Lithuania</controllingFieldValue>
@@ -1602,6 +1607,10 @@
             <valueSettings>
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <valueName>00G20000002uStaEAE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>00G6M000003RXdL</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>India</controllingFieldValue>
@@ -9352,6 +9361,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <controllingFieldValue>IDB</controllingFieldValue>
                 <controllingFieldValue>Retainers</controllingFieldValue>
                 <controllingFieldValue>Staged Models</controllingFieldValue>
+                <controllingFieldValue>Wires</controllingFieldValue>
                 <valueName>Missing Order</valueName>
             </valueSettings>
             <valueSettings>
@@ -9374,6 +9384,15 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <controllingFieldValue>IDB</controllingFieldValue>
                 <controllingFieldValue>Retainers</controllingFieldValue>
                 <valueName>Product Packaging</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Aligners</controllingFieldValue>
+                <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
+                <controllingFieldValue>Retainers</controllingFieldValue>
+                <controllingFieldValue>Setups</controllingFieldValue>
+                <controllingFieldValue>Staged Models</controllingFieldValue>
+                <controllingFieldValue>Wires</controllingFieldValue>
+                <valueName>Rush Request</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Aligners</controllingFieldValue>
@@ -9427,14 +9446,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <valueSettings>
                 <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
                 <valueName>Missing Data</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
-                <controllingFieldValue>Retainers</controllingFieldValue>
-                <controllingFieldValue>Setups</controllingFieldValue>
-                <controllingFieldValue>Staged Models</controllingFieldValue>
-                <controllingFieldValue>Wires</controllingFieldValue>
-                <valueName>Rush Request</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
@@ -9851,6 +9862,20 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TF_MultipleEmails__c</fullName>
+        <description>If the customer sent email to case then they replied to the Auto Response and the Case Status is still &quot;New&quot;, this help field will be True.
+
+TFUS-000005186</description>
+        <externalId>false</externalId>
+        <formula>If ( Text(Status)=&quot;New&quot; &amp;&amp; LastInboundEmailDate__c &gt; CreatedDate+(1/1440) &amp;&amp;  TEXT(Origin)=&quot;Support email&quot; ,&quot;True&quot;,&quot;False&quot;)</formula>
+        <inlineHelpText>If the customer sent email to case then they replied to the Auto Response and the Case Status is still &quot;New&quot;, this help field will be True</inlineHelpText>
+        <label>Multiple Emails</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>TF_NewOwnerNotification__c</fullName>
@@ -10886,6 +10911,35 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>BNL_All_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>OwnerName_TF__c</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>SBU__c</columns>
+        <columns>Complaint_Category__c</columns>
+        <columns>CASES.REASON</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>Support_Email__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Solved &amp; Closed,Cancelled &amp; Closed,Solved,Closed,Cancelled,Completed,Solution Provided,Addition Provided,Merged &amp; Cancelled</value>
+        </filters>
+        <filters>
+            <field>Account_Country__c</field>
+            <operation>equals</operation>
+            <value>BE,NL,LU</value>
+        </filters>
+        <label>BNL: All Cases</label>
+        <sharedTo>
+            <role>Benelux_CRM_Analyst</role>
+            <role>Benelux_Shared_Services</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>BNL_All_Open_Service_Complaints</fullName>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>NAME</columns>
@@ -11569,7 +11623,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <filters>
             <field>CASES.STATUS</field>
             <operation>equals</operation>
-            <value>New</value>
+            <value>New,Active</value>
         </filters>
         <label>#CRM Team: APAC - Support</label>
         <sharedTo>
@@ -13177,8 +13231,9 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
+        <columns>SBU__c</columns>
         <columns>Approval_Routing__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
@@ -13536,7 +13591,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
     </listViews>
     <listViews>
         <fullName>NA_Endo_All_Open_Cases</fullName>
-        <booleanFilter>(1 OR 4) AND 2 AND 3</booleanFilter>
+        <booleanFilter>(1 OR 3) AND 2 AND 4 AND 5</booleanFilter>
         <columns>OWNER_NAME</columns>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -13557,14 +13612,19 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <value>Closed</value>
         </filters>
         <filters>
-            <field>CASES.ORIGIN</field>
-            <operation>equals</operation>
-            <value>Support email</value>
-        </filters>
-        <filters>
             <field>OWNER_NAME</field>
             <operation>equals</operation>
             <value>Kimberly Friedhofen,Madison Ryder,Cade Ketchum,Kym Manns-Bates,Jennifer Rankin,Amy Vinyard,Jennifer Spaulding</value>
+        </filters>
+        <filters>
+            <field>Complaint__c</field>
+            <operation>notContain</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>CASES.ORIGIN</field>
+            <operation>notEqual</operation>
+            <value>By Web</value>
         </filters>
         <label>NA: Endo All  Assigned Open Email Cases</label>
         <sharedTo>
@@ -13794,22 +13854,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>NA_Implants_Project_Team_Email_to_Case</fullName>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>CASES.ORIGIN</columns>
-        <columns>CASES.CREATED_DATE</columns>
-        <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>CASES.STATUS</columns>
-        <filterScope>Queue</filterScope>
-        <label>NA: Implants Project Team</label>
-        <queue>NA_Implants_Project_Team</queue>
-        <sharedTo>
-            <group>NA_Implants_Project_Team</group>
-            <role>NA_CRM_Analyst</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
         <fullName>NA_Implants_Project_Team_Email_to_Case_Case</fullName>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>NAME</columns>
@@ -13914,6 +13958,29 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <role>NA_Customer_Service_Endo</role>
             <role>NA_Customer_Service_Implants</role>
             <role>NA_Customer_Service_Ortho</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_New_E2C_with_Multiple_EMails</fullName>
+        <columns>CASES.ORIGIN</columns>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>LastInboundEmailDate__c</columns>
+        <columns>LastEmailType__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TF_MultipleEmails__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filters>
+        <label>NA: New E2C with Multiple EMails</label>
+        <sharedTo>
+            <role>Dentsply_IH_CEO</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -22678,6 +22745,10 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </values>
             <values>
                 <fullName>00G6M000003RXN8UAO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>00G6M000003RXdL</fullName>
                 <default>false</default>
             </values>
             <values>

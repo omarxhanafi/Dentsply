@@ -16,7 +16,7 @@
     </values>
     <values>
         <field>Min__c</field>
-        <value xsi:type="xsd:double">550.0</value>
+        <value xsi:type="xsd:double">600.0</value>
     </values>
     <values>
         <field>ProfessionGroup__c</field>
