@@ -35,6 +35,10 @@ public without sharing class OrderPath_CC {
     @AuraEnabled
     public static string submitForApproval(String orderId, String comment) {
         try {
+            // Calculate margins and update items of the order.
+            AssignMarginGuidanceHelper.calculateMargin(orderId);
+
+            // Submit for approval
             Approval.ProcessSubmitRequest approvalRequest = new Approval.ProcessSubmitRequest();
             approvalRequest.setComments(comment);
             approvalRequest.setObjectId(orderId);
