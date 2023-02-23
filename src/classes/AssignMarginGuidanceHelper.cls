@@ -22,24 +22,22 @@ public with sharing class AssignMarginGuidanceHelper {
     public static void calculateMargin(Id orderId) {
         // Get the order and its related line items
         Order order = [
-                SELECT Id, Pricebook2.MarginGuidanceCalculation__c, (SELECT Id, Order.Account.DC_ETM_Code__c, Product2Id, Quantity, ListPrice, TotalPrice, MarginGuidance__c FROM OrderItems)
+                SELECT Id, Account.DC_ETM_Code__c, Pricebook2.MarginGuidanceCalculation__c, (SELECT Id, Product2Id, Quantity, ListPrice, TotalPrice, MarginGuidance__c FROM OrderItems)
                 FROM Order
                 WHERE Id = :orderId
-                AND Country__c = 'US'
         ];
 
-        if (!order.Pricebook2.MarginGuidanceCalculation__c) {
-            // SKIP if Pricebook2.MarginGuidanceCalculation__c = false
+        if (!order?.Pricebook2?.MarginGuidanceCalculation__c && !order?.OrderItems.isEmpty()) {
+            // SKIP if Pricebook2.MarginGuidanceCalculation__c = false or no order items
             return;
         }
 
         // Init the area code / product id sets
-        Set<String> areaCodeSet = new Set<String>();
+        String areaCode = order?.Account?.DC_ETM_Code__c != null ? order?.Account?.DC_ETM_Code__c.substring(0, 3) : '';
         Set<Id> productIdSet = new Set<Id>();
 
         // Generating the area code / product id sets
         for (OrderItem eachOrderItem : order.OrderItems) {
-            areaCodeSet.add(eachOrderItem.Order.Account.DC_ETM_Code__c != null ? eachOrderItem.Order.Account.DC_ETM_Code__c.substring(0, 3) : '');
             productIdSet.add(eachOrderItem.Product2Id);
         }
 
@@ -47,7 +45,8 @@ public with sharing class AssignMarginGuidanceHelper {
         List<MarginGuidance__c> marginGuidanceList = [
                 SELECT Id, AreaCode__c, Product__c, Cost__c, Lowerguidance__c, UpperGuidance__c
                 FROM MarginGuidance__c
-                WHERE AreaCode__c IN :areaCodeSet
+                WHERE AreaCode__c = :areaCode
+                OR AreaCode__c = ''
                 OR Product__c IN :productIdSet
         ];
 
@@ -74,6 +73,7 @@ public with sharing class AssignMarginGuidanceHelper {
         try {
             update new List<OrderItem>(orderItemMarginGuidanceMap.keySet());
         } catch (Exception e){
+            DebugLog.addException(e, e.getMessage());
             throw new AssignMarginGuidanceCustomException(e.getMessage());
         }
 
@@ -98,9 +98,10 @@ public with sharing class AssignMarginGuidanceHelper {
             eachOrderItem.Margin__c = (eachOrderItem.ListPrice - eachMarginGuidance.Cost__c) / eachOrderItem.ListPrice;
             eachOrderItem.WeightedMargin__c = eachOrderItem.Margin__c * eachOrderItem.Weight__c;
             eachOrderItem.UpperGuidance__c = eachMarginGuidance.UpperGuidance__c;
-            eachOrderItem.LowerGuidance__c = eachMarginGuidance.Lowerguidance__c;
-            eachOrderItem.WeightedUpperGuidance__c = (eachMarginGuidance.UpperGuidance__c * eachOrderItem.Weight__c);
-            eachOrderItem.WeightedLowerGuidance__c = (eachMarginGuidance.Lowerguidance__c * eachOrderItem.Weight__c);
+            eachOrderItem.LowerGuidance__c = eachMarginGuidance.LowerGuidance__c;
+
+            eachOrderItem.WeightedUpperGuidance__c = ((eachMarginGuidance.UpperGuidance__c / 100) * eachOrderItem.Weight__c);
+            eachOrderItem.WeightedLowerGuidance__c = ((eachMarginGuidance.LowerGuidance__c / 100) * eachOrderItem.Weight__c);
 
             // Associate margin guidance to the order item
             eachOrderItem.MarginGuidance__c = eachMarginGuidance.Id;
@@ -121,13 +122,14 @@ public with sharing class AssignMarginGuidanceHelper {
         // Init Order Item / Margin Guidance Map
         Map<OrderItem, MarginGuidance__c> orderItemMarginGuidanceMap = new Map<OrderItem, MarginGuidance__c>();
 
+        String areaCode = order?.Account?.DC_ETM_Code__c != null ? order?.Account?.DC_ETM_Code__c.substring(0, 3) : '';
+
         for (OrderItem eachOrderItem : order.OrderItems) {
-            String itemAreaCode = eachOrderItem.Order.Account.DC_ETM_Code__c != null ? eachOrderItem.Order.Account.DC_ETM_Code__c.substring(0, 3) : '';
             Id itemProductId = eachOrderItem.Product2Id;
 
             for (MarginGuidance__c eachMarginGuidance : marginGuidanceList) {
                 // We check if there's a margin guidance record with both matching area code and product id
-                if (eachMarginGuidance.AreaCode__c == itemAreaCode && eachMarginGuidance.Product__c == itemProductId) {
+                if (eachMarginGuidance.AreaCode__c == areaCode && eachMarginGuidance.Product__c == itemProductId) {
                     orderItemMarginGuidanceMap.put(eachOrderItem, eachMarginGuidance);
                     break;
 

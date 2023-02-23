@@ -100,8 +100,6 @@ public without sharing class Test_AssignMarginGuidanceHelper {
             System.assertNotEquals(null, orderItems[0].MarginGuidance__c);
             System.assertEquals(1, orderItems[0].Weight__c);
 
-            System.debug('Order items : ' + orderItems);
-
         }
     }
 }
