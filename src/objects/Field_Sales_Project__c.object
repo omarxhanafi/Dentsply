@@ -618,6 +618,11 @@
                     <label>Glidepath Files</label>
                 </value>
                 <value>
+                    <fullName>Golden Surfer</fullName>
+                    <default>false</default>
+                    <label>Golden Surfer</label>
+                </value>
+                <value>
                     <fullName>GuttaCore</fullName>
                     <default>false</default>
                     <label>GuttaCore</label>
@@ -1911,6 +1916,10 @@
             <valueSettings>
                 <controllingFieldValue>Prosthetics</controllingFieldValue>
                 <valueName>Full Lab System</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Prosthetics</controllingFieldValue>
+                <valueName>Golden Surfer</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Prosthetics</controllingFieldValue>
@@ -6839,6 +6848,10 @@
             </values>
             <values>
                 <fullName>Glidepath Files</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Golden Surfer</fullName>
                 <default>false</default>
             </values>
             <values>

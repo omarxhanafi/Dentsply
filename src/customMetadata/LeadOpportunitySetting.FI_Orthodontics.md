@@ -48,6 +48,6 @@
     </values>
     <values>
         <field>UserRoles__c</field>
-        <value xsi:type="xsd:string">Sales Rep (Digital Clinic)</value>
+        <value xsi:type="xsd:string">Product Specialist (REO)</value>
     </values>
 </CustomMetadata>

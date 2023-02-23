@@ -41,6 +41,43 @@
     </actionCalls>
     <actionCalls>
         <processMetadataValues>
+            <name>textJson</name>
+            <value>
+                <stringValue>{&quot;mentions&quot;:[],&quot;message&quot;:&quot;Dear @[{![Contract].OwnerId}] \n\nYour contract is ready to download.\n\nhttps://dentsplysirona.lightning.force.com/lightning/r/Contract/{![Contract].Id}/view&quot;}</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_38_A2</name>
+        <label>ContractActivationPost</label>
+        <locationX>3800</locationX>
+        <locationY>300</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <connector>
+            <targetReference>myDecision40</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <stringValue>Dear @[{!myVariable_current.OwnerId}] 
+
+Your contract is ready to download.
+
+https://dentsplysirona.lightning.force.com/lightning/r/Contract/{!myVariable_current.Id}/view</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <processMetadataValues>
             <name>ActionCallType</name>
             <value>
                 <stringValue>flow</stringValue>
@@ -118,14 +155,14 @@
                 <stringValue>Contract: Summarize sales for pooled order</stringValue>
             </value>
         </processMetadataValues>
-        <name>myWaitEvent_myWait_myRule_35_event_0_SA1</name>
+        <name>myWaitEvent_myWait_myRule_41_event_0_SA1</name>
         <label>Find pooled orders</label>
-        <locationX>3500</locationX>
+        <locationX>4100</locationX>
         <locationY>200</locationY>
         <actionName>Contract_Summarize_sales</actionName>
         <actionType>flow</actionType>
         <connector>
-            <targetReference>myWaitEvent_myWait_myRule_35_event_0_postWaitExecutionAssignment</targetReference>
+            <targetReference>myWaitEvent_myWait_myRule_41_event_0_postWaitExecutionAssignment</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -173,15 +210,15 @@
     </actionCalls>
     <apiVersion>49.0</apiVersion>
     <assignments>
-        <name>myWaitAssignment_myWait_myRule_35</name>
-        <label>myWaitAssignment_myWait_myRule_35</label>
+        <name>myWaitAssignment_myWait_myRule_41</name>
+        <label>myWaitAssignment_myWait_myRule_41</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>cancelWaits</assignToReference>
             <operator>Add</operator>
             <value>
-                <stringValue>myWait_myRule_35</stringValue>
+                <stringValue>myWait_myRule_41</stringValue>
             </value>
         </assignmentItems>
         <connector>
@@ -189,21 +226,53 @@
         </connector>
     </assignments>
     <assignments>
-        <name>myWaitEvent_myWait_myRule_35_event_0_postWaitExecutionAssignment</name>
-        <label>myWaitEvent_myWait_myRule_35_event_0_postWaitExecutionAssignment</label>
+        <name>myWaitEvent_myWait_myRule_41_event_0_postWaitExecutionAssignment</name>
+        <label>myWaitEvent_myWait_myRule_41_event_0_postWaitExecutionAssignment</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignmentItems>
-            <assignToReference>myWaitEvent_myWait_myRule_35_event_0_postActionExecutionVariable</assignToReference>
+            <assignToReference>myWaitEvent_myWait_myRule_41_event_0_postActionExecutionVariable</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>myWait_myRule_35</targetReference>
+            <targetReference>myWait_myRule_41</targetReference>
         </connector>
     </assignments>
+    <decisions>
+        <name>isChangedDecision39_myRule_38_Status</name>
+        <label>isChangedDecision39_myRule_38_Status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myPreWaitDecision_myWait_myRule_41</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>isChangedRule_39_myRule_38_Status</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>myVariable_old.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>myVariable_current.Status</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myPreWaitDecision_myWait_myRule_41</targetReference>
+            </connector>
+            <label>isChangedRule_39_myRule_38_Status</label>
+        </rules>
+    </decisions>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -1094,7 +1163,7 @@
                 <leftValueReference>myVariable_current.Contract_End_Date__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>formula_30_myRule_29_0690398626</elementReference>
+                    <elementReference>formula_30_myRule_29_2927354238</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1145,21 +1214,196 @@
         <label>myDecision34</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision37</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_35</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>formula_myRule_35</leftValueReference>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Date</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Date</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.StartDate</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DiscountContract</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_35_A1</targetReference>
+            </connector>
+            <label>DiscountContractSetContractDefaults</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>14.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision37</name>
+        <label>myDecision37</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision40</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_38</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DiscountContract</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Activated</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>isChangedRule_39_myRule_38_Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_35_pmetdec</targetReference>
+                <targetReference>myRule_38_A1</targetReference>
             </connector>
-            <label>Contract: Look for pooled orders</label>
+            <label>DiscountContractUpdateOpportunityToClose</label>
         </rules>
     </decisions>
     <decisions>
@@ -1289,6 +1533,34 @@
                 <targetReference>myRule_5_A1</targetReference>
             </connector>
             <label>Manager is ASM</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>15.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision40</name>
+        <label>myDecision40</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_41</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_41</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_41_pmetdec</targetReference>
+            </connector>
+            <label>Contract: Look for pooled orders</label>
         </rules>
     </decisions>
     <decisions>
@@ -1551,16 +1823,16 @@
         </rules>
     </decisions>
     <decisions>
-        <name>myPostWaitDecision_myWaitEvent_myWait_myRule_35_event_0</name>
-        <label>myPostWaitDecision_myWaitEvent_myWait_myRule_35_event_0</label>
+        <name>myPostWaitDecision_myWaitEvent_myWait_myRule_41_event_0</name>
+        <label>myPostWaitDecision_myWaitEvent_myWait_myRule_41_event_0</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myWaitEvent_myWait_myRule_35_event_0_postWaitExecutionAssignment</targetReference>
+            <targetReference>myWaitEvent_myWait_myRule_41_event_0_postWaitExecutionAssignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>myPostWaitRule_myWaitEvent_myWait_myRule_35_event_0</name>
+            <name>myPostWaitRule_myWaitEvent_myWait_myRule_41_event_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>myVariable_current.ActivatedDate</leftValueReference>
@@ -1570,25 +1842,25 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myWaitEvent_myWait_myRule_35_event_0_SA1</targetReference>
+                <targetReference>myWaitEvent_myWait_myRule_41_event_0_SA1</targetReference>
             </connector>
-            <label>myPostWaitRule_myWaitEvent_myWait_myRule_35_event_0</label>
+            <label>myPostWaitRule_myWaitEvent_myWait_myRule_41_event_0</label>
         </rules>
     </decisions>
     <decisions>
-        <name>myPreWaitDecision_myWait_myRule_35</name>
-        <label>myPreWaitDecision_myWait_myRule_35</label>
+        <name>myPreWaitDecision_myWait_myRule_41</name>
+        <label>myPreWaitDecision_myWait_myRule_41</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myWaitAssignment_myWait_myRule_35</targetReference>
+            <targetReference>myWaitAssignment_myWait_myRule_41</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>myPreWaitRule_myWait_myRule_35</name>
+            <name>myPreWaitRule_myWait_myRule_41</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>formula_myRule_35</leftValueReference>
+                <leftValueReference>formula_myRule_41</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -1597,7 +1869,7 @@
             <connector>
                 <targetReference>myDecision</targetReference>
             </connector>
-            <label>myPreWaitRule_myWait_myRule_35</label>
+            <label>myPreWaitRule_myWait_myRule_41</label>
         </rules>
     </decisions>
     <decisions>
@@ -1781,7 +2053,7 @@
                 <leftValueReference>myVariable_old.Contract_End_Date__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>formula_31_myRule_29_pmetrule_6630008666</elementReference>
+                    <elementReference>formula_31_myRule_29_pmetrule_9387564564</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1822,16 +2094,16 @@
         </rules>
     </decisions>
     <decisions>
-        <name>myRule_35_pmetdec</name>
+        <name>myRule_41_pmetdec</name>
         <label>Previously Met Decision</label>
-        <locationX>3500</locationX>
+        <locationX>4100</locationX>
         <locationY>100</locationY>
         <defaultConnector>
-            <targetReference>myWait_myRule_35</targetReference>
+            <targetReference>myWait_myRule_41</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
         <rules>
-            <name>myRule_35_pmetnullrule</name>
+            <name>myRule_41_pmetnullrule</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>myVariable_old</leftValueReference>
@@ -1841,15 +2113,15 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myWait_myRule_35</targetReference>
+                <targetReference>myWait_myRule_41</targetReference>
             </connector>
             <label>Previously Met - Null</label>
         </rules>
         <rules>
-            <name>myRule_35_pmetrule</name>
+            <name>myRule_41_pmetrule</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>formula_myRule_35_pmetrule</leftValueReference>
+                <leftValueReference>formula_myRule_41_pmetrule</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -1961,7 +2233,7 @@
                 <stringValue>&apos;&apos;</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_10_myRule_9_A1_3171287952</name>
+        <name>formula_10_myRule_9_A1_5736087321</name>
         <dataType>String</dataType>
         <expression>&apos;&apos;</expression>
     </formulas>
@@ -1972,7 +2244,7 @@
                 <stringValue>Today()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_15_myRule_14_A1_1273806289</name>
+        <name>formula_15_myRule_14_A1_1633395680</name>
         <dataType>Date</dataType>
         <expression>Today()</expression>
     </formulas>
@@ -1989,7 +2261,7 @@ IF(ISPICKVAL([Contract].Pooled_order_commitment_perc_input__c, &quot;&gt;100&quo
 )))))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_24_myRule_23_A1_8356994970</name>
+        <name>formula_24_myRule_23_A1_3305947956</name>
         <dataType>Number</dataType>
         <expression>IF(
 TEXT({!myVariable_current.Pooled_order_commitment_perc_input__c}) = &quot;10&quot;, 10,
@@ -2007,7 +2279,7 @@ IF(ISPICKVAL({!myVariable_current.Pooled_order_commitment_perc_input__c}, &quot;
                 <stringValue>DATE( (YEAR([Contract].StartDate)+( VALUE(TEXT([Contract].Contract_length__c)) / 12)), MONTH([Contract].StartDate), DAY([Contract].StartDate))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_27_myRule_26_A1_8986479906</name>
+        <name>formula_27_myRule_26_A1_0683240595</name>
         <dataType>Date</dataType>
         <expression>DATE( (YEAR({!myVariable_current.StartDate})+( VALUE(TEXT({!myVariable_current.Contract_length__c})) / 12)), MONTH({!myVariable_current.StartDate}), DAY({!myVariable_current.StartDate}))</expression>
     </formulas>
@@ -2018,7 +2290,7 @@ IF(ISPICKVAL({!myVariable_current.Pooled_order_commitment_perc_input__c}, &quot;
                 <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_30_myRule_29_0690398626</name>
+        <name>formula_30_myRule_29_2927354238</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
     </formulas>
@@ -2029,7 +2301,7 @@ IF(ISPICKVAL({!myVariable_current.Pooled_order_commitment_perc_input__c}, &quot;
                 <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_31_myRule_29_pmetrule_6630008666</name>
+        <name>formula_31_myRule_29_pmetrule_9387564564</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
     </formulas>
@@ -2040,7 +2312,7 @@ IF(ISPICKVAL({!myVariable_current.Pooled_order_commitment_perc_input__c}, &quot;
                 <stringValue>[Contract].Implant_volume_L12M__c</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_32_myRule_29_A1_1044728188</name>
+        <name>formula_32_myRule_29_A1_3493183357</name>
         <dataType>Number</dataType>
         <expression>{!myVariable_current.Implant_volume_L12M__c}</expression>
         <scale>18</scale>
@@ -2052,10 +2324,21 @@ IF(ISPICKVAL({!myVariable_current.Pooled_order_commitment_perc_input__c}, &quot;
                 <stringValue>[Contract].Sales_L12M__c</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_33_myRule_29_A1_7557705171</name>
+        <name>formula_33_myRule_29_A1_1671196587</name>
         <dataType>Number</dataType>
         <expression>{!myVariable_current.Sales_L12M__c}</expression>
         <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue> ADDMONTHS([Contract].StartDate,12) </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_36_myRule_35_A1_8427795471</name>
+        <dataType>Date</dataType>
+        <expression> ADDMONTHS({!myVariable_current.StartDate},12)</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
@@ -2101,7 +2384,7 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
                 <stringValue>AND(ISCHANGED([Contract].StatusCode), ISPICKVAL([Contract].StatusCode, &apos;Activated&apos;), [Contract].RecordType.DeveloperName = &apos;Pricing_contract&apos; )  </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_myRule_35</name>
+        <name>formula_myRule_41</name>
         <dataType>Boolean</dataType>
         <expression>AND(ISCHANGED({!myVariable_current.StatusCode}), ISPICKVAL({!myVariable_current.StatusCode}, &apos;Activated&apos;), {!myVariable_current.RecordType.DeveloperName} = &apos;Pricing_contract&apos; )</expression>
     </formulas>
@@ -2112,11 +2395,11 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
                 <stringValue>AND(ISCHANGED([Contract].StatusCode), ISPICKVAL([Contract].StatusCode, &apos;Activated&apos;), [Contract].RecordType.DeveloperName = &apos;Pricing_contract&apos; )  </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_myRule_35_pmetrule</name>
+        <name>formula_myRule_41_pmetrule</name>
         <dataType>Boolean</dataType>
         <expression>AND(ISCHANGED({!myVariable_old.StatusCode}), ISPICKVAL({!myVariable_old.StatusCode}, &apos;Activated&apos;), {!myVariable_old.RecordType.DeveloperName} = &apos;Pricing_contract&apos; )</expression>
     </formulas>
-    <interviewLabel>Contract_Default_Process_Builder-9_InterviewLabel</interviewLabel>
+    <interviewLabel>Contract_Default_Process_Builder-10_InterviewLabel</interviewLabel>
     <label>Contract : Default Process Builder</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -2258,7 +2541,7 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
             </processMetadataValues>
             <field>Last_Approval_Change_Date__c</field>
             <value>
-                <elementReference>formula_15_myRule_14_A1_1273806289</elementReference>
+                <elementReference>formula_15_myRule_14_A1_1633395680</elementReference>
             </value>
         </inputAssignments>
         <object>Contract</object>
@@ -2594,7 +2877,7 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
             </processMetadataValues>
             <field>Pooled_order_commitment__c</field>
             <value>
-                <elementReference>formula_24_myRule_23_A1_8356994970</elementReference>
+                <elementReference>formula_24_myRule_23_A1_3305947956</elementReference>
             </value>
         </inputAssignments>
         <object>Contract</object>
@@ -2678,7 +2961,7 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
             </processMetadataValues>
             <field>EndDate</field>
             <value>
-                <elementReference>formula_27_myRule_26_A1_8986479906</elementReference>
+                <elementReference>formula_27_myRule_26_A1_0683240595</elementReference>
             </value>
         </inputAssignments>
         <object>Contract</object>
@@ -2762,7 +3045,7 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
             </processMetadataValues>
             <field>Sold_Implants_During_Contract_Period__c</field>
             <value>
-                <elementReference>formula_32_myRule_29_A1_1044728188</elementReference>
+                <elementReference>formula_32_myRule_29_A1_3493183357</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2798,10 +3081,250 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
             </processMetadataValues>
             <field>Total_Sales_During_Contract_Period__c</field>
             <value>
-                <elementReference>formula_33_myRule_29_A1_7557705171</elementReference>
+                <elementReference>formula_33_myRule_29_A1_1671196587</elementReference>
             </value>
         </inputAssignments>
         <object>Contract</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Contract]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_35_A1</name>
+        <label>UpdateEndDate</label>
+        <locationX>3500</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision37</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Area manager (DE)</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Area_manager_DE__c</field>
+            <value>
+                <elementReference>myVariable_current.Owner.Manager.ManagerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Contract End Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>EndDate</field>
+            <value>
+                <elementReference>formula_36_myRule_35_A1_8427795471</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contract</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Contract].Opportunity</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_38_A1</name>
+        <label>UpdateOppToCloseWon</label>
+        <locationX>3800</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myRule_38_A2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Stage</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>StageName</field>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Win/Loss Reason</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Win_Loss_Reason__c</field>
+            <value>
+                <stringValue>Price</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
     </recordUpdates>
     <recordUpdates>
         <processMetadataValues>
@@ -3044,12 +3567,12 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
             </processMetadataValues>
             <field>OwnerExpirationNotice</field>
             <value>
-                <elementReference>formula_10_myRule_9_A1_3171287952</elementReference>
+                <elementReference>formula_10_myRule_9_A1_5736087321</elementReference>
             </value>
         </inputAssignments>
         <object>Contract</object>
     </recordUpdates>
-    <startElementReference>myPreWaitDecision_myWait_myRule_35</startElementReference>
+    <startElementReference>isChangedDecision39_myRule_38_Status</startElementReference>
     <status>Active</status>
     <variables>
         <name>cancelWaits</name>
@@ -3075,7 +3598,7 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
         <objectType>Contract</objectType>
     </variables>
     <variables>
-        <name>myWaitEvent_myWait_myRule_35_event_0_postActionExecutionVariable</name>
+        <name>myWaitEvent_myWait_myRule_41_event_0_postActionExecutionVariable</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -3085,8 +3608,8 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
         </value>
     </variables>
     <waits>
-        <name>myWait_myRule_35</name>
-        <label>myWait_myRule_35</label>
+        <name>myWait_myRule_41</name>
+        <label>myWait_myRule_41</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnectorLabel>defaultLabel</defaultConnectorLabel>
@@ -3097,17 +3620,17 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
                     <stringValue>referenced</stringValue>
                 </value>
             </processMetadataValues>
-            <name>myWaitEvent_myWait_myRule_35_event_0</name>
+            <name>myWaitEvent_myWait_myRule_41_event_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>myWaitEvent_myWait_myRule_35_event_0_postActionExecutionVariable</leftValueReference>
+                <leftValueReference>myWaitEvent_myWait_myRule_41_event_0_postActionExecutionVariable</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myPostWaitDecision_myWaitEvent_myWait_myRule_35_event_0</targetReference>
+                <targetReference>myPostWaitDecision_myWaitEvent_myWait_myRule_41_event_0</targetReference>
             </connector>
             <eventType>DateRefAlarmEvent</eventType>
             <inputParameters>
@@ -3140,7 +3663,7 @@ $Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c=false)</stringValue
                     <stringValue>ActivatedDate</stringValue>
                 </value>
             </inputParameters>
-            <label>myWaitEvent_myWait_myRule_35_event_0</label>
+            <label>myWaitEvent_myWait_myRule_41_event_0</label>
         </waitEvents>
     </waits>
 </Flow>

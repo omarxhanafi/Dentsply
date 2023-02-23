@@ -3,8 +3,8 @@
     <actionCalls>
         <name>EFA_NavigateToContract</name>
         <label>Navigate to Contract</label>
-        <locationX>2544</locationX>
-        <locationY>2850</locationY>
+        <locationX>3751</locationX>
+        <locationY>3116</locationY>
         <actionName>c:Flow_NavigateToSObject</actionName>
         <actionType>component</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -25,8 +25,8 @@
     <actionCalls>
         <name>getPricingSalesData</name>
         <label>get Pricing Sales Data</label>
-        <locationX>743</locationX>
-        <locationY>2448</locationY>
+        <locationX>1950</locationX>
+        <locationY>2714</locationY>
         <actionName>ContractTriggerHelper</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -54,8 +54,8 @@
     <actionCalls>
         <name>NavigateToContract</name>
         <label>Navigate to Contract</label>
-        <locationX>763</locationX>
-        <locationY>4283</locationY>
+        <locationX>1970</locationX>
+        <locationY>4549</locationY>
         <actionName>c:Flow_NavigateToSObject</actionName>
         <actionType>component</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -77,8 +77,8 @@
     <assignments>
         <name>Assign_0_sales</name>
         <label>Assign 0 sales</label>
-        <locationX>761</locationX>
-        <locationY>2836</locationY>
+        <locationX>1968</locationX>
+        <locationY>3102</locationY>
         <assignmentItems>
             <assignToReference>Contract.Sales_L12M__c</assignToReference>
             <operator>Assign</operator>
@@ -100,8 +100,8 @@
     <assignments>
         <name>Assign_Purchasing_Contract_RT</name>
         <label>Assign Purchasing Contract RT</label>
-        <locationX>1102</locationX>
-        <locationY>2047</locationY>
+        <locationX>2253</locationX>
+        <locationY>2217</locationY>
         <assignmentItems>
             <assignToReference>Contract.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -110,14 +110,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>SourceRecordScreen_0</targetReference>
+            <targetReference>isOpportunity2</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>AssignCalcRun</name>
         <label>Assign Calc Run</label>
-        <locationX>645</locationX>
-        <locationY>2615</locationY>
+        <locationX>1852</locationX>
+        <locationY>2881</locationY>
         <assignmentItems>
             <assignToReference>CalcCheck</assignToReference>
             <operator>Assign</operator>
@@ -132,8 +132,8 @@
     <assignments>
         <name>AssignContractSalesData_0_0_0</name>
         <label>Assign Contract Sales Data</label>
-        <locationX>413</locationX>
-        <locationY>1856</locationY>
+        <locationX>1765</locationX>
+        <locationY>2134</locationY>
         <assignmentItems>
             <assignToReference>Contract.General_practitioner__c</assignToReference>
             <operator>Assign</operator>
@@ -174,14 +174,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>SourceRecordScreen</targetReference>
+            <targetReference>isOpportunity1</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>AssignContractSourceRecord</name>
         <label>Assign Contract Source Record</label>
-        <locationX>481</locationX>
-        <locationY>2200</locationY>
+        <locationX>1688</locationX>
+        <locationY>2466</locationY>
         <assignmentItems>
             <assignToReference>Contract.SourceRecord__c</assignToReference>
             <operator>Assign</operator>
@@ -197,8 +197,8 @@
         <description>TFUS-000003033</description>
         <name>assignCustomerAgreementFilter</name>
         <label>assignCustomerAgreementFilter</label>
-        <locationX>1360</locationX>
-        <locationY>1019</locationY>
+        <locationX>2567</locationX>
+        <locationY>1285</locationY>
         <assignmentItems>
             <assignToReference>customerAgreementFilter</assignToReference>
             <operator>Assign</operator>
@@ -213,8 +213,8 @@
     <assignments>
         <name>AssignCustomerNumbers</name>
         <label>Assign customer numbers</label>
-        <locationX>652</locationX>
-        <locationY>3224</locationY>
+        <locationX>1859</locationX>
+        <locationY>3490</locationY>
         <assignmentItems>
             <assignToReference>Contract.Several_Customer_numbers__c</assignToReference>
             <operator>Assign</operator>
@@ -234,10 +234,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>assignDiscountContractFilter</name>
+        <label>assignDiscountContractFilter</label>
+        <locationX>2623</locationX>
+        <locationY>541</locationY>
+        <assignmentItems>
+            <assignToReference>DiscountContractContractFilter</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DiscountContract</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>decisionRTPricingContractAvailable</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>AssignPricingContractData</name>
         <label>Assign Pricing Contract Data</label>
-        <locationX>455</locationX>
-        <locationY>3059</locationY>
+        <locationX>1662</locationX>
+        <locationY>3325</locationY>
         <assignmentItems>
             <assignToReference>Contract.StartDate</assignToReference>
             <operator>Assign</operator>
@@ -281,8 +297,8 @@
         <description>TFUS-000003033</description>
         <name>assignPricingContractFilter</name>
         <label>assignPricingContractFilter</label>
-        <locationX>1360</locationX>
-        <locationY>565</locationY>
+        <locationX>2567</locationX>
+        <locationY>831</locationY>
         <assignmentItems>
             <assignToReference>pricingContractFilter</assignToReference>
             <operator>Assign</operator>
@@ -297,8 +313,8 @@
     <assignments>
         <name>AssignPurchasingContract</name>
         <label>Assign Purchasing Contract</label>
-        <locationX>1084</locationX>
-        <locationY>2496</locationY>
+        <locationX>2291</locationX>
+        <locationY>2762</locationY>
         <assignmentItems>
             <assignToReference>Contract.StartDate</assignToReference>
             <operator>Assign</operator>
@@ -363,8 +379,8 @@
         <description>TFUS-000003033</description>
         <name>assignPurchasingContractFilter</name>
         <label>assignPurchasingContractFilter</label>
-        <locationX>1353</locationX>
-        <locationY>775</locationY>
+        <locationX>2560</locationX>
+        <locationY>1041</locationY>
         <assignmentItems>
             <assignToReference>purchasingContractFilter</assignToReference>
             <operator>Assign</operator>
@@ -379,8 +395,8 @@
     <assignments>
         <name>AssignSalesCorrection</name>
         <label>Assign Sales Correction</label>
-        <locationX>466</locationX>
-        <locationY>3866</locationY>
+        <locationX>1673</locationX>
+        <locationY>4132</locationY>
         <assignmentItems>
             <assignToReference>Contract.New_customer__c</assignToReference>
             <operator>Assign</operator>
@@ -409,8 +425,8 @@
     <assignments>
         <name>AssignSalesCorrection_0</name>
         <label>Assign Sales Correction</label>
-        <locationX>651</locationX>
-        <locationY>3769</locationY>
+        <locationX>1858</locationX>
+        <locationY>4035</locationY>
         <assignmentItems>
             <assignToReference>Contract.New_customer__c</assignToReference>
             <operator>Assign</operator>
@@ -439,8 +455,8 @@
     <assignments>
         <name>AssignSalesCorrection_0_0</name>
         <label>Assign Sales Correction</label>
-        <locationX>767</locationX>
-        <locationY>3807</locationY>
+        <locationX>1974</locationX>
+        <locationY>4073</locationY>
         <assignmentItems>
             <assignToReference>Contract.New_customer__c</assignToReference>
             <operator>Assign</operator>
@@ -469,8 +485,8 @@
     <assignments>
         <name>AssignSalesCorrection_0_0_0</name>
         <label>Assign Sales Correction</label>
-        <locationX>912</locationX>
-        <locationY>3688</locationY>
+        <locationX>2119</locationX>
+        <locationY>3954</locationY>
         <assignmentItems>
             <assignToReference>Contract.New_customer__c</assignToReference>
             <operator>Assign</operator>
@@ -513,8 +529,8 @@
     <assignments>
         <name>Canada_English_Description</name>
         <label>Canada / English Description</label>
-        <locationX>2256</locationX>
-        <locationY>2258</locationY>
+        <locationX>3463</locationX>
+        <locationY>2524</locationY>
         <assignmentItems>
             <assignToReference>EFA_ContractDescription</assignToReference>
             <operator>Assign</operator>
@@ -529,8 +545,8 @@
     <assignments>
         <name>Canada_French_Description</name>
         <label>Canada / French Description</label>
-        <locationX>2458</locationX>
-        <locationY>2254</locationY>
+        <locationX>3665</locationX>
+        <locationY>2520</locationY>
         <assignmentItems>
             <assignToReference>EFA_ContractDescription</assignToReference>
             <operator>Assign</operator>
@@ -543,10 +559,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>contractOpportunityField1</name>
+        <label>contractOpportunityField</label>
+        <locationX>1447</locationX>
+        <locationY>2103</locationY>
+        <assignmentItems>
+            <assignToReference>Contract.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GetOpportunity.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SourceRecordScreen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Default_Description</name>
         <label>Default Description</label>
-        <locationX>2068</locationX>
-        <locationY>2261</locationY>
+        <locationX>3275</locationX>
+        <locationY>2527</locationY>
         <assignmentItems>
             <assignToReference>EFA_ContractDescription</assignToReference>
             <operator>Assign</operator>
@@ -556,6 +588,89 @@
         </assignmentItems>
         <connector>
             <targetReference>EFA_updateAccount</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>DiscountContractAssignamentDetails</name>
+        <label>DiscountContractAssignamentDetails</label>
+        <locationX>55</locationX>
+        <locationY>3114</locationY>
+        <assignmentItems>
+            <assignToReference>Contract.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GetOpportunity.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Contract.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GetOpportunity.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Contract.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Contract.StartDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ContractStartDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Contract.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>selectedRTId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CreateDiscountContract</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>fillContractOpportunityField</name>
+        <label>fillContractOpportunityField</label>
+        <locationX>2575</locationX>
+        <locationY>2075</locationY>
+        <assignmentItems>
+            <assignToReference>Contract.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GetOpportunity.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SourceRecordScreen_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SetRecordIdWithAccountId</name>
+        <label>SetRecordIdWithAccountId</label>
+        <locationX>1706</locationX>
+        <locationY>567</locationY>
+        <assignmentItems>
+            <assignToReference>recordId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GetOpportunity.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>isOpportunity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Account</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -573,6 +688,14 @@
         <dataType>String</dataType>
         <value>
             <stringValue>Yes</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>DiscountContract</name>
+        <choiceText>&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 12px; font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);&quot;&gt;DiscountContract&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>DiscountContract</stringValue>
         </value>
     </choices>
     <choices>
@@ -619,8 +742,8 @@
     <decisions>
         <name>CheckContractType</name>
         <label>Check Contract Type</label>
-        <locationX>776</locationX>
-        <locationY>2159</locationY>
+        <locationX>1983</locationX>
+        <locationY>2425</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>PricingContractSelected</name>
@@ -656,8 +779,8 @@
     <decisions>
         <name>CheckPricingNavigation</name>
         <label>Check Navigation</label>
-        <locationX>50</locationX>
-        <locationY>3868</locationY>
+        <locationX>1257</locationX>
+        <locationY>4134</locationY>
         <defaultConnector>
             <targetReference>CreatePricingContract</targetReference>
         </defaultConnector>
@@ -682,8 +805,8 @@
         <description>TFUS-000003063</description>
         <name>decisionCountrySupported</name>
         <label>decisionCountrySupported</label>
-        <locationX>1166</locationX>
-        <locationY>1166</locationY>
+        <locationX>2373</locationX>
+        <locationY>1432</locationY>
         <defaultConnector>
             <targetReference>SelectContractType</targetReference>
         </defaultConnector>
@@ -712,6 +835,13 @@
                     <stringValue></stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>DiscountContractContractFilter</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>showCountryNotSupported</targetReference>
             </connector>
@@ -722,8 +852,8 @@
         <description>TFUS-000003033</description>
         <name>decisionRTCustomerAgreementAvailable</name>
         <label>decisionRTCustomerAgreementAvailable</label>
-        <locationX>1149</locationX>
-        <locationY>871</locationY>
+        <locationX>2356</locationX>
+        <locationY>1137</locationY>
         <defaultConnector>
             <targetReference>decisionCountrySupported</targetReference>
         </defaultConnector>
@@ -745,11 +875,50 @@
         </rules>
     </decisions>
     <decisions>
+        <name>DecisionRTDiscountContractAvailable</name>
+        <label>DecisionRTDiscountContractAvailable</label>
+        <locationX>2350</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>decisionRTPricingContractAvailable</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>DiscountContractContractAvailableFalse</defaultConnectorLabel>
+        <rules>
+            <name>DiscountContractContractAvailableTrue</name>
+            <conditionLogic>(1 OR 2 )  AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$User.User_Country__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Germany</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$User.User_Country__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Austria</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>isOpportunity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>assignDiscountContractFilter</targetReference>
+            </connector>
+            <label>DiscountContractContractAvailableTrue</label>
+        </rules>
+    </decisions>
+    <decisions>
         <description>TFUS-000003033</description>
         <name>decisionRTPricingContractAvailable</name>
         <label>decisionRTPricingContractAvailable</label>
-        <locationX>1143</locationX>
-        <locationY>405</locationY>
+        <locationX>2350</locationX>
+        <locationY>671</locationY>
         <defaultConnector>
             <targetReference>decisionRTPurchasingContractAvailable</targetReference>
         </defaultConnector>
@@ -781,8 +950,8 @@
         <description>TFUS-000003033</description>
         <name>decisionRTPurchasingContractAvailable</name>
         <label>decisionRTPurchasingContractAvailable</label>
-        <locationX>1143</locationX>
-        <locationY>653</locationY>
+        <locationX>2350</locationX>
+        <locationY>919</locationY>
         <defaultConnector>
             <targetReference>decisionRTCustomerAgreementAvailable</targetReference>
         </defaultConnector>
@@ -814,8 +983,8 @@
         <description>TFUS-000003033</description>
         <name>EFA_decisionCustomerAgreement</name>
         <label>EFA_decisionCustomerAgreement</label>
-        <locationX>1070</locationX>
-        <locationY>1568</locationY>
+        <locationX>2277</locationX>
+        <locationY>1834</locationY>
         <defaultConnector>
             <targetReference>Source_Records</targetReference>
         </defaultConnector>
@@ -835,12 +1004,27 @@
             </connector>
             <label>CustomerAgreementTrue</label>
         </rules>
+        <rules>
+            <name>DiscountContractTrue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ContractTypeSelectList</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>DiscountContract</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DiscountContractInsertData</targetReference>
+            </connector>
+            <label>DiscountContractTrue</label>
+        </rules>
     </decisions>
     <decisions>
         <name>HasCalculationRan</name>
         <label>Has calculation ran?</label>
-        <locationX>598</locationX>
-        <locationY>2252</locationY>
+        <locationX>1805</locationX>
+        <locationY>2518</locationY>
         <defaultConnector>
             <targetReference>getPricingSalesData</targetReference>
         </defaultConnector>
@@ -862,10 +1046,60 @@
         </rules>
     </decisions>
     <decisions>
+        <name>isOpportunity1</name>
+        <label>isOpportunity</label>
+        <locationX>1567</locationX>
+        <locationY>2119</locationY>
+        <defaultConnector>
+            <targetReference>SourceRecordScreen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>isOpportunityTrue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isOpportunity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>contractOpportunityField1</targetReference>
+            </connector>
+            <label>isOpportunityTrue</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>isOpportunity2</name>
+        <label>isOpportunity</label>
+        <locationX>2365</locationX>
+        <locationY>2131</locationY>
+        <defaultConnector>
+            <targetReference>SourceRecordScreen_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>isOpportunityTrue2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isOpportunity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>fillContractOpportunityField</targetReference>
+            </connector>
+            <label>isOpportunityTrue</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>MultipleCustomerNumbers</name>
         <label>Multiple customer numbers?</label>
-        <locationX>448</locationX>
-        <locationY>3224</locationY>
+        <locationX>1655</locationX>
+        <locationY>3490</locationY>
         <defaultConnector>
             <targetReference>SalesCorrectionCheck</targetReference>
         </defaultConnector>
@@ -889,8 +1123,8 @@
     <decisions>
         <name>SalesCorrectionCheck</name>
         <label>Sales Correction?</label>
-        <locationX>455</locationX>
-        <locationY>3515</locationY>
+        <locationX>1662</locationX>
+        <locationY>3781</locationY>
         <defaultConnector>
             <targetReference>CheckPricingNavigation</targetReference>
         </defaultConnector>
@@ -1016,8 +1250,8 @@
         <description>TFUS-000004732</description>
         <name>Select_Contract_Description</name>
         <label>Select Contract Description</label>
-        <locationX>2243</locationX>
-        <locationY>2009</locationY>
+        <locationX>3450</locationX>
+        <locationY>2275</locationY>
         <defaultConnector>
             <targetReference>Default_Description</targetReference>
         </defaultConnector>
@@ -1067,6 +1301,47 @@
             <label>Canada / French</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>WhatObject</name>
+        <label>WhatObject</label>
+        <locationX>1942</locationX>
+        <locationY>315</locationY>
+        <defaultConnector>
+            <targetReference>StartObjectsNotSupported</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formulaRecordIdPrefixFirst3Char</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>001</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Account</targetReference>
+            </connector>
+            <label>Account</label>
+        </rules>
+        <rules>
+            <name>Opprotunity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formulaRecordIdPrefixFirst3Char</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>006</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetOpportunity</targetReference>
+            </connector>
+            <label>Opprotunity</label>
+        </rules>
+    </decisions>
+    <description>Expanded to start from Opp</description>
     <dynamicChoiceSets>
         <name>ContractRecordTypeChoices</name>
         <dataType>String</dataType>
@@ -1100,7 +1375,7 @@
         <name>contractRTChoiceSet</name>
         <dataType>String</dataType>
         <displayField>Name</displayField>
-        <filterLogic>1 AND 2 AND (3 OR 4 OR 5)</filterLogic>
+        <filterLogic>1 AND 2 AND (3 OR 4 OR 5 OR 6)</filterLogic>
         <filters>
             <field>IsActive</field>
             <operator>EqualTo</operator>
@@ -1134,6 +1409,13 @@
             <operator>EqualTo</operator>
             <value>
                 <elementReference>customerAgreementFilter</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>DiscountContractContractFilter</elementReference>
             </value>
         </filters>
         <object>RecordType</object>
@@ -1204,6 +1486,11 @@
         <dataType>String</dataType>
         <expression>{!Get_Account.Name} + &quot; &quot; + {!Get_Account.OneSF_Id__c} + &quot; DS Activate&quot; + &quot; &quot; + TEXT({!EFA_inputContractStartDate})</expression>
     </formulas>
+    <formulas>
+        <name>formulaRecordIdPrefixFirst3Char</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!recordId}, 3)</expression>
+    </formulas>
     <interviewLabel>Contract: New Pricing Contract {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Contract: New Pricing Contract</label>
     <processMetadataValues>
@@ -1226,10 +1513,20 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
+        <name>CreateDiscountContract</name>
+        <label>Create Discount Contract</label>
+        <locationX>50</locationX>
+        <locationY>3968</locationY>
+        <connector>
+            <targetReference>NavigateToContract</targetReference>
+        </connector>
+        <inputReference>Contract</inputReference>
+    </recordCreates>
+    <recordCreates>
         <name>CreatePricingContract</name>
         <label>Create Pricing Contract</label>
-        <locationX>455</locationX>
-        <locationY>4067</locationY>
+        <locationX>1662</locationX>
+        <locationY>4333</locationY>
         <connector>
             <targetReference>NavigateToContract</targetReference>
         </connector>
@@ -1241,8 +1538,8 @@
     <recordCreates>
         <name>CreatePurchasingContract</name>
         <label>Create Purchasing Contract</label>
-        <locationX>1088</locationX>
-        <locationY>3603</locationY>
+        <locationX>2295</locationX>
+        <locationY>3869</locationY>
         <connector>
             <targetReference>NavigateToContract</targetReference>
         </connector>
@@ -1255,8 +1552,8 @@
         <description>TFUS-000003033</description>
         <name>EFA_createContract</name>
         <label>EFA_createContract</label>
-        <locationX>2256</locationX>
-        <locationY>2850</locationY>
+        <locationX>3463</locationX>
+        <locationY>3116</locationY>
         <connector>
             <targetReference>EFA_NavigateToContract</targetReference>
         </connector>
@@ -1407,11 +1704,11 @@
     <recordLookups>
         <name>Get_Account</name>
         <label>Get Account</label>
-        <locationX>921</locationX>
-        <locationY>171</locationY>
+        <locationX>2095</locationX>
+        <locationY>455</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>decisionRTPricingContractAvailable</targetReference>
+            <targetReference>DecisionRTDiscountContractAvailable</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1429,8 +1726,8 @@
         <description>Will be used to choose the right language for Contract Description (TFUS-000004732)</description>
         <name>Get_Contact_Preferred_Language</name>
         <label>Get Contact Preferred Language</label>
-        <locationX>2252</locationX>
-        <locationY>1792</locationY>
+        <locationX>3459</locationX>
+        <locationY>2058</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Select_Contract_Description</targetReference>
@@ -1450,8 +1747,8 @@
     <recordLookups>
         <name>GetDiscountModel</name>
         <label>Get Discount Model</label>
-        <locationX>455</locationX>
-        <locationY>2699</locationY>
+        <locationX>1662</locationX>
+        <locationY>2965</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>CreateContractScreen1_0</targetReference>
@@ -1472,10 +1769,31 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>GetOpportunity</name>
+        <label>GetOpportunity</label>
+        <locationX>1706</locationX>
+        <locationY>405</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>SetRecordIdWithAccountId</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Source_Records</name>
         <label>Source Records</label>
-        <locationX>789</locationX>
-        <locationY>1996</locationY>
+        <locationX>1996</locationX>
+        <locationY>2262</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>CheckContractType</targetReference>
@@ -1508,8 +1826,8 @@
         <description>TFUS-000003033</description>
         <name>EFA_updateAccount</name>
         <label>EFA_updateAccount</label>
-        <locationX>2256</locationX>
-        <locationY>2528</locationY>
+        <locationX>3463</locationX>
+        <locationY>2794</locationY>
         <connector>
             <targetReference>EFA_createContract</targetReference>
         </connector>
@@ -1534,10 +1852,59 @@
     </recordUpdates>
     <runInMode>DefaultMode</runInMode>
     <screens>
+        <name>createContract</name>
+        <label>createContract</label>
+        <locationX>1736</locationX>
+        <locationY>1078</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>newContractFromComp</name>
+            <extensionName>c:NavigateToCreateRecordComp_FLOW</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>defaultFieldValues</name>
+                <value>
+                    <stringValue>{Name : &apos;hola&apos;}</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>objectToCreate</name>
+                <value>
+                    <stringValue>Contract</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <stringValue>0011x00001hvw6LAAQ</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordTypeId</name>
+                <value>
+                    <stringValue>0121x000005Pt4hAAC</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>hasNavigated</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>CreateContractScreen1_0</name>
         <label>Create Contract</label>
-        <locationX>457</locationX>
-        <locationY>2865</locationY>
+        <locationX>1664</locationX>
+        <locationY>3131</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1809,11 +2176,32 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>DiscountContractInsertData</name>
+        <label>DiscountContractInsertData</label>
+        <locationX>55</locationX>
+        <locationY>1843</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>DiscountContractAssignamentDetails</targetReference>
+        </connector>
+        <fields>
+            <name>ContractStartDate</name>
+            <dataType>Date</dataType>
+            <fieldText>Contract Start Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <description>TFUS-000003033</description>
         <name>EFA_showContractInput</name>
         <label>EFA_showContractInput</label>
-        <locationX>1764</locationX>
-        <locationY>1568</locationY>
+        <locationX>2971</locationX>
+        <locationY>1834</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -2024,8 +2412,8 @@
     <screens>
         <name>EFA_showSelectContact</name>
         <label>EFA_showSelectContact</label>
-        <locationX>1967</locationX>
-        <locationY>1567</locationY>
+        <locationX>3174</locationX>
+        <locationY>1833</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -2108,8 +2496,8 @@
         <description>TFUS-000003033</description>
         <name>EFA_showSelectedContact</name>
         <label>EFA_showSelectedContact</label>
-        <locationX>2250</locationX>
-        <locationY>1567</locationY>
+        <locationX>3457</locationX>
+        <locationY>1833</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -2188,8 +2576,8 @@
     <screens>
         <name>Error</name>
         <label>Error</label>
-        <locationX>1477</locationX>
-        <locationY>3391</locationY>
+        <locationX>2684</locationX>
+        <locationY>3657</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -2209,8 +2597,8 @@
     <screens>
         <name>Purchasing_Contract_Details</name>
         <label>Purchasing Contract Details</label>
-        <locationX>1378</locationX>
-        <locationY>2068</locationY>
+        <locationX>2585</locationX>
+        <locationY>2334</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -2309,8 +2697,8 @@
     <screens>
         <name>PurchasingContractBasics</name>
         <label>Purchasing Contract Details</label>
-        <locationX>1084</locationX>
-        <locationY>2269</locationY>
+        <locationX>2291</locationX>
+        <locationY>2535</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -2366,8 +2754,8 @@
     <screens>
         <name>SelectContractType</name>
         <label>Select Contract Type</label>
-        <locationX>786</locationX>
-        <locationY>1187</locationY>
+        <locationX>1993</locationX>
+        <locationY>1453</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -2450,11 +2838,14 @@
         <description>TFUS-000003063</description>
         <name>showCountryNotSupported</name>
         <label>showCountryNotSupported</label>
-        <locationX>610</locationX>
-        <locationY>633</locationY>
+        <locationX>1965</locationX>
+        <locationY>1078</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
+        <connector>
+            <targetReference>createContract</targetReference>
+        </connector>
         <fields>
             <name>msgCountryNotSupportedTitle</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 22px; font-family: -apple-system, system-ui, &amp;quot;Segoe UI&amp;quot;, Roboto, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;; color: rgb(62, 62, 60);&quot;&gt;Country not supported&lt;/span&gt;&lt;/p&gt;</fieldText>
@@ -2470,8 +2861,8 @@
     <screens>
         <name>SourceRecordScreen</name>
         <label>Select Source Record</label>
-        <locationX>275</locationX>
-        <locationY>2017</locationY>
+        <locationX>1482</locationX>
+        <locationY>2283</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -2514,8 +2905,8 @@
     <screens>
         <name>SourceRecordScreen_0</name>
         <label>Select Source Record</label>
-        <locationX>1237</locationX>
-        <locationY>1947</locationY>
+        <locationX>2580</locationX>
+        <locationY>2218</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -2545,11 +2936,27 @@
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
+    <screens>
+        <name>StartObjectsNotSupported</name>
+        <label>StartObjectNotSupported</label>
+        <locationX>1744</locationX>
+        <locationY>50</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>StartObjectNotSupportedMessage</name>
+            <fieldText>&lt;p&gt;Start Object Not Supported&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <start>
-        <locationX>795</locationX>
-        <locationY>48</locationY>
+        <locationX>1966</locationX>
+        <locationY>171</locationY>
         <connector>
-            <targetReference>Get_Account</targetReference>
+            <targetReference>WhatObject</targetReference>
         </connector>
     </start>
     <status>Active</status>
@@ -2626,6 +3033,16 @@
         </value>
     </variables>
     <variables>
+        <name>DiscountContractContractFilter</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
         <name>EFA_ContractDescription</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -2649,6 +3066,16 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>isOpportunity</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
     </variables>
     <variables>
         <name>pricingContractFilter</name>

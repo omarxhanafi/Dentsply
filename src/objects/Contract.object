@@ -275,6 +275,17 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>AccountCountry__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account.Country__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>AccountId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
@@ -608,6 +619,17 @@
         <scale>1</scale>
         <trackHistory>false</trackHistory>
         <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ApprovalLevel__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Level</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Approval_Status__c</fullName>
@@ -5123,6 +5145,15 @@ VALUE(TEXT(Implant_commitment_perc_input__c))*0.01, 0)</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>IsECommerceCustomer__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Account.of_BUYDS_Accounts__c &gt; 0, true , false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is E-Commerce Customer</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>IsSureSmileCustomer__c</fullName>
         <description>TFUS-000003033</description>
         <externalId>false</externalId>
@@ -5291,6 +5322,19 @@ VALUE(TEXT(Implant_commitment_perc_input__c))*0.01, 0)</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Contracts (Opportunity)</relationshipLabel>
+        <relationshipName>Contracts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Ordered_Within_Agreement__c</fullName>
@@ -7854,6 +7898,10 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
                 <default>false</default>
             </values>
             <values>
+                <fullName>Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>ENDO</fullName>
                 <default>false</default>
             </values>
@@ -9721,6 +9769,10 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
                 <default>false</default>
             </values>
             <values>
+                <fullName>Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>ENDO</fullName>
                 <default>false</default>
             </values>
@@ -10427,6 +10479,2084 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
             <picklist>Type_of_Contract__c</picklist>
             <values>
                 <fullName>DS Activate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Voucher_Type__c</picklist>
+            <values>
+                <fullName>Voucher - Conversion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voucher - Pilot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voucher - Planning Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voucher - Safe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voucher - Universal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voucher - Wafers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DiscountContract</fullName>
+        <active>true</active>
+        <label>Discount Contract</label>
+        <picklistValues>
+            <picklist>Abutment_commitment_pick__c</picklist>
+            <values>
+                <fullName>%3E80%25 of implants commitment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%E2%89%A480%25 of implants commitment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AdditionalDiscount__c</picklist>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Submitted for Approval</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Brand_UK__c</picklist>
+            <values>
+                <fullName>Ankylos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Astra Tech</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XiVE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Discount__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>0%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>01</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>01%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20%2C8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>29%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>31</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>31%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>33</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>33%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>37</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>37%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>39</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>39%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>41</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>41%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>43</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>43%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>46</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>46%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>47</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>47%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>49</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>49%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>51</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>51%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>52</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>52%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>53</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>53%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>54</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>54%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>55</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>55%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>56</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>56%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>57</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>57%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>58</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>58%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>59</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>59%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>61</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>61%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>62</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>62%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>63</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>63%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>64</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>64%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>65</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>65%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>66</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>66%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>67</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>67%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>68</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>68%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>69</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>69%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>70</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>70%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>71</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>71%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>72</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>72%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>73</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>73%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>74</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>74%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>75</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>75%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>76</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>76%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>77</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>77%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>78</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>78%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>79</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>79%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>80</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>80%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>81</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>81%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>82</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>82%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>83</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>83%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>84</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>84%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>85</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>85%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>86</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>86%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>87</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>87%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>88</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>88%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>89</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>89%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>91</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>91%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>92</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>92%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>93</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>93%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>94</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>94%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>95</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>95%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>96</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>96%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>97</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>97%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>98</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>98%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>99</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>99%2E5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Model__c</picklist>
+            <values>
+                <fullName>100 - 149 Implants %2822%2E5%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>150 - 199 Implants %2825%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Digital Impression %2B Implant Prosthetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Digital Impression %2B Implantology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Digital Impression %2B PM Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Digital Impression %2B Restorative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Digital Impression %2B Structure Material</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Digital Impression %2B SureSmile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A EM Digital %2B Implantology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A EM Digital %2B Restorative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Implant Prosthetics %2B Implantology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Implant Prosthetics %2B PM Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Implant Prosthetics %2B Restorative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Implant Prosthetics %2B SureSmile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Implantology %2B Restorative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A PM Digital %2B SureSmile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Structure Material %2B Implant Prosthetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Structure Material %2B PM Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Structure Material %2B Restorative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A Structure Material %2B SureSmile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A SureSmile %2B Implantology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 of 4%3A SureSmile %2B Restorative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>200 - 299 Implants %2827%2E5%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 of 4%3A Digital Impression %2B Implant Prosthetics %2B PM Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 of 4%3A Digital Impression %2B Implantology %2B Restorative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 of 4%3A Digital Impression %2B Structure Material %2B Implant Prosthetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 of 4%3A Digital Impression %2B Structure Material %2B PM Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 of 4%3A Digital Impression %2B Structure Material %2B SureSmile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 of 4%3A Digital Impression %2B SureSmile %2B Implantology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 of 4%3A Digital Impression %2B SureSmile %2B Restorative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 of 4%3A Structure Material %2B Implant Prosthetics %2B PM Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 of 4%3A SureSmile %2B Implantology %2B Restorative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 26-1600 XiVE BoneCondenser Instrumenten-Set gerade %2B anguliert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 26-7005 XiVE Chirurgie Kit D3%2C0 %E2%80%93 D3%2C8 %2F S</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 3102 6140 Prothetik-Kassette%2C Balance Aufbausystem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 3102 6150 Prothetik-Kassette%2C Standard Aufbausystem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 3103 6100 ANKYLOS Freilegungskassette kpl%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 3103 6300 ANKYLOS Kassette BoneExpander kpl%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 3103 6320 ANKYLOS Kassette BoneCondenser kpl%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 3103 6325 ANKYLOS Kassette BoneCondenser bajonett</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 3103 6511 ANKYLOS Chirurgie Kit manuell AB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 3103 6530 ANKYLOS Chirurgie Kit ExpertEase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 3103-6521 ANKYLOS Chirurgie Kit motor AB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 45-8072 FRIALIT Starter-Set Chirurgie</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 45-8560 FRIALIT BoneCondenser Set gerade D 3%2C8-5%2C5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 45-8570 FRIALIT BoneCondenser Set gerade D 3%2C8-6%2C5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 45-8950 FRIALIT BoneCondenser Set anguliert D 3%2C8-4%2C5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free 45-8970 FRIALIT BoneCondenser Set anguliert D 3%2C8-6%2C5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 - Implants - Free Prothetik-Kassette%2C kpl%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>300 - Implants  %2830%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40 - Implants - Free 3102 6120 ANKYLOS Prothetik-Kassette%2C kpl%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40 - Implants - Free 45-8090 FRIALIT Expert-Set Chirurgie</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45 - Implants - Free 3103 6501 ANKYLOS Chirurgie Kit manuell ABC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45 - Implants - Free Chirurgie Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 - Implants - Free Facilitate Tray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 - Implants - Free Osteotome kmpl%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>65 - 99 Implants %2820%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis Abutment %28Dublicates incl%2E%29 Quantity %2810%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis Abutments Turnover %E2%82%AC 30%2E000 %2815%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis Sales 10%2E000 %E2%82%AC %2820%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis Sales 15%2E000 %E2%82%AC %2825%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis Sales 25%2E000 %E2%82%AC %2830%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis Sales 5%2E000 %E2%82%AC %2815%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis Starthilfe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis-Abutment Quantity %2810%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis-Abutment Quantity %2815%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis-Abutment Quantity %2820%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis-Abutment Quantity %2830%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom %28Add info in special Terms %26 Discount field%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom %28Needs Management Approval%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed price ATIS EV 24%2C0%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed price Ankylos 15%2C0%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed price NEW customer all Systems EUR 178%2C50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed price XiVE 25%2C0%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed prive all Systems EUR 178%2C50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implant Quantity 140 - 299 %2825%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implant Quantity 300 -  %2830%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implant Quantity 65 - 139 %2820%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LEGEND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lab Sales 10%2E000 %E2%82%AC %284%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lab Sales 15%2E000 %E2%82%AC %285%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lab Sales 20%2E000 %E2%82%AC %287%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lab Sales 25%2E000 %E2%82%AC %288%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lab Sales 5%2E000 %E2%82%AC %283%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMNI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMNI Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRIME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRIME Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRO Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STEPPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgical Turnover %E2%82%AC 20%2E000 - 30%2E000 %285%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgical Turnover %E2%82%AC 30%2E001 - 40%2E000 %287%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgical Turnover %E2%82%AC 40%2E001 - 50%2E000 %289%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgical Turnover %E2%82%AC 50%2E001 -  %2811%25%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voucher - Conversion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voucher - Pilot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voucher - Planning Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voucher - Safe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voucher - Universal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voucher - Wafers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_SBU__c</picklist>
+            <values>
+                <fullName>CDCM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DIGI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ENDO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IMAG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IMPL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ORTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PREV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PROS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TRCE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Status_in_the_ERP__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Type__c</picklist>
+            <values>
+                <fullName>Abutment Quantity %28Discount%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis Abut%2E and Atlantis Suprastructure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FollowUp Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implant Quantity %28Discount%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lab Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STEPPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Simplant Voucher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier Dentist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier Lab</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_discount_equipment_picklist__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>31</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>33</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>37</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>39</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>41</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>43</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>46</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>47</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>49</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>51</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>52</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>53</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>54</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>55</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>56</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>57</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>58</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>59</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>62</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_discount_materials_picklist__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>31</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>33</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>37</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>39</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>41</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>43</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_length__c</picklist>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Discount_Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ortho</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PREP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Implant_commitment_perc_input__c</picklist>
+            <values>
+                <fullName>100</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>110</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>120</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>130</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IsSureSmileCustomer__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_discount__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Pooled_order_commitment_perc_input__c</picklist>
+            <values>
+                <fullName>%3E100</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SBQQ__AmendmentRenewalBehavior__c</picklist>
+            <values>
+                <fullName>Earliest End Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Latest End Date</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SBQQ__MDQRenewalBehavior__c</picklist>
+            <values>
+                <fullName>De-segmented</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Siroforce_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Activated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Approval Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Contract__c</picklist>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS Activate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loyalty Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subscription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voucher</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11451,6 +13581,10 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
             </values>
             <values>
                 <fullName>DIGI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Services</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12710,6 +14844,10 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
             </values>
             <values>
                 <fullName>DIGI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Services</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14535,6 +16673,10 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
                 <default>false</default>
             </values>
             <values>
+                <fullName>Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>ENDO</fullName>
                 <default>false</default>
             </values>
@@ -15631,6 +17773,10 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
             </values>
             <values>
                 <fullName>DIGI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Services</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16919,6 +19065,10 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
                 <default>false</default>
             </values>
             <values>
+                <fullName>Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>ENDO</fullName>
                 <default>false</default>
             </values>
@@ -17708,7 +19858,7 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
     <validationRules>
         <fullName>Change_approved_activated_Contract</fullName>
         <active>true</active>
-        <errorConditionFormula>(ISPICKVAL(Status, &quot;Activated&quot;) || ISPICKVAL( Approval_Status__c , &quot;Approved&quot;)) &amp;&amp; (RecordType.DeveloperName = &apos;Pricing_contract&apos; || RecordType.DeveloperName = &apos;Purchasing_Contract_Turnover&apos;) &amp;&amp;  !CONTAINS($Profile.Name, &quot;#System&quot;) &amp;&amp; !ISPICKVAL($User.Team__c, &apos;Customer Service Implants Contracts&apos;)</errorConditionFormula>
+        <errorConditionFormula>(ISPICKVAL(Status, &quot;Activated&quot;) || ISPICKVAL( Approval_Status__c , &quot;Approved&quot;)) &amp;&amp; (RecordType.DeveloperName = &apos;Pricing_contract&apos; || RecordType.DeveloperName = &apos;Purchasing_Contract_Turnover&apos; || RecordType.DeveloperName = &apos;newPricing&apos;) &amp;&amp;  !CONTAINS($Profile.Name, &quot;#System&quot;) &amp;&amp; !ISPICKVAL($User.Team__c, &apos;Customer Service Implants Contracts&apos;)</errorConditionFormula>
         <errorMessage>Please note! You cannot change a Contract that is being approved or has been approved/activated</errorMessage>
     </validationRules>
     <validationRules>

@@ -388,6 +388,18 @@
         <unique>true</unique>
     </fields>
     <fields>
+        <fullName>Notes__c</fullName>
+        <description>TFUS-000005223</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please provide further information about this Cost/Revenue Transaction.</inlineHelpText>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
         <fullName>Project__c</fullName>
         <externalId>false</externalId>
         <label>Project#</label>

@@ -68,8 +68,8 @@ export default class Flow_lookupLwc extends LightningElement {
         try
         {
             const searchResults = await apexSearch({searchTerm:     searchTerm.searchTerm,
-                                                            contactAccountId:      this.accountId,
-                                                            searchObjects:  this.objectsToSearch});
+                contactAccountId:      this.accountId,
+                searchObjects:  this.objectsToSearch});
 
             this.template.querySelector('c-lookup').setSearchResults(searchResults);
         }

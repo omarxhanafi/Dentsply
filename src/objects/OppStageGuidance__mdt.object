@@ -141,6 +141,16 @@
                     <default>false</default>
                     <label>Digital Services</label>
                 </value>
+                <value>
+                    <fullName>non-product related</fullName>
+                    <default>false</default>
+                    <label>non-product related</label>
+                </value>
+                <value>
+                    <fullName>Pricing</fullName>
+                    <default>false</default>
+                    <label>Pricing</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

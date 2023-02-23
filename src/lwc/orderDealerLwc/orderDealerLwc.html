@@ -40,6 +40,16 @@
                                 </div>
                             </a>
                         </th>
+
+                        <template if:true={showNotAllowedToSell}>
+                            <th aria-label={labels.notAllowedToSellCol} aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col">
+                                <a class="slds-th__action slds-text-link_reset" href="javascript:void(0);" role="button" tabindex="-1">
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate slds-wrap">
+                                        <span class="slds-truncate" title={labels.notAllowedToSellCol}>{labels.notAllowedToSellCol}</span>
+                                    </div>
+                                </a>
+                            </th>
+                        </template>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,7 +61,7 @@
                                 data-index={index} onclick={handleShowAddDealer} size="small">
                             </lightning-button-icon-stateful>
                         </td>
-                        <td colspan="2">
+                        <td colspan={tableColspan}>
                             <template if:true={showAddNewDealer}>
                                 <div class="slds-form-element">
                                     <div class="slds-grid slds-grid_vertical-align-center">
@@ -86,8 +96,8 @@
                     </tr>
                     <template for:each={dealers} for:item="dealer" for:index="index">
                         <tr key={dealer.Id}>
-                            <td class="slds-align_absolute-center">
-                                <div class="slds-form-element__control">
+                            <td>
+                                <div class="slds-form-element__control slds-align_absolute-center">
                                     <span class="slds-radio">
                                         <input type="radio" id={index} value={dealer.isSelected} name="distributor-radio"
                                             checked={dealer.isSelected} onchange={handleSelectDealer}
@@ -109,6 +119,13 @@
                                 <div class="slds-truncate" title={dealer.Dealer__r.ETM2_State_City__c}>
                                     {dealer.Dealer__r.ETM2_State_City__c}</div>
                             </td>
+                            <template if:true={showNotAllowedToSell}>
+                                <td role="gridcell">
+                                    <div class="slds-truncate" style="white-space:pre-line !important;" title={dealer.Dealer__r.DistributorCategorisation__c}>
+                                        {dealer.NotAllowedToSell}
+                                    </div>
+                                </td>
+                            </template>
                         </tr>
                     </template>
                 </tbody>

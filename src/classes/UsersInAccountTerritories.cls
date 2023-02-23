@@ -24,7 +24,7 @@ public with sharing class UsersInAccountTerritories {
      */
     @AuraEnabled
     public static Boolean isManualAssignmentVisible(String recordId, String categoryInput, String brandInput){
-        Boolean isManualAssignmentVisible;
+        Boolean isManualAssignmentVisible = false;
         Account acc = [SELECT Id, Country__c FROM Account WHERE Id =: recordId];
         //Get Custom Metadata records
         LeadOpportunitySetting__mdt[] oppSettings = new LeadOpportunitySetting__mdt[]{};
@@ -44,7 +44,11 @@ public with sharing class UsersInAccountTerritories {
                 }
             }
         }
-        isManualAssignmentVisible = settingsMap.get(brandInput).ShowManualSalesLeadOwnerAssignment__c;
+
+        if(settingsMap.containsKey(brandInput))
+        {
+            isManualAssignmentVisible = settingsMap.get(brandInput).ShowManualSalesLeadOwnerAssignment__c;
+        }
         return isManualAssignmentVisible;
     }
 

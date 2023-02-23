@@ -2114,6 +2114,11 @@
                     <label>Glidepath Files</label>
                 </value>
                 <value>
+                    <fullName>Golden Surfer</fullName>
+                    <default>false</default>
+                    <label>Golden Surfer</label>
+                </value>
+                <value>
                     <fullName>GuttaCore</fullName>
                     <default>false</default>
                     <label>GuttaCore</label>
@@ -55529,6 +55534,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
+                <fullName>Golden Surfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>GuttaCore</fullName>
                 <default>false</default>
             </values>
@@ -61245,6 +61254,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Glidepath Files</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Golden Surfer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -87847,6 +87860,7 @@ $User.Full_Name__c &lt;&gt; &apos;Eloqua Integration&apos; &amp;&amp;
         <fullName>Set_Credits_Provided_by_if_CE_Credits</fullName>
         <active>true</active>
         <errorConditionFormula>AND( 
+RecordTypeId &lt;&gt; &quot;0126M000000jouA&quot;,
 Credits__c &gt;0, 
  OR(ISBLANK( TEXT(Credits_provided_by__c) ),ISPICKVAL(Credits_provided_by__c, &quot;No credits provided&quot;)))</errorConditionFormula>
         <errorDisplayField>Credits_provided_by__c</errorDisplayField>

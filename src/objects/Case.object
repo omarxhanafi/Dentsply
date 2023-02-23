@@ -4353,6 +4353,56 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
                     <label>Connect</label>
                 </value>
                 <value>
+                    <fullName>Core Access</fullName>
+                    <default>false</default>
+                    <label>Core Access</label>
+                </value>
+                <value>
+                    <fullName>Core Advanced</fullName>
+                    <default>false</default>
+                    <label>Core Advanced</label>
+                </value>
+                <value>
+                    <fullName>Core Care - Primemill</fullName>
+                    <default>false</default>
+                    <label>Core Care - Primemill</label>
+                </value>
+                <value>
+                    <fullName>Core Care - Primeprint</fullName>
+                    <default>false</default>
+                    <label>Core Care - Primeprint</label>
+                </value>
+                <value>
+                    <fullName>Core Care - Primescan connect</fullName>
+                    <default>false</default>
+                    <label>Core Care - Primescan connect</label>
+                </value>
+                <value>
+                    <fullName>Core Care - Primescan w/Cart</fullName>
+                    <default>false</default>
+                    <label>Core Care - Primescan w/Cart</label>
+                </value>
+                <value>
+                    <fullName>Core Care - Speedfire</fullName>
+                    <default>false</default>
+                    <label>Core Care - Speedfire</label>
+                </value>
+                <value>
+                    <fullName>Core Create Print</fullName>
+                    <default>false</default>
+                    <label>Core Create Print</label>
+                </value>
+                <value>
+                    <fullName>Core Light</fullName>
+                    <default>false</default>
+                    <label>Core Light</label>
+                </value>
+                <value>
+                    <fullName>Core Standard</fullName>
+                    <default>false</default>
+                    <label>Core Standard</label>
+                </value>
+                <value>
                     <fullName>DBSWIN</fullName>
                     <default>false</default>
                     <label>DBSWIN</label>
@@ -4361,21 +4411,6 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
                     <fullName>Digital Lab</fullName>
                     <default>false</default>
                     <label>Digital Lab</label>
-                </value>
-                <value>
-                    <fullName>DS Core</fullName>
-                    <default>false</default>
-                    <label>DS Core</label>
-                </value>
-                <value>
-                    <fullName>DS Core Care</fullName>
-                    <default>false</default>
-                    <label>DS Core Care</label>
-                </value>
-                <value>
-                    <fullName>DS Core Create</fullName>
-                    <default>false</default>
-                    <label>DS Core Create</label>
                 </value>
                 <value>
                     <fullName>Engineering</fullName>
@@ -4506,6 +4541,11 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
                     <fullName>Other</fullName>
                     <default>false</default>
                     <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Outcome Simulator</fullName>
+                    <default>false</default>
+                    <label>Outcome Simulator</label>
                 </value>
                 <value>
                     <fullName>PACS</fullName>
@@ -4784,6 +4824,10 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SureSmile</controllingFieldValue>
+                <valueName>Outcome Simulator</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>SureSmile</controllingFieldValue>
                 <valueName>Practice Network</valueName>
             </valueSettings>
             <valueSettings>
@@ -4832,18 +4876,6 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Primesolution</controllingFieldValue>
-                <valueName>DS Core</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Primesolution</controllingFieldValue>
-                <valueName>DS Core Care</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Primesolution</controllingFieldValue>
-                <valueName>DS Core Create</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Primesolution</controllingFieldValue>
                 <valueName>Ink</valueName>
             </valueSettings>
             <valueSettings>
@@ -4853,6 +4885,46 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
             <valueSettings>
                 <controllingFieldValue>Primesolution</controllingFieldValue>
                 <valueName>PrimePrint</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DS Core</controllingFieldValue>
+                <valueName>Core Access</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DS Core</controllingFieldValue>
+                <valueName>Core Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DS Core</controllingFieldValue>
+                <valueName>Core Light</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DS Core</controllingFieldValue>
+                <valueName>Core Standard</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DS Core Care</controllingFieldValue>
+                <valueName>Core Care - Primemill</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DS Core Care</controllingFieldValue>
+                <valueName>Core Care - Primeprint</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DS Core Care</controllingFieldValue>
+                <valueName>Core Care - Primescan connect</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DS Core Care</controllingFieldValue>
+                <valueName>Core Care - Primescan w/Cart</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DS Core Care</controllingFieldValue>
+                <valueName>Core Care - Speedfire</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DS Core Create</controllingFieldValue>
+                <valueName>Core Create Print</valueName>
             </valueSettings>
         </valueSet>
     </fields>
@@ -5739,6 +5811,21 @@ If(ContactId=&apos;&apos; &amp;&amp; text(Status)=&apos;New&apos;,&apos;hide flo
                     <label>Disks</label>
                 </value>
                 <value>
+                    <fullName>DS Core</fullName>
+                    <default>false</default>
+                    <label>DS Core</label>
+                </value>
+                <value>
+                    <fullName>DS Core Care</fullName>
+                    <default>false</default>
+                    <label>DS Core Care</label>
+                </value>
+                <value>
+                    <fullName>DS Core Create</fullName>
+                    <default>false</default>
+                    <label>DS Core Create</label>
+                </value>
+                <value>
                     <fullName>E-commerce</fullName>
                     <default>false</default>
                     <label>E-commerce</label>
@@ -5839,6 +5926,11 @@ If(ContactId=&apos;&apos; &amp;&amp; text(Status)=&apos;New&apos;,&apos;hide flo
                     <label>Infection Prevention</label>
                 </value>
                 <value>
+                    <fullName>INK</fullName>
+                    <default>false</default>
+                    <label>INK</label>
+                </value>
+                <value>
                     <fullName>Inserts</fullName>
                     <default>false</default>
                     <label>Inserts</label>
@@ -5914,6 +6006,11 @@ If(ContactId=&apos;&apos; &amp;&amp; text(Status)=&apos;New&apos;,&apos;hide flo
                     <label>Operating lights</label>
                 </value>
                 <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
                     <fullName>Other Endo</fullName>
                     <default>false</default>
                     <label>Other Endo</label>
@@ -5962,6 +6059,31 @@ If(ContactId=&apos;&apos; &amp;&amp; text(Status)=&apos;New&apos;,&apos;hide flo
                     <fullName>Pressure Machines</fullName>
                     <default>false</default>
                     <label>Pressure Machines</label>
+                </value>
+                <value>
+                    <fullName>Primemill</fullName>
+                    <default>false</default>
+                    <label>Primemill</label>
+                </value>
+                <value>
+                    <fullName>Primeprint</fullName>
+                    <default>false</default>
+                    <label>Primeprint</label>
+                </value>
+                <value>
+                    <fullName>Primescan</fullName>
+                    <default>false</default>
+                    <label>Primescan</label>
+                </value>
+                <value>
+                    <fullName>Primescan AC</fullName>
+                    <default>false</default>
+                    <label>Primescan AC</label>
+                </value>
+                <value>
+                    <fullName>Primescan Connect</fullName>
+                    <default>false</default>
+                    <label>Primescan Connect</label>
                 </value>
                 <value>
                     <fullName>Primesolution</fullName>
@@ -6116,11 +6238,51 @@ If(ContactId=&apos;&apos; &amp;&amp; text(Status)=&apos;New&apos;,&apos;hide flo
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>DIGI</controllingFieldValue>
+                <valueName>INK</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DIGI</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DIGI</controllingFieldValue>
+                <valueName>Primemill</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DIGI</controllingFieldValue>
+                <valueName>Primeprint</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DIGI</controllingFieldValue>
+                <valueName>Primescan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DIGI</controllingFieldValue>
+                <valueName>Primescan AC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DIGI</controllingFieldValue>
+                <valueName>Primescan Connect</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DIGI</controllingFieldValue>
                 <valueName>Primesolution</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Platform</controllingFieldValue>
                 <valueName>E-commerce</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Services</controllingFieldValue>
+                <valueName>DS Core</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Services</controllingFieldValue>
+                <valueName>DS Core Care</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Services</controllingFieldValue>
+                <valueName>DS Core Create</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>IMPL</controllingFieldValue>
@@ -7523,6 +7685,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                     <label>Address Change</label>
                 </value>
                 <value>
+                    <fullName>Aligner Order Workflow</fullName>
+                    <default>false</default>
+                    <label>Aligner Order Workflow</label>
+                </value>
+                <value>
                     <fullName>ASA Issue</fullName>
                     <default>false</default>
                     <label>ASA Issue</label>
@@ -7836,6 +8003,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                     <fullName>Electronic Transfer</fullName>
                     <default>false</default>
                     <label>Electronic Transfer</label>
+                </value>
+                <value>
+                    <fullName>Equipment</fullName>
+                    <default>false</default>
+                    <label>Equipment</label>
                 </value>
                 <value>
                     <fullName>Error Messages</fullName>
@@ -8201,6 +8373,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                     <fullName>Osteotomy</fullName>
                     <default>false</default>
                     <label>Osteotomy</label>
+                </value>
+                <value>
+                    <fullName>Outcome Simulator</fullName>
+                    <default>false</default>
+                    <label>Outcome Simulator</label>
                 </value>
                 <value>
                     <fullName>Packaging</fullName>
@@ -8573,6 +8750,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                     <label>Suresmile Doctor Locator</label>
                 </value>
                 <value>
+                    <fullName>Suresmile Sales Lead</fullName>
+                    <default>false</default>
+                    <label>Suresmile Sales Lead</label>
+                </value>
+                <value>
                     <fullName>Switching Views</fullName>
                     <default>false</default>
                     <label>Switching Views</label>
@@ -8598,6 +8780,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                     <label>Team-Up</label>
                 </value>
                 <value>
+                    <fullName>Third Party Lab</fullName>
+                    <default>false</default>
+                    <label>Third Party Lab</label>
+                </value>
+                <value>
                     <fullName>Tooth movement</fullName>
                     <default>false</default>
                     <label>Tooth movement</label>
@@ -8611,6 +8798,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                     <fullName>Training Materials</fullName>
                     <default>false</default>
                     <label>Training Materials</label>
+                </value>
+                <value>
+                    <fullName>Turnaround Time</fullName>
+                    <default>false</default>
+                    <label>Turnaround Time</label>
                 </value>
                 <value>
                     <fullName>Twain</fullName>
@@ -8837,6 +9029,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <valueSettings>
                 <controllingFieldValue>Microsite</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
+                <controllingFieldValue>Core Create Print</controllingFieldValue>
                 <controllingFieldValue>Simplant Editor</controllingFieldValue>
                 <controllingFieldValue>AWO Website</controllingFieldValue>
                 <controllingFieldValue>ISUS Viewer</controllingFieldValue>
@@ -8939,6 +9132,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <valueSettings>
                 <controllingFieldValue>Microsite</controllingFieldValue>
                 <controllingFieldValue>SimPlant 18</controllingFieldValue>
+                <controllingFieldValue>Core Create Print</controllingFieldValue>
                 <controllingFieldValue>Simplant Editor</controllingFieldValue>
                 <controllingFieldValue>Atlantis Editor</controllingFieldValue>
                 <controllingFieldValue>Case viewer</controllingFieldValue>
@@ -9071,6 +9265,165 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <valueName>SIMPLANT Guide information</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>Core Access</controllingFieldValue>
+                <controllingFieldValue>Core Advanced</controllingFieldValue>
+                <controllingFieldValue>Core Light</controllingFieldValue>
+                <controllingFieldValue>Core Standard</controllingFieldValue>
+                <valueName>Aligner Order Workflow</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Access</controllingFieldValue>
+                <controllingFieldValue>Core Advanced</controllingFieldValue>
+                <controllingFieldValue>Core Light</controllingFieldValue>
+                <controllingFieldValue>Core Standard</controllingFieldValue>
+                <controllingFieldValue>Aligners</controllingFieldValue>
+                <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
+                <controllingFieldValue>Retainers</controllingFieldValue>
+                <controllingFieldValue>Setups</controllingFieldValue>
+                <controllingFieldValue>Staged Models</controllingFieldValue>
+                <controllingFieldValue>Wires</controllingFieldValue>
+                <valueName>Cancellation Request</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Access</controllingFieldValue>
+                <controllingFieldValue>Core Advanced</controllingFieldValue>
+                <controllingFieldValue>Core Light</controllingFieldValue>
+                <controllingFieldValue>Core Standard</controllingFieldValue>
+                <controllingFieldValue>Aligners</controllingFieldValue>
+                <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
+                <controllingFieldValue>IDB</controllingFieldValue>
+                <controllingFieldValue>Retainers</controllingFieldValue>
+                <controllingFieldValue>Staged Models</controllingFieldValue>
+                <valueName>Cannot Order</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Access</controllingFieldValue>
+                <controllingFieldValue>Core Advanced</controllingFieldValue>
+                <controllingFieldValue>Core Light</controllingFieldValue>
+                <controllingFieldValue>Core Standard</controllingFieldValue>
+                <controllingFieldValue>Outcome Simulator</controllingFieldValue>
+                <controllingFieldValue>SureWeb/SureScan</controllingFieldValue>
+                <valueName>Display Issues</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Access</controllingFieldValue>
+                <controllingFieldValue>Core Advanced</controllingFieldValue>
+                <controllingFieldValue>Core Light</controllingFieldValue>
+                <controllingFieldValue>Core Standard</controllingFieldValue>
+                <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
+                <valueName>Electronic Transfer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Access</controllingFieldValue>
+                <controllingFieldValue>Core Advanced</controllingFieldValue>
+                <controllingFieldValue>Core Light</controllingFieldValue>
+                <controllingFieldValue>Core Standard</controllingFieldValue>
+                <controllingFieldValue>Outcome Simulator</controllingFieldValue>
+                <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
+                <valueName>Incorrect File Format</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Access</controllingFieldValue>
+                <controllingFieldValue>Core Advanced</controllingFieldValue>
+                <controllingFieldValue>Core Light</controllingFieldValue>
+                <controllingFieldValue>Core Standard</controllingFieldValue>
+                <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
+                <valueName>Missing Data</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Access</controllingFieldValue>
+                <controllingFieldValue>Core Advanced</controllingFieldValue>
+                <controllingFieldValue>Core Light</controllingFieldValue>
+                <controllingFieldValue>Core Standard</controllingFieldValue>
+                <controllingFieldValue>Aligners</controllingFieldValue>
+                <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
+                <controllingFieldValue>IDB</controllingFieldValue>
+                <controllingFieldValue>Retainers</controllingFieldValue>
+                <controllingFieldValue>Staged Models</controllingFieldValue>
+                <controllingFieldValue>Wires</controllingFieldValue>
+                <valueName>Missing Order</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Access</controllingFieldValue>
+                <controllingFieldValue>Core Advanced</controllingFieldValue>
+                <controllingFieldValue>Core Light</controllingFieldValue>
+                <controllingFieldValue>Core Standard</controllingFieldValue>
+                <valueName>Outcome Simulator</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Create Print</controllingFieldValue>
+                <controllingFieldValue>Aligners</controllingFieldValue>
+                <controllingFieldValue>IDB</controllingFieldValue>
+                <controllingFieldValue>Retainers</controllingFieldValue>
+                <controllingFieldValue>Setups</controllingFieldValue>
+                <controllingFieldValue>SureWeb/SureScan</controllingFieldValue>
+                <controllingFieldValue>Wires</controllingFieldValue>
+                <valueName>Billing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Create Print</controllingFieldValue>
+                <controllingFieldValue>Simplant Editor</controllingFieldValue>
+                <controllingFieldValue>suprastructure order</controllingFieldValue>
+                <controllingFieldValue>Atlantis Editor</controllingFieldValue>
+                <controllingFieldValue>mySimPlant</controllingFieldValue>
+                <controllingFieldValue>Case viewer</controllingFieldValue>
+                <controllingFieldValue>CMP</controllingFieldValue>
+                <controllingFieldValue>Mflow</controllingFieldValue>
+                <controllingFieldValue>Msoft</controllingFieldValue>
+                <valueName>Case Approval</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Create Print</controllingFieldValue>
+                <controllingFieldValue>mySimPlant</controllingFieldValue>
+                <valueName>Case creation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Create Print</controllingFieldValue>
+                <controllingFieldValue>Aligners</controllingFieldValue>
+                <controllingFieldValue>IDB</controllingFieldValue>
+                <controllingFieldValue>Retainers</controllingFieldValue>
+                <controllingFieldValue>Staged Models</controllingFieldValue>
+                <valueName>Design Issue</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Create Print</controllingFieldValue>
+                <valueName>Download project</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Create Print</controllingFieldValue>
+                <valueName>Equipment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Create Print</controllingFieldValue>
+                <controllingFieldValue>Simplant Editor</controllingFieldValue>
+                <controllingFieldValue>suprastructure order</controllingFieldValue>
+                <controllingFieldValue>Atlantis Editor</controllingFieldValue>
+                <controllingFieldValue>mySimPlant</controllingFieldValue>
+                <controllingFieldValue>Case viewer</controllingFieldValue>
+                <controllingFieldValue>CMP</controllingFieldValue>
+                <controllingFieldValue>Hardware components</controllingFieldValue>
+                <controllingFieldValue>SimPlant Guide File</controllingFieldValue>
+                <controllingFieldValue>Mflow</controllingFieldValue>
+                <controllingFieldValue>Mguide</controllingFieldValue>
+                <controllingFieldValue>Msoft</controllingFieldValue>
+                <controllingFieldValue>SIMPLANT Guide</controllingFieldValue>
+                <valueName>On hold follow up</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Create Print</controllingFieldValue>
+                <valueName>Third Party Lab</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Create Print</controllingFieldValue>
+                <valueName>Turnaround Time</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Create Print</controllingFieldValue>
+                <controllingFieldValue>mySimPlant</controllingFieldValue>
+                <controllingFieldValue>CMP</controllingFieldValue>
+                <valueName>Upload files</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>CDR DICOM</controllingFieldValue>
                 <controllingFieldValue>Sidexis 4</controllingFieldValue>
                 <controllingFieldValue>Sidexis XG</controllingFieldValue>
@@ -9160,17 +9513,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Simplant Editor</controllingFieldValue>
-                <controllingFieldValue>suprastructure order</controllingFieldValue>
-                <controllingFieldValue>Atlantis Editor</controllingFieldValue>
-                <controllingFieldValue>mySimPlant</controllingFieldValue>
-                <controllingFieldValue>Case viewer</controllingFieldValue>
-                <controllingFieldValue>CMP</controllingFieldValue>
-                <controllingFieldValue>Mflow</controllingFieldValue>
-                <controllingFieldValue>Msoft</controllingFieldValue>
-                <valueName>Case Approval</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Simplant Editor</controllingFieldValue>
                 <valueName>Implant library</valueName>
             </valueSettings>
             <valueSettings>
@@ -9179,21 +9521,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <controllingFieldValue>mySimPlant</controllingFieldValue>
                 <controllingFieldValue>Msoft</controllingFieldValue>
                 <valueName>Login</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Simplant Editor</controllingFieldValue>
-                <controllingFieldValue>suprastructure order</controllingFieldValue>
-                <controllingFieldValue>Atlantis Editor</controllingFieldValue>
-                <controllingFieldValue>mySimPlant</controllingFieldValue>
-                <controllingFieldValue>Case viewer</controllingFieldValue>
-                <controllingFieldValue>CMP</controllingFieldValue>
-                <controllingFieldValue>Hardware components</controllingFieldValue>
-                <controllingFieldValue>SimPlant Guide File</controllingFieldValue>
-                <controllingFieldValue>Mflow</controllingFieldValue>
-                <controllingFieldValue>Mguide</controllingFieldValue>
-                <controllingFieldValue>Msoft</controllingFieldValue>
-                <controllingFieldValue>SIMPLANT Guide</controllingFieldValue>
-                <valueName>On hold follow up</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Simplant Editor</controllingFieldValue>
@@ -9273,16 +9600,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>mySimPlant</controllingFieldValue>
-                <valueName>Case creation</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>mySimPlant</controllingFieldValue>
                 <valueName>Mobile Access</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>mySimPlant</controllingFieldValue>
-                <controllingFieldValue>CMP</controllingFieldValue>
-                <valueName>Upload files</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>CMP</controllingFieldValue>
@@ -9310,35 +9628,18 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <valueName>IFU</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>Outcome Simulator</controllingFieldValue>
+                <controllingFieldValue>Image Integration</controllingFieldValue>
+                <controllingFieldValue>Setups</controllingFieldValue>
+                <controllingFieldValue>Staged Models</controllingFieldValue>
+                <controllingFieldValue>SureWeb/SureScan</controllingFieldValue>
+                <controllingFieldValue>Technical</controllingFieldValue>
+                <valueName>Misc</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>Mguide</controllingFieldValue>
                 <controllingFieldValue>SIMPLANT Guide</controllingFieldValue>
                 <valueName>Complaint Investigation</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Aligners</controllingFieldValue>
-                <controllingFieldValue>IDB</controllingFieldValue>
-                <controllingFieldValue>Retainers</controllingFieldValue>
-                <controllingFieldValue>Setups</controllingFieldValue>
-                <controllingFieldValue>SureWeb/SureScan</controllingFieldValue>
-                <controllingFieldValue>Wires</controllingFieldValue>
-                <valueName>Billing</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Aligners</controllingFieldValue>
-                <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
-                <controllingFieldValue>Retainers</controllingFieldValue>
-                <controllingFieldValue>Setups</controllingFieldValue>
-                <controllingFieldValue>Staged Models</controllingFieldValue>
-                <controllingFieldValue>Wires</controllingFieldValue>
-                <valueName>Cancellation Request</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Aligners</controllingFieldValue>
-                <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
-                <controllingFieldValue>IDB</controllingFieldValue>
-                <controllingFieldValue>Retainers</controllingFieldValue>
-                <controllingFieldValue>Staged Models</controllingFieldValue>
-                <valueName>Cannot Order</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Aligners</controllingFieldValue>
@@ -9346,23 +9647,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Aligners</controllingFieldValue>
-                <controllingFieldValue>IDB</controllingFieldValue>
-                <controllingFieldValue>Retainers</controllingFieldValue>
-                <controllingFieldValue>Staged Models</controllingFieldValue>
-                <valueName>Design Issue</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Aligners</controllingFieldValue>
                 <valueName>Incorrect Article/S</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Aligners</controllingFieldValue>
-                <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
-                <controllingFieldValue>IDB</controllingFieldValue>
-                <controllingFieldValue>Retainers</controllingFieldValue>
-                <controllingFieldValue>Staged Models</controllingFieldValue>
-                <controllingFieldValue>Wires</controllingFieldValue>
-                <valueName>Missing Order</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Aligners</controllingFieldValue>
@@ -9433,19 +9718,7 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
-                <valueName>Electronic Transfer</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
-                <valueName>Incorrect File Format</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
                 <valueName>Itero</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
-                <valueName>Missing Data</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>CBCT &amp; 3rd Party Scans</controllingFieldValue>
@@ -9528,14 +9801,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <valueSettings>
                 <controllingFieldValue>Image Integration</controllingFieldValue>
                 <valueName>Dolphin</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Image Integration</controllingFieldValue>
-                <controllingFieldValue>Setups</controllingFieldValue>
-                <controllingFieldValue>Staged Models</controllingFieldValue>
-                <controllingFieldValue>SureWeb/SureScan</controllingFieldValue>
-                <controllingFieldValue>Technical</controllingFieldValue>
-                <valueName>Misc</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Image Integration</controllingFieldValue>
@@ -9715,6 +9980,11 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
                 <valueName>Pricing Question</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>SureSmile U</controllingFieldValue>
+                <controllingFieldValue>SureWeb/SureScan</controllingFieldValue>
+                <valueName>Suresmile Sales Lead</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>SureWeb/SureScan</controllingFieldValue>
                 <valueName>Beta</valueName>
             </valueSettings>
@@ -9729,10 +9999,6 @@ Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;
             <valueSettings>
                 <controllingFieldValue>SureWeb/SureScan</controllingFieldValue>
                 <valueName>Charts Submissions</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>SureWeb/SureScan</controllingFieldValue>
-                <valueName>Display Issues</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>SureWeb/SureScan</controllingFieldValue>
@@ -13231,9 +13497,8 @@ TFUS-000005186</description>
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
         <columns>CORE.USERS.ALIAS</columns>
-        <columns>SBU__c</columns>
         <columns>Approval_Routing__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
@@ -16303,6 +16568,10 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>ENDO</fullName>
                 <default>false</default>
             </values>
@@ -17857,6 +18126,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>DIGI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Services</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20227,6 +20500,10 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>ENDO</fullName>
                 <default>false</default>
             </values>
@@ -21836,6 +22113,10 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>ENDO</fullName>
                 <default>false</default>
             </values>
@@ -23402,19 +23683,47 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Core Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Core Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Core Care - Primemill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Core Care - Primeprint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Core Care - Primescan connect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Core Care - Primescan w%2FCart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Core Care - Speedfire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Core Create Print</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Core Light</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Core Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>DBSWIN</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DS Core</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DS Core Care</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DS Core Create</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23518,15 +23827,15 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Outcome Simulator</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>PACS</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Practice Network</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PrimePrint</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23866,6 +24175,18 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>DS Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS Core Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS Core Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Dental Handpieces</fullName>
                 <default>false</default>
             </values>
@@ -23935,6 +24256,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>High strength glass ceramics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INK</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24022,6 +24347,10 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Other Endo</fullName>
                 <default>false</default>
             </values>
@@ -24062,7 +24391,23 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Primesolution</fullName>
+                <fullName>Primemill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primeprint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primescan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primescan AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primescan Connect</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24313,6 +24658,10 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>ENDO</fullName>
                 <default>false</default>
             </values>
@@ -24400,6 +24749,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>AXEOS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aligner Order Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24632,6 +24985,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>Electronic Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -24903,6 +25260,10 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Outcome Simulator</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>PC Requirements</fullName>
                 <default>false</default>
             </values>
@@ -24976,14 +25337,6 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>Pricing Question</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Primemill</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Primescan</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25183,6 +25536,10 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Suresmile Sales Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Suresmile%2Ecom Website Issue</fullName>
                 <default>false</default>
             </values>
@@ -25207,6 +25564,10 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Third Party Lab</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Tooth movement</fullName>
                 <default>false</default>
             </values>
@@ -25216,6 +25577,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>Training Materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turnaround Time</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -27436,6 +27801,10 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>ENDO</fullName>
                 <default>false</default>
             </values>
@@ -28865,6 +29234,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>DIGI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Services</fullName>
                 <default>false</default>
             </values>
             <values>

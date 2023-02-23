@@ -1334,4 +1334,48 @@ History :
         return quoteLineItems;
     }
 
+        /*-------------------------------------------------------------------------------------------------------
+    Company:        Roberto
+    Description:    Returns an inserted list of Quote Line Items
+
+    Inputs:         @param discountModels           List of Discount_model__c
+    Inputs:         @param recordType               String
+    Inputs:         @param contract     			List of Contract
+
+    Outputs:        List<ContractItem__c> 			List of the inserted ContractItem__c
+    History:
+    20230209     Roberto     New Method
+    --------------------------------------------------------------------------------------------------------*/
+    public static List<ContractItem__c> returnContractItems(List<Discount_model__c> discountModels, String recordType, Contract contract) {
+
+        RecordType rt = TestDataFactoryUtils.getRecordType('ContractItem__c', recordType);
+        List<ContractItem__c> contractItems = new List<ContractItem__c>();
+
+        for(Discount_model__c disModel : discountModels) {
+            ContractItem__c contractItem = new ContractItem__c(Name = disModel.Name, recordTypeId = rt.Id, Contract__c = contract.Id, DiscountModel__c = discountModels[0].Id);
+            contractItems.add(contractItem);
+        }
+
+        return contractItems;
+    }
+    /*-------------------------------------------------------------------------------------------------------
+    Company:        Roberto
+    Description:    Returns an inserted list of Quote Line Items
+
+    Inputs:         @param discountModels           List of Discount_model__c
+    Inputs:         @param recordType               String
+    Inputs:         @param contract     			List of Contract
+
+    Outputs:        List<ContractItem__c> 			List of the inserted ContractItem__c
+    History:
+    20230209     Roberto     New Method
+    --------------------------------------------------------------------------------------------------------*/
+    public static List<ContractItem__c> createContractItems(List<Discount_model__c> discountModels, String recordType, Contract contract) {
+
+        List<ContractItem__c> contractItems = returnContractItems(discountModels, recordType, contract);
+        insert contractItems;
+        return contractItems;
+    }
+    
+
 }

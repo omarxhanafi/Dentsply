@@ -414,7 +414,7 @@ public class Test_AccountTrigger {
 
         if (accSubSegList.isEmpty()) return;
 
-        List<Account> testAccountList = TestDataFactory.returnAccounts(200, 'Non_ERP_Account', testUser.Id);
+        List<Account> testAccountList = TestDataFactory.returnAccounts(10, 'Non_ERP_Account', testUser.Id);
         for (Account accountRecord : testAccountList) {
             accountRecord.Name = 'INSERT ' + accountRecord.Name;
             accountRecord.Country__c = accSubSegList[0].Country__c;
@@ -455,7 +455,7 @@ public class Test_AccountTrigger {
 
         if (accSubSegList1.isEmpty() || accSubSegList2.isEmpty()) return;
         
-        List<Account> testAccountList = TestDataFactory.returnAccounts(100, 'Non_ERP_Account', testUser.Id);
+        List<Account> testAccountList = TestDataFactory.returnAccounts(10, 'Non_ERP_Account', testUser.Id);
         for (Account accountRecord : testAccountList) {
             accountRecord.Name = 'INSERT ' + accountRecord.Name;
             accountRecord.Country__c = accSubSegList1[0].Country__c;

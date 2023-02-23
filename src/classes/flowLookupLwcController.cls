@@ -70,9 +70,9 @@ public with sharing class flowLookupLwcController {
 
         List<List<SObject>> searchResults = new List<List<SObject>>();
         searchResults = [ FIND :searchTerm
-                          IN ALL FIELDS
-                          RETURNING Contact(Id, Name, FirstName, LastName, Email, Phone WHERE Id NOT IN :idsNotToInclude AND Id IN :contactIdSet)
-                          LIMIT :MAX_RESULTS
+        IN ALL FIELDS
+        RETURNING Contact(Id, Name, FirstName, LastName, Email, Phone WHERE Id NOT IN :idsNotToInclude AND Id IN :contactIdSet)
+        LIMIT :MAX_RESULTS
         ];
 
         Contact[] contacts = (List<Contact>) searchResults[0];
@@ -99,12 +99,12 @@ public with sharing class flowLookupLwcController {
         List<LookupSearchResult> results = new List<LookupSearchResult>();
 
         searchResults = [   FIND :searchTerm
-                            IN ALL FIELDS
-                            RETURNING Account(  Id, Name, BillingCity
-                                                WHERE   Id NOT IN :idsNotToInclude
-                                                        AND
-                                                        RecordTypeId = :GlobalUtils.getRecordTypeId('Account','CIM_Account'))
-                            LIMIT :MAX_RESULTS
+        IN ALL FIELDS
+        RETURNING Account(  Id, Name, BillingCity
+                WHERE   Id NOT IN :idsNotToInclude
+                AND
+                RecordTypeId = :GlobalUtils.getRecordTypeId('Account','CIM_Account'))
+        LIMIT :MAX_RESULTS
         ];
 
         Account[] accounts = (List<Account>) searchResults[0];
@@ -146,17 +146,17 @@ public with sharing class flowLookupLwcController {
         if(recordId.left(3) == '003')
         {
             recentRecords = [
-                SELECT Id, Name, FirstName, LastName
-                FROM Contact
-                WHERE Id =: recordId
+                    SELECT Id, Name, FirstName, LastName
+                    FROM Contact
+                    WHERE Id =: recordId
             ];
         }
         else if(accountId != null)
         {
             recentRecords = [
-                SELECT Id, Name, FirstName, LastName
-                FROM Contact
-                WHERE AccountId =: accountId
+                    SELECT Id, Name, FirstName, LastName
+                    FROM Contact
+                    WHERE AccountId =: accountId
             ];
         }
 

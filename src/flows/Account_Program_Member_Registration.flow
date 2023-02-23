@@ -1165,10 +1165,17 @@
         <defaultConnectorLabel>ExistTrue</defaultConnectorLabel>
         <rules>
             <name>ExistFalse_0</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>getExistingMember</leftValueReference>
                 <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>getAccountProgram.AllowMultipleMembersPerContact__c</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>

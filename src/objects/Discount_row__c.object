@@ -232,6 +232,41 @@
                     <default>false</default>
                     <label>Payment type</label>
                 </value>
+                <value>
+                    <fullName>Segment base</fullName>
+                    <default>false</default>
+                    <label>Segment base</label>
+                </value>
+                <value>
+                    <fullName>Total Net Sales</fullName>
+                    <default>false</default>
+                    <label>Total Net Sales</label>
+                </value>
+                <value>
+                    <fullName>Workflow coverage</fullName>
+                    <default>false</default>
+                    <label>Workflow coverage</label>
+                </value>
+                <value>
+                    <fullName>Growth</fullName>
+                    <default>false</default>
+                    <label>Growth</label>
+                </value>
+                <value>
+                    <fullName>Loyalty</fullName>
+                    <default>false</default>
+                    <label>Loyalty</label>
+                </value>
+                <value>
+                    <fullName>E-commerce</fullName>
+                    <default>false</default>
+                    <label>E-commerce</label>
+                </value>
+                <value>
+                    <fullName>Skonto</fullName>
+                    <default>false</default>
+                    <label>Skonto</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -243,6 +278,17 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MaxNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Max Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -264,6 +310,28 @@
         <scale>0</scale>
         <trackTrending>false</trackTrending>
         <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>MinNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Min Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MinTotalSalesNet__c</fullName>
+        <externalId>false</externalId>
+        <label>Min Total Sales Net</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Min__c</fullName>
@@ -295,6 +363,16 @@
         <scale>0</scale>
         <trackTrending>false</trackTrending>
         <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TextMatchResult__c</fullName>
+        <externalId>false</externalId>
+        <label>Text Match Result</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
         <unique>false</unique>
     </fields>
     <label>Discount row</label>

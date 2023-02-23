@@ -8,6 +8,7 @@ import FORM_FACTOR from '@salesforce/client/formFactor';
 import CALL_REPORT_OBJECT from '@salesforce/schema/Call_Report__c'
 import CALL_REPORT_EVENT_WHOIDS_FIELD from '@salesforce/schema/Call_Report__c.EventWhoIds__c';
 import ACTIVITY_TYPE_FIELD from '@salesforce/schema/Call_Report__c.ActivityType__c';
+import CONTACT_ACCOUNT_ID_FIELD from '@salesforce/schema/Contact.AccountId';
 import Id from '@salesforce/user/Id';
 
 const USER_FIELDS = ['User.User_Country__c', 'User.Default_CFE_SBUs__c', 'User.Default_Activity_Length_In_Minutes__c'];
@@ -33,6 +34,7 @@ import getContacts from '@salesforce/apex/EventMultiWhoController.getContacts';
 import createEvent from '@salesforce/apex/CallReportQuickActionPocController.createEvent';
 import getCotravelPicklist from '@salesforce/apex/CallReportQuickActionPocController.getPickListValuesIntoList';
 import getProcedureTrackerData from '@salesforce/apex/CallReportQuickActionPocController.getProcedureTrackerDataList';
+import {encodeDefaultFieldValues} from "lightning/pageReferenceUtils";
 
 export default class CallReportQuickActionPocLwc extends NavigationMixin(LightningElement) {
 
@@ -45,6 +47,7 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
     //
     @api recordId;
     @api sObjectName;
+    isSaveAndNew = false;
     // Use alerts instead of toast to notify user
     @api notifyViaAlerts = false;
     @track _mobileFormFactor = FORM_FACTOR == 'Small';
@@ -83,7 +86,12 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
             if (userDefaultActivityLength) this._startTime = this.nearestQuarterDateTime(-userDefaultActivityLength);
         }
     }
+    @wire(getRecord, { recordId: '$recordId', fields: [CONTACT_ACCOUNT_ID_FIELD] })
+    contact;
 
+    get contactAccountId() {
+        return getFieldValue(this.contact.data, CONTACT_ACCOUNT_ID_FIELD);
+    }
     @wire(getPicklistValues, { recordTypeId: '$callReportRTId', fieldApiName: ACTIVITY_TYPE_FIELD })
     getActivityPicklistDefaultValue({ error, data }) {
         if (data) {
@@ -279,9 +287,40 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
         this.dispatchEvent(closeQA);
     }
 
-    isSaveAndNew = false;
-    handleSaveAndNew(event) {
-        this.isSaveAndNew = true;
+
+
+    handleSaveAndNew() {
+        try {
+            this.isSaveAndNew = true;
+
+            let defaultValues;
+            if (this.sObjectName === 'Contact') {
+                defaultValues = {
+                    WhoId: this.recordId,
+                    WhatId: this.contactAccountId
+                };
+            } else {
+                const selection = this.template.querySelector('c-lookup-lwc').getSelection();
+                let whoId = (selection.length !== 0) ? selection[0].id : null;
+                defaultValues = {
+                    WhoId: whoId,
+                    WhatId: this.recordId
+                };
+            }
+            let defaultValuesEncoded = encodeDefaultFieldValues(defaultValues);
+            this[NavigationMixin.Navigate]({
+                type: 'standard__objectPage',
+                attributes: {
+                    objectApiName: 'Event',
+                    actionName: 'new'
+                },
+                state: {
+                    defaultFieldValues: defaultValuesEncoded
+                }
+            });
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     handleSubmit(event) {
@@ -307,15 +346,15 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
 
     handleSuccess(event) {
         try {
-            const payload = event.detail;
-            this.callReportId = payload.id;
-            this.error = null;
-            console.log('success::'+JSON.stringify(payload));
+        const payload = event.detail;
+        this.callReportId = payload.id;
+        this.error = null;
+        console.log('success::'+JSON.stringify(payload));
             if(payload.fields.CourseOrEventPromotion__c != null)
             {
                 this.courseEventPromotionChange = !!(payload.fields.CourseOrEventPromotion__c.value);
             }
-            this.createEvent();
+        this.createEvent();
         }
         catch (e){
             console.error(e);
@@ -408,8 +447,8 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
         const selection = this.template.querySelector('c-lookup-lwc').getSelection();
         if (selection.length === 0) {
             this.errors = [{
-                message: 'You must select a Contact before submitting!'
-            },
+                    message: 'You must select a Contact before submitting!'
+                },
                 {
                     message: 'Please select a Contact and try again.'
                 }

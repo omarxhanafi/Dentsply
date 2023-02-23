@@ -417,6 +417,17 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Global_Training_Update_required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>See TFUS - 000005323</description>
+        <externalId>false</externalId>
+        <label>Global Training Update required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Platform__c</fullName>
         <description>This field is used to assign User Stories to the right Product Owner</description>
         <externalId>false</externalId>

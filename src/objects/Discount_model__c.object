@@ -155,6 +155,33 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>ActivationDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Activation Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Active__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY() &gt;=  ActivationDate__c &amp;&amp; (( ISBLANK( DeActivationDate__c ) ) || TODAY() &lt; DeActivationDate__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CompanyCodes__c</fullName>
+        <externalId>false</externalId>
+        <label>Company Codes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Country__c</fullName>
         <externalId>false</externalId>
         <label>Country</label>
@@ -162,6 +189,68 @@
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DeActivationDate__c</fullName>
+        <externalId>false</externalId>
+        <label>De-Activation Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FirstLevelApproval__c</fullName>
+        <description>First Level Approval number over recommended discount</description>
+        <externalId>false</externalId>
+        <label>First Level Approval</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MaxDiscountToOffer__c</fullName>
+        <externalId>false</externalId>
+        <label>Max Discount To Offer</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAQLQuery__c</fullName>
+        <externalId>false</externalId>
+        <label>SAQL Query</label>
+        <length>31000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>21</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SecondLevelApproval__c</fullName>
+        <description>Second Level Approval number over recommended discount</description>
+        <externalId>false</externalId>
+        <label>Second Level Approval</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -184,6 +273,11 @@
                     <fullName>Order</fullName>
                     <default>false</default>
                     <label>Order</label>
+                </value>
+                <value>
+                    <fullName>Quote</fullName>
+                    <default>false</default>
+                    <label>Quote</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

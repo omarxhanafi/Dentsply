@@ -386,20 +386,6 @@
     </fields>
     <label>GuidanceProcedureTracking</label>
     <listViews>
-        <fullName>Canada</fullName>
-        <columns>MasterLabel</columns>
-        <columns>DeveloperName</columns>
-        <columns>NamespacePrefix</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>MasterLabel</field>
-            <operation>startsWith</operation>
-            <value>CA</value>
-        </filters>
-        <label>Canada</label>
-        <language>en_US</language>
-    </listViews>
-    <listViews>
         <fullName>US_Guidance</fullName>
         <columns>MasterLabel</columns>
         <columns>DeveloperName</columns>

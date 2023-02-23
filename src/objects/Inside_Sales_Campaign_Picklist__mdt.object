@@ -66,6 +66,11 @@
                     <default>false</default>
                     <label>Sent</label>
                 </value>
+                <value>
+                    <fullName>Canceled</fullName>
+                    <default>false</default>
+                    <label>Canceled</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

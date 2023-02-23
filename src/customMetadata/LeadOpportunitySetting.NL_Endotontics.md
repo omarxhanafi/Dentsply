@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">X-smart IQ;GuttaCore;IQ/ProMark Motor;ProTaper Gold;ProTaper Next;TruNatomy;WaveOne Gold;Irrigation Needle</value>
+        <value xsi:type="xsd:string">X-smart IQ;GuttaCore;IQ/ProMark Motor;ProTaper Gold;ProTaper Next;TruNatomy;WaveOne Gold;Irrigation Needle;ProTaper Ultimate</value>
     </values>
     <values>
         <field>Category__c</field>

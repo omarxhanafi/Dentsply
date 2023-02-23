@@ -1990,15 +1990,15 @@ Case no : 00487797  // Case: 00627926</description>
     <validationRules>
         <fullName>NA_Activity_TypeSubtype_at_Complete</fullName>
         <active>true</active>
-        <description>For USA, Canada, and Indonesia, the Activity Type+Subtype must be filled if it&apos;s a customer-facing event.</description>
+        <description>For USA, Canada, and Indonesia, France, the Activity Type+Subtype must be filled if it&apos;s a customer-facing event.</description>
         <errorConditionFormula>AND(
 	Customer_Facing_Event__c = TRUE
 	,
 	OR(
 		TEXT( $User.User_Country__c) = &quot;USA&quot;,
 		TEXT( $User.User_Country__c) = &quot;Canada&quot;,
-		TEXT( $User.User_Country__c) = &quot;Indonesia&quot;
-	)
+		TEXT( $User.User_Country__c) = &quot;Indonesia&quot;,
+	 TEXT( $User.User_Country__c) = &quot;France&quot;	)
 	,
 	OR(
 		ISBLANK(TEXT(Astra_Tech_Type__c )),

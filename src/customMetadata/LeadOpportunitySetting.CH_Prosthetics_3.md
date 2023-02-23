@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">Vitallium;Zirconia</value>
+        <value xsi:type="xsd:string">Vitallium;Zirconia;Golden Surfer</value>
     </values>
     <values>
         <field>Category__c</field>

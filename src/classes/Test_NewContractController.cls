@@ -7,8 +7,8 @@ History
 public class Test_NewContractController {
 	@testSetup
     private static void testSetup() {
-        List<User> userList = TestDataFactory.createUsers(1, 'Lightning Sales Rep');
         TestDataFactory.createBypassCustomSetting();
+        List<User> userList = TestDataFactory.createUsers(1, 'Lightning Sales Rep');
         List<User> userIntegrationList = TestDataFactory.insertIntegrationUsers(1, 'System Administrator');
         TestDataFactory.createGlobalIntegrationSettings(userIntegrationList);
         List<Account> testAccountList = TestDataFactory.createAccounts(1, 'CIM_Account', userList[0].Id);

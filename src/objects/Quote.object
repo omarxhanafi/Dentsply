@@ -866,11 +866,9 @@ TEXT($User.LanguageLocaleKey))</formula>
                 <controllingFieldValue>Finland</controllingFieldValue>
                 <controllingFieldValue>France</controllingFieldValue>
                 <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
                 <controllingFieldValue>Belgium</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>Greece</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>
@@ -920,11 +918,9 @@ TEXT($User.LanguageLocaleKey))</formula>
                 <controllingFieldValue>Finland</controllingFieldValue>
                 <controllingFieldValue>France</controllingFieldValue>
                 <controllingFieldValue>Australia</controllingFieldValue>
-                <controllingFieldValue>Austria</controllingFieldValue>
                 <controllingFieldValue>Belgium</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>Greece</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>Hungary</controllingFieldValue>

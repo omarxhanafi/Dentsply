@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">All Ceramics;Celtra Duo;Celtra Press;Cercon;Cercon ML;Digital Dentures;Economy Teeth;Full Lab System;HIPA;InEos X5;InFire;InLab MC X5;InLab MC XL;InLab Profire;InLab Software;Midline Teeth;PMMA/Wax;Porcelain;Premium Teeth;Vitallium;Zirconia;Lucitone Digital Print Dentures;ACB with ASA</value>
+        <value xsi:type="xsd:string">All Ceramics;Celtra Duo;Celtra Press;Cercon;Cercon ML;Digital Dentures;Economy Teeth;Full Lab System;HIPA;InEos X5;InFire;InLab MC X5;InLab MC XL;InLab Profire;InLab Software;Midline Teeth;PMMA/Wax;Porcelain;Premium Teeth;Vitallium;Zirconia;Lucitone Digital Print Dentures;ACB with ASA;Atlantis;Atlantis Abutments;Atlantis Suprastructures;</value>
     </values>
     <values>
         <field>Category__c</field>

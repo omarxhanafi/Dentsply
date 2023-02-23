@@ -4816,7 +4816,6 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
             <role>DNA_Shared_Services</role>
             <role>NA_CRM_Analyst</role>
             <role>NA_Customer_Service_Implants</role>
-            <role>NA_Customer_Service_MIS</role>
         </sharedTo>
     </listViews>
     <listViews>

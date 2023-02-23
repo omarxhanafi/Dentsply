@@ -61,7 +61,7 @@
                                 <input class="slds-form-element" type="hidden" name="memberId" value={campaign.memberId}>
                             </td>
                             <td scope="row">
-                                <lightning-input class="slds-form-element" name="note" type="text" value={campaign.note}></lightning-input>
+                                <textarea class="slds-form-element" name="note" value={campaign.note} style="height: auto; resize: both; overflow: auto; box-sizing: border-box;"></textarea>
                             </td>
                             <td scope="row">
                                 <select class="slds-combobox__input slds-combobox__input-value slds-input_faux slds-m-top_small slds-form-element" name="activityResult">

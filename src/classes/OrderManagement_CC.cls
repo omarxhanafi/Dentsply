@@ -6,6 +6,7 @@ History:
 210716          modified to support ERP callouts new methods added -> prodPricingERPCallOut, getSourceRecords
 210426          modified getProducts() to return list ordered on Article__c
 201015          Added readAccess check on getPriceBooks()
+230131			TFUS-000005107
 ----------------------------------------------------------------------------------------*/
 public with sharing class OrderManagement_CC {
 
@@ -505,7 +506,6 @@ public with sharing class OrderManagement_CC {
     @AuraEnabled
     public static Order createOrder(String pricebookId, ID parentId, String currencyIsoCode, String contractId, String sourceRecordId, string accountId) {
         try {
-            system.debug('order');
             Boolean isParentaLead = false;
             Field_Sales_Project_Members__c salesLead;
             Pricebook2 pricebook = [SELECT Id, PriceBook_Type__c, Pricebook_Subtype__c, Pricebook_Channel__c FROM Pricebook2 WHERE Id =:pricebookId];
@@ -577,7 +577,6 @@ public with sharing class OrderManagement_CC {
                 order.SourceRecord__c=sourceRecordId;
             }
             insert order;
-            system.debug('order'+order);
             if(isParentaLead){
                 salesLead.Order__c = order.Id;
                 salesLead.Status__c = 'Completed';
@@ -875,9 +874,11 @@ public with sharing class OrderManagement_CC {
                 }
                 else if ('Event'.equals(parentSObjectName)) {
                     Event parentEvent = [SELECT Id, WhatId FROM Event WHERE Id = :parentId];
+                    String accIDToFilter = accountId == '' ? parentEvent.WhatId : accountId ;
+                    
                     sourceRecords = [   SELECT Id, Combined_Fields__c
                                         FROM Source_Record__c
-                                        WHERE   CIM_Account__c      = :accountId
+                                        WHERE   CIM_Account__c      = :accIDToFilter
                                                 AND Source_Id__c    = :pricebook[0].SourceId__c
                                                 AND Company_Code__c = :pricebook[0].CompanyCode__c
                                                 AND Status__c       = 'Active'];
@@ -892,7 +893,6 @@ public with sharing class OrderManagement_CC {
                                                 AND Status__c       = 'Active'];
                     }
                 }
-
                 if (!sourceRecords.isEmpty()) {
                     return sourceRecords;
                 }
@@ -909,7 +909,7 @@ public with sharing class OrderManagement_CC {
 
 
     /*------------------------------------------------------------  
-    Description:    Method to select a Source Records List related to the parent(Account,Opportunity, Event, Lead)
+    Description:    Method to select a AccountContactRelation Records List related to the parent(Account,Opportunity, Event, Lead)
                     filtred by accountID.
     Inputs:          @param parentId
     ------------------------------------------------------------*/

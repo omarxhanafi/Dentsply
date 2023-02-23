@@ -4361,6 +4361,11 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                     <label>Glidepath Files</label>
                 </value>
                 <value>
+                    <fullName>Golden Surfer</fullName>
+                    <default>false</default>
+                    <label>Golden Surfer</label>
+                </value>
+                <value>
                     <fullName>GuttaCore</fullName>
                     <default>false</default>
                     <label>GuttaCore</label>
@@ -4719,6 +4724,11 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                     <fullName>Premium Teeth</fullName>
                     <default>false</default>
                     <label>Premium Teeth</label>
+                </value>
+                <value>
+                    <fullName>Pricing</fullName>
+                    <default>false</default>
+                    <label>Pricing</label>
                 </value>
                 <value>
                     <fullName>Prime &amp; Bond active</fullName>
@@ -5508,6 +5518,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <valueName>DS Core Create</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>non-product related</controllingFieldValue>
+                <valueName>Pricing</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>Prosthetics</controllingFieldValue>
                 <valueName>All Ceramics</valueName>
             </valueSettings>
@@ -5538,6 +5552,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             <valueSettings>
                 <controllingFieldValue>Prosthetics</controllingFieldValue>
                 <valueName>Full Lab System</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Prosthetics</controllingFieldValue>
+                <valueName>Golden Surfer</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Prosthetics</controllingFieldValue>
@@ -6399,6 +6417,11 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                     <label>Midwest Equipment</label>
                 </value>
                 <value>
+                    <fullName>non-product related</fullName>
+                    <default>false</default>
+                    <label>non-product related</label>
+                </value>
+                <value>
                     <fullName>Orthodontics</fullName>
                     <default>false</default>
                     <label>Orthodontics</label>
@@ -7069,6 +7092,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>DEX</controllingFieldValue>
                 <valueName>Single Unit Crown</valueName>
             </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Germany</controllingFieldValue>
+                <valueName>non-product related</valueName>
+            </valueSettings>
         </valueSet>
     </fields>
     <fields>
@@ -7659,6 +7686,16 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OwnerManagerId__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner.ManagerId</formula>
+        <label>Owner&apos;s Manager Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>PartnerAccountId</fullName>
@@ -35849,6 +35886,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                 <default>false</default>
             </values>
             <values>
+                <fullName>Golden Surfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>GuttaCore</fullName>
                 <default>false</default>
             </values>
@@ -42066,6 +42107,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                 <default>false</default>
             </values>
             <values>
+                <fullName>Golden Surfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>GuttaCore</fullName>
                 <default>false</default>
             </values>
@@ -42351,6 +42396,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>Premium Teeth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -42818,6 +42867,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>Single Unit Crown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>non-product related</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -74210,14 +74263,15 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <fullName>ChangeOwner</fullName>
         <active>true</active>
         <description>Only Sys Admins or CRM Analysts (based on Profile),
-Owner or Owner&apos;s manager are allowed to change owner.</description>
+Owner or Owner&apos;s manager are allowed to change owner.
+TFUS-000005327</description>
         <errorConditionFormula>AND(
 NOT(ISNEW()),
-OR($User.Id &lt;&gt; OwnerId, ISCHANGED(OwnerId)),
-$User.Id &lt;&gt; PRIORVALUE(OwnerId),
+ISCHANGED(OwnerId),
+NOT($User.Id = PRIORVALUE(OwnerId)),
+NOT($User.Id = PRIORVALUE(OwnerManagerId__c)),
 NOT(CONTAINS($User.Profile__c, &apos;#System:&apos;)),
-NOT(CONTAINS($User.Profile__c, &apos;CRM Analyst&apos;)),
-AND ($User.Id = Owner.ManagerId, ISCHANGED(OwnerId))
+NOT(CONTAINS($User.Profile__c, &apos;CRM Analyst&apos;))
 )</errorConditionFormula>
         <errorMessage>Sorry! Only the owner of the opportunity or his manager are allowed to change Owner please contact your admin</errorMessage>
     </validationRules>
@@ -74310,7 +74364,7 @@ TEXT( Account.Country__c ) = &quot;VA&quot;))</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>WinLossDescriptionRequiredIfPrimescan</fullName>
-        <active>false</active>
+        <active>true</active>
         <description>TFUS-000005071
 As a sales manager, I want to make sure I can see win/loss reason for opps, so that I can get insighst and also share with product teams and marketing on why we win/lose</description>
         <errorConditionFormula>AND(
@@ -74324,7 +74378,7 @@ As a sales manager, I want to make sure I can see win/loss reason for opps, so t
     </validationRules>
     <validationRules>
         <fullName>WinLoss_Reason_Required</fullName>
-        <active>false</active>
+        <active>true</active>
         <description>TFUS-000003353 Win/Loss Reason Mandatory when Stage is Closed Lost or Closed Won
 TFUS-000005071</description>
         <errorConditionFormula>AND(
@@ -74478,6 +74532,17 @@ ISPICKVAL(Win_Loss_Reason__c, &quot;&quot;)
         <protected>false</protected>
         <requireRowSelection>false</requireRowSelection>
         <url>/006/e?retURL=%2F{!Account.Id}&amp;accid={!Account.Id}&amp;RecordType=01220000000DqeH&amp;opp3={!Account.Name}&amp;opp11=&quot;Positioning Products&quot;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Pricing_Contract</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Pricing Contract</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/lightning/o/Contract/new?recordTypeId=0121x000005Pt4hAAC&amp;defaultFieldValues=Status=Draft,Opportunity__c={!Opportunity.Id},AccountId={!Opportunity.AccountId}</url>
     </webLinks>
     <webLinks>
         <fullName>Plan_Event</fullName>

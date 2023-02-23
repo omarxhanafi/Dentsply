@@ -812,6 +812,11 @@ HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula
                     <label>Glidepath Files</label>
                 </value>
                 <value>
+                    <fullName>Golden Surfer</fullName>
+                    <default>false</default>
+                    <label>Golden Surfer</label>
+                </value>
+                <value>
                     <fullName>GuttaCore</fullName>
                     <default>false</default>
                     <label>GuttaCore</label>
@@ -2510,6 +2515,16 @@ TFUS-000004667</description>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>OpportunityStatus__c</fullName>
+        <description>TFUS-4724</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Opportunity__r.StageName)</formula>
+        <label>Opportunity Status</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Opportunity__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -2803,6 +2818,16 @@ This box is ticked if the participant has refferred a patient.</description>
         <externalId>false</externalId>
         <formula>SalesLead__r.Sales_Rep__r.Full_Name__c</formula>
         <label>Sales Lead Owner</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SalesLeadStatus__c</fullName>
+        <description>TFUS-000004724</description>
+        <externalId>false</externalId>
+        <formula>TEXT(SalesLead__r.Status__c)</formula>
+        <label>Sales Lead Status</label>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
@@ -3434,6 +3459,10 @@ CampaignID+Member email</description>
             </values>
             <values>
                 <fullName>Glidepath Files</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Golden Surfer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4665,6 +4694,10 @@ CampaignID+Member email</description>
             </values>
             <values>
                 <fullName>Glidepath Files</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Golden Surfer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6610,6 +6643,18 @@ CampaignID+Member email</description>
         <errorConditionFormula>AND(Campaign.AssignRepFromDealer__c = true, ISBLANK(Dealer__c),  OR(Campaign.RecordType.DeveloperName = &apos;Digital_Marketing_Campaign&apos;, Campaign.RecordType.DeveloperName = &apos;InPersonEventCampaign&apos;),  $User.User_ID_18_digit__c != &apos;0056M00000A14bnQAB&apos;,  OR(ISPICKVAL(Status, &apos;Visited&apos;), ISPICKVAL(Status, &apos;Responded&apos;)))</errorConditionFormula>
         <errorDisplayField>Dealer__c</errorDisplayField>
         <errorMessage>Please note! For this Campaign, you need to assign a Dealer to each Campaign Member</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>IT_Sales_Reps_only_allowed_to_invite</fullName>
+        <active>true</active>
+        <description>TFUS-000005200</description>
+        <errorConditionFormula>AND(
+TEXT(Status) &lt;&gt; &quot;Invitation Pending&quot;,
+$User.ProfileId = &quot;00e0J000001Ar3k&quot;,
+TEXT(Campaign.Campaign_Country__c) = &quot;Italy&quot;,
+Campaign.RecordType.DeveloperName = &quot;InPersonEventCampaign&quot;
+)</errorConditionFormula>
+        <errorMessage>You are only allowed to add campaign members with the status &quot;Invitation Pending&quot;</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Not_null_email_contact_member</fullName>

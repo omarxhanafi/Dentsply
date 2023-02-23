@@ -4,7 +4,7 @@
         <name>checkDealerAccessAction</name>
         <label>checkDealerAccess</label>
         <locationX>181</locationX>
-        <locationY>825</locationY>
+        <locationY>967</locationY>
         <actionName>Flow_CheckRecordAccess</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -23,7 +23,7 @@
         <name>Nav2Opp</name>
         <label>Nav2Opp</label>
         <locationX>3119</locationX>
-        <locationY>417</locationY>
+        <locationY>559</locationY>
         <actionName>c:ServiceCloud_Nav2SObj</actionName>
         <actionType>component</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -39,7 +39,7 @@
         <name>Assign_data_from_Sales_Lead</name>
         <label>Assign data from Sales Lead</label>
         <locationX>755</locationX>
-        <locationY>611</locationY>
+        <locationY>753</locationY>
         <assignmentItems>
             <assignToReference>Opp2Create.CampaignId</assignToReference>
             <operator>Assign</operator>
@@ -55,7 +55,7 @@
         <name>Assign_data_from_Target_List</name>
         <label>Assign data from Target List</label>
         <locationX>746</locationX>
-        <locationY>166</locationY>
+        <locationY>308</locationY>
         <assignmentItems>
             <assignToReference>Opp2Create.CampaignId</assignToReference>
             <operator>Assign</operator>
@@ -78,7 +78,7 @@
         <name>Assign_opp_input</name>
         <label>Assign opp input</label>
         <locationX>1553</locationX>
-        <locationY>403</locationY>
+        <locationY>545</locationY>
         <assignmentItems>
             <assignToReference>Opp2Create.CloseDate</assignToReference>
             <operator>Assign</operator>
@@ -115,7 +115,7 @@
         <name>Assign_opportunity_data</name>
         <label>Assign opportunity data</label>
         <locationX>890</locationX>
-        <locationY>312</locationY>
+        <locationY>454</locationY>
         <assignmentItems>
             <assignToReference>Opp2Create.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -223,7 +223,7 @@
         <name>AssignDealer</name>
         <label>Assign dealer</label>
         <locationX>1021</locationX>
-        <locationY>671</locationY>
+        <locationY>813</locationY>
         <assignmentItems>
             <assignToReference>Opp2Create.Dealer__c</assignToReference>
             <operator>Assign</operator>
@@ -238,8 +238,8 @@
     <assignments>
         <name>AssignManualName</name>
         <label>Assign Manual Name</label>
-        <locationX>1004</locationX>
-        <locationY>68</locationY>
+        <locationX>1018</locationX>
+        <locationY>191</locationY>
         <assignmentItems>
             <assignToReference>Opp2Create.ManualName__c</assignToReference>
             <operator>Assign</operator>
@@ -255,7 +255,7 @@
         <name>AssignOppToQA</name>
         <label>Assign opp</label>
         <locationX>2418</locationX>
-        <locationY>75</locationY>
+        <locationY>217</locationY>
         <assignmentItems>
             <assignToReference>QAToLoop.Opportunity_Name__c</assignToReference>
             <operator>Assign</operator>
@@ -271,7 +271,7 @@
         <name>assignOwnerAutomatically</name>
         <label>Assign owner automatically</label>
         <locationX>1136</locationX>
-        <locationY>606</locationY>
+        <locationY>748</locationY>
         <assignmentItems>
             <assignToReference>Owner.Id</assignToReference>
             <operator>Assign</operator>
@@ -286,8 +286,8 @@
     <assignments>
         <name>Set_owner_not_assigned</name>
         <label>Set owner not assigned</label>
-        <locationX>1392</locationX>
-        <locationY>241</locationY>
+        <locationX>1400</locationX>
+        <locationY>337</locationY>
         <assignmentItems>
             <assignToReference>OwnerNotAssigned</assignToReference>
             <operator>Assign</operator>
@@ -300,10 +300,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>SetOppValidationRuleTriggered</name>
+        <label>Set Opp Validation Rule Triggered</label>
+        <locationX>1400</locationX>
+        <locationY>838</locationY>
+        <assignmentItems>
+            <assignToReference>OppValidationRuleTriggered</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opportunity_details</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>UpdateOppOwner</name>
         <label>Update opp owner</label>
         <locationX>2090</locationX>
-        <locationY>186</locationY>
+        <locationY>328</locationY>
         <assignmentItems>
             <assignToReference>Opp2Create.OwnerId</assignToReference>
             <operator>Assign</operator>
@@ -319,7 +335,7 @@
         <name>DealerAccessDecision</name>
         <label>Has dealer access?</label>
         <locationX>857</locationX>
-        <locationY>677</locationY>
+        <locationY>819</locationY>
         <defaultConnector>
             <targetReference>Opportunity_details</targetReference>
         </defaultConnector>
@@ -351,7 +367,7 @@
         <name>DescAlreadyConverted</name>
         <label>Already converted?</label>
         <locationX>424</locationX>
-        <locationY>827</locationY>
+        <locationY>969</locationY>
         <defaultConnector>
             <targetReference>Initiative_assigned</targetReference>
         </defaultConnector>
@@ -375,8 +391,8 @@
     <decisions>
         <name>descOwnerAssignedManually</name>
         <label>Owner assigned manually?</label>
-        <locationX>1124</locationX>
-        <locationY>406</locationY>
+        <locationX>1128</locationX>
+        <locationY>765</locationY>
         <defaultConnector>
             <targetReference>SelectOwnerScreen</targetReference>
         </defaultConnector>
@@ -436,7 +452,7 @@
         <name>Initiative_assigned</name>
         <label>Initiative assigned?</label>
         <locationX>562</locationX>
-        <locationY>614</locationY>
+        <locationY>756</locationY>
         <defaultConnector>
             <targetReference>Assign_data_from_Sales_Lead</targetReference>
         </defaultConnector>
@@ -458,10 +474,35 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Opportunity_Validation_Rule_Triggered</name>
+        <label>Is Opportunity Validation Rule Triggered?</label>
+        <locationX>1514</locationX>
+        <locationY>847</locationY>
+        <defaultConnector>
+            <targetReference>scrErrorMessage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Validation_Rule_Triggered</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Flow.FaultMessage</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>You must enter a Win/Loss Description upon closing an Opportunity related to Pricemescan Connect</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetOppValidationRuleTriggered</targetReference>
+            </connector>
+            <label>Opportunity Validation Rule Triggered</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_owner_assigned</name>
         <label>Is owner assigned?</label>
         <locationX>1392</locationX>
-        <locationY>404</locationY>
+        <locationY>546</locationY>
         <defaultConnector>
             <targetReference>Set_owner_not_assigned</targetReference>
         </defaultConnector>
@@ -482,8 +523,8 @@
     <decisions>
         <name>ManualNameDecision</name>
         <label>Manual name?</label>
-        <locationX>991</locationX>
-        <locationY>269</locationY>
+        <locationX>1003</locationX>
+        <locationY>385</locationY>
         <defaultConnector>
             <targetReference>descOwnerAssignedManually</targetReference>
         </defaultConnector>
@@ -508,7 +549,7 @@
         <name>QA_Check</name>
         <label>Are Q&amp;As assigned?</label>
         <locationX>2460</locationX>
-        <locationY>432</locationY>
+        <locationY>574</locationY>
         <defaultConnector>
             <targetReference>Nav2Opp</targetReference>
         </defaultConnector>
@@ -529,7 +570,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>220808: TFUS-000004617: Iberia owner skip
+    <description>230123 : TFUS-000005269 : Display the Win/Loss Reasons/Description fields when the Opportunity stage equals &apos;Closed Won&apos; or &apos;Closed Lost&apos;
+220808: TFUS-000004617: Iberia owner skip
 220120: TFUS-000003955: Recreate the Fault connection from &quot;Update Lead&quot; to &quot;scrErrorMessage&quot; since this didn&apos;t work properly.
 Converting Sales Leads into Opportunities
 210720: TFUS-000003206: Modified to use standard functionality of creating OpportunityContactRole by populating `Opportunity.ContactId`
@@ -559,13 +601,18 @@ Converting Sales Leads into Opportunities
         <dataType>String</dataType>
         <expression>IF( OR( {!Get_lead.Sales_Rep__c}!= null, {!Get_lead.Sales_Rep__c} != &apos;&apos;), {!Get_lead.Sales_Rep__c}, {!$User.Id})</expression>
     </formulas>
+    <formulas>
+        <name>ValidationRuleCheck</name>
+        <dataType>String</dataType>
+        <expression>&quot;Create_opportunity.errors[0].message&quot;</expression>
+    </formulas>
     <interviewLabel>Lead: Convert lead {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Lead: Convert lead</label>
     <loops>
         <name>LoopQA</name>
         <label>Loop Q&amp;As</label>
         <locationX>2481</locationX>
-        <locationY>254</locationY>
+        <locationY>396</locationY>
         <assignNextValueToReference>QAToLoop</assignNextValueToReference>
         <collectionReference>GetRelQA</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -599,12 +646,12 @@ Converting Sales Leads into Opportunities
         <name>Create_opportunity</name>
         <label>Create opportunity</label>
         <locationX>1682</locationX>
-        <locationY>403</locationY>
+        <locationY>545</locationY>
         <connector>
             <targetReference>Update_initiative_account</targetReference>
         </connector>
         <faultConnector>
-            <targetReference>scrErrorMessage</targetReference>
+            <targetReference>Is_Opportunity_Validation_Rule_Triggered</targetReference>
         </faultConnector>
         <inputReference>Opp2Create</inputReference>
     </recordCreates>
@@ -613,7 +660,7 @@ Converting Sales Leads into Opportunities
         <name>createOpportunityTeamMember</name>
         <label>createOpportunityTeamMember</label>
         <locationX>1908</locationX>
-        <locationY>188</locationY>
+        <locationY>330</locationY>
         <connector>
             <targetReference>UpdateOppOwner</targetReference>
         </connector>
@@ -651,7 +698,7 @@ Converting Sales Leads into Opportunities
         <name>Get_inititative</name>
         <label>Get inititative</label>
         <locationX>574</locationX>
-        <locationY>163</locationY>
+        <locationY>305</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_data_from_Target_List</targetReference>
@@ -675,7 +722,7 @@ Converting Sales Leads into Opportunities
         <name>Get_lead</name>
         <label>Get lead</label>
         <locationX>181</locationX>
-        <locationY>602</locationY>
+        <locationY>744</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>checkDealerAccessAction</targetReference>
@@ -699,7 +746,7 @@ Converting Sales Leads into Opportunities
         <name>GetRelQA</name>
         <label>Get related Q&amp;A&apos;s</label>
         <locationX>2349</locationX>
-        <locationY>566</locationY>
+        <locationY>708</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>QA_Check</targetReference>
@@ -730,7 +777,7 @@ Converting Sales Leads into Opportunities
         <name>Update_initiative_account</name>
         <label>Update lead</label>
         <locationX>1910</locationX>
-        <locationY>404</locationY>
+        <locationY>546</locationY>
         <connector>
             <targetReference>createOpportunityTeamMember</targetReference>
         </connector>
@@ -769,7 +816,7 @@ Converting Sales Leads into Opportunities
         <name>UpdateOpp</name>
         <label>Update opportunity</label>
         <locationX>2087</locationX>
-        <locationY>567</locationY>
+        <locationY>709</locationY>
         <connector>
             <targetReference>GetRelQA</targetReference>
         </connector>
@@ -782,7 +829,7 @@ Converting Sales Leads into Opportunities
         <name>UpdateQA</name>
         <label>Update Q&amp;A</label>
         <locationX>2546</locationX>
-        <locationY>75</locationY>
+        <locationY>217</locationY>
         <connector>
             <targetReference>LoopQA</targetReference>
         </connector>
@@ -796,7 +843,7 @@ Converting Sales Leads into Opportunities
         <name>AlreadyConverted</name>
         <label>Already converted</label>
         <locationX>624</locationX>
-        <locationY>824</locationY>
+        <locationY>966</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -817,13 +864,37 @@ Converting Sales Leads into Opportunities
         <name>Opportunity_details</name>
         <label>Opportunity details</label>
         <locationX>1000</locationX>
-        <locationY>394</locationY>
+        <locationY>536</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
             <targetReference>ManualNameDecision</targetReference>
         </connector>
+        <fields>
+            <name>OppValidationRuleAlert</name>
+            <extensionName>c:LightningPage_WarningMessage</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>You must enter a Win/Loss Description upon closing an Opportunity related to Primescan Connect</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>OppValidationRuleTriggered</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>OppScript</name>
             <extensionName>c:ServiceCloud_FlowScript</extensionName>
@@ -874,23 +945,11 @@ Converting Sales Leads into Opportunities
             </outputParameters>
         </fields>
         <fields>
-            <name>StageInput</name>
-            <extensionName>c:Flow_InputField</extensionName>
+            <name>OpportunityWinLossInput</name>
+            <extensionName>c:opportunityWinLossLwc</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>objType</name>
-                <value>
-                    <stringValue>Opportunity</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>fieldN</name>
-                <value>
-                    <stringValue>StageName</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>resId</name>
+                <name>stageName</name>
                 <value>
                     <elementReference>Opp2Create.StageName</elementReference>
                 </value>
@@ -901,17 +960,19 @@ Converting Sales Leads into Opportunities
                     <elementReference>Opp2Create.RecordTypeId</elementReference>
                 </value>
             </inputParameters>
-            <inputParameters>
-                <name>fieldVal</name>
-                <value>
-                    <elementReference>Opp2Create.StageName</elementReference>
-                </value>
-            </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <outputParameters>
                 <assignToReference>Opp2Create.StageName</assignToReference>
-                <name>resId</name>
+                <name>stageName</name>
+            </outputParameters>
+            <outputParameters>
+                <assignToReference>Opp2Create.Win_Loss_Description__c</assignToReference>
+                <name>winLossDescription</name>
+            </outputParameters>
+            <outputParameters>
+                <assignToReference>Opp2Create.Win_Loss_Reason__c</assignToReference>
+                <name>winLossReason</name>
             </outputParameters>
         </fields>
         <fields>
@@ -1080,13 +1141,13 @@ Converting Sales Leads into Opportunities
         <name>scrErrorMessage</name>
         <label>scrErrorMessage</label>
         <locationX>1627</locationX>
-        <locationY>990</locationY>
+        <locationY>1132</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <fields>
             <name>msgError</name>
-            <fieldText>&lt;p&gt;Something went wrong in the Flow, please contact your administrator and provide the following details:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Something went wrong in the Flow, please contact your administrator and provide the following details:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1096,7 +1157,7 @@ Converting Sales Leads into Opportunities
         <name>SelectOwnerScreen</name>
         <label>Select owner</label>
         <locationX>1265</locationX>
-        <locationY>402</locationY>
+        <locationY>544</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1188,8 +1249,8 @@ Converting Sales Leads into Opportunities
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>50</locationX>
-        <locationY>365</locationY>
+        <locationX>55</locationX>
+        <locationY>519</locationY>
         <connector>
             <targetReference>Get_lead</targetReference>
         </connector>
@@ -1242,6 +1303,16 @@ Converting Sales Leads into Opportunities
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>OpportunityContactRole</objectType>
+    </variables>
+    <variables>
+        <name>OppValidationRuleTriggered</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
     </variables>
     <variables>
         <name>Owner</name>
