@@ -50,6 +50,7 @@ public with sharing class AssignMarginGuidanceHelper {
                 OR Product__c IN :productIdSet
         ];
 
+
         // Generating the Order Item / Margin Guidance Map
         Map<OrderItem, MarginGuidance__c> orderItemMarginGuidanceMap = generateOrderItemMarginGuidanceMap(order, marginGuidanceList);
 
@@ -95,7 +96,8 @@ public with sharing class AssignMarginGuidanceHelper {
 
             // Update the order item fields
             eachOrderItem.Weight__c = eachOrderItem.ListPrice * eachOrderItem.Quantity / totalPriceSum;
-            eachOrderItem.Margin__c = (eachOrderItem.ListPrice - eachMarginGuidance.Cost__c) / eachOrderItem.ListPrice;
+//            eachOrderItem.Margin__c = (eachOrderItem.ListPrice - eachMarginGuidance.Cost__c) / eachOrderItem.ListPrice;
+            eachOrderItem.Margin__c = (eachOrderItem.TotalPrice - (eachMarginGuidance.Cost__c * eachOrderItem.Quantity)) / eachOrderItem.TotalPrice;
             eachOrderItem.WeightedMargin__c = eachOrderItem.Margin__c * eachOrderItem.Weight__c;
             eachOrderItem.UpperGuidance__c = eachMarginGuidance.UpperGuidance__c;
             eachOrderItem.LowerGuidance__c = eachMarginGuidance.LowerGuidance__c;
