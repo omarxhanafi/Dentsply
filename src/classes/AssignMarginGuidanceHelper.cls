@@ -22,7 +22,7 @@ public with sharing class AssignMarginGuidanceHelper {
     public static void calculateMargin(Id orderId) {
         // Get the order and its related line items
         Order order = [
-                SELECT Id, Account.DC_ETM_Code__c, Pricebook2.MarginGuidanceCalculation__c, (SELECT Id, Product2Id, Quantity, ListPrice, TotalPrice, MarginGuidance__c FROM OrderItems)
+                SELECT Id, Account.DC_ETM_Code__c, Pricebook2.MarginGuidanceCalculation__c, (SELECT Id, Product2Id, Quantity, ListPrice, TotalPrice, SalesPrice__c, MarginGuidance__c FROM OrderItems)
                 FROM Order
                 WHERE Id = :orderId
         ];
@@ -97,7 +97,8 @@ public with sharing class AssignMarginGuidanceHelper {
             // Update the order item fields
             eachOrderItem.Weight__c = eachOrderItem.ListPrice * eachOrderItem.Quantity / totalPriceSum;
 //            eachOrderItem.Margin__c = (eachOrderItem.ListPrice - eachMarginGuidance.Cost__c) / eachOrderItem.ListPrice;
-            eachOrderItem.Margin__c = (eachOrderItem.TotalPrice - (eachMarginGuidance.Cost__c * eachOrderItem.Quantity)) / eachOrderItem.TotalPrice;
+//            eachOrderItem.Margin__c = (eachOrderItem.TotalPrice - (eachMarginGuidance.Cost__c * eachOrderItem.Quantity)) / eachOrderItem.TotalPrice;
+            eachOrderItem.Margin__c = (eachOrderItem.SalesPrice__c - eachMarginGuidance.Cost__c) / eachOrderItem.SalesPrice__c;
             eachOrderItem.WeightedMargin__c = eachOrderItem.Margin__c * eachOrderItem.Weight__c;
             eachOrderItem.UpperGuidance__c = eachMarginGuidance.UpperGuidance__c;
             eachOrderItem.LowerGuidance__c = eachMarginGuidance.LowerGuidance__c;
