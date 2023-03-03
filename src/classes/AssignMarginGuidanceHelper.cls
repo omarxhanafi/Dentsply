@@ -98,7 +98,8 @@ public with sharing class AssignMarginGuidanceHelper {
             eachOrderItem.Weight__c = eachOrderItem.ListPrice * eachOrderItem.Quantity / totalPriceSum;
 //            eachOrderItem.Margin__c = (eachOrderItem.ListPrice - eachMarginGuidance.Cost__c) / eachOrderItem.ListPrice;
 //            eachOrderItem.Margin__c = (eachOrderItem.TotalPrice - (eachMarginGuidance.Cost__c * eachOrderItem.Quantity)) / eachOrderItem.TotalPrice;
-            eachOrderItem.Margin__c = (eachOrderItem.SalesPrice__c - eachMarginGuidance.Cost__c) / eachOrderItem.SalesPrice__c;
+            eachOrderItem.Margin__c = (eachOrderItem.SalesPrice__c > 0) ? (eachOrderItem.SalesPrice__c - eachMarginGuidance.Cost__c) / eachOrderItem.SalesPrice__c :
+                    (eachOrderItem.ListPrice - eachMarginGuidance.Cost__c) / eachOrderItem.ListPrice;
             eachOrderItem.WeightedMargin__c = eachOrderItem.Margin__c * eachOrderItem.Weight__c;
             eachOrderItem.UpperGuidance__c = eachMarginGuidance.UpperGuidance__c;
             eachOrderItem.LowerGuidance__c = eachMarginGuidance.LowerGuidance__c;
@@ -106,8 +107,9 @@ public with sharing class AssignMarginGuidanceHelper {
             eachOrderItem.WeightedUpperGuidance__c = ((eachMarginGuidance.UpperGuidance__c / 100) * eachOrderItem.Weight__c);
             eachOrderItem.WeightedLowerGuidance__c = ((eachMarginGuidance.LowerGuidance__c / 100) * eachOrderItem.Weight__c);
 
-            // Associate margin guidance to the order item
+            // Associate margin guidance to the order item / Assigning the cost field
             eachOrderItem.MarginGuidance__c = eachMarginGuidance.Id;
+            eachOrderItem.Cost__c = eachMarginGuidance.Cost__c;
         }
     }
 
