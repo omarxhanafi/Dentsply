@@ -46,7 +46,7 @@ public with sharing class AssignMarginGuidanceHelper {
                 SELECT Id, AreaCode__c, Product__c, Cost__c, Lowerguidance__c, UpperGuidance__c
                 FROM MarginGuidance__c
                 WHERE AreaCode__c = :areaCode
-                OR AreaCode__c = ''
+                OR AreaCode__c = 'All'
                 OR Product__c IN :productIdSet
         ];
 
@@ -129,7 +129,7 @@ public with sharing class AssignMarginGuidanceHelper {
         // Init Order Item / Margin Guidance Map
         Map<OrderItem, MarginGuidance__c> orderItemMarginGuidanceMap = new Map<OrderItem, MarginGuidance__c>();
 
-        String areaCode = order?.Account?.DC_ETM_Code__c != null ? order?.Account?.DC_ETM_Code__c.substring(0, 3) : '';
+        String areaCode = order?.Account?.DC_ETM_Code__c != null ? order?.Account?.DC_ETM_Code__c.substring(0, 3) : 'All';
 
         for (OrderItem eachOrderItem : order.OrderItems) {
             Id itemProductId = eachOrderItem.Product2Id;
@@ -141,7 +141,7 @@ public with sharing class AssignMarginGuidanceHelper {
                     break;
 
                     // Else we only check for the product id
-                } else if (eachMarginGuidance.Product__c == itemProductId && eachMarginGuidance.AreaCode__c == '') {
+                } else if (eachMarginGuidance.Product__c == itemProductId && eachMarginGuidance.AreaCode__c == 'All') {
                     orderItemMarginGuidanceMap.put(eachOrderItem, eachMarginGuidance);
                 }
             }
