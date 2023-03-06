@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/Margin/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/Margin/OfflineSymbolTable.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/AssignMarginGuidanceHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/AssignMarginGuidanceHelper.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Test_AssignMarginGuidanceHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_AssignMarginGuidanceHelper.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -572,10 +572,10 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ASSIGNMARGINGUIDANCEHELPER" value="1677842299158" />
+                      <entry key="APEXCLASS:ASSIGNMARGINGUIDANCEHELPER" value="1677857781376" />
                       <entry key="APEXCLASS:CAMPAIGNMEMBERTRIGGERHELPER" value="1677677459536" />
                       <entry key="APEXCLASS:ORDERPATH_CC" value="1676893514414" />
-                      <entry key="APEXCLASS:TEST_ASSIGNMARGINGUIDANCEHELPER" value="1677062992984" />
+                      <entry key="APEXCLASS:TEST_ASSIGNMARGINGUIDANCEHELPER" value="1677856589724" />
                     </map>
                   </option>
                   <option name="lastBuildScope" value="CONTEXT" />
@@ -1355,6 +1355,8 @@
       <workItem from="1676621959881" duration="2614000" />
       <workItem from="1676625467667" duration="16182000" />
       <workItem from="1677831490935" duration="264000" />
+      <workItem from="1677856719040" duration="444000" />
+      <workItem from="1677968317090" duration="90000" />
     </task>
     <servers />
   </component>
