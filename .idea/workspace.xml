@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/Lead/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/Lead/OfflineSymbolTable.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/leadConvert.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/leadConvert.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/FindLeadMatch.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/FindLeadMatch.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,13 +51,11 @@
               <list>
                 <AnonymousApexSavedDocument>
                   <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="List&lt;String&gt; input = new List&lt;String&gt;();&#10;//input.add('00Q6M000015UnflUAC');&#10;input.add('00Q3G000002B60QUAS');&#10;input.add('Contact');&#10;List&lt;List&lt;String&gt;&gt; inputList = new List&lt;List&lt;String&gt;&gt;();&#10;inputList.add(input);&#10;&#10;List&lt;findLeadMatch.leadMatchResult&gt; res = findLeadMatch.executeLeadMatchSearch(inputList);" />
                   <option name="calloutsLogLevel" value="FINEST" />
                   <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 1" />
                   <option name="nbaLogLevel" value="FINEST" />
                   <option name="profilingLogLevel" value="FINEST" />
-                  <option name="splitterProportion" value="0.2641392" />
                   <option name="systemLogLevel" value="FINEST" />
                   <option name="validationLogLevel" value="FINEST" />
                   <option name="visualforceLogLevel" value="FINEST" />
@@ -194,6 +193,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
+                      <entry key="APEXCLASS:FINDLEADMATCH" value="1678352494923" />
                       <entry key="APEXCLASS:FLOWLOOKUPLWCCONTROLLER" value="1675266640885" />
                       <entry key="APEXCLASS:LEADCONVERT" value="1675871741478" />
                       <entry key="APEXCLASS:TEST_UPDATECONTACTSBYPASSDUPLICATE" value="1675421598536" />
@@ -549,11 +549,13 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:CAMPAIGNMEMBERTRIGGERHELPER" value="1668005778242" />
+                      <entry key="APEXCLASS:CAMPAIGNMEMBERTRIGGERHELPER" value="1677584885462" />
                       <entry key="APEXCLASS:CHANGEOWNER" value="1669800166407" />
                       <entry key="APEXCLASS:FINDLEADMATCH" value="1668161656809" />
                       <entry key="APEXCLASS:FINDLEADMATCHTEST" value="1666272735994" />
                       <entry key="APEXCLASS:FLOWLOOKUPLWCCONTROLLER" value="1675243532479" />
+                      <entry key="APEXCLASS:GLOBALUTILS" value="1677582723901" />
+                      <entry key="APEXCLASS:LEADCONVERT" value="1677582570752" />
                       <entry key="APEXCLASS:OPPORTUNITYINSERTASYNCH" value="1668510513326" />
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1666193185822" />
                       <entry key="APEXCLASS:USERSINACCOUNTTERRITORIES" value="1667389763476" />
@@ -944,24 +946,11 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Id, FirstName, LastName, PostalCode, Country, Email FROM Lead WHERE Id = '00Q6M000015UnflUAC'" />
-                  <option name="connectionName" value="Lead" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 2" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Id, Name, ETM2_Street_Address__c , BillingCountry, ETM2_Zip_Code__c  FROM Account WHERE ETM2_Zip_Code__c = '48010' AND Id != '00Q3G000002B60QUAS'" />
                   <option name="name" value="SOQL Query 1" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="select count(id) from account where PersonMailingPostalCode != null" />
-                  <option name="connectionName" value="Production" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 3" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="2" />
+            <option name="selectedSavedDocumentIndex" value="0" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -1281,6 +1270,9 @@
       <workItem from="1674819045663" duration="5911000" />
       <workItem from="1674859665867" duration="202000" />
       <workItem from="1675262640784" duration="2281000" />
+      <workItem from="1677833269302" duration="543000" />
+      <workItem from="1677842788838" duration="654000" />
+      <workItem from="1678352355867" duration="502000" />
     </task>
     <servers />
   </component>
@@ -1302,11 +1294,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="ApexOfflineDebuggerLocalBreakpointType">
-          <url>file://$PROJECT_DIR$/src/classes/FindLeadMatch.cls</url>
-          <line>281</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ApexOfflineDebuggerLocalBreakpointType">
           <url>file://$PROJECT_DIR$/src/classes/OpportunityInsertAsynch.cls</url>
           <line>61</line>
           <option name="timeStamp" value="43" />
@@ -1318,7 +1305,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ApexOfflineDebuggerLocalBreakpointType">
           <url>file://$PROJECT_DIR$/src/classes/CampaignMemberTriggerHelper.cls</url>
-          <line>692</line>
+          <line>696</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
@@ -1334,6 +1321,7 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_GuidanceRendererController.ic2" NAME="SureSmile Coverage Results" MODIFIED="1669718040013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchCreateProcedureTrackers_testBatchCreateProcedureTrackers.ic2" NAME="StgJan Coverage Results" MODIFIED="1673859457008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_UpdateContactsBypassDuplicate_testUpdateContact.ic2" NAME="Lead Coverage Results" MODIFIED="1675421607460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Lead" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMargins.ic2" NAME="Margin Coverage Results" MODIFIED="1677067029631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevMar" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchSetAccountSubSegmentation.ic2" NAME="Production Coverage Results" MODIFIED="1674815707650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Production" CONNECTION_TYPE="OAUTH" />
   </component>
