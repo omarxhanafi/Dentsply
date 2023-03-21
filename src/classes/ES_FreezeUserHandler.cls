@@ -43,18 +43,32 @@ public class ES_FreezeUserHandler implements Messaging.InboundEmailHandler {
         // If a federation ID was found, freeze the user with that ID
         if (federationId != null) {
             // Query for the user with the given federation ID
-            User userToFreeze = [SELECT Id FROM User WHERE FederationIdentifier = :federationId LIMIT 1];
-            if (userToFreeze != null) {
-                // Query for the user login record associated with the user
-                UserLogin ulogin = [SELECT Id, IsFrozen, UserId FROM UserLogin WHERE UserId = :userToFreeze.Id];
-                // Set the IsFrozen field to true to freeze the user
-                ulogin.IsFrozen = true;
-                // Add a comment to the user record to indicate that the user was frozen by an automated process
-                userToFreeze.CRM_team_comments__c = 'Frozen on ' + Datetime.now() + ' by automated process';
-                // Update the user login and user records to save the changes
-                update ulogin;
-                update userToFreeze;
+            List<User> userList = [SELECT Id, CRM_team_comments__c FROM User WHERE FederationIdentifier = :federationId LIMIT 1];
+            if(!userList.isEmpty()) {
+                User userToFreeze = userList[0];
+                if (userToFreeze != null) {
+                    // Query for the user login record associated with the user
+                    UserLogin ulogin = [SELECT Id, IsFrozen, UserId FROM UserLogin WHERE UserId = :userToFreeze.Id];
+
+                    // Set the IsFrozen field to true to freeze the user
+                    ulogin.IsFrozen = true;
+
+                    // Add a comment to the user record to indicate that the user was frozen by an automated process
+                    String freezeComment = 'Frozen on ' + Datetime.now() + ' by automated process';
+                    userToFreeze.CRM_team_comments__c = String.isEmpty(userToFreeze.CRM_team_comments__c) ? freezeComment : userToFreeze.CRM_team_comments__c + ' ' + freezeComment;
+
+                    // Update the user login and user records to save the changes
+                    try {
+                        update ulogin;
+                        update userToFreeze;
+                    } catch (Exception e){
+                        DebugLog.addError(e.getMessage());
+                    }
+
+                }
             }
+
+
         }
 
         // Generate a successful result
