@@ -1,0 +1,11 @@
+<template>
+    <template if:true={leadOppSettings}>
+        <lightning-card  variant="Narrow"  title={label.headerLabel} icon-name="standard:campaign">
+            <p class="slds-p-horizontal_small">{label.descriptionLabel} <b>{leadOppSettings.UserRoles__c}</b></p>
+        </lightning-card>
+    </template>
+    <template if:false={leadOppSettings}>
+        <lightning-card  variant="Narrow"  title={label.warningLabel} icon-name="utility:warning">
+        </lightning-card>
+    </template>
+</template>

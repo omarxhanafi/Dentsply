@@ -3,8 +3,6 @@ k
 ;src/classes/Test_ProcedureTrackerTriggerHelper.cls-meta.xml,2/9/29ab8179169847a8d09c2c1b9d86460bb85c9af3
 _
 /src/classes/Test_BatchSalesLeadAssignSOwner.cls,2/9/29bda9cef8dc5dd240588d1518d7ab81c87b218d
-U
-%src/classes/Test_BatchFreezeUsers.cls,1/b/1b00ef8cd1b04b5de25d321ac95905c57254dd4c
 O
 src/classes/TestDataFactory.cls,d/e/de9cc9e83ac53b03d331c74c7fe4b8a665cacd4d
 `
@@ -17,13 +15,5 @@ Y
 )src/classes/ActivityHistoryController.cls,3/8/38b6174b026c27fdd1e1f7a595c249a04dc513b5
 V
 &src/classes/BulkCFEsListController.cls,e/f/efaf45216d7b585dd680d8d8aee75d37c9412a33
-T
-$src/classes/ContactTriggerHelper.cls,b/d/bd7c5e46ed311a981d67bc228b24950647116b1f
-[
-+src/classes/CampaignMemberTriggerHelper.cls,c/f/cf058cdb669ab6fe8092c9e960ab6976a618aa8c
-Y
-)src/classes/UsersInAccountTerritories.cls,6/0/600e13b554d07ec0d22169f41a27daa04f6db3f8
-M
-src/classes/FindLeadMatch.cls,0/e/0e1858e429c50ace9d11d3a2a6688cb05f541e55
 b
 2src/classes/AccountPlanTriggerHandler.cls-meta.xml,c/8/c8b27114d7508e0d8b84fbda73fe91daa1cf9f45
