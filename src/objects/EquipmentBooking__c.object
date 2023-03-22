@@ -716,7 +716,7 @@
         <columns>Product__c</columns>
         <columns>EquipmentSerialNumber__c</columns>
         <columns>DeliveryDate__c</columns>
-        <columns>Status__c</columns>
+        <columns>ReturnDate__c</columns>
         <columns>CREATED_DATE</columns>
         <filterScope>Queue</filterScope>
         <filters>

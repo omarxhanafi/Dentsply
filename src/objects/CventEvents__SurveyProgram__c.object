@@ -252,6 +252,17 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>CventEvents__QuestionTagStubs__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the list of selected tags for Event Survey Program.</description>
+        <externalId>false</externalId>
+        <label>Question Tag Stubs</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
         <fullName>CventEvents__Status__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>

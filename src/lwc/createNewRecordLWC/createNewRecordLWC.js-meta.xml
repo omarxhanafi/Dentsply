@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen, lightning__RecordPage">
+            <property name="difaultFieldValues" type="String" label="Default Field Values In JSON Mode"/>
+            <property name="recordTypeId" type="String" label="Record Type Id"/>
+            <property name="objectApiName" type="String" label="SObject (API Name) To Create Record"/>
+            <!--property name="showStandardRecordTypeSelection" type="String" label="Show Standard Record Type Selection"/-->
+            </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -30,6 +30,21 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>tz__CPU_Availability__c</fullName>
+        <defaultValue>500</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Define the value in milliseconds. The App checks the remaining CPU available time against this setting in a given transaction. If the available time is less than the value defined in this setting, the App will stop processing work and exit, in order to avoid Apex CPU time limit exceeded error.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Define the value in milliseconds. The App checks the remaining CPU available time against this setting in a given transaction. If the available time is less than the value defined in this setting, the App will stop processing work and exit, in order to avoid Apex CPU time limit exceeded error.</inlineHelpText>
+        <label>CPU Availability</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>tz__Default_Country__c</fullName>
         <deprecated>false</deprecated>
         <description>The App will utilize this country for all records where the country/phone information is missing.</description>
@@ -78,10 +93,10 @@ A lower value will update the time value more frequently but might consume more 
     <fields>
         <fullName>tz__Gadget_Time_Format__c</fullName>
         <deprecated>false</deprecated>
-        <description>Time display format for the Local Time gadget, Find Local Time button, and Lightning Component.</description>
+        <description>Time display format for the Local Time gadget, Find Local Time button, and Event fields.</description>
         <externalId>false</externalId>
         <inlineHelpText>Time display format for the Local Time gadget, Find Local Time button, and Lightning Component.</inlineHelpText>
-        <label>Local Time Gadget Time Format</label>
+        <label>Time Format</label>
         <length>20</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -107,7 +122,7 @@ A lower value will update the time value more frequently but might consume more 
         <description>Number of records to be processed by the manual mass update batch job.</description>
         <externalId>false</externalId>
         <inlineHelpText>Number of records to be processed by the manual mass update batch job.</inlineHelpText>
-        <label>Manual Batch Size</label>
+        <label>Manual Batch Size (Deprecated)</label>
         <precision>3</precision>
         <required>false</required>
         <scale>0</scale>

@@ -36,7 +36,7 @@
     </values>
     <values>
         <field>AccountPlanFilter__c</field>
-        <value xsi:type="xsd:string">{&apos;datasets&apos;:{&apos;AccountSalesDetail&apos;:[{&apos;fields&apos;:[&apos;ac.Id&apos;], &apos;filter&apos;:{&apos;operator&apos;: &apos;matches&apos;, &apos;values&apos;:[&apos;#account__c#&apos;]}}]}}</value>
+        <value xsi:type="xsd:string">{&apos;datasets&apos;:{&apos;AccountSalesDetail_NA&apos;:[{&apos;fields&apos;:[&apos;Account.Id&apos;], &apos;filter&apos;:{&apos;operator&apos;: &apos;matches&apos;, &apos;values&apos;:[&apos;#account__c#&apos;]}}]}}</value>
     </values>
     <values>
         <field>AccountPlanMemberDashboard__c</field>
@@ -44,7 +44,7 @@
     </values>
     <values>
         <field>AccountPlanMemberFilter__c</field>
-        <value xsi:type="xsd:string">{&apos;datasets&apos;:{&apos;AccountSalesDetail&apos;:[{&apos;fields&apos;:[&apos;ac.Id&apos;], &apos;filter&apos;:{&apos;operator&apos;: &apos;matches&apos;, &apos;values&apos;:[&apos;#account__c#&apos;]}}]}}</value>
+        <value xsi:type="xsd:string">{&apos;datasets&apos;:{&apos;AccountSalesDetail_NA&apos;:[{&apos;fields&apos;:[&apos;Account.Id&apos;], &apos;filter&apos;:{&apos;operator&apos;: &apos;matches&apos;, &apos;values&apos;:[&apos;#account__c#&apos;]}}]}}</value>
     </values>
     <values>
         <field>AccountServiceDashboardFilter__c</field>

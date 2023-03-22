@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>AssignOwnerFrom__c</field>
-        <value xsi:type="xsd:string">Manual</value>
+        <value xsi:type="xsd:string">Account</value>
     </values>
     <values>
         <field>BrandsList__c</field>
@@ -44,7 +44,7 @@
     </values>
     <values>
         <field>ShowManualSalesLeadOwnerAssignment__c</field>
-        <value xsi:type="xsd:boolean">false</value>
+        <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
         <field>UserRoles__c</field>

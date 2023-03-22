@@ -1441,15 +1441,16 @@ IF( Xof_Account_Network_Members__c &gt; 10 &amp;&amp; Xof_Account_Network_Member
         <columns>Hub_Account__c</columns>
         <columns>Product_Area__c</columns>
         <columns>RECORDTYPE</columns>
+        <columns>LAST_UPDATE</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Network_Category__c</field>
             <operation>equals</operation>
             <value>Endodontic Referral Network</value>
         </filters>
-        <label>Endodontic Referral Networks</label>
+        <label>NA: Endodontic Referral Networks</label>
         <sharedTo>
-            <roleAndSubordinates>NA_CRM_Analyst</roleAndSubordinates>
+            <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -1654,25 +1655,6 @@ IF( Xof_Account_Network_Members__c &gt; 10 &amp;&amp; Xof_Account_Network_Member
         <columns>Description__c</columns>
         <columns>Network_Type__c</columns>
         <columns>UPDATEDBY_USER</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Network__c.Account_to_Account_Network</value>
-        </filters>
-        <label>#All Account to Account Networks</label>
-        <language>en_US</language>
-        <sharedTo>
-            <roleAndSubordinates>Dentsply_IH_CEO</roleAndSubordinates>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>X54_All_Accounts_to_Accounts_Networks</fullName>
-        <columns>NAME</columns>
-        <columns>Hub_Account__c</columns>
-        <columns>Hub_Contact__c</columns>
-        <columns>Network_Type__c</columns>
-        <columns>Description__c</columns>
         <columns>Creator_Country__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
@@ -1680,11 +1662,7 @@ IF( Xof_Account_Network_Members__c &gt; 10 &amp;&amp; Xof_Account_Network_Member
             <operation>equals</operation>
             <value>Network__c.Account_to_Account_Network</value>
         </filters>
-        <label>#All Accounts to Accounts Networks</label>
-        <language>en_US</language>
-        <sharedTo>
-            <roleAndSubordinates>Dentsply_IH_CEO</roleAndSubordinates>
-        </sharedTo>
+        <label>#All Account to Account Networks</label>
     </listViews>
     <listViews>
         <fullName>x10MyNetworks</fullName>

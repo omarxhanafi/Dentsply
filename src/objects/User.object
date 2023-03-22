@@ -9732,7 +9732,7 @@ null)
             <value>1</value>
         </filters>
         <filters>
-            <field>CORE.USERS.ADDRESS_COUNTRY</field>
+            <field>User_Country__c</field>
             <operation>equals</operation>
             <value>Brazil</value>
         </filters>
@@ -9877,7 +9877,7 @@ null)
     </listViews>
     <listViews>
         <fullName>Frozen_Users_pending_deactivation</fullName>
-        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
         <columns>User_Country__c</columns>
         <columns>FULL_NAME</columns>
         <columns>DpgUser__c</columns>
@@ -9910,11 +9910,6 @@ null)
             <field>CORE.USERS.LAST_NAME</field>
             <operation>notEqual</operation>
             <value>IN STOCK</value>
-        </filters>
-        <filters>
-            <field>User_Country__c</field>
-            <operation>notEqual</operation>
-            <value>Russia</value>
         </filters>
         <filters>
             <field>CORE.USERS.FIRST_NAME</field>
@@ -10203,43 +10198,6 @@ null)
         </filters>
         <label>Inactive Users</label>
         <language>en_US</language>
-    </listViews>
-    <listViews>
-        <fullName>JP_All_Users</fullName>
-        <columns>Movex_Uer_ID__c</columns>
-        <columns>CORE.USERS.ACTIVE</columns>
-        <columns>FULL_NAME</columns>
-        <columns>CORE.USERS.USERNAME</columns>
-        <columns>CORE.PROFILE.NAME</columns>
-        <columns>CORE.USER_ROLE.NAME</columns>
-        <columns>CORE.USERS.TITLE</columns>
-        <columns>SR_Origin__c</columns>
-        <columns>CORE.USERS.LAST_LOGIN</columns>
-        <columns>Region__c</columns>
-        <columns>Territory__c</columns>
-        <columns>LANGUAGE</columns>
-        <columns>CREATED_DATE</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>User_Country__c</field>
-            <operation>equals</operation>
-            <value>Japan</value>
-        </filters>
-        <filters>
-            <field>Product_Area__c</field>
-            <operation>equals</operation>
-            <value>Dental</value>
-        </filters>
-        <filters>
-            <field>CORE.USERS.ACTIVE</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <label>JP: All Users</label>
-        <language>en_US</language>
-        <sharedTo>
-            <group>DI_System_Administrators</group>
-        </sharedTo>
     </listViews>
     <listViews>
         <fullName>KOL_Italy</fullName>

@@ -1843,6 +1843,11 @@
                     <label>C1</label>
                 </value>
                 <value>
+                    <fullName>C1 XD</fullName>
+                    <default>false</default>
+                    <label>C1 XD</label>
+                </value>
+                <value>
                     <fullName>Calibra</fullName>
                     <default>false</default>
                     <label>Calibra</label>
@@ -2042,6 +2047,11 @@
                     <fullName>DS Core Create</fullName>
                     <default>false</default>
                     <label>DS Core Create</label>
+                </value>
+                <value>
+                    <fullName>DS OmniTaper</fullName>
+                    <default>false</default>
+                    <label>DS OmniTaper</label>
                 </value>
                 <value>
                     <fullName>DS PrimeTaper</fullName>
@@ -2657,6 +2667,11 @@
                     <label>Seven</label>
                 </value>
                 <value>
+                    <fullName>Seven XD</fullName>
+                    <default>false</default>
+                    <label>Seven XD</label>
+                </value>
+                <value>
                     <fullName>Shorty</fullName>
                     <default>false</default>
                     <label>Shorty</label>
@@ -2998,14 +3013,29 @@
                     <label>XiVE</label>
                 </value>
                 <value>
+                    <fullName>X-SMART</fullName>
+                    <default>false</default>
+                    <label>X-SMART</label>
+                </value>
+                <value>
+                    <fullName>X-SMART Apex Locator</fullName>
+                    <default>false</default>
+                    <label>X-SMART Apex Locator</label>
+                </value>
+                <value>
                     <fullName>X-smart IQ</fullName>
                     <default>false</default>
-                    <label>X-smart IQ</label>
+                    <label>X-SMART IQ</label>
                 </value>
                 <value>
                     <fullName>X-Smart Plus</fullName>
                     <default>false</default>
-                    <label>X-Smart Plus</label>
+                    <label>X-SMART Plus</label>
+                </value>
+                <value>
+                    <fullName>X-SMART PRO</fullName>
+                    <default>false</default>
+                    <label>X-SMART PRO+</label>
                 </value>
                 <value>
                     <fullName>Zirconia</fullName>
@@ -17249,16 +17279,12 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
         <columns>Campaign_Approver__c</columns>
         <columns>Campaign_Owner__c</columns>
         <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.RECORDTYPE</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>CAMPAIGN.RECORDTYPE</field>
             <operation>equals</operation>
-            <value>Campaign.DI_Campaign_Session,Campaign.DI_Campaign,Campaign.DI_Mailing,Campaign.DI_Parent_Campaign</value>
-        </filters>
-        <filters>
-            <field>CAMPAIGN.ACTIVE</field>
-            <operation>equals</operation>
-            <value>1</value>
+            <value>Campaign.DI_Campaign_Session,Campaign.DI_Campaign,Campaign.InPersonEventCampaign,Campaign.DI_Mailing,Campaign.DI_Parent_Campaign</value>
         </filters>
         <filters>
             <field>CAMPAIGN.STATUS</field>
@@ -17296,16 +17322,12 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
         <columns>Campaign_Approver__c</columns>
         <columns>Campaign_Owner__c</columns>
         <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.RECORDTYPE</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>CAMPAIGN.RECORDTYPE</field>
             <operation>equals</operation>
-            <value>Campaign.DI_Campaign_Session,Campaign.DI_Campaign,Campaign.DI_Mailing,Campaign.DI_Parent_Campaign</value>
-        </filters>
-        <filters>
-            <field>CAMPAIGN.ACTIVE</field>
-            <operation>equals</operation>
-            <value>1</value>
+            <value>Campaign.DI_Campaign_Session,Campaign.DI_Campaign,Campaign.InPersonEventCampaign,Campaign.DI_Mailing,Campaign.DI_Parent_Campaign</value>
         </filters>
         <filters>
             <field>CAMPAIGN.STATUS</field>
@@ -17614,6 +17636,7 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
         <columns>HQ_Campaign_Coordinator__c</columns>
         <columns>Campaign_Name_Campaign_ID__c</columns>
         <columns>CAMPAIGN.RECORDTYPE</columns>
+        <columns>Venue__c</columns>
         <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
         <columns>CAMPAIGN.STATUS</columns>
         <columns>Campaign_City__c</columns>
@@ -18157,17 +18180,9 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             <operation>equals</operation>
             <value>Finland,Denmark,Sweden,Norway</value>
         </filters>
-        <label>Nordics: All Campaigns 2021</label>
-        <language>en_US</language>
+        <label>Nordics: All Campaigns Last Year</label>
         <sharedTo>
-            <role>Nordics_CRM_Analyst</role>
-            <role>Nordics_EQUIP_Commercial_Manager</role>
-            <role>Nordics_IMPL_Commercial_Manager</role>
-            <role>Nordics_MANT_Sales_Rep</role>
-            <role>Nordics_Managing_Director</role>
-            <role>Nordics_PROS_Sales_Manager</role>
-            <role>Nordics_PROS_Sales_Rep</role>
-            <role>Nordics_Shared_Service</role>
+            <roleAndSubordinatesInternal>Nordics_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>
@@ -18288,30 +18303,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             <role>RU_ORTHO_Sales_Team</role>
             <role>RU_PRE_Sales_Team</role>
             <role>RU_Shared_Services</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>SE_Prova_Pa</fullName>
-        <columns>CAMPAIGN.NAME</columns>
-        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
-        <columns>CAMPAIGN.STATUS</columns>
-        <columns>Profession__c</columns>
-        <columns>CAMPAIGN.NUM_RESPONSES</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>CAMPAIGN.NAME</field>
-            <operation>contains</operation>
-            <value>Prova</value>
-        </filters>
-        <filters>
-            <field>Owner_User_Country__c</field>
-            <operation>equals</operation>
-            <value>Sweden</value>
-        </filters>
-        <label>SE: Prova-På</label>
-        <language>en_US</language>
-        <sharedTo>
-            <roleAndSubordinates>SE_IMPL_Sales_Manager</roleAndSubordinates>
         </sharedTo>
     </listViews>
     <listViews>
@@ -18602,11 +18593,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             <field>Creator_User_Country__c</field>
             <operation>equals</operation>
             <value>usa</value>
-        </filters>
-        <filters>
-            <field>CAMPAIGN.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Campaign.DI_Campaign,Campaign.DI_Parent_Campaign,Campaign.DI_Campaign_Session</value>
         </filters>
         <label>US: All Campaigns</label>
         <language>en_US</language>
@@ -55330,6 +55316,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
+                <fullName>C1 XD</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>CEREC Full System MCX</fullName>
                 <default>false</default>
             </values>
@@ -55463,6 +55453,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>DS Core Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS OmniTaper</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -55982,6 +55976,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
+                <fullName>Seven XD</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Shorty</fullName>
                 <default>false</default>
             </values>
@@ -56183,6 +56181,18 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>WaveOne Gold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART Apex Locator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART PRO</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -61053,6 +61063,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
+                <fullName>C1 XD</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>CEREC Full System MCX</fullName>
                 <default>false</default>
             </values>
@@ -61186,6 +61200,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>DS Core Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS OmniTaper</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -61705,6 +61723,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
+                <fullName>Seven XD</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Shorty</fullName>
                 <default>false</default>
             </values>
@@ -61902,6 +61924,18 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>WaveOne Gold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART Apex Locator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART PRO</fullName>
                 <default>false</default>
             </values>
             <values>

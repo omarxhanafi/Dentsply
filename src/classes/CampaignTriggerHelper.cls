@@ -120,8 +120,6 @@ public with sharing class CampaignTriggerHelper {
                  	statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Bounced', 11, false, false));
 					statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Sent', 12, false, true));
 					statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Failure', 13, false, false));
-                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Canceled', 14, false, false));
-
                 } else if (campaign.RecordTypeId.equals(GlobalUtils.getRecordTypeId('Campaign', 'Digital_Marketing_Campaign'))) {
                     statiTempInsert.add(returnCampaignMemberStatus(campaign.Id,'Temporary', 99, true, true));
                     statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Registered', 3, true, false));

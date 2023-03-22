@@ -365,19 +365,24 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Pending</fullName>
-                    <default>true</default>
-                    <label>Pending</label>
-                </value>
-                <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
                     <label>Approved</label>
                 </value>
                 <value>
+                    <fullName>Pending</fullName>
+                    <default>true</default>
+                    <label>Pending</label>
+                </value>
+                <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
                     <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -464,6 +469,18 @@
         <masterLabel>Approve</masterLabel>
         <openType>sidebar</openType>
         <page>CventEvents__NominationBulkApprove</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>CventEvents__Cancel</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Cancel Nominations</masterLabel>
+        <openType>sidebar</openType>
+        <page>CventEvents__NominationBulkCancel</page>
         <protected>false</protected>
         <requireRowSelection>true</requireRowSelection>
     </webLinks>

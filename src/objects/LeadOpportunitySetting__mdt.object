@@ -1556,11 +1556,12 @@
         <columns>MasterLabel</columns>
         <columns>DeveloperName</columns>
         <columns>NamespacePrefix</columns>
+        <columns>UserRoles__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>DeveloperName</field>
             <operation>contains</operation>
-            <value>Denmark</value>
+            <value>dk</value>
         </filters>
         <label>Denmark_Settings</label>
         <language>en_US</language>
@@ -1570,11 +1571,12 @@
         <columns>MasterLabel</columns>
         <columns>DeveloperName</columns>
         <columns>NamespacePrefix</columns>
+        <columns>UserRoles__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>DeveloperName</field>
             <operation>contains</operation>
-            <value>Finnland</value>
+            <value>fi</value>
         </filters>
         <label>Finland_Settings</label>
         <language>en_US</language>
@@ -1619,16 +1621,42 @@
         <language>en_US</language>
     </listViews>
     <listViews>
+        <fullName>Iberia_Custom_Metadata</fullName>
+        <columns>Country__c</columns>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>Category__c</columns>
+        <columns>BrandsList__c</columns>
+        <columns>UserRoles__c</columns>
+        <columns>ShowManualSalesLeadOwnerAssignment__c</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>DefaultCampaignOwner__c</columns>
+        <columns>DefaultLeadOwner__c</columns>
+        <columns>DefaultProcedureTrackerOwnerId__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Country__c</field>
+            <operation>equals</operation>
+            <value>AD,ES,PT</value>
+        </filters>
+        <label>Iberia Custom Metadata</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
         <fullName>Iberia_Lead_Opportunity</fullName>
         <columns>MasterLabel</columns>
         <columns>DeveloperName</columns>
         <columns>NamespacePrefix</columns>
-        <columns>DefaultLeadOwner__c</columns>
-        <columns>AssignOwnerFrom__c</columns>
         <columns>Category__c</columns>
+        <columns>BrandsList__c</columns>
+        <columns>DefaultLeadOwner__c</columns>
+        <columns>DefaultProcedureTrackerOwnerId__c</columns>
+        <columns>DefaultCampaignOwner__c</columns>
+        <columns>AssignOwnerFrom__c</columns>
         <columns>ShowDistributor__c</columns>
         <columns>UserRoles__c</columns>
         <columns>ShowManualSalesLeadOwnerAssignment__c</columns>
+        <columns>Country__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Country__c</field>
@@ -1643,11 +1671,12 @@
         <columns>MasterLabel</columns>
         <columns>DeveloperName</columns>
         <columns>NamespacePrefix</columns>
+        <columns>UserRoles__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>DeveloperName</field>
             <operation>contains</operation>
-            <value>Norway</value>
+            <value>NO</value>
         </filters>
         <label>Norway_Settings</label>
         <language>en_US</language>
@@ -1713,6 +1742,7 @@
         <columns>NamespacePrefix</columns>
         <columns>DefaultCampaignOwner__c</columns>
         <columns>DefaultLeadOwner__c</columns>
+        <columns>UserRoles__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>DeveloperName</field>

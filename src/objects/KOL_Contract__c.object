@@ -3148,7 +3148,13 @@ Lectures at major meetings MAY require more time</inlineHelpText>
     </listViews>
     <listViews>
         <fullName>Contracts_Due_within_30_days</fullName>
+        <columns>KOLContractOwner__c</columns>
+        <columns>Expert__c</columns>
         <columns>NAME</columns>
+        <columns>Include_Lectures__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Status__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>End_Date__c</field>
@@ -3161,6 +3167,7 @@ Lectures at major meetings MAY require more time</inlineHelpText>
             <value>YESTERDAY</value>
         </filters>
         <label>Contracts Due within 30 days</label>
+        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>My_open_KOL_Contracts</fullName>
@@ -3192,8 +3199,11 @@ Lectures at major meetings MAY require more time</inlineHelpText>
     </listViews>
     <listViews>
         <fullName>New_Contracts_Created_last_30_days</fullName>
+        <columns>KOLContractOwner__c</columns>
         <columns>NAME</columns>
+        <columns>Status__c</columns>
         <columns>CREATED_DATE</columns>
+        <columns>Start_Date__c</columns>
         <columns>End_Date__c</columns>
         <filterScope>Everything</filterScope>
         <filters>

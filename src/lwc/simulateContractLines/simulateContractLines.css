@@ -1,22 +1,11 @@
-.slds-scrollable {
-    height: 3000px;
+table{
+    width: 100%;
 }
 
-.slds-scrollable_y {
-    width:100%;
+.th10{
+    width: 10%;
 }
 
-.total-price {
-    position: absolute;
-    right: 0;
-}
-
-li.slds-item::after {
-    display: none!important;
-}
-
-.materials {
-    margin-left: 1.7rem;
-    padding-top: 0.6rem;
-    margin-top: 0.5rem;
+.td90{
+    width: 90%;
 }

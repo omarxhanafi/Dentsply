@@ -99,7 +99,6 @@
             <label>Sales Rep Changed</label>
         </rules>
     </decisions>
-    <environments>Default</environments>
     <formulas>
         <name>isNew</name>
         <dataType>Boolean</dataType>

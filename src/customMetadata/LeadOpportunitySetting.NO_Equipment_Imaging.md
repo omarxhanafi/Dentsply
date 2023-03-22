@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">SiroCam;UAF plus;Sirolaser;SIROLaser Advance;SIROLaser Blue;T1 Contra-angles;T1 Turbines;T2 Contra-angles;T2 Turbines;TENEO;USBCAM;XIOS AE;XIOS Scan;XIOS Supreme;SICAT Suite;Sinius;SiroCam;Axano</value>
+        <value xsi:type="xsd:string">SIROLaser Advance;SIROLaser Blue;T1 Contra-angles;T1 Turbines;T2 Contra-angles;T2 Turbines;TENEO;USBCAM;XIOS AE;XIOS Scan;XIOS Supreme;Sinius;SiroCam;Axano;INTEGO;Axeos;Heliodent Plus;Orthophos E;Orthophos S 2D;Orthophos S 3D;Orthophos SL 2D;Orthophos SL 3D;SICAT Suite;SiroCam;SiroCam UAF plus;</value>
     </values>
     <values>
         <field>Category__c</field>

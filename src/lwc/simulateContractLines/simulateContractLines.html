@@ -54,7 +54,7 @@
 
   <template if:true={showSimulationTable}>
     <div>
-      <table class="slds-table slds-table_cell-buffer slds-table_bordered" width="100%"> <!-- peers segmentation-->
+      <table class="slds-table slds-table_cell-buffer slds-table_bordered"> <!-- peers segmentation-->
         <caption> </caption>
         <tbody>
           <tr>
@@ -149,57 +149,57 @@
             </td>
           </tr>
 
-            <tr>
-              <th style="background-color: rgb(82, 207, 77)">
-                <div>
-                  {contractItemObjectInfo.data.fields.RecommendedDiscount__c.label}
-                </div>
-              </th>
-              <td style="background-color: rgb(18, 235, 11)">
-                <div>
-                  <lightning-formatted-number value={contractItem.RecommendedDiscount__c} ></lightning-formatted-number> %
-                </div>
-              </td>
-              <td style="background-color: rgb(144, 236, 243)">
-                <div>
-                  <lightning-input type="number" name="seven" 
-                  value={contractItem.OfferedDiscount__c} onchange={handleDiscountUpdate} 
-                  step="0.5" min=0 max={maxDiscountToOffer}
-                  placeholder="Change Discount..." label={contractItemObjectInfo.data.fields.OfferedDiscount__c.label}  ></lightning-input>
-                </div>
-              </td>
-            </tr>
+          <tr>
+            <th style="background-color: rgb(82, 207, 77)">
+              <div>
+                {contractItemObjectInfo.data.fields.RecommendedDiscount__c.label}
+              </div>
+            </th>
+            <td style="background-color: rgb(18, 235, 11)">
+              <div>
+                <lightning-formatted-number value={contractItem.RecommendedDiscount__c} ></lightning-formatted-number> %
+              </div>
+            </td>
+            <td style="background-color: rgb(144, 236, 243)">
+              <div>
+                <lightning-input type="number" name="seven" 
+                value={contractItem.OfferedDiscount__c} onchange={handleDiscountUpdate} 
+                step="0.5" min=0 max={maxDiscountToOffer}
+                placeholder="Change Discount..." label={contractItemObjectInfo.data.fields.OfferedDiscount__c.label}  ></lightning-input>
+              </div>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
     <div>
       
-      <table class="slds-table slds-table_cell-buffer slds-table_bordered" width="100%"> <!-- PG groups table -->
+      <table class="slds-table slds-table_cell-buffer slds-table_bordered" > <!-- PG groups table -->
         <caption>{labels.PG_DISTRIBUTION}</caption>
         <tbody>
           <tr>
-            <th style="background-color: rgb(214, 141, 57)" width="10%">
+            <th class="th10" style="background-color: rgb(214, 141, 57)" >
               <div>
                 <lightning-input type="checkbox"
                 variant="label-hidden" class="slds-m-left_xx-small slds-float_left .slds-align_absolute-center"
                 checked={contractItem.TGImplantSystem__c} disabled=true > </lightning-input>
               </div>
             </th>
-            <td style="background-color: rgb(216, 183, 74)" width="90%">
+            <td class="td10" style="background-color: rgb(216, 183, 74)" >
               <div>
                 {contractItemObjectInfo.data.fields.TGImplantSystem__c.label}
               </div>
             </td>
           </tr>
           <tr>
-            <th style="background-color: rgb(214, 141, 57)" width="10%">
+            <th class="th10" style="background-color: rgb(214, 141, 57)" >
               <div>
                 <lightning-input type="checkbox"
                 variant="label-hidden" class="slds-m-left_xx-small slds-float_left .slds-align_absolute-center"
-                checked={contractItem.TGOssix__c} disabled=true > </lightning-input>
+                checked={contractItem.TGOssix__c} disabled=true > </lightning-input> 
               </div>
             </th>
-            <td style="background-color: rgb(216, 183, 74)" width="90%">
+            <td class="td10" style="background-color: rgb(216, 183, 74)">
               <div>
                 {contractItemObjectInfo.data.fields.TGOssix__c.label}
               </div>
@@ -207,42 +207,42 @@
           </tr>
           
           <tr>
-            <th style="background-color: rgb(223, 167, 104)" width="10%">
+            <th class="th10" style="background-color: rgb(223, 167, 104)">
               <div>
                 <lightning-input type="checkbox"
                 variant="label-hidden" class="slds-m-left_xx-small slds-float_left .slds-align_absolute-center"
                 checked={contractItem.TGAtlantisManuallyUpdated__c} onchange={handleSelectAtlantis} > </lightning-input>
               </div>
             </th>
-            <td style="background-color: rgb(230, 214, 163)" width="90%">
+            <td class="td10" style="background-color: rgb(230, 214, 163)">
               <div>
                 {contractItemObjectInfo.data.fields.TGAtlantis__c.label}
               </div>
             </td>
           </tr>
           <tr>
-            <th style="background-color: rgb(223, 167, 104)" width="10%">
+            <th class="th10" style="background-color: rgb(223, 167, 104)">
               <div>
                 <lightning-input type="checkbox"
                 variant="label-hidden" class="slds-m-left_xx-small slds-float_left .slds-align_absolute-center"
                 checked={contractItem.TGSimplantManuallyUpdated__c} onchange={handleSelectSimplant} > </lightning-input>
               </div>
             </th>
-            <td style="background-color: rgb(230, 214, 163)" width="90%">
+            <td class="td10" style="background-color: rgb(230, 214, 163)">
               <div>
                 {contractItemObjectInfo.data.fields.TGSimplant__c.label}
               </div>
             </td>
           </tr>
           <tr>
-            <th style="background-color: rgb(223, 167, 104)" width="10%">
+            <th class="th10" style="background-color: rgb(223, 167, 104)">
               <div>
                 <lightning-input type="checkbox"
                 variant="label-hidden" class="slds-m-left_xx-small slds-float_left .slds-align_absolute-center"
                 checked={contractItem.TGCBCTManuallyUpdated__c} onchange={handleSelectCBCT} > </lightning-input>
               </div>
             </th>
-            <td style="background-color: rgb(230, 214, 163)" width="90%">
+            <td class="td10" style="background-color: rgb(230, 214, 163)">
               <div>
                 {contractItemObjectInfo.data.fields.TGCBCT__c.label}
               </div>
@@ -250,22 +250,19 @@
           </tr>
           
           <tr>
-            <th style="background-color: rgb(223, 167, 104)" width="10%">
+            <th class="th10" style="background-color: rgb(223, 167, 104)">
               <div>
                 <lightning-input type="checkbox"
                 variant="label-hidden" class="slds-m-left_xx-small slds-float_left .slds-align_absolute-center"
                 checked={contractItem.TGPrimescanManuallyUpdated__c} onchange={handleSelectPrimescan} > </lightning-input>
               </div>
             </th>
-            <td style="background-color: rgb(230, 214, 163)" width="90%">
-              <div>
+            <td class="td10" style="background-color: rgb(230, 214, 163)">
+              <div >
                 {contractItemObjectInfo.data.fields.TGPrimescan__c.label}
               </div>
             </td>
           </tr>
-          
-
-          
         </tbody>
       </table>
     </div>
@@ -291,5 +288,10 @@
   <template if:true={showSalesCalculation}>
     {SALESCALCULATIONMESSAGE}
   </template> 
+  <template if:true={errorMessage}>
+    <div style="color:rgb(255, 0, 0);">
+      {labels.ERROR}: {errorMessage}
+    </div>
+  </template>
       
 </template>

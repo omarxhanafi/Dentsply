@@ -4,9 +4,35 @@
     <description>Stores the Cvent - SF record matching criteria.</description>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>CventEvents__ConditionLogic__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores logical expression for custom condition requirements.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores logical expression for custom condition requirements.</inlineHelpText>
+        <label>Condition Logic</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__ConditionRequirements__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates what logic should be applied to the conditions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates what logic should be applied to the conditions.</inlineHelpText>
+        <label>Condition Requirements</label>
+        <length>20</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>CventEvents__CventField__c</fullName>
         <deprecated>false</deprecated>
-        <description>Attendee Temp field API name used for mapping.</description>
+        <description>Attendee Temp field API name used for matching.</description>
         <externalId>false</externalId>
         <inlineHelpText>Attendee Temp field API name used for mapping.</inlineHelpText>
         <label>Cvent Field</label>
@@ -19,7 +45,7 @@
     <fields>
         <fullName>CventEvents__Object__c</fullName>
         <deprecated>false</deprecated>
-        <description>Salesforce target object name used for mapping.</description>
+        <description>Salesforce target object name used for matching.</description>
         <externalId>false</externalId>
         <inlineHelpText>Salesforce target object name used for mapping.</inlineHelpText>
         <label>Object</label>
@@ -32,7 +58,7 @@
     <fields>
         <fullName>CventEvents__SalesforceField__c</fullName>
         <deprecated>false</deprecated>
-        <description>Account/Contact/Lead field API name used for mapping.</description>
+        <description>Account/Contact/Lead field API name used for matching.</description>
         <externalId>false</externalId>
         <inlineHelpText>Account/Contact/Lead field API name used for mapping.</inlineHelpText>
         <label>Salesforce Field</label>

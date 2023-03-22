@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">ANKYLOS;ATIS;ATIS EV;ATIS TX;Atlantis;Atlantis Abutments;Atlantis Suprastructures;Azento Astra Tech;Azento EV;Azento XiVE;C1;DS PrimeTaper;MGuide;MIS Implants;MIS Regenerative;Ossix;Other;Pre-milled Blanks;Seven;Simplant;Simplant Planning Service;Service;Simplant Pro;SmartFix;Symbios;V3;XiVE</value>
+        <value xsi:type="xsd:string">ANKYLOS;ATIS;ATIS EV;ATIS TX;Atlantis;DS PrimeTaper;Other;Pre-milled Blanks;Simplant;Simplant Planning Service;Simplant Pro;SmartFix;XiVE</value>
     </values>
     <values>
         <field>Category__c</field>
@@ -44,7 +44,7 @@
     </values>
     <values>
         <field>ShowManualSalesLeadOwnerAssignment__c</field>
-        <value xsi:type="xsd:boolean">false</value>
+        <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
         <field>UserRoles__c</field>

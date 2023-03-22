@@ -3765,6 +3765,7 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <columns>ORDERS.TOTAL_AMOUNT</columns>
         <columns>ProcessStatus__c</columns>
         <columns>ORDERS.STATUS</columns>
+        <columns>Pricebook_Name__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>ORDERS.STATUS</field>
@@ -3774,7 +3775,7 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <filters>
             <field>PRICEBOOK2.NAME</field>
             <operation>equals</operation>
-            <value>CA MIS Pricebook</value>
+            <value>CA MIS Pricebook,CA MIS Pricing</value>
         </filters>
         <filters>
             <field>ProcessStatus__c</field>
@@ -3784,7 +3785,6 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <label>CA: MIS Orders - Pending Approval</label>
         <sharedTo>
             <group>CA_MIS_Orders_CS</group>
-            <group>CA_MIS_Pricebook_Access</group>
             <role>NA_CRM_Analyst</role>
         </sharedTo>
     </listViews>
@@ -3799,6 +3799,7 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <columns>ORDERS.TOTAL_AMOUNT</columns>
         <columns>ProcessStatus__c</columns>
         <columns>ORDERS.STATUS</columns>
+        <columns>Pricebook_Name__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>ORDERS.STATUS</field>
@@ -3808,7 +3809,7 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <filters>
             <field>PRICEBOOK2.NAME</field>
             <operation>equals</operation>
-            <value>CA MIS Pricebook</value>
+            <value>CA MIS Pricebook,CA MIS Pricing</value>
         </filters>
         <filters>
             <field>total_discount_on_the_order_c__c</field>
@@ -3828,7 +3829,6 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <label>CA: MIS Orders for Processing</label>
         <sharedTo>
             <group>CA_MIS_Orders_CS</group>
-            <group>CA_MIS_Pricebook_Access</group>
             <role>NA_CRM_Analyst</role>
         </sharedTo>
     </listViews>
@@ -4816,6 +4816,7 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
             <role>DNA_Shared_Services</role>
             <role>NA_CRM_Analyst</role>
             <role>NA_Customer_Service_Implants</role>
+            <role>NA_Customer_Service_MIS</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -4998,8 +4999,8 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <label>Nordics: All Orders</label>
         <language>en_US</language>
         <sharedTo>
+            <roleAndSubordinates>Nordics_Lab_Commercial_Manager</roleAndSubordinates>
             <roleAndSubordinates>Nordics_Managing_Director</roleAndSubordinates>
-            <roleAndSubordinates>Nordics_PROS_Sales_Manager</roleAndSubordinates>
         </sharedTo>
     </listViews>
     <listViews>
@@ -5015,7 +5016,7 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <label>Nordics: My Orders</label>
         <language>en_US</language>
         <sharedTo>
-            <role>Nordics_PROS_Sales_Rep</role>
+            <role>Nordics_Digital_Lab_Clinic_Trainer</role>
         </sharedTo>
     </listViews>
     <listViews>

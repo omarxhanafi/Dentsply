@@ -111,7 +111,6 @@ public with sharing class InsideSalesCampaignTrackerController {
         for(Campaign campaign: Campaigns){
              camapignsDetails.put(campaign.name,campaign.Id);
         }
-
 		for(Object taskdata : tasksData){
             Map<String,Object> mappedData = (Map<String,Object>)taskdata;
             Task tasktoBeCreated =  new Task();
@@ -133,12 +132,7 @@ public with sharing class InsideSalesCampaignTrackerController {
             tasktoBeCreated.Activity_Result__c = (String)mappedData.get('activityResult');
             tasktoBeCreated.ActivityDate = System.Today();
             tasktoBeCreated.TaskSubtype = 'Call';
-
-            // Don't create an activity when the campaign member's status is Canceled - TFUS-000005230
-            if((String)mappedData.get('memberStatus') != 'Canceled'){
-                tasksList.add(tasktoBeCreated);
-            }
-
+            tasksList.add(tasktoBeCreated);
             campaignMemberStatusMap.put((String)mappedData.get('name'), (String)mappedData.get('memberStatus'));
         }
         List<Contact> contactrelated = [SELECT id FROM Contact where Accountid =: accountId];
@@ -147,19 +141,12 @@ public with sharing class InsideSalesCampaignTrackerController {
             campaignMemberListToUpdate.add(member);
         }
         try{
+        	insert tasksList;
         	update campaignMemberListToUpdate;
-
-            if(!tasksList.isEmpty()){
-                insert tasksList;
-
-                if(tasksList.size() == 1)
-                    result = tasksList[0].Id;
-                if(tasksList.size() > 1)
-                    result = String.valueOf(tasksList.size());
-            } else {
-                result = 'Campaign members updated successfully, no tasks were created';
-            }
-
+            if(tasksList.size() == 1)
+        		 result = tasksList[0].Id;
+            if(tasksList.size() > 1)
+                result = String.valueOf(tasksList.size());
             return result;
         }catch(Exception ex){
             DebugLog.addException(ex,'###InsideSalesCampaignTrackerController:createTaskforCampaignMember exception');

@@ -9214,7 +9214,6 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone_F__c,&quot;&
         </filters>
         <label>Nordics: My Territory Contacts</label>
         <sharedTo>
-            <role>Nordics_CRM_Analyst</role>
             <roleAndSubordinates>Nordics_CRM_Analyst</roleAndSubordinates>
         </sharedTo>
     </listViews>

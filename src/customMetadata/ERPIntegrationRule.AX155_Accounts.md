@@ -16,7 +16,7 @@
     </values>
     <values>
         <field>ACC_PracticeHrIdIsRequired__c</field>
-        <value xsi:type="xsd:boolean">true</value>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>ACC_RetainExistingSalesforceOwnerId__c</field>

@@ -1766,7 +1766,7 @@ IF(left( WhoId,3)=&quot;00Q&quot;,&quot;Lead&quot;,
     <fields>
         <fullName>tz__Local_Time__c</fullName>
         <deprecated>false</deprecated>
-        <description>Shows the current local time for the related record (Lead, Contact etc.)</description>
+        <description>Shows the current local time for the related record (Lead, Contact etc.). This field is meant to be used on the Task record.</description>
         <externalId>false</externalId>
         <formula>IF(ISBLANK(tz__UTC_Offset__c), 
 &quot;Unknown&quot;, 
@@ -1809,7 +1809,7 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone__c,&quot;&qu
     <fields>
         <fullName>tz__Timezone__c</fullName>
         <deprecated>false</deprecated>
-        <description>Timezone abbreviation (PST, EST, etc.).</description>
+        <description>Timezone abbreviation (PST, EST, etc.) for the related record (Lead, Contact etc.).</description>
         <externalId>false</externalId>
         <inlineHelpText>Timezone abbreviation (PST, EST, etc.).</inlineHelpText>
         <label>Timezone</label>
@@ -1821,7 +1821,7 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone__c,&quot;&qu
     <fields>
         <fullName>tz__UTC_Offset__c</fullName>
         <deprecated>false</deprecated>
-        <description>Shows the UTC timezone offset for the related record (Lead, Contact etc.).</description>
+        <description>UTC timezone offset for the related record (Lead, Contact etc.).</description>
         <externalId>false</externalId>
         <inlineHelpText>Shows the UTC timezone offset for the related record (Lead, Contact etc.).</inlineHelpText>
         <label>UTC Offset</label>
@@ -2230,10 +2230,7 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone__c,&quot;&qu
         <language>en_US</language>
         <sharedTo>
             <role>Benelux_Shared_Services</role>
-            <role>DK_IMPL_Sales_Manager</role>
             <role>Dentsply_IH_CEO</role>
-            <role>NO_IMPL_Sales_Manager</role>
-            <role>SE_IMPL_Sales_Manager</role>
         </sharedTo>
     </listViews>
     <listViews>

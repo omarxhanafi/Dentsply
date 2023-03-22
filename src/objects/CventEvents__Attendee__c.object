@@ -514,6 +514,18 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>CventEvents__OpportunityBindings__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the serialized map of opportunity configuration Id to the Id of opportunity created by this configuration.</description>
+        <externalId>false</externalId>
+        <label>Opportunity Bindings</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
         <fullName>CventEvents__PrimaryRegistrantName__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -687,12 +699,47 @@
                     <label>Nomination Denied</label>
                 </value>
                 <value>
+                    <fullName>Nomination Cancelled</fullName>
+                    <default>false</default>
+                    <label>Nomination Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Substituted</fullName>
+                    <default>false</default>
+                    <label>Substituted</label>
+                </value>
+                <value>
                     <fullName>Registration Pending</fullName>
                     <default>false</default>
                     <label>Registration Pending</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>CventEvents__SubstitutionName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(CventEvents__Substitution__c), null, CventEvents__Substitution__r.CventEvents__AttendeeName__c)</formula>
+        <label>Substitution</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__Substitution__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Substitution Number</label>
+        <referenceTo>CventEvents__Attendee__c</referenceTo>
+        <relationshipLabel>Substituted Attendees</relationshipLabel>
+        <relationshipName>SubstitutedAttendees</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>CventEvents__UnsubscribedFromEvent__c</fullName>

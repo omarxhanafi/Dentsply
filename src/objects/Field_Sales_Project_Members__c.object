@@ -487,6 +487,11 @@
                     <label>C1</label>
                 </value>
                 <value>
+                    <fullName>C1 XD</fullName>
+                    <default>false</default>
+                    <label>C1 XD</label>
+                </value>
+                <value>
                     <fullName>Calibra</fullName>
                     <default>false</default>
                     <label>Calibra</label>
@@ -692,6 +697,11 @@
                     <fullName>DS Core Create</fullName>
                     <default>false</default>
                     <label>DS Core Create</label>
+                </value>
+                <value>
+                    <fullName>DS OmniTaper</fullName>
+                    <default>false</default>
+                    <label>DS OmniTaper</label>
                 </value>
                 <value>
                     <fullName>DS PrimeTaper</fullName>
@@ -1325,6 +1335,11 @@
                     <label>Seven</label>
                 </value>
                 <value>
+                    <fullName>Seven XD</fullName>
+                    <default>false</default>
+                    <label>Seven XD</label>
+                </value>
+                <value>
                     <fullName>Shorty</fullName>
                     <default>false</default>
                     <label>Shorty</label>
@@ -1666,14 +1681,29 @@
                     <label>XiVE</label>
                 </value>
                 <value>
+                    <fullName>X-SMART</fullName>
+                    <default>false</default>
+                    <label>X-SMART</label>
+                </value>
+                <value>
+                    <fullName>X-SMART Apex Locator</fullName>
+                    <default>false</default>
+                    <label>X-SMART Apex Locator</label>
+                </value>
+                <value>
                     <fullName>X-smart IQ</fullName>
                     <default>false</default>
-                    <label>X-smart IQ</label>
+                    <label>X-SMART IQ</label>
                 </value>
                 <value>
                     <fullName>X-Smart Plus</fullName>
                     <default>false</default>
-                    <label>X-Smart Plus</label>
+                    <label>X-SMART Plus</label>
+                </value>
+                <value>
+                    <fullName>X-SMART PRO</fullName>
+                    <default>false</default>
+                    <label>X-SMART PRO+</label>
                 </value>
                 <value>
                     <fullName>Zirconia</fullName>
@@ -2246,11 +2276,23 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
+                <valueName>X-SMART</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endodontics</controllingFieldValue>
+                <valueName>X-SMART Apex Locator</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endodontics</controllingFieldValue>
                 <valueName>X-smart IQ</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
                 <valueName>X-Smart Plus</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endodontics</controllingFieldValue>
+                <valueName>X-SMART PRO</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Equipment</controllingFieldValue>
@@ -2446,6 +2488,14 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Implants</controllingFieldValue>
+                <valueName>C1 XD</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Implants</controllingFieldValue>
+                <valueName>DS OmniTaper</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Implants</controllingFieldValue>
                 <valueName>DS PrimeTaper</valueName>
             </valueSettings>
             <valueSettings>
@@ -2471,6 +2521,10 @@
             <valueSettings>
                 <controllingFieldValue>Implants</controllingFieldValue>
                 <valueName>Seven</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Implants</controllingFieldValue>
+                <valueName>Seven XD</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Implants</controllingFieldValue>
@@ -4063,7 +4117,7 @@
                     <label>Target Analysis</label>
                 </value>
                 <value>
-                    <fullName>Trade show</fullName>
+                    <fullName>Trade Show/Congress</fullName>
                     <default>false</default>
                     <label>Trade Show/Congress</label>
                 </value>
@@ -6378,7 +6432,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Trade show</fullName>
+                <fullName>Trade Show%2FCongress</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6843,6 +6897,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>C1 XD</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>CEREC Full System MCX</fullName>
                 <default>false</default>
             </values>
@@ -6983,6 +7041,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>DS OmniTaper</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>DS PrimeTaper</fullName>
                 <default>false</default>
             </values>
@@ -7048,6 +7110,10 @@
             </values>
             <values>
                 <fullName>Glidepath Files</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Golden Surfer</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7495,6 +7561,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Seven XD</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Shorty</fullName>
                 <default>false</default>
             </values>
@@ -7699,6 +7769,18 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>X-SMART</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART Apex Locator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART PRO</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>X-Smart Plus</fullName>
                 <default>false</default>
             </values>
@@ -7875,7 +7957,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Trade show</fullName>
+                <fullName>Trade Show%2FCongress</fullName>
                 <default>false</default>
             </values>
             <values>

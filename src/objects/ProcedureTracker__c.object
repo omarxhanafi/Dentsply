@@ -1861,6 +1861,7 @@
         <fullName>All</fullName>
         <columns>NAME</columns>
         <columns>PracticeAccount__c</columns>
+        <columns>AccountCountry__c</columns>
         <columns>Stage__c</columns>
         <columns>SalesRep__c</columns>
         <columns>RegistrationDate__c</columns>
@@ -1888,7 +1889,34 @@
         <label>All Suresmile Trackers</label>
     </listViews>
     <listViews>
-        <fullName>Global_Suresmile_Trackers</fullName>
+        <fullName>Automated_Created_Suresmile_Trackers</fullName>
+        <columns>NAME</columns>
+        <columns>PracticeAccount__c</columns>
+        <columns>Stage__c</columns>
+        <columns>SalesRep__c</columns>
+        <columns>RegistrationDate__c</columns>
+        <columns>Contact__c</columns>
+        <columns>SalesAnalytics__c</columns>
+        <columns>LastActivity__c</columns>
+        <columns>NextActivity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ProcedureType__c</field>
+            <operation>equals</operation>
+            <value>Clear Aligners</value>
+        </filters>
+        <filters>
+            <field>AutomaticallyCreated__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Automated-Created Suresmile Trackers</label>
+        <sharedTo>
+            <role>Dentsply_IH_CEO</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DACH_My_Suresmile_Trackers</fullName>
         <columns>NAME</columns>
         <columns>PracticeAccount__c</columns>
         <columns>Stage__c</columns>
@@ -1897,6 +1925,36 @@
         <columns>Contact__c</columns>
         <columns>LastActivity__c</columns>
         <columns>NextActivity__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>MyTracker__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>ProcedureType__c</field>
+            <operation>equals</operation>
+            <value>Clear Aligners</value>
+        </filters>
+        <label>DACH: My Suresmile Trackers</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>D_A_CH_Managing_Director</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Global_Suresmile_Trackers</fullName>
+        <columns>NAME</columns>
+        <columns>PracticeAccount__c</columns>
+        <columns>AccountCountry__c</columns>
+        <columns>Stage__c</columns>
+        <columns>SalesRep__c</columns>
+        <columns>RegistrationDate__c</columns>
+        <columns>Contact__c</columns>
+        <columns>LastActivity__c</columns>
+        <columns>NextActivity__c</columns>
+        <columns>ParentAccountInformation__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>ProcedureType__c</field>
@@ -1909,7 +1967,6 @@
             <value>ProcedureTracker__c.Clear_Aligners</value>
         </filters>
         <label>Global Suresmile Trackers</label>
-        <language>en_US</language>
         <sharedTo>
             <role>Dentsply_IH_CEO</role>
         </sharedTo>
@@ -1941,12 +1998,14 @@
         <fullName>US_Suresmile_Trackers</fullName>
         <columns>NAME</columns>
         <columns>PracticeAccount__c</columns>
+        <columns>AccountCountry__c</columns>
         <columns>Stage__c</columns>
         <columns>SalesRep__c</columns>
         <columns>RegistrationDate__c</columns>
         <columns>Contact__c</columns>
         <columns>LastActivity__c</columns>
         <columns>NextActivity__c</columns>
+        <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>ProcedureType__c</field>
@@ -1958,11 +2017,36 @@
             <operation>equals</operation>
             <value>ProcedureTracker__c.Clear_Aligners</value>
         </filters>
-        <label>US Suresmile Trackers</label>
-        <language>en_US</language>
+        <label>NA SureSmile Trackers</label>
         <sharedTo>
             <role>NA_CRM_Analyst</role>
             <roleAndSubordinatesInternal>DNA_CRMANALYST</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Unassigned_Suresmile_Trackers</fullName>
+        <columns>NAME</columns>
+        <columns>AutomaticallyCreated__c</columns>
+        <columns>PracticeAccount__c</columns>
+        <columns>Stage__c</columns>
+        <columns>SalesRep__c</columns>
+        <columns>RegistrationDate__c</columns>
+        <columns>Contact__c</columns>
+        <columns>LastActivity__c</columns>
+        <columns>NextActivity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SalesRep__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>ProcedureType__c</field>
+            <operation>equals</operation>
+            <value>Clear Aligners</value>
+        </filters>
+        <label>Unassigned Suresmile Trackers</label>
+        <sharedTo>
+            <role>Dentsply_IH_CEO</role>
         </sharedTo>
     </listViews>
     <nameField>

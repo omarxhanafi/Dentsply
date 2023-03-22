@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">Celtra Duo;Celtra Press</value>
+        <value xsi:type="xsd:string">InEos X5;InLab MC X5;InLab MC XL;InLab Profire;InLab Software;MCX5</value>
     </values>
     <values>
         <field>Category__c</field>
@@ -44,10 +44,10 @@
     </values>
     <values>
         <field>ShowManualSalesLeadOwnerAssignment__c</field>
-        <value xsi:type="xsd:boolean">false</value>
+        <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
         <field>UserRoles__c</field>
-        <value xsi:type="xsd:string">Sales Rep (PREP)</value>
+        <value xsi:type="xsd:string">Sales Rep (TRCE)</value>
     </values>
 </CustomMetadata>

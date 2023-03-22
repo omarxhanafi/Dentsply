@@ -243,6 +243,16 @@
                     <label>Nomination Denied</label>
                 </value>
                 <value>
+                    <fullName>Nomination Cancelled</fullName>
+                    <default>false</default>
+                    <label>Nomination Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Substituted</fullName>
+                    <default>false</default>
+                    <label>Substituted</label>
+                </value>
+                <value>
                     <fullName>Registration Pending</fullName>
                     <default>false</default>
                     <label>Registration Pending</label>

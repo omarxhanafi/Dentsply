@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">TruNatomy;WaveOne Gold;Wave One Gold Glider;X-smart IQ;X-Smart Plus</value>
+        <value xsi:type="xsd:string">TruNatomy;WaveOne Gold;Wave One Gold Glider;X-SMART;X-SMART Apex Locator;X-SMART IQ;X-SMART Plus;X-SMART PRO+</value>
     </values>
     <values>
         <field>Category__c</field>

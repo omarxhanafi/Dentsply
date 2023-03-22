@@ -59,7 +59,6 @@ public with sharing class OrderDealer_CC {
                                                 Dealer__r.OneAccount_Type__c,
                                                 Dealer__r.Name,Dealer__r.ShippingCity,
                                                 Dealer__r.ShippingState,Dealer__r.ShippingPostalCode,
-                                                Dealer__r.DistributorCategorisation__c,
                                                 Default_dealer__c, Dealer_email__c 
                                                 FROM Preferred_dealer_item__c
                                                 WHERE Account__c = :order.AccountId

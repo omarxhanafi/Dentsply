@@ -931,6 +931,23 @@
         </valueSet>
     </fields>
     <listViews>
+        <fullName>All_Active_APAC_Pricebook</fullName>
+        <columns>PRICEBOOK2.NAME</columns>
+        <columns>PRICEBOOK2.IS_ACTIVE</columns>
+        <columns>PRICEBOOK2.DESCRIPTION</columns>
+        <columns>PRICEBOOK2.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PRICEBOOK2.NAME</field>
+            <operation>contains</operation>
+            <value>Australia,New Zealand,Indonesia,Hong Kong,Taiwan,HK</value>
+        </filters>
+        <label>All Active APAC Pricebooks</label>
+        <sharedTo>
+            <group>CRM_Extended_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>All_Active_Pricebooks</fullName>
         <columns>PRICEBOOK2.NAME</columns>
         <columns>PRICEBOOK2.IS_ACTIVE</columns>

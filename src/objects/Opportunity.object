@@ -1455,6 +1455,42 @@ IF(AND(RecordType.Id = &apos;0120J000000jnHR&apos;, ISPICKVAL(Account_Plan_Type_
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Approval_Status__c</fullName>
+        <description>TFUS-000005460</description>
+        <externalId>false</externalId>
+        <label>Approval Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Approved_by_Sales_Manager__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Set by the SR&apos;s Manager to verify that the Account Plan is completely filled in and that the Account in itself is a good fit for an Account Plan. If Managers selects NO, the Account Plan will be visible on the Personal Assistant of the SR for completion.</inlineHelpText>
@@ -4096,6 +4132,11 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                     <label>C1</label>
                 </value>
                 <value>
+                    <fullName>C1 XD</fullName>
+                    <default>false</default>
+                    <label>C1 XD</label>
+                </value>
+                <value>
                     <fullName>Calibra</fullName>
                     <default>false</default>
                     <label>Calibra</label>
@@ -4289,6 +4330,11 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                     <fullName>DS Core Create</fullName>
                     <default>false</default>
                     <label>DS Core Create</label>
+                </value>
+                <value>
+                    <fullName>DS OmniTaper</fullName>
+                    <default>false</default>
+                    <label>DS OmniTaper</label>
                 </value>
                 <value>
                     <fullName>DS PrimeTaper</fullName>
@@ -4891,6 +4937,11 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                     <label>Seven</label>
                 </value>
                 <value>
+                    <fullName>Seven XD</fullName>
+                    <default>false</default>
+                    <label>Seven XD</label>
+                </value>
+                <value>
                     <fullName>Shorty</fullName>
                     <default>false</default>
                     <label>Shorty</label>
@@ -5226,14 +5277,29 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                     <label>XiVE</label>
                 </value>
                 <value>
+                    <fullName>X-SMART</fullName>
+                    <default>false</default>
+                    <label>X-SMART</label>
+                </value>
+                <value>
+                    <fullName>X-SMART Apex Locator</fullName>
+                    <default>false</default>
+                    <label>X-SMART Apex Locator</label>
+                </value>
+                <value>
                     <fullName>X-smart IQ</fullName>
                     <default>false</default>
-                    <label>X-smart IQ</label>
+                    <label>X-SMART IQ</label>
                 </value>
                 <value>
                     <fullName>X-Smart Plus</fullName>
                     <default>false</default>
-                    <label>X-Smart Plus</label>
+                    <label>X-SMART Plus</label>
+                </value>
+                <value>
+                    <fullName>X-SMART PRO</fullName>
+                    <default>false</default>
+                    <label>X-SMART PRO+</label>
                 </value>
                 <value>
                     <fullName>Zirconia</fullName>
@@ -6032,11 +6098,23 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
+                <valueName>X-SMART</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endodontics</controllingFieldValue>
+                <valueName>X-SMART Apex Locator</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endodontics</controllingFieldValue>
                 <valueName>X-smart IQ</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
                 <valueName>X-Smart Plus</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endodontics</controllingFieldValue>
+                <valueName>X-SMART PRO</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Equipment</controllingFieldValue>
@@ -6141,6 +6219,14 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Implants</controllingFieldValue>
+                <valueName>C1 XD</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Implants</controllingFieldValue>
+                <valueName>DS OmniTaper</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Implants</controllingFieldValue>
                 <valueName>DS PrimeTaper</valueName>
             </valueSettings>
             <valueSettings>
@@ -6167,6 +6253,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             <valueSettings>
                 <controllingFieldValue>Implants</controllingFieldValue>
                 <valueName>Seven</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Implants</controllingFieldValue>
+                <valueName>Seven XD</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Implants</controllingFieldValue>
@@ -12414,93 +12504,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             <value>THIS_MONTH</value>
         </filters>
         <label>My Team&apos;s OPEN OPPS closing This month</label>
-        <sharedTo>
-            <territory>Global_Setup.US_D0101_Long_Island</territory>
-            <territory>Global_Setup.US_D0102_Hartford_CT</territory>
-            <territory>Global_Setup.US_D0103_Boston</territory>
-            <territory>Global_Setup.US_D0104_Albany</territory>
-            <territory>Global_Setup.US_D0105_Providence_RI</territory>
-            <territory>Global_Setup.US_D0106_Portland_ME</territory>
-            <territory>Global_Setup.US_D0107_White_Plains_NY</territory>
-            <territory>Global_Setup.US_D0108_Newark</territory>
-            <territory>Global_Setup.US_D0109_Metro_NY</territory>
-            <territory>Global_Setup.US_D0201_Scranton</territory>
-            <territory>Global_Setup.US_D0202_Wilmington_DE</territory>
-            <territory>Global_Setup.US_D0203_Philadelphia</territory>
-            <territory>Global_Setup.US_D0204_Buffalo_Syracuse</territory>
-            <territory>Global_Setup.US_D0205_Pittsburgh</territory>
-            <territory>Global_Setup.US_D0206_Baltimore_North</territory>
-            <territory>Global_Setup.US_D0207_Baltimore_South</territory>
-            <territory>Global_Setup.US_D0208_Washington_DC</territory>
-            <territory>Global_Setup.US_D0209_Richmond_VA</territory>
-            <territory>Global_Setup.US_D0301_Greensboro_Roanoke</territory>
-            <territory>Global_Setup.US_D0302_Knoxville_TN</territory>
-            <territory>Global_Setup.US_D0303_Columbus_OH</territory>
-            <territory>Global_Setup.US_D0304_Charlotte_NC</territory>
-            <territory>Global_Setup.US_D0305_Raleigh_NC</territory>
-            <territory>Global_Setup.US_D0306_Greenville_SC</territory>
-            <territory>Global_Setup.US_D0307_Columbia_SC</territory>
-            <territory>Global_Setup.US_D0308_Nashville</territory>
-            <territory>Global_Setup.US_D0309_Louisville</territory>
-            <territory>Global_Setup.US_D0310_Cincinnati</territory>
-            <territory>Global_Setup.US_D0401_Atlanta_North</territory>
-            <territory>Global_Setup.US_D0402_Atlanta_South</territory>
-            <territory>Global_Setup.US_D0403_Jacksonville</territory>
-            <territory>Global_Setup.US_D0404_Orlando</territory>
-            <territory>Global_Setup.US_D0405_New_Orleans</territory>
-            <territory>Global_Setup.US_D0406_Miami</territory>
-            <territory>Global_Setup.US_D0407_Ft_Lauderdale</territory>
-            <territory>Global_Setup.US_D0408_Tampa_Bay</territory>
-            <territory>Global_Setup.US_D0409_Birmingham_AL</territory>
-            <territory>Global_Setup.US_D0501_Cleveland</territory>
-            <territory>Global_Setup.US_D0502_Detroit</territory>
-            <territory>Global_Setup.US_D0503_Indianapolis</territory>
-            <territory>Global_Setup.US_D0504_Chicago_South</territory>
-            <territory>Global_Setup.US_D0505_Lansing_MI</territory>
-            <territory>Global_Setup.US_D0506_Grand_Rapids_MI</territory>
-            <territory>Global_Setup.US_D0507_Milwaukee_North</territory>
-            <territory>Global_Setup.US_D0508_Des_Moines</territory>
-            <territory>Global_Setup.US_D0509_Chicago_North</territory>
-            <territory>Global_Setup.US_D0510_Milwaukee_South</territory>
-            <territory>Global_Setup.US_D0601_Kansas_City</territory>
-            <territory>Global_Setup.US_D0602_Central_IL</territory>
-            <territory>Global_Setup.US_D0603_Omaha</territory>
-            <territory>Global_Setup.US_D0604_Minneapolis_East</territory>
-            <territory>Global_Setup.US_D0605_Minneapolis_West</territory>
-            <territory>Global_Setup.US_D0606_St_Louis</territory>
-            <territory>Global_Setup.US_D0607_Denver_North</territory>
-            <territory>Global_Setup.US_D0608_Denver_South</territory>
-            <territory>Global_Setup.US_D0701_Little_Rock</territory>
-            <territory>Global_Setup.US_D0702_Oklahoma_City</territory>
-            <territory>Global_Setup.US_D0703_Albuquerque</territory>
-            <territory>Global_Setup.US_D0704_Houston_South</territory>
-            <territory>Global_Setup.US_D0705_Austin_TX</territory>
-            <territory>Global_Setup.US_D0706_Dallas</territory>
-            <territory>Global_Setup.US_D0707_Ft_Worth</territory>
-            <territory>Global_Setup.US_D0708_Houston_North</territory>
-            <territory>Global_Setup.US_D0709_San_Antonio</territory>
-            <territory>Global_Setup.US_D0801_Spokane</territory>
-            <territory>Global_Setup.US_D0802_Boise</territory>
-            <territory>Global_Setup.US_D0803_Sacramento</territory>
-            <territory>Global_Setup.US_D0804_San_Francisco</territory>
-            <territory>Global_Setup.US_D0805_Napa</territory>
-            <territory>Global_Setup.US_D0806_Salem_OR</territory>
-            <territory>Global_Setup.US_D0807_Portland_OR</territory>
-            <territory>Global_Setup.US_D0808_Seattle_South</territory>
-            <territory>Global_Setup.US_D0809_Seattle_North_AK</territory>
-            <territory>Global_Setup.US_D0810_Salt_Lake_City</territory>
-            <territory>Global_Setup.US_D0901_San_Jose</territory>
-            <territory>Global_Setup.US_D0902_Hawaii</territory>
-            <territory>Global_Setup.US_D0903_Las_Vegas</territory>
-            <territory>Global_Setup.US_D0904_Phoenix_North</territory>
-            <territory>Global_Setup.US_D0905_Phoenix_South</territory>
-            <territory>Global_Setup.US_D0906_Los_Angeles</territory>
-            <territory>Global_Setup.US_D0907_Santa_Barbara</territory>
-            <territory>Global_Setup.US_D0908_Riverside_CA</territory>
-            <territory>Global_Setup.US_D0909_Anaheim</territory>
-            <territory>Global_Setup.US_D0910_San_Diego</territory>
-            <territory>Global_Setup.US_D0911_Fresno</territory>
-        </sharedTo>
+        <sharedTo/>
     </listViews>
     <listViews>
         <fullName>My_Team_s_Open_Opps_RM</fullName>
@@ -12735,7 +12739,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <filters>
             <field>CORE.USERS.FULL_NAME</field>
             <operation>equals</operation>
-            <value>Adam cartwright</value>
+            <value>jamie thomas</value>
         </filters>
         <filters>
             <field>OPPORTUNITY.CLOSED</field>
@@ -13251,6 +13255,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14935,6 +14958,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -16646,6 +16688,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -18374,6 +18435,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -21678,6 +21758,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -24005,6 +24104,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -26324,6 +26442,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -27976,6 +28113,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -29596,6 +29752,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -31212,6 +31387,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -32912,6 +33106,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -34635,6 +34848,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -35698,6 +35930,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                 <default>false</default>
             </values>
             <values>
+                <fullName>C1 XD</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>CEREC Full System MCX</fullName>
                 <default>false</default>
             </values>
@@ -35819,6 +36055,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>DS Core Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS OmniTaper</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -36318,6 +36558,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                 <default>false</default>
             </values>
             <values>
+                <fullName>Seven XD</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Shorty</fullName>
                 <default>false</default>
             </values>
@@ -36519,6 +36763,18 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>WaveOne Gold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART Apex Locator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART PRO</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -37923,6 +38179,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -39463,6 +39738,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -41120,6 +41414,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -41903,6 +42216,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                 <default>false</default>
             </values>
             <values>
+                <fullName>C1 XD</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>CEREC Full System MCX</fullName>
                 <default>false</default>
             </values>
@@ -42036,6 +42353,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>DS Core Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS OmniTaper</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -42559,6 +42880,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                 <default>false</default>
             </values>
             <values>
+                <fullName>Seven XD</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Shorty</fullName>
                 <default>false</default>
             </values>
@@ -42760,6 +43085,18 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>WaveOne Gold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART Apex Locator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART PRO</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -44268,6 +44605,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -46414,6 +46770,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -48133,6 +48508,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -49857,6 +50251,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -51504,6 +51917,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -53096,6 +53528,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -55331,6 +55782,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -57775,6 +58245,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -59964,6 +60453,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -62160,6 +62668,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -64660,6 +65187,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -67179,6 +67725,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -69622,6 +70187,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -72058,6 +72642,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

@@ -2565,6 +2565,11 @@
                     <label>Brackets</label>
                 </value>
                 <value>
+                    <fullName>C1 XD</fullName>
+                    <default>false</default>
+                    <label>C1 XD</label>
+                </value>
+                <value>
                     <fullName>Calibra</fullName>
                     <default>false</default>
                     <label>Calibra</label>
@@ -2693,6 +2698,11 @@
                     <fullName>Drufo</fullName>
                     <default>false</default>
                     <label>Drufo</label>
+                </value>
+                <value>
+                    <fullName>DS OmniTaper</fullName>
+                    <default>false</default>
+                    <label>DS OmniTaper</label>
                 </value>
                 <value>
                     <fullName>Economy Teeth</fullName>
@@ -3070,6 +3080,11 @@
                     <label>SDR flow+</label>
                 </value>
                 <value>
+                    <fullName>Seven XD</fullName>
+                    <default>false</default>
+                    <label>Seven XD</label>
+                </value>
+                <value>
                     <fullName>Shorty</fullName>
                     <default>false</default>
                     <label>Shorty</label>
@@ -3300,14 +3315,29 @@
                     <label>XiVE</label>
                 </value>
                 <value>
-                    <fullName>X-smart IQ</fullName>
+                    <fullName>X-SMART</fullName>
                     <default>false</default>
-                    <label>X-smart IQ</label>
+                    <label>X-SMART</label>
                 </value>
                 <value>
-                    <fullName>X-Smart Plus</fullName>
+                    <fullName>X-SMART Apex Locator</fullName>
                     <default>false</default>
-                    <label>X-Smart Plus</label>
+                    <label>X-SMART Apex Locator</label>
+                </value>
+                <value>
+                    <fullName>X-SMART IQ</fullName>
+                    <default>false</default>
+                    <label>X-SMART IQ</label>
+                </value>
+                <value>
+                    <fullName>X-SMART Plus</fullName>
+                    <default>false</default>
+                    <label>X-SMART Plus</label>
+                </value>
+                <value>
+                    <fullName>X-SMART PRO+</fullName>
+                    <default>false</default>
+                    <label>X-SMART PRO+</label>
                 </value>
                 <value>
                     <fullName>Zirconia</fullName>
@@ -6032,11 +6062,11 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>X-Smart Plus</fullName>
+                <fullName>X-SMART IQ</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>X-smart IQ</fullName>
+                <fullName>X-SMART Plus</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7638,6 +7668,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>C1 XD</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>CEREC MTL Zirconia</fullName>
                 <default>false</default>
             </values>
@@ -7715,6 +7749,10 @@
             </values>
             <values>
                 <fullName>DAC Universal S</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS OmniTaper</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8058,6 +8096,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Seven XD</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Shorty</fullName>
                 <default>false</default>
             </values>
@@ -8206,11 +8248,23 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>X-Smart Plus</fullName>
+                <fullName>X-SMART</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>X-smart IQ</fullName>
+                <fullName>X-SMART Apex Locator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART IQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART PRO%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART Plus</fullName>
                 <default>false</default>
             </values>
             <values>

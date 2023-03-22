@@ -2,6 +2,8 @@ import { LightningElement, api, track, wire } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 import { FlowNavigationFinishEvent } from 'lightning/flowSupport';
 import { updateRecord } from 'lightning/uiRecordApi';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+
 
 import { getObjectInfo } from 'lightning/uiObjectInfoApi';
 import CONTRACT_ITEM_OBJECT from '@salesforce/schema/ContractItem__c';
@@ -70,7 +72,7 @@ export default class SimulateContractInQouteLines  extends NavigationMixin(Light
     @track discountModelOptionsToSelect=[];
 
     @track contractItemDescription;
-    
+    @track errorMessage;
     @track showMessageLine = false;
     @track numOfSelectedItems = 0;
     @track disableSimulateButton = true;
@@ -125,6 +127,7 @@ export default class SimulateContractInQouteLines  extends NavigationMixin(Light
                 this.getRelatedDiscount();
             })
             .catch(error => {
+                this.errorMessage = error.body.message + error.body.stackTrace;
                 this.showToast(this.labels.ERROR, error.body.message + error.body.stackTrace, 'error' );
             });
     }
@@ -134,10 +137,10 @@ export default class SimulateContractInQouteLines  extends NavigationMixin(Light
         getRelatedDiscount({discountModelId : this.contractItem.DiscountModel__c})
             .then(result => {
                 this.discountPlan = result;
-                
                 this.showSimulationTable = true;
             })
             .catch(error => {
+                this.errorMessage = error.body.message + error.body.stackTrace;
                 this.showToast(this.labels.ERROR, error.body.message + error.body.stackTrace, 'error' );
             });
     }
@@ -150,6 +153,7 @@ export default class SimulateContractInQouteLines  extends NavigationMixin(Light
                 
             })
             .catch(error => {
+                this.errorMessage = error.body.message + error.body.stackTrace;
                 this.showToast(this.labels.ERROR, error.body.message + error.body.stackTrace, 'error' );
             });
     }
@@ -185,6 +189,7 @@ export default class SimulateContractInQouteLines  extends NavigationMixin(Light
                 
             })
             .catch(error => {
+                this.errorMessage = error.body.message + error.body.stackTrace;
                 this.showToast(this.labels.ERROR, error.body.message + error.body.stackTrace, 'error' );
             });
     }
@@ -205,7 +210,7 @@ export default class SimulateContractInQouteLines  extends NavigationMixin(Light
                 }
             })
             .catch(error => {
-
+                this.errorMessage = error.body.message + error.body.stackTrace;
                 this.showToast(this.labels.ERROR, error.body.message + error.body.stackTrace, 'error' );
             });
     }
@@ -310,6 +315,8 @@ export default class SimulateContractInQouteLines  extends NavigationMixin(Light
 
             })
             .catch(error => {
+                this.showSalesCalculation = false;
+                this.errorMessage = error.body.message + error.body.stackTrace;
                 this.showToast(this.labels.ERROR, error.body.message + error.body.stackTrace, 'error' );
             });
 
@@ -392,20 +399,18 @@ export default class SimulateContractInQouteLines  extends NavigationMixin(Light
     insertOrUpdateContractItem(){
         insertOrUpdateContractItem({contractLine : this.contractItem, isInsert : this.isInsert})
             .then(result => {
-            let contractLineInserted = result;
-            //this.handleCloseFlow();
+            //let contractLineInserted = result;
             
             if(this.isInsert){
                 this.handleCloseFlow(); //close the flow
             } else {
                 this.updateRecordView(this.recordId);
-                //this.showToast('this.labels.ERROR',' error.body.message + error.body.stackTrace', 'success' );
             }
 
             })
             .catch(error => {
-            this.showToast(this.labels.ERROR, error.body.message + error.body.stackTrace, 'error' );
-
+                this.errorMessage = error.body.message + error.body.stackTrace;
+                this.showToast(this.labels.ERROR, error.body.message + error.body.stackTrace, 'error' );
             });
     }
 

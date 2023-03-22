@@ -3258,6 +3258,11 @@
                     <label>Fixed price NEW Customer AstraEV EUR 197,00</label>
                 </value>
                 <value>
+                    <fullName>Fixed price NEW Customer OmniTaper EUR 197,00</fullName>
+                    <default>false</default>
+                    <label>Fixed price NEW Customer OmniTaper EUR 197,00</label>
+                </value>
+                <value>
                     <fullName>Fixed price NEW Customer PrimeTaper EUR 217,00</fullName>
                     <default>false</default>
                     <label>Fixed price NEW Customer PrimeTaper EUR 217,00</label>
@@ -3406,6 +3411,10 @@
             <valueSettings>
                 <controllingFieldValue>Implant Quantity (Discount)</controllingFieldValue>
                 <valueName>Fixed price NEW Customer AstraEV EUR 197,00</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Implant Quantity (Discount)</controllingFieldValue>
+                <valueName>Fixed price NEW Customer OmniTaper EUR 197,00</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Implant Quantity (Discount)</controllingFieldValue>
@@ -16587,6 +16596,10 @@ Example: for a contract with 100 implants created on jan 1st lasting until dec 3
             </values>
             <values>
                 <fullName>Fixed price NEW Customer AstraEV EUR 197%2C00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed price NEW Customer OmniTaper EUR 197%2C00</fullName>
                 <default>false</default>
             </values>
             <values>

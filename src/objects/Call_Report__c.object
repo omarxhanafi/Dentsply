@@ -2583,6 +2583,7 @@
                 <controllingFieldValue>France</controllingFieldValue>
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -2708,6 +2709,7 @@
                 <controllingFieldValue>France</controllingFieldValue>
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -2781,6 +2783,7 @@
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>UK</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>HQ: NL</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
@@ -2809,6 +2812,7 @@
                 <controllingFieldValue>Denmark</controllingFieldValue>
                 <controllingFieldValue>Finland</controllingFieldValue>
                 <controllingFieldValue>Sweden</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
@@ -3018,6 +3022,7 @@
                 <controllingFieldValue>Denmark</controllingFieldValue>
                 <controllingFieldValue>Finland</controllingFieldValue>
                 <controllingFieldValue>Sweden</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Belarus</controllingFieldValue>
@@ -3331,6 +3336,7 @@
                 <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Austria</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Belarus</controllingFieldValue>
@@ -3436,6 +3442,7 @@
             <valueSettings>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
@@ -3496,6 +3503,7 @@
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>Algeria</controllingFieldValue>
                 <controllingFieldValue>Austria</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -3511,6 +3519,7 @@
                 <controllingFieldValue>Austria</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -3522,6 +3531,7 @@
             <valueSettings>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Qatar</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Belarus</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
                 <valueName>Other NiTi rotary files</valueName>
@@ -6670,6 +6680,7 @@
                 <controllingFieldValue>Denmark</controllingFieldValue>
                 <controllingFieldValue>Finland</controllingFieldValue>
                 <controllingFieldValue>Sweden</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
@@ -6816,6 +6827,7 @@
                 <controllingFieldValue>Denmark</controllingFieldValue>
                 <controllingFieldValue>Finland</controllingFieldValue>
                 <controllingFieldValue>Sweden</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
@@ -12700,6 +12712,7 @@
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Algeria</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Belarus</controllingFieldValue>
                 <controllingFieldValue>Ukraine</controllingFieldValue>
                 <controllingFieldValue>India</controllingFieldValue>
@@ -13017,6 +13030,7 @@
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Austria</controllingFieldValue>
                 <controllingFieldValue>UK</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Belarus</controllingFieldValue>
@@ -13244,6 +13258,7 @@
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>UK</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Belarus</controllingFieldValue>
@@ -13532,6 +13547,7 @@
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
@@ -17154,6 +17170,10 @@
             </values>
             <values>
                 <fullName>Matrix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neo Spectra</fullName>
                 <default>false</default>
             </values>
             <values>

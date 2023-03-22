@@ -292,6 +292,35 @@
         <label>All</label>
     </listViews>
     <listViews>
+        <fullName>DACH_Bundles</fullName>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Price_Book__c</columns>
+        <columns>Active__c</columns>
+        <columns>Total_price__c</columns>
+        <columns>Total_Discount__c</columns>
+        <columns>FixedPrice__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Price_Book__c</field>
+            <operation>startsWith</operation>
+            <value>DE</value>
+        </filters>
+        <filters>
+            <field>Price_Book__c</field>
+            <operation>startsWith</operation>
+            <value>CH</value>
+        </filters>
+        <filters>
+            <field>Price_Book__c</field>
+            <operation>startsWith</operation>
+            <value>AT</value>
+        </filters>
+        <label>DACH Bundles</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
         <fullName>Iberia_Bundles</fullName>
         <columns>NAME</columns>
         <columns>Price_Book__c</columns>
@@ -307,6 +336,26 @@
             <value>Iberia</value>
         </filters>
         <label>Iberia Bundles</label>
+    </listViews>
+    <listViews>
+        <fullName>UK_BUNDLE</fullName>
+        <columns>NAME</columns>
+        <columns>Price_Book__c</columns>
+        <columns>Total_price__c</columns>
+        <columns>Total_Discount__c</columns>
+        <columns>FixedPrice__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Price_Book__c</field>
+            <operation>contains</operation>
+            <value>UK</value>
+        </filters>
+        <label>UK  BUNDLE!!!!</label>
+        <sharedTo>
+            <role>UK_IE_CRM_Analyst</role>
+        </sharedTo>
     </listViews>
     <nameField>
         <label>Product bundle Name</label>

@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">FlexAccess;Glidepath Files;GuttaCore;GuttaCore/Calamus;GuttaSmart;IQ/ProMark Motor;Propex IQ;ProTaper Gold;ProTaper Next;ProTaper Ultimate;TruNatomy;TruShape;Vortex Blue;Wave One Gold Glider;WaveOne Gold;X-smart IQ;X-Smart Plus</value>
+        <value xsi:type="xsd:string">FlexAccess;Glidepath Files;GuttaCore;GuttaCore/Calamus;GuttaSmart;IQ/ProMark Motor;Propex IQ;ProTaper Gold;ProTaper Next;ProTaper Ultimate;TruNatomy;TruShape;Vortex Blue;Wave One Gold Glider;WaveOne Gold;X-SMART;X-SMART Apex Locator;X-SMART IQ;X-SMART Plus;X-SMART PRO</value>
     </values>
     <values>
         <field>Category__c</field>

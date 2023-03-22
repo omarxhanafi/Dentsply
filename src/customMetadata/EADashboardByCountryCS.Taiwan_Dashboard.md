@@ -68,7 +68,7 @@
     </values>
     <values>
         <field>HomeDashboardName__c</field>
-        <value xsi:type="xsd:string">Taiwan_Sales_Home_Page</value>
+        <value xsi:type="xsd:string">Taiwan_Sales_Home_Page_DRAFT</value>
     </values>
     <values>
         <field>HomeInsideSalesDashboardFilter__c</field>
@@ -76,7 +76,7 @@
     </values>
     <values>
         <field>HomeInsideSalesDashboard__c</field>
-        <value xsi:type="xsd:string">Taiwan_Sales_Home_Page</value>
+        <value xsi:type="xsd:string">Taiwan_Sales_Home_Page_DRAFT</value>
     </values>
     <values>
         <field>HomeMarketingDashboardFilter__c</field>
@@ -92,7 +92,7 @@
     </values>
     <values>
         <field>HomeOutsideSalesDashboard__c</field>
-        <value xsi:type="xsd:string">Taiwan_Sales_Home_Page</value>
+        <value xsi:type="xsd:string">Taiwan_Sales_Home_Page_DRAFT</value>
     </values>
     <values>
         <field>HomeServiceDashboardFilter__c</field>

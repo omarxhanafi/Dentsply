@@ -285,7 +285,7 @@ export default class InsideSalesCampaignTracker extends NavigationMixin(Lightnin
                 } else {
                     const event = new ShowToastEvent({
                         title: 'Success',
-                        message: result.includes('no tasks') ? result : result + ' Tasks have been Created successfully',
+                        message: result+' Tasks have been Created successfully',
                         variant: 'success',
                         mode: 'dismissible'
                     });

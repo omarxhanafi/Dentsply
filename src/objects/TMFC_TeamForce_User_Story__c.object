@@ -1233,6 +1233,30 @@ ISBLANK(TMFC_So_that__c),
     </fields>
     <label>TeamForce User Story</label>
     <listViews>
+        <fullName>All_Christian_s_User_Stories_OPEN</fullName>
+        <columns>NAME</columns>
+        <columns>TMFC_I_want_to__c</columns>
+        <columns>Sandbox__c</columns>
+        <columns>Project__c</columns>
+        <columns>Release__c</columns>
+        <columns>TMFC_TeamForce_Epic__c</columns>
+        <columns>TMFC_User_Story_Priority__c</columns>
+        <columns>TMFC_Story_Points__c</columns>
+        <columns>TMFC_User_Story_Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER.LAST_NAME</field>
+            <operation>equals</operation>
+            <value>Pfeil</value>
+        </filters>
+        <filters>
+            <field>TMFC_User_Story_Status__c</field>
+            <operation>notEqual</operation>
+            <value>In Production - Closed,Cancelled</value>
+        </filters>
+        <label>All Christian&apos;s User Stories (OPEN)</label>
+    </listViews>
+    <listViews>
         <fullName>All_Houssam_s_User_Stories_OPEN</fullName>
         <columns>NAME</columns>
         <columns>TMFC_I_want_to__c</columns>
@@ -1481,6 +1505,7 @@ ISBLANK(TMFC_So_that__c),
         <columns>NAME</columns>
         <columns>TMFC_I_want_to__c</columns>
         <columns>TMFC_TeamForce_Sprint__c</columns>
+        <columns>Sandbox__c</columns>
         <columns>Project__c</columns>
         <columns>TMFC_TeamForce_Epic__c</columns>
         <columns>TMFC_Story_Points__c</columns>
@@ -2199,8 +2224,8 @@ ISBLANK(TMFC_So_that__c),
         </filters>
         <filters>
             <field>TMFC_User_Story_Status__c</field>
-            <operation>notEqual</operation>
-            <value>In Production - Closed,Cancelled</value>
+            <operation>equals</operation>
+            <value>Cancelled</value>
         </filters>
         <filters>
             <field>Product__c</field>
@@ -2727,6 +2752,7 @@ ISBLANK(TMFC_So_that__c),
         <columns>Requester_Country__c</columns>
         <columns>OWNER.FIRST_NAME</columns>
         <columns>OWNER.LAST_NAME</columns>
+        <columns>TMFC_User_Story_Status__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Platform__c</field>

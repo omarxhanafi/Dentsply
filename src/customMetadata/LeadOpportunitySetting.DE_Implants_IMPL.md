@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">ANKYLOS;ATIS;ATIS EV;ATIS TX;Azento Astra Tech;Azento EV;Azento XiVE;C1;DS PrimeTaper;MIS Implants;MIS Regenerative;Ossix;Other;Pre-milled Blanks;Seven;SmartFix;Symbios;V3;XiVE</value>
+        <value xsi:type="xsd:string">ANKYLOS;ATIS;ATIS EV;ATIS TX;Azento Astra Tech;Azento EV;Azento XiVE;C1;DS PrimeTaper;MIS Implants;MIS Regenerative;Ossix;Other;Pre-milled Blanks;Seven;SmartFix;Symbios;V3;XiVE;DS PrimeTaper;DS OmniTaper;C1 XD;Seven XD</value>
     </values>
     <values>
         <field>Category__c</field>

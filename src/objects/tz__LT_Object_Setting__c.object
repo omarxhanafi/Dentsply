@@ -30,7 +30,7 @@
     <fields>
         <fullName>tz__City__c</fullName>
         <deprecated>false</deprecated>
-        <description>API name of the city field.</description>
+        <description>API name of the city field in the standard object or the Event Start UTC Offset field in the Activity object.</description>
         <externalId>false</externalId>
         <inlineHelpText>API name of the city field.</inlineHelpText>
         <label>City</label>
@@ -43,7 +43,7 @@
     <fields>
         <fullName>tz__Country__c</fullName>
         <deprecated>false</deprecated>
-        <description>API name of the country field.</description>
+        <description>API name of the country field in the standard object or the Event Start Date field in the Activity object.</description>
         <externalId>false</externalId>
         <inlineHelpText>API name of the country field.</inlineHelpText>
         <label>Country</label>
@@ -59,7 +59,7 @@
         <description>Option to override the default lookup based on address/phone fields. When you input a valid IANA Timezone in the selected field (Example: America/New_York), the App fetches the timezone information based on this value and ignores address/phone fields. Useful for United States Armed Forces.</description>
         <externalId>false</externalId>
         <inlineHelpText>Option to override the lookup based on address/phone fields. When you input a valid IANA Timezone in the selected field (Example: America/New_York), the App fetches the timezone information based on this value. Useful for United States Armed Forces.</inlineHelpText>
-        <label>IANA Override</label>
+        <label>IANA Override (to be deprecated)</label>
         <length>100</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -70,11 +70,11 @@
         <fullName>tz__Lookup_Order__c</fullName>
         <defaultValue>&quot;Address&quot;</defaultValue>
         <deprecated>false</deprecated>
-        <description>Select the lookup order to identify the timezone. Default is Address fields. The App will first attempt to identify the timezone based on address fields, and if it does not succeed, it will use the Phone field.</description>
+        <description>Select the lookup order (Address or Phone) to identify the timezone or the Event End UTC Offset field in the Activity object.</description>
         <externalId>false</externalId>
         <inlineHelpText>Select the lookup order to identify the timezone. Default is Address fields. The App will first attempt to identify the timezone based on address fields, and if it does not succeed, it will use the Phone field.</inlineHelpText>
         <label>Lookup Order</label>
-        <length>10</length>
+        <length>100</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -83,7 +83,7 @@
     <fields>
         <fullName>tz__Phone__c</fullName>
         <deprecated>false</deprecated>
-        <description>API name of the phone field.</description>
+        <description>API name of the phone field in the standard object or the Event End Timezone field in the Activity object.</description>
         <externalId>false</externalId>
         <inlineHelpText>API name of the phone field.</inlineHelpText>
         <label>Phone</label>
@@ -94,7 +94,7 @@
     <fields>
         <fullName>tz__Postal_Code__c</fullName>
         <deprecated>false</deprecated>
-        <description>API name of the postal code field.</description>
+        <description>API name of the postal code field in the standard object or the Event End Date field in the Activity object.</description>
         <externalId>false</externalId>
         <inlineHelpText>API name of the postal code field.</inlineHelpText>
         <label>Postal Code</label>
@@ -107,7 +107,7 @@
     <fields>
         <fullName>tz__State__c</fullName>
         <deprecated>false</deprecated>
-        <description>API name of the state field.</description>
+        <description>API name of the state field in the standard object or the Event Start Timezone field in the Activity object.</description>
         <externalId>false</externalId>
         <inlineHelpText>API name of the state field.</inlineHelpText>
         <label>State</label>

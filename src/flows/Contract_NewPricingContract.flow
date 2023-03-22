@@ -843,7 +843,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>showCountryNotSupported</targetReference>
+                <targetReference>createContract</targetReference>
             </connector>
             <label>CountrySupportedFalse</label>
         </rules>
@@ -1487,6 +1487,11 @@
         <expression>{!Get_Account.Name} + &quot; &quot; + {!Get_Account.OneSF_Id__c} + &quot; DS Activate&quot; + &quot; &quot; + TEXT({!EFA_inputContractStartDate})</expression>
     </formulas>
     <formulas>
+        <name>formulaDefaultFieldsInStandardNewContract</name>
+        <dataType>String</dataType>
+        <expression>&apos;AccountId=&apos; &amp; {!Get_Account.Id}</expression>
+    </formulas>
+    <formulas>
         <name>formulaRecordIdPrefixFirst3Char</name>
         <dataType>String</dataType>
         <expression>LEFT({!recordId}, 3)</expression>
@@ -1860,37 +1865,25 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <fields>
-            <name>newContractFromComp</name>
-            <extensionName>c:NavigateToCreateRecordComp_FLOW</extensionName>
+            <name>CreatingNewStandardContract</name>
+            <extensionName>c:createNewRecordLWC</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>defaultFieldValues</name>
+                <name>difaultFieldValues</name>
                 <value>
-                    <stringValue>{Name : &apos;hola&apos;}</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>objectToCreate</name>
-                <value>
-                    <stringValue>Contract</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>recordId</name>
-                <value>
-                    <stringValue>0011x00001hvw6LAAQ</stringValue>
+                    <elementReference>formulaDefaultFieldsInStandardNewContract</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>recordTypeId</name>
                 <value>
-                    <stringValue>0121x000005Pt4hAAC</stringValue>
+                    <stringValue>0120J000000jn5fQAA</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>hasNavigated</name>
+                <name>objectApiName</name>
                 <value>
-                    <booleanValue>false</booleanValue>
+                    <stringValue>Contract</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2830,30 +2823,6 @@
             <fieldText>Please select a Contract Type</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
-    <screens>
-        <description>TFUS-000003063</description>
-        <name>showCountryNotSupported</name>
-        <label>showCountryNotSupported</label>
-        <locationX>1965</locationX>
-        <locationY>1078</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
-        <connector>
-            <targetReference>createContract</targetReference>
-        </connector>
-        <fields>
-            <name>msgCountryNotSupportedTitle</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 22px; font-family: -apple-system, system-ui, &amp;quot;Segoe UI&amp;quot;, Roboto, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;; color: rgb(62, 62, 60);&quot;&gt;Country not supported&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>msgCountryNotSupportedBody</name>
-            <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>

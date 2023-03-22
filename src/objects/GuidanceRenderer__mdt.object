@@ -386,6 +386,67 @@
     </fields>
     <label>GuidanceProcedureTracking</label>
     <listViews>
+        <fullName>Australia_New_Zeland</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>CountryList__c</columns>
+        <columns>RecordTypeDeveloperName__c</columns>
+        <columns>NamespacePrefix</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DeveloperName</field>
+            <operation>startsWith</operation>
+            <value>AUNZ</value>
+        </filters>
+        <label>Australia New Zeland</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Austria_Germany</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>CountryList__c</columns>
+        <columns>RecordTypeDeveloperName__c</columns>
+        <columns>NamespacePrefix</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DeveloperName</field>
+            <operation>startsWith</operation>
+            <value>AT_DE</value>
+        </filters>
+        <label>Austria &amp; Germany</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Canada</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>MasterLabel</field>
+            <operation>startsWith</operation>
+            <value>CA</value>
+        </filters>
+        <label>Canada</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Global</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>CountryList__c</columns>
+        <columns>NamespacePrefix</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DeveloperName</field>
+            <operation>startsWith</operation>
+            <value>Global</value>
+        </filters>
+        <label>Global</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
         <fullName>US_Guidance</fullName>
         <columns>MasterLabel</columns>
         <columns>DeveloperName</columns>

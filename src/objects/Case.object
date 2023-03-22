@@ -10741,6 +10741,27 @@ TFUS-000005186</description>
         <unique>false</unique>
     </fields>
     <listViews>
+        <fullName>ANZ_Software_Support_3rd_party_reply</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>Customer Replied</value>
+        </filters>
+        <label>ANZ: Software Support - 3rd party reply</label>
+        <queue>ANZ_Software_Support_Third_Party</queue>
+        <sharedTo>
+            <group>ANZ_Software_Support_Third_Party</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>ANZ_Software_Support_Closed_Completed_Case</fullName>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -11755,6 +11776,57 @@ TFUS-000005186</description>
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>CRM_Team_AMERICAS_Analytics</fullName>
+        <booleanFilter>1 AND 4 AND 5 AND (2 OR 3) AND 6</booleanFilter>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>Request_Type__c</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Teamforce_Product__c</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CRM_Analyst__c</columns>
+        <columns>related_Country__c</columns>
+        <columns>Due_Date__c</columns>
+        <columns>Related_Development_Project__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>New,Active,Waiting For Customer Feedback,Waiting For User Feedback,Waiting For Internal Feedback</value>
+        </filters>
+        <filters>
+            <field>related_Country__c</field>
+            <operation>equals</operation>
+            <value>USA,Canada,Brazil</value>
+        </filters>
+        <filters>
+            <field>Creator_Country__c</field>
+            <operation>equals</operation>
+            <value>USA,Brazil,Canada</value>
+        </filters>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.CRM_Requests</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>notEqual</operation>
+            <value>Darren Pasley,CRM Team LATIN AMERICA</value>
+        </filters>
+        <filters>
+            <field>Teamforce_Product__c</field>
+            <operation>equals</operation>
+            <value>Einstein Analytics (EA)</value>
+        </filters>
+        <label>#CRM Team: AMERICAS - Analytics</label>
+        <sharedTo>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>CRM_Team_AMERICAS_Case</fullName>
         <booleanFilter>1 AND 3 AND 5 AND 6 AND (2 OR 4)</booleanFilter>
         <columns>CASES.CASE_NUMBER</columns>
@@ -11783,7 +11855,7 @@ TFUS-000005186</description>
         <filters>
             <field>OWNER_NAME</field>
             <operation>notEqual</operation>
-            <value>Mike Pilgrim,Narda Hilton,Vicki Gaines,Siroforce Integration,Katarina Eckebrant</value>
+            <value>Mike Pilgrim,Narda Hilton,Vicki Gaines,Siroforce Integration,Katarina Eckebrant,Tobias Nygren</value>
         </filters>
         <filters>
             <field>Creator_Country__c</field>
@@ -12508,9 +12580,7 @@ TFUS-000005186</description>
         </filters>
         <label>DK: All ServiceComplaint(excl. SIMPLANT)</label>
         <language>en_US</language>
-        <sharedTo>
-            <roleAndSubordinates>DK_IMPL_Sales_Manager</roleAndSubordinates>
-        </sharedTo>
+        <sharedTo/>
     </listViews>
     <listViews>
         <fullName>DK_SIMPLANT_Case</fullName>
@@ -12887,6 +12957,15 @@ TFUS-000005186</description>
         <queue>IT_Customer_Service_Dealer_queue</queue>
         <sharedTo>
             <group>IT_Customer_Service_Dealer_queue</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>IT_Finance_queue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>IT: Finance queue</label>
+        <queue>IT_Finance_queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
         </sharedTo>
     </listViews>
     <listViews>
@@ -13338,6 +13417,26 @@ TFUS-000005186</description>
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>My_Cases_Created_by_Me2023</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CreatedByMe__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filters>
+        <label>#My Cases (Created by Me)</label>
+        <sharedTo>
+            <group>US_Endo_Sales_Reps</group>
+            <role>NA_CRM_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>My_Team_s_Open_Cases</fullName>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>NAME</columns>
@@ -13491,14 +13590,15 @@ TFUS-000005186</description>
     </listViews>
     <listViews>
         <fullName>NA_Customer_Service_Credit_Processing_Case</fullName>
-        <booleanFilter>(1 AND 2 AND 3 AND 4) OR (5 AND 6)</booleanFilter>
+        <booleanFilter>(1 AND 2 AND 3 AND 4 AND 7) OR (5 AND 6 AND 7)</booleanFilter>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>NAME</columns>
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
+        <columns>SBU__c</columns>
         <columns>Approval_Routing__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
@@ -13530,6 +13630,11 @@ TFUS-000005186</description>
             <field>CASES.STATUS</field>
             <operation>equals</operation>
             <value>In Process,New,Active</value>
+        </filters>
+        <filters>
+            <field>Product_Line__c</field>
+            <operation>notContain</operation>
+            <value>SureSmile</value>
         </filters>
         <label>NA:DI Customer Service Credit Processing</label>
         <sharedTo>
@@ -13583,7 +13688,7 @@ TFUS-000005186</description>
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <columns>Approval_Routing__c</columns>
         <filterScope>Everything</filterScope>
@@ -13601,6 +13706,11 @@ TFUS-000005186</description>
             <field>CORE.USERS.ALIAS</field>
             <operation>notEqual</operation>
             <value>NA: Credit and Rebill</value>
+        </filters>
+        <filters>
+            <field>Product_Line__c</field>
+            <operation>notContain</operation>
+            <value>SureSmile</value>
         </filters>
         <label>NA:DI CS Credit Processing v2 Test</label>
         <sharedTo>
@@ -13805,8 +13915,8 @@ TFUS-000005186</description>
         </filters>
         <filters>
             <field>CASES.SUBJECT</field>
-            <operation>notEqual</operation>
-            <value>Annual Leave</value>
+            <operation>notContain</operation>
+            <value>Annual Leave,Ticket Received</value>
         </filters>
         <label>NA: DT Web Support</label>
         <queue>NA_DT_web_support</queue>
@@ -14640,7 +14750,37 @@ TFUS-000005186</description>
         <language>en_US</language>
         <sharedTo>
             <role>ATLANTIS_Europe</role>
-            <roleAndSubordinates>NO_IMPL_Sales_Manager</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Open_Brazil_CRM_Requests</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Request_Sub_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Creator_Country__c</field>
+            <operation>equals</operation>
+            <value>Brazil</value>
+        </filters>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.CRM_Requests</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Solved &amp; Closed,Cancelled &amp; Closed,Solved,Closed,Cancelled,Completed</value>
+        </filters>
+        <label>Open Brazil CRM Requests</label>
+        <sharedTo>
+            <role>BR_CRM_Analyst</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -15190,7 +15330,6 @@ TFUS-000005186</description>
         <language>en_US</language>
         <sharedTo>
             <role>ATLANTIS_Europe</role>
-            <roleAndSubordinates>SE_IMPL_Sales_Manager</roleAndSubordinates>
         </sharedTo>
     </listViews>
     <listViews>

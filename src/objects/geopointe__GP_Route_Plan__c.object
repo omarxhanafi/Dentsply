@@ -727,6 +727,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>geopointe__Records_With_Incorrect_Business_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Records With Incorrect Business Hours</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>7</visibleLines>
+    </fields>
+    <fields>
         <fullName>geopointe__Records_With_Incorrect_Hours__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>

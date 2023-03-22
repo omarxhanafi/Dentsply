@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">C-Pilot;DT Post;EDDY;EDDY.Flex Cannula;FlexAccess;Guttafusion;Hand file user;Reciproc;Reciproc blue;Reciproc direct;R-Pilot;TruShape;Ultrasonics;VDW.1Seal;VDW.Gold Reciproc;VDW.Rotate;VDW.Silver Reciproc;VDW.Ultra;Vortex Blue</value>
+        <value xsi:type="xsd:string">C-Pilot;DT Post;EDDY;EDDY.Flex Cannula;FlexAccess;Guttafusion;Hand file user;Reciproc;Reciproc blue;Reciproc direct;R-Pilot;TruShape;Ultrasonics;VDW.1Seal;VDW.Gold Reciproc;VDW.Rotate;VDW.Silver Reciproc;VDW.Ultra;Vortex Blue;X-SMART;X-SMART Apex Locator;X-SMART IQ;X-SMART Plus;X-SMART PRO+</value>
     </values>
     <values>
         <field>Category__c</field>
