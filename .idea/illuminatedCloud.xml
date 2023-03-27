@@ -4,12 +4,13 @@
     <option name="connections">
       <list>
         <IlluminatedCloudConnection>
-          <option name="connectionName" value="DevApril" />
+          <option name="connectionName" value="Tracker" />
           <option name="connectionType" value="OAUTH" />
           <option name="defaultModuleName" value="Dentsply" />
-          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/DevApril/OfflineSymbolTable.zip" />
+          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/Tracker/OfflineSymbolTable.zip" />
         </IlluminatedCloudConnection>
       </list>
     </option>
+    <option name="ignoreJavaScriptLanguageLevel" value="true" />
   </component>
 </project>

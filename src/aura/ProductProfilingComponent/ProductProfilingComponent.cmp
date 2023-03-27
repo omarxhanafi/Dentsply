@@ -23,7 +23,9 @@ Description:   	Component to show Product Profiling records (in a Hierarchy wher
     <aura:attribute name="activeFocusFilter" type="string" default="all"/>
     <aura:attribute name="activeCompetitorFilter" type="string" default="all"/>
     <aura:attribute name="focusFilter" type="boolean" default="false"/>
-    
+
+    <aura:attribute name="profilingRecordId" type="String" />
+
     <lightning:navigation aura:id="navService"/>
     <aura:attribute name="pageReference" type="Object"/>
   

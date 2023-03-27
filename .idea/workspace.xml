@@ -2,21 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/CountryCodeController.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/CountryCodeController.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Test_CountryCodeController.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Test_CountryCodeController.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lwc/campaignLeadOpWarningLwc/campaignLeadOpWarningLwc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lwc/campaignLeadOpWarningLwc/campaignLeadOpWarningLwc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lwc/campaignLeadOpWarningLwc/campaignLeadOpWarningLwc.js-meta.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/e/0e1858e429c50ace9d11d3a2a6688cb05f541e55" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1b00ef8cd1b04b5de25d321ac95905c57254dd4c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/0/600e13b554d07ec0d22169f41a27daa04f6db3f8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/d/bd7c5e46ed311a981d67bc228b24950647116b1f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/f/cf058cdb669ab6fe8092c9e960ab6976a618aa8c" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/079338ab86f2c653731167d83eb37eb1f766a0bd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/e/0e5523a87a1c18832da5e7ad90f24e4c717124f9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/1339ce4b9d6e30c2ebb87538e78324652b80772a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/32ec7cf3602ec30eba731714bb0d9771ba2a8ff4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/0/600e13b554d07ec0d22169f41a27daa04f6db3f8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/714e76fb7ba689a6a266d170f38582d523c689a6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/73c92ad3f783c06394fd158eee405166b4cd92d7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/1/81b49f70a221a9443477a136902207a0d850ed94" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/a/9ac986f76eb93cc6e1a99ed167c248dbf47986b2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9bf12b6e3c7c3203ffaf4222c2903b4b0aa98ca8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a6c6de8768b1f7656e9540e9d57cbb3e1e914b5b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IlluminatedCloud/Tracker/OfflineSymbolTable.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/UsersInAccountTerritories.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/UsersInAccountTerritories.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/UAT/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/UAT/OfflineSymbolTable.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponent.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponent.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,9 +94,13 @@
                   <option name="body" value="Id productId = '01t0J00000ISbvEQAT';&#10;Id orderId = '8013G000001HmD3QAK';&#10;Id pricebookId = '01s3G000002BMwCQAW';&#10;&#10;//PricebookEntry pricebookEntry1 = new PricebookEntry(Pricebook2Id='01s20000000DHebAAG', Product2Id = productId, UnitPrice=100, IsActive=true);&#10;//insert pricebookEntry1;&#10;&#10;PricebookEntry pricebookEntry2 = new PricebookEntry(Pricebook2Id=pricebookId, Product2Id= productId, UnitPrice=100, IsActive=true);&#10;insert pricebookEntry2;&#10;&#10;// Add an order line item for the product to the order&#10;OrderItem orderItem = new OrderItem(&#10;        OrderId = orderId,&#10;        Product2Id = productId,&#10;        Quantity = 2,&#10;        UnitPrice = 100,&#10;        ListPrice = 100,&#10;        PricebookEntryId = pricebookEntry2.Id&#10;);&#10;insert orderItem;&#10;&#10;System.debug('Order Item ID: ' + orderItem.Id);&#10;" />
                   <option name="name" value="Anonymous Apex 4" />
                 </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="body" value="Schema.DescribeSObjectResult r = ProcedureTracker__c.sObjectType.getDescribe();&#10;String keyPrefix = r.getKeyPrefix();&#10;System.debug('Printing –'+keyPrefix );" />
+                  <option name="name" value="Anonymous Apex 5" />
+                </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="3" />
+            <option name="selectedSavedDocumentIndex" value="4" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionWorkspaceSettings">
@@ -17817,6 +17828,11 @@
                 </ConnectionWorkspaceSettings>
               </value>
             </entry>
+            <entry key="IntegrationSuperBadge">
+              <value>
+                <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
             <entry key="Lead">
               <value>
                 <ConnectionWorkspaceSettings>
@@ -18199,6 +18215,19 @@
             <entry key="SureSmile">
               <value>
                 <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
+            <entry key="Tracker">
+              <value>
+                <ConnectionWorkspaceSettings>
+                  <option name="buildSuccessDatesBySourceRootRelativePath">
+                    <map>
+                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1679909345806" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1679914689000" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1679908688231" />
+                    </map>
+                  </option>
+                </ConnectionWorkspaceSettings>
               </value>
             </entry>
             <entry key="UAT">
@@ -18601,8 +18630,10 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select id, Name, SobjectType from recordtype where SobjectType = 'Campaign'" />
-                  <option name="name" value="SOQL Query 1" />
+                  <option name="body" value="select id, Countries__c, ProductGroupText__c from Non_ERP_Products__c where Countries__c includes ('BE') limit 500 " />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="SOQL Query 2" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
@@ -18654,7 +18685,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="DevApril" />
+      <option name="connectionName" value="Tracker" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -18701,7 +18732,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="DevApril" />
+      <option name="connectionName" value="Tracker" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -18740,7 +18771,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="DevApril" />
+      <option name="connectionName" value="Tracker" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -18787,7 +18818,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="DevApril" />
+      <option name="connectionName" value="Tracker" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -18834,7 +18865,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="DevApril" />
+      <option name="connectionName" value="Tracker" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -18935,6 +18966,13 @@
       <workItem from="1679406336722" duration="82000" />
       <workItem from="1679406421004" duration="7330000" />
       <workItem from="1679498885657" duration="2546000" />
+      <workItem from="1679657270474" duration="1383000" />
+      <workItem from="1679659581553" duration="4000" />
+      <workItem from="1679666514024" duration="481000" />
+      <workItem from="1679667264677" duration="675000" />
+      <workItem from="1679668269580" duration="1832000" />
+      <workItem from="1679838882296" duration="11000" />
+      <workItem from="1679905348498" duration="2720000" />
     </task>
     <servers />
   </component>
@@ -18983,7 +19021,7 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_ES_FreezeUserHandler_testHandleInboundEmail.ic2" NAME="Freeze Coverage Results" MODIFIED="1679330377388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Freeze" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ProcedureTrackerTriggerHelper_testcheckUniqueness.ic2" NAME="StgJan Coverage Results" MODIFIED="1673520387472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchCreateProcedureTrackers_testBatchCreateProcedureTrackers.ic2" NAME="StgJan Coverage Results" MODIFIED="1673859457008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_CountryCodeController.ic2" NAME="DevApril Coverage Results" MODIFIED="1679497979036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevApril" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_CountryCodeController.ic2" NAME="DevApril Coverage Results" MODIFIED="1679497979036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchSetAccountSubSegmentation.ic2" NAME="Production Coverage Results" MODIFIED="1674815707650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Production" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
@@ -18991,7 +19029,7 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_NewContractController_testEligibilityOfCreation.ic2" NAME="DevFeb Coverage Results" MODIFIED="1673603932022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevFeb" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_GuidanceRendererController.ic2" NAME="SureSmile Coverage Results" MODIFIED="1669718040013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_UpdateContactsBypassDuplicate_testUpdateContact.ic2" NAME="Lead Coverage Results" MODIFIED="1675421607460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Freeze" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMargins.ic2" NAME="Margin Coverage Results" MODIFIED="1677067029631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevApril" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMargins.ic2" NAME="Margin Coverage Results" MODIFIED="1677067029631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
   </component>
 </project>

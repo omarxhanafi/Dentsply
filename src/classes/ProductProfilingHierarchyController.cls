@@ -386,6 +386,20 @@ public with sharing class ProductProfilingHierarchyController {
         
     }
 
+    /**
+     * getAccountFromProcedureTracker Get the practice account related to the provided procedure tracker
+     * @author ohanafi@salesforce.com | 27-03-2023
+     *
+     * @param procedureTrackerId   Procedure Tracker id
+     *
+     * @return Id - Account id related to the procedure tracker
+     */
+    @AuraEnabled
+    public static Id getAccountFromProcedureTracker(Id procedureTrackerId) {
+        ProcedureTracker__c procedureTracker = [SELECT PracticeAccount__c FROM ProcedureTracker__c WHERE Id = :procedureTrackerId];
+        return procedureTracker.PracticeAccount__c;
+    }
+
 
     public class HierarchyNode {
     @AuraEnabled public Non_ERP_Products__c node;

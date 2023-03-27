@@ -32,14 +32,44 @@ init: function (cmp, event, helper) {
             { type: "action", typeAttributes: { rowActions: rowActions }}                
         ]);
 
-    
-  	   var record = cmp.get("v.recordId");
-       var isAccountPlanRecord = false;
-       if(record.substring(0,3) === 'a5q'){
-            isAccountPlanRecord = true;
-           	cmp.set("v.isAccountPlanRecord",true);
-       }	
-       helper.getProfilingHierarchy(cmp, event, record);
+    var recordId = cmp.get("v.recordId");
+    cmp.set("v.profilingRecordId", recordId);
+
+    var objectPrefix = recordId.substring(0, 3);
+
+    if (objectPrefix === "a6R") {
+        // Check if the record ID is a Procedure Tracker
+        console.log('Procedure tracker');
+
+        var action = cmp.get("c.getAccountFromProcedureTracker");
+
+        action.setParams({
+            "procedureTrackerId": recordId
+        });
+
+        // Get practice account id related to the procedure tracker
+        action.setCallback(this, function(response) {
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                var accountId = response.getReturnValue();
+
+                // We set the account id as the new the record id
+                cmp.set("v.profilingRecordId", accountId);
+
+                // We run the profiling hierarchy
+                helper.getProfilingHierarchy(cmp, event, recordId);
+            } else {
+                console.log("Error retrieving Account ID");
+            }
+        });
+
+        $A.enqueueAction(action);
+    } else {
+        if(objectPrefix === 'a5q'){
+            cmp.set("v.isAccountPlanRecord",true);
+        }
+        helper.getProfilingHierarchy(cmp, event, recordId);
+    }
 
     },
     
@@ -58,7 +88,7 @@ init: function (cmp, event, helper) {
       			{
         			name : 'recordId',
         			type : 'String',
-        			value : component.get("v.recordId")
+        			value : component.get("v.profilingRecordId")
       			}	
     			];
        		flow.startFlow('Product_Profiling_Create_Product_Profiling_from_Contact', inputVariables);
@@ -67,7 +97,7 @@ init: function (cmp, event, helper) {
             
             /*var urlEvent = $A.get("e.force:navigateToURL");
     		urlEvent.setParams({
-      				"url": '/flow/Product_Profiling_Create_Product_Profiling_from_Contact?recordId=' + component.get("v.recordId") + '&retURL=' + component.get("v.recordId")
+      				"url": '/flow/Product_Profiling_Create_Product_Profiling_from_Contact?recordId=' + component.get("v.profilingRecordId") + '&retURL=' + component.get("v.profilingRecordId")
     			});       	
     		urlEvent.fire();*/
                    
@@ -79,7 +109,7 @@ init: function (cmp, event, helper) {
                 "componentName": "c__ProductProfilingFlow"    
             },    
             "state": {
-                "c__testVar": component.get("v.recordId")
+                "c__testVar": component.get("v.profilingRecordId")
            	}
         	};
 			
@@ -125,7 +155,7 @@ init: function (cmp, event, helper) {
        	var relatedListEvent = $A.get("e.force:navigateToRelatedList");
    		relatedListEvent.setParams({
       			"relatedListId": "Products_Profiling__r",
-      			"parentRecordId": component.get("v.recordId")
+      			"parentRecordId": component.get("v.profilingRecordId")
    		});
    		relatedListEvent.fire();
     },
@@ -156,7 +186,7 @@ init: function (cmp, event, helper) {
         var row = event.getParam('row');
         var action = event.getParam('action');
         var recordId = row.productId;
-        var parentRecord = cmp.get('v.recordId');
+        var parentRecord = cmp.get('v.profilingRecordId');
         
         if(action.name == 'view'){
         	helper.openProduct(cmp, event, recordId, 'view');
