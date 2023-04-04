@@ -3,7 +3,6 @@ global with sharing class leadConvert {
     @InvocableMethod(label='Convert Lead' description='Converts a lead to an account/contact' category='Lead')
   	public static List<String> convertLead(List<ConvertLeadRequest> input) {
         try {
-            System.debug('Init lead convert');
             Database.LeadConvert lc = new Database.LeadConvert();
             lc.setLeadId(input[0].leadId);
         	lc.setConvertedStatus(input[0].convertedStatus);
@@ -21,7 +20,6 @@ global with sharing class leadConvert {
         	//Contact
         	
         	if (input[0].contactId != '' && input[0].contactId != null) {
-                System.debug('Contact Id : ' + input[0].contactId);
               lc.setContactId(input[0].contactId);
               
                 Contact c = [SELECT Id, AccountId FROM Contact WHERE Id =: input[0].contactId];
@@ -45,7 +43,6 @@ global with sharing class leadConvert {
         	if (input[0].sendEmailToOwner != null && input[0].sendEmailToOwner) {
               lc.setSendNotificationEmail(input[0].sendEmailToOwner);
             }
-            System.debug(lc);
 
             Database.LeadConvertResult lcr = null;
 
@@ -59,7 +56,6 @@ global with sharing class leadConvert {
             if (lcr.isSuccess()) {
                 List<String> result = new List<String>();
                 String contactId = lcr.getContactId();
-                System.debug('Contact id: ' + contactId);
                 if(contactId != ''){
                     result.add(lcr.getContactId());
                 }
@@ -73,7 +69,6 @@ global with sharing class leadConvert {
                 result.opportunityId = lcr.getOpportunityId();*/
                 return result;
             } else {
-                System.debug(lcr.getErrors()[0].getMessage());
                 throw new ConvertLeadActionException(lcr.getErrors()[0].getMessage());
             }
 
