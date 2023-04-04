@@ -27,9 +27,8 @@ public without sharing class GuidanceRendererController {
             * @return The guidance details for the given Procedure Tracker record.
             */
         @AuraEnabled
-        public static string getGuidanceDetails(String parentId, String nextActivity){
+        public static GuidanceRenderer__mdt getGuidanceDetails(String parentId, String nextActivity){
             try {
-                String guidance;
                 ProcedureTracker__c currentProcedure = [Select Id, PracticeAccount__r.Country__c,NextActivity__c,RecordTypeId from ProcedureTracker__c Where Id =: parentId Limit 1];
                 RecordType currentRecordType = [SELECT DeveloperName
                 FROM RecordType
@@ -41,13 +40,13 @@ public without sharing class GuidanceRendererController {
 
                     if(Test.IsRunningTest()){
                         guidanceList =  [
-                                Select Id,CountryList__c, Guidance_Content__c, NextActivity__c
+                                Select Id,CountryList__c, Guidance_Content__c, NextActivity__c, PDFLinkLabel__c, PDFLinkURL__c
                                 From GuidanceRenderer__mdt
                                 Where  isTest__c = true
                         ];
                     } else {
                         guidanceList =  [
-                                Select Id,CountryList__c, Guidance_Content__c, NextActivity__c
+                                Select Id,CountryList__c, Guidance_Content__c, NextActivity__c, PDFLinkLabel__c, PDFLinkURL__c
                                 From GuidanceRenderer__mdt
                                 Where  NextActivity__c=:nextActivity
                                 AND RecordTypeDeveloperName__c =: currentRecordType.DeveloperName
@@ -61,8 +60,7 @@ public without sharing class GuidanceRendererController {
                             if(!countryList.isEmpty()){
                                 // We check if the practice account's country is included in the countries list
                                 if(countryList.contains(currentProcedure.PracticeAccount__r.Country__c)){
-                                    guidance = eachGuidance.Guidance_Content__c;
-                                    break;
+                                    return eachGuidance;
                                 }
                             }
                         }
@@ -70,7 +68,7 @@ public without sharing class GuidanceRendererController {
 
                 }
 
-                return guidance;
+                return null;
 
             } catch (Exception e) {
                 throw new AuraHandledException(e.getMessage());

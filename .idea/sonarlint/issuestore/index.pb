@@ -39,3 +39,7 @@ V
 &src/classes/BulkCFEsListController.cls,e/f/efaf45216d7b585dd680d8d8aee75d37c9412a33
 o
 ?src/aura/ProductProfilingEdit/ProductProfilingEditController.js,9/b/9bf12b6e3c7c3203ffaf4222c2903b4b0aa98ca8
+y
+Isrc/aura/ProductProfilingComponent/ProductProfilingComponent.cmp-meta.xml,c/a/ca34d6a51fff059f7d4a5b458e3b507d4555a6b3
+p
+@src/aura/ProductProfilingHierarchy/ProductProfilingHierarchy.cmp,8/1/8142d91b81d9e8901ff6be5c6003b044381f6112

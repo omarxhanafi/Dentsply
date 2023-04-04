@@ -13,6 +13,7 @@
                 <supportedFormFactor type="Large" />
                 <supportedFormFactor type="Small" />
             </supportedFormFactors>
+            <property label="Playbook Height in rem" name="playbookHeightInRem" type="Integer" default="20" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

@@ -4,11 +4,19 @@ import getGuidance from '@salesforce/apex/GuidanceRendererController.getGuidance
 const FIELDS=['ProcedureTracker__c.NextActivity__c'];
 
 export default class GuidanceRenderer extends LightningElement {
-@api recordId;
-guidanceDetails;
-nextActivity;
-currentNextActivity;
-isVisible = false;
+
+    @api recordId;
+    @api playbookHeightInRem;
+
+    guidanceDetails;
+    nextActivity;
+    currentNextActivity;
+    isVisible = false;
+
+    pdfLinkURL;
+    pdfLinkLabel;
+
+
     @wire(getRecord, { recordId: '$recordId', fields: FIELDS })
     wiredRecord({ error, data }) {
         if (error) {
@@ -27,12 +35,18 @@ isVisible = false;
 
     getGuidances(){
         getGuidance({parentId : this.recordId, nextActivity :this.currentNextActivity }).then((result) =>{
-            if(result){
-                this.guidanceDetails = result;
+            if(!!result){
+                this.guidanceDetails = result.Guidance_Content__c;
+                this.pdfLinkLabel = result.PDFLinkLabel__c;
+                this.pdfLinkURL = result.PDFLinkURL__c;
                 this.isVisible = true
             }
         }).catch((error) => {
             console.log('error',error);
         })
+    }
+
+    get pdfHeight() {
+        return 'height: ' + this.playbookHeightInRem + 'rem';
     }
 }
