@@ -5,7 +5,8 @@
         </lightning-card>
     </template>
     <template if:false={leadOppSettings}>
-        <lightning-card  variant="Narrow"  title={label.warningLabel} icon-name="utility:warning">
+        <lightning-card  variant="Narrow" icon-name="utility:warning" >
+            <h1 slot="title" style="white-space: normal;">{label.warningLabel}</h1>
         </lightning-card>
     </template>
 </template>
