@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/GuidanceRendererController.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.js-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.js-meta.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18214,10 +18209,10 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:GUIDANCERENDERERCONTROLLER" value="1680250811000" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1680170820086" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1680620616845" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1679914711613" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1679908688231" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:GUIDANCERENDERER" value="1680251301000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:GUIDANCERENDERER" value="1680619920439" />
                     </map>
                   </option>
                 </ConnectionWorkspaceSettings>

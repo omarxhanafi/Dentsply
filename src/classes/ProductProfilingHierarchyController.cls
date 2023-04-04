@@ -1,7 +1,13 @@
-/*------------------------------------------------------------  
-Author:         Richard Trum (Glimt) 2019-11-27     
-Description:    Controller handling custom lightning components related to Product Profiling
-------------------------------------------------------------*/
+/**
+ * @Author          Richard Trum
+ * @Description     Controller handling custom lightning components related to Product Profiling.
+ * @Test-Class      Test_SalesAnalyticsTriggerHandler
+ *
+ * @History
+ * 2019-11-27   Richard  Created ProductProfilingHierarchyController class
+ * 2023-03-27   Omar     TFUS-000005477 / TFUS-000005470 - Included Procedure Tracker in the Product Profiling component as well as being able to select all countries for a Non_ERP_Products__c record.
+
+ */
 
 public with sharing class ProductProfilingHierarchyController {
         
@@ -197,52 +203,52 @@ public with sharing class ProductProfilingHierarchyController {
     List<Non_ERP_Products__c> allProducts = new List<Non_ERP_Products__c>();    
     
     Boolean validInMyMarket = true;
-    Boolean inactiveProduct = false;    
+    Boolean inactiveProduct = false;
     
     String query = 'SELECT Id, Name, Countries__c, SBU__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, Manufacturer__c, ProductGroupText__c, QuantityUnitOfMeasure__c FROM Non_ERP_Products__c';
-    query = query + ' WHERE Inactive__c =: inactiveProduct AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true)'; //OR Valid_in_my_Market__c =: validInMyMarket)
+    query += ' WHERE Inactive__c =: inactiveProduct AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true)'; //OR Valid_in_my_Market__c =: validInMyMarket)
      
         
     Boolean filterIsApplied = false;    
         if(node != '' && node != null){
             node = String.EscapeSingleQuotes(node);
-            query = query + ' AND Product_Category__c =: node';
+            query += ' AND Product_Category__c =: node';
             filterIsApplied = true;
         }    
         
         if(searchString != ''){
             searchString = '%' + searchString + '%';
             searchString = String.EscapeSingleQuotes(searchString);
-            query = query + ' AND Name LIKE: searchString';
+            query += ' AND Name LIKE: searchString';
             filterIsApplied = true;
         }
         
         if(category != ''){
             category = String.EscapeSingleQuotes(category);
-            query = query + ' AND ProductGroupText__c =: category';
+            query += ' AND ProductGroupText__c =: category';
             filterIsApplied = true;
         }
         
         if(manufacturer != ''){
             manufacturer = String.EscapeSingleQuotes(manufacturer);
-            query = query + ' AND Manufacturer__c =: manufacturer';
+            query += ' AND Manufacturer__c =: manufacturer';
             filterIsApplied = true;
         }
         
         if(localcat != '' && localcat != null){
             localcat = String.EscapeSingleQuotes(localcat);
-            query = query + ' AND Product_Category__c =: localcat';
+            query += ' AND Product_Category__c =: localcat';
             filterIsApplied = true;
         }
         
         if(competitor == true){
             competitor = false;
-            query = query + ' AND Competitor_Product__c =: competitor';
+            query += ' AND Competitor_Product__c =: competitor';
             filterIsApplied = true;
         }
         
         if(focus == true){
-            query = query + ' AND KeyProduct__c =: focus';
+            query += ' AND KeyProduct__c =: focus';
             filterIsApplied = true;
         }
         

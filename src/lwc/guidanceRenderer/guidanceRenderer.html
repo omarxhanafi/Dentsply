@@ -2,14 +2,16 @@
     <template if:true={isVisible}>
     <lightning-card>
        <div class="slds-m-left_medium">
-       <template if:true={pdfLinkURL}>
+            <lightning-formatted-rich-text value={guidanceDetails}>
+            </lightning-formatted-rich-text>
+
+           <br><br>
+
+           <template if:true={pdfLinkURL}>
                <a class="slds-button slds-button_brand" href={pdfLinkURL} target="_blank">{pdfLinkLabel}</a>
                <p>&nbsp;</p>
                <iframe src={pdfLinkURL} style={pdfHeight}></iframe>
-       </template>
-           <p> </p>
-        <lightning-formatted-rich-text value={guidanceDetails}>
-        </lightning-formatted-rich-text>
+           </template>
        </div>
     </lightning-card>
     </template>
