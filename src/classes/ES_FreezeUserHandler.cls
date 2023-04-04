@@ -36,7 +36,6 @@ public class ES_FreezeUserHandler implements Messaging.InboundEmailHandler {
             Integer idEndIndex = textBody.indexOf(idEnd, idStartIndex);
             if (idEndIndex != -1) {
                 federationId = textBody.substring(idStartIndex, idEndIndex);
-                System.debug('Federation ID: ' + federationId);
             }
         }
 
@@ -60,6 +59,11 @@ public class ES_FreezeUserHandler implements Messaging.InboundEmailHandler {
                     // Update the user login and user records to save the changes
                     try {
                         update ulogin;
+                    } catch (Exception e){
+                        DebugLog.addError(e.getMessage());
+                    }
+
+                    try {
                         update userToFreeze;
                     } catch (Exception e){
                         DebugLog.addError(e.getMessage());
