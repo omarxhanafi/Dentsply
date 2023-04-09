@@ -21,57 +21,58 @@ public class ES_FreezeUserHandler implements Messaging.InboundEmailHandler {
     public Messaging.InboundEmailResult handleInboundEmail(Messaging.InboundEmail email, Messaging.InboundEnvelope envelope) {
         // Extract the plain text body of the email
         String textBody = email.plainTextBody;
+        textBody = textBody.replaceAll('\\s', ''); // replace all whitespace characters with an empty string
 
-        // Define the start and end strings to search for the user ID in the email body
-        String idStart = '*INTERNAL\\';
-        String idEnd = ' was';
+        // Initialize the federation ID List
+        List<String> federationIds = new List<String>();
 
-        // Initialize the federation ID
-        String federationId = null;
+        // Search for the user IDs in the email body
+        String regexPattern = '(?<=\\*From:\\*INTERNAL\\\\)[a-zA-Z0-9]+(?=\\*To:)';
+        Pattern pattern = Pattern.compile(regexPattern);
+        Matcher matcher = pattern.matcher(textBody);
 
-        // Search for the user ID in the email body
-        Integer idStartIndex = textBody.indexOf(idStart);
-        if (idStartIndex != -1) {
-            idStartIndex += idStart.length();
-            Integer idEndIndex = textBody.indexOf(idEnd, idStartIndex);
-            if (idEndIndex != -1) {
-                federationId = textBody.substring(idStartIndex, idEndIndex);
-            }
+        while (matcher.find()) {
+            federationIds.add(matcher.group());
         }
 
-        // If a federation ID was found, freeze the user with that ID
-        if (federationId != null) {
-            // Query for the user with the given federation ID
-            List<User> userList = [SELECT Id, CRM_team_comments__c FROM User WHERE FederationIdentifier = :federationId LIMIT 1];
-            if(!userList.isEmpty()) {
-                User userToFreeze = userList[0];
-                if (userToFreeze != null) {
-                    // Query for the user login record associated with the user
-                    UserLogin ulogin = [SELECT Id, IsFrozen, UserId FROM UserLogin WHERE UserId = :userToFreeze.Id];
+        if(!federationIds.isEmpty()){
+            // Get the list of users
+            Map<Id, User> userMap = new Map<Id, User> ([
+                    SELECT Id, CRM_team_comments__c, FederationIdentifier
+                    FROM User
+                    WHERE FederationIdentifier in :federationIds
+            ]);
 
-                    // Set the IsFrozen field to true to freeze the user
-                    ulogin.IsFrozen = true;
+            // Get the list of UserLogin records
+            List<UserLogin> userLoginList = [
+                    SELECT Id, IsFrozen, UserId
+                    FROM UserLogin
+                    WHERE UserId = :userMap.keySet()
+            ];
 
-                    // Add a comment to the user record to indicate that the user was frozen by an automated process
-                    String freezeComment = 'Frozen on ' + Datetime.now() + ' by automated process';
-                    userToFreeze.CRM_team_comments__c = String.isEmpty(userToFreeze.CRM_team_comments__c) ? freezeComment : userToFreeze.CRM_team_comments__c + ' ' + freezeComment;
-
-                    // Update the user login and user records to save the changes
-                    try {
-                        update ulogin;
-                    } catch (Exception e){
-                        DebugLog.addError(e.getMessage());
-                    }
-
-                    try {
-                        update userToFreeze;
-                    } catch (Exception e){
-                        DebugLog.addError(e.getMessage());
-                    }
-
-                }
+            for(User eachUser : userMap.values()){
+                // Add a comment to the user record to indicate that the user was frozen by an automated process
+                String freezeComment = 'Frozen on ' + Datetime.now() + ' by automated process';
+                eachUser.CRM_team_comments__c = String.isEmpty(eachUser.CRM_team_comments__c) ? freezeComment : eachUser.CRM_team_comments__c + ' ' + freezeComment;
             }
 
+            for(UserLogin eachUserLogin : userLoginList){
+                // Set the IsFrozen field to true to freeze the user
+                eachUserLogin.IsFrozen = true;
+            }
+
+            // Update the user login and user records to save the changes
+            try {
+                update userLoginList;
+            } catch (Exception e){
+                DebugLog.addError(e.getMessage());
+            }
+
+            try {
+                update userMap.values();
+            } catch (Exception e){
+                DebugLog.addError(e.getMessage());
+            }
 
         }
 

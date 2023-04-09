@@ -4,6 +4,7 @@
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/ES_FreezeUserHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ES_FreezeUserHandler.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Test_ES_FreezeUserHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_ES_FreezeUserHandler.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +49,7 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
+                  <option name="body" value="String text = 'This is a sample text with delimiter1 some data delimiter2 and another data delimiter1 some more data delimiter2';&#10;&#10;String delimiter1 = 'delimiter1';&#10;String delimiter2 = 'delimiter2';&#10;&#10;String[] textArray = text.split(delimiter1);&#10;&#10;for (Integer i=1; i&lt;textArray.size(); i++) {&#10;    String subText = textArray[i].substring(0, textArray[i].indexOf(delimiter2));&#10;    System.debug(subText);&#10;}&#10;" />
                   <option name="name" value="Anonymous Apex 1" />
                 </AnonymousApexSavedDocument>
               </list>
@@ -143,8 +145,8 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ES_FREEZEUSERHANDLER" value="1680621417626" />
-                      <entry key="APEXCLASS:TEST_ES_FREEZEUSERHANDLER" value="1679330373515" />
+                      <entry key="APEXCLASS:ES_FREEZEUSERHANDLER" value="1680944884013" />
+                      <entry key="APEXCLASS:TEST_ES_FREEZEUSERHANDLER" value="1680944786728" />
                     </map>
                   </option>
                 </ConnectionWorkspaceSettings>
@@ -946,7 +948,7 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select Name from Profile where name like '%rep%'" />
+                  <option name="body" value="SELECT FederationIdentifier FROM User where FederationIdentifier = 'dizuf619'" />
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
               </list>
@@ -1330,7 +1332,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Dentsply$Test_findLeadMatch_testExecuteLeadSearch.ic2" NAME="HOTFIX Coverage Results" MODIFIED="1667918143842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="HOTFIX" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_ES_FreezeUserHandler_testHandleInboundEmail.ic2" NAME="Freeze Coverage Results" MODIFIED="1679330377388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Freeze" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_ES_FreezeUserHandler_testHandleInboundEmail.ic2" NAME="Freeze Coverage Results" MODIFIED="1680944791040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Freeze" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ProcedureTrackerTriggerHelper_testcheckUniqueness.ic2" NAME="StgJan Coverage Results" MODIFIED="1673520387472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchCreateProcedureTrackers_testBatchCreateProcedureTrackers.ic2" NAME="StgJan Coverage Results" MODIFIED="1673859457008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_CountryCodeController.ic2" NAME="DevApril Coverage Results" MODIFIED="1679497979036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />

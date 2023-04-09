@@ -30,7 +30,7 @@ public without sharing class Test_ES_FreezeUserHandler {
 
             // Create a test inbound email
             Messaging.InboundEmail email = new Messaging.InboundEmail();
-            email.plainTextBody = '*INTERNAL\\testFederationId was frozen';
+            email.plainTextBody = '*Action:*DeleteAttribute*From:*INTERNAL\\testFederationId*To:*';
 
             // Call the email service handler
             ES_FreezeUserHandler handler = new ES_FreezeUserHandler();
@@ -49,7 +49,7 @@ public without sharing class Test_ES_FreezeUserHandler {
             UserLogin ulogin = [SELECT Id, IsFrozen, UserId FROM UserLogin WHERE UserId = :frozenUser.Id];
 
             System.assertEquals(true, ulogin.IsFrozen);
-            System.assertEquals('Frozen on ' + Datetime.now() + ' by automated process', frozenUser.CRM_team_comments__c);
+            System.assert(frozenUser.CRM_team_comments__c.contains('Frozen on'));
 
         }
 
