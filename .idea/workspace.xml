@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/guidanceRenderer/guidanceRenderer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/BatchCreateProcedureTrackers.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/BatchCreateProcedureTrackers.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,15 +50,6 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="Id productId = '01t0J00000CxanYQAR';&#10;String areaCode = 'D01';&#10;&#10;// Create an account with a DC_ETM_Code__c value of 'D01'&#10;Account account = new Account(&#10;        Name = 'Test Account',&#10;        DC_ETM_Code__c = areaCode&#10;);&#10;insert account;&#10;&#10;//// Create a product&#10;//Product2 product = new Product2(&#10;//        Name = 'Test Product',&#10;//        Article__c = 'A1',&#10;//        IsActive = true&#10;//);&#10;//insert product;&#10;&#10;&#10;// Create a price book and set it as the active price book&#10;Pricebook2 pricebook = new Pricebook2(&#10;        Name = 'Test Price Book',&#10;        IsActive = true,&#10;        MarginGuidanceCalculation__c = true&#10;);&#10;insert pricebook;&#10;&#10;PricebookEntry pricebookEntry1 = new PricebookEntry(Pricebook2Id='01s20000000DHebAAG', Product2Id = productId, UnitPrice=100, IsActive=true);&#10;insert pricebookEntry1;&#10;&#10;PricebookEntry pricebookEntry2 = new PricebookEntry(Pricebook2Id=pricebook.Id, Product2Id= productId, UnitPrice=100, IsActive=true);&#10;insert pricebookEntry2;&#10;&#10;// Create an order and associate it with the account and price book&#10;Order order = new Order(&#10;        AccountId = account.Id,&#10;        Pricebook2Id = pricebook.Id,&#10;        EffectiveDate = Date.today(),&#10;        Status = 'Created',&#10;        Country__c = 'US'&#10;);&#10;insert order;&#10;&#10;// Add an order line item for the product to the order&#10;OrderItem orderItem = new OrderItem(&#10;        OrderId = order.Id,&#10;        Product2Id = productId,&#10;        Quantity = 2,&#10;        UnitPrice = 100,&#10;        ListPrice = 100,&#10;        PricebookEntryId = pricebookEntry2.Id&#10;);&#10;insert orderItem;&#10;&#10;//// Add an order line item for the product to the order&#10;//OrderItem orderItem2 = new OrderItem(&#10;//        OrderId = order.Id,&#10;//        Product2Id = product.Id,&#10;//        Quantity = 2,&#10;//        UnitPrice = 100,&#10;//        MarginGuidance__c = null,&#10;//        PricebookEntryId = pricebookEntry2.Id&#10;//);&#10;//insert orderItem2;&#10;//&#10;//// Add an order line item for the product to the order&#10;//OrderItem orderItem3 = new OrderItem(&#10;//        OrderId = order.Id,&#10;//        Product2Id = product.Id,&#10;//        Quantity = 2,&#10;//        UnitPrice = 100,&#10;//        MarginGuidance__c = null,&#10;//        PricebookEntryId = pricebookEntry2.Id&#10;//);&#10;//insert orderItem3;&#10;&#10;//MarginGuidance__c margin = new MarginGuidance__c(&#10;//        Cost__c = 37,&#10;//        AreaCode__c = 'D01',&#10;//        Product__c = product.Id,&#10;//        LowerGuidance__c = 0.56&#10;//);&#10;//&#10;//insert margin;&#10;&#10;//System.debug('Pricebook ID: ' + pricebook.Id);&#10;//System.debug('Pricebook Entry 1: ' + pricebookEntry1.Id);&#10;//System.debug('Pricebook Entry 2: ' + pricebookEntry2.Id);&#10;System.debug('Order ID: ' + order.Id);&#10;System.debug('Account ID: ' + account.Id);&#10;System.debug('Order Item ID: ' + orderItem.Id);&#10;" />
-                  <option name="name" value="Anonymous Apex 1" />
-                  <option name="splitterProportion" value="0.39154753" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="AssignMarginGuidanceHelper.calculateMargin('8013G000001HmD3QAK');" />
-                  <option name="name" value="Anonymous Apex 3" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
                   <option name="apexLogLevel" value="FINEST" />
                   <option name="body" value="// Get the date 7 days ago&#10;Date sevenDaysAgo = System.today().addDays(-7);&#10;&#10;// Delete order items&#10;List&lt;OrderItem&gt; orderItemsToDelete = [SELECT Id FROM OrderItem WHERE CreatedDate &gt;= :sevenDaysAgo];&#10;delete orderItemsToDelete;&#10;&#10;// Delete orders&#10;List&lt;Order&gt; ordersToDelete = [SELECT Id FROM Order WHERE CreatedDate &gt;= :sevenDaysAgo];&#10;delete ordersToDelete;&#10;&#10;// Delete accounts&#10;List&lt;Account&gt; accountsToDelete = [SELECT Id FROM Account WHERE CreatedDate &gt;= :sevenDaysAgo];&#10;delete accountsToDelete;&#10;&#10;//Delete products&#10;//List&lt;Product2&gt; productsToDelete = [SELECT Id FROM Product2 WHERE CreatedDate &gt;= :sevenDaysAgo];&#10;//delete productsToDelete;&#10;&#10;//Delete pricebook entries&#10;//List&lt;PricebookEntry&gt; pricebookEntriesToDelete = [SELECT Id FROM PricebookEntry WHERE CreatedDate &gt;= :sevenDaysAgo];&#10;//delete pricebookEntriesToDelete;" />
                   <option name="name" value="Anonymous Apex 2" />
@@ -79,9 +69,16 @@
                   <option name="body" value="Schema.DescribeSObjectResult r = ProcedureTracker__c.sObjectType.getDescribe();&#10;String keyPrefix = r.getKeyPrefix();&#10;System.debug('Printing –'+keyPrefix );" />
                   <option name="name" value="Anonymous Apex 5" />
                 </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="body" value="String invoiceCountry = 'CA';&#10;&#10;String RecordTypeId = (new Set&lt;String&gt;{'US', 'CA'}.contains(invoiceCountry)) ? 'US' : 'Global'; // We assign the record type based on the account's country&#10;&#10;System.debug(RecordTypeId);" />
+                  <option name="name" value="Anonymous Apex 1" />
+                </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="name" value="Anonymous Apex 1" />
+                </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="4" />
+            <option name="selectedSavedDocumentIndex" value="0" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionWorkspaceSettings">
@@ -18208,6 +18205,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
+                      <entry key="APEXCLASS:BATCHCREATEPROCEDURETRACKERS" value="1681040582494" />
                       <entry key="APEXCLASS:GUIDANCERENDERERCONTROLLER" value="1680250811000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1680620616845" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1679914711613" />
@@ -18668,7 +18666,7 @@
       <recent name="$PROJECT_DIR$/src/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Apex Unit Tests.Test_CountryCodeController">
+  <component name="RunManager" selected="Apex Unit Tests.Test_BatchCreateProcedureTrackers.testBatchCreateProcedureTrackers">
     <configuration name="Test_AssignMarginGuidanceHelper.testCalculateMargins" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -18704,6 +18702,53 @@
             <value>
               <set>
                 <option value="testCalculateMargins" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_BatchCreateProcedureTrackers.testBatchCreateProcedureTrackers" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="connectionName" value="Tracker" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_BatchCreateProcedureTrackers" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map>
+          <entry key="Test_BatchCreateProcedureTrackers">
+            <value>
+              <set>
+                <option value="testBatchCreateProcedureTrackers" />
               </set>
             </value>
           </entry>
@@ -18802,53 +18847,6 @@
       <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_UpdateContactsBypassDuplicate.testUpdateContact" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="Tracker" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_UpdateContactsBypassDuplicate" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map>
-          <entry key="Test_UpdateContactsBypassDuplicate">
-            <value>
-              <set>
-                <option value="testUpdateContact" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <method v="2" />
-    </configuration>
     <configuration name="Test_UsersInAccountTerritories" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -18890,11 +18888,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Apex Unit Tests.Test_BatchCreateProcedureTrackers.testBatchCreateProcedureTrackers" />
         <item itemvalue="Apex Unit Tests.Test_CountryCodeController" />
         <item itemvalue="Apex Unit Tests.Test_CountryCodeController.testGetThreeDigitCode" />
         <item itemvalue="Apex Unit Tests.Test_UsersInAccountTerritories" />
         <item itemvalue="Apex Unit Tests.Test_AssignMarginGuidanceHelper.testCalculateMargins" />
-        <item itemvalue="Apex Unit Tests.Test_UpdateContactsBypassDuplicate.testUpdateContact" />
       </list>
     </recent_temporary>
   </component>
@@ -19010,9 +19008,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Dentsply$Test_findLeadMatch_testExecuteLeadSearch.ic2" NAME="HOTFIX Coverage Results" MODIFIED="1667918143842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="HOTFIX" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_ES_FreezeUserHandler_testHandleInboundEmail.ic2" NAME="Freeze Coverage Results" MODIFIED="1679330377388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Freeze" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_ES_FreezeUserHandler_testHandleInboundEmail.ic2" NAME="Freeze Coverage Results" MODIFIED="1681040119075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Freeze" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ProcedureTrackerTriggerHelper_testcheckUniqueness.ic2" NAME="StgJan Coverage Results" MODIFIED="1673520387472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_BatchCreateProcedureTrackers_testBatchCreateProcedureTrackers.ic2" NAME="StgJan Coverage Results" MODIFIED="1673859457008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_BatchCreateProcedureTrackers_testBatchCreateProcedureTrackers.ic2" NAME="Tracker Coverage Results" MODIFIED="1681041022988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_CountryCodeController.ic2" NAME="DevApril Coverage Results" MODIFIED="1679497979036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchSetAccountSubSegmentation.ic2" NAME="Production Coverage Results" MODIFIED="1674815707650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Production" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
