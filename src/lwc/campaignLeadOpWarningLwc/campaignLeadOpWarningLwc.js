@@ -6,7 +6,7 @@ import headerLabel from '@salesforce/label/c.Sales_Opportunity_Territory_Assignm
 import descriptionLabel from '@salesforce/label/c.Sales_Opportunity_Territory_Assignment_Description';
 import warningLabel from '@salesforce/label/c.Sales_Opportunity_Territory_Assignment_Warning';
 
-const CAMPAIGN_FIELDS = ['Campaign.Country__c', 'Campaign.Brands__c'];
+const CAMPAIGN_FIELDS = ['Campaign.Country_Code_3_digit__c', 'Campaign.Brands__c'];
 
 export default class CampaignLeadOpWarningLwc extends LightningElement {
     @api recordId;
@@ -26,7 +26,7 @@ export default class CampaignLeadOpWarningLwc extends LightningElement {
             console.log('error',error);
         } else if(data) {
             // Extract the Country and Brands field values from the fetched campaign record
-            let countryThreeDigit = data.fields.Country__c.value;
+            let countryThreeDigit = data.fields.Country_Code_3_digit__c.value;
             let brand = data.fields.Brands__c.value;
 
             // Call the Apex method to fetch the two-digit code of the country
