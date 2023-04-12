@@ -221,7 +221,7 @@
                 <leftValueReference>myVariable_current.Assign_To__c</leftValueReference>
                 <operator>StartsWith</operator>
                 <rightValue>
-                    <elementReference>formula_12_myRule_11_1671736837</elementReference>
+                    <elementReference>formula_12_myRule_11_5258714025</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -252,7 +252,7 @@
                 <leftValueReference>myVariable_current.Assign_To__c</leftValueReference>
                 <operator>StartsWith</operator>
                 <rightValue>
-                    <elementReference>formula_13_myRule_11_0553839575</elementReference>
+                    <elementReference>formula_13_myRule_11_5864921929</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -816,7 +816,7 @@
                 <leftValueReference>myVariable_current.Contact.Last_Survey_Update__c</leftValueReference>
                 <operator>LessThan</operator>
                 <rightValue>
-                    <elementReference>formula_34_myRule_33_1660947010</elementReference>
+                    <elementReference>formula_34_myRule_33_8355428645</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1548,7 +1548,7 @@
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_56</name>
-            <conditionLogic>1 AND 4 AND (2 OR 3) AND (5 OR 6) AND 7 AND 8 AND 9 AND 10 AND 11</conditionLogic>
+            <conditionLogic>1 AND 4 AND (2 OR 3 OR 12) AND (5 OR 6) AND 7 AND 8 AND 9 AND 10 AND 11</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -1608,7 +1608,7 @@
                 <leftValueReference>myVariable_current.Contact.LastSurveySentDate__c</leftValueReference>
                 <operator>LessThan</operator>
                 <rightValue>
-                    <elementReference>formula_57_myRule_56_2558376609</elementReference>
+                    <elementReference>formula_57_myRule_56_9590878870</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1894,6 +1894,37 @@
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Send_Survey__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2389,7 +2420,7 @@
                 <leftValueReference>myVariable_old.Contact.Last_Survey_Update__c</leftValueReference>
                 <operator>LessThan</operator>
                 <rightValue>
-                    <elementReference>formula_35_myRule_33_pmetrule_4811013350</elementReference>
+                    <elementReference>formula_35_myRule_33_pmetrule_9464271777</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2486,7 +2517,7 @@
         </rules>
         <rules>
             <name>myRule_56_pmetrule</name>
-            <conditionLogic>1 AND 4 AND (2 OR 3) AND (5 OR 6) AND 7 AND 8 AND 9 AND 10 AND 11</conditionLogic>
+            <conditionLogic>1 AND 4 AND (2 OR 3 OR 12) AND (5 OR 6) AND 7 AND 8 AND 9 AND 10 AND 11</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -2546,7 +2577,7 @@
                 <leftValueReference>myVariable_old.Contact.LastSurveySentDate__c</leftValueReference>
                 <operator>LessThan</operator>
                 <rightValue>
-                    <elementReference>formula_58_myRule_56_pmetrule_1906724503</elementReference>
+                    <elementReference>formula_58_myRule_56_pmetrule_9675443308</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2834,10 +2865,41 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.Send_Survey__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <label>Previously Met - Prev</label>
         </rules>
     </decisions>
-    <description>Quick Fix for Survey</description>
+    <description>TFUS-000005270 Enforce UK Survey</description>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
@@ -2845,7 +2907,7 @@
                 <stringValue>&quot;Queue&quot;</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_12_myRule_11_1671736837</name>
+        <name>formula_12_myRule_11_5258714025</name>
         <dataType>String</dataType>
         <expression>&quot;Queue&quot;</expression>
     </formulas>
@@ -2856,7 +2918,7 @@
                 <stringValue>&quot;00G&quot;</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_13_myRule_11_0553839575</name>
+        <name>formula_13_myRule_11_5864921929</name>
         <dataType>String</dataType>
         <expression>&quot;00G&quot;</expression>
     </formulas>
@@ -2867,7 +2929,7 @@
                 <stringValue>PRiorvalue([Case].OwnerId )</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_14_myRule_11_A2_0596214953</name>
+        <name>formula_14_myRule_11_A2_5848089306</name>
         <dataType>String</dataType>
         <expression>PRiorvalue({!myVariable_current.OwnerId} )</expression>
     </formulas>
@@ -2878,7 +2940,7 @@
                 <stringValue>Text([Case].Assign_To__c)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_15_myRule_11_A1_0428921287</name>
+        <name>formula_15_myRule_11_A1_0726096651</name>
         <dataType>String</dataType>
         <expression>Text({!myVariable_current.Assign_To__c})</expression>
     </formulas>
@@ -2889,7 +2951,7 @@
                 <stringValue>PRIORVALUE([Case].OwnerId ) </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_18_myRule_17_A4_8826606797</name>
+        <name>formula_18_myRule_17_A4_9452777925</name>
         <dataType>String</dataType>
         <expression>PRIORVALUE({!myVariable_current.OwnerId} )</expression>
     </formulas>
@@ -2900,7 +2962,7 @@
                 <stringValue>[Case].FirstRealOwner_TF__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_19_myRule_17_A3_6963961730</name>
+        <name>formula_19_myRule_17_A3_1378626873</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.FirstRealOwner_TF__c}</expression>
     </formulas>
@@ -2911,7 +2973,7 @@
                 <stringValue>PRIORVALUE([Case].OwnerId ) </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_20_myRule_17_A2_1869099219</name>
+        <name>formula_20_myRule_17_A2_4894514229</name>
         <dataType>String</dataType>
         <expression>PRIORVALUE({!myVariable_current.OwnerId} )</expression>
     </formulas>
@@ -2922,7 +2984,7 @@
                 <stringValue>If($Organization.Id =&apos;00D200000001dDc&apos;,&apos;5506M000000HzqSQAS&apos;,&apos;&apos;)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_23_myRule_22_A8_5996821607</name>
+        <name>formula_23_myRule_22_A8_1436021742</name>
         <dataType>String</dataType>
         <expression>If({!$Organization.Id} =&apos;00D200000001dDc&apos;,&apos;5506M000000HzqSQAS&apos;,&apos;&apos;)</expression>
     </formulas>
@@ -2933,7 +2995,7 @@
                 <stringValue>If($Organization.Id =&apos;00D200000001dDc&apos;,&apos;5506M000000HzqSQAS&apos;,&apos;&apos;)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_24_myRule_22_A7_6789932904</name>
+        <name>formula_24_myRule_22_A7_5268210910</name>
         <dataType>String</dataType>
         <expression>If({!$Organization.Id} =&apos;00D200000001dDc&apos;,&apos;5506M000000HzqSQAS&apos;,&apos;&apos;)</expression>
     </formulas>
@@ -2944,7 +3006,7 @@
                 <stringValue>If($Organization.Id =&apos;00D200000001dDc&apos;,&apos;5506M000000HzqSQAS&apos;,&apos;&apos;)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_25_myRule_22_A6_2630673110</name>
+        <name>formula_25_myRule_22_A6_0198730040</name>
         <dataType>String</dataType>
         <expression>If({!$Organization.Id} =&apos;00D200000001dDc&apos;,&apos;5506M000000HzqSQAS&apos;,&apos;&apos;)</expression>
     </formulas>
@@ -2955,7 +3017,7 @@
                 <stringValue>If($Organization.Id =&apos;00D200000001dDc&apos;,&apos;5506M000000HzqSQAS&apos;,&apos;&apos;)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_26_myRule_22_A5_2940791933</name>
+        <name>formula_26_myRule_22_A5_1575686626</name>
         <dataType>String</dataType>
         <expression>If({!$Organization.Id} =&apos;00D200000001dDc&apos;,&apos;5506M000000HzqSQAS&apos;,&apos;&apos;)</expression>
     </formulas>
@@ -2966,7 +3028,7 @@
                 <stringValue>If($Organization.Id =&apos;00D200000001dDc&apos;,&apos;5506M000002fDOnQAM&apos;,&apos;&apos;)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_27_myRule_22_A4_1019118198</name>
+        <name>formula_27_myRule_22_A4_3127938394</name>
         <dataType>String</dataType>
         <expression>If({!$Organization.Id} =&apos;00D200000001dDc&apos;,&apos;5506M000002fDOnQAM&apos;,&apos;&apos;)</expression>
     </formulas>
@@ -2977,7 +3039,7 @@
                 <stringValue>If($Organization.Id =&apos;00D200000001dDc&apos;,&apos;5506M000002fDOnQAM&apos;,&apos;&apos;)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_28_myRule_22_A3_4510041373</name>
+        <name>formula_28_myRule_22_A3_2472398707</name>
         <dataType>String</dataType>
         <expression>If({!$Organization.Id} =&apos;00D200000001dDc&apos;,&apos;5506M000002fDOnQAM&apos;,&apos;&apos;)</expression>
     </formulas>
@@ -2988,7 +3050,7 @@
                 <stringValue>If($Organization.Id =&apos;00D200000001dDc&apos;,&apos;5506M000002fDOnQAM&apos;,&apos;&apos;)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_29_myRule_22_A2_0973124405</name>
+        <name>formula_29_myRule_22_A2_7142096971</name>
         <dataType>String</dataType>
         <expression>If({!$Organization.Id} =&apos;00D200000001dDc&apos;,&apos;5506M000002fDOnQAM&apos;,&apos;&apos;)</expression>
     </formulas>
@@ -2999,7 +3061,7 @@
                 <stringValue>Today() -90</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_34_myRule_33_1660947010</name>
+        <name>formula_34_myRule_33_8355428645</name>
         <dataType>Date</dataType>
         <expression>Today() -90</expression>
     </formulas>
@@ -3010,7 +3072,7 @@
                 <stringValue>Today() -90</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_35_myRule_33_pmetrule_4811013350</name>
+        <name>formula_35_myRule_33_pmetrule_9464271777</name>
         <dataType>Date</dataType>
         <expression>Today() -90</expression>
     </formulas>
@@ -3021,7 +3083,7 @@
                 <stringValue>priorvalue([Case].OwnerId)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_41_myRule_39_A2_2842021296</name>
+        <name>formula_41_myRule_39_A2_2471045054</name>
         <dataType>String</dataType>
         <expression>priorvalue({!myVariable_current.OwnerId})</expression>
     </formulas>
@@ -3032,7 +3094,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_42_myRule_39_A1_8866731701</name>
+        <name>formula_42_myRule_39_A1_8692961915</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -3043,7 +3105,7 @@
                 <stringValue>CASESAFEID($user.Id) </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_45_myRule_44_A1_9853096772</name>
+        <name>formula_45_myRule_44_A1_5817092442</name>
         <dataType>String</dataType>
         <expression>CASESAFEID({!$user.Id})</expression>
     </formulas>
@@ -3057,7 +3119,7 @@
 &quot;France&quot;, &quot;a0z2000000A4ia7&quot;,&quot;Germany&quot;, &quot;a0z2000000AhkJo&quot;,&quot;Holland&quot;, &quot;a0z2000000A4iLu&quot;, &quot;Thailand&quot;, &quot;a0z2000000AhkO5&quot;, &quot;Hong Kong&quot;, &quot;a0z2000000A4O3s&quot;, &quot;Singapore&quot;, &quot;a0z2000000A3kLA&quot;, &quot;India&quot;, &quot;a0z2000000A4hJN&quot;, &quot;Indonesia&quot;, &quot;a0z0J00000BN6Le&quot;, &quot;Vietnam&quot;, &quot;a0z2000000AhkLL&quot;, &quot;Italy&quot;, &quot;a0z2000000A4icr&quot;, &quot;Japan&quot;, &quot;a0z2000000A4q8z&quot;, &quot;Poland&quot;, &quot;a0z2000000A4Gx2&quot;, &quot;Russia&quot;, &quot;a0z2000000A47ie&quot;, &quot;Spain&quot;, &quot;a0z2000000AamKD&quot;, &quot;Sweden&quot;, &quot;a0z0J00000BbWjS&quot;, &quot;Taiwan&quot;, &quot;a0z2000000A4N3a&quot;, &quot;Turkey&quot;, &quot;a0z2000000A4HYD&quot;, &quot;UAE&quot;, &quot;a0z2000000A4hVO&quot;, &quot;UK&quot;, &quot;a0z2000000A4i6V&quot;, &quot;USA&quot;, &quot;a0z0J00000BB0t6&quot;, &quot;HQ: SE&quot;, &quot;a0z0J00000BBlBC&quot; ,&quot;HQ: DE&quot;, &quot;a0z0J00000BBlBC&quot; ,&quot;HQ: NL&quot;, &quot;a0z0J00000BBlBC&quot; , null)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_46_myRule_44_A1_4944164201</name>
+        <name>formula_46_myRule_44_A1_4775678216</name>
         <dataType>String</dataType>
         <expression>CASE(
 {!myVariable_current.Creator_Country__c}, &quot;Austria&quot;, &quot;a0z2000000Ab0Om&quot;, &quot;Australia&quot;, &quot;a0z2000000Ab0R7&quot;,
@@ -3071,7 +3133,7 @@
                 <stringValue>PRiorvalue([Case].OwnerId )</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_3_A2_7634719480</name>
+        <name>formula_4_myRule_3_A2_8693765845</name>
         <dataType>String</dataType>
         <expression>PRiorvalue({!myVariable_current.OwnerId} )</expression>
     </formulas>
@@ -3082,7 +3144,7 @@
                 <stringValue>Today () -90</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_57_myRule_56_2558376609</name>
+        <name>formula_57_myRule_56_9590878870</name>
         <dataType>Date</dataType>
         <expression>Today () -90</expression>
     </formulas>
@@ -3093,7 +3155,7 @@
                 <stringValue>Today () -90</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_58_myRule_56_pmetrule_1906724503</name>
+        <name>formula_58_myRule_56_pmetrule_9675443308</name>
         <dataType>Date</dataType>
         <expression>Today () -90</expression>
     </formulas>
@@ -3104,7 +3166,7 @@
                 <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_59_myRule_56_A2_2545592454</name>
+        <name>formula_59_myRule_56_A2_4537601329</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
     </formulas>
@@ -3115,7 +3177,7 @@
                 <stringValue>$User.Id </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_5_myRule_3_A1_6870705164</name>
+        <name>formula_5_myRule_3_A1_2200022317</name>
         <dataType>String</dataType>
         <expression>{!$User.Id}</expression>
     </formulas>
@@ -3126,7 +3188,7 @@
                 <stringValue>PRiorvalue([Case].OwnerId )</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_8_myRule_7_A2_3074453261</name>
+        <name>formula_8_myRule_7_A2_6190135352</name>
         <dataType>String</dataType>
         <expression>PRiorvalue({!myVariable_current.OwnerId} )</expression>
     </formulas>
@@ -3137,7 +3199,7 @@
                 <stringValue>[Case].Previous_Case_Owner__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_9_myRule_7_A1_8241235039</name>
+        <name>formula_9_myRule_7_A1_8317788100</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.Previous_Case_Owner__c}</expression>
     </formulas>
@@ -3284,7 +3346,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
 
 {!myVariable_current.RecordType.DeveloperName} =&quot;Service_Complaint&quot;</expression>
     </formulas>
-    <interviewLabel>Case_Default_Process_Builder-49_InterviewLabel</interviewLabel>
+    <interviewLabel>Case_Default_Process_Builder-51_InterviewLabel</interviewLabel>
     <label>Case : Default Process Builder</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -3390,7 +3452,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>OwnerId</field>
             <value>
-                <elementReference>formula_15_myRule_11_A1_0428921287</elementReference>
+                <elementReference>formula_15_myRule_11_A1_0726096651</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -3474,7 +3536,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>Previous_Case_Owner__c</field>
             <value>
-                <elementReference>formula_14_myRule_11_A2_0596214953</elementReference>
+                <elementReference>formula_14_myRule_11_A2_5848089306</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -3821,7 +3883,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>Previous_Case_Owner__c</field>
             <value>
-                <elementReference>formula_20_myRule_17_A2_1869099219</elementReference>
+                <elementReference>formula_20_myRule_17_A2_4894514229</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -4003,7 +4065,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>OwnerId</field>
             <value>
-                <elementReference>formula_19_myRule_17_A3_6963961730</elementReference>
+                <elementReference>formula_19_myRule_17_A3_1378626873</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -4185,7 +4247,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>Previous_Case_Owner__c</field>
             <value>
-                <elementReference>formula_18_myRule_17_A4_8826606797</elementReference>
+                <elementReference>formula_18_myRule_17_A4_9452777925</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -4568,7 +4630,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>EntitlementId</field>
             <value>
-                <elementReference>formula_29_myRule_22_A2_0973124405</elementReference>
+                <elementReference>formula_29_myRule_22_A2_7142096971</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -4750,7 +4812,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>EntitlementId</field>
             <value>
-                <elementReference>formula_28_myRule_22_A3_4510041373</elementReference>
+                <elementReference>formula_28_myRule_22_A3_2472398707</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -4932,7 +4994,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>EntitlementId</field>
             <value>
-                <elementReference>formula_27_myRule_22_A4_1019118198</elementReference>
+                <elementReference>formula_27_myRule_22_A4_3127938394</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -5114,7 +5176,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>EntitlementId</field>
             <value>
-                <elementReference>formula_26_myRule_22_A5_2940791933</elementReference>
+                <elementReference>formula_26_myRule_22_A5_1575686626</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -5296,7 +5358,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>EntitlementId</field>
             <value>
-                <elementReference>formula_25_myRule_22_A6_2630673110</elementReference>
+                <elementReference>formula_25_myRule_22_A6_0198730040</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -5478,7 +5540,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>EntitlementId</field>
             <value>
-                <elementReference>formula_24_myRule_22_A7_6789932904</elementReference>
+                <elementReference>formula_24_myRule_22_A7_5268210910</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -5660,7 +5722,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>EntitlementId</field>
             <value>
-                <elementReference>formula_23_myRule_22_A8_5996821607</elementReference>
+                <elementReference>formula_23_myRule_22_A8_1436021742</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -5825,7 +5887,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>Date_Assigned_to_Owner__c</field>
             <value>
-                <elementReference>formula_42_myRule_39_A1_8866731701</elementReference>
+                <elementReference>formula_42_myRule_39_A1_8692961915</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -5909,7 +5971,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>Previous_Case_Owner__c</field>
             <value>
-                <elementReference>formula_41_myRule_39_A2_2842021296</elementReference>
+                <elementReference>formula_41_myRule_39_A2_2471045054</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -6077,7 +6139,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>OwnerId</field>
             <value>
-                <elementReference>formula_5_myRule_3_A1_6870705164</elementReference>
+                <elementReference>formula_5_myRule_3_A1_2200022317</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -6161,7 +6223,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>Previous_Case_Owner__c</field>
             <value>
-                <elementReference>formula_4_myRule_3_A2_7634719480</elementReference>
+                <elementReference>formula_4_myRule_3_A2_8693765845</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -6323,7 +6385,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>CRM_Analyst__c</field>
             <value>
-                <elementReference>formula_45_myRule_44_A1_9853096772</elementReference>
+                <elementReference>formula_45_myRule_44_A1_5817092442</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -6359,7 +6421,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>related_Country__c</field>
             <value>
-                <elementReference>formula_46_myRule_44_A1_4944164201</elementReference>
+                <elementReference>formula_46_myRule_44_A1_4775678216</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -6776,7 +6838,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>LastSurveySentDate__c</field>
             <value>
-                <elementReference>formula_59_myRule_56_A2_2545592454</elementReference>
+                <elementReference>formula_59_myRule_56_A2_4537601329</elementReference>
             </value>
         </inputAssignments>
         <object>Contact</object>
@@ -6958,7 +7020,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>OwnerId</field>
             <value>
-                <elementReference>formula_9_myRule_7_A1_8241235039</elementReference>
+                <elementReference>formula_9_myRule_7_A1_8317788100</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -7140,7 +7202,7 @@ ISCHANGED({!myVariable_current.LastInboundEmailDate__c} )
             </processMetadataValues>
             <field>Previous_Case_Owner__c</field>
             <value>
-                <elementReference>formula_8_myRule_7_A2_3074453261</elementReference>
+                <elementReference>formula_8_myRule_7_A2_6190135352</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>

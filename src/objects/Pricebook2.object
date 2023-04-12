@@ -301,6 +301,17 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>MarginGuidanceCalculation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>TFUS-000005314
+If checked, it will enable the calculation of margin guidance upon submitting an order for approval.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>if checked, it will enable the calculation of margin guidance upon submitting an order for approval.</inlineHelpText>
+        <label>Margin Guidance Calculation ?</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Market__c</fullName>
         <description>&lt;ADMINISTRATION&gt; Keep the values of this field aligned with the UserMarket field values.</description>
         <externalId>false</externalId>

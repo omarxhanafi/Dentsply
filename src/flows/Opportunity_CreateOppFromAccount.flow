@@ -3,7 +3,7 @@
     <actionCalls>
         <name>FindQuest</name>
         <label>FindQuest</label>
-        <locationX>1186</locationX>
+        <locationX>1265</locationX>
         <locationY>456</locationY>
         <actionName>flowQuestionnaireController</actionName>
         <actionType>apex</actionType>
@@ -25,7 +25,7 @@
     <actionCalls>
         <name>Nav2Lead</name>
         <label>Nav2Lead</label>
-        <locationX>1820</locationX>
+        <locationX>1899</locationX>
         <locationY>1936</locationY>
         <actionName>c:ServiceCloud_Nav2SObj</actionName>
         <actionType>component</actionType>
@@ -40,7 +40,7 @@
     <actionCalls>
         <name>Post_to_Chatter</name>
         <label>Post to Chatter</label>
-        <locationX>2256</locationX>
+        <locationX>2335</locationX>
         <locationY>1785</locationY>
         <actionName>chatterPost</actionName>
         <actionType>chatterPost</actionType>
@@ -71,7 +71,7 @@
     <assignments>
         <name>Assign_Category_Details</name>
         <label>Assign Category Details</label>
-        <locationX>991</locationX>
+        <locationX>1070</locationX>
         <locationY>457</locationY>
         <assignmentItems>
             <assignToReference>OppToCreate.NA_Category__c</assignToReference>
@@ -101,8 +101,8 @@
     <assignments>
         <name>Assign_null_init</name>
         <label>Assign null init</label>
-        <locationX>549</locationX>
-        <locationY>1271</locationY>
+        <locationX>581</locationX>
+        <locationY>1272</locationY>
         <assignmentItems>
             <assignToReference>QuestionnaireToUse.Id</assignToReference>
             <operator>Assign</operator>
@@ -122,8 +122,8 @@
     <assignments>
         <name>Assign_owner</name>
         <label>Assign owner</label>
-        <locationX>1510</locationX>
-        <locationY>1178</locationY>
+        <locationX>1587</locationX>
+        <locationY>1309</locationY>
         <assignmentItems>
             <assignToReference>OppToCreate.OwnerId</assignToReference>
             <operator>Assign</operator>
@@ -138,7 +138,7 @@
     <assignments>
         <name>Assign_response_update</name>
         <label>Assign response update</label>
-        <locationX>1999</locationX>
+        <locationX>2078</locationX>
         <locationY>1393</locationY>
         <assignmentItems>
             <assignToReference>LoopResponse.Opportunity_Name__c</assignToReference>
@@ -154,7 +154,7 @@
     <assignments>
         <name>assignDetails</name>
         <label>Assign details</label>
-        <locationX>1806</locationX>
+        <locationX>1885</locationX>
         <locationY>1045</locationY>
         <assignmentItems>
             <assignToReference>OppToCreate.OwnerId</assignToReference>
@@ -212,8 +212,8 @@
     <assignments>
         <name>AssignOppDetails</name>
         <label>Assign opportunity details</label>
-        <locationX>814</locationX>
-        <locationY>739</locationY>
+        <locationX>766</locationX>
+        <locationY>774</locationY>
         <assignmentItems>
             <assignToReference>OppToCreate.AccountId</assignToReference>
             <operator>Assign</operator>
@@ -281,7 +281,7 @@
     <assignments>
         <name>CategoryBrandMissingCheck</name>
         <label>Category or brand is missing</label>
-        <locationX>1188</locationX>
+        <locationX>1267</locationX>
         <locationY>50</locationY>
         <assignmentItems>
             <assignToReference>CategoryBrandMissing</assignToReference>
@@ -297,7 +297,7 @@
     <assignments>
         <name>QuestionsRemainAssign</name>
         <label>Required questions remain</label>
-        <locationX>1875</locationX>
+        <locationX>1954</locationX>
         <locationY>416</locationY>
         <assignmentItems>
             <assignToReference>RequiredQRemain</assignToReference>
@@ -320,8 +320,8 @@
     <assignments>
         <name>Set_accountId_from_account</name>
         <label>Set accountId from account</label>
-        <locationX>712</locationX>
-        <locationY>1067</locationY>
+        <locationX>717</locationX>
+        <locationY>1066</locationY>
         <assignmentItems>
             <assignToReference>accountId</assignToReference>
             <operator>Assign</operator>
@@ -336,7 +336,7 @@
     <assignments>
         <name>Set_accountId_from_Contact</name>
         <label>Set accountId from Contact</label>
-        <locationX>937</locationX>
+        <locationX>1016</locationX>
         <locationY>1432</locationY>
         <assignmentItems>
             <assignToReference>accountId</assignToReference>
@@ -364,9 +364,25 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Set_Opp_Validation_Rule_Triggered</name>
+        <label>Set Opp Validation Rule Triggered</label>
+        <locationX>1123</locationX>
+        <locationY>869</locationY>
+        <assignmentItems>
+            <assignToReference>OppValidationRuleTriggered</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>OppDetails</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>SetOwnerNotAssigned</name>
         <label>SetOwnerNotAssigned</label>
-        <locationX>1936</locationX>
+        <locationX>2015</locationX>
         <locationY>850</locationY>
         <assignmentItems>
             <assignToReference>OwnerNotAssigned</assignToReference>
@@ -382,7 +398,7 @@
     <decisions>
         <name>CatBrandAssignedDesc</name>
         <label>Category and brand assigned?</label>
-        <locationX>1179</locationX>
+        <locationX>1258</locationX>
         <locationY>238</locationY>
         <defaultConnector>
             <targetReference>CategoryBrandMissingCheck</targetReference>
@@ -407,8 +423,8 @@
     <decisions>
         <name>Check_object_type</name>
         <label>Check object type</label>
-        <locationX>707</locationX>
-        <locationY>1275</locationY>
+        <locationX>712</locationX>
+        <locationY>1274</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Account</name>
@@ -444,7 +460,7 @@
     <decisions>
         <name>decUserIsOwner</name>
         <label>Is user owner?</label>
-        <locationX>1804</locationX>
+        <locationX>1883</locationX>
         <locationY>1310</locationY>
         <defaultConnector>
             <targetReference>Update_Q_As</targetReference>
@@ -469,7 +485,7 @@
     <decisions>
         <name>Is_current_user_owner</name>
         <label>Is current user owner?</label>
-        <locationX>1811</locationX>
+        <locationX>1890</locationX>
         <locationY>1668</locationY>
         <defaultConnector>
             <targetReference>Post_to_Chatter</targetReference>
@@ -492,9 +508,34 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Opportunity_Validation_Rule_Triggered</name>
+        <label>Is Opportunity Validation Rule Triggered?</label>
+        <locationX>1344</locationX>
+        <locationY>1186</locationY>
+        <defaultConnector>
+            <targetReference>scrErrorMessage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Validation_Rule_Triggered</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Flow.FaultMessage</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>ou must enter a detailed Win/Loss Description upon closing an Opportunity related to Primescan Connect</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Opp_Validation_Rule_Triggered</targetReference>
+            </connector>
+            <label>Opportunity Validation Rule Triggered</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Owner_assigned</name>
         <label>Owner assigned?</label>
-        <locationX>1651</locationX>
+        <locationX>1730</locationX>
         <locationY>997</locationY>
         <defaultConnector>
             <targetReference>SetOwnerNotAssigned</targetReference>
@@ -523,7 +564,7 @@
     <decisions>
         <name>Questionnaire_found</name>
         <label>Questionnaire found?</label>
-        <locationX>1440</locationX>
+        <locationX>1519</locationX>
         <locationY>849</locationY>
         <defaultConnector>
             <targetReference>AssignOwnerScreen</targetReference>
@@ -548,7 +589,7 @@
     <decisions>
         <name>RequiredQuestrionsAnsweredDesc</name>
         <label>RequiredQuestrionsAnsweredDesc</label>
-        <locationX>1868</locationX>
+        <locationX>1947</locationX>
         <locationY>595</locationY>
         <defaultConnector>
             <targetReference>QuestionsRemainAssign</targetReference>
@@ -573,7 +614,7 @@
     <decisions>
         <name>WhereQuestionsFound</name>
         <label>Where questions found?</label>
-        <locationX>1554</locationX>
+        <locationX>1633</locationX>
         <locationY>420</locationY>
         <defaultConnector>
             <targetReference>AssignOwnerScreen</targetReference>
@@ -602,7 +643,7 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>TFUS-000003990 : New Opportunity from an Account Program Member</description>
+    <description>TFUS-000005409 : Handling of Win/Loss Reason</description>
     <dynamicChoiceSets>
         <name>CountryPicklist</name>
         <dataType>Multipicklist</dataType>
@@ -611,6 +652,7 @@
         <picklistField>Country__c</picklistField>
         <picklistObject>Questionnaire_Setup__c</picklistObject>
     </dynamicChoiceSets>
+    <environments>Default</environments>
     <formulas>
         <name>AccCountry</name>
         <dataType>String</dataType>
@@ -671,7 +713,7 @@
     <loops>
         <name>Update_Q_As</name>
         <label>Update Q&amp;As</label>
-        <locationX>1818</locationX>
+        <locationX>1897</locationX>
         <locationY>1480</locationY>
         <assignNextValueToReference>LoopResponse</assignNextValueToReference>
         <collectionReference>Responses</collectionReference>
@@ -705,21 +747,21 @@
     <recordCreates>
         <name>Create_opportunity</name>
         <label>Create opportunity</label>
-        <locationX>1810</locationX>
+        <locationX>1889</locationX>
         <locationY>1184</locationY>
         <connector>
             <targetReference>decUserIsOwner</targetReference>
         </connector>
         <faultConnector>
-            <targetReference>scrErrorMessage</targetReference>
+            <targetReference>Is_Opportunity_Validation_Rule_Triggered</targetReference>
         </faultConnector>
         <inputReference>OppToCreate</inputReference>
     </recordCreates>
     <recordCreates>
         <name>Create_Opportunity_Team_Member</name>
         <label>Create Opportunity Team Member</label>
-        <locationX>1508</locationX>
-        <locationY>1315</locationY>
+        <locationX>1587</locationX>
+        <locationY>1456</locationY>
         <connector>
             <targetReference>updateOpportunity</targetReference>
         </connector>
@@ -756,7 +798,7 @@
     <recordCreates>
         <name>Create_Q_A</name>
         <label>Create Q&amp;A</label>
-        <locationX>1992</locationX>
+        <locationX>2071</locationX>
         <locationY>1558</locationY>
         <connector>
             <targetReference>Update_Q_As</targetReference>
@@ -769,7 +811,7 @@
     <recordLookups>
         <name>FindCatQuestions</name>
         <label>Find category questions</label>
-        <locationX>1368</locationX>
+        <locationX>1447</locationX>
         <locationY>730</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -806,7 +848,7 @@
     <recordLookups>
         <name>FindGenericQuestions</name>
         <label>Find generic questions</label>
-        <locationX>1368</locationX>
+        <locationX>1447</locationX>
         <locationY>552</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -840,7 +882,7 @@
     <recordLookups>
         <name>Get_account_details</name>
         <label>Get account details</label>
-        <locationX>931</locationX>
+        <locationX>1010</locationX>
         <locationY>1065</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -863,8 +905,8 @@
     <recordLookups>
         <name>Get_contact</name>
         <label>Get contact</label>
-        <locationX>720</locationX>
-        <locationY>1433</locationY>
+        <locationX>725</locationX>
+        <locationY>1432</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_accountId_from_Contact</targetReference>
@@ -886,7 +928,7 @@
     <recordLookups>
         <name>Get_current_user</name>
         <label>Get current user</label>
-        <locationX>390</locationX>
+        <locationX>434</locationX>
         <locationY>1272</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -911,8 +953,8 @@
     <recordUpdates>
         <name>updateOpportunity</name>
         <label>Update Opportunity</label>
-        <locationX>1509</locationX>
-        <locationY>1454</locationY>
+        <locationX>1595</locationX>
+        <locationY>1635</locationY>
         <connector>
             <targetReference>Update_Q_As</targetReference>
         </connector>
@@ -924,7 +966,7 @@
     <screens>
         <name>AssignOwnerScreen</name>
         <label>Assign owner</label>
-        <locationX>1699</locationX>
+        <locationX>1778</locationX>
         <locationY>842</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -997,7 +1039,7 @@
         </fields>
         <fields>
             <name>NeedToAssignOwner</name>
-            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Please note! You need to assign an owner in order to create the lead.&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;Please note! You need to assign an owner in order to create the opportunity.&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
@@ -1016,7 +1058,7 @@
     <screens>
         <name>OppDetails</name>
         <label>Opportunity details</label>
-        <locationX>695</locationX>
+        <locationX>774</locationX>
         <locationY>471</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1024,6 +1066,30 @@
         <connector>
             <targetReference>Product_interest_0</targetReference>
         </connector>
+        <fields>
+            <name>OppValidationRuleAlert</name>
+            <extensionName>c:LightningPage_WarningMessage</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>You must enter a detailed Win/Loss Description upon closing an Opportunity related to Pricemescan Connect in order to get insights and share them with product and marketing teams.</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>OppValidationRuleTriggered</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>OppDetailsScript</name>
             <extensionName>c:ServiceCloud_FlowScript</extensionName>
@@ -1038,29 +1104,17 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>OpportunityStage</name>
-            <extensionName>c:Flow_InputField</extensionName>
+            <name>OpportunityWinLossInput</name>
+            <extensionName>c:opportunityWinLossLwc</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>recordTypeId</name>
                 <value>
-                    <stringValue>0120J00000079nDQAQ</stringValue>
+                    <elementReference>OppToCreate.RecordTypeId</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>fieldN</name>
-                <value>
-                    <stringValue>StageName</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>objType</name>
-                <value>
-                    <stringValue>Opportunity</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>fieldVal</name>
+                <name>stageName</name>
                 <value>
                     <elementReference>OppToCreate.StageName</elementReference>
                 </value>
@@ -1069,7 +1123,15 @@
             <isRequired>true</isRequired>
             <outputParameters>
                 <assignToReference>OppToCreate.StageName</assignToReference>
-                <name>resId</name>
+                <name>stageName</name>
+            </outputParameters>
+            <outputParameters>
+                <assignToReference>OppToCreate.Win_Loss_Description__c</assignToReference>
+                <name>winLossDescription</name>
+            </outputParameters>
+            <outputParameters>
+                <assignToReference>OppToCreate.Win_Loss_Reason__c</assignToReference>
+                <name>winLossReason</name>
             </outputParameters>
         </fields>
         <fields>
@@ -1123,6 +1185,32 @@
             </outputParameters>
         </fields>
         <fields>
+            <name>LeadSourceInput</name>
+            <extensionName>c:Flow_InputField</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>fieldN</name>
+                <value>
+                    <stringValue>LeadSource</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>objType</name>
+                <value>
+                    <stringValue>Opportunity</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordTypeId</name>
+                <value>
+                    <elementReference>OppToCreate.RecordTypeId</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
             <name>ContactLwcLookup</name>
             <extensionName>c:flow_lookupLwc</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -1166,7 +1254,7 @@
     <screens>
         <name>Product_interest_0</name>
         <label>Product interest</label>
-        <locationX>695</locationX>
+        <locationX>774</locationX>
         <locationY>267</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1268,7 +1356,7 @@
     <screens>
         <name>QuestionnaireScreen</name>
         <label>Questionnaire</label>
-        <locationX>1723</locationX>
+        <locationX>1802</locationX>
         <locationY>418</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1365,8 +1453,8 @@
     <screens>
         <name>scrErrorMessage</name>
         <label>scrErrorMessage</label>
-        <locationX>1536</locationX>
-        <locationY>1961</locationY>
+        <locationX>1389</locationX>
+        <locationY>2013</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1380,7 +1468,7 @@
     </screens>
     <start>
         <locationX>50</locationX>
-        <locationY>1271</locationY>
+        <locationY>1256</locationY>
         <connector>
             <targetReference>Get_current_user</targetReference>
         </connector>
@@ -1516,6 +1604,16 @@
         <isInput>false</isInput>
         <isOutput>true</isOutput>
         <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>OppValidationRuleTriggered</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
     </variables>
     <variables>
         <name>Owner</name>

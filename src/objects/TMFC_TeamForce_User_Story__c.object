@@ -1554,40 +1554,21 @@ ISBLANK(TMFC_So_that__c),
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>April_12th_2022_release</fullName>
-        <columns>NAME</columns>
-        <columns>TMFC_I_want_to__c</columns>
-        <columns>TMFC_Story_Points__c</columns>
-        <columns>OWNER.FIRST_NAME</columns>
-        <columns>Project__c</columns>
-        <columns>TMFC_User_Story_Notes__c</columns>
-        <columns>TMFC_User_Story_Priority__c</columns>
-        <columns>TMFC_User_Story_Status__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>ReleaseDate__c</field>
-            <operation>equals</operation>
-            <value>4/12/2022</value>
-        </filters>
-        <label>April 12th 2022 release</label>
-    </listViews>
-    <listViews>
         <fullName>April_19th_2022_release</fullName>
         <columns>NAME</columns>
         <columns>TMFC_I_want_to__c</columns>
-        <columns>TMFC_Story_Points__c</columns>
         <columns>OWNER.FIRST_NAME</columns>
-        <columns>Project__c</columns>
         <columns>TMFC_User_Story_Notes__c</columns>
+        <columns>Sandbox__c</columns>
         <columns>TMFC_User_Story_Priority__c</columns>
         <columns>TMFC_User_Story_Status__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>ReleaseDate__c</field>
             <operation>equals</operation>
-            <value>4/19/2022</value>
+            <value>4/18/2023</value>
         </filters>
-        <label>April 19th 2022 release</label>
+        <label>April 18th 2023 release</label>
     </listViews>
     <listViews>
         <fullName>April_5th_2022_release</fullName>
@@ -2352,6 +2333,7 @@ ISBLANK(TMFC_So_that__c),
         <columns>TMFC_Story_Points__c</columns>
         <columns>Sandbox__c</columns>
         <columns>TMFC_User_Story_Notes__c</columns>
+        <columns>Global_Training_Update_required__c</columns>
         <columns>TMFC_User_Story_Priority__c</columns>
         <columns>TMFC_User_Story_Status__c</columns>
         <columns>Product__c</columns>
@@ -2847,12 +2829,37 @@ ISBLANK(TMFC_So_that__c),
     </listViews>
     <listViews>
         <fullName>Service_Field_Service_Development_Queu_TMFC_TeamForce_User_Story</fullName>
+        <columns>NAME</columns>
+        <columns>TMFC_User_Story_Notes__c</columns>
+        <columns>TMFC_User_Story_Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>TMFC_User_Story_Status__c</field>
+            <operation>notEqual</operation>
+            <value>In Production - Closed,Cancelled</value>
+        </filters>
         <label>Service/Field Service - Development Queu</label>
         <queue>Service_Field_Service_Development_Queu</queue>
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SureSmile_Tracker_Project</fullName>
+        <columns>NAME</columns>
+        <columns>TMFC_User_Story_Text__c</columns>
+        <columns>TMFC_Story_Points__c</columns>
+        <columns>TMFC_User_Story_Status__c</columns>
+        <columns>Release__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project__c</field>
+            <operation>equals</operation>
+            <value>Global: SureSmile Procedure Tracker</value>
+        </filters>
+        <label>SureSmile_Tracker_Project</label>
     </listViews>
     <listViews>
         <fullName>TMFC_All</fullName>
@@ -2905,28 +2912,6 @@ ISBLANK(TMFC_So_that__c),
         <description>Forces cancellation notes if a user story is cancelled</description>
         <errorConditionFormula>ISPICKVAL(TMFC_User_Story_Status__c, &quot;Cancelled&quot;)  &amp;&amp;  ISBLANK(Cancellation_reason__c)</errorConditionFormula>
         <errorMessage>You must add cancellation notes before cancelling a User Story</errorMessage>
-    </validationRules>
-    <validationRules>
-        <fullName>Add_personas</fullName>
-        <active>false</active>
-        <description>Forces persona definition if a user story is ready or in production</description>
-        <errorConditionFormula>OR(
-ISPICKVAL(TMFC_User_Story_Status__c, &quot;In Production - Closed&quot;) ,
-ISPICKVAL(TMFC_User_Story_Status__c, &quot;Ready to dev integrate&quot;) , 
-ISPICKVAL(TMFC_User_Story_Status__c, &quot;Ready for prod deploy&quot;)) &amp;&amp; 
-ISBLANK(Affected_Personas__c)</errorConditionFormula>
-        <errorMessage>Please add the personas that are affected by this user story</errorMessage>
-    </validationRules>
-    <validationRules>
-        <fullName>Add_release_notes</fullName>
-        <active>true</active>
-        <description>Forces release notes if a user story is ready or in production</description>
-        <errorConditionFormula>OR(
-ISPICKVAL(TMFC_User_Story_Status__c, &quot;In Production - Closed&quot;) ,
-ISPICKVAL(TMFC_User_Story_Status__c, &quot;Ready to dev integrate&quot;) , 
-ISPICKVAL(TMFC_User_Story_Status__c, &quot;Ready for prod deploy&quot;)) &amp;&amp; 
-LEN(Release_Notes__c) = 0</errorConditionFormula>
-        <errorMessage>You must add release notes for CRM analysts before putting this User Story into production</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Add_result_notes</fullName>

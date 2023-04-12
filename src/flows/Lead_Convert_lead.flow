@@ -489,7 +489,7 @@
                 <leftValueReference>$Flow.FaultMessage</leftValueReference>
                 <operator>Contains</operator>
                 <rightValue>
-                    <stringValue>You must enter a Win/Loss Description upon closing an Opportunity related to Pricemescan Connect</stringValue>
+                    <stringValue>You must enter a detailed Win/Loss Description upon closing an Opportunity related to Primescan Connect</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -570,7 +570,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>230123 : TFUS-000005269 : Display the Win/Loss Reasons/Description fields when the Opportunity stage equals &apos;Closed Won&apos; or &apos;Closed Lost&apos;
+    <description>230308: TFUS-000005409 : Adjusted Win/Loss Description validation error message
+230123 : TFUS-000005269 : Display the Win/Loss Reasons/Description fields when the Opportunity stage equals &apos;Closed Won&apos; or &apos;Closed Lost&apos;
 220808: TFUS-000004617: Iberia owner skip
 220120: TFUS-000003955: Recreate the Fault connection from &quot;Update Lead&quot; to &quot;scrErrorMessage&quot; since this didn&apos;t work properly.
 Converting Sales Leads into Opportunities
@@ -586,6 +587,7 @@ Converting Sales Leads into Opportunities
         <picklistField>Converted_to__c</picklistField>
         <picklistObject>Field_Sales_Project_Members__c</picklistObject>
     </dynamicChoiceSets>
+    <environments>Default</environments>
     <formulas>
         <name>ChatterMessage</name>
         <dataType>String</dataType>
@@ -878,7 +880,7 @@ Converting Sales Leads into Opportunities
             <inputParameters>
                 <name>label</name>
                 <value>
-                    <stringValue>You must enter a Win/Loss Description upon closing an Opportunity related to Primescan Connect</stringValue>
+                    <stringValue>You must enter a detailed Win/Loss Description upon closing an Opportunity related to Pricemescan Connect in order to get insights and share them with product and marketing teams.</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>

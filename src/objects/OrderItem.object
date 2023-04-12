@@ -234,6 +234,17 @@ OR((Order.Order_Amount_global__c - Total_Line_Item_Price__c)&gt;=  PricebookEntr
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -380,6 +391,17 @@ IF(Discount_Percent__c   = 0, &quot;NO APPROVAL NEEDED&quot;,
         <fullName>ListPrice</fullName>
     </fields>
     <fields>
+        <fullName>LowerGuidance__c</fullName>
+        <description>#5314 - Margin Guidance Calculation Process</description>
+        <externalId>false</externalId>
+        <label>Lower Guidance (%)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
         <fullName>MTF_EvaluationNumber__c</fullName>
         <defaultValue>0</defaultValue>
         <externalId>false</externalId>
@@ -456,6 +478,53 @@ IF(Discount_Percent__c   = 0, &quot;NO APPROVAL NEEDED&quot;,
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MarginGuidanceIndicator__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( MarginGuidance__c == null, 
+ &apos;n/a&apos;,
+ IF(
+    Margin__c  &gt;  UpperGuidance__c ,
+    IMAGE(&quot;/img/samples/color_green.gif&quot;, &quot;Green&quot;, 20,20),
+    IF(
+        AND(Margin__c &lt;= UpperGuidance__c, Margin__c &gt;=  LowerGuidance__c ),
+        IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;Yellow&quot;, 20,20),
+        IMAGE(&quot;/img/samples/color_red.gif&quot;, &quot;Red&quot;, 20,20)
+
+    )
+ )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Margin Guidance Indicator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MarginGuidance__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Margin Guidance</label>
+        <referenceTo>MarginGuidance__c</referenceTo>
+        <relationshipLabel>Order Products</relationshipLabel>
+        <relationshipName>Order_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Margin__c</fullName>
+        <description>#5314 - Margin Guidance Calculation Process</description>
+        <externalId>false</externalId>
+        <label>Margin</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
@@ -1404,6 +1473,17 @@ PricebookEntry.Product2.D_Level2__c &amp; &apos;-&apos; &amp; PricebookEntry.Pro
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>TotalCost__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>TotalLineItemPricePDFButler__c</fullName>
         <externalId>false</externalId>
         <formula>Total_Line_Item_Price__c * 1.1</formula>
@@ -1474,6 +1554,17 @@ PricebookEntry.Product2.D_Level2__c &amp; &apos;-&apos; &amp; PricebookEntry.Pro
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>UpperGuidance__c</fullName>
+        <description>#5314 - Margin Guidance Calculation Process</description>
+        <externalId>false</externalId>
+        <label>Upper Guidance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
         <fullName>UseCoupon__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1512,6 +1603,42 @@ PricebookEntry.Product2.D_Level2__c &amp; &apos;-&apos; &amp; PricebookEntry.Pro
         <scale>2</scale>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Weight__c</fullName>
+        <description>#5314 - Margin Guidance Calculation Process</description>
+        <externalId>false</externalId>
+        <label>Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>8</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WeightedLowerGuidance__c</fullName>
+        <description>#5314 - Margin Guidance Calculation Process</description>
+        <externalId>false</externalId>
+        <label>Weighted Lower Guidance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>8</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WeightedUpperGuidance__c</fullName>
+        <description>#5314 - Margin Guidance Calculation Process</description>
+        <externalId>false</externalId>
+        <label>Weighted Upper Guidance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>8</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <validationRules>
         <fullName>Can_Not_Pick_Header_Specials</fullName>

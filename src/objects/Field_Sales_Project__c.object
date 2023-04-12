@@ -4373,7 +4373,6 @@
     </fields>
     <fields>
         <fullName>Title__c</fullName>
-        <caseSensitive>false</caseSensitive>
         <externalId>false</externalId>
         <inlineHelpText>This helps the naming of the Initiative</inlineHelpText>
         <label>Title</label>
@@ -4382,7 +4381,7 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
-        <unique>true</unique>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>UserCountry__c</fullName>

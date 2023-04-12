@@ -40,6 +40,6 @@
     </values>
     <values>
         <field>StageGuidance__c</field>
-        <value xsi:type="xsd:string">Verloren</value>
+        <value xsi:type="xsd:string">Gewonnen</value>
     </values>
 </CustomMetadata>

@@ -662,6 +662,17 @@ TEXT($User.LanguageLocaleKey))</formula>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>QuoteDate__c</fullName>
+        <description>The date of the quote that is used in PDF Butler and can be considered as the start date of the quote from customer perspective. &quot;Last_Approval_Action_DateTime__c&quot; and &quot;CreatedDate&quot; if not.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Last_Approval_Action_DateTime__c),  DATEVALUE(CreatedDate), DATEVALUE(Last_Approval_Action_DateTime__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Quote Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>QuoteLinesDiscountChanged__c</fullName>
         <description>Shows the number of Quote Line Items rows where the final price has been changed ( Sales Price or Discount has been modified by user) - either Increased or Decreased.</description>
         <externalId>false</externalId>

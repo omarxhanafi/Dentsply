@@ -281,6 +281,7 @@
     <fields>
         <fullName>CventEvents__sub_Value__c</fullName>
         <deprecated>false</deprecated>
+        <description>Replaces Value__c field which has been deprecated.</description>
         <externalId>false</externalId>
         <label>Value</label>
         <length>10000</length>

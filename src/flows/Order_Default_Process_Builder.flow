@@ -224,7 +224,7 @@
             </processMetadataValues>
             <name>objectId</name>
             <value>
-                <elementReference>formula_16_myRule_14_A1_5048297933</elementReference>
+                <elementReference>formula_16_myRule_14_A1_5119753116</elementReference>
             </value>
         </inputParameters>
     </actionCalls>
@@ -452,7 +452,7 @@
             </processMetadataValues>
             <name>objectId</name>
             <value>
-                <elementReference>formula_20_myRule_18_A1_3901699495</elementReference>
+                <elementReference>formula_20_myRule_18_A1_5608510057</elementReference>
             </value>
         </inputParameters>
     </actionCalls>
@@ -1356,20 +1356,20 @@
             <label>Previously Met - Prev</label>
         </rules>
     </decisions>
-    <description>US implants approvers</description>
+    <description>TFUS-000005394</description>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
                 <stringValue>If(text( [Order].Shipping_Method__c )= &quot;&quot; &amp;&amp; Text($User.User_Country__c)  = &quot;USA&quot; ,&quot;UPS 2nd Day PM - UXE $14.50&quot; , 
-if(text( [Order].Shipping_Method__c )= &quot;&quot; &amp;&amp; Text($User.User_Country__c)  = &quot;Canada&quot; , &quot;UFJ: F IntnlPriority: FedEx Intnl Priority Warehouse&quot;,
+if(text( [Order].Shipping_Method__c )= &quot;&quot; &amp;&amp; Text($User.User_Country__c)  = &quot;Canada&quot; , &quot;UPS (UXJ): IntnlPriority: UPS Intnl Priority Warehouse&quot;,
 text( [Order].Shipping_Method__c )))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_11_myRule_10_A1_8829501432</name>
+        <name>formula_11_myRule_10_A1_4029205982</name>
         <dataType>String</dataType>
         <expression>If(text( {!myVariable_current.Shipping_Method__c} )= &quot;&quot; &amp;&amp; Text({!$User.User_Country__c})  = &quot;USA&quot; ,&quot;UPS 2nd Day PM - UXE $14.50&quot; , 
-if(text( {!myVariable_current.Shipping_Method__c} )= &quot;&quot; &amp;&amp; Text({!$User.User_Country__c})  = &quot;Canada&quot; , &quot;UFJ: F IntnlPriority: FedEx Intnl Priority Warehouse&quot;,
+if(text( {!myVariable_current.Shipping_Method__c} )= &quot;&quot; &amp;&amp; Text({!$User.User_Country__c})  = &quot;Canada&quot; , &quot;UPS (UXJ): IntnlPriority: UPS Intnl Priority Warehouse&quot;,
 text( {!myVariable_current.Shipping_Method__c} )))</expression>
     </formulas>
     <formulas>
@@ -1379,7 +1379,7 @@ text( {!myVariable_current.Shipping_Method__c} )))</expression>
                 <stringValue>If(text([Order].User_CountryPL__c )= null, Text($User.User_Country__c)  , text([Order].User_CountryPL__c))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_12_myRule_10_A1_3004300836</name>
+        <name>formula_12_myRule_10_A1_9024019636</name>
         <dataType>String</dataType>
         <expression>If(text({!myVariable_current.User_CountryPL__c} )= null, Text({!$User.User_Country__c})  , text({!myVariable_current.User_CountryPL__c}))</expression>
     </formulas>
@@ -1390,7 +1390,7 @@ text( {!myVariable_current.Shipping_Method__c} )))</expression>
                 <stringValue>[Order].Id </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_16_myRule_14_A1_5048297933</name>
+        <name>formula_16_myRule_14_A1_5119753116</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.Id}</expression>
     </formulas>
@@ -1401,7 +1401,7 @@ text( {!myVariable_current.Shipping_Method__c} )))</expression>
                 <stringValue>[Order].Id </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_20_myRule_18_A1_3901699495</name>
+        <name>formula_20_myRule_18_A1_5608510057</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.Id}</expression>
     </formulas>
@@ -1412,7 +1412,7 @@ text( {!myVariable_current.Shipping_Method__c} )))</expression>
                 <stringValue>NOW() </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_25_myRule_24_A1_2272786471</name>
+        <name>formula_25_myRule_24_A1_2989910715</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1423,7 +1423,7 @@ text( {!myVariable_current.Shipping_Method__c} )))</expression>
                 <stringValue>[Order].CreatedBy.Personal_Order_Account__c</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_6_myRule_5_A1_1095985932</name>
+        <name>formula_6_myRule_5_A1_3376781738</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.CreatedBy.Personal_Order_Account__c}</expression>
     </formulas>
@@ -1477,7 +1477,7 @@ ISPICKVAL({!myVariable_current.Account.Country__c}, &apos;DK&apos;),
 ISPICKVAL({!myVariable_current.Account.Country__c}, &apos;NO&apos;),
 ISPICKVAL({!myVariable_current.Account.Country__c},&apos;FI&apos;)))</expression>
     </formulas>
-    <interviewLabel>Order_Default_Process_Builder-11_InterviewLabel</interviewLabel>
+    <interviewLabel>Order_Default_Process_Builder-12_InterviewLabel</interviewLabel>
     <label>Order : Default Process Builder</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -1583,7 +1583,7 @@ ISPICKVAL({!myVariable_current.Account.Country__c},&apos;FI&apos;)))</expression
             </processMetadataValues>
             <field>Shipping_Method__c</field>
             <value>
-                <elementReference>formula_11_myRule_10_A1_8829501432</elementReference>
+                <elementReference>formula_11_myRule_10_A1_4029205982</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1619,7 +1619,7 @@ ISPICKVAL({!myVariable_current.Account.Country__c},&apos;FI&apos;)))</expression
             </processMetadataValues>
             <field>User_CountryPL__c</field>
             <value>
-                <elementReference>formula_12_myRule_10_A1_3004300836</elementReference>
+                <elementReference>formula_12_myRule_10_A1_9024019636</elementReference>
             </value>
         </inputAssignments>
         <object>Order</object>
@@ -1820,7 +1820,7 @@ ISPICKVAL({!myVariable_current.Account.Country__c},&apos;FI&apos;)))</expression
             </processMetadataValues>
             <field>CS_Ownership_Assigned__c</field>
             <value>
-                <elementReference>formula_25_myRule_24_A1_2272786471</elementReference>
+                <elementReference>formula_25_myRule_24_A1_2989910715</elementReference>
             </value>
         </inputAssignments>
         <object>Order</object>
@@ -2086,7 +2086,7 @@ ISPICKVAL({!myVariable_current.Account.Country__c},&apos;FI&apos;)))</expression
             </processMetadataValues>
             <field>Account_for_Sample_in_AX__c</field>
             <value>
-                <elementReference>formula_6_myRule_5_A1_1095985932</elementReference>
+                <elementReference>formula_6_myRule_5_A1_3376781738</elementReference>
             </value>
         </inputAssignments>
         <object>Order</object>

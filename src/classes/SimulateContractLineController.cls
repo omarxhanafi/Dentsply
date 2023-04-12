@@ -12,7 +12,7 @@ public with sharing class SimulateContractLineController {
             return(contractLine);
         }
         catch (Exception e) {
-            DebugLog.addException(e, 'SimulateContractLineController.insertOrUpdateContractItem');
+            DebugLog.addException(e, 'SimulateContractLineController.contractLine');
             throw new AuraHandledException(e.getMessage());    
         }
     }
@@ -26,20 +26,21 @@ public with sharing class SimulateContractLineController {
             return(contractItem);
         }
         catch (Exception e) {
-            DebugLog.addException(e, 'SimulateContractLineController.getContractItem');
+            DebugLog.addException(e, 'SimulateContractLineController.contractLine');
             throw new AuraHandledException(e.getMessage());    
         }
     }
 
     @AuraEnabled
     public static List<ContractItem__c> getAlreadyAddedContractItems(Id contractId) {
+        //system.debug(contractItem);
         try {
             List<ContractItem__c> contractItems = new List<ContractItem__c>();
             contractItems = [SELECT Name, Id  FROM ContractItem__c WHERE Contract__c =: contractId];       
             return(contractItems);
         }
         catch (Exception e) {
-            DebugLog.addException(e, 'SimulateContractLineController.getAlreadyAddedContractItems');
+            DebugLog.addException(e, 'SimulateContractLineController.contractLine');
             throw new AuraHandledException(e.getMessage());    
         }
     }
@@ -53,38 +54,44 @@ public with sharing class SimulateContractLineController {
             return(discountModel);
         }
         catch (Exception e) {
-            DebugLog.addException(e, 'SimulateContractLineController.getRelatedDiscount');
+            DebugLog.addException(e, 'SimulateContractLineController.contractLine');
             throw new AuraHandledException(e.getMessage());    
         }
     }
 
     @AuraEnabled
     public static List<Discount_model__c> getDiscountModels( String accountId) {
-        try{
-            List<Discount_model__c> discountRecords = new List<Discount_model__c>();
-            Account acc = new Account();
-            acc = [SELECT country__c FROM Account WHERE id =: accountId LIMIT 1];
-            discountRecords = [SELECT Id, MaxDiscountToOffer__c, Product__c, SAQLQuery__c, CompanyCodes__c, FirstLevelApproval__c, SecondLevelApproval__c, (SELECT Id, MinTotalSalesNet__c, TextMatchResult__c, Discount_lever__c, Allowed_discount__c, MaxNumber__c, MinNumber__c, Equals__c FROM Discount_row__r) FROM Discount_model__c WHERE Country__c =: acc.Country__c AND Active__c = true ];
-            return(discountRecords);
-        }
-        catch (Exception e) {
-            DebugLog.addException(e, 'SimulateContractLineController.getDiscountModels');
-            throw new AuraHandledException(e.getMessage());    
-        }
+        List<Discount_model__c> discountRecords = new List<Discount_model__c>();
+        Account acc = new Account();
+        acc = [SELECT country__c FROM Account WHERE id =: accountId LIMIT 1];
+        discountRecords = [SELECT Id, MaxDiscountToOffer__c, Product__c, SAQLQuery__c, CompanyCodes__c, FirstLevelApproval__c, SecondLevelApproval__c, (SELECT Id, MinTotalSalesNet__c, TextMatchResult__c, Discount_lever__c, Allowed_discount__c, MaxNumber__c, MinNumber__c, Equals__c FROM Discount_row__r) FROM Discount_model__c WHERE Country__c =: acc.Country__c AND Active__c = true ];
+        return(discountRecords);
     }
 
     @AuraEnabled
     public static List<Source_Record__c> getSorceRecords( String accountId,List<String> companyCodes) {
-        try{
-            List<Source_Record__c> sourceRecords = new List<Source_Record__c>();
-            sourceRecords = [SELECT Id, Source_Id__c, Combined_Fields__c, Company_Code__c, Customer_Id__c FROM Source_Record__c WHERE CIM_Account__c =: accountId AND Status__c = 'Active' AND Company_Code__c IN :companyCodes ORDER BY Source_Id__c, Company_Code__c];
-            return(sourceRecords);
-        }
-        catch (Exception e) {
-            DebugLog.addException(e, 'SimulateContractLineController.getSorceRecords');
-            throw new AuraHandledException(e.getMessage());    
-        }
+        List<Source_Record__c> sourceRecords = new List<Source_Record__c>();
+        sourceRecords = [SELECT Id, Source_Id__c, Combined_Fields__c, Company_Code__c, Customer_Id__c FROM Source_Record__c WHERE CIM_Account__c =: accountId AND Status__c = 'Active' AND Company_Code__c IN :companyCodes ORDER BY Source_Id__c, Company_Code__c];
+        system.debug(sourceRecords);
+        return(sourceRecords);
     }
+
+
+
+
+/*
+    global class ContractSalesDataResponse {
+        @InvocableVariable
+        global Decimal salesResult;
+        
+        @InvocableVariable
+        global Decimal implantsResult;       
+    }
+
+*/
+
+
+
 
     private static String[] findDatasetVersion(String datasetName){
 
@@ -144,35 +151,31 @@ public with sharing class SimulateContractLineController {
 
     @AuraEnabled
 	public static  Map<String,Object> getSalesData(String accountId, String querySAQL){
-        try{
-            List<String> datasetDetails = findDatasetVersion('AccountSalesDetail');
-            List<String> datasetAssetsDetails = findDatasetVersion('Assets');
-            Map<String,Object> results = new Map<String,Object>();
-            Account acc = [SELECT Id, OneSF_Id__c FROM Account WHERE Id =: accountId LIMIT 1];
 
-            if(datasetDetails[0]!= null && datasetDetails[1] != null && datasetAssetsDetails[0]!= null && datasetAssetsDetails[1] != null){
-                String querySAQLtoFilter = querySAQL;
-                querySAQLtoFilter = querySAQLtoFilter.replace('*replaceAccountSalesDetail*',datasetDetails[0] + '/' + datasetDetails[1]);
-                querySAQLtoFilter = querySAQLtoFilter.replace('*replaceAssets*',datasetAssetsDetails[0] + '/' + datasetAssetsDetails[1]);
-                querySAQLtoFilter = querySAQLtoFilter.replace('*replaceSFDCOneId*',acc.OneSF_Id__c);
-                
-            String response = '';
-            if (!Test.isRunningTest()) {
-                ConnectApi.LiteralJson queryresult =  ConnectApi.Wave.executeQuery(querySAQLtoFilter);
-                response = queryresult.json;
-            }
-            else{
-                response = '{"results":{"records":[{"NetAmount":3000, "ImplantUnitsQty":30},{"NetAmount":2000, "ImplantUnitsQty":40}]}, "id":"56789"}';   
-            }
-            results = (Map<String,Object>)JSON.deserializeUntyped(response);
+    List<String> datasetDetails = findDatasetVersion('AccountSalesDetail');
+    List<String> datasetAssetsDetails = findDatasetVersion('Assets');
+    List<Decimal> salesData = new List<Decimal>{};
+    Map<String,Object> results = new Map<String,Object>();
+    Account acc = [SELECT Id, OneSF_Id__c FROM Account WHERE Id =: accountId LIMIT 1];
 
-            
-            }
-            return(results);
+    if(datasetDetails[0]!= null && datasetDetails[1] != null && datasetAssetsDetails[0]!= null && datasetAssetsDetails[1] != null){
+        String querySAQLtoFilter = querySAQL;
+        querySAQLtoFilter = querySAQLtoFilter.replace('*replaceAccountSalesDetail*',datasetDetails[0] + '/' + datasetDetails[1]);
+        querySAQLtoFilter = querySAQLtoFilter.replace('*replaceAssets*',datasetAssetsDetails[0] + '/' + datasetAssetsDetails[1]);
+        querySAQLtoFilter = querySAQLtoFilter.replace('*replaceSFDCOneId*',acc.OneSF_Id__c);
+        
+        String response = '';
+        if (!Test.isRunningTest()) {
+            ConnectApi.LiteralJson queryresult =  ConnectApi.Wave.executeQuery(querySAQLtoFilter);
+            response = queryresult.json;
         }
-        catch (Exception e) {
-            DebugLog.addException(e, 'SimulateContractLineController.getSalesData');
-            throw new AuraHandledException(e.getMessage());    
+        else{
+            response = '{"results":{"records":[{"NetAmount":3000, "ImplantUnitsQty":30},{"NetAmount":2000, "ImplantUnitsQty":40}]}, "id":"56789"}';   
         }
+        results = (Map<String,Object>)JSON.deserializeUntyped(response);
+
+        
+        }
+        return(results);
     }
 }

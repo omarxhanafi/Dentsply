@@ -1628,9 +1628,10 @@ Paused - Stopped on waiting for approval, paused for restart require approval. P
     <listViews>
         <fullName>All_Open_Projcts</fullName>
         <columns>NAME</columns>
-        <columns>Project_Status__c</columns>
         <columns>OWNER.FIRST_NAME</columns>
         <columns>Country__c</columns>
+        <columns>Project_Status__c</columns>
+        <columns>Phase__c</columns>
         <columns>Start_date__c</columns>
         <columns>End_date__c</columns>
         <columns>Go_Live_date__c</columns>

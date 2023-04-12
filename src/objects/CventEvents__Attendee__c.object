@@ -526,6 +526,17 @@
         <visibleLines>5</visibleLines>
     </fields>
     <fields>
+        <fullName>CventEvents__PersonalizedRegistrationLink__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(OR(ISBLANK(CventEvents__AttendeeStub__c), CventEvents__IsFreeloader__c ), null, CventEvents__Event__r.CventEvents__pkg_RegistrationLink__c + &apos;?i=&apos; + CventEvents__AttendeeStub__c)</formula>
+        <label>Personalized Registration Link</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>CventEvents__PrimaryRegistrantName__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -589,7 +600,7 @@
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Registration Path</label>
-        <length>50</length>
+        <length>100</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>

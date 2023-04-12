@@ -7628,7 +7628,7 @@ This field will be used by field technicians to write what&apos;s the work they 
         <language>en_US</language>
     </listViews>
     <listViews>
-        <fullName>My_SA_Not_Completed</fullName>
+        <fullName>My_SA_Rolling_Six_Months</fullName>
         <columns>Name</columns>
         <columns>Account</columns>
         <columns>FSSK__FSK_Work_Order__c</columns>
@@ -7643,15 +7643,10 @@ This field will be used by field technicians to write what&apos;s the work they 
         <filterScope>AssignedToMe</filterScope>
         <filters>
             <field>SchedEndTime</field>
-            <operation>lessOrEqual</operation>
-            <value>TODAY</value>
+            <operation>greaterOrEqual</operation>
+            <value>LAST_90_DAYS</value>
         </filters>
-        <filters>
-            <field>Status</field>
-            <operation>equals</operation>
-            <value>None,Scheduled,Dispatched,In Progress</value>
-        </filters>
-        <label>*My SA Not Completed</label>
+        <label>*My SA Rolling Six Months</label>
         <language>en_US</language>
     </listViews>
     <listViews>

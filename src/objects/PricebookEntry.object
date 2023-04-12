@@ -107,7 +107,7 @@
         <label>Approval Level 1</label>
         <precision>18</precision>
         <required>false</required>
-        <scale>0</scale>
+        <scale>2</scale>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
@@ -119,7 +119,7 @@
         <label>Approval Level 2</label>
         <precision>18</precision>
         <required>false</required>
-        <scale>0</scale>
+        <scale>2</scale>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
@@ -131,7 +131,7 @@
         <label>Approval Level 3</label>
         <precision>18</precision>
         <required>false</required>
-        <scale>0</scale>
+        <scale>2</scale>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>

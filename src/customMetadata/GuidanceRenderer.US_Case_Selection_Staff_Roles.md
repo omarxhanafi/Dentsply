@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>CountryList__c</field>
-        <value xsi:type="xsd:string">US</value>
+        <value xsi:type="xsd:string">US;CA</value>
     </values>
     <values>
         <field>Guidance_Content__c</field>

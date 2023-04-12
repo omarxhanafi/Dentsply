@@ -18,6 +18,7 @@ import noDistributorsFound from '@salesforce/label/c.OD_No_Distributors_Found';
 import accountCol from '@salesforce/label/c.OD_Account_Col'; 
 import typeCol from '@salesforce/label/c.OD_Type_Col';
 import cityCol from '@salesforce/label/c.OD_City_Col';
+import notAllowedToSellCol from '@salesforce/label/c.OD_NotAllowedToSell_Col';
 import addDealer from '@salesforce/label/c.OD_Add_Dealer';
 import selectDealer from '@salesforce/label/c.OD_Select_Dealer';
 import cancel from '@salesforce/label/c.OD_Cancel';
@@ -33,6 +34,8 @@ export default class OrderDealerLwc extends LightningElement {
     @track selectedDealer = -1;
     @track noDistributorsFound = false;
     @track userUiTheme;
+    @track showNotAllowedToSell = false;
+    @track tableColspan = 2;
     @track labels = {
         title,
         subTitle,
@@ -42,6 +45,7 @@ export default class OrderDealerLwc extends LightningElement {
         accountCol,
         typeCol,
         cityCol,
+        notAllowedToSellCol,
         selectDealer,
         addDealer,
         cancel,
@@ -92,6 +96,21 @@ export default class OrderDealerLwc extends LightningElement {
                         dealer.isDisabled = true;
                         this.selectedDealer = index;
                     }
+                    if(dealer.Dealer__r.DistributorCategorisation__c != undefined){
+                        var notAllowedToSellList = dealer.Dealer__r.DistributorCategorisation__c.split(';');
+                        for(var i in notAllowedToSellList){
+
+                            if(i==0){
+                                dealer.NotAllowedToSell = notAllowedToSellList[i];
+                            }
+                            else{
+                                dealer.NotAllowedToSell = dealer.NotAllowedToSell + '\n' + notAllowedToSellList[i];
+                            }
+                            this.showNotAllowedToSell = true;
+                            this.tableColspan = 3;
+                        }
+                         
+                    }
                     return dealer;
                 });
                 this.loading = false;
@@ -123,6 +142,22 @@ export default class OrderDealerLwc extends LightningElement {
                         dealer.isDisabled = true;
                         this.selectedDealer = index;
                     }
+                    if(dealer.Dealer__r.DistributorCategorisation__c != undefined){
+                        var notAllowedToSellList = dealer.Dealer__r.DistributorCategorisation__c.split(';');
+                        for(var i in notAllowedToSellList){
+
+                            if(i==0){
+                                dealer.NotAllowedToSell = notAllowedToSellList[i];
+                            }
+                            else{
+                                dealer.NotAllowedToSell = dealer.NotAllowedToSell + '\n' + notAllowedToSellList[i];
+                            }
+                            this.showNotAllowedToSell = true;
+                            this.tableColspan = 3;
+                        }
+                         
+                    }
+
                     return dealer;
                 });
                 lookup.selection = [];
@@ -219,6 +254,7 @@ export default class OrderDealerLwc extends LightningElement {
         detail.selectedIds = [...detail.selectedIds, ...selectedIds];
         try {
             const results = await apexSearch(detail);
+            console.log(results);
             target.setSearchResults(results);
         } catch (error) {
             // TODO: handle error

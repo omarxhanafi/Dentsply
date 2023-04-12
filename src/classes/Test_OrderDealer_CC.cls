@@ -56,6 +56,8 @@ public class Test_OrderDealer_CC {
         List<Account> accounts = TestDataFactory.returnAccounts(2, 'CIM_Account', testUser.Id);
         for (Account account : accounts) {
             account.OneAccount_Type__c = 'Distributor';
+            account.DistributorCategorisation__c = 'Implants';
+            account.Country__c = 'DE';
         }
         insert accounts;
         List<Id> fixedSearchResults = new List<Id>();
@@ -64,6 +66,8 @@ public class Test_OrderDealer_CC {
         }
         Test.setFixedSearchResults(fixedSearchResults);
         System.assertEquals(2, OrderDealer_CC.search('Test', new List<String>()).size());
+        
+        List<LookupSearchResult> recentlyViewed = OrderDealer_CC.getRecentlyViewed();
     }
 
     @isTest

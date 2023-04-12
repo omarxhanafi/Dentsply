@@ -1459,6 +1459,32 @@ IF( AND( OR(  BEGINS(Pricebook_Name__c, &quot;US IMP&quot;), BEGINS(Pricebook_Na
         <type>Percent</type>
     </fields>
     <fields>
+        <fullName>MarginGuidanceIndicator__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR( WeightedUpperGuidance__c==0,WeightedLowerGuidance__c==0), 
+&apos;n/a&apos;,
+IF(
+    ((TF_TotalSalesMarginCalculation__c- TotalCost__c)/TF_TotalSalesMarginCalculation__c) &gt; WeightedUpperGuidance__c,
+    IMAGE(&quot;/img/samples/color_green.gif&quot;, &quot;Green&quot;, 20, 20),
+    IF(
+        AND(
+            ((TF_TotalSalesMarginCalculation__c - TotalCost__c)/TF_TotalSalesMarginCalculation__c) &lt;= WeightedUpperGuidance__c, 
+            ((TF_TotalSalesMarginCalculation__c - TotalCost__c)/TF_TotalSalesMarginCalculation__c) &gt;= WeightedLowerGuidance__c
+            ),
+        IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;Yellow&quot;, 20, 20),
+        IMAGE(&quot;/img/samples/color_red.gif&quot;, &quot;Red&quot;, 20, 20)
+
+    )
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Margin Guidance Indicator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Movex_Customer_Number__c</fullName>
         <externalId>false</externalId>
         <formula>Account.Movex__c</formula>
@@ -2814,6 +2840,11 @@ if(isblank(Account_for_Sample_in_AX__r.ShippingCountry),&quot;&quot;, &quot; , &
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
+                    <fullName>UPS (UXJ): IntnlPriority: UPS Intnl Priority Warehouse</fullName>
+                    <default>false</default>
+                    <label>UPS (UXJ): IntnlPriority: UPS Intnl Priority Warehouse</label>
+                </value>
+                <value>
                     <fullName>UFJ: F IntnlPriority: FedEx Intnl Priority Warehouse</fullName>
                     <default>false</default>
                     <label>UFJ: F IntnlPriority: FedEx Intnl Priority Warehouse</label>
@@ -2949,7 +2980,6 @@ if(isblank(Account_for_Sample_in_AX__r.ShippingCountry),&quot;&quot;, &quot; , &
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>USA</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
                 <valueName>SIMPLANT- No Shipping</valueName>
             </valueSettings>
             <valueSettings>
@@ -2963,6 +2993,10 @@ if(isblank(Account_for_Sample_in_AX__r.ShippingCountry),&quot;&quot;, &quot; , &
             <valueSettings>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <valueName>UPS COD 2nd Day PM:  UX5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <valueName>UPS (UXJ): IntnlPriority: UPS Intnl Priority Warehouse</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Canada</controllingFieldValue>
@@ -3021,9 +3055,37 @@ if(isblank(Account_for_Sample_in_AX__r.ShippingCountry),&quot;&quot;, &quot; , &
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>TF_TotalSalesMarginCalculation__c</fullName>
+        <description>Used in formula of the Margin Indicator
+Total Sales w/ discount exc. lines w/o identified Margin Guidance</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Sales w/ discount exc. lines w/o identified Margin Guidance</inlineHelpText>
+        <label>Total Sales (w/ Margin Calculation)</label>
+        <summarizedField>OrderItem.Total_Line_Item_Price__c</summarizedField>
+        <summaryFilterItems>
+            <field>OrderItem.Cost__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </summaryFilterItems>
+        <summaryForeignKey>OrderItem.OrderId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>TotalAmount</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TotalCost__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Cost</label>
+        <summarizedField>OrderItem.TotalCost__c</summarizedField>
+        <summaryForeignKey>OrderItem.OrderId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
     </fields>
     <fields>
         <fullName>Total_After_PPN__c</fullName>
@@ -3559,6 +3621,36 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WeightedLowerGuidance__c</fullName>
+        <externalId>false</externalId>
+        <label>Weighted Lower Guidance</label>
+        <summarizedField>OrderItem.WeightedLowerGuidance__c</summarizedField>
+        <summaryFilterItems>
+            <field>OrderItem.UpperGuidance__c</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </summaryFilterItems>
+        <summaryForeignKey>OrderItem.OrderId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>WeightedUpperGuidance__c</fullName>
+        <externalId>false</externalId>
+        <label>Weighted Upper Guidance</label>
+        <summarizedField>OrderItem.WeightedUpperGuidance__c</summarizedField>
+        <summaryFilterItems>
+            <field>OrderItem.UpperGuidance__c</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </summaryFilterItems>
+        <summaryForeignKey>OrderItem.OrderId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
     </fields>
     <fields>
         <fullName>amount_of_foc_products_eith_currency__c</fullName>
@@ -4812,6 +4904,7 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         </filters>
         <label>NA: CS INBOX MIS ALL Pending</label>
         <sharedTo>
+            <group>NA_DI_Customer_Service_Inbox_Team</group>
             <group>NA_DI_Customer_Service_and_Mgmt</group>
             <role>DNA_Shared_Services</role>
             <role>NA_CRM_Analyst</role>
@@ -5432,6 +5525,42 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>US_Inside_Sales_ENDO_Orders_to_Process</fullName>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>Order_Owner__c</columns>
+        <columns>External_notes__c</columns>
+        <columns>ORDERS.STATUS</columns>
+        <columns>Order_Amount_global__c</columns>
+        <columns>ORDERS.EFFECTIVE_DATE</columns>
+        <columns>US_Telsales__c</columns>
+        <columns>Order_Type__c</columns>
+        <columns>Order_subtype__c</columns>
+        <columns>Send_order_manually__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <filters>
+            <field>Country__c</field>
+            <operation>equals</operation>
+            <value>US,CA</value>
+        </filters>
+        <filters>
+            <field>Pricebook_Name__c</field>
+            <operation>equals</operation>
+            <value>US Inside Sales Endo</value>
+        </filters>
+        <label>US: Inside Sales ENDO Orders to Process</label>
+        <sharedTo>
+            <group>US_Inside_Sales_Endo_Orders</group>
+            <role>NA_CRM_Analyst</role>
+            <roleAndSubordinatesInternal>US_Inside_Sales</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>West_Clinical_Area_Orders_Today</fullName>
         <booleanFilter>1 AND (2 OR 3)</booleanFilter>
         <columns>Location__c</columns>
@@ -5897,6 +6026,10 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
             </values>
             <values>
                 <fullName>UFJ%3A F IntnlPriority%3A FedEx Intnl Priority Warehouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UPS %28UXJ%29%3A IntnlPriority%3A UPS Intnl Priority Warehouse</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7891,6 +8024,10 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
             </values>
             <values>
                 <fullName>UFJ%3A F IntnlPriority%3A FedEx Intnl Priority Warehouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UPS %28UXJ%29%3A IntnlPriority%3A UPS Intnl Priority Warehouse</fullName>
                 <default>false</default>
             </values>
             <values>

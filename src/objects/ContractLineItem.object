@@ -85,12 +85,96 @@
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>ServiceContractLineItem</fullName>
+        <fields>Article__c</fields>
+        <label>Service Contract Line Item</label>
+    </compactLayouts>
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Article__c</fullName>
+        <description>The SKU Code, Item Number of the product/service.</description>
+        <externalId>false</externalId>
+        <label>Article (SKU)</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <fields>
         <fullName>AssetId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AutoRenew__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Auto Renew</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BundleId__c</fullName>
+        <externalId>false</externalId>
+        <label>Bundle Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CIM360Id__c</fullName>
+        <externalId>true</externalId>
+        <label>CIM360 Id</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CancelledDate__c</fullName>
+        <description>The date when the subscription was cancelled</description>
+        <externalId>false</externalId>
+        <label>Cancelled Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CompanyCode__c</fullName>
+        <description>The Company code of the ERP system to which the subscription is tied.</description>
+        <externalId>false</externalId>
+        <label>Company Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContractEffectiveDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DEPUniqueKey__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>DEP Unique Key</label>
+        <length>255</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
     </fields>
     <fields>
         <fullName>Description</fullName>
@@ -105,6 +189,25 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>InstallationDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Item__c</fullName>
+        <description>SKU in DEP table - the SKU in Zuora</description>
+        <externalId>false</externalId>
+        <label>Item</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>ListPrice</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -112,6 +215,28 @@
         <fullName>LocationId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>MaterialId__c</fullName>
+        <externalId>false</externalId>
+        <label>Material Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MonthlyPrice__c</fullName>
+        <description>MRR = Monthly Recurring Revenue</description>
+        <externalId>false</externalId>
+        <inlineHelpText>MRR = Monthly Recurring Revenue</inlineHelpText>
+        <label>Monthly Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>ParentContractLineItemId</fullName>
@@ -132,14 +257,73 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>RCOCode__c</fullName>
+        <externalId>false</externalId>
+        <label>RCO Code</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RatePlanChargeId__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate Plan Charge Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>RootContractLineItemId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>SerialNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Serial Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ServiceActivationDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Activation Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>ServiceContractId</fullName>
         <trackHistory>false</trackHistory>
         <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>SiroforceId__c</fullName>
+        <externalId>false</externalId>
+        <label>Siroforce Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SourceSystemName__c</fullName>
+        <description>Shows from which source system the subscription comes.</description>
+        <externalId>false</externalId>
+        <label>Source System Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>StartDate</fullName>
@@ -154,6 +338,53 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>SubscriptionEndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Subscription End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SubscriptionId__c</fullName>
+        <externalId>false</externalId>
+        <label>Subscription Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SubscriptionStartDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Subscription Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SubscriptionStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>Subscription Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SubscriptionVersion__c</fullName>
+        <externalId>false</externalId>
+        <label>Subscription Version</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Subtotal</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -165,6 +396,12 @@
         <fullName>UnitPrice</fullName>
         <trackHistory>false</trackHistory>
     </fields>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>ServiceContractLineItem</fullName>
+        <active>true</active>
+        <label>Service Contract Line Item</label>
+    </recordTypes>
     <searchLayouts>
         <searchResultsAdditionalFields>LINEITEM.NAME</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>PRODUCT.NAME</searchResultsAdditionalFields>

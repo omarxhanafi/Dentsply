@@ -424,6 +424,11 @@
                     <label>Japan</label>
                 </value>
                 <value>
+                    <fullName>Jordan</fullName>
+                    <default>false</default>
+                    <label>Jordan</label>
+                </value>
+                <value>
                     <fullName>Kazakhstan</fullName>
                     <default>false</default>
                     <label>Kazakhstan</label>
@@ -434,6 +439,11 @@
                     <label>Kuwait</label>
                 </value>
                 <value>
+                    <fullName>Lebanon</fullName>
+                    <default>false</default>
+                    <label>Lebanon</label>
+                </value>
+                <value>
                     <fullName>Luxembourg</fullName>
                     <default>false</default>
                     <label>Luxembourg</label>
@@ -442,6 +452,11 @@
                     <fullName>Malaysia</fullName>
                     <default>false</default>
                     <label>Malaysia</label>
+                </value>
+                <value>
+                    <fullName>Morocco</fullName>
+                    <default>false</default>
+                    <label>Morocco</label>
                 </value>
                 <value>
                     <fullName>New Zealand</fullName>
@@ -527,6 +542,11 @@
                     <fullName>Turkey</fullName>
                     <default>false</default>
                     <label>Turkey</label>
+                </value>
+                <value>
+                    <fullName>U.A.E</fullName>
+                    <default>false</default>
+                    <label>U.A.E</label>
                 </value>
                 <value>
                     <fullName>UAE</fullName>
@@ -973,6 +993,11 @@
                     <label>CEREC Ortho Software</label>
                 </value>
                 <value>
+                    <fullName>CEREC PrimeMill</fullName>
+                    <default>false</default>
+                    <label>CEREC PrimeMill</label>
+                </value>
+                <value>
                     <fullName>CEREC Primescan AC</fullName>
                     <default>false</default>
                     <label>CEREC Primescan AC</label>
@@ -1131,6 +1156,11 @@
                     <fullName>Primescan AC</fullName>
                     <default>false</default>
                     <label>Primescan AC</label>
+                </value>
+                <value>
+                    <fullName>PrimeScan Cerec</fullName>
+                    <default>false</default>
+                    <label>PrimeScan Cerec</label>
                 </value>
                 <value>
                     <fullName>Primescan Connect</fullName>
@@ -1301,6 +1331,7 @@
                 <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>South Africa</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
                 <controllingFieldValue>UAE</controllingFieldValue>
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Saudi Arabia</controllingFieldValue>
@@ -1839,6 +1870,7 @@
                 <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
+                <controllingFieldValue>Turkey</controllingFieldValue>
                 <valueName>CEREC SpeedFire</valueName>
             </valueSettings>
             <valueSettings>
@@ -2044,6 +2076,14 @@
                 <controllingFieldValue>Italy</controllingFieldValue>
                 <valueName>Service and Software</valueName>
             </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <valueName>CEREC PrimeMill</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <valueName>PrimeScan Cerec</valueName>
+            </valueSettings>
         </valueSet>
         <visibleLines>4</visibleLines>
     </fields>
@@ -2068,6 +2108,11 @@
                     <fullName>AH Plus</fullName>
                     <default>false</default>
                     <label>AH Plus</label>
+                </value>
+                <value>
+                    <fullName>AH PLUS BIOMETRIC</fullName>
+                    <default>false</default>
+                    <label>AH PLUS BIOMETRIC</label>
                 </value>
                 <value>
                     <fullName>AH TEMP</fullName>
@@ -2355,6 +2400,11 @@
                     <label>Propex IQ</label>
                 </value>
                 <value>
+                    <fullName>Propex Pixi</fullName>
+                    <default>false</default>
+                    <label>Propex Pixi</label>
+                </value>
+                <value>
                     <fullName>PRO ROOT MTA</fullName>
                     <default>false</default>
                     <label>PRO ROOT MTA</label>
@@ -2530,6 +2580,11 @@
                     <label>WaveOne Gold Motor</label>
                 </value>
                 <value>
+                    <fullName>X Smart</fullName>
+                    <default>false</default>
+                    <label>X Smart</label>
+                </value>
+                <value>
                     <fullName>X-Smart IQ</fullName>
                     <default>false</default>
                     <label>X-Smart IQ</label>
@@ -2538,6 +2593,11 @@
                     <fullName>X-Smart PLUS</fullName>
                     <default>false</default>
                     <label>X-Smart PLUS</label>
+                </value>
+                <value>
+                    <fullName>X-Smart Pro+</fullName>
+                    <default>false</default>
+                    <label>X-Smart Pro+</label>
                 </value>
             </valueSetDefinition>
             <valueSettings>
@@ -2812,7 +2872,6 @@
                 <controllingFieldValue>Denmark</controllingFieldValue>
                 <controllingFieldValue>Finland</controllingFieldValue>
                 <controllingFieldValue>Sweden</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
@@ -3442,6 +3501,7 @@
             <valueSettings>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
+                <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -3503,7 +3563,6 @@
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>Algeria</controllingFieldValue>
                 <controllingFieldValue>Austria</controllingFieldValue>
-                <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>Singapore</controllingFieldValue>
                 <controllingFieldValue>Malaysia</controllingFieldValue>
@@ -3514,6 +3573,7 @@
             <valueSettings>
                 <controllingFieldValue>Vietnam</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
+                <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>Algeria</controllingFieldValue>
                 <controllingFieldValue>Austria</controllingFieldValue>
@@ -3527,6 +3587,11 @@
                 <controllingFieldValue>Taiwan</controllingFieldValue>
                 <controllingFieldValue>India</controllingFieldValue>
                 <valueName>X-Smart PLUS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kazakhstan</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
+                <valueName>Guttapercha</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
@@ -3550,6 +3615,11 @@
                 <controllingFieldValue>Ukraine</controllingFieldValue>
                 <controllingFieldValue>India</controllingFieldValue>
                 <valueName>Proglider</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kazakhstan</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
+                <valueName>Propex Pixi</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Germany</controllingFieldValue>
@@ -3653,6 +3723,12 @@
                 <valueName>VDW.Ultra</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>Germany</controllingFieldValue>
+                <controllingFieldValue>Austria</controllingFieldValue>
+                <controllingFieldValue>Switzerland</controllingFieldValue>
+                <valueName>X-Smart Pro+</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>Italy</controllingFieldValue>
                 <valueName>Endo Motor</valueName>
             </valueSettings>
@@ -3675,15 +3751,15 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Russia</controllingFieldValue>
-                <valueName>Guttapercha</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Russia</controllingFieldValue>
                 <valueName>Pathfile</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <valueName>Protaper Universal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Russia</controllingFieldValue>
+                <valueName>X Smart</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
@@ -3704,6 +3780,10 @@
             <valueSettings>
                 <controllingFieldValue>India</controllingFieldValue>
                 <valueName>VDW.Gold</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Turkey</controllingFieldValue>
+                <valueName>AH PLUS BIOMETRIC</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Turkey</controllingFieldValue>
@@ -12517,6 +12597,11 @@
                     <label>Smart Lite Pro</label>
                 </value>
                 <value>
+                    <fullName>SmartLite Pro EndoActivator</fullName>
+                    <default>false</default>
+                    <label>SmartLite Pro EndoActivator</label>
+                </value>
+                <value>
                     <fullName>Spectra ST</fullName>
                     <default>false</default>
                     <label>Spectra ST</label>
@@ -13674,11 +13759,32 @@
                 <valueName>Zhermack</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>Kazakhstan</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
+                <valueName>Zhermack - Acrytemp</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kazakhstan</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
+                <valueName>Zhermack - Elite HD+</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Kazakhstan</controllingFieldValue>
+                <controllingFieldValue>Russia</controllingFieldValue>
+                <valueName>Zhermack - Occlufast Rock</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>Germany</controllingFieldValue>
                 <controllingFieldValue>Austria</controllingFieldValue>
                 <controllingFieldValue>Switzerland</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <valueName>CEREC MTL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Germany</controllingFieldValue>
+                <controllingFieldValue>Austria</controllingFieldValue>
+                <controllingFieldValue>Switzerland</controllingFieldValue>
+                <valueName>SmartLite Pro EndoActivator</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Italy</controllingFieldValue>
@@ -13702,19 +13808,7 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Russia</controllingFieldValue>
-                <valueName>Zhermack - Acrytemp</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <valueName>Zhermack - Elite HD+</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Russia</controllingFieldValue>
                 <valueName>Zhermack - Hydrorise</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Russia</controllingFieldValue>
-                <valueName>Zhermack - Occlufast Rock</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Taiwan</controllingFieldValue>
@@ -14514,6 +14608,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Jordan</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Kazakhstan</fullName>
                 <default>false</default>
             </values>
@@ -14522,11 +14620,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Lebanon</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Luxembourg</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Malaysia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morocco</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14595,6 +14701,10 @@
             </values>
             <values>
                 <fullName>Turkey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2EA%2EE</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14797,6 +14907,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>CEREC PrimeMill</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>CEREC Primescan AC</fullName>
                 <default>false</default>
             </values>
@@ -14889,6 +15003,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>PrimeScan Cerec</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Primemill</fullName>
                 <default>false</default>
             </values>
@@ -14959,6 +15077,10 @@
         </picklistValues>
         <picklistValues>
             <picklist>Products_discussed_ENDO__c</picklist>
+            <values>
+                <fullName>AH PLUS BIOMETRIC</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>AH Plus</fullName>
                 <default>false</default>
@@ -15200,6 +15322,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Propex Pixi</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Protaper GOLD</fullName>
                 <default>false</default>
             </values>
@@ -15308,11 +15434,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>X Smart</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>X-Smart IQ</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>X-Smart PLUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-Smart Pro%2B</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17290,6 +17424,10 @@
             </values>
             <values>
                 <fullName>Smart Lite Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SmartLite Pro EndoActivator</fullName>
                 <default>false</default>
             </values>
             <values>

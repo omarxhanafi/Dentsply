@@ -92,7 +92,7 @@ public without sharing class Test_AssignMarginGuidanceHelper {
             Test.stopTest();
 
             List<OrderItem> orderItems = [
-                    SELECT Margin__c, Weight__c, MarginGuidance__c, WeightedMargin__c, UpperGuidance__c, LowerGuidance__c, WeightedLowerGuidance__c, WeightedUpperGuidance__c
+                    SELECT Margin__c, Weight__c, MarginGuidance__c, UpperGuidance__c, LowerGuidance__c, WeightedLowerGuidance__c, WeightedUpperGuidance__c
                     FROM OrderItem
             ];
 

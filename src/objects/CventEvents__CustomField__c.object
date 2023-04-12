@@ -243,6 +243,19 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>CventEvents__SalesforceType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the Salesforce field type.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the Salesforce field type.</inlineHelpText>
+        <label>Salesforce Type</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>CventEvents__SyncAsLongTextArea__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>

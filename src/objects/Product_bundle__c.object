@@ -319,6 +319,9 @@
         </filters>
         <label>DACH Bundles</label>
         <language>en_US</language>
+        <sharedTo>
+            <role>D_A_CH_CRM_Analyst</role>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>Iberia_Bundles</fullName>

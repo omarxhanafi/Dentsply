@@ -59,6 +59,7 @@ public with sharing class OrderDealer_CC {
                                                 Dealer__r.OneAccount_Type__c,
                                                 Dealer__r.Name,Dealer__r.ShippingCity,
                                                 Dealer__r.ShippingState,Dealer__r.ShippingPostalCode,
+                                                Dealer__r.DistributorCategorisation__c,
                                                 Default_dealer__c, Dealer_email__c 
                                                 FROM Preferred_dealer_item__c
                                                 WHERE Account__c = :order.AccountId
@@ -100,7 +101,7 @@ public with sharing class OrderDealer_CC {
             IN ALL FIELDS
             RETURNING
                 Account(
-                    Id, Name, OneAccount_Type__c, ETM2_State_City__c 
+                    Id, Name, OneAccount_Type__c, ETM2_State_City__c, DistributorCategorisation__c 
                     WHERE id NOT IN :selectedIds 
                         AND (
                             RecordTypeId = :GlobalUtils.getRecordTypeId('Account','ERP_Distributor')
@@ -119,6 +120,11 @@ public with sharing class OrderDealer_CC {
         Account[] accounts = (List<Account>) searchResults[0];
         for (Account account : accounts) {
             String stateCitySubString = String.isNotBlank(account.ETM2_State_City__c) ? ' • ' + account.ETM2_State_City__c : '';
+            
+            if(account.DistributorCategorisation__c != null){
+                stateCitySubString = stateCitySubString + ' • ' + account.DistributorCategorisation__c;
+            }
+
             results.add(
                 new LookupSearchResult(
                     account.Id,

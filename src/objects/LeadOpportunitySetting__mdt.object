@@ -1752,6 +1752,27 @@
         <label>Sweden_Settings</label>
         <language>en_US</language>
     </listViews>
+    <listViews>
+        <fullName>UK_Settings</fullName>
+        <columns>Country__c</columns>
+        <columns>Category__c</columns>
+        <columns>MasterLabel</columns>
+        <columns>ShowDistributor__c</columns>
+        <columns>AssignOwnerFrom__c</columns>
+        <columns>UserRoles__c</columns>
+        <columns>BrandsList__c</columns>
+        <columns>DefaultCampaignOwner__c</columns>
+        <columns>ShowManualSalesLeadOwnerAssignment__c</columns>
+        <columns>Dealer_Distributor_is_Mandatory__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Country__c</field>
+            <operation>equals</operation>
+            <value>GB</value>
+        </filters>
+        <label>UK_Settings</label>
+        <language>en_US</language>
+    </listViews>
     <pluralLabel>Lead &amp; Opportunity Settings</pluralLabel>
     <visibility>Public</visibility>
 </CustomObject>

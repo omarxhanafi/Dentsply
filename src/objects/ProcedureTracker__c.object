@@ -436,7 +436,12 @@
         <valueSet>
             <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Align – Itero Element 5 D</fullName>
+                    <default>false</default>
+                    <label>Align – Itero Element 5 D</label>
+                </value>
                 <value>
                     <fullName>DS - Omnican</fullName>
                     <default>false</default>
@@ -453,14 +458,20 @@
                     <label>DS - Primescan Conect</label>
                 </value>
                 <value>
-                    <fullName>Align – Itero Element 5 D</fullName>
+                    <fullName>Medit</fullName>
                     <default>false</default>
-                    <label>Align – Itero Element 5 D</label>
+                    <label>Medit</label>
                 </value>
                 <value>
                     <fullName>Medit – i700</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Medit – i700</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
                 </value>
                 <value>
                     <fullName>Planmeca – Emerald S</fullName>
@@ -468,9 +479,9 @@
                     <label>Planmeca – Emerald S</label>
                 </value>
                 <value>
-                    <fullName>Other</fullName>
+                    <fullName>Trios</fullName>
                     <default>false</default>
-                    <label>Other</label>
+                    <label>Trios</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1584,16 +1595,11 @@
         <valueSet>
             <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
-                    <fullName>DS</fullName>
+                    <fullName>Acteon</fullName>
                     <default>false</default>
-                    <label>DS</label>
-                </value>
-                <value>
-                    <fullName>Planmeca</fullName>
-                    <default>false</default>
-                    <label>Planmeca</label>
+                    <label>Acteon</label>
                 </value>
                 <value>
                     <fullName>Carestream</fullName>
@@ -1601,14 +1607,56 @@
                     <label>Carestream</label>
                 </value>
                 <value>
+                    <fullName>Dentsply Sirona</fullName>
+                    <default>false</default>
+                    <label>Dentsply Sirona</label>
+                </value>
+                <value>
+                    <fullName>DS</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>DS</label>
+                </value>
+                <value>
+                    <fullName>iCAT</fullName>
+                    <default>false</default>
+                    <label>iCAT</label>
+                </value>
+                <value>
+                    <fullName>KaVo</fullName>
+                    <default>false</default>
+                    <label>KaVo</label>
+                </value>
+                <value>
                     <fullName>KaVo Kerr</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>KaVo Kerr</label>
+                </value>
+                <value>
+                    <fullName>NewTom</fullName>
+                    <default>false</default>
+                    <label>NewTom</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
                     <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Planmeca</fullName>
+                    <default>false</default>
+                    <label>Planmeca</label>
+                </value>
+                <value>
+                    <fullName>Ray</fullName>
+                    <default>false</default>
+                    <label>Ray</label>
+                </value>
+                <value>
+                    <fullName>Vatech</fullName>
+                    <default>false</default>
+                    <label>Vatech</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2141,7 +2189,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Medit %E2%80%93 i700</fullName>
+                <fullName>Medit</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -2150,6 +2198,10 @@
             </values>
             <values>
                 <fullName>Planmeca %E2%80%93 Emerald S</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trios</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2225,15 +2277,23 @@
         <picklistValues>
             <picklist>imagingDeviceBrandin_Use__c</picklist>
             <values>
+                <fullName>Acteon</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Carestream</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>DS</fullName>
+                <fullName>Dentsply Sirona</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>KaVo Kerr</fullName>
+                <fullName>KaVo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NewTom</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -2242,6 +2302,18 @@
             </values>
             <values>
                 <fullName>Planmeca</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vatech</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iCAT</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2328,7 +2400,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Medit %E2%80%93 i700</fullName>
+                <fullName>Medit</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -2337,6 +2409,10 @@
             </values>
             <values>
                 <fullName>Planmeca %E2%80%93 Emerald S</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trios</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2404,15 +2480,23 @@
         <picklistValues>
             <picklist>imagingDeviceBrandin_Use__c</picklist>
             <values>
+                <fullName>Acteon</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Carestream</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>DS</fullName>
+                <fullName>Dentsply Sirona</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>KaVo Kerr</fullName>
+                <fullName>KaVo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NewTom</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -2421,6 +2505,18 @@
             </values>
             <values>
                 <fullName>Planmeca</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vatech</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iCAT</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2448,16 +2544,17 @@
         <description>If The Associated Practice Account country is Us, the user has to Select the US Model Record Type.</description>
         <errorConditionFormula>OR (
   AND(
-    TEXT(PracticeAccount__r.Country__c) = &apos;US&apos;,
+    OR (TEXT(PracticeAccount__r.Country__c) = &apos;US&apos;, TEXT(PracticeAccount__r.Country__c) = &apos;CA&apos;),
     RecordType.DeveloperName &lt;&gt; &apos;Clear_Aligners&apos;
   ),
   AND(
     TEXT(PracticeAccount__r.Country__c) &lt;&gt; &apos;US&apos;,
+    TEXT(PracticeAccount__r.Country__c) &lt;&gt; &apos;CA&apos;,
     RecordType.DeveloperName = &apos;Clear_Aligners&apos;
   )
 )</errorConditionFormula>
         <errorDisplayField>PracticeAccount__c</errorDisplayField>
-        <errorMessage>US Accounts must be assigned to the &quot;Clear Aligners - US&quot;  Record Type, any other country must be assigned to the &quot;Clear Aligners - Global&quot; Record Type.</errorMessage>
+        <errorMessage>North American Accounts must be assigned to the &quot;Clear Aligners - US&quot;  Record Type, any other country must be assigned to the &quot;Clear Aligners - Global&quot; Record Type.</errorMessage>
     </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">DAC Premium;DAC Professional;Sirolaser;SIROLaser Advance;SIROLaser Blue;T1 Contra-angles;T1 Turbines;T2 Contra-angles;T2 Turbines</value>
+        <value xsi:type="xsd:string">DAC Premium;DAC Professional;Sirolaser;SIROLaser Advance;SIROLaser Blue;T1 Contra-angles;T1 Turbines;T2 Contra-angles;T2 Turbines;DAC Universal D;DAC D</value>
     </values>
     <values>
         <field>Category__c</field>

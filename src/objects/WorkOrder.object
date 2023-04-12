@@ -1421,6 +1421,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Source_Record_Customer_Id__c</fullName>
+        <description>TFUS-000005480</description>
+        <externalId>false</externalId>
+        <formula>SourceRecord__r.Customer_Id__c</formula>
+        <label>Customer Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>StartDate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -1462,6 +1473,17 @@
         <externalId>false</externalId>
         <formula>Text( Account.Country__c )</formula>
         <label>Account Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TF_IsValidSourceRecord__c</fullName>
+        <description>This is to validate the source record for the integration. This is a quick temp fix until we deploy a scalable validation method.</description>
+        <externalId>false</externalId>
+        <formula>IF ( ISBLANK(SourceRecord__c) ||  ( SourceRecord__r.Company_Code__c !=&quot;613&quot; &amp;&amp;  SourceRecord__r.Company_Code__c !=&quot;614&quot; )||  TEXT(SourceRecord__r.Status__c)=&quot;Inactive&quot;, &quot;False&quot;,&quot;True&quot;)</formula>
+        <label>TF_IsValidSourceRecord</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>

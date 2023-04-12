@@ -240,6 +240,14 @@
         <visibleLines>5</visibleLines>
     </fields>
     <fields>
+        <fullName>Address__c</fullName>
+        <description>TFUS-000005221</description>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Address</type>
+    </fields>
+    <fields>
         <fullName>Advertising_Actual__c</fullName>
         <externalId>false</externalId>
         <label>Advertising (Actual)</label>
@@ -6575,6 +6583,15 @@ The filed is populated only if this is true. The field is hidden from page layou
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Steps_completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>TFUS-000005061</description>
+        <externalId>false</externalId>
+        <label>Follow-Up Steps completed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Food_Beverage_Actual__c</fullName>
@@ -15790,6 +15807,15 @@ Image(&quot;/resource/1444678681000/NACAMPREJECTED&quot;, &quot;Rejected&quot;, 
         <visibleLines>8</visibleLines>
     </fields>
     <fields>
+        <fullName>Submitted_for_Marketing_review__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>TFUS-000005061</description>
+        <externalId>false</externalId>
+        <label>Submitted for Marketing review</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Surgical_Drapes_FR__c</fullName>
         <externalId>false</externalId>
         <label>Surgical Drapes (FR)</label>
@@ -16579,7 +16605,7 @@ Image(&quot;/resource/1444678681000/NACAMPREJECTED&quot;, &quot;Rejected&quot;, 
         <inlineHelpText>Click here and search for a TA if required for this program</inlineHelpText>
         <label>Technical Advisor Requested</label>
         <lookupFilter>
-            <active>true</active>
+            <active>false</active>
             <booleanFilter>1 AND 2 AND (3 OR (4 OR 5 OR 6 OR 7 OR 8))</booleanFilter>
             <filterItems>
                 <field>User.IsActive</field>
@@ -55428,6 +55454,10 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
+                <fullName>DAC D</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>DAC Premium</fullName>
                 <default>false</default>
             </values>
@@ -87881,6 +87911,12 @@ $User.Full_Name__c &lt;&gt; &apos;Eloqua Integration&apos; &amp;&amp;
   ISCHANGED(TargetMarket__c)
   )</errorConditionFormula>
         <errorMessage>This is an automated marketing and synchronize fields should not be updated in salesforce. If a synchronize field needs to be update please contact Eloqua team.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RequiredCountryForEloquaUser</fullName>
+        <active>true</active>
+        <errorConditionFormula>TEXT( Country_Code_3_digit__c ) = &quot;&quot; &amp;&amp; $User.Full_Name__c = &apos;Eloqua Integration&apos;</errorConditionFormula>
+        <errorMessage>Country is required</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>SBU_must_be_entered</fullName>

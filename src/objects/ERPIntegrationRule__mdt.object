@@ -214,6 +214,11 @@
                     <label>080</label>
                 </value>
                 <value>
+                    <fullName>091</fullName>
+                    <default>false</default>
+                    <label>091</label>
+                </value>
+                <value>
                     <fullName>095</fullName>
                     <default>false</default>
                     <label>095</label>
@@ -760,6 +765,14 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>SUB_IsEnabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Upload Subscriptions?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>SourceIdERP__c</fullName>
         <externalId>false</externalId>
         <fieldManageability>DeveloperControlled</fieldManageability>
@@ -839,6 +852,11 @@
                     <fullName>75</fullName>
                     <default>false</default>
                     <label>75</label>
+                </value>
+                <value>
+                    <fullName>9999</fullName>
+                    <default>false</default>
+                    <label>Zuora</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

@@ -4360,6 +4360,26 @@ to be specified in the invoice</description>
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>MENA_Account_Maintenance_Team_Pending</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Name__c</columns>
+        <columns>Request_Type__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Approval_Status__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Created,Submitted,Processing</value>
+        </filters>
+        <label>MENA: Account Maintenance Team - Pending</label>
+        <queue>MENA_Account_Maintenance_Team</queue>
+        <sharedTo>
+            <group>MENA_Account_Maintenance_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>My_Pending_Account_Requests</fullName>
         <columns>NAME</columns>
         <columns>Comments__c</columns>

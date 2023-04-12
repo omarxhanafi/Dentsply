@@ -11,47 +11,52 @@ public with sharing class FieldServiceCalloutERP {
     @AuraEnabled
     public static String doFieldServiceCalloutERP( List<Id> recordIds ) {
         //This method is actually doing the callout. 
-        String objectType = String.valueOf(recordIds[0].getSObjectType());
-        String query = '';
-        List< WorkOrder > workOrdersToSend = new List<WorkOrder>();
-        List< ProductRequest > productRequestsToSend = new List<ProductRequest>();
-        if(objectType == 'WorkOrder'){
-            workOrdersToSend = [SELECT Id, ERPJSONVersion__c, WorkOrderNumber, ServiceType__c, SourceRecord__r.Company_Code__c , SourceRecord__r.Customer_Id__c, SourceRecord__r.Location_Id__c, CurrencyIsoCode, EndDate, Status, Describewhathasbeendone__c, WorkType.Name, Asset.Name, Asset.Product2.Article__c, Asset.Product2.Name, Asset.SerialNumber, FaultDescription__c, (SELECT Id, CurrencyIsoCode, Discount, Quantity,  WorkOrderId, Product2.Article__c, Product2.Company_Code__c FROM WorkOrderLineItems ), (SELECT Id, CurrencyIsoCode, QuantityConsumed, Discount, WorkOrderId, Product2.Article__c, Product2.Company_Code__c, ProductItem.SerialNumber__c, ProductItem.BatchNumber__c, ProductItem.Location.ERPWarehouseId__c, ProductItem.ERPWarehouse__c FROM ProductsConsumed) FROM WorkOrder WHERE id IN: recordIds];
-        }
-        if(objectType == 'ProductRequest'){
-            productRequestsToSend = [ SELECT Id, ERPJSONVersion__c, ProductRequestNumber, TF_CustomerRequestNumber__c, DestinationLocation.ERPWarehouseId__c, SourceLocation.ERPWarehouseId__c, DestinationLocation.ParentLocation.ERPWarehouseId__c, (SELECT Id, ProductRequestLineItemNumber, ParentId, Product2.Article__c, Product2.Company_Code__c, QuantityRequested, Status FROM ProductRequestLineItems) FROM ProductRequest WHERE id IN: recordIds ];
-        }
+        try{
+            String objectType = String.valueOf(recordIds[0].getSObjectType());
+            List< WorkOrder > workOrdersToSend = new List<WorkOrder>();
+            List< ProductRequest > productRequestsToSend = new List<ProductRequest>();
+            if(objectType == 'WorkOrder'){
+                workOrdersToSend = [SELECT Id, ERPJSONVersion__c, WorkOrderNumber, ServiceType__c, SourceRecord__r.Company_Code__c , SourceRecord__r.Customer_Id__c, SourceRecord__r.Location_Id__c, CurrencyIsoCode, EndDate, Status, Describewhathasbeendone__c, WorkType.Name, Asset.Name, Asset.Product2.Article__c, Asset.Product2.Name, Asset.SerialNumber, FaultDescription__c, (SELECT Id, CurrencyIsoCode, Discount, Quantity,  WorkOrderId, Product2.Article__c, Product2.Company_Code__c FROM WorkOrderLineItems ), (SELECT Id, CurrencyIsoCode, QuantityConsumed, Discount, WorkOrderId, Product2.Article__c, Product2.Company_Code__c, ProductItem.SerialNumber__c, ProductItem.BatchNumber__c, ProductItem.Location.ERPWarehouseId__c, ProductItem.ERPWarehouse__c FROM ProductsConsumed) FROM WorkOrder WHERE id IN: recordIds];
+            }
+            if(objectType == 'ProductRequest'){
+                productRequestsToSend = [ SELECT Id, ERPJSONVersion__c, ProductRequestNumber, TF_CustomerRequestNumber__c, DestinationLocation.ERPWarehouseId__c, SourceLocation.ERPWarehouseId__c, DestinationLocation.ParentLocation.ERPWarehouseId__c, (SELECT Id, ProductRequestLineItemNumber, ParentId, Product2.Article__c, Product2.Company_Code__c, QuantityRequested, Status FROM ProductRequestLineItems) FROM ProductRequest WHERE id IN: recordIds ];
+            }
 
-        
-        Http http = new Http();
-        HttpRequest request = new HttpRequest();
-        if(objectType == 'WorkOrder'){
-            request.setEndpoint('callout:FSBiztalkIntegrationWorkOrder');
-        }
-        if(objectType == 'ProductRequest'){
-            request.setEndpoint('callout:FSBiztalkIntegrationProductRequest');
-        }
-        
-        request.setMethod('POST');
-        request.setHeader('Content-Type', 'application/json;charset=UTF-8');
-        // Set the body as a JSON object
-        if(objectType == 'WorkOrder'){
-            Map<String, List<WorkOrder>> mapforERP = new Map<String, List<WorkOrder>> ();
-            mapforERP.put('records', workOrdersToSend);
-            request.setBody(JSON.serialize(mapforERP, false));
-        }
-        if(objectType == 'ProductRequest'){
-            Map<String, List<ProductRequest>> mapforERP = new Map<String, List<ProductRequest>> ();
-            mapforERP.put('records', productRequestsToSend);
-            request.setBody(JSON.serializePretty(mapforERP, false));
-        }
+            
+            Http http = new Http();
+            HttpRequest request = new HttpRequest();
+            if(objectType == 'WorkOrder'){
+                request.setEndpoint('callout:FSBiztalkIntegrationWorkOrder');
+            }
+            if(objectType == 'ProductRequest'){
+                request.setEndpoint('callout:FSBiztalkIntegrationProductRequest');
+            }
+            
+            request.setMethod('POST');
+            request.setHeader('Content-Type', 'application/json;charset=UTF-8');
+            // Set the body as a JSON object
+            if(objectType == 'WorkOrder'){
+                Map<String, List<WorkOrder>> mapforERP = new Map<String, List<WorkOrder>> ();
+                mapforERP.put('records', workOrdersToSend);
+                request.setBody(JSON.serialize(mapforERP, false));
+            }
+            if(objectType == 'ProductRequest'){
+                Map<String, List<ProductRequest>> mapforERP = new Map<String, List<ProductRequest>> ();
+                mapforERP.put('records', productRequestsToSend);
+                request.setBody(JSON.serializePretty(mapforERP, false));
+            }
 
-        if(!Test.isRunningTest()){
-            HttpResponse response = http.send(request);
-            return response.getBody();
-        } else {
-            String fakeResponse = 'FaekeResponse';
-            return fakeResponse;
+            if(!Test.isRunningTest()){
+                HttpResponse response = http.send(request);
+                return response.getBody();
+            } else {
+                String fakeResponse = 'FaekeResponse';
+                return fakeResponse;
+            }
+        }
+        catch (Exception e) {
+            DebugLog.addException(e, 'FieldServiceCalloutERP.doFieldServiceCalloutERP');
+            throw new AuraHandledException(e.getMessage());    
         }
         
     }
@@ -92,37 +97,44 @@ public with sharing class FieldServiceCalloutERP {
     @AuraEnabled
     public static String checkIfSentBefore( Id recordId ) {
         //This method is actually doing the callout. 
-        String returnMessage;
-        String objectType = String.valueOf(recordId.getSObjectType());
-        WorkOrder workOrderToCheck = new WorkOrder();
-        ProductRequest productRequestToCheck = new ProductRequest();
-        if(objectType == 'WorkOrder'){
-            workOrderToCheck = [SELECT Id, ERPJSONVersion__c, ERPReturnMessage__c  FROM WorkOrder WHERE id =: recordId LIMIT 1];
-            if(workOrderToCheck.ERPJSONVersion__c == 0 || (workOrderToCheck.ERPJSONVersion__c > 0 && workOrderToCheck.ERPReturnMessage__c != null && workOrderToCheck.ERPReturnMessage__c.contains('Error'))){
-                returnMessage = 'processing' ;
-                workOrderToCheck.ERPJSONVersion__c = workOrderToCheck.ERPJSONVersion__c == null ? 1 : workOrderToCheck.ERPJSONVersion__c + 1;
-                workOrderToCheck.ERPReturnMessage__c = '';
-                workOrderToCheck.ERPOrderStatus__c = '';
-                workOrderToCheck.ERPOrderNumber__c = '';
-                update workOrderToCheck;
-            } else {
-                returnMessage = 'alreadySent' ;
+        try{
+            String returnMessage;
+            String objectType = String.valueOf(recordId.getSObjectType());
+            WorkOrder workOrderToCheck = new WorkOrder();
+            ProductRequest productRequestToCheck = new ProductRequest();
+            if(objectType == 'WorkOrder'){
+                workOrderToCheck = [SELECT Id, ERPJSONVersion__c, ERPOrderStatus__c  FROM WorkOrder WHERE id =: recordId LIMIT 1];
+                if(workOrderToCheck.ERPJSONVersion__c == 0 || (workOrderToCheck.ERPJSONVersion__c > 0 && workOrderToCheck.ERPOrderStatus__c != null && workOrderToCheck.ERPOrderStatus__c.contains('Error'))){
+                    returnMessage = 'processing' ;
+                    workOrderToCheck.ERPJSONVersion__c = workOrderToCheck.ERPJSONVersion__c == null ? 1 : workOrderToCheck.ERPJSONVersion__c + 1;
+                    workOrderToCheck.ERPReturnMessage__c = '';
+                    workOrderToCheck.ERPOrderStatus__c = '';
+                    workOrderToCheck.ERPOrderNumber__c = '';
+                    update workOrderToCheck;
+                } else {
+                    returnMessage = 'alreadySent' ;
+                }
             }
-        }
-        if(objectType == 'ProductRequest'){
-            productRequestToCheck = [ SELECT Id, ERPJSONVersion__c, ERPReturnMessage__c FROM ProductRequest WHERE id =: recordId LIMIT 1 ];
-            if(productRequestToCheck.ERPJSONVersion__c == 0 || (productRequestToCheck.ERPJSONVersion__c > 0 && productRequestToCheck.ERPReturnMessage__c != null && productRequestToCheck.ERPReturnMessage__c.contains('Error'))){
-                returnMessage = 'processing' ;
-                productRequestToCheck.ERPJSONVersion__c = productRequestToCheck.ERPJSONVersion__c == null ? 1 : productRequestToCheck.ERPJSONVersion__c + 1;
-                productRequestToCheck.ERPReturnMessage__c = '';
-                productRequestToCheck.ERPOrderStatus__c = '';
-                productRequestToCheck.ERPOrderNumber__c = '';
-                update productRequestToCheck;
-            } else {
-                returnMessage = 'alreadySent' ;
+            if(objectType == 'ProductRequest'){
+                productRequestToCheck = [ SELECT Id, ERPJSONVersion__c, ERPOrderStatus__c FROM ProductRequest WHERE id =: recordId LIMIT 1 ];
+                if(productRequestToCheck.ERPJSONVersion__c == 0 || (productRequestToCheck.ERPJSONVersion__c > 0 && productRequestToCheck.ERPOrderStatus__c != null && productRequestToCheck.ERPOrderStatus__c.contains('Error'))){
+                    returnMessage = 'processing' ;
+                    productRequestToCheck.ERPJSONVersion__c = productRequestToCheck.ERPJSONVersion__c == null ? 1 : productRequestToCheck.ERPJSONVersion__c + 1;
+                    productRequestToCheck.ERPReturnMessage__c = '';
+                    productRequestToCheck.ERPOrderStatus__c = '';
+                    productRequestToCheck.ERPOrderNumber__c = '';
+                    update productRequestToCheck;
+                } else {
+                    returnMessage = 'alreadySent' ;
+                }
             }
-        }
 
-        return returnMessage;
+            return returnMessage;
+        }
+        catch (Exception e) {
+            DebugLog.addException(e, 'FieldServiceCalloutERP.checkIfSentBefore');
+            throw new AuraHandledException(e.getMessage());    
+        }
     }
+    
 }

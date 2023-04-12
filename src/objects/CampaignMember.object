@@ -2069,6 +2069,7 @@ AND(INCLUDES(Campaign.SBU_Focus__c,&quot;Intruments&quot;),Contact.Account.CFEs_
         <label>Dealer</label>
         <lookupFilter>
             <active>true</active>
+            <errorMessage>Value does not exist or does not match filter criteria.</errorMessage>
             <filterItems>
                 <field>Account.RecordType.DeveloperName</field>
                 <operation>equals</operation>
@@ -2579,15 +2580,6 @@ TFUS-000004667</description>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>Payer Movex Account</label>
-        <lookupFilter>
-            <active>true</active>
-            <filterItems>
-                <field>Account.RecordTypeId</field>
-                <operation>equals</operation>
-                <value>Clinical Customer (D), DEX D Customer, Lab Customer (D)</value>
-            </filterItems>
-            <isOptional>false</isOptional>
-        </lookupFilter>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Campaign Members</relationshipLabel>
         <relationshipName>Campaign_Members</relationshipName>

@@ -869,6 +869,11 @@
                     <label>Queue: IT: Digital</label>
                 </value>
                 <value>
+                    <fullName>00G6M0000040OCeUAM</fullName>
+                    <default>false</default>
+                    <label>Queue: IT: Finance</label>
+                </value>
+                <value>
                     <fullName>00G0J000003ZRrUUAW</fullName>
                     <default>false</default>
                     <label>Queue: IT: Front Line</label>
@@ -1423,6 +1428,10 @@
             <valueSettings>
                 <controllingFieldValue>Italy</controllingFieldValue>
                 <valueName>00520000000wTDuAAM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Italy</controllingFieldValue>
+                <valueName>00G6M0000040OCeUAM</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Italy</controllingFieldValue>
@@ -11077,12 +11086,20 @@ TFUS-000005186</description>
         <columns>CASES.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <columns>LastInboundEmailDate__c</columns>
-        <filterScope>Queue</filterScope>
-        <label>BENELUX: SureSmile Support</label>
-        <language>en_US</language>
-        <queue>BENELUX_SureSmile_Support</queue>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Support_Email__c</field>
+            <operation>equals</operation>
+            <value>BNL: Digital</value>
+        </filters>
+        <label>BNL: Digital (All Closed)</label>
         <sharedTo>
-            <group>BNL_SureSmile_Support</group>
+            <group>BNL_Digital</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -11134,6 +11151,68 @@ TFUS-000005186</description>
         <label>#SC: IMPL - ATL Supra Support 2nd</label>
         <sharedTo>
             <role>BEX_Technical_Support_Admin</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>BEX_DI_SIMPLANT_Support</fullName>
+        <booleanFilter>1 AND (2 OR 3 OR 4 OR 5 OR 7) AND 6</booleanFilter>
+        <columns>Account_Country__c</columns>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Movex__c</columns>
+        <columns>Digital_Product__c</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>Complaint_Category__c</columns>
+        <columns>Complaint_Reason2__c</columns>
+        <columns>Support_Keyword__c</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed,Solved &amp; Closed</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>dupont</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>maho</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>boev</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>2nd</value>
+        </filters>
+        <filters>
+            <field>Product_Line__c</field>
+            <operation>equals</operation>
+            <value>Simplant</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>sirin</value>
+        </filters>
+        <label>#SC: IMPL - Simplant Support 2nd</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>BEX_SIMPLANT_Business_Support</role>
+            <role>BEX_Technical_Support_Admin</role>
+            <role>JP_DI_SIMPLANT_Support</role>
+            <role>JP_Simplant</role>
+            <role>NA_Technical_Services_Simplant</role>
+            <role>SIMPLANT_Support</role>
         </sharedTo>
     </listViews>
     <listViews>
@@ -11338,6 +11417,54 @@ TFUS-000005186</description>
         <queue>BNL_PRE_Customer_Service</queue>
         <sharedTo>
             <group>BNL_PRE_Customer_Service</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>BNL_Digital_All_Open</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LastInboundEmailDate__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Support_Email__c</field>
+            <operation>equals</operation>
+            <value>BNL: Digital</value>
+        </filters>
+        <label>BNL: Digital (All Open)</label>
+        <sharedTo>
+            <group>BNL_Digital</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>BNL_Digital_Unassigned</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LastInboundEmailDate__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>BNL: Digital (Unassigned)</label>
+        <queue>BNL_Digital</queue>
+        <sharedTo>
+            <group>BNL_Digital</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -12961,11 +13088,27 @@ TFUS-000005186</description>
     </listViews>
     <listViews>
         <fullName>IT_Finance_queue_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>SLAStatusImage__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Complaint_Category__c</columns>
+        <columns>Complaint_Reason2__c</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
         <label>IT: Finance queue</label>
+        <language>en_US</language>
         <queue>IT_Finance_queue</queue>
         <sharedTo>
-            <allInternalUsers></allInternalUsers>
+            <group>IT_Finance_queue</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -12992,6 +13135,31 @@ TFUS-000005186</description>
         <sharedTo>
             <group>IT_Digital_queue</group>
             <role>ATLANTIS_Europe</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>IT_Italia_Promozioni_queue_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>SLAStatusImage__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Complaint_Category__c</columns>
+        <columns>CASES.REASON</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
+        <label>IT: Italia Promozioni queue</label>
+        <language>en_US</language>
+        <queue>IT_Italia_Promozioni_queue</queue>
+        <sharedTo>
+            <group>IT_Italia_Promozioni_Team</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -13136,224 +13304,8 @@ TFUS-000005186</description>
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>JP_Atlantis_All</fullName>
-        <booleanFilter>1 AND 2 AND 3</booleanFilter>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>OWNER_NAME</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>Complaint_Category__c</columns>
-        <columns>CASES.CREATED_DATE</columns>
-        <columns>CASES.CLOSED_DATE</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Account_Market__c</field>
-            <operation>equals</operation>
-            <value>JP</value>
-        </filters>
-        <filters>
-            <field>CASES.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Case.Service_Complaint</value>
-        </filters>
-        <filters>
-            <field>Product_Line__c</field>
-            <operation>equals</operation>
-            <value>ATLANTIS Abut,ATLANTIS ISUS</value>
-        </filters>
-        <label>JP: Atlantis All</label>
-        <language>en_US</language>
-        <sharedTo>
-            <group>JP_All_Users</group>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>JP_Atlantis_Closed</fullName>
-        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>OWNER_NAME</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>Complaint_Category__c</columns>
-        <columns>CASES.CREATED_DATE</columns>
-        <columns>CASES.CLOSED_DATE</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>CASES.STATUS</field>
-            <operation>equals</operation>
-            <value>Closed</value>
-        </filters>
-        <filters>
-            <field>Account_Market__c</field>
-            <operation>equals</operation>
-            <value>JP</value>
-        </filters>
-        <filters>
-            <field>CASES.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Case.Service_Complaint</value>
-        </filters>
-        <filters>
-            <field>Product_Line__c</field>
-            <operation>equals</operation>
-            <value>ATLANTIS Abut,ATLANTIS ISUS</value>
-        </filters>
-        <label>JP: Atlantis Closed</label>
-        <language>en_US</language>
-        <sharedTo>
-            <group>JP_All_Users</group>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>JP_Atlantis_Open</fullName>
-        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>OWNER_NAME</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>Complaint_Category__c</columns>
-        <columns>CASES.CREATED_DATE</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>CASES.STATUS</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </filters>
-        <filters>
-            <field>Account_Market__c</field>
-            <operation>equals</operation>
-            <value>JP</value>
-        </filters>
-        <filters>
-            <field>CASES.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Case.Service_Complaint</value>
-        </filters>
-        <filters>
-            <field>Product_Line__c</field>
-            <operation>equals</operation>
-            <value>ATLANTIS Abut,ATLANTIS ISUS</value>
-        </filters>
-        <label>JP: Atlantis Open</label>
-        <language>en_US</language>
-        <sharedTo>
-            <group>JP_All_Users</group>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>JP_Implants_All</fullName>
-        <booleanFilter>1 AND 2 AND 3</booleanFilter>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>OWNER_NAME</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>Complaint_Category__c</columns>
-        <columns>CASES.CREATED_DATE</columns>
-        <columns>CASES.CLOSED_DATE</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Account_Market__c</field>
-            <operation>equals</operation>
-            <value>JP</value>
-        </filters>
-        <filters>
-            <field>CASES.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Case.Service_Complaint</value>
-        </filters>
-        <filters>
-            <field>Product_Line__c</field>
-            <operation>equals</operation>
-            <value>IMPLANTS,All</value>
-        </filters>
-        <label>JP: Implants All</label>
-        <language>en_US</language>
-        <sharedTo>
-            <group>JP_All_Users</group>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>JP_Implants_Closed</fullName>
-        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>OWNER_NAME</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>Complaint_Category__c</columns>
-        <columns>CASES.CREATED_DATE</columns>
-        <columns>CASES.CLOSED_DATE</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>CASES.STATUS</field>
-            <operation>equals</operation>
-            <value>Closed</value>
-        </filters>
-        <filters>
-            <field>Account_Market__c</field>
-            <operation>equals</operation>
-            <value>JP</value>
-        </filters>
-        <filters>
-            <field>CASES.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Case.Service_Complaint</value>
-        </filters>
-        <filters>
-            <field>Product_Line__c</field>
-            <operation>equals</operation>
-            <value>IMPLANTS,All</value>
-        </filters>
-        <label>JP: Implants Closed</label>
-        <language>en_US</language>
-        <sharedTo>
-            <group>JP_All_Users</group>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>JP_Implants_Open</fullName>
-        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>OWNER_NAME</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>Complaint_Category__c</columns>
-        <columns>CASES.CREATED_DATE</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>CASES.STATUS</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </filters>
-        <filters>
-            <field>Account_Market__c</field>
-            <operation>equals</operation>
-            <value>JP</value>
-        </filters>
-        <filters>
-            <field>CASES.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Case.Service_Complaint</value>
-        </filters>
-        <filters>
-            <field>Product_Line__c</field>
-            <operation>equals</operation>
-            <value>IMPLANTS,All</value>
-        </filters>
-        <label>JP: Implants Open</label>
-        <language>en_US</language>
-        <sharedTo>
-            <group>JP_All_Users</group>
-        </sharedTo>
-    </listViews>
-    <listViews>
         <fullName>JP_SIMPLANT_Support</fullName>
-        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+        <booleanFilter>1 AND 2 AND 3 AND 4 and 5</booleanFilter>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>CASES.SUBJECT</columns>
         <columns>OWNER_NAME</columns>
@@ -13367,10 +13319,10 @@ TFUS-000005186</description>
         <filters>
             <field>CASES.STATUS</field>
             <operation>notEqual</operation>
-            <value>Closed</value>
+            <value>Closed,Solved &amp; Closed,Solved</value>
         </filters>
         <filters>
-            <field>Account_Market__c</field>
+            <field>Account_Country__c</field>
             <operation>equals</operation>
             <value>JP</value>
         </filters>
@@ -13385,9 +13337,9 @@ TFUS-000005186</description>
             <value>BEX</value>
         </filters>
         <filters>
-            <field>Product_Line__c</field>
+            <field>SBU__c</field>
             <operation>equals</operation>
-            <value>SIMPLANT</value>
+            <value>IMPL</value>
         </filters>
         <label>JP: SIMPLANT Support</label>
         <language>en_US</language>
@@ -13921,6 +13873,7 @@ TFUS-000005186</description>
         <label>NA: DT Web Support</label>
         <queue>NA_DT_web_support</queue>
         <sharedTo>
+            <group>NA_DT_web_support</group>
             <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
@@ -13989,7 +13942,7 @@ TFUS-000005186</description>
         <filters>
             <field>OWNER_NAME</field>
             <operation>equals</operation>
-            <value>Kimberly Friedhofen,Madison Ryder,Cade Ketchum,Kym Manns-Bates,Jennifer Rankin,Amy Vinyard,Jennifer Spaulding</value>
+            <value>Kimberly Friedhofen,Madison Ryder,Cade Ketchum,Kym Manns-Bates,Jennifer Rankin,Amy Vinyard,Jennifer Spaulding,Jessica Eilander</value>
         </filters>
         <filters>
             <field>Complaint__c</field>
@@ -23205,6 +23158,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>00G6M0000040GYWUA2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>00G6M0000040OCeUAM</fullName>
                 <default>false</default>
             </values>
             <values>

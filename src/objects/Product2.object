@@ -2520,6 +2520,17 @@
         <language>en_US</language>
         <sharedTo/>
     </listViews>
+    <profileSearchLayouts>
+        <fields>PRODUCT2.NAME</fields>
+        <fields>Article__c</fields>
+        <fields>Company_Code__c</fields>
+        <fields>PG1_Code__c</fields>
+        <fields>PG1_Desc__c</fields>
+        <fields>PG2_Code__c</fields>
+        <fields>PG3_Desc__c</fields>
+        <fields>Business_Area_Code__c</fields>
+        <profileName>Lightning Field Service</profileName>
+    </profileSearchLayouts>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>

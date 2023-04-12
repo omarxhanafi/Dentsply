@@ -173,7 +173,7 @@ A Margin guidance record defines the different layers of margin thresholds per c
         <externalId>false</externalId>
         <label>Cost</label>
         <precision>18</precision>
-        <required>false</required>
+        <required>true</required>
         <scale>0</scale>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
@@ -184,25 +184,12 @@ A Margin guidance record defines the different layers of margin thresholds per c
         <fullName>LowerGuidance__c</fullName>
         <externalId>false</externalId>
         <label>Lower Guidance</label>
-        <precision>3</precision>
-        <required>false</required>
-        <scale>0</scale>
+        <precision>5</precision>
+        <required>true</required>
+        <scale>2</scale>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>PriceBook__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Price Book</label>
-        <referenceTo>Pricebook2</referenceTo>
-        <relationshipLabel>Margin Guidances</relationshipLabel>
-        <relationshipName>Margin_Guidances</relationshipName>
-        <required>false</required>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Product__c</fullName>
@@ -216,6 +203,17 @@ A Margin guidance record defines the different layers of margin thresholds per c
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UpperGuidance__c</fullName>
+        <externalId>false</externalId>
+        <label>Upper Guidance</label>
+        <precision>5</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
     </fields>
     <label>Margin Guidance</label>
     <nameField>

@@ -449,6 +449,7 @@
     <listViews>
         <fullName>US_Guidance</fullName>
         <columns>MasterLabel</columns>
+        <columns>CountryList__c</columns>
         <columns>DeveloperName</columns>
         <columns>NamespacePrefix</columns>
         <columns>Guidance_Content__c</columns>

@@ -370,7 +370,7 @@
     <fields>
         <fullName>CventEvents__OpportunityAmountString__c</fullName>
         <deprecated>false</deprecated>
-        <description>Amount value of the Opportunity. Has text type in order to keep data tags in addition to numeric values.</description>
+        <description>Amount value of the Opportunity. Has text type in order to keep data tags in addition to numeric values. Replaces OpportunityAmount__c field which has been deprecated.</description>
         <externalId>false</externalId>
         <inlineHelpText>Amount value of the Opportunity.</inlineHelpText>
         <label>Opportunity Amount</label>
@@ -581,8 +581,8 @@
     <searchLayouts>
         <excludedStandardButtons>New</excludedStandardButtons>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
-        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
         <searchResultsAdditionalFields>CventEvents__OpportunityName__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CventEvents__IsActive__c</searchResultsAdditionalFields>

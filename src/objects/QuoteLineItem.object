@@ -356,21 +356,6 @@ Calculated by the record-triggered Flow</description>
     </fields>
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
-        <fullName>NotAllowLineItemIfNotProductBundle</fullName>
-        <active>true</active>
-        <description>Do not allow to add products of type Category Product unless a Quote Line Bundle is added to the line item</description>
-        <errorConditionFormula>AND(
-$Setup.GlobalBypassProcessesSettings__c.RunValidationRules__c,
-OR(
-AND(
-QuoteProductBundle__c = null,
-Product2.RecordType.DeveloperName = &apos;CategoryProduct&apos;
-)
-)
-)</errorConditionFormula>
-        <errorMessage>Category Products need to be added as a bundle instead of as an individual product.</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>NotAllowLineItemsEditIfProductBundle</fullName>
         <active>true</active>
         <description>Do not allow the edition of certain fields if the quote line items are associated with a Quote Product Bundle.</description>

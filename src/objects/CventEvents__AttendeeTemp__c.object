@@ -1029,7 +1029,7 @@
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Registration Path</label>
-        <length>50</length>
+        <length>100</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -5049,6 +5049,7 @@
         <columns>CventEvents__pkg_FirstName__c</columns>
         <columns>CventEvents__pkg_LastName__c</columns>
         <columns>SFDCID__c</columns>
+        <columns>ProfiseeMasterID__c</columns>
         <columns>CventEvents__pkg_Email__c</columns>
         <columns>CventEvents__pkg_ProcessStatus__c</columns>
         <columns>CventEvents__pkg_Message__c</columns>
@@ -5111,6 +5112,12 @@
             <value>Processed</value>
         </filters>
         <label>Status Processed</label>
+    </listViews>
+    <listViews>
+        <fullName>Implant_Solutions_World_Summit_Athens</fullName>
+        <columns>NAME</columns>
+        <filterScope>Mine</filterScope>
+        <label>Implant Solutions World Summit, Athens</label>
     </listViews>
     <listViews>
         <fullName>TMP_Attendees_with_Profisee_Master_ID</fullName>

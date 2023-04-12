@@ -2932,6 +2932,30 @@ Rest .... Europe</description>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>DeletionPrevention__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field can be checked by users to prevent deletion of the contact during future clean-ups. Most likely this is required when the field has been flagged/suggested for deletion with the field &quot;Marked for Deletion&quot;(Deletion__c). This usually happens in case a contact has been identified to be inactive.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Can be checked to prevent deletion of this contact in the future even if this is or will be recommended.</inlineHelpText>
+        <label>Prevent Deletion</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Deletion__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field indicates, that the contact should be deleted soon, most likely because it has been identified as inactive. This field is created to be set/updated by admins or an automated process.
+
+Users will be able to prevent deletion by manually checking the field &quot;Prevent Deletion&quot;(DeletionPrevention__c).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates when a deletion of this contact is recommended.</inlineHelpText>
+        <label>Marked for Deletion</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Dental_School_D_JP__c</fullName>
         <description>Field to capture the dental school where a contact graduated. Created specifically for Japan.</description>
         <externalId>false</externalId>
@@ -9215,6 +9239,51 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone_F__c,&quot;&
         <label>Nordics: My Territory Contacts</label>
         <sharedTo>
             <roleAndSubordinates>Nordics_CRM_Analyst</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Nordics_New_List_View</fullName>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.ADDRESS1_CITY</columns>
+        <columns>FULL_NAME</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>Profession__c</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>Account.General_Info_Email__c</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.PHONE3</columns>
+        <columns>CONTACT.EMAIL_BOUNCED_DATE</columns>
+        <columns>CONTACT.LAST_ACTIVITY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTACT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Contact.ContactGlobal</value>
+        </filters>
+        <filters>
+            <field>Account.My_Territories_Account__c</field>
+            <operation>equals</operation>
+            <value>TRUE</value>
+        </filters>
+        <filters>
+            <field>Inactive__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Account.General_Info_Email__c</field>
+            <operation>contains</operation>
+            <value>@</value>
+        </filters>
+        <filters>
+            <field>CONTACT.EMAIL</field>
+            <operation>contains</operation>
+            <value>@</value>
+        </filters>
+        <label>Nordics: My Territory Contacts w Email</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Nordics_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
     <listViews>

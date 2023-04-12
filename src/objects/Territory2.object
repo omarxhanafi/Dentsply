@@ -439,16 +439,23 @@
         <columns>PARENT_NAME</columns>
         <columns>ROLLUP_DESCRIPTION</columns>
         <columns>FORECAST_USER</columns>
+        <columns>Territory_Level__c</columns>
+        <columns>TERRITORY_TYPE.NAME</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>TERR_NAME</field>
             <operation>startsWith</operation>
-            <value>CA</value>
+            <value>US:</value>
         </filters>
         <filters>
             <field>TERR_NAME</field>
             <operation>contains</operation>
-            <value>ORTHO,ORTCA</value>
+            <value>_CS0</value>
+        </filters>
+        <filters>
+            <field>TERR_NAME</field>
+            <operation>notContain</operation>
+            <value>_MW0,_RS0,_PV0</value>
         </filters>
         <label>Temp - Search</label>
         <language>en_US</language>
@@ -468,9 +475,9 @@
         <filters>
             <field>TERR_NAME</field>
             <operation>startsWith</operation>
-            <value>US: CCO NAM,US: CCO KAM,US CCO SAS,US: CCO TECH,US: CCO S,US:CCO - NAREG,US: NA</value>
+            <value>US: CCO NAM,US: CCO RAM,US CCO SAS,US: RAM,US: CCO S,US:CCO - NAREG,US: NA</value>
         </filters>
-        <label>US: NAM &amp; KAM</label>
+        <label>US: NAM &amp; RAM</label>
         <language>en_US</language>
         <sharedTo>
             <role>NA_CRM_Analyst</role>
