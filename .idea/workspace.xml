@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/IlluminatedCloud/StgApril/OfflineSymbolTable.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/campaignLeadOpWarningLwc/campaignLeadOpWarningLwc.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/campaignLeadOpWarningLwc/campaignLeadOpWarningLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/campaignLeadOpWarningLwc/campaignLeadOpWarningLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/campaignLeadOpWarningLwc/campaignLeadOpWarningLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/campaignLeadOpWarningLwc/campaignLeadOpWarningLwc.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +19,7 @@
         <option value="Lightning Web Component JavaScript" />
         <option value="Apex Class" />
         <option value="Apex Metadata" />
+        <option value="Lightning Web Component CSS" />
       </list>
     </option>
   </component>
@@ -18172,7 +18170,7 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:USERSINACCOUNTTERRITORIES" value="1681300098815" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CAMPAIGNLEADOPWARNINGLWC" value="1681301726744" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CAMPAIGNLEADOPWARNINGLWC" value="1681464192096" />
                     </map>
                   </option>
                 </ConnectionWorkspaceSettings>
