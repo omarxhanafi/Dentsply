@@ -4,6 +4,7 @@
  *
  * @History
  * 20-02-2023   Omar     Created test class
+ * 17-04-2023   Omar     TFUS-000005556 - Added new logic for Canada (using the region code instead of area code)
  */
 
 @isTest(seeAllData=false)
@@ -86,6 +87,105 @@ public without sharing class Test_AssignMarginGuidanceHelper {
             insert testMargin;
 
             Test.startTest();
+
+            AssignMarginGuidanceHelper.calculateMargin(testOrder[0].Id);
+
+            Test.stopTest();
+
+            List<OrderItem> orderItems = [
+                    SELECT Margin__c, Weight__c, MarginGuidance__c, UpperGuidance__c, LowerGuidance__c, WeightedLowerGuidance__c, WeightedUpperGuidance__c
+                    FROM OrderItem
+            ];
+
+            System.assertEquals(1, orderItems.size());
+            System.assertNotEquals(null, orderItems[0].MarginGuidance__c);
+            System.assertEquals(1, orderItems[0].Weight__c);
+
+        }
+    }
+
+    @isTest
+    private static void testCalculateMarginsForCanada() {
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
+
+        System.runAs(testUser) {
+
+            // Create test account
+            List<Account> testAccount = TestDataFactory.returnAccounts(1, 'CIM_Account', testUser.Id);
+            testAccount[0].Name = 'Test Account';
+            testAccount[0].DC_ETM_Code__c = 'D01';
+            testAccount[0].Country__c = 'CA';
+
+            insert testAccount[0];
+
+            // Create test product
+            List<Product2> testProduct = TestDataFactory.returnProducts(1);
+            testProduct[0].Name = 'Test Account';
+            testProduct[0].Article__c = 'A1';
+            testProduct[0].IsActive = true;
+
+            insert testProduct[0];
+
+
+            // Create test custom pricebook
+            List<Pricebook2> testPricebook = TestDataFactory.returnPricebooks(1, 'Test Price Book');
+            testPricebook[0].IsActive = true;
+            testPricebook[0].MarginGuidanceCalculation__c = true;
+            insert testPricebook[0];
+
+            // Create test pricebook entry
+            List<PricebookEntry> testPricebookEntry = TestDataFactory.returnPricebookEntries(1, testPricebook, testProduct);
+            testPricebookEntry[0].UnitPrice = 100;
+            testPricebookEntry[0].IsActive = true;
+
+            insert testPricebookEntry[0];
+
+            // Create test order
+            List<Order> testOrder = TestDataFactory.returnOrders(1, 'Direct_global_order', testAccount);
+
+            testOrder[0].AccountId = testAccount[0].Id;
+            testOrder[0].Pricebook2Id = testPricebook[0].Id;
+            testOrder[0].EffectiveDate = Date.today();
+            testOrder[0].Status = 'Created';
+            testOrder[0].Country__c = 'CA';
+
+            insert testOrder[0];
+
+            // Create test order item
+            List<OrderItem> testOrderItem = TestDataFactory.returnOrderItems(1, testOrder, testPricebookEntry);
+            testOrderItem[0].Product2Id = testProduct[0].Id;
+            testOrderItem[0].Quantity = 2;
+            testOrderItem[0].UnitPrice = 100;
+            testOrderItem[0].ListPrice = 100;
+
+            insert testOrderItem[0];
+
+            // Create test margin guidance
+            MarginGuidance__c testMargin = new MarginGuidance__c(
+                    Cost__c = 37,
+                    AreaCode__c = 'RBM02',
+                    Product__c = testProduct[0].Id,
+                    LowerGuidance__c = 64,
+                    UpperGuidance__c = 68
+            );
+
+            insert testMargin;
+
+            // Get a canada territory
+            Territory2 testTerritory = [SELECT Id FROM Territory2 WHERE Name = 'CA: RBM02 - IMP Vancouver East/Island CASS'][0];
+
+            // Create test object territory associations
+            ObjectTerritory2Association testObjectTerritoryAssociation = new ObjectTerritory2Association(ObjectId = testAccount[0].Id, Territory2Id = testTerritory.Id, AssociationCause = 'Territory2Manual');
+
+            insert testObjectTerritoryAssociation;
+
+            // Create test user territory associations
+            UserTerritory2Association testUserTerritoryAssociation = new UserTerritory2Association(UserId = testUser.Id, Territory2Id = testTerritory.Id, RoleInTerritory2 = 'Sales Rep (IMPL   )');
+
+            Test.startTest();
+
+            // Setup objects should be inserted in a different transaction in order to avoid the MIXED_DML_OPERATION error
+            insert testUserTerritoryAssociation;
 
             AssignMarginGuidanceHelper.calculateMargin(testOrder[0].Id);
 

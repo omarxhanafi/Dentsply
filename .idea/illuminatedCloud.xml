@@ -4,10 +4,10 @@
     <option name="connections">
       <list>
         <IlluminatedCloudConnection>
-          <option name="connectionName" value="Margin" />
+          <option name="connectionName" value="MarginCA" />
           <option name="connectionType" value="OAUTH" />
           <option name="defaultModuleName" value="Dentsply" />
-          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/Margin/OfflineSymbolTable.zip" />
+          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/MarginCA/OfflineSymbolTable.zip" />
         </IlluminatedCloudConnection>
       </list>
     </option>
