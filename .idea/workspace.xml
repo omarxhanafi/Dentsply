@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lwc/activityScorecard/activityScorecard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lwc/activityScorecard/activityScorecard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lwc/activityScorecard/activityScorecard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lwc/activityScorecard/activityScorecard.js-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/UAT/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/UAT/OfflineSymbolTable.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecard/activityScorecard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecard/activityScorecard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecard/activityScorecard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecard/activityScorecard.js-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js-meta.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,11 +25,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Apex Unit Test Class" />
-        <option value="Apex Class" />
         <option value="Lightning Web Component HTML" />
         <option value="Lightning Web Component JavaScript" />
-        <option value="Apex Metadata" />
         <option value="Lightning Web Component CSS" />
+        <option value="Apex Class" />
+        <option value="Apex Metadata" />
       </list>
     </option>
   </component>
@@ -54,33 +62,24 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="Id productId = '01t0J00000CxanYQAR';&#10;String areaCode = 'D01';&#10;&#10;// Create an account with a DC_ETM_Code__c value of 'D01'&#10;Account account = new Account(&#10;        Name = 'Test Account',&#10;        DC_ETM_Code__c = areaCode&#10;);&#10;insert account;&#10;&#10;//// Create a product&#10;//Product2 product = new Product2(&#10;//        Name = 'Test Product',&#10;//        Article__c = 'A1',&#10;//        IsActive = true&#10;//);&#10;//insert product;&#10;&#10;&#10;// Create a price book and set it as the active price book&#10;Pricebook2 pricebook = new Pricebook2(&#10;        Name = 'Test Price Book',&#10;        IsActive = true,&#10;        MarginGuidanceCalculation__c = true&#10;);&#10;insert pricebook;&#10;&#10;PricebookEntry pricebookEntry1 = new PricebookEntry(Pricebook2Id='01s20000000DHebAAG', Product2Id = productId, UnitPrice=100, IsActive=true);&#10;insert pricebookEntry1;&#10;&#10;PricebookEntry pricebookEntry2 = new PricebookEntry(Pricebook2Id=pricebook.Id, Product2Id= productId, UnitPrice=100, IsActive=true);&#10;insert pricebookEntry2;&#10;&#10;// Create an order and associate it with the account and price book&#10;Order order = new Order(&#10;        AccountId = account.Id,&#10;        Pricebook2Id = pricebook.Id,&#10;        EffectiveDate = Date.today(),&#10;        Status = 'Created',&#10;        Country__c = 'US'&#10;);&#10;insert order;&#10;&#10;// Add an order line item for the product to the order&#10;OrderItem orderItem = new OrderItem(&#10;        OrderId = order.Id,&#10;        Product2Id = productId,&#10;        Quantity = 2,&#10;        UnitPrice = 100,&#10;        ListPrice = 100,&#10;        PricebookEntryId = pricebookEntry2.Id&#10;);&#10;insert orderItem;&#10;&#10;//// Add an order line item for the product to the order&#10;//OrderItem orderItem2 = new OrderItem(&#10;//        OrderId = order.Id,&#10;//        Product2Id = product.Id,&#10;//        Quantity = 2,&#10;//        UnitPrice = 100,&#10;//        MarginGuidance__c = null,&#10;//        PricebookEntryId = pricebookEntry2.Id&#10;//);&#10;//insert orderItem2;&#10;//&#10;//// Add an order line item for the product to the order&#10;//OrderItem orderItem3 = new OrderItem(&#10;//        OrderId = order.Id,&#10;//        Product2Id = product.Id,&#10;//        Quantity = 2,&#10;//        UnitPrice = 100,&#10;//        MarginGuidance__c = null,&#10;//        PricebookEntryId = pricebookEntry2.Id&#10;//);&#10;//insert orderItem3;&#10;&#10;//MarginGuidance__c margin = new MarginGuidance__c(&#10;//        Cost__c = 37,&#10;//        AreaCode__c = 'D01',&#10;//        Product__c = product.Id,&#10;//        LowerGuidance__c = 0.56&#10;//);&#10;//&#10;//insert margin;&#10;&#10;//System.debug('Pricebook ID: ' + pricebook.Id);&#10;//System.debug('Pricebook Entry 1: ' + pricebookEntry1.Id);&#10;//System.debug('Pricebook Entry 2: ' + pricebookEntry2.Id);&#10;System.debug('Order ID: ' + order.Id);&#10;System.debug('Account ID: ' + account.Id);&#10;System.debug('Order Item ID: ' + orderItem.Id);&#10;" />
-                  <option name="name" value="Anonymous Apex 1" />
-                  <option name="splitterProportion" value="0.39154753" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="AssignMarginGuidanceHelper.calculateMargin('8013G000001HmD3QAK');" />
-                  <option name="name" value="Anonymous Apex 3" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
                   <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="// Get the date 7 days ago&#10;Date sevenDaysAgo = System.today().addDays(-7);&#10;&#10;// Delete order items&#10;List&lt;OrderItem&gt; orderItemsToDelete = [SELECT Id FROM OrderItem WHERE CreatedDate &gt;= :sevenDaysAgo];&#10;delete orderItemsToDelete;&#10;&#10;// Delete orders&#10;List&lt;Order&gt; ordersToDelete = [SELECT Id FROM Order WHERE CreatedDate &gt;= :sevenDaysAgo];&#10;delete ordersToDelete;&#10;&#10;// Delete accounts&#10;List&lt;Account&gt; accountsToDelete = [SELECT Id FROM Account WHERE CreatedDate &gt;= :sevenDaysAgo];&#10;delete accountsToDelete;&#10;&#10;//Delete products&#10;//List&lt;Product2&gt; productsToDelete = [SELECT Id FROM Product2 WHERE CreatedDate &gt;= :sevenDaysAgo];&#10;//delete productsToDelete;&#10;&#10;//Delete pricebook entries&#10;//List&lt;PricebookEntry&gt; pricebookEntriesToDelete = [SELECT Id FROM PricebookEntry WHERE CreatedDate &gt;= :sevenDaysAgo];&#10;//delete pricebookEntriesToDelete;" />
-                  <option name="name" value="Anonymous Apex 2" />
-                  <option name="nbaLogLevel" value="ERROR" />
-                  <option name="profilingLogLevel" value="ERROR" />
+                  <option name="body" value="ActivityScorecardController.getAccountActivityScorecard('0016M00002H7LrPQAV');" />
+                  <option name="calloutsLogLevel" value="FINEST" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="databaseLogLevel" value="FINEST" />
+                  <option name="name" value="Anonymous Apex 1" />
+                  <option name="nbaLogLevel" value="FINEST" />
+                  <option name="profilingLogLevel" value="FINEST" />
                   <option name="systemLogLevel" value="FINEST" />
-                  <option name="validationLogLevel" value="ERROR" />
-                  <option name="visualforceLogLevel" value="FINE" />
-                  <option name="waveLogLevel" value="ERROR" />
-                  <option name="workflowLogLevel" value="ERROR" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="Id productId = '01t0J00000ISbvEQAT';&#10;Id orderId = '8013G000001HmD3QAK';&#10;Id pricebookId = '01s3G000002BMwCQAW';&#10;&#10;//PricebookEntry pricebookEntry1 = new PricebookEntry(Pricebook2Id='01s20000000DHebAAG', Product2Id = productId, UnitPrice=100, IsActive=true);&#10;//insert pricebookEntry1;&#10;&#10;PricebookEntry pricebookEntry2 = new PricebookEntry(Pricebook2Id=pricebookId, Product2Id= productId, UnitPrice=100, IsActive=true);&#10;insert pricebookEntry2;&#10;&#10;// Add an order line item for the product to the order&#10;OrderItem orderItem = new OrderItem(&#10;        OrderId = orderId,&#10;        Product2Id = productId,&#10;        Quantity = 2,&#10;        UnitPrice = 100,&#10;        ListPrice = 100,&#10;        PricebookEntryId = pricebookEntry2.Id&#10;);&#10;insert orderItem;&#10;&#10;System.debug('Order Item ID: ' + orderItem.Id);&#10;" />
-                  <option name="name" value="Anonymous Apex 4" />
+                  <option name="validationLogLevel" value="FINEST" />
+                  <option name="visualforceLogLevel" value="FINEST" />
+                  <option name="waveLogLevel" value="FINEST" />
+                  <option name="workflowLogLevel" value="FINEST" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="3" />
+            <option name="selectedSavedDocumentIndex" value="0" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionWorkspaceSettings">
@@ -18202,6 +18201,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1682076500069" />
                       <entry key="APEXCLASS:CAMPAIGNMEMBERTRIGGERHELPER" value="1668005778242" />
                       <entry key="APEXCLASS:CHANGEOWNER" value="1669800166407" />
                       <entry key="APEXCLASS:FINDLEADMATCH" value="1668161656809" />
@@ -18212,6 +18212,8 @@
                       <entry key="APEXCLASS:USERSINACCOUNTTERRITORIES" value="1667389763476" />
                       <entry key="AURADEFINITIONBUNDLE:FLOW_SUGGESTEDUSERSBASEDONBRAND" value="1667402512131" />
                       <entry key="AURADEFINITIONBUNDLE:SERVICECLOUD_FLOWINPUTFIELD" value="1674823830000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARD" value="1682075429551" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1682077321499" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CLONEORDEROMLWC" value="1666105134000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:FLOW_LOOKUPLWC" value="1675243668000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:LEADMATCHCONTACTHANDLING" value="1666275637000" />
@@ -18553,12 +18555,24 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARD" value="1681313044490" />
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1682073392585" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARD" value="1682072574000" />
                     </map>
                   </option>
                   <option name="lastBuildScope" value="CONTEXT" />
                   <option name="lastBuildViewToggles">
                     <map>
+                      <entry key="DEPLOY">
+                        <value>
+                          <BuildViewToggles>
+                            <option name="showLocalAndServer" value="true" />
+                            <option name="showLocalOnly" value="true" />
+                            <option name="showServerOnly" value="false" />
+                            <option name="showSubscribedByParent" value="true" />
+                            <option name="showSubscribedOnly" value="true" />
+                          </BuildViewToggles>
+                        </value>
+                      </entry>
                       <entry key="RETRIEVE">
                         <value>
                           <BuildViewToggles>
@@ -18571,6 +18585,9 @@
                         </value>
                       </entry>
                     </map>
+                  </option>
+                  <option name="lastDeploymentOptions">
+                    <DeploymentOptions />
                   </option>
                 </ConnectionWorkspaceSettings>
               </value>
@@ -18620,16 +18637,24 @@
         <option name="retrieveAndMergeDefault" value="false" />
         <option name="soqlQuerySettings">
           <SoqlQuerySettings>
-            <option name="resultsSplitterProportion" value="0.68813556" />
+            <option name="resultsSplitterProportion" value="0.6188925" />
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select id, Name, SobjectType from recordtype where SobjectType = 'Campaign'" />
+                  <option name="body" value="SELECT OneAccount_Type__c, Country__c&#10;FROM Account&#10;GROUP BY OneAccount_Type__c, Country__c" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 1" />
+                </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="SOQL Query 2" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="0" />
+            <option name="selectedSavedDocumentIndex" value="1" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -18677,7 +18702,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="UAT" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -18724,7 +18749,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="UAT" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -18763,7 +18788,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="UAT" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -18810,7 +18835,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="UAT" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -18857,7 +18882,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="UAT" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -18960,6 +18985,9 @@
       <workItem from="1679498885657" duration="2546000" />
       <workItem from="1681297450729" duration="1049000" />
       <workItem from="1681312755793" duration="741000" />
+      <workItem from="1681912194765" duration="5330000" />
+      <workItem from="1682070679359" duration="2376000" />
+      <workItem from="1682073756540" duration="3952000" />
     </task>
     <servers />
   </component>
@@ -19007,6 +19035,7 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_findLeadMatch_testExecuteLeadSearch.ic2" NAME="HOTFIX Coverage Results" MODIFIED="1667918143842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="HOTFIX" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ES_FreezeUserHandler_testHandleInboundEmail.ic2" NAME="Freeze Coverage Results" MODIFIED="1681040119075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Freeze" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ProcedureTrackerTriggerHelper_testcheckUniqueness.ic2" NAME="StgJan Coverage Results" MODIFIED="1673520387472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMarginsForCanada.ic2" NAME="MarginCA Coverage Results" MODIFIED="1681743541440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="MarginCA" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchCreateProcedureTrackers_testBatchCreateProcedureTrackers.ic2" NAME="StgJan Coverage Results" MODIFIED="1673859457008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_CountryCodeController.ic2" NAME="DevApril Coverage Results" MODIFIED="1679497979036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchSetAccountSubSegmentation.ic2" NAME="Production Coverage Results" MODIFIED="1674815707650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Production" CONNECTION_TYPE="OAUTH" />
