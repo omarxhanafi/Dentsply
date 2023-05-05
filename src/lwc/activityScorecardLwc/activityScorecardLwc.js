@@ -6,32 +6,32 @@ export default class ActivityScorecardLwc extends LightningElement {
 
     @api recordId;
 
-    result;
+    activityScorecardResult;
 
     @wire(getAccountEventsJSON, { accountId: '$recordId' })
     wiredGetAccountEvents({ error, data }){
         if (data) {
-            this.result = JSON.parse(data);
-            console.log(this.result);
+            this.activityScorecardResult = JSON.parse(data);
+            console.log(this.activityScorecardResult);
         } else if (error) {
             console.error(error);
         }
     }
 
     get completedTasksWidth() {
-        return `width: ${this.result?.completedTasksCount}%`;
+        return `width: ${this.activityScorecardResult?.completedTasksCount}%`;
     }
 
     get callsLoggedWidth() {
-        return `width: ${this.result?.callsLoggedCount}%`;
+        return `width: ${this.activityScorecardResult?.callsLoggedCount}%`;
     }
 
     get emailsSentWidth() {
-        return `width: ${this.result?.emailsSentCount}%`;
+        return `width: ${this.activityScorecardResult?.emailsSentCount}%`;
     }
 
     get eventsLoggedWidth() {
-        return `width: ${this.result?.eventsLoggedCount}%`;
+        return `width: ${this.activityScorecardResult?.eventsLoggedCount}%`;
     }
 
 

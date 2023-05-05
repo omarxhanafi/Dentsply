@@ -3,6 +3,16 @@ public class ActivityScorecardController {
 
     @AuraEnabled(Cacheable = true)
     public static String getAccountActivityScorecard(Id accountId) {
+        // Get account details (Type and country)
+        Account accountDetails = [
+                SELECT OneAccount_Type__c, Country__c
+                FROM Account
+                WHERE Id = :accountId
+        ];
+
+        String accountType = accountDetails?.OneAccount_Type__c;
+        String accountCountry = accountDetails?.Country__c;
+
         // Query for the oldest event on the account
         Date firstEventDate = [
                 SELECT ActivityDate
@@ -29,6 +39,18 @@ public class ActivityScorecardController {
                 AND CreatedDate = LAST_N_MONTHS:12
         ];
 
+        // Benchmark of completed tasks on the account
+        List<AggregateResult> completedTasksBenchmark = [
+                SELECT COUNT(Id) result
+                FROM Task
+                WHERE Account.OneAccount_Type__c = :accountType
+                AND Account.Country__c = :accountCountry
+                AND IsClosed = true
+                GROUP BY AccountId
+                ORDER BY COUNT(Id) DESC
+                LIMIT 1
+        ];
+
         // Count the number of calls logged on the account
         Integer callsLoggedCount = [
                 SELECT COUNT()
@@ -36,6 +58,18 @@ public class ActivityScorecardController {
                 WHERE AccountId = :accountId
                 AND Type = 'Call'
                 AND CreatedDate = LAST_N_MONTHS:12
+        ];
+
+        // Benchmark of calls logged on the account
+        List<AggregateResult> callsLoggedBenchmark = [
+                SELECT COUNT(Id) result
+                FROM Task
+                WHERE Account.OneAccount_Type__c = :accountType
+                AND Account.Country__c = :accountCountry
+                AND Type = 'Call'
+                GROUP BY AccountId
+                ORDER BY COUNT(Id) DESC
+                LIMIT 1
         ];
 
         // Count the number of emails sent on the account
@@ -47,6 +81,18 @@ public class ActivityScorecardController {
                 AND CreatedDate = LAST_N_MONTHS:12
         ];
 
+        // Benchmark of emails sent on the account
+        List<AggregateResult> emailsSentBenchmark = [
+                SELECT COUNT(Id) result
+                FROM Task
+                WHERE Account.OneAccount_Type__c = :accountType
+                AND Account.Country__c = :accountCountry
+                AND Type = 'Email'
+                GROUP BY AccountId
+                ORDER BY COUNT(Id) DESC
+                LIMIT 1
+        ];
+
         // Count the number of events logged on the account
         Integer eventsLoggedCount = [
                 SELECT COUNT()
@@ -55,23 +101,34 @@ public class ActivityScorecardController {
                 AND CreatedDate = LAST_N_MONTHS:12
         ];
 
-        // Output the results
-        System.debug('First Event Date: ' + firstEventDate);
-        System.debug('Future Events Count: ' + futureEventsCount);
-        System.debug('Completed Tasks Count: ' + completedTasksCount);
-        System.debug('Calls Logged Count: ' + callsLoggedCount);
-        System.debug('Emails Sent Count: ' + emailsSentCount);
-        System.debug('Events Logged Count: ' + eventsLoggedCount);
+        // Benchmark of events logged on the account
+        List<AggregateResult> eventsLoggedBenchmark = [
+                SELECT COUNT(Id) result
+                FROM Event
+                WHERE Account.OneAccount_Type__c = :accountType
+                AND Account.Country__c = :accountCountry
+                GROUP BY AccountId
+                ORDER BY COUNT(Id) DESC
+                LIMIT 1
+        ];
 
 
         // Construct a Map of the results
         Map<String, Object> results = new Map<String, Object>();
         results.put('firstEventDate', firstEventDate);
         results.put('futureEventsCount', futureEventsCount);
+
         results.put('completedTasksCount', completedTasksCount);
         results.put('callsLoggedCount', callsLoggedCount);
         results.put('emailsSentCount', emailsSentCount);
         results.put('eventsLoggedCount', eventsLoggedCount);
+
+        results.put('completedTasksBenchmark', !completedTasksBenchmark.isEmpty() ? completedTasksBenchmark.get(0)?.get('result') : 0);
+        results.put('callsLoggedBenchmark', !callsLoggedBenchmark.isEmpty() ? callsLoggedBenchmark.get(0)?.get('result') : 0);
+        results.put('emailsSentBenchmark', !emailsSentBenchmark.isEmpty() ? emailsSentBenchmark.get(0)?.get('result') : 0);
+        results.put('eventsLoggedBenchmark', !eventsLoggedBenchmark.isEmpty() ? eventsLoggedBenchmark.get(0)?.get('result') : 0);
+
+        System.debug(results);
 
         return JSON.serialize(results);
     }

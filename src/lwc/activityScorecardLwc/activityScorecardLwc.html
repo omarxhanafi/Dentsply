@@ -1,15 +1,15 @@
 <!-- Activity Scorecard -->
 <template>
-        <div if:true={result} class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+        <div if:true={activityScorecardResult} class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
             <lightning-layout>
                 <lightning-layout-item flexibility="auto" padding="around-small">
                     <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
                         <p>First Event Date</p>
                         <br>
-                            <template if:true={result.firstEventDate}>
-                                <p class="activity-counter">{result.firstEventDate}</p>
+                            <template if:true={activityScorecardResult.firstEventDate}>
+                                <p class="activity-counter">{activityScorecardResult.firstEventDate}</p>
                             </template>
-                            <template if:false={result.firstEventDate}>
+                            <template if:false={activityScorecardResult.firstEventDate}>
                                 <p class="activity-counter">N/A</p>
                             </template>
                         </p>
@@ -19,7 +19,7 @@
                     <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
                         <p># Future Activities</p>
                         <br>
-                        <p class="activity-counter">{result.futureEventsCount}</p>
+                        <p class="activity-counter">{activityScorecardResult.futureEventsCount}</p>
                     </div>
                 </lightning-layout-item>
             </lightning-layout>
@@ -39,12 +39,12 @@
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-1">
-                                    <span>{result.completedTasksCount} tasks completed</span>
+                                    <span>{activityScorecardResult.completedTasksCount} tasks completed</span>
                                     <span aria-hidden="true">
                                       <strong>100</strong>
                                     </span>
                                 </div>
-                                <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={result.completedTasksCount} aria-labelledby="progress-bar-label-id-1" role="progressbar">
+                                <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.completedTasksCount} aria-labelledby="progress-bar-label-id-1" role="progressbar">
                                     <span class="slds-progress-bar__value" style={completedTasksWidth}>
                                     </span>
                                 </div>
@@ -59,12 +59,12 @@
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-2">
-                                    <span>{result.callsLoggedCount} calls logged</span>
+                                    <span>{activityScorecardResult.callsLoggedCount} calls logged</span>
                                     <span aria-hidden="true">
                                       <strong>100</strong>
                                     </span>
                                 </div>
-                                <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={result.callsLoggedCount} aria-labelledby="progress-bar-label-id-2" role="progressbar">
+                                <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.callsLoggedCount} aria-labelledby="progress-bar-label-id-2" role="progressbar">
                                     <span class="slds-progress-bar__value" style={callsLoggedWidth}>
                                     </span>
                                 </div>
@@ -79,12 +79,12 @@
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-3">
-                                    <span>{result.emailsSentCount} emails sent</span>
+                                    <span>{activityScorecardResult.emailsSentCount} emails sent</span>
                                     <span aria-hidden="true">
                                       <strong>100</strong>
                                     </span>
                                 </div>
-                                <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={result.emailsSentCount} aria-labelledby="progress-bar-label-id-3" role="progressbar">
+                                <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.emailsSentCount} aria-labelledby="progress-bar-label-id-3" role="progressbar">
                                     <span class="slds-progress-bar__value" style={emailsSentWidth}>
                                     </span>
                                 </div>
@@ -99,12 +99,12 @@
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-4">
-                                    <span>{result.eventsLoggedCount} events logged</span>
+                                    <span>{activityScorecardResult.eventsLoggedCount} events logged</span>
                                     <span aria-hidden="true">
                                       <strong>100</strong>
                                     </span>
                                 </div>
-                                <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={result.eventsLoggedCount} aria-labelledby="progress-bar-label-id-4" role="progressbar">
+                                <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.eventsLoggedCount} aria-labelledby="progress-bar-label-id-4" role="progressbar">
                                     <span class="slds-progress-bar__value" style={eventsLoggedWidth}>
                                     </span>
                                 </div>
