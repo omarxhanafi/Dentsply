@@ -27,7 +27,7 @@ public class ES_FreezeUserHandler implements Messaging.InboundEmailHandler {
         List<String> federationIds = new List<String>();
 
         // Search for the user IDs in the email body
-        String regexPattern = '(?<=\\*From:\\*INTERNAL\\\\)[a-zA-Z0-9]+(?=\\*To:)';
+        String regexPattern = '(?<=\\*?From:\\*?INTERNAL\\\\)[a-zA-Z0-9]+(?=\\*?To:)';
         Pattern pattern = Pattern.compile(regexPattern);
         Matcher matcher = pattern.matcher(textBody);
 
@@ -42,6 +42,24 @@ public class ES_FreezeUserHandler implements Messaging.InboundEmailHandler {
                     FROM User
                     WHERE FederationIdentifier in :federationIds
             ]);
+
+            // Checking the existence of the federation Ids
+            List<String> foundFederationIds = new List<String>();
+            List<String> notFoundFederationIds = new List<String>();
+            for(String federationId : federationIds){
+                Boolean found = false;
+                for(User u : userMap.values()){
+                    if(u.FederationIdentifier == federationId){
+                        foundFederationIds.add(federationId);
+                        found = true;
+                        break;
+                    }
+                }
+                if(!found){
+                    notFoundFederationIds.add(federationId);
+                }
+            }
+
 
             // Get the list of UserLogin records
             List<UserLogin> userLoginList = [
@@ -70,6 +88,12 @@ public class ES_FreezeUserHandler implements Messaging.InboundEmailHandler {
 
             try {
                 update userMap.values();
+
+                DebugLog.addInfo('Users Frozen: ' + foundFederationIds);
+
+                if(!notFoundFederationIds.isEmpty()){
+                    DebugLog.addInfo('Users not found: ' + notFoundFederationIds);
+                }
             } catch (Exception e){
                 DebugLog.addError(e.getMessage());
             }
