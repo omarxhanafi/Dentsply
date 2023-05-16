@@ -21,7 +21,13 @@ public class ES_FreezeUserHandler implements Messaging.InboundEmailHandler {
     public Messaging.InboundEmailResult handleInboundEmail(Messaging.InboundEmail email, Messaging.InboundEnvelope envelope) {
         // Extract the plain text body of the email
         String textBody = email.plainTextBody;
+
+        DebugLog.addInfo('Email Service ES_FreezeUserHandler called with the following textBody: ' + textBody);
+
         textBody = textBody.replaceAll('\\s', ''); // replace all whitespace characters with an empty string
+
+        // Checking if the text body contains a base64 encoded segment
+        textBody = decodeBase64Email(textBody);
 
         // Initialize the federation ID List
         List<String> federationIds = new List<String>();
@@ -104,5 +110,35 @@ public class ES_FreezeUserHandler implements Messaging.InboundEmailHandler {
         Messaging.InboundEmailResult result = new Messaging.InboundEmailResult();
         result.success = true;
         return result;
+    }
+
+    /**
+     * decodeBase64Email Checks if the email body contains a base64 encoded segment, if yes, decodes it
+     * @author ohanafi@salesforce.com | 16-05-2023
+     *
+     * @param textBody      The email body
+     *
+     * @return String - Decoded email body
+     */
+    private String decodeBase64Email(String textBody) {
+        Integer startIndex = textBody.indexOf('Content-Transfer-Encoding:base64');
+        if (startIndex != -1) {
+            // Add the length of the search string to get the starting index of the content
+            startIndex += 'Content-Transfer-Encoding:base64'.length();
+
+            // Find the index of the character '=' after the starting index
+            Integer endIndex = textBody.indexOf('=', startIndex);
+            if (endIndex != -1) {
+                // Extract the content between the starting and ending indices
+                String base64String = textBody.substring(startIndex, endIndex);
+
+                // We decode the base64 segment and assign it as a the new text body
+                textBody = EncodingUtil.base64Decode(base64String).toString();
+
+                textBody = textBody.replaceAll('\\s', ''); // we again remove all whitespace characters
+            }
+        }
+
+        return textBody;
     }
 }

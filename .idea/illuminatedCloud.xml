@@ -4,10 +4,10 @@
     <option name="connections">
       <list>
         <IlluminatedCloudConnection>
-          <option name="connectionName" value="HOTFIX" />
+          <option name="connectionName" value="Freeze" />
           <option name="connectionType" value="OAUTH" />
           <option name="defaultModuleName" value="Dentsply" />
-          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/HOTFIX/OfflineSymbolTable.zip" />
+          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/Freeze/OfflineSymbolTable.zip" />
         </IlluminatedCloudConnection>
       </list>
     </option>
