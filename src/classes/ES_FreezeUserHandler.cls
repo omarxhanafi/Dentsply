@@ -123,13 +123,12 @@ public class ES_FreezeUserHandler implements Messaging.InboundEmailHandler {
     private String decodeBase64Email(String textBody) {
         Integer startIndex = textBody.indexOf('Content-Transfer-Encoding:base64');
         if (startIndex != -1) {
-            // Add the length of the search string to get the starting index of the content
             startIndex += 'Content-Transfer-Encoding:base64'.length();
 
             // Find the index of the character '=' after the starting index
             Integer endIndex = textBody.indexOf('=', startIndex);
             if (endIndex != -1) {
-                // Extract the content between the starting and ending indices
+                // Extract the base64 content
                 String base64String = textBody.substring(startIndex, endIndex);
 
                 // We decode the base64 segment and assign it as a the new text body
