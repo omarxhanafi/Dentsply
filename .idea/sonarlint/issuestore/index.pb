@@ -5,3 +5,5 @@ Z
 *src/lwc/customDatatable/customDatatable.js,f/6/f6a0b24094d19ff04f543bc6efcc1b2762a9f9cd
 H
 src/classes/DebugLog.cls,0/b/0b7401302fbd534bf32a1219b9701867e9b8dd0a
+]
+-src/classes/Test_OpportunityStageGuidance.cls,2/e/2ed084ed3d222664fd44e60531071a9dac319489

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Post_To_Chatter</name>
+        <label>Post To Chatter</label>
+        <locationX>242</locationX>
+        <locationY>839</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <connector>
+            <targetReference>myRule_13</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>postToChatterText</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Status_Update</name>
+        <label>Status Update</label>
+        <locationX>242</locationX>
+        <locationY>1139</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <connector>
+            <targetReference>myRule_15</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>statusUpdateText</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <decisions>
+        <name>myRule_1</name>
+        <label>Bypass Enabled?</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>myRule_3</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Bypass Enabled?</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_TRUE_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>TRUE_Bypass Enabled?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_11</name>
+        <label>Chatter post when new</label>
+        <locationX>374</locationX>
+        <locationY>731</locationY>
+        <defaultConnector>
+            <targetReference>myRule_13</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Chatter post when new</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_11</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_TRUE_myRule_11</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Post_To_Chatter</targetReference>
+            </connector>
+            <label>TRUE_Chatter post when new</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_13</name>
+        <label>StatusUpdate</label>
+        <locationX>374</locationX>
+        <locationY>1031</locationY>
+        <defaultConnector>
+            <targetReference>myRule_15</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_StatusUpdate</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_13</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_TRUE_myRule_13</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Status_Update</targetReference>
+            </connector>
+            <label>TRUE_StatusUpdate</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_15</name>
+        <label>Sales Lead Completed/Closed</label>
+        <locationX>374</locationX>
+        <locationY>1331</locationY>
+        <defaultConnectorLabel>FALSE_Sales Lead Completed/Closed</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_15</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_TRUE_myRule_15</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_15_A1</targetReference>
+            </connector>
+            <label>TRUE_Sales Lead Completed/Closed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_3</name>
+        <label>Set Status fields</label>
+        <locationX>374</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>myRule_11</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Set Status fields</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_3_A1</targetReference>
+            </connector>
+            <label>TRUE_Set Status fields</label>
+        </rules>
+    </decisions>
+    <description>TFUS-000005611 : Migrated from the Sales Lead: Default Process Builder process using multiple criteria.
+TFUS-000004208(1/7/22) - TFUS-000004361 - TFUS-000004436</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CustomerNotes</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.CustomerNotes__c}), &apos;&apos;, &apos;\n\nCustomer Notes : &apos; + {!$Record.CustomerNotes__c})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_1_myRule_3_A1_3935374828</name>
+        <dataType>Date</dataType>
+        <expression>If( TEXT({!$Record.Status__c}) = &quot;Cancelled&quot;, TODAY() , {!$Record.CancelledAssignedDate__c} )</expression>
+    </formulas>
+    <formulas>
+        <name>formula_2_myRule_3_A1_8138005031</name>
+        <dataType>Date</dataType>
+        <expression>If( TEXT( {!$Record.Status__c} )= &quot;Completed&quot;, TODAY() , {!$Record.CompletedAssignedDate__c} )</expression>
+    </formulas>
+    <formulas>
+        <name>formula_3_myRule_3_A1_8952404135</name>
+        <dataType>Date</dataType>
+        <expression>If( TEXT( {!$Record.Status__c} )= &quot;Expired&quot;, TODAY() , {!$Record.ExpiredAssignedDate__c} )</expression>
+    </formulas>
+    <formulas>
+        <name>formula_4_myRule_3_A1_7152569356</name>
+        <dataType>Date</dataType>
+        <expression>If( TEXT( {!$Record.Status__c} ) = &quot;In Progress&quot;, TODAY() , {!$Record.InProgressAssignedDate__c} )</expression>
+    </formulas>
+    <formulas>
+        <name>formula_5_myRule_3_A1_4958463504</name>
+        <dataType>Date</dataType>
+        <expression>If( TEXT({!$Record.Status__c}) = &quot;Parked/OnHold&quot; 
+, TODAY() , {!$Record.ParkedOnHoldAssignedDate__c}  )</expression>
+    </formulas>
+    <formulas>
+        <name>formula_6_myRule_15_A1_5333070554</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <formulas>
+        <name>formula_TRUE_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+{!$Setup.PbBypassSalesLeadCs__c.Bypass__c}=true,
+{!$Setup.GlobalBypassProcessesSettings__c.RunProcessBuilder__c}=false)</expression>
+    </formulas>
+    <formulas>
+        <name>formula_TRUE_myRule_11</name>
+        <dataType>Boolean</dataType>
+        <expression>OR (IsNew() , IsChanged({!$Record.Sales_Rep__c} )) &amp;&amp;
+{!$Record.Sales_Rep__c} &lt;&gt; $User.User_ID_18_digit__c &amp;&amp;
+TEXT({!$Record.Source__c} ) &lt;&gt; &quot;Target Analysis&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>formula_TRUE_myRule_13</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+TEXT({!$Record.Source__c} ) &lt;&gt; &quot;Target Analysis&quot;,
+ISCHANGED({!$Record.Status__c}), !ISCHANGED({!$Record.Opportunity__c}), {!$Record.CreatedById} !={!$Record.Sales_Rep__c})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_TRUE_myRule_15</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+OR(
+ISPICKVAL({!$Record.Status__c}, &apos;Completed&apos;), ISPICKVAL({!$Record.Status__c}, &apos;Cancelled&apos;)), ISCHANGED({!$Record.Status__c}))</expression>
+    </formulas>
+    <formulas>
+        <name>Notes</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.Notes__c}), &apos;&apos;, &apos;\n\nNotes : &apos; + {!$Record.Notes__c})</expression>
+    </formulas>
+    <interviewLabel>Sales Lead: Update Status {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Sales Lead: Update Status</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>myRule_15_A1</name>
+        <label>Set Closed Date</label>
+        <locationX>242</locationX>
+        <locationY>1439</locationY>
+        <inputAssignments>
+            <field>ClosedDate__c</field>
+            <value>
+                <elementReference>formula_6_myRule_15_A1_5333070554</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>myRule_3_A1</name>
+        <label>update Status field</label>
+        <locationX>242</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>myRule_11</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CancelledAssignedDate__c</field>
+            <value>
+                <elementReference>formula_1_myRule_3_A1_3935374828</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CompletedAssignedDate__c</field>
+            <value>
+                <elementReference>formula_2_myRule_3_A1_8138005031</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ExpiredAssignedDate__c</field>
+            <value>
+                <elementReference>formula_3_myRule_3_A1_8952404135</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>InProgressAssignedDate__c</field>
+            <value>
+                <elementReference>formula_4_myRule_3_A1_7152569356</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParkedOnHoldAssignedDate__c</field>
+            <value>
+                <elementReference>formula_5_myRule_3_A1_4958463504</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>myRule_1</targetReference>
+        </connector>
+        <object>Field_Sales_Project_Members__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>postToChatterText</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>New Sales Lead : {!$Record.Category__c}, {!$Record.Brand__c} @[{!$Record.Sales_Rep__c}] {!Notes} {!CustomerNotes}
+
+https://dentsplysirona.lightning.force.com/lightning/r/Field_Sales_Project_Members__c/{!$Record.Id}/view</text>
+    </textTemplates>
+    <textTemplates>
+        <name>statusUpdateText</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear @[{!$Record.CreatedById}], This sales lead&apos;s status linked to account &quot;{!$Record.Account__r.Name}&quot; has been updated to {!$Record.Status__c}</text>
+    </textTemplates>
+</Flow>
