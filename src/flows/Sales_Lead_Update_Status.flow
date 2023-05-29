@@ -170,7 +170,7 @@
             <label>TRUE_Set Status fields</label>
         </rules>
     </decisions>
-    <description>TFUS-000005611 : Migrated from the Sales Lead: Default Process Builder process using multiple criteria.
+    <description>TFUS-000005611 : Migrated from the Sales Lead: Default Process Builder - added CustomerNotes__c and Notes__c fields to the chatter post
 TFUS-000004208(1/7/22) - TFUS-000004361 - TFUS-000004436</description>
     <environments>Default</environments>
     <formulas>
