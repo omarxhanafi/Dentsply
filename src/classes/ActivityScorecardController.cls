@@ -36,7 +36,9 @@ public class ActivityScorecardController {
                 FROM Task
                 WHERE AccountId = :accountId
                 AND IsClosed = true
-                AND CreatedDate = LAST_N_MONTHS:12
+                AND Type <> 'Call'
+                AND Type <> 'Email'
+                AND ActivityDate = LAST_N_MONTHS:12
         ];
 
         // Benchmark of completed tasks on the account
@@ -57,7 +59,7 @@ public class ActivityScorecardController {
                 FROM Task
                 WHERE AccountId = :accountId
                 AND Type = 'Call'
-                AND CreatedDate = LAST_N_MONTHS:12
+                AND ActivityDate = LAST_N_MONTHS:12
         ];
 
         // Benchmark of calls logged on the account
@@ -78,7 +80,7 @@ public class ActivityScorecardController {
                 FROM Task
                 WHERE AccountId = :accountId
                 AND Type = 'Email'
-                AND CreatedDate = LAST_N_MONTHS:12
+                AND ActivityDate = LAST_N_MONTHS:12
         ];
 
         // Benchmark of emails sent on the account
@@ -98,7 +100,7 @@ public class ActivityScorecardController {
                 SELECT COUNT()
                 FROM Event
                 WHERE AccountId = :accountId
-                AND CreatedDate = LAST_N_MONTHS:12
+                AND ActivityDate = LAST_N_MONTHS:12
         ];
 
         // Benchmark of events logged on the account

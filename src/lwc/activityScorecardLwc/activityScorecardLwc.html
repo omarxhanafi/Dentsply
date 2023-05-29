@@ -34,14 +34,14 @@
                         <lightning-layout>
                             <lightning-layout-item size="1" padding="around-small">
                                 <div class="slds-m-right_small">
-                                    <lightning-icon icon-name="standard:task" size="small"></lightning-icon>
+                                    <lightning-icon icon-name="standard:task" size={iconSize}></lightning-icon>
                                 </div>
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-1">
                                     <span>{activityScorecardResult.completedTasksCount} tasks completed</span>
                                     <span aria-hidden="true">
-                                      <strong>100</strong>
+                                      <strong>{completedTasksBenchmark}</strong>
                                     </span>
                                 </div>
                                 <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.completedTasksCount} aria-labelledby="progress-bar-label-id-1" role="progressbar">
@@ -54,14 +54,14 @@
                         <lightning-layout>
                             <lightning-layout-item size="1" padding="around-small">
                                 <div class="slds-m-right_small">
-                                    <lightning-icon icon-name="standard:call" size="small"></lightning-icon>
+                                    <lightning-icon icon-name="standard:call" size={iconSize}></lightning-icon>
                                 </div>
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-2">
                                     <span>{activityScorecardResult.callsLoggedCount} calls logged</span>
                                     <span aria-hidden="true">
-                                      <strong>100</strong>
+                                      <strong>{callsLoggedBenchmark}</strong>
                                     </span>
                                 </div>
                                 <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.callsLoggedCount} aria-labelledby="progress-bar-label-id-2" role="progressbar">
@@ -74,14 +74,14 @@
                         <lightning-layout>
                             <lightning-layout-item size="1" padding="around-small">
                                 <div class="slds-m-right_small">
-                                    <lightning-icon icon-name="standard:email" size="small"></lightning-icon>
+                                    <lightning-icon icon-name="standard:email" size={iconSize}></lightning-icon>
                                 </div>
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-3">
                                     <span>{activityScorecardResult.emailsSentCount} emails sent</span>
                                     <span aria-hidden="true">
-                                      <strong>100</strong>
+                                      <strong>{emailsSentBenchmark}</strong>
                                     </span>
                                 </div>
                                 <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.emailsSentCount} aria-labelledby="progress-bar-label-id-3" role="progressbar">
@@ -94,14 +94,14 @@
                         <lightning-layout>
                             <lightning-layout-item size="1" padding="around-small">
                                 <div class="slds-m-right_small">
-                                    <lightning-icon icon-name="standard:event" size="small"></lightning-icon>
+                                    <lightning-icon icon-name="standard:event" size={iconSize}></lightning-icon>
                                 </div>
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-4">
                                     <span>{activityScorecardResult.eventsLoggedCount} events logged</span>
                                     <span aria-hidden="true">
-                                      <strong>100</strong>
+                                      <strong>{eventsLoggedBenchmark}</strong>
                                     </span>
                                 </div>
                                 <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.eventsLoggedCount} aria-labelledby="progress-bar-label-id-4" role="progressbar">

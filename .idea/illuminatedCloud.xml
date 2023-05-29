@@ -4,10 +4,9 @@
     <option name="connections">
       <list>
         <IlluminatedCloudConnection>
-          <option name="connectionName" value="UAT" />
+          <option name="connectionName" value="UATT" />
           <option name="connectionType" value="OAUTH" />
           <option name="defaultModuleName" value="Dentsply" />
-          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/UAT/OfflineSymbolTable.zip" />
         </IlluminatedCloudConnection>
       </list>
     </option>
