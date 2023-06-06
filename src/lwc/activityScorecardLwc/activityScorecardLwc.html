@@ -39,9 +39,9 @@
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-1">
-                                    <span>{activityScorecardResult.completedTasksCount} tasks completed</span>
+                                    <span>{activityScorecardResult.completedTasksCount} tasks completed out of {completedTasksBenchmark}</span>
                                     <span aria-hidden="true">
-                                      <strong>{completedTasksBenchmark}</strong>
+                                      <strong>{completedTasksPercentage}%</strong>
                                     </span>
                                 </div>
                                 <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.completedTasksCount} aria-labelledby="progress-bar-label-id-1" role="progressbar">
@@ -59,9 +59,9 @@
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-2">
-                                    <span>{activityScorecardResult.callsLoggedCount} calls logged</span>
+                                    <span>{activityScorecardResult.callsLoggedCount} calls logged out of {callsLoggedBenchmark}</span>
                                     <span aria-hidden="true">
-                                      <strong>{callsLoggedBenchmark}</strong>
+                                      <strong>{callsLoggedPercentage}%</strong>
                                     </span>
                                 </div>
                                 <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.callsLoggedCount} aria-labelledby="progress-bar-label-id-2" role="progressbar">
@@ -79,9 +79,9 @@
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-3">
-                                    <span>{activityScorecardResult.emailsSentCount} emails sent</span>
+                                    <span>{activityScorecardResult.emailsSentCount} emails sent out of {emailsSentBenchmark}</span>
                                     <span aria-hidden="true">
-                                      <strong>{emailsSentBenchmark}</strong>
+                                      <strong>{emailsSentPercentage}%</strong>
                                     </span>
                                 </div>
                                 <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.emailsSentCount} aria-labelledby="progress-bar-label-id-3" role="progressbar">
@@ -99,9 +99,9 @@
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-4">
-                                    <span>{activityScorecardResult.eventsLoggedCount} events logged</span>
+                                    <span>{activityScorecardResult.eventsLoggedCount} events logged out of {eventsLoggedBenchmark}</span>
                                     <span aria-hidden="true">
-                                      <strong>{eventsLoggedBenchmark}</strong>
+                                      <strong>{eventsLoggedPercentage}%</strong>
                                     </span>
                                 </div>
                                 <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.eventsLoggedCount} aria-labelledby="progress-bar-label-id-4" role="progressbar">
@@ -115,5 +115,4 @@
                 </lightning-layout-item>
             </lightning-layout>
         </div>
-
 </template>
