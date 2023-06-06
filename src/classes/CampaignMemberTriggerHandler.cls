@@ -2,8 +2,9 @@
 Author:         Ahmed LOUDRASSI (Salesforce) 20191022
 Description:    Campaign Member Trigger Handler Class
 History
-20191022   Ahmed LOUDRASSI   Migrated CampMgmtCampaignMemberTrigger and CampMgmtCampaignMemberTrigger2 triggers. (#)
-20191022   Ahmed LOUDRASSI   Migrated CampaignMember Workflows. (#)
+2019-10-22      Ahmed LOUDRASSI     Migrated CampMgmtCampaignMemberTrigger and CampMgmtCampaignMemberTrigger2 triggers. (#)
+2019-10-22      Ahmed LOUDRASSI     Migrated CampaignMember Workflows. (#)
+2023-03-01      Houssam ADIB        Refactored The Trigger
 ----------------------------------------------------------------------------------------*/
 public class CampaignMemberTriggerHandler extends TriggerHandler {
 
@@ -17,22 +18,19 @@ public class CampaignMemberTriggerHandler extends TriggerHandler {
         newCampaignMemberMap = (Map<Id, CampaignMember>) Trigger.newMap;
     }
     protected override void beforeInsert() {
-        CampaignMemberTriggerHelper.updateCampaignMemberAccount(newCampaignMemberList);
-        CampaignMemberTriggerHelper.updateCampaignMembersInfo(newCampaignMemberList);
-        CampaignMemberTriggerHelper.setInternationalSpeaker(newCampaignMemberList);
-        CampaignMemberTriggerHelper.leadOwnerAssignment(newCampaignMemberList);
+        CampaignMemberTriggerHelper.updateCampaignMemberAccount(newCampaignMemberList);                     // Low Consumption
+        CampaignMemberTriggerHelper.updateCampaignMembersInfo(newCampaignMemberList);                       // Low Consumption
+        CampaignMemberTriggerHelper.setInternationalSpeaker(newCampaignMemberList);                         // Low Consumption
     }
     protected override void beforeUpdate() {
-        CampaignMemberTriggerHelper.setInternationalSpeaker(newCampaignMemberList);
-        CampaignMemberTriggerHelper.leadOwnerAssignment(newCampaignMemberList);
+        CampaignMemberTriggerHelper.setInternationalSpeaker(newCampaignMemberList);                         // Low Consumption
     }
     protected override void afterInsert() {
-        CampaignMemberTriggerHelper.updateCampaignAndAccountIdCMList(newCampaignMemberList);
+        CampaignMemberTriggerHelper.leadOwnerAssignment(newCampaignMemberList);         // Execute Lead Trigger (Moved to After context) (Made Future)
         CampaignMemberTriggerHelper.createOpportunities(newCampaignMemberList, oldCampaignMemberMap, false);
-        //CampaignMemberTriggerHelper.createCFE(newCampaignMemberList, oldCampaignMemberMap);
     }
     protected override void afterUpdate() {
-        CampaignMemberTriggerHelper.updateCampaignAndAccountIdCMList(newCampaignMemberList);
+        CampaignMemberTriggerHelper.leadOwnerAssignment(newCampaignMemberList);         // Execute Lead Trigger (Moved to After context) (Made Future)
         CampaignMemberTriggerHelper.createOpportunities(newCampaignMemberList, oldCampaignMemberMap, false);
     }
 }

@@ -1269,70 +1269,11 @@
         <fullName>Foodpreferences__c</fullName>
         <externalId>false</externalId>
         <label>Food preferences</label>
+        <length>255</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>true</sorted>
-                <value>
-                    <fullName>Gluten Free</fullName>
-                    <default>false</default>
-                    <label>Gluten Free</label>
-                </value>
-                <value>
-                    <fullName>Multiple or other; please contact me.</fullName>
-                    <default>false</default>
-                    <label>Multiple or other; please contact me.</label>
-                </value>
-                <value>
-                    <fullName>No Beef</fullName>
-                    <default>false</default>
-                    <label>No Beef</label>
-                </value>
-                <value>
-                    <fullName>No Eggs or Dairy</fullName>
-                    <default>false</default>
-                    <label>No Eggs or Dairy</label>
-                </value>
-                <value>
-                    <fullName>None</fullName>
-                    <default>false</default>
-                    <label>None</label>
-                </value>
-                <value>
-                    <fullName>No Nuts</fullName>
-                    <default>false</default>
-                    <label>No Nuts</label>
-                </value>
-                <value>
-                    <fullName>No Pork</fullName>
-                    <default>false</default>
-                    <label>No Pork</label>
-                </value>
-                <value>
-                    <fullName>No Shellfish</fullName>
-                    <default>false</default>
-                    <label>No Shellfish</label>
-                </value>
-                <value>
-                    <fullName>Pescatarian</fullName>
-                    <default>false</default>
-                    <label>Pescatarian</label>
-                </value>
-                <value>
-                    <fullName>Vegan</fullName>
-                    <default>false</default>
-                    <label>Vegan</label>
-                </value>
-                <value>
-                    <fullName>Vegetarian</fullName>
-                    <default>false</default>
-                    <label>Vegetarian</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>GDCNumber__c</fullName>
@@ -1406,6 +1347,16 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>IndustrySector__c</fullName>
+        <externalId>false</externalId>
+        <label>Industry Sector</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>LEGAAreyouattendingaspartofapart__c</fullName>
@@ -4757,35 +4708,11 @@
         <fullName>Status__c</fullName>
         <externalId>false</externalId>
         <label>Status</label>
+        <length>255</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>true</sorted>
-                <value>
-                    <fullName>Active</fullName>
-                    <default>false</default>
-                    <label>Active</label>
-                </value>
-                <value>
-                    <fullName>Deceased</fullName>
-                    <default>false</default>
-                    <label>Deceased</label>
-                </value>
-                <value>
-                    <fullName>Duplicated</fullName>
-                    <default>false</default>
-                    <label>Duplicated</label>
-                </value>
-                <value>
-                    <fullName>Inactive</fullName>
-                    <default>false</default>
-                    <label>Inactive</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Suffix__c</fullName>

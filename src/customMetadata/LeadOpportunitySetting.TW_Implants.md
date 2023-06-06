@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">ANKYLOS;ATIS;ATIS EV;ATIS TX;Atlantis;DS PrimeTaper;Other;Pre-milled Blanks;Simplant;Simplant Planning Service;Simplant Pro;SmartFix;XiVE</value>
+        <value xsi:type="xsd:string">ANKYLOS;ATIS;ATIS EV;ATIS TX;Atlantis;DS PrimeTaper;Other Implants;Pre-milled Blanks;Simplant;Simplant Planning Service;Simplant Pro;SmartFix;XiVE</value>
     </values>
     <values>
         <field>Category__c</field>

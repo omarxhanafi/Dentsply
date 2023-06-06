@@ -17,6 +17,14 @@ Sales rep to obtain credit card number and call Customer Care at 1-800-221-0168 
         <value xsi:type="xsd:string">Obtain Credit Card Information</value>
     </values>
     <values>
+        <field>PDFLinkLabel__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>PDFLinkURL__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>RecordTypeDeveloperName__c</field>
         <value xsi:type="xsd:string">Clear_Aligners</value>
     </values>

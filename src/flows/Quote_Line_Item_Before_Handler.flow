@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>55.0</apiVersion>
-    <description>TFUS-000005172 - VAT with decimals compatibility</description>
+    <description>TFUS-000004637 - Update with correct VAT caldulation. The VAT calculation was done on non-discounted price.
+TFUS-000005064 - added Retail Price and Base Price as additional field updates (calculation already existed)</description>
+    <environments>Default</environments>
     <formulas>
         <description>Checks if Base Price exists - if not uses ListPrice</description>
         <name>BasePriceLogic</name>
@@ -74,19 +76,19 @@
             ),
             {!$Record.Product2.VAT__c} / 100,
             0)</expression>
-        <scale>8</scale>
+        <scale>2</scale>
     </formulas>
     <formulas>
         <name>VAT_LU</name>
         <dataType>Number</dataType>
         <expression>{!$Record.Product2.AlternateVAT__c} / 100</expression>
-        <scale>8</scale>
+        <scale>2</scale>
     </formulas>
     <formulas>
         <name>VAT_PT</name>
         <dataType>Number</dataType>
         <expression>{!$Record.Product2.AlternateVAT__c} / 100</expression>
-        <scale>8</scale>
+        <scale>2</scale>
     </formulas>
     <formulas>
         <name>VAT_TR</name>
@@ -98,7 +100,7 @@
             {!$Record.Product2.AlternateVAT__c} / 100
             )
             )</expression>
-        <scale>8</scale>
+        <scale>2</scale>
     </formulas>
     <formulas>
         <name>VATAmount</name>
@@ -116,13 +118,13 @@
             &apos;LU&apos;, {!VAT_LU} ,
             &apos;AD&apos;, 0,
             {!$Record.Product2.VAT__c} / 100)</expression>
-        <scale>8</scale>
+        <scale>2</scale>
     </formulas>
     <formulas>
         <name>VATCalculationinPercent</name>
         <dataType>Number</dataType>
         <expression>{!VATCalculation} * 100</expression>
-        <scale>2</scale>
+        <scale>0</scale>
     </formulas>
     <formulas>
         <name>VATRateText</name>
@@ -245,5 +247,5 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>

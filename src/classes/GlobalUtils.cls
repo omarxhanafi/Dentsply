@@ -124,8 +124,154 @@ public class GlobalUtils {
         return dependentPicklistValues;
     }
 
+    /**
+     * Assort the Opportunity Settings data (LeadOpportunitySetting__mdt) in a Map
+     * The map has either brand names or category names as keys and corresponding LeadOpportunitySetting__mdt values.
+     * @author hadib@salesforce.com | 20-02-2023 (Campaign Refactoring)
+     *
+     * @param oppSettings   Opportunity Settings metadata
+     *
+     * @return Map<String, LeadOpportunitySetting__mdt> - Map of settings classified by Brand or Category
+     */
+    public static Map<String, LeadOpportunitySetting__mdt> getSettingsMap(List<LeadOpportunitySetting__mdt> oppSettings)
+    {
+        Map<String, LeadOpportunitySetting__mdt> settingsMap = new Map<String, LeadOpportunitySetting__mdt>();
+
+        for (LeadOpportunitySetting__mdt setting : oppSettings)
+        {
+            if (setting.BrandsList__c != null)
+            {
+                String brands = setting.BrandsList__c;
+                String[] brandList = brands.split(';');
+
+                for (String brand : brandList)
+                {
+                    settingsMap.put(brand, setting);
+                }
+            }
+            else
+            {
+                settingsMap.put(setting.Category__c, setting);
+            }
+        }
+        return settingsMap;
+    }
+
+    /**
+     * Assort the Opportunity Settings data (LeadOpportunitySetting__mdt) in a Map
+     * @author hadib@salesforce.com | 20-02-2023 (Campaign Refactoring)
+     *
+     * @param oppSettings   Opportunity Settings metadata
+     *
+     * @return Map<String, LeadOpportunitySetting__mdt> - Map of settings classified by Brand or Category
+     */
+    public static Map<String, LeadOpportunitySetting__mdt> getSettingsMapWithNumberSignKey(LeadOpportunitySetting__mdt[] oppSettings)
+    {
+        Map<String, LeadOpportunitySetting__mdt> settingsMap = new Map<String, LeadOpportunitySetting__mdt>();
+
+        for (LeadOpportunitySetting__mdt setting : oppSettings)
+        {
+            if (setting.BrandsList__c != null)
+            {
+                String brands = setting.BrandsList__c;
+                String[] brandList = brands.split(';');
+
+                for (String brand : brandList)
+                {
+                    settingsMap.put(setting.Country__c + '#' + brand, setting);
+                }
+            }
+        }
+        return settingsMap;
+    }
+
+    /**
+     * Retrieve the list of settings corresponding for a country and a category
+     * @author hadib@salesforce.com | 20-02-2023 (Campaign Refactoring)
+     *
+     * @param countryId         Country Id
+     * @param categoryInput     Category
+     *
+     * @return List<LeadOpportunitySetting__mdt> - Map of lead/opportunity settings
+     */
+    public static List<LeadOpportunitySetting__mdt> getOpportunitySettings(String countryId, String categoryInput)
+    {
+        List<LeadOpportunitySetting__mdt> filteredLeadOpportunitySettings = new List<LeadOpportunitySetting__mdt>();
+
+        List<LeadOpportunitySetting__mdt> leadOpportunitySettings = getOpportunitySettings(new Set<String>{countryId});
+
+        if(!leadOpportunitySettings.isEmpty())
+        {
+            for(LeadOpportunitySetting__mdt setting : leadOpportunitySettings)
+            {
+                if(setting.Category__c == categoryInput)
+                {
+                    filteredLeadOpportunitySettings.add(setting);
+                }
+            }
+        }
+
+        return filteredLeadOpportunitySettings;
+    }
+
+    /**
+     * Retrieve the list of settings corresponding for a country and a category
+     * @author hadib@salesforce.com | 20-02-2023 (Campaign Refactoring)
+     *
+     * @param countriesSet2Digit    List of countries
+     *
+     * @return List<LeadOpportunitySetting__mdt> - Map of lead/opportunity settings
+     */
+    public static List<LeadOpportunitySetting__mdt> getOpportunitySettings(Set<String> countriesSet2Digit)
+    {
+        List<LeadOpportunitySetting__mdt> leadOpportunitySettings = new List<LeadOpportunitySetting__mdt>{};
+        if (Test.isRunningTest()) {
+            leadOpportunitySettings = [
+                    SELECT  DeveloperName, ShowManualSalesLeadOwnerAssignment__c, Category__c, DefaultLeadOwner__c, BrandsList__c, Country__c,
+                            AssignOwnerFrom__c, DefaultCampaignOwner__c, UserRoles__c, IsTest__c
+                    FROM LeadOpportunitySetting__mdt
+            ];
+        }
+        else {
+            leadOpportunitySettings = [
+                    SELECT  DeveloperName, ShowManualSalesLeadOwnerAssignment__c, Category__c, DefaultLeadOwner__c, BrandsList__c, Country__c,
+                            AssignOwnerFrom__c, DefaultCampaignOwner__c, UserRoles__c, IsTest__c
+                    FROM LeadOpportunitySetting__mdt
+                    WHERE   Country__c IN :countriesSet2Digit
+                            AND IsTest__c = :false
+            ];
+        }
+        return leadOpportunitySettings;
+    }
+
+    /**
+     * Returns a map of LeadOpportunitySetting__mdt settings based on a set of countries codes
+     * Key in a form of (setting.Country__c + '#' + brand)
+     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+     *
+     * @param Counties2Digits Set of Countries codes
+     *
+     * @return Map<String, LeadOpportunitySetting__mdt> - Map of LeadOpportunitySetting__mdt
+     */
+    public static Map<String, LeadOpportunitySetting__mdt>  getSettingsMapNumberSignKey(Set<String> Counties2Digits)
+    {
+        LeadOpportunitySetting__mdt[] oppSettings               = GlobalUtils.getOpportunitySettings(Counties2Digits);
+
+        Map<String, LeadOpportunitySetting__mdt> settingsMap    = GlobalUtils.getSettingsMapWithNumberSignKey(oppSettings);
+
+        return settingsMap;
+    }
 
 
-	
-
+    /*------------------------------------------------------------  
+    Description:    Method to retrieve a map with key devname and Id value for SObject recordType
+    Inputs:         @param SObjectName 
+    ------------------------------------------------------------*/
+    public static Map<String, Id> getRecordTypeMapNameIds(String ObjectName){
+        Map<String, Id> recorTypeMap = new Map<String, Id>();
+        for(RecordType recorTypeInfo : [SELECT DeveloperName, Id FROM RecordType WHERE SobjectType =: ObjectName AND IsActive = true ]){
+            recorTypeMap.put(recorTypeInfo.DeveloperName, recorTypeInfo.Id);
+        }
+        return recorTypeMap;
+    }
 }

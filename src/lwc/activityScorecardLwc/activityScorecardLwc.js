@@ -25,6 +25,7 @@ export default class ActivityScorecardLwc extends LightningElement {
     wiredGetAccountEvents({ error, data }){
         if (data) {
             this.activityScorecardResult = JSON.parse(data);
+            console.log("this.activityScorecardResult", this.activityScorecardResult);
 
             // Adapt the benchmark if the value is higher than the threshold
             if (this.activityScorecardResult?.completedTasksCount > this.completedTasksBenchmark){
@@ -50,8 +51,8 @@ export default class ActivityScorecardLwc extends LightningElement {
             this.eventsLoggedPercentage = this.activityScorecardResult?.eventsLoggedCount / this.eventsLoggedBenchmark * 100;
 
             // Format first event's date to the user’s locale
-            const dateObject = new Date(this.activityScorecardResult?.firstEventDate);
-            this.activityScorecardResult.firstEventDate = dateObject.toLocaleDateString(LOCALE);
+            const dateObject = new Date(this.activityScorecardResult?.firstEvent);
+            this.activityScorecardResult.firstEvent = this.activityScorecardResult?.firstEvent != null ? dateObject.toLocaleDateString(LOCALE) : null;
         } else if (error) {
             console.error(error);
         }

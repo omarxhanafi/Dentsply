@@ -52,7 +52,7 @@
     </values>
     <values>
         <field>AccountServiceDashboard__c</field>
-        <value xsi:type="xsd:string">Account_Analytics_User_Story_985</value>
+        <value xsi:type="xsd:string">EMEA_Service_Account_Page</value>
     </values>
     <values>
         <field>CountryCode__c</field>

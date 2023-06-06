@@ -40,6 +40,14 @@
         <value xsi:type="xsd:string">17. Complete SureSmile Business Review</value>
     </values>
     <values>
+        <field>PDFLinkLabel__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>PDFLinkURL__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>RecordTypeDeveloperName__c</field>
         <value xsi:type="xsd:string">Clear_Aligners_Global</value>
     </values>

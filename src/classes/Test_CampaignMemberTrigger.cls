@@ -108,72 +108,9 @@ public class Test_CampaignMemberTrigger {
         Test.stopTest();
     }
 
-    @isTest
-    public static void testetInternationalSpeaker() {
-        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accountsList = TestDataFactory.createAccounts(1, 'Non_ERP_Account', testUser.Id);
-        List<Contact> contactList = TestDataFactory.returnContacts(1, 'Contact_D', testUser.Id);
-        contactList.get(0).AccountId = accountsList.get(0).Id;
-        contactList.get(0).International_Speaker__c = true;
-        insert contactList;
-        List<Campaign> campaignList = TestDataFactory.createCampaigns(1, 'DNA_Campaign', testUser.Id);
-        List<CampaignMember> campaignMembertList = TestDataFactory.returnCampaignMembers(1);
 
-        campaignMembertList.get(0).ContactId = contactList.get(0).Id;
-        campaignMembertList.get(0).CampaignId = campaignList.get(0).Id;
-
-        Test.startTest();
-        insert campaignMembertList;
-        Test.stopTest();
-
-        System.assertEquals(true, [SELECT Id, International_Speaker__c FROM CampaignMember LIMIT 1].International_Speaker__c);
-    }
     
-    @isTest
-    public static void testCreateOpportunities(){
-               
-        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accountsList = TestDataFactory.createAccounts(2, 'CIM_Account', testUser.Id);
-        accountsList.get(1).OneAccount_Type__c = 'Distributor';
-        accountsList.get(0).Country__c = 'DE';
-        update accountsList;
-        
-        List<Contact> contactList = TestDataFactory.returnContacts(2, 'ContactGlobal', testUser.Id);
-        contactList.get(0).AccountId = accountsList.get(0).Id;
-        contactList.get(0).Email = 'test1.test@dentsplysirona.com.invalid';
-        contactList.get(0).InsertEmailMarketingConsentCollected__c = 'No';
-        contactList.get(1).AccountId = accountsList.get(1).Id;
-        contactList.get(1).Email = 'test2.test@dentsplysirona.com.invalid';
-        contactList.get(1).InsertEmailMarketingConsentCollected__c = 'No';
-        insert contactList;
-        
-        List<AccountContactRelation> relations = [SELECT AccountId, ContactId, Specialty__c FROM AccountContactRelation WHERE AccountId =: accountsList.get(1).Id];
-        
-        for(AccountContactRelation rel : relations){
-            rel.Specialty__c = 'Dealer Sales Rep (CEREC)';
-        }
-        update relations;
-        
-        List<Campaign> campaignList = TestDataFactory.returnCampaigns(1, 'Digital_Marketing_Campaign', testUser.Id);
-        campaignList.get(0).Brands__c = 'Sinius';
-        campaignList.get(0).Convert_To__c = 'Opportunity';
-        campaignList.get(0).Include_In_Dealer_Community__c = 'Yes';
-        insert campaignList;
-        List<CampaignMember> campaignMembertList = TestDataFactory.returnCampaignMembers(1);
 
-        campaignMembertList.get(0).ContactId = contactList.get(0).Id;
-        campaignMembertList.get(0).CampaignId = campaignList.get(0).Id;
-        campaignMembertList.get(0).Dealer__c = accountsList.get(1).Id;
-        campaignMembertList.get(0).Status = 'Registered';
-        
-		Test.startTest();
-        insert campaignMembertList;
-        campaignMembertList.get(0).Status = 'Responded';
-        update campaignMembertList;
-        	
-        Test.stopTest();        
-        
-    }
     
     @isTest
     public static void testCreateSalesLead(){

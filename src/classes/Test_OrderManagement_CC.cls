@@ -1,6 +1,8 @@
 /*-------------------------------------------------------------------------------------------------------
 Author:         Ahmed LOUDRASSI (Salesforce) 20191113
 Description:    OrderManagement_CC Class
+History:
+2023-05-11      Richard Trum    Updated opportunity and account record types
 --------------------------------------------------------------------------------------------------------*/
 
 @isTest(seeAllData=false)
@@ -193,8 +195,8 @@ public with sharing class Test_OrderManagement_CC {
             products.get(0).GlobalSKUMapping__c = productsParents.get(0).Id;
             insert products;
             List<PricebookEntry> pricebookEntries = TestDataFactory.createPricebookEntries(1, pricebooks, products);
-            List<Account> accounts = TestDataFactory.createAccounts(1, 'Non_ERP_Account', testUser.Id);
-            List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Account_Plan', testUser.Id);
+            List<Account> accounts = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
+            List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
             opportunities.get(0).AccountId = accounts.get(0).Id;
             insert opportunities;
             Test.startTest();
@@ -222,8 +224,8 @@ public with sharing class Test_OrderManagement_CC {
             products.get(0).GlobalSKUMapping__c = productsParents.get(0).Id;
             insert products;
             List<PricebookEntry> pricebookEntries = TestDataFactory.createPricebookEntries(1, pricebooks, products);
-            List<Account> accounts = TestDataFactory.createAccounts(1, 'Non_ERP_Account', testUser.Id);
-            List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Account_Plan', testUser.Id);
+            List<Account> accounts = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
+            List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
             opportunities.get(0).AccountId = accounts.get(0).Id;
             insert opportunities;
             Test.startTest();
@@ -300,8 +302,8 @@ public with sharing class Test_OrderManagement_CC {
             List<Pricebook2> pricebooks = TestDataFactory.returnPricebooks(1, 'BNL PRE');
             pricebooks.get(0).Contract_Discount_types__c = 'Implants';
             insert pricebooks;
-            List<Account> accounts = TestDataFactory.createAccounts(1, 'Non_ERP_Account', testUser.Id);
-            List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Account_Plan', testUser.Id);
+            List<Account> accounts = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
+            List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
             opportunities.get(0).AccountId = accounts.get(0).Id;
             insert opportunities;
             Field_Sales_Project_Members__c prospect1 = new Field_Sales_Project_Members__c();
@@ -378,8 +380,8 @@ public with sharing class Test_OrderManagement_CC {
             pricebooks.get(2).Contract_Discount_types__c = 'Implants';
             pricebooks.get(2).Pricebook_Channel__c = 'Free Good Order';
             insert pricebooks;
-            List<Account> accounts = TestDataFactory.createAccounts(1, 'Non_ERP_Account', testUser.Id);
-            List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Account_Plan', testUser.Id);
+            List<Account> accounts = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
+            List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
             opportunities.get(0).AccountId = accounts.get(0).Id;
             insert opportunities;
             List<Contact> contacts = TestDataFactory.returnContacts(1, 'ContactGlobal', testUser.Id);
@@ -423,8 +425,8 @@ public with sharing class Test_OrderManagement_CC {
             pricebooks.get(2).Contract_Discount_types__c = 'Implants';
             pricebooks.get(2).Pricebook_Channel__c = 'Free Good Order';
             insert pricebooks;
-            List<Account> accounts = TestDataFactory.createAccounts(1, 'Non_ERP_Account', testUser.Id);
-            List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Account_Plan', testUser.Id);
+            List<Account> accounts = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
+            List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
             opportunities.get(0).AccountId = accounts.get(0).Id;
             insert opportunities;
             List<Contact> contacts = TestDataFactory.returnContacts(1, 'ContactGlobal', testUser.Id);
@@ -465,7 +467,7 @@ public with sharing class Test_OrderManagement_CC {
             pricebooks.get(0).Pricebook_Channel__c = 'Direct';
             insert pricebooks;
             List<Account> accounts = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
-            List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Account_Plan', testUser.Id);
+            List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
             opportunities.get(0).AccountId = accounts.get(0).Id;
             insert opportunities;
             List<Contact> contacts = TestDataFactory.returnContacts(1, 'ContactGlobal', testUser.Id);

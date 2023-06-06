@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">Bonding;Composite;Finishing and Polishing;Matrix;Other</value>
+        <value xsi:type="xsd:string">Bonding;Composite;Finishing and Polishing;Matrix;Other Class II</value>
     </values>
     <values>
         <field>Category__c</field>

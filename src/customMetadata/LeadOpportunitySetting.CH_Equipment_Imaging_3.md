@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">Axano;DAC D;DAC Premium;DAC Professional;DAC Universal;INTEGO;Intego Ambidextrous;Intego Pro Ambidextrous;Sinius;SiroCam;T1 Contra-angles;T1 Turbines;T2 Contra-angles;T2 Turbines;TENEO;DACH Universal D</value>
+        <value xsi:type="xsd:string">Axano;DAC D;DAC Premium;DAC Professional;DAC Universal;INTEGO;Intego Ambidextrous;Intego Pro Ambidextrous;Sinius;SiroCam;T1 Contra-angles;T1 Turbines;T2 Contra-angles;T2 Turbines;TENEO;DACH Universal D;Other Equipment &amp; Imaging</value>
     </values>
     <values>
         <field>Category__c</field>

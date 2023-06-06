@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">Drufo;Other;Propel Acceledent;Propel Excellerator;Propel VPro;SureSmile Advanced;SureSmile Aligner;SureSmile IDB;SureSmile Ortho;Suresmile Wire</value>
+        <value xsi:type="xsd:string">Drufo;Other Orthodontics;Propel Acceledent;Propel Excellerator;Propel VPro;SureSmile Advanced;SureSmile Aligner;SureSmile IDB;SureSmile Ortho;Suresmile Wire</value>
     </values>
     <values>
         <field>Category__c</field>

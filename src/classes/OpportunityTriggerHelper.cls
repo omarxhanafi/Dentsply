@@ -6,6 +6,8 @@ History
 20210906    kdoruibin               TFUS-000002909: Updated setOpportunityName according to new naming framework
 20200907    Richard Trum            Created trigger framework for Opportunities
 20220729   Roberto Narbona            TFUS-000004576
+20230322    Roberto                 added setActualCloseDate method TFUS-000005474
+20230503    Richard Trum            commented out usage of old record types (TFUS-5578)
 
 ----------------------------------------------------------------------------------------*/
 
@@ -17,8 +19,9 @@ public with sharing class OpportunityTriggerHelper {
     Description:    Sets the Opportunity Pre-Defined field values
     Inputs:         @param newOpportunityList      List of new or updated opportunities
     ------------------------------------------------------------*/
-    public static void setPreDefinedFields(List<Opportunity> newOpportunityList)
+    public static void setPreDefinedFields(List<Opportunity> newOpportunityList, Map<Id, Opportunity> oldOpportunityMap)
     {
+        setActualCloseDate(newOpportunityList , oldOpportunityMap);
         setOpportunityName(newOpportunityList);
         setOpportunityOverallNotes(newOpportunityList);
     }
@@ -58,7 +61,7 @@ public with sharing class OpportunityTriggerHelper {
         BatchSettings__c settings = BatchSettings__c.getInstance('Default');
                     
         String recordTypeId = Schema.Sobjecttype.Opportunity.getRecordTypeInfosByDeveloperName().get('Lightning_Pipeline_Opportunity').getRecordTypeId();
-        String dealerRecordTypeId = Schema.Sobjecttype.Opportunity.getRecordTypeInfosByDeveloperName().get('Dealer_Community').getRecordTypeId();
+        //String dealerRecordTypeId = Schema.Sobjecttype.Opportunity.getRecordTypeInfosByDeveloperName().get('Dealer_Community').getRecordTypeId();
     
         Set<Id> accountIdSet = new Set<Id>();
         Set<Id> ownerIdSet = new Set<Id>();
@@ -79,7 +82,7 @@ public with sharing class OpportunityTriggerHelper {
         }
 
         for (Opportunity oppty : newOpportunityList) {
-            if (oppty.RecordTypeId != recordTypeId && oppty.RecordTypeId != dealerRecordTypeId) continue;
+            if (oppty.RecordTypeId != recordTypeId) continue; //&& oppty.RecordTypeId != dealerRecordTypeId
             if (oppty.ManualName__c != false) continue;
 
             Account relatedAccount = accountMap.get(oppty.AccountId);
@@ -210,27 +213,9 @@ public with sharing class OpportunityTriggerHelper {
         );
         
         //Get Custom Metadata records related to the previously queried countries
-        LeadOpportunitySetting__mdt[] oppSettings = new LeadOpportunitySetting__mdt[]{};
-        if(Test.IsRunningTest()){
-            oppSettings = [SELECT DeveloperName, Category__c, BrandsList__c, Country__c, AssignOwnerFrom__c, UserRoles__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE IsTest__c =: true];
-        }
-        else{
-        	oppSettings = [SELECT DeveloperName, Category__c, BrandsList__c, Country__c, AssignOwnerFrom__c, UserRoles__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE Country__c IN: countries AND IsTest__c =: false];
-        }
-        
-        Map<String, LeadOpportunitySetting__mdt> settingsMap = new Map<String, LeadOpportunitySetting__mdt>();
-        for(LeadOpportunitySetting__mdt setting: oppSettings){
-            if(setting.BrandsList__c != null){
-                String brands = setting.BrandsList__c;
-                String[] brandList = brands.split(';');
-                for(String brand : brandList){
-                    settingsMap.put(brand, setting);
-                }
-            }
-            else{
-                settingsMap.put(setting.Category__c, setting);
-            }    
-        }
+        LeadOpportunitySetting__mdt[] oppSettings = GlobalUtils.getOpportunitySettings(countries);
+
+        Map<String, LeadOpportunitySetting__mdt> settingsMap = GlobalUtils.getSettingsMap(oppSettings);
         
         
         //Loop Opportunities
@@ -354,6 +339,26 @@ public with sharing class OpportunityTriggerHelper {
         if (!assetsToInsert.isEmpty()) {
             insert assetsToInsert;
         }
+    }
+
+    /*------------------------------------------------------------  
+    Description:    
+    Inputs:         @param newOpportunityList and @param oldOpportunityMap
+    ------------------------------------------------------------*/
+    public static void setActualCloseDate(List<Opportunity> newOpportunityList, Map<Id, Opportunity> oldOpportunityMap) {
+        
+        for(Integer i=0; i < newOpportunityList.Size(); i++){
+            /* for updates when opp has been closed*/
+            if( oldOpportunityMap != null && 
+                newOpportunityList[i].IsClosed == true &&
+                oldOpportunityMap.get(newOpportunityList[i].Id).IsClosed == false){
+                    newOpportunityList[i].ActualCloseDate__c = date.today();
+            }
+            /* for inserts */
+            if(oldOpportunityMap == null && newOpportunityList[i].IsClosed == true){
+                newOpportunityList[i].ActualCloseDate__c = date.today();
+            }
+        }        
     }
 
 }

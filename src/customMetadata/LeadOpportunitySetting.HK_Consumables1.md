@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">AlginX;Anaestadent;Aquasil;Calibra;Cavitron;Ceram.x;Ceram.x Spectra ST;Ceram.x Spectra ST Flow;Enhance;Inserts;Integrity;Neo Spectra;NuPro;Oraqix;Other;Oxivir;Palodent 360;Palodent Plus;Palodent V3;Prime &amp; Bond active;Prime &amp; Bond Universal;Prime and Bond;Purevac;RDH;Resurge Bath;SDR flow+;SmartCem2;SmartLite Pro;SmartLite Pro Endo Activator;Surefil one;Surefil SDR;TPH</value>
+        <value xsi:type="xsd:string">AlginX;Anaestadent;Aquasil;Calibra;Cavitron;Ceram.x;Ceram.x Spectra ST;Ceram.x Spectra ST Flow;Enhance;Inserts;Integrity;Neo Spectra;NuPro;Oraqix;Other Consumables;Oxivir;Palodent 360;Palodent Plus;Palodent V3;Prime &amp; Bond active;Prime &amp; Bond Universal;Prime and Bond;Purevac;RDH;Resurge Bath;SDR flow+;SmartCem2;SmartLite Pro;SmartLite Pro Endo Activator;Surefil one;Surefil SDR;TPH</value>
     </values>
     <values>
         <field>Category__c</field>

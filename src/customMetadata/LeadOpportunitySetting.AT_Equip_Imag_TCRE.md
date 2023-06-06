@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">Axano;INTEGO;Intego Pro;Other;Sinius;SiroCam</value>
+        <value xsi:type="xsd:string">Axano;INTEGO;Intego Pro;Other Equipment &amp; Imaging;Sinius;SiroCam</value>
     </values>
     <values>
         <field>Category__c</field>

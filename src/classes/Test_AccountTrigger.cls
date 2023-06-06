@@ -8,6 +8,7 @@ History
 20210405    Nisreen AlSaleh    Added test for creatEntitlement method  (#TFUS-000001231) 
 20220906    Tobias Nygren    Removed tests for default owner (TFUS-000004729)
 20220906    Nisreen AlSaleh    Update creatEntitlement test method (TFUS-000004769)
+20230224    roberto narbona     Cleanup story (TFUS-000003722)
 ------------------------------------------------------------*/
 
 @isTest(seeAllData=false)
@@ -106,7 +107,7 @@ public class Test_AccountTrigger {
     @isTest
     private static void testSetPayerLookup() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> testAccountList = TestDataFactory.returnAccounts(5, 'Non_ERP_Account', testUser.Id);
+        List<Account> testAccountList = TestDataFactory.returnAccounts(5, 'ERP_Account', testUser.Id);
         List<Account> testAccountsToInsertList = new List<Account>();
 
         Account testAccount0 = testAccountList[0];
@@ -153,58 +154,50 @@ public class Test_AccountTrigger {
     @isTest
     public static void testOverridePotential() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts = TestDataFactory.returnAccounts(7, 'Non_ERP_Account', testUser.Id);
+        List<Account> accounts = TestDataFactory.returnAccounts(7, 'ERP_Account', testUser.Id);
         //  WF-ACC-01 : Override ATL Abut Potential
         accounts.get(0).TQ_CY_D_DD_Abuts_Atlantis__c = 10;
-        
+        accounts.get(0).Movex__c = '100';
         //  WF-ACC-02 : Override ATL ISUS Potential
         accounts.get(1).TQ_CY_D_DD_IsusProsth_Isus__c  = 10;
-        
+        accounts.get(1).Movex__c = '101';
         //  WF-ACC-03 : Override Simplant Potential
         accounts.get(2).TQ_CY_D_DD_Guides_Simplant__c  = 10;
-        
+        accounts.get(2).Movex__c = '102';
         //  WF-ACC-04 : Overwrite Implants Potential
         accounts.get(3).TQ_CY_D_DI_Implants_AllBrands__c = 10;
         accounts.get(3).Custom_Segmentation__c = 'Long Purchasing Cycle >1 Year';
-        
+        accounts.get(3).Movex__c = '103';
+
         accounts.get(4).TQ_CY_D_DI_Implants_AllBrands__c = 5;
         accounts.get(4).Custom_Segmentation__c = 'Long Purchasing Cycle >1 Year';
         accounts.get(4).TQ_CY_1_D_DI_Implants_AllBrands__c = -20;
-        
+        accounts.get(4).Movex__c = '104';
+
         accounts.get(5).TQ_CY_D_DI_Implants_AllBrands__c = 10;
-        
+        accounts.get(5).Movex__c = '105';
+
         accounts.get(6).TQ_CY_D_DI_Implants_AllBrands__c = 10;
         accounts.get(6).TQ_CY_1_TD_D_DI_Implants_AllBrands__c = 1;
+        accounts.get(6).Movex__c = '106';
         
         Test.startTest();
         insert accounts;
         Test.stopTest();
-
+        System.assertEquals(0 , [SELECT Id,Implants_Potential_Year__c FROM Account WHERE Id =: accounts.get(0).Id].Implants_Potential_Year__c);
+        System.assertEquals(0 , [SELECT Id,Implants_Potential_Year__c FROM Account WHERE Id =: accounts.get(1).Id].Implants_Potential_Year__c);
+        System.assertEquals(0 , [SELECT Id,Implants_Potential_Year__c FROM Account WHERE Id =: accounts.get(2).Id].Implants_Potential_Year__c);
+        System.assertEquals(5 , [SELECT Id,Implants_Potential_Year__c FROM Account WHERE Id =: accounts.get(3).Id].Implants_Potential_Year__c);
+        System.assertEquals(0 , [SELECT Id,Implants_Potential_Year__c FROM Account WHERE Id =: accounts.get(4).Id].Implants_Potential_Year__c);
+        System.assertEquals(10 , [SELECT Id,Implants_Potential_Year__c FROM Account WHERE Id =: accounts.get(5).Id].Implants_Potential_Year__c);
+        System.assertEquals(9 , [SELECT Id,Implants_Potential_Year__c FROM Account WHERE Id =: accounts.get(6).Id].Implants_Potential_Year__c);
     }
-    @isTest
-    public static void testDentalProspectMovex() {
-        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        //  WF-ACC-05 : Dental Clinical Prospect - Movex
-        List<Account> accounts1 = TestDataFactory.returnAccounts(1, 'Lab_Prospect_D', testUser.Id);
-        accounts1.get(0).Movex__c = 'XX34590';
-        //  WF-ACC-06 : Dental Lab Prospect - Movex
-        List<Account> accounts2 = TestDataFactory.returnAccounts(1, 'Clinical_Prospect_D', testUser.Id);
-        accounts2.get(0).Movex__c = 'XX345691';
-        
-        accounts1.addAll(accounts2);
-        Test.startTest();
-        insert accounts1;
-        Test.stopTest();
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'Lab_Customer_D'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(0).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'Clinical_Customer_D'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(1).Id].RecordTypeId);
-    }
+    
     @isTest
     public static void testUpdateVolume() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
         List<Account> accounts1 = TestDataFactory.returnAccounts(8, 'Non_ERP_Account', testUser.Id);
-        List<Account> accounts2 = TestDataFactory.returnAccounts(8, 'Lab_Customer_D', testUser.Id);
+        List<Account> accounts2 = TestDataFactory.returnAccounts(8, 'Non_ERP_Lab_Account', testUser.Id);
         
         // WF-ACC-12 : Update Volume SP Guides to No Usage
         accounts1.get(0).SP_Guides_Potential_Year__c = 0 ;
@@ -230,22 +223,7 @@ public class Test_AccountTrigger {
         // WF-ACC-19 : Update Volume (Implants) to High
         accounts1.get(7).Implants_Potential_Year__c = 120 ;
         
-        // WF-ACC-20 : Update Volume (ATL ISUS) to No Usage
-        accounts2.get(0).ATL_ISUS_Potential_Year__c = 0 ;
-        
-        // WF-ACC-21 : Update Volume (ATL ISUS) to Low
-        accounts2.get(1).ATL_ISUS_Potential_Year__c = 16 ;
-        accounts2.get(1).Country__c = 'NL';
-        
-        // WF-ACC-22 : Update Volume (ATL ISUS) to Medium
-        accounts2.get(2).ATL_ISUS_Potential_Year__c = 40 ;
-        accounts2.get(2).Country__c = 'NL';
-        
-        // WF-ACC-23 : Update Volume (ATL ISUS) to High
-        accounts2.get(3).ATL_ISUS_Potential_Year__c = 100 ;
-        accounts2.get(3).Country__c = 'NL';
-        
-        // WF-ACC-24 : Update Volume (ATL Abut) to No Usage
+       // WF-ACC-24 : Update Volume (ATL Abut) to No Usage
         accounts2.get(4).ATL_Abut_Potential_Year__c = 0 ;
         
         // WF-ACC-25 : Update Volume (ATL Abut) to Low
@@ -279,14 +257,6 @@ public class Test_AccountTrigger {
                             [SELECT Id,Volume_Implants__c FROM Account WHERE Id =: accounts1.get(6).Id].Volume_Implants__c);
         System.assertEquals('High Usage',
                             [SELECT Id,Volume_Implants__c FROM Account WHERE Id =: accounts1.get(7).Id].Volume_Implants__c);
-        System.assertEquals('No Usage',
-                            [SELECT Id,Volume_ATL_ISUS__c FROM Account WHERE Id =: accounts1.get(8).Id].Volume_ATL_ISUS__c);
-        System.assertEquals('Low Usage',
-                            [SELECT Id,Volume_ATL_ISUS__c FROM Account WHERE Id =: accounts1.get(9).Id].Volume_ATL_ISUS__c);
-        System.assertEquals('Medium Usage',
-                            [SELECT Id,Volume_ATL_ISUS__c FROM Account WHERE Id =: accounts1.get(10).Id].Volume_ATL_ISUS__c);
-        System.assertEquals('High Usage',
-                            [SELECT Id,Volume_ATL_ISUS__c FROM Account WHERE Id =: accounts1.get(11).Id].Volume_ATL_ISUS__c);
         System.assertEquals('No Usage',
                             [SELECT Id,Volume_ATL_Abut__c FROM Account WHERE Id =: accounts1.get(12).Id].Volume_ATL_Abut__c);
         System.assertEquals('Low Usage',
@@ -358,7 +328,7 @@ public class Test_AccountTrigger {
     @isTest
     public static void testUpdateAccountsInfo() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.returnAccounts(5, 'Clinical_Customer_D', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.returnAccounts(5, 'Non_ERP_Account', testUser.Id);
         
         // WF-ACC-37 : Set product area = Dental
         accounts1.get(0).Product_Area__c = '';
@@ -380,12 +350,8 @@ public class Test_AccountTrigger {
         insert accounts1;
         Test.stopTest();
         
-        System.assertEquals('Dental',
-                            [SELECT Id,Product_Area__c FROM Account WHERE Id =: accounts1.get(0).Id].Product_Area__c);
         System.assertEquals('Administrative Reason',
                             [SELECT Id,Loss_Type_D__c FROM Account WHERE Id =: accounts1.get(1).Id].Loss_Type_D__c);
-        System.assertEquals('Segmentation N/A',
-                            [SELECT Id,Custom_Segmentation__c FROM Account WHERE Id =: accounts1.get(2).Id].Custom_Segmentation__c);
         System.assertEquals(Date.today() - 1,
                             [SELECT Id,AWO_Approval_Date__c FROM Account WHERE Id =: accounts1.get(3).Id].AWO_Approval_Date__c);
         System.assertEquals(null,
@@ -491,7 +457,7 @@ public class Test_AccountTrigger {
     private static void testupdateRelatedContactAddresses() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
 
-        List<Account> testAccountList = TestDataFactory.returnAccounts(5, 'Non_ERP_Account', testUser.Id);        
+        List<Account> testAccountList = TestDataFactory.returnAccounts(5, 'CIM_Account', testUser.Id);        
 
         for (Account account : testAccountList) {
             account.Country__c = 'TR';

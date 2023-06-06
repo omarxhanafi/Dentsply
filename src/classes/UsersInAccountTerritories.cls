@@ -295,7 +295,7 @@ public with sharing class UsersInAccountTerritories {
 
                 // Step 3 - Retrieve the leadOpp Settings that let us know which object will be used to get the obj territories (Dealer or Account)
                 Account currentAccount = [SELECT Id, Country__c FROM Account WHERE Id = :accountId];
-                LeadOpportunitySetting__mdt leadOppSettings = getLeadOppSettings(currentAccount,categoryInput,brandInput);
+                LeadOpportunitySetting__mdt leadOppSettings = getLeadOppSettingsByCountryAndCategoryAndBrand(currentAccount?.Country__c, categoryInput, brandInput);
 
                 // We retrieved by (category,Account Country). Then we will filter by (brand), and we return one record.
                 List<ObjectTerritory2Association> filteredTerritories = new List<ObjectTerritory2Association>();
@@ -432,29 +432,61 @@ public with sharing class UsersInAccountTerritories {
     }
 
     /**
-     * Extract brand settings from a set of LeadOpportunitySetting__mdt records
+     * Get a list of LeadOpportunitySetting__mdt based on the combination of (Country, Category and brand)
      * @author hadib@salesforce.com | 01-12-2022
      *
-     * @param currentAccount    The current account opened
+     * @param countryInput      Country input
      * @param categoryInput     Category selected in the 'New Sales Lead' modal
      * @param brandInput        Brand selected in the 'New Sales Lead' modal
      *
      * @return LeadOpportunitySetting__mdt - Correspondent settings for the combination of the current (account country,category,brand)
      */
-    private static LeadOpportunitySetting__mdt getLeadOppSettings(Account currentAccount, String categoryInput, String brandInput)
+    private static LeadOpportunitySetting__mdt getLeadOppSettingsByCountryAndCategoryAndBrand(String countryInput, String categoryInput, String brandInput)
     {
-        LeadOpportunitySetting__mdt[] leadOppSettings = getLeadOppSettings(currentAccount, categoryInput);
+        LeadOpportunitySetting__mdt[] leadOppSettings = getLeadOppSettingsByCountryAndCategory(countryInput, categoryInput);
 
+        LeadOpportunitySetting__mdt brandSettings = filterBrandSettings(leadOppSettings, brandInput);
+
+        return brandSettings;
+    }
+
+    /**
+     * Get a list of LeadOpportunitySetting__mdt based on the combination of (Country, Category and brand)
+     * @author hadib@salesforce.com | 01-12-2022
+     *
+     * @param countryInput      Country input
+     * @param categoryInput     Category selected in the 'New Sales Lead' modal
+     * @param brandInput        Brand selected in the 'New Sales Lead' modal
+     *
+     * @return LeadOpportunitySetting__mdt - Correspondent settings for the combination of the current (account country,category,brand)
+     */
+    @AuraEnabled
+    public static LeadOpportunitySetting__mdt getLeadOppSettingsByCountryAndBrand(String countryInput, String brandInput)
+    {
+        LeadOpportunitySetting__mdt[] leadOppSettings = getLeadOppSettingsByCountry(countryInput);
+
+        LeadOpportunitySetting__mdt brandSettings = filterBrandSettings(leadOppSettings, brandInput);
+
+        return brandSettings;
+    }
+
+    /**
+     * Get a filtered list of LeadOpportunitySetting__mdt based on the brand field and a list of LeadOpportunitySetting__mdt records
+     * @author ohanafi@salesforce.com | 22-03-2023
+     *
+     * @param leadOppSettings      LeadOpportunitySetting__mdt records
+     * @param brandInput        Brand selected in the 'New Sales Lead' modal
+     *
+     * @return LeadOpportunitySetting__mdt - Filtered list based on brand
+     */
+    private static LeadOpportunitySetting__mdt filterBrandSettings(LeadOpportunitySetting__mdt[] leadOppSettings, String brandInput) {
         LeadOpportunitySetting__mdt brandSettings;
-        for (LeadOpportunitySetting__mdt setting : leadOppSettings)
-        {
-            if (String.isNotBlank(setting.BrandsList__c))
-            {
+        for (LeadOpportunitySetting__mdt setting : leadOppSettings) {
+            if (String.isNotBlank(setting.BrandsList__c)) {
                 String brands = setting.BrandsList__c ;
                 List<String> brandList = brands.split(';');
 
-                if(brandList.contains(brandInput))
-                {
+                if (brandList.contains(brandInput)) {
                     brandSettings = setting;
                     break;
                 }
@@ -464,14 +496,14 @@ public with sharing class UsersInAccountTerritories {
     }
 
     /**
-     * TODO
+     * Get a list of LeadOpportunitySetting__mdt based on the combination of (Country and Category)
      * @author naoussar@salesforce.com | 23-09-2022
      *
-     * @param acc               Current Account
+     * @param countryInput      Country
      * @param categoryInput     Category selected in the modal
      * @return LeadOpportunitySetting__mdt - custom metadata records
      */
-    private static LeadOpportunitySetting__mdt[] getLeadOppSettings(Account acc, String categoryInput)
+    private static LeadOpportunitySetting__mdt[] getLeadOppSettingsByCountryAndCategory(String countryInput, String categoryInput)
     {
         LeadOpportunitySetting__mdt[] leadOppSettings = new LeadOpportunitySetting__mdt[]{};
 
@@ -479,7 +511,28 @@ public with sharing class UsersInAccountTerritories {
                 SELECT  DeveloperName, ShowManualSalesLeadOwnerAssignment__c, Category__c, BrandsList__c, Country__c,
                         AssignOwnerFrom__c, UserRoles__c, IsTest__c
                 FROM    LeadOpportunitySetting__mdt
-                WHERE   Country__c = :acc.Country__c AND Category__c = :categoryInput AND IsTest__c = :false
+                WHERE   Country__c = :countryInput AND Category__c = :categoryInput AND IsTest__c = :false
+        ];
+
+        return leadOppSettings;
+    }
+
+    /**
+     * Get a list of LeadOpportunitySetting__mdt based on the Country field
+     * @author ohanafi@salesforce.com | 22-03-2023
+     *
+     * @param countryInput      Country
+     * @return LeadOpportunitySetting__mdt - custom metadata records
+     */
+    private static LeadOpportunitySetting__mdt[] getLeadOppSettingsByCountry(String countryInput)
+    {
+        LeadOpportunitySetting__mdt[] leadOppSettings = new LeadOpportunitySetting__mdt[]{};
+
+        leadOppSettings = [
+                SELECT  DeveloperName, ShowManualSalesLeadOwnerAssignment__c, Category__c, BrandsList__c, Country__c,
+                        AssignOwnerFrom__c, UserRoles__c, IsTest__c
+                FROM    LeadOpportunitySetting__mdt
+                WHERE   Country__c = :countryInput AND IsTest__c = :false
         ];
 
         return leadOppSettings;
@@ -591,5 +644,27 @@ public with sharing class UsersInAccountTerritories {
         currentUserRole.User = currentUser;
         currentUserRole.RoleInTerritory2 = 'Current user';
         return currentUserRole;
+    }
+
+
+    /**
+     * TODO
+     * @author          richard.trum@glimt.se | 28-03-2023
+     * @param category  TODO
+     * @param accountId   TODO
+     *
+     * @return List<LeadOpportunitySetting__mdt> - TODO
+     */
+    @AuraEnabled
+    public static List<LeadOpportunitySetting__mdt> getOpportunitySettings(String category, String accountid){
+        
+        List<Account> accList = [SELECT Id, Country__c FROM Account WHERE Id =: accountId];
+
+        List<LeadOpportunitySetting__mdt> settings = new List<LeadOpportunitySetting__mdt>();
+        if(accList.size()>0){
+            settings = [SELECT DeveloperName, Category__c, Country__c, BrandsList__c, ShowDistributor__c, Dealer_Distributor_is_Mandatory__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE (Category__c =:category AND Country__c =: accList[0].Country__c)];
+        }
+        System.debug(settings);
+        return settings;
     }
 }

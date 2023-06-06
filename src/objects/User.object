@@ -335,6 +335,15 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>CRM_Internal_Team_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>CRM Internal Team Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>CRM_team_comments__c</fullName>
         <externalId>false</externalId>
         <label>CRM team comments</label>
@@ -4948,6 +4957,14 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>New Zealand</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>Australia</controllingFieldValue>
+                <controllingFieldValue>Brazil</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Accounting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>New Zealand</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
                 <controllingFieldValue>Australia</controllingFieldValue>
@@ -4970,9 +4987,35 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
             <valueSettings>
                 <controllingFieldValue>New Zealand</controllingFieldValue>
                 <controllingFieldValue>Portugal</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>Spain</controllingFieldValue>
+                <controllingFieldValue>Australia</controllingFieldValue>
+                <controllingFieldValue>Brazil</controllingFieldValue>
+                <controllingFieldValue>Taiwan</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Marketing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>New Zealand</controllingFieldValue>
+                <controllingFieldValue>Australia</controllingFieldValue>
+                <controllingFieldValue>Brazil</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Quality</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>New Zealand</controllingFieldValue>
+                <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
                 <controllingFieldValue>Australia</controllingFieldValue>
                 <valueName>Sales Manager</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>New Zealand</controllingFieldValue>
+                <controllingFieldValue>Canada</controllingFieldValue>
+                <controllingFieldValue>Australia</controllingFieldValue>
+                <controllingFieldValue>Brazil</controllingFieldValue>
+                <controllingFieldValue>USA</controllingFieldValue>
+                <valueName>Sales Operations</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>New Zealand</controllingFieldValue>
@@ -5028,15 +5071,6 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Portugal</controllingFieldValue>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Spain</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>Taiwan</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <valueName>Marketing</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
@@ -5046,12 +5080,6 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
                 <controllingFieldValue>Portugal</controllingFieldValue>
                 <controllingFieldValue>Spain</controllingFieldValue>
                 <valueName>Specialist</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <valueName>Accounting</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Canada</controllingFieldValue>
@@ -5127,12 +5155,6 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <valueName>Orthodontics</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Canada</controllingFieldValue>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <valueName>Sales Operations</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Canada</controllingFieldValue>
@@ -5223,11 +5245,6 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
                 <controllingFieldValue>Brazil</controllingFieldValue>
                 <controllingFieldValue>USA</controllingFieldValue>
                 <valueName>Procedural Solutions</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Brazil</controllingFieldValue>
-                <controllingFieldValue>USA</controllingFieldValue>
-                <valueName>Quality</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Brazil</controllingFieldValue>

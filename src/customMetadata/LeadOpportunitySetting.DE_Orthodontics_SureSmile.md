@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">SureSmile Aligner;SureSmile IDB;SureSmile Ortho</value>
+        <value xsi:type="xsd:string">SureSmile Aligner;SureSmile IDB;SureSmile Ortho;Other Orthodontics</value>
     </values>
     <values>
         <field>Category__c</field>

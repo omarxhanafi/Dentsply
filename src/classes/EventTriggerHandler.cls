@@ -3,6 +3,7 @@ Author: 		Ahmed LOUDRASSI (Salesforce) 20191107
 Description:   	Event Trigger Handler Class
 History	
 20191107 	Ahmed LOUDRASSI			CallReportEventTrigger, CallReportEventTriggerAfterInsert, DC_EventBackgroundJobs an DeleteClonedChildEvent triggers. (#)
+20230426    Roberto Narbona         TFUS-000005610
 --------------------------------------------------------------------------------------------------------*/
 
 public class EventTriggerHandler extends TriggerHandler {
@@ -21,6 +22,7 @@ public class EventTriggerHandler extends TriggerHandler {
         EventTriggerHelper.callReportEvent2(newEventList);
         EventTriggerHelper.updateNewOutlookEvent(newEventList);
         EventTriggerHelper.setEventDescription(newEventList, oldEventMap);
+        EventTriggerHelper.beforeSalesforceMapsScheduled(newEventList);
     }
     protected override void beforeUpdate() {
         EventTriggerHelper.preventRecurringCFE(newEventList);

@@ -162,6 +162,11 @@
                     <label>LB</label>
                 </value>
                 <value>
+                    <fullName>MA</fullName>
+                    <default>false</default>
+                    <label>MA</label>
+                </value>
+                <value>
                     <fullName>MX</fullName>
                     <default>false</default>
                     <label>MX</label>
@@ -235,6 +240,11 @@
                     <fullName>TW</fullName>
                     <default>false</default>
                     <label>TW</label>
+                </value>
+                <value>
+                    <fullName>UA</fullName>
+                    <default>false</default>
+                    <label>UA</label>
                 </value>
                 <value>
                     <fullName>UK</fullName>
@@ -391,6 +401,11 @@
                     <label>LBP</label>
                 </value>
                 <value>
+                    <fullName>MAD</fullName>
+                    <default>false</default>
+                    <label>MAD</label>
+                </value>
+                <value>
                     <fullName>MXN</fullName>
                     <default>false</default>
                     <label>MXN</label>
@@ -459,6 +474,11 @@
                     <fullName>TWD</fullName>
                     <default>false</default>
                     <label>TWD</label>
+                </value>
+                <value>
+                    <fullName>UAH</fullName>
+                    <default>false</default>
+                    <label>UAH</label>
                 </value>
                 <value>
                     <fullName>USD</fullName>

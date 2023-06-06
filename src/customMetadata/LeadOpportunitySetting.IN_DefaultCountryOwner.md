@@ -24,11 +24,11 @@
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>
-        <value xsi:type="xsd:string">0056M00000ATLsXQAX</value>
+        <value xsi:type="xsd:string">00520000005QSsK</value>
     </values>
     <values>
         <field>DefaultLeadOwner__c</field>
-        <value xsi:type="xsd:string">0056M00000ATLsXQAX</value>
+        <value xsi:type="xsd:string">00520000005QSsK</value>
     </values>
     <values>
         <field>DefaultProcedureTrackerOwnerId__c</field>

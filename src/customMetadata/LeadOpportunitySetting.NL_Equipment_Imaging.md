@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">Axeos;Heliodent Plus;Orthophos E;Orthophos S 2D;Orthophos S 3D;Orthophos SL 2D;Orthophos SL 3D;SICAT Suite;SiroCam;SiroCam UAF plus;Axano;Other</value>
+        <value xsi:type="xsd:string">Axeos;Heliodent Plus;Orthophos E;Orthophos S 2D;Orthophos S 3D;Orthophos SL 2D;Orthophos SL 3D;SICAT Suite;SiroCam;SiroCam UAF plus;Axano;Other Equipment &amp; Imaging</value>
     </values>
     <values>
         <field>Category__c</field>

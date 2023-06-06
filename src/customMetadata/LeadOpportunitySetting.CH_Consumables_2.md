@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">SmartCem2;SmartLite Pro;SmartLite Pro Endo Activator;Surefil one;Surefil SDR;Tessera;TPH</value>
+        <value xsi:type="xsd:string">SmartCem2;SmartLite Pro;SmartLite Pro Endo Activator;Surefil one;Surefil SDR;Tessera;TPH;Other Consumables</value>
     </values>
     <values>
         <field>Category__c</field>

@@ -40,6 +40,7 @@ export default class CreateOrderOmLwc extends LightningElement {
     @track relatedAccountsWithContact = []; 
     @track selectedAccountsWithContactId = '';
     @track isMicroserviceCallOutPricebook = false;  
+    sourceRecordMandatory = false;
     @track loading = true;
     @track noneLabel = '--None--';
     @track labels = {
@@ -95,6 +96,7 @@ export default class CreateOrderOmLwc extends LightningElement {
                     for(let i = 0; i < this.pricebooks.length; i++){
                         if(this.selectedPricebookId == this.pricebooks[i].Id){
                             this.isMicroserviceCallOutPricebook = this.pricebooks[i].ShowPricingfromMicroServiceOM__c;
+                            this.sourceRecordMandatory = this.pricebooks[i].SourceId__c ? true : false;
                             continue;
                         }
                     }
@@ -305,9 +307,7 @@ export default class CreateOrderOmLwc extends LightningElement {
     }
     
     get enableCreateButton() {
-        //return !this.selectedPricebookId || !this.selectedCurrency;
-        //return false;
-        return !this.selectedPricebookId || !this.selectedCurrency || (this.isMicroserviceCallOutPricebook && !this.selectedSourceRecordId && this.accountRecordType =='CIM_Account');
+        return !this.selectedPricebookId || !this.selectedCurrency || ((this.isMicroserviceCallOutPricebook || this.sourceRecordMandatory) && !this.selectedSourceRecordId && this.accountRecordType =='CIM_Account');
     }
     
     cancel() {

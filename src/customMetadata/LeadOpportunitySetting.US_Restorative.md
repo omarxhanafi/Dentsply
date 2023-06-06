@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">SDR flow+;SmartLite Pro;Surefil one;Aquasil;Calibra;Palodent Plus;Prime &amp; Bond active;TPH;Tessera;SmartCem2;Palodent 360</value>
+        <value xsi:type="xsd:string">SDR flow+;SmartLite Pro;Surefil XXX one;Aquasil;Calibra;Palodent Plus;Prime &amp; Bond active;TPH;Tessera;SmartCem2;Palodent 360</value>
     </values>
     <values>
         <field>Category__c</field>

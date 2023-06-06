@@ -7,6 +7,7 @@ History:
 210426          modified getProducts() to return list ordered on Article__c
 201015          Added readAccess check on getPriceBooks()
 230131			TFUS-000005107
+230420          TFUS-000005506
 ----------------------------------------------------------------------------------------*/
 public with sharing class OrderManagement_CC {
 
@@ -55,7 +56,7 @@ public with sharing class OrderManagement_CC {
     public static List<PriceBook2> getPriceBooks() {
         try {
             Map<Id, Pricebook2> pricebookMap = new Map<Id, Pricebook2>([
-                SELECT Id, Name, ShowPricingfromMicroServiceOM__c  
+                SELECT Id, Name, ShowPricingfromMicroServiceOM__c, SourceId__c   
                 FROM Pricebook2 
                 WHERE IsActive = true AND Name != 'Standard Price Book' AND Name != 'Sirona Products' AND ObjectTypeUseOM__c != 'Opportunity'
                 ORDER BY Name ASC

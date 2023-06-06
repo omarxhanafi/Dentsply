@@ -5,6 +5,7 @@
  *
  * @History
  * 15-02-2023   Omar     Created AssignMarginGuidanceHelper class
+ * 17-04-2023   Omar     TFUS-000005556 - Added new logic for Canada (using the region code instead of area code)
  */
 
 public with sharing class AssignMarginGuidanceHelper {
@@ -22,7 +23,7 @@ public with sharing class AssignMarginGuidanceHelper {
     public static void calculateMargin(Id orderId) {
         // Get the order and its related line items
         Order order = [
-                SELECT Id, Account.DC_ETM_Code__c, Pricebook2.MarginGuidanceCalculation__c, (SELECT Id, Product2Id, Quantity, ListPrice, TotalPrice, SalesPrice__c, MarginGuidance__c FROM OrderItems)
+                SELECT Id, Account.DC_ETM_Code__c, Account.Country__c, AccountId, Pricebook2.MarginGuidanceCalculation__c, (SELECT Id, Product2Id, Quantity, ListPrice, TotalPrice, SalesPrice__c, MarginGuidance__c FROM OrderItems)
                 FROM Order
                 WHERE Id = :orderId
         ];
@@ -32,9 +33,16 @@ public with sharing class AssignMarginGuidanceHelper {
             return;
         }
 
-        // Init the area code / product id sets
-        String areaCode = order?.Account?.DC_ETM_Code__c != null ? order?.Account?.DC_ETM_Code__c.substring(0, 3) : '';
+        // Init the area code / product id set
+        String areaRegionCode;
         Set<Id> productIdSet = new Set<Id>();
+
+        // If the account's country is Canada, We look for the region code through territory management
+        if(order?.Account?.Country__c == 'CA'){
+            areaRegionCode = getRegionCodeFromOrder(order);
+        } else { // Otherwise we get the area code directly from the etm code of the account
+            areaRegionCode = order?.Account?.DC_ETM_Code__c != null ? order?.Account?.DC_ETM_Code__c.substring(0, 3) : '';
+        }
 
         // Generating the area code / product id sets
         for (OrderItem eachOrderItem : order.OrderItems) {
@@ -45,16 +53,13 @@ public with sharing class AssignMarginGuidanceHelper {
         List<MarginGuidance__c> marginGuidanceList = [
                 SELECT Id, AreaCode__c, Product__c, Cost__c, Lowerguidance__c, UpperGuidance__c
                 FROM MarginGuidance__c
-                WHERE AreaCode__c = :areaCode
+                WHERE AreaCode__c = :areaRegionCode
                 OR AreaCode__c = 'All'
                 OR Product__c IN :productIdSet
         ];
 
-
         // Generating the Order Item / Margin Guidance Map
-        Map<OrderItem, MarginGuidance__c> orderItemMarginGuidanceMap = generateOrderItemMarginGuidanceMap(order, marginGuidanceList);
-
-        System.debug('Map Size : ' + orderItemMarginGuidanceMap.size());
+        Map<OrderItem, MarginGuidance__c> orderItemMarginGuidanceMap = generateOrderItemMarginGuidanceMap(areaRegionCode, order, marginGuidanceList);
 
         // Calculate the total price sum
         Decimal totalPriceSum = 0;
@@ -65,10 +70,7 @@ public with sharing class AssignMarginGuidanceHelper {
         // Calculating margins for the order items
         if(totalPriceSum > 0){
             updateOrderItems(orderItemMarginGuidanceMap, totalPriceSum);
-            System.debug('Total Price Sum : ' + totalPriceSum);
         }
-
-        System.debug('Updated Items List : ' + orderItemMarginGuidanceMap.keySet());
 
         // Update list of order items
         try {
@@ -78,6 +80,52 @@ public with sharing class AssignMarginGuidanceHelper {
             throw new AssignMarginGuidanceCustomException(e.getMessage());
         }
 
+    }
+
+    /**
+         * getRegionCodeFromOrder     Get the region code from an order based on ETM (For Canada orders).
+         * @author ohanafi@salesforce.com | 17-04-2023
+         *
+         * @param
+         *                  order - The Order record to generate the map for.
+         *
+         * @return          The region code
+         *
+         */
+    private static String getRegionCodeFromOrder(Order order) {
+        // Getting a list of all territories related to the account id
+        List<ObjectTerritory2Association> objectTerritoryAssociations = [
+                SELECT Territory2Id
+                FROM ObjectTerritory2Association
+                WHERE ObjectId = :order.AccountId
+        ];
+
+        Set<Id> territoryIdSet = new Set<Id>();
+
+        for (ObjectTerritory2Association eachAssociation : objectTerritoryAssociations) {
+            territoryIdSet.add(eachAssociation.Territory2Id);
+        }
+
+        // We get a list of all users based on the list of territories and the role Sales Rep (Impl)
+        List<UserTerritory2Association> usersInTerritoryList = [
+                SELECT Territory2.Name
+                FROM UserTerritory2Association
+                WHERE Territory2Id IN :territoryIdSet AND RoleInTerritory2 = 'Sales Rep (IMPL)'
+        ];
+
+        if (!usersInTerritoryList.isEmpty()) {
+            String territoryName = usersInTerritoryList[0].Territory2.Name;
+
+            // Find the index of the region code's starting position
+            Integer start = !String.isEmpty(territoryName) ? territoryName.indexOf('RBM') : -1;
+
+            if (start != -1) {
+                // Extract the region code
+                return territoryName.substring(start, start + 5);
+            }
+        }
+
+        return null;
     }
 
     /**
@@ -119,24 +167,24 @@ public with sharing class AssignMarginGuidanceHelper {
          * generateOrderItemMarginGuidanceMap     Generate a map of OrderItem records and their associated MarginGuidance__c records based on a given order and a list of MarginGuidance__c records.
          * @author ohanafi@salesforce.com | 16-02-2023
          *
-         * @param           order - The Order record to generate the map for.
+         * @param
+         *                  areaRegionCode - Area or Region code of the order's account.
+         *                  order - The Order record to generate the map for.
          *                  marginGuidanceList - A list of MarginGuidance__c records to use for mapping.
          *
          * @return          A map of OrderItem records and their associated MarginGuidance__c records.
          *
          */
-    private static Map<OrderItem, MarginGuidance__c> generateOrderItemMarginGuidanceMap(Order order, List<MarginGuidance__c> marginGuidanceList) {
+    private static Map<OrderItem, MarginGuidance__c> generateOrderItemMarginGuidanceMap(String areaRegionCode, Order order, List<MarginGuidance__c> marginGuidanceList) {
         // Init Order Item / Margin Guidance Map
         Map<OrderItem, MarginGuidance__c> orderItemMarginGuidanceMap = new Map<OrderItem, MarginGuidance__c>();
-
-        String areaCode = order?.Account?.DC_ETM_Code__c != null ? order?.Account?.DC_ETM_Code__c.substring(0, 3) : 'All';
 
         for (OrderItem eachOrderItem : order.OrderItems) {
             Id itemProductId = eachOrderItem.Product2Id;
 
             for (MarginGuidance__c eachMarginGuidance : marginGuidanceList) {
                 // We check if there's a margin guidance record with both matching area code and product id
-                if (eachMarginGuidance.AreaCode__c == areaCode && eachMarginGuidance.Product__c == itemProductId) {
+                if (eachMarginGuidance.AreaCode__c == areaRegionCode && eachMarginGuidance.Product__c == itemProductId) {
                     orderItemMarginGuidanceMap.put(eachOrderItem, eachMarginGuidance);
                     break;
 

@@ -4,6 +4,7 @@ Description:    Opportunity Trigger Handler Class.
 History 
 <Date>      <Authors Name>     <Brief Description of Change>
 20200907    Richard Trum       Created trigger framework for Opportunities
+20230322    Roberto            added oldOpportunityMap parameter in setPreDefinedFields TFUS-000005474
 ------------------------------------------------------------*/
 
 public class OpportunityTriggerHandler extends TriggerHandler {
@@ -18,11 +19,11 @@ public class OpportunityTriggerHandler extends TriggerHandler {
     }
     
     protected override void beforeInsert() {
-        OpportunityTriggerHelper.setPreDefinedFields(newOpportunityList);
+        OpportunityTriggerHelper.setPreDefinedFields(newOpportunityList, oldOpportunityMap);
     }
     
     protected override void beforeUpdate() {
-        OpportunityTriggerHelper.setPreDefinedFields(newOpportunityList);
+        OpportunityTriggerHelper.setPreDefinedFields(newOpportunityList, oldOpportunityMap);
         OpportunityTriggerHelper.createAssets(newOpportunityList);
     }
     

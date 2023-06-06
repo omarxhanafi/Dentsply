@@ -74,7 +74,6 @@ export default class NavigateToCreateRecord extends LightningElement {
             finalString = finalString.replace(regex, replacementString);
         }
         //finalString = finalString.replace(/(:")\W[^\w"']*(")/g, '$1$2');
-        console.log('finalString::' + finalString);
         const navigateToCreateRecord = new CustomEvent('navigatetonewrecord', {
             detail: {
                 defaultFields: finalString

@@ -73,7 +73,7 @@ public with sharing class CampaignTriggerHelper {
                 'InPersonEventCampaign' => 'InPersonEventCampaign'};
             Map<String, String> rtDiCampaignList = new Map<String, String> {'DI_Campaign' => 'DI_Campaign',
                 'NA_Activity_Request_Form' => 'NA_Activity_Request_Form', 
-                'NATradeShow' => 'NATradeShow', 'NA_Sponsorship' => 'NA_Sponsorship', 'CventCampaign' => 'CventCampaign'};
+                'NATradeShow' => 'NATradeShow', 'NA_Sponsorship' => 'NA_Sponsorship'};
 
             for(Campaign campaign : newCampaignMap.values()) {
                 CampaignMemberStatus status;
@@ -147,6 +147,17 @@ public with sharing class CampaignTriggerHelper {
                     statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Opportunity Closed Won', 11, false, false));
                     statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Opportunity Closed Lost', 12, false, false));
                     statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Removed From Campaign', 13, false, false));
+                }
+                else if (campaign.RecordTypeId.equals(GlobalUtils.getRecordTypeId('Campaign', 'CventCampaign')))
+                {
+                    statiTempInsert.add(returnCampaignMemberStatus(campaign.Id,'Temporary', 99, true, true));
+                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Pending Approval', 3, true, false));
+                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'No Response', 4, false, false));
+                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Accepted', 5, false, false));
+                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Declined', 6, false, true));
+                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Visited', 7, false, true));
+                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Waitlisted', 8, false, true));
+                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Cancelled', 9, false, true));
                 }
                 //Cvent attendee statuses:
                 // - No response
@@ -352,44 +363,29 @@ public with sharing class CampaignTriggerHelper {
             for (CountryCodeMap__mdt country : countryCodeMetadta) {
                 countryCode3DigitKeyMap.put(country.Country_Code_3_digit__c, country);
             }
-            for(Campaign camp : newCampaignList){  
-                countriesSet2Digit.add(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c);
-            }
-
-            LeadOpportunitySetting__mdt[] oppSettings = new LeadOpportunitySetting__mdt[]{};
-            if(Test.IsRunningTest()){
-                oppSettings = [SELECT DeveloperName, DefaultLeadOwner__c, BrandsList__c, Country__c, DefaultCampaignOwner__c, UserRoles__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE IsTest__c =: true];
-            }
-            else{
-                oppSettings = [SELECT DeveloperName, DefaultLeadOwner__c, BrandsList__c, Country__c, DefaultCampaignOwner__c, UserRoles__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE Country__c IN: countriesSet2Digit AND IsTest__c =: false];
-            }
-            
-            Map<String, LeadOpportunitySetting__mdt> settingsMap = new Map<String, LeadOpportunitySetting__mdt>();
-            for(LeadOpportunitySetting__mdt setting: oppSettings){
-                if(setting.BrandsList__c != null){
-                    String brands = setting.BrandsList__c;
-                    String[] brandList = brands.split(';');
-                    for(String brand : brandList){
-                        settingsMap.put(setting.Country__c+'#'+brand, setting);
-                    }
+            for(Campaign camp : newCampaignList){
+                if(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c) != null)
+                {
+                    countriesSet2Digit.add(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c);
                 }
             }
-            String digitalId = GlobalUtils.getRecordTypeId('Campaign', 'Digital_Marketing_Campaign');
 
-            for(Campaign camp : newCampaignList){  
-                if(camp.recordTypeId == digitalId && currentUser == eloquaIntegrationUser && ((System.Trigger.isInsert == true ) || (camp.OwnerId == eloquaIntegrationUserId && System.Trigger.isInsert == false ))){
-                camp.OwnerId = settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#'+camp.Brands__c) != null && settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#'+camp.Brands__c).DefaultCampaignOwner__c != null ? settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#'+camp.Brands__c).DefaultCampaignOwner__c : settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#DefaultCountryOwner').DefaultCampaignOwner__c;
+            if(!countriesSet2Digit.isEmpty())
+            {
+                LeadOpportunitySetting__mdt[] oppSettings = GlobalUtils.getOpportunitySettings(countriesSet2Digit);
+
+                Map<String, LeadOpportunitySetting__mdt> settingsMap = GlobalUtils.getSettingsMapWithNumberSignKey(oppSettings);
+
+                String digitalId = GlobalUtils.getRecordTypeId('Campaign', 'Digital_Marketing_Campaign');
+
+                for(Campaign camp : newCampaignList)
+                {
+                    if(camp.recordTypeId == digitalId
+                            && currentUser == eloquaIntegrationUser && ((System.Trigger.isInsert == true ) || (camp.OwnerId == eloquaIntegrationUserId && System.Trigger.isInsert == false ))){
+                        camp.OwnerId = settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#'+camp.Brands__c) != null && settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#'+camp.Brands__c).DefaultCampaignOwner__c != null ? settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#'+camp.Brands__c).DefaultCampaignOwner__c : settingsMap.get(countryCode3DigitKeyMap.get(camp.Country_Code_3_digit__c).Country_Code_2_digit__c+'#DefaultCountryOwner').DefaultCampaignOwner__c;
+                    }
                 }
             }
         }
     }
 }
-
-/*
-[Campaign].RecordType.DeveloperName = 'Digital_Marketing_Campaign' &&
-    (   (Isnew() && $User.Full_Name__c = 'Eloqua Integration')
-         ||
-         ( ! Isnew() && $User.Full_Name__c = 'Eloqua Integration' && 
-         [Campaign].Owner.Full_Name__c = 'Eloqua Integration' )
-     ) 
-*/

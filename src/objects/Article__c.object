@@ -518,61 +518,11 @@ Related_Case__r.Account.BillingCountry</formula>
         <valueSet>
             <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
-                    <fullName>No Exception</fullName>
-                    <default>true</default>
-                    <label>No Exception</label>
-                </value>
-                <value>
-                    <fullName>No record of purchase</fullName>
+                    <fullName>Additional Item Not Part of Exchange</fullName>
                     <default>false</default>
-                    <label>No record of purchase</label>
-                </value>
-                <value>
-                    <fullName>Shelf life &lt; 1 yr</fullName>
-                    <default>false</default>
-                    <label>Shelf life &lt; 1 yr</label>
-                </value>
-                <value>
-                    <fullName>Purchased &gt; 180 days</fullName>
-                    <default>false</default>
-                    <label>Purchased &gt; 180 days - No Exchange</label>
-                </value>
-                <value>
-                    <fullName>Not a DS Product</fullName>
-                    <default>false</default>
-                    <label>Not a DS Product</label>
-                </value>
-                <value>
-                    <fullName>Product Opened</fullName>
-                    <default>false</default>
-                    <label>Product Opened</label>
-                </value>
-                <value>
-                    <fullName>Writing on Product</fullName>
-                    <default>false</default>
-                    <label>Writing on Product</label>
-                </value>
-                <value>
-                    <fullName>Product Crushed</fullName>
-                    <default>false</default>
-                    <label>Product Crushed</label>
-                </value>
-                <value>
-                    <fullName>Expired</fullName>
-                    <default>false</default>
-                    <label>Expired</label>
-                </value>
-                <value>
-                    <fullName>Damaged Product</fullName>
-                    <default>false</default>
-                    <label>Damaged Product</label>
-                </value>
-                <value>
-                    <fullName>Ripped label</fullName>
-                    <default>false</default>
-                    <label>Ripped label</label>
+                    <label>Additional Item Not Part of Exchange</label>
                 </value>
                 <value>
                     <fullName>Blood/Residue Stain</fullName>
@@ -580,19 +530,9 @@ Related_Case__r.Account.BillingCountry</formula>
                     <label>Blood/Residue Stain</label>
                 </value>
                 <value>
-                    <fullName>Staples</fullName>
+                    <fullName>Damaged Product</fullName>
                     <default>false</default>
-                    <label>Staples</label>
-                </value>
-                <value>
-                    <fullName>Missing TX Sticker</fullName>
-                    <default>false</default>
-                    <label>Missing TX Sticker</label>
-                </value>
-                <value>
-                    <fullName>Tape Damage</fullName>
-                    <default>false</default>
-                    <label>Tape Damage</label>
+                    <label>Damaged Product</label>
                 </value>
                 <value>
                     <fullName>Discolored Labels</fullName>
@@ -600,14 +540,84 @@ Related_Case__r.Account.BillingCountry</formula>
                     <label>Discolored Labels</label>
                 </value>
                 <value>
-                    <fullName>Additional Item Not Part of Exchange</fullName>
+                    <fullName>Expired</fullName>
                     <default>false</default>
-                    <label>Additional Item Not Part of Exchange</label>
+                    <label>Expired</label>
+                </value>
+                <value>
+                    <fullName>Free Goods</fullName>
+                    <default>false</default>
+                    <label>Free Goods</label>
+                </value>
+                <value>
+                    <fullName>Missing TX Sticker</fullName>
+                    <default>false</default>
+                    <label>Missing TX Sticker</label>
+                </value>
+                <value>
+                    <fullName>No Exception</fullName>
+                    <default>true</default>
+                    <label>No Exception</label>
                 </value>
                 <value>
                     <fullName>No Product In Package</fullName>
                     <default>false</default>
                     <label>No Product In Package</label>
+                </value>
+                <value>
+                    <fullName>No record of purchase</fullName>
+                    <default>false</default>
+                    <label>No record of purchase</label>
+                </value>
+                <value>
+                    <fullName>Not a DS Product</fullName>
+                    <default>false</default>
+                    <label>Not a DS Product</label>
+                </value>
+                <value>
+                    <fullName>Product Crushed</fullName>
+                    <default>false</default>
+                    <label>Product Crushed</label>
+                </value>
+                <value>
+                    <fullName>Product Opened</fullName>
+                    <default>false</default>
+                    <label>Product Opened</label>
+                </value>
+                <value>
+                    <fullName>Promo</fullName>
+                    <default>false</default>
+                    <label>Promo</label>
+                </value>
+                <value>
+                    <fullName>Purchased &gt; 180 days</fullName>
+                    <default>false</default>
+                    <label>Purchased &gt; 180 days - No Exchange</label>
+                </value>
+                <value>
+                    <fullName>Ripped label</fullName>
+                    <default>false</default>
+                    <label>Ripped label</label>
+                </value>
+                <value>
+                    <fullName>Shelf life &lt; 1 yr</fullName>
+                    <default>false</default>
+                    <label>Shelf life &lt; 1 yr</label>
+                </value>
+                <value>
+                    <fullName>Staples</fullName>
+                    <default>false</default>
+                    <label>Staples</label>
+                </value>
+                <value>
+                    <fullName>Tape Damage</fullName>
+                    <default>false</default>
+                    <label>Tape Damage</label>
+                </value>
+                <value>
+                    <fullName>Writing on Product</fullName>
+                    <default>false</default>
+                    <label>Writing on Product</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -790,6 +800,10 @@ Related_Case__r.Account.BillingCountry</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Free Goods</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Missing TX Sticker</fullName>
                 <default>false</default>
             </values>
@@ -815,6 +829,10 @@ Related_Case__r.Account.BillingCountry</formula>
             </values>
             <values>
                 <fullName>Product Opened</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promo</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -907,7 +925,15 @@ Related_Case__r.Account.BillingCountry</formula>
         <picklistValues>
             <picklist>Return_Exception_Requested__c</picklist>
             <values>
+                <fullName>Free Goods</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>No record of purchase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promo</fullName>
                 <default>false</default>
             </values>
             <values>

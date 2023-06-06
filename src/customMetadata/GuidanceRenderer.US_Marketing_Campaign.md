@@ -61,6 +61,14 @@
         <value xsi:type="xsd:string">Marketing Campaign</value>
     </values>
     <values>
+        <field>PDFLinkLabel__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>PDFLinkURL__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>RecordTypeDeveloperName__c</field>
         <value xsi:type="xsd:string">Clear_Aligners</value>
     </values>

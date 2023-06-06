@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">AH Plus;AH Temp;All Other Endo;All Other – Obturation;Apex Locator;AH Plus Bioceramic Sealer;Glidepath Files;GuttaCore;GuttaCore/Calamus;GuttaSmart;Irrigation Needle;Kits &amp; Motors;Propex IQ;ProTaper Gold;ProTaper Next;ProTaper Ultimate;TruNatomy;WaveOne Gold;Wave One Gold Glider;X-SMART;X-SMART Apex Locator;X-SMART IQ;X-SMART Plus;X-SMART PRO+</value>
+        <value xsi:type="xsd:string">AH Plus;AH Temp;All Other Endo;All Other – Obturation;Apex Locator;AH Plus Bioceramic Sealer;Glidepath Files;GuttaCore;GuttaCore/Calamus;GuttaSmart;Irrigation Needle;Kits &amp; Motors;Propex IQ;ProTaper Gold;ProTaper Next;ProTaper Ultimate;TruNatomy;WaveOne Gold;Wave One Gold Glider;X-SMART;X-SMART Apex Locator;X-SMART IQ;X-SMART Plus;X-SMART PRO+;Other Endodontics</value>
     </values>
     <values>
         <field>Category__c</field>

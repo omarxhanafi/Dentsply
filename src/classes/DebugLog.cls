@@ -21,6 +21,10 @@ global without sharing class DebugLog {
         createLog(DebugLog.INFO, description, objectId);
     }
 
+    public static void addInfo(String description, String objectId, String comments){
+        createLog(DebugLog.INFO, description, objectId, comments);
+    }
+
     public static void addError(String description){
         createLog(DebugLog.ERROR, description);
     }
@@ -56,6 +60,16 @@ global without sharing class DebugLog {
         dl.Severity__c = severity;
         dl.Message__c = description.left(32768);
         dl.DateTime__c = System.now();
+        dl.ObjectId__c = objectId.left(18);
+        Database.Saveresult saveresult = Database.insert(dl);
+    }
+
+    private static void createLog(String severity, String description, String objectId, String comments){
+        DebugLog__c dl = new DebugLog__c();
+        dl.Severity__c = severity;
+        dl.Message__c = description.left(32768);
+        dl.DateTime__c = System.now();
+        dl.Comments__c = comments.left(32768);
         dl.ObjectId__c = objectId.left(18);
         Database.Saveresult saveresult = Database.insert(dl);
     }

@@ -14,7 +14,7 @@ private class Test_PushAmountToOpportunities
         if (date.today() > cutOffDate)
             CDate = CDate.addYears(1);
         
-        RecordType rtGrowLabAtlantis = [SELECT Id, Name, DeveloperName, SobjectType FROM RecordType WHERE RecordType.DeveloperName = 'GROW_Lab_Atlantis'];
+        RecordType rtGrowLabAtlantis = [SELECT Id, Name, DeveloperName, SobjectType FROM RecordType WHERE RecordType.DeveloperName = 'Lightning_Pipeline_Opportunity']; //'GROW_Lab_Atlantis'];
 
         Opportunity AtlOpp = new Opportunity(
             Name='Test Atl Op',

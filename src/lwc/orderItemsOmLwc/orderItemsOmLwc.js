@@ -902,7 +902,9 @@ export default class OrderItemsOmLwc extends LightningElement {
                 
             })
             .catch(error => {
-                console.log(error);
+                let errorDetail = error.body.stackTrace ? error.body.stackTrace : error.body.output.errors[0].message;
+                showToast(this, this.userUiTheme, 'ERROR', error.body.message + errorDetail, 'error');
+                this.loading = false;
             });
         }
 

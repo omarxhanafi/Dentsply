@@ -7,6 +7,7 @@
      * @param helper    Helper Class
      */
     init: function (cmp, event, helper) {
+
         if (sessionStorage) {
             console.log('Validation log: ' + sessionStorage);
 

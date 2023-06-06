@@ -12,11 +12,11 @@
     </values>
     <values>
         <field>Max__c</field>
-        <value xsi:type="xsd:double">124000.0</value>
+        <value xsi:type="xsd:double">167050.0</value>
     </values>
     <values>
         <field>Min__c</field>
-        <value xsi:type="xsd:double">111000.0</value>
+        <value xsi:type="xsd:double">149300.0</value>
     </values>
     <values>
         <field>ProfessionGroup__c</field>

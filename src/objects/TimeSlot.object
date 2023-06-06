@@ -253,6 +253,10 @@
         <type>MasterDetail</type>
     </fields>
     <fields>
+        <fullName>RecordsetFilterCriteriaId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>StartTime</fullName>
     </fields>
     <fields>

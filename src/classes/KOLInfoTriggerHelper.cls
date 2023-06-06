@@ -4,6 +4,7 @@ Description:   	KOL Information Trigger Helper Class
 Test Class:      
 History	
 20191129 		Richard Trum			Created triggers in the trigger framework for the KOL Information object
+20230413		Richard Trum			Bulkified the method setExpertName
 --------------------------------------------------------------------------------------------------------*/
 
 public with sharing class KOLInfoTriggerHelper {
@@ -24,16 +25,37 @@ public with sharing class KOLInfoTriggerHelper {
         }
     }
     
+    /*------------------------------------------------------------	
+	Description:   	Method to set/override the name of the KOL Information record based on the Contact
+    Inputs:        	@param expertList
+	------------------------------------------------------------*/
+
     public static void setExpertName(List<Expert__c> expertlist){
-      for(Expert__c exp:expertlist){
+    
+    Set<Id> expertContactIds = new Set<Id>();
+    for(Expert__c kol : expertlist){
+        if(kol.Contact__c != null){
+            expertContactIds.add(kol.Contact__c);
+        }    
+    }     
+     
+    Map<Id, Contact> contactMap = new Map<Id, Contact>([SELECT Id, FirstName, LastName FROM Contact WHERE Id IN: expertContactIds]);
+        
+    for(Expert__c exp:expertlist){
         if(exp.Contact__c != null){
-            Contact c = [select id, FirstName, LastName from Contact where Id=:exp.Contact__c];
+            Contact c = contactMap.get(exp.Contact__c);
             exp.Name = c.FirstName + ' ' + c.LastName + ' - KOL info';
         }
 
     }
   
     }
+
+    /*------------------------------------------------------------	
+	Description:   	Method to automatically check the "Not a Healthcare Professional" checkbox based on profession
+    Inputs:        	@param expertList
+	------------------------------------------------------------*/
+
     
     public static void setNonHCProfession(List<Expert__c> expertlist){
         for(Expert__c exp : expertlist){          

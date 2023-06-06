@@ -2,7 +2,7 @@ global with sharing class leadConvert {
     
     @InvocableMethod(label='Convert Lead' description='Converts a lead to an account/contact' category='Lead')
   	public static List<String> convertLead(List<ConvertLeadRequest> input) {
-			System.debug('Init lead convert');
+        try {
             Database.LeadConvert lc = new Database.LeadConvert();
             lc.setLeadId(input[0].leadId);
         	lc.setConvertedStatus(input[0].convertedStatus);
@@ -20,7 +20,6 @@ global with sharing class leadConvert {
         	//Contact
         	
         	if (input[0].contactId != '' && input[0].contactId != null) {
-                System.debug('Contact Id : ' + input[0].contactId);
               lc.setContactId(input[0].contactId);
               
                 Contact c = [SELECT Id, AccountId FROM Contact WHERE Id =: input[0].contactId];
@@ -34,7 +33,7 @@ global with sharing class leadConvert {
                 /*if(input[0].convertToPersonAccount != null && input[0].convertToPersonAccount){
                     lc.setRelatedPersonAccountId(input[0].accountId);
                 }*/
-                
+                    
     		}
 
             if (input[0].overWriteLeadSource != null && input[0].overWriteLeadSource) {
@@ -44,29 +43,51 @@ global with sharing class leadConvert {
         	if (input[0].sendEmailToOwner != null && input[0].sendEmailToOwner) {
               lc.setSendNotificationEmail(input[0].sendEmailToOwner);
             }
-            System.debug(lc);
-        
-            Database.LeadConvertResult lcr = Database.convertLead(lc, true);
+
+            Database.LeadConvertResult lcr = null;
+
+            Database.DMLOptions dmlOpts = new Database.DMLOptions();
+            dmlOpts.duplicateRuleHeader.allowSave = true;
+            dmlOpts.optAllOrNone = true;
+
+            lcr = Database.convertLead(lc, dmlOpts);
+
+
             if (lcr.isSuccess()) {
-                  List<String> result = new List<String>();
-                	String contactId = lcr.getContactId();
-                	System.debug('Contact id: ' + contactId);
-                	if(contactId != ''){
-                    	result.add(lcr.getContactId());
-                	}
-                	else{
-                		result.add(lcr.getAccountId());
-                    }    
-                  //
-                  /*ConvertLeadActionResult result = new ConvertLeadActionResult();
-                  result.accountId = lcr.getAccountId();
-                  result.contactId = lcr.getContactId();
-                  result.opportunityId = lcr.getOpportunityId();*/
-                  return result;
+                List<String> result = new List<String>();
+                String contactId = lcr.getContactId();
+                if(contactId != ''){
+                    result.add(lcr.getContactId());
+                }
+                else{
+                    result.add(lcr.getAccountId());
+                }
+                //
+                /*ConvertLeadActionResult result = new ConvertLeadActionResult();
+                result.accountId = lcr.getAccountId();
+                result.contactId = lcr.getContactId();
+                result.opportunityId = lcr.getOpportunityId();*/
+                return result;
             } else {
-              	System.debug(lcr.getErrors()[0].getMessage());
                 throw new ConvertLeadActionException(lcr.getErrors()[0].getMessage());
             }
+
+        } catch (Exception e) {
+            String errorMessage = e.getMessage();
+            Integer startIndex = errorMessage.indexOf(':', errorMessage.indexOf(':') + 1) + 2;
+            if (startIndex == -1) {
+                throw new ConvertLeadActionException(errorMessage);
+            } else {
+                String filteredMessage = errorMessage.substring(startIndex);
+                Integer endIndex = filteredMessage.indexOf(':');
+
+                if(endIndex != -1){
+                    filteredMessage = filteredMessage.substring(0, endIndex);
+                }
+
+                throw new ConvertLeadActionException(filteredMessage);
+            }
+        }
         
     }
     

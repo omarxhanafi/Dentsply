@@ -160,7 +160,7 @@ A Margin guidance record defines the different layers of margin thresholds per c
         <description>Should be equaled to Account DC_ETM_Code__c (First 3 characters)</description>
         <externalId>false</externalId>
         <inlineHelpText>Area Code to be matched with the account&apos;s territory area code available on the account&apos;s ETM Code (First 3 characters)</inlineHelpText>
-        <label>Area Code</label>
+        <label>Area/Region Code</label>
         <length>255</length>
         <required>false</required>
         <trackHistory>true</trackHistory>

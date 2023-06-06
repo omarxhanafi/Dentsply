@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">CEREC Hub;CEREC MC X;CEREC MC XL;CEREC MTL;CEREC Omnicam AC;CEREC Primemill Full System;CEREC Primescan AC;CEREC SpeedFire;Omnicam AC;Omnicam AC 2.0;Omnicam AF/AI;Other;Primemill;Primeprint;Primescan AC;Primescan Connect</value>
+        <value xsi:type="xsd:string">CEREC Hub;CEREC MC X;CEREC MC XL;CEREC MTL;CEREC Omnicam AC;CEREC Primemill Full System;CEREC Primescan AC;CEREC SpeedFire;Omnicam AC;Omnicam AC 2.0;Omnicam AF/AI;Other Digital Group;Primemill;Primeprint;Primescan AC;Primescan Connect</value>
     </values>
     <values>
         <field>Category__c</field>

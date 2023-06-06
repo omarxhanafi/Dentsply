@@ -2879,7 +2879,7 @@ Rest .... Europe</description>
         <fullName>CventId__c</fullName>
         <description>Field used for matching Contacts between Cvent and Salesforce</description>
         <externalId>false</externalId>
-        <formula>Id</formula>
+        <formula>IF(OR(ISNULL(MasterContactID__c), ISBLANK(MasterContactID__c)), &apos;DUMMY&apos;, MasterContactID__c)</formula>
         <label>Cvent Matching Id</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -8497,6 +8497,11 @@ False&apos; if the owner of contact is different than the account</description>
                     <label>Norway</label>
                 </value>
                 <value>
+                    <fullName>Pakistan</fullName>
+                    <default>false</default>
+                    <label>Pakistan</label>
+                </value>
+                <value>
                     <fullName>Poland</fullName>
                     <default>false</default>
                     <label>Poland</label>
@@ -13276,6 +13281,10 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone_F__c,&quot;&
                 <default>false</default>
             </values>
             <values>
+                <fullName>Pakistan</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Poland</fullName>
                 <default>false</default>
             </values>
@@ -16646,6 +16655,10 @@ IF( $Setup.tz__lt_app_settings__c.tz__Abbreviation__c, tz__Timezone_F__c,&quot;&
             </values>
             <values>
                 <fullName>Norway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pakistan</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26421,8 +26434,8 @@ Please contact create a new contacts on this account</errorMessage>
 (TEXT(Account.Country__c) = &apos;FR&apos;||TEXT(Account.Country__c) = &apos;MC&apos; )
 &amp;&amp; 
 ( Title  = &quot;&quot; )
-&amp;&amp;
-$Profile.Id !=&apos;00e20000001Ygwu&apos; &amp;&amp; $User.Id != &apos;00520000004HG35&apos; &amp;&amp; $User.Id != &apos;0050J00000794ol&apos; &amp;&amp; $User.Id != &apos;0050J000007ZSTo&apos; &amp;&amp; $User.Id != &apos;00520000001CBYl&apos; /*exceptions added for integration users*/ &amp;&amp; $Profile.Id !=&apos;00e0J000001Ar8k&apos; &amp;&amp; $Profile.Id !=&apos;00e0J000001Ar8k&apos;/*Temporary exclusion for Service Cloud profiles*/</errorConditionFormula>
+&amp;&amp; $Profile.Id !=&apos;00e20000001Ygwu&apos;
+&amp;&amp; $User.Id != &apos;00520000004HG35&apos; &amp;&amp; $User.Id != &apos;0050J00000794ol&apos; &amp;&amp; $User.Id != &apos;0050J000007ZSTo&apos; &amp;&amp; $User.Id != &apos;00520000001CBYl&apos; /*exceptions added for integration users*/ &amp;&amp; $Profile.Id !=&apos;00e0J000001Ar8k&apos; &amp;&amp; $Profile.Id !=&apos;00e0J000001Ar8k&apos;/*Temporary exclusion for Service Cloud profiles*/</errorConditionFormula>
         <errorMessage>Please make sure to fill in the Title for this Contact.</errorMessage>
     </validationRules>
     <validationRules>

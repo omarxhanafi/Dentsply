@@ -1,4 +1,3 @@
-
 public class ActivityScorecardController {
 
     @AuraEnabled(Cacheable = true)
@@ -14,13 +13,22 @@ public class ActivityScorecardController {
 //        String accountCountry = accountDetails?.Country__c;
 
         // Query for the oldest event on the account
-        Date firstEventDate = [
+        String firstEventDate;
+
+        List<Event> events = [
                 SELECT ActivityDate
                 FROM Event
                 WHERE AccountId = :accountId
                 ORDER BY ActivityDate ASC
                 LIMIT 1
-        ]?.ActivityDate;
+        ];
+
+
+        if (events != null && !events.isEmpty()) {
+                firstEventDate = String.valueOf(events[0].ActivityDate);
+        } else {
+                firstEventDate = null;
+        }
 
         // Count the number of future events on the account
         Integer futureEventsCount = [
@@ -117,9 +125,8 @@ public class ActivityScorecardController {
 
         // Construct a Map of the results
         Map<String, Object> results = new Map<String, Object>();
-        results.put('firstEventDate', firstEventDate);
+        results.put('firstEvent', firstEventDate);
         results.put('futureEventsCount', futureEventsCount);
-
         results.put('completedTasksCount', completedTasksCount);
         results.put('callsLoggedCount', callsLoggedCount);
         results.put('emailsSentCount', emailsSentCount);

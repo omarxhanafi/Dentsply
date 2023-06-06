@@ -5,6 +5,7 @@ History
 20211008 	kdoruibin			Added test testSetEventSubjectNoridcsUser()
 20201209 	kdoruibin			Added tests testSetEventDescription(), testSetEventSubject()
 20191107 	Ahmed LOUDRASSI     CallReportEventTrigger, CallReportEventTriggerAfterInsert, DC_EventBackgroundJobs an DeleteClonedChildEvent triggers. (#)
+20230426    Roberto Narbona         TFUS-000005610
 --------------------------------------------------------------------------------------------------------*/
 
 @isTest(seeAllData=false)
@@ -186,4 +187,21 @@ public with sharing class Test_EventTrigger {
         List<Event> testEventList = [SELECT Id, Astra_Tech_Type__c, Who.Name, What.Name, Subject FROM Event WHERE Id = :events.get(0).Id];
         System.assertEquals(true, String.isBlank(testEventList.get(0).Subject));
     }
+
+    @isTest
+    private static void testBeforeSalesforceMapsScheduled() {
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
+        List<Event> events = TestDataFactory.returnEvents(1, testUser.Id); 
+        events[0].ScheduledRoutedInSalesforceMaps__c = true;
+        System.runAs(testUser) {
+            Test.startTest();
+            insert events;
+            Test.stopTest();
+        }
+        Id eId=events[0].Id;
+        Event e = [SELECT Customer_Facing_Event__c, Astra_Tech_Type__c FROM Event WHERE Id =: eId LIMIT 1];
+        System.assertEquals(true, e.Customer_Facing_Event__c);
+        System.assertEquals('In Person Meeting', e.Astra_Tech_Type__c);
+    } 
+
 }

@@ -323,6 +323,16 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>FSL__HorizontalScrolling__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Horizontal Scrolling in Gantt</description>
+        <externalId>false</externalId>
+        <label>Horizontal Scrolling in Gantt</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>FSL__Include_Weekends__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
@@ -463,7 +473,7 @@
         <description>Last selected resource filtering for gantt view</description>
         <externalId>false</externalId>
         <label>Resource Filter</label>
-        <length>1000</length>
+        <length>131072</length>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>

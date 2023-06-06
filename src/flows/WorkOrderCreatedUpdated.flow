@@ -5,7 +5,7 @@
         <name>dec_EntitlementAction</name>
         <label>Entitlement Actions</label>
         <locationX>314</locationX>
-        <locationY>791</locationY>
+        <locationY>911</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>dec_EntitlementAction_Pause</name>
@@ -63,7 +63,7 @@
         <name>dec_IsPriceBookSet</name>
         <label>Is Pricebook Set</label>
         <locationX>314</locationX>
-        <locationY>335</locationY>
+        <locationY>455</locationY>
         <defaultConnector>
             <targetReference>dec_EntitlementAction</targetReference>
         </defaultConnector>
@@ -84,7 +84,8 @@
             <label>False</label>
         </rules>
     </decisions>
-    <description>Naming Convention and removing extra DML + Delete Calling Subflow</description>
+    <description>Naming Convention and removing extra DML + Delete Calling Subflow + Update TF_ServiceTerritoryName</description>
+    <environments>Default</environments>
     <interviewLabel>WorkOrder: Created &amp; Updated {!$Flow.CurrentDateTime}</interviewLabel>
     <label>WorkOrder: Created &amp; Updated</label>
     <processMetadataValues>
@@ -110,7 +111,7 @@
         <name>gr_Pricebook</name>
         <label>Get Pricebook</label>
         <locationX>182</locationX>
-        <locationY>455</locationY>
+        <locationY>575</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ur_SetPricebook</targetReference>
@@ -128,10 +129,35 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <description>Update TF_ServiceTerritoryName to be the same as Service Territory Name so we can use this TF as a criteria filter in Sharing Rules</description>
+        <name>UpdateServiceTerritoryName</name>
+        <label>Update Service Territory Name</label>
+        <locationX>314</locationX>
+        <locationY>335</locationY>
+        <connector>
+            <targetReference>dec_IsPriceBookSet</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ServiceTerritoryId</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>TF_ServiceTerritoryName__c</field>
+            <value>
+                <elementReference>$Record.ServiceTerritory.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>ur_IsStopped_False</name>
         <label>Set IsStopped False</label>
         <locationX>314</locationX>
-        <locationY>911</locationY>
+        <locationY>1031</locationY>
         <inputAssignments>
             <field>IsStopped</field>
             <value>
@@ -144,7 +170,7 @@
         <name>ur_IsStopped_True</name>
         <label>Set IsStopped True</label>
         <locationX>50</locationX>
-        <locationY>911</locationY>
+        <locationY>1031</locationY>
         <inputAssignments>
             <field>IsStopped</field>
             <value>
@@ -157,7 +183,7 @@
         <name>ur_SetPricebook</name>
         <label>Set Pricebook</label>
         <locationX>182</locationX>
-        <locationY>575</locationY>
+        <locationY>695</locationY>
         <connector>
             <targetReference>dec_EntitlementAction</targetReference>
         </connector>
@@ -179,7 +205,7 @@
         <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>dec_IsPriceBookSet</targetReference>
+            <targetReference>UpdateServiceTerritoryName</targetReference>
         </connector>
         <object>WorkOrder</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>

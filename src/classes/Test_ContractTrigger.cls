@@ -4,6 +4,7 @@ Description:   	Test Class for all ContractTriggerHelper methods.
 History
 <Date>      <Authors Name>     <Brief Description of Change>
 20200117 	Kevin Do			Created Class
+20230326    Roberto Narbona     TFUS-000003734
 ------------------------------------------------------------*/
 
 @isTest(seeAllData=false)
@@ -47,7 +48,7 @@ public class Test_ContractTrigger {
     @IsTest
     private static void testUpdateSalesHistory() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> testAccountList = TestDataFactory.returnAccounts(3, 'Lab_Customer_D', testUser.Id);
+        List<Account> testAccountList = TestDataFactory.returnAccounts(3, 'Non_ERP_Account', testUser.Id);
         Account testAccount0 = testAccountList[0];
         testAccount0.Country__c = 'DE';
         // Fields needed for Account.Sales_L12MD__c formula field
@@ -125,7 +126,7 @@ public class Test_ContractTrigger {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
         List<Discount_model__c> testDiscountModelList = [SELECT Id FROM Discount_model__c WHERE OwnerId = :testUser.Id LIMIT 1];
         Id testDiscountModelId = testDiscountModelList[0].Id;
-        List<Account> testAccountList = TestDataFactory.returnAccounts(3, 'Lab_Customer_D', testUser.Id);
+        List<Account> testAccountList = TestDataFactory.returnAccounts(3, 'Non_ERP_Account', testUser.Id);
         Account testAccount0 = testAccountList[0];
         testAccount0.Country__c = 'DE';
         // Fields needed for Account.Sales_L12MD__c formula field

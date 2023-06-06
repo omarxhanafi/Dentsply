@@ -216,7 +216,7 @@
             <label>No</label>
         </rules>
     </decisions>
-    <description>Fixing Flow Layout + Cleaning unused resources</description>
+    <description>Fixing Flow Layout + Cleaning unused resources + TFUS-000005703</description>
     <dynamicChoiceSets>
         <name>ReturnExceptionPL</name>
         <dataType>Picklist</dataType>
@@ -225,6 +225,7 @@
         <picklistField>Return_Exception_Requested__c</picklistField>
         <picklistObject>Article__c</picklistObject>
     </dynamicChoiceSets>
+    <environments>Default</environments>
     <formulas>
         <name>Article_number</name>
         <dataType>String</dataType>
@@ -473,6 +474,9 @@
             <name>Return_Exception_Requested</name>
             <choiceReferences>ReturnExceptionPL</choiceReferences>
             <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>No Exception</stringValue>
+            </defaultValue>
             <fieldText>Return Exception Requested</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>

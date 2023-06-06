@@ -6,10 +6,10 @@
                     <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
                         <p>First Event Date</p>
                         <br>
-                            <template if:true={activityScorecardResult.firstEventDate}>
-                                <p class="activity-counter">{activityScorecardResult.firstEventDate}</p>
+                            <template if:true={activityScorecardResult.firstEvent}>
+                                <p class="activity-counter">{activityScorecardResult.firstEvent}</p>
                             </template>
-                            <template if:false={activityScorecardResult.firstEventDate}>
+                            <template if:false={activityScorecardResult.firstEvent}>
                                 <p class="activity-counter">N/A</p>
                             </template>
                         </p>

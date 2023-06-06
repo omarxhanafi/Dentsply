@@ -7,6 +7,7 @@ History
 20200326    Kevin Do            Added call to setAccountSubSegmentation in beforeInsert and beforeUpdate (#TFUS-000001698)
 20200817    Richard Trum        Added afterUpdate section, calling the new updateRelatedContactAddresses method (#TFUS2084)
 20210405    Nisreen Al-Saleh    Added afterInsert, calling the createEntitlement method (#TFUS-000001231)
+20230326    Roberto Narbona     TFUS-000003734
 ------------------------------------------------------------*/
 
 public class AccountTriggerHandler extends TriggerHandler {
@@ -21,27 +22,16 @@ public class AccountTriggerHandler extends TriggerHandler {
     }
 
     protected override void beforeInsert() {
-        Integer t0 = Limits.getCpuTime();
-        System.debug('cpu b ' + Limits.getCpuTime() + ' ' + Limits.getLimitCpuTime());
         AccountTriggerHelper.setPostalCodeInfoAndEtmCode(newAccountList, oldAccountMap);
-        System.debug('cpu b2 ' + Limits.getCpuTime() + ' ' + Limits.getLimitCpuTime());
         AccountTriggerHelper.setPayerLookup(newAccountList, oldAccountMap);
         // WorkFlows
         for(Account account : newAccountList) {
             AccountTriggerHelper.overridePotential(account);
-            System.debug('cpu a1 ' + Limits.getCpuTime() + ' ' + Limits.getLimitCpuTime());
-            AccountTriggerHelper.dentalProspectMovex(account);
         }
-        System.debug('cpu a2 ' + Limits.getCpuTime() + ' ' + Limits.getLimitCpuTime());
         AccountTriggerHelper.updateRecordsType(newAccountList);
-        System.debug('cpu a3 ' + Limits.getCpuTime() + ' ' + Limits.getLimitCpuTime());
         AccountTriggerHelper.updateVolume(newAccountList);
-        System.debug('cpu a4 ' + Limits.getCpuTime() + ' ' + Limits.getLimitCpuTime());
         AccountTriggerHelper.updateAccountsInfo(newAccountList);
-        System.debug('cpu a5 ' + Limits.getCpuTime() + ' ' + Limits.getLimitCpuTime());
-        //AccountTriggerHelper.updateAccountsStrategyIcon(newAccountList);
         AccountTriggerHelper.setAccountSubSegmentation(newAccountList, oldAccountMap);
-        System.debug('cpu a ' + (Limits.getCpuTime()  - t0)); // Almost 1583 MS with ALL WF
     }
 
     protected override void beforeUpdate() {
@@ -50,18 +40,16 @@ public class AccountTriggerHandler extends TriggerHandler {
         // WorkFlows
         for(Account account : newAccountList) {
             AccountTriggerHelper.overridePotential(account);
-            AccountTriggerHelper.dentalProspectMovex(account);
         }
         AccountTriggerHelper.updateRecordsType(newAccountList);
         AccountTriggerHelper.updateVolume(newAccountList);
         AccountTriggerHelper.updateAccountsInfo(newAccountList);
-        AccountTriggerHelper.updateAccountsStrategyIcon(newAccountList);
         AccountTriggerHelper.setAccountSubSegmentation(newAccountList, oldAccountMap);  
     }
 
     protected override void afterUpdate(){
         AccountTriggerHelper.updateRelatedContactAddresses(newAccountList, oldAccountMap, newAccountMap);
-      AccountTriggerHelper.createEntitlement(newAccountList);
+        AccountTriggerHelper.createEntitlement(newAccountList);
         
     }
     protected override void afterInsert() {

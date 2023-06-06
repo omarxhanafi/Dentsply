@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">All Ceramics;Celtra Duo;Celtra Press;Cercon;Cercon ML;Digital Dentures;Economy Teeth;Full Lab System;HIPA;Lucitone Digital Print Dentures;Midline Teeth;Other;PMMA/Wax;Porcelain;Premium Teeth;Vitallium</value>
+        <value xsi:type="xsd:string">All Ceramics;Celtra Duo;Celtra Press;Cercon;Cercon ML;Digital Dentures;Economy Teeth;Full Lab System;HIPA;Lucitone Digital Print Dentures;Midline Teeth;Other Prosthetics;PMMA/Wax;Porcelain;Premium Teeth;Vitallium</value>
     </values>
     <values>
         <field>Category__c</field>

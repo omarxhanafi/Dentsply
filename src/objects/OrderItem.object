@@ -1663,6 +1663,21 @@ Text(Sales_Special__c) =&quot;***National Specials***&quot;)</errorConditionForm
         <errorMessage>You must insert 100% discount if the products are free of charge</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Check_if_foc_offercode</fullName>
+        <active>true</active>
+        <description>TFUS-000005461:
+only allow to add 100% discount, if product has an offer code related to it</description>
+        <errorConditionFormula>AND(
+				(Order.RecordTypeId =&quot;0120J000000cn31&quot;), 
+				OR(
+								ISPICKVAL($User.User_Country__c, &quot;Spain&quot;),
+								ISPICKVAL($User.User_Country__c, &quot;Portugal&quot;),
+								ISPICKVAL($User.User_Country__c, &quot;Andorra&quot;)),
+				ISBLANK(Offer_Code_dna__c), 
+				(Discount_Percent__c = 1))</errorConditionFormula>
+        <errorMessage>You must add an offer code, if you give 100% discount</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>OM_Max_Discount</fullName>
         <active>true</active>
         <errorConditionFormula>OR(Discount_Percent__c &gt; 1, Discount_Percent__c &lt; -1)</errorConditionFormula>

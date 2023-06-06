@@ -13,31 +13,37 @@ History
 20220905    Tobias Nygren        Removed default Owner Logic: TFUS-000004729
 20220906	Nisreen AlSaleh		Update createEntitlement (TFUS-000004769)
 20221013	Nisreen/Nihad		Update createEntitlement (TFUS-000004844)
+20230224    roberto narbona     Cleanup story (TFUS-000003722)
 ----------------------------------------------------------------------------------------*/
 
 public with sharing class AccountTriggerHelper {
 
     public static Boolean forceUpdate = false;
     private static final String SOBJECT_NAME = 'Account';
-    private static final Map<String, String> SOBJECT_RECORD_TYPES = new Map<String, String> {
-            'Lab_Prospect_D'=> 'Lab_Prospect_D', 'Lab_Customer_D'=> 'Lab_Customer_D',
-            'Clinical_Prospect_D'=> 'Clinical_Prospect_D', 'Clinical_Customer_D'=> 'Clinical_Customer_D',
-            'Distributors_Customer_D'=> 'Distributors_Customer_D', 'ERP_Account'=> 'ERP_Account',
-            'ERP_Lab_Account'=> 'ERP_Lab_Account', 'DNA_Internal'=> 'DNA_Internal',
-            'DNA_EndUser'=> 'DNA_EndUser', 'DNA_Distributor'=> 'DNA_Distributor',
-            'DNA_Event'=> 'DNA_Event', 'CIM_Account'=> 'CIM_Account',
-            'Partner_DI'=> 'Partner_DI','Non_ERP_Account'=> 'Non_ERP_Account',
-            'Non_ERP_Lab_Account'=> 'Non_ERP_Lab_Account', 'Non_ERP_Distributor'=> 'Non_ERP_Distributor',
-            'Competitor'=> 'Competitor', 'Geographical_Account'=> 'Geographical_Account',
-            'ERP_Distributor'=> 'ERP_Distributor', 'DEX_Customer'=> 'DEX_Customer',
-            'Distributors_Prospect_D'=> 'Distributors_Prospect_D', 'DEX_D_Prospect'=> 'DEX_D_Prospect',
-            'Dummy_Dentsply_Implants_Account'=> 'Dummy_Dentsply_Implants_Account',
-            'Dummy_Wellspect_Account'=> 'Dummy_Wellspect_Account', 'ERP_Lab_Account'=> 'ERP_Lab_Account'};
-                                                
+    private static final String TRUE_STRING = 'True';
+    private static final String NO_USAGE_STRING = 'No Usage';
+    private static final String HIGH_USAGE_STRING = 'High Usage';
+    private static final String MEDIUM_USAGE_STRING = 'Medium Usage';
+    
+ 
+    private static final Map<String, Id> RECORD_TYPES_NAME_IDS = GlobalUtils.getRecordTypeMapNameIds(SOBJECT_NAME);
+    private static final Id CLASSIC_ERP_RECORDTYPE_IDS = RECORD_TYPES_NAME_IDS.get('ERP_Account');
+    private static final Id CLASSIC_ERP_LAB_RECORDTYPE_IDS = RECORD_TYPES_NAME_IDS.get('ERP_Lab_Account');
+    private static final Id CLASSIC_ERP_DISTRIBUTOR_RECORDTYPE_IDS = RECORD_TYPES_NAME_IDS.get('ERP_Distributor');
+    private static final Id CLASSIC_NON_ERP_RECORDTYPE_IDS = RECORD_TYPES_NAME_IDS.get('Non_ERP_Account');
+    private static final Id CLASSIC_NON_ERP_LAB_RECORDTYPE_IDS = RECORD_TYPES_NAME_IDS.get('Non_ERP_Lab_Account');
+    private static final Id CLASSIC_NON_ERP_DISTRIBUTOR_RECORDTYPE_IDS = RECORD_TYPES_NAME_IDS.get('Non_ERP_Distributor'); 
+    private static final Id CLASSIC_PARTNER_RECORDTYPE_IDS = RECORD_TYPES_NAME_IDS.get('Partner_DI'); 
+    private static final Id CLASSIC_GEOGRAPHICAL_RECORDTYPE_IDS = RECORD_TYPES_NAME_IDS.get('Geographical_Account');
+    private static final Id CLASSIC_COMPETITOR_RECORDTYPE_IDS = RECORD_TYPES_NAME_IDS.get('Competitor');
+    private static final Id CIM_RECORDTYPE_ID = RECORD_TYPES_NAME_IDS.get('CIM_Account');
+
+                                                            
     /*------------------------------------------------------------  
     Description:    Method migrated from DC_AccountTrigger trigger
     Inputs:         @param newAccountList and @param oldAccountMap
     ------------------------------------------------------------*/
+    
     public static void setPostalCodeInfoAndEtmCode(List<Account> newAccountList, Map<Id, Account> oldAccountMap) {
         Set<String> eTm2ZipCodecSet = new Set<String>();
         List<Account> accountEtm2ZipCodeList = new List<Account>();
@@ -63,13 +69,16 @@ public with sharing class AccountTriggerHelper {
     Description:    Method migrated from AccountSetPayerLookup trigger
     Inputs:         @param newAccountList and @param oldAccountMap
     ------------------------------------------------------------*/
+    /*When poland goes to LEX this will go away in while "&& classicErpRecordTypeIds.contains(account.RecordTypeId)" condition has been added*/
     public static void setPayerLookup(List<Account> newAccountList, Map<Id, Account> oldAccountMap) {
         // Collect a list of all Payer_Movex__c values of the affected Accounts.
         List<Account> affectedAccountList = new List<Account>();
         Set<String> payerMovexNumberSet = new Set<String>();
-
+        List<Id> classicErpRecordTypeIds = new List<Id>{CLASSIC_ERP_RECORDTYPE_IDS,
+                                                        CLASSIC_ERP_LAB_RECORDTYPE_IDS,
+                                                        CLASSIC_ERP_DISTRIBUTOR_RECORDTYPE_IDS};
         for (Account newAccount : newAccountList) {
-            if (!String.isBlank(newAccount.Payer_Movex__c)) {
+            if (!String.isBlank(newAccount.Payer_Movex__c) && classicErpRecordTypeIds.contains(newAccount.RecordTypeId)) {
                 if (oldAccountMap == null) {
                     affectedAccountList.add(newAccount);
                     payerMovexNumberSet.add(newAccount.Payer_Movex__c);
@@ -94,8 +103,12 @@ public with sharing class AccountTriggerHelper {
                 accountMap.put(account.Movex__c, account.Id);
             }
         }
+        relatePayerLookup(affectedAccountList, accountMap);
 
-        // Set the Id value of the related payer Account in the Payer_Lookup__c field of each affected Account.
+    }
+    // Set the Id value of the related payer Account in the Payer_Lookup__c field of each affected Account.
+
+    public static void relatePayerLookup(List<Account> affectedAccountList, Map<String, Id> accountMap) {
         for (Account account : affectedAccountList) {
             if (!String.isBlank(account.Payer_Movex__c) && accountMap.containsKey(account.Payer_Movex__c)) {
                 Id payerLookupId = accountMap.get(account.Payer_Movex__c);
@@ -108,7 +121,9 @@ public with sharing class AccountTriggerHelper {
             }
             account.Payer_Lookup__c = null;
         }
-    }
+	}
+
+
 
     /*------------------------------------------------------------
     Description:    Helper method migrated from DC_AccountTrigger
@@ -143,60 +158,50 @@ public with sharing class AccountTriggerHelper {
                     WF-ACC-04 : 'Overwrite Implants Potential'(Created on 16/02/2015)
     Inputs:         @param newAccount
     ------------------------------------------------------------*/
+    /*When poland goes to LEX this will go away in while new if
+     statement added "classicErpRecordTypeIds.contains(account.RecordTypeId)" condition has been added*/
     public static void overridePotential(Account newAccount) {
-        // In case the potential is less than the current sales
-        if('True'.equals(newAccount.Override_ATL_Abut_Potential__c)) {
-            newAccount.ATL_Abut_Potential_Year__c = newAccount.Sold_Atlantis_Abut_s_L12M__c;
-        }
-        // In case the potential is less than the current sales
-        if('True'.equals(newAccount.Override_ATL_ISUS_Potential__c)) {
-            newAccount.ATL_ISUS_Potential_Year__c = newAccount.Sold_ATL_ISUS_L12M__c;
-        }
-        // In case the potential is less than the current sales
-        if('True'.equals(newAccount.Override_Simplant_Potential__c)) {
-            newAccount.SP_Guides_Potential_Year__c = newAccount.Sold_Guides_L12M__c;
-        }
-        /* 
-            If Sold Implants L12M > Implants Potential / Year, 
-            then the system will overwrite current potential with
-            the Sold Implants L12M value. This Boolean logic checked in a help field
-        */
-        if('True'.equals(newAccount.Overwrite_Implants_Potential__c)) {
-            if('Long Purchasing Cycle >1 Year'.equals(newAccount.Custom_Segmentation__c)) {
-                if(((newAccount.Sold_Implants_L12M__c + newAccount.Sold_Implants_L13_24M__c) / 2) > 0) {
-                    newAccount.Implants_Potential_Year__c = 
-                        (newAccount.Sold_Implants_L12M__c + newAccount.Sold_Implants_L13_24M__c) / 2;
+        List<Id> classicErpRecordTypeIds = new List<Id>{CLASSIC_ERP_RECORDTYPE_IDS,
+                                                        CLASSIC_ERP_LAB_RECORDTYPE_IDS,
+                                                        CLASSIC_ERP_DISTRIBUTOR_RECORDTYPE_IDS};
+        if(classicErpRecordTypeIds.contains(newAccount.RecordTypeId)){
+            // In case the potential is less than the current sales
+            if(TRUE_STRING.equals(newAccount.Override_ATL_Abut_Potential__c)) {
+                newAccount.ATL_Abut_Potential_Year__c = newAccount.Sold_Atlantis_Abut_s_L12M__c;
+            }
+            // In case the potential is less than the current sales
+            if(TRUE_STRING.equals(newAccount.Override_ATL_ISUS_Potential__c)) {
+                newAccount.ATL_ISUS_Potential_Year__c = newAccount.Sold_ATL_ISUS_L12M__c;
+            }
+            // In case the potential is less than the current sales
+            if(TRUE_STRING.equals(newAccount.Override_Simplant_Potential__c)) {
+                newAccount.SP_Guides_Potential_Year__c = newAccount.Sold_Guides_L12M__c;
+            }
+            /* 
+                If Sold Implants L12M > Implants Potential / Year, 
+                then the system will overwrite current potential with
+                the Sold Implants L12M value. This Boolean logic checked in a help field
+            */
+            if(TRUE_STRING.equals(newAccount.Overwrite_Implants_Potential__c)) {
+                if('Long Purchasing Cycle >1 Year'.equals(newAccount.Custom_Segmentation__c)) {
+                    if(((newAccount.Sold_Implants_L12M__c + newAccount.Sold_Implants_L13_24M__c) / 2) > 0) {
+                        newAccount.Implants_Potential_Year__c = 
+                            (newAccount.Sold_Implants_L12M__c + newAccount.Sold_Implants_L13_24M__c) / 2;
+                    }else {
+                        newAccount.Implants_Potential_Year__c = 0;
+                    }
                 }else {
-                    newAccount.Implants_Potential_Year__c = 0;
+                    If(newAccount.Sold_Implants_L12M__c > 0) {
+                        newAccount.Implants_Potential_Year__c = newAccount.Sold_Implants_L12M__c;
+                    }else {
+                        newAccount.Implants_Potential_Year__c = 0;
+                    }                        
                 }
-            }else {
-                If(newAccount.Sold_Implants_L12M__c > 0) {
-                    newAccount.Implants_Potential_Year__c = newAccount.Sold_Implants_L12M__c;
-                }else {
-                    newAccount.Implants_Potential_Year__c = 0;
-                }                        
             }
         }
     }
 
-    /*------------------------------------------------------------  
-    Description:    Method migrated from  Workflows
-                    WF-ACC-05 : 'Dental Clinical Prospect - Movex' (Created on 08/01/2010)
-                    WF-ACC-06 : 'Dental Lab Prospect - Movex' (Created on 28/09/2009)
-    Inputs:         @param newAccount
-    ------------------------------------------------------------*/
-    public static void dentalProspectMovex(Account newAccount) {
-        //When Movex# is filled in, update record type from Dental Lab Prospect to Dental Lab Customer
-        if(newAccount.RecordTypeId == GlobalUtils.getRecordTypeId(SOBJECT_NAME, SOBJECT_RECORD_TYPES.get('Lab_Prospect_D'))
-           && String.IsNotBlank(newAccount.Movex__c)) {
-               newAccount.RecordTypeId = GlobalUtils.getRecordTypeId(SOBJECT_NAME, SOBJECT_RECORD_TYPES.get('Lab_Customer_D'));
-        }
-        // When Movex# is filled in, update record type from Dental Clinical Prospect to Dental Clinical Customer
-        if(newAccount.RecordTypeId == GlobalUtils.getRecordTypeId(SOBJECT_NAME, SOBJECT_RECORD_TYPES.get('Clinical_Prospect_D'))
-           && String.IsNotBlank(newAccount.Movex__c)) {
-               newAccount.RecordTypeId = GlobalUtils.getRecordTypeId(SOBJECT_NAME, SOBJECT_RECORD_TYPES.get('Clinical_Customer_D'));
-        }
-    }
+    
     /*------------------------------------------------------------ 
     Description:    Method migrated from  Workflows
                     WF-ACC-12 : 'Update Volume SP Guides to No Usage' (Created on 08/05/2014)
@@ -218,123 +223,79 @@ public with sharing class AccountTriggerHelper {
     Inputs:         @param newAccount
     ------------------------------------------------------------*/
     public static void updateVolume(List<Account> newAccountList)  {
+        List<Id> classicERPAndNonERPRecordTypes= new List<Id>{CLASSIC_ERP_RECORDTYPE_IDS,
+                                                              CLASSIC_ERP_LAB_RECORDTYPE_IDS,
+                                                              CLASSIC_ERP_DISTRIBUTOR_RECORDTYPE_IDS,
+                                                              CLASSIC_NON_ERP_RECORDTYPE_IDS,
+                                                              CLASSIC_NON_ERP_LAB_RECORDTYPE_IDS,
+                                                              CLASSIC_NON_ERP_DISTRIBUTOR_RECORDTYPE_IDS};
+        for(Account newAccount : newAccountList) {  
+            if(classicERPAndNonERPRecordTypes.contains(newAccount.RecordTypeId)){  
+                updateSPGuidesVolume(newAccount);
+                updateImplantsVolume(newAccount);
+                updateATLAbutVolume(newAccount);
                 
-        Set<String> countriesSet1 = new Set<String>{'PL','DK','GB','CA','DE','ES'};
-        Set<String> countriesSet2 = new Set<String>{'IT','LU','NZ','CH','AT','PT','AU'};
-        Set<String> countriesSet3 = new Set<String>{'FR','NL','NO','BE','SE','FI'};
-        Set<String> countriesSet4 = new Set<String> {'US','PL','DK','GB','CA','DE','ES'};    
-        List<String> recordTypes1 = new List<String> {SOBJECT_RECORD_TYPES.get('Lab_Customer_D'),
-                                                        SOBJECT_RECORD_TYPES.get('Lab_Prospect_D'),
-                                                        SOBJECT_RECORD_TYPES.get('Clinical_Customer_D'),
-                                                        SOBJECT_RECORD_TYPES.get('Clinical_Prospect_D')};
-        List<String> recordTypes2 = new List<String> {SOBJECT_RECORD_TYPES.get('DEX_Customer'),
-                                                        SOBJECT_RECORD_TYPES.get('Distributors_Prospect_D'),
-                                                        SOBJECT_RECORD_TYPES.get('Distributors_Customer_D'),
-                                                        SOBJECT_RECORD_TYPES.get('DEX_D_Prospect'),
-                                                        SOBJECT_RECORD_TYPES.get('Partner_DI'),
-                                                        SOBJECT_RECORD_TYPES.get('Dummy_Dentsply_Implants_Account'),
-                                                        SOBJECT_RECORD_TYPES.get('Dummy_Wellspect_Account'),
-                                                        SOBJECT_RECORD_TYPES.get('Lab_Customer_D'),
-                                                        SOBJECT_RECORD_TYPES.get('Lab_Prospect_D'),
-                                                        SOBJECT_RECORD_TYPES.get('Clinical_Customer_D'),
-                                                        SOBJECT_RECORD_TYPES.get('Clinical_Prospect_D'),
-                                                        SOBJECT_RECORD_TYPES.get('Competitor'),
-                                                        SOBJECT_RECORD_TYPES.get('ERP_Account'),
-                                                        SOBJECT_RECORD_TYPES.get('ERP_Distributor'),
-                                                        SOBJECT_RECORD_TYPES.get('ERP_Lab_Account')}; 
-        for(Account newAccount : newAccountList) {                                            
-            // Update Volume SP Guides to No Usage
-            if((newAccount.SP_Guides_Potential_Year__c == null || newAccount.SP_Guides_Potential_Year__c <= 0))
-            {
-                newAccount.Volume_Simplant__c = 'No Usage';
-            }
-            // Update Volume SP Guides to Low Usage
-            if(newAccount.SP_Guides_Potential_Year__c > 0 && newAccount.SP_Guides_Potential_Year__c < 5)  {
-                newAccount.Volume_Simplant__c = 'Low Usage';
-            }
-            // Update Volume SP Guides to Medium Usage
-            if(newAccount.SP_Guides_Potential_Year__c >= 5 && newAccount.SP_Guides_Potential_Year__c < 15)  {
-                newAccount.Volume_Simplant__c = 'Medium Usage';
-            }
-            // Update Volume SP Guides to High Usage
-            if(newAccount.SP_Guides_Potential_Year__c >= 15)  {
-                newAccount.Volume_Simplant__c = 'High Usage';
-            }
-            // Update Volume (Implants) to No usage
-            if(newAccount.Implants_Potential_Year__c == null || newAccount.Implants_Potential_Year__c <= 0) {
-                newAccount.Volume_Implants__c = 'No Usage';
-            }
-            // Update Volume (Implants) to Low
-            if(newAccount.Implants_Potential_Year__c > 0 && newAccount.Implants_Potential_Year__c < 30) {
-                newAccount.Volume_Implants__c = 'Low Usage';
-            }
-            // Update Volume (Implants) to Medium
-            if(newAccount.Implants_Potential_Year__c >= 30 && newAccount.Implants_Potential_Year__c < 100) {
-                newAccount.Volume_Implants__c = 'Medium Usage';
-            }
-            // Update Volume (Implants) to High
-            if(newAccount.Implants_Potential_Year__c >= 100) {
-                newAccount.Volume_Implants__c = 'High Usage';
-            }                      
-            // Update Volume (ATL ISUS) to No Usage for Labs if ATL ISUS Potential/year is 0
-            if((newAccount.ATL_ISUS_Potential_Year__c == null || newAccount.ATL_ISUS_Potential_Year__c == 0)  
-               && GlobalUtils.ifRecordTypeInList(SOBJECT_NAME, recordTypes1, newAccount.RecordTypeId)) {
-                   newAccount.Volume_ATL_ISUS__c = 'No Usage';
-            }
-           // Update Volume (ATL ISUS) to Low
-           if(GlobalUtils.ifRecordTypeInList(SOBJECT_NAME, recordTypes1, newAccount.RecordTypeId) 
-               &&((newAccount.ISUS_Connection_potential_Year__c >= 1 && newAccount.ISUS_Connection_potential_Year__c <= 99 
-                   && countriesSet1.contains(newAccount.Country__c))
-                  ||(newAccount.ISUS_Connection_potential_Year__c >= 1 && newAccount.ISUS_Connection_potential_Year__c <= 24
-                     && countriesSet2.contains(newAccount.Country__c))
-                  ||(newAccount.ISUS_Connection_potential_Year__c >= 1 && newAccount.ISUS_Connection_potential_Year__c <= 49
-                     && countriesSet3.contains(newAccount.Country__c)))) {
-                     newAccount.Volume_ATL_ISUS__c = 'Low Usage';
-            }
-            // Update Volume (ATL ISUS) to Medium
-            if((newAccount.ISUS_Connection_potential_Year__c >= 100 && newAccount.ISUS_Connection_potential_Year__c <= 299
-                     && countriesSet1.contains(newAccount.Country__c))
-              || (newAccount.ISUS_Connection_potential_Year__c >= 25 && newAccount.ISUS_Connection_potential_Year__c <= 99
-                     && countriesSet2.contains(newAccount.Country__c)) 
-              || (newAccount.ISUS_Connection_potential_Year__c >= 50 && newAccount.ISUS_Connection_potential_Year__c <= 199
-                     && countriesSet3.contains(newAccount.Country__c))) {
-                newAccount.Volume_ATL_ISUS__c = 'Medium Usage';
-            }
-            // Update Volume (ATL ISUS) to High
-            if((newAccount.ISUS_Connection_potential_Year__c >= 300 && countriesSet1.contains(newAccount.Country__c))
-              || (newAccount.ISUS_Connection_potential_Year__c >= 100 && countriesSet2.contains(newAccount.Country__c)) 
-              || (newAccount.ISUS_Connection_potential_Year__c >= 200 && countriesSet3.contains(newAccount.Country__c))) {
-                newAccount.Volume_ATL_ISUS__c = 'High Usage';
-            }
-            // Update Volume (ATL Abut) to No Usage
-            if(newAccount.ATL_Abut_Potential_Year__c == 0) {
-                newAccount.Volume_ATL_Abut__c = 'No Usage'; 
-            }  
-            // Update Volume (ATL Abut) to Low
-            if(GlobalUtils.ifRecordTypeInList(SOBJECT_NAME, recordTypes2, newAccount.RecordTypeId)  
-               && newAccount.ATL_Abut_Potential_Year__c >= 1
-               &&((newAccount.ATL_Abut_Potential_Year__c <= 99 && countriesSet4.contains(newAccount.Country__c)) 
-                  || (countriesSet3.contains(newAccount.Country__c) && newAccount.ATL_Abut_Potential_Year__c <= 49) 
-                  ||( newAccount.ATL_Abut_Potential_Year__c <= 24 && (countriesSet2.contains(newAccount.Country__c))))) {
-                  newAccount.Volume_ATL_Abut__c  = 'Low Usage';
-            }
-            // Update Volume (ATL Abut) to Medium
-            if(( newAccount.ATL_Abut_Potential_Year__c >= 100 && newAccount.ATL_Abut_Potential_Year__c <= 299
-               && countriesSet4.contains(newAccount.Country__c))
-              ||( newAccount.ATL_Abut_Potential_Year__c >= 25 && newAccount.ATL_Abut_Potential_Year__c <= 99
-               && countriesSet2.contains(newAccount.Country__c))
-              ||( newAccount.ATL_Abut_Potential_Year__c >= 50 && newAccount.ATL_Abut_Potential_Year__c <= 199
-               && countriesSet3.contains(newAccount.Country__c))) {
-                newAccount.Volume_ATL_Abut__c = 'Medium Usage';
-            }
-            // Update Volume (ATL Abut) to High
-            if(( newAccount.ATL_Abut_Potential_Year__c >= 300 && countriesSet4.contains(newAccount.Country__c))
-              ||( newAccount.ATL_Abut_Potential_Year__c >= 100 && countriesSet2.contains(newAccount.Country__c))
-              ||( newAccount.ATL_Abut_Potential_Year__c >= 200 && countriesSet3.contains(newAccount.Country__c))) {
-                newAccount.Volume_ATL_Abut__c = 'High Usage';
             }
         }
     }
+
+    public static void updateSPGuidesVolume(Account newAccount) {
+        // Update Volume SP Guides to No Usage
+        if((newAccount.SP_Guides_Potential_Year__c == null || newAccount.SP_Guides_Potential_Year__c <= 0))
+        {
+            newAccount.Volume_Simplant__c = NO_USAGE_STRING;
+        }
+        // Update Volume SP Guides to Low Usage
+        if(newAccount.SP_Guides_Potential_Year__c > 0 && newAccount.SP_Guides_Potential_Year__c < 5)  {
+            newAccount.Volume_Simplant__c = 'Low Usage';
+        }
+        // Update Volume SP Guides to Medium Usage
+        if(newAccount.SP_Guides_Potential_Year__c >= 5 && newAccount.SP_Guides_Potential_Year__c < 15)  {
+            newAccount.Volume_Simplant__c = MEDIUM_USAGE_STRING;
+        }
+        // Update Volume SP Guides to High Usage
+        if(newAccount.SP_Guides_Potential_Year__c >= 15)  {
+            newAccount.Volume_Simplant__c = HIGH_USAGE_STRING;
+        }
+	}
+
+    public static void updateImplantsVolume(Account newAccount) {
+        // Update Volume (Implants) to No usage
+        if(newAccount.Implants_Potential_Year__c == null || newAccount.Implants_Potential_Year__c <= 0) {
+            newAccount.Volume_Implants__c = NO_USAGE_STRING;
+        }
+        // Update Volume (Implants) to Low
+        if(newAccount.Implants_Potential_Year__c > 0 && newAccount.Implants_Potential_Year__c < 30) {
+            newAccount.Volume_Implants__c = 'Low Usage';
+        }
+        // Update Volume (Implants) to Medium
+        if(newAccount.Implants_Potential_Year__c >= 30 && newAccount.Implants_Potential_Year__c < 100) {
+            newAccount.Volume_Implants__c = MEDIUM_USAGE_STRING;
+        }
+        // Update Volume (Implants) to High
+        if(newAccount.Implants_Potential_Year__c >= 100) {
+            newAccount.Volume_Implants__c = HIGH_USAGE_STRING;
+        }
+	}
+
+    public static void updateATLAbutVolume(Account newAccount) {
+        // Update Volume (ATL Abut) to No Usage
+        if(newAccount.ATL_Abut_Potential_Year__c == 0) {
+            newAccount.Volume_ATL_Abut__c = NO_USAGE_STRING; 
+        }  
+        // Update Volume (ATL Abut) to Low
+        if(newAccount.ATL_Abut_Potential_Year__c >= 1 && newAccount.ATL_Abut_Potential_Year__c <= 99 ) {
+            newAccount.Volume_ATL_Abut__c  = 'Low Usage';
+        }
+        // Update Volume (ATL Abut) to Medium
+        if( newAccount.ATL_Abut_Potential_Year__c >= 100 && newAccount.ATL_Abut_Potential_Year__c <= 299) {
+            newAccount.Volume_ATL_Abut__c = MEDIUM_USAGE_STRING;
+        }
+        // Update Volume (ATL Abut) to High
+        if( newAccount.ATL_Abut_Potential_Year__c >= 300 ) {
+            newAccount.Volume_ATL_Abut__c = HIGH_USAGE_STRING;
+        }
+	}
 
     /*------------------------------------------------------------ 
     Description:    Method migrated from  Workflows
@@ -350,97 +311,141 @@ public with sharing class AccountTriggerHelper {
     Inputs:         @param newAccount
     ------------------------------------------------------------*/
     public static void updateRecordsType(List<Account> newAccountList) {
-        List<String> recordTypes3 = new List<String> {SOBJECT_RECORD_TYPES.get('DNA_Internal'), SOBJECT_RECORD_TYPES.get('DNA_Event'), 
-                                                      SOBJECT_RECORD_TYPES.get('DNA_Distributor'), SOBJECT_RECORD_TYPES.get('DNA_EndUser')};
+        
+        List<Id> recordTypeIdsToCheck = new List<Id>{CLASSIC_ERP_RECORDTYPE_IDS,
+                                                    CLASSIC_ERP_LAB_RECORDTYPE_IDS,
+                                                    CLASSIC_ERP_DISTRIBUTOR_RECORDTYPE_IDS,
+                                                    CLASSIC_NON_ERP_RECORDTYPE_IDS,
+                                                    CLASSIC_NON_ERP_LAB_RECORDTYPE_IDS,
+                                                    CLASSIC_NON_ERP_DISTRIBUTOR_RECORDTYPE_IDS,
+                                                    CLASSIC_PARTNER_RECORDTYPE_IDS,
+                                                    CLASSIC_GEOGRAPHICAL_RECORDTYPE_IDS};
         for(Account newAccount: newAccountList)  {
-            Boolean notInRecordTypesList =!GlobalUtils.ifRecordTypeInList(SOBJECT_NAME, recordTypes3, newAccount.RecordTypeId);
+            Boolean isRecordTypeToCheck = recordTypeIdsToCheck.contains(newAccount.RecordTypeId);//!GlobalUtils.ifRecordTypeInList(SOBJECT_NAME, recordTypes3, newAccount.RecordTypeId);
+            updatePartnerRecordType(isRecordTypeToCheck, newAccount);
+            updateNonERPLabRecordType(isRecordTypeToCheck, newAccount);
+            updateNonERPDistributorRecordType(isRecordTypeToCheck, newAccount);
+            updateNonERPAccountRecordType(isRecordTypeToCheck, newAccount);
+            updateERPAccountRecordType(isRecordTypeToCheck, newAccount);
+            updateERPLabRecordType(isRecordTypeToCheck, newAccount);
+            updateERPDistributorRecordType(isRecordTypeToCheck, newAccount);
+            updateCompetitorRecordType(isRecordTypeToCheck, newAccount);
+            updateGeographycalRecordType(isRecordTypeToCheck, newAccount);
             
-            // Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
-            if(newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('CIM_Account')) 
-               && (String.ISBLANK(newAccount.RecordTypeId) 
-                    || newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('Partner_DI')))  
-               && 'Partner'.equals(newAccount.OneAccount_Type__c)) {
-                newAccount.RecordTypeId = GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('Partner_DI'));
-            }
-            // Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
-            if(notInRecordTypesList 
-                && newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('CIM_Account'))
-                && String.ISBLANK(newAccount.Movex__c)
-                &&  (String.ISBLANK(newAccount.RecordTypeId) 
-                     || newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('Non_ERP_Lab_Account'))) 
-                &&  'Dental Laboratory'.equals(newAccount.OneAccount_Type__c)) {
-                    newAccount.RecordTypeId  = GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('Non_ERP_Lab_Account'));
-            }
-            // Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
-            if(notInRecordTypesList 
-                && newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('CIM_Account'))
-                && String.ISBLANK(newAccount.Movex__c)
-                &&  (String.ISBLANK(newAccount.RecordTypeId) 
-                     || newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('Non_ERP_Distributor')))
-                &&  ('Wholesaler'.equals(newAccount.OneAccount_Type__c) 
-                     || 'Distributor'.equals(newAccount.OneAccount_Type__c))) {
-                    newAccount.RecordTypeId = GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('Non_ERP_Distributor'));
-            }
-            // Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
-            if(notInRecordTypesList
-                && newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('CIM_Account'))
-                && String.ISBLANK(newAccount.Movex__c) 
-                && (String.ISBLANK(newAccount.RecordTypeId) 
-                    || newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('Non_ERP_Account')))
-                && ('Dental Clinic'.equals(newAccount.OneAccount_Type__c) || 'Hospital'.equals(newAccount.OneAccount_Type__c) 
-                    || 'University'.equals(newAccount.OneAccount_Type__c) || 'Government'.equals(newAccount.OneAccount_Type__c) 
-                    || 'Insurance Care Center'.equals(newAccount.OneAccount_Type__c) || 'Purchasing Group'.equals(newAccount.OneAccount_Type__c))) {
-                    newAccount.RecordTypeId = GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('Non_ERP_Account'));
-            }
-            // Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
-            if(notInRecordTypesList 
-                && newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME, SOBJECT_RECORD_TYPES.get('CIM_Account'))
-                && String.ISNOTBLANK(newAccount.Movex__c)
-                &&  (String.ISBLANK(newAccount.RecordTypeId) 
-                     || newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('ERP_Account')))
-                &&  ('Dental Clinic'.equals(newAccount.OneAccount_Type__c) || 'Hospital'.equals(newAccount.OneAccount_Type__c) 
-                    || 'University'.equals(newAccount.OneAccount_Type__c) || 'Government'.equals(newAccount.OneAccount_Type__c) 
-                    || 'Insurance Care Center'.equals(newAccount.OneAccount_Type__c) || 'Purchasing Group'.equals(newAccount.OneAccount_Type__c))) {
-                newAccount.RecordTypeId = GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('ERP_Account'));
-            }
-            //Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
-            if(notInRecordTypesList
-                && newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('CIM_Account'))
-                && (String.ISNOTBLANK(newAccount.Movex__c))  
-                && (String.ISBLANK(newAccount.RecordTypeId) 
-                     || newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('ERP_Lab_Account')))
-                &&  'Dental Laboratory'.equals(newAccount.OneAccount_Type__c)) {
-                   newAccount.RecordTypeId = GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('ERP_Lab_Account'));
-             }
-            //  Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
-            if(notInRecordTypesList 
-                && newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('CIM_Account'))
-                && (String.ISNOTBLANK(newAccount.Movex__c))  
-                && (String.ISBLANK(newAccount.RecordTypeId) 
-                    || newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('ERP_Distributor')))  
-                && ( 'Wholesaler'.equals(newAccount.OneAccount_Type__c) || 'Distributor'.equals(newAccount.OneAccount_Type__c))) {
-                newAccount.RecordTypeId = GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('ERP_Distributor'));
-            }
-            // Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
-            if(notInRecordTypesList 
-                && newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('CIM_Account'))
-                && String.ISBLANK(newAccount.Movex__c) 
-                && (String.ISBLANK(newAccount.RecordTypeId) 
-                    || newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('Competitor')))  
-                &&  'Competitor'.equals(newAccount.OneAccount_Type__c)) {
-                newAccount.RecordTypeId = GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('Competitor'));
-            }
-            // Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
-            if(newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('CIM_Account'))
-               &&(String.ISBLANK(newAccount.RecordTypeId) 
-                  || newAccount.RecordTypeId != GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('Geographical_Account')))  
-               &&  ('Dealer Sell Out Data Region'.equals(newAccount.OneAccount_Type__c) || 'Zip/Postal Code'.equals(newAccount.OneAccount_Type__c)
-                    || 'First letters of Zip/Postal Code'.equals(newAccount.OneAccount_Type__c)|| 'Region'.equals(newAccount.OneAccount_Type__c) 
-                    || 'Country'.equals(newAccount.OneAccount_Type__c))) {
-                newAccount.RecordTypeId = GlobalUtils.getRecordTypeId(SOBJECT_NAME,SOBJECT_RECORD_TYPES.get('Geographical_Account'));
-            }
         }
     }
+
+    public static void updatePartnerRecordType(Boolean isRecordTypeToCheck, Account newAccount) {
+        // Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
+        if( isRecordTypeToCheck  
+        && (String.ISBLANK(newAccount.RecordTypeId) 
+             || newAccount.RecordTypeId != CLASSIC_PARTNER_RECORDTYPE_IDS)  
+        && 'Partner'.equals(newAccount.OneAccount_Type__c)) {
+         newAccount.RecordTypeId = CLASSIC_PARTNER_RECORDTYPE_IDS;
+        }
+	}
+
+    public static void updateNonERPLabRecordType(Boolean isRecordTypeToCheck, Account newAccount) {
+        // Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
+        if(isRecordTypeToCheck 
+        && String.ISBLANK(newAccount.Movex__c)
+        &&  (String.ISBLANK(newAccount.RecordTypeId) 
+             || newAccount.RecordTypeId != CLASSIC_NON_ERP_LAB_RECORDTYPE_IDS) 
+        &&  'Dental Laboratory'.equals(newAccount.OneAccount_Type__c)) {
+            newAccount.RecordTypeId  = CLASSIC_NON_ERP_LAB_RECORDTYPE_IDS;
+        }
+	}
+
+    public static void updateNonERPDistributorRecordType(Boolean isRecordTypeToCheck, Account newAccount) {
+        // Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
+        if(isRecordTypeToCheck 
+        && String.ISBLANK(newAccount.Movex__c)
+        &&  (String.ISBLANK(newAccount.RecordTypeId) 
+             || newAccount.RecordTypeId != CLASSIC_NON_ERP_DISTRIBUTOR_RECORDTYPE_IDS)
+        &&  ('Wholesaler'.equals(newAccount.OneAccount_Type__c) 
+             || 'Distributor'.equals(newAccount.OneAccount_Type__c))) {
+            newAccount.RecordTypeId = CLASSIC_NON_ERP_DISTRIBUTOR_RECORDTYPE_IDS;
+        }
+	}
+
+    public static void updateNonERPAccountRecordType(Boolean isRecordTypeToCheck, Account newAccount) {
+        // Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
+        Boolean isInvalidAccountType = ('Dental Clinic'.equals(newAccount.OneAccount_Type__c) 
+                                        || 'Hospital'.equals(newAccount.OneAccount_Type__c) 
+                                        || 'University'.equals(newAccount.OneAccount_Type__c) 
+                                        || 'Government'.equals(newAccount.OneAccount_Type__c) 
+                                        || 'Insurance Care Center'.equals(newAccount.OneAccount_Type__c) 
+                                        || 'Purchasing Group'.equals(newAccount.OneAccount_Type__c));
+        if(isRecordTypeToCheck
+        && String.ISBLANK(newAccount.Movex__c) 
+        && (String.ISBLANK(newAccount.RecordTypeId) 
+            || newAccount.RecordTypeId != CLASSIC_NON_ERP_RECORDTYPE_IDS)
+        && isInvalidAccountType) {
+            newAccount.RecordTypeId = CLASSIC_NON_ERP_RECORDTYPE_IDS;
+        }
+	}
+
+    public static void updateERPAccountRecordType(Boolean isRecordTypeToCheck, Account newAccount) {
+        // Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
+        Boolean isInvalidAccountType = ('Dental Clinic'.equals(newAccount.OneAccount_Type__c) 
+                                        || 'Hospital'.equals(newAccount.OneAccount_Type__c) 
+                                        || 'University'.equals(newAccount.OneAccount_Type__c) 
+                                        || 'Government'.equals(newAccount.OneAccount_Type__c) 
+                                        || 'Insurance Care Center'.equals(newAccount.OneAccount_Type__c) 
+                                        || 'Purchasing Group'.equals(newAccount.OneAccount_Type__c));
+        if(isRecordTypeToCheck 
+        && String.ISNOTBLANK(newAccount.Movex__c)
+        &&  (String.ISBLANK(newAccount.RecordTypeId) 
+             || newAccount.RecordTypeId != CLASSIC_ERP_RECORDTYPE_IDS)
+        &&  isInvalidAccountType) {
+        newAccount.RecordTypeId = CLASSIC_ERP_RECORDTYPE_IDS;
+        }
+	}
+
+    public static void updateERPLabRecordType(Boolean isRecordTypeToCheck, Account newAccount) {
+        //Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
+        if(isRecordTypeToCheck
+        && (String.ISNOTBLANK(newAccount.Movex__c))  
+        && (String.ISBLANK(newAccount.RecordTypeId) 
+             || newAccount.RecordTypeId != CLASSIC_ERP_LAB_RECORDTYPE_IDS)
+        &&  'Dental Laboratory'.equals(newAccount.OneAccount_Type__c)) {
+           newAccount.RecordTypeId = CLASSIC_ERP_LAB_RECORDTYPE_IDS;
+        }
+	}
+
+    public static void updateERPDistributorRecordType(Boolean isRecordTypeToCheck, Account newAccount) {
+        //  Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
+        if(isRecordTypeToCheck 
+        && (String.ISNOTBLANK(newAccount.Movex__c))  
+        && (String.ISBLANK(newAccount.RecordTypeId) 
+            || newAccount.RecordTypeId != CLASSIC_ERP_DISTRIBUTOR_RECORDTYPE_IDS)  
+        && ( 'Wholesaler'.equals(newAccount.OneAccount_Type__c) || 'Distributor'.equals(newAccount.OneAccount_Type__c))) {
+        newAccount.RecordTypeId = CLASSIC_ERP_DISTRIBUTOR_RECORDTYPE_IDS;
+        }
+	}
+
+    public static void updateCompetitorRecordType(Boolean isRecordTypeToCheck, Account newAccount) {
+        // Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
+        if(isRecordTypeToCheck 
+        && String.ISBLANK(newAccount.Movex__c) 
+        && (String.ISBLANK(newAccount.RecordTypeId) 
+            || newAccount.RecordTypeId != CLASSIC_COMPETITOR_RECORDTYPE_IDS)  
+        &&  'Competitor'.equals(newAccount.OneAccount_Type__c)) {
+        newAccount.RecordTypeId = CLASSIC_COMPETITOR_RECORDTYPE_IDS;
+        }
+	}
+
+    public static void updateGeographycalRecordType(Boolean isRecordTypeToCheck, Account newAccount) {
+        // Used for ONE SFDC to check values in Account Type & ERP# fields and set the correct record type of the Account.
+        if(isRecordTypeToCheck
+        &&(String.ISBLANK(newAccount.RecordTypeId) 
+           || newAccount.RecordTypeId != CLASSIC_GEOGRAPHICAL_RECORDTYPE_IDS)  
+        &&  ('Dealer Sell Out Data Region'.equals(newAccount.OneAccount_Type__c) || 'Zip/Postal Code'.equals(newAccount.OneAccount_Type__c)
+             || 'First letters of Zip/Postal Code'.equals(newAccount.OneAccount_Type__c)|| 'Region'.equals(newAccount.OneAccount_Type__c) 
+             || 'Country'.equals(newAccount.OneAccount_Type__c))) {
+         newAccount.RecordTypeId = CLASSIC_GEOGRAPHICAL_RECORDTYPE_IDS;
+        }
+	}
     /*------------------------------------------------------------ 
     Description:    Method migrated from  Workflows
                     WF-ACC-37 : 'Set product area = Dental' (Created on 12/01/2017)
@@ -451,157 +456,58 @@ public with sharing class AccountTriggerHelper {
     Inputs:         @param newAccount
     ------------------------------------------------------------*/
     public static void updateAccountsInfo(List<Account> newAccountList) {
-        List<String> recordTypes4 = new List<String> {SOBJECT_RECORD_TYPES.get('Partner_DI'),
-                                                        SOBJECT_RECORD_TYPES.get('ERP_Account'),
-                                                        SOBJECT_RECORD_TYPES.get('ERP_Distributor'),
-                                                        SOBJECT_RECORD_TYPES.get('ERP_Lab_Account'),
-                                                        SOBJECT_RECORD_TYPES.get('Geographical_Account'),
-                                                        SOBJECT_RECORD_TYPES.get('Non_ERP_Account'),
-                                                        SOBJECT_RECORD_TYPES.get('Non_ERP_Distributor'),
-                                                        SOBJECT_RECORD_TYPES.get('Non_ERP_Lab_Account')};
+        List<Id> recordTypesToCheck = new List<Id> {CLASSIC_PARTNER_RECORDTYPE_IDS,
+                                                    CLASSIC_ERP_RECORDTYPE_IDS,
+                                                    CLASSIC_ERP_DISTRIBUTOR_RECORDTYPE_IDS,
+                                                    CLASSIC_ERP_LAB_RECORDTYPE_IDS,
+                                                    CLASSIC_GEOGRAPHICAL_RECORDTYPE_IDS,
+                                                    CLASSIC_NON_ERP_RECORDTYPE_IDS,
+                                                    CLASSIC_NON_ERP_LAB_RECORDTYPE_IDS,
+                                                    CLASSIC_NON_ERP_DISTRIBUTOR_RECORDTYPE_IDS};
         for(Account newAccount: newAccountList) {                                                
-            // Set product area = Dental
-            if(!'Dental'.equals(newAccount.Product_Area__c)) {
-               newAccount.Product_Area__c = 'Dental'; 
-            }
+            
             // States if this customer is replacing/is a replacement of an old Movex#.
             // If 0= Customer is replacing an old customer. This means this is not a "truly NEW" customer.
             // If 1 =  This customer is being replaced. This meas this is not a "truly LOST customer"
             if(newAccount.Movex_Reference_Reason__c == 1 
-              && !GlobalUtils.ifRecordTypeInList(SOBJECT_NAME, recordTypes4, newAccount.RecordTypeId) ) {
+              && recordTypesToCheck.contains(newAccount.RecordTypeId) ) {
                   newAccount.Loss_Type_D__c= 'Administrative Reason';
             }
-            // Segmentation N/A will be selected automatically (Dominant rule) by the system when one of the following criteria is true:
-            // Movex status is 90 or 10
-            // Movex Product Area (OKHAFE) contains “X” such as “DX” for Movex countries 
-            if(('10'.equals(newAccount.Status__c) || '90'.equals(newAccount.Status__c))
-              && String.isNotBlank(newAccount.Movex_Product_Area_OKHAFE__c) && newAccount.Movex_Product_Area_OKHAFE__c.contains('x')
-              && newAccount.RecordTypeId == GlobalUtils.getRecordTypeId(SOBJECT_NAME,'Clinical_Customer_D')) {
-               newAccount.Custom_Segmentation__c  = 'Segmentation N/A';  
-            }
+            
             // Sets the date when the AWO was first Approved. If the AWO-field is disabled, this field 
             // will NOT be changed, which means that it shows the FIRST time the customer was approved.
             // Used for analysis and reporting
             if(newAccount.AWO_Approval_Date__c == null && newAccount.Atlantis_Web_Order_Customer__c) {
                 newAccount.AWO_Approval_Date__c = Date.today() - 1;
             }
-            //To guarantee the quality of Custom Segmentation , this rule validates the selection in that
-            // field and deselect it if the criteria are not met. Refer to the training material for more details.
-            if(('Segmentation N/A'.equals(newAccount.Custom_Segmentation__c)
-                && (newAccount.Implants_Potential_Year__c > 0 || newAccount.Referral_Potential_Year__c >= 5) 
-                && (String.ISBLANK(newAccount.Status__c) || '20'.equals(newAccount.Status__c)))   
-                || 
-                ('Educate'.equals(newAccount.Custom_Segmentation__c) && newAccount.Implants_Potential_Year__c > 0 
-                 && (String.ISBLANK(newAccount.Status__c) || '20'.equals(newAccount.Status__c)))   
-                || 
-                ('Implants Starter'.equals(newAccount.Custom_Segmentation__c) 
-                 && ('Medium Usage'.equals(newAccount.Volume_Implants__c) || 'High Usage'.equals(newAccount.Volume_Implants__c) 
-                     || 'No Usage'.equals(newAccount.Volume_Implants__c)))) {
-                newAccount.Custom_Segmentation__c  = '';
-            }
+
+            updateCustomSegmantation(newAccount);
+            
         }
     }
-    /*------------------------------------------------------------ 
-    Description:        
-    Inputs:         @param newAccount List
-    ------------------------------------------------------------*/
-    public static void updateAccountsStrategyIcon(List<Account> newAccountList) {
-        List<String> recordTypes = new List<String> {SOBJECT_RECORD_TYPES.get('Non_ERP_Lab_Account'),
-            SOBJECT_RECORD_TYPES.get('ERP_Account'),SOBJECT_RECORD_TYPES.get('ERP_Distributor'),
-            SOBJECT_RECORD_TYPES.get('ERP_Lab_Account'),SOBJECT_RECORD_TYPES.get('Non_ERP_Account'),
-            SOBJECT_RECORD_TYPES.get('Non_ERP_Distributor')};
-                                                        
-                                                   
-        Map<String, String> accountStrategyImplantsMap = new Map<String, String> {'GET' => '01520000001F35r',
-            'GROW' => '01520000001F35x', 'KEEP' => '01520000001F361', 'TIME MINIMISE' => '01520000001F36B',
-            'EDUCATE' => '01520000001F35o', 'STARTER' => '01520000001F368', 'REFERRAL' => '01520000001F367'};
-        Map<String, String> accountStrategyATLAbutMap = new Map<String, String> {'GET' => '01520000001F35p',
-            'GROW' => '01520000001F35w','KEEP' => '01520000001F35z','TIME MINIMISE' => '01520000001F369'};
-        Map<String, String> accountStrategyATLISUSMap = new Map<String, String> {'GET' => '01520000001F35s',
-            'GROW' => '01520000001F35y','KEEP' => '01520000001F362','TIME MINIMISE' => '01520000001F36C'};
-        Map<String, String> accountStrategySBUORTHMap = new Map<String, String> {'GET' => '01520000001F35t',
-            'GROW' => '01520000003gXfm','KEEP' => '01520000001F363','TIME MINIMISE' => '01520000001F36D'};
-        Map<String, String> accountStrategySBUPREVMap = new Map<String, String> {'GET' => '01520000001F35u',
-            'GROW' => '01520000001F35l','KEEP' => '01520000001F364','TIME MINIMISE' => '01520000001F36E'};
-        Map<String, String> accountStrategySBURESTMap = new Map<String, String> {'GET' => '01520000001F35v',
-            'GROW' => '01520000001F35n','KEEP' => '01520000001F366','TIME MINIMISE' => '01520000001F36G'};
-        Map<String, String> accountStrategySBUENDOMap = new Map<String, String> {'GET' => '01520000001F35q',
-            'GROW' => '01520000001F35k','KEEP' => '01520000001F360','TIME MINIMISE' => '01520000001F36A'};       
-        Map<String, String> accountStrategySBUPROSMap = new Map<String, String> {'GET' => '01520000001F35j',
-            'GROW' => '01520000001F35m','KEEP' => '01520000001F365','TIME MINIMISE' => '01520000001F36F'};
-        String defaultValue = '01520000001F4Er';
-        for(Account account : newAccountList) {
-            System.debug('hola ' + account.Name + ' ' + account.Account_Strategy_Implants__c) ;
-            String result = '';
-            if(GlobalUtils.ifRecordTypeInList(SOBJECT_NAME, recordTypes, account.RecordTypeId) ) {
-                if(account.Owner.SF_Implementation_Level__c != null &&
-                    account.Owner.SF_Implementation_Level__c.contains('Basic')) {
-                    if(account.Account_Strategy_Implants_Basic__c != null 
-                        && accountStrategyImplantsMap.containsKey(account.Account_Strategy_Implants_Basic__c)) {
-                        result+= accountStrategyImplantsMap.get(account.Account_Strategy_Implants_Basic__c);
-                    }else {
-                        result+= defaultValue;
-                    }
-                }else {
-                    if(account.Account_Strategy_Implants__c != null 
-                        && accountStrategyImplantsMap.containsKey(account.Account_Strategy_Implants__c)) {
-                        result+= accountStrategyImplantsMap.get(account.Account_Strategy_Implants__c);
-                    }else {
-                        result+= defaultValue;
-                    }
-                }
-                if(account.Account_Strategy_ATL_Abut__c != null 
-                   && accountStrategyATLAbutMap.containsKey(account.Account_Strategy_ATL_Abut__c)) {
-                       result+= accountStrategyATLAbutMap.get(account.Account_Strategy_ATL_Abut__c);
-                }else {
-                    result+= defaultValue;
-                }
-                
-                if(account.Account_Strategy_ATL_ISUS__c != null 
-                   && accountStrategyATLISUSMap.containsKey(account.Account_Strategy_ATL_ISUS__c)) {
-                       result+= accountStrategyATLISUSMap.get(account.Account_Strategy_ATL_ISUS__c);
-                }else {
-                    result+= defaultValue;
-                }
-                
-                if(account.Account_Strategy_SBU_ORTH__c != null 
-                   && accountStrategySBUORTHMap.containsKey(account.Account_Strategy_SBU_ORTH__c)) {
-                       result+= accountStrategySBUORTHMap.get(account.Account_Strategy_SBU_ORTH__c);
-                }else {
-                    result+= defaultValue;
-                }
-                
-                if(account.Account_Strategy_SBU_PREV__c != null 
-                   && accountStrategySBUPREVMap.containsKey(account.Account_Strategy_SBU_PREV__c)) {
-                       result+= accountStrategySBUPREVMap.get(account.Account_Strategy_SBU_PREV__c);
-                }else {
-                    result+= defaultValue;
-                }
-                
-                if(account.Account_Strategy_SBU_REST__c != null 
-                   && accountStrategySBURESTMap.containsKey(account.Account_Strategy_SBU_REST__c)) {
-                       result+= accountStrategySBURESTMap.get(account.Account_Strategy_SBU_REST__c);
-                }else {
-                    result+= defaultValue;
-                }
-                
-                if(account.Account_Strategy_SBU_ENDO__c != null 
-                   && accountStrategySBUENDOMap.containsKey(account.Account_Strategy_SBU_ENDO__c)) {
-                       result+= accountStrategySBUENDOMap.get(account.Account_Strategy_SBU_ENDO__c);
-                }else {
-                    result+= defaultValue;
-                }
-                
-                if(account.Account_Strategy_SBU_PROS__c != null 
-                   && accountStrategySBUPROSMap.containsKey(account.Account_Strategy_SBU_PROS__c)) {
-                       result+= accountStrategySBUPROSMap.get(account.Account_Strategy_SBU_PROS__c);
-                }else {
-                    result+= defaultValue;
-                }
-                account.Acc_Strategy_Icons_HQ__c = result;
-            }
+
+    public static void updateCustomSegmantation( Account newAccount) {
+        //To guarantee the quality of Custom Segmentation , this rule validates the selection in that
+        // field and deselect it if the criteria are not met. Refer to the training material for more details.
+        Boolean isNullOr20Status = (String.ISBLANK(newAccount.Status__c) || '20'.equals(newAccount.Status__c));
+        Boolean isHighMediumNoneUsage = (MEDIUM_USAGE_STRING.equals(newAccount.Volume_Implants__c) 
+                                        || HIGH_USAGE_STRING.equals(newAccount.Volume_Implants__c) 
+                                        || NO_USAGE_STRING.equals(newAccount.Volume_Implants__c));
+        Boolean isYearForSegmentationUpdate = (newAccount.Implants_Potential_Year__c > 0 
+                                              || newAccount.Referral_Potential_Year__c >= 5);
+        if(('Segmentation N/A'.equals(newAccount.Custom_Segmentation__c)
+            && isYearForSegmentationUpdate 
+            && isNullOr20Status)   
+            || 
+            ('Educate'.equals(newAccount.Custom_Segmentation__c) && newAccount.Implants_Potential_Year__c > 0 
+                && isNullOr20Status)   
+            || 
+            ('Implants Starter'.equals(newAccount.Custom_Segmentation__c) 
+                && isHighMediumNoneUsage)) {
+            newAccount.Custom_Segmentation__c  = '';
         }
-    }
+	}
+    
 
     /*------------------------------------------------------------ 
     Description:    Method used for Account Sub Segmentation categorization in before insert and before update
@@ -610,15 +516,9 @@ public with sharing class AccountTriggerHelper {
     ------------------------------------------------------------*/
     public static void setAccountSubSegmentation(List<Account> newAccountList, Map<Id, Account> oldAccountMap) {
         Set<String> countrySet = new Set<String>();
-        // Loop through accounts and add their countries to a set
-        for (Account accountRecord : newAccountList) {
-            if (!String.isBlank(accountRecord.Country__c)) {
-                countrySet.add(accountRecord.Country__c);
-            } 
-            if (null != oldAccountMap && !String.isBlank(oldAccountMap.get(accountRecord.Id).Country__c)) {
-                countrySet.add(oldAccountMap.get(accountRecord.Id).Country__c);
-            } 
-        }
+        countrySet = setCountrySet( newAccountList,  oldAccountMap);
+        
+        
         // Use the account countrySet to filter accsubseg mdt
         List<AccountSubSegmentationMatrix__mdt> accSubSegList = new List<AccountSubSegmentationMatrix__mdt>([
             SELECT Country__c, ControllingField__c, TargetField__c, MediumThresholdMax__c, MediumThresholdMin__c, LowThresholdMIN__c
@@ -653,67 +553,72 @@ public with sharing class AccountTriggerHelper {
             }
             // Do the main logic to set the target fields only if we have mdt for the Account.Country__c
             if (null == countryAccSubSegMap.get(accountRecord.Country__c)) continue;
-            for (AccountSubSegmentationMatrix__mdt accSubSegRecord : countryAccSubSegMap.get(accountRecord.Country__c)) {
-                Integer newAccControllingField = Integer.valueOf(accountRecord.get(accSubSegRecord.ControllingField__c));
-                // Escape block
-                if (null == oldAccountMap && null == newAccControllingField) {
-                    continue;
-                } else if (null != oldAccountMap && false == forceUpdate) {
-                    Integer oldAccControllingField = Integer.valueOf(oldAccountMap.get(accountRecord.Id).get(accSubSegRecord.ControllingField__c));
-                    String oldAccCountry = oldAccountMap.get(accountRecord.Id).Country__c;
-                    if (newAccControllingField == oldAccControllingField && accountRecord.Country__c.equals(oldAccCountry)) continue;
-                }
-                // Main logic
-                try {
-                    if (null == newAccControllingField) {
-                        accountRecord.put(accSubSegRecord.TargetField__c, null);
-                    } else if (newAccControllingField < accSubSegRecord.LowThresholdMIN__c) {
-                        accountRecord.put(accSubSegRecord.TargetField__c, 'N/A');
-                    } else if (newAccControllingField > accSubSegRecord.MediumThresholdMAX__c) {
-                        accountRecord.put(accSubSegRecord.TargetField__c, 'High');
-                    } else if (newAccControllingField < accSubSegRecord.MediumThresholdMIN__c) {
-                        accountRecord.put(accSubSegRecord.TargetField__c, 'Low');
-                    } else {
-                        accountRecord.put(accSubSegRecord.TargetField__c, 'Medium');
-                    }
-                } catch (Exception e) {
-                    DebugLog.addException(e, 'AccountTriggerHelper.setAccountSubSegmentation');
-                }
+            
+            getAndSetTargetFields( accountRecord, oldAccountMap, countryAccSubSegMap);
+            
+        }
+    }
+
+    public static Set<String> setCountrySet(List<Account> newAccountList, Map<Id, Account> oldAccountMap){
+        Set<String> countrySet = new Set<String>();
+        // Loop through accounts and add their countries to a set
+        for (Account accountRecord : newAccountList) {
+            if (!String.isBlank(accountRecord.Country__c)) {
+                countrySet.add(accountRecord.Country__c);
+            } 
+            if (null != oldAccountMap && !String.isBlank(oldAccountMap.get(accountRecord.Id).Country__c)) {
+                countrySet.add(oldAccountMap.get(accountRecord.Id).Country__c);
+            } 
+        }
+        return countrySet;
+    }
+
+    public static void getAndSetTargetFields(Account accountRecord, Map<Id, Account> oldAccountMap, Map<String, List<AccountSubSegmentationMatrix__mdt>> countryAccSubSegMap){
+        for (AccountSubSegmentationMatrix__mdt accSubSegRecord : countryAccSubSegMap.get(accountRecord.Country__c)) {
+            Integer newAccControllingField = Integer.valueOf(accountRecord.get(accSubSegRecord.ControllingField__c));
+            // Escape block
+            if (null == oldAccountMap && null == newAccControllingField) {
+                continue;
+            } else if (null != oldAccountMap && false == forceUpdate) {
+                Integer oldAccControllingField = Integer.valueOf(oldAccountMap.get(accountRecord.Id).get(accSubSegRecord.ControllingField__c));
+                String oldAccCountry = oldAccountMap.get(accountRecord.Id).Country__c;
+                if (newAccControllingField == oldAccControllingField && accountRecord.Country__c.equals(oldAccCountry)) continue;
             }
+            setTargetFields( accountRecord, accSubSegRecord , newAccControllingField);
+        }
+    }
+
+    public static void setTargetFields(Account accountRecord, AccountSubSegmentationMatrix__mdt accSubSegRecord , Integer newAccControllingField){
+        // Main logic
+        try {
+            if (null == newAccControllingField) {
+                accountRecord.put(accSubSegRecord.TargetField__c, null);
+            } else if (newAccControllingField < accSubSegRecord.LowThresholdMIN__c) {
+                accountRecord.put(accSubSegRecord.TargetField__c, 'N/A');
+            } else if (newAccControllingField > accSubSegRecord.MediumThresholdMAX__c) {
+                accountRecord.put(accSubSegRecord.TargetField__c, 'High');
+            } else if (newAccControllingField < accSubSegRecord.MediumThresholdMIN__c) {
+                accountRecord.put(accSubSegRecord.TargetField__c, 'Low');
+            } else {
+                accountRecord.put(accSubSegRecord.TargetField__c, 'Medium');
+            }
+        } catch (Exception e) {
+            DebugLog.addException(e, 'AccountTriggerHelper.setAccountSubSegmentation');
         }
     }
     
     
     /*------------------------------------------------------------ 
-    Description:    Method to update Turkish contacts that are having MailingAddress = Account.BillingAddress with the new BillingAddress from the related account  
+    Description:    Method to update Turkish contacts that are having MailingAddress = 
+    Account.BillingAddress with the new BillingAddress from the related account  
     Inputs:         @param newAccount List
                     @param oldAccountMap Map
                     @param newAccountMap Map
     ------------------------------------------------------------*/
     public static void updateRelatedContactAddresses(List<Account> newAccountList, Map<Id, Account> oldAccountMap, Map<Id, Account> newAccountMap) {
-        List<String> recordTypes = new List<String> {SOBJECT_RECORD_TYPES.get('Non_ERP_Lab_Account'),
-            SOBJECT_RECORD_TYPES.get('ERP_Account'),SOBJECT_RECORD_TYPES.get('ERP_Distributor'),
-            SOBJECT_RECORD_TYPES.get('ERP_Lab_Account'),SOBJECT_RECORD_TYPES.get('Non_ERP_Account'),
-            SOBJECT_RECORD_TYPES.get('Non_ERP_Distributor'), SOBJECT_RECORD_TYPES.get('CIM_Account')};                                             
-        
         Map<Id, String> changedAccounts = new Map<Id, String>();
-            
-        for(Account account : newAccountList) {
-            if(GlobalUtils.ifRecordTypeInList(SOBJECT_NAME, recordTypes, account.RecordTypeId) ){
-                
-                //Find all Turkish accounts where any part of the address has changed
-                if('TR'.equals(account.Country__c) && 
-                (account.BillingStreet != oldAccountMap.get(account.Id).BillingStreet ||
-                account.BillingCity != oldAccountMap.get(account.Id).BillingCity ||
-                account.BillingPostalCode != oldAccountMap.get(account.Id).BillingPostalCode ||
-                account.BillingCountry != oldAccountMap.get(account.Id).BillingCountry ||
-                account.BillingState != oldAccountMap.get(account.Id).BillingState)
-                )
-                {
-                        changedAccounts.put(account.Id, account.Name);
-                }
-            }
-        }
+        changedAccounts = getChangedAddress(newAccountList , oldAccountMap);
+        
     
         //Find all contacts related to the previously found accounts
         List<Contact> contacts= [SELECT Id, Name, MailingCity, MailingStreet, MailingPostalCode, MailingCountry, MailingState, AccountId FROM Contact WHERE Account.Id IN: changedAccounts.keySet()];
@@ -743,14 +648,35 @@ public with sharing class AccountTriggerHelper {
                 update contactsToUpdate;     
             }
             catch(DmlException e){
-                DebugLog.addException(e, 'updateRelatedContactAddresses');
+                DebugLog.addException(e, 'AccountTriggerHelper.updateRelatedContactAddresses');
             }
         }
         
     }
+
+    public static Map<Id, String> getChangedAddress(List<Account> newAccountList, Map<Id, Account> oldAccountMap){
+        Map<Id, String> changedAccounts = new Map<Id, String>();
+            
+        for(Account account : newAccountList) {
+                
+                //Find all Turkish accounts where any part of the address has changed
+                if(account.RecordTypeId == CIM_RECORDTYPE_ID && 'TR'.equals(account.Country__c) && 
+                (account.BillingStreet != oldAccountMap.get(account.Id).BillingStreet ||
+                account.BillingCity != oldAccountMap.get(account.Id).BillingCity ||
+                account.BillingPostalCode != oldAccountMap.get(account.Id).BillingPostalCode ||
+                account.BillingCountry != oldAccountMap.get(account.Id).BillingCountry ||
+                account.BillingState != oldAccountMap.get(account.Id).BillingState)
+                )
+                {
+                        changedAccounts.put(account.Id, account.Name);
+                }
+        }
+        return changedAccounts;
+    }
     
     /*------------------------------------------------------------ 
-    Description:    Method to create an entitlement for each newly created account. It uses a custom metadata to find the correct entitlement id for each country
+    Description:    Method to create an entitlement for each newly created account. 
+    It uses a custom metadata to find the correct entitlement id for each country
     Inputs:         @param newAccount List
     ------------------------------------------------------------*/ 
 	public static void createEntitlement(Account[] newAccs) {
@@ -760,7 +686,6 @@ public with sharing class AccountTriggerHelper {
         Map <String,String> SLANameCountryMap = new Map <String,String> ();
         // countrySLAIdsMap will hold country name and a list of process ids related to that country
         Map <String,List<Id>> countrySLAIdsMap = new Map <String,List<Id>> ();
-        Map <Id,String> objMap = new Map <Id,String> ();
         Set <String> countriesSet = new Set <String> ();
         
         for (Account acc: newAccs) {

@@ -20,7 +20,7 @@
     </values>
     <values>
         <field>FieldsToDisplay__c</field>
-        <value xsi:type="xsd:string">Amount;CloseDate;Win_Loss_Description__c</value>
+        <value xsi:type="xsd:string">Amount;CloseDate;Win_Loss_Description__c;Final_Installation_Date__c</value>
     </values>
     <values>
         <field>Object__c</field>

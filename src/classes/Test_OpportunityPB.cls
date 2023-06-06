@@ -4,6 +4,8 @@ Description:   	Test Class for the Opportunity Process Builder.
 History
 <Date>      <Authors Name>     <Brief Description of Change>
 20210906    kdoruibin           Updated testLightningPipelineOpportunityNamingConvention to assert the default naming
+20230326    Roberto Narbona     TFUS-000003734
+20230503    Richard Trum        Commented out code related to old Process Builder steps/nodes as well as old Record Types (TFUS-5578)
 
 ------------------------------------------------------------*/
 
@@ -32,8 +34,8 @@ public class Test_OpportunityPB {
     @isTest
     public static void testSetOpportunityUserCountry() {
         User testUser = [SELECT Id, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
-        List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Account_Plan', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
+        List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
         for(Opportunity opportunity : opportunities) {
             opportunity.AccountId = accounts1[0].Id;
         }
@@ -44,10 +46,10 @@ public class Test_OpportunityPB {
         Test.stopTest();
         System.assertEquals('Belgium', [SELECT Id, User_Country__c  FROM Opportunity LIMIT 1].User_Country__c );
     }
-    @isTest
+    /*@isTest
     public static void testGetImplantAPRestorativeSurgicalAndAtlantis () {
         User testUser = [SELECT Id, Name, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Non_ERP_Account', testUser.Id);
         List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Implant_GET_AP', testUser.Id);
         for(Opportunity opportunity : opportunities) {
             opportunity.AccountId = accounts1[0].Id;
@@ -59,8 +61,8 @@ public class Test_OpportunityPB {
         Test.stopTest();
         System.assertEquals('Implant GET AP - ' +  accounts1[0].Name + ' - No Usage',
                             [SELECT Id, Name  FROM Opportunity LIMIT 1].Name);
-    }
-    @isTest
+    }*/
+    /*@isTest
     public static void testImplantGrowAndKeepAPRestorativeSurgicalandAtlantis () {
         User testUser = [SELECT Id, Name, Full_Name__c, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
         List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
@@ -75,7 +77,7 @@ public class Test_OpportunityPB {
         Test.stopTest();
         System.assertEquals('Implant GROW & KEEP AP - '+ accounts1[0].Name + ' -  Implants', 
                             [SELECT Id, Name  FROM Opportunity LIMIT 1].Name);
-    }
+    }*/
     @isTest
     public static void testLightningPipelineOpportunityNamingConvention () {
         User testUser = [SELECT Id, Name, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
@@ -117,7 +119,7 @@ public class Test_OpportunityPB {
 
         System.assertEquals(formattedName, [SELECT Id, Name FROM Opportunity LIMIT 1].Name);
     }
-    @isTest
+    /*@isTest
     public static void testUpdateOpportunityNameForAccountPlanRecordType () {
         User testUser = [SELECT Id, Name, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
         List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
@@ -132,8 +134,8 @@ public class Test_OpportunityPB {
         Test.stopTest();
         System.assertEquals('Account Plan - '+ accounts1[0].Name, 
                             [SELECT Id, Name  FROM Opportunity LIMIT 1].Name);
-    }
-    @isTest
+    }*/
+    /*@isTest
     public static void testRedLightFocusApproval () {
         User testUser = [SELECT Id, Name, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
         List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
@@ -148,7 +150,7 @@ public class Test_OpportunityPB {
         }
         Test.stopTest();
         
-    }
+    }*/
     
     @isTest
     public static void testxSbuStages () {
@@ -166,7 +168,7 @@ public class Test_OpportunityPB {
         Test.stopTest();
         //System.assertEquals(Date.today(), [SELECT Id, CloseDate  FROM Opportunity LIMIT 1].CloseDate);
     }
-     @isTest
+     /*@isTest
     public static void testUpdateCloseDateToDec () {
         User testUser = [SELECT Id, Name, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
         List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
@@ -182,7 +184,7 @@ public class Test_OpportunityPB {
         Test.stopTest();
         System.assertEquals(date.newInstance(Date.today().year() , 12, 31),
                             [SELECT Id, CloseDate  FROM Opportunity LIMIT 1].CloseDate);
-    }
+    }*/
     
     @isTest
     public static void testSendDealerEmail () {

@@ -314,6 +314,57 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>CancelationReason__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Competition</fullName>
+                    <default>false</default>
+                    <label>Competition</label>
+                </value>
+                <value>
+                    <fullName>Lack of training / knowledge</fullName>
+                    <default>false</default>
+                    <label>Lack of training / knowledge</label>
+                </value>
+                <value>
+                    <fullName>Lost interest</fullName>
+                    <default>false</default>
+                    <label>Lost interest</label>
+                </value>
+                <value>
+                    <fullName>Price</fullName>
+                    <default>false</default>
+                    <label>Price</label>
+                </value>
+                <value>
+                    <fullName>Unsatisfied with Product / Platform</fullName>
+                    <default>false</default>
+                    <label>Unsatisfied with Product / Platform</label>
+                </value>
+                <value>
+                    <fullName>Unsatisfied with the Support</fullName>
+                    <default>false</default>
+                    <label>Unsatisfied with the Support</label>
+                </value>
+                <value>
+                    <fullName>Workflow integration not possible</fullName>
+                    <default>false</default>
+                    <label>Workflow integration not possible</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>CaseSelectionStaffRoles__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -2171,6 +2222,37 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>CancelationReason__c</picklist>
+            <values>
+                <fullName>Competition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lack of training %2F knowledge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost interest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsatisfied with Product %2F Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsatisfied with the Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workflow integration not possible</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>IntraoralScanner__c</picklist>
             <values>
                 <fullName>Align %E2%80%93 Itero Element 5 D</fullName>
@@ -2382,6 +2464,37 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>CancelationReason__c</picklist>
+            <values>
+                <fullName>Competition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lack of training %2F knowledge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost interest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsatisfied with Product %2F Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsatisfied with the Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workflow integration not possible</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>IntraoralScanner__c</picklist>
             <values>
                 <fullName>Align %E2%80%93 Itero Element 5 D</fullName>
@@ -2537,6 +2650,18 @@
         <errorConditionFormula>ISBLANK(TEXT(PracticeAccount__r.Country__c))</errorConditionFormula>
         <errorDisplayField>PracticeAccount__c</errorDisplayField>
         <errorMessage>The associated practice account must have a country.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CancelledReasonRequiredIfCancelled</fullName>
+        <active>true</active>
+        <description>TFUS-000005262</description>
+        <errorConditionFormula>AND(
+   $Setup.GlobalBypassProcessesSettings__c.RunValidationRules__c,
+   TEXT(Status__c) = &apos;Cancelled&apos;,
+   TEXT(CancelationReason__c) = &apos;&apos;
+)</errorConditionFormula>
+        <errorDisplayField>CancelationReason__c</errorDisplayField>
+        <errorMessage>You must enter a cancellation reason upon canceling a procedure tracker</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>UsAccountsMustBeAssociatedToUSRecordType</fullName>

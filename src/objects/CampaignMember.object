@@ -371,7 +371,7 @@ HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula
         <valueSet>
             <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>true</sorted>
+                <sorted>false</sorted>
                 <value>
                     <fullName>3D Upgrade</fullName>
                     <default>false</default>
@@ -518,12 +518,6 @@ HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula
                     <label>Bioceramic</label>
                 </value>
                 <value>
-                    <fullName>Bioceramic Sealer</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Bioceramic Sealer</label>
-                </value>
-                <value>
                     <fullName>Bluecam</fullName>
                     <default>false</default>
                     <label>Bluecam</label>
@@ -537,12 +531,6 @@ HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula
                     <fullName>Bone</fullName>
                     <default>false</default>
                     <label>Bone</label>
-                </value>
-                <value>
-                    <fullName>Brackets</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Brackets</label>
                 </value>
                 <value>
                     <fullName>C1</fullName>
@@ -598,12 +586,6 @@ HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula
                     <fullName>Ceram.x Spectra ST</fullName>
                     <default>false</default>
                     <label>Ceram.x Spectra ST</label>
-                </value>
-                <value>
-                    <fullName>Ceram. X Spectra ST</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Ceram. X Spectra ST</label>
                 </value>
                 <value>
                     <fullName>Ceram.x Spectra ST Flow</fullName>
@@ -714,12 +696,6 @@ HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula
                     <fullName>DAC Professional</fullName>
                     <default>false</default>
                     <label>DAC Professional</label>
-                </value>
-                <value>
-                    <fullName>DAC Universal</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>DAC Universal</label>
                 </value>
                 <value>
                     <fullName>DAC Universal D</fullName>
@@ -892,12 +868,6 @@ HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula
                     <label>InEos X5</label>
                 </value>
                 <value>
-                    <fullName>InFire</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>InFire</label>
-                </value>
-                <value>
                     <fullName>InLab MC X5</fullName>
                     <default>false</default>
                     <label>InLab MC X5</label>
@@ -961,12 +931,6 @@ HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula
                     <fullName>Kits &amp; Motors</fullName>
                     <default>false</default>
                     <label>Kits &amp; Motors</label>
-                </value>
-                <value>
-                    <fullName>Laser</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Laser</label>
                 </value>
                 <value>
                     <fullName>Legacy Rotary</fullName>
@@ -1144,11 +1108,6 @@ HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula
                     <label>Ossix</label>
                 </value>
                 <value>
-                    <fullName>Other</fullName>
-                    <default>false</default>
-                    <label>Other</label>
-                </value>
-                <value>
                     <fullName>Oxivir</fullName>
                     <default>false</default>
                     <label>Oxivir</label>
@@ -1237,12 +1196,6 @@ HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula
                     <fullName>Primescan Connect</fullName>
                     <default>false</default>
                     <label>Primescan Connect</label>
-                </value>
-                <value>
-                    <fullName>PrimeTaper</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>PrimeTaper</label>
                 </value>
                 <value>
                     <fullName>Propel Acceledent</fullName>
@@ -1650,12 +1603,6 @@ HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula
                     <label>Vortex Blue</label>
                 </value>
                 <value>
-                    <fullName>Vortex Bue</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Vortex Bue</label>
-                </value>
-                <value>
                     <fullName>WaveOne Gold</fullName>
                     <default>false</default>
                     <label>WaveOne Gold</label>
@@ -1740,6 +1687,125 @@ HYPERLINK(&apos;/&apos;+Account.Id, Account.Name , &quot;_blank&quot;))</formula
                     <default>false</default>
                     <label>Zirconia</label>
                 </value>
+                <value>
+                    <fullName>Other Class II</fullName>
+                    <default>false</default>
+                    <label>Other Class II</label>
+                </value>
+                <value>
+                    <fullName>Other Consumables</fullName>
+                    <default>false</default>
+                    <label>Other Consumables</label>
+                </value>
+                <value>
+                    <fullName>Other Digital</fullName>
+                    <default>false</default>
+                    <label>Other Digital</label>
+                </value>
+                <value>
+                    <fullName>Other Digital Group</fullName>
+                    <default>false</default>
+                    <label>Other Digital Group</label>
+                </value>
+                <value>
+                    <fullName>Other Digital Services</fullName>
+                    <default>false</default>
+                    <label>Other Digital Services</label>
+                </value>
+                <value>
+                    <fullName>Other Endodontics</fullName>
+                    <default>false</default>
+                    <label>Other Endodontics</label>
+                </value>
+                <value>
+                    <fullName>Other Equipment</fullName>
+                    <default>false</default>
+                    <label>Other Equipment</label>
+                </value>
+                <value>
+                    <fullName>Other Equipment &amp; Imaging</fullName>
+                    <default>false</default>
+                    <label>Other Equipment &amp; Imaging</label>
+                </value>
+                <value>
+                    <fullName>Other Implants</fullName>
+                    <default>false</default>
+                    <label>Other Implants</label>
+                </value>
+                <value>
+                    <fullName>Other Orthodontics</fullName>
+                    <default>false</default>
+                    <label>Other Orthodontics</label>
+                </value>
+                <value>
+                    <fullName>Other Prosthetics</fullName>
+                    <default>false</default>
+                    <label>Other Prosthetics</label>
+                </value>
+                <value>
+                    <fullName>Other Root To Crown</fullName>
+                    <default>false</default>
+                    <label>Other Root To Crown</label>
+                </value>
+                <value>
+                    <fullName>Other Single Unit Crown</fullName>
+                    <default>false</default>
+                    <label>Other Single Unit Crown</label>
+                </value>
+                <value>
+                    <fullName>Bioceramic Sealer</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Bioceramic Sealer</label>
+                </value>
+                <value>
+                    <fullName>Brackets</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Brackets</label>
+                </value>
+                <value>
+                    <fullName>Ceram. X Spectra ST</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Ceram. X Spectra ST</label>
+                </value>
+                <value>
+                    <fullName>DAC Universal</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>DAC Universal</label>
+                </value>
+                <value>
+                    <fullName>InFire</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>InFire</label>
+                </value>
+                <value>
+                    <fullName>Laser</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Laser</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>PrimeTaper</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>PrimeTaper</label>
+                </value>
+                <value>
+                    <fullName>Vortex Bue</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Vortex Bue</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -1789,6 +1855,15 @@ null)</formula>
         <inlineHelpText>Checks if this Campaign Member is a Business Team Member. Used for ADA-CERP</inlineHelpText>
         <label>Business Team Member</label>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CVENT_Attended__c</fullName>
+        <externalId>false</externalId>
+        <label>Attended</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>CampaignId</fullName>
@@ -3150,6 +3225,1314 @@ CampaignID+Member email</description>
         </valueSet>
     </fields>
     <recordTypes>
+        <fullName>CVENT_Campaign_Member</fullName>
+        <active>true</active>
+        <description>CVENT Event Campaign Member Record Type</description>
+        <label>CVENT Campaign Member</label>
+        <picklistValues>
+            <picklist>Brand__c</picklist>
+            <values>
+                <fullName>3D Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ACB with ASA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AH Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AH Plus Bioceramic Sealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AH Temp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ANKYLOS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ATIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ATIS EV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ATIS TX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AlginX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>All Ceramics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>All Other %E2%80%93 Obturation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>All Other - Niti Rotary Files</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>All Other Endo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Anaestadent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apex Locator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aquasil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aquasil Ultra Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis Abutments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantis Suprastructures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Axano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Axeos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Azento Astra Tech</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Azento EV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Azento XiVE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bioceramic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bluecam</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bonding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C-Pilot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C1 XD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC Full System MCX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC Full System MCXL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC Full System Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC MC X</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC MC XL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC MTL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC MTL Zirconia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC Omnicam AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC Primemill Full System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC Primescan AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEREC SpeedFire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Calibra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carbide Burs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cavitron</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Celtra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Celtra Duo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Celtra Press</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ceram%2Ex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ceram%2Ex Spectra ST Flow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cercon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cercon ML</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cerec Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Composite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conus%2FConical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DAC Premium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DAC Professional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DAC Universal D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DAC Universal S</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS OmniTaper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS PrimeTaper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DT Post</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Diamond Burs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Dentures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drufo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EDDY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EDDY%2EFlex Cannula</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Economy Teeth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EsthetX HD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finishing and Polishing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flashtips</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FlexAccess</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Lab System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GALILEOS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Genie</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Glidepath Files</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Golden Surfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GuttaCore</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GuttaCore%2FCalamus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GuttaSmart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guttafusion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HELIODENT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HIPA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hand file user</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heliodent Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INTEGO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IQ%2FProMark Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Immediate Smile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Impression Materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InEos X5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InLab MC X5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InLab MC XL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InLab Profire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InLab Software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ineos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inserts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intego Ambidextrous</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intego Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intego Pro Ambidextrous</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Integrity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Irrigation Needle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kits %26 Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LS Attachments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legacy Rotary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Locator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lucitone Digital Print Dentures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCX Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCX5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCXL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCXL Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MGuide</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIS Implants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIS Regenerative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Matrix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Membrane</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Midline Teeth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Midwest E%2FPlus%2FPro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neo Spectra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NiTi Acquistion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NuPro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omni Connect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omni Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omni Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omnicam</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omnicam AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omnicam AC 2%2E0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omnicam AF%2FAI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omnicam Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OneDS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oraqix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orthophos E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orthophos S 2D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orthophos S 3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orthophos SL 2D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orthophos SL 3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ossix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Class II</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Endodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment %26 Imaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Implants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Orthodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Prosthetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Root To Crown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Single Unit Crown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oxivir</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PMMA%2FWax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Palodent 360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Palodent Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Palodent V3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PerioDerm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phoenix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Porcelain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-milled Blanks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premium Teeth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prime %26 Bond Universal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prime %26 Bond active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prime and Bond</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primemill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primeprint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primescan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primescan AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primescan Connect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ProTaper Gold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ProTaper Next</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ProTaper Ultimate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Propel Acceledent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Propel Excellerator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Propel VPro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Propex IQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purevac</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-Pilot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RDH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reciproc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reciproc blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reciproc direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resurge Bath</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rhino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCHICK 33 SIZE 0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCHICK 33 SIZE 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCHICK 33 SIZE 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCHICK ELITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCHICK USB INTERFACE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDR flow%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SICAT Suite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIMPLANT Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIMPLANT Software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIROLaser Advance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIROLaser Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL2D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schick 33</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schick Sensors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seven</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seven XD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shorty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Simplant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Simplant Planning Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Simplant Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sinius</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SiroCam</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SiroCam UAF plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sirolaser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SmartCem2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SmartFix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SmartLite Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SmartLite Pro Endo Activator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speedfire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stylus%2FPlus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suprastructures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SureSmile Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SureSmile Aligner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SureSmile IDB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SureSmile Ortho</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surefil SDR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surefil one</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suresmile Wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgical Guides</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgical Hardware</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Symbios</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T1 Contra-angles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T1 Turbines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T2 Contra-angles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T2 Turbines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TENEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TPH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TPH Spectra ST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tessera</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tradition%2FPlus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Treatment Centers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TruNatomy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TruShape</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USBCAM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultrasonics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>V3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VDW 1%2ESeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VDW%2EGold Reciproc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VDW%2ERotate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VDW%2ESilver Reciproc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VDW%2EUltra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vitallium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vortex Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wave One Gold Glider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WaveOne Gold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART Apex Locator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-SMART PRO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-Smart Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X-smart IQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XCP-DS Fit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XG 3D READY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XG3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XG5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XIOS AE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XIOS Scan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XIOS Select</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XIOS Supreme</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XiVE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zirconia</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Breakfast__c</picklist>
+            <values>
+                <fullName>Breakfast Excluded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Breakfast Included</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hotel_Arrangement_Status__c</picklist>
+            <values>
+                <fullName>Arranged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Accomodation Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Yet Arranged</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google Ad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Ad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Form</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_By__c</picklist>
+            <values>
+                <fullName>Dentsply Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Payer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Participant</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Status__c</picklist>
+            <values>
+                <fullName>Billable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Note</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invoiced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not to be invoiced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To be invoiced</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>Automatic Debit Transfer System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invoice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loyalty program points</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mixed payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STEPPS Points</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subscription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voucher</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>MQL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SQL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interpreter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Participant</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Sales Staff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speaker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speaker %26 Moderator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spouse</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>of_Guests_including_participant__c</picklist>
+            <values>
+                <fullName>Double Room</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Room</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suite</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
         <fullName>Digital_Marketing_Campaign_Member</fullName>
         <active>true</active>
         <label>Digital Marketing Campaign Member</label>
@@ -3740,7 +5123,55 @@ CampaignID+Member email</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other</fullName>
+                <fullName>Other Class II</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Endodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment %26 Imaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Implants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Orthodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Prosthetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Root To Crown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Single Unit Crown</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4999,7 +6430,55 @@ CampaignID+Member email</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other</fullName>
+                <fullName>Other Class II</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Endodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment %26 Imaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Implants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Orthodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Prosthetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Root To Crown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Single Unit Crown</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6154,10 +7633,6 @@ CampaignID+Member email</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>PMMA%2FWax</fullName>
                 <default>false</default>
             </values>
@@ -6740,7 +8215,7 @@ Campaign.RecordType.DeveloperName = &quot;InPersonEventCampaign&quot;
     </validationRules>
     <validationRules>
         <fullName>Not_null_email_contact_member</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>Campaign.RecordType.DeveloperName = &apos;Digital_Marketing_Campaign&apos; &amp;&amp;  ContactId != null  &amp;&amp;  Contact.Email = &apos;&apos; &amp;&amp;  $User.Full_Name__c != &apos;Eloqua Integration&apos;</errorConditionFormula>
         <errorMessage>One contact does not have email address. Please update the email in the contact before adding it to a digital campaign.</errorMessage>
     </validationRules>

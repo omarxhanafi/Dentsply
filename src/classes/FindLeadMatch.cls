@@ -158,7 +158,15 @@ public with sharing class FindLeadMatch {
         //System.debug('Before sort ' + output);
         output.sort();
         System.debug('Sorted output ' + output);
-        return output;
+
+        // Limit size of output to 10
+        List<LeadMatchResult> limitedOutput = new List<LeadMatchResult>();
+
+        for (Integer i = 0; i < 10 && i < output.size(); i++) {
+            limitedOutput.add(output[i]);
+        }
+
+        return limitedOutput;
 
     }
     /*---------------------------------------------------------------------------------------------------------------------------------------
@@ -190,6 +198,8 @@ public with sharing class FindLeadMatch {
                 // We filter by the lead's country if it exists
                 accountSearchQuery += ' AND Country__c = :leadCountry2DigitCode';
             }
+
+            accountSearchQuery += ' LIMIT 40000';
 
             initialSearch = Database.query(accountSearchQuery);
 
@@ -231,7 +241,7 @@ public with sharing class FindLeadMatch {
                 String compareName = initialSearch[i].Name;
                 Integer dist = -1;
                 if(accName != null){
-                    dist = accName.getLevenshteinDistance(compareName, 4);
+                    dist = accName.replaceAll('\\s', '').getLevenshteinDistance(compareName.replaceAll('\\s', ''), 4);
                 }
 
                 Double matchConfidence = 0;
@@ -361,9 +371,11 @@ public with sharing class FindLeadMatch {
         }
 
         // We filter by the lead's country if it exists
-//        if(String.isNotBlank(leadCountry2DigitCode)){
-//            contactSearchQuery += ' AND Account.Country__c = :leadCountry2DigitCode';
-//        }
+        if(String.isNotBlank(leadCountry2DigitCode)){
+            contactSearchQuery += ' AND Account.Country__c = :leadCountry2DigitCode';
+        }
+
+        contactSearchQuery += ' LIMIT 40000';
 
         initialSearch = Database.query(contactSearchQuery);
 
@@ -416,7 +428,7 @@ public with sharing class FindLeadMatch {
             String compareName = initialSearch[i].Full_Name__c;
             Integer dist = -1;
             if(conName != null && compareName != null){
-                dist = conName.getLevenshteinDistance(compareName, 4);
+                dist = conName.replaceAll('\\s', '').getLevenshteinDistance(compareName.replaceAll('\\s', ''), 2);
             }
             System.debug(initialSearch[i].Email + ' - ' + con.Email);
 
@@ -489,7 +501,7 @@ public with sharing class FindLeadMatch {
             String compareIndName = rel.Contact.Full_Name__c;
             Integer dist = -1;
             if(conName != null && compareIndName != null){
-                dist = conName.getLevenshteinDistance(compareIndName, 2);
+                dist = conName.replaceAll('\\s', '').getLevenshteinDistance(compareIndName.replaceAll('\\s', ''), 2);
             }
 
             System.debug('Distance: ' + dist);
@@ -576,7 +588,7 @@ public with sharing class FindLeadMatch {
             Integer dist = -1;
 
             if(compareName != null){
-                dist = leadName.getLevenshteinDistance(compareName, 2);
+                dist = leadName.replaceAll('\\s', '').getLevenshteinDistance(compareName.replaceAll('\\s', ''), 2);
             }
 
             leadMatchResult lrm = new leadMatchResult();
@@ -628,7 +640,7 @@ public with sharing class FindLeadMatch {
             Integer dist = -1;
 
             if(compareName != null){
-                dist = leadName.getLevenshteinDistance(compareName, 2);
+                dist = leadName.replaceAll('\\s', '').getLevenshteinDistance(compareName.replaceAll('\\s', ''), 2);
             }
 
             if(lead.Email != null && lead.Email == acr.Contact.Email){

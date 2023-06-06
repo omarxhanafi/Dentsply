@@ -332,6 +332,30 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>AgeDays__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(  ISBLANK(InstallDate) = false , TEXT(ROUND((TODAY() - InstallDate),0)), &apos;N/A&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Age (# Days)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AgeYM__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( ISBLANK(InstallDate) = false , TEXT(FLOOR((TODAY() - InstallDate)/365.2425)) &amp;&apos; Years&apos; &amp; &apos; &apos; &amp; 
+                                   TEXT(FLOOR(MOD((TODAY() - InstallDate),365.2425)/30)) &amp;&apos; Months&apos;,
+                                   &apos;N/A&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Age (Y+M)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>ArticleNumberSKU__c</fullName>
         <externalId>false</externalId>
         <label>Article Number (SKU)</label>

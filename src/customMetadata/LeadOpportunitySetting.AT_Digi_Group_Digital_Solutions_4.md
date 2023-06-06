@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">Other</value>
+        <value xsi:type="xsd:string">Other Digital Group</value>
     </values>
     <values>
         <field>Category__c</field>

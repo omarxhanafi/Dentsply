@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">Axano;Axeos;DAC D;DAC Premium;DAC Professional;DAC Universal;Heliodent Plus;INTEGO;Intego Ambidextrous;Intego Pro;Intego Pro Ambidextrous;Orthophos E;Orthophos S 2D;Orthophos S 3D;Orthophos SL 2D;Orthophos SL 3D;Other;SICAT Suite;Sinius;SiroCam;SiroCam UAF plus;Sirolaser;SIROLaser Advance;SIROLaser Blue;T1 Contra-angles;T1 Turbines;T2 Contra-angles;T2 Turbines;TENEO;USBCAM;XIOS AE;XIOS Scan;XIOS Supreme</value>
+        <value xsi:type="xsd:string">Axano;Axeos;DAC D;DAC Premium;DAC Professional;DAC Universal;Heliodent Plus;INTEGO;Intego Ambidextrous;Intego Pro;Intego Pro Ambidextrous;Orthophos E;Orthophos S 2D;Orthophos S 3D;Orthophos SL 2D;Orthophos SL 3D;Other Equipment &amp; Imaging;SICAT Suite;Sinius;SiroCam;SiroCam UAF plus;Sirolaser;SIROLaser Advance;SIROLaser Blue;T1 Contra-angles;T1 Turbines;T2 Contra-angles;T2 Turbines;TENEO;USBCAM;XIOS AE;XIOS Scan;XIOS Supreme</value>
     </values>
     <values>
         <field>Category__c</field>

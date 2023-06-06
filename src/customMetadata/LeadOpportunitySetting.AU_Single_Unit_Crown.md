@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">Cement;Impression Materials;Temporary Materials</value>
+        <value xsi:type="xsd:string">Cement;Impression Materials;Temporary Materials; Other Single Unit Crown</value>
     </values>
     <values>
         <field>Category__c</field>

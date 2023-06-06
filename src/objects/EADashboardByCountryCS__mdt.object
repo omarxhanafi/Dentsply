@@ -1420,6 +1420,11 @@
             <valueSetDefinition>
                 <sorted>true</sorted>
                 <value>
+                    <fullName>Algeria</fullName>
+                    <default>false</default>
+                    <label>Algeria</label>
+                </value>
+                <value>
                     <fullName>Andorra</fullName>
                     <default>false</default>
                     <label>Andorra</label>
@@ -1585,6 +1590,11 @@
                     <label>Latvia</label>
                 </value>
                 <value>
+                    <fullName>Lebanon</fullName>
+                    <default>false</default>
+                    <label>Lebanon</label>
+                </value>
+                <value>
                     <fullName>Lithuania</fullName>
                     <default>false</default>
                     <label>Lithuania</label>
@@ -1598,6 +1608,11 @@
                     <fullName>Malaysia</fullName>
                     <default>false</default>
                     <label>Malaysia</label>
+                </value>
+                <value>
+                    <fullName>Morocco</fullName>
+                    <default>false</default>
+                    <label>Morocco</label>
                 </value>
                 <value>
                     <fullName>New Zealand</fullName>
@@ -1628,6 +1643,11 @@
                     <fullName>Portugal</fullName>
                     <default>false</default>
                     <label>Portugal</label>
+                </value>
+                <value>
+                    <fullName>Qatar</fullName>
+                    <default>false</default>
+                    <label>Qatar</label>
                 </value>
                 <value>
                     <fullName>Russia</fullName>

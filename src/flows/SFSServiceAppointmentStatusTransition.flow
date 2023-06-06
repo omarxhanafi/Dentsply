@@ -186,6 +186,13 @@
                 <elementReference>EndTime</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>WorkOrder.ServiceNotes__c</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>ServiceNotes</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Update_Values</targetReference>
         </connector>
@@ -497,7 +504,7 @@
             <label>In Progress</label>
         </rules>
     </decisions>
-    <description>Mobile users can update the status of their service appointments while adhering to the permitted status flow +TFUS-000004775 + Add Start Time and End Time + cannot Complete Reason on SA + Remove Time Type Reference + Update WO Status on Incompletion + Fix Actual Duration + Update ScheduledTime with Mobile Times + Fix WorkDone</description>
+    <description>Mobile users can update the status of their service appointments while adhering to the permitted status flow +TFUS-000004775 + Add Start Time and End Time + cannot Complete Reason on SA + Remove Time Type Reference + Update WO Status on Incompletion + Fix Actual Duration + Update ScheduledTime with Mobile Times + Fix WorkDone + copy Service Notes to WorkOrder (TFUS-000005632)</description>
     <dynamicChoiceSets>
         <name>CannotCompleteReason</name>
         <dataType>Picklist</dataType>
@@ -514,6 +521,7 @@
         <picklistField>TimeType__c</picklistField>
         <picklistObject>ServiceAppointment</picklistObject>
     </dynamicChoiceSets>
+    <environments>Default</environments>
     <formulas>
         <name>for_ActualDuration</name>
         <dataType>Number</dataType>

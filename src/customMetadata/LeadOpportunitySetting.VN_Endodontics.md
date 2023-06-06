@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">AH Plus;AH Temp;All Other Endo;All Other – Obturation;Apex Locator;Bioceramic;Bioceramic Sealer;C-Pilot;DT Post;EDDY;EDDY.Flex Cannula;FlexAccess;Glidepath Files;GuttaCore;GuttaCore/Calamus;Guttafusion;GuttaSmart;Hand file user;IQ/ProMark Motor;Irrigation Needle;Kits &amp; Motors;Propex IQ;ProTaper Gold;ProTaper Next;ProTaper Ultimate;Reciproc;Reciproc blue;Reciproc direct;R-Pilot;TruNatomy;TruShape;Ultrasonics;VDW.1Seal;VDW.Gold Reciproc;VDW.Rotate;VDW.Silver Reciproc;VDW.Ultra;Vortex Blue;WaveOne Gold;Wave One Gold Glider;X-smart IQ;X-Smart Plus</value>
+        <value xsi:type="xsd:string">AH Plus;AH Temp;All Other Endo;All Other – Obturation;Apex Locator;Bioceramic;Bioceramic Sealer;C-Pilot;DT Post;EDDY;EDDY.Flex Cannula;FlexAccess;Glidepath Files;GuttaCore;GuttaCore/Calamus;Guttafusion;GuttaSmart;Hand file user;IQ/ProMark Motor;Irrigation Needle;Kits &amp; Motors;Propex IQ;ProTaper Gold;ProTaper Next;ProTaper Ultimate;Reciproc;Reciproc blue;Reciproc direct;R-Pilot;TruNatomy;TruShape;Ultrasonics;VDW.1Seal;VDW.Gold Reciproc;VDW.Rotate;VDW.Silver Reciproc;VDW.Ultra;Vortex Blue;WaveOne Gold;Wave One Gold Glider;X-smart IQ;X-Smart Plus; Other Endodontics</value>
     </values>
     <values>
         <field>Category__c</field>

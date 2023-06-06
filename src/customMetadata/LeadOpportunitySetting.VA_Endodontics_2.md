@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">AH Plus;AH Temp;All Other - Niti Rotary Files;All Other – Obturation;All Other Endo;Apex Locator;Bioceramic;AH Plus Bioceramic Sealer;C-Pilot;DT Post;EDDY;EDDY.Flex Cannula;Guttafusion;Hand file user;Irrigation Needle;Kits &amp;amp; Motors;Reciproc;Reciproc blue;Reciproc direct;R-Pilot;Ultrasonics;VDW.1Seal;VDW.Gold Reciproc;VDW.Rotate;VDW.Silver Reciproc;VDW.Ultra</value>
+        <value xsi:type="xsd:string">AH Plus;AH Temp;All Other - Niti Rotary Files;All Other – Obturation;All Other Endo;Apex Locator;Bioceramic;AH Plus Bioceramic Sealer;C-Pilot;DT Post;EDDY;EDDY.Flex Cannula;Guttafusion;Hand file user;Irrigation Needle;Kits &amp;amp; Motors;Reciproc;Reciproc blue;Reciproc direct;R-Pilot;Ultrasonics;VDW.1Seal;VDW.Gold Reciproc;VDW.Rotate;VDW.Silver Reciproc;VDW.Ultra;Other Endodontics</value>
     </values>
     <values>
         <field>Category__c</field>

@@ -21,7 +21,9 @@ public class CallReportExtensionTest {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
 
         System.runAs(testUser) {
-            Account acc = new Account(Name = 'test');
+
+            Account acc = new Account();
+            acc = testDataFactory.returnAccounts(1, 'CIM_Account', testUser.Id)[0];
             insert acc;
             Event ev = new Event(DurationInMinutes=5,subject='test',ActivityDate=date.today(), ActivityDateTime=datetime.now(),SBU__c='Preventive',Customer_Facing_Event__c=true, Event_Status__c='Completed',Whatid=acc.Id);
             Call_Report__c callreport = new Call_Report__c(Call_Notes__c='test',Met_with_Decision_Maker__c= true, Met_with_Assistant__c= true);

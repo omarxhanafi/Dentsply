@@ -10,7 +10,7 @@ private class Test_UpdOppStageOnLABGETOpps
         testAccount.Atlantis_Web_Order_Customer__c = false;     
         insert testAccount;
         
-        RecordType rt = [SELECT Id, Name, DeveloperName, SobjectType FROM RecordType WHERE RecordType.DeveloperName = 'GET_Lab_Atlantis'];
+        RecordType rt = [SELECT Id, Name, DeveloperName, SobjectType FROM RecordType WHERE RecordType.DeveloperName = 'Lightning_Pipeline_Opportunity']; //'GET_Lab_Atlantis'];
                 
         // Create an open GET Lab Atlantis opportunity on the above account.
         Date CDate = date.newinstance(2010,12,31);

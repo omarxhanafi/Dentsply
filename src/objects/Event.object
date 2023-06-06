@@ -1992,7 +1992,7 @@ Case no : 00487797  // Case: 00627926</description>
         <active>true</active>
         <description>For USA, Canada, and Indonesia, France, the Activity Type+Subtype must be filled if it&apos;s a customer-facing event.</description>
         <errorConditionFormula>AND(
-	Customer_Facing_Event__c = TRUE
+	Customer_Facing_Event__c = TRUE, ScheduledRoutedInSalesforceMaps__c = FALSE
 	,
 	OR(
 		TEXT( $User.User_Country__c) = &quot;USA&quot;,

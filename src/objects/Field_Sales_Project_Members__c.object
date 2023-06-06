@@ -308,7 +308,7 @@
             <controllingField>Category__c</controllingField>
             <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>true</sorted>
+                <sorted>false</sorted>
                 <value>
                     <fullName>3D Upgrade</fullName>
                     <default>false</default>
@@ -455,12 +455,6 @@
                     <label>Bioceramic</label>
                 </value>
                 <value>
-                    <fullName>Bioceramic Sealer</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Bioceramic Sealer</label>
-                </value>
-                <value>
                     <fullName>Bluecam</fullName>
                     <default>false</default>
                     <label>Bluecam</label>
@@ -474,12 +468,6 @@
                     <fullName>Bone</fullName>
                     <default>false</default>
                     <label>Bone</label>
-                </value>
-                <value>
-                    <fullName>Brackets</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Brackets</label>
                 </value>
                 <value>
                     <fullName>C1</fullName>
@@ -535,12 +523,6 @@
                     <fullName>Ceram.x Spectra ST</fullName>
                     <default>false</default>
                     <label>Ceram.x Spectra ST</label>
-                </value>
-                <value>
-                    <fullName>Ceram. X Spectra ST</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Ceram. X Spectra ST</label>
                 </value>
                 <value>
                     <fullName>Ceram.x Spectra ST Flow</fullName>
@@ -653,12 +635,6 @@
                     <label>DAC Professional</label>
                 </value>
                 <value>
-                    <fullName>DAC Universal</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>DAC Universal</label>
-                </value>
-                <value>
                     <fullName>DAC Universal D</fullName>
                     <default>false</default>
                     <label>DAC Universal D</label>
@@ -759,24 +735,6 @@
                     <label>Full Lab System</label>
                 </value>
                 <value>
-                    <fullName>Full System MCX</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Full System MCX</label>
-                </value>
-                <value>
-                    <fullName>Full System MCXL</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Full System MCXL</label>
-                </value>
-                <value>
-                    <fullName>Full System Upgrade</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Full System Upgrade</label>
-                </value>
-                <value>
                     <fullName>GALILEOS</fullName>
                     <default>false</default>
                     <label>GALILEOS</label>
@@ -862,12 +820,6 @@
                     <label>InEos X5</label>
                 </value>
                 <value>
-                    <fullName>InFire</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>InFire</label>
-                </value>
-                <value>
                     <fullName>InLab MC X5</fullName>
                     <default>false</default>
                     <label>InLab MC X5</label>
@@ -931,12 +883,6 @@
                     <fullName>Kits &amp; Motors</fullName>
                     <default>false</default>
                     <label>Kits &amp; Motors</label>
-                </value>
-                <value>
-                    <fullName>Laser</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Laser</label>
                 </value>
                 <value>
                     <fullName>Legacy Rotary</fullName>
@@ -1114,11 +1060,6 @@
                     <label>Ossix</label>
                 </value>
                 <value>
-                    <fullName>Other</fullName>
-                    <default>false</default>
-                    <label>Other</label>
-                </value>
-                <value>
                     <fullName>Oxivir</fullName>
                     <default>false</default>
                     <label>Oxivir</label>
@@ -1207,12 +1148,6 @@
                     <fullName>Primescan Connect</fullName>
                     <default>false</default>
                     <label>Primescan Connect</label>
-                </value>
-                <value>
-                    <fullName>PrimeTaper</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>PrimeTaper</label>
                 </value>
                 <value>
                     <fullName>Propel Acceledent</fullName>
@@ -1620,12 +1555,6 @@
                     <label>Vortex Blue</label>
                 </value>
                 <value>
-                    <fullName>Vortex Bue</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Vortex Bue</label>
-                </value>
-                <value>
                     <fullName>WaveOne Gold</fullName>
                     <default>false</default>
                     <label>WaveOne Gold</label>
@@ -1710,6 +1639,148 @@
                     <default>false</default>
                     <label>Zirconia</label>
                 </value>
+                <value>
+                    <fullName>Other Class II</fullName>
+                    <default>false</default>
+                    <label>Other Class II</label>
+                </value>
+                <value>
+                    <fullName>Other Consumables</fullName>
+                    <default>false</default>
+                    <label>Other Consumables</label>
+                </value>
+                <value>
+                    <fullName>Other Digital</fullName>
+                    <default>false</default>
+                    <label>Other Digital</label>
+                </value>
+                <value>
+                    <fullName>Other Digital Group</fullName>
+                    <default>false</default>
+                    <label>Other Digital Group</label>
+                </value>
+                <value>
+                    <fullName>Other Digital Services</fullName>
+                    <default>false</default>
+                    <label>Other Digital Services</label>
+                </value>
+                <value>
+                    <fullName>Other Endodontics</fullName>
+                    <default>false</default>
+                    <label>Other Endodontics</label>
+                </value>
+                <value>
+                    <fullName>Other Equipment</fullName>
+                    <default>false</default>
+                    <label>Other Equipment</label>
+                </value>
+                <value>
+                    <fullName>Other Equipment &amp; Imaging</fullName>
+                    <default>false</default>
+                    <label>Other Equipment &amp; Imaging</label>
+                </value>
+                <value>
+                    <fullName>Other Implants</fullName>
+                    <default>false</default>
+                    <label>Other Implants</label>
+                </value>
+                <value>
+                    <fullName>Other Orthodontics</fullName>
+                    <default>false</default>
+                    <label>Other Orthodontics</label>
+                </value>
+                <value>
+                    <fullName>Other Prosthetics</fullName>
+                    <default>false</default>
+                    <label>Other Prosthetics</label>
+                </value>
+                <value>
+                    <fullName>Other Root To Crown</fullName>
+                    <default>false</default>
+                    <label>Other Root To Crown</label>
+                </value>
+                <value>
+                    <fullName>Other Single Unit Crown</fullName>
+                    <default>false</default>
+                    <label>Other Single Unit Crown</label>
+                </value>
+                <value>
+                    <fullName>Other Treatment Centers</fullName>
+                    <default>false</default>
+                    <label>Other Treatment Centers</label>
+                </value>
+                <value>
+                    <fullName>Bioceramic Sealer</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Bioceramic Sealer</label>
+                </value>
+                <value>
+                    <fullName>Brackets</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Brackets</label>
+                </value>
+                <value>
+                    <fullName>Ceram. X Spectra ST</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Ceram. X Spectra ST</label>
+                </value>
+                <value>
+                    <fullName>DAC Universal</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>DAC Universal</label>
+                </value>
+                <value>
+                    <fullName>Full System MCX</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Full System MCX</label>
+                </value>
+                <value>
+                    <fullName>Full System MCXL</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Full System MCXL</label>
+                </value>
+                <value>
+                    <fullName>Full System Upgrade</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Full System Upgrade</label>
+                </value>
+                <value>
+                    <fullName>InFire</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>InFire</label>
+                </value>
+                <value>
+                    <fullName>Laser</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Laser</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>PrimeTaper</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>PrimeTaper</label>
+                </value>
+                <value>
+                    <fullName>Vortex Bue</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Vortex Bue</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Single Unit Crown</controllingFieldValue>
@@ -1721,21 +1792,15 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Single Unit Crown</controllingFieldValue>
-                <controllingFieldValue>Root To Crown</controllingFieldValue>
-                <controllingFieldValue>Consumables</controllingFieldValue>
-                <controllingFieldValue>Digital</controllingFieldValue>
-                <controllingFieldValue>Digital Group</controllingFieldValue>
-                <controllingFieldValue>Equipment</controllingFieldValue>
-                <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
-                <controllingFieldValue>Implants</controllingFieldValue>
-                <controllingFieldValue>Orthodontics</controllingFieldValue>
-                <controllingFieldValue>Prosthetics</controllingFieldValue>
-                <controllingFieldValue>Class II</controllingFieldValue>
-                <valueName>Other</valueName>
+                <valueName>Temporary Materials</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Single Unit Crown</controllingFieldValue>
-                <valueName>Temporary Materials</valueName>
+                <valueName>Other Single Unit Crown</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Root To Crown</controllingFieldValue>
+                <valueName>Other Root To Crown</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Others</controllingFieldValue>
@@ -1752,6 +1817,10 @@
             <valueSettings>
                 <controllingFieldValue>Digital Services</controllingFieldValue>
                 <valueName>DS Core Create</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Services</controllingFieldValue>
+                <valueName>Other Digital Services</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Consumables</controllingFieldValue>
@@ -1888,6 +1957,10 @@
             <valueSettings>
                 <controllingFieldValue>Consumables</controllingFieldValue>
                 <valueName>TPH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Consumables</controllingFieldValue>
+                <valueName>Other Consumables</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Digital</controllingFieldValue>
@@ -2079,6 +2152,10 @@
                 <valueName>XG5</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>Digital</controllingFieldValue>
+                <valueName>Other Digital</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>Digital Group</controllingFieldValue>
                 <valueName>CEREC Hub</valueName>
             </valueSettings>
@@ -2109,6 +2186,10 @@
             <valueSettings>
                 <controllingFieldValue>Digital Group</controllingFieldValue>
                 <valueName>Primescan AC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Group</controllingFieldValue>
+                <valueName>Other Digital Group</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
@@ -2295,6 +2376,10 @@
                 <valueName>X-SMART PRO</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>Endodontics</controllingFieldValue>
+                <valueName>Other Endodontics</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>Equipment</controllingFieldValue>
                 <valueName>Automate</valueName>
             </valueSettings>
@@ -2361,6 +2446,10 @@
             <valueSettings>
                 <controllingFieldValue>Equipment</controllingFieldValue>
                 <valueName>XIOS Select</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equipment</controllingFieldValue>
+                <valueName>Other Equipment</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
@@ -2441,6 +2530,10 @@
             <valueSettings>
                 <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
                 <valueName>XIOS Supreme</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
+                <valueName>Other Equipment &amp; Imaging</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Implants</controllingFieldValue>
@@ -2555,6 +2648,10 @@
                 <valueName>XiVE</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>Implants</controllingFieldValue>
+                <valueName>Other Implants</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>Orthodontics</controllingFieldValue>
                 <valueName>Drufo</valueName>
             </valueSettings>
@@ -2589,6 +2686,10 @@
             <valueSettings>
                 <controllingFieldValue>Orthodontics</controllingFieldValue>
                 <valueName>Suresmile Wire</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Orthodontics</controllingFieldValue>
+                <valueName>Other Orthodontics</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Prosthetics</controllingFieldValue>
@@ -2683,6 +2784,10 @@
                 <valueName>Zirconia</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>Prosthetics</controllingFieldValue>
+                <valueName>Other Prosthetics</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>Class II</controllingFieldValue>
                 <valueName>Bonding</valueName>
             </valueSettings>
@@ -2697,6 +2802,10 @@
             <valueSettings>
                 <controllingFieldValue>Class II</controllingFieldValue>
                 <valueName>Matrix</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Class II</controllingFieldValue>
+                <valueName>Other Class II</valueName>
             </valueSettings>
         </valueSet>
     </fields>
@@ -2957,6 +3066,7 @@
                 <controllingFieldValue>Hungary</controllingFieldValue>
                 <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
@@ -3025,6 +3135,7 @@
                 <controllingFieldValue>Hungary</controllingFieldValue>
                 <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
@@ -3095,6 +3206,7 @@
                 <controllingFieldValue>Hungary</controllingFieldValue>
                 <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
@@ -3165,6 +3277,7 @@
                 <controllingFieldValue>Hungary</controllingFieldValue>
                 <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
@@ -3233,6 +3346,7 @@
                 <controllingFieldValue>Hungary</controllingFieldValue>
                 <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
@@ -3303,6 +3417,7 @@
                 <controllingFieldValue>Hungary</controllingFieldValue>
                 <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
@@ -3373,6 +3488,7 @@
                 <controllingFieldValue>Hungary</controllingFieldValue>
                 <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
@@ -3443,6 +3559,7 @@
                 <controllingFieldValue>Hungary</controllingFieldValue>
                 <controllingFieldValue>Qatar</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Jordan</controllingFieldValue>
                 <controllingFieldValue>Kazakhstan</controllingFieldValue>
                 <controllingFieldValue>Kuwait</controllingFieldValue>
@@ -4324,6 +4441,7 @@
 &quot;Morocco&quot;,&quot;Morocco&quot;,
 &quot;New Zealand&quot;,&quot;New Zealand&quot;,
 &quot;Norway&quot;,&quot;Norway&quot;,
+&quot;Pakistan&quot;,&quot;Pakistan&quot;,
 &quot;Philippines&quot;,&quot;Philippines&quot;,
 &quot;Portugal&quot;,&quot;Portugal&quot;,
 &quot;Poland&quot;,&quot;Poland&quot;,
@@ -4690,6 +4808,11 @@
                     <fullName>Qatar</fullName>
                     <default>false</default>
                     <label>Qatar</label>
+                </value>
+                <value>
+                    <fullName>Pakistan</fullName>
+                    <default>false</default>
+                    <label>Pakistan</label>
                 </value>
                 <value>
                     <fullName>U.A.E</fullName>
@@ -6008,10 +6131,6 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Oxivir</fullName>
                 <default>false</default>
             </values>
@@ -6650,6 +6769,10 @@
             </values>
             <values>
                 <fullName>Oman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pakistan</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7361,7 +7484,59 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other</fullName>
+                <fullName>Other Class II</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Endodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment %26 Imaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Implants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Orthodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Prosthetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Root To Crown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Single Unit Crown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Treatment Centers</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8175,6 +8350,10 @@
             </values>
             <values>
                 <fullName>Oman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pakistan</fullName>
                 <default>false</default>
             </values>
             <values>

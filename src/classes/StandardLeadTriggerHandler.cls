@@ -18,6 +18,6 @@ public class StandardLeadTriggerHandler extends TriggerHandler {
     }
     
     protected override void afterUpdate() {
-        StandardLeadTriggerHelper.updateCampaignMembers(newLeadList);
+        StandardLeadTriggerHelper.updateCampaignMembers(oldLeadMap,newLeadMap);
     }
 }

@@ -98,6 +98,9 @@
         <fullName>FromPhoneNumber</fullName>
     </fields>
     <fields>
+        <fullName>IsDiarizationOptIn</fullName>
+    </fields>
+    <fields>
         <fullName>IsRecorded</fullName>
     </fields>
     <fields>
@@ -110,6 +113,9 @@
     </fields>
     <fields>
         <fullName>ToPhoneNumber</fullName>
+    </fields>
+    <fields>
+        <fullName>TranscribedLanguage</fullName>
     </fields>
     <fields>
         <fullName>UserId</fullName>

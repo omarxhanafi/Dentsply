@@ -1438,69 +1438,11 @@
         <fullName>Foodpreferences__c</fullName>
         <externalId>false</externalId>
         <label>Food preferences</label>
+        <length>255</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>None</fullName>
-                    <default>false</default>
-                    <label>None</label>
-                </value>
-                <value>
-                    <fullName>Vegetarian</fullName>
-                    <default>false</default>
-                    <label>Vegetarian</label>
-                </value>
-                <value>
-                    <fullName>Vegan</fullName>
-                    <default>false</default>
-                    <label>Vegan</label>
-                </value>
-                <value>
-                    <fullName>Pescatarian</fullName>
-                    <default>false</default>
-                    <label>Pescatarian</label>
-                </value>
-                <value>
-                    <fullName>Gluten Free</fullName>
-                    <default>false</default>
-                    <label>Gluten Free</label>
-                </value>
-                <value>
-                    <fullName>No Eggs or Dairy</fullName>
-                    <default>false</default>
-                    <label>No Eggs or Dairy</label>
-                </value>
-                <value>
-                    <fullName>No Nuts</fullName>
-                    <default>false</default>
-                    <label>No Nuts</label>
-                </value>
-                <value>
-                    <fullName>No Shellfish</fullName>
-                    <default>false</default>
-                    <label>No Shellfish</label>
-                </value>
-                <value>
-                    <fullName>No Pork</fullName>
-                    <default>false</default>
-                    <label>No Pork</label>
-                </value>
-                <value>
-                    <fullName>No Beef</fullName>
-                    <default>false</default>
-                    <label>No Beef</label>
-                </value>
-                <value>
-                    <fullName>Multiple or other; please contact me.</fullName>
-                    <default>false</default>
-                    <label>Multiple or other; please contact me.</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>GDCNumber__c</fullName>
@@ -1578,7 +1520,7 @@
     <fields>
         <fullName>IndustrySector__c</fullName>
         <externalId>false</externalId>
-        <label>IndustrySector</label>
+        <label>Industry Sector</label>
         <length>255</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -4687,6 +4629,37 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>MatchStatus__c</fullName>
+        <description>Specifies whether it has been successfully matched to an existing record in the system, has not been matched to any existing records, or needs to be converted into a lead for further follow-up.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates the current matching status of the record.</inlineHelpText>
+        <label>Match Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unmatched</fullName>
+                    <default>true</default>
+                    <label>Unmatched</label>
+                </value>
+                <value>
+                    <fullName>Matched</fullName>
+                    <default>false</default>
+                    <label>Matched</label>
+                </value>
+                <value>
+                    <fullName>Converted to Lead</fullName>
+                    <default>false</default>
+                    <label>Converted to Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>NPINumberCHPNumberorLicenseNumb__c</fullName>
         <externalId>false</externalId>
         <label>* NPI Number, CHP Number or License Numb</label>
@@ -4942,39 +4915,11 @@
         <fullName>Status__c</fullName>
         <externalId>false</externalId>
         <label>Status</label>
+        <length>255</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Active</fullName>
-                    <default>false</default>
-                    <label>Active</label>
-                </value>
-                <value>
-                    <fullName>Inactive</fullName>
-                    <default>false</default>
-                    <label>Inactive</label>
-                </value>
-                <value>
-                    <fullName>Duplicated</fullName>
-                    <default>false</default>
-                    <label>Duplicated</label>
-                </value>
-                <value>
-                    <fullName>Deceased</fullName>
-                    <default>false</default>
-                    <label>Deceased</label>
-                </value>
-                <value>
-                    <fullName>Accepted</fullName>
-                    <default>false</default>
-                    <label>Accepted</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Suffix__c</fullName>

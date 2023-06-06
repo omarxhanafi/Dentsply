@@ -3,8 +3,8 @@
     <actionCalls>
         <name>FindQuest</name>
         <label>FindQuest</label>
-        <locationX>1265</locationX>
-        <locationY>456</locationY>
+        <locationX>1267</locationX>
+        <locationY>855</locationY>
         <actionName>flowQuestionnaireController</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -71,27 +71,27 @@
     <assignments>
         <name>Assign_Category_Details</name>
         <label>Assign Category Details</label>
-        <locationX>1070</locationX>
-        <locationY>457</locationY>
+        <locationX>1063</locationX>
+        <locationY>334</locationY>
         <assignmentItems>
             <assignToReference>OppToCreate.NA_Category__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>CustomCategorisation.categoryOutput</elementReference>
+                <elementReference>CustomCategorisationAndOwnership.categoryOutput</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>OppToCreate.NA_Brand__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>CustomCategorisation.brandOutput</elementReference>
+                <elementReference>CustomCategorisationAndOwnership.brandOutput</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>OppToCreate.Dealer__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>CustomCategorisation.dealerOutput</elementReference>
+                <elementReference>CustomCategorisationAndOwnership.dealerOutput</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -128,7 +128,7 @@
             <assignToReference>OppToCreate.OwnerId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Formula_OwnerId_Calculation</elementReference>
+                <elementReference>CustomCategorisationAndOwnership.ChoosenUserId</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -154,8 +154,8 @@
     <assignments>
         <name>assignDetails</name>
         <label>Assign details</label>
-        <locationX>1885</locationX>
-        <locationY>1045</locationY>
+        <locationX>1888</locationX>
+        <locationY>838</locationY>
         <assignmentItems>
             <assignToReference>OppToCreate.OwnerId</assignToReference>
             <operator>Assign</operator>
@@ -279,10 +279,33 @@
         </connector>
     </assignments>
     <assignments>
+        <name>AssignOwnerAutomatically</name>
+        <label>Assign owner automatically</label>
+        <locationX>513</locationX>
+        <locationY>270</locationY>
+        <assignmentItems>
+            <assignToReference>Owner.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varAssignOwnerAutomatically</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Product_interest_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>CategoryBrandMissingCheck</name>
         <label>Category or brand is missing</label>
         <locationX>1267</locationX>
-        <locationY>50</locationY>
+        <locationY>51</locationY>
         <assignmentItems>
             <assignToReference>CategoryBrandMissing</assignToReference>
             <operator>Assign</operator>
@@ -382,8 +405,8 @@
     <assignments>
         <name>SetOwnerNotAssigned</name>
         <label>SetOwnerNotAssigned</label>
-        <locationX>2015</locationX>
-        <locationY>850</locationY>
+        <locationX>958</locationX>
+        <locationY>556</locationY>
         <assignmentItems>
             <assignToReference>OwnerNotAssigned</assignToReference>
             <operator>Assign</operator>
@@ -392,7 +415,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>AssignOwnerScreen</targetReference>
+            <targetReference>Product_interest_0</targetReference>
         </connector>
     </assignments>
     <decisions>
@@ -415,7 +438,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>FindQuest</targetReference>
+                <targetReference>Owner_assigned</targetReference>
             </connector>
             <label>Category and Brand assigned</label>
         </rules>
@@ -470,7 +493,7 @@
             <name>decOutcUserIsNotOwner</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Formula_OwnerId_Calculation</leftValueReference>
+                <leftValueReference>CustomCategorisationAndOwnership.ChoosenUserId</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <elementReference>$User.Id</elementReference>
@@ -478,6 +501,66 @@
             </conditions>
             <connector>
                 <targetReference>Assign_owner</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>DESC_OwnerAssignedAutomatically</name>
+        <label>Owner assigned automatically?</label>
+        <locationX>696</locationX>
+        <locationY>366</locationY>
+        <defaultConnector>
+            <targetReference>Product_interest_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>outcomeOwnerAssignedAutomatically</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_account_details.Country__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>US</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_account_details.Country__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_account_details.Country__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>IN</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_account_details.Country__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>ES</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_account_details.Country__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PT</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_account_details.Country__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>AD</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignOwnerAutomatically</targetReference>
             </connector>
             <label>No</label>
         </rules>
@@ -535,8 +618,8 @@
     <decisions>
         <name>Owner_assigned</name>
         <label>Owner assigned?</label>
-        <locationX>1730</locationX>
-        <locationY>997</locationY>
+        <locationX>1256</locationX>
+        <locationY>560</locationY>
         <defaultConnector>
             <targetReference>SetOwnerNotAssigned</targetReference>
         </defaultConnector>
@@ -545,18 +628,18 @@
             <name>OwnerIsAssigned</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Formula_OwnerId_Calculation</leftValueReference>
+                <leftValueReference>CustomCategorisationAndOwnership.ChoosenUserId</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
-                <leftValueReference>Formula_OwnerId_Calculation</leftValueReference>
+                <leftValueReference>CustomCategorisationAndOwnership.ChoosenUserId</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>&quot;&quot;</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>assignDetails</targetReference>
+                <targetReference>FindQuest</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -567,7 +650,7 @@
         <locationX>1519</locationX>
         <locationY>849</locationY>
         <defaultConnector>
-            <targetReference>AssignOwnerScreen</targetReference>
+            <targetReference>assignDetails</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -606,7 +689,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>AssignOwnerScreen</targetReference>
+                <targetReference>assignDetails</targetReference>
             </connector>
             <label>All answered</label>
         </rules>
@@ -617,7 +700,7 @@
         <locationX>1633</locationX>
         <locationY>420</locationY>
         <defaultConnector>
-            <targetReference>AssignOwnerScreen</targetReference>
+            <targetReference>assignDetails</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -682,11 +765,6 @@
         <name>EndDateFormula</name>
         <dataType>Date</dataType>
         <expression>DATE(YEAR({!$Flow.CurrentDate}), 12, 31)</expression>
-    </formulas>
-    <formulas>
-        <name>Formula_OwnerId_Calculation</name>
-        <dataType>String</dataType>
-        <expression>If({!Owner.Id} = null &amp;&amp; {!LookupOwner1.recordId} != &quot;&quot; ,{!LookupOwner1.recordId},{!Owner.Id})</expression>
     </formulas>
     <formulas>
         <name>InitName</name>
@@ -818,7 +896,7 @@
             <targetReference>FindGenericQuestions</targetReference>
         </connector>
         <faultConnector>
-            <targetReference>AssignOwnerScreen</targetReference>
+            <targetReference>assignDetails</targetReference>
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -849,13 +927,13 @@
         <name>FindGenericQuestions</name>
         <label>Find generic questions</label>
         <locationX>1447</locationX>
-        <locationY>552</locationY>
+        <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>WhereQuestionsFound</targetReference>
         </connector>
         <faultConnector>
-            <targetReference>AssignOwnerScreen</targetReference>
+            <targetReference>assignDetails</targetReference>
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -964,98 +1042,6 @@
         <inputReference>OppToCreate</inputReference>
     </recordUpdates>
     <screens>
-        <name>AssignOwnerScreen</name>
-        <label>Assign owner</label>
-        <locationX>1778</locationX>
-        <locationY>842</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
-        <connector>
-            <targetReference>Owner_assigned</targetReference>
-        </connector>
-        <fields>
-            <name>OwnerScript</name>
-            <extensionName>c:ServiceCloud_FlowScript</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>scriptText</name>
-                <value>
-                    <stringValue>Please select an owner of the new opportunity</stringValue>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
-            <name>SelectOwner</name>
-            <extensionName>c:Flow_SelectUserFromAccountTerritories</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>recordId</name>
-                <value>
-                    <elementReference>accountId</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>selectedUsers</name>
-                <value>
-                    <elementReference>Owner</elementReference>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <outputParameters>
-                <assignToReference>Owner</assignToReference>
-                <name>selectedUsers</name>
-            </outputParameters>
-        </fields>
-        <fields>
-            <name>LookupOwner1</name>
-            <extensionName>flowruntime:lookup</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>fieldApiName</name>
-                <value>
-                    <stringValue>Sales_Rep__c</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>objectApiName</name>
-                <value>
-                    <stringValue>Field_Sales_Project_Members__c</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>label</name>
-                <value>
-                    <stringValue>...or assign an owner manually</stringValue>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
-            <name>NeedToAssignOwner</name>
-            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;Please note! You need to assign an owner in order to create the opportunity.&lt;/strong&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>OwnerNotAssigned</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <booleanValue>true</booleanValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
-    <screens>
         <name>OppDetails</name>
         <label>Opportunity details</label>
         <locationX>774</locationX>
@@ -1064,7 +1050,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Product_interest_0</targetReference>
+            <targetReference>DESC_OwnerAssignedAutomatically</targetReference>
         </connector>
         <fields>
             <name>OppValidationRuleAlert</name>
@@ -1254,8 +1240,8 @@
     <screens>
         <name>Product_interest_0</name>
         <label>Product interest</label>
-        <locationX>774</locationX>
-        <locationY>267</locationY>
+        <locationX>782</locationX>
+        <locationY>59</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1275,6 +1261,30 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>NeedToAssignOwner</name>
+            <extensionName>c:LightningPage_WarningMessage</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue> Please note! You need to assign an owner in order to create the opportunity.</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>OwnerNotAssigned</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>WarningCatBrand</name>
@@ -1301,8 +1311,8 @@
             </visibilityRule>
         </fields>
         <fields>
-            <name>CustomCategorisation</name>
-            <extensionName>c:Flow_SalesLeadCategorization</extensionName>
+            <name>CustomCategorisationAndOwnership</name>
+            <extensionName>c:Flow_OppSuggestedUserBasedOnBrand</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>accountId</name>
@@ -1311,13 +1321,19 @@
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>category</name>
+                <name>recordId</name>
+                <value>
+                    <elementReference>accountId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>brand</name>
                 <value>
                     <elementReference>Brand</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>brand</name>
+                <name>category</name>
                 <value>
                     <elementReference>Category</elementReference>
                 </value>
@@ -1335,15 +1351,9 @@
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>objType</name>
+                <name>isOwnerAssignedAutomatically</name>
                 <value>
-                    <stringValue>Opportunity</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>recordTypeId</name>
-                <value>
-                    <stringValue>0120J00000079nDQAQ</stringValue>
+                    <elementReference>varAssignOwnerAutomatically</elementReference>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1693,5 +1703,15 @@
         <isInput>false</isInput>
         <isOutput>true</isOutput>
         <objectType>Q_A__c</objectType>
+    </variables>
+    <variables>
+        <name>varAssignOwnerAutomatically</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
     </variables>
 </Flow>

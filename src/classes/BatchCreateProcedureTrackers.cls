@@ -117,7 +117,7 @@ global class BatchCreateProcedureTrackers implements Database.Batchable<sObject>
             String invoiceCountry = eachSalesAnalytic.Account__r.Country__c;
 
             ProcedureTracker__c eachProcedureTracker = new ProcedureTracker__c(
-                    RecordTypeId = invoiceCountry?.equals('US') ? ptRecordTypeUSId : ptRecordTypeGlobalId, // We assign the record type based on the account's country
+                    RecordTypeId = (new Set<String>{'US', 'CA'}.contains(invoiceCountry)) ? ptRecordTypeUSId : ptRecordTypeGlobalId, // We assign the record type based on the account's country
                     ProcedureType__c = 'Clear Aligners',
                     PracticeAccount__c = eachSalesAnalytic.Account__c,
                     RegistrationDate__c = eachSalesAnalytic.Invoice_Date__c,    // Eventually have a field on the account with the registration date and transform the current field to a custom formula instead
@@ -127,7 +127,7 @@ global class BatchCreateProcedureTrackers implements Database.Batchable<sObject>
             );
 
             // We check the first two activities for the global procedure trackers
-            if(!invoiceCountry?.equals('US')){
+            if(!(new Set<String>{'US', 'CA'}.contains(invoiceCountry))){
                 eachProcedureTracker.x1ExperienceSureSmile__c = true;
                 eachProcedureTracker.x2Register__c = true;
             }

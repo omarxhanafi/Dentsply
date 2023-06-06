@@ -227,15 +227,6 @@ Requirement was to use same values as on Product Profiling on Contact. Picklist 
         <description>Related the products used to a specific Trial</description>
         <externalId>false</externalId>
         <label>Trial &amp; Tender</label>
-        <lookupFilter>
-            <active>true</active>
-            <filterItems>
-                <field>Opportunity.RecordTypeId</field>
-                <operation>equals</operation>
-                <value>Trials &amp; Tenders</value>
-            </filterItems>
-            <isOptional>false</isOptional>
-        </lookupFilter>
         <referenceTo>Opportunity</referenceTo>
         <relationshipLabel>Current products used</relationshipLabel>
         <relationshipName>Current_products_used</relationshipName>

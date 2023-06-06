@@ -58,7 +58,7 @@ public class AccountMergeRequestTrigger_Test {
         contactRecord[1].AccountId = accounts[0].Id;
         insert contactRecord;
 
-        List<Opportunity> opportunityRecord = TestDataFactory.returnOpportunities(1, 'Account_Plan', testUser.Id);
+        List<Opportunity> opportunityRecord = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
         opportunityRecord[0].AccountId = accounts[1].Id;
         insert opportunityRecord;
 

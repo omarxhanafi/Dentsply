@@ -7,11 +7,11 @@
     
     getProfilingHierarchy : function(cmp, event, recordId) { 
 			var action = cmp.get("c.getProductProfiling");
-        	
+
             action.setParams({
-                recordId : cmp.get("v.recordId")
+                recordId : cmp.get("v.profilingRecordId")
             });
-        	
+
         	action.setCallback(this, function(response) {
 
             var state = response.getState();

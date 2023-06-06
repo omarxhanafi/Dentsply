@@ -67,6 +67,14 @@ Gather Information/Establish Partnership &lt;/b&gt;&lt;/h4&gt;
         <value xsi:type="xsd:string">Discovery, Goal Assessment</value>
     </values>
     <values>
+        <field>PDFLinkLabel__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>PDFLinkURL__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>RecordTypeDeveloperName__c</field>
         <value xsi:type="xsd:string">Clear_Aligners</value>
     </values>

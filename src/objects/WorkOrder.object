@@ -1365,6 +1365,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>ServiceNotes__c</fullName>
+        <description>To be copied from Service Appointment (TFUS-000005632)</description>
+        <externalId>false</externalId>
+        <label>Service Notes</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>ServiceReportLanguage</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -1485,6 +1496,18 @@
         <formula>IF ( ISBLANK(SourceRecord__c) ||  ( SourceRecord__r.Company_Code__c !=&quot;613&quot; &amp;&amp;  SourceRecord__r.Company_Code__c !=&quot;614&quot; )||  TEXT(SourceRecord__r.Status__c)=&quot;Inactive&quot;, &quot;False&quot;,&quot;True&quot;)</formula>
         <label>TF_IsValidSourceRecord</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TF_ServiceTerritoryName__c</fullName>
+        <description>as the service territory field is a lookup and we need to use it in Sharing Rules criteria and we can&apos;t use it, so this field is used as a technical field to get the service territory name through a flow and use it</description>
+        <externalId>false</externalId>
+        <label>Service Territory Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>

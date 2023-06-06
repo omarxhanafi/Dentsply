@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">CEREC Primescan;CEREC Primemill Full System;SpeedFire;Primescan Connect;Other;Primescan AC;Primescan</value>
+        <value xsi:type="xsd:string">CEREC Primescan;CEREC Primemill Full System;SpeedFire;Primescan Connect;Other Digital Group;Primescan AC;Primescan</value>
     </values>
     <values>
         <field>Category__c</field>

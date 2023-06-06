@@ -646,7 +646,7 @@
         <externalId>false</externalId>
         <formula>IF (ISBLANK(Start), 0, (End - Start)*24*60)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Duration In Minutes</label>
+        <label>Scheduled Duration</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>

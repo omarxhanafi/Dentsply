@@ -88,8 +88,12 @@ public with sharing class QuoteTriggerHelper {
 
         for (Quote newQuote : quotes)
         {
-            String accountCountry = quoteOpportunityMap.get(newQuote.Id).Account.Country__c;
-            setQuoteTemplate(newQuote, accountCountry, quoteSettings);
+            // Populate the Selected Quote Template only if not selected by the user
+            if(String.isBlank(newQuote.SelectQuoteTemplate__c))
+            {
+                String accountCountry = quoteOpportunityMap.get(newQuote.Id).Account.Country__c;
+                setQuoteTemplate(newQuote, accountCountry, quoteSettings);
+            }
             setQuoteManagers(newQuote,quoteOpportunityMap.get(newQuote.Id));
         }
     }

@@ -5,8 +5,12 @@
         </lightning-card>
     </template>
     <template if:false={leadOppSettings}>
-        <lightning-card  variant="Narrow" icon-name="utility:warning" >
-            <h1 slot="title" style="white-space: normal;">{label.warningLabel}</h1>
+        <lightning-card  variant="Narrow"  title={label.headerLabel} icon-name="utility:warning" class="orange-bg">
+            <p class="slds-p-horizontal_small">{label.warningLabel}</p>
         </lightning-card>
+<!--        <lightning-card  variant="Narrow" icon-name="utility:warning" >-->
+<!--            -->
+<!--            <p slot="title" class="slds-p-horizontal_small" style="white-space: normal;">{label.warningLabel}</p>-->
+<!--        </lightning-card>-->
     </template>
 </template>

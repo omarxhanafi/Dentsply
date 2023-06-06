@@ -347,7 +347,7 @@
     <validationRules>
         <fullName>ExceptionEndDateMustBeChangedByApprover</fullName>
         <active>true</active>
-        <description>Exception End Date on the FMV Exception request can be initially filled. After initial filling, it should be read-only to all users. It can only be changed by the approver (Vicki Gaines).
+        <description>Exception End Date on the FMV Exception request can be initially filled. After initial filling, it should be read-only to all users. It can only be changed by the approver (Narda Hilton).
 TFUS-000003534</description>
         <errorConditionFormula>AND(
 $Setup.GlobalBypassProcessesSettings__c.RunValidationRules__c,
@@ -356,7 +356,7 @@ ISChanged(Exception_End_Date__c),
 $User.Id &lt;&gt; &apos;0050J000007YnWH&apos;
 )</errorConditionFormula>
         <errorDisplayField>Exception_End_Date__c</errorDisplayField>
-        <errorMessage>You&apos;re not allowed to modify the Exception End Date. Please, contact Vicki Gaines.</errorMessage>
+        <errorMessage>You&apos;re not allowed to modify the Exception End Date. Please, contact Narda Hilton.</errorMessage>
     </validationRules>
     <visibility>Public</visibility>
     <webLinks>

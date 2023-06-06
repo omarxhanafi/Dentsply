@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">SmartFix;Symbios;V3;XiVE;DS PrimeTaper;DS OmniTaper;C1 XD;Seven XD</value>
+        <value xsi:type="xsd:string">SmartFix;Symbios;V3;XiVE;DS PrimeTaper;DS OmniTaper;C1 XD;Seven XD;Other Implants</value>
     </values>
     <values>
         <field>Category__c</field>

@@ -10,15 +10,26 @@ History
 20220824    roberto     Created  methods createProductRequests,returnProductRequests, createWorkOrders, returnWorkOrders
 --------------------------------------------------------------------------------------------------------*/
 
-@isTest(seeAllData=false)
+@IsTest(SeeAllData=false)
 public class TestDataFactory {
+
+    /**
+     * Enables CampMgmtCampaignMemberTriggerIsEnabled__c in BatchSettings__c
+     */
+    public static void enableTrigger()
+    {
+        BatchSettings__c settings = new BatchSettings__c();
+        settings.Name = 'Default';
+        settings.CampMgmtCampaignMemberTriggerIsEnabled__c = true;
+        insert settings;
+    }
 
     /*-------------------------------------------------------------------------------------------------------
     Author: Salesforce
     Description: Creates the GlobalBypassProcessesSettings__c needed to run automation
     --------------------------------------------------------------------------------------------------------*/
     public static GlobalBypassProcessesSettings__c createBypassCustomSetting(){
-        List<GlobalBypassProcessesSettings__c> existingbypassSettings = [Select Id from GlobalBypassProcessesSettings__c];
+        List<GlobalBypassProcessesSettings__c> existingbypassSettings = [SELECT Id FROM GlobalBypassProcessesSettings__c];
         if (!existingbypassSettings.isEmpty()) return existingbypassSettings.get(0);
         GlobalBypassProcessesSettings__c bypassSetting = new GlobalBypassProcessesSettings__c();
         bypassSetting.RunTriggers__c  = true;
@@ -28,7 +39,7 @@ public class TestDataFactory {
     }
 
     public static GlobalBypassProcessesSettings__c createBypassCustomSetting(Boolean runTriggers, Boolean runProcesBuilder){
-        List<GlobalBypassProcessesSettings__c> existingbypassSettings = [Select Id from GlobalBypassProcessesSettings__c];
+        List<GlobalBypassProcessesSettings__c> existingbypassSettings = [SELECT Id FROM GlobalBypassProcessesSettings__c];
         if (!existingbypassSettings.isEmpty()) return existingbypassSettings.get(0);
         GlobalBypassProcessesSettings__c bypassSetting = new GlobalBypassProcessesSettings__c();
         bypassSetting.RunTriggers__c  = runTriggers;
@@ -119,7 +130,7 @@ public class TestDataFactory {
     --------------------------------------------------------------------------------------------------------*/
     public static List<User> returnUsers(Integer numRecords, String profileName){
 
-        Profile profile = [select Id, Name from profile where Name =: profileName LIMIT 1];
+        Profile profile = [SELECT Id, Name FROM profile WHERE Name =: profileName LIMIT 1];
         List<User> lstUsers = new List<User>();
         String baseUsrName = profile.Name.replaceAll('[ \\#\\:]', '');
         List<String> profileNameSplitted = baseUsrName.split('');
@@ -193,7 +204,7 @@ public class TestDataFactory {
     Inputs : @param usersList
     --------------------------------------------------------------------------------------------------------*/
     public static GlobalIntegrationSettings__c createGlobalIntegrationSettings(List<User> usersList){
-        List<GlobalIntegrationSettings__c> existingGlobalIntegrationSettings = [Select Id from GlobalIntegrationSettings__c];
+        List<GlobalIntegrationSettings__c> existingGlobalIntegrationSettings = [SELECT Id FROM GlobalIntegrationSettings__c];
         if (!existingGlobalIntegrationSettings.isEmpty()) return existingGlobalIntegrationSettings.get(0);
         GlobalIntegrationSettings__c globalIntegrationSettings = new GlobalIntegrationSettings__c();
         if(usersList.size() > 0)  {
@@ -1376,6 +1387,161 @@ History :
         insert contractItems;
         return contractItems;
     }
-    
+
+    /**
+     * Returns a instanced Cvent event record
+     * @param eventCode Event Code
+     *
+     * @return CventEvents__Event__c - Cvent event record
+     */
+    public static CventEvents__Event__c returnCventEvent(String eventCode)
+    {
+        CventEvents__Event__c event = new CventEvents__Event__c();
+        event.CventEvents__pkg_PlannerEmail__c = 'elearning-deutschland@dentsplysirona.com';
+        event.CventEvents__pkg_PlannerFirstName__c = 'Michael';
+        event.CventEvents__pkg_PlannerLastName__c = 'Mantel';
+        event.CventEvents__pkg_PlanningStatus__c = 'Approved 1';
+        event.CventEvents__pkg_Capacity__c = 500;
+        event.CventEvents__pkg_Category__c = 'Webinar';
+        event.CventEvents__pkg_Code__c = eventCode;
+        event.CventEvents__pkg_LaunchDate__c = Date.newInstance(2022, 12, 14);
+        event.CventEvents__pkg_EventStub__c = '12142ab7-b829-4770-b1ca-7c274812d4d1';
+        event.CventEvents__pkg_Status__c = 'Active';
+        event.CventEvents__pkg_TimeZone__c = 'Central Europe Time';
+        event.CventEvents__pkg_Title__c = 'Webinar_CEREC Online-Demo_030223_Strobel';
+        event.CventEvents__pkg_TypeName__c = 'Public';
+        return event;
+    }
+
+    /**
+     * Create a Cvent Event record
+     * @param eventCode     Event Code
+     * @param isInserted    Insert or not the record in database
+     *
+     * @return CventEvents__Event__c - Cvent Event
+     */
+    public static CventEvents__Event__c createCventEvent(String eventCode, Boolean isInserted)
+    {
+        CventEvents__Event__c event = returnCventEvent(eventCode);
+
+        if(isInserted)
+        {
+            insert event;
+        }
+
+        return event;
+    }
+
+    /**
+     * Returns a Temp attendee record
+     * @param attendeeStub  Attendee Stub
+     * @param eventStub     Event Stub
+     *
+     * @return CventEvents__AttendeeTemp__c - Temp Attendee record
+     */
+    public static CventEvents__AttendeeTemp__c returnAttendeeTemp(String attendeeStub, String eventStub)
+    {
+        CventEvents__AttendeeTemp__c temp = new CventEvents__AttendeeTemp__c();
+        temp.CventEvents__pkg_AttendeeStatus__c = 'No Response';
+        temp.CventEvents__pkg_ContactStub__c = 'ContactStubId';
+        temp.CventEvents__pkg_Attended__c = 'Yes';
+        temp.CventEvents__pkg_FirstName__c = 'temp';
+        temp.CventEvents__pkg_LastName__c = 'attendee';
+        temp.CventEvents__pkg_Email__c = 'attendeeStub@gmail.com';
+        temp.CventEvents__pkg_AttendeeStub__c = attendeeStub;
+        temp.CventEvents__pkg_EventStub__c = eventStub;
+        temp.CventEvents__pkg_Title__c = 'Webinar_CEREC Online-Demo_030223_Strobel';
+        return temp;
+    }
+
+    /**
+     * Creates a Temp Attendee record
+     * @param attendeeStub  Attendee Stub
+     * @param eventStub     Event Stub
+     * @param isInserted    Insert or not the record in database
+     *
+     * @return aze
+     */
+    public static CventEvents__AttendeeTemp__c createAttendeeTemp(String attendeeStub, String eventStub, Boolean isInserted)
+    {
+        CventEvents__AttendeeTemp__c temp = returnAttendeeTemp(attendeeStub,eventStub);
+
+        if(isInserted)
+        {
+            insert temp;
+        }
+
+        return temp;
+    }
+
+    /**
+     * Return an instanced Attendee Record
+     * @param contact       Attendee's contact
+     * @param event         Attendee's event
+     * @param temp          Attendee's temp
+     * @param lead          Attendee's lead
+     *
+     * @return CventEvents__Attendee__c - Attendee
+     */
+    public static CventEvents__Attendee__c returnAttendee(Contact contact, CventEvents__Event__c event, CventEvents__AttendeeTemp__c temp, Lead lead)
+    {
+        CventEvents__Attendee__c attendee = new CventEvents__Attendee__c();
+        attendee.CventEvents__Event__c = event.Id;
+        attendee.CventEvents__AttendeeStub__c = temp.CventEvents__pkg_AttendeeStub__c;
+        attendee.CventEvents__Status__c = temp.CventEvents__pkg_AttendeeStatus__c;
+        attendee.CventEvents__Lead__c = lead?.Id;
+        attendee.CventEvents__Contact__c = contact?.Id;
+        return attendee;
+    }
+
+    /**
+     * Create an Attendee Record
+     * @param contact       Attendee's contact
+     * @param event         Attendee's event
+     * @param temp          Attendee's temp
+     * @param lead          Attendee's lead
+     * @param isInserted    Insert or not the record in database
+     *
+     * @return CventEvents__Attendee__c - Attendee
+     */
+    public static CventEvents__Attendee__c createAttendee(Contact contact, CventEvents__Event__c event, CventEvents__AttendeeTemp__c temp, Lead lead, Boolean isInserted)
+    {
+        CventEvents__Attendee__c attendee = returnAttendee(contact, event, temp, lead);
+
+        if(isInserted)
+        {
+            insert attendee;
+        }
+
+        return attendee;
+    }
+
+    /**
+     * Assign Cvent Permission Sets to the current user before executing tests
+     */
+    public static void assignCventPermissionSet(Id userId)
+    {
+        // Query for the permission set ID
+        List<PermissionSet> ps2 = [SELECT Id FROM PermissionSet WHERE Name = 'Global_Campaigns_CVENT_Campaigns'];
+
+        if (!ps2.isEmpty())
+        {
+            List<PermissionSetAssignment> existingPsa2 = [SELECT Id FROM PermissionSetAssignment WHERE AssigneeId = :userId AND PermissionSetId = :ps2[0].Id];
+
+            if (existingPsa2.isEmpty())
+            {
+                PermissionSetAssignment psa2 = new PermissionSetAssignment(
+                        AssigneeId = userId,
+                        PermissionSetId = ps2[0].Id
+                );
+                insert psa2;
+            }
+        }else {
+            System.assert(false,'Global_Campaigns_CVENT_Campaigns Permission set is missing in the environment');
+        }
+
+        List<PermissionSetAssignment> existingPsa2Res = [SELECT Id FROM PermissionSetAssignment WHERE AssigneeId = :userId AND PermissionSetId = :ps2[0].Id];
+        System.assertEquals(1,existingPsa2Res.size(),'Global_Campaigns_CVENT_Campaigns Permission set is not assigned');
+    }
 
 }

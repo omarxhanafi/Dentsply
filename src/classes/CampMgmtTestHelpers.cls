@@ -3,6 +3,8 @@ global class CampMgmtTestHelpers
     global static Account createTestAccount(String name)
     {
         Account testAccount = new Account();
+        String currentUserId = UserInfo.getUserId();
+        testAccount = testDataFactory.returnAccounts(1, 'CIM_Account', currentUserId)[0];
         testAccount.Country__c = 'SE';
         testAccount.Name = name;
         insert testAccount;
@@ -18,6 +20,8 @@ global class CampMgmtTestHelpers
         testContact.LastName = lastName;
         testContact.InsertEmailMarketingConsentCollected__c= 'No';
         testContact.Email = emailAddress;
+        testContact.Email = emailAddress;
+        testContact.Country_Code_3_digit__c = 'DEU';
         insert testContact;
         
         return testContact;
@@ -32,7 +36,10 @@ global class CampMgmtTestHelpers
         testCampaign.Name = name;
         testCampaign.Strategy__c = 'GET';
         testCampaign.SBU_Focus__c = 'Implants';
+        testCampaign.Campaign_Category__c = 'Consumables';
+        testCampaign.Brands__c = 'Sinius';
         testCampaign.IsActive = true;
+        testCampaign.Country_Code_3_digit__c = 'DEU';
         insert testCampaign;
 
         return testCampaign;
@@ -55,7 +62,9 @@ global class CampMgmtTestHelpers
 
     global static CampaignMember createTestCampaignMember(ID campaignId, ID contactId, String status)
     {
-         return createTestCampaignMember(campaignId, contactId, status, 'Participant');     
+        CampaignMember testCampaignMember = createTestCampaignMember(campaignId, contactId, status, 'Participant');
+        insert testCampaignMember;
+        return testCampaignMember;
     } 
 
     global static CampaignMember createTestCampaignMember(ID campaignId, ID contactId, String status, String type)
@@ -65,8 +74,12 @@ global class CampMgmtTestHelpers
         testCampaignMember.ContactId = contactId;
         testCampaignMember.Status = status;
         testCampaignMember.Type__c = type;
-        insert testCampaignMember;  
 
         return testCampaignMember;     
-    }    
+    }
+
+    global static CampaignMember returnTestCampaignMember(ID campaignId, ID contactId, String status)
+    {
+        return createTestCampaignMember(campaignId, contactId, status, 'Participant');
+    }
 }

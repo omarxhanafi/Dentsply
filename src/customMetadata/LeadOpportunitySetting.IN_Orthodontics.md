@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">SureSmile Aligner</value>
+        <value xsi:type="xsd:string">SureSmile Aligner;Propel VPro</value>
     </values>
     <values>
         <field>Category__c</field>
@@ -24,11 +24,11 @@
     </values>
     <values>
         <field>DefaultCampaignOwner__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">00520000005QSsK</value>
     </values>
     <values>
         <field>DefaultLeadOwner__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">00520000005QSsK</value>
     </values>
     <values>
         <field>DefaultProcedureTrackerOwnerId__c</field>

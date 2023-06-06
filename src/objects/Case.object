@@ -879,6 +879,11 @@
                     <label>Queue: IT: Front Line</label>
                 </value>
                 <value>
+                    <fullName>00G6M0000040QMbUAM</fullName>
+                    <default>false</default>
+                    <label>Queue: IT: Italia Promozioni</label>
+                </value>
+                <value>
                     <fullName>00G6M0000040GYWUA2</fullName>
                     <default>false</default>
                     <label>Queue: IT: Technical Admin</label>
@@ -7389,7 +7394,7 @@ HYPERLINK(&quot;/&quot;&amp;Id&amp;&quot;/a?retURL=%2F&quot;&amp;Id&amp;&quot;&a
         <relationshipName>Cases</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -23162,6 +23167,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>00G6M0000040OCeUAM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>00G6M0000040QMbUAM</fullName>
                 <default>false</default>
             </values>
             <values>

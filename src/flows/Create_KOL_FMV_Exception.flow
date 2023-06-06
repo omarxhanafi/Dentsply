@@ -196,8 +196,9 @@
             <label>Unique</label>
         </rules>
     </decisions>
-    <description>added uniquely qualified reason with possibility to longer text
-TFUS-000004298</description>
+    <description>TFUS-5125 Marked Exception End Date as being required
+TFUS-000004298 added uniquely qualified reason with possibility to longer text</description>
+    <environments>Default</environments>
     <formulas>
         <name>Max_text</name>
         <dataType>String</dataType>
@@ -396,7 +397,7 @@ TFUS-000004298</description>
             <dataType>Date</dataType>
             <fieldText>Exception End Date</fieldText>
             <fieldType>InputField</fieldType>
-            <isRequired>false</isRequired>
+            <isRequired>true</isRequired>
         </fields>
         <fields>
             <name>StatusLC</name>

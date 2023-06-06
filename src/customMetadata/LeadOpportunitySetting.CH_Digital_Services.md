@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>BrandsList__c</field>
-        <value xsi:type="xsd:string">DS Core;DS Core Care;DS Core Create</value>
+        <value xsi:type="xsd:string">DS Core;DS Core Care;DS Core Create;Other Digital Services</value>
     </values>
     <values>
         <field>Category__c</field>

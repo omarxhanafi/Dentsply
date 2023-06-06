@@ -413,13 +413,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Botiss_D_PL__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>Botiss (D-PL)</label>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>Business_Initiative__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>New Specialist: New Specialist AP w/o Implant Sales LY
@@ -572,13 +565,6 @@ DSO: National Acct calls not part of the base bus. or AP</inlineHelpText>
         </valueSet>
     </fields>
     <fields>
-        <fullName>Call_notes__c</fullName>
-        <externalId>false</externalId>
-        <label>Call notes</label>
-        <required>false</required>
-        <type>TextArea</type>
-    </fields>
-    <fields>
         <fullName>Click_this_link_to_edit_this_CFE__c</fullName>
         <description>Custom URL to show a link to the VF Page (to edit the event) 
 Temp workaround brought to mitigate the Edit Std Page</description>
@@ -688,14 +674,6 @@ Temp workaround brought to mitigate the Edit Std Page</description>
         <externalId>false</externalId>
         <inlineHelpText>Highlights that the Sales Reps have discussed courses or events promotion.</inlineHelpText>
         <label>Course/Event Promotion</label>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Courses__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>Used to capture CFEs where Courses was detailed as a product. Used only in ES, PT and AT.</description>
-        <externalId>false</externalId>
-        <label>Courses</label>
         <type>Checkbox</type>
     </fields>
     <fields>
@@ -973,22 +951,6 @@ Non-direct Contact Visit does not count as an actual CFE</inlineHelpText>
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Dentsply_Implants_Devices__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>Old lable is FRIOS Instruments</description>
-        <externalId>false</externalId>
-        <label>Dentsply Implants Devices</label>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Dual_Atlantis_CFE_D_UK__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <inlineHelpText>To be checked by Clinical TM if conducting a CFE together with Lab TM.</inlineHelpText>
-        <label>Dual Atlantis CFE (D-UK)</label>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>End_User_Activity__c</fullName>
         <externalId>false</externalId>
         <label>End User Activity</label>
@@ -1092,14 +1054,6 @@ Non-direct Contact Visit does not count as an actual CFE</inlineHelpText>
         </valueSet>
     </fields>
     <fields>
-        <fullName>ExpertEase__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>A detailed product.</description>
-        <externalId>false</externalId>
-        <label>ExpertEase</label>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>FSL__Count_of_Events__c</fullName>
         <deprecated>false</deprecated>
         <description>Count of all events</description>
@@ -1149,14 +1103,6 @@ Non-direct Contact Visit does not count as an actual CFE</inlineHelpText>
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Facilitate__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>A detailed Product</description>
-        <externalId>false</externalId>
-        <label>Facilitate</label>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>First_Call_Resolution__c</fullName>
@@ -1220,23 +1166,6 @@ Non-direct Contact Visit does not count as an actual CFE</inlineHelpText>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>New_Customer_Conversion__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>Used in the Dubai Hub  (UAE, Egypt, Kuwait, Saudi Arabia and South Africa) to track customer conversion rate after events. Used in Task layout. Very similiar checkbox exist on Events for Germany but chosed not to use to not mix the task and event fields</description>
-        <externalId>false</externalId>
-        <inlineHelpText>A customer converted thanks to this event</inlineHelpText>
-        <label>New Customer Conversion</label>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Nite_White_D_JP__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>Special Product sold in Japan.</description>
-        <externalId>false</externalId>
-        <label>Nite White (D-JP)</label>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>Number_of_implants_TR__c</fullName>
         <description>This is a field requested from turkey to track the number of implants during surgery</description>
         <externalId>false</externalId>
@@ -1282,14 +1211,6 @@ Non-direct Contact Visit does not count as an actual CFE</inlineHelpText>
         <relationshipName>Activities</relationshipName>
         <required>false</required>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Other__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>A detailed Product</description>
-        <externalId>false</externalId>
-        <label>Other</label>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Phone_Number_Calling__c</fullName>
@@ -1355,14 +1276,6 @@ Non-direct Contact Visit does not count as an actual CFE</inlineHelpText>
                 <valueName>Urology</valueName>
             </valueSettings>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Product_Complaint_D_DE__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>Used by DE Digital Sales Reps to mark CFEs which involves a product complaint.</description>
-        <externalId>false</externalId>
-        <label>Product Complaint (D-DE)</label>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>RSM_Co_Travel__c</fullName>
@@ -1451,6 +1364,13 @@ IF(left( WhoId,3)=&quot;00Q&quot;,&quot;Lead&quot;,
         <visibleLines>7</visibleLines>
     </fields>
     <fields>
+        <fullName>ScheduledRoutedInSalesforceMaps__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Scheduled / Routed in Salesforce Maps</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Scientific_Market_Monitoring_D_IT__c</fullName>
         <defaultValue>false</defaultValue>
         <description>CFE related to a Scientific Project. Used by DI Italy.</description>
@@ -1480,20 +1400,13 @@ IF(left( WhoId,3)=&quot;00Q&quot;,&quot;Lead&quot;,
         </valueSet>
     </fields>
     <fields>
-        <fullName>Surgical_Guides__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>SIMPLANT Surgical Guides</description>
+        <fullName>Task_Objective__c</fullName>
         <externalId>false</externalId>
-        <label>Surgical Guides</label>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>System_Presentation_D_DE__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>By request from Moritz Hamburger April 2012. Service promoted in Germany.</description>
-        <externalId>false</externalId>
-        <label>System Presentation (D-DE)</label>
-        <type>Checkbox</type>
+        <label>Task Objective</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>User_Country__c</fullName>

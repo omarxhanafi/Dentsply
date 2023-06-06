@@ -20,6 +20,7 @@ private class Test_ProductProfilingHierarchyController {
         User currentUser = TestDataFactory.createUsers(1, 'System Administrator')[0]; 
         system.runAs(currentUser){
             Account acc = new Account();
+            acc = testDataFactory.returnAccounts(1, 'CIM_Account', currentUser.Id)[0];
             acc.Name ='Test account';
             acc.Country__c = 'DE';
             insert acc;
@@ -93,6 +94,7 @@ private class Test_ProductProfilingHierarchyController {
         User currentUser = TestDataFactory.createUsers(1, 'System Administrator')[0]; 
         system.runAs(currentUser){
             Account acc = new Account();
+            acc = testDataFactory.returnAccounts(1, 'CIM_Account', currentUser.Id)[0];
             acc.Name ='Test account';
             insert acc;
             

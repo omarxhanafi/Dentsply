@@ -23,16 +23,16 @@ public class Test_GuidanceRendererController {
         System.runAs(testUser)
         {
             Account acc = [SELECT id,Country__c FROM Account LIMIT 1];
-            acc.Country__c = 'BE';
+            acc.Country__c = 'UM';
             update acc;
             ProcedureTracker__c testProcedureTracker = new ProcedureTracker__c(PracticeAccount__c = acc.Id,
                     ObtainCreditCardInformation__c  = true);
             insert testProcedureTracker;
 
             Test.startTest();
-            String contentOfGuidance = GuidanceRendererController.getGuidanceDetails(testProcedureTracker.Id,'Obtain Credit Card Information');
+            GuidanceRenderer__mdt guidance = GuidanceRendererController.getGuidanceDetails(testProcedureTracker.Id,'Obtain Credit Card Information');
             Test.stopTest();
-            System.assertNotEquals('',contentOfGuidance);
+            System.assertNotEquals(null ,guidance);
         }
     }
 

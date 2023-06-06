@@ -1064,6 +1064,17 @@ IF(AND(MTF_Evaluation1__c =0, Waive_Shipping_Charges__c =TRUE),
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Delivery_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Delivery Cost</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
@@ -3099,6 +3110,19 @@ Total Sales w/ discount exc. lines w/o identified Margin Guidance</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Amount__c</fullName>
+        <description>Prints the total amount of an order, including Order Amount and Delivery Cost</description>
+        <externalId>false</externalId>
+        <formula>Delivery_Cost__c  +  Order_Amount_global__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Total_Bundle_Discount__c</fullName>

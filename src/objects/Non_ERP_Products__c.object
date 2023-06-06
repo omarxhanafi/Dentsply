@@ -216,6 +216,17 @@
         <visibleLines>25</visibleLines>
     </fields>
     <fields>
+        <fullName>GlobalProductShowtoallcountries__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, this product will be shown to all countries regardless of the countries&apos; field selection.  
+TFUS-000005477</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, this product will be shown to all countries regardless of the countries&apos; field selection.</inlineHelpText>
+        <label>Global Product (Show to all countries)</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Inactive__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>

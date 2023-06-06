@@ -5,6 +5,7 @@ History
 20211008    Kevin Ruibin Do         TFUS-000003304 Updated setEventSubject() to skip nordic users
 20200609    Kevin Ruibin Do         TFUS-000001933 Changed boolean flag on manageNoticesOnEventsInserted to true
 20191107    Ahmed LOUDRASSI         CallReportEventTrigger, CallReportEventTriggerAfterInsert, DC_EventBackgroundJobs an DeleteClonedChildEvent triggers. (#)
+20230426    Roberto Narbona         TFUS-000005610
 --------------------------------------------------------------------------------------------------------*/
 public  with sharing class EventTriggerHelper {
 
@@ -265,6 +266,20 @@ public  with sharing class EventTriggerHelper {
         for (Event eventToCheck : newEventList) {
             if (eventToCheck.Customer_Facing_Event__c == true && eventToCheck.IsRecurrence2 == true) {
                 eventToCheck.addError('Recurring Customer Facing Events are not allowed');
+            }
+        }
+    }
+
+
+    /*------------------------------------------------------------  
+    Description:    New Method story TFUS-000005610
+    Inputs:         @param newEventList
+    ------------------------------------------------------------*/
+    public static void beforeSalesforceMapsScheduled(List<Event> newEventList) {
+        for (Event eventToCheck : newEventList) {
+            if (eventToCheck.ScheduledRoutedInSalesforceMaps__c) {
+                eventToCheck.Customer_Facing_Event__c  = true;
+                eventToCheck.Astra_Tech_Type__c  = 'In Person Meeting';
             }
         }
     }
