@@ -2,6 +2,11 @@ import { LightningElement, api, wire } from 'lwc';
 import getAccountEventsJSON from '@salesforce/apex/ActivityScorecardController.getAccountActivityScorecard';
 import FORM_FACTOR from '@salesforce/client/formFactor';
 import LOCALE from '@salesforce/i18n/locale';
+import TASKS_COMPLETED from '@salesforce/label/c.ActivityScoreboardTasksCompleted';
+import CALLS_LOGGED from '@salesforce/label/c.ActivityScoreboardCallsLogged';
+import EMAILS_SENT from '@salesforce/label/c.ActivityScoreboardEmailsSent';
+import EVENTS_LOGGED from '@salesforce/label/c.ActivityScoreboardEventsLogged';
+
 
 
 
@@ -20,6 +25,13 @@ export default class ActivityScorecardLwc extends LightningElement {
     callsLoggedPercentage;
     emailsSentPercentage;
     eventsLoggedPercentage;
+
+    labels = {
+        TASKS_COMPLETED,
+        CALLS_LOGGED,
+        EMAILS_SENT,
+        EVENTS_LOGGED
+    };
 
     @wire(getAccountEventsJSON, { accountId: '$recordId' })
     wiredGetAccountEvents({ error, data }){

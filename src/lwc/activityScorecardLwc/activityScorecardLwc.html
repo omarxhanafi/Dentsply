@@ -39,7 +39,7 @@
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-1">
-                                    <span>{activityScorecardResult.completedTasksCount} tasks completed out of {completedTasksBenchmark}</span>
+                                    <span>{activityScorecardResult.completedTasksCount} {labels.TASKS_COMPLETED} {completedTasksBenchmark}</span>
                                     <span aria-hidden="true">
                                       <strong>{completedTasksPercentage}%</strong>
                                     </span>
@@ -59,7 +59,7 @@
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-2">
-                                    <span>{activityScorecardResult.callsLoggedCount} calls logged out of {callsLoggedBenchmark}</span>
+                                    <span>{activityScorecardResult.callsLoggedCount} {labels.CALLS_LOGGED} {callsLoggedBenchmark}</span>
                                     <span aria-hidden="true">
                                       <strong>{callsLoggedPercentage}%</strong>
                                     </span>
@@ -79,7 +79,7 @@
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-3">
-                                    <span>{activityScorecardResult.emailsSentCount} emails sent out of {emailsSentBenchmark}</span>
+                                    <span>{activityScorecardResult.emailsSentCount} {labels.EMAILS_SENT} {emailsSentBenchmark}</span>
                                     <span aria-hidden="true">
                                       <strong>{emailsSentPercentage}%</strong>
                                     </span>
@@ -99,7 +99,7 @@
                             </lightning-layout-item>
                             <lightning-layout-item size="11" padding="around-small">
                                 <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-4">
-                                    <span>{activityScorecardResult.eventsLoggedCount} events logged out of {eventsLoggedBenchmark}</span>
+                                    <span>{activityScorecardResult.eventsLoggedCount} {labels.EVENTS_LOGGED} {eventsLoggedBenchmark}</span>
                                     <span aria-hidden="true">
                                       <strong>{eventsLoggedPercentage}%</strong>
                                     </span>
