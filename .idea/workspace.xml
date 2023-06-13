@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,24 +52,18 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="apexLogLevel" value="FINEST" />
                   <option name="body" value="ActivityScorecardController.getAccountActivityScorecard('0016M00002H7LrPQAV');" />
-                  <option name="calloutsLogLevel" value="FINEST" />
                   <option name="connectionName" value="acc360" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 1" />
-                  <option name="nbaLogLevel" value="FINEST" />
-                  <option name="profilingLogLevel" value="FINEST" />
-                  <option name="systemLogLevel" value="FINEST" />
-                  <option name="validationLogLevel" value="FINEST" />
-                  <option name="visualforceLogLevel" value="FINEST" />
-                  <option name="waveLogLevel" value="FINEST" />
-                  <option name="workflowLogLevel" value="FINEST" />
+                </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="body" value="// Specify the Account ID of the record you want to share&#10;String accountId = '0015r00000o9Ls3AAE'; // Replace with the actual Account ID&#10;&#10;// Specify the User ID or Group ID with whom you want to share the record&#10;String shareWithId = '0050J000003RHjzQAG'; // Replace with the actual User ID or Group ID&#10;&#10;// Specify the access level you want to grant ('Read', 'Edit', 'All', or 'None')&#10;String accessLevel = 'Edit';&#10;&#10;// Create a new AccountShare object&#10;AccountShare shareRecord = new AccountShare();&#10;shareRecord.AccountId = accountId;&#10;shareRecord.UserOrGroupId = shareWithId;&#10;shareRecord.AccountAccessLevel = accessLevel;&#10;shareRecord.OpportunityAccessLevel = accessLevel; // Add this line to specify the Opportunity access level&#10;&#10;&#10;// Insert the AccountShare record to share the account&#10;try {&#10;    insert shareRecord;&#10;    System.debug('Account record shared successfully.');&#10;} catch (Exception e) {&#10;    System.debug('Error sharing the account record: ' + e.getMessage());&#10;}&#10;" />
+                  <option name="name" value="Anonymous Apex 2" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="0" />
+            <option name="selectedSavedDocumentIndex" value="1" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionWorkspaceSettings">
@@ -18562,8 +18556,8 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1686058895873" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1686060203000" />
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1686648319000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1686648320000" />
                     </map>
                   </option>
                   <option name="lastBuildScope" value="CONTEXT" />
@@ -18667,14 +18661,18 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT ActivityDate&#10;FROM Event&#10;WHERE AccountId = '0015r00000o9Ls3AAE'&#10;ORDER BY ActivityDate ASC&#10;LIMIT 1" />
+                  <option name="body" value="select id, DeveloperName from bmpyrckt__Timeline_Configuration__mdt where DeveloperName = 'Account_Orders'" />
                   <option name="connectionName" value="acc360" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="SELECT id, ActivityDate&#10;FROM Event&#10;WHERE AccountId = '0015r00000o9Ls3AAE'&#10;AND ActivityDate = LAST_N_DAYS:365" />
+                  <option name="name" value="SOQL Query 2" />
+                </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="0" />
+            <option name="selectedSavedDocumentIndex" value="1" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -19013,7 +19011,7 @@
       <workItem from="1684134734319" duration="479000" />
       <workItem from="1685010185886" duration="4681000" />
       <workItem from="1685953308159" duration="3375000" />
-      <workItem from="1686052132628" duration="5187000" />
+      <workItem from="1686052132628" duration="10191000" />
     </task>
     <servers />
   </component>
