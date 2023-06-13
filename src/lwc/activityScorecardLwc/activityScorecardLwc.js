@@ -88,7 +88,7 @@ export default class ActivityScorecardLwc extends LightningElement {
 
     get iconSize(){
         if(FORM_FACTOR == 'Large') {
-            return 'large';
+            return 'medium';
         }
 
         return 'small';

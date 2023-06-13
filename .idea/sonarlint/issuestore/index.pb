@@ -47,3 +47,5 @@ h
 0src/classes/NavigateToCreateRecordController.cls,4/e/4e95e2a57b84b361fe4cbc4c830b83e66727456c
 K
 src/classes/DoNothingPB.cls,b/9/b9c8fdd70ca7a2eb3190ca81576d701d5eff1444
+P
+ src/lwc/addBundles/addBundles.js,f/d/fd188abc0d3db6a7e3020e7284107d2ba179b0ee
