@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IlluminatedCloud/DevAug/OfflineSymbolTable.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +35,7 @@
         <entry key="Dentsply">
           <value>
             <ModuleWorkspaceSettings>
-              <option name="moduleContentsLastModified" value="1681297545783" />
+              <option name="moduleContentsLastModified" value="1689237678303" />
             </ModuleWorkspaceSettings>
           </value>
         </entry>
@@ -58,7 +56,7 @@
               <list>
                 <AnonymousApexSavedDocument>
                   <option name="body" value="ActivityScorecardController.getAccountActivityScorecard('0016M00002H7LrPQAV');" />
-                  <option name="connectionName" value="acc360" />
+                  <option name="connectionName" value="DevAug" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="Anonymous Apex 1" />
                 </AnonymousApexSavedDocument>
@@ -11848,6 +11846,11 @@
                 </ConnectionWorkspaceSettings>
               </value>
             </entry>
+            <entry key="DevAug">
+              <value>
+                <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
             <entry key="DevDec">
               <value>
                 <ConnectionWorkspaceSettings />
@@ -18681,7 +18684,7 @@
               <list>
                 <SoqlQuerySavedDocument>
                   <option name="body" value="select id, DeveloperName from bmpyrckt__Timeline_Configuration__mdt where DeveloperName = 'Account_Orders'" />
-                  <option name="connectionName" value="acc360" />
+                  <option name="connectionName" value="DevAug" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
@@ -18743,7 +18746,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="DevAug" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -18790,7 +18793,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="DevAug" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -18829,7 +18832,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="DevAug" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -18876,7 +18879,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="DevAug" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -18923,7 +18926,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="DevAug" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -19041,7 +19044,8 @@
       <workItem from="1687851211748" duration="627000" />
       <workItem from="1687852255702" duration="3372000" />
       <workItem from="1687942913254" duration="898000" />
-      <workItem from="1689155292066" duration="1097000" />
+      <workItem from="1689155292066" duration="1364000" />
+      <workItem from="1689236127000" duration="319000" />
     </task>
     <servers />
   </component>

@@ -49,3 +49,9 @@ K
 src/classes/DoNothingPB.cls,b/9/b9c8fdd70ca7a2eb3190ca81576d701d5eff1444
 P
  src/lwc/addBundles/addBundles.js,f/d/fd188abc0d3db6a7e3020e7284107d2ba179b0ee
+V
+&src/classes/AccountFlagsController.cls,a/e/ae546cbec7d875f0e7d652d26a2e3fd90dc6dbef
+Z
+*src/lwc/accountFlagsLwc/accountFlagsLwc.js,2/d/2d023c109c9ed5bc55d2b91f7cdf0bb68e943a28
+\
+,src/lwc/accountFlagsLwc/accountFlagsLwc.html,3/8/38713d0d9afea46ac83e95ad7e96de21334b7365
