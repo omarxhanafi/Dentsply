@@ -215,6 +215,14 @@
                 <elementReference>Get_lead.Contact__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Opp2Create.Win_Loss_Reason__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Opp2Create.Win_Loss_Description__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
         <connector>
             <targetReference>DealerAccessDecision</targetReference>
         </connector>
@@ -962,6 +970,30 @@ Converting Sales Leads into Opportunities
                     <elementReference>Opp2Create.RecordTypeId</elementReference>
                 </value>
             </inputParameters>
+            <inputParameters>
+                <name>brand</name>
+                <value>
+                    <elementReference>Get_lead.Brand__c</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>category</name>
+                <value>
+                    <elementReference>Get_lead.Category__c</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>winLossReason</name>
+                <value>
+                    <elementReference>Opp2Create.Win_Loss_Reason__c</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>winLossDescription</name>
+                <value>
+                    <elementReference>Opp2Create.Win_Loss_Description__c</elementReference>
+                </value>
+            </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <outputParameters>
@@ -1257,7 +1289,7 @@ Converting Sales Leads into Opportunities
             <targetReference>Get_lead</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>ChatterPost</name>
         <dataType>SObject</dataType>

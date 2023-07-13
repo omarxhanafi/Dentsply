@@ -759,7 +759,7 @@ ISPICKVAL({!myVariable_current.Status__c}, &apos;Completed&apos;), ISPICKVAL({!m
         <object>Field_Sales_Project_Members__c</object>
     </recordUpdates>
     <startElementReference>isChangedDecision4_myRule_3_Status_c</startElementReference>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>

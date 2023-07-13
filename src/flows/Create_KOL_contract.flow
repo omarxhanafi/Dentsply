@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Nav2FMV</name>
         <label>Nav2FMV</label>
-        <locationX>2123</locationX>
+        <locationX>2353</locationX>
         <locationY>619</locationY>
         <actionName>c:ServiceCloud_Nav2SObj</actionName>
         <actionType>component</actionType>
@@ -22,7 +22,7 @@
     <actionCalls>
         <name>Nav2Obj</name>
         <label>Nav2Obj</label>
-        <locationX>3061</locationX>
+        <locationX>3291</locationX>
         <locationY>778</locationY>
         <actionName>c:ServiceCloud_Nav2SObj</actionName>
         <actionType>component</actionType>
@@ -42,7 +42,7 @@
     <assignments>
         <name>Assign_compensation_stage</name>
         <label>Assign compensation stage</label>
-        <locationX>1954</locationX>
+        <locationX>2184</locationX>
         <locationY>290</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
@@ -65,7 +65,7 @@
     <assignments>
         <name>Assign_Consulting_Contract</name>
         <label>Assign Consulting Contract</label>
-        <locationX>940</locationX>
+        <locationX>1170</locationX>
         <locationY>143</locationY>
         <assignmentItems>
             <assignToReference>KOLcontract.Case_Series__c</assignToReference>
@@ -137,7 +137,7 @@
     <assignments>
         <name>Assign_country_match</name>
         <label>Assign country match</label>
-        <locationX>1715</locationX>
+        <locationX>1945</locationX>
         <locationY>246</locationY>
         <assignmentItems>
             <assignToReference>var_countryMatch</assignToReference>
@@ -153,7 +153,7 @@
     <assignments>
         <name>Assign_default_model</name>
         <label>Assign default model</label>
-        <locationX>1716</locationX>
+        <locationX>1946</locationX>
         <locationY>474</locationY>
         <assignmentItems>
             <assignToReference>KOLcontract.Hourly_rate_max__c</assignToReference>
@@ -183,7 +183,7 @@
     <assignments>
         <name>Assign_general_info_to_contract</name>
         <label>Assign general info to contract</label>
-        <locationX>44</locationX>
+        <locationX>274</locationX>
         <locationY>670</locationY>
         <assignmentItems>
             <assignToReference>KOLcontract.Contact__c</assignToReference>
@@ -262,7 +262,7 @@
     <assignments>
         <name>Assign_model</name>
         <label>Assign model</label>
-        <locationX>1446</locationX>
+        <locationX>1676</locationX>
         <locationY>50</locationY>
         <assignmentItems>
             <assignToReference>KOLcontract.Hourly_rate_max__c</assignToReference>
@@ -299,7 +299,7 @@
     <assignments>
         <name>Assign_Speaking_Contract</name>
         <label>Assign Speaking Contract</label>
-        <locationX>983</locationX>
+        <locationX>1213</locationX>
         <locationY>307</locationY>
         <assignmentItems>
             <assignToReference>KOLcontract.Lectures__c</assignToReference>
@@ -319,7 +319,7 @@
     <assignments>
         <name>Update_contract_0</name>
         <label>Update contract 0</label>
-        <locationX>41</locationX>
+        <locationX>271</locationX>
         <locationY>464</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
@@ -335,7 +335,7 @@
     <assignments>
         <name>Update_contract_1</name>
         <label>Update contract 1</label>
-        <locationX>683</locationX>
+        <locationX>913</locationX>
         <locationY>306</locationY>
         <assignmentItems>
             <assignToReference>KOLcontract.End_Date__c</assignToReference>
@@ -414,7 +414,7 @@
     <assignments>
         <name>Update_contract_1_0</name>
         <label>Update contract 1</label>
-        <locationX>607</locationX>
+        <locationX>837</locationX>
         <locationY>151</locationY>
         <assignmentItems>
             <assignToReference>KOLcontract.End_Date__c</assignToReference>
@@ -493,7 +493,7 @@
     <assignments>
         <name>Update_contract_1_1</name>
         <label>Update contract 1</label>
-        <locationX>769</locationX>
+        <locationX>999</locationX>
         <locationY>692</locationY>
         <assignmentItems>
             <assignToReference>KOLcontract.End_Date__c</assignToReference>
@@ -572,7 +572,7 @@
     <assignments>
         <name>Update_contract_2</name>
         <label>Update contract 2</label>
-        <locationX>2544</locationX>
+        <locationX>2774</locationX>
         <locationY>405</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
@@ -627,7 +627,7 @@
     <decisions>
         <name>Check_country</name>
         <label>Check country</label>
-        <locationX>1606</locationX>
+        <locationX>1836</locationX>
         <locationY>127</locationY>
         <defaultConnector>
             <targetReference>Look_KOL_model</targetReference>
@@ -652,7 +652,7 @@
     <decisions>
         <name>Check_hourly_rate</name>
         <label>Check hourly rate</label>
-        <locationX>2275</locationX>
+        <locationX>2505</locationX>
         <locationY>409</locationY>
         <defaultConnector>
             <targetReference>ExceptionScreen</targetReference>
@@ -706,7 +706,7 @@
     <decisions>
         <name>Check_KOL_model</name>
         <label>Check KOL model</label>
-        <locationX>1278</locationX>
+        <locationX>1508</locationX>
         <locationY>163</locationY>
         <defaultConnector>
             <targetReference>Check_country</targetReference>
@@ -752,7 +752,7 @@
     <decisions>
         <name>Check_record_type</name>
         <label>Check record type</label>
-        <locationX>209</locationX>
+        <locationX>439</locationX>
         <locationY>289</locationY>
         <defaultConnector>
             <targetReference>General_info_screen_2_0</targetReference>
@@ -804,7 +804,7 @@
     <decisions>
         <name>Contract_require_payment</name>
         <label>Contract require payment</label>
-        <locationX>357</locationX>
+        <locationX>587</locationX>
         <locationY>668</locationY>
         <defaultConnector>
             <targetReference>Healthcare_Professional</targetReference>
@@ -827,9 +827,34 @@
         </rules>
     </decisions>
     <decisions>
+        <name>DecisionRecordIdAssigned</name>
+        <label>Is record id assigned?</label>
+        <locationX>181</locationX>
+        <locationY>163</locationY>
+        <defaultConnector>
+            <targetReference>SelectKolScreen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>OutcomeRecordIdIsAssigned</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>LookupKOLinfo</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Do_any_records_exist</name>
         <label>Do any records exist?</label>
-        <locationX>1154</locationX>
+        <locationX>1384</locationX>
         <locationY>252</locationY>
         <defaultConnector>
             <targetReference>Assign_default_model</targetReference>
@@ -861,7 +886,7 @@
     <decisions>
         <name>ExceptionDecision</name>
         <label>ExceptionDecision</label>
-        <locationX>1953</locationX>
+        <locationX>2183</locationX>
         <locationY>486</locationY>
         <defaultConnector>
             <targetReference>Assign_compensation_stage</targetReference>
@@ -887,7 +912,7 @@
         <description>Checks if this is a KOL country but we have missing Tier or Profession Group for the KOL. In that case exit flow and send user back to Tier correctly.</description>
         <name>FMV_Country_Not_Tiered</name>
         <label>FMV Country Not Tiered</label>
-        <locationX>410</locationX>
+        <locationX>640</locationX>
         <locationY>393</locationY>
         <defaultConnector>
             <targetReference>Check_record_type</targetReference>
@@ -926,7 +951,7 @@
     <decisions>
         <name>Found_any_model</name>
         <label>Found any model?</label>
-        <locationX>1716</locationX>
+        <locationX>1946</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Assign_default_model</targetReference>
@@ -974,7 +999,7 @@
         <description>Checks if this is not a healthcare provider and if so ignores</description>
         <name>Healthcare_Professional</name>
         <label>Healthcare Professional</label>
-        <locationX>208</locationX>
+        <locationX>438</locationX>
         <locationY>501</locationY>
         <defaultConnector>
             <targetReference>Check_record_type</targetReference>
@@ -996,7 +1021,8 @@
             <label>Healthcare</label>
         </rules>
     </decisions>
-    <description>Added the KOL Contract Owner</description>
+    <description>TFUS-5600: Added the possibility to select a KOL if blank
+Added the KOL Contract Owner</description>
     <dynamicChoiceSets>
         <name>ContractStatusSelection</name>
         <dataType>Picklist</dataType>
@@ -1067,6 +1093,7 @@
         <picklistField>SBU__c</picklistField>
         <picklistObject>KOL_Contract__c</picklistObject>
     </dynamicChoiceSets>
+    <environments>Default</environments>
     <formulas>
         <name>CheckActiveApprovals</name>
         <dataType>Boolean</dataType>
@@ -1156,7 +1183,7 @@ IF( {!KOLinfo.Approved_Lower_Exception_Value__c}&lt; {!KOLcontract.Hourly_rate_m
     <loops>
         <name>Look_KOL_model</name>
         <label>Look KOL model</label>
-        <locationX>1487</locationX>
+        <locationX>1717</locationX>
         <locationY>320</locationY>
         <assignNextValueToReference>CurrentKOLmodel</assignNextValueToReference>
         <collectionReference>KOL_model</collectionReference>
@@ -1184,7 +1211,7 @@ IF( {!KOLinfo.Approved_Lower_Exception_Value__c}&lt; {!KOLcontract.Hourly_rate_m
     <recordCreates>
         <name>Create_contract</name>
         <label>Create contract</label>
-        <locationX>2566</locationX>
+        <locationX>2796</locationX>
         <locationY>773</locationY>
         <connector>
             <targetReference>FileUpload</targetReference>
@@ -1194,7 +1221,7 @@ IF( {!KOLinfo.Approved_Lower_Exception_Value__c}&lt; {!KOLcontract.Hourly_rate_m
     <recordLookups>
         <name>Lookup_KOL_model</name>
         <label>KOL_model</label>
-        <locationX>430</locationX>
+        <locationX>660</locationX>
         <locationY>497</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1229,8 +1256,8 @@ IF( {!KOLinfo.Approved_Lower_Exception_Value__c}&lt; {!KOLcontract.Hourly_rate_m
     <recordLookups>
         <name>LookupKOLinfo</name>
         <label>LookupKOLinfo</label>
-        <locationX>38</locationX>
-        <locationY>368</locationY>
+        <locationX>187</locationX>
+        <locationY>305</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_contract_0</targetReference>
@@ -1284,7 +1311,7 @@ IF( {!KOLinfo.Approved_Lower_Exception_Value__c}&lt; {!KOLcontract.Hourly_rate_m
     <recordUpdates>
         <name>Update_contract</name>
         <label>Update contract</label>
-        <locationX>2894</locationX>
+        <locationX>3124</locationX>
         <locationY>775</locationY>
         <connector>
             <targetReference>Nav2Obj</targetReference>
@@ -1308,7 +1335,7 @@ IF( {!KOLinfo.Approved_Lower_Exception_Value__c}&lt; {!KOLcontract.Hourly_rate_m
     <screens>
         <name>Choose_type</name>
         <label>Choose type</label>
-        <locationX>44</locationX>
+        <locationX>274</locationX>
         <locationY>563</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1353,7 +1380,7 @@ IF( {!KOLinfo.Approved_Lower_Exception_Value__c}&lt; {!KOLcontract.Hourly_rate_m
     <screens>
         <name>Compensation_Details_Screen</name>
         <label>Compensation Details Screen</label>
-        <locationX>2129</locationX>
+        <locationX>2359</locationX>
         <locationY>287</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1571,7 +1598,7 @@ IF( {!KOLinfo.Approved_Lower_Exception_Value__c}&lt; {!KOLcontract.Hourly_rate_m
     <screens>
         <name>Consulting_Contract_Screen</name>
         <label>Consulting Contract Screen</label>
-        <locationX>774</locationX>
+        <locationX>1004</locationX>
         <locationY>146</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1704,7 +1731,7 @@ IF( {!KOLinfo.Approved_Lower_Exception_Value__c}&lt; {!KOLcontract.Hourly_rate_m
     <screens>
         <name>ContractSummary</name>
         <label>ContractSummary</label>
-        <locationX>2400</locationX>
+        <locationX>2630</locationX>
         <locationY>771</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1746,7 +1773,7 @@ IF( {!KOLinfo.Approved_Lower_Exception_Value__c}&lt; {!KOLcontract.Hourly_rate_m
     <screens>
         <name>ExceptionScreen</name>
         <label>ExceptionScreen</label>
-        <locationX>2107</locationX>
+        <locationX>2337</locationX>
         <locationY>487</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1777,7 +1804,7 @@ Would you like to do that now?</fieldText>
     <screens>
         <name>FileUpload</name>
         <label>FileUpload</label>
-        <locationX>2736</locationX>
+        <locationX>2966</locationX>
         <locationY>775</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1838,7 +1865,7 @@ Would you like to do that now?</fieldText>
     <screens>
         <name>General_info_screen</name>
         <label>General info screen</label>
-        <locationX>218</locationX>
+        <locationX>448</locationX>
         <locationY>671</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1979,7 +2006,7 @@ Would you like to do that now?</fieldText>
     <screens>
         <name>General_info_screen_2</name>
         <label>General info screen 2</label>
-        <locationX>543</locationX>
+        <locationX>773</locationX>
         <locationY>307</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2032,7 +2059,7 @@ Would you like to do that now?</fieldText>
     <screens>
         <name>General_info_screen_2_0</name>
         <label>General info screen 2</label>
-        <locationX>447</locationX>
+        <locationX>677</locationX>
         <locationY>150</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2085,7 +2112,7 @@ Would you like to do that now?</fieldText>
     <screens>
         <name>KOL_not_correctly_defined</name>
         <label>KOL not correctly defined</label>
-        <locationX>723</locationX>
+        <locationX>953</locationX>
         <locationY>504</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2101,7 +2128,7 @@ Would you like to do that now?</fieldText>
     <screens>
         <name>No_FMV_Model_Found</name>
         <label>No FMV Model Found</label>
-        <locationX>1857</locationX>
+        <locationX>2087</locationX>
         <locationY>169</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2115,9 +2142,69 @@ Would you like to do that now?</fieldText>
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>SelectKolScreen</name>
+        <label>Select KOL</label>
+        <locationX>50</locationX>
+        <locationY>249</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>LookupKOLinfo</targetReference>
+        </connector>
+        <fields>
+            <name>SelectKolHeader</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Please select a KOL to create the contract towards&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>KolLookup</name>
+            <extensionName>flowruntime:lookup</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>fieldApiName</name>
+                <value>
+                    <stringValue>Expert__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>KOL</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>objectApiName</name>
+                <value>
+                    <stringValue>KOL_Contract__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>maxValues</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>required</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <outputParameters>
+                <assignToReference>recordId</assignToReference>
+                <name>recordId</name>
+            </outputParameters>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Speaking_Contract_Screen</name>
         <label>Speaking Contract Screen</label>
-        <locationX>835</locationX>
+        <locationX>1065</locationX>
         <locationY>305</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2214,17 +2301,17 @@ Would you like to do that now?</fieldText>
         <stageOrder>5</stageOrder>
     </stages>
     <start>
-        <locationX>50</locationX>
-        <locationY>167</locationY>
+        <locationX>65</locationX>
+        <locationY>0</locationY>
         <connector>
-            <targetReference>LookupKOLinfo</targetReference>
+            <targetReference>DecisionRecordIdAssigned</targetReference>
         </connector>
     </start>
     <status>Active</status>
     <subflows>
         <name>Create_exception</name>
         <label>Create exception</label>
-        <locationX>1955</locationX>
+        <locationX>2185</locationX>
         <locationY>616</locationY>
         <connector>
             <targetReference>Nav2FMV</targetReference>
