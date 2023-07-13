@@ -77,7 +77,7 @@
     <assignments>
         <name>Assign_opp_input</name>
         <label>Assign opp input</label>
-        <locationX>1553</locationX>
+        <locationX>1577</locationX>
         <locationY>545</locationY>
         <assignmentItems>
             <assignToReference>Opp2Create.CloseDate</assignToReference>
@@ -215,14 +215,6 @@
                 <elementReference>Get_lead.Contact__c</elementReference>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Opp2Create.Win_Loss_Reason__c</assignToReference>
-            <operator>Assign</operator>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Opp2Create.Win_Loss_Description__c</assignToReference>
-            <operator>Assign</operator>
-        </assignmentItems>
         <connector>
             <targetReference>DealerAccessDecision</targetReference>
         </connector>
@@ -308,10 +300,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>SetLeadValidationRuleTriggered</name>
+        <label>Set Lead Validation Rule Triggered</label>
+        <locationX>1351</locationX>
+        <locationY>870</locationY>
+        <assignmentItems>
+            <assignToReference>LeadValidationRuleTriggered</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opportunity_details</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>SetOppValidationRuleTriggered</name>
         <label>Set Opp Validation Rule Triggered</label>
-        <locationX>1400</locationX>
-        <locationY>838</locationY>
+        <locationX>1353</locationX>
+        <locationY>980</locationY>
         <assignmentItems>
             <assignToReference>OppValidationRuleTriggered</assignToReference>
             <operator>Assign</operator>
@@ -399,8 +407,8 @@
     <decisions>
         <name>descOwnerAssignedManually</name>
         <label>Owner assigned manually?</label>
-        <locationX>1128</locationX>
-        <locationY>765</locationY>
+        <locationX>1156</locationX>
+        <locationY>539</locationY>
         <defaultConnector>
             <targetReference>SelectOwnerScreen</targetReference>
         </defaultConnector>
@@ -484,8 +492,8 @@
     <decisions>
         <name>Is_Opportunity_Validation_Rule_Triggered</name>
         <label>Is Opportunity Validation Rule Triggered?</label>
-        <locationX>1514</locationX>
-        <locationY>847</locationY>
+        <locationX>1534</locationX>
+        <locationY>987</locationY>
         <defaultConnector>
             <targetReference>scrErrorMessage</targetReference>
         </defaultConnector>
@@ -526,6 +534,31 @@
                 <targetReference>Assign_opp_input</targetReference>
             </connector>
             <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IsSalesLeadValidationRuleTriggered</name>
+        <label>Is Sales Lead Validation Rule Triggered</label>
+        <locationX>1744</locationX>
+        <locationY>869</locationY>
+        <defaultConnector>
+            <targetReference>scrErrorMessage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SalesLeadValidationRuleTriggered</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Flow.FaultMessage</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Sorry! Only the owner and its manager are allowed to change this sales lead at this point</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetLeadValidationRuleTriggered</targetReference>
+            </connector>
+            <label>Sales Lead Validation Rule Triggered</label>
         </rules>
     </decisions>
     <decisions>
@@ -578,7 +611,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>230308: TFUS-000005409 : Adjusted Win/Loss Description validation error message
+    <description>230713 : TFUS-000005781 : Proper error handling for the Sales Lead validation rule
+230308: TFUS-000005409 : Adjusted Win/Loss Description validation error message
 230123 : TFUS-000005269 : Display the Win/Loss Reasons/Description fields when the Opportunity stage equals &apos;Closed Won&apos; or &apos;Closed Lost&apos;
 220808: TFUS-000004617: Iberia owner skip
 220120: TFUS-000003955: Recreate the Fault connection from &quot;Update Lead&quot; to &quot;scrErrorMessage&quot; since this didn&apos;t work properly.
@@ -655,7 +689,7 @@ Converting Sales Leads into Opportunities
     <recordCreates>
         <name>Create_opportunity</name>
         <label>Create opportunity</label>
-        <locationX>1682</locationX>
+        <locationX>1771</locationX>
         <locationY>545</locationY>
         <connector>
             <targetReference>Update_initiative_account</targetReference>
@@ -786,13 +820,13 @@ Converting Sales Leads into Opportunities
     <recordUpdates>
         <name>Update_initiative_account</name>
         <label>Update lead</label>
-        <locationX>1910</locationX>
-        <locationY>546</locationY>
+        <locationX>1983</locationX>
+        <locationY>545</locationY>
         <connector>
             <targetReference>createOpportunityTeamMember</targetReference>
         </connector>
         <faultConnector>
-            <targetReference>scrErrorMessage</targetReference>
+            <targetReference>IsSalesLeadValidationRuleTriggered</targetReference>
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -906,6 +940,30 @@ Converting Sales Leads into Opportunities
             </visibilityRule>
         </fields>
         <fields>
+            <name>LeadValidationRuleAlert</name>
+            <extensionName>c:LightningPage_WarningMessage</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Sorry! Only the owner and its manager are allowed to change this sales lead at this point.</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>LeadValidationRuleTriggered</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
             <name>OppScript</name>
             <extensionName>c:ServiceCloud_FlowScript</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -968,30 +1026,6 @@ Converting Sales Leads into Opportunities
                 <name>recordTypeId</name>
                 <value>
                     <elementReference>Opp2Create.RecordTypeId</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>brand</name>
-                <value>
-                    <elementReference>Get_lead.Brand__c</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>category</name>
-                <value>
-                    <elementReference>Get_lead.Category__c</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>winLossReason</name>
-                <value>
-                    <elementReference>Opp2Create.Win_Loss_Reason__c</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>winLossDescription</name>
-                <value>
-                    <elementReference>Opp2Create.Win_Loss_Description__c</elementReference>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1289,7 +1323,7 @@ Converting Sales Leads into Opportunities
             <targetReference>Get_lead</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>ChatterPost</name>
         <dataType>SObject</dataType>
@@ -1304,6 +1338,16 @@ Converting Sales Leads into Opportunities
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>LeadValidationRuleTriggered</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
     </variables>
     <variables>
         <name>ManualNameCheck</name>
