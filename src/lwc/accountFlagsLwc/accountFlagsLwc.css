@@ -1,0 +1,43 @@
+.flag-table {
+    width: auto;
+    border-collapse: collapse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flag-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flag-square {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.flag-text {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.flag-red {
+    background-color: red;
+}
+
+.flag-green {
+    background-color: green;
+}
+
+.flag-white {
+    background-color: white;
+}
+
+.flag-table td {
+    padding-bottom: 10px;
+}

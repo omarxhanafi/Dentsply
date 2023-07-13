@@ -71,7 +71,7 @@ export default class ActivityScorecardLwc extends LightningElement {
     }
 
     get completedTasksWidth() {
-        return `width: ${this.completedTasksPercentage}%`;
+        return `z: ${this.completedTasksPercentage}%`;
     }
 
     get callsLoggedWidth() {

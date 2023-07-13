@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js-meta.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,9 +70,13 @@
                   <option name="body" value="Account acc = [SELECT Id FROM Account WHERE Id = '0015r00000qASgNAAW' LIMIT 1];&#10;&#10;ServiceAppointment sa = new ServiceAppointment();&#10;sa.AccountId = acc.Id; // Use AccountId to link the ServiceAppointment with an Account&#10;&#10;// Set other required fields for the ServiceAppointment&#10;sa.Subject = 'Quick Service Appointment';&#10;sa.StartDateTime = DateTime.now();&#10;sa.EndDateTime = sa.StartDateTime.addHours(1);&#10;// Set other fields as needed&#10;&#10;insert sa;&#10;" />
                   <option name="name" value="Anonymous Apex 3" />
                 </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="body" value="AccountFlagsController.getAccountFlags('0015r00000qASgNAAW');" />
+                  <option name="name" value="Anonymous Apex 4" />
+                </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="2" />
+            <option name="selectedSavedDocumentIndex" value="3" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionWorkspaceSettings">
@@ -18544,6 +18554,7 @@
                     <map>
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1685363814633" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1686040038000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1686907197000" />
                     </map>
                   </option>
                 </ConnectionWorkspaceSettings>
@@ -18559,8 +18570,11 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1687853239000" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1686648319000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1686742552557" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1687855002000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1687853928000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
                     </map>
                   </option>
                   <option name="lastBuildScope" value="CONTEXT" />
@@ -19022,7 +19036,12 @@
       <workItem from="1685953308159" duration="3375000" />
       <workItem from="1686052132628" duration="11653000" />
       <workItem from="1686656924576" duration="237000" />
-      <workItem from="1686657525597" duration="3447000" />
+      <workItem from="1686657525597" duration="12343000" />
+      <workItem from="1687338012561" duration="12641000" />
+      <workItem from="1687851211748" duration="627000" />
+      <workItem from="1687852255702" duration="3372000" />
+      <workItem from="1687942913254" duration="898000" />
+      <workItem from="1689155292066" duration="1097000" />
     </task>
     <servers />
   </component>
