@@ -1,6 +1,6 @@
 <template>
     <div if:true={accountFlagsResult} class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
-        <lightning-card  variant="Narrow"  title="Account 360 Flags" icon-name="standard:account">
+        <lightning-card variant="Narrow" title="Account 360 Flags" icon-name="standard:account_info">
             <br/>
             <table class="flag-table" style="margin-left: 10px; margin-top: 20px;">
                 <tbody>
@@ -9,22 +9,46 @@
                         <div class="flag-text" style="font-size: 16px">Customer Number</div>
                     </td>
                     <td>
-                        <div class="flag-square flag-green"></div>
+                        <div class={customerNumberClass}></div>
+                    </td>
+                    <td if:true={customerNumber}>
+                        <div class="flag-text" style="font-size: 16px"><strong>({customerNumber})</strong></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="flag-text" style="font-size: 16px">KOL</div>
                     </td>
                     <td>
-                        <div class="flag-text" style="font-size: 16px"><strong>(ABCD12345)</strong></div>
+                        <div class={kolClass}></div>
                     </td>
                 </tr>
                 </tbody>
             </table>
             <br/>
             <lightning-layout>
-                <lightning-layout-item flexibility="auto" padding="around-small">
+                <lightning-layout-item flexibility="auto" padding="around-small" size="5" large-device-size="5" small-device-size="12">
                     <div class="custom-box slds-box slds-p-around_medium">
                         <lightning-card  variant="Narrow"  title="DS Core" icon-name="standard:settings">
                             <br/>
                             <table class="flag-table">
                                 <tbody>
+                                    <tr if:true={showDSCoreInactive}>
+                                        <td>
+                                            <div class="flag-text">DS Core</div>
+                                        </td>
+                                        <td>
+                                            <strong class="flag-text">(Inactive)</strong>
+                                        </td>
+                                    </tr>
+                                    <tr if:true={showAccess}>
+                                        <td>
+                                            <div class="flag-text">Access</div>
+                                        </td>
+                                        <td>
+                                            <div class={dsCoreAccessClass}></div>
+                                        </td>
+                                    </tr>
                                     <tr if:true={showLight}>
                                         <td>
                                             <div class="flag-text">Light</div>
@@ -59,6 +83,14 @@
                                     </tr>
 <!--                                    <tr>-->
 <!--                                        <td>-->
+<!--                                            <div class="flag-text">CEREC Club</div>-->
+<!--                                        </td>-->
+<!--                                        <td>-->
+<!--                                            <div class="flag-square flag-green"></div>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>-->
 <!--                                            <div class="flag-text">DS Core Create</div>-->
 <!--                                        </td>-->
 <!--                                        <td>-->
@@ -71,66 +103,42 @@
                         </lightning-card>
                     </div>
                 </lightning-layout-item>
-                <lightning-layout-item flexibility="auto" padding="around-small">
+                <lightning-layout-item flexibility="auto" padding="around-small" size="7" large-device-size="7" small-device-size="12">
                     <div class="custom-box slds-box slds-p-around_medium">
                         <lightning-card  variant="Narrow"  title="Online Ordering" icon-name="standard:orders">
                             <br/>
                             <table class="flag-table">
                                 <tbody>
+<!--                                    <tr>-->
+<!--                                        <td>-->
+<!--                                            <div class="flag-text">One DS</div>-->
+<!--                                        </td>-->
+<!--                                        <td>-->
+<!--                                            <div class="flag-square flag-green"></div>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
                                     <tr>
                                         <td>
-                                            <div class="flag-text">One DS</div>
+                                            <div class="flag-text">DS.com</div>
                                         </td>
                                         <td>
-                                            <div class="flag-square flag-green"></div>
+                                            <div class={dsComCLass}></div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <div class="flag-text">CEREC Club</div>
+                                            <div class="flag-text">SureSmile</div>
                                         </td>
                                         <td>
-                                            <div class="flag-square flag-green"></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag-text">Premiere</div>
-                                        </td>
-                                        <td>
-                                            <div class="flag-square flag-green"></div>
+                                            <div class={sureSmileClass}></div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <div class="flag-text">DS Activate</div>
+                                            <div class="flag-text">AWO</div>
                                         </td>
                                         <td>
-                                            <div class="flag-square flag-green"></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag-text">Clinical Accelerator</div>
-                                        </td>
-                                        <td>
-                                            <div class="flag-square flag-green"></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag-text">KOL</div>
-                                        </td>
-                                        <td>
-                                            <div class="flag-square flag-green"></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag-text">??</div>
-                                        </td>
-                                        <td>
-                                            <div class="flag-square flag-green"></div>
+                                            <div class={awoClass}></div>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -138,41 +146,41 @@
                         </lightning-card>
                     </div>
                 </lightning-layout-item>
-                <lightning-layout-item flexibility="auto" padding="around-small">
-                    <div class="custom-box slds-box slds-p-around_medium">
-                        <lightning-card  variant="Narrow"  title="Programs" icon-name="standard:channel_programs">
-                            <br/>
-                            <table class="flag-table">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="flag-text">Light</div>
-                                        </td>
-                                        <td>
-                                            <div class="flag-square flag-green"></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag-text">Standard</div>
-                                        </td>
-                                        <td>
-                                            <div class="flag-square flag-white"></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag-text">Advanced</div>
-                                        </td>
-                                        <td>
-                                            <div class="flag-square flag-red"></div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </lightning-card>
-                    </div>
-                </lightning-layout-item>
+<!--                <lightning-layout-item flexibility="auto" padding="around-small">-->
+<!--                    <div class="custom-box slds-box slds-p-around_medium">-->
+<!--                        <lightning-card  variant="Narrow"  title="Programs" icon-name="standard:channel_programs">-->
+<!--                            <br/>-->
+<!--                            <table class="flag-table">-->
+<!--                                <tbody>-->
+<!--                                    <tr>-->
+<!--                                        <td>-->
+<!--                                            <div class="flag-text">Light</div>-->
+<!--                                        </td>-->
+<!--                                        <td>-->
+<!--                                            <div class="flag-square flag-green"></div>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>-->
+<!--                                            <div class="flag-text">Standard</div>-->
+<!--                                        </td>-->
+<!--                                        <td>-->
+<!--                                            <div class="flag-square flag-white"></div>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>-->
+<!--                                            <div class="flag-text">Advanced</div>-->
+<!--                                        </td>-->
+<!--                                        <td>-->
+<!--                                            <div class="flag-square flag-red"></div>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                </tbody>-->
+<!--                            </table>-->
+<!--                        </lightning-card>-->
+<!--                    </div>-->
+<!--                </lightning-layout-item>-->
             </lightning-layout>
         </lightning-card>
     </div>

@@ -49,3 +49,5 @@ K
 src/classes/DoNothingPB.cls,b/9/b9c8fdd70ca7a2eb3190ca81576d701d5eff1444
 P
  src/lwc/addBundles/addBundles.js,f/d/fd188abc0d3db6a7e3020e7284107d2ba179b0ee
+^
+.src/classes/DisableChatterDeletesTestSuite.cls,3/a/3a6bffbee909f88306331420713d556b2539a423

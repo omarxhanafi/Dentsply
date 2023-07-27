@@ -13,9 +13,13 @@ export default class AccountFlagsLwc extends LightningElement {
 
     accountFlagsResult;
 
+    customerNumber;
+
+    showAccess = false;
     showLight = false;
     showStandard = false;
     showAdvanced = false;
+    showDSCoreInactive = false;
 
     @wire(getAccountFlagsJSON, { accountId: '$recordId' })
     wiredGetAccountFlags({ error, data }){
@@ -23,12 +27,21 @@ export default class AccountFlagsLwc extends LightningElement {
             this.accountFlagsResult = JSON.parse(data);
             console.log("this.accountFlagsResult", this.accountFlagsResult);
 
-            if(this.accountFlagsResult?.dsCoreAdvanced != 0){
+            // We only show the customer number if the flag is green, otherwise we only show the flag
+            if(this.accountFlagsResult?.customerNumber?.itemId != null && this.accountFlagsResult?.customerNumber?.value == 1){
+                this.customerNumber = this.accountFlagsResult?.customerNumber?.itemId;
+            }
+
+            if(this.accountFlagsResult?.dsCoreAdvanced?.value > 0){
                 this.showAdvanced = true;
-            } else if (this.accountFlagsResult?.dsCoreStandard != 0){
+            } else if (this.accountFlagsResult?.dsCoreStandard?.value > 0){
                 this.showStandard = true;
-            } else {
+            } else if (this.accountFlagsResult?.dsCoreLight?.value > 0) {
                 this.showLight = true;
+            } else if (this.accountFlagsResult?.dsCoreAccess?.value > 0) {
+                this.showAccess = true;
+            } else {
+                this.showDSCoreInactive = true;
             }
 
         } else if (error) {
@@ -36,19 +49,47 @@ export default class AccountFlagsLwc extends LightningElement {
         }
     }
 
+    get kolClass() {
+        return this.getFlag(this.accountFlagsResult?.kol?.value);
+    }
+
+    get customerNumberClass() {
+        return this.getFlag(this.accountFlagsResult?.customerNumber?.value);
+    }
+
+    get dsCoreAccessClass() {
+        return this.getFlag(this.accountFlagsResult?.dsCoreAccess?.value);
+    }
+
     get dsCoreLightClass() {
-        return 'flag-square ' + (this.accountFlagsResult?.dsCoreLight == 1 ? 'flag-green' : (this.accountFlagsResult?.dsCoreLight == 2 ? 'flag-red' : 'flag-white'));
+        return this.getFlag(this.accountFlagsResult?.dsCoreLight?.value);
     }
 
     get dsCoreStandardClass() {
-        return 'flag-square ' + (this.accountFlagsResult?.dsCoreStandard == 1 ? 'flag-green' : (this.accountFlagsResult?.dsCoreStandard == 2 ? 'flag-red' : 'flag-white'));
+        return this.getFlag(this.accountFlagsResult?.dsCoreStandard?.value);
     }
 
     get dsCoreAdvancedClass() {
-        return 'flag-square ' + (this.accountFlagsResult?.dsCoreAdvanced == 1 ? 'flag-green' : (this.accountFlagsResult?.dsCoreAdvanced == 2 ? 'flag-red' : 'flag-white'));
+        return this.getFlag(this.accountFlagsResult?.dsCoreAdvanced?.value);
     }
 
     get dsCoreCareClass() {
-        return 'flag-square ' + (this.accountFlagsResult?.dsCoreCare == 1 ? 'flag-green' : (this.accountFlagsResult?.dsCoreCare == 2 ? 'flag-red' : 'flag-white'));
+        return this.getFlag(this.accountFlagsResult?.dsCoreCare?.value);
+    }
+
+    get dsComCLass() {
+        return this.getFlag(this.accountFlagsResult?.dsCom?.value);
+    }
+
+    get sureSmileClass() {
+        return this.getFlag(this.accountFlagsResult?.sureSmile?.value);
+    }
+
+    get awoClass() {
+        return this.getFlag(this.accountFlagsResult?.awo?.value);
+    }
+
+    getFlag(flagValue){
+        return 'flag-square ' + (flagValue == 1 ? 'flag-green' : (flagValue == 2 ? 'flag-red' : 'flag-white'));
     }
 }
