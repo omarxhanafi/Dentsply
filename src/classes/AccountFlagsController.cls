@@ -1,9 +1,22 @@
 /**
- * Created by ohanafi on 22/6/2023.
+ * @Author          Omar (ohanafi@salesforce.com)
+ * @Description     Account Flags Controller.
+ * @Test-Class      Test_AccountFlagsController
+ *
+ * @History
+ * 22-06-2023   Omar     Create new AccountFlagsController class
  */
 
 public with sharing class AccountFlagsController {
 
+    /**
+     * getAccountFlagsJSON Return a map of Account Flags related to the provided account
+     * @author ohanafi@salesforce.com | 22-06-2022
+     *
+     * @param accountId   Id of the account
+     *
+     * @return String - Serialized map of flags
+     */
     @AuraEnabled(Cacheable = true)
     public static String getAccountFlagsJSON(Id accountId) {
         // Get account record
@@ -45,10 +58,10 @@ public with sharing class AccountFlagsController {
 
         if(!activeContracts.isEmpty()){
             // We first get the flag values from the active contracts
-            results.putAll(getDSCoreFlags(activeContracts, true));
+            results.putAll(getContractFlags(activeContracts, true));
 
             // We check the expired contracts
-            Map<String, AccountFlag> expiredResults = getDSCoreFlags(expiredContracts, false);
+            Map<String, AccountFlag> expiredResults = getContractFlags(expiredContracts, false);
 
             // If no DS Core results were found from the active contracts, we get the expired results
             if(results.get('dsCoreAccess').value == 0 && results.get('dsCoreLight').value == 0 && results.get('dsCoreStandard').value == 0 && results.get('dsCoreAdvanced').value == 0){
@@ -63,7 +76,7 @@ public with sharing class AccountFlagsController {
             }
 
         } else {
-            results.putAll(getDSCoreFlags(expiredContracts, false));
+            results.putAll(getContractFlags(expiredContracts, false));
         }
 
         // Retrieve source records  related to the account
@@ -105,17 +118,54 @@ public with sharing class AccountFlagsController {
             results.putAll(getSourceRecordFlags(inactiveSourceRecords, false));
         }
 
+        // Init CEREC Club Flag
+        AccountFlag cerecClub = new AccountFlag(0, null);
+
+        // Getting the CEREC Club Contracts
+        List<Contract> cerecContracts = [
+                SELECT
+                        Id, StartDate, EndDate, Name, Siroforce_Status__c
+                FROM Contract
+                WHERE AccountId = :accountId
+                    AND RecordType.DeveloperName = 'siroForceIntegration'
+                    AND Name LIKE '%CEREC CLUB%'
+        ];
+
+        if(!cerecContracts.isEmpty()){
+            // We look for active contracts first, if not found we check for any expired ones
+            for(Contract eachContract : cerecContracts){
+                if(eachContract.Siroforce_Status__c == 'Active' && eachContract.StartDate <= System.today() && eachContract.EndDate >= System.today()){
+                    cerecClub = new AccountFlag(1, eachContract.Id);
+                    break;
+                } else if (eachContract.Siroforce_Status__c == 'Inactive' && eachContract.EndDate < System.today()){
+                    cerecClub = new AccountFlag(2, eachContract.Id);
+                }
+            }
+        }
+
+        results.put('cerecClub', cerecClub);
+
         System.debug(results);
 
         return JSON.serialize(results);
     }
 
+    /**
+     * getAccountFlagsJSON Return a map of flags from a list of source records
+     * @author ohanafi@salesforce.com | 22-06-2023
+     *
+     * @param sourceRecords   List of source records
+     * @param isActive   Indicates if the source records are active or expired
+     *
+     * @return Map<String, AccountFlag> - Map of flags
+     */
     private static Map<String, AccountFlag> getSourceRecordFlags(List<Source_Record__c> sourceRecords, Boolean isActive) {
         // Init flag values (ranging from 0 to 2, 0 being not found, 1 = active, 2 = inactive)
-        AccountFlag customerNumber = new AccountFlag(0, null);
+        AccountFlag customerNumber = new AccountFlag(0, null, null);
         AccountFlag dsCom = new AccountFlag(0, null);
         AccountFlag sureSmile = new AccountFlag(0, null);
         AccountFlag awo = new AccountFlag(0, null);
+        AccountFlag siroForce = new AccountFlag(0, null);
 
         // Init list of source records related to an erp customer
         List<Source_Record__c> erpSourceRecords = new List<Source_Record__c>();
@@ -136,6 +186,10 @@ public with sharing class AccountFlagsController {
                 awo = new AccountFlag(isActive ? 1 : 2, eachSourceRecord.Id);
             }
 
+            if(eachSourceRecord.Source_Id__c == '64'){
+                siroForce = new AccountFlag(isActive ? 1 : 2, eachSourceRecord.Id);
+            }
+
             // If the SourceId is contained within the defined list of ERP codes, we add to the ERP Source records list
             if(new List<String>{'7', '1', '2', '31', '8', '58', '4', '33', '37', '17', '9', '39', '41', '46', '49', '18', '56', '3'}.contains(eachSourceRecord.Source_Id__c)){
                 erpSourceRecords.add(eachSourceRecord);
@@ -149,9 +203,9 @@ public with sharing class AccountFlagsController {
 
         if(!erpSourceRecords.isEmpty()){
             if(erpSourceRecords.size() > 1){
-                customerNumber = new AccountFlag(isActive ? 1 : 2, erpSourceRecords[0].SearchInfo__c);
+                customerNumber = new AccountFlag(isActive ? 1 : 2, erpSourceRecords[0].Id, erpSourceRecords[0].SearchInfo__c);
             } else {
-                customerNumber = new AccountFlag(isActive ? 1 : 2, erpSourceRecords[0].Customer_Id__c);
+                customerNumber = new AccountFlag(isActive ? 1 : 2, erpSourceRecords[0].Id, erpSourceRecords[0].Customer_Id__c);
             }
         }
 
@@ -161,13 +215,23 @@ public with sharing class AccountFlagsController {
         results.put('dsCom', dsCom);
         results.put('sureSmile', sureSmile);
         results.put('awo', awo);
+        results.put('siroForce', siroForce);
 
         return results;
     }
 
-    private static Map<String, AccountFlag> getDSCoreFlags(List<ServiceContract> activeContracts, Boolean isActive) {
+    /**
+     * getContractFlags Return a map of flags from a list of contracts
+     * @author ohanafi@salesforce.com | 22-06-2023
+     *
+     * @param contractsList   List of contracts
+     * @param isActive   Indicates if the contracts are active or expired
+     *
+     * @return Map<String, AccountFlag> - Map of flags
+     */
+    private static Map<String, AccountFlag> getContractFlags(List<ServiceContract> contractsList, Boolean isActive) {
         // Get a global set of service contract ids
-        Set<Id> serviceContractIds = new Map<Id, ServiceContract>(activeContracts).keySet();
+        Set<Id> serviceContractIds = new Map<Id, ServiceContract>(contractsList).keySet();
 
         // Init flag values (ranging from 0 to 2, 0 being not found, 1 = active, 2 = expired)
         AccountFlag dsCoreAccess = new AccountFlag(0, null);
@@ -177,15 +241,17 @@ public with sharing class AccountFlagsController {
         AccountFlag dsCoreCare = new AccountFlag(0, null);
 
         // We get the global list of contract line items associated with the provided set of service contracts, we also retrieve the PG1, PG2 and GPP codes
-        List<ContractLineItem> contractLineItems = [
-                SELECT Id,
-                        ServiceContractId,
-                        ContractLineItem.PricebookEntry.Product2.PG1_Code__c,
-                        ContractLineItem.PricebookEntry.Product2.PG2_Code__c,
-                        ContractLineItem.PricebookEntry.Product2.GPP_Code__c
-                FROM ContractLineItem
-                WHERE ServiceContractId IN :serviceContractIds
-        ];
+        String queryString = 'SELECT Id, ' +
+                'ServiceContractId, ' +
+                'PricebookEntry.Product2.PG1_Code__c, ' +
+                'PricebookEntry.Product2.PG2_Code__c, ' +
+                'PricebookEntry.Product2.GPP_Code__c ' +
+                'FROM ContractLineItem ' +
+                'WHERE ServiceContractId IN :serviceContractIds';
+
+        queryString += isActive ? ' AND StartDate <= TODAY AND EndDate >= TODAY' : ' AND EndDate < TODAY';
+
+        List<ContractLineItem> contractLineItems = Database.query(queryString);
 
         // We group the contract line items by service contract id
         Map<Id, List<ContractLineItem>> contractLineItemsMap = new Map<Id, List<ContractLineItem>>();
@@ -235,8 +301,17 @@ public with sharing class AccountFlagsController {
         // Value of the flag (0, 1, 2)
         @AuraEnabled public Integer value;
 
-        // Id of the Contract Line Item
+        // Id of the Contract Line Item, Contract or Source Record
         @AuraEnabled public String itemId;
+
+        // Customer number (optional)
+        @AuraEnabled public String customerNumber;
+
+        public AccountFlag(Integer value, String itemId, String customerNumber) {
+            this.value = value;
+            this.itemId = itemId;
+            this.customerNumber = customerNumber;
+        }
 
         public AccountFlag(Integer value, String itemId) {
             this.value = value;

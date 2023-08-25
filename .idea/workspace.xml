@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lwc/accountContainerLwc/accountContainerLwc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lwc/accountContainerLwc/accountContainerLwc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lwc/accountContainerLwc/accountContainerLwc.js-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_AccountFlagsController.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_AccountFlagsController.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29ab8179169847a8d09c2c1b9d86460bb85c9af3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4a3cf386d00c451769cd7536778c9b8a0b8e05a3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/6/b630b1cdf35416ba134d6722822b203854993152" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d7cd98f31984bfc448b97911180fe3aaee44b5cd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/e/de9cc9e83ac53b03d331c74c7fe4b8a665cacd4d" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flows/Account_Program_Member_Registration.flow" beforeDir="false" afterPath="$PROJECT_DIR$/src/flows/Account_Program_Member_Registration.flow" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flows/Create_KOL_contract.flow" beforeDir="false" afterPath="$PROJECT_DIR$/src/flows/Create_KOL_contract.flow" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flows/Lead_Convert_lead.flow" beforeDir="false" afterPath="$PROJECT_DIR$/src/flows/Lead_Convert_lead.flow" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flows/Order_Default_Process_Builder.flow" beforeDir="false" afterPath="$PROJECT_DIR$/src/flows/Order_Default_Process_Builder.flow" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flows/Sales_Lead_Default_Process_Builder.flow" beforeDir="false" afterPath="$PROJECT_DIR$/src/flows/Sales_Lead_Default_Process_Builder.flow" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flows/case_updated.flow" beforeDir="false" afterPath="$PROJECT_DIR$/src/flows/case_updated.flow" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,11 +24,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Apex Unit Test Class" />
         <option value="Lightning Web Component CSS" />
-        <option value="Apex Class" />
         <option value="Lightning Web Component HTML" />
         <option value="Lightning Web Component JavaScript" />
+        <option value="Apex Unit Test Class" />
+        <option value="Apex Class" />
         <option value="Apex Metadata" />
       </list>
     </option>
@@ -80,15 +77,7 @@
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
                   <option name="body" value="AccountFlagsController.getAccountFlagsJSON('0015r00000qASgNAAW');" />
-                  <option name="databaseLogLevel" value="ERROR" />
                   <option name="name" value="Anonymous Apex 4" />
-                  <option name="nbaLogLevel" value="ERROR" />
-                  <option name="profilingLogLevel" value="ERROR" />
-                  <option name="systemLogLevel" value="ERROR" />
-                  <option name="validationLogLevel" value="ERROR" />
-                  <option name="visualforceLogLevel" value="FINE" />
-                  <option name="waveLogLevel" value="ERROR" />
-                  <option name="workflowLogLevel" value="ERROR" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
@@ -18586,10 +18575,11 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1690378767809" />
-                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1686648319000" />
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1692954983901" />
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1692017955504" />
+                      <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1692194892939" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTCONTAINERLWC" value="1689951225892" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1690448227000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1692955135400" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1690377458000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
                     </map>
@@ -18697,24 +18687,12 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select id, DeveloperName from bmpyrckt__Timeline_Configuration__mdt where DeveloperName = 'Account_Orders'" />
-                  <option name="connectionName" value="acc360" />
-                  <option name="connectionType" value="OAUTH" />
+                  <option name="body" value="Select Id, DeveloperName, SobjectType from RecordType where DeveloperName = 'siroforceIntegration'" />
                   <option name="name" value="SOQL Query 1" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT id, ActivityDate&#10;FROM Event&#10;WHERE AccountId = '0015r00000o9Ls3AAE'&#10;AND ActivityDate = LAST_N_DAYS:365" />
-                  <option name="name" value="SOQL Query 2" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="select name from Source_Record__c where CIM_Account__c = '0016M00002H7LrPQAV'" />
-                  <option name="connectionName" value="Production" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 3" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="2" />
+            <option name="selectedSavedDocumentIndex" value="0" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -18756,8 +18734,8 @@
       <recent name="$PROJECT_DIR$/src/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Apex Unit Tests.Test_CountryCodeController">
-    <configuration name="Test_AssignMarginGuidanceHelper.testCalculateMargins" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+  <component name="RunManager" selected="Apex Unit Tests.Test_AccountFlagsController">
+    <configuration name="Test_AccountFlagsController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
@@ -18773,7 +18751,46 @@
           <entry key="Dentsply">
             <value>
               <set>
-                <option value="Test_AssignMarginGuidanceHelper" />
+                <option value="Test_AccountFlagsController" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map />
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_AccountFlagsController.testGetAccountFlagsJSON" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="connectionName" value="acc360" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_AccountFlagsController" />
               </set>
             </value>
           </entry>
@@ -18788,10 +18805,10 @@
       <option name="systemLogLevel" value="DEBUG" />
       <option name="testClassToTestMethodNames">
         <map>
-          <entry key="Test_AssignMarginGuidanceHelper">
+          <entry key="Test_AccountFlagsController">
             <value>
               <set>
-                <option value="testCalculateMargins" />
+                <option value="testGetAccountFlagsJSON" />
               </set>
             </value>
           </entry>
@@ -18890,53 +18907,6 @@
       <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_UpdateContactsBypassDuplicate.testUpdateContact" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_UpdateContactsBypassDuplicate" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map>
-          <entry key="Test_UpdateContactsBypassDuplicate">
-            <value>
-              <set>
-                <option value="testUpdateContact" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <method v="2" />
-    </configuration>
     <configuration name="Test_UsersInAccountTerritories" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -18978,11 +18948,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Apex Unit Tests.Test_AccountFlagsController" />
+        <item itemvalue="Apex Unit Tests.Test_AccountFlagsController.testGetAccountFlagsJSON" />
         <item itemvalue="Apex Unit Tests.Test_CountryCodeController" />
         <item itemvalue="Apex Unit Tests.Test_CountryCodeController.testGetThreeDigitCode" />
         <item itemvalue="Apex Unit Tests.Test_UsersInAccountTerritories" />
-        <item itemvalue="Apex Unit Tests.Test_AssignMarginGuidanceHelper.testCalculateMargins" />
-        <item itemvalue="Apex Unit Tests.Test_UpdateContactsBypassDuplicate.testUpdateContact" />
       </list>
     </recent_temporary>
   </component>
@@ -19063,7 +19033,10 @@
       <workItem from="1689155292066" duration="1097000" />
       <workItem from="1689596719820" duration="19410000" />
       <workItem from="1690363399047" duration="1017000" />
-      <workItem from="1690365334826" duration="4589000" />
+      <workItem from="1690365334826" duration="5576000" />
+      <workItem from="1690626550088" duration="12132000" />
+      <workItem from="1692014610014" duration="17790000" />
+      <workItem from="1692688977813" duration="4281000" />
     </task>
     <servers />
   </component>
@@ -19110,10 +19083,10 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Dentsply$Test_findLeadMatch_testExecuteLeadSearch.ic2" NAME="HOTFIX Coverage Results" MODIFIED="1667918143842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ES_FreezeUserHandler_testHandleInboundEmail.ic2" NAME="Freeze Coverage Results" MODIFIED="1684228757679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_AccountFlagsController.ic2" NAME="acc360 Coverage Results" MODIFIED="1692194939458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="acc360" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ProcedureTrackerTriggerHelper_testcheckUniqueness.ic2" NAME="StgJan Coverage Results" MODIFIED="1673520387472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMarginsForCanada.ic2" NAME="MarginCA Coverage Results" MODIFIED="1681743541440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="MarginCA" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchCreateProcedureTrackers_testBatchCreateProcedureTrackers.ic2" NAME="StgJan Coverage Results" MODIFIED="1673859457008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_CountryCodeController.ic2" NAME="acc360 Coverage Results" MODIFIED="1689950651518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="acc360" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchSetAccountSubSegmentation.ic2" NAME="Production Coverage Results" MODIFIED="1674815707650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Production" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />

@@ -1,0 +1,69 @@
+<template>
+
+    <div>
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <span  class="slds-card__header-link slds-truncate attention-point-title">
+                            <span>{title}</span>
+                        </span>
+                    </h2>
+                </div>
+
+            </header>
+        </div>
+
+        <div class="slds-card__body slds-card__body_inner">
+            <article class="slds-tile slds-media">
+
+                <div class="slds-media__figure">
+                    <span class={iconClasses}> <svg class="slds-icon" aria-hidden="true">
+                        <use xlink:href={iconUrl}></use> </svg> <span class="slds-assistive-text">{iconName}</span>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <!-- FIELD ONE -->
+                    <div class="slds-clearfix">
+                        <a class="slds-float_left" onclick={handleRedirection} onmouseover={handleMouseOver} onmouseout={handleMouseOut}>{name}
+                            <template if:true={isObjectSupported}>
+                                <template if:false={isMobile}>
+                                    <template if:true={isMouseOver}>
+                                    <div class="slds-is-relative slds-float_right">
+                                        <c-popover-record-info
+                                                record-id={id} url={url}
+                                                title={name} object-api-name="Opportunity"
+                                                icon-name="standard:opportunity"></c-popover-record-info>
+                                    </div>
+                                    </template>
+                                </template>
+                            </template>
+                        </a>
+                    </div>
+
+
+                    <div class="slds-tile__detail">
+                        <dl class="slds-list_horizontal slds-wrap">
+                            <template for:each={fields} for:item="field">
+                                <dt class="slds-item_label slds-text-color_weak slds-truncate" key={field}
+                                    title={field.label}>{field.label}:
+                                </dt>
+                                <dd class="slds-item_detail slds-truncate" key={field} >
+
+                                    <template if:false={field.isTypeDateOrDateTime}>
+                                        {field.value}
+                                    </template>
+                                    <template if:true={field.isTypeDateOrDateTime}>
+                                        <lightning-formatted-date-time value={field.formattedValue}></lightning-formatted-date-time>
+                                    </template>
+                                </dd>
+                            </template>
+                        </dl>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+
+</template>

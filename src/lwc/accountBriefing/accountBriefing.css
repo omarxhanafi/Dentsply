@@ -1,0 +1,22 @@
+.component-container {
+    padding: .85rem;
+    background: white;
+}
+
+.slds-icon {
+ border-radius: 10%;
+}
+
+.slds-text-title {
+    font-size: .85rem;
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+
+.slds-text-heading_medium {
+    font-size: .88rem;
+}
+
+.slds-card__header-title {
+    margin-bottom: 1rem;
+}

@@ -1,5 +1,21 @@
+/**
+ * @Author          Omar (ohanafi@salesforce.com)
+ * @Description     Activity Scorecard Controller.
+ * @Test-Class      Test_ActivityScorecardController
+ *
+ * @History
+ * 22-06-2023   Omar     Create new ActivityScorecardController class
+ */
 public class ActivityScorecardController {
 
+     /**
+     * getAccountActivityScorecard Return a map of scorecard info related to the provided account
+     * @author ohanafi@salesforce.com | 22-06-2023
+     *
+     * @param accountId Id of the account
+     *
+     * @return String - Serialized map of scorecard info
+     */
     @AuraEnabled(Cacheable = true)
     public static String getAccountActivityScorecard(Id accountId) {
         // Get account details (Type and country)
