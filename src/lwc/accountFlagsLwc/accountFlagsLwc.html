@@ -1,30 +1,22 @@
 <template>
-    <div if:true={accountFlagsResult} class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+    <div if:true={accountFlagsResult} class="slds-box slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
         <lightning-card variant="Narrow" title={labels.HEADER} icon-name="standard:account_info">
-            <br/>
-            <table class="flag-table" style="margin-left: 10px; margin-top: 20px;">
-                <tbody>
-<!--                <tr>-->
-<!--                    <td>-->
-<!--                        <div class="flag-text" style="font-size: 16px">{labels.CUSTOMER_NUMBER}</div>-->
-<!--                    </td>-->
-<!--                    <td>-->
-<!--                        <div class={customerNumberClass}></div>-->
-<!--                    </td>-->
-<!--                    <td if:true={customerNumber}>-->
-<!--                        <div class="flag-text" style="font-size: 16px"><strong>({customerNumber})</strong></div>-->
-<!--                    </td>-->
-<!--                </tr>-->
-                <tr>
-                    <td>
-                        <div class="flag-text" style="font-size: 16px">KOL</div>
-                    </td>
-                    <td>
-                        <div class={kolClass}></div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+<!--            <br/>-->
+<!--            <table class="flag-table" style="margin-left: 10px; margin-top: 20px;">-->
+<!--                <tbody>-->
+<!--&lt;!&ndash;                <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="flag-text" style="font-size: 16px">{labels.CUSTOMER_NUMBER}</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </td>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class={customerNumberClass}></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </td>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <td if:true={customerNumber}>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="flag-text" style="font-size: 16px"><strong>({customerNumber})</strong></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </td>&ndash;&gt;-->
+<!--&lt;!&ndash;                </tr>&ndash;&gt;-->
+<!--                </tbody>-->
+<!--            </table>-->
             <br/>
             <lightning-layout>
                 <lightning-layout-item flexibility="auto" padding="around-small" size="5" large-device-size="5" small-device-size="12">
@@ -236,6 +228,14 @@
                                         </td>
                                         <td if:true={customerNumber}>
                                             <div class="flag-text"><strong>({customerNumber})</strong></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flag-text">KOL</div>
+                                        </td>
+                                        <td>
+                                            <div class={kolClass}></div>
                                         </td>
                                     </tr>
                                     <tr>
