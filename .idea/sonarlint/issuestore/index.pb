@@ -51,3 +51,9 @@ h
 0src/lwc/popoverRecordInfo/popoverRecordInfo.html,9/d/9dc46076a5c4bcf57c7046ad0e600d3c5b67f930
 S
 #src/objects/Source_Record__c.object,b/e/bee6fce0b02b65d910c7da2229a5a99868be7d77
+f
+6src/lwc/activityScorecardLwc/activityScorecardLwc.html,1/d/1daf6dae190093603e3a8ea8f8266025f70cef4e
+\
+,src/lwc/accountFlagsLwc/accountFlagsLwc.html,3/8/38713d0d9afea46ac83e95ad7e96de21334b7365
+Z
+*src/lwc/accountFlagsLwc/accountFlagsLwc.js,2/d/2d023c109c9ed5bc55d2b91f7cdf0bb68e943a28

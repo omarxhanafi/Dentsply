@@ -135,10 +135,7 @@
                         <apex:inputField value="{!Event.Demonstration__c}"/>     
                         <apex:inputTextarea value="{!Event.Objective__c}" rows="6" cols="40" />
                         <apex:inputField value="{!Event.Presentation__c}"/>   
-                        <!--<apex:inputField value="{!Event.NA_of_Open_Implant_GET_Opps__c}"/> --> 
-                        <apex:inputField value="{!Event.new_customer_acquisition_DE__c}"/>  
-                        <apex:inputField value="{!Event.Number_of_implants_TR__c}"/>    
-                        <apex:inputField value="{!Event.Number_of_patients_TR__c}"/>    
+                        <!--<apex:inputField value="{!Event.NA_of_Open_Implant_GET_Opps__c}"/> -->
                         <!--<apex:inputField value="{!Event.Send_Mailing__c}"/> -->    
                         <!--<apex:inputField value="{!Event.NA_GET_Qualified__c}"/> -->    
                         <!--<apex:inputField value="{!Event.NA_GET_Mailing_Sent__c}"/> -->  
@@ -193,13 +190,6 @@
                         </apex:pageBlockSectionItem>
                         <apex:inputField rendered="{!Event.Co_travel__c='Dealer/Distributor'}" value="{!Event.Dealer_Customer__c}"/>
                         <apex:inputField rendered="{!Event.Co_travel__c='Manager'}" value="{!Event.Co_Travel_Manager__c}"/>
-                    </apex:pageBlockSection>
-                </apex:outputPanel>
-                
-                <apex:outputPanel id="pnl_educationalEventInformation">
-                    <apex:pageBlockSection title="{!$Label.CallReport_Header_Educational}" collapsible="false" rendered="{!Event.Astra_Tech_Type__c=='Educational Event' && Event.Customer_Facing_Event__c}" columns="1">
-                        <apex:inputField value="{!Event.Create_Campiagn__c}"/> 
-                        <apex:inputField value="{!Event.Event_Speaker__c}"/>
                     </apex:pageBlockSection>
                 </apex:outputPanel>
                 
