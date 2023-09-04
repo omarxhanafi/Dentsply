@@ -11,7 +11,7 @@ public with sharing class AccountFlagsController {
 
     /**
      * getAccountFlagsJSON Return a map of Account Flags related to the provided account
-     * @author ohanafi@salesforce.com | 22-06-2022
+     * @author ohanafi@salesforce.com | 22-06-2023
      *
      * @param accountId   Id of the account
      *
@@ -107,8 +107,8 @@ public with sharing class AccountFlagsController {
             Map<String, AccountFlag> inactiveResults = getSourceRecordFlags(inactiveSourceRecords, false);
 
             for(String key : inactiveResults.keySet()){
-                // If the flags related to the active source records are empty, we get the flag value from the inactive ones
                 if(new List<String>{'customerNumber', 'dsCom', 'sureSmile', 'awo'}.contains(key)){
+                    // If the flags related to the active source records are empty, we get the flag value from the inactive ones
                     if(results.get(key).value == 0){
                         results.put(key, inactiveResults.get(key));
                     }
@@ -118,6 +118,23 @@ public with sharing class AccountFlagsController {
             results.putAll(getSourceRecordFlags(inactiveSourceRecords, false));
         }
 
+        AccountFlag cerecClub = getCerecClubFlag(accountId);
+        results.put('cerecClub', cerecClub);
+
+        System.debug(results);
+
+        return JSON.serialize(results);
+    }
+
+    /**
+     * getCerecClubFlag Return the CEREC Club flag related to the provided account
+     * @author ohanafi@salesforce.com | 04-09-2023
+     *
+     * @param accountId   Id of the account
+     *
+     * @return String - Serialized map of flags
+     */
+    private static AccountFlag getCerecClubFlag(Id accountId) {
         // Init CEREC Club Flag
         AccountFlag cerecClub = new AccountFlag(0, null);
 
@@ -127,27 +144,22 @@ public with sharing class AccountFlagsController {
                         Id, StartDate, EndDate, Name, Siroforce_Status__c
                 FROM Contract
                 WHERE AccountId = :accountId
-                    AND RecordType.DeveloperName = 'siroForceIntegration'
-                    AND Name LIKE '%CEREC CLUB%'
+                AND RecordType.DeveloperName = 'siroForceIntegration'
+                AND Name LIKE '%CEREC CLUB%'
         ];
 
-        if(!cerecContracts.isEmpty()){
+        if (!cerecContracts.isEmpty()) {
             // We look for active contracts first, if not found we check for any expired ones
-            for(Contract eachContract : cerecContracts){
-                if(eachContract.Siroforce_Status__c == 'Active' && eachContract.StartDate <= System.today() && eachContract.EndDate >= System.today()){
+            for (Contract eachContract : cerecContracts) {
+                if (eachContract.Siroforce_Status__c == 'Active' && eachContract.StartDate <= System.today() && eachContract.EndDate >= System.today()) {
                     cerecClub = new AccountFlag(1, eachContract.Id);
                     break;
-                } else if (eachContract.Siroforce_Status__c == 'Inactive' && eachContract.EndDate < System.today()){
+                } else if (eachContract.Siroforce_Status__c == 'Inactive' && eachContract.EndDate < System.today()) {
                     cerecClub = new AccountFlag(2, eachContract.Id);
                 }
             }
         }
-
-        results.put('cerecClub', cerecClub);
-
-        System.debug(results);
-
-        return JSON.serialize(results);
+        return cerecClub;
     }
 
     /**
@@ -186,7 +198,7 @@ public with sharing class AccountFlagsController {
                 awo = new AccountFlag(isActive ? 1 : 2, eachSourceRecord.Id);
             }
 
-            if(eachSourceRecord.Source_Id__c == '64'){
+            if(eachSourceRecord.Company_Code__c == 'SIROFORCE'){
                 siroForce = new AccountFlag(isActive ? 1 : 2, eachSourceRecord.Id);
             }
 
