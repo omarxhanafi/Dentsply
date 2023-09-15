@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.js-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,12 +20,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Lightning Web Component CSS" />
+        <option value="Apex Unit Test Class" />
         <option value="Lightning Web Component HTML" />
         <option value="Lightning Web Component JavaScript" />
-        <option value="Apex Unit Test Class" />
         <option value="Apex Class" />
         <option value="Apex Metadata" />
+        <option value="Lightning Web Component CSS" />
       </list>
     </option>
   </component>
@@ -70,9 +75,13 @@
                   <option name="body" value="AccountFlagsController.getAccountFlagsJSON('0015r00000qASgNAAW');" />
                   <option name="name" value="Anonymous Apex 4" />
                 </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="body" value="System.debug(WorkflowProfilingController.getWorkflowsByCountry('0015r00000qASgNAAW'));" />
+                  <option name="name" value="Anonymous Apex 5" />
+                </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="3" />
+            <option name="selectedSavedDocumentIndex" value="4" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionWorkspaceSettings">
@@ -18566,13 +18575,15 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1693838601939" />
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1693838621012" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1692017955504" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1692194892939" />
+                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1694168492000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTCONTAINERLWC" value="1689951225892" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1693469359225" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1690377458000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1694616729040" />
                     </map>
                   </option>
                   <option name="lastBuildScope" value="CONTEXT" />
@@ -18674,16 +18685,16 @@
         <option name="retrieveAndMergeDefault" value="false" />
         <option name="soqlQuerySettings">
           <SoqlQuerySettings>
-            <option name="resultsSplitterProportion" value="0.3753754" />
+            <option name="resultsSplitterProportion" value="0.6433121" />
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT id, type FROM Task WHERE AccountId = '0015r00000qASgNAAW' AND ActivityDate = LAST_N_DAYS:365" />
-                  <option name="name" value="SOQL Query 1" />
+                  <option name="body" value="SELECT Id, Name FROM Workflow__c WHERE Countries__c EXCLUDES ('US')" />
+                  <option name="name" value="SOQL Query 2" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="0" />
+            <option name="selectedSavedDocumentIndex" value="1" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -19029,6 +19040,10 @@
       <workItem from="1692014610014" duration="17790000" />
       <workItem from="1692688977813" duration="4513000" />
       <workItem from="1693007292943" duration="1117000" />
+      <workItem from="1693839846651" duration="6821000" />
+      <workItem from="1694610548262" duration="100000" />
+      <workItem from="1694610686603" duration="65000" />
+      <workItem from="1694611646267" duration="5060000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,15 @@
+.workflow-table {
+    width: 100%;
+}
+
+.workflow-table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.workflow-table th,
+.workflow-table td {
+    padding: 8px;
+    text-align: left;
+    font-size: 15px;
+
+}

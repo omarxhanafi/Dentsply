@@ -1,0 +1,28 @@
+<template>
+    <div if:true={workflowsList} class="slds-box slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+        <lightning-card variant="Narrow" title="Workflow Profiling" icon-name="standard:account_info">
+            <br/>
+            <table class="workflow-table">
+                <tbody>
+                    <template for:each={workflowsList} for:item="eachWorkflow">
+                        <tr key={eachWorkflow.Id}>
+                            <td>
+                                <lightning-input
+                                        type="checkbox-button"
+                                        label="Input One"
+                                        name="input1"
+                                        data-workflowid={eachWorkflow.Id}
+                                        onchange={handleCheckboxChange}
+                                        checked={eachWorkflow.selected}
+                                ></lightning-input>
+                            </td>
+                            <td>
+                                <div>{eachWorkflow.Name}</div>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </lightning-card>
+    </div>
+</template>
