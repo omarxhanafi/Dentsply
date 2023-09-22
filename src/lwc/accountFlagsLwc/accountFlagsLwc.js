@@ -1,4 +1,4 @@
-import { LightningElement, api, wire } from 'lwc';
+    import { LightningElement, api, wire } from 'lwc';
 import getAccountFlagsJSON from '@salesforce/apex/AccountFlagsController.getAccountFlagsJSON';
 import {NavigationMixin} from "lightning/navigation";
 // import FORM_FACTOR from '@salesforce/client/formFactor';
@@ -30,6 +30,7 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
     dsCoreLightId;
     dsCoreStandardId;
     dsCoreAdvancedId;
+    dsCoreLabId
     dsCoreCareId;
     cerecClubId;
     dsComId;
@@ -42,6 +43,7 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
     isMouseOverDSCoreLight = false;
     isMouseOverDSCoreStandard = false;
     isMouseOverDSCoreAdvanced = false;
+    isMouseOverDSCoreLab = false;
     isMouseOverDSCoreCare = false;
     isMouseOverCerecClub = false;
     isMouseOverDSCom = false;
@@ -85,6 +87,10 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
                 this.dsCoreAccessId = this.accountFlagsResult?.dsCoreAccess?.itemId;
             } else {
                 this.showDSCoreInactive = true;
+            }
+
+            if(this.accountFlagsResult?.dsCoreLab?.value > 0){
+                this.dsCoreLabId = this.accountFlagsResult?.dsCoreLab?.itemId;
             }
 
             if(this.accountFlagsResult?.dsCoreCare?.value > 0){
@@ -140,6 +146,10 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
         return this.getFlag(this.accountFlagsResult?.dsCoreAdvanced?.value);
     }
 
+    get dsCoreLabClass() {
+        return this.getFlag(this.accountFlagsResult?.dsCoreLab?.value);
+    }
+
     get dsCoreCareClass() {
         return this.getFlag(this.accountFlagsResult?.dsCoreCare?.value);
     }
@@ -193,6 +203,9 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
                 break;
             case 'dsCoreAdvanced':
                 this.isMouseOverDSCoreAdvanced = isOver;
+                break;
+            case 'dsCoreLab':
+                this.isMouseOverDSCoreLab = isOver;
                 break;
             case 'dsCoreCare':
                 this.isMouseOverDSCoreCare = isOver;

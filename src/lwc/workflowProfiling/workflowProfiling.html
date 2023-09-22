@@ -6,23 +6,35 @@
                 <tbody>
                     <template for:each={workflowsList} for:item="eachWorkflow">
                         <tr key={eachWorkflow.Id}>
-                            <td>
-                                <lightning-input
-                                        type="checkbox-button"
-                                        label="Input One"
-                                        name="input1"
-                                        data-workflowid={eachWorkflow.Id}
-                                        onchange={handleCheckboxChange}
-                                        checked={eachWorkflow.selected}
-                                ></lightning-input>
+                            <td style="width: 50%; text-align: center;">
+                                <div class="slider-container">
+<!--                                    style="&#45;&#45;lwc-colorTextIconDefault: red"-->
+<!--                                    <lightning-icon icon-name="utility:sentiment_negative" size="x-small" class="sad-face"></lightning-icon>-->
+                                    <lightning-slider
+                                            size="large"
+                                            label="Rating"
+                                            min="0"
+                                            max="5"
+                                            step="1"
+                                            data-workflowid={eachWorkflow.Id}
+                                            value={eachWorkflow.rating}
+                                            onchange={handleSliderChange}
+                                    ></lightning-slider>
+<!--                                    <lightning-icon icon-name="utility:smiley_and_people" size="x-small" class="happy-face"></lightning-icon>-->
+                                </div>
                             </td>
                             <td>
-                                <div>{eachWorkflow.Name}</div>
+                                <div>{eachWorkflow.WorkflowLabel__c}</div>
                             </td>
                         </tr>
                     </template>
                 </tbody>
             </table>
+            <br/>
+            <br/>
+            <div class="slds-m-top_medium slds-align_absolute-center">
+                <lightning-button variant="brand" label="Save" title="Save" icon-name="utility:save" class="slds-m-left_x-small" onclick={saveData}></lightning-button>
+            </div>
         </lightning-card>
     </div>
 </template>

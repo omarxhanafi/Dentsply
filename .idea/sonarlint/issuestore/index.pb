@@ -65,3 +65,9 @@ d
 4src/lwc/activityScorecardLwc/activityScorecardLwc.js,f/f/ff25ea74f937fad429fe27671f5c3017cf608c9a
 [
 +src/classes/Test_AccountFlagsController.cls,7/b/7bfd11c35b574e718c0fc7af72dca280a63f16bd
+s
+Csrc/aura/ProductProfilingComponent/ProductProfilingComponent.design,4/b/4b10c927324dd59a665dfa77169de87f96ee2333
+p
+@src/aura/ProductProfilingHierarchy/ProductProfilingHierarchy.cmp,8/1/8142d91b81d9e8901ff6be5c6003b044381f6112
+y
+Isrc/aura/ProductProfilingHierarchy/ProductProfilingHierarchyController.js,7/2/7295bef49ccade8f3b8fbf66e7e3c1a7b1d124a5

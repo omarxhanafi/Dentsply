@@ -251,13 +251,14 @@ public with sharing class AccountFlagsController {
         AccountFlag dsCoreStandard = new AccountFlag(0, null);
         AccountFlag dsCoreAdvanced = new AccountFlag(0, null);
         AccountFlag dsCoreCare = new AccountFlag(0, null);
+        AccountFlag dsCoreLab = new AccountFlag(0, null);
 
         // We get the global list of contract line items associated with the provided set of service contracts, we also retrieve the PG1, PG2 and GPP codes
         String queryString = 'SELECT Id, ' +
                 'ServiceContractId, ' +
-                'PricebookEntry.Product2.PG1_Code__c, ' +
-                'PricebookEntry.Product2.PG2_Code__c, ' +
-                'PricebookEntry.Product2.GPP_Code__c ' +
+                'PricebookEntry.Product2.GlobalSKUMapping__r.PG1_Code__c, ' +
+                'PricebookEntry.Product2.GlobalSKUMapping__r.PG2_Code__c, ' +
+                'PricebookEntry.Product2.GlobalSKUMapping__r.GPP_Code__c ' +
                 'FROM ContractLineItem ' +
                 'WHERE ServiceContractId IN :serviceContractIds';
 
@@ -282,11 +283,12 @@ public with sharing class AccountFlagsController {
             for (ContractLineItem eachLineItem : contractLineItemsMap.get(serviceContractId)) {
 
                 // We calculate the flag values
-                Integer tempDsCoreAccess = eachLineItem.PricebookEntry.Product2.PG2_Code__c == 'DC10' ? (isActive ? 1 : 2) : 0;
-                Integer tempDsCoreLight = eachLineItem.PricebookEntry.Product2.PG2_Code__c == 'DC11' ? (isActive ? 1 : 2) : 0;
-                Integer tempDsCoreStandard = eachLineItem.PricebookEntry.Product2.PG2_Code__c == 'DC12' ? (isActive ? 1 : 2) : 0;
-                Integer tempDsCoreAdvanced = eachLineItem.PricebookEntry.Product2.PG2_Code__c == 'DC13' ? (isActive ? 1 : 2) : 0;
-                Integer tempDsCoreCare = eachLineItem.PricebookEntry.Product2.GPP_Code__c == 'DT' ? (isActive ? 1 : 2) : 0;
+                Integer tempDsCoreAccess = (eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.PG2_Code__c == 'DC10' || eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.PG2_Code__c == 'DC14') ? (isActive ? 1 : 2) : 0;
+                Integer tempDsCoreLight = eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.PG2_Code__c == 'DC11' ? (isActive ? 1 : 2) : 0;
+                Integer tempDsCoreStandard = eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.PG2_Code__c == 'DC12' ? (isActive ? 1 : 2) : 0;
+                Integer tempDsCoreAdvanced = eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.PG2_Code__c == 'DC13' ? (isActive ? 1 : 2) : 0;
+                Integer tempDsCoreCare = eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.GPP_Code__c == 'DT' ? (isActive ? 1 : 2) : 0;
+                Integer tempDsCoreLab = eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.GPP_Code__c == 'DL' ? (isActive ? 1 : 2) : 0;
 
                 // We compare the current flag value with the previous one
                 dsCoreAccess = (tempDsCoreAccess > dsCoreAccess.value) ? new AccountFlag(tempDsCoreAccess, eachLineItem.Id) : dsCoreAccess;
@@ -294,6 +296,7 @@ public with sharing class AccountFlagsController {
                 dsCoreStandard = (tempDsCoreStandard > dsCoreStandard.value) ? new AccountFlag(tempDsCoreStandard, eachLineItem.Id) : dsCoreStandard;
                 dsCoreAdvanced = (tempDsCoreAdvanced > dsCoreAdvanced.value) ? new AccountFlag(tempDsCoreAdvanced, eachLineItem.Id) : dsCoreAdvanced;
                 dsCoreCare = (tempDsCoreCare > dsCoreCare.value) ? new AccountFlag(tempDsCoreCare, eachLineItem.Id) : dsCoreCare;
+                dsCoreLab = (tempDsCoreLab > dsCoreLab.value) ? new AccountFlag(tempDsCoreLab, eachLineItem.Id) : dsCoreLab;
             }
         }
 
@@ -304,6 +307,7 @@ public with sharing class AccountFlagsController {
         results.put('dsCoreStandard', dsCoreStandard);
         results.put('dsCoreAdvanced', dsCoreAdvanced);
         results.put('dsCoreCare', dsCoreCare);
+        results.put('dsCoreLab', dsCoreLab);
 
         return results;
     }
