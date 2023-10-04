@@ -32,6 +32,7 @@ init: function (cmp, event, helper) {
         helper.getProfilingData(cmp, event, record);
     	helper.getSBUs(cmp, event, "ProductGroupText__c", "v.options");
     	helper.getManufacturers(cmp, event, "Manufacturer__c", "v.manufacturers", '');
+        helper.getWorkflows(cmp, event, "v.workflows");
         helper.getLocalCategories(cmp, event, "Product_Category__c", "v.localCategories", '', '');
         helper.getProductProfilingRecords(cmp, event, record);        
 	            
@@ -391,26 +392,28 @@ init: function (cmp, event, helper) {
         filter.focus = cmp.find('focusFilter').get('v.checked');
         filter.competitor = cmp.find('competitorFilter').get('v.checked');
 
-        if(cmp.find('sbuFilter').get('v.value') != null){    
-        	filter.SBU = cmp.find('sbuFilter').get('v.value');
-            //helper.getManufacturers(cmp, event, "Manufacturer__c", "v.manufacturers", filter.SBU);
- 			//helper.getLocalCategories(cmp, event, "Product_Category__c", "v.localCategories", filter.SBU, '');
-        }
-        else{
-        	filter.SBU = '';        
-        }  
+        // if(cmp.find('sbuFilter').get('v.value') != null){
+        // 	filter.SBU = cmp.find('sbuFilter').get('v.value');
+        //     //helper.getManufacturers(cmp, event, "Manufacturer__c", "v.manufacturers", filter.SBU);
+ 		// 	//helper.getLocalCategories(cmp, event, "Product_Category__c", "v.localCategories", filter.SBU, '');
+        // }
+        // else{
+        // 	filter.SBU = '';
+        // }
+
         if(cmp.find('manufactFilter').get('v.value') != null){    
             filter.manufacturer = cmp.find('manufactFilter').get('v.value');
         }
         else{
             filter.manufacturer = '';
         }
-        if(cmp.find('localCategoryFilter').get('v.value') != null){    
-            filter.localCategory = cmp.find('localCategoryFilter').get('v.value');
-        }
-        else{
-            filter.localCategory = '';
-        }       
+
+        // if(cmp.find('localCategoryFilter').get('v.value') != null){
+        //     filter.localCategory = cmp.find('localCategoryFilter').get('v.value');
+        // }
+        // else{
+        //     filter.localCategory = '';
+        // }
             
         filter.categories = cmp.find('categoryFilter').get('v.value');
         var tempArray = [];
@@ -420,7 +423,7 @@ init: function (cmp, event, helper) {
                 if(cmp.get('v.hideFilters') == false){
                     cmp.set('v.hideToggleFilters', false);
                 }
-                helper.getChildProductsServer(cmp, event,'',filter.SBU,filter.manufacturer,filter.searchString,'',filter.competitor,filter.focus,filter.localCategory);    
+                helper.getChildProductsServer(cmp, event,'','',filter.manufacturer,filter.searchString,'',filter.competitor,filter.focus,'');
             }
             else if(filter.searchString.length == 0){
                 cmp.set('v.hideToggleFilters', true);
@@ -580,24 +583,24 @@ init: function (cmp, event, helper) {
             filter.focus = cmp.find('focusFilter').get('v.checked');
             filter.competitor = cmp.find('competitorFilter').get('v.checked');
     
-            if(cmp.find('sbuFilter').get('v.value') != null){    
-                filter.SBU = cmp.find('sbuFilter').get('v.value');
-            }
-            else{
-                filter.SBU = '';        
-            }    
+            // if(cmp.find('sbuFilter').get('v.value') != null){
+            //     filter.SBU = cmp.find('sbuFilter').get('v.value');
+            // }
+            // else{
+            //     filter.SBU = '';
+            // }
             if(cmp.find('manufactFilter').get('v.value') != null){    
                 filter.manufacturer = cmp.find('manufactFilter').get('v.value');
             }
             else{
                 filter.manufacturer = '';
             }
-            if(cmp.find('localCategoryFilter').get('v.value') != null){    
-            	filter.localCategory = cmp.find('localCategoryFilter').get('v.value');
-            }
-            else{
-                filter.localCategory = '';
-        	} 
+            // if(cmp.find('localCategoryFilter').get('v.value') != null){
+            // 	filter.localCategory = cmp.find('localCategoryFilter').get('v.value');
+            // }
+            // else{
+            //     filter.localCategory = '';
+        	// }
             filter.categories = cmp.find('categoryFilter').get('v.value');
                         
             if(filter.searchString == '' && filter.SBU == '' && filter.manufacturer == '' && filter.localCategory == ''){
@@ -654,24 +657,24 @@ init: function (cmp, event, helper) {
         filter.focus = cmp.find('focusFilter').get('v.checked');
         filter.competitor = cmp.find('competitorFilter').get('v.checked');
         
-        if(cmp.find('sbuFilter').get('v.value') != null){    
-            filter.SBU = cmp.find('sbuFilter').get('v.value');
-        }
-        else{
-            filter.SBU = '';        
-        }    
+        // if(cmp.find('sbuFilter').get('v.value') != null){
+        //     filter.SBU = cmp.find('sbuFilter').get('v.value');
+        // }
+        // else{
+        //     filter.SBU = '';
+        // }
         if(cmp.find('manufactFilter').get('v.value') != null){    
             filter.manufacturer = cmp.find('manufactFilter').get('v.value');
         }
         else{
             filter.manufacturer = '';
         }
-        if(cmp.find('localCategoryFilter').get('v.value') != null){    
-            filter.localCategory = cmp.find('localCategoryFilter').get('v.value');
-        }
-        else{
-            filter.localCategory = '';
-        }  
+        // if(cmp.find('localCategoryFilter').get('v.value') != null){
+        //     filter.localCategory = cmp.find('localCategoryFilter').get('v.value');
+        // }
+        // else{
+        //     filter.localCategory = '';
+        // }
          
         filter.categories = cmp.find('categoryFilter').get('v.value');
         
@@ -681,11 +684,11 @@ init: function (cmp, event, helper) {
                 cmp.set('v.hideToggleFilters', false);
             }
             
-            helper.getChildProductsServer(cmp, event, '',filter.SBU,filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,filter.localCategory);
+            helper.getChildProductsServer(cmp, event, '','',filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,'');
         }
         else if(filter.SBU != '' || filter.manufacturer != '' || filter.localCategory != ''){
             searchFilter = '';
-            helper.getChildProductsServer(cmp, event, '',filter.SBU,filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,filter.localCategory);            
+            helper.getChildProductsServer(cmp, event, '','',filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,'');
         }
         else if(searchFilter.length == 0){
             console.log('Resetting data');

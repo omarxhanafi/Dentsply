@@ -300,17 +300,17 @@
         $A.enqueueAction(action);
         
     },
-    
+
     getManufacturers: function(cmp, event, fieldName, varToAssign, SBU){
-        
-       var action = cmp.get("c.getManufacturers");
-       var recordId = cmp.get("v.recordId"); 
-       action.setParams({
-           		recordId: recordId,
-           		SBU: SBU
-            });
+
+        var action = cmp.get("c.getManufacturers");
+        var recordId = cmp.get("v.recordId");
+        action.setParams({
+            recordId: recordId,
+            SBU: SBU
+        });
         action.setCallback(this, function(response) {
-        	var result=response.getReturnValue();
+            var result=response.getReturnValue();
             var plList = [];
             var plDef = {};
             plDef.label="";
@@ -322,14 +322,44 @@
                 plVal.value = result[res];
                 plList.push(plVal);
             }
-			
+
             //Sort values ascending
-            this.sortTable(cmp, event, true, plList, "label"); 
+            this.sortTable(cmp, event, true, plList, "label");
             cmp.set(varToAssign, plList);
-            
+
         });
         $A.enqueueAction(action);
-        
+
+    },
+
+    getWorkflows: function(cmp, event, varToAssign){
+
+        var action = cmp.get("c.getWorkflows");
+        var recordId = cmp.get("v.recordId");
+        action.setParams({
+            recordId: recordId,
+        });
+        action.setCallback(this, function(response) {
+            var result=response.getReturnValue();
+            var plList = [];
+            var plDef = {};
+            plDef.label="";
+            plDef.value="";
+            plList.push(plDef);
+
+            for(var res in result){
+                var plVal = {};
+                plVal.label = result[res].WorkflowLabel__c;
+                plVal.value = result[res].Id;
+                plList.push(plVal);
+            }
+
+            //Sort values ascending
+            this.sortTable(cmp, event, true, plList, "label");
+            cmp.set(varToAssign, plList);
+        });
+        $A.enqueueAction(action);
+
     },
     
     getLocalCategories: function(cmp, event, fieldName, varToAssign, SBU, manufacturer){

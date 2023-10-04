@@ -33,6 +33,7 @@ Description:   	Component to select Non-ERP products (in a Hierarchy where the p
     <aura:attribute name="activeCompetitorFilter" type="string" default="all"/>
     <aura:attribute name="categories" type="List" default="[]" />
     <aura:attribute name="manufacturers" type="List" default="[]"/>
+    <aura:attribute name="workflows" type="List" default="[]"/>
     <aura:attribute name="localCategories" type="List" default="[]"/>
     
     <aura:attribute name="timer" type="Integer"/>
@@ -83,15 +84,20 @@ Description:   	Component to select Non-ERP products (in a Hierarchy where the p
                <lightning:combobox options="{!v.categories}" label="Categories" aura:id="categoryFilter" name="categoryFilter" onchange="{!c.filterTable}"/>
         </div>
 		
+<!--        <div class="{!if(v.hideFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size&#45;&#45;1-of-1 slds-medium-size&#45;&#45;3-of-12 slds-large-size&#45;&#45;3-of-12')}">-->
+<!--               <lightning:combobox aura:id="sbuFilter" variant="label-hidden" label="Product Group" placeholder="Select Product Group" options="{! v.options }" onchange="{!c.filterTable}"/>            -->
+<!--        </div>-->
+<!--        <div class="{!if(v.hideFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size&#45;&#45;1-of-1 slds-medium-size&#45;&#45;3-of-12 slds-large-size&#45;&#45;3-of-12')}">-->
+<!--               <lightning:combobox aura:id="localCategoryFilter" variant="label-hidden" label="Local Category" placeholder="Select Local Category" options="{! v.localCategories}" onchange="{!c.filterTable}"/>            -->
+<!--        </div>-->
+
         <div class="{!if(v.hideFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size--1-of-1 slds-medium-size--3-of-12 slds-large-size--3-of-12')}">
-               <lightning:combobox aura:id="sbuFilter" variant="label-hidden" label="Product Group" placeholder="Select Product Group" options="{! v.options }" onchange="{!c.filterTable}"/>            
+            <lightning:combobox aura:id="workflowFilter" variant="label-hidden" label="Workflow" placeholder="Select Workflow" options="{! v.workflows }" onchange="{!c.filterTable}"/>
         </div>
         <div class="{!if(v.hideFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size--1-of-1 slds-medium-size--3-of-12 slds-large-size--3-of-12')}">
-               <lightning:combobox aura:id="manufactFilter" variant="label-hidden" label="Manufacturer" placeholder="Select Manufacturer" options="{! v.manufacturers }" onchange="{!c.filterTable}"/>            
+               <lightning:combobox aura:id="manufactFilter" variant="label-hidden" label="Manufacturer" placeholder="Select Manufacturer" options="{! v.manufacturers }" onchange="{!c.filterTable}"/>
         </div>
-        <div class="{!if(v.hideFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size--1-of-1 slds-medium-size--3-of-12 slds-large-size--3-of-12')}">
-               <lightning:combobox aura:id="localCategoryFilter" variant="label-hidden" label="Local Category" placeholder="Select Local Category" options="{! v.localCategories}" onchange="{!c.filterTable}"/>            
-        </div>
+
         
         <div class="{!if(v.hideToggleFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size--1-of-1 slds-medium-size--6-of-12 slds-large-size--6-of-12')}">      
             <lightning:input type="toggle" label="Only focus products" aura:id="focusFilter" name="focusFilter" onchange="{!c.filterTable}" value="focusFilter"/>

@@ -350,6 +350,18 @@ public with sharing class ProductProfilingHierarchyController {
         return uniqueNames;
         
     }
+
+    @AuraEnabled(cacheable=true)
+    public static List<Workflow__c> getWorkflows(Id recordId) {
+        Account acc = [SELECT Id, Country__c from Account where id = :recordId LIMIT 1];
+
+        if(acc != null){
+            String country = acc.Country__c;
+            return [SELECT Id, WorkflowLabel__c FROM Workflow__c WHERE Countries__c EXCLUDES (:country)];
+        }
+
+        return null;
+    }
     
     @AuraEnabled
     public static String[] getLocalCategories(String recordId, String SBU, String manufacturer) {

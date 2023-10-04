@@ -63,5 +63,3 @@ Z
 +src/classes/Test_AccountFlagsController.cls,7/b/7bfd11c35b574e718c0fc7af72dca280a63f16bd
 s
 Csrc/aura/ProductProfilingComponent/ProductProfilingComponent.design,4/b/4b10c927324dd59a665dfa77169de87f96ee2333
-y
-Isrc/aura/ProductProfilingHierarchy/ProductProfilingHierarchyController.js,7/2/7295bef49ccade8f3b8fbf66e7e3c1a7b1d124a5
