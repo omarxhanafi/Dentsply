@@ -31,8 +31,8 @@ init: function (cmp, event, helper) {
 		helper.getProductsWithHierarchyNew(cmp, event, record, '');
         helper.getProfilingData(cmp, event, record);
     	helper.getSBUs(cmp, event, "ProductGroupText__c", "v.options");
-    	helper.getManufacturers(cmp, event, "Manufacturer__c", "v.manufacturers", '');
         helper.getWorkflows(cmp, event, "v.workflows");
+        helper.getManufacturers(cmp, event, "Manufacturer__c", "v.manufacturers", '');
         helper.getLocalCategories(cmp, event, "Product_Category__c", "v.localCategories", '', '');
         helper.getProductProfilingRecords(cmp, event, record);        
 	            
@@ -401,7 +401,9 @@ init: function (cmp, event, helper) {
         // 	filter.SBU = '';
         // }
 
-        if(cmp.find('manufactFilter').get('v.value') != null){    
+        filter.SBU = '';
+
+            if(cmp.find('manufactFilter').get('v.value') != null){
             filter.manufacturer = cmp.find('manufactFilter').get('v.value');
         }
         else{
@@ -414,6 +416,7 @@ init: function (cmp, event, helper) {
         // else{
         //     filter.localCategory = '';
         // }
+        filter.localCategory = '';
             
         filter.categories = cmp.find('categoryFilter').get('v.value');
         var tempArray = [];
@@ -423,7 +426,7 @@ init: function (cmp, event, helper) {
                 if(cmp.get('v.hideFilters') == false){
                     cmp.set('v.hideToggleFilters', false);
                 }
-                helper.getChildProductsServer(cmp, event,'','',filter.manufacturer,filter.searchString,'',filter.competitor,filter.focus,'');
+                helper.getChildProductsServer(cmp, event,'',filter.SBU,filter.manufacturer,filter.searchString,'',filter.competitor,filter.focus,filter.localCategory);    
             }
             else if(filter.searchString.length == 0){
                 cmp.set('v.hideToggleFilters', true);
@@ -589,7 +592,10 @@ init: function (cmp, event, helper) {
             // else{
             //     filter.SBU = '';
             // }
-            if(cmp.find('manufactFilter').get('v.value') != null){    
+
+            filter.SBU = '';
+
+            if(cmp.find('manufactFilter').get('v.value') != null){
                 filter.manufacturer = cmp.find('manufactFilter').get('v.value');
             }
             else{
@@ -601,6 +607,9 @@ init: function (cmp, event, helper) {
             // else{
             //     filter.localCategory = '';
         	// }
+
+            filter.localCategory = '';
+
             filter.categories = cmp.find('categoryFilter').get('v.value');
                         
             if(filter.searchString == '' && filter.SBU == '' && filter.manufacturer == '' && filter.localCategory == ''){
@@ -663,7 +672,10 @@ init: function (cmp, event, helper) {
         // else{
         //     filter.SBU = '';
         // }
-        if(cmp.find('manufactFilter').get('v.value') != null){    
+
+        filter.SBU = '';
+
+        if(cmp.find('manufactFilter').get('v.value') != null){
             filter.manufacturer = cmp.find('manufactFilter').get('v.value');
         }
         else{
@@ -675,6 +687,8 @@ init: function (cmp, event, helper) {
         // else{
         //     filter.localCategory = '';
         // }
+
+        filter.localCategory = '';
          
         filter.categories = cmp.find('categoryFilter').get('v.value');
         
@@ -684,11 +698,11 @@ init: function (cmp, event, helper) {
                 cmp.set('v.hideToggleFilters', false);
             }
             
-            helper.getChildProductsServer(cmp, event, '','',filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,'');
+            helper.getChildProductsServer(cmp, event, '',filter.SBU,filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,filter.localCategory);
         }
         else if(filter.SBU != '' || filter.manufacturer != '' || filter.localCategory != ''){
             searchFilter = '';
-            helper.getChildProductsServer(cmp, event, '','',filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,'');
+            helper.getChildProductsServer(cmp, event, '',filter.SBU,filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,filter.localCategory);            
         }
         else if(searchFilter.length == 0){
             console.log('Resetting data');
