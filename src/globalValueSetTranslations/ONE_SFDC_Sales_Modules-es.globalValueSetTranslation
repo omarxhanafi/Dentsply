@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>1a. Sales Basic Foundation</masterLabel>
+        <translation>Venta Básica</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>AX integration</masterLabel>
+        <translation>Integración AX</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Asset Management</masterLabel>
+        <translation>Gestión de activos</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CFE Mass Creation</masterLabel>
+        <translation>CFE creación masiva</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dealer Sell Out Data</masterLabel>
+        <translation>Sell Out Distribuidor</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Duplicate Management</masterLabel>
+        <translation>Gestión duplicados</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>ETM</masterLabel>
+        <translation>ETM</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Order Management R1</masterLabel>
+        <translation>Gestión pedidos R1</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Wave Sales DB R1</masterLabel>
+        <translation>Ventas DB R1</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>X-SBU  R1</masterLabel>
+        <translation>Venta Cruzada R1</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>X-SBU R2</masterLabel>
+        <translation>Venta Cruzada R2</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Waiting Parts</fullName>
+        <default>false</default>
+        <label>Waiting Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>Waiting Technical Help</fullName>
+        <default>false</default>
+        <label>Waiting Technical Help</label>
+    </customValue>
+    <customValue>
+        <fullName>Waiting Customer</fullName>
+        <default>false</default>
+        <label>Waiting Customer</label>
+    </customValue>
+    <description>Used within Fields Service</description>
+    <masterLabel>Cannot Complete Reason</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

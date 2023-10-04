@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>2W</fullName>
+        <default>false</default>
+        <label>Recall - Parts Charged</label>
+    </customValue>
+    <customValue>
+        <fullName>3P</fullName>
+        <default>false</default>
+        <label>3rd Party Tech</label>
+    </customValue>
+    <customValue>
+        <fullName>CA</fullName>
+        <default>false</default>
+        <label>Chargeable call with call out</label>
+    </customValue>
+    <customValue>
+        <fullName>CL</fullName>
+        <default>false</default>
+        <label>Calibration – compliance</label>
+    </customValue>
+    <customValue>
+        <fullName>CO</fullName>
+        <default>false</default>
+        <label>Contract</label>
+    </customValue>
+    <customValue>
+        <fullName>DC</fullName>
+        <default>false</default>
+        <label>Do and Charge Call - No call out</label>
+    </customValue>
+    <customValue>
+        <fullName>FS</fullName>
+        <default>false</default>
+        <label>Free Service</label>
+    </customValue>
+    <customValue>
+        <fullName>IN</fullName>
+        <default>false</default>
+        <label>Installation</label>
+    </customValue>
+    <customValue>
+        <fullName>IR</fullName>
+        <default>false</default>
+        <label>Intego Replacement</label>
+    </customValue>
+    <customValue>
+        <fullName>IW</fullName>
+        <default>false</default>
+        <label>Internal Work</label>
+    </customValue>
+    <customValue>
+        <fullName>PH</fullName>
+        <default>false</default>
+        <label>Phone or Remote Access Support</label>
+    </customValue>
+    <customValue>
+        <fullName>PM</fullName>
+        <default>false</default>
+        <label>Preventative Maintenance</label>
+    </customValue>
+    <customValue>
+        <fullName>PW</fullName>
+        <default>false</default>
+        <label>Parts Warranty Only</label>
+    </customValue>
+    <customValue>
+        <fullName>TU</fullName>
+        <default>false</default>
+        <label>Technical Unavailable (Not used after test)</label>
+    </customValue>
+    <customValue>
+        <fullName>WA</fullName>
+        <default>false</default>
+        <label>Warranty</label>
+    </customValue>
+    <customValue>
+        <fullName>WS</fullName>
+        <default>false</default>
+        <label>Workshop</label>
+    </customValue>
+    <customValue>
+        <fullName>ZL</fullName>
+        <default>false</default>
+        <label>SalesSupport</label>
+    </customValue>
+    <description>Custom Picklist value that will be used in Salesforce-AX integration for the field service</description>
+    <masterLabel>Service Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

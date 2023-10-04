@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>USA - AL</fullName>
+        <default>false</default>
+        <label>USA - AL</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - AK</fullName>
+        <default>false</default>
+        <label>USA - AK</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - AZ</fullName>
+        <default>false</default>
+        <label>USA - AZ</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - AR</fullName>
+        <default>false</default>
+        <label>USA - AR</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - CA</fullName>
+        <default>false</default>
+        <label>USA - CA</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - CO</fullName>
+        <default>false</default>
+        <label>USA - CO</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - CT</fullName>
+        <default>false</default>
+        <label>USA - CT</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - DE</fullName>
+        <default>false</default>
+        <label>USA - DE</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - FL</fullName>
+        <default>false</default>
+        <label>USA - FL</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - GA</fullName>
+        <default>false</default>
+        <label>USA - GA</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - HI</fullName>
+        <default>false</default>
+        <label>USA - HI</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - ID</fullName>
+        <default>false</default>
+        <label>USA - ID</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - IL</fullName>
+        <default>false</default>
+        <label>USA - IL</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - IN</fullName>
+        <default>false</default>
+        <label>USA - IN</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - IA</fullName>
+        <default>false</default>
+        <label>USA - IA</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - KS</fullName>
+        <default>false</default>
+        <label>USA - KS</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - KY</fullName>
+        <default>false</default>
+        <label>USA - KY</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - LA</fullName>
+        <default>false</default>
+        <label>USA - LA</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - ME</fullName>
+        <default>false</default>
+        <label>USA - ME</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - MD</fullName>
+        <default>false</default>
+        <label>USA - MD</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - MA</fullName>
+        <default>false</default>
+        <label>USA - MA</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - MI</fullName>
+        <default>false</default>
+        <label>USA - MI</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - MN</fullName>
+        <default>false</default>
+        <label>USA - MN</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - MS</fullName>
+        <default>false</default>
+        <label>USA - MS</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - MO</fullName>
+        <default>false</default>
+        <label>USA - MO</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - MT</fullName>
+        <default>false</default>
+        <label>USA - MT</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - NE</fullName>
+        <default>false</default>
+        <label>USA - NE</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - NV</fullName>
+        <default>false</default>
+        <label>USA - NV</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - NH</fullName>
+        <default>false</default>
+        <label>USA - NH</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - NJ</fullName>
+        <default>false</default>
+        <label>USA - NJ</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - NM</fullName>
+        <default>false</default>
+        <label>USA - NM</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - NY</fullName>
+        <default>false</default>
+        <label>USA - NY</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - NC</fullName>
+        <default>false</default>
+        <label>USA - NC</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - ND</fullName>
+        <default>false</default>
+        <label>USA - ND</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - OH</fullName>
+        <default>false</default>
+        <label>USA - OH</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - OK</fullName>
+        <default>false</default>
+        <label>USA - OK</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - OR</fullName>
+        <default>false</default>
+        <label>USA - OR</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - PA</fullName>
+        <default>false</default>
+        <label>USA - PA</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - RI</fullName>
+        <default>false</default>
+        <label>USA - RI</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - SC</fullName>
+        <default>false</default>
+        <label>USA - SC</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - SD</fullName>
+        <default>false</default>
+        <label>USA - SD</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - TN</fullName>
+        <default>false</default>
+        <label>USA - TN</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - TX</fullName>
+        <default>false</default>
+        <label>USA - TX</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - UT</fullName>
+        <default>false</default>
+        <label>USA - UT</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - VT</fullName>
+        <default>false</default>
+        <label>USA - VT</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - VA</fullName>
+        <default>false</default>
+        <label>USA - VA</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - WA</fullName>
+        <default>false</default>
+        <label>USA - WA</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - WV</fullName>
+        <default>false</default>
+        <label>USA - WV</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - WI</fullName>
+        <default>false</default>
+        <label>USA - WI</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - WY</fullName>
+        <default>false</default>
+        <label>USA - WY</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - DC</fullName>
+        <default>false</default>
+        <label>USA - DC</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada - AB</fullName>
+        <default>false</default>
+        <label>Canada - AB</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada - BC</fullName>
+        <default>false</default>
+        <label>Canada - BC</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada - MB</fullName>
+        <default>false</default>
+        <label>Canada - MB</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada - NB</fullName>
+        <default>false</default>
+        <label>Canada - NB</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada - NL</fullName>
+        <default>false</default>
+        <label>Canada - NL</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada - NS</fullName>
+        <default>false</default>
+        <label>Canada - NS</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada - ON</fullName>
+        <default>false</default>
+        <label>Canada - ON</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada - PE</fullName>
+        <default>false</default>
+        <label>Canada - PE</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada - QC</fullName>
+        <default>false</default>
+        <label>Canada - QC</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada - SK</fullName>
+        <default>false</default>
+        <label>Canada - SK</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - AA</fullName>
+        <default>false</default>
+        <label>USA - AA</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - AE</fullName>
+        <default>false</default>
+        <label>USA - AE</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - AP</fullName>
+        <default>false</default>
+        <label>USA - AP</label>
+    </customValue>
+    <masterLabel>States: North America</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

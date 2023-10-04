@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Accounts</masterLabel>
+        <translation>Cuentas</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Assets</masterLabel>
+        <translation>Bienes</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CTI Integration</masterLabel>
+        <translation><!-- CTI Integration --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Campaigns</masterLabel>
+        <translation>Campañas</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cases</masterLabel>
+        <translation>Casos</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contacts</masterLabel>
+        <translation>Contactos</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contracts</masterLabel>
+        <translation>Contratos</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>ETM/Access/Sharing</masterLabel>
+        <translation>ETM/acceso/compartir</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Einstein Analytics (EA)</masterLabel>
+        <translation><!-- Einstein Analytics (EA) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Email-to-case</masterLabel>
+        <translation>email al caso</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Events</masterLabel>
+        <translation>Eventos</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Field Service</masterLabel>
+        <translation>Campo técnico</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Get feedback-Survey</masterLabel>
+        <translation>Conseguir feedback-Cuestionario</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Integration - Azure</masterLabel>
+        <translation>Integración - Azure</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Integration - CDW</masterLabel>
+        <translation>Integración - CDW</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Integration - CIM360</masterLabel>
+        <translation>Integración - CIM360</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Integration - Cvent</masterLabel>
+        <translation><!-- Integration - Cvent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Integration - Eloqua</masterLabel>
+        <translation><!-- Integration - Eloqua --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Integration - GDW</masterLabel>
+        <translation>Integración - GDW</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Integration - Profisee Contact</masterLabel>
+        <translation><!-- Integration - Profisee Contact --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Integration - Siroforce</masterLabel>
+        <translation><!-- Integration - Siroforce --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>KOL Management</masterLabel>
+        <translation>KOL Gestión</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Knowledge</masterLabel>
+        <translation>Conocimiento</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Live Agent</masterLabel>
+        <translation><!-- Live Agent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Maps</masterLabel>
+        <translation><!-- Maps --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Marketing</masterLabel>
+        <translation>Marketing</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mobile</masterLabel>
+        <translation>Móvil</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Opportunities</masterLabel>
+        <translation>Oportunidades</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Orders</masterLabel>
+        <translation>Pedidos</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Platform Development</masterLabel>
+        <translation><!-- Platform Development --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Platform Security</masterLabel>
+        <translation><!-- Platform Security --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Platform Setup</masterLabel>
+        <translation><!-- Platform Setup --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Product Profiling</masterLabel>
+        <translation><!-- Product Profiling --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Reports &amp; Dashboards</masterLabel>
+        <translation><!-- Reports &amp; Dashboards --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sales Leads</masterLabel>
+        <translation><!-- Sales Leads --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>User Administration</masterLabel>
+        <translation><!-- User Administration --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Web-to-case</masterLabel>
+        <translation><!-- Web-to-case --></translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

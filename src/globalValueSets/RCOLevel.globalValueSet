@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>APAC</fullName>
+        <default>false</default>
+        <label>APAC</label>
+    </customValue>
+    <customValue>
+        <fullName>DACH</fullName>
+        <default>false</default>
+        <label>DACH</label>
+    </customValue>
+    <customValue>
+        <fullName>LATAM</fullName>
+        <default>false</default>
+        <label>LATAM</label>
+    </customValue>
+    <customValue>
+        <fullName>NA</fullName>
+        <default>false</default>
+        <label>NA</label>
+    </customValue>
+    <customValue>
+        <fullName>Eastern EU</fullName>
+        <default>false</default>
+        <label>Eastern EU</label>
+    </customValue>
+    <customValue>
+        <fullName>Southern EU</fullName>
+        <default>false</default>
+        <label>Southern EU</label>
+    </customValue>
+    <customValue>
+        <fullName>Northern EU</fullName>
+        <default>false</default>
+        <label>Northern EU</label>
+    </customValue>
+    <description>TFUS-000005227
+RCO Level used to identify the region of a specific record. 
+Initially used on the KOL Information Object.</description>
+    <masterLabel>RCO Level</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

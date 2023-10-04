@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>4a. Marketing Cloud (UK/All)</fullName>
+        <default>false</default>
+        <label>4a. Marketing Cloud (UK/All)</label>
+    </customValue>
+    <customValue>
+        <fullName>4b. Contracts (DE/Implants)</fullName>
+        <default>false</default>
+        <label>4b. Contracts (DE/Implants)</label>
+    </customValue>
+    <customValue>
+        <fullName>4c. Top 20 (EU/Ortho)</fullName>
+        <default>false</default>
+        <label>4c. Top 20 (EU/Ortho)</label>
+    </customValue>
+    <customValue>
+        <fullName>4d. Returns Authorization (US/Implants)</fullName>
+        <default>false</default>
+        <label>4d. Returns Authorization (US/Implants)</label>
+    </customValue>
+    <customValue>
+        <fullName>4e. Rewards Integration (UK/PRE)</fullName>
+        <default>false</default>
+        <label>4e. Rewards Integration (UK/PRE)</label>
+    </customValue>
+    <masterLabel>RCO/SBU Specific</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

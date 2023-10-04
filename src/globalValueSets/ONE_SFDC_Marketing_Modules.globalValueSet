@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>3a. T&amp;E Campaigns</fullName>
+        <default>false</default>
+        <label>Campaigns</label>
+    </customValue>
+    <masterLabel>ONE SFDC Marketing Modules</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

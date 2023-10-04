@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>The custom metadata object will contain specific queries and filters to fetch data related to various objects such as Opportunities, Sales Leads, Contracts, Cases, and others, that can provide valuable insights into an account.</description>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FieldsToShow__c</fullName>
+        <description>Fields to show separated by comma. Maximum Three fields.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Fields to show separated by comma. Maximum Three fields.</inlineHelpText>
+        <label>Fields to Show</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Icon__c</fullName>
+        <description>Icon of the attention point tile.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Icon of the attention point tile.</inlineHelpText>
+        <label>Icon</label>
+        <length>64</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ObjectType__c</fullName>
+        <description>Object type of the attention point.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Object Type</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Account</fullName>
+                    <default>true</default>
+                    <label>Account</label>
+                </value>
+                <value>
+                    <fullName>Event</fullName>
+                    <default>false</default>
+                    <label>Event</label>
+                </value>
+                <value>
+                    <fullName>Task</fullName>
+                    <default>false</default>
+                    <label>Task</label>
+                </value>
+                <value>
+                    <fullName>Opportunity</fullName>
+                    <default>false</default>
+                    <label>Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Contract</fullName>
+                    <default>false</default>
+                    <label>Contract</label>
+                </value>
+                <value>
+                    <fullName>Field_Sales_Project_Members__c</fullName>
+                    <default>false</default>
+                    <label>Field_Sales_Project_Members__c</label>
+                </value>
+                <value>
+                    <fullName>Case</fullName>
+                    <default>false</default>
+                    <label>Case</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RelationshipField__c</fullName>
+        <description>Relationship field api name to use in order to find related records.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Relationship field api name to use in order to find related records.</inlineHelpText>
+        <label>Relationship Field</label>
+        <length>64</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Relevance__c</fullName>
+        <description>Determines the order in which the tiles will be displayed, with the most relevant appearing first.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Determines the order in which the tiles will be displayed, with the most relevant appearing first.</inlineHelpText>
+        <label>Relevance</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SOQLQuery__c</fullName>
+        <description>SOQL query filter to use in order to find key attention points</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>SOQL Query</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <description>Custom label full name to display a Title of the attention point.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Custom label full name to display a Title of the attention point.</inlineHelpText>
+        <label>Title</label>
+        <length>64</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Attention Point</label>
+    <listViews>
+        <fullName>All_Attention_Points</fullName>
+        <columns>MasterLabel</columns>
+        <columns>ObjectType__c</columns>
+        <columns>Relevance__c</columns>
+        <columns>Title__c</columns>
+        <columns>FieldsToShow__c</columns>
+        <columns>Icon__c</columns>
+        <columns>SOQLQuery__c</columns>
+        <columns>RelationshipField__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Attention Points</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>Attention Points</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

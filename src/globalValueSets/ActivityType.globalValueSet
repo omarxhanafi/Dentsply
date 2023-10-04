@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>In Person Meeting</fullName>
+        <default>false</default>
+        <label>In Person Meeting</label>
+    </customValue>
+    <customValue>
+        <fullName>Virtual Meeting</fullName>
+        <default>false</default>
+        <label>Virtual Meeting</label>
+    </customValue>
+    <customValue>
+        <fullName>Absence or Holiday</fullName>
+        <default>false</default>
+        <label>Absence or Holiday</label>
+    </customValue>
+    <customValue>
+        <fullName>Co Travel Day</fullName>
+        <default>false</default>
+        <label>Co Travel Day</label>
+    </customValue>
+    <customValue>
+        <fullName>Customer Related Activity</fullName>
+        <default>false</default>
+        <label>Customer Related Activity</label>
+    </customValue>
+    <customValue>
+        <fullName>Event or Trade Show</fullName>
+        <default>false</default>
+        <label>Event or Trade Show</label>
+    </customValue>
+    <customValue>
+        <fullName>Home Office</fullName>
+        <default>false</default>
+        <label>Home Office</label>
+    </customValue>
+    <customValue>
+        <fullName>Internal Meeting</fullName>
+        <default>false</default>
+        <label>Internal Meeting</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Development/Training</fullName>
+        <default>false</default>
+        <label>Professional Development/Training</label>
+    </customValue>
+    <customValue>
+        <fullName>Kunden-Telefon-Meeting</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Kunden-Telefon-Meeting</label>
+    </customValue>
+    <customValue>
+        <fullName>Otras</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Otras</label>
+    </customValue>
+    <customValue>
+        <fullName>Formación</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Formación</label>
+    </customValue>
+    <customValue>
+        <fullName>Confirmed Sales Visit</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Confirmed Sales Visit</label>
+    </customValue>
+    <customValue>
+        <fullName>Unconfirmed Sales Visit</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Unconfirmed Sales Visit</label>
+    </customValue>
+    <customValue>
+        <fullName>Meeting/Training</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Meeting/Training</label>
+    </customValue>
+    <customValue>
+        <fullName>Holiday</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Holiday</label>
+    </customValue>
+    <customValue>
+        <fullName>Diğer</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Diğer</label>
+    </customValue>
+    <customValue>
+        <fullName>Randevulu Satış Görüşmesi</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Randevulu Satış Görüşmesi</label>
+    </customValue>
+    <customValue>
+        <fullName>Face-à-face individuel</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Face-à-face individuel</label>
+    </customValue>
+    <customValue>
+        <fullName>Tatil</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Tatil</label>
+    </customValue>
+    <customValue>
+        <fullName>Contatto telefonico Cliente</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Contatto telefonico Cliente</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Development</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Professional Development</label>
+    </customValue>
+    <customValue>
+        <fullName>Ferie</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Ferie</label>
+    </customValue>
+    <customValue>
+        <fullName>Тренинг</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Тренинг</label>
+    </customValue>
+    <customValue>
+        <fullName>Офис</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Офис</label>
+    </customValue>
+    <customValue>
+        <fullName>Education clinique (TP, Manip,Webinar..)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Education clinique (TP, Manip,Webinar..)</label>
+    </customValue>
+    <customValue>
+        <fullName>Evento presso il Cliente</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Evento presso il Cliente</label>
+    </customValue>
+    <customValue>
+        <fullName>Giorno di affiancamento</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Giorno di affiancamento</label>
+    </customValue>
+    <customValue>
+        <fullName>Altro</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Altro</label>
+    </customValue>
+    <customValue>
+        <fullName>Выходной</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Выходной</label>
+    </customValue>
+    <customValue>
+        <fullName>Administration des ventes (HO)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Administration des ventes (HO)</label>
+    </customValue>
+    <customValue>
+        <fullName>Meeting e/o Formazione</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Meeting e/o Formazione</label>
+    </customValue>
+    <customValue>
+        <fullName>Oficina</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Oficina</label>
+    </customValue>
+    <customValue>
+        <fullName>Manifestation clients (Congrés,Journée formation)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Manifestation clients (Congrés,Journée formation)</label>
+    </customValue>
+    <customValue>
+        <fullName>Visite sans RdV</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Visite sans RdV</label>
+    </customValue>
+    <customValue>
+        <fullName>Visite sur RdV</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Visite sur RdV</label>
+    </customValue>
+    <customValue>
+        <fullName>Обзвон клиентов</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Обзвон клиентов</label>
+    </customValue>
+    <customValue>
+        <fullName>Démo produit par tél, skype</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Démo produit par tél, skype</label>
+    </customValue>
+    <customValue>
+        <fullName>Outlook</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Outlook</label>
+    </customValue>
+    <customValue>
+        <fullName>Réunion interne (Régionale,Nationale,Formation..)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Réunion interne (Régionale,Nationale,Formation..)</label>
+    </customValue>
+    <customValue>
+        <fullName>Congé(s)/RTT/Récup</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Congé(s)/RTT/Récup</label>
+    </customValue>
+    <customValue>
+        <fullName>Abwesenheit</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Abwesenheit</label>
+    </customValue>
+    <customValue>
+        <fullName>Büro</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Büro</label>
+    </customValue>
+    <customValue>
+        <fullName>Sonstige</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Sonstige</label>
+    </customValue>
+    <customValue>
+        <fullName>Kaltakquise</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Kaltakquise</label>
+    </customValue>
+    <customValue>
+        <fullName>Geplanter Termin</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Geplanter Termin</label>
+    </customValue>
+    <customValue>
+        <fullName>AppointmentConfirmed Sales Visit</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Appointment/Confirmed Sales Visit</label>
+    </customValue>
+    <customValue>
+        <fullName>Cold Call</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Cold Call</label>
+    </customValue>
+    <customValue>
+        <fullName>Campaign Activity</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Campaign Activity</label>
+    </customValue>
+    <customValue>
+        <fullName>Call</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Call</label>
+    </customValue>
+    <customValue>
+        <fullName>Unbestätigter Verkaufsbesuch</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Unbestätigter Verkaufsbesuch</label>
+    </customValue>
+    <customValue>
+        <fullName>Customer Sales Visit</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Customer Sales Visit</label>
+    </customValue>
+    <customValue>
+        <fullName>Bestätigter Verkaufsbesuch</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Bestätigter Verkaufsbesuch</label>
+    </customValue>
+    <customValue>
+        <fullName>visita de ventas confirmada</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>visita de ventas confirmada</label>
+    </customValue>
+    <customValue>
+        <fullName>visita a clínica</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>visita a clínica</label>
+    </customValue>
+    <customValue>
+        <fullName>Customer Phone Meeting</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Customer Phone Meeting</label>
+    </customValue>
+    <customValue>
+        <fullName>Non-direct Contact Visit</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Non-direct Contact Visit</label>
+    </customValue>
+    <customValue>
+        <fullName>アポあり訪問</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>アポあり訪問</label>
+    </customValue>
+    <customValue>
+        <fullName>アポなし訪問</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>アポなし訪問</label>
+    </customValue>
+    <customValue>
+        <fullName>&quot;Seminar Activity&quot;</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>&quot;Seminar Activity&quot;</label>
+    </customValue>
+    <customValue>
+        <fullName>Implant Rescue Service</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Implant Rescue Service</label>
+    </customValue>
+    <customValue>
+        <fullName>Assenza</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Assenza</label>
+    </customValue>
+    <customValue>
+        <fullName>Technical Support</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Technical Support</label>
+    </customValue>
+    <customValue>
+        <fullName>Consignment Stock Check</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Consignment Stock Check</label>
+    </customValue>
+    <customValue>
+        <fullName>Event (e.g. Lunch&amp;Learn)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Event (e.g. Lunch&amp;Learn)</label>
+    </customValue>
+    <customValue>
+        <fullName>Educational Event</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Educational Event</label>
+    </customValue>
+    <customValue>
+        <fullName>Absence</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Absence</label>
+    </customValue>
+    <customValue>
+        <fullName>Customer Event</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Customer Event</label>
+    </customValue>
+    <customValue>
+        <fullName>Monitoraggio - Recupero credito</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Monitoraggio - Recupero credito</label>
+    </customValue>
+    <customValue>
+        <fullName>イベント(例:ランチ講習会)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>イベント(例:ランチ講習会)</label>
+    </customValue>
+    <customValue>
+        <fullName>Appointment/Confirmed Sales Visit</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Appointment/Confirmed Sales Visit2</label>
+    </customValue>
+    <masterLabel>ActivityType</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

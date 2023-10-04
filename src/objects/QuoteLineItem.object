@@ -1,112 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>AddQuoteLine</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>AddQuoteLine</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>AddQuoteLine</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>EditAllQuoteLine</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>EditAllQuoteLine</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>EditAllQuoteLine</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Quote_Line_Item_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Quote_Line_Item_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <enableFeeds>false</enableFeeds>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>BaseDiscount__c</fullName>
         <description>Will show the customer specific or offer specific pre defined discount.
@@ -139,14 +32,6 @@ This is (1-BasePrice/RetailPrice)*100</description>
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Description</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>Discount</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
         <fullName>DiscountedUnitPrice__c</fullName>
         <externalId>false</externalId>
         <formula>If(NULLVALUE(Discount, 0) = 0, UnitPrice, UnitPrice * (1 - Discount))</formula>
@@ -170,14 +55,6 @@ This is (1-BasePrice/RetailPrice)*100</description>
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>LineNumber</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>ListPrice</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
         <fullName>NetPrice__c</fullName>
         <description>Shows the final discounted price - the Net Price per Unit</description>
         <externalId>false</externalId>
@@ -188,24 +65,6 @@ This is (1-BasePrice/RetailPrice)*100</description>
         <scale>2</scale>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Product2Id</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ProductCode</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>Quantity</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>QuoteId</fullName>
-        <trackHistory>false</trackHistory>
-        <type>MasterDetail</type>
     </fields>
     <fields>
         <fullName>QuoteProductBundle__c</fullName>
@@ -230,14 +89,6 @@ This can come from the Bundle pricing, AX microservice or if from nowhere else i
         <scale>2</scale>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>ServiceDate</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>Subtotal</fullName>
-        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>TariffCode__c</fullName>
@@ -284,10 +135,6 @@ Calculated by the record-triggered Flow</description>
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>TotalPrice</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
         <fullName>TotalPriceVAT__c</fullName>
         <externalId>false</externalId>
         <label>Total Price w/ VAT</label>
@@ -307,10 +154,6 @@ Calculated by the record-triggered Flow</description>
         <scale>2</scale>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>UnitPrice</fullName>
-        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>VATAmountNumeric__c</fullName>
@@ -354,7 +197,6 @@ Calculated by the record-triggered Flow</description>
         <trackHistory>false</trackHistory>
         <type>Percent</type>
     </fields>
-    <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
         <fullName>NotAllowLineItemIfNotProductBundle</fullName>
         <active>true</active>

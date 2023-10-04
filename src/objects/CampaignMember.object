@@ -1,139 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>AddCampaign</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>AddCampaign</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>AddCampaign</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ConvertLead</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ConvertLead</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ConvertLead</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CreateOpportunity</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CreateOpportunity</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CreateOpportunity</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Lightning_Campaign_Member_Page_Layout</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Lightning_Campaign_Member_Page_Layout</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>ATL_Abut_Won_Lost_Status__c</fullName>
         <externalId>false</externalId>
@@ -161,10 +27,6 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>AccountId</fullName>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>AccountLocalTime__c</fullName>
@@ -1866,10 +1728,6 @@ null)</formula>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>CampaignId</fullName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>CampaignMemberOwner__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>TFUS-000004287</description>
@@ -1942,9 +1800,6 @@ null)</formula>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>City</fullName>
-    </fields>
-    <fields>
         <fullName>City__c</fullName>
         <externalId>false</externalId>
         <formula>Contact.MailingCity</formula>
@@ -1955,9 +1810,6 @@ null)</formula>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>CompanyOrAccount</fullName>
-    </fields>
-    <fields>
         <fullName>Confirmation_letter_sent_out_BNL__c</fullName>
         <defaultValue>false</defaultValue>
         <description>A temporary solution for BNL to keep track of who has received a confirmation letter from Dentsply. A wish from BNL to manage this by member status in the future.</description>
@@ -1965,10 +1817,6 @@ null)</formula>
         <inlineHelpText>Shows if a confirmation letter has been sent to the Campaign member.</inlineHelpText>
         <label>Confirmation letter sent out (BNL)</label>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>ContactId</fullName>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Contract__c</fullName>
@@ -2005,9 +1853,6 @@ null)</formula>
         <relationshipName>Campaign_Members</relationshipName>
         <required>false</required>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Country</fullName>
     </fields>
     <fields>
         <fullName>Country_Code_3_digit__c</fullName>
@@ -2198,9 +2043,6 @@ AND(INCLUDES(Campaign.SBU_Focus__c,&quot;Intruments&quot;),Contact.Account.CFEs_
         <type>DateTime</type>
     </fields>
     <fields>
-        <fullName>Description</fullName>
-    </fields>
-    <fields>
         <fullName>Description__c</fullName>
         <externalId>false</externalId>
         <label>Customer Notes</label>
@@ -2219,9 +2061,6 @@ AND(INCLUDES(Campaign.SBU_Focus__c,&quot;Intruments&quot;),Contact.Account.CFEs_
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>DoNotCall</fullName>
-    </fields>
-    <fields>
         <fullName>ETM2_Assigned_Users__c</fullName>
         <externalId>false</externalId>
         <formula>Account__r.DC_ETM_Code__c</formula>
@@ -2230,9 +2069,6 @@ AND(INCLUDES(Campaign.SBU_Focus__c,&quot;Intruments&quot;),Contact.Account.CFEs_
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Email</fullName>
     </fields>
     <fields>
         <fullName>External_Attribute_1__c</fullName>
@@ -2266,15 +2102,6 @@ AND(INCLUDES(Campaign.SBU_Focus__c,&quot;Intruments&quot;),Contact.Account.CFEs_
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Fax</fullName>
-    </fields>
-    <fields>
-        <fullName>FirstName</fullName>
-    </fields>
-    <fields>
-        <fullName>FirstRespondedDate</fullName>
-    </fields>
-    <fields>
         <fullName>Full_Name__c</fullName>
         <externalId>false</externalId>
         <formula>IF( ISBLANK(TEXT(Contact.Salutation)), FirstName &amp; &quot; &quot; &amp; LastName , TEXT(Contact.Salutation)  &amp; &quot; &quot; &amp; FirstName &amp; &quot; &quot; &amp; LastName )</formula>
@@ -2301,15 +2128,6 @@ AND(INCLUDES(Campaign.SBU_Focus__c,&quot;Intruments&quot;),Contact.Account.CFEs_
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>HasOptedOutOfEmail</fullName>
-    </fields>
-    <fields>
-        <fullName>HasOptedOutOfFax</fullName>
-    </fields>
-    <fields>
-        <fullName>HasResponded</fullName>
     </fields>
     <fields>
         <fullName>Hotel_Arrangement_Status__c</fullName>
@@ -2366,15 +2184,6 @@ AND(INCLUDES(Campaign.SBU_Focus__c,&quot;Intruments&quot;),Contact.Account.CFEs_
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>Hotel</label>
-        <lookupFilter>
-            <active>true</active>
-            <filterItems>
-                <field>Account.RecordTypeId</field>
-                <operation>equals</operation>
-                <value>Partner (DI)</value>
-            </filterItems>
-            <isOptional>false</isOptional>
-        </lookupFilter>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Campaign Members (Hotel)</relationshipLabel>
         <relationshipName>Campaign_Members1</relationshipName>
@@ -2463,9 +2272,6 @@ AND(INCLUDES(Campaign.SBU_Focus__c,&quot;Intruments&quot;),Contact.Account.CFEs_
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>LastName</fullName>
-    </fields>
-    <fields>
         <fullName>LastSFDCCampaignMemberStatus__c</fullName>
         <externalId>false</externalId>
         <label>Last SFDC Campaign Member Status</label>
@@ -2480,14 +2286,6 @@ AND(INCLUDES(Campaign.SBU_Focus__c,&quot;Intruments&quot;),Contact.Account.CFEs_
         <label>Last Payment Date (IT)</label>
         <required>false</required>
         <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>LeadId</fullName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>LeadSource</fullName>
-        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>LeadSource__c</fullName>
@@ -2551,9 +2349,6 @@ This box is ticked if a MPK has been sent.</description>
         <length>2550</length>
         <type>LongTextArea</type>
         <visibleLines>4</visibleLines>
-    </fields>
-    <fields>
-        <fullName>MobilePhone</fullName>
     </fields>
     <fields>
         <fullName>Movex__c</fullName>
@@ -2814,9 +2609,6 @@ TFUS-000004667</description>
         </valueSet>
     </fields>
     <fields>
-        <fullName>Phone</fullName>
-    </fields>
-    <fields>
         <fullName>Phone__c</fullName>
         <description>Dynamic field that will show the Phone Number of the Member if the Contact belongs to your territories.</description>
         <externalId>false</externalId>
@@ -2826,9 +2618,6 @@ TFUS-000004667</description>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>PostalCode</fullName>
     </fields>
     <fields>
         <fullName>Practitioner_ID_NPI_in_US__c</fullName>
@@ -2951,10 +2740,6 @@ This box is ticked if the participant has refferred a patient.</description>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Salutation</fullName>
-        <type>Picklist</type>
-    </fields>
-    <fields>
         <fullName>Simplant_Won_Lost_Status__c</fullName>
         <externalId>false</externalId>
         <label>Simplant Won/Lost Status</label>
@@ -3005,13 +2790,6 @@ This box is ticked if the participant has refferred a patient.</description>
         </valueSet>
     </fields>
     <fields>
-        <fullName>State</fullName>
-    </fields>
-    <fields>
-        <fullName>Status</fullName>
-        <type>Picklist</type>
-    </fields>
-    <fields>
         <fullName>Status__c</fullName>
         <description>This fields displays a text version of the Status field on Campaign Members. Used to override the fact that you can not have a read only version of the original Status field on the Page Layout</description>
         <externalId>false</externalId>
@@ -3021,9 +2799,6 @@ This box is ticked if the participant has refferred a patient.</description>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Street</fullName>
     </fields>
     <fields>
         <fullName>Street__c</fullName>
@@ -3072,9 +2847,6 @@ This box is ticked if the participant has refferred a patient.</description>
         <inlineHelpText>Checks if this Campaign Member is a Technician. Used for ADA-CERP</inlineHelpText>
         <label>Technicians</label>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Title</fullName>
     </fields>
     <fields>
         <fullName>Total_Fee__c</fullName>
@@ -8193,7 +7965,6 @@ CampaignID+Member email</description>
             </values>
         </picklistValues>
     </recordTypes>
-    <sharingModel>ControlledByCampaign</sharingModel>
     <validationRules>
         <fullName>Dealer_required</fullName>
         <active>true</active>

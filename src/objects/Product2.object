@@ -1,132 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Add</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Add</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Add</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <compactLayoutAssignment>Product_Compact_Layout</compactLayoutAssignment>
     <compactLayouts>
         <fullName>Product_Compact_Layout</fullName>
         <fields>Name</fields>
@@ -137,8 +10,6 @@
         <fields>RecordTypeId</fields>
         <label>Product Compact Layout</label>
     </compactLayouts>
-    <enableFeeds>true</enableFeeds>
-    <externalSharingModel>Private</externalSharingModel>
     <fieldSets>
         <fullName>SBQQ__ConfiguratorFilter</fullName>
         <availableFields>
@@ -463,11 +334,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>CurrencyIsoCode</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
         <fullName>DEPUniqueKey__c</fullName>
         <caseSensitive>false</caseSensitive>
         <externalId>true</externalId>
@@ -604,16 +470,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Description</fullName>
-        <trackFeedHistory>true</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
-        <fullName>DisplayUrl</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
         <fullName>ERP_Source_Description__c</fullName>
         <externalId>false</externalId>
         <formula>CASE(ERP_Source__c, 
@@ -640,22 +496,6 @@
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>ExternalDataSourceId</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ExternalId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>Family</fullName>
-        <trackFeedHistory>true</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>GPP_Code__c</fullName>
@@ -728,16 +568,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>IsActive</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>IsSerialized</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
         <fullName>Legacy_System_ID__c</fullName>
         <externalId>false</externalId>
         <label>Legacy System ID</label>
@@ -782,11 +612,6 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Name</fullName>
-        <trackFeedHistory>true</trackFeedHistory>
-        <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>PG1_Code__c</fullName>
@@ -925,11 +750,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>ProductCode</fullName>
-        <trackFeedHistory>true</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
         <fullName>ProductStructure__c</fullName>
         <description>Shows the full product structure of the Product record.</description>
         <externalId>false</externalId>
@@ -1010,12 +830,6 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>QuantityUnitOfMeasure</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>SBQQ__AssetAmendmentBehavior__c</fullName>
@@ -2415,11 +2229,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>StockKeepingUnit</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
         <fullName>TariffCode__c</fullName>
         <description>tax code on goods coming into or going out of a country</description>
         <externalId>false</externalId>
@@ -2431,11 +2240,6 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>TransferRecordMode</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Unit_of_Measurement__c</fullName>
@@ -2532,19 +2336,6 @@
         <language>en_US</language>
         <sharedTo/>
     </listViews>
-    <profileSearchLayouts>
-        <fields>PRODUCT2.NAME</fields>
-        <fields>Article__c</fields>
-        <fields>Company_Code__c</fields>
-        <fields>PG1_Code__c</fields>
-        <fields>PG1_Desc__c</fields>
-        <fields>PG2_Code__c</fields>
-        <fields>PG3_Desc__c</fields>
-        <fields>Business_Area_Code__c</fields>
-        <profileName>Lightning Field Service</profileName>
-    </profileSearchLayouts>
-    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
-    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>CategoryProduct</fullName>
         <active>true</active>
@@ -3532,34 +3323,6 @@
             </values>
         </picklistValues>
     </recordTypes>
-    <searchLayouts>
-        <customTabListAdditionalFields>PRODUCT2.NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Article__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>GPP_Code__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>PG1_Code__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>PG2_Code__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>PG3_Code__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>PG4_Code__c</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>PRODUCT2.NAME</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Article__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>PRODUCT2.DESCRIPTION</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>PRODUCT2.FAMILY</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Company_Code__c</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>PRODUCT2.NAME</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>PRODUCT2.DESCRIPTION</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>PRODUCT2.FAMILY</lookupPhoneDialogsAdditionalFields>
-        <searchResultsAdditionalFields>PRODUCT2.NAME</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Article__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>PG1_Code__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>PG1_Desc__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>PG2_Code__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>PG3_Desc__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Business_Area_Code__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Company_Code__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>SBQQ__Include_or_Exclude_Maintenance</fullName>
         <active>true</active>

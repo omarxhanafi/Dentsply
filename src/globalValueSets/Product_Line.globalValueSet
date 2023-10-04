@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Not SBU-Specific</fullName>
+        <default>true</default>
+        <label>Not SBU-Specific</label>
+    </customValue>
+    <customValue>
+        <fullName>CAD/CAM</fullName>
+        <default>false</default>
+        <label>CAD/CAM</label>
+    </customValue>
+    <customValue>
+        <fullName>CAD/CAM - Nazaré</fullName>
+        <default>false</default>
+        <label>CAD/CAM - Nazaré</label>
+    </customValue>
+    <customValue>
+        <fullName>CAD/CAM - CEREC</fullName>
+        <default>false</default>
+        <label>CAD/CAM - CEREC</label>
+    </customValue>
+    <customValue>
+        <fullName>CAD/CAM - InLab</fullName>
+        <default>false</default>
+        <label>CAD/CAM - InLab</label>
+    </customValue>
+    <customValue>
+        <fullName>Imaging</fullName>
+        <default>false</default>
+        <label>Imaging</label>
+    </customValue>
+    <customValue>
+        <fullName>Imaging - Extra Oral</fullName>
+        <default>false</default>
+        <label>Imaging - Extra Oral</label>
+    </customValue>
+    <customValue>
+        <fullName>Imaging - Intra Oral</fullName>
+        <default>false</default>
+        <label>Imaging - Intra Oral</label>
+    </customValue>
+    <customValue>
+        <fullName>Instruments</fullName>
+        <default>false</default>
+        <label>Instruments</label>
+    </customValue>
+    <customValue>
+        <fullName>Treatment Centers</fullName>
+        <default>false</default>
+        <label>Treatment Centers</label>
+    </customValue>
+    <customValue>
+        <fullName>Endodontics</fullName>
+        <default>false</default>
+        <label>Endodontics</label>
+    </customValue>
+    <customValue>
+        <fullName>Restorative</fullName>
+        <default>false</default>
+        <label>Restorative</label>
+    </customValue>
+    <customValue>
+        <fullName>Implants</fullName>
+        <default>false</default>
+        <label>Implants</label>
+    </customValue>
+    <customValue>
+        <fullName>Prosthetics</fullName>
+        <default>false</default>
+        <label>Prosthetics</label>
+    </customValue>
+    <customValue>
+        <fullName>PREP</fullName>
+        <default>false</default>
+        <label>PREP</label>
+    </customValue>
+    <customValue>
+        <fullName>Orthodontics</fullName>
+        <default>false</default>
+        <label>Orthodontics</label>
+    </customValue>
+    <customValue>
+        <fullName>Preventive</fullName>
+        <default>false</default>
+        <label>Preventive</label>
+    </customValue>
+    <customValue>
+        <fullName>Imaging - 2D</fullName>
+        <default>false</default>
+        <label>Imaging - 2D</label>
+    </customValue>
+    <customValue>
+        <fullName>Imaging - 3D</fullName>
+        <default>false</default>
+        <label>Imaging - 3D</label>
+    </customValue>
+    <customValue>
+        <fullName>Laboratory</fullName>
+        <default>false</default>
+        <label>Laboratory</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital</fullName>
+        <default>false</default>
+        <label>Digital</label>
+    </customValue>
+    <customValue>
+        <fullName>Consumables</fullName>
+        <default>false</default>
+        <label>Consumables</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Group</fullName>
+        <default>false</default>
+        <label>Digital Group</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Services</fullName>
+        <default>false</default>
+        <label>Digital Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Equipment</fullName>
+        <default>false</default>
+        <label>Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Equipment &amp; Imaging</fullName>
+        <default>false</default>
+        <label>Equipment &amp; Imaging</label>
+    </customValue>
+    <customValue>
+        <fullName>Class II</fullName>
+        <default>false</default>
+        <label>Class II</label>
+    </customValue>
+    <customValue>
+        <fullName>Single Unit Crown</fullName>
+        <default>false</default>
+        <label>Single Unit Crown</label>
+    </customValue>
+    <customValue>
+        <fullName>Root To Crown</fullName>
+        <default>false</default>
+        <label>Root To Crown</label>
+    </customValue>
+    <description>Used for x-SBU related objects</description>
+    <masterLabel>Product Line</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

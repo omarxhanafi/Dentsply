@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>CDCM</masterLabel>
+        <translation><!-- CDCM --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Consumables</masterLabel>
+        <translation><!-- Consumables --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Digital Group</masterLabel>
+        <translation><!-- Digital Group --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Digital Services</masterLabel>
+        <translation><!-- Digital Services --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>ENDO</masterLabel>
+        <translation><!-- ENDO --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Equipment</masterLabel>
+        <translation><!-- Equipment --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>General</masterLabel>
+        <translation><!-- General --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>IMAG</masterLabel>
+        <translation>RX</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>IMPL</masterLabel>
+        <translation><!-- IMPL --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>INST</masterLabel>
+        <translation><!-- INST --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>ORTH</masterLabel>
+        <translation><!-- ORTH --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>PREV</masterLabel>
+        <translation><!-- PREV --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>PROS</masterLabel>
+        <translation><!-- PROS --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Platform</masterLabel>
+        <translation><!-- Platform --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>REST</masterLabel>
+        <translation><!-- REST --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>TRCE</masterLabel>
+        <translation><!-- TRCE --></translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

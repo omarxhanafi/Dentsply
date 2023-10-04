@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;line-height:normal&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt;Helsingin kaupunki&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;line-height:normal&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt;Hyv&amp;auml; vastaanottaja,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;line-height:normal&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt;DENTSPLY Sirona j&amp;auml;rjest&amp;auml;&amp;auml; perinteisen&lt;b&gt;, erikoistuville hammasl&amp;auml;&amp;auml;k&amp;auml;reille suunnatun implantologian kurssin H&amp;auml;meenlinnassa,&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;line-height:normal&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt;Hotelli Vanajanlinnassa &lt;b&gt;8. &amp;ndash; 9.10.2021.&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;line-height:normal&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt;Kurssi alkaa perjantaina 8.10. klo 9.00 ja p&amp;auml;&amp;auml;ttyy lauantaina 9.10. n. klo 15.30.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;line-height:normal&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;u&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt;Kurssimaksu 150 &amp;euro; / osallistuja (sis. alv 24 %).&lt;/span&gt;&lt;/span&gt;&lt;/u&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;line-height:normal&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt;DENTSPLY Sironan varaamaan kurssipakettiin sis&amp;auml;ltyv&amp;auml;t kurssin aikana ruokailut ja majoitus yhden tai kahden hengen huoneissa.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-size:12pt&quot;&gt;&lt;span style=&quot;font-family:Arial,sans-serif&quot;&gt;&lt;span style=&quot;color:black&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&amp;nbsp;Kurssin vet&amp;auml;jin&amp;auml; toimivat EHL Jenni Hjerppe, EHL Karita Nylund ja &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;span style=&quot;font-size:12pt&quot;&gt;&lt;span style=&quot;font-family:Arial,sans-serif&quot;&gt;&lt;span style=&quot;color:black&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&amp;nbsp;EHL Janne Ryh&amp;auml;nen &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;line-height:normal&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt;Mukana my&amp;ouml;s Dentsply Sironan henkil&amp;ouml;kuntaa.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;line-height:normal&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt;Kurssi on tarkoitettu kaikille erikoistujille. Toivomme, ett&amp;auml; suhtaudutte my&amp;ouml;t&amp;auml;mielisesti kurssiin ja annatte erikoistujille mahdollisuuden osallistua t&amp;auml;h&amp;auml;n paljon positiivista palautetta saaneeseen tilaisuuteen.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;line-height:normal&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt;Pyyd&amp;auml;mme teit&amp;auml; yst&amp;auml;v&amp;auml;llisesti nime&amp;auml;m&amp;auml;&amp;auml;n yksik&amp;ouml;st&amp;auml;nne ne henkil&amp;ouml;t, jotka mielest&amp;auml;nne voivat osallistua ko. kurssille ja toimittamaan osallistujatiedot (nimi, toimipaikka, s-postiosoite ja puhelinnumero) maanantaihin &lt;b&gt;20.9.2021 menness&amp;auml;, &lt;/b&gt;s&amp;auml;hk&amp;ouml;postilla &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;line-height:normal&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;a href=&quot;mailto:paivi.henriksson@dentsplysirona.com&quot; style=&quot;color:blue; text-decoration:underline&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt;paivi.henriksson@dentsplysirona.com&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt; tai 09 8676 1662 / P&amp;auml;ivi Henriksson.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;line-height:normal&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt;Kurssiterveisin&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;line-height:normal&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt;DENTSPLY Sirona&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt&quot;&gt;&lt;span style=&quot;line-height:normal&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;font-size:10.0pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Arial&amp;quot;,sans-serif&quot;&gt;Liite: Kurssiohjelma&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;img alt=&quot;ds-line-email&quot; src=&quot;https://dentsplysirona--c.documentforce.com/file-asset-public/dslineemail?oid=00D200000001dDc&quot; style=&quot;max-width: 100%&quot; title=&quot;ds-line-email&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;img alt=&quot;ds-logo-email&quot; src=&quot;https://dentsplysirona--c.documentforce.com/file-asset-public/dslogoemail?oid=00D200000001dDc&quot; style=&quot;max-width: 100%&quot; title=&quot;ds-logo-email&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;a href=&quot;http://www.dentsplysirona.com&quot;&gt;www.dentsplysirona.com&lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:richText</componentName>
+                <identifier>contentbuilder_richText</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-355642ec-8dcb-42b3-b080-9307889b3c24</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-355642ec-8dcb-42b3-b080-9307889b3c24</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-8acb9919-1108-4d73-9c8e-2e81049d9c05</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-8acb9919-1108-4d73-9c8e-2e81049d9c05</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>FI_Kutsu_Helsingin_kaupunki_Erikoistujat_2021</masterLabel>
+    <template>
+        <name>contentpage:defaultEmailTemplatePageTemplate</name>
+        <properties>
+            <name>backgroundColor</name>
+            <value>#E9EAEC</value>
+        </properties>
+        <properties>
+            <name>backgroundImageUrl</name>
+        </properties>
+        <properties>
+            <name>bodyColor</name>
+            <value>#FFFFFF</value>
+        </properties>
+        <properties>
+            <name>paddingBottom</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingLeft</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingRight</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingTop</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>preheader</name>
+        </properties>
+    </template>
+    <type>EmailTemplatePage</type>
+</FlexiPage>

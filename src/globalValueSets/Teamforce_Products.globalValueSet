@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Accounts</fullName>
+        <default>false</default>
+        <label>Accounts</label>
+    </customValue>
+    <customValue>
+        <fullName>Assets</fullName>
+        <default>false</default>
+        <label>Assets</label>
+    </customValue>
+    <customValue>
+        <fullName>Campaigns</fullName>
+        <default>false</default>
+        <label>Campaigns</label>
+    </customValue>
+    <customValue>
+        <fullName>Cases</fullName>
+        <default>false</default>
+        <label>Cases</label>
+    </customValue>
+    <customValue>
+        <fullName>Contacts</fullName>
+        <default>false</default>
+        <label>Contacts</label>
+    </customValue>
+    <customValue>
+        <fullName>Contracts</fullName>
+        <default>false</default>
+        <label>Contracts</label>
+    </customValue>
+    <customValue>
+        <fullName>CTI Integration</fullName>
+        <default>false</default>
+        <label>CTI Integration</label>
+    </customValue>
+    <customValue>
+        <fullName>Einstein Analytics (EA)</fullName>
+        <default>false</default>
+        <label>Einstein Analytics (EA)</label>
+    </customValue>
+    <customValue>
+        <fullName>Email-to-case</fullName>
+        <default>false</default>
+        <label>Email-to-case</label>
+    </customValue>
+    <customValue>
+        <fullName>ETM/Access/Sharing</fullName>
+        <default>false</default>
+        <label>ETM/Access/Sharing</label>
+    </customValue>
+    <customValue>
+        <fullName>Events</fullName>
+        <default>false</default>
+        <label>Events</label>
+    </customValue>
+    <customValue>
+        <fullName>Field Service</fullName>
+        <default>false</default>
+        <label>Field Service</label>
+    </customValue>
+    <customValue>
+        <fullName>Get feedback-Survey</fullName>
+        <default>false</default>
+        <label>Get feedback-Survey</label>
+    </customValue>
+    <customValue>
+        <fullName>Integration - Azure</fullName>
+        <default>false</default>
+        <label>Integration - Azure</label>
+    </customValue>
+    <customValue>
+        <fullName>Integration - CDW</fullName>
+        <default>false</default>
+        <label>Integration - CDW</label>
+    </customValue>
+    <customValue>
+        <fullName>Integration - CIM360</fullName>
+        <default>false</default>
+        <label>Integration - CIM360</label>
+    </customValue>
+    <customValue>
+        <fullName>Integration - Cvent</fullName>
+        <default>false</default>
+        <label>Integration - Cvent</label>
+    </customValue>
+    <customValue>
+        <fullName>Integration - Eloqua</fullName>
+        <default>false</default>
+        <label>Integration - Eloqua</label>
+    </customValue>
+    <customValue>
+        <fullName>Integration - GDW</fullName>
+        <default>false</default>
+        <label>Integration - GDW</label>
+    </customValue>
+    <customValue>
+        <fullName>Integration - Profisee Contact</fullName>
+        <default>false</default>
+        <label>Integration - Profisee Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Integration - Siroforce</fullName>
+        <default>false</default>
+        <label>Integration - Siroforce</label>
+    </customValue>
+    <customValue>
+        <fullName>Knowledge</fullName>
+        <default>false</default>
+        <label>Knowledge</label>
+    </customValue>
+    <customValue>
+        <fullName>KOL Management</fullName>
+        <default>false</default>
+        <label>KOL Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Live Agent</fullName>
+        <default>false</default>
+        <label>Live Agent</label>
+    </customValue>
+    <customValue>
+        <fullName>Maps</fullName>
+        <default>false</default>
+        <label>Maps</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing</fullName>
+        <default>false</default>
+        <label>Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Mobile</fullName>
+        <default>false</default>
+        <label>Mobile</label>
+    </customValue>
+    <customValue>
+        <fullName>Opportunities</fullName>
+        <default>false</default>
+        <label>Opportunities</label>
+    </customValue>
+    <customValue>
+        <fullName>Orders</fullName>
+        <default>false</default>
+        <label>Orders</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Platform Development</fullName>
+        <default>false</default>
+        <label>Platform Development</label>
+    </customValue>
+    <customValue>
+        <fullName>Platform Security</fullName>
+        <default>false</default>
+        <label>Platform Security</label>
+    </customValue>
+    <customValue>
+        <fullName>Platform Setup</fullName>
+        <default>false</default>
+        <label>Platform Setup</label>
+    </customValue>
+    <customValue>
+        <fullName>Product Profiling</fullName>
+        <default>false</default>
+        <label>Product Profiling</label>
+    </customValue>
+    <customValue>
+        <fullName>Reports &amp; Dashboards</fullName>
+        <default>false</default>
+        <label>Reports &amp; Dashboards</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Leads</fullName>
+        <default>false</default>
+        <label>Sales Leads</label>
+    </customValue>
+    <customValue>
+        <fullName>User Administration</fullName>
+        <default>false</default>
+        <label>User Administration</label>
+    </customValue>
+    <customValue>
+        <fullName>Web-to-case</fullName>
+        <default>false</default>
+        <label>Web-to-case</label>
+    </customValue>
+    <customValue>
+        <fullName>Geopointe</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Geopointe</label>
+    </customValue>
+    <description>To tag product offer in DentsplySirona CRM - different objects/features in the system</description>
+    <masterLabel>Teamforce Products</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

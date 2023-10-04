@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Used to assign the correct SLA to each created account based on the country &amp; SBU  (#TFUS-000001231)</description>
     <fields>
         <fullName>Country__c</fullName>
         <description>Country Name</description>
@@ -34,7 +33,4 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <label>Service Cloud: Country SLA</label>
-    <pluralLabel>Service Cloud: Countries SLA</pluralLabel>
-    <visibility>Public</visibility>
 </CustomObject>

@@ -193,55 +193,6 @@
         </values>
     </businessProcesses>
     <businessProcesses>
-        <fullName>Dealers Community</fullName>
-        <isActive>true</isActive>
-        <values>
-            <fullName>Closed Lost</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Closed Won</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Positioning Products</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Registered</fullName>
-            <default>false</default>
-        </values>
-    </businessProcesses>
-    <businessProcesses>
-        <fullName>GET</fullName>
-        <description>For all Opportunities targeted at winning new customers for a new product</description>
-        <isActive>true</isActive>
-        <values>
-            <fullName>Acquired</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Decision Maker OK</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Lost</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Negotiated</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Prospecting</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Trialed</fullName>
-            <default>false</default>
-        </values>
-    </businessProcesses>
-    <businessProcesses>
         <fullName>GET Atlantis - D</fullName>
         <description>Opportunity stages for Dental Atlantis GET Opportunities</description>
         <isActive>true</isActive>
@@ -302,7 +253,7 @@
     <businessProcesses>
         <fullName>GET Surgical - D</fullName>
         <description>Opportunity stages for Dental Surgical GET Opportunities.</description>
-        <isActive>true</isActive>
+        <isActive>false</isActive>
         <values>
             <fullName>Closed - Cancelled</fullName>
             <default>false</default>
@@ -329,39 +280,6 @@
         </values>
         <values>
             <fullName>Won - Kit and over 10 implants acquired</fullName>
-            <default>false</default>
-        </values>
-    </businessProcesses>
-    <businessProcesses>
-        <fullName>GROW</fullName>
-        <description>For all Opportunities targeted at growing existing business</description>
-        <isActive>true</isActive>
-        <values>
-            <fullName>%3E 25%25 Referred patients%2Fbusiness</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>%3E 50%25 Referred patients%2Fbusiness</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>%3E 80%25 Referred patients%2Fbusiness</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Building Network%2FBusiness</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Lost</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Network%2FBusiness Built</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Not Applicable</fullName>
             <default>false</default>
         </values>
     </businessProcesses>
@@ -401,7 +319,7 @@
     </businessProcesses>
     <businessProcesses>
         <fullName>Global consumable process</fullName>
-        <isActive>true</isActive>
+        <isActive>false</isActive>
         <values>
             <fullName>1 - Targeting</fullName>
             <default>false</default>
@@ -871,30 +789,6 @@
         <label>default</label>
     </fieldSets>
     <fields>
-        <fullName>AP_Progress_Status_ORTH__c</fullName>
-        <description>Green = less than 60 days in same stage
-            Yellow = 60 - 90 days in same stage
-            Red = more than 90 days in same stage</description>
-        <externalId>false</externalId>
-        <formula>IF( OR( RecordTypeId = &quot;01220000000oo0M&quot; ),
-
-            IF( Stage_Duration__c &lt;= 60 , IMAGE(&quot;/img/samples/light_green.gif&quot;,&quot;Green Flag&quot;),
-
-            IF(Stage_Duration__c &gt;= 90, IMAGE(&quot;/img/samples/light_red.gif&quot;, &quot;Red Flag&quot;), IMAGE(&quot;/img/samples/light_yellow.gif&quot;, &quot;Yellow Flag&quot;))
-
-            ), &quot;Not Applicable&quot;
-            )</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>Green = less than 60 days in same stage
-            Yellow = 60 - 90 days in same stage
-            Red = more than 90 days in same stage</inlineHelpText>
-        <label>AP Progress Status (ORTH)</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>ATL_Abuts_Potential_Year__c</fullName>
         <description>This field shows the Total Yearly Atlantis Abutments potential on the Account associated with this Opportunity. It is taken from the Account record and can therefore only be changed there.</description>
         <externalId>false</externalId>
@@ -934,17 +828,6 @@
         <scale>0</scale>
         <trackHistory>false</trackHistory>
         <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>AWO_Customer__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF( Account.Atlantis_Web_Order_Customer__c=true,&quot;Yes&quot;,&quot;No&quot;)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>AWO Customer?</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Accomplishments_To_Date__c</fullName>
@@ -1455,6 +1338,62 @@ IF(AND(RecordType.Id = &apos;0120J000000jnHR&apos;, ISPICKVAL(Account_Plan_Type_
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Approval_Status__c</fullName>
+        <description>TFUS-000005460</description>
+        <externalId>false</externalId>
+        <label>Approval Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+                <value>
+                    <fullName>Step 1</fullName>
+                    <default>false</default>
+                    <label>Step 1</label>
+                </value>
+                <value>
+                    <fullName>Step 2</fullName>
+                    <default>false</default>
+                    <label>Step 2</label>
+                </value>
+                <value>
+                    <fullName>Step 3</fullName>
+                    <default>false</default>
+                    <label>Step 3</label>
+                </value>
+                <value>
+                    <fullName>Step 4</fullName>
+                    <default>false</default>
+                    <label>Step 4</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Approved_by_Sales_Manager__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Set by the SR&apos;s Manager to verify that the Account Plan is completely filled in and that the Account in itself is a good fit for an Account Plan. If Managers selects NO, the Account Plan will be visible on the Personal Assistant of the SR for completion.</inlineHelpText>
@@ -1579,19 +1518,6 @@ IF(AND(RecordType.Id = &apos;0120J000000jnHR&apos;, ISPICKVAL(Account_Plan_Type_
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>CFE_LY__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.CFEs_Implants_CY_1__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>CFE LY</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>CFE_Target_CY__c</fullName>
@@ -1752,21 +1678,6 @@ IF(AND(RecordType.Id = &apos;0120J000000jnHR&apos;, ISPICKVAL(Account_Plan_Type_
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Competitor_Implant_Volume_F__c</fullName>
-        <description>Calculation of # implants competitor</description>
-        <externalId>false</externalId>
-        <formula>Account.Implants_Potential_Year__c-Sold_Implants_L12M__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>calculated from Implant potential of the assigned account minus Implants solds last 12 Month</inlineHelpText>
-        <label>Competitor Implant Volume_F</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Competitor_Information__c</fullName>
         <description>Relevant information about Competitor</description>
         <externalId>false</externalId>
@@ -1889,14 +1800,6 @@ IF(AND(RecordType.Id = &apos;0120J000000jnHR&apos;, ISPICKVAL(Account_Plan_Type_
             </valueSetDefinition>
         </valueSet>
         <visibleLines>8</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Conservative_Dentistry__c</fullName>
-        <externalId>false</externalId>
-        <formula>if (includes( Account.Clinic_Treatment_Focus__c ,&quot;Conservative dentistry&quot;),True,False)</formula>
-        <label>Conservative Dentistry</label>
-        <trackHistory>false</trackHistory>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>ContractId</fullName>
@@ -2515,6 +2418,7 @@ IF(AND(RecordType.Id = &apos;0120J000000jnHR&apos;, ISPICKVAL(Account_Plan_Type_
         <label>Dealer&apos;s Sales Rep</label>
         <lookupFilter>
             <active>true</active>
+            <errorMessage>Value does not exist or does not match filter criteria.</errorMessage>
             <filterItems>
                 <field>$Source.Dealer__c</field>
                 <operation>equals</operation>
@@ -2630,27 +2534,6 @@ IF(AND(RecordType.Id = &apos;0120J000000jnHR&apos;, ISPICKVAL(Account_Plan_Type_
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>ERP_Ortho__c</fullName>
-        <description>ERP# (Ortho) as entered on the Account object</description>
-        <externalId>false</externalId>
-        <formula>Account.ERP_Ortho__c</formula>
-        <inlineHelpText>ERP# (Ortho) - fetched from the Account</inlineHelpText>
-        <label>ERP# (ORTH)</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Endodontics__c</fullName>
-        <externalId>false</externalId>
-        <formula>if (includes( Account.Clinic_Treatment_Focus__c ,&quot;Endodontics&quot;),True,False)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Endodontics</label>
-        <trackHistory>false</trackHistory>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>Est_ATL_GrowthCY__c</fullName>
         <description>Shows the estimated growth in money for this Account. It compares Atlantis Sales LY with the Est ATL Sales CY on the Opportunity. Only applicable when the Closing year equals or greater than the current year. otherwise it will be Zero</description>
         <externalId>false</externalId>
@@ -2741,19 +2624,6 @@ IF(AND(RecordType.Id = &apos;0120J000000jnHR&apos;, ISPICKVAL(Account_Plan_Type_
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Est_Implant_Growth_CY__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.Est_Implant_Growth_CY__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Est Implant Growth CY</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Est_Implant_Volume_CY_D_JP__c</fullName>
         <externalId>false</externalId>
         <formula>Account.Est_Implant_Volume_CY_D__c</formula>
@@ -2807,19 +2677,6 @@ IF(AND(RecordType.Id = &apos;0120J000000jnHR&apos;, ISPICKVAL(Account_Plan_Type_
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Est_Sales_Growth__c</fullName>
-        <externalId>false</externalId>
-        <formula>(Account_Est_Sales_CY__c-Sales_Dental_LY__c)/Sales_Dental_LY__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>Wachstum des Umsatzes in %</inlineHelpText>
-        <label>%Est Sales Growth</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <type>Percent</type>
     </fields>
     <fields>
         <fullName>Est_Sales_LY__c</fullName>
@@ -2934,6 +2791,16 @@ IF(AND(RecordType.Id = &apos;0120J000000jnHR&apos;, ISPICKVAL(Account_Plan_Type_
         <fullName>ExpectedRevenue</fullName>
     </fields>
     <fields>
+        <fullName>Final_Installation_Date__c</fullName>
+        <description>Australian specific request for support of their direct business: see TFUS-000005491</description>
+        <externalId>false</externalId>
+        <label>Final Installation Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>First_Atlantis_Sales_Date__c</fullName>
         <externalId>false</externalId>
         <formula>Account.First_Atlantis_Sales_Date__c</formula>
@@ -2952,132 +2819,6 @@ IF(AND(RecordType.Id = &apos;0120J000000jnHR&apos;, ISPICKVAL(Account_Plan_Type_
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Fulfillment_of_target_ATL_Abut__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF(
-OR(
-AND( of_ATL_Abuts_YTD__c = 0, Est_of_ATL_Abuts_Current_CY__c = 0),
-AND( of_ATL_Abuts_YTD__c = 0, Est_of_ATL_Abuts_Current_CY__c &gt; 0)),0,
-IF(
-AND( of_ATL_Abuts_YTD__c &gt; 0, Est_of_ATL_Abuts_Current_CY__c = 0),1,
-IF(
-AND( of_ATL_Abuts_YTD__c &lt; 0, Est_of_ATL_Abuts_Current_CY__c &gt;= 0),-1,
-of_ATL_Abuts_YTD__c/ Est_of_ATL_Abuts_Current_CY__c)))</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Fulfillment of target ATL Abut</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Fulfillment_of_target_CFE__c</fullName>
-        <description>Fulliment oft CFE Target = CFEs Current Year / CFE Target Current Year</description>
-        <externalId>false</externalId>
-        <formula>IF(
-OR(
-AND( CFEs_CY__c = 0, CFE_Target_CY__c = 0),
-AND( CFEs_CY__c = 0, CFE_Target_CY__c &gt; 0)),0,
-IF(
-AND( CFEs_CY__c &gt; 0, CFE_Target_CY__c = 0),1,
-IF(
-AND( CFEs_CY__c &lt; 0, CFE_Target_CY__c &gt;= 0),-1,
-CFEs_CY__c/CFE_Target_CY__c)))</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>Erreichung Anzahl geplanten Besuche für dieses Jahr</inlineHelpText>
-        <label>Fulfillment of target CFE</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Fulfillment_of_target_ISUS__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF(
-OR(
-AND( Sold_ATL_ISUS_CY__c = 0, Est_of_ATL_ISUS_CY__c = 0),
-AND( Sold_ATL_ISUS_CY__c = 0, Est_of_ATL_ISUS_CY__c &gt; 0)),0,
-IF(
-AND( Sold_ATL_ISUS_CY__c &gt; 0, Est_of_ATL_ISUS_CY__c = 0),1,
-IF(
-AND( Sold_ATL_ISUS_CY__c &lt; 0, Est_of_ATL_ISUS_CY__c &gt;= 0),-1,
-Sold_ATL_ISUS_CY__c/ Est_of_ATL_ISUS_CY__c)))</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Fulfillment of target ISUS</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Fulfillment_of_target_Implants__c</fullName>
-        <description>fullfillment of sold Implants = Actual sold implants CY/Est # of Implants CY</description>
-        <externalId>false</externalId>
-        <formula>IF(
-OR(
-AND( of_Implants_Sold_YTD__c = 0, Est_Implant_Volume_CY_D_JP__c = 0),
-AND( of_Implants_Sold_YTD__c = 0, Est_Implant_Volume_CY_D_JP__c &gt; 0)),0,
-IF(
-AND( of_Implants_Sold_YTD__c &gt; 0, Est_Implant_Volume_CY_D_JP__c = 0),1,
-IF(
-AND( of_Implants_Sold_YTD__c &lt; 0, Est_Implant_Volume_CY_D_JP__c &gt;= 0),-1,
-of_Implants_Sold_YTD__c/Est_Implant_Volume_CY_D_JP__c)))</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>Aktueller Erfüllungsgrad zu den geplanten Implantaten dieses Jahr</inlineHelpText>
-        <label>Fulfillment of target Implants</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>1</scale>
-        <trackHistory>false</trackHistory>
-        <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Fulfillment_of_target_Sales__c</fullName>
-        <description>Fulliment of the estemated sales. Based on sales CY to estemated sales</description>
-        <externalId>false</externalId>
-        <formula>IF(
-OR(
-AND( Sales_Dental_YTD__c = 0, Account_Est_Sales_CY__c = 0),
-AND( Sales_Dental_YTD__c = 0, Account_Est_Sales_CY__c &gt; 0)),0,
-IF(
-AND( Sales_Dental_YTD__c &gt; 0, Account_Est_Sales_CY__c = 0),1,
-IF(
-AND( Sales_Dental_YTD__c &lt; 0, Account_Est_Sales_CY__c &gt;= 0),-1,
-Sales_Dental_YTD__c/Account_Est_Sales_CY__c)))</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>Aktueller Stand zum geplanten Umsatz</inlineHelpText>
-        <label>Fulfillment of target Sales</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Fulfillment_of_target_Stock_Abut__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF(
-OR(
-AND( of_Stock_Abuts_YTD__c = 0, Est_of_Stock_Abuts_Current_CY__c = 0),
-AND( of_Stock_Abuts_YTD__c = 0, Est_of_Stock_Abuts_Current_CY__c &gt; 0)),0,
-IF(
-AND( of_Stock_Abuts_YTD__c &gt; 0, Est_of_Stock_Abuts_Current_CY__c = 0),1,
-IF(
-AND( of_Stock_Abuts_YTD__c &lt; 0, Est_of_Stock_Abuts_Current_CY__c &gt;= 0),-1,
-of_Stock_Abuts_YTD__c / Est_of_Stock_Abuts_Current_CY__c)))</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Fulfillment of target Stock Abut</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <type>Percent</type>
     </fields>
     <fields>
         <fullName>GET_AP_Red_Light_Focus_Approval__c</fullName>
@@ -3316,22 +3057,6 @@ of_Stock_Abuts_YTD__c / Est_of_Stock_Abuts_Current_CY__c)))</formula>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>IMG_Sales_Graph__c</fullName>
-        <externalId>false</externalId>
-        <formula>IMAGE(&quot;http://chart.apis.google.com/chart?cht=bhs&amp;chd=t:&quot; &amp;
-            Text(IMG_Est_Sales_CY__c ) &amp; &quot;,&quot; &amp;
-            Text( IMG_Sales_YTD__c ) &amp; &quot;,&quot; &amp;
-            Text( IMG_Sales_LY__c ) &amp;
-            &quot;&amp;chbh=10&amp;chs=250x60&amp;chf=bg,s,F3F3EC&amp;chdl=Est Sales CY|Sales YTD|Sales LY&amp;chco=4D89D9 &quot;,
-            &quot;chart text&quot;)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>IMG Sales Graph</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>IMG_Sales_LY__c</fullName>
         <description>COS field used for North America Dental.</description>
         <externalId>false</externalId>
@@ -3360,39 +3085,6 @@ of_Stock_Abuts_YTD__c / Est_of_Stock_Abuts_Current_CY__c)))</formula>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>IMPL_Data_Quality_Description__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF( Data_Quality_Score__c =60,&quot;All Opportunity Details Captured&quot;, &quot;Missing: &quot;&amp;&quot;&quot;&amp;IF(LEN( TEXT(MONTH(CloseDate))) = 0, &quot;Close Date, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( ISPICKVAL( Main_Competitor__c,&quot;&quot;), &quot;Main competitor, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( LEN(NextStep)=0, &quot;Next Steps&quot;,&quot;&quot;))</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>IMPL Data Quality Description</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>IMPL_Data_Quality_Score__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF( LEN( TEXT(MONTH(CloseDate))) = 0, 0,20) + IF( ISPICKVAL( Main_Competitor__c ,&quot;&quot;), 0,20) + IF( LEN(NextStep)=0, 0,20)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>IMPL Data Quality Score</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Implants_Won_Date__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.LastWonEventYearMonth_Implants__c</formula>
-        <label>Implants Won Date</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Implants_Won_Lost_Status__c</fullName>
         <externalId>false</externalId>
         <formula>Account.WonLostStatus_Implants_EndField__c</formula>
@@ -3402,14 +3094,6 @@ of_Stock_Abuts_YTD__c / Est_of_Stock_Abuts_Current_CY__c)))</formula>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Implants__c</fullName>
-        <externalId>false</externalId>
-        <formula>if (or(includes( Account.Clinic_Treatment_Focus__c ,&quot;Implantology&quot;), includes( Account.Clinic_Treatment_Focus__c ,&quot;Implant Surgery&quot;),includes( Account.Clinic_Treatment_Focus__c ,&quot;Implant Restorations&quot;)),True,False)</formula>
-        <label>Implants</label>
-        <trackHistory>false</trackHistory>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Improved_based_on_Managers_feedback__c</fullName>
@@ -3618,35 +3302,26 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             <valueSettings>
                 <controllingFieldValue>Lost</controllingFieldValue>
                 <controllingFieldValue>Closed - Cancelled</controllingFieldValue>
-                <controllingFieldValue>7. Lost or Cancelled</controllingFieldValue>
                 <valueName>Administration Error</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Lost</controllingFieldValue>
-                <controllingFieldValue>Closed - Yearly Target not reached</controllingFieldValue>
-                <controllingFieldValue>7. Lost or Cancelled</controllingFieldValue>
                 <valueName>Price</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Lost</controllingFieldValue>
-                <controllingFieldValue>Closed - Yearly Target not reached</controllingFieldValue>
-                <controllingFieldValue>7. Lost or Cancelled</controllingFieldValue>
                 <valueName>Product</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Lost</controllingFieldValue>
-                <controllingFieldValue>Closed - Yearly Target not reached</controllingFieldValue>
-                <controllingFieldValue>7. Lost or Cancelled</controllingFieldValue>
                 <valueName>Promotion</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed - Cancelled</controllingFieldValue>
-                <controllingFieldValue>7. Lost or Cancelled</controllingFieldValue>
                 <valueName>Account no longer eligible for GROW Account Plan</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Closed - Cancelled</controllingFieldValue>
-                <controllingFieldValue>7. Lost or Cancelled</controllingFieldValue>
                 <valueName>Closed due to opportunity inactivity</valueName>
             </valueSettings>
         </valueSet>
@@ -3726,18 +3401,6 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <valueName>Time Related</valueName>
             </valueSettings>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Main_Competitor_D__c</fullName>
-        <description>Main Competitor is taken from the Account Record. If this field is empty, please update the Main Competitor field on the Account.</description>
-        <externalId>false</externalId>
-        <formula>Account.Main_Competitor_D__r.Name</formula>
-        <inlineHelpText>Main Competitor is taken from the Account Record. If this field is empty, please update the Main Competitor field on the Account.</inlineHelpText>
-        <label>Main Competitor</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Main_Competitor__c</fullName>
@@ -4694,9 +4357,69 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                     <label>Ossix</label>
                 </value>
                 <value>
-                    <fullName>Other</fullName>
+                    <fullName>Other Class II</fullName>
                     <default>false</default>
-                    <label>Other</label>
+                    <label>Other Class II</label>
+                </value>
+                <value>
+                    <fullName>Other Consumables</fullName>
+                    <default>false</default>
+                    <label>Other Consumables</label>
+                </value>
+                <value>
+                    <fullName>Other Digital</fullName>
+                    <default>false</default>
+                    <label>Other Digital</label>
+                </value>
+                <value>
+                    <fullName>Other Digital Group</fullName>
+                    <default>false</default>
+                    <label>Other Digital Group</label>
+                </value>
+                <value>
+                    <fullName>Other Digital Services</fullName>
+                    <default>false</default>
+                    <label>Other Digital Services</label>
+                </value>
+                <value>
+                    <fullName>Other Endodontics</fullName>
+                    <default>false</default>
+                    <label>Other Endodontics</label>
+                </value>
+                <value>
+                    <fullName>Other Equipment</fullName>
+                    <default>false</default>
+                    <label>Other Equipment</label>
+                </value>
+                <value>
+                    <fullName>Other Equipment &amp; Imaging</fullName>
+                    <default>false</default>
+                    <label>Other Equipment &amp; Imaging</label>
+                </value>
+                <value>
+                    <fullName>Other Implants</fullName>
+                    <default>false</default>
+                    <label>Other Implants</label>
+                </value>
+                <value>
+                    <fullName>Other Orthodontics</fullName>
+                    <default>false</default>
+                    <label>Other Orthodontics</label>
+                </value>
+                <value>
+                    <fullName>Other Prosthetics</fullName>
+                    <default>false</default>
+                    <label>Other Prosthetics</label>
+                </value>
+                <value>
+                    <fullName>Other Root To Crown</fullName>
+                    <default>false</default>
+                    <label>Other Root To Crown</label>
+                </value>
+                <value>
+                    <fullName>Other Single Unit Crown</fullName>
+                    <default>false</default>
+                    <label>Other Single Unit Crown</label>
                 </value>
                 <value>
                     <fullName>Oxivir</fullName>
@@ -5294,34 +5017,15 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Single Unit Crown</controllingFieldValue>
-                <controllingFieldValue>Root To Crown</controllingFieldValue>
-                <controllingFieldValue>Digital Group</controllingFieldValue>
-                <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
-                <controllingFieldValue>Prosthetics</controllingFieldValue>
-                <controllingFieldValue>Intra Oral Imaging</controllingFieldValue>
-                <controllingFieldValue>Extra Oral Imaging</controllingFieldValue>
-                <controllingFieldValue>3D Imaging</controllingFieldValue>
-                <controllingFieldValue>Treatment Centers</controllingFieldValue>
-                <controllingFieldValue>Preventive</controllingFieldValue>
-                <controllingFieldValue>Consumables</controllingFieldValue>
-                <controllingFieldValue>Digital</controllingFieldValue>
-                <controllingFieldValue>Equipment</controllingFieldValue>
-                <controllingFieldValue>Implants</controllingFieldValue>
-                <controllingFieldValue>Restorative</controllingFieldValue>
-                <controllingFieldValue>Regenerative</controllingFieldValue>
-                <controllingFieldValue>Endentulous</controllingFieldValue>
-                <controllingFieldValue>Digital Solutions</controllingFieldValue>
-                <controllingFieldValue>ATLANTIS</controllingFieldValue>
-                <controllingFieldValue>CEREC Equipment</controllingFieldValue>
-                <controllingFieldValue>Midwest Equipment</controllingFieldValue>
-                <controllingFieldValue>InLab</controllingFieldValue>
-                <controllingFieldValue>Orthodontics</controllingFieldValue>
-                <controllingFieldValue>Class II</controllingFieldValue>
-                <valueName>Other</valueName>
+                <valueName>Other Single Unit Crown</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Single Unit Crown</controllingFieldValue>
                 <valueName>Temporary Materials</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Root To Crown</controllingFieldValue>
+                <valueName>Other Root To Crown</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Digital Group</controllingFieldValue>
@@ -5371,6 +5075,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             <valueSettings>
                 <controllingFieldValue>Digital Group</controllingFieldValue>
                 <valueName>Omnicam AF/AI</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital Group</controllingFieldValue>
+                <valueName>Other Digital Group</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Digital Group</controllingFieldValue>
@@ -5471,6 +5179,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
+                <valueName>Other Equipment &amp; Imaging</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equipment &amp; Imaging</controllingFieldValue>
                 <controllingFieldValue>Digital</controllingFieldValue>
                 <valueName>SICAT Suite</valueName>
             </valueSettings>
@@ -5561,6 +5273,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <valueName>DS Core Create</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>Digital Services</controllingFieldValue>
+                <valueName>Other Digital Services</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>non-product related</controllingFieldValue>
                 <valueName>Pricing</valueName>
             </valueSettings>
@@ -5636,6 +5352,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             <valueSettings>
                 <controllingFieldValue>Prosthetics</controllingFieldValue>
                 <valueName>Midline Teeth</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Prosthetics</controllingFieldValue>
+                <valueName>Other Prosthetics</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Prosthetics</controllingFieldValue>
@@ -5795,6 +5515,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Consumables</controllingFieldValue>
+                <valueName>Other Consumables</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Consumables</controllingFieldValue>
                 <valueName>Oxivir</valueName>
             </valueSettings>
             <valueSettings>
@@ -5898,6 +5622,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Digital</controllingFieldValue>
+                <valueName>Other Digital</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Digital</controllingFieldValue>
                 <controllingFieldValue>Digital Solutions</controllingFieldValue>
                 <valueName>Primescan</valueName>
             </valueSettings>
@@ -5996,6 +5724,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
                 <valueName>Kits &amp; Motors</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endodontics</controllingFieldValue>
+                <valueName>Other Endodontics</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Endodontics</controllingFieldValue>
@@ -6120,6 +5852,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Equipment</controllingFieldValue>
+                <valueName>Other Equipment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equipment</controllingFieldValue>
                 <valueName>Phoenix</valueName>
             </valueSettings>
             <valueSettings>
@@ -6222,6 +5958,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Implants</controllingFieldValue>
                 <controllingFieldValue>Regenerative</controllingFieldValue>
                 <valueName>Ossix</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Implants</controllingFieldValue>
+                <valueName>Other Implants</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Implants</controllingFieldValue>
@@ -6333,6 +6073,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Orthodontics</controllingFieldValue>
+                <valueName>Other Orthodontics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Orthodontics</controllingFieldValue>
                 <valueName>Propel Acceledent</valueName>
             </valueSettings>
             <valueSettings>
@@ -6378,6 +6122,10 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
             <valueSettings>
                 <controllingFieldValue>Class II</controllingFieldValue>
                 <valueName>Matrix</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Class II</controllingFieldValue>
+                <valueName>Other Class II</valueName>
             </valueSettings>
         </valueSet>
     </fields>
@@ -6586,6 +6334,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
@@ -6647,6 +6396,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
@@ -6710,6 +6460,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
@@ -6773,6 +6524,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
@@ -6834,6 +6586,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
@@ -6897,6 +6650,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
@@ -6960,6 +6714,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
@@ -7023,6 +6778,7 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
                 <controllingFieldValue>Egypt</controllingFieldValue>
                 <controllingFieldValue>Thailand</controllingFieldValue>
                 <controllingFieldValue>Hong Kong</controllingFieldValue>
+                <controllingFieldValue>Pakistan</controllingFieldValue>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <controllingFieldValue>Poland</controllingFieldValue>
                 <controllingFieldValue>Japan</controllingFieldValue>
@@ -7445,15 +7201,6 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
         <description>Related to User Story TFUS-000005396</description>
         <externalId>false</externalId>
         <label>Offer Code</label>
-        <lookupFilter>
-            <active>true</active>
-            <filterItems>
-                <field>Offer_Code__c.Offer_Code_Status__c</field>
-                <operation>notEqual</operation>
-                <value>Expired</value>
-            </filterItems>
-            <isOptional>false</isOptional>
-        </lookupFilter>
         <referenceTo>Offer_Code__c</referenceTo>
         <relationshipLabel>Opportunities</relationshipLabel>
         <relationshipName>Opportunities</relationshipName>
@@ -7470,88 +7217,6 @@ If Sales Manager still does not approve the AP, he is to uncheck this field to a
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Opportunity_Flag_D__c</fullName>
-        <description>GET-RED: Stage Duration &gt;90days YELLOW: Stage Duration 60-90days, GREEN: Stage Duration&lt;60 days
-GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; &lt;6 CFEs L6M. YELLOW: Predicted Implant Unites CY not on track OR Sales ILY%&lt;100 OR &lt;6 CFEs Last 6 Months.</description>
-        <externalId>false</externalId>
-        <formula>IF(IsClosed,&quot;Not Applicable&quot;,
-
-IF( OR( RecordTypeId=&quot;01220000000DqeM&quot;, RecordTypeId=&quot;01220000000Dv29&quot;),
-
-IF( CFEs_Last_6_Months_D__c  &gt;=  Minimum_CFEs__c  &amp;&amp;  Sold_Implants_ILY__c  &gt;= 1   &amp;&amp; Sold_Implants_Proj__c  &gt;= 1, IMAGE(&quot;/img/samples/light_green.gif&quot;,&quot;Green Flag&quot;),
-
-IF(CFEs_Last_6_Months_D__c  &lt;  Minimum_CFEs__c  &amp;&amp;  Sold_Implants_ILY__c  &lt; 1 &amp;&amp;  Sold_Implants_Proj__c  &lt;1,IMAGE(&quot;/img/samples/light_red.gif&quot;, &quot;Red Flag&quot;) , IMAGE(&quot;/img/samples/light_yellow.gif&quot;, &quot;Yellow Flag&quot;)
-
-)
-
-),
-
-IF( OR( RecordTypeId = &quot;01220000000Dv1f&quot;, RecordTypeId= &quot;01220000000DqeH&quot; ),
-
-IF( Stage_Duration__c  &lt;=  60 , IMAGE(&quot;/img/samples/light_green.gif&quot;,&quot;Green Flag&quot;),
-
-IF(Stage_Duration__c  &gt;= 90, IMAGE(&quot;/img/samples/light_red.gif&quot;, &quot;Red Flag&quot;), IMAGE(&quot;/img/samples/light_yellow.gif&quot;, &quot;Yellow Flag&quot;))
-
-), &quot;Not Applicable&quot;
-)
-)
-)
-
-
-
-/*
-IF(IsClosed,&quot;Not Applicable&quot;,
-
-IF( OR( RecordTypeId=&quot;01220000000DqeM&quot;, RecordTypeId=&quot;01220000000Dv29&quot;),
-
-IF( CFEs_Last_6_Months_D__c  &gt;=  Minimum_CFEs__c  &amp;&amp;  Sold_Implants_ILY__c  &gt;= 1   &amp;&amp; Sold_Implants_Proj__c  &gt;= 1, IMAGE(&quot;/servlet/servlet.FileDownload?file=01520000000yzK1&quot;,&quot;Green Flag&quot;),
-
-IF(CFEs_Last_6_Months_D__c  &lt;  Minimum_CFEs__c  &amp;&amp;  Sold_Implants_ILY__c  &lt; 1 &amp;&amp;  Sold_Implants_Proj__c  &lt;1,IMAGE(&quot;/servlet/servlet.FileDownload?file=01520000000yzK6&quot;, &quot;Red Flag&quot;) , IMAGE(&quot;/servlet/servlet.FileDownload?file=01520000000zblq&quot;, &quot;Yellow Flag&quot;)
-
-)
-
-),
-
-IF( OR( RecordTypeId = &quot;01220000000Dv1f&quot;, RecordTypeId= &quot;01220000000DqeH&quot; ),
-
-IF( Overdue_Formula__c = &quot;NO&quot; &amp;&amp; Stage_Duration__c  &lt;=  Stage_duration_criteria__c &amp;&amp;  CFEs_Last_6_Months_D__c  &gt;=  Minimum_CFEs__c, IMAGE(&quot;/servlet/servlet.FileDownload?file=01520000000yzK1&quot;,&quot;Green Flag&quot;),
-
-IF(Overdue_Formula__c = &quot;YES&quot; &amp;&amp; Stage_Duration__c  &gt;  Stage_duration_criteria__c &amp;&amp;  CFEs_Last_6_Months_D__c  &lt;  Minimum_CFEs__c, IMAGE(&quot;/servlet/servlet.FileDownload?file=01520000000yzK6&quot;, &quot;Red Flag&quot;), IMAGE(&quot;/servlet/servlet.FileDownload?file=01520000000zblq&quot;, &quot;Yellow Flag&quot;))
-
-), &quot;Not Applicable&quot;
-)
-)
-)
-
-*/
-/*
-IF(IsClosed,&quot;Not Applicable&quot;,
-IF( OR( RecordTypeId=&quot;01220000000DqeM&quot;, RecordTypeId=&quot;01220000000Dv29&quot;),
-
-IF( OR( Sold_Implants_ILY__c &lt;=1, CFEs_Last_6_Months_D__c &lt; Minimum_CFEs__c,  Account.Growth_Criteria_Met__c =0  ),
-
-IF( OR ( Account.Growth_Criteria_Met__c =0,AND( Sold_Implants_ILY__c &lt;=1, CFEs_Last_6_Months_D__c &lt;Minimum_CFEs__c )), IMAGE(&quot;/servlet/servlet.FileDownload?file=01520000000yzK6&quot;, &quot;Red Flag&quot;), IMAGE(&quot;/servlet/servlet.FileDownload?file=01520000000zblq&quot;, &quot;Yellow Flag&quot;)), IMAGE(&quot;/servlet/servlet.FileDownload?file=01520000000yzK1&quot;,&quot;Green Flag&quot;)),
-
-IF( OR( RecordTypeId = &quot;01220000000Dv1f&quot;, RecordTypeId= &quot;01220000000DqeH&quot; ),
-
-IF( Overdue_Formula__c = &quot;YES&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=01520000000yzK6&quot;, &quot;Red Flag&quot;), IF (OR( Stage_Duration__c &gt; Stage_duration_criteria__c , CFEs_Last_6_Months_D__c &lt;Minimum_CFEs__c  ),
-
-IF( and( Stage_Duration__c &gt;Stage_duration_criteria__c, CFEs_Last_6_Months_D__c &lt;Minimum_CFEs__c  ), IMAGE(&quot;/servlet/servlet.FileDownload?file=01520000000yzK6&quot;, &quot;Red Flag&quot;), IMAGE(&quot;/servlet/servlet.FileDownload?file=01520000000zblq&quot;, &quot;Yellow Flag&quot;) ), IMAGE(&quot;/servlet/servlet.FileDownload?file=01520000000yzK1&quot;,&quot;Green Flag&quot;) )
-), &quot;Not Applicable&quot;
-)
-)
-)
-
-*/</formula>
-        <inlineHelpText>GET-RED: Stage Duration &gt;90d YELLOW: Stage Duration 60-90d, GREEN: Stage Duration&lt;60 d
-GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; &lt;6 CFEs L6M. YELLOW: Predicted Implant Unites CY not on track OR Sales ILY%&lt;100 OR &lt;6 CFEs</inlineHelpText>
-        <label>AP Progress Status</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Opportunity_Flag_Tag_D__c</fullName>
@@ -7720,14 +7385,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Orthodontics__c</fullName>
-        <externalId>false</externalId>
-        <formula>if (includes( Account.Clinic_Treatment_Focus__c ,&quot;Orthodontics&quot;),True,False)</formula>
-        <label>Orthodontics</label>
-        <trackHistory>false</trackHistory>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>OverallNotes__c</fullName>
         <description>Concatenate Customer Notes &amp; Description to be displayed in list views</description>
         <externalId>false</externalId>
@@ -7794,14 +7451,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Pediondontics_Pediatric_Dentistry__c</fullName>
-        <externalId>false</externalId>
-        <formula>if (includes( Account.Clinic_Treatment_Focus__c ,&quot;Pediondontics/Pediatric Dentistry&quot;),True,False)</formula>
-        <label>Pediondontics/Pediatric Dentistry</label>
-        <trackHistory>false</trackHistory>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>Perc_Est_Growth_CY__c</fullName>
         <description>This field show the expected growth in % on Account this CY compared to total sales LY.</description>
         <externalId>false</externalId>
@@ -7814,14 +7463,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <scale>0</scale>
         <trackHistory>false</trackHistory>
         <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Periodontics__c</fullName>
-        <externalId>false</externalId>
-        <formula>if (includes( Account.Clinic_Treatment_Focus__c ,&quot;Periodontics&quot;),True,False)</formula>
-        <label>Periodontics</label>
-        <trackHistory>false</trackHistory>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Position_to_competition__c</fullName>
@@ -7882,15 +7523,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <inlineHelpText>Check this check box if you are planning on growing this Account by Practice Building.</inlineHelpText>
         <label>Practice Building</label>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Preventive__c</fullName>
-        <externalId>false</externalId>
-        <formula>if (includes( Account.Clinic_Treatment_Focus__c ,&quot;Preventive Care&quot;),True,False)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Preventive</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
@@ -8375,14 +8007,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Prosthetics__c</fullName>
-        <externalId>false</externalId>
-        <formula>if (includes( Account.Clinic_Treatment_Focus__c ,&quot;Prosthetics&quot;), True,False)</formula>
-        <label>Prosthetics</label>
-        <trackHistory>false</trackHistory>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>Provider_Sector__c</fullName>
         <externalId>false</externalId>
         <formula>text( Account.Provider_Sector__c )</formula>
@@ -8721,14 +8345,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         </valueSet>
     </fields>
     <fields>
-        <fullName>Restorative__c</fullName>
-        <externalId>false</externalId>
-        <formula>if(includes( Account.Clinic_Treatment_Focus__c ,&quot;Restorative&quot;),True, False)</formula>
-        <label>Restorative</label>
-        <trackHistory>false</trackHistory>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>S2S_Product_Line_Interested_In__c</fullName>
         <externalId>false</externalId>
         <label>S2S Product Line Interested In</label>
@@ -9010,58 +8626,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                     <label>Lost</label>
                 </value>
             </valueSetDefinition>
-            <valueSettings>
-                <controllingFieldValue>Prospecting</controllingFieldValue>
-                <valueName>2. Involve Key Restorative Team</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Won - Order Received</controllingFieldValue>
-                <controllingFieldValue>Won - Committed</controllingFieldValue>
-                <valueName>5. Service</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Won - Order Received</controllingFieldValue>
-                <controllingFieldValue>Won - Committed</controllingFieldValue>
-                <valueName>6. Educate</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Won - Order Received</controllingFieldValue>
-                <controllingFieldValue>Won - Committed</controllingFieldValue>
-                <valueName>7. Develop</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Won - Order Received</controllingFieldValue>
-                <controllingFieldValue>Won - Committed</controllingFieldValue>
-                <valueName>8. Evaluate</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Qualifying</controllingFieldValue>
-                <valueName>1. Validate</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Negotiating</controllingFieldValue>
-                <valueName>3. Agreement / Close</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Negotiating</controllingFieldValue>
-                <valueName>4. Familiarize</valueName>
-            </valueSettings>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Sales_ATL_LY__c</fullName>
-        <description>Field shows total Atlantis sales LY for Account (Figure includes ALL Atlantis products sales)Information is taken from the Account record.Only applicable when the Closing year equals the current year. otherwise it will be Zero</description>
-        <externalId>false</externalId>
-        <formula>IF (Year (CloseDate) = Year(Today()) ,Account.TS_CY_1_D_DD_AllPCs_Atlantis__c  ,0)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>Field shows total Atlantis sales LY for Account (Figure includes ALL Atlantis products sales)Information is taken from the Account record.Only applicable when the Closing year equals the current year. otherwise it will be Zero</inlineHelpText>
-        <label>Sales LY (ATL)</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Sales_ATL_YTD__c</fullName>
@@ -9114,48 +8679,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <inlineHelpText>Shows the total dental sales CY for Account (Include all dental products sales ).</inlineHelpText>
         <label>Sales CY</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Sales_ILY_D_ATL__c</fullName>
-        <description>Shows an index comparing Sales ATL CY and Sales ATL  LY To Date.</description>
-        <externalId>false</externalId>
-        <formula>Account.Sales_ILY_D_ATL__c</formula>
-        <inlineHelpText>Shows an index comparing Sales ATL CY and Sales ATL  LY To Date.</inlineHelpText>
-        <label>Sales ILY% (ATL)</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Sales_ILY_criteria__c</fullName>
-        <description>used for analysis only</description>
-        <externalId>false</externalId>
-        <formula>IF($RecordType.Id =&quot;01220000000PiO9&quot;, Account.Sales_ILY_D_ATL__c, Account.Sales_ILY_D__c)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>used for analysis only</inlineHelpText>
-        <label>Sales ILY criteria</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Sales_LY_To_Date_D__c</fullName>
-        <description>Shows the total dental sales LY to data for Account (Include all dental products sales ). Only applicable when the Closing year equals the current year. otherwise it will be Zero</description>
-        <externalId>false</externalId>
-        <formula>IF (Year (CloseDate) = Year(Today()) ,Account.TS_CY_1_TD_D_AllPLs_AllPCs_AllBrands__c,0)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>Shows the total dental sales LY to data for Account (Include all dental products sales ). Only applicable when the Closing year equals the current year. otherwise it will be Zero</inlineHelpText>
-        <label>Sales LYTD</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -9329,32 +8852,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Sold_ATL_ISUS_CY__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.TQ_CY_D_DD_IsusProsth_Isus__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Sold ATL ISUS CY</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Sold_ATL_ISUS_LY__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.TQ_CY_1_D_DD_IsusProsth_Isus__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Sold ATL ISUS LY</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Sold_Implants_ILY__c</fullName>
         <description>Shows an index comparing Sold Implants CY To Date and Sold Implants LY To Date.</description>
         <externalId>false</externalId>
@@ -9367,47 +8864,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <scale>0</scale>
         <trackHistory>false</trackHistory>
         <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Sold_Implants_L12M__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.Sold_Implants_L12M__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Sold Implants L12M</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Sold_Implants_LYTD__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.TQ_CY_1_TD_D_DI_Implants_AllBrands__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Sold Implants LYTD</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Sold_Implants_LY__c</fullName>
-        <description>Field shows total # of Implants sold to Account LY. Information is taken from the Account record.</description>
-        <externalId>false</externalId>
-        <formula>Account.TQ_CY_1_D_DI_Implants_AllBrands__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>Field shows total # of Implants sold to Account LY. Information is taken from the Account record.</inlineHelpText>
-        <label>Sold Implants LY</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Sold_Implants_Proj__c</fullName>
@@ -9997,6 +9453,15 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         </valueSet>
     </fields>
     <fields>
+        <fullName>Submitted_for_Approval_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Submitted for Approval Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Summary__c</fullName>
         <description>Please describe the identified opportunity and the objective you would like to reach with this Customer.</description>
         <externalId>false</externalId>
@@ -10068,19 +9533,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Targeted_Implant_Volume_growth__c</fullName>
-        <externalId>false</externalId>
-        <formula>Est_Implant_Volume_CY_D_JP__c  -  Sold_Implants_LY__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Targeted Implant Volume growth</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Targeted_Minimum_Ortho__c</fullName>
@@ -10705,6 +10157,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <label>Trial Product</label>
         <lookupFilter>
             <active>true</active>
+            <errorMessage>Value does not exist or does not match filter criteria.</errorMessage>
             <filterItems>
                 <field>Non_ERP_Products__c.Valid_in_my_Market__c</field>
                 <operation>equals</operation>
@@ -10798,6 +10251,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
 &quot;Morocco&quot;,&quot;Morocco&quot;,
 &quot;New Zealand&quot;,&quot;New Zealand&quot;,
 &quot;Norway&quot;,&quot;Norway&quot;,
+&quot;Pakistan&quot;,&quot;Pakistan&quot;,
 &quot;Philippines&quot;,&quot;Philippines&quot;,
 &quot;Portugal&quot;,&quot;Portugal&quot;,
 &quot;Poland&quot;,&quot;Poland&quot;,
@@ -11164,6 +10618,11 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                     <default>false</default>
                     <label>Qatar</label>
                 </value>
+                <value>
+                    <fullName>Pakistan</fullName>
+                    <default>false</default>
+                    <label>Pakistan</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -11308,54 +10767,12 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             <valueSettings>
                 <controllingFieldValue>Demo Completed</controllingFieldValue>
                 <controllingFieldValue>Customer Quoted</controllingFieldValue>
-                <controllingFieldValue>3 - Demo Completed</controllingFieldValue>
-                <controllingFieldValue>4 - Quote</controllingFieldValue>
-                <controllingFieldValue>5 - Pending</controllingFieldValue>
                 <controllingFieldValue>Customer Ordered</controllingFieldValue>
                 <controllingFieldValue>Customer Not Interested</controllingFieldValue>
-                <controllingFieldValue>1. Profiling Account</controllingFieldValue>
-                <controllingFieldValue>2. Advanced Profiling</controllingFieldValue>
-                <controllingFieldValue>3. I Can Help You</controllingFieldValue>
-                <controllingFieldValue>4. Move It Forward</controllingFieldValue>
-                <controllingFieldValue>5. Follow Up</controllingFieldValue>
-                <controllingFieldValue>Redundant</controllingFieldValue>
-                <controllingFieldValue>1 - Targeting</controllingFieldValue>
-                <controllingFieldValue>2 - Qualification</controllingFieldValue>
-                <controllingFieldValue>Acquired</controllingFieldValue>
                 <controllingFieldValue>Lost</controllingFieldValue>
                 <controllingFieldValue>Closed Lost</controllingFieldValue>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
-                <controllingFieldValue>&gt; 80% Referred patients/business</controllingFieldValue>
-                <controllingFieldValue>Won - Order Received</controllingFieldValue>
-                <controllingFieldValue>Won - Committed</controllingFieldValue>
                 <controllingFieldValue>Won</controllingFieldValue>
-                <controllingFieldValue>c. Closed - COS Reached</controllingFieldValue>
-                <controllingFieldValue>d. Canceled</controllingFieldValue>
-                <controllingFieldValue>1. Qualification</controllingFieldValue>
-                <controllingFieldValue>2. Confirmation of Needs</controllingFieldValue>
-                <controllingFieldValue>3. Support</controllingFieldValue>
-                <controllingFieldValue>4. Overcoming Resistance</controllingFieldValue>
-                <controllingFieldValue>5. Proposal Presented</controllingFieldValue>
-                <controllingFieldValue>6. Order Placed</controllingFieldValue>
-                <controllingFieldValue>7. Lost or Cancelled</controllingFieldValue>
-                <controllingFieldValue>3. Proposal Presented</controllingFieldValue>
-                <controllingFieldValue>4. First Case Sent</controllingFieldValue>
-                <controllingFieldValue>5. Conversion Complete (10th Case Sent)</controllingFieldValue>
-                <controllingFieldValue>6. Lost or Cancelled</controllingFieldValue>
-                <controllingFieldValue>To be validated for 2016</controllingFieldValue>
-                <controllingFieldValue>3 - Demo</controllingFieldValue>
-                <controllingFieldValue>4 - Milling Results</controllingFieldValue>
-                <controllingFieldValue>4 - Decision Making</controllingFieldValue>
-                <controllingFieldValue>5 - Quoted</controllingFieldValue>
-                <controllingFieldValue>6 - Signed</controllingFieldValue>
-                <controllingFieldValue>7 - Closed WON</controllingFieldValue>
-                <controllingFieldValue>1 - Prospect &amp; Pipeline</controllingFieldValue>
-                <controllingFieldValue>Ortho: In Progress</controllingFieldValue>
-                <controllingFieldValue>2 - Targeting</controllingFieldValue>
-                <controllingFieldValue>Ortho: On Hold</controllingFieldValue>
-                <controllingFieldValue>2 - Demo Scheduled</controllingFieldValue>
-                <controllingFieldValue>Ortho: Success</controllingFieldValue>
-                <controllingFieldValue>Ortho: Lost</controllingFieldValue>
                 <controllingFieldValue>Submitted</controllingFieldValue>
                 <controllingFieldValue>Contacted</controllingFieldValue>
                 <controllingFieldValue>Demo Scheduled</controllingFieldValue>
@@ -11364,82 +10781,32 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             <valueSettings>
                 <controllingFieldValue>Demo Completed</controllingFieldValue>
                 <controllingFieldValue>Customer Quoted</controllingFieldValue>
-                <controllingFieldValue>3 - Demo Completed</controllingFieldValue>
-                <controllingFieldValue>4 - Quote</controllingFieldValue>
-                <controllingFieldValue>5 - Pending</controllingFieldValue>
                 <controllingFieldValue>Customer Ordered</controllingFieldValue>
                 <controllingFieldValue>Customer Not Interested</controllingFieldValue>
-                <controllingFieldValue>1. Profiling Account</controllingFieldValue>
-                <controllingFieldValue>2. Advanced Profiling</controllingFieldValue>
-                <controllingFieldValue>3. I Can Help You</controllingFieldValue>
-                <controllingFieldValue>4. Move It Forward</controllingFieldValue>
-                <controllingFieldValue>5. Follow Up</controllingFieldValue>
-                <controllingFieldValue>Redundant</controllingFieldValue>
-                <controllingFieldValue>1 - Targeting</controllingFieldValue>
-                <controllingFieldValue>2 - Qualification</controllingFieldValue>
-                <controllingFieldValue>Acquired</controllingFieldValue>
                 <controllingFieldValue>Lost</controllingFieldValue>
                 <controllingFieldValue>Closed Lost</controllingFieldValue>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
-                <controllingFieldValue>&gt; 80% Referred patients/business</controllingFieldValue>
-                <controllingFieldValue>Won - Order Received</controllingFieldValue>
-                <controllingFieldValue>Won - Committed</controllingFieldValue>
                 <controllingFieldValue>Won</controllingFieldValue>
-                <controllingFieldValue>c. Closed - COS Reached</controllingFieldValue>
-                <controllingFieldValue>d. Canceled</controllingFieldValue>
-                <controllingFieldValue>1. Qualification</controllingFieldValue>
-                <controllingFieldValue>2. Confirmation of Needs</controllingFieldValue>
-                <controllingFieldValue>3. Support</controllingFieldValue>
-                <controllingFieldValue>4. Overcoming Resistance</controllingFieldValue>
-                <controllingFieldValue>5. Proposal Presented</controllingFieldValue>
-                <controllingFieldValue>6. Order Placed</controllingFieldValue>
-                <controllingFieldValue>7. Lost or Cancelled</controllingFieldValue>
-                <controllingFieldValue>3. Proposal Presented</controllingFieldValue>
-                <controllingFieldValue>4. First Case Sent</controllingFieldValue>
-                <controllingFieldValue>5. Conversion Complete (10th Case Sent)</controllingFieldValue>
-                <controllingFieldValue>6. Lost or Cancelled</controllingFieldValue>
-                <controllingFieldValue>To be validated for 2016</controllingFieldValue>
-                <controllingFieldValue>3 - Demo</controllingFieldValue>
-                <controllingFieldValue>4 - Milling Results</controllingFieldValue>
-                <controllingFieldValue>4 - Decision Making</controllingFieldValue>
-                <controllingFieldValue>5 - Quoted</controllingFieldValue>
-                <controllingFieldValue>6 - Signed</controllingFieldValue>
-                <controllingFieldValue>7 - Closed WON</controllingFieldValue>
-                <controllingFieldValue>1 - Prospect &amp; Pipeline</controllingFieldValue>
-                <controllingFieldValue>Ortho: In Progress</controllingFieldValue>
-                <controllingFieldValue>2 - Targeting</controllingFieldValue>
-                <controllingFieldValue>Ortho: On Hold</controllingFieldValue>
-                <controllingFieldValue>2 - Demo Scheduled</controllingFieldValue>
-                <controllingFieldValue>Ortho: Success</controllingFieldValue>
-                <controllingFieldValue>Ortho: Lost</controllingFieldValue>
                 <controllingFieldValue>Submitted</controllingFieldValue>
                 <controllingFieldValue>Contacted</controllingFieldValue>
                 <controllingFieldValue>Demo Scheduled</controllingFieldValue>
                 <valueName>Product</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Acquired</controllingFieldValue>
                 <controllingFieldValue>Lost</controllingFieldValue>
-                <controllingFieldValue>&gt; 80% Referred patients/business</controllingFieldValue>
-                <controllingFieldValue>Won - Order Received</controllingFieldValue>
-                <controllingFieldValue>Won - Committed</controllingFieldValue>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Lost Interest</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Lost</controllingFieldValue>
                 <controllingFieldValue>Won</controllingFieldValue>
                 <valueName>Place (Level of Service Delivery)</valueName>
             </valueSettings>
             <valueSettings>
-                <controllingFieldValue>Acquired</controllingFieldValue>
                 <controllingFieldValue>Lost</controllingFieldValue>
                 <controllingFieldValue>Closed Won</controllingFieldValue>
-                <controllingFieldValue>&gt; 80% Referred patients/business</controllingFieldValue>
-                <controllingFieldValue>Won - Order Received</controllingFieldValue>
-                <controllingFieldValue>Won - Committed</controllingFieldValue>
                 <controllingFieldValue>Won</controllingFieldValue>
                 <valueName>Promotion (Campaign/Advertising)</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Lost</controllingFieldValue>
-                <controllingFieldValue>Closed Lost</controllingFieldValue>
-                <valueName>Lost Interest</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Lost</controllingFieldValue>
@@ -11519,22 +10886,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                     <label>Trial Cases - If Needed</label>
                 </value>
             </valueSetDefinition>
-            <valueSettings>
-                <controllingFieldValue>4. Overcoming Resistance</controllingFieldValue>
-                <valueName>Overcoming any objections</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>4. Overcoming Resistance</controllingFieldValue>
-                <valueName>Referral/On-boarding Acceptance</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>4. Overcoming Resistance</controllingFieldValue>
-                <valueName>Staff Training</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>4. Overcoming Resistance</controllingFieldValue>
-                <valueName>Trial Cases - If Needed</valueName>
-            </valueSettings>
         </valueSet>
     </fields>
     <fields>
@@ -11712,103 +11063,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>of_Dental_Hygienists__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.of_Dental_Hygienists__c</formula>
-        <label># of Dental Hygienists</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>of_Dentists__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.of_Dentists__c</formula>
-        <label># of Dentists</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>of_Implants_Sold_YTD__c</fullName>
-        <description>Shows # of Implants sold for the Account YTD. Information is taken from the Account record.</description>
-        <externalId>false</externalId>
-        <formula>Account.TQ_CY_D_DI_Implants_AllBrands__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>Shows # of Implants sold for the Account YTD. Information is taken from the Account record.</inlineHelpText>
-        <label>Sold Implants CY</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>of_Prophylaxis_Chairs__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.of_Prophylaxis_Chairs__c</formula>
-        <label># of Prophylaxis Chairs</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>of_Stock_Abuts_LY__c</fullName>
-        <description>This field shows the number of Stock Abutments sold to Account LY. The information is taken from the Account Record.</description>
-        <externalId>false</externalId>
-        <formula>Account.TQ_CY_1_D_DI_StockAbuts_AllBrands__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>This field shows the number of Stock Abutments sold to Account LY. The information is taken from the Account Record.</inlineHelpText>
-        <label>Sold Stock Abut&apos;s LY</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>of_Stock_Abuts_YTD__c</fullName>
-        <description>This field shows the number of Stock Abutments sold to Account YTD. The information is taken from the Account Record.Only applicable when the Closing year equals the current year. otherwise it will be Zero</description>
-        <externalId>false</externalId>
-        <formula>IF (Year (CloseDate) = Year(Today()) ,Account.TQ_CY_D_DI_StockAbuts_AllBrands__c,0)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>This field shows the number of Stock Abutments sold to Account YTD. The information is taken from the Account Record.Only applicable when the Closing year equals the current year. otherwise it will be Zero</inlineHelpText>
-        <label>Sold Stock Abut&apos;s CY</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>of_Target_R12M_Ortho__c</fullName>
-        <description>I would like to show this info on a report.
-            I have a report for Sales rep : “Atteinte objectifs.
-            I would like to add a column with a formula in % to show “% of Targeted value reached (12 rolling month” -&gt;
-            Targeted Value / Sales 12M (Ortho) //Eve C</description>
-        <externalId>false</externalId>
-        <formula>Sales_Ortho_L12M__c / Targeted_Value_Ortho__c</formula>
-        <inlineHelpText>Sales L12M (Ortho) / Targeted Value (Ortho)</inlineHelpText>
-        <label>% of Target - R12M (ORTH)</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Percent</type>
-    </fields>
-    <fields>
         <fullName>of_Targeted_Minimum_Reached__c</fullName>
         <description>Used in the Ortho implementation</description>
         <externalId>false</externalId>
@@ -11833,18 +11087,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <scale>0</scale>
         <trackHistory>false</trackHistory>
         <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>of_Technicians__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.of_Dental_Technicians__c</formula>
-        <label># of Technicians</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>rating_cpqa__c</fullName>
@@ -11899,18 +11141,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>treatment_chairs__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.of_treatment_Chairs__c</formula>
-        <label># treatment chairs</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -13220,7 +12450,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
         </sharedTo>
     </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
-    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
     <recordTypes>
         <fullName>Account_Plan</fullName>
         <active>true</active>
@@ -13289,6 +12519,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14973,6 +14222,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -16688,6 +15956,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -18310,8 +17597,8 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
     </recordTypes>
     <recordTypes>
         <fullName>Dealer_Community</fullName>
-        <active>true</active>
-        <businessProcess>Dealers Community</businessProcess>
+        <active>false</active>
+        <businessProcess>GET Restorative - D</businessProcess>
         <compactLayoutAssignment>ExternalDealerCommunity</compactLayoutAssignment>
         <label>Dealer Community</label>
         <picklistValues>
@@ -18412,6 +17699,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -19852,10 +19158,6 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>Ossix</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -21622,8 +20924,8 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
     </recordTypes>
     <recordTypes>
         <fullName>Focus_Account_Plan</fullName>
-        <active>true</active>
-        <businessProcess>DE-New Accountplans</businessProcess>
+        <active>false</active>
+        <businessProcess>GET Restorative - D</businessProcess>
         <description>New Accountplanlayout for Germany</description>
         <label>Focus Account Plan</label>
         <picklistValues>
@@ -21712,6 +21014,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -24043,6 +23364,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -26294,7 +25634,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
     <recordTypes>
         <fullName>GET</fullName>
         <active>true</active>
-        <businessProcess>GET</businessProcess>
+        <businessProcess>GET Restorative - D</businessProcess>
         <label>X DO NOT USE 2t</label>
         <picklistValues>
             <picklist>Account_Country_Ortho__c</picklist>
@@ -26358,6 +25698,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -28014,6 +27373,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -29634,6 +29012,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -31250,6 +30647,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -32954,6 +32370,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -34584,8 +34019,8 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
     </recordTypes>
     <recordTypes>
         <fullName>Global_Opportunities</fullName>
-        <active>true</active>
-        <businessProcess>Global consumable process</businessProcess>
+        <active>false</active>
+        <businessProcess>GET Restorative - D</businessProcess>
         <label>Global Opportunities</label>
         <picklistValues>
             <picklist>Account_Country_Ortho__c</picklist>
@@ -34669,6 +34104,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -36172,7 +35626,55 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other</fullName>
+                <fullName>Other Class II</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Endodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment %26 Imaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Implants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Orthodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Prosthetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Root To Crown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Single Unit Crown</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -37919,7 +37421,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
     </recordTypes>
     <recordTypes>
         <fullName>Implant_GET_AP</fullName>
-        <active>true</active>
+        <active>false</active>
         <businessProcess>GET Surgical - D</businessProcess>
         <description>Use this Opportunity Type when creating an Account Plan against an Implant GET Account.</description>
         <label>Implant GET AP</label>
@@ -37985,6 +37487,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -39459,8 +38980,8 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
     </recordTypes>
     <recordTypes>
         <fullName>Implant_GROW_KEEP_AP</fullName>
-        <active>true</active>
-        <businessProcess>GROW Surgical - D</businessProcess>
+        <active>false</active>
+        <businessProcess>GET Restorative - D</businessProcess>
         <description>Use this Opportunity Type when creating an Account Plan aiming for GROWing or KEEPing an Implant Customer.</description>
         <label>Implant GROW &amp; KEEP AP</label>
         <picklistValues>
@@ -39525,6 +39046,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -41182,6 +40722,41 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -42425,7 +42000,55 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other</fullName>
+                <fullName>Other Class II</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Endodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment %26 Imaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Implants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Orthodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Prosthetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Root To Crown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Single Unit Crown</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -43868,6 +43491,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
                 <default>false</default>
             </values>
             <values>
+                <fullName>New Practice</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Reorder</fullName>
                 <default>false</default>
             </values>
@@ -44055,6 +43682,10 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>Oman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pakistan</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -44354,6 +43985,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -46500,6 +46150,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -48219,6 +47888,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>GROW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -49943,6 +49631,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -51590,6 +51297,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -53182,6 +52908,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -55417,6 +55162,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -57861,6 +57625,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -60050,6 +59833,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -62246,6 +62048,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -64746,6 +64567,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -67265,6 +67105,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -69704,6 +69563,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
             <values>
                 <fullName>KEEP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -72148,6 +72026,25 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Approved_by_Sales_Manager__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -74340,7 +74237,7 @@ GROW-RED: Predicted Implant Units CY not on track &amp; Sales ILY%&lt;100 &amp; 
     <sharingModel>Private</sharingModel>
     <validationRules>
         <fullName>Add_lostreason_to_focus_accountplan</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>AND( $RecordType.Name = &quot;Focus Account Plan&quot; , TEXT(StageName) = &quot;Lost&quot; ,  Loss_Cancellation_Description__c = &quot;&quot;)</errorConditionFormula>
         <errorDisplayField>Loss_Cancellation_Description__c</errorDisplayField>
         <errorMessage>Please add &quot;Loss/Cancellation Description&quot;</errorMessage>
@@ -74389,6 +74286,25 @@ TEXT( Account.Country__c ) = &quot;VA&quot;))</errorConditionFormula>
         <errorMessage>You need to select a sub-stage before saving</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>OfferCodeExpired</fullName>
+        <active>true</active>
+        <description>TFUS-000005700</description>
+        <errorConditionFormula>AND(
+ OR(
+  TEXT(Account.Country__c) == &apos;PT&apos;,
+  TEXT(Account.Country__c) == &apos;ES&apos;,
+  TEXT(Account.Country__c) == &apos;AD&apos;
+  ),
+ Offer_Code__c &lt;&gt; null, /* Skip VR if no Offer Code and restrict to status = &quot;Valid Offer Code&quot; */ 
+ OR (              
+    Offer_Code__r.Offer_Code_Status__c = &apos;Expired&apos;,
+    Offer_Code__r.Offer_Code_Status__c = &apos;Planned&apos;
+ ),
+ ISBLANK(Submitted_for_Approval_Date__c) /* skip the VR if the opp has been submitted for approval*/ 
+)</errorConditionFormula>
+        <errorMessage>You can only choose valid offer codes</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>PreventPartnersToChangeOwnership</fullName>
         <active>true</active>
         <errorConditionFormula>$User.Profile__c == &quot;Partner Community User&quot; &amp;&amp; ISCHANGED(OwnerId )</errorConditionFormula>
@@ -74434,7 +74350,7 @@ TEXT( Account.Country__c ) = &quot;VA&quot;))</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>Restrict_changing_Close_Date</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>If this opportunity is created before the cut of date, the closing date can&apos;t be changed</description>
         <errorConditionFormula>($RecordType.Name=&quot;GROW Lab Atlantis&quot; || $RecordType.Name=&quot;GROW Restorative&quot; || $RecordType.Name=&quot;GROW Surgical&quot;)
 
@@ -74454,10 +74370,10 @@ TEXT( Account.Country__c ) = &quot;VA&quot;))</errorConditionFormula>
         <description>TFUS-000005071
 As a sales manager, I want to make sure I can see win/loss reason for opps, so that I can get insighst and also share with product teams and marketing on why we win/lose</description>
         <errorConditionFormula>AND(
- $Setup.GlobalBypassProcessesSettings__c.RunValidationRules__c,
- TEXT(NA_Brand__c) = &apos;Primescan Connect&apos;,
- Win_Loss_Description__c = &apos;&apos;,
- IsClosed = true
+$Setup.GlobalBypassProcessesSettings__c.RunValidationRules__c,
+TEXT(NA_Brand__c) = &apos;Primescan Connect&apos;,
+Win_Loss_Description__c = &apos;&apos;,
+IsClosed = true
 )</errorConditionFormula>
         <errorDisplayField>Win_Loss_Description__c</errorDisplayField>
         <errorMessage>You must enter a detailed Win/Loss Description upon closing an Opportunity related to Primescan Connect in order to get insights and share them with product and marketing teams.</errorMessage>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Implants</fullName>
+        <default>false</default>
+        <label>Implants</label>
+    </customValue>
+    <customValue>
+        <fullName>Endodontics</fullName>
+        <default>false</default>
+        <label>Endodontics</label>
+    </customValue>
+    <customValue>
+        <fullName>Orthodontics</fullName>
+        <default>false</default>
+        <label>Orthodontics</label>
+    </customValue>
+    <customValue>
+        <fullName>Preventive</fullName>
+        <default>false</default>
+        <label>Preventive</label>
+    </customValue>
+    <customValue>
+        <fullName>Prosthetics</fullName>
+        <default>false</default>
+        <label>Prosthetics</label>
+    </customValue>
+    <customValue>
+        <fullName>Restorative</fullName>
+        <default>false</default>
+        <label>Restorative</label>
+    </customValue>
+    <customValue>
+        <fullName>CAD/CAM</fullName>
+        <default>false</default>
+        <label>CAD/CAM</label>
+    </customValue>
+    <customValue>
+        <fullName>Instruments</fullName>
+        <default>false</default>
+        <label>Instruments</label>
+    </customValue>
+    <customValue>
+        <fullName>Treatment Centers</fullName>
+        <default>false</default>
+        <label>Treatment Centers</label>
+    </customValue>
+    <customValue>
+        <fullName>Imaging Systems</fullName>
+        <default>false</default>
+        <label>Imaging Systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Implants,CAD/CAM</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Implants,CAD/CAM</label>
+    </customValue>
+    <customValue>
+        <fullName>CAD/CAM,Imaging Systems</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CAD/CAM,Imaging Systems</label>
+    </customValue>
+    <customValue>
+        <fullName>--Hiçbiri--</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>--Hiçbiri--</label>
+    </customValue>
+    <customValue>
+        <fullName>Preventive,Restorative</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Preventive,Restorative</label>
+    </customValue>
+    <customValue>
+        <fullName>Implants,Restorative</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Implants,Restorative</label>
+    </customValue>
+    <customValue>
+        <fullName>Endodontics,Restorative</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Endodontics,Restorative</label>
+    </customValue>
+    <customValue>
+        <fullName>-- Нет --</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>-- Нет --</label>
+    </customValue>
+    <masterLabel>SBU (Full Names)</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -100,18 +100,20 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
-        <content>newCampaignOverridePage</content>
+        <content>newCampaignOverride</content>
+        <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Visualforce</type>
+        <type>LightningComponent</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
+        <content>newCampaignOverride</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>LightningComponent</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
-        <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -144,19 +146,34 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Campaign_Record_Page3</content>
         <formFactor>Large</formFactor>
-        <type>Default</type>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Campaign_Record_Page3</content>
         <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>CVENT_Event_Campaign_Compact</fullName>
+        <fields>Name</fields>
+        <fields>Event_Code__c</fields>
+        <fields>CVENT_Event_Category__c</fields>
+        <fields>Status</fields>
+        <fields>StartDate</fields>
+        <label>CVENT Event Campaign Compact</label>
+    </compactLayouts>
     <compactLayouts>
         <fullName>Console_Campaign_Compact</fullName>
         <fields>Type</fields>
@@ -1672,7 +1689,7 @@
         <valueSet>
             <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>true</sorted>
+                <sorted>false</sorted>
                 <value>
                     <fullName>3D Upgrade</fullName>
                     <default>false</default>
@@ -1819,12 +1836,6 @@
                     <label>Bioceramic</label>
                 </value>
                 <value>
-                    <fullName>Bioceramic Sealer</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Bioceramic Sealer</label>
-                </value>
-                <value>
                     <fullName>Bluecam</fullName>
                     <default>false</default>
                     <label>Bluecam</label>
@@ -1838,12 +1849,6 @@
                     <fullName>Bone</fullName>
                     <default>false</default>
                     <label>Bone</label>
-                </value>
-                <value>
-                    <fullName>Brackets</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Brackets</label>
                 </value>
                 <value>
                     <fullName>C1</fullName>
@@ -1896,9 +1901,9 @@
                     <label>Ceram.x</label>
                 </value>
                 <value>
-                    <fullName>Ceram. X Spectra ST</fullName>
+                    <fullName>Ceram.x Spectra ST</fullName>
                     <default>false</default>
-                    <label>Ceram. X Spectra ST</label>
+                    <label>Ceram.x Spectra ST</label>
                 </value>
                 <value>
                     <fullName>Ceram.x Spectra ST Flow</fullName>
@@ -2009,12 +2014,6 @@
                     <fullName>DAC Professional</fullName>
                     <default>false</default>
                     <label>DAC Professional</label>
-                </value>
-                <value>
-                    <fullName>DAC Universal</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>DAC Universal</label>
                 </value>
                 <value>
                     <fullName>DAC Universal D</fullName>
@@ -2202,12 +2201,6 @@
                     <label>InEos X5</label>
                 </value>
                 <value>
-                    <fullName>InFire</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>InFire</label>
-                </value>
-                <value>
                     <fullName>InLab MC X5</fullName>
                     <default>false</default>
                     <label>InLab MC X5</label>
@@ -2271,12 +2264,6 @@
                     <fullName>Kits &amp; Motors</fullName>
                     <default>false</default>
                     <label>Kits &amp; Motors</label>
-                </value>
-                <value>
-                    <fullName>Laser</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Laser</label>
                 </value>
                 <value>
                     <fullName>Legacy Rotary</fullName>
@@ -2454,11 +2441,6 @@
                     <label>Ossix</label>
                 </value>
                 <value>
-                    <fullName>Other</fullName>
-                    <default>false</default>
-                    <label>Other</label>
-                </value>
-                <value>
                     <fullName>Oxivir</fullName>
                     <default>false</default>
                     <label>Oxivir</label>
@@ -2547,12 +2529,6 @@
                     <fullName>Primescan Connect</fullName>
                     <default>false</default>
                     <label>Primescan Connect</label>
-                </value>
-                <value>
-                    <fullName>PrimeTaper</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>PrimeTaper</label>
                 </value>
                 <value>
                     <fullName>Propel Acceledent</fullName>
@@ -2960,12 +2936,6 @@
                     <label>Vortex Blue</label>
                 </value>
                 <value>
-                    <fullName>Vortex Bue</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Vortex Bue</label>
-                </value>
-                <value>
                     <fullName>WaveOne Gold</fullName>
                     <default>false</default>
                     <label>WaveOne Gold</label>
@@ -3050,6 +3020,125 @@
                     <default>false</default>
                     <label>Zirconia</label>
                 </value>
+                <value>
+                    <fullName>Other Class II</fullName>
+                    <default>false</default>
+                    <label>Other Class II</label>
+                </value>
+                <value>
+                    <fullName>Other Consumables</fullName>
+                    <default>false</default>
+                    <label>Other Consumables</label>
+                </value>
+                <value>
+                    <fullName>Other Digital</fullName>
+                    <default>false</default>
+                    <label>Other Digital</label>
+                </value>
+                <value>
+                    <fullName>Other Digital Group</fullName>
+                    <default>false</default>
+                    <label>Other Digital Group</label>
+                </value>
+                <value>
+                    <fullName>Other Digital Services</fullName>
+                    <default>false</default>
+                    <label>Other Digital Services</label>
+                </value>
+                <value>
+                    <fullName>Other Endodontics</fullName>
+                    <default>false</default>
+                    <label>Other Endodontics</label>
+                </value>
+                <value>
+                    <fullName>Other Equipment</fullName>
+                    <default>false</default>
+                    <label>Other Equipment</label>
+                </value>
+                <value>
+                    <fullName>Other Equipment &amp; Imaging</fullName>
+                    <default>false</default>
+                    <label>Other Equipment &amp; Imaging</label>
+                </value>
+                <value>
+                    <fullName>Other Implants</fullName>
+                    <default>false</default>
+                    <label>Other Implants</label>
+                </value>
+                <value>
+                    <fullName>Other Orthodontics</fullName>
+                    <default>false</default>
+                    <label>Other Orthodontics</label>
+                </value>
+                <value>
+                    <fullName>Other Prosthetics</fullName>
+                    <default>false</default>
+                    <label>Other Prosthetics</label>
+                </value>
+                <value>
+                    <fullName>Other Root To Crown</fullName>
+                    <default>false</default>
+                    <label>Other Root To Crown</label>
+                </value>
+                <value>
+                    <fullName>Other Single Unit Crown</fullName>
+                    <default>false</default>
+                    <label>Other Single Unit Crown</label>
+                </value>
+                <value>
+                    <fullName>Bioceramic Sealer</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Bioceramic Sealer</label>
+                </value>
+                <value>
+                    <fullName>Brackets</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Brackets</label>
+                </value>
+                <value>
+                    <fullName>Ceram. X Spectra ST</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Ceram. X Spectra ST</label>
+                </value>
+                <value>
+                    <fullName>DAC Universal</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>DAC Universal</label>
+                </value>
+                <value>
+                    <fullName>InFire</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>InFire</label>
+                </value>
+                <value>
+                    <fullName>Laser</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Laser</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>PrimeTaper</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>PrimeTaper</label>
+                </value>
+                <value>
+                    <fullName>Vortex Bue</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Vortex Bue</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -3112,6 +3201,16 @@
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CVENT_Event_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -3865,11 +3964,9 @@
         <fullName>Campaign_End_Time__c</fullName>
         <externalId>false</externalId>
         <label>End Time</label>
-        <length>20</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Time</type>
     </fields>
     <fields>
         <fullName>Campaign_Name_Campaign_ID__c</fullName>
@@ -4758,11 +4855,9 @@
         <fullName>Campaign_Start_Time__c</fullName>
         <externalId>false</externalId>
         <label>Start Time</label>
-        <length>20</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Time</type>
     </fields>
     <fields>
         <fullName>Campaign_State__c</fullName>
@@ -5528,6 +5623,16 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Contracted_Speaker__c</fullName>
+        <externalId>false</externalId>
+        <label>Contracted Speaker</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Contrat_d_honoraires__c</fullName>
         <description>To be used for France</description>
         <externalId>false</externalId>
@@ -5907,6 +6012,16 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Course_Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Course Product</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Course_Title_and_Description__c</fullName>
         <defaultValue>&quot;“Enter title, course description and objectives only if developing a custom program&quot;</defaultValue>
         <description>Used for the North America Activity Request Form Process</description>
@@ -5916,6 +6031,16 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Course_Topic__c</fullName>
+        <externalId>false</externalId>
+        <label>Course Topic</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Creator_User_Country__c</fullName>
@@ -6496,6 +6621,64 @@ The filed is populated only if this is true. The field is hidden from page layou
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Archive_Date__c</fullName>
+        <description>CVENT Event Archive Date</description>
+        <externalId>false</externalId>
+        <label>Event Archive Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Event_Code__c</fullName>
+        <description>CVENT Event Code</description>
+        <externalId>false</externalId>
+        <label>Event Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Format__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Format</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Language__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Language</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Launch_Date__c</fullName>
+        <description>CVENT Event Launch Date</description>
+        <externalId>false</externalId>
+        <label>Event Launch Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Event_Launch_Time__c</fullName>
+        <description>CVENT Event Launch Time</description>
+        <externalId>false</externalId>
+        <label>Event Launch Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Time</type>
     </fields>
     <fields>
         <fullName>ExpectedResponse</fullName>
@@ -7178,6 +7361,17 @@ CASE(HQ_second_Campaign_Coordinator__c,
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>KOL_Manager_E_Mail__c</fullName>
+        <description>E-Mail Address of KOL Manager</description>
+        <externalId>false</externalId>
+        <label>KOL Manager E-Mail</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Last_Approval_Change_Date__c</fullName>
         <defaultValue>NOW()</defaultValue>
         <externalId>false</externalId>
@@ -7232,6 +7426,16 @@ CASE(HQ_second_Campaign_Coordinator__c,
         <fullName>Local_Contact_Person__c</fullName>
         <externalId>false</externalId>
         <label>Local Contact Person</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Locale__c</fullName>
+        <externalId>false</externalId>
+        <label>Locale</label>
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -7735,7 +7939,7 @@ CASE(HQ_second_Campaign_Coordinator__c,
         <externalId>false</externalId>
         <inlineHelpText>If Venue is yet to be determined, please indicated &quot;TBD&quot;</inlineHelpText>
         <label>Name of Venue</label>
-        <length>100</length>
+        <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
@@ -8188,6 +8392,50 @@ CASE(HQ_second_Campaign_Coordinator__c,
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Planner_E_Mail__c</fullName>
+        <description>CVENT Event Planner First Name</description>
+        <externalId>false</externalId>
+        <label>Planner E-Mail</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planner_First_Name__c</fullName>
+        <description>CVENT Event Planner First Name</description>
+        <externalId>false</externalId>
+        <label>Planner First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planner_Last_Name__c</fullName>
+        <description>CVENT Event Planner First Name</description>
+        <externalId>false</externalId>
+        <label>Planner Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planning_Status__c</fullName>
+        <description>CVENT Planning Status</description>
+        <externalId>false</externalId>
+        <label>Planning Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Post_event_registration_to_council__c</fullName>
@@ -14962,6 +15210,15 @@ CASE(HQ_second_Campaign_Coordinator__c,
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Registration_Deadline_Date__c</fullName>
+        <description>CVENT Registration Deadline Date</description>
+        <externalId>false</externalId>
+        <label>Registration Deadline Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Registration_Time_End__c</fullName>
         <description>Used for the Activity Request form in North America</description>
         <externalId>false</externalId>
@@ -16930,6 +17187,16 @@ Image(&quot;/resource/1444678681000/NACAMPREJECTED&quot;, &quot;Rejected&quot;, 
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Venue_Address1__c</fullName>
+        <externalId>false</externalId>
+        <label>Venue Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Venue_Address__c</fullName>
         <description>Used on the North America Activity Request Form</description>
         <externalId>false</externalId>
@@ -16939,6 +17206,16 @@ Image(&quot;/resource/1444678681000/NACAMPREJECTED&quot;, &quot;Rejected&quot;, 
         <trackFeedHistory>false</trackFeedHistory>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Venue_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Venue Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Venue_Expenses_Actual__c</fullName>
@@ -16988,6 +17265,16 @@ Image(&quot;/resource/1444678681000/NACAMPREJECTED&quot;, &quot;Rejected&quot;, 
         <externalId>false</externalId>
         <label>Venue Room/Hall</label>
         <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Venue_ZIP_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Venue ZIP Code</label>
+        <length>10</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
@@ -18853,11 +19140,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2E X Spectra ST</fullName>
+                <fullName>Ceram%2Ex</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2Ex</fullName>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19146,10 +19433,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Ossix</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -21789,7 +22072,8 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
     <recordTypes>
         <fullName>CventCampaign</fullName>
         <active>true</active>
-        <label>Cvent Campaign</label>
+        <compactLayoutAssignment>CVENT_Event_Campaign_Compact</compactLayoutAssignment>
+        <label>CVENT Campaign</label>
         <picklistValues>
             <picklist>Approval_Status_DI__c</picklist>
             <values>
@@ -22113,11 +22397,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2E X Spectra ST</fullName>
+                <fullName>Ceram%2Ex</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2Ex</fullName>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22409,7 +22693,55 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other</fullName>
+                <fullName>Other Class II</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Endodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment %26 Imaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Implants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Orthodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Prosthetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Root To Crown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Single Unit Crown</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26832,15 +27164,15 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
         <picklistValues>
             <picklist>Status</picklist>
             <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Cancelled</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Closed - Cancelled</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Closed - Completed</fullName>
+                <fullName>Closed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -26848,8 +27180,12 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Proposed</fullName>
-                <default>true</default>
+                <fullName>No Registration Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -27764,11 +28100,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2E X Spectra ST</fullName>
+                <fullName>Ceram%2Ex</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2Ex</fullName>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -28057,10 +28393,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Ossix</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -33468,11 +33800,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2E X Spectra ST</fullName>
+                <fullName>Ceram%2Ex</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2Ex</fullName>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -33761,10 +34093,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Ossix</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -38787,11 +39115,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2E X Spectra ST</fullName>
+                <fullName>Ceram%2Ex</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2Ex</fullName>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -39080,10 +39408,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Ossix</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -44191,11 +44515,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2E X Spectra ST</fullName>
+                <fullName>Ceram%2Ex</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2Ex</fullName>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -44484,10 +44808,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Ossix</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -49703,11 +50023,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2E X Spectra ST</fullName>
+                <fullName>Ceram%2Ex</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2Ex</fullName>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -49996,10 +50316,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Ossix</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -55422,11 +55738,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2E X Spectra ST</fullName>
+                <fullName>Ceram%2Ex</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2Ex</fullName>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -55806,7 +56122,55 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other</fullName>
+                <fullName>Other Class II</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Endodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment %26 Imaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Implants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Orthodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Prosthetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Root To Crown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Single Unit Crown</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -61173,11 +61537,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2E X Spectra ST</fullName>
+                <fullName>Ceram%2Ex</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2Ex</fullName>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -61553,7 +61917,55 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other</fullName>
+                <fullName>Other Class II</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Digital Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Endodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Equipment %26 Imaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Implants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Orthodontics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Prosthetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Root To Crown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Single Unit Crown</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -66904,11 +67316,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2E X Spectra ST</fullName>
+                <fullName>Ceram%2Ex</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2Ex</fullName>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -67197,10 +67609,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Ossix</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -72599,11 +73007,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2E X Spectra ST</fullName>
+                <fullName>Ceram%2Ex</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2Ex</fullName>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -72892,10 +73300,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Ossix</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -76336,11 +76740,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2E X Spectra ST</fullName>
+                <fullName>Ceram%2Ex</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2Ex</fullName>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -76629,10 +77033,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Ossix</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -80417,11 +80817,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2E X Spectra ST</fullName>
+                <fullName>Ceram%2Ex</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2Ex</fullName>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -80710,10 +81110,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Ossix</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -84263,11 +84659,11 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2E X Spectra ST</fullName>
+                <fullName>Ceram%2Ex</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Ceram%2Ex</fullName>
+                <fullName>Ceram%2Ex Spectra ST</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -84556,10 +84952,6 @@ IF(INCLUDES(Target_Group__c, &quot;Surgical&quot;),&quot;MKG&quot;,&quot;group m
             </values>
             <values>
                 <fullName>Ossix</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -88092,97 +88484,6 @@ Credits__c &gt;0,
         <showsStatus>false</showsStatus>
     </webLinks>
     <webLinks>
-        <fullName>Financial_report</fullName>
-        <availability>online</availability>
-        <displayType>link</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <hasMenubar>false</hasMenubar>
-        <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>false</hasToolbar>
-        <height>600</height>
-        <isResizable>true</isResizable>
-        <linkType>url</linkType>
-        <masterLabel>Financial report</masterLabel>
-        <openType>newWindow</openType>
-        <position>none</position>
-        <protected>false</protected>
-        <showsLocation>false</showsLocation>
-        <showsStatus>false</showsStatus>
-        <url>/{!CASE( TEXT($User.User_Country__c) , 
-&quot;Australia&quot;,  &quot;00O20000006i6Iu&quot; ,
-&quot;Canada&quot;, &quot;00O20000006i6K&quot;,
-&quot;Switzerland&quot;, &quot;00O20000006i6Iz&quot;,
-&quot;Denmark&quot;, &quot;00O20000006i6J9&quot;,
-&quot;Japan&quot;, &quot;00O20000006i6Ji&quot;,
-&quot;Norway&quot;, &quot;00O20000006i6Jn&quot;,
-&quot;Poland&quot;, &quot;00O20000006i6K2&quot;,
-&quot;Russia&quot;, &quot;00O20000006i6Kb&quot;,
-&quot;Sweden&quot;, &quot;00O20000005HarR&quot;,
-&quot;HQ: SE&quot;,  &quot;00O20000005HarR&quot; ,
-&quot;UK&quot;, &quot;00O20000006i6JY&quot;,
-&quot;USA&quot;, &quot;00O20000006i6Kg&quot;,
-&quot;00O20000006i6JJ&quot;)}
-?pv0={!Campaign.Id}</url>
-    </webLinks>
-    <webLinks>
-        <fullName>Follow_Up_Report</fullName>
-        <availability>online</availability>
-        <description>Follow up on specific Campaign</description>
-        <displayType>link</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <hasMenubar>false</hasMenubar>
-        <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>false</hasToolbar>
-        <height>600</height>
-        <isResizable>true</isResizable>
-        <linkType>url</linkType>
-        <masterLabel>Follow Up Report</masterLabel>
-        <openType>newWindow</openType>
-        <position>none</position>
-        <protected>false</protected>
-        <showsLocation>false</showsLocation>
-        <showsStatus>false</showsStatus>
-        <url>/00O0J000007TGG1?pv0={!Campaign.Id}</url>
-    </webLinks>
-    <webLinks>
-        <fullName>Hotel_arrangements</fullName>
-        <availability>online</availability>
-        <displayType>link</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <hasMenubar>false</hasMenubar>
-        <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>false</hasToolbar>
-        <height>600</height>
-        <isResizable>true</isResizable>
-        <linkType>url</linkType>
-        <masterLabel>Hotel arrangements</masterLabel>
-        <openType>newWindow</openType>
-        <position>none</position>
-        <protected>false</protected>
-        <showsLocation>false</showsLocation>
-        <showsStatus>false</showsStatus>
-        <url>/00O20000005Hara?pv0={!Campaign.Id}</url>
-    </webLinks>
-    <webLinks>
-        <fullName>Invoice_list</fullName>
-        <availability>online</availability>
-        <displayType>link</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <hasMenubar>false</hasMenubar>
-        <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>false</hasToolbar>
-        <height>600</height>
-        <isResizable>true</isResizable>
-        <linkType>url</linkType>
-        <masterLabel>Invoice list</masterLabel>
-        <openType>newWindow</openType>
-        <position>none</position>
-        <protected>false</protected>
-        <showsLocation>false</showsLocation>
-        <showsStatus>false</showsStatus>
-        <url>/00O20000005HarU?pv0={!Campaign.Id}&amp;pv1={!Campaign.Name}</url>
-    </webLinks>
-    <webLinks>
         <fullName>LEX_Confirmed_Members</fullName>
         <availability>online</availability>
         <displayType>link</displayType>
@@ -88387,24 +88688,16 @@ Credits__c &gt;0,
         <url>/lightning/r/Report/00O20000005Hard/view?fv0={!Campaign.Id}</url>
     </webLinks>
     <webLinks>
-        <fullName>Mailing_Member_list</fullName>
+        <fullName>NewSessionAura</fullName>
         <availability>online</availability>
-        <description>Shows a list of all Members on the Mailing Campaign with status Sent, Responded or Completed</description>
-        <displayType>link</displayType>
+        <displayType>massActionButton</displayType>
         <encodingKey>UTF-8</encodingKey>
-        <hasMenubar>false</hasMenubar>
-        <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>false</hasToolbar>
-        <height>600</height>
-        <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Mailing Member list</masterLabel>
-        <openType>newWindow</openType>
-        <position>none</position>
+        <masterLabel>New Session</masterLabel>
+        <openType>replace</openType>
         <protected>false</protected>
-        <showsLocation>false</showsLocation>
-        <showsStatus>false</showsStatus>
-        <url>/00O20000007Lyqn?pv0={!Campaign.Id}</url>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/lightning/cmp/c__newCampaignOverride?c__passedRecordTypeId=01220000000ANcmAAG&amp;c__passedRecordId={!Campaign.Id}</url>
     </webLinks>
     <webLinks>
         <fullName>New_Activity_Request_Form</fullName>
@@ -88444,82 +88737,6 @@ Credits__c &gt;0,
         <protected>false</protected>
         <requireRowSelection>false</requireRowSelection>
         <url>/apex/newCampaignOverridePage?LinkOrder={!Campaign.Id}</url>
-    </webLinks>
-    <webLinks>
-        <fullName>Participant_list</fullName>
-        <availability>online</availability>
-        <displayType>link</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <hasMenubar>false</hasMenubar>
-        <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>false</hasToolbar>
-        <height>600</height>
-        <isResizable>true</isResizable>
-        <linkType>url</linkType>
-        <masterLabel>Participant list</masterLabel>
-        <openType>newWindow</openType>
-        <position>none</position>
-        <protected>false</protected>
-        <showsLocation>false</showsLocation>
-        <showsStatus>false</showsStatus>
-        <url>/00O20000006i6Qj?pv0={!Campaign.Id}</url>
-    </webLinks>
-    <webLinks>
-        <fullName>Participant_list_detailed</fullName>
-        <availability>online</availability>
-        <displayType>link</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <hasMenubar>false</hasMenubar>
-        <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>false</hasToolbar>
-        <height>600</height>
-        <isResizable>true</isResizable>
-        <linkType>url</linkType>
-        <masterLabel>Participant list - detailed</masterLabel>
-        <openType>newWindow</openType>
-        <position>none</position>
-        <protected>false</protected>
-        <showsLocation>false</showsLocation>
-        <showsStatus>false</showsStatus>
-        <url>/00O20000005HarZ?pv0={!Campaign.Id}</url>
-    </webLinks>
-    <webLinks>
-        <fullName>Sales_development_ROI</fullName>
-        <availability>online</availability>
-        <displayType>link</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <hasMenubar>false</hasMenubar>
-        <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>false</hasToolbar>
-        <height>600</height>
-        <isResizable>true</isResizable>
-        <linkType>url</linkType>
-        <masterLabel>Sales development (12M)</masterLabel>
-        <openType>newWindow</openType>
-        <position>none</position>
-        <protected>false</protected>
-        <showsLocation>false</showsLocation>
-        <showsStatus>false</showsStatus>
-        <url>/00O20000006i2nd?pv0={!Campaign.Id}&amp;pv1={!MONTH(DATE( YEAR( Campaign.StartDate )-1 , MONTH( Campaign.StartDate ),1))}&quot;/1/&quot;{!YEAR(DATE( YEAR( Campaign.StartDate )-1 , MONTH( Campaign.StartDate ),1))}&amp;pv2={!MONTH(DATE( YEAR( Campaign.StartDate )+1 , MONTH( Campaign.StartDate )+1 ,1)-1)}&quot;/&quot;{!DAY(DATE( YEAR( Campaign.StartDate )+1 , MONTH( Campaign.StartDate )+1 ,1)-1)}&quot;/&quot;{!YEAR(DATE( YEAR( Campaign.StartDate )+1 , MONTH( Campaign.StartDate )+1 ,1)-1)}</url>
-    </webLinks>
-    <webLinks>
-        <fullName>Transfer_list</fullName>
-        <availability>online</availability>
-        <displayType>link</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <hasMenubar>false</hasMenubar>
-        <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>false</hasToolbar>
-        <height>600</height>
-        <isResizable>true</isResizable>
-        <linkType>url</linkType>
-        <masterLabel>Transfer list</masterLabel>
-        <openType>newWindow</openType>
-        <position>none</position>
-        <protected>false</protected>
-        <showsLocation>false</showsLocation>
-        <showsStatus>false</showsStatus>
-        <url>/00O20000005Hard?pv0={!Campaign.Id}</url>
     </webLinks>
     <webLinks>
         <fullName>ViewAllCampaignMembers</fullName>

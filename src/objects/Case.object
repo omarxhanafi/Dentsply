@@ -1,203 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ChangeStatus</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ChangeStatus</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ChangeStatus</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CloneAsChild</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CloneAsChild</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CloneAsChild</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CloseCase</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CloseCase</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CloseCase</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <content>TeamForceDelete</content>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Visualforce</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>MassClose</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>MassClose</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>MassClose</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>NewCase</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>NewCase</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>NewCase</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
     <businessProcesses>
         <fullName>CRM Requests</fullName>
         <isActive>true</isActive>
@@ -388,7 +190,6 @@
             <default>false</default>
         </values>
     </businessProcesses>
-    <compactLayoutAssignment>Case_Management_Layout</compactLayoutAssignment>
     <compactLayouts>
         <fullName>CRM_Requests</fullName>
         <fields>Subject</fields>
@@ -409,8 +210,6 @@
         <fields>ClosedDate</fields>
         <label>Case Management Layout</label>
     </compactLayouts>
-    <enableFeeds>true</enableFeeds>
-    <externalSharingModel>Private</externalSharingModel>
     <fieldSets>
         <fullName>testInCountry1__default</fullName>
         <description>default</description>
@@ -436,12 +235,6 @@
         </displayedFields>
         <label>default</label>
     </fieldSets>
-    <fields>
-        <fullName>AccountId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
     <fields>
         <fullName>Account_Country__c</fullName>
         <externalId>false</externalId>
@@ -505,7 +298,7 @@
         <inlineHelpText>SureSmile Address</inlineHelpText>
         <label>Address</label>
         <lookupFilter>
-            <active>true</active>
+            <active>false</active>
             <filterItems>
                 <field>Address__c.Account__c</field>
                 <operation>equals</operation>
@@ -660,18 +453,6 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>AssetId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>AssetWarrantyId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Asset__c</fullName>
@@ -867,6 +648,11 @@
                     <fullName>00520000000wTDuAAM</fullName>
                     <default>false</default>
                     <label>Queue: IT: Digital</label>
+                </value>
+                <value>
+                    <fullName>00G6M000003U6NuUAK</fullName>
+                    <default>false</default>
+                    <label>Queue: IT: Equipment Booking</label>
                 </value>
                 <value>
                     <fullName>00G6M0000040OCeUAM</fullName>
@@ -1436,6 +1222,10 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Italy</controllingFieldValue>
+                <valueName>00G6M000003U6NuUAK</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Italy</controllingFieldValue>
                 <valueName>00G6M0000040OCeUAM</valueName>
             </valueSettings>
             <valueSettings>
@@ -1635,12 +1425,6 @@
                 <valueName>00G6M0000040EIzUAM</valueName>
             </valueSettings>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>BusinessHoursId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>CRM_Analyst__c</fullName>
@@ -2075,13 +1859,6 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>ClosedDate</fullName>
-    </fields>
-    <fields>
-        <fullName>Comments</fullName>
-        <inlineHelpText>(Optional) Use this field to add comment. Will appear in Case Comments related List and in Chatter.</inlineHelpText>
     </fields>
     <fields>
         <fullName>Complaint_Category__c</fullName>
@@ -3963,39 +3740,6 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
         </valueSet>
     </fields>
     <fields>
-        <fullName>ContactEmail</fullName>
-    </fields>
-    <fields>
-        <fullName>ContactFax</fullName>
-    </fields>
-    <fields>
-        <fullName>ContactId</fullName>
-        <lookupFilter>
-            <active>true</active>
-            <booleanFilter>1 OR 2</booleanFilter>
-            <filterItems>
-                <field>Contact.AccountId</field>
-                <operation>equals</operation>
-                <valueField>$Source.AccountId</valueField>
-            </filterItems>
-            <filterItems>
-                <field>$Source.AccountId</field>
-                <operation>equals</operation>
-                <value></value>
-            </filterItems>
-            <isOptional>true</isOptional>
-        </lookupFilter>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ContactMobile</fullName>
-    </fields>
-    <fields>
-        <fullName>ContactPhone</fullName>
-    </fields>
-    <fields>
         <fullName>Country__c</fullName>
         <externalId>false</externalId>
         <label>Country</label>
@@ -4198,11 +3942,6 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>CurrencyIsoCode</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
         <fullName>Customer_Service_Processing_Completed__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>For tracking the Customer Service KPI Turn around time</inlineHelpText>
@@ -4243,11 +3982,6 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Description</fullName>
-        <trackFeedHistory>true</trackFeedHistory>
-        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Dev_environment_sync__c</fullName>
@@ -4964,12 +4698,6 @@ ROUND(MOD((ClosedDate - Date_Assigned_to_Owner__c)*1440,60),0)
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>EntitlementId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Exchange_Order_Ship_Date__c</fullName>
         <externalId>false</externalId>
         <label>Exchange Order Ship Date</label>
@@ -5110,36 +4838,6 @@ https://dentsplysirona.my.salesforce.com/5000J00001GH99c</description>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>IsClosedOnCreate</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>IsEscalated</fullName>
-        <trackFeedHistory>true</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
-        <fullName>IsSelfServiceClosed</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>IsStopped</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>IsVisibleInSelfService</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>Language</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>LastEmailType__c</fullName>
@@ -5291,12 +4989,6 @@ don&apos;t add to the layout</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>MilestoneStatus</fullName>
-    </fields>
-    <fields>
-        <fullName>MilestoneStatusIcon</fullName>
     </fields>
     <fields>
         <fullName>Movex__c</fullName>
@@ -5555,12 +5247,6 @@ If(ContactId=&apos;&apos; &amp;&amp; text(Status)=&apos;New&apos;,&apos;hide flo
         </valueSet>
     </fields>
     <fields>
-        <fullName>Origin</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-    </fields>
-    <fields>
         <fullName>Original_Order_Date__c</fullName>
         <externalId>false</externalId>
         <label>Original Order Date</label>
@@ -5579,12 +5265,6 @@ If(ContactId=&apos;&apos; &amp;&amp; text(Status)=&apos;New&apos;,&apos;hide flo
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>OwnerId</fullName>
-        <trackFeedHistory>true</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>OwnerName_TF__c</fullName>
@@ -5612,12 +5292,6 @@ If(ContactId=&apos;&apos; &amp;&amp; text(Status)=&apos;New&apos;,&apos;hide flo
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>ParentId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Previous_Case_Owner__c</fullName>
         <externalId>false</externalId>
         <label>Previous Case Owner</label>
@@ -5627,18 +5301,6 @@ If(ContactId=&apos;&apos; &amp;&amp; text(Status)=&apos;New&apos;,&apos;hide flo
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Priority</fullName>
-        <trackFeedHistory>true</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <type>Picklist</type>
-    </fields>
-    <fields>
-        <fullName>ProductId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Product_Line__c</fullName>
@@ -6822,12 +6484,6 @@ HYPERLINK(&quot;/&quot;&amp;Id&amp;&quot;/a?retURL=%2F&quot;&amp;Id&amp;&quot;&a
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Reason</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-    </fields>
-    <fields>
         <fullName>Rebill_Order_Amount__c</fullName>
         <externalId>false</externalId>
         <label>Rebill Order Amount</label>
@@ -7378,7 +7034,7 @@ HYPERLINK(&quot;/&quot;&amp;Id&amp;&quot;/a?retURL=%2F&quot;&amp;Id&amp;&quot;&a
         <label>Responsible Function</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -7528,12 +7184,6 @@ IF( ISPICKVAL(SLAStatus__c,&quot;Orange&quot;),
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>ServiceContractId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>SiroforceEMailAddress__c</fullName>
         <externalId>false</externalId>
         <label>Contact Person E-Mail Address</label>
@@ -7558,20 +7208,6 @@ IF( ISPICKVAL(SLAStatus__c,&quot;Orange&quot;),
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>SlaExitDate</fullName>
-    </fields>
-    <fields>
-        <fullName>SlaStartDate</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>SourceId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Source_Record_Info__c</fullName>
         <description>Can be added to layout upon request, now it&apos;s used in the service cloud flow to pull the information directly from the case instead of the source record object</description>
         <externalId>false</externalId>
@@ -7588,7 +7224,7 @@ IF( ISPICKVAL(SLAStatus__c,&quot;Orange&quot;),
         <externalId>false</externalId>
         <label>Source Record</label>
         <lookupFilter>
-            <active>true</active>
+            <active>false</active>
             <filterItems>
                 <field>Source_Record__c.CIM_Account__c</field>
                 <operation>equals</operation>
@@ -7603,33 +7239,6 @@ IF( ISPICKVAL(SLAStatus__c,&quot;Orange&quot;),
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Status</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <trackTrending>true</trackTrending>
-        <type>Picklist</type>
-    </fields>
-    <fields>
-        <fullName>StopStartDate</fullName>
-    </fields>
-    <fields>
-        <fullName>Subject</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
-        <fullName>SuppliedCompany</fullName>
-    </fields>
-    <fields>
-        <fullName>SuppliedEmail</fullName>
-    </fields>
-    <fields>
-        <fullName>SuppliedName</fullName>
-    </fields>
-    <fields>
-        <fullName>SuppliedPhone</fullName>
     </fields>
     <fields>
         <fullName>Support_Case__c</fullName>
@@ -10252,12 +9861,6 @@ TFUS-000005186</description>
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Type</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>User_Country__c</fullName>
@@ -15737,8 +15340,6 @@ TFUS-000005186</description>
             <roleAndSubordinatesInternal>NA_CRM_Analyst</roleAndSubordinatesInternal>
         </sharedTo>
     </listViews>
-    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
-    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>CRM_Requests</fullName>
         <active>true</active>
@@ -17106,10 +16707,6 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Geopointe</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Get feedback-Survey</fullName>
                 <default>false</default>
             </values>
@@ -17155,6 +16752,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>Live Agent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -18671,10 +18272,6 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Geopointe</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Get feedback-Survey</fullName>
                 <default>false</default>
             </values>
@@ -18720,6 +18317,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>Live Agent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -21110,10 +20711,6 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Geopointe</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Get feedback-Survey</fullName>
                 <default>false</default>
             </values>
@@ -21159,6 +20756,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>Live Agent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -22655,10 +22256,6 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Geopointe</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Get feedback-Survey</fullName>
                 <default>false</default>
             </values>
@@ -22704,6 +22301,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>Live Agent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -23131,6 +22732,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>00G6M000003RXqZUAW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>00G6M000003U6NuUAK</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -25860,10 +25465,6 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Geopointe</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Get feedback-Survey</fullName>
                 <default>false</default>
             </values>
@@ -25897,6 +25498,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>Live Agent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -28419,10 +28024,6 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Geopointe</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Get feedback-Survey</fullName>
                 <default>false</default>
             </values>
@@ -28468,6 +28069,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>Live Agent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -29699,10 +29304,6 @@ TFUS-000005186</description>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Geopointe</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Get feedback-Survey</fullName>
                 <default>false</default>
             </values>
@@ -29748,6 +29349,10 @@ TFUS-000005186</description>
             </values>
             <values>
                 <fullName>Live Agent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maps</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -29937,41 +29542,6 @@ TFUS-000005186</description>
             </values>
         </picklistValues>
     </recordTypes>
-    <searchLayouts>
-        <customTabListAdditionalFields>CASES.CREATED_DATE</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Movex__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>MD_Legacy_ID__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
-        <customTabListAdditionalFields>OWNER_NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Account_Country__c</customTabListAdditionalFields>
-        <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
-        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <excludedStandardButtons>MassClose</excludedStandardButtons>
-        <lookupDialogsAdditionalFields>CASES.CASE_NUMBER</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>CASES.SUBJECT</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>NAME</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>CASES.STATUS</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>CASES.CASE_NUMBER</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>CASES.SUBJECT</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>NAME</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>CASES.STATUS</lookupPhoneDialogsAdditionalFields>
-        <massQuickActions>CloseAsInternalNotification</massQuickActions>
-        <massQuickActions>CloseAsSpam</massQuickActions>
-        <searchResultsAdditionalFields>CASES.CASE_NUMBER</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>NAME</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Complaint_Category__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CASES.SUBJECT</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CASES.STATUS</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CASES.CREATED_DATE</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>Private</sharingModel>
     <validationRules>
         <fullName>Add_cancellation_notes_if_cancelling</fullName>
         <active>true</active>

@@ -2,15 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/1/8142d91b81d9e8901ff6be5c6003b044381f6112" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/d/ad6cf685edfd5e115942ab85060b14eb8911c084" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/f/ff25ea74f937fad429fe27671f5c3017cf608c9a" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Account.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Account.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Campaign.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Campaign.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/CampaignMember.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/CampaignMember.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Case.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Case.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/CaseComment.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/CaseComment.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Contact.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Contact.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/CountrySLA__mdt.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/CountrySLA__mdt.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/DebugLog__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/DebugLog__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Discount_row__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Discount_row__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/EquipmentBooking__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/EquipmentBooking__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Event.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Event.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Expert__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Expert__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/FSL__Service_Goal__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/FSL__Service_Goal__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/FSL__UserSetting__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/FSL__UserSetting__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/FSL__Work_Rule__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/FSL__Work_Rule__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Field_Sales_Project_Members__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Field_Sales_Project_Members__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Lead.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Lead.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/LoyaltyProgramParticipant__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/LoyaltyProgramParticipant__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Non_ERP_Products__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Non_ERP_Products__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/OpenOrderLine__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/OpenOrderLine__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Opportunity.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Opportunity.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/OpportunityLineItem.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/OpportunityLineItem.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Order.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Order.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/PricebookEntry.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/PricebookEntry.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Product2.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Product2.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/ProductInstruction__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/ProductInstruction__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/QuoteLineItem.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/QuoteLineItem.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Sales_Analytics__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Sales_Analytics__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/ServiceAppointment.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/ServiceAppointment.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/User.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/User.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/WorkOrder.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/WorkOrder.object" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +73,7 @@
         <entry key="Dentsply">
           <value>
             <ModuleWorkspaceSettings>
-              <option name="moduleContentsLastModified" value="1681297545783" />
+              <option name="moduleContentsLastModified" value="1695386813324" />
             </ModuleWorkspaceSettings>
           </value>
         </entry>
@@ -18212,7 +18247,8 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1684135012438" />
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1695385676209" />
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1695385632000" />
                       <entry key="APEXCLASS:CAMPAIGNMEMBERTRIGGERHELPER" value="1668005778242" />
                       <entry key="APEXCLASS:CHANGEOWNER" value="1669800166407" />
                       <entry key="APEXCLASS:FINDLEADMATCH" value="1668161656809" />
@@ -18221,14 +18257,48 @@
                       <entry key="APEXCLASS:OPPORTUNITYINSERTASYNCH" value="1668510513326" />
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1666193185822" />
                       <entry key="APEXCLASS:USERSINACCOUNTTERRITORIES" value="1667389763476" />
+                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1695386202000" />
                       <entry key="AURADEFINITIONBUNDLE:FLOW_SUGGESTEDUSERSBASEDONBRAND" value="1667402512131" />
                       <entry key="AURADEFINITIONBUNDLE:SERVICECLOUD_FLOWINPUTFIELD" value="1674823830000" />
+                      <entry key="CUSTOMFIELD:PRODUCT2.BRANDCATEGORY__C" value="1695384210000" />
+                      <entry key="CUSTOMFIELD:PRODUCT2.BRANDTYPE__C" value="1695384210000" />
+                      <entry key="CUSTOMFIELD:PRODUCT2.FACTORYDESC__C" value="1695384210000" />
+                      <entry key="CUSTOMFIELD:PRODUCT2.NONERPPRODUCT__C" value="1695384210000" />
+                      <entry key="CUSTOMFIELD:PRODUCT2.PILLARDESC__C" value="1695384210000" />
+                      <entry key="CUSTOMFIELD:PRODUCT2.SEGMENTNAME__C" value="1695384210000" />
+                      <entry key="CUSTOMFIELD:PRODUCT2.SOURCESYSTEMNAME__C" value="1695384210000" />
+                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.CLASSIFICATIONTYPE__C" value="1695386160000" />
+                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.GBU__C" value="1695386160000" />
+                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.GPHCODE__C" value="1695386160000" />
+                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.LIFESPANMONTHS__C" value="1695386160000" />
+                      <entry key="CUSTOMFIELD:WORKFLOWLINE__C.ORDER__C" value="1695386160000" />
+                      <entry key="CUSTOMFIELD:WORKFLOWLINE__C.PRODUCTFAMILY__C" value="1695386160000" />
+                      <entry key="CUSTOMFIELD:WORKFLOWLINE__C.WORKFLOW__C" value="1695386159000" />
+                      <entry key="CUSTOMFIELD:WORKFLOWPROFILING__C.ACCOUNT__C" value="1695386160000" />
+                      <entry key="CUSTOMFIELD:WORKFLOWPROFILING__C.RATING__C" value="1695386160000" />
+                      <entry key="CUSTOMFIELD:WORKFLOWPROFILING__C.WORKFLOW__C" value="1695386160000" />
+                      <entry key="CUSTOMFIELD:WORKFLOW__C.COUNTRIES__C" value="1695386160000" />
+                      <entry key="CUSTOMFIELD:WORKFLOW__C.WORKFLOWLABEL__C" value="1695386160000" />
+                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1695385506000" />
+                      <entry key="CUSTOMOBJECT:PRODUCTFAMILY__C" value="1695386160000" />
+                      <entry key="CUSTOMOBJECT:WORKFLOWLINE__C" value="1695386160000" />
+                      <entry key="CUSTOMOBJECT:WORKFLOWPROFILING__C" value="1695386160000" />
+                      <entry key="CUSTOMOBJECT:WORKFLOW__C" value="1695386160000" />
+                      <entry key="FLEXIPAGE:LIGHTNING_ACCOUNTACC360" value="1695388578000" />
+                      <entry key="GLOBALVALUESET:GBU" value="1695386095000" />
+                      <entry key="GLOBALVALUESET:WORKFLOWS" value="1695386095000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1695385692000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARD" value="1682075429551" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1684135121641" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1695385649000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CLONEORDEROMLWC" value="1666105134000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:FLOW_LOOKUPLWC" value="1675243668000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:LEADMATCHCONTACTHANDLING" value="1666275637000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:SELECTPRODUCTSOMLWC" value="1666187952046" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1695386299000" />
+                      <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1695386160000" />
+                      <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1695386160000" />
+                      <entry key="STATICRESOURCE:COLDICON" value="1695386286000" />
+                      <entry key="STATICRESOURCE:HOTICON" value="1695386286000" />
                     </map>
                   </option>
                   <option name="lastBuildScope" value="CUSTOM" />
@@ -18579,18 +18649,36 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1695286129857" />
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1696171694728" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1692017955504" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1692194892939" />
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1694795426963" />
+                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.CLASSIFICATIONTYPE__C" value="1695383392000" />
+                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.GBU__C" value="1695383392000" />
+                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.GPHCODE__C" value="1695383392000" />
+                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.LIFESPANMONTHS__C" value="1695383392000" />
+                      <entry key="CUSTOMFIELD:WORKFLOWLINE__C.ORDER__C" value="1695383392000" />
+                      <entry key="CUSTOMFIELD:WORKFLOWLINE__C.PRODUCTFAMILY__C" value="1695383392000" />
+                      <entry key="CUSTOMFIELD:WORKFLOWLINE__C.WORKFLOW__C" value="1695383392000" />
+                      <entry key="CUSTOMFIELD:WORKFLOWPROFILING__C.ACCOUNT__C" value="1695383392000" />
+                      <entry key="CUSTOMFIELD:WORKFLOWPROFILING__C.RATING__C" value="1695383392000" />
+                      <entry key="CUSTOMFIELD:WORKFLOWPROFILING__C.WORKFLOW__C" value="1695383392000" />
+                      <entry key="CUSTOMFIELD:WORKFLOW__C.COUNTRIES__C" value="1695383392000" />
+                      <entry key="CUSTOMFIELD:WORKFLOW__C.WORKFLOWLABEL__C" value="1695383392000" />
+                      <entry key="CUSTOMOBJECT:PRODUCTFAMILY__C" value="1695383392000" />
+                      <entry key="CUSTOMOBJECT:WORKFLOWLINE__C" value="1695383392000" />
+                      <entry key="CUSTOMOBJECT:WORKFLOWPROFILING__C" value="1695383392000" />
+                      <entry key="CUSTOMOBJECT:WORKFLOW__C" value="1695383392000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTCONTAINERLWC" value="1689951225892" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1695286581000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1690377458000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1696171999474" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1695713716562" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1695285248633" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1695715154611" />
+                      <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1695383392000" />
+                      <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1695383392000" />
                     </map>
                   </option>
-                  <option name="lastBuildScope" value="CONTEXT" />
+                  <option name="lastBuildScope" value="CUSTOM" />
                   <option name="lastBuildViewToggles">
                     <map>
                       <entry key="DELETE">
@@ -18630,9 +18718,7 @@
                   </option>
                   <option name="lastCustomSelectionUrls">
                     <set>
-                      <option value="metadata://CustomMetadata/bmpyrckt__Timeline_Configuration.Account_Orders" />
-                      <option value="metadata://CustomMetadata/bmpyrckt__Timeline_Configuration.Account_Quotes" />
-                      <option value="metadata://CustomMetadata/bmpyrckt__Timeline_Configuration.Account_ServiceAppointments" />
+                      <option value="metadata://FlexiPage/Lightning_Accountacc360" />
                     </set>
                   </option>
                   <option name="lastDeleteOptions">
@@ -18693,7 +18779,9 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Id, Name FROM Workflow__c WHERE Countries__c EXCLUDES ('US')" />
+                  <option name="body" value="select id from KOL_Contract__c where Account__c = '0010J000025CIpDQAW'" />
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 2" />
                 </SoqlQuerySavedDocument>
               </list>
@@ -19048,7 +19136,8 @@
       <workItem from="1694610548262" duration="100000" />
       <workItem from="1694610686603" duration="65000" />
       <workItem from="1694611646267" duration="8291000" />
-      <workItem from="1694781080820" duration="10891000" />
+      <workItem from="1694781080820" duration="24178000" />
+      <workItem from="1696241423843" duration="754000" />
     </task>
     <servers />
   </component>

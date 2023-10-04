@@ -3,6 +3,9 @@ import getWorkflowsByExcludingCountry from '@salesforce/apex/WorkflowProfilingCo
 import getWorkflowProfilingsByAccount from '@salesforce/apex/WorkflowProfilingController.getWorkflowProfilingsByAccount';
 import createOrUpdateWorkflowProfilings from '@salesforce/apex/WorkflowProfilingController.createOrUpdateWorkflowProfilings';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import HOT_ICON from '@salesforce/resourceUrl/HotIcon';
+import COLD_ICON from '@salesforce/resourceUrl/ColdIcon';
+
 
 
 export default class WorkflowProfiling extends LightningElement {
@@ -10,6 +13,9 @@ export default class WorkflowProfiling extends LightningElement {
     @api recordId; // Account record Id
     @track workflowsList = [];
     workflowProfilings = [];
+
+    hotIconUrl = HOT_ICON;
+    coldIconUrl = COLD_ICON;
 
     @wire(getWorkflowsByExcludingCountry, { accountId: '$recordId' })
     wiredWorkflows({ error, data }) {
@@ -67,11 +73,14 @@ export default class WorkflowProfiling extends LightningElement {
         });
 
         console.log('Changed workflows', this.workflowsList);
+
+        // Save data upon change
+        this.saveData();
     }
 
     saveData() {
         // Create WorkflowProfiling objects by filtering the list of workflows with a rating higher than 0
-        let workflowProfilingsToCreate = this.workflowsList.filter(workflow => workflow.rating > 0).map(workflow => ({
+        let workflowProfilingsToCreate = this.workflowsList.map(workflow => ({
             Account__c: this.recordId,
             Workflow__c: workflow.Id,
             Rating__c: workflow.rating
@@ -83,7 +92,7 @@ export default class WorkflowProfiling extends LightningElement {
             // Call the Apex method to save Workflow Profilings
             createOrUpdateWorkflowProfilings({ newRecords: workflowProfilingsToCreate })
                 .then(result => {
-                    this.showToast('Success', 'Records saved successfully', 'success');
+                    // this.showToast('Success', 'Records saved successfully', 'success');
                     console.log('Workflow profiles created or updated successfully.');
                 })
                 .catch(error => {

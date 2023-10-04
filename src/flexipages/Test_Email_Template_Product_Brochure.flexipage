@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;br /&gt;
+Hi {{{Recipient.FirstName}}},&lt;br /&gt;
+&lt;br /&gt;
+thank you for trying our WaveOne Gold product.&lt;br /&gt;
+&amp;nbsp;&lt;br /&gt;
+&lt;img alt=&quot;WaveOne Demo Picture&quot; src=&quot;https://dentsplysirona--c.documentforce.com/file-asset-public/WaveOne_Demo_Picture?oid=00D200000001dDc&quot; style=&quot;max-width: 100%&quot; title=&quot;WaveOne Demo Picture&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+I hope it will meet your expectations.&lt;br /&gt;
+&lt;br /&gt;
+Click &lt;a href=&quot;https://assets.dentsplysirona.com/flagship/en/explore/endodontics/ROW-WaveOne-Gold-Brochure-Digital-EN-0418.pdf&quot;&gt;here&lt;/a&gt; to download the product brochure.&lt;br /&gt;
+&lt;br /&gt;
+Looking forward to be seeing you on February 15, at 10:00 AM.&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+Best regards,&lt;br /&gt;
+&lt;br /&gt;
+Fredrik Cedervall&lt;br /&gt;
+&lt;br /&gt;
+&lt;img alt=&quot;Fredrik Signature&quot; src=&quot;https://dentsplysirona--c.documentforce.com/file-asset-public/Fredrik_Signature?oid=00D200000001dDc&quot; style=&quot;max-width: 100%&quot; title=&quot;Fredrik Signature&quot; /&gt;&lt;br /&gt;
+Aminogatan 1 P.O. Box 14&lt;br /&gt;
+431 53 M&amp;ouml;lndal&lt;br /&gt;
+Sweden&lt;br /&gt;
+&lt;br /&gt;
+Telephone +46 31 3763-481&lt;br /&gt;
+Mobile +46 702 4382-67&lt;br /&gt;
+&lt;a href=&quot;mailto:fredrik.cedervall@dentsplysirona.com&quot;&gt;fredrik.cedervall@dentsplysirona.com&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.dentsplysirona.com&quot;&gt;www.dentsplysirona.com&lt;/a&gt;
+&lt;table bgcolor=&quot;#ffffff&quot; style=&quot;font-style:inherit; font-variant:inherit; font-weight:inherit; font-stretch:inherit; font-size:13px; line-height:18px; font-family:Arial, Helvetica, sans-serif; color:#666666; padding:0px; outline:none; border-collapse:collapse; border-spacing:0px; width:600px; border:none; empty-cells:show&quot; width=&quot;600&quot;&gt;
+	&lt;tbody style=&quot;padding:0px; outline:none&quot;&gt;
+		&lt;tr style=&quot;padding:0px; outline:none&quot;&gt;
+			&lt;td height=&quot;15&quot; style=&quot;border:none; padding:0px; vertical-align:top&quot; width=&quot;600&quot;&gt;&lt;br /&gt;
+			&amp;nbsp;&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:richText</componentName>
+                <identifier>contentbuilder_richText</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-dcc6c3c2-228b-4f6f-af44-12d13693764d</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-dcc6c3c2-228b-4f6f-af44-12d13693764d</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-661dd246-a221-438d-9cac-211e74507de3</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-661dd246-a221-438d-9cac-211e74507de3</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Test_Email_Template_Product_Brochure</masterLabel>
+    <template>
+        <name>contentpage:defaultEmailTemplatePageTemplate</name>
+        <properties>
+            <name>backgroundColor</name>
+            <value>#E9EAEC</value>
+        </properties>
+        <properties>
+            <name>backgroundImageUrl</name>
+        </properties>
+        <properties>
+            <name>bodyColor</name>
+            <value>#FFFFFF</value>
+        </properties>
+        <properties>
+            <name>paddingBottom</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingLeft</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingRight</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingTop</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>preheader</name>
+        </properties>
+    </template>
+    <type>EmailTemplatePage</type>
+</FlexiPage>

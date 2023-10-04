@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>After Sales Follow-up</masterLabel>
+        <translation><!-- After Sales Follow-up --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Book Appointment</masterLabel>
+        <translation><!-- Book Appointment --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Business Review</masterLabel>
+        <translation><!-- Business Review --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CFE to collect MKT Consent</masterLabel>
+        <translation><!-- CFE to collect MKT Consent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Chairside/Clinical</masterLabel>
+        <translation>Klinik Destek</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Sale</masterLabel>
+        <translation><!-- Closed Sale --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Demonstration</masterLabel>
+        <translation>Sunum/Tanıtım</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Evaluation</masterLabel>
+        <translation><!-- Evaluation --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Loyalty Program Registration</masterLabel>
+        <translation><!-- Loyalty Program Registration --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lunch &amp; Learn</masterLabel>
+        <translation>Çalışma Grubu Toplantısı</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New Business/Prospecting</masterLabel>
+        <translation><!-- New Business/Prospecting --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation>Diğer</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Problem Solving/Process Support</masterLabel>
+        <translation><!-- Problem Solving/Process Support --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Quote Presented</masterLabel>
+        <translation><!-- Quote Presented --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sales Presentation</masterLabel>
+        <translation><!-- Sales Presentation --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Technical Support</masterLabel>
+        <translation>Teknik Destek</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Training/Implementation</masterLabel>
+        <translation><!-- Training/Implementation --></translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

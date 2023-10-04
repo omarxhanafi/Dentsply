@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Cerec Club</fullName>
+        <default>false</default>
+        <label>Cerec Club</label>
+    </customValue>
+    <customValue>
+        <fullName>SureSmile Advantage</fullName>
+        <default>false</default>
+        <label>SureSmile Advantage</label>
+    </customValue>
+    <customValue>
+        <fullName>One DS</fullName>
+        <default>false</default>
+        <label>One DS</label>
+    </customValue>
+    <customValue>
+        <fullName>One DSO</fullName>
+        <default>false</default>
+        <label>One DSO</label>
+    </customValue>
+    <customValue>
+        <fullName>One DS Pro</fullName>
+        <default>false</default>
+        <label>One DS Pro</label>
+    </customValue>
+    <customValue>
+        <fullName>Lab Alliance</fullName>
+        <default>false</default>
+        <label>Lab Alliance</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <description>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</description>
+    <masterLabel>Account Program: Subtype</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,147 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>EquipmentBookingCompactLayouts</compactLayoutAssignment>
     <compactLayouts>
         <fullName>EquipmentBookingCompactLayouts</fullName>
         <fields>Name</fields>
@@ -152,18 +10,6 @@
         <fields>OwnerId</fields>
         <label>Equipment Booking Compact Layouts</label>
     </compactLayouts>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <description>TFUS-000003992 Used to book equipment from inventory location.</description>
-    <enableActivities>true</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>true</enableFeeds>
-    <enableHistory>true</enableHistory>
-    <enableLicensing>false</enableLicensing>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>Account__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
@@ -329,6 +175,7 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <controllingField>Country__c</controllingField>
             <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
@@ -347,7 +194,64 @@
                     <default>false</default>
                     <label>FedEx</label>
                 </value>
+                <value>
+                    <fullName>ARCO</fullName>
+                    <default>false</default>
+                    <label>ARCO</label>
+                </value>
+                <value>
+                    <fullName>MIT</fullName>
+                    <default>false</default>
+                    <label>MIT</label>
+                </value>
+                <value>
+                    <fullName>BARTOLINI</fullName>
+                    <default>false</default>
+                    <label>BARTOLINI</label>
+                </value>
             </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>SM</controllingFieldValue>
+                <controllingFieldValue>FR</controllingFieldValue>
+                <controllingFieldValue>IT</controllingFieldValue>
+                <controllingFieldValue>DE</controllingFieldValue>
+                <controllingFieldValue>AT</controllingFieldValue>
+                <controllingFieldValue>VA</controllingFieldValue>
+                <valueName>DHL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>SM</controllingFieldValue>
+                <controllingFieldValue>FR</controllingFieldValue>
+                <controllingFieldValue>IT</controllingFieldValue>
+                <controllingFieldValue>DE</controllingFieldValue>
+                <controllingFieldValue>AT</controllingFieldValue>
+                <controllingFieldValue>VA</controllingFieldValue>
+                <valueName>UPS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>SM</controllingFieldValue>
+                <controllingFieldValue>IT</controllingFieldValue>
+                <controllingFieldValue>VA</controllingFieldValue>
+                <valueName>ARCO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>SM</controllingFieldValue>
+                <controllingFieldValue>IT</controllingFieldValue>
+                <controllingFieldValue>VA</controllingFieldValue>
+                <valueName>MIT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>SM</controllingFieldValue>
+                <controllingFieldValue>IT</controllingFieldValue>
+                <controllingFieldValue>VA</controllingFieldValue>
+                <valueName>BARTOLINI</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>FR</controllingFieldValue>
+                <controllingFieldValue>DE</controllingFieldValue>
+                <controllingFieldValue>AT</controllingFieldValue>
+                <valueName>FedEx</valueName>
+            </valueSettings>
         </valueSet>
     </fields>
     <fields>
@@ -652,7 +556,6 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <label>Equipment Booking</label>
     <listViews>
         <fullName>DACH_VDW_Customer_Care_Team_1_Submitted</fullName>
         <columns>NAME</columns>
@@ -757,16 +660,6 @@
             <group>DACH_VDW_Customer_Care_Team</group>
         </sharedTo>
     </listViews>
-    <nameField>
-        <displayFormat>EB-{000000000}</displayFormat>
-        <label>Booking Number</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Equipment Bookings</pluralLabel>
-    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
-    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>EquipmentBooking</fullName>
         <active>true</active>
@@ -808,9 +701,29 @@
                 <fullName>DE</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Courier__c</picklist>
+            <values>
+                <fullName>ARCO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BARTOLINI</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>DHL</fullName>
                 <default>false</default>
@@ -820,8 +733,12 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>MIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>UPS</fullName>
-                <default>true</default>
+                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -848,25 +765,6 @@
             </values>
         </picklistValues>
     </recordTypes>
-    <searchLayouts>
-        <excludedStandardButtons>Import</excludedStandardButtons>
-        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>New</excludedStandardButtons>
-        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
-        <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>BookingType__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>StartDate__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>EndDate__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Product__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>InventoryItem__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>Private</sharingModel>
-    <startsWith>Vowel</startsWith>
     <validationRules>
         <fullName>Product_must_match_Inventory_Item</fullName>
         <active>true</active>
@@ -926,5 +824,4 @@ ISBLANK(InventoryItem__c)
 )</errorConditionFormula>
         <errorMessage>To Change the status to Shipped, you must fill in Delivery Date, and Inventory Item must be assigned.</errorMessage>
     </validationRules>
-    <visibility>Public</visibility>
 </CustomObject>

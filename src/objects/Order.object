@@ -1,208 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Activate</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Activate</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Activate</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Approve</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Approve</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Approve</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Deactivate</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Deactivate</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Deactivate</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>NewReduction</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>NewReduction</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>NewReduction</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ReduceOrder</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ReduceOrder</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ReduceOrder</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Lightning_Order</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Lightning_Order</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <compactLayouts>
         <fullName>LightningOrder_Compact</fullName>
         <fields>OrderNumber</fields>
@@ -214,8 +11,6 @@
         <fields>total_discount_on_the_order_c__c</fields>
         <label>LightningOrder Compact</label>
     </compactLayouts>
-    <enableFeeds>true</enableFeeds>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>AX_Order_Number__c</fullName>
         <externalId>false</externalId>
@@ -226,15 +21,6 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>AccountId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>AccountNumber</fullName>
     </fields>
     <fields>
         <fullName>Account_Discount_Model__c</fullName>
@@ -319,17 +105,6 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ActivatedById</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ActivatedDate</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Activity_ID__c</fullName>
@@ -557,17 +332,6 @@ TEXT(Shipping_Method__c )=&quot;FedEx Saturday 10:30am - UFH $49.50&quot;))</for
         <type>TextArea</type>
     </fields>
     <fields>
-        <fullName>BillToContactId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>BillingAddress</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
         <fullName>CS_Inbox_Approved__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -662,17 +426,6 @@ TEXT(Shipping_Method__c )=&quot;FedEx Saturday 10:30am - UFH $49.50&quot;))</for
         <visibleLines>5</visibleLines>
     </fields>
     <fields>
-        <fullName>CompanyAuthorizedById</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>CompanyAuthorizedDate</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
         <fullName>Confirmation__c</fullName>
         <externalId>false</externalId>
         <label>Confirmation #</label>
@@ -714,58 +467,6 @@ TEXT(Shipping_Method__c )=&quot;FedEx Saturday 10:30am - UFH $49.50&quot;))</for
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>ContractEndDate</fullName>
-    </fields>
-    <fields>
-        <fullName>ContractId</fullName>
-        <lookupFilter>
-            <active>false</active>
-            <booleanFilter>(1 AND 2 AND 3 AND 4 AND 5) OR (6 AND 7)</booleanFilter>
-            <filterItems>
-                <field>$Source.Order_subtype__c</field>
-                <operation>equals</operation>
-                <value>Offers, Standard</value>
-            </filterItems>
-            <filterItems>
-                <field>Contract.Discount_Type__c</field>
-                <operation>equals</operation>
-                <valueField>$Source.Order_Type__c</valueField>
-            </filterItems>
-            <filterItems>
-                <field>$Source.AccountId</field>
-                <operation>equals</operation>
-                <valueField>Contract.AccountId</valueField>
-            </filterItems>
-            <filterItems>
-                <field>Contract.Status</field>
-                <operation>equals</operation>
-                <value>Active</value>
-            </filterItems>
-            <filterItems>
-                <field>Contract.Remaining_Value__c</field>
-                <operation>greaterThan</operation>
-                <value>0</value>
-            </filterItems>
-            <filterItems>
-                <field>$Source.Order_subtype__c</field>
-                <operation>notEqual</operation>
-                <value>Offers, Standard</value>
-            </filterItems>
-            <filterItems>
-                <field>$Source.AccountId</field>
-                <operation>equals</operation>
-                <valueField>Contract.AccountId</valueField>
-            </filterItems>
-            <isOptional>true</isOptional>
-        </lookupFilter>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ContractName</fullName>
     </fields>
     <fields>
         <fullName>Count_Bundles__c</fullName>
@@ -906,11 +607,6 @@ TEXT(Shipping_Method__c )=&quot;FedEx Saturday 10:30am - UFH $49.50&quot;))</for
         <type>EncryptedText</type>
     </fields>
     <fields>
-        <fullName>CurrencyIsoCode</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
         <fullName>Current_approver_ID__c</fullName>
         <externalId>false</externalId>
         <label>Current approver ID</label>
@@ -920,17 +616,6 @@ TEXT(Shipping_Method__c )=&quot;FedEx Saturday 10:30am - UFH $49.50&quot;))</for
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>CustomerAuthorizedById</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>CustomerAuthorizedDate</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Customer_Credit_Card_Information__c</fullName>
@@ -1075,11 +760,6 @@ IF(AND(MTF_Evaluation1__c =0, Waive_Shipping_Charges__c =TRUE),
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>Description</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
         <fullName>Direct_Manager__c</fullName>
         <externalId>false</externalId>
         <formula>Owner:User.Manager.Full_Name__c</formula>
@@ -1120,6 +800,16 @@ IF(AND(MTF_Evaluation1__c =0, Waive_Shipping_Charges__c =TRUE),
                     <fullName>Low Differentiation</fullName>
                     <default>false</default>
                     <label>Low Differentiation</label>
+                </value>
+                <value>
+                    <fullName>Relationship Improvement</fullName>
+                    <default>false</default>
+                    <label>Relationship Improvement</label>
+                </value>
+                <value>
+                    <fullName>Prior Pricing</fullName>
+                    <default>false</default>
+                    <label>Prior Pricing</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1277,11 +967,6 @@ IF(AND(MTF_Evaluation1__c =0, Waive_Shipping_Charges__c =TRUE),
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>EffectiveDate</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
         <fullName>Email_Body__c</fullName>
         <externalId>false</externalId>
         <label>Email Body</label>
@@ -1300,11 +985,6 @@ IF(AND(MTF_Evaluation1__c =0, Waive_Shipping_Charges__c =TRUE),
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>EndDate</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>External_notes__c</fullName>
@@ -1388,9 +1068,6 @@ IF(AND(MTF_Evaluation1__c =0, Waive_Shipping_Charges__c =TRUE),
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>IsReductionOrder</fullName>
     </fields>
     <fields>
         <fullName>Item_Description__c</fullName>
@@ -1540,11 +1217,6 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Name</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
         <fullName>No_of_FOC_rows__c</fullName>
         <externalId>false</externalId>
         <label>No of FOC rows</label>
@@ -1601,17 +1273,6 @@ IF(
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>OpportunityId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>OrderReferenceNumber</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>Order_Account_Name__c</fullName>
@@ -2027,10 +1688,6 @@ All Other Login Info: Username: track@us.dentsply.com, Password: centiro</inline
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>OriginalOrderId</fullName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Overdue_Invoice_Age__c</fullName>
         <externalId>false</externalId>
         <formula>Account.Credit_Limit_4__c</formula>
@@ -2055,12 +1712,6 @@ All Other Login Info: Username: track@us.dentsply.com, Password: centiro</inline
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>OwnerId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>PDFButlerAlternativeName__c</fullName>
@@ -2220,22 +1871,6 @@ All Other Login Info: Username: track@us.dentsply.com, Password: centiro</inline
         <type>Percent</type>
     </fields>
     <fields>
-        <fullName>PoDate</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
-        <fullName>PoNumber</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
-        <fullName>Pricebook2Id</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Pricebook_Name__c</fullName>
         <externalId>false</externalId>
         <formula>Pricebook2.Name</formula>
@@ -2314,12 +1949,6 @@ All Other Login Info: Username: track@us.dentsply.com, Password: centiro</inline
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>QuoteId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Quote_Status__c</fullName>
@@ -2698,12 +2327,6 @@ if(isblank(Account_for_Sample_in_AX__r.ShippingCountry),&quot;&quot;, &quot; , &
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>ShipToContactId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Ship_Method__c</fullName>
         <description>Picklist field (required) only on the Prosthetics Direct Orders (USC - US)</description>
         <externalId>false</externalId>
@@ -2797,11 +2420,6 @@ if(isblank(Account_for_Sample_in_AX__r.ShippingCountry),&quot;&quot;, &quot; , &
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>ShippingAddress</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>Shipping_Charges__c</fullName>
@@ -3050,12 +2668,6 @@ if(isblank(Account_for_Sample_in_AX__r.ShippingCountry),&quot;&quot;, &quot; , &
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Status</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <type>Picklist</type>
-    </fields>
-    <fields>
         <fullName>Submitted_for_Approval__c</fullName>
         <defaultValue>false</defaultValue>
         <description>This box is checked only when the approval process has been enabled. This is to create a validation rule, such that only the approval process can change the Status</description>
@@ -3082,11 +2694,6 @@ Total Sales w/ discount exc. lines w/o identified Margin Guidance</description>
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
-    </fields>
-    <fields>
-        <fullName>TotalAmount</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>TotalCost__c</fullName>
@@ -3164,12 +2771,6 @@ Total Sales w/ discount exc. lines w/o identified Margin Guidance</description>
         <summaryOperation>count</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
-    </fields>
-    <fields>
-        <fullName>Type</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Type__c</fullName>
@@ -5675,17 +5276,6 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
             <role>NA_Customer_Service</role>
         </sharedTo>
     </listViews>
-    <profileSearchLayouts>
-        <fields>ORDERS.ORDER_NUMBER</fields>
-        <fields>SALES.ACCOUNT.NAME</fields>
-        <fields>Order_Amount_global__c</fields>
-        <fields>ORDERS.EFFECTIVE_DATE</fields>
-        <fields>ORDERS.STATUS</fields>
-        <fields>CONTRACT.CONTRACT_NUMBER</fields>
-        <profileName>Lightning Sales Rep</profileName>
-    </profileSearchLayouts>
-    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
-    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>Direct_global_order</fullName>
         <active>true</active>
@@ -5703,6 +5293,14 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
             </values>
             <values>
                 <fullName>Low Differentiation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prior Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship Improvement</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8392,23 +7990,6 @@ if(Owner:User.Profile.Id = &apos;00e0J000001Ar3p&apos;, True, False))</formula>
             </values>
         </picklistValues>
     </recordTypes>
-    <searchLayouts>
-        <customTabListAdditionalFields>ORDERS.ORDER_NUMBER</customTabListAdditionalFields>
-        <customTabListAdditionalFields>SALES.ACCOUNT.NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ORDERS.STATUS</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ORDERS.TOTAL_AMOUNT</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>ORDERS.ORDER_NUMBER</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>CONTRACT.OWNERALIAS</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>ORDERS.ORDER_NUMBER</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>CONTRACT.OWNERALIAS</lookupPhoneDialogsAdditionalFields>
-        <searchResultsAdditionalFields>ORDERS.ORDER_NUMBER</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>SALES.ACCOUNT.NAME</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>ORDERS.TOTAL_AMOUNT</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>ORDERS.EFFECTIVE_DATE</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>ORDERS.STATUS</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CONTRACT.CONTRACT_NUMBER</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
         <fullName>Customer_Service_Backorder</fullName>
         <active>true</active>

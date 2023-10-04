@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Competitor</fullName>
+        <default>false</default>
+        <label>Competitor</label>
+    </customValue>
+    <customValue>
+        <fullName>Country</fullName>
+        <default>false</default>
+        <label>Country</label>
+    </customValue>
+    <customValue>
+        <fullName>Dealer Sell Out Data Region</fullName>
+        <default>false</default>
+        <label>Dealer Sell Out Data Region</label>
+    </customValue>
+    <customValue>
+        <fullName>Dental Clinic</fullName>
+        <default>false</default>
+        <label>Dental Clinic</label>
+    </customValue>
+    <customValue>
+        <fullName>Dental Laboratory</fullName>
+        <default>false</default>
+        <label>Dental Laboratory</label>
+    </customValue>
+    <customValue>
+        <fullName>Dental Support Organization</fullName>
+        <default>false</default>
+        <label>Dental Support Organization</label>
+    </customValue>
+    <customValue>
+        <fullName>DENTSPLY</fullName>
+        <default>false</default>
+        <label>DENTSPLY</label>
+    </customValue>
+    <customValue>
+        <fullName>Distributor</fullName>
+        <default>false</default>
+        <label>Distributor</label>
+    </customValue>
+    <customValue>
+        <fullName>DNA Distributor</fullName>
+        <default>false</default>
+        <label>DNA Distributor</label>
+    </customValue>
+    <customValue>
+        <fullName>Education</fullName>
+        <default>false</default>
+        <label>Education</label>
+    </customValue>
+    <customValue>
+        <fullName>End User</fullName>
+        <default>false</default>
+        <label>End User</label>
+    </customValue>
+    <customValue>
+        <fullName>Events</fullName>
+        <default>false</default>
+        <label>Events</label>
+    </customValue>
+    <customValue>
+        <fullName>First letters of Zip/Postal Code</fullName>
+        <default>false</default>
+        <label>First letters of Zip/Postal Code</label>
+    </customValue>
+    <customValue>
+        <fullName>General Practice</fullName>
+        <default>false</default>
+        <label>General Practice</label>
+    </customValue>
+    <customValue>
+        <fullName>Government</fullName>
+        <default>false</default>
+        <label>Government</label>
+    </customValue>
+    <customValue>
+        <fullName>Hospital</fullName>
+        <default>false</default>
+        <label>Hospital</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance Care Center</fullName>
+        <default>false</default>
+        <label>Insurance Care Center</label>
+    </customValue>
+    <customValue>
+        <fullName>Internal</fullName>
+        <default>false</default>
+        <label>Internal</label>
+    </customValue>
+    <customValue>
+        <fullName>Lab within a Clinic</fullName>
+        <default>false</default>
+        <label>Lab within a Clinic</label>
+    </customValue>
+    <customValue>
+        <fullName>Medical</fullName>
+        <default>false</default>
+        <label>Medical</label>
+    </customValue>
+    <customValue>
+        <fullName>Non-Dental</fullName>
+        <default>false</default>
+        <label>Non-Dental</label>
+    </customValue>
+    <customValue>
+        <fullName>Partner</fullName>
+        <default>false</default>
+        <label>Partner</label>
+    </customValue>
+    <customValue>
+        <fullName>Patient</fullName>
+        <default>false</default>
+        <label>Patient</label>
+    </customValue>
+    <customValue>
+        <fullName>Purchasing Group</fullName>
+        <default>false</default>
+        <label>Purchasing Group</label>
+    </customValue>
+    <customValue>
+        <fullName>Region</fullName>
+        <default>false</default>
+        <label>Region</label>
+    </customValue>
+    <customValue>
+        <fullName>Specialty</fullName>
+        <default>false</default>
+        <label>Specialty</label>
+    </customValue>
+    <customValue>
+        <fullName>Student</fullName>
+        <default>false</default>
+        <label>Student</label>
+    </customValue>
+    <customValue>
+        <fullName>University</fullName>
+        <default>false</default>
+        <label>University</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown/Other</fullName>
+        <default>false</default>
+        <label>Unknown/Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Wholesaler</fullName>
+        <default>false</default>
+        <label>Wholesaler</label>
+    </customValue>
+    <customValue>
+        <fullName>Zip/Postal Code</fullName>
+        <default>false</default>
+        <label>Zip/Postal Code</label>
+    </customValue>
+    <masterLabel>Account Type</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

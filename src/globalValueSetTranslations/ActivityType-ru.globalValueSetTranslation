@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Absence or Holiday</masterLabel>
+        <translation>Отпуск/отгул</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Co Travel Day</masterLabel>
+        <translation>Совместные визиты</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Customer Related Activity</masterLabel>
+        <translation>Клиентоориентированная деятельность</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Event or Trade Show</masterLabel>
+        <translation>Выставка/мероприятие</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Home Office</masterLabel>
+        <translation>Хоум офис</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>In Person Meeting</masterLabel>
+        <translation>Личная встреча</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Internal Meeting</masterLabel>
+        <translation>Внутреннее собрание</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation>Прочее</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Professional Development/Training</masterLabel>
+        <translation>Тренинг сотрудников</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Virtual Meeting</masterLabel>
+        <translation>Виртуальная встреча</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

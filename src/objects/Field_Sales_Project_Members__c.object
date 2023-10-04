@@ -1,157 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <content>createSalesLeadFlow</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>true</skipRecordTypeSelect>
-        <type>LightningComponent</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <content>createSalesLeadFlow</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>true</skipRecordTypeSelect>
-        <type>LightningComponent</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Initiative_Account_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Initiative_Account_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>true</allowInChatterGroups>
-    <compactLayoutAssignment>Prospect_compact_layout</compactLayoutAssignment>
     <compactLayouts>
         <fullName>Prospect_compact_layout</fullName>
         <fields>Account__c</fields>
@@ -162,18 +10,6 @@
         <fields>Hot_prospect__c</fields>
         <label>Prospect compact layout</label>
     </compactLayouts>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <description>Used to track targets for sales for specified initiatives based on target lists, regional initiatives, or customer interactions.</description>
-    <enableActivities>true</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>true</enableFeeds>
-    <enableHistory>true</enableHistory>
-    <enableLicensing>false</enableLicensing>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>AccountPhone__c</fullName>
         <externalId>false</externalId>
@@ -4846,7 +4682,6 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <label>Sales Lead</label>
     <listViews>
         <fullName>ALL_Open_Sales_Leads_inkl_Status</fullName>
         <columns>ChannelPriority__c</columns>
@@ -5694,16 +5529,6 @@
             <territoryAndSubordinates>Global_Setup.South_Africa</territoryAndSubordinates>
         </sharedTo>
     </listViews>
-    <nameField>
-        <displayFormat>Ld-{0000000}</displayFormat>
-        <label>LD ID</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Sales Leads</pluralLabel>
-    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
-    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>Inside_Sales_Lead</fullName>
         <active>true</active>
@@ -8458,26 +8283,6 @@
             </values>
         </picklistValues>
     </recordTypes>
-    <searchLayouts>
-        <excludedStandardButtons>New</excludedStandardButtons>
-        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Account_City__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Account_State_Province__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Brand__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Category__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Sales_Rep__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Source__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
-        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Account_City__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Account_State_Province__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Brand__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Category__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Sales_Rep__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Source__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
         <fullName>Completed_Sales_Lead</fullName>
         <active>true</active>
@@ -8550,7 +8355,6 @@ NOT($Permission.canEditSalesLeads)
 )</errorConditionFormula>
         <errorMessage>Sorry! Only the owner and its manager are allowed to change this sales lead at this point.</errorMessage>
     </validationRules>
-    <visibility>Public</visibility>
     <webLinks>
         <fullName>Convert_Lead_Classic</fullName>
         <availability>online</availability>

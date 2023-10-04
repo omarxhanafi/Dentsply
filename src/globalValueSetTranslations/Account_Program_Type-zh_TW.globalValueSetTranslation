@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Clinical Accelerator</masterLabel>
+        <translation>臨床加速器</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Loyalty program</masterLabel>
+        <translation>忠誠度計劃</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pricing/Discount Program</masterLabel>
+        <translation>定價/折扣計劃</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Rewards Program</masterLabel>
+        <translation>獎勵計劃</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Subscription Program</masterLabel>
+        <translation>訂閱計劃</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Dental Public Health</fullName>
+        <default>false</default>
+        <label>Dental Public Health</label>
+    </customValue>
+    <customValue>
+        <fullName>Dentist Anesthesiologist</fullName>
+        <default>false</default>
+        <label>Dentist Anesthesiologist</label>
+    </customValue>
+    <customValue>
+        <fullName>Emergency Medicine</fullName>
+        <default>false</default>
+        <label>Emergency Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>Endodontics</fullName>
+        <default>false</default>
+        <label>Endodontics</label>
+    </customValue>
+    <customValue>
+        <fullName>Esthetics &amp; Plastic Surgery</fullName>
+        <default>false</default>
+        <label>Esthetics &amp; Plastic Surgery</label>
+    </customValue>
+    <customValue>
+        <fullName>General Medicine</fullName>
+        <default>false</default>
+        <label>General Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>General Practice</fullName>
+        <default>false</default>
+        <label>General Practice</label>
+    </customValue>
+    <customValue>
+        <fullName>Implantology</fullName>
+        <default>false</default>
+        <label>Implantology</label>
+    </customValue>
+    <customValue>
+        <fullName>Oral and Maxillofacial Pathology</fullName>
+        <default>false</default>
+        <label>Oral and Maxillofacial Pathology</label>
+    </customValue>
+    <customValue>
+        <fullName>Oral and Maxillofacial Radiology</fullName>
+        <default>false</default>
+        <label>Oral and Maxillofacial Radiology</label>
+    </customValue>
+    <customValue>
+        <fullName>Oral and Maxillofacial Surgery</fullName>
+        <default>false</default>
+        <label>Oral and Maxillofacial Surgery</label>
+    </customValue>
+    <customValue>
+        <fullName>Orofacial Pain</fullName>
+        <default>false</default>
+        <label>Orofacial Pain</label>
+    </customValue>
+    <customValue>
+        <fullName>Orthodontics and Dentofacial Orthopedics</fullName>
+        <default>false</default>
+        <label>Orthodontics and Dentofacial Orthopedics</label>
+    </customValue>
+    <customValue>
+        <fullName>Pediatric Dentistry</fullName>
+        <default>false</default>
+        <label>Pediatric Dentistry</label>
+    </customValue>
+    <customValue>
+        <fullName>Periodontics</fullName>
+        <default>false</default>
+        <label>Periodontics</label>
+    </customValue>
+    <customValue>
+        <fullName>Prevention</fullName>
+        <default>false</default>
+        <label>Prevention</label>
+    </customValue>
+    <customValue>
+        <fullName>Prosthodontics</fullName>
+        <default>false</default>
+        <label>Prosthodontics</label>
+    </customValue>
+    <masterLabel>Specialty</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

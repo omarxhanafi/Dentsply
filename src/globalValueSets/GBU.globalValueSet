@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Essential Dental Solutions</fullName>
+        <default>false</default>
+        <label>Essential Dental Solutions</label>
+    </customValue>
+    <customValue>
+        <fullName>Implant &amp; Prosthetic Solutions</fullName>
+        <default>false</default>
+        <label>Implant &amp; Prosthetic Solutions</label>
+    </customValue>
+    <customValue>
+        <fullName>Connected Technology Solutions</fullName>
+        <default>false</default>
+        <label>Connected Technology Solutions</label>
+    </customValue>
+    <customValue>
+        <fullName>Orthodontic Aligner Solutions</fullName>
+        <default>false</default>
+        <label>Orthodontic Aligner Solutions</label>
+    </customValue>
+    <masterLabel>GBU</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

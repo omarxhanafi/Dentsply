@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>All</masterLabel>
+        <translation>全部</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Equipment</masterLabel>
+        <translation><!-- Equipment --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Implants</masterLabel>
+        <translation><!-- Implants --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ortho</masterLabel>
+        <translation><!-- Ortho --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>PREP</masterLabel>
+        <translation><!-- PREP --></translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

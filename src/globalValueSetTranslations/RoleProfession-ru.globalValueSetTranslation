@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Advanced Practice Dental Therapist</masterLabel>
+        <translation>Продвинутый стоматолог-терапевт</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Clinical Director</masterLabel>
+        <translation>Клинический директор</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Consultant</masterLabel>
+        <translation>Консультант</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contractor</masterLabel>
+        <translation>Подрядчик</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>DS Employee</masterLabel>
+        <translation>Сотрудник DS</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dean / Head</masterLabel>
+        <translation>Руководитель</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dental Assistant</masterLabel>
+        <translation>Ассистент стоматолога</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dental Hygienist</masterLabel>
+        <translation>Гигиенист</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dental Laboratory Technician</masterLabel>
+        <translation>Зубной техник</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dental Therapist</masterLabel>
+        <translation>Стоматолог-терапевт</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dentist</masterLabel>
+        <translation>Врач-стоматолог</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Denturist</masterLabel>
+        <translation>Протезист</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Distributor Sales Rep</masterLabel>
+        <translation>Торг.представитель дистрибьютора</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Doctor</masterLabel>
+        <translation>Врач</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Employee</masterLabel>
+        <translation>Служащий</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>General Manager</masterLabel>
+        <translation>Генеральный директор</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Implant Manager</masterLabel>
+        <translation>Рук-ль имплантологического отделения</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Office Manager</masterLabel>
+        <translation>Офис-менеджер</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Office Staff/Front Desk</masterLabel>
+        <translation>Сотрудник приемного отделения</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Oral Medicinist</masterLabel>
+        <translation><!-- Oral Medicinist --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation>Прочее</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Owner</masterLabel>
+        <translation>Владелец</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Post Graduate Trainee</masterLabel>
+        <translation>Аспирант</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Prevention Professional</masterLabel>
+        <translation>Специалист по профилактике</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Professor</masterLabel>
+        <translation>Профессор/преподаватель</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Purchaser</masterLabel>
+        <translation><!-- Purchaser --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Purchasing Assistant</masterLabel>
+        <translation><!-- Purchasing Assistant --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Registered Nurse</masterLabel>
+        <translation><!-- Registered Nurse --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Registrar</masterLabel>
+        <translation><!-- Registrar --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Student in an Organized Health Care Education/Training Program</masterLabel>
+        <translation><!-- Student in an Organized Health Care Education/Training Program --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Surgeon</masterLabel>
+        <translation><!-- Surgeon --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Veterinarian</masterLabel>
+        <translation><!-- Veterinarian --></translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

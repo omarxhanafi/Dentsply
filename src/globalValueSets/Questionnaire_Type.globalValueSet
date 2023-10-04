@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>xSBU</fullName>
+        <default>false</default>
+        <label>xSBU</label>
+    </customValue>
+    <customValue>
+        <fullName>SmartFix_Phase_One</fullName>
+        <default>false</default>
+        <label>SmartFix Phase One</label>
+    </customValue>
+    <customValue>
+        <fullName>SmartFix_Phase_Two</fullName>
+        <default>false</default>
+        <label>SmartFix Phase Two</label>
+    </customValue>
+    <customValue>
+        <fullName>Product_Trial</fullName>
+        <default>false</default>
+        <label>Product Trial</label>
+    </customValue>
+    <customValue>
+        <fullName>GP Customer Onboarding</fullName>
+        <default>false</default>
+        <label>GP Customer Onboarding</label>
+    </customValue>
+    <customValue>
+        <fullName>Survey</fullName>
+        <default>false</default>
+        <label>Survey</label>
+    </customValue>
+    <masterLabel>Questionnaire Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

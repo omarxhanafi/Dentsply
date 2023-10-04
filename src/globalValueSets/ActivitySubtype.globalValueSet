@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>After Sales Follow-up</fullName>
+        <default>false</default>
+        <label>After Sales Follow-up</label>
+    </customValue>
+    <customValue>
+        <fullName>Book Appointment</fullName>
+        <default>false</default>
+        <label>Book Appointment</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Review</fullName>
+        <default>false</default>
+        <label>Business Review</label>
+    </customValue>
+    <customValue>
+        <fullName>CFE to collect MKT Consent</fullName>
+        <default>false</default>
+        <label>CFE to collect MKT Consent</label>
+    </customValue>
+    <customValue>
+        <fullName>Chairside/Clinical</fullName>
+        <default>false</default>
+        <label>Chairside/Clinical</label>
+    </customValue>
+    <customValue>
+        <fullName>Closed Sale</fullName>
+        <default>false</default>
+        <label>Closed Sale</label>
+    </customValue>
+    <customValue>
+        <fullName>Demonstration</fullName>
+        <default>false</default>
+        <label>Demonstration</label>
+    </customValue>
+    <customValue>
+        <fullName>Evaluation</fullName>
+        <default>false</default>
+        <label>Evaluation</label>
+    </customValue>
+    <customValue>
+        <fullName>Loyalty Program Registration</fullName>
+        <default>false</default>
+        <label>Loyalty Program Registration</label>
+    </customValue>
+    <customValue>
+        <fullName>Lunch &amp; Learn</fullName>
+        <default>false</default>
+        <label>Lunch &amp; Learn</label>
+    </customValue>
+    <customValue>
+        <fullName>New Business/Prospecting</fullName>
+        <default>false</default>
+        <label>New Business/Prospecting</label>
+    </customValue>
+    <customValue>
+        <fullName>Problem Solving/Process Support</fullName>
+        <default>false</default>
+        <label>Problem Solving/Process Support</label>
+    </customValue>
+    <customValue>
+        <fullName>Quote Presented</fullName>
+        <default>false</default>
+        <label>Quote Presented</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Presentation</fullName>
+        <default>false</default>
+        <label>Sales Presentation</label>
+    </customValue>
+    <customValue>
+        <fullName>Technical Support</fullName>
+        <default>false</default>
+        <label>Technical Support</label>
+    </customValue>
+    <customValue>
+        <fullName>Training/Implementation</fullName>
+        <default>false</default>
+        <label>Training/Implementation</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Problem Solving</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Problem Solving</label>
+    </customValue>
+    <customValue>
+        <fullName>Consignment Stock Check</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Consignment Stock Check</label>
+    </customValue>
+    <customValue>
+        <fullName>Appointment Set</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Appointment Set</label>
+    </customValue>
+    <customValue>
+        <fullName>Virtual Meeting</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Virtual Meeting</label>
+    </customValue>
+    <customValue>
+        <fullName>Prospecting, Left Card or Literature</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Prospecting, Left Card or Literature</label>
+    </customValue>
+    <customValue>
+        <fullName>Left Voicemail</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Left Voicemail</label>
+    </customValue>
+    <customValue>
+        <fullName>Left Message with Non-Decision Maker</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Left Message with Non-Decision Maker</label>
+    </customValue>
+    <customValue>
+        <fullName>Reorder</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Reorder</label>
+    </customValue>
+    <masterLabel>ActivitySubtype</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

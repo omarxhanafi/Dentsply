@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>After Sales Follow-up</masterLabel>
+        <translation>售後追蹤</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Book Appointment</masterLabel>
+        <translation>預約</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Business Review</masterLabel>
+        <translation>商業評論</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CFE to collect MKT Consent</masterLabel>
+        <translation>CFE 收集 MKT 同意書</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Chairside/Clinical</masterLabel>
+        <translation>椅旁/臨床</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Sale</masterLabel>
+        <translation>結束銷售</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Demonstration</masterLabel>
+        <translation>示範</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Evaluation</masterLabel>
+        <translation>評估</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Loyalty Program Registration</masterLabel>
+        <translation>忠誠度計劃註冊</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lunch &amp; Learn</masterLabel>
+        <translation><!-- Lunch &amp; Learn --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New Business/Prospecting</masterLabel>
+        <translation>新業務/勘探</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation>其他</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Problem Solving/Process Support</masterLabel>
+        <translation>問題解決/流程支持</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Quote Presented</masterLabel>
+        <translation>報價顯示</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sales Presentation</masterLabel>
+        <translation>銷售發表</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Technical Support</masterLabel>
+        <translation>技術支援</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Training/Implementation</masterLabel>
+        <translation>培訓/實施</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

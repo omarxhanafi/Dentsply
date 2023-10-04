@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Dental Public Health</masterLabel>
+        <translation>Centre médico-dentaire</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dentist Anesthesiologist</masterLabel>
+        <translation>Anesthésiste dentaire</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Emergency Medicine</masterLabel>
+        <translation>Médecine d&apos;urgence</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Endodontics</masterLabel>
+        <translation>Endodontie</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Esthetics &amp; Plastic Surgery</masterLabel>
+        <translation>Chirurgie plastique</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>General Medicine</masterLabel>
+        <translation>Médecine générale</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>General Practice</masterLabel>
+        <translation>Omnipraticien</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Implantology</masterLabel>
+        <translation>Implantologue</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Oral and Maxillofacial Pathology</masterLabel>
+        <translation>Stomatologue</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Oral and Maxillofacial Radiology</masterLabel>
+        <translation>Radiologue</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Oral and Maxillofacial Surgery</masterLabel>
+        <translation>Chirurgie orale et maxillo-faciale</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Orofacial Pain</masterLabel>
+        <translation>Traitement de la douleur bucco-faciale</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Orthodontics and Dentofacial Orthopedics</masterLabel>
+        <translation>Orthodontiste</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pediatric Dentistry</masterLabel>
+        <translation>Pédodontiste</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Periodontics</masterLabel>
+        <translation>Parodontologue</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Prevention</masterLabel>
+        <translation>Prévention</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Prosthodontics</masterLabel>
+        <translation>Prothésiste</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

@@ -1,205 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>CallHighlightAction</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CallHighlightAction</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CallHighlightAction</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>DeleteBannerPhotoAction</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>DeleteBannerPhotoAction</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>DeleteBannerPhotoAction</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>EditUserAction</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>EditUserAction</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>EditUserAction</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>EmailHighlightAction</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>EmailHighlightAction</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>EmailHighlightAction</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>FreezeUserAction</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>FreezeUserAction</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>FreezeUserAction</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>LinkToSetupUserDetailAction</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>LinkToSetupUserDetailAction</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>LinkToSetupUserDetailAction</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ManagePermSetsAction</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ManagePermSetsAction</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ManagePermSetsAction</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>PasswordUnlockAction</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>PasswordUnlockAction</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>PasswordUnlockAction</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ResetPasswordAction</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ResetPasswordAction</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ResetPasswordAction</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SmsHighlightAction</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SmsHighlightAction</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SmsHighlightAction</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>UpdateBannerPhotoAction</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>UpdateBannerPhotoAction</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>UpdateBannerPhotoAction</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>UserActivationAction</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>UserActivationAction</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>UserActivationAction</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <enableEnhancedLookup>true</enableEnhancedLookup>
-    <enableFeeds>true</enableFeeds>
-    <externalSharingModel>Private</externalSharingModel>
     <fieldSets>
         <fullName>PersonalInfo_EPIM</fullName>
         <description>Fieldset for User Field Masking</description>
@@ -279,10 +79,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>AboutMe</fullName>
-        <trackFeedHistory>true</trackFeedHistory>
-    </fields>
-    <fields>
         <fullName>Actual_Sales_LY__c</fullName>
         <description>Sales LY on Accounts owned by the rep. Used in Italy to group reps into categories by size. Updated manually. If more countries would use this field, update this description accordingly</description>
         <externalId>false</externalId>
@@ -294,14 +90,6 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Address</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>Alias</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Area_Manager_DI_DE__c</fullName>
@@ -363,18 +151,6 @@
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>CallCenterId</fullName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>CommunityNickname</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>CompanyName</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
         <fullName>ComputerId__c</fullName>
         <description>DO NOT DELETE - Used for Encore Integration</description>
         <externalId>false</externalId>
@@ -384,11 +160,6 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>ContactId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Country_Code_3_digit__c</fullName>
@@ -425,6 +196,10 @@
             <valueSettings>
                 <controllingFieldValue>Russia</controllingFieldValue>
                 <valueName>RUS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Iraq</controllingFieldValue>
+                <valueName>IRQ</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Canada</controllingFieldValue>
@@ -602,10 +377,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>DefaultGroupNotificationFrequency</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
         <fullName>Default_Activity_Length_In_Minutes__c</fullName>
         <description>The number of minutes that an activity or task duration should default to.</description>
         <externalId>false</externalId>
@@ -650,18 +421,6 @@
         <label>Default Event Update Calendar</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>DelegatedApproverId</fullName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Department</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>DigestFrequency</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Digital_Region_D_UK__c</fullName>
@@ -2067,10 +1826,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Division</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
         <fullName>DoNotFreeze__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Field used by an Apex Batch that will freeze users that didn&apos;t login for a certain amount of time. The apex batch does not include the users flagged as &quot;do not freeze&quot;</description>
@@ -2128,18 +1883,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Email</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>EmailEncodingKey</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>EmployeeNumber</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
         <fullName>Endodontics_User__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Use User&apos;s SBUs instead</description>
@@ -2156,10 +1899,6 @@
         <label>Exclude from login history report</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Extension</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>FSSK__FSK_FSL_Resource_Type__c</fullName>
@@ -2209,14 +1948,6 @@ When an admin creates or updates user records, the SFS Resource Type field on th
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Fax</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>FederationIdentifier</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>FieldSalesRatioPerc__c</fullName>
@@ -2291,19 +2022,6 @@ Note that administrative time should not be deducted.</inlineHelpText>
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>IndividualId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>IsActive</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>IsSystemControlled</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
         <fullName>Is_Active__c</fullName>
         <description>Standard fields are not available for Account Reports, only Custom Owner fields are included</description>
         <externalId>false</externalId>
@@ -2342,20 +2060,6 @@ Note that administrative time should not be deducted.</inlineHelpText>
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>LanguageLocaleKey</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>LocaleSidKey</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>ManagerId</fullName>
-        <description>The value of this field is overwritten by the field &quot;Manager selection&quot; (Through a PB Action)</description>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Hierarchy</type>
     </fields>
     <fields>
         <fullName>Manager_s_Manager__c</fullName>
@@ -2571,10 +2275,6 @@ Note that administrative time should not be deducted.</inlineHelpText>
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>MobilePhone</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Mobile_User__c</fullName>
@@ -2841,10 +2541,6 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Name</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
         <fullName>National_Admin__c</fullName>
         <description>Users with information in this field will receive information adressed to National Admins</description>
         <externalId>false</externalId>
@@ -2900,14 +2596,6 @@ IF(
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Phone</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>PortalRole</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Preventive_User__c</fullName>
@@ -2968,11 +2656,6 @@ null)</formula>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>ProfileId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Profile__c</fullName>
         <description>used to display profile name when data is extracted by dataloader</description>
         <externalId>false</externalId>
@@ -3003,14 +2686,6 @@ null)</formula>
             <valueSetName>Questionnaire_Type</valueSetName>
         </valueSet>
         <visibleLines>4</visibleLines>
-    </fields>
-    <fields>
-        <fullName>ReceivesAdminInfoEmails</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>ReceivesInfoEmails</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Region__c</fullName>
@@ -4580,14 +4255,6 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>SenderEmail</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>SenderName</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
         <fullName>Service_Cloud_Special_Permissions__c</fullName>
         <externalId>false</externalId>
         <label>Service Cloud Special Permissions</label>
@@ -4621,22 +4288,6 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Signature</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>StayInTouchNote</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>StayInTouchSignature</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>StayInTouchSubject</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Team_Setup_ID__c</fullName>
@@ -8934,14 +8585,6 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
         </valueSet>
     </fields>
     <fields>
-        <fullName>TimeZoneSidKey</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>Title</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
         <fullName>US_TeleSales_Team_Name__c</fullName>
         <description>Used for US DNA TeleSales Reportin</description>
         <externalId>false</externalId>
@@ -8951,14 +8594,6 @@ Please note that Sales Quota should be set for targeted sales against Accounts O
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>UserRoleId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>UserSubtype</fullName>
     </fields>
     <fields>
         <fullName>UserUnique__c</fullName>
@@ -9292,10 +8927,6 @@ Sales Manager = Regional Sales Mgrs, Division Sales Mgrs, National Sales Mgrs</i
         </valueSet>
     </fields>
     <fields>
-        <fullName>Username</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
         <fullName>View_All_EA_Products__c</fullName>
         <externalId>false</externalId>
         <label>View All EA Products</label>
@@ -9440,10 +9071,6 @@ null)
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>WorkspaceId</fullName>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>echosign_dev1__EchoSign_Allow_Delegated_Sending__c</fullName>
@@ -10736,45 +10363,6 @@ null)
             <group>DI_System_Administrators</group>
         </sharedTo>
     </listViews>
-    <searchLayouts>
-        <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>CORE.USERS.TITLE</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>CORE.USER_ROLE.NAME</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Product_Area__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>User_Country__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>CORE.USERS.ACTIVE</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Movex_Uer_ID__c</lookupDialogsAdditionalFields>
-        <lookupFilterFields>CORE.USERS.FIRST_NAME</lookupFilterFields>
-        <lookupFilterFields>CORE.USERS.LAST_NAME</lookupFilterFields>
-        <lookupFilterFields>CORE.PROFILE.USERTYPE</lookupFilterFields>
-        <lookupFilterFields>Product_Area__c</lookupFilterFields>
-        <lookupFilterFields>User_Country__c</lookupFilterFields>
-        <lookupFilterFields>Movex_Uer_ID__c</lookupFilterFields>
-        <lookupPhoneDialogsAdditionalFields>FULL_NAME</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>CORE.USER_ROLE.NAME</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>CORE.USERS.PHONE</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>CORE.USERS.EXTENSION</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>CORE.USERS.CELL</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Movex_Uer_ID__c</lookupPhoneDialogsAdditionalFields>
-        <searchFilterFields>CORE.USERS.FIRST_NAME</searchFilterFields>
-        <searchFilterFields>CORE.USERS.LAST_NAME</searchFilterFields>
-        <searchFilterFields>CORE.USERS.USERNAME</searchFilterFields>
-        <searchFilterFields>Product_Area__c</searchFilterFields>
-        <searchFilterFields>CORE.USERS.ACTIVE</searchFilterFields>
-        <searchFilterFields>CORE.USER_ROLE.NAME</searchFilterFields>
-        <searchFilterFields>CORE.PROFILE.NAME</searchFilterFields>
-        <searchFilterFields>CORE.PROFILE.USERTYPE</searchFilterFields>
-        <searchFilterFields>CORE.USERS.ADDRESS_COUNTRY</searchFilterFields>
-        <searchFilterFields>Movex_Uer_ID__c</searchFilterFields>
-        <searchResultsAdditionalFields>FULL_NAME</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CORE.USERS.TITLE</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CORE.USERS.PHONE</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CORE.USERS.EMAIL</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CORE.USER_ROLE.NAME</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CORE.USERS.ACTIVE</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Movex_Uer_ID__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>Read</sharingModel>
     <validationRules>
         <fullName>Enforce_Sales_Channel_For_IMPL</fullName>
         <active>false</active>

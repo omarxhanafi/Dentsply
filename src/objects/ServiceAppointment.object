@@ -1,146 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>GeneratePdf</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>GeneratePdf</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>GeneratePdf</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <compactLayoutAssignment>ServiceAppointmentCompactLayout</compactLayoutAssignment>
     <compactLayouts>
         <fullName>ServiceAppointmentCompactLayout</fullName>
         <fields>AppointmentNumber</fields>
@@ -154,8 +13,6 @@
         <fields>AcceptReject__c</fields>
         <label>Service Appointment Compact Layout</label>
     </compactLayouts>
-    <enableFeeds>true</enableFeeds>
-    <externalSharingModel>Private</externalSharingModel>
     <fieldSets>
         <fullName>FSL__Bundle_Members</fullName>
         <availableFields>
@@ -179,6 +36,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -190,6 +52,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -299,7 +166,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -375,6 +252,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -529,6 +411,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -540,6 +427,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -649,7 +541,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -725,6 +627,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -879,6 +786,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -989,7 +901,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -1070,6 +992,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -1234,6 +1161,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -1245,6 +1177,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -1344,7 +1281,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -1420,6 +1367,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -1584,6 +1536,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -1595,6 +1552,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -1679,7 +1641,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -1755,6 +1727,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -1924,6 +1901,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -1935,6 +1917,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -2039,7 +2026,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -2120,6 +2117,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -2269,6 +2271,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -2280,6 +2287,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -2384,7 +2396,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -2465,6 +2487,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -2609,6 +2636,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -2620,6 +2652,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -2729,7 +2766,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -2810,6 +2857,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -2944,6 +2996,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -2955,6 +3012,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -3039,7 +3101,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -3120,6 +3192,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -3289,6 +3366,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -3300,6 +3382,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -3409,7 +3496,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -3485,6 +3582,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -3639,6 +3741,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -3650,6 +3757,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -3759,7 +3871,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -3840,6 +3962,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -3989,6 +4116,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -4000,6 +4132,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -4104,7 +4241,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -4175,6 +4322,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -4324,6 +4476,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -4335,6 +4492,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -4449,7 +4611,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -4530,6 +4702,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -4664,6 +4841,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -4675,6 +4857,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -4779,7 +4966,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -4860,6 +5057,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -5009,6 +5211,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -5020,6 +5227,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -5134,7 +5346,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -5215,6 +5437,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -5354,6 +5581,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -5365,6 +5597,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -5474,7 +5711,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -5550,6 +5797,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -5719,6 +5971,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -5730,6 +5987,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -5834,7 +6096,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -5910,6 +6182,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -6054,6 +6331,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>ArrivalWindowEndTime</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -6065,6 +6347,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -6169,7 +6456,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -6250,6 +6547,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -6414,7 +6716,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>ApptBookingInfoUrl</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__Auto_Schedule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BundlePolicyId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -6514,7 +6826,17 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>IsManuallyBundled</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>FSL__IsMultiDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsOffsiteAppointment</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -6590,6 +6912,11 @@
         </availableFields>
         <availableFields>
             <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>RelatedBundleId</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -6753,27 +7080,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>AccountId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ActualDuration</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>ActualEndTime</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>ActualStartTime</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
         <fullName>AdditionalComments__c</fullName>
         <externalId>false</externalId>
         <label>Additional Comments</label>
@@ -6782,26 +7088,6 @@
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Address</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>ApptBookingInfoUrl</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>ArrivalWindowEndTime</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>ArrivalWindowStartTime</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>AssignedResources__c</fullName>
@@ -6814,12 +7100,6 @@
         <trackHistory>true</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>BundlePolicyId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>CancellationRejectionReason__c</fullName>
@@ -6870,37 +7150,6 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>TextArea</type>
-    </fields>
-    <fields>
-        <fullName>ContactId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Description</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>DueDate</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
-        <fullName>Duration</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
-        <fullName>DurationType</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>EarliestStartTime</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>FSL__Appointment_Grade__c</fullName>
@@ -7376,89 +7625,6 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>IsBundle</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>IsBundleMember</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>IsManuallyBundled</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>IsOffsiteAppointment</fullName>
-        <inlineHelpText>Any type of work that can be done remotely.</inlineHelpText>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>OwnerId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ParentRecordId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ParentRecordStatusCategory</fullName>
-    </fields>
-    <fields>
-        <fullName>ParentRecordType</fullName>
-    </fields>
-    <fields>
-        <fullName>RelatedBundleId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>SchedEndTime</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
-        <fullName>SchedStartTime</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
-        <fullName>ServiceNote</fullName>
-        <inlineHelpText>Internal Comments</inlineHelpText>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
-        <fullName>ServiceTerritoryId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Status</fullName>
-        <trackFeedHistory>true</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <type>Picklist</type>
-    </fields>
-    <fields>
-        <fullName>StatusCategory</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>Subject</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
         <fullName>TF_AssignedToMe__c</fullName>
         <externalId>false</externalId>
         <formula>IF (FSSK__FSK_Assigned_Service_Resource__r.RelatedRecordId= $User.Id ,&quot;True&quot;,IF(CONTAINS(AssignedResources__c,$User.Full_Name__c),&quot;True&quot;,&quot;False&quot;))</formula>
@@ -7518,12 +7684,6 @@ This field will be used by field technicians to write what&apos;s the work they 
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>TextArea</type>
-    </fields>
-    <fields>
-        <fullName>WorkTypeId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
     </fields>
     <listViews>
         <fullName>AllServiceAppointments</fullName>
@@ -7725,42 +7885,6 @@ This field will be used by field technicians to write what&apos;s the work they 
             <role>Dentsply_IH_CEO</role>
         </sharedTo>
     </listViews>
-    <profileSearchLayouts>
-        <fields>Name</fields>
-        <fields>Account</fields>
-        <fields>ServiceTerritory</fields>
-        <fields>WorkType</fields>
-        <fields>ParentRecord</fields>
-        <fields>Status</fields>
-        <fields>ArrivalWindowStartTime</fields>
-        <fields>ArrivalWindowEndTime</fields>
-        <fields>WorkDone__c</fields>
-        <profileName>Lightning Field Service</profileName>
-    </profileSearchLayouts>
-    <searchLayouts>
-        <customTabListAdditionalFields>ParentRecord</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ParentRecordType</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Status</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ArrivalWindowStartTime</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ArrivalWindowEndTime</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>ParentRecord</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>ParentRecordType</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Status</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>ArrivalWindowStartTime</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>ArrivalWindowEndTime</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>ParentRecord</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>ParentRecordType</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Status</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>ArrivalWindowStartTime</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>ArrivalWindowEndTime</lookupPhoneDialogsAdditionalFields>
-        <searchResultsAdditionalFields>FSSK__FSK_Assigned_Service_Resource__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>ParentRecord</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>ParentRecordType</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Status</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>ArrivalWindowStartTime</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>ArrivalWindowEndTime</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>Private</sharingModel>
     <validationRules>
         <fullName>FSL__Dont_allow_scheduled_or_dispatched</fullName>
         <active>true</active>

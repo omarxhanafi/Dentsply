@@ -1,164 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Product_Instruction_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Product_Instruction_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <enableActivities>true</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>true</enableHistory>
-    <enableLicensing>false</enableLicensing>
-    <enableReports>true</enableReports>
-    <enableSearch>false</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>Account__c</fullName>
         <externalId>false</externalId>
@@ -316,6 +157,26 @@
                     <label>Competitor file systems</label>
                 </value>
                 <value>
+                    <fullName>Contra Angle care X-Smart Pro+</fullName>
+                    <default>false</default>
+                    <label>Contra Angle care X-Smart Pro+</label>
+                </value>
+                <value>
+                    <fullName>DS-File System - WaveOne Gold</fullName>
+                    <default>false</default>
+                    <label>DS-File System - WaveOne Gold</label>
+                </value>
+                <value>
+                    <fullName>DS-File System - ProTaper</fullName>
+                    <default>false</default>
+                    <label>DS-File System - ProTaper</label>
+                </value>
+                <value>
+                    <fullName>DS-File System - TruNatomy</fullName>
+                    <default>false</default>
+                    <label>DS-File System - TruNatomy</label>
+                </value>
+                <value>
                     <fullName>Electric length termination</fullName>
                     <default>false</default>
                     <label>Electric length termination</label>
@@ -326,9 +187,9 @@
                     <label>Function keys/control panel</label>
                 </value>
                 <value>
-                    <fullName>Hand over User Manuel Update VDW.ROTATE</fullName>
+                    <fullName>Setup WLAN connection X-Smart Pro+</fullName>
                     <default>false</default>
-                    <label>Hand over User Manuel Update VDW.ROTATE</label>
+                    <label>Setup WLAN connection X-Smart Pro+</label>
                 </value>
                 <value>
                     <fullName>Reciproc module SIRONA Teneo</fullName>
@@ -339,16 +200,6 @@
                     <fullName>Update VDW.ROTATE</fullName>
                     <default>false</default>
                     <label>Update VDW.ROTATE</label>
-                </value>
-                <value>
-                    <fullName>VDW.CONNECT App</fullName>
-                    <default>false</default>
-                    <label>VDW.CONNECT App</label>
-                </value>
-                <value>
-                    <fullName>VDW-File System - FlexMaster</fullName>
-                    <default>false</default>
-                    <label>VDW-File System - FlexMaster</label>
                 </value>
                 <value>
                     <fullName>VDW-File System - Mtwo</fullName>
@@ -369,6 +220,24 @@
                     <fullName>Other</fullName>
                     <default>false</default>
                     <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Hand over User Manuel Update VDW.ROTATE</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Hand over User Manuel Update VDW.ROTATE</label>
+                </value>
+                <value>
+                    <fullName>VDW-File System - FlexMaster</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>VDW-File System - FlexMaster</label>
+                </value>
+                <value>
+                    <fullName>VDW.CONNECT App</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>VDW.CONNECT App</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -478,6 +347,11 @@
                     <label>Customer Care</label>
                 </value>
                 <value>
+                    <fullName>Inside Sales</fullName>
+                    <default>false</default>
+                    <label>Inside Sales</label>
+                </value>
+                <value>
                     <fullName>No Follow-Up</fullName>
                     <default>false</default>
                     <label>No Follow-Up</label>
@@ -518,15 +392,4 @@
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
-    <label>Product Instruction</label>
-    <nameField>
-        <displayFormat>#I{000}</displayFormat>
-        <label>Name</label>
-        <trackHistory>false</trackHistory>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Product Instructions</pluralLabel>
-    <searchLayouts/>
-    <sharingModel>ControlledByParent</sharingModel>
-    <visibility>Public</visibility>
 </CustomObject>

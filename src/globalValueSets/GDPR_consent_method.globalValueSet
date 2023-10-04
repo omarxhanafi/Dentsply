@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Verbally Phone</fullName>
+        <default>false</default>
+        <label>Verbally Phone</label>
+    </customValue>
+    <customValue>
+        <fullName>Verbally Face-To-Face</fullName>
+        <default>false</default>
+        <label>Verbally Face-To-Face</label>
+    </customValue>
+    <customValue>
+        <fullName>Digitally</fullName>
+        <default>false</default>
+        <label>Digitally</label>
+    </customValue>
+    <customValue>
+        <fullName>Hard Copy Signed Form</fullName>
+        <default>false</default>
+        <label>Hard Copy Signed Form</label>
+    </customValue>
+    <masterLabel>GDPR consent method</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

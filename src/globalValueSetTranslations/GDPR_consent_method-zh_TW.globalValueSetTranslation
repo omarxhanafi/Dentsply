@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Digitally</masterLabel>
+        <translation>數位化</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Hard Copy Signed Form</masterLabel>
+        <translation>紙本簽屬文件</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Verbally Face-To-Face</masterLabel>
+        <translation>口頭(面對面)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Verbally Phone</masterLabel>
+        <translation>口頭(電話)</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

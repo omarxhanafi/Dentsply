@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Competitor</masterLabel>
+        <translation>Concurrent</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Country</masterLabel>
+        <translation><!-- Country --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>DENTSPLY</masterLabel>
+        <translation><!-- DENTSPLY --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>DNA Distributor</masterLabel>
+        <translation><!-- DNA Distributor --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dealer Sell Out Data Region</masterLabel>
+        <translation><!-- Dealer Sell Out Data Region --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dental Clinic</masterLabel>
+        <translation>Cabinet dentaire</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dental Laboratory</masterLabel>
+        <translation>Laboratoire dentaire</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dental Support Organization</masterLabel>
+        <translation><!-- Dental Support Organization --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Distributor</masterLabel>
+        <translation>Distributeur</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Education</masterLabel>
+        <translation>Formation</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>End User</masterLabel>
+        <translation><!-- End User --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Events</masterLabel>
+        <translation><!-- Events --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>First letters of Zip/Postal Code</masterLabel>
+        <translation><!-- First letters of Zip/Postal Code --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>General Practice</masterLabel>
+        <translation>Omnipraticien</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Government</masterLabel>
+        <translation>Services publics</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Hospital</masterLabel>
+        <translation>Hôpital</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Insurance Care Center</masterLabel>
+        <translation>Mutuelle</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Internal</masterLabel>
+        <translation>Interne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lab within a Clinic</masterLabel>
+        <translation>Laboratoire intégré au cabinet dentaire</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Medical</masterLabel>
+        <translation>Médical</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Non-Dental</masterLabel>
+        <translation>Autre</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Partner</masterLabel>
+        <translation>Partenaire</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Patient</masterLabel>
+        <translation>Patient</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Purchasing Group</masterLabel>
+        <translation>Groupe d&apos;acheteurs</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Region</masterLabel>
+        <translation><!-- Region --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Specialty</masterLabel>
+        <translation><!-- Specialty --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Student</masterLabel>
+        <translation><!-- Student --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>University</masterLabel>
+        <translation><!-- University --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Unknown/Other</masterLabel>
+        <translation><!-- Unknown/Other --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Wholesaler</masterLabel>
+        <translation><!-- Wholesaler --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Zip/Postal Code</masterLabel>
+        <translation><!-- Zip/Postal Code --></translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

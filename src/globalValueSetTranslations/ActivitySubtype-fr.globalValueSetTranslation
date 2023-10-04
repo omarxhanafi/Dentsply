@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>After Sales Follow-up</masterLabel>
+        <translation>Suivi sav</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Book Appointment</masterLabel>
+        <translation>Prise de rdv</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Business Review</masterLabel>
+        <translation>PLAN DE DEV. CLIENT / POINT D ACTIVITE</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CFE to collect MKT Consent</masterLabel>
+        <translation>Consentement Email</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Chairside/Clinical</masterLabel>
+        <translation><!-- Chairside/Clinical --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Sale</masterLabel>
+        <translation><!-- Closed Sale --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Demonstration</masterLabel>
+        <translation>DEMONSTRATION</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Evaluation</masterLabel>
+        <translation><!-- Evaluation --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Loyalty Program Registration</masterLabel>
+        <translation>Signature partenariat</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lunch &amp; Learn</masterLabel>
+        <translation><!-- Lunch &amp; Learn --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New Business/Prospecting</masterLabel>
+        <translation>PROSPECTION</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Problem Solving/Process Support</masterLabel>
+        <translation><!-- Problem Solving/Process Support --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Quote Presented</masterLabel>
+        <translation>Présentation devis</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sales Presentation</masterLabel>
+        <translation><!-- Sales Presentation --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Technical Support</masterLabel>
+        <translation>SUPPORT TEHNIQUE</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Training/Implementation</masterLabel>
+        <translation>FORMATION / MISE EN PLACE</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

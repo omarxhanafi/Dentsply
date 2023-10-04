@@ -19,11 +19,11 @@ public with sharing class AccountFlagsController {
      */
     @AuraEnabled(Cacheable = true)
     public static String getAccountFlagsJSON(Id accountId) {
-        // Get account record
-        Account account = [
-                SELECT KOLAccount__c
-                FROM Account
-                WHERE Id = :accountId
+        // Get number of kol contract records related to the account
+        Integer kolCount = [
+                SELECT COUNT()
+                FROM KOL_Contract__c
+                WHERE Account__c = :accountId
                 LIMIT 1
         ];
 
@@ -54,7 +54,7 @@ public with sharing class AccountFlagsController {
         Map<String, AccountFlag> results = new Map<String, AccountFlag>();
 
         // KOL flag
-        results.put('kol', new AccountFlag(account?.KOLAccount__c == true ? 1 : 0, null));
+        results.put('kol', new AccountFlag(kolCount > 0 ? 1 : 0, null));
 
         if(!activeContracts.isEmpty()){
             // We first get the flag values from the active contracts

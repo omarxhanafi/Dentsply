@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Tooth Preservation - Indirect Restoration</fullName>
+        <default>false</default>
+        <label>Tooth Preservation - Indirect Restoration</label>
+    </customValue>
+    <customValue>
+        <fullName>Tooth Preservation - Indirect Restoration - Scan to Lab</fullName>
+        <default>false</default>
+        <label>Tooth Preservation - Indirect Restoration - Scan to Lab</label>
+    </customValue>
+    <customValue>
+        <fullName>Tooth Replacement - Implant</fullName>
+        <default>false</default>
+        <label>Tooth Replacement - Implant</label>
+    </customValue>
+    <customValue>
+        <fullName>Lab - Indirect Restoration</fullName>
+        <default>false</default>
+        <label>Lab - Indirect Restoration</label>
+    </customValue>
+    <customValue>
+        <fullName>Tooth Preservation - Endodontic</fullName>
+        <default>false</default>
+        <label>Tooth Preservation - Endodontic</label>
+    </customValue>
+    <customValue>
+        <fullName>Tooth Movement - Smile design</fullName>
+        <default>false</default>
+        <label>Tooth Movement - Smile design</label>
+    </customValue>
+    <customValue>
+        <fullName>Tooth Preservation - Direct Restoration</fullName>
+        <default>false</default>
+        <label>Tooth Preservation - Direct Restoration</label>
+    </customValue>
+    <masterLabel>workflows</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

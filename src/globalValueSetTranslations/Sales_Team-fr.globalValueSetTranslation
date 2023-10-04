@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Account Maintenance</masterLabel>
+        <translation>Gestion des comptes clients</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Accounting</masterLabel>
+        <translation>Comptabilité</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CEREC Equipment</masterLabel>
+        <translation><!-- CEREC Equipment --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CRM Analyst</masterLabel>
+        <translation><!-- CRM Analyst --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Chairside</masterLabel>
+        <translation><!-- Chairside --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Clinical Affairs</masterLabel>
+        <translation>Affaires cliniques</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Clinical Development Manager</masterLabel>
+        <translation>Responsable du développement clinique</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Customer Service Consumables</masterLabel>
+        <translation><!-- Customer Service Consumables --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Customer Service Endodontics</masterLabel>
+        <translation><!-- Customer Service Endodontics --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Customer Service Implants</masterLabel>
+        <translation><!-- Customer Service Implants --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Customer Service Orthodontics</masterLabel>
+        <translation><!-- Customer Service Orthodontics --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>DS Lab</masterLabel>
+        <translation><!-- DS Lab --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Direct Sales</masterLabel>
+        <translation>Ventes directes</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Endodontics</masterLabel>
+        <translation><!-- Endodontics --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Global CRM</masterLabel>
+        <translation><!-- Global CRM --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Imaging Equipment</masterLabel>
+        <translation><!-- Imaging Equipment --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Implants</masterLabel>
+        <translation><!-- Implants --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Implants MIS</masterLabel>
+        <translation><!-- Implants MIS --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Indirect Sales</masterLabel>
+        <translation>Ventes indirectes</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Information Technology</masterLabel>
+        <translation>IT</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Inside Sales</masterLabel>
+        <translation>Commercial sédentaire</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Institutional</masterLabel>
+        <translation><!-- Institutional --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Key Accounts</masterLabel>
+        <translation><!-- Key Accounts --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lab Solutions</masterLabel>
+        <translation><!-- Lab Solutions --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Marketing</masterLabel>
+        <translation><!-- Marketing --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>National Accounts</masterLabel>
+        <translation><!-- National Accounts --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Orthodontics</masterLabel>
+        <translation><!-- Orthodontics --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Orthodontics CIS</masterLabel>
+        <translation><!-- Orthodontics CIS --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Preventive</masterLabel>
+        <translation><!-- Preventive --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Quality</masterLabel>
+        <translation><!-- Quality --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Restorative</masterLabel>
+        <translation><!-- Restorative --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sales Operations</masterLabel>
+        <translation><!-- Sales Operations --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sales Training</masterLabel>
+        <translation><!-- Sales Training --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Shipping &amp; Receiving</masterLabel>
+        <translation><!-- Shipping &amp; Receiving --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Technical Support</masterLabel>
+        <translation><!-- Technical Support --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Technical Support Implants</masterLabel>
+        <translation><!-- Technical Support Implants --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Technical Support Orthodontics</masterLabel>
+        <translation><!-- Technical Support Orthodontics --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Treatment Centers</masterLabel>
+        <translation><!-- Treatment Centers --></translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

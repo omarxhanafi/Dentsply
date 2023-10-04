@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>CAD/CAM</masterLabel>
+        <translation>CAD/CAM</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Endodontics</masterLabel>
+        <translation>Endodonti</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Imaging Systems</masterLabel>
+        <translation><!-- Imaging Systems --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Implants</masterLabel>
+        <translation><!-- Implants --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Instruments</masterLabel>
+        <translation><!-- Instruments --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Orthodontics</masterLabel>
+        <translation><!-- Orthodontics --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Preventive</masterLabel>
+        <translation><!-- Preventive --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Prosthetics</masterLabel>
+        <translation><!-- Prosthetics --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Restorative</masterLabel>
+        <translation><!-- Restorative --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Treatment Centers</masterLabel>
+        <translation><!-- Treatment Centers --></translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

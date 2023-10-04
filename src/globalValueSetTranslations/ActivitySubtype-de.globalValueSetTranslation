@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>After Sales Follow-up</masterLabel>
+        <translation>Einweisungsgespräch</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Book Appointment</masterLabel>
+        <translation>Terminvereinbarung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Business Review</masterLabel>
+        <translation>Kundenentwicklungsgespräch</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CFE to collect MKT Consent</masterLabel>
+        <translation>Einwilligung Marketingaktivitäten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Chairside/Clinical</masterLabel>
+        <translation>Besuch klin. Begleitung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Sale</masterLabel>
+        <translation>Nachverkaufsbesuch</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Demonstration</masterLabel>
+        <translation>Anwendungsdemo</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Evaluation</masterLabel>
+        <translation>Neukundenaquise</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Loyalty Program Registration</masterLabel>
+        <translation><!-- Loyalty Program Registration --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lunch &amp; Learn</masterLabel>
+        <translation><!-- Lunch &amp; Learn --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New Business/Prospecting</masterLabel>
+        <translation>Kaltbesuch</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation>Sonstiges</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Problem Solving/Process Support</masterLabel>
+        <translation>Problemlösungsbesuch</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Quote Presented</masterLabel>
+        <translation>Angebotsübermittlung/Investition</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sales Presentation</masterLabel>
+        <translation>Verkaufsgespräch</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Technical Support</masterLabel>
+        <translation>Besuch technische Unterstützung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Training/Implementation</masterLabel>
+        <translation>Anwenderschulung/Workshop</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>
