@@ -176,7 +176,7 @@ public with sharing class ProductProfilingHierarchyController {
     ------------------------------------------------------------*/ 
 
     @AuraEnabled
-    public static List<HierarchyNode> getChildProducts(String recordId, String node, String manufacturer, String searchString, String category, Boolean competitor, Boolean focus, String localcat) {
+    public static List<HierarchyNode> getChildProducts(String recordId, String node, String manufacturer, String searchString, String category, Boolean competitor, Boolean focus, String localcat, String workflow) {
     
     System.debug('Record Id: ' + recordId);
     System.debug('Manufacturer: ' + manufacturer);
@@ -185,6 +185,7 @@ public with sharing class ProductProfilingHierarchyController {
     System.debug('Node name: ' + node);
     System.debug('Local categ: ' + localcat);
     System.debug('Competitor: ' + competitor);
+    System.debug('Workflow: ' + workflow);
         
     String country = '';    
         if(recordId.left(3) == '003'){
@@ -199,14 +200,13 @@ public with sharing class ProductProfilingHierarchyController {
             Account acc = [SELECT Id, Country__c FROM Account WHERE Id =: recordId];
             country = acc.Country__c;
         }
+
+    Set<Id> productFamiliesSet = new Set<Id>();
     	        
     List<Non_ERP_Products__c> allProducts = new List<Non_ERP_Products__c>();    
-    
-    Boolean validInMyMarket = true;
-    Boolean inactiveProduct = false;
-    
-    String query = 'SELECT Id, Name, Countries__c, SBU__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, Manufacturer__c, ProductGroupText__c, QuantityUnitOfMeasure__c FROM Non_ERP_Products__c';
-    query += ' WHERE Inactive__c =: inactiveProduct AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true)'; //OR Valid_in_my_Market__c =: validInMyMarket)
+
+    String query = 'SELECT Id, Name, Countries__c, SBU__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, ProductFamily__c, Manufacturer__c, ProductGroupText__c, QuantityUnitOfMeasure__c FROM Non_ERP_Products__c';
+    query += ' WHERE Inactive__c = FALSE AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE)';
      
         
     Boolean filterIsApplied = false;    
@@ -240,6 +240,19 @@ public with sharing class ProductProfilingHierarchyController {
             query += ' AND Product_Category__c =: localcat';
             filterIsApplied = true;
         }
+
+        // If a workflow filter is applied, we look for the product families through the workflow lines
+        if(workflow != ''){
+            List<WorkflowLine__c> workflowLines = [SELECT Id, ProductFamily__c, ProductFamily__r.Name FROM WorkflowLine__c where Workflow__c = :workflow];
+            System.debug('workflowLines : ' + workflowLines);
+            for(WorkflowLine__c eachWorkflowLine : workflowLines){
+                productFamiliesSet.add(eachWorkflowLine.ProductFamily__c);
+            }
+            if(!productFamiliesSet.isEmpty()){
+                query += ' AND ProductFamily__c IN :productFamiliesSet';
+            }
+            filterIsApplied = true;
+        }
         
         if(competitor == true){
             competitor = false;
@@ -255,29 +268,32 @@ public with sharing class ProductProfilingHierarchyController {
         if(filterIsApplied == true){    
             allProducts = Database.query(query);
         }
-    /*if(searchString != ''){
-    
-      	Map<String, Non_ERP_Products__c> recordMap = new Map<String, Non_ERP_Products__c>();
-        
-        for(Non_ERP_Products__c so : allProducts){
-            if(category != '' && category != null){
-                if(so.ProductGroupText__c == category){
-                    recordMap.put(so.Id, so);
+
+        System.debug('allproducts : ' + allProducts);
+
+        /*if(searchString != ''){
+
+              Map<String, Non_ERP_Products__c> recordMap = new Map<String, Non_ERP_Products__c>();
+
+            for(Non_ERP_Products__c so : allProducts){
+                if(category != '' && category != null){
+                    if(so.ProductGroupText__c == category){
+                        recordMap.put(so.Id, so);
+                    }
                 }
-            }
-            if(manufacturer != '' && manufacturer != null){
-                if(so.Manufacturer__c == manufacturer){
-                    recordMap.put(so.Id, so);
+                if(manufacturer != '' && manufacturer != null){
+                    if(so.Manufacturer__c == manufacturer){
+                        recordMap.put(so.Id, so);
+                    }
                 }
+
             }
-            
-        }
-        if(recordMap.values().size()>0){
-        	allProducts = recordMap.values();
-        }    
-        
-        System.debug(allProducts);
-    }*/
+            if(recordMap.values().size()>0){
+                allProducts = recordMap.values();
+            }
+
+            System.debug(allProducts);
+        }*/
         
         
     List<HierarchyNode> nodes = new List<HierarchyNode>();

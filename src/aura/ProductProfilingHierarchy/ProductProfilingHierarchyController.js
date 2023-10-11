@@ -417,16 +417,23 @@ init: function (cmp, event, helper) {
         //     filter.localCategory = '';
         // }
         filter.localCategory = '';
+
+        if(cmp.find('workflowFilter').get('v.value') != null){
+            filter.workflow = cmp.find('workflowFilter').get('v.value');
+        }
+        else{
+            filter.workflow = '';
+        }
             
         filter.categories = cmp.find('categoryFilter').get('v.value');
         var tempArray = [];
         var arrayLength =allRecords.length; 
                         
-            if(filter.manufacturer != '' || filter.SBU != '' || filter.searchString.length > 1 || filter.localCategory != ''){ //|| filter.competitor != false || filter.focus != false    
+            if(filter.manufacturer != '' || filter.SBU != '' || filter.searchString.length > 1 || filter.localCategory != '' || filter.workflow != ''){ //|| filter.competitor != false || filter.focus != false
                 if(cmp.get('v.hideFilters') == false){
                     cmp.set('v.hideToggleFilters', false);
                 }
-                helper.getChildProductsServer(cmp, event,'',filter.SBU,filter.manufacturer,filter.searchString,'',filter.competitor,filter.focus,filter.localCategory);    
+                helper.getChildProductsServer(cmp, event,'',filter.SBU,filter.manufacturer,filter.searchString,'',filter.competitor,filter.focus,filter.localCategory, filter.workflow);
             }
             else if(filter.searchString.length == 0){
                 cmp.set('v.hideToggleFilters', true);
@@ -610,6 +617,13 @@ init: function (cmp, event, helper) {
 
             filter.localCategory = '';
 
+            if(cmp.find('workflowFilter').get('v.value') != null){
+                filter.workflow = cmp.find('workflowFilter').get('v.value');
+            }
+            else{
+                filter.workflow = '';
+            }
+
             filter.categories = cmp.find('categoryFilter').get('v.value');
                         
             if(filter.searchString == '' && filter.SBU == '' && filter.manufacturer == '' && filter.localCategory == ''){
@@ -629,7 +643,7 @@ init: function (cmp, event, helper) {
                         section = '';
                     }
                     if(existInList == false){
-                        helper.getChildProductsServer(cmp, event, '','','','',section,filter.competitor,filter.focus,'');
+                        helper.getChildProductsServer(cmp, event, '','','','',section,filter.competitor,filter.focus,'', filter.workflow);
                     }
                 }
                 cmp.set("v.prevExpandedRows", openSections);
@@ -689,6 +703,13 @@ init: function (cmp, event, helper) {
         // }
 
         filter.localCategory = '';
+
+        if(cmp.find('workflowFilter').get('v.value') != null){
+            filter.workflow = cmp.find('workflowFilter').get('v.value');
+        }
+        else{
+            filter.workflow = '';
+        }
          
         filter.categories = cmp.find('categoryFilter').get('v.value');
         
@@ -698,11 +719,11 @@ init: function (cmp, event, helper) {
                 cmp.set('v.hideToggleFilters', false);
             }
             
-            helper.getChildProductsServer(cmp, event, '',filter.SBU,filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,filter.localCategory);
+            helper.getChildProductsServer(cmp, event, '',filter.SBU,filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,filter.localCategory, filter.workflow);
         }
-        else if(filter.SBU != '' || filter.manufacturer != '' || filter.localCategory != ''){
+        else if(filter.SBU != '' || filter.manufacturer != '' || filter.localCategory != '' || filter.workflow != ''){
             searchFilter = '';
-            helper.getChildProductsServer(cmp, event, '',filter.SBU,filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,filter.localCategory);            
+            helper.getChildProductsServer(cmp, event, '',filter.SBU,filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,filter.localCategory, filter.workflow);
         }
         else if(searchFilter.length == 0){
             console.log('Resetting data');

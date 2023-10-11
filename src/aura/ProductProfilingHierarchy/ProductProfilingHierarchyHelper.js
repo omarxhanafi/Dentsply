@@ -412,7 +412,7 @@
     Inputs:			@param recordId
 	------------------------------------------------------------*/     
     
-    getChildProductsServer : function(cmp, event, recordId, category, manufacturer, searchString, nodeName, competitor, focus, localcat) { 
+    getChildProductsServer : function(cmp, event, recordId, category, manufacturer, searchString, nodeName, competitor, focus, localcat, workflow) {
         console.log('Launching getChildProducts');
         cmp.set('v.showSpinner', true);
                 
@@ -429,7 +429,8 @@
                 category: category,
                 competitor: competitor,
                 focus: focus,
-                localcat : localcat
+                localcat : localcat,
+                workflow : workflow
             });
         action.setCallback(this, function(response) {
             var state = response.getState();
@@ -443,7 +444,7 @@
             var formFactor = $A.get("$Browser.formFactor");            
             var selectedProducts = cmp.get('v.currentSelectedRows');
             var manufacturerSet = {};
-            
+
             var expanded = [];
             
             if (state === "SUCCESS") {
@@ -463,7 +464,7 @@
                         if(data[cat].nodeName == categ){ 	
                                recordToAdd = data[cat];
                             
-                            if(manufacturer != '' || localcat != '' || searchString != '' || nodeName != '' || focus != false || competitor != false){
+                            if(manufacturer != '' || workflow != '' || localcat != '' || searchString != '' || nodeName != '' || focus != false || competitor != false){
                                expanded.push(categ);	
                             }
                             else{
