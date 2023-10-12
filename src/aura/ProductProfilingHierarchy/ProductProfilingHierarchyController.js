@@ -168,109 +168,109 @@ init: function (cmp, event, helper) {
     		
     },
     
-    getSelectedRowsNew: function(cmp, event, helper) {
-        console.log('Launching getSelectedRowsNew');
-
-        var treeGridCmp = cmp.find('mytree');
-        
-        var selected = treeGridCmp.getSelectedRows();
-
-        var selectedProducts = cmp.get('v.currentSelectedRows');
-                
-        var currentView = cmp.get('v.gridWrapperFilteredData');
-        
-                
-        var selectionMap = cmp.get("v.selectionMap");
-                
-        var expanded = treeGridCmp.getCurrentExpandedRows();
-                        
-        var selectedProductsNotInCurrentView = [];
-                
-        var currentViewArray = [];
-        
-        //Map of currently shown products
-    	for(var currentProd in currentView){
-        	var childRecords = currentView[currentProd]._children;
-            for(var currentProdChild in childRecords){
-                currentViewArray[childRecords[currentProdChild].node.Id] = childRecords[currentProdChild].node;
-            }
-            
-    	}
-            
-    	//Map of selected rows in total
-    	for(var prod in selectedProducts){  
-    		var selProductId = selectedProducts[prod].Id;
-    		selectionMap[selProductId] = selectedProducts[prod];
-        }
-    	
-    	var notShownSelectedProducts = [];
-    
-    	//Find all selected products that are not shown currently
-
-    	for(var prod in selectedProducts){
-			var selectedProduct = selectedProducts[prod];
-            
-            var isInTable = false;
-            for(var k in expanded){
-                if(selectedProduct.Product_Category__c == expanded[k]){
-                    isInTable = true;
-                }
-            }
-            
-            if(isInTable == false){
-                notShownSelectedProducts.push(selectedProducts[prod]);
-            }
-            
-    	}    	 
-    
-    	var selectedProductsInView = [];
-
-        for(var row in selected){
-               
-            if(selected[row].isProfiled == true || selected[row].isCat == true){                
-                
-                if(selected[row].isCat == true){
-                	alert("Sorry! You cannot add a category as a product profiling."); 
-                }  
-                else{
-                    alert("Oops! This product has already been profiled.");
-                }
-                
-            }
-            else{
-                var idToCheck = selected[row].node.Id;
-				
-				//Only add value in case it hasn't been added before                
-                if(selectionMap[idToCheck] == undefined){                    
-                        selectedProducts.push(selected[row].node);
-                }
-                
-                selectedProductsInView.push(selected[row].node);
-                
-                //Add all selected products in the current view to the list of not shown but selected products
-                notShownSelectedProducts.push(selected[row].node);
-            }
-        }
-		
-        //cmp.find('mytree').set('v.expandedRows', expanded);
-        cmp.set('v.currentSelectedRows', notShownSelectedProducts);
-    
-    	var productsWrapper = [];
-        var rowsCount = 0;
-    
-    	for(var prod in notShownSelectedProducts){
- 			            
-            var bundl = {};
-            bundl.productId = notShownSelectedProducts[prod].Id;
-            bundl.productName = notShownSelectedProducts[prod].Name;
-            bundl.manufacturerName = notShownSelectedProducts[prod].Manufacturer__c;
-            
-            productsWrapper.push(bundl);
-           	rowsCount++;
-    	}
-    	cmp.set('v.currentSelectedRowWrapper', productsWrapper);
-    	cmp.set('v.currentSelectedRowsCount', rowsCount);	
-    },
+    // getSelectedRowsNew: function(cmp, event, helper) {
+    //     console.log('Launching getSelectedRowsNew');
+    //
+    //     var treeGridCmp = cmp.find('mytree');
+    //
+    //     var selected = treeGridCmp.getSelectedRows();
+    //
+    //     var selectedProducts = cmp.get('v.currentSelectedRows');
+    //
+    //     var currentView = cmp.get('v.gridWrapperFilteredData');
+    //
+    //
+    //     var selectionMap = cmp.get("v.selectionMap");
+    //
+    //     var expanded = treeGridCmp.getCurrentExpandedRows();
+    //
+    //     var selectedProductsNotInCurrentView = [];
+    //
+    //     var currentViewArray = [];
+    //
+    //     //Map of currently shown products
+    // 	for(var currentProd in currentView){
+    //     	var childRecords = currentView[currentProd]._children;
+    //         for(var currentProdChild in childRecords){
+    //             currentViewArray[childRecords[currentProdChild].node.Id] = childRecords[currentProdChild].node;
+    //         }
+    //
+    // 	}
+    //
+    // 	//Map of selected rows in total
+    // 	for(var prod in selectedProducts){
+    // 		var selProductId = selectedProducts[prod].Id;
+    // 		selectionMap[selProductId] = selectedProducts[prod];
+    //     }
+    //
+    // 	var notShownSelectedProducts = [];
+    //
+    // 	//Find all selected products that are not shown currently
+    //
+    // 	for(var prod in selectedProducts){
+	// 		var selectedProduct = selectedProducts[prod];
+    //
+    //         var isInTable = false;
+    //         for(var k in expanded){
+    //             if(selectedProduct.Product_Category__c == expanded[k]){
+    //                 isInTable = true;
+    //             }
+    //         }
+    //
+    //         if(isInTable == false){
+    //             notShownSelectedProducts.push(selectedProducts[prod]);
+    //         }
+    //
+    // 	}
+    //
+    // 	var selectedProductsInView = [];
+    //
+    //     for(var row in selected){
+    //
+    //         if(selected[row].isProfiled == true || selected[row].isCat == true){
+    //
+    //             if(selected[row].isCat == true){
+    //             	alert("Sorry! You cannot add a category as a product profiling.");
+    //             }
+    //             else{
+    //                 alert("Oops! This product has already been profiled.");
+    //             }
+    //
+    //         }
+    //         else{
+    //             var idToCheck = selected[row].node.Id;
+	//
+	// 			//Only add value in case it hasn't been added before
+    //             if(selectionMap[idToCheck] == undefined){
+    //                     selectedProducts.push(selected[row].node);
+    //             }
+    //
+    //             selectedProductsInView.push(selected[row].node);
+    //
+    //             //Add all selected products in the current view to the list of not shown but selected products
+    //             notShownSelectedProducts.push(selected[row].node);
+    //         }
+    //     }
+	//
+    //     //cmp.find('mytree').set('v.expandedRows', expanded);
+    //     cmp.set('v.currentSelectedRows', notShownSelectedProducts);
+    //
+    // 	var productsWrapper = [];
+    //     var rowsCount = 0;
+    //
+    // 	for(var prod in notShownSelectedProducts){
+ 	//
+    //         var bundl = {};
+    //         bundl.productId = notShownSelectedProducts[prod].Id;
+    //         bundl.productName = notShownSelectedProducts[prod].Name;
+    //         bundl.manufacturerName = notShownSelectedProducts[prod].Manufacturer__c;
+    //
+    //         productsWrapper.push(bundl);
+    //        	rowsCount++;
+    // 	}
+    // 	cmp.set('v.currentSelectedRowWrapper', productsWrapper);
+    // 	cmp.set('v.currentSelectedRowsCount', rowsCount);
+    // },
 
     
    /*------------------------------------------------------------	

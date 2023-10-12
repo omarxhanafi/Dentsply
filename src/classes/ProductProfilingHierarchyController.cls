@@ -1,7 +1,7 @@
 /**
  * @Author          Richard Trum
  * @Description     Controller handling custom lightning components related to Product Profiling.
- * @Test-Class      Test_SalesAnalyticsTriggerHandler
+ * @Test-Class      Test_ProductProfilingHierarchyController
  *
  * @History
  * 2019-11-27   Richard  Created ProductProfilingHierarchyController class
