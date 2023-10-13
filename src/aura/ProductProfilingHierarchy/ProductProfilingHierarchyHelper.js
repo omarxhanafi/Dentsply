@@ -451,7 +451,7 @@
                 var result=response.getReturnValue();
                 //Find all categories
                 for(var prodKey in result){					   
-					var cat = result[prodKey].node.Product_Category__c;
+					var cat = result[prodKey].node.ProductFamily__r.Name;
                     categories[cat] = cat;
                 }
                                
@@ -489,7 +489,7 @@
                        record.nodeId = record.node.Id;
                        record.manufacturer = record.node.Manufacturer__c;
                        manufacturerSet[record.manufacturer] = record.manufacturer; 
-                       record.category =  record.node.Product_Category__c;
+                       record.category =  record.node.ProductFamily__r.Name;
                         
                         for(var k in selectedRows){
                             if(selectedRows[k].Id == record.nodeId){
