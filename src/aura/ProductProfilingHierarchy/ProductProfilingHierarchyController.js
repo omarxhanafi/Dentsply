@@ -626,7 +626,7 @@ init: function (cmp, event, helper) {
 
             filter.categories = cmp.find('categoryFilter').get('v.value');
                         
-            if(filter.searchString == '' && filter.SBU == '' && filter.manufacturer == '' && filter.localCategory == ''){
+            if(filter.searchString == '' && filter.SBU == '' && filter.manufacturer == '' && filter.localCategory == '' && filter.workflow == ''){
                 var prevOpenSections = cmp.get("v.prevExpandedRows");
                 for(var sectionKey in openSections){
                     var section = openSections[sectionKey];

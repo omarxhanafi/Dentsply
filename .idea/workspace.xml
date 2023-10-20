@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,34 +51,11 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="ActivityScorecardController.getAccountActivityScorecard('0016M00002H7LrPQAV');" />
-                  <option name="connectionName" value="acc360" />
-                  <option name="connectionType" value="OAUTH" />
                   <option name="name" value="Anonymous Apex 1" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="// Specify the Account ID of the record you want to share&#10;String accountId = '0015r00000o9Ls3AAE'; // Replace with the actual Account ID&#10;&#10;// Specify the User ID or Group ID with whom you want to share the record&#10;String shareWithId = '0050J000003RHjzQAG'; // Replace with the actual User ID or Group ID&#10;&#10;// Specify the access level you want to grant ('Read', 'Edit', 'All', or 'None')&#10;String accessLevel = 'Edit';&#10;&#10;// Create a new AccountShare object&#10;AccountShare shareRecord = new AccountShare();&#10;shareRecord.AccountId = accountId;&#10;shareRecord.UserOrGroupId = shareWithId;&#10;shareRecord.AccountAccessLevel = accessLevel;&#10;shareRecord.OpportunityAccessLevel = accessLevel; // Add this line to specify the Opportunity access level&#10;&#10;&#10;// Insert the AccountShare record to share the account&#10;try {&#10;    insert shareRecord;&#10;    System.debug('Account record shared successfully.');&#10;} catch (Exception e) {&#10;    System.debug('Error sharing the account record: ' + e.getMessage());&#10;}&#10;" />
-                  <option name="name" value="Anonymous Apex 2" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="Account acc = [SELECT Id FROM Account WHERE Id = '0015r00000qASgNAAW' LIMIT 1];&#10;&#10;ServiceAppointment sa = new ServiceAppointment();&#10;sa.AccountId = acc.Id; // Use AccountId to link the ServiceAppointment with an Account&#10;&#10;// Set other required fields for the ServiceAppointment&#10;sa.Subject = 'Quick Service Appointment';&#10;sa.StartDateTime = DateTime.now();&#10;sa.EndDateTime = sa.StartDateTime.addHours(1);&#10;// Set other fields as needed&#10;&#10;insert sa;&#10;" />
-                  <option name="name" value="Anonymous Apex 3" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="AccountFlagsController.getAccountFlagsJSON('0015r00000qASgNAAW');" />
-                  <option name="name" value="Anonymous Apex 4" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="System.debug(WorkflowProfilingController.getWorkflowsByCountry('0015r00000qASgNAAW'));" />
-                  <option name="name" value="Anonymous Apex 5" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="WorkflowProfiling__c prof = new WorkflowProfiling__c(&#10;        Workflow__c = 'a7u5r000000RuYdAAK',&#10;        Account__c = '0015r00000qASgNAAW',&#10;        Rating__c = 3&#10;);&#10;&#10;insert prof;" />
-                  <option name="name" value="Anonymous Apex 6" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="5" />
+            <option name="selectedSavedDocumentIndex" value="0" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionWorkspaceSettings">
@@ -18611,10 +18586,10 @@
                     <map>
                       <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1696171694728" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1697198113771" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1697796865000" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1697799504340" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1692194892939" />
                       <entry key="APEXCLASS:TEST_ACTIVITYSCORECARDCONTROLLER" value="1697197787769" />
-                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1694795426963" />
+                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1697799504340" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1697635868236" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1697796867000" />
                       <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.CLASSIFICATIONTYPE__C" value="1695383392000" />
@@ -18743,6 +18718,7 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
+                  <option name="body" value="select GlobalProductShowtoallcountries__c, Id, Countries__c from Workflow__c" />
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
               </list>
@@ -19109,7 +19085,7 @@
       <workItem from="1696241423843" duration="6674000" />
       <workItem from="1697040924844" duration="2746000" />
       <workItem from="1697317304351" duration="428000" />
-      <workItem from="1697624106928" duration="6481000" />
+      <workItem from="1697624106928" duration="6872000" />
     </task>
     <servers />
   </component>
