@@ -454,7 +454,7 @@
 					var cat = result[prodKey].node.ProductFamily__r.Name;
                     categories[cat] = cat;
                 }
-                               
+                
                 for(var catKey in categories){
                     
                     var categ= categories[catKey];
@@ -533,7 +533,7 @@
                    
                 cmp.set('v.gridWrapperData', data);
                 
-                if(searchString.length>1 || category != '' || manufacturer != '' || localcat != ''){
+                if(searchString.length>1 || category != '' || manufacturer != '' || workflow != '' || localcat != ''){
                     cmp.set('v.gridWrapperFilteredData', filteredData);
                     
                     if(manufacturer == ''){
