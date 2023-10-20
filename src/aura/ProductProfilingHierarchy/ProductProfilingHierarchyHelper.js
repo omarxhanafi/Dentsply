@@ -454,7 +454,7 @@
 					var cat = result[prodKey].node.ProductFamily__r.Name;
                     categories[cat] = cat;
                 }
-                
+
                 for(var catKey in categories){
                     
                     var categ= categories[catKey];

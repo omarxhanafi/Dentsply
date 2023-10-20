@@ -244,7 +244,6 @@ public with sharing class ProductProfilingHierarchyController {
         // If a workflow filter is applied, we look for the product families through the workflow lines
         if(workflow != ''){
             List<WorkflowLine__c> workflowLines = [SELECT Id, ProductFamily__c, ProductFamily__r.Name FROM WorkflowLine__c where Workflow__c = :workflow];
-            System.debug('workflowLines : ' + workflowLines);
             for(WorkflowLine__c eachWorkflowLine : workflowLines){
                 productFamiliesSet.add(eachWorkflowLine.ProductFamily__c);
             }
@@ -373,7 +372,7 @@ public with sharing class ProductProfilingHierarchyController {
 
         if(acc != null){
             String country = acc.Country__c;
-            return [SELECT Id, WorkflowLabel__c FROM Workflow__c WHERE Countries__c EXCLUDES (:country)];
+            return [SELECT Id, WorkflowLabel__c FROM Workflow__c WHERE Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE];
         }
 
         return null;

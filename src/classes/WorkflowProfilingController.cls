@@ -6,7 +6,7 @@ public with sharing class WorkflowProfilingController {
 
         if(acc != null){
             String country = acc.Country__c;
-            return [SELECT Id, WorkflowLabel__c FROM Workflow__c WHERE Countries__c EXCLUDES (:country)];
+            return [SELECT Id, WorkflowLabel__c FROM Workflow__c WHERE Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE];
         }
 
         return null;
