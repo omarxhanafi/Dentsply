@@ -37,10 +37,10 @@ public with sharing class ProductProfilingHierarchyController {
     List<AggregateResult> results = new List<AggregateResult>();
         
         if(SBU != '' && SBU != null){
-    		results = [SELECT count(Id), ProductFamily__r.Name family FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) AND ProductGroupText__c =: SBU GROUP BY ProductFamily__r.Name];   //OR (Valid_in_my_Market__c =: true AND Market__c != '')
+    		results = [SELECT count(Id), ProductFamily__r.ProductFamilyLabel__c family FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) AND ProductGroupText__c =: SBU GROUP BY ProductFamily__r.ProductFamilyLabel__c];   //OR (Valid_in_my_Market__c =: true AND Market__c != '')
         }   
         else{
-    		results = [SELECT count(Id), ProductFamily__r.Name family FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) GROUP BY ProductFamily__r.Name];
+    		results = [SELECT count(Id), ProductFamily__r.ProductFamilyLabel__c family FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) GROUP BY ProductFamily__r.ProductFamilyLabel__c];
         }
         
         
@@ -205,14 +205,14 @@ public with sharing class ProductProfilingHierarchyController {
     	        
     List<Non_ERP_Products__c> allProducts = new List<Non_ERP_Products__c>();    
 
-    String query = 'SELECT Id, Name, Countries__c, SBU__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, ProductFamily__r.Name, Manufacturer__c, ProductGroupText__c, QuantityUnitOfMeasure__c FROM Non_ERP_Products__c';
+    String query = 'SELECT Id, Name, Countries__c, SBU__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, ProductFamily__r.ProductFamilyLabel__c, Manufacturer__c, ProductGroupText__c, QuantityUnitOfMeasure__c FROM Non_ERP_Products__c';
     query += ' WHERE Inactive__c = FALSE AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE)';
      
         
     Boolean filterIsApplied = false;    
         if(node != '' && node != null){
             node = String.EscapeSingleQuotes(node);
-            query += ' AND ProductFamily__r.Name =: node';
+            query += ' AND ProductFamily__r.ProductFamilyLabel__c =: node';
             filterIsApplied = true;
         }    
         
@@ -243,7 +243,7 @@ public with sharing class ProductProfilingHierarchyController {
 
         // If a workflow filter is applied, we look for the product families through the workflow lines
         if(workflow != ''){
-            List<WorkflowLine__c> workflowLines = [SELECT Id, ProductFamily__c, ProductFamily__r.Name FROM WorkflowLine__c where Workflow__c = :workflow];
+            List<WorkflowLine__c> workflowLines = [SELECT Id, ProductFamily__c, ProductFamily__r.ProductFamilyLabel__c FROM WorkflowLine__c where Workflow__c = :workflow];
             for(WorkflowLine__c eachWorkflowLine : workflowLines){
                 productFamiliesSet.add(eachWorkflowLine.ProductFamily__c);
             }
