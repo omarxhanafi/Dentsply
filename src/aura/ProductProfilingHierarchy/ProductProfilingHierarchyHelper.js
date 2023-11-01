@@ -450,7 +450,6 @@
             if (state === "SUCCESS") {
                 var result=response.getReturnValue();
 
-                console.log("RESUUUUUUUULT",result);
                 //Find all categories
                 for(var prodKey in result){					   
 					var cat = result[prodKey].node.ProductFamily__r.ProductFamilyLabel__c;

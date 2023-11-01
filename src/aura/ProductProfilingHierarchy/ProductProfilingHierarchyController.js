@@ -318,9 +318,6 @@ init: function (cmp, event, helper) {
                 	            
         cmp.set('v.currentSelectedRows', notShownSelectedProducts);
 
-        console.log('notShownSelectedProducts', JSON.parse(JSON.stringify(notShownSelectedProducts)));
-
-
         var productsWrapper = [];
         var rowsCount = 0;    
         
