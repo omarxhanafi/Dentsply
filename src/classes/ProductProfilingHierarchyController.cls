@@ -298,6 +298,7 @@ public with sharing class ProductProfilingHierarchyController {
         
         
     List<HierarchyNode> nodes = new List<HierarchyNode>();
+        // If a workflow filter is applied we look through the list of workflow lines we retrieved previously
         if(workflow != ''){
             for (Non_ERP_Products__c a : allProducts) {
                 for(WorkflowLine__c eachWorkflowLine : workflowLines){
@@ -308,6 +309,7 @@ public with sharing class ProductProfilingHierarchyController {
                 }
             }
         } else {
+            // Otherwise we retrieve a list of workflow lines by product families
             Set<Id> productFamilyIds = new Set<Id>();
 
             for (Non_ERP_Products__c a : allProducts) {
@@ -326,9 +328,6 @@ public with sharing class ProductProfilingHierarchyController {
             }
 
         }
-
-        System.debug('nodes' + nodes);
-
 
         return nodes;
     }
