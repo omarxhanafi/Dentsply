@@ -205,7 +205,7 @@ public with sharing class ProductProfilingHierarchyController {
     	        
     List<Non_ERP_Products__c> allProducts = new List<Non_ERP_Products__c>();    
 
-    String query = 'SELECT Id, Name, Countries__c, SBU__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, ProductFamily__r.ProductFamilyLabel__c, Manufacturer__c, ProductGroupText__c, QuantityUnitOfMeasure__c FROM Non_ERP_Products__c';
+    String query = 'SELECT Id, Name, Countries__c, SBU__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, ProductFamily__c, ProductFamily__r.ProductFamilyLabel__c, Manufacturer__c, ProductGroupText__c, QuantityUnitOfMeasure__c FROM Non_ERP_Products__c';
     query += ' WHERE Inactive__c = FALSE AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE)';
      
         
@@ -242,8 +242,10 @@ public with sharing class ProductProfilingHierarchyController {
         }
 
         // If a workflow filter is applied, we look for the product families through the workflow lines
+        List<WorkflowLine__c> workflowLines = new List<WorkflowLine__c>();
+
         if(workflow != ''){
-            List<WorkflowLine__c> workflowLines = [SELECT Id, ProductFamily__c, ProductFamily__r.ProductFamilyLabel__c FROM WorkflowLine__c where Workflow__c = :workflow];
+            workflowLines = [SELECT Id, Workflow__c, ProductFamily__c, ProductFamily__r.ProductFamilyLabel__c FROM WorkflowLine__c where Workflow__c = :workflow];
             for(WorkflowLine__c eachWorkflowLine : workflowLines){
                 productFamiliesSet.add(eachWorkflowLine.ProductFamily__c);
             }
@@ -296,12 +298,38 @@ public with sharing class ProductProfilingHierarchyController {
         
         
     List<HierarchyNode> nodes = new List<HierarchyNode>();
- 
-    for (Non_ERP_Products__c a : allProducts) { 
-        nodes.add(new HierarchyNode(a, false));        
-    }
-        
-    return nodes;
+        // If a workflow filter is applied we look through the list of workflow lines we retrieved previously
+        if(workflow != ''){
+            for (Non_ERP_Products__c a : allProducts) {
+                for(WorkflowLine__c eachWorkflowLine : workflowLines){
+                    if(eachWorkflowLine.ProductFamily__c == a.ProductFamily__c){
+                        nodes.add(new HierarchyNode(a, false, workflow, eachWorkflowLine.Id));
+                        break;
+                    }
+                }
+            }
+        } else {
+            // Otherwise we retrieve a list of workflow lines by product families
+            Set<Id> productFamilyIds = new Set<Id>();
+
+            for (Non_ERP_Products__c a : allProducts) {
+                productFamilyIds.add(a.ProductFamily__c);
+            }
+
+            List<WorkflowLine__c> workflowLinesByFamilies = [SELECT Id, Workflow__c, ProductFamily__c, ProductFamily__r.ProductFamilyLabel__c FROM WorkflowLine__c where ProductFamily__c in :productFamilyIds];
+
+            for (Non_ERP_Products__c a : allProducts) {
+                for(WorkflowLine__c line : workflowLinesByFamilies){
+                    if(a.ProductFamily__c == line.ProductFamily__c){
+                        nodes.add(new HierarchyNode(a, false, line.Workflow__c, line.Id));
+                        break;
+                    }
+                }
+            }
+
+        }
+
+        return nodes;
     }
         
     @AuraEnabled
@@ -435,15 +463,29 @@ public with sharing class ProductProfilingHierarchyController {
 
 
     public class HierarchyNode {
-    @AuraEnabled public Non_ERP_Products__c node;
-    @AuraEnabled public String nodeName;    
-    @AuraEnabled public List<HierarchyNode> children;
-    @AuraEnabled public Boolean isProfiled;
-    HierarchyNode(Non_ERP_Products__c acc, Boolean isProfiling) {
-        node = acc;
-        nodeName = acc.Name;
-        children = new List<HierarchyNode>();
-        isProfiled = isProfiling;
-    }        
+        @AuraEnabled public Non_ERP_Products__c node;
+        @AuraEnabled public String nodeName;
+        @AuraEnabled public List<HierarchyNode> children;
+        @AuraEnabled public Boolean isProfiled;
+        @AuraEnabled public Id workflow;
+        @AuraEnabled public Id workflowLine;
+
+        HierarchyNode(Non_ERP_Products__c acc, Boolean isProfiling) {
+            node = acc;
+            nodeName = acc.Name;
+            children = new List<HierarchyNode>();
+            isProfiled = isProfiling;
+        }
+
+        HierarchyNode(Non_ERP_Products__c acc, Boolean isProfiling, Id workflow, Id workflowLine) {
+            node = acc;
+            nodeName = acc.Name;
+            children = new List<HierarchyNode>();
+            isProfiled = isProfiling;
+            this.workflow = workflow;
+            this.workflowLine = workflowLine;
+        }
+
+
 	}
 }

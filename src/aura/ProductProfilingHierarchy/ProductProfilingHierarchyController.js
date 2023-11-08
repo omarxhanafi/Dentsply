@@ -297,6 +297,7 @@ init: function (cmp, event, helper) {
             }
             
     	}
+
         var notShownSelectedProducts = [];
                                     
         if(selected == true){
@@ -316,7 +317,7 @@ init: function (cmp, event, helper) {
         }       
                 	            
         cmp.set('v.currentSelectedRows', notShownSelectedProducts);
-            
+
         var productsWrapper = [];
         var rowsCount = 0;    
         
@@ -326,10 +327,12 @@ init: function (cmp, event, helper) {
             bundl.productId = notShownSelectedProducts[prod].Id;
             bundl.productName = notShownSelectedProducts[prod].Name;
            	bundl.manufacturerName = notShownSelectedProducts[prod].Manufacturer__c;
+            bundl.workflow = notShownSelectedProducts[prod].workflow;
+            bundl.workflowLine = notShownSelectedProducts[prod].workflowLine;
             
             productsWrapper.push(bundl);
             rowsCount++;
-    	}    
+    	}
                         
     	cmp.set('v.currentSelectedRowWrapper', productsWrapper);    
         cmp.set('v.currentSelectedRowsCount', rowsCount);
