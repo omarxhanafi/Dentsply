@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,7 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="List&lt;Product_Profiling__c&gt; families = [SELECT Id from Product_Profiling__c WHERE Account__c = '0015r00000qASgNAAW'];&#10;&#10;delete families;" />
+                  <option name="body" value="List&lt;ProductFamily__c&gt; families = [SELECT name from ProductFamily__c];&#10;&#10;for(ProductFamily__c family : families){&#10;    family.ProductFamilyLabel__c = family.Name;&#10;}&#10;&#10;update families;" />
                   <option name="name" value="Anonymous Apex 1" />
                 </AnonymousApexSavedDocument>
               </list>
@@ -18593,13 +18594,12 @@
                     <map>
                       <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1696171694728" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1697198113771" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1698758856222" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1698844848171" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1697799504340" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1692194892939" />
                       <entry key="APEXCLASS:TEST_ACTIVITYSCORECARDCONTROLLER" value="1697197787769" />
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1697799504340" />
-                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1698759990130" />
-                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1698844909318" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1697635868236" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1697799953943" />
                       <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.CLASSIFICATIONTYPE__C" value="1695383392000" />
                       <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.GBU__C" value="1695383392000" />
                       <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.GPHCODE__C" value="1695383392000" />
@@ -18716,7 +18716,7 @@
         </option>
         <option name="logAnalyzerSettings">
           <LogAnalyzerSettings>
-            <option name="splitterProportion" value="0.4378882" />
+            <option name="splitterProportion" value="0.518797" />
           </LogAnalyzerSettings>
         </option>
         <option name="retrieveAndMergeDefault" value="false" />
@@ -19095,7 +19095,6 @@
       <workItem from="1697317304351" duration="428000" />
       <workItem from="1697624106928" duration="7080000" />
       <workItem from="1698229191841" duration="1636000" />
-      <workItem from="1698410658168" duration="18571000" />
     </task>
     <servers />
   </component>
