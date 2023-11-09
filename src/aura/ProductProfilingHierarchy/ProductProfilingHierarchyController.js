@@ -326,6 +326,7 @@ init: function (cmp, event, helper) {
             bundl.productId = notShownSelectedProducts[prod].Id;
             bundl.productName = notShownSelectedProducts[prod].Name;
            	bundl.manufacturerName = notShownSelectedProducts[prod].Manufacturer__c;
+            bundl.productFamilyLabel = notShownSelectedProducts[prod].ProductFamily__r.ProductFamilyLabel__c;
             
             productsWrapper.push(bundl);
             rowsCount++;
