@@ -1,7 +1,7 @@
 public with sharing class WorkflowProfilingController {
 
     @AuraEnabled(cacheable=true)
-    public static List<Workflow__c> getWorkflowsByExcludingCountry(Id accountId) {
+    public static List<Workflow__c> getWorkflows(Id accountId) {
         Account acc = [SELECT Id, Country__c from Account where id = :accountId LIMIT 1];
 
         if(acc != null){

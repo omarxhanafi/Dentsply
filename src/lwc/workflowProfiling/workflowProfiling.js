@@ -1,5 +1,5 @@
 import { LightningElement, wire, api, track } from 'lwc';
-import getWorkflowsByExcludingCountry from '@salesforce/apex/WorkflowProfilingController.getWorkflowsByExcludingCountry';
+import getWorkflows from '@salesforce/apex/WorkflowProfilingController.getWorkflows';
 import getWorkflowProfilingsByAccount from '@salesforce/apex/WorkflowProfilingController.getWorkflowProfilingsByAccount';
 import createOrUpdateWorkflowProfilings from '@salesforce/apex/WorkflowProfilingController.createOrUpdateWorkflowProfilings';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
@@ -17,7 +17,7 @@ export default class WorkflowProfiling extends LightningElement {
     hotIconUrl = HOT_ICON;
     coldIconUrl = COLD_ICON;
 
-    @wire(getWorkflowsByExcludingCountry, { accountId: '$recordId' })
+    @wire(getWorkflows, { accountId: '$recordId' })
     wiredWorkflows({ error, data }) {
         if (data) {
             // Add the 'rating' property to each workflow
