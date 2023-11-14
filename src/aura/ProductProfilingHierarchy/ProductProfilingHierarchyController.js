@@ -441,6 +441,8 @@ init: function (cmp, event, helper) {
                 helper.getChildProductsServer(cmp, event,'',filter.SBU,filter.manufacturer,filter.searchString,'',filter.competitor,filter.focus,filter.localCategory, filter.workflow);
             }
             else if(filter.searchString.length == 0){
+                console.log("Are we here ?");
+
                 cmp.find('competitorFilter').set('v.checked', false);
                 cmp.find('focusFilter').set('v.checked', false);
                 var completeData = cmp.get('v.gridWrapperData');
@@ -733,11 +735,6 @@ init: function (cmp, event, helper) {
         filter.categories = cmp.find('categoryFilter').get('v.value');
         
         if(searchFilter.length>1){
-
-            if(cmp.get('v.hideFilters') == false){
-                cmp.set('v.hideToggleFilters', false);
-            }
-
             helper.getChildProductsServer(cmp, event, '',filter.SBU,filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,filter.localCategory, filter.workflow);
         }
         else if(filter.SBU != '' || (filter.manufacturer != '' && filter.focus == false && filter.competitor == false) || filter.focus == true || filter.competitor == true || filter.localCategory != '' || filter.workflow != ''){
@@ -777,8 +774,6 @@ init: function (cmp, event, helper) {
         //alert('Hide filters?: ' + hideFilters);
         if(hideFilters == false){
             cmp.set("v.hideFilters", true);
-            cmp.set("v.hideToggleFilters", true);
-
         }
         else{
            cmp.set("v.hideFilters", false); 
