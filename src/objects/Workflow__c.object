@@ -157,7 +157,7 @@
         <fullName>Countries__c</fullName>
         <description>To which countries, this workflow should be excluded for account profiling.</description>
         <externalId>false</externalId>
-        <label>ExcludedCountries</label>
+        <label>Countries</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>MultiselectPicklist</type>
@@ -166,6 +166,17 @@
             <valueSetName>Country_Code_2_digit</valueSetName>
         </valueSet>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>GlobalProductShowtoallcountries__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, this product will be shown to all countries regardless of the countries&apos; field selection.
+TFUS-000006035</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, this product will be shown to all countries regardless of the countries&apos; field selection.</inlineHelpText>
+        <label>Global Product (Show to all countries)</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>WorkflowLabel__c</fullName>

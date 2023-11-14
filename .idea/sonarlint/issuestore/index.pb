@@ -69,5 +69,3 @@ p
 @src/aura/ProductProfilingComponent/ProductProfilingComponent.cmp,2/4/241c0e9db6182f0b54e8f3702ace35ae107c2cb6
 y
 Isrc/aura/ProductProfilingComponent/ProductProfilingComponentController.js,4/c/4cd14365cae38c458babc4e25aadccf14e98498d
-[
-+src/classes/WorkflowProfilingController.cls,1/5/15f4f4c2e40fcd97747804bbccfde185a017e797

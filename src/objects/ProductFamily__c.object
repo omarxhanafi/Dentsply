@@ -217,6 +217,18 @@ TFUS-000005712</description>
         <type>Number</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>ProductFamilyLabel__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Family Label</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>ProductFamily</valueSetName>
+        </valueSet>
+    </fields>
     <label>Product Family</label>
     <listViews>
         <fullName>All</fullName>

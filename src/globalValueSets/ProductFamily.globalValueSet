@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>3D Printer</fullName>
+        <default>false</default>
+        <label>3D Printer</label>
+    </customValue>
+    <customValue>
+        <fullName>Bulk Composite</fullName>
+        <default>false</default>
+        <label>Bulk Composite</label>
+    </customValue>
+    <customValue>
+        <fullName>CAD/CAM Ceramics &amp; Zirconia</fullName>
+        <default>false</default>
+        <label>CAD/CAM Ceramics &amp; Zirconia</label>
+    </customValue>
+    <customValue>
+        <fullName>Clear Aligners</fullName>
+        <default>false</default>
+        <label>Clear Aligners</label>
+    </customValue>
+    <customValue>
+        <fullName>Cloud Software</fullName>
+        <default>false</default>
+        <label>Cloud Software</label>
+    </customValue>
+    <customValue>
+        <fullName>Core</fullName>
+        <default>false</default>
+        <label>Core</label>
+    </customValue>
+    <customValue>
+        <fullName>Dental Lab Scanner</fullName>
+        <default>false</default>
+        <label>Dental Lab Scanner</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Denture Base</fullName>
+        <default>false</default>
+        <label>Digital Denture Base</label>
+    </customValue>
+    <customValue>
+        <fullName>DI Systems</fullName>
+        <default>false</default>
+        <label>DI Systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Endo Activator</fullName>
+        <default>false</default>
+        <label>Endo Activator</label>
+    </customValue>
+    <customValue>
+        <fullName>Finishing &amp; Polishing</fullName>
+        <default>false</default>
+        <label>Finishing &amp; Polishing</label>
+    </customValue>
+    <customValue>
+        <fullName>Glide Path Files Rotary</fullName>
+        <default>false</default>
+        <label>Glide Path Files Rotary</label>
+    </customValue>
+    <customValue>
+        <fullName>Implant Planning Software</fullName>
+        <default>false</default>
+        <label>Implant Planning Software</label>
+    </customValue>
+    <customValue>
+        <fullName>Implant System</fullName>
+        <default>false</default>
+        <label>Implant System</label>
+    </customValue>
+    <customValue>
+        <fullName>inLab Furnaces</fullName>
+        <default>false</default>
+        <label>inLab Furnaces</label>
+    </customValue>
+    <customValue>
+        <fullName>Intraoral sensors</fullName>
+        <default>false</default>
+        <label>Intraoral sensors</label>
+    </customValue>
+    <customValue>
+        <fullName>LED Lights</fullName>
+        <default>false</default>
+        <label>LED Lights</label>
+    </customValue>
+    <customValue>
+        <fullName>Matrix Systems</fullName>
+        <default>false</default>
+        <label>Matrix Systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Milling Acquisition Systems</fullName>
+        <default>false</default>
+        <label>Milling Acquisition Systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Milling Machines</fullName>
+        <default>false</default>
+        <label>Milling Machines</label>
+    </customValue>
+    <customValue>
+        <fullName>Motors &amp; Contra Angles</fullName>
+        <default>false</default>
+        <label>Motors &amp; Contra Angles</label>
+    </customValue>
+    <customValue>
+        <fullName>Patient Specific Abutment</fullName>
+        <default>false</default>
+        <label>Patient Specific Abutment</label>
+    </customValue>
+    <customValue>
+        <fullName>Patient Specific Suprastructures</fullName>
+        <default>false</default>
+        <label>Patient Specific Suprastructures</label>
+    </customValue>
+    <customValue>
+        <fullName>Permanent Cements</fullName>
+        <default>false</default>
+        <label>Permanent Cements</label>
+    </customValue>
+    <customValue>
+        <fullName>Plastic Sheets</fullName>
+        <default>false</default>
+        <label>Plastic Sheets</label>
+    </customValue>
+    <customValue>
+        <fullName>ProphyPaste &amp; Accessories</fullName>
+        <default>false</default>
+        <label>ProphyPaste &amp; Accessories</label>
+    </customValue>
+    <customValue>
+        <fullName>Provisional Restoration</fullName>
+        <default>false</default>
+        <label>Provisional Restoration</label>
+    </customValue>
+    <customValue>
+        <fullName>Reciprocating Files</fullName>
+        <default>false</default>
+        <label>Reciprocating Files</label>
+    </customValue>
+    <customValue>
+        <fullName>Regenerative (Guided Bone Regeneration)</fullName>
+        <default>false</default>
+        <label>Regenerative (Guided Bone Regeneration)</label>
+    </customValue>
+    <customValue>
+        <fullName>Rotary Files</fullName>
+        <default>false</default>
+        <label>Rotary Files</label>
+    </customValue>
+    <customValue>
+        <fullName>Sealer</fullName>
+        <default>false</default>
+        <label>Sealer</label>
+    </customValue>
+    <customValue>
+        <fullName>Sintering Furnace</fullName>
+        <default>false</default>
+        <label>Sintering Furnace</label>
+    </customValue>
+    <customValue>
+        <fullName>Structured Materials Discs</fullName>
+        <default>false</default>
+        <label>Structured Materials Discs</label>
+    </customValue>
+    <customValue>
+        <fullName>Treatment Center</fullName>
+        <default>false</default>
+        <label>Treatment Center</label>
+    </customValue>
+    <customValue>
+        <fullName>Universal Adhesives</fullName>
+        <default>false</default>
+        <label>Universal Adhesives</label>
+    </customValue>
+    <customValue>
+        <fullName>Universal Composites</fullName>
+        <default>false</default>
+        <label>Universal Composites</label>
+    </customValue>
+    <customValue>
+        <fullName>Vibration Devices</fullName>
+        <default>false</default>
+        <label>Vibration Devices</label>
+    </customValue>
+    <customValue>
+        <fullName>Whitening</fullName>
+        <default>false</default>
+        <label>Whitening</label>
+    </customValue>
+    <customValue>
+        <fullName>X-Ray 3D</fullName>
+        <default>false</default>
+        <label>X-Ray 3D</label>
+    </customValue>
+    <masterLabel>Product Family</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

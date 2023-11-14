@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Orthodontics CIS</fullName>
+        <default>false</default>
+        <label>Orthodontics CIS</label>
+    </customValue>
+    <customValue>
+        <fullName>CEREC Equipment</fullName>
+        <default>false</default>
+        <label>CEREC Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Clinical Development Manager</fullName>
+        <default>false</default>
+        <label>Clinical Development Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>DS Lab</fullName>
+        <default>false</default>
+        <label>DS Lab</label>
+    </customValue>
+    <customValue>
+        <fullName>Endodontics</fullName>
+        <default>false</default>
+        <label>Endodontics</label>
+    </customValue>
+    <customValue>
+        <fullName>Imaging Equipment</fullName>
+        <default>false</default>
+        <label>Imaging Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Implants</fullName>
+        <default>false</default>
+        <label>Implants</label>
+    </customValue>
+    <customValue>
+        <fullName>Implants MIS</fullName>
+        <default>false</default>
+        <label>Implants MIS</label>
+    </customValue>
+    <customValue>
+        <fullName>Orthodontics</fullName>
+        <default>false</default>
+        <label>Orthodontics</label>
+    </customValue>
+    <customValue>
+        <fullName>Preventive</fullName>
+        <default>false</default>
+        <label>Preventive</label>
+    </customValue>
+    <customValue>
+        <fullName>Treatment Centers</fullName>
+        <default>false</default>
+        <label>Treatment Centers</label>
+    </customValue>
+    <customValue>
+        <fullName>Restorative</fullName>
+        <default>false</default>
+        <label>Restorative</label>
+    </customValue>
+    <masterLabel>E-Commerce Team</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

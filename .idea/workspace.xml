@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/8/2896ffe9c932642d1ea44ad50465d37c5f6d9934" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/15f4f4c2e40fcd97747804bbccfde185a017e797" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingDetails/ProductProfilingDetails.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingDetails/ProductProfilingDetails.cmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingDetails/ProductProfilingDetailsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingDetails/ProductProfilingDetailsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingBundle.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingBundle.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Non_ERP_Products__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Non_ERP_Products__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/ProductFamily__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/ProductFamily__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Workflow__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Workflow__c.object" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +37,7 @@
         <entry key="Dentsply">
           <value>
             <ModuleWorkspaceSettings>
-              <option name="moduleContentsLastModified" value="1695386813324" />
+              <option name="moduleContentsLastModified" value="1699613686146" />
             </ModuleWorkspaceSettings>
           </value>
         </entry>
@@ -59,9 +60,21 @@
                   <option name="body" value="List&lt;Product_Profiling__c&gt; profs = [SELECT id from Product_Profiling__c where Account__c = '0015r00000qASgNAAW'];&#10;&#10;delete profs;" />
                   <option name="name" value="Anonymous Apex 2" />
                 </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="body" value="List&lt;Workflow__c&gt; workflows = [select id, name, WorkflowLabel__c from Workflow__c];&#10;&#10;for(Workflow__c work : workflows){&#10;    work.WorkflowLabel__c = work.Name;&#10;}&#10;&#10;update workflows;" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="Anonymous Apex 1" />
+                </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="body" value="List&lt;Non_ERP_Products__c&gt; prods = [select id, productfamily__c from Non_ERP_Products__c where Countries__c INCLUDES ('PL')];&#10;&#10;for(Non_ERP_Products__c prod : prods){&#10;    prod.productfamily__c = null;&#10;}&#10;&#10;update prods;" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="Anonymous Apex 3" />
+                </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="0" />
+            <option name="selectedSavedDocumentIndex" value="2" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionWorkspaceSettings">
@@ -18193,8 +18206,8 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1695385676209" />
-                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1695385632000" />
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1699614320693" />
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1699614336006" />
                       <entry key="APEXCLASS:CAMPAIGNMEMBERTRIGGERHELPER" value="1668005778242" />
                       <entry key="APEXCLASS:CHANGEOWNER" value="1669800166407" />
                       <entry key="APEXCLASS:FINDLEADMATCH" value="1668161656809" />
@@ -18202,10 +18215,40 @@
                       <entry key="APEXCLASS:FLOWLOOKUPLWCCONTROLLER" value="1675243532479" />
                       <entry key="APEXCLASS:OPPORTUNITYINSERTASYNCH" value="1668510513326" />
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1666193185822" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1699618608061" />
                       <entry key="APEXCLASS:USERSINACCOUNTTERRITORIES" value="1667389763476" />
-                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1696434242085" />
+                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1699614933148" />
                       <entry key="AURADEFINITIONBUNDLE:FLOW_SUGGESTEDUSERSBASEDONBRAND" value="1667402512131" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1699613853000" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1699612519000" />
                       <entry key="AURADEFINITIONBUNDLE:SERVICECLOUD_FLOWINPUTFIELD" value="1674823830000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.ADDITIONAL_NAME__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.CATCH_PHRASE__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.COMPETITOR_PRODUCT__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.COUNTRIES__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.CUSTOMCATEGORY__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.DETAILS__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.GLOBALPRODUCTSHOWTOALLCOUNTRIES__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.INACTIVE__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.KANA__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.KEYPRODUCT__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.MANUFACTURER__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.MARKET__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.OLD_PRODUCT_ID__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.PRODUCTFAMILY__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.PRODUCTGROUPTEXT__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.PRODUCT_CATEGORY__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.PRODUCT_IMAGE_1__C" value="1699613750000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.PRODUCT_IMAGE_2__C" value="1699613750000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.PRODUCT_IMAGE_3__C" value="1699613750000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.PRODUCT_MARKET_MAPPING__C" value="1699613750000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.QUANTITYUNITOFMEASURE__C" value="1699613750000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.REPLACEMENTS__C" value="1699613750000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.SBU__C" value="1699613750000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.SEARCH_KEYWORD__C" value="1699613750000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.STATUS__C" value="1699613750000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.T35_NAME_UK__C" value="1699613750000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.VALID_IN_MY_MARKET__C" value="1699613750000" />
                       <entry key="CUSTOMFIELD:PRODUCT2.BRANDCATEGORY__C" value="1695384210000" />
                       <entry key="CUSTOMFIELD:PRODUCT2.BRANDTYPE__C" value="1695384210000" />
                       <entry key="CUSTOMFIELD:PRODUCT2.FACTORYDESC__C" value="1695384210000" />
@@ -18213,36 +18256,56 @@
                       <entry key="CUSTOMFIELD:PRODUCT2.PILLARDESC__C" value="1695384210000" />
                       <entry key="CUSTOMFIELD:PRODUCT2.SEGMENTNAME__C" value="1695384210000" />
                       <entry key="CUSTOMFIELD:PRODUCT2.SOURCESYSTEMNAME__C" value="1695384210000" />
-                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.CLASSIFICATIONTYPE__C" value="1695386160000" />
-                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.GBU__C" value="1695386160000" />
-                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.GPHCODE__C" value="1695386160000" />
-                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.LIFESPANMONTHS__C" value="1695386160000" />
+                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.CLASSIFICATIONTYPE__C" value="1699613224000" />
+                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.GBU__C" value="1699613224000" />
+                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.GPHCODE__C" value="1699613224000" />
+                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.LIFESPANMONTHS__C" value="1699613224000" />
+                      <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.PRODUCTFAMILYLABEL__C" value="1699613224000" />
                       <entry key="CUSTOMFIELD:WORKFLOWLINE__C.ORDER__C" value="1695386160000" />
                       <entry key="CUSTOMFIELD:WORKFLOWLINE__C.PRODUCTFAMILY__C" value="1695386160000" />
                       <entry key="CUSTOMFIELD:WORKFLOWLINE__C.WORKFLOW__C" value="1695386159000" />
                       <entry key="CUSTOMFIELD:WORKFLOWPROFILING__C.ACCOUNT__C" value="1695386160000" />
                       <entry key="CUSTOMFIELD:WORKFLOWPROFILING__C.RATING__C" value="1695386160000" />
                       <entry key="CUSTOMFIELD:WORKFLOWPROFILING__C.WORKFLOW__C" value="1695386160000" />
-                      <entry key="CUSTOMFIELD:WORKFLOW__C.COUNTRIES__C" value="1695386160000" />
-                      <entry key="CUSTOMFIELD:WORKFLOW__C.WORKFLOWLABEL__C" value="1695386160000" />
+                      <entry key="CUSTOMFIELD:WORKFLOW__C.COUNTRIES__C" value="1699613011000" />
+                      <entry key="CUSTOMFIELD:WORKFLOW__C.GLOBALPRODUCTSHOWTOALLCOUNTRIES__C" value="1699613011000" />
+                      <entry key="CUSTOMFIELD:WORKFLOW__C.WORKFLOWLABEL__C" value="1699613011000" />
                       <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1695385506000" />
-                      <entry key="CUSTOMOBJECT:PRODUCTFAMILY__C" value="1695386160000" />
+                      <entry key="CUSTOMOBJECT:NON_ERP_PRODUCTS__C" value="1699613750000" />
+                      <entry key="CUSTOMOBJECT:PRODUCTFAMILY__C" value="1699613224000" />
                       <entry key="CUSTOMOBJECT:WORKFLOWLINE__C" value="1695386160000" />
                       <entry key="CUSTOMOBJECT:WORKFLOWPROFILING__C" value="1695386160000" />
-                      <entry key="CUSTOMOBJECT:WORKFLOW__C" value="1695386160000" />
+                      <entry key="CUSTOMOBJECT:WORKFLOW__C" value="1699613011000" />
                       <entry key="FLEXIPAGE:LIGHTNING_ACCOUNTACC360" value="1695388578000" />
                       <entry key="GLOBALVALUESET:GBU" value="1695386095000" />
+                      <entry key="GLOBALVALUESET:PRODUCTFAMILY" value="1699613196000" />
                       <entry key="GLOBALVALUESET:WORKFLOWS" value="1695386095000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1695385692000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1699614972000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARD" value="1682075429551" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1695385649000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1699614994000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CLONEORDEROMLWC" value="1666105134000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:FLOW_LOOKUPLWC" value="1675243668000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:LEADMATCHCONTACTHANDLING" value="1666275637000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:SELECTPRODUCTSOMLWC" value="1666187952046" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1696433887000" />
-                      <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1695386160000" />
-                      <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1695386160000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1699614946000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.ALL" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.AT" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.CH" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.DE" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.FR" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.GLOBAL_PRODUCT_GROUP_EMPTY" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.IB" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.IBERIA" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.IT" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.MANUFACTURER_EMPTY" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.PL" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.RUSSIA_PRODS" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.TR" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.UK" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.UK_PRODUCTS1" value="1699613750000" />
+                      <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.US" value="1699613750000" />
+                      <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1699613224000" />
+                      <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1699613011000" />
                       <entry key="STATICRESOURCE:COLDICON" value="1695386286000" />
                       <entry key="STATICRESOURCE:HOTICON" value="1695386286000" />
                     </map>
@@ -18598,7 +18661,7 @@
                       <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1696171694728" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1697198113771" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1699450620652" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1699618596771" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1692194892939" />
                       <entry key="APEXCLASS:TEST_ACTIVITYSCORECARDCONTROLLER" value="1697197787769" />
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1697799504340" />
@@ -18669,7 +18732,7 @@
                   </option>
                   <option name="lastCustomSelectionUrls">
                     <set>
-                      <option value="metadata://FlexiPage/Lightning_Accountacc360" />
+                      <option value="metadata://GlobalValueSet/ProductFamily" />
                     </set>
                   </option>
                   <option name="lastDeleteOptions">
@@ -18730,12 +18793,20 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select name, productfamilylabel__c from ProductFamily__c" />
+                  <option name="body" value="select id, name, productfamilylabel__c from ProductFamily__c" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 1" />
+                </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="select id, productfamily__c from Non_ERP_Products__c where Countries__c INCLUDES ('US')" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="SOQL Query 2" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="0" />
+            <option name="selectedSavedDocumentIndex" value="1" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -19099,7 +19170,7 @@
       <workItem from="1697317304351" duration="428000" />
       <workItem from="1697624106928" duration="7080000" />
       <workItem from="1698229191841" duration="1636000" />
-      <workItem from="1699451916839" duration="4217000" />
+      <workItem from="1699451916839" duration="12227000" />
     </task>
     <servers />
   </component>

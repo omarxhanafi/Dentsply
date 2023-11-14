@@ -42,7 +42,7 @@ public with sharing class ProductProfilingHierarchyController {
         else{
     		results = [SELECT count(Id), ProductFamily__r.ProductFamilyLabel__c family FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) GROUP BY ProductFamily__r.ProductFamilyLabel__c];
         }
-        
+
         
     List<String> uniqueNames = new List<String>();
         
