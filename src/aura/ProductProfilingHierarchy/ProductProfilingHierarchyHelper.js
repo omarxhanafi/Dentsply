@@ -322,9 +322,9 @@
             //Sort values ascending
             this.sortTable(cmp, event, true, plList, "label");
             plList.unshift(
-                { label : "", value : "" },
-                { label : "Only focus products", value : "focus" },
-                { label : "Only Dentsply Sirona Products", value : "competitor" }
+                { label : "", value : "" }
+                // { label : "Only focus products", value : "focus" },
+                // { label : "Only Dentsply Sirona Products", value : "competitor" }
             );
             cmp.set(varToAssign, plList);
 
@@ -533,11 +533,13 @@
                 this.sortTable(cmp, event, true, filteredData, "nodeName");
                    
                 cmp.set('v.gridWrapperData', data);
-                
+
+
                 if(searchString.length>1 || category != '' || manufacturer != '' || workflow != '' || localcat != ''){
+
                     cmp.set('v.gridWrapperFilteredData', filteredData);
                     
-                    if(manufacturer == ''){
+                    if(manufacturer == '' && focus == false && competitor == false){
                         var manufacturers = [];
                         
                         for(var k in manufacturerSet){

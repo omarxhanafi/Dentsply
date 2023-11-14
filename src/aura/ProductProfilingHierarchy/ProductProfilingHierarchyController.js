@@ -34,9 +34,9 @@ init: function (cmp, event, helper) {
         helper.getWorkflows(cmp, event, "v.workflows");
         helper.getManufacturers(cmp, event, "Manufacturer__c", "v.manufacturers", '');
         helper.getLocalCategories(cmp, event, "Product_Category__c", "v.localCategories", '', '');
-        helper.getProductProfilingRecords(cmp, event, record);        
-	            
-        var selectedProducts = cmp.get("v.currentSelectedRows");        
+        helper.getProductProfilingRecords(cmp, event, record);
+
+        var selectedProducts = cmp.get("v.currentSelectedRows");
         var productsWrapper = [];
                 
         var rowsCount = 0;        
@@ -437,14 +437,10 @@ init: function (cmp, event, helper) {
         var tempArray = [];
         var arrayLength =allRecords.length;
 
-            if((filter.manufacturer != '' && filter.focus == false && filter.competitor == false) || filter.focus == true || filter.competitor == true || filter.SBU != '' || filter.searchString.length > 1 || filter.localCategory != '' || filter.workflow != ''){ //|| filter.competitor != false || filter.focus != false
-                if(cmp.get('v.hideFilters') == false){
-                    cmp.set('v.hideToggleFilters', false);
-                }
+            if((filter.manufacturer != '' && filter.focus == false && filter.competitor == false) || filter.SBU != '' || filter.searchString.length > 1 || filter.localCategory != '' || filter.workflow != ''){ //|| filter.competitor != false || filter.focus != false
                 helper.getChildProductsServer(cmp, event,'',filter.SBU,filter.manufacturer,filter.searchString,'',filter.competitor,filter.focus,filter.localCategory, filter.workflow);
             }
             else if(filter.searchString.length == 0){
-                cmp.set('v.hideToggleFilters', true);
                 cmp.find('competitorFilter').set('v.checked', false);
                 cmp.find('focusFilter').set('v.checked', false);
                 var completeData = cmp.get('v.gridWrapperData');
@@ -460,7 +456,6 @@ init: function (cmp, event, helper) {
                 }    
         	}
     },
-    
     
     goToProduct: function(cmp, event){
         var navService = cmp.find("navService");
@@ -738,11 +733,11 @@ init: function (cmp, event, helper) {
         filter.categories = cmp.find('categoryFilter').get('v.value');
         
         if(searchFilter.length>1){
-            
+
             if(cmp.get('v.hideFilters') == false){
                 cmp.set('v.hideToggleFilters', false);
             }
-            
+
             helper.getChildProductsServer(cmp, event, '',filter.SBU,filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,filter.localCategory, filter.workflow);
         }
         else if(filter.SBU != '' || (filter.manufacturer != '' && filter.focus == false && filter.competitor == false) || filter.focus == true || filter.competitor == true || filter.localCategory != '' || filter.workflow != ''){
@@ -751,8 +746,7 @@ init: function (cmp, event, helper) {
         }
         else if(searchFilter.length == 0){
             console.log('Resetting data');
-            
-            cmp.set('v.hideToggleFilters', true);
+
             cmp.find('competitorFilter').set('v.checked', false);
             cmp.find('focusFilter').set('v.checked', false);
 
@@ -766,7 +760,7 @@ init: function (cmp, event, helper) {
             helper.getSBUs(cmp, event, "ProductGroupText__c", "v.options");
     		helper.getManufacturers(cmp, event, "Manufacturer__c", "v.manufacturers", '');
         	helper.getLocalCategories(cmp, event, "Product_Category__c", "v.localCategories", '', '');
- 
+
             if(cmp.find('mytree')){
                 var expanded = [];
             	cmp.set('v.expandedRows', expanded);
@@ -784,7 +778,7 @@ init: function (cmp, event, helper) {
         if(hideFilters == false){
             cmp.set("v.hideFilters", true);
             cmp.set("v.hideToggleFilters", true);
-            
+
         }
         else{
            cmp.set("v.hideFilters", false); 
