@@ -312,10 +312,6 @@
         action.setCallback(this, function(response) {
             var result=response.getReturnValue();
             var plList = [];
-            var plDef = {};
-            plDef.label="";
-            plDef.value="";
-            plList.push(plDef);
             for(var res in result){
                 var plVal = {};
                 plVal.label = result[res];
@@ -325,6 +321,11 @@
 
             //Sort values ascending
             this.sortTable(cmp, event, true, plList, "label");
+            plList.unshift(
+                { label : "", value : "" },
+                { label : "Only focus products", value : "focus" },
+                { label : "Only Dentsply Sirona Products", value : "competitor" }
+            );
             cmp.set(varToAssign, plList);
 
         });
@@ -538,10 +539,6 @@
                     
                     if(manufacturer == ''){
                         var manufacturers = [];
-                        var mDef = {};
-                        mDef.label = '';
-                        mDef.value = '';
-                        manufacturers.push(mDef);
                         
                         for(var k in manufacturerSet){
                             var m = {};
@@ -550,6 +547,13 @@
                             manufacturers.push(m);
                         }
                         this.sortTable(cmp, event, true, manufacturers, "label");
+
+                        manufacturers.unshift(
+                            { label : "", value : "" },
+                            { label : "Only focus products", value : "focus" },
+                            { label : "Only Dentsply Sirona Products", value : "competitor" }
+                        );
+
                         cmp.set('v.manufacturers', manufacturers);
                     }
                     

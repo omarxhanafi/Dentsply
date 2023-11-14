@@ -99,12 +99,12 @@ Description:   	Component to select Non-ERP products (in a Hierarchy where the p
         </div>
 
         
-        <div class="{!if(v.hideToggleFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size--1-of-1 slds-medium-size--6-of-12 slds-large-size--6-of-12')}">      
-            <lightning:input type="toggle" label="Only focus products" aura:id="focusFilter" name="focusFilter" onchange="{!c.filterTable}" value="focusFilter"/>
-        </div>
-        <div class="{!if(v.hideToggleFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size--1-of-1 slds-medium-size--6-of-12 slds-large-size--6-of-12')}">
-            <lightning:input type="toggle" label="Only DentplySirona products" aura:id="competitorFilter" name="competitorFilter" onchange="{!c.filterTable}" value="competitorFilter"/>
-        </div>
+<!--        <div class="{!if(v.hideToggleFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size&#45;&#45;1-of-1 slds-medium-size&#45;&#45;6-of-12 slds-large-size&#45;&#45;6-of-12')}">      -->
+<!--            <lightning:input type="toggle" label="Only focus products" aura:id="focusFilter" name="focusFilter" onchange="{!c.filterTable}" value="focusFilter"/>-->
+<!--        </div>-->
+<!--        <div class="{!if(v.hideToggleFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size&#45;&#45;1-of-1 slds-medium-size&#45;&#45;6-of-12 slds-large-size&#45;&#45;6-of-12')}">-->
+<!--            <lightning:input type="toggle" label="Only DentplySirona products" aura:id="competitorFilter" name="competitorFilter" onchange="{!c.filterTable}" value="competitorFilter"/>-->
+<!--        </div>-->
         
         
 		</div>

@@ -390,8 +390,8 @@ init: function (cmp, event, helper) {
             else{
                 filter.searchString = '';
             }
-        filter.focus = cmp.find('focusFilter').get('v.checked');
-        filter.competitor = cmp.find('competitorFilter').get('v.checked');
+        // filter.focus = cmp.find('focusFilter').get('v.checked');
+        // filter.competitor = cmp.find('competitorFilter').get('v.checked');
 
         // if(cmp.find('sbuFilter').get('v.value') != null){
         // 	filter.SBU = cmp.find('sbuFilter').get('v.value');
@@ -404,11 +404,18 @@ init: function (cmp, event, helper) {
 
         filter.SBU = '';
 
-            if(cmp.find('manufactFilter').get('v.value') != null){
-            filter.manufacturer = cmp.find('manufactFilter').get('v.value');
-        }
-        else{
-            filter.manufacturer = '';
+        filter.focus = false;
+        filter.competitor = false;
+        filter.manufacturer = '';
+        var manufacturerFilter = cmp.find('manufactFilter').get('v.value');
+        if(manufacturerFilter != null){
+            if(manufacturerFilter == 'focus'){
+                filter.focus = true;
+            } else if (manufacturerFilter == 'competitor'){
+                filter.competitor = true;
+            } else {
+                filter.manufacturer = manufacturerFilter;
+            }
         }
 
         // if(cmp.find('localCategoryFilter').get('v.value') != null){
@@ -428,9 +435,9 @@ init: function (cmp, event, helper) {
             
         filter.categories = cmp.find('categoryFilter').get('v.value');
         var tempArray = [];
-        var arrayLength =allRecords.length; 
-                        
-            if(filter.manufacturer != '' || filter.SBU != '' || filter.searchString.length > 1 || filter.localCategory != '' || filter.workflow != ''){ //|| filter.competitor != false || filter.focus != false
+        var arrayLength =allRecords.length;
+
+            if((filter.manufacturer != '' && filter.focus == false && filter.competitor == false) || filter.focus == true || filter.competitor == true || filter.SBU != '' || filter.searchString.length > 1 || filter.localCategory != '' || filter.workflow != ''){ //|| filter.competitor != false || filter.focus != false
                 if(cmp.get('v.hideFilters') == false){
                     cmp.set('v.hideToggleFilters', false);
                 }
@@ -591,8 +598,8 @@ init: function (cmp, event, helper) {
             else{
                 filter.searchString = '';
             }
-            filter.focus = cmp.find('focusFilter').get('v.checked');
-            filter.competitor = cmp.find('competitorFilter').get('v.checked');
+            // filter.focus = cmp.find('focusFilter').get('v.checked');
+            // filter.competitor = cmp.find('competitorFilter').get('v.checked');
     
             // if(cmp.find('sbuFilter').get('v.value') != null){
             //     filter.SBU = cmp.find('sbuFilter').get('v.value');
@@ -603,12 +610,20 @@ init: function (cmp, event, helper) {
 
             filter.SBU = '';
 
-            if(cmp.find('manufactFilter').get('v.value') != null){
-                filter.manufacturer = cmp.find('manufactFilter').get('v.value');
+            filter.focus = false;
+            filter.competitor = false;
+            filter.manufacturer = '';
+            var manufacturerFilter = cmp.find('manufactFilter').get('v.value');
+            if(manufacturerFilter != null){
+                if(manufacturerFilter == 'focus'){
+                    filter.focus = true;
+                } else if (manufacturerFilter == 'competitor'){
+                    filter.competitor = true;
+                } else {
+                    filter.manufacturer = manufacturerFilter;
+                }
             }
-            else{
-                filter.manufacturer = '';
-            }
+
             // if(cmp.find('localCategoryFilter').get('v.value') != null){
             // 	filter.localCategory = cmp.find('localCategoryFilter').get('v.value');
             // }
@@ -626,8 +641,8 @@ init: function (cmp, event, helper) {
             }
 
             filter.categories = cmp.find('categoryFilter').get('v.value');
-                        
-            if(filter.searchString == '' && filter.SBU == '' && filter.manufacturer == '' && filter.localCategory == '' && filter.workflow == ''){
+
+            if(filter.searchString == '' && filter.SBU == '' && filter.manufacturer == '' && filter.focus == false && filter.competitor == false && filter.localCategory == '' && filter.workflow == ''){
                 var prevOpenSections = cmp.get("v.prevExpandedRows");
                 for(var sectionKey in openSections){
                     var section = openSections[sectionKey];
@@ -678,8 +693,8 @@ init: function (cmp, event, helper) {
         //Check for any filterings
         var filter = {};
         //filter.searchString = cmp.find('searchBox').get('v.value');       
-        filter.focus = cmp.find('focusFilter').get('v.checked');
-        filter.competitor = cmp.find('competitorFilter').get('v.checked');
+        // filter.focus = cmp.find('focusFilter').get('v.checked');
+        // filter.competitor = cmp.find('competitorFilter').get('v.checked');
         
         // if(cmp.find('sbuFilter').get('v.value') != null){
         //     filter.SBU = cmp.find('sbuFilter').get('v.value');
@@ -690,12 +705,20 @@ init: function (cmp, event, helper) {
 
         filter.SBU = '';
 
-        if(cmp.find('manufactFilter').get('v.value') != null){
-            filter.manufacturer = cmp.find('manufactFilter').get('v.value');
+        filter.focus = false;
+        filter.competitor = false;
+        filter.manufacturer = '';
+        var manufacturerFilter = cmp.find('manufactFilter').get('v.value');
+        if(manufacturerFilter != null){
+            if(manufacturerFilter == 'focus'){
+                filter.focus = true;
+            } else if (manufacturerFilter == 'competitor'){
+                filter.competitor = true;
+            } else {
+                filter.manufacturer = manufacturerFilter;
+            }
         }
-        else{
-            filter.manufacturer = '';
-        }
+
         // if(cmp.find('localCategoryFilter').get('v.value') != null){
         //     filter.localCategory = cmp.find('localCategoryFilter').get('v.value');
         // }
@@ -722,7 +745,7 @@ init: function (cmp, event, helper) {
             
             helper.getChildProductsServer(cmp, event, '',filter.SBU,filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,filter.localCategory, filter.workflow);
         }
-        else if(filter.SBU != '' || filter.manufacturer != '' || filter.localCategory != '' || filter.workflow != ''){
+        else if(filter.SBU != '' || (filter.manufacturer != '' && filter.focus == false && filter.competitor == false) || filter.focus == true || filter.competitor == true || filter.localCategory != '' || filter.workflow != ''){
             searchFilter = '';
             helper.getChildProductsServer(cmp, event, '',filter.SBU,filter.manufacturer,searchFilter,'',filter.competitor,filter.focus,filter.localCategory, filter.workflow);
         }
