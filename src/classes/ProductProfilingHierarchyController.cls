@@ -68,17 +68,34 @@ public with sharing class ProductProfilingHierarchyController {
     List<Product_Profiling__c> profilings = new List<Product_Profiling__c>();
         
         if(recordId.startsWith('003')){
-            profilings = [SELECT Id, Product_Name__c, Quantity__c, Product_Category__c, Product_Name__r.Id, Product_Name__r.Manufacturer__c, Product_Name__r.Product_Category__c, Product_Name__r.Name, Product_Name__r.SBU__c, Product_Name__r.Competitor_Product__c, Product_Name__r.KeyProduct__c, Product_Name__r.ProductGroupText__c, Product_Name__r.QuantityUnitOfMeasure__c, Status__c, Account__c, Contact__c, Contact__r.FirstName, Contact__r.LastName FROM Product_Profiling__c WHERE Contact__c =: recordId AND Product_Name__c!= null];    
+            profilings = [SELECT Id, Product_Name__c, Quantity__c, Product_Category__c, InUseSince__c, Product_Name__r.ProductFamily__r.ProductFamilyLabel__c, Product_Name__r.Id, Product_Name__r.Manufacturer__c, Product_Name__r.Product_Category__c, Product_Name__r.Name, Product_Name__r.SBU__c, Product_Name__r.Competitor_Product__c, Product_Name__r.KeyProduct__c, Product_Name__r.ProductGroupText__c, Product_Name__r.QuantityUnitOfMeasure__c, Status__c, Account__c, Contact__c, Contact__r.FirstName, Contact__r.LastName FROM Product_Profiling__c WHERE Contact__c =: recordId AND Product_Name__c!= null];
         }
         else if(recordId.startsWith('a5q')){
             String accId = [SELECT Account__c FROM  Account_Plan__c WHERE id =: recordId LIMIT 1][0].Account__c;
-            profilings = [SELECT Id, Product_Name__c, Quantity__c, Product_Category__c, Product_Name__r.Id, Product_Name__r.Manufacturer__c, Product_Name__r.Product_Category__c, Product_Name__r.Name, Product_Name__r.SBU__c, Product_Name__r.Competitor_Product__c, Product_Name__r.KeyProduct__c, Product_Name__r.ProductGroupText__c, Product_Name__r.QuantityUnitOfMeasure__c, Status__c, Account__c, Contact__c, Contact__r.FirstName, Contact__r.LastName FROM Product_Profiling__c WHERE Account__c =: accId  AND Product_Name__c!= null ORDER BY Contact__c ASC NULLS FIRST]; // AND Contact__c =:''    
+            profilings = [SELECT Id, Product_Name__c, Quantity__c, Product_Category__c, InUseSince__c, Product_Name__r.ProductFamily__r.ProductFamilyLabel__c, Product_Name__r.Id, Product_Name__r.Manufacturer__c, Product_Name__r.Product_Category__c, Product_Name__r.Name, Product_Name__r.SBU__c, Product_Name__r.Competitor_Product__c, Product_Name__r.KeyProduct__c, Product_Name__r.ProductGroupText__c, Product_Name__r.QuantityUnitOfMeasure__c, Status__c, Account__c, Contact__c, Contact__r.FirstName, Contact__r.LastName FROM Product_Profiling__c WHERE Account__c =: accId  AND Product_Name__c!= null ORDER BY Contact__c ASC NULLS FIRST]; // AND Contact__c =:''
         }else {
-          	profilings = [SELECT Id, Product_Name__c, Quantity__c, Product_Category__c, Product_Name__r.Id, Product_Name__r.Manufacturer__c, Product_Name__r.Product_Category__c, Product_Name__r.Name, Product_Name__r.SBU__c, Product_Name__r.Competitor_Product__c, Product_Name__r.KeyProduct__c, Product_Name__r.ProductGroupText__c, Product_Name__r.QuantityUnitOfMeasure__c, Status__c, Account__c, Contact__c, Contact__r.FirstName, Contact__r.LastName FROM Product_Profiling__c WHERE Account__c =: recordId  AND Product_Name__c!= null ORDER BY Contact__c ASC NULLS FIRST]; // AND Contact__c =:''    
+          	profilings = [SELECT Id, Product_Name__c, Quantity__c, Product_Category__c, InUseSince__c, Product_Name__r.ProductFamily__r.ProductFamilyLabel__c, Product_Name__r.Id, Product_Name__r.Manufacturer__c, Product_Name__r.Product_Category__c, Product_Name__r.Name, Product_Name__r.SBU__c, Product_Name__r.Competitor_Product__c, Product_Name__r.KeyProduct__c, Product_Name__r.ProductGroupText__c, Product_Name__r.QuantityUnitOfMeasure__c, Status__c, Account__c, Contact__c, Contact__r.FirstName, Contact__r.LastName FROM Product_Profiling__c WHERE Account__c =: recordId  AND Product_Name__c!= null ORDER BY Contact__c ASC NULLS FIRST]; // AND Contact__c =:''
         }
      
     return profilings;
         
+    }
+
+    /**
+     * updateProductProfilingRecords Updates the provided list of Product_Profiling__c records
+     * @author ohanafi@salesforce.com | 16-11-2023
+     *
+     * @param productProfilingList   List of Product_Profiling__c records
+     *
+     */
+    @AuraEnabled
+    public static void updateProductProfilingRecords(List<Product_Profiling__c> productProfilingList) {
+        try {
+            update productProfilingList;
+        } catch (Exception e) {
+            System.debug('Error occurred while updating product profiling records: ' + e.getMessage());
+            throw new AuraHandledException('Error occurred while updating product profiling records: ' + e.getMessage());
+        }
     }
     
     /*------------------------------------------------------------  
@@ -366,6 +383,14 @@ public with sharing class ProductProfilingHierarchyController {
         
     }
 
+    /**
+     * getWorkflows Return a list of Workflow__c records related to the provided Account Id
+     * @author ohanafi@salesforce.com | 16-10-2023
+     *
+     * @param recordId   Id of the account
+     *
+     * @return List<Workflow__c> - List of workflows
+     */
     @AuraEnabled(cacheable=true)
     public static List<Workflow__c> getWorkflows(Id recordId) {
         Account acc = [SELECT Id, Country__c from Account where id = :recordId LIMIT 1];

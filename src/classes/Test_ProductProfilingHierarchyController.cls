@@ -57,7 +57,7 @@ private class Test_ProductProfilingHierarchyController {
             
             Test.startTest();
             
-            List<ProductProfilingHierarchyController.HierarchyNode> res = ProductProfilingHierarchyController.getChildProducts(String.valueOf(acc.Id), 'Implants', 'Test manufacturer', 'Test', 'Implants', false, true, 'Implants');
+            List<ProductProfilingHierarchyController.HierarchyNode> res = ProductProfilingHierarchyController.getChildProducts(String.valueOf(acc.Id), '', 'Test manufacturer', 'Test', 'Implants', false, true, '', '');
             System.assertEquals(res.size(), 1);
             
             List<String> resSBUs = ProductProfilingHierarchyController.getSBUs(acc.Id);
@@ -69,6 +69,7 @@ private class Test_ProductProfilingHierarchyController {
             List<String> resLocalCategoriesWOcat = ProductProfilingHierarchyController.getLocalCategories(acc.Id, '', 'Test manufacturer');
             List<String> resCategories =  ProductProfilingHierarchyController.getAllCategories(acc.Id, 'Implants');
             List<String> resCategoriesContact =  ProductProfilingHierarchyController.getAllCategories(con.Id, 'Implants');
+            List<Workflow__c> resWorkflows =  ProductProfilingHierarchyController.getWorkflows(acc.Id);
             
             Map<Id, Product_Profiling__c> resMapAcc = ProductProfilingHierarchyController.getProductProfilingMap(acc.Id);
             System.assertNotEquals(resMapAcc, null);

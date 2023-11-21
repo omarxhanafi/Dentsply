@@ -1,12 +1,24 @@
 ({
     init: function (cmp, event, helper) {
-		cmp.set("v.showSpinner", true);        
+		// cmp.set("v.showSpinner", true);
         var products = cmp.get("v.selectedProducts");
         var currentOrder = true;
 		products.sort(function(a,b) {
             var t1 = a.Product_Name__r.Name == b.Product_Name__r.Name, t2 = a.Product_Name__r.Name < b.Product_Name__r.Name;
             return t1? 0: (currentOrder?-1:1)*(t2?1:-1);
         });
+
+        // Get the current year
+        var currentYear = new Date().getFullYear();
+
+        // Create an array to store the last 15 years
+        var yearOptions = [];
+        for (var i = currentYear; i >= currentYear - 15; i--) {
+            yearOptions.push({ label: '' + i, value: '' + i });
+        }
+
+        // Set the yearOptions attribute
+        cmp.set('v.yearOptions', yearOptions);
     },
     
     hideSpinner: function(cmp, event, helper){
@@ -35,28 +47,39 @@
     },
 
     setValues: function(cmp, event, helper){
-    var records = cmp.find("editForm");
-	
-    cmp.set("v.showSpinner", true);
-     
-    var allRecords = cmp.get("v.selectedProducts");        
-    var recordLength = allRecords.length;  
- 	
-    if(recordLength > 1){
-    	for(var i in records){
-        
-        	if(records[i].get("v.recordId")){
-        		cmp.find("editForm")[i].submit();
-        	}
-    	}
-    }
-    else{
-       	  records.submit();   
-    }
-        
-    var cmpEvent = cmp.getEvent('cmpEvent');
-    cmpEvent.fire();    
-                
+        var products = cmp.get("v.selectedProducts");
+
+        cmp.set("v.showSpinner", true);
+
+        var action = cmp.get("c.updateProductProfilingRecords");
+
+        // Prepare the list of records to update
+        action.setParams({
+            "recordsToUpdate": products
+        });
+
+        action.setCallback(this, function(response) {
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                // Handle success response
+                cmp.set("v.showSpinner", false);
+
+                var cmpEvent = cmp.getEvent('cmpEvent');
+                cmpEvent.fire();
+
+            } else if (state === "ERROR") {
+                // Handle error response
+                var errors = response.getError();
+                if (errors) {
+                    console.error("Error message: " + errors[0].message);
+                    // Handle specific error messages or display to the user
+                } else {
+                    console.error("Unknown error");
+                }
+            }
+        });
+
+        $A.enqueueAction(action);
     },
 
 	deleteProduct: function(cmp, event){
