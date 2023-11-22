@@ -437,11 +437,10 @@ init: function (cmp, event, helper) {
         var tempArray = [];
         var arrayLength =allRecords.length;
 
-            if((filter.manufacturer != '' && filter.focus == false && filter.competitor == false) || filter.SBU != '' || filter.searchString.length > 1 || filter.localCategory != '' || filter.workflow != ''){ //|| filter.competitor != false || filter.focus != false
+            if((filter.manufacturer != '' && filter.focus == false && filter.competitor == false) || filter.SBU != '' || filter.searchString.length > 1 || filter.localCategory != '' || filter.workflow != '' || filter.competitor != false || filter.focus != false){ //|| filter.competitor != false || filter.focus != false
                 helper.getChildProductsServer(cmp, event,'',filter.SBU,filter.manufacturer,filter.searchString,'',filter.competitor,filter.focus,filter.localCategory, filter.workflow);
             }
             else if(filter.searchString.length == 0){
-                console.log("Are we here ?");
 
                 cmp.find('competitorFilter').set('v.checked', false);
                 cmp.find('focusFilter').set('v.checked', false);

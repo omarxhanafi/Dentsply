@@ -223,7 +223,7 @@ public with sharing class ProductProfilingHierarchyController {
     List<Non_ERP_Products__c> allProducts = new List<Non_ERP_Products__c>();    
 
     String query = 'SELECT Id, Name, Countries__c, SBU__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, ProductFamily__r.ProductFamilyLabel__c, Manufacturer__c, ProductGroupText__c, QuantityUnitOfMeasure__c FROM Non_ERP_Products__c';
-    query += ' WHERE Inactive__c = FALSE AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE)';
+    query += ' WHERE Inactive__c = FALSE AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE) AND ProductFamily__c != NULL';
      
         
     Boolean filterIsApplied = false;    
@@ -271,16 +271,15 @@ public with sharing class ProductProfilingHierarchyController {
         }
         
         if(competitor == true){
-            competitor = false;
-            query += ' AND Competitor_Product__c =: competitor';
+            query += ' AND Competitor_Product__c = FALSE';
             filterIsApplied = true;
         }
         
         if(focus == true){
-            query += ' AND KeyProduct__c =: focus';
+            query += ' AND Competitor_Product__c = TRUE';
             filterIsApplied = true;
         }
-        
+
         if(filterIsApplied == true){    
             allProducts = Database.query(query);
         }

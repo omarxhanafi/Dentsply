@@ -322,9 +322,9 @@
             //Sort values ascending
             this.sortTable(cmp, event, true, plList, "label");
             plList.unshift(
-                { label : "", value : "" }
-                // { label : "Only focus products", value : "focus" },
-                // { label : "Only Dentsply Sirona Products", value : "competitor" }
+          { label : "", value : "" },
+                { label : "Only Competitor Products", value : "focus" },
+                { label : "Only Dentsply Sirona Products", value : "competitor" }
             );
             cmp.set(varToAssign, plList);
 
@@ -394,20 +394,29 @@
         $A.enqueueAction(action);
         
     },
-   
-    sortTable : function(cmp, event, sortAsc, dataSet, sortField){
-                	try{
-                    	dataSet.sort(function(a,b){
-						var t1 = a[sortField] == b[sortField],
-                			t2 = a[sortField] > b[sortField];
-            				return t1? 0: (sortAsc?-1:1)*(t2?-1:1);                        
-                    	})
-                		}
-                	catch(e){
-                    	console.error(e);
-                	}   
+
+    sortTable: function(cmp, event, sortAsc, dataSet, sortField) {
+        try {
+            dataSet.sort(function(a, b) {
+                var t1 = a[sortField].toLowerCase(),
+                    t2 = b[sortField].toLowerCase();
+
+                if (t1 === t2) {
+                    return 0;
+                } else {
+                    if (sortAsc) {
+                        return t1 < t2 ? -1 : 1;
+                    } else {
+                        return t1 > t2 ? -1 : 1;
+                    }
+                }
+            });
+        } catch (e) {
+            console.error(e);
+        }
     },
-    
+
+
     /*------------------------------------------------------------	
 	Description:   	Helper method to find non-ERP products and create a parent level based on the found records' category
     Inputs:			@param recordId
@@ -451,13 +460,14 @@
             if (state === "SUCCESS") {
                 var result=response.getReturnValue();
                 //Find all categories
-                for(var prodKey in result){					   
-					var cat = result[prodKey].node.ProductFamily__r.ProductFamilyLabel__c;
+
+                for(var prodKey in result){
+                    var cat = result[prodKey].node.ProductFamily__r.ProductFamilyLabel__c;
                     categories[cat] = cat;
                 }
 
                 for(var catKey in categories){
-                    
+
                     var categ= categories[catKey];
                 	var recordToAdd = {};
                 
@@ -465,7 +475,7 @@
                         if(data[cat].nodeName == categ){ 	
                                recordToAdd = data[cat];
                             
-                            if(manufacturer != '' || workflow != '' || localcat != '' || searchString != '' || nodeName != '' || focus != false || competitor != false){
+                            if(manufacturer != '' || workflow != '' || localcat != '' || searchString != '' || nodeName != '' || focus == true || competitor == true){
                                expanded.push(categ);	
                             }
                             else{
@@ -474,7 +484,7 @@
 
                         }
                     }
-                                
+
                     var childrenToAdd = [];
                     
                     var selectedRows = cmp.get("v.currentSelectedRows");
@@ -489,9 +499,9 @@
                        record.isCat = false; 
                        record.nodeId = record.node.Id;
                        record.manufacturer = record.node.Manufacturer__c;
-                       manufacturerSet[record.manufacturer] = record.manufacturer; 
+                       manufacturerSet[record.manufacturer] = record.manufacturer;
                        record.category =  record.node.ProductFamily__r.ProductFamilyLabel__c;
-                        
+
                         for(var k in selectedRows){
                             if(selectedRows[k].Id == record.nodeId){
                                 record.isSelected = true;
@@ -520,8 +530,8 @@
                    filteredData.push(recordToAdd);
                    data[categ] =  dataToAdd;
                 }
-                
-   				//Expand children if only one category is included             
+
+                //Expand children if only one category is included
                 if(catCount == 1){
                     for(var i in categories){
                     	expanded.push(categories[i]);
@@ -534,8 +544,7 @@
                    
                 cmp.set('v.gridWrapperData', data);
 
-
-                if(searchString.length>1 || category != '' || manufacturer != '' || workflow != '' || localcat != ''){
+                if(searchString.length>1 || category != '' || manufacturer != '' || workflow != '' || localcat != '' || focus == true || competitor == true){
 
                     cmp.set('v.gridWrapperFilteredData', filteredData);
                     
@@ -552,7 +561,7 @@
 
                         manufacturers.unshift(
                             { label : "", value : "" },
-                            { label : "Only focus products", value : "focus" },
+                            { label : "Only Competitor Products", value : "focus" },
                             { label : "Only Dentsply Sirona Products", value : "competitor" }
                         );
 
