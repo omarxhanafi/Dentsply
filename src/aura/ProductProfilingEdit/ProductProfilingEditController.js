@@ -1,12 +1,14 @@
 ({
     init: function (cmp, event, helper) {
 		// cmp.set("v.showSpinner", true);
-        var products = cmp.get("v.selectedProducts");
-        var currentOrder = true;
-		products.sort(function(a,b) {
-            var t1 = a.Product_Name__r.Name == b.Product_Name__r.Name, t2 = a.Product_Name__r.Name < b.Product_Name__r.Name;
-            return t1? 0: (currentOrder?-1:1)*(t2?1:-1);
-        });
+
+        // var products = cmp.get("v.selectedProducts");
+        //
+        // var currentOrder = true;
+		// products.sort(function(a,b) {
+        //     var t1 = a.Product_Name__r.Name == b.Product_Name__r.Name, t2 = a.Product_Name__r.Name < b.Product_Name__r.Name;
+        //     return t1? 0: (currentOrder?-1:1)*(t2?1:-1);
+        // });
 
         // Get the current year
         var currentYear = new Date().getFullYear();
@@ -20,6 +22,20 @@
         // Set the yearOptions attribute
         cmp.set('v.yearOptions', yearOptions);
     },
+    //
+    // sortProducts: function(cmp, event){
+    //     console.log("here?");
+    //
+    //     var products = cmp.get("v.selectedProducts");
+    //
+    //     var currentOrder = true;
+    //     products.sort(function(a,b) {
+    //         var t1 = a.Product_Name__r.Name == b.Product_Name__r.Name, t2 = a.Product_Name__r.Name < b.Product_Name__r.Name;
+    //         return t1? 0: (currentOrder?-1:1)*(t2?1:-1);
+    //     });
+    //
+    //     cmp.set("v.selectedProducts", products);
+    // },
     
     hideSpinner: function(cmp, event, helper){
       	console.log('Hide spinner');
@@ -49,13 +65,15 @@
     setValues: function(cmp, event, helper){
         var products = cmp.get("v.selectedProducts");
 
+        console.log("Products to update", products);
+
         cmp.set("v.showSpinner", true);
 
         var action = cmp.get("c.updateProductProfilingRecords");
 
         // Prepare the list of records to update
         action.setParams({
-            "recordsToUpdate": products
+            "productProfilingList": products
         });
 
         action.setCallback(this, function(response) {
@@ -72,7 +90,6 @@
                 var errors = response.getError();
                 if (errors) {
                     console.error("Error message: " + errors[0].message);
-                    // Handle specific error messages or display to the user
                 } else {
                     console.error("Unknown error");
                 }

@@ -28,7 +28,7 @@ Description:   	Component to mass edit Product Profiling records - embedded in c
     	<div style="height: 400px;">
     	<div class="slds-scrollable--y" style="height: 100%;">
 		<!--<div class="overflow-y: scroll;"> -->   
-    	<aura:iteration items="{!v.selectedProducts}" var="item">
+    	<aura:iteration items="{!v.selectedProducts}" var="item" indexVar="Id">
 
 <!--          <lightning:recordEditForm-->
 <!--                      aura:id="editForm"-->
@@ -67,7 +67,7 @@ Description:   	Component to mass edit Product Profiling records - embedded in c
                </div>
                 <div class="slds-col slds-size_2-of-12">
                     <span>
-                    <lightning:input type="number" name="{!item.Quantity__c}" label="Quantity" value="{!item.Quantity__c}" />
+                    <lightning:input type="number" name="quantity" label="Quantity" value="{!item.Quantity__c}"/>
                 	</span>
                 </div>
 			   <div class="slds-col slds-size_2-of-12">
@@ -75,7 +75,7 @@ Description:   	Component to mass edit Product Profiling records - embedded in c
 <!--						<lightning:inputField fieldName="InUseSince__c" variant="label-stacked"/>-->
                         <lightning:combobox
 								fieldLevelHelp="Year of installation/first usage"
-								name="{!item.InUseSince__c}"
+								name="inUseSince"
 								label="In Use Since?"
 								value="{!item.InUseSince__c}"
 								options="{!v.yearOptions}"
