@@ -203,7 +203,7 @@ public with sharing class ProductProfilingHierarchyController {
     System.debug('Local categ: ' + localcat);
     System.debug('Competitor: ' + competitor);
     System.debug('Workflow: ' + workflow);
-        
+
     String country = '';    
         if(recordId.left(3) == '003'){
             Contact con = [SELECT Id, Account.Country__c FROM Contact WHERE Id =: recordId];
@@ -236,7 +236,7 @@ public with sharing class ProductProfilingHierarchyController {
         if(searchString != ''){
             searchString = '%' + searchString + '%';
             searchString = String.EscapeSingleQuotes(searchString);
-            query += ' AND Name LIKE: searchString';
+            query += ' AND (Name LIKE: searchString OR Manufacturer__c LIKE :searchString)';
             filterIsApplied = true;
         }
         
@@ -296,11 +296,7 @@ public with sharing class ProductProfilingHierarchyController {
             allProducts = Database.query(query);
         }
 
-        System.debug('Query: ' + query);
-
         System.debug('allproducts : ' + allProducts);
-
-
 
 
         /*if(searchString != ''){

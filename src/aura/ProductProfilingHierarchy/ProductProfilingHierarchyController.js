@@ -740,9 +740,6 @@ init: function (cmp, event, helper) {
         else if(searchFilter.length == 0){
             console.log('Resetting data');
 
-            cmp.find('competitorFilter').set('v.checked', false);
-            cmp.find('focusFilter').set('v.checked', false);
-
             var expanded = [];
             cmp.set('v.expandActionLaunched', true);
            	cmp.set('v.expandedRows', expanded);
