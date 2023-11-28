@@ -222,7 +222,7 @@ public with sharing class ProductProfilingHierarchyController {
     	        
     List<Non_ERP_Products__c> allProducts = new List<Non_ERP_Products__c>();    
 
-    String query = 'SELECT Id, Name, Countries__c, SBU__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, ProductFamily__r.ProductFamilyLabel__c, Manufacturer__c, ProductGroupText__c, QuantityUnitOfMeasure__c FROM Non_ERP_Products__c';
+    String query = 'SELECT Id, Name, Countries__c, SBU__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, ProductFamily__r.ProductFamilyLabel__c, ProductFamily__c, Manufacturer__c, ProductGroupText__c, QuantityUnitOfMeasure__c FROM Non_ERP_Products__c';
     query += ' WHERE Inactive__c = FALSE AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE) AND ProductFamily__c != NULL';
      
         
@@ -258,15 +258,27 @@ public with sharing class ProductProfilingHierarchyController {
             filterIsApplied = true;
         }
 
+        List<WorkflowLine__c> workflowLines = new List<WorkflowLine__c>();
+
+        // Map to store ProductFamily__c and Order__c from workflowLines
+        Map<Id, Integer> productOrderMap = new Map<Id, Integer>();
+
         // If a workflow filter is applied, we look for the product families through the workflow lines
         if(workflow != ''){
-            List<WorkflowLine__c> workflowLines = [SELECT Id, ProductFamily__c, ProductFamily__r.ProductFamilyLabel__c FROM WorkflowLine__c where Workflow__c = :workflow order by Order__c];
+            workflowLines = [SELECT Id, ProductFamily__c, ProductFamily__r.ProductFamilyLabel__c, Order__c FROM WorkflowLine__c where Workflow__c = :workflow order by Order__c];
+
             for(WorkflowLine__c eachWorkflowLine : workflowLines){
                 productFamiliesSet.add(eachWorkflowLine.ProductFamily__c);
             }
+
             if(!productFamiliesSet.isEmpty()){
                 query += ' AND ProductFamily__c IN :productFamiliesSet';
             }
+
+            for (WorkflowLine__c eachWorkflowLine : workflowLines) {
+                productOrderMap.put(eachWorkflowLine.ProductFamily__c, (Integer) eachWorkflowLine.Order__c);
+            }
+
             filterIsApplied = true;
         }
         
@@ -284,7 +296,12 @@ public with sharing class ProductProfilingHierarchyController {
             allProducts = Database.query(query);
         }
 
+        System.debug('Query: ' + query);
+
         System.debug('allproducts : ' + allProducts);
+
+
+
 
         /*if(searchString != ''){
 
@@ -313,10 +330,14 @@ public with sharing class ProductProfilingHierarchyController {
         
     List<HierarchyNode> nodes = new List<HierarchyNode>();
  
-    for (Non_ERP_Products__c a : allProducts) { 
-        nodes.add(new HierarchyNode(a, false));        
+    for (Non_ERP_Products__c a : allProducts) {
+        if(workflow != ''){
+            nodes.add(new HierarchyNode(a, false, productOrderMap.get(a.ProductFamily__c)));
+        } else {
+            nodes.add(new HierarchyNode(a, false));
+        }
     }
-        
+
     return nodes;
     }
         
@@ -463,11 +484,19 @@ public with sharing class ProductProfilingHierarchyController {
     @AuraEnabled public String nodeName;    
     @AuraEnabled public List<HierarchyNode> children;
     @AuraEnabled public Boolean isProfiled;
-    HierarchyNode(Non_ERP_Products__c acc, Boolean isProfiling) {
-        node = acc;
-        nodeName = acc.Name;
-        children = new List<HierarchyNode>();
-        isProfiled = isProfiling;
-    }        
-	}
+    @AuraEnabled public Integer familyOrder;
+        HierarchyNode(Non_ERP_Products__c acc, Boolean isProfiling) {
+            node = acc;
+            nodeName = acc.Name;
+            children = new List<HierarchyNode>();
+            isProfiled = isProfiling;
+        }
+        HierarchyNode(Non_ERP_Products__c acc, Boolean isProfiling, Integer familyOrder) {
+            node = acc;
+            nodeName = acc.Name;
+            children = new List<HierarchyNode>();
+            isProfiled = isProfiling;
+            this.familyOrder = familyOrder;
+        }
+    }
 }

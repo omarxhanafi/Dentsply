@@ -225,8 +225,6 @@
                 cmp.set('v.currentSelectedRows', []);                
                 cmp.set('v.productProfilingData', productProfilingData);
 
-                console.log('gridWrapperFilteredData', data);
-           
                	//Expand all rows by default in the Desktop version
                	var formFactor = $A.get("$Browser.formFactor");
                 

@@ -441,9 +441,6 @@ init: function (cmp, event, helper) {
                 helper.getChildProductsServer(cmp, event,'',filter.SBU,filter.manufacturer,filter.searchString,'',filter.competitor,filter.focus,filter.localCategory, filter.workflow);
             }
             else if(filter.searchString.length == 0){
-
-                cmp.find('competitorFilter').set('v.checked', false);
-                cmp.find('focusFilter').set('v.checked', false);
                 var completeData = cmp.get('v.gridWrapperData');
                 var expanded = [];
                 

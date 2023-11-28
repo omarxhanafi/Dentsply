@@ -35,6 +35,9 @@ private class Test_ProductProfilingHierarchyController {
             pmm.Market__c = currentUser.Market__c;
             pmm.Active__c = true;
             insert pmm;
+
+            ProductFamily__c family = new ProductFamily__c(Name = 'Test Family');
+            insert family;
             
             Non_ERP_Products__c ERP = new Non_ERP_Products__c();
             ERP.Name = 'Test product';
@@ -46,6 +49,7 @@ private class Test_ProductProfilingHierarchyController {
             ERP.Manufacturer__c = 'Test manufacturer';
             ERP.Countries__c = 'DE';
             ERP.Inactive__c = false;
+            ERP.ProductFamily__c = family.Id;
             
             insert ERP;
             
@@ -57,7 +61,7 @@ private class Test_ProductProfilingHierarchyController {
             
             Test.startTest();
             
-            List<ProductProfilingHierarchyController.HierarchyNode> res = ProductProfilingHierarchyController.getChildProducts(String.valueOf(acc.Id), '', 'Test manufacturer', 'Test', 'Implants', false, true, '', '');
+            List<ProductProfilingHierarchyController.HierarchyNode> res = ProductProfilingHierarchyController.getChildProducts(String.valueOf(acc.Id), '', 'Test manufacturer', 'Test', 'Implants', false, false, '', '');
             System.assertEquals(res.size(), 1);
             
             List<String> resSBUs = ProductProfilingHierarchyController.getSBUs(acc.Id);

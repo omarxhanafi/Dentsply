@@ -501,6 +501,7 @@
                        record.manufacturer = record.node.Manufacturer__c;
                        manufacturerSet[record.manufacturer] = record.manufacturer;
                        record.category =  record.node.ProductFamily__r.ProductFamilyLabel__c;
+                       record.familyOrder = record.familyOrder;
 
                         for(var k in selectedRows){
                             if(selectedRows[k].Id == record.nodeId){
@@ -519,7 +520,7 @@
                         }    
                                                                    
                    }
-                    
+
 				   recordToAdd._children = childrenToAdd;
 
                    //Sort child records ascending 
@@ -541,6 +542,14 @@
                 //Sort node records ascending 
                 this.sortTable(cmp, event, true, data, "nodeName");
                 this.sortTable(cmp, event, true, filteredData, "nodeName");
+
+                // Sorting the categories by family order
+                filteredData.sort((a, b) => {
+                    const orderA = (a._children && a._children.length > 0) ? a._children[0].familyOrder : Number.MAX_SAFE_INTEGER;
+                    const orderB = (b._children && b._children.length > 0) ? b._children[0].familyOrder : Number.MAX_SAFE_INTEGER;
+
+                    return orderA - orderB;
+                });
                    
                 cmp.set('v.gridWrapperData', data);
 
