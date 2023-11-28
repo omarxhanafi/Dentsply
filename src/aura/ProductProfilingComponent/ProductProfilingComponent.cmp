@@ -94,7 +94,7 @@ Description:   	Component to show Product Profiling records (in a Hierarchy wher
                             	<p class="slds-truncate" title="{!childProduct.nodeName}">
 									<b>{!childProduct.nodeName}</b>                                       
                                 	<br/>
-                                	Status: {!childProduct.status}
+                                	Inactive: {!childProduct.inactive}
                                 	</p>
                                 </div>    
                                 </th>
@@ -102,7 +102,7 @@ Description:   	Component to show Product Profiling records (in a Hierarchy wher
                             	<aura:if isTrue="{!childProduct.focusProduct}">
                                     <!--<lightning:icon iconName="custom:custom76" alternativeText="Focus product"/> -->
                                     <lightning:icon iconName="utility:favorite" alternativeText="Focus product"/>
-                                </aura:if>    
+                                </aura:if>
                                     <aura:if isTrue="{!childProduct.competitor}">										
                                     		<!--<lightning:icon iconName="custom:custom26" alternativeText="Competitor product"/>  -->
                                         	<aura:set attribute="else">

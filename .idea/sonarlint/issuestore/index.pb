@@ -59,8 +59,6 @@ S
 #src/classes/EventWithCallReport.cls,b/1/b10c862f78e16ee36ad6646ae6195c76751ab786
 Z
 *src/classes/EventWithCallReportService.cls,6/c/6c97435614f83c907271393225091bad979e0b4c
-s
-Csrc/aura/ProductProfilingComponent/ProductProfilingComponent.design,4/b/4b10c927324dd59a665dfa77169de87f96ee2333
 f
 6src/aura/ProductProfilingFlow/ProductProfilingFlow.cmp,c/e/ce21ba681a0570a6584e3efa049aafd14c26ee84
 o
@@ -87,8 +85,6 @@ y
 Isrc/aura/ProductProfilingHierarchy/ProductProfilingHierarchy.cmp-meta.xml,e/7/e74af207f4485179c80ef5f2606638c81bae134d
 S
 #src/objects/ProductFamily__c.object,f/2/f28fb1d0f51a92c97d03865042e17efddb686ee1
-u
-Esrc/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js,b/7/b73d98ef0ae135c31a85e485c5a3e8ea726c91ed
 T
 $src/classes/TestDataFactoryUtils.cls,c/7/c7a6e029d4efc7170f8092950ac5b529b386173e
 O
@@ -109,7 +105,3 @@ u
 Esrc/aura/ProductProfilingHierarchy/ProductProfilingHierarchyHelper.js,d/6/d65eb531e685f5d5c0e45d03e5c80a30002a2ae6
 p
 @src/aura/ProductProfilingHierarchy/ProductProfilingHierarchy.cmp,8/1/8142d91b81d9e8901ff6be5c6003b044381f6112
-p
-@src/aura/ProductProfilingComponent/ProductProfilingComponent.cmp,2/4/241c0e9db6182f0b54e8f3702ace35ae107c2cb6
-y
-Isrc/aura/ProductProfilingComponent/ProductProfilingComponentController.js,4/c/4cd14365cae38c458babc4e25aadccf14e98498d

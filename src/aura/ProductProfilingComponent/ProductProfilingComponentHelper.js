@@ -82,6 +82,8 @@
                        			childToAdd.competitor = record.Product_Name__r.Competitor_Product__c;
 					   			childToAdd.focusProduct = record.Product_Name__r.KeyProduct__c;
                            		childToAdd.manufacturer = record.Product_Name__r.Manufacturer__c;
+                                childToAdd.source = record.Source__c;
+                                childToAdd.inactive = record.Inactive__c;
                            		
                            		if(productCount[record.Product_Name__r.Id]==1){
                            			childToAdd.status = record.Status__c;
@@ -222,6 +224,8 @@
                 cmp.set('v.gridWrapperFilteredData', data);
                 cmp.set('v.currentSelectedRows', []);                
                 cmp.set('v.productProfilingData', productProfilingData);
+
+                console.log('gridWrapperFilteredData', data);
            
                	//Expand all rows by default in the Desktop version
                	var formFactor = $A.get("$Browser.formFactor");

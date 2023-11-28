@@ -19,10 +19,10 @@ init: function (cmp, event, helper) {
                     label: { fieldName: 'nodeName' },
                  	tooltip: {fieldName: 'nodeName'}
                 }},
-            {label: 'FOCUS PRODUCT', fieldName: 'focusProduct', actions:focusActions, type: 'boolean'},
+            {label: 'SOURCE', fieldName: 'source', type: 'text'},
             {label: 'MANUFACTURER', fieldName: 'manufacturer', actions:competitorActions, type: 'text'},
-            {label:'QUANTITY', fieldName:'quantity', type:'text'},     
-            {label: 'STATUS', fieldName: 'status', type: 'text'},
+            {label:'QUANTITY', fieldName:'quantity', type:'text'},
+            {label: 'INACTIVE', fieldName: 'inactive', type: 'boolean'},
             //{label: 'CONTACT', fieldName: 'contact', type: 'text'},
             {label:'CONTACT', fieldName: 'contactUrl', type: 'url',
                  typeAttributes: {
