@@ -26,7 +26,7 @@
                
            <div class="slds-grid slds-gutters">
 		
-                <div class="slds-col slds-size_2-of-12">
+                <div class="slds-col slds-size_3-of-12">
                     <span>
                     
                     <!--<aura:if isTrue="{!item.Product_Name__r.Name != null }">
@@ -44,17 +44,17 @@
 <!--                    <lightning:combobox aura:id="{!item.Non_Erp_Product_ID__c}" name="{!item.Non_Erp_Product_ID__c}" label="Status" value="{!item.Status__c}" placeholder="Select Progress" options="{!v.options}"/>-->
 <!--                    </span>-->
 <!--                </div>-->
-               <div class="slds-col slds-size_2-of-12">
+               <div class="slds-col slds-size_3-of-12">
                     <span>
                     	<lightning:input name="productFamilyLabel" readonly="true" value="{!item.productFamilyLabel}" label="Product Family"/>
                 	</span>
                </div>
-               <div class="slds-col slds-size_2-of-12">
+               <div class="slds-col slds-size_3-of-12">
                     <span>
                     <lightning:input type="number" name="{!item.Quantity__c}" label="Quantity" value="{!item.Quantity__c}" />
                 	</span>
                 </div>
-                <div class="slds-col slds-size_2-of-12">
+                <div class="slds-col slds-size_3-of-12">
                		<span>
                         <lightning:combobox
                                 fieldLevelHelp="Year of installation/first usage"
@@ -63,11 +63,6 @@
                                 value="{!item.InUseSince__c}"
                                 options="{!v.yearOptions}"
                         />
-                    </span>
-               </div>
-               <div class="slds-col slds-size_4-of-12">
-               		<span>
-                        <lightning:input type="text" name="{!item.Notes__c}" label="Notes" value="{!item.Notes__c}"/>
                     </span>
                </div>
               </div> 

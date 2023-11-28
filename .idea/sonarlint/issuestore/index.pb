@@ -109,15 +109,7 @@ u
 Esrc/aura/ProductProfilingHierarchy/ProductProfilingHierarchyHelper.js,d/6/d65eb531e685f5d5c0e45d03e5c80a30002a2ae6
 p
 @src/aura/ProductProfilingHierarchy/ProductProfilingHierarchy.cmp,8/1/8142d91b81d9e8901ff6be5c6003b044381f6112
-l
-<src/aura/ProductProfilingDetails/ProductProfilingDetails.cmp,2/8/2896ffe9c932642d1ea44ad50465d37c5f6d9934
-o
-?src/aura/ProductProfilingEdit/ProductProfilingEditController.js,9/b/9bf12b6e3c7c3203ffaf4222c2903b4b0aa98ca8
-u
-Esrc/aura/ProductProfilingDetails/ProductProfilingDetailsController.js,6/9/69eb05a5724d642e1c1e2462221fb856d9753978
 p
 @src/aura/ProductProfilingComponent/ProductProfilingComponent.cmp,2/4/241c0e9db6182f0b54e8f3702ace35ae107c2cb6
-f
-6src/aura/ProductProfilingEdit/ProductProfilingEdit.cmp,5/5/556cdd98ad6c8c5d69a0901966b49588331ba1a5
 y
 Isrc/aura/ProductProfilingComponent/ProductProfilingComponentController.js,4/c/4cd14365cae38c458babc4e25aadccf14e98498d
