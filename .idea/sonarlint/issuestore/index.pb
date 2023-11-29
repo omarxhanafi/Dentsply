@@ -63,8 +63,6 @@ f
 6src/aura/ProductProfilingFlow/ProductProfilingFlow.cmp,c/e/ce21ba681a0570a6584e3efa049aafd14c26ee84
 o
 ?src/aura/ProductProfilingFlow/ProductProfilingFlowController.js,2/9/29572d09ea572a07ce9065f9d6deea26de7aa8e7
-o
-?src/aura/ProductProfilingDetails/ProductProfilingDetails.design,b/3/b3731ae3bc68549aa8e1dd9c05021a306de3b4e8
 V
 &src/classes/ProductProfilingBundle.cls,0/1/0122086ca560ae27153afd7cd9369cfcc52865dd
 V

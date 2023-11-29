@@ -18,7 +18,7 @@
     <!--<div style="overflow:initial">-->
     	<div style="height: 400px;" class="slds-p-around_small">
     	<div class="slds-scrollable--y" style="height: 100%;">
-    	<aura:iteration items="{!v.outputProducts}" var="item">
+    	<aura:iteration items="{!v.outputProducts}" var="item" indexVar="Id">
             
            <!-- Desktop experience -->
             
@@ -28,16 +28,11 @@
 		
                 <div class="slds-col slds-size_3-of-12">
                     <span>
-                    
-                    <!--<aura:if isTrue="{!item.Product_Name__r.Name != null }">
-                        <lightning:input name="productName" readonly="true" value="{!item.Product_Name__r.Name}" label="Product"/>
-                   
-                    <aura:set attribute="else"> -->
-                    	<lightning:input name="productName" readonly="true" value="{!item.productName}" label="Product"/>
-                   <!--</aura:set>
-                        </aura:if>  -->   
-                        
+                        <lightning:input name="productName" readonly="true" value="{!item.productName}" label="Product"/>
                 	</span>
+                    <lightning:layoutItem class="slds-hide">
+                        <lightning:inputField fieldName="Product_Name__c"/>
+                    </lightning:layoutItem>
                 </div>   
 <!--                <div class="slds-col slds-size_2-of-12 slds-p-left_x-small">-->
 <!--                    <span>-->
