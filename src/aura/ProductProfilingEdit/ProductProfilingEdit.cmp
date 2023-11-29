@@ -19,15 +19,15 @@ Description:   	Component to mass edit Product Profiling records - embedded in c
     	]"/>
     	<aura:attribute name="productsLoaded" type="Map" default="{}" />
 		<aura:attribute name="yearOptions" type="List" />
-    
+
     	<aura:if isTrue="{!v.showSpinner}">
     		<lightning:spinner variant="brand" size="small" alternativeText="Updating" />
     	</aura:if>
-		
-    
+
+
     	<div style="height: 400px;">
     	<div class="slds-scrollable--y" style="height: 100%;">
-		<!--<div class="overflow-y: scroll;"> -->   
+		<!--<div class="overflow-y: scroll;"> -->
     	<aura:iteration items="{!v.selectedProducts}" var="item" indexVar="Id">
 
 <!--          <lightning:recordEditForm-->
@@ -41,13 +41,13 @@ Description:   	Component to mass edit Product Profiling records - embedded in c
            <div class="slds-grid slds-gutters">
 
                 <div class="slds-col slds-size_2-of-12">
-                    <span>  
-                        <lightning:input name="productName" readonly="true" value="{!item.Product_Name__r.Name}" label="Product"/>                  
+                    <span>
+                        <lightning:input name="productName" readonly="true" value="{!item.Product_Name__r.Name}" label="Product"/>
                 	</span>
                 	<lightning:layoutItem class="slds-hide">
     					<lightning:inputField fieldName="Product_Name__c"/>
 					</lightning:layoutItem>
-                        
+
                 </div>
 			   <div class="slds-col slds-size_2-of-12">
                		<span>
@@ -59,10 +59,13 @@ Description:   	Component to mass edit Product Profiling records - embedded in c
 						/>
                 	</span>
 			   </div>
-				<div class="slds-col slds-size_2-of-12">
+				<div class="slds-col slds-size_2-of-12" style="margin-top: 28px">
                		<span>
-<!--                    	<lightning:outputField fieldName="Contact__c" variant="label-stacked"/>-->
-						<lightning:input name="contact" readonly="true" value="{!item.Contact__c}" label="Contact"/>
+						<aura:if isTrue="{!not(empty(item.Contact__c))}">
+							<a onclick="{!c.navigateToRecord}" data-recordid="{!item.Contact__c}">
+								{!item.Contact__r.FirstName}&nbsp;{!item.Contact__r.LastName}
+							</a>
+						</aura:if>
                     </span>
                </div>
                 <div class="slds-col slds-size_2-of-12">
@@ -90,7 +93,7 @@ Description:   	Component to mass edit Product Profiling records - embedded in c
 			   </div>
 
                <div class="slds-col slds-size_1-of-12">
-                    <span> <!-- class="{!if(v.productsLoaded[item.Id] == true, '', 'slds-hide')}" -->    
+                    <span> <!-- class="{!if(v.productsLoaded[item.Id] == true, '', 'slds-hide')}" -->
                     	<lightning:buttonIcon name="{!item.Id}" onclick="{!c.deleteProduct}" class="slds-p-top_large" iconName="utility:delete" size="large" variant="bare" alternativeText="Delete" title="Delete"/>
                 	</span>
                </div>
@@ -99,12 +102,12 @@ Description:   	Component to mass edit Product Profiling records - embedded in c
 <!--            </lightning:recordEditForm>-->
 
         </aura:iteration>
-		</div>            
+		</div>
     	{!v.deleteButton}
     	<div class="slds-m-top_medium slds-float--right sticky-button_bottom-container">
-            <!--<footer class="slds-modal__footer"> -->   
+            <!--<footer class="slds-modal__footer"> -->
             	<lightning:button variant="brand" type="submit" name="save" label="Save" onclick="{!c.setValues}"/>
         	<!--</footer> -->
        	</div>
-    </div>     
+    </div>
 </aura:component>

@@ -10,6 +10,8 @@
         //     return t1? 0: (currentOrder?-1:1)*(t2?1:-1);
         // });
 
+        console.log('products', cmp.get('v.selectedProducts'));
+
         // Get the current year
         var currentYear = new Date().getFullYear();
 
@@ -137,5 +139,17 @@
         });
         $A.enqueueAction(action);
  
-    },    
+    },
+        navigateToRecord : function(cmp, event, helper) {
+            // Retrieve the recordId from the clicked element's data attribute
+            var recordId = event.target.dataset.recordid;
+
+            // Create the event to navigate to the record
+            var navEvt = $A.get("e.force:navigateToSObject");
+            navEvt.setParams({
+                "recordId": recordId,
+                "slideDevName": "detail"
+            });
+            navEvt.fire();
+        }
 })
