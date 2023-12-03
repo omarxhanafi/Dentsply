@@ -18,53 +18,95 @@
     <!--<div style="overflow:initial">-->
     	<div style="height: 400px;" class="slds-p-around_small">
     	<div class="slds-scrollable--y" style="height: 100%;">
-    	<aura:iteration items="{!v.outputProducts}" var="item" indexVar="Id">
-            
+
            <!-- Desktop experience -->
             
            <aura:if isTrue="{!$Browser.formFactor == 'DESKTOP'}">
+
+               <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                   <thead>
+                   <tr>
+                       <th style="width: 30%; height: 40px;">Product</th>
+                       <th style="width: 30%; height: 40px;">Product Family</th>
+                       <th style="width: 20%; height: 40px;">Quantity</th>
+                       <th style="width: 20%; height: 40px;" class="slds-line-height_reset slds-text-align_left">
+                           <div class="slds-grid slds-grid_vertical-align-center">
+                               <span>In Use Since?</span>
+                               <div class="slds-p-left_x-small">
+                                   <lightning:helptext content="Year of installation/first usage" iconName="utility:info" />
+                               </div>
+                           </div>
+                       </th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                   <aura:iteration items="{!v.outputProducts}" var="item" indexVar="Id">
+                       <tr>
+                           <td>
+                               <lightning:input name="productName" readonly="true" value="{!item.productName}"/>
+                           </td>
+                           <td>
+                               <lightning:input readonly="true" value="{!item.productFamilyLabel}"/>
+                           </td>
+                           <td>
+                               <lightning:input aura:id="quantity" type="number" name="quantity" value="{!item.Quantity__c}"/>
+                           </td>
+                           <td>
+                               <lightning:combobox
+                                       name="inUseSince"
+                                       value="{!item.InUseSince__c}" options="{!v.yearOptions}"/>
+                           </td>
+                       </tr>
+                   </aura:iteration>
+                   </tbody>
+               </table>
                
-           <div class="slds-grid slds-gutters">
-		
-                <div class="slds-col slds-size_3-of-12">
-                    <span>
-                        <lightning:input name="productName" readonly="true" value="{!item.productName}" label="Product"/>
-                	</span>
-                    <lightning:layoutItem class="slds-hide">
-                        <lightning:inputField fieldName="Product_Name__c"/>
-                    </lightning:layoutItem>
-                </div>   
-<!--                <div class="slds-col slds-size_2-of-12 slds-p-left_x-small">-->
+<!--           <div class="slds-grid slds-gutters">-->
+<!--		-->
+<!--                <div class="slds-col slds-size_3-of-12">-->
 <!--                    <span>-->
-<!--                    <lightning:combobox aura:id="{!item.Non_Erp_Product_ID__c}" name="{!item.Non_Erp_Product_ID__c}" label="Status" value="{!item.Status__c}" placeholder="Select Progress" options="{!v.options}"/>-->
-<!--                    </span>-->
+<!--                        <lightning:input name="productName" readonly="true" value="{!item.productName}" label="Product"/>-->
+<!--                	</span>-->
+<!--                    <lightning:layoutItem class="slds-hide">-->
+<!--                        <lightning:inputField fieldName="Product_Name__c"/>-->
+<!--                    </lightning:layoutItem>-->
+<!--                </div>   -->
+<!--&lt;!&ndash;                <div class="slds-col slds-size_2-of-12 slds-p-left_x-small">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <lightning:combobox aura:id="{!item.Non_Erp_Product_ID__c}" name="{!item.Non_Erp_Product_ID__c}" label="Status" value="{!item.Status__c}" placeholder="Select Progress" options="{!v.options}"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </span>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--               <div class="slds-col slds-size_3-of-12">-->
+<!--                    <span>-->
+<!--                    	<lightning:input name="productFamilyLabel" readonly="true" value="{!item.productFamilyLabel}" label="Product Family"/>-->
+<!--                	</span>-->
+<!--               </div>-->
+<!--               <div class="slds-col slds-size_3-of-12">-->
+<!--                    <span>-->
+<!--                    <lightning:input type="number" name="{!item.Quantity__c}" label="Quantity" value="{!item.Quantity__c}" />-->
+<!--                	</span>-->
 <!--                </div>-->
-               <div class="slds-col slds-size_3-of-12">
-                    <span>
-                    	<lightning:input name="productFamilyLabel" readonly="true" value="{!item.productFamilyLabel}" label="Product Family"/>
-                	</span>
-               </div>
-               <div class="slds-col slds-size_3-of-12">
-                    <span>
-                    <lightning:input type="number" name="{!item.Quantity__c}" label="Quantity" value="{!item.Quantity__c}" />
-                	</span>
-                </div>
-                <div class="slds-col slds-size_3-of-12">
-               		<span>
-                        <lightning:combobox
-                                fieldLevelHelp="Year of installation/first usage"
-                                name="{!item.InUseSince__c}"
-                                label="In Use Since?"
-                                value="{!item.InUseSince__c}"
-                                options="{!v.yearOptions}"
-                        />
-                    </span>
-               </div>
-              </div> 
+<!--                <div class="slds-col slds-size_3-of-12">-->
+<!--               		<span>-->
+<!--                        <lightning:combobox-->
+<!--                                fieldLevelHelp="Year of installation/first usage"-->
+<!--                                name="{!item.InUseSince__c}"-->
+<!--                                label="In Use Since?"-->
+<!--                                value="{!item.InUseSince__c}"-->
+<!--                                options="{!v.yearOptions}"-->
+<!--                        />-->
+<!--                    </span>-->
+<!--               </div>-->
+<!--              </div>-->
+
+
                
               <!-- Mobile experience -->
               <aura:set attribute="else">
-              	
+
+                  <aura:iteration items="{!v.outputProducts}" var="item" indexVar="Id">
+
+
                   <lightning:card variant="Narrow">
                       <aura:set attribute="title">
                          <!--<aura:if isTrue="{!item.Product_Name__r.Name != null }">
@@ -88,11 +130,12 @@
                           />
                       </p>
                      </lightning:card>
+
+                  </aura:iteration>
 					
               </aura:set>    
                
             </aura:if>
-        </aura:iteration>
     	</div>
         </div>    
     	<!--<aura:if isTrue="{!$Browser.formFactor == 'PHONE'}">

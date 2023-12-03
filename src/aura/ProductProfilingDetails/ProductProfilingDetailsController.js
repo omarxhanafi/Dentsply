@@ -45,6 +45,18 @@
 
         // Set the yearOptions attribute
         cmp.set('v.yearOptions', yearOptions);
+
+        // Set a timeout to focus on the quantity field after a short delay
+        setTimeout(function() {
+            // Retrieve the first row's quantity field
+            var firstRowQuantity = cmp.find("quantity")[0];
+
+            // Check if the quantity field exists
+            if (firstRowQuantity) {
+                // Set focus to the quantity field
+                firstRowQuantity.focus();
+            }
+        }, 100);
         
     }
 })
