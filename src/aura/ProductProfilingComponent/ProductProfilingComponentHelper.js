@@ -29,7 +29,7 @@
 				var productCount = {};    
                 //Find all categories
                   for(var prodKey in result){					   
-					var cat = result[prodKey].Product_Category__c;
+					var cat = result[prodKey].Product_Name__r.ProductFamily__r.ProductFamilyLabel__c;
                     categories[cat] = cat; 
                      
                     var prodId = result[prodKey].Product_Name__r.Id;
@@ -59,7 +59,7 @@
                        var record = result[key];
                         //console.log(record);
                                              
-                       if(record.Product_Category__c == categories[catKey]){
+                       if(record.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c == categories[catKey]){
                            		
                            		//Create child record
                        			var childToAdd = {};
@@ -100,7 +100,7 @@
                                 }*/
                            		productProfilingData.push(record);
                      
-                            if(record.Product_Name__r.Product_Category__c){
+                            if(record.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c){
                                 if(productCount[record.Product_Name__r.Id]==1){
                                     
                                     if(record.Contact__c != null){

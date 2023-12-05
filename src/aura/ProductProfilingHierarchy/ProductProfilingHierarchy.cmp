@@ -95,7 +95,10 @@ Description:   	Component to select Non-ERP products (in a Hierarchy where the p
             <lightning:combobox aura:id="workflowFilter" variant="label-hidden" label="Workflow" placeholder="Select Workflow" options="{! v.workflows }" onchange="{!c.filterTable}"/>
         </div>
         <div class="{!if(v.hideFilters == true,'slds-hide','slds-p-bottom_small slds-p-left_small slds-size--1-of-1 slds-medium-size--3-of-12 slds-large-size--3-of-12')}">
-               <lightning:combobox aura:id="manufactFilter" variant="label-hidden" label="Manufacturer" placeholder="Select Manufacturer" options="{! v.manufacturers }" onchange="{!c.filterTable}"/>
+            <lightning:combobox aura:id="manufactFilter" variant="label-hidden" label="Manufacturer" placeholder="Select Manufacturer" options="{! v.manufacturers }" onchange="{!c.filterTable}"/>
+        </div>
+        <div class="slds-p-bottom_small slds-p-left_small slds-size--1-of-1 slds-medium-size--3-of-12 slds-large-size--3-of-12">
+            <lightning:button iconName="utility:toggle" variant="brand" onclick="{!c.toggleCollapseAll}" label="Expand / Collapse All"></lightning:button>
         </div>
 
         

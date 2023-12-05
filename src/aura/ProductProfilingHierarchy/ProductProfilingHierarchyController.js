@@ -783,12 +783,12 @@ init: function (cmp, event, helper) {
            cmp.set("v.hideSelection", false); 
         }
     },
-    
+
     deleteSelectedProduct : function(cmp, event, helper){
         console.log('Delete ' + event.getSource().get("v.value"));
-        
+
         var prodId = event.getSource().get("v.value");
-        
+
         var selProdWrapper = cmp.get('v.currentSelectedRowWrapper');
         var selectedProducts = cmp.get('v.currentSelectedRows');
         var prodCount = cmp.get('v.currentSelectedRowsCount');
@@ -798,19 +798,68 @@ init: function (cmp, event, helper) {
                 prodCount = prodCount -1;
             }
         }
-        
+
         for(var p in selectedProducts){
             if(selectedProducts[p].Id == prodId){
                 selectedProducts.splice(p, 1);
             }
         }
-        
-        
+
+
         cmp.set('v.currentSelectedRows', selectedProducts);
         cmp.set('v.currentSelectedRowWrapper', selProdWrapper);
         cmp.set('v.currentSelectedRowsCount', prodCount);
-        
-		$A.enqueueAction(cmp.get('c.filterTable'));        
+
+        $A.enqueueAction(cmp.get('c.filterTable'));
+    },
+
+    toggleCollapseAll : function(cmp, event, helper){
+        var expandedRows = cmp.get('v.expandedRows');
+        var gridWrapperFilteredData = cmp.get('v.gridWrapperFilteredData');
+
+        if(expandedRows.length > 0){
+            cmp.set('v.expandedRows', []);
+        } else {
+            var filter = {};
+
+            if(cmp.find('searchBox').get('v.value') != null){
+                filter.searchString = cmp.find('searchBox').get('v.value');
+            }
+            else{
+                filter.searchString = '';
+            }
+
+            filter.focus = false;
+            filter.competitor = false;
+            filter.manufacturer = '';
+
+            var manufacturerFilter = cmp.find('manufactFilter').get('v.value');
+            if(manufacturerFilter != null){
+                if(manufacturerFilter == 'focus'){
+                    filter.focus = true;
+                } else if (manufacturerFilter == 'competitor'){
+                    filter.competitor = true;
+                } else {
+                    filter.manufacturer = manufacturerFilter;
+                }
+            }
+
+            if(cmp.find('workflowFilter').get('v.value') != null){
+                filter.workflow = cmp.find('workflowFilter').get('v.value');
+            }
+            else{
+                filter.workflow = '';
+            }
+
+            if(filter.searchString != '' || filter.manufacturer != '' || filter.focus == true || filter.competitor == true || filter.workflow != ''){
+                gridWrapperFilteredData.forEach(function(item) {
+                    expandedRows.push(item.nodeName);
+                });
+
+                cmp.set("v.expandedRows", expandedRows);
+            }
+        }
+
     }
            
 })
