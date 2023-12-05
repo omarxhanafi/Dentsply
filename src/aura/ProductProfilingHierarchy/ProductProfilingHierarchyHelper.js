@@ -616,5 +616,31 @@
         });
 		$A.enqueueAction(action);        
     },
+
+    createFilterObject: function(cmp, event) {
+        var filter = {};
+
+        filter.searchString = cmp.find('searchBox').get('v.value') || '';
+
+        filter.focus = false;
+        filter.competitor = false;
+        filter.manufacturer = '';
+
+        var manufacturerFilter = cmp.find('manufactFilter').get('v.value');
+
+        if(manufacturerFilter != null){
+            if(manufacturerFilter == 'focus'){
+                filter.focus = true;
+            } else if (manufacturerFilter == 'competitor'){
+                filter.competitor = true;
+            } else {
+                filter.manufacturer = manufacturerFilter;
+            }
+        }
+
+        filter.workflow = cmp.find('workflowFilter').get('v.value') || '';
+
+        return filter;
+    }
     
 })
