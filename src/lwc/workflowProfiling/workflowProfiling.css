@@ -33,3 +33,11 @@
 .workflow-label {
     margin-top: 10px;
 }
+
+.disabled-td {
+    color: #888;
+    opacity: 0.6;
+    cursor: not-allowed; /* Cursor indicating non-interactivity */
+    pointer-events: none; /* Disable pointer events */
+}
+

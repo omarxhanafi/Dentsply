@@ -6,10 +6,18 @@
                 <tbody>
                     <template for:each={workflowsList} for:item="eachWorkflow">
                         <tr key={eachWorkflow.Id}>
-                            <td style="width: 60%;">
+                            <td>
+                                <lightning-input
+                                        type="checkbox-button"
+                                        label="Enable Row"
+                                        name={eachWorkflow.Id}
+                                        checked={eachWorkflow.isChecked}
+                                        onchange={handleRowToggle}
+                                        data-rowid={eachWorkflow.Id}
+                                ></lightning-input>
+                            </td>
+                            <td style="width: 60%;" class={eachWorkflow.itemClass}>
                                 <div class="slider-container">
-                                    <img src={coldIconUrl} class="custom-icon"/>
-                                    <lightning-icon src={coldIconUrl} size="x-small"></lightning-icon>
                                     <lightning-slider
                                             class="slider-class"
                                             min="0"
@@ -22,7 +30,7 @@
                                     <img src={hotIconUrl} class="custom-icon"/>
                                 </div>
                             </td>
-                            <td>
+                            <td class={eachWorkflow.itemClass}>
                                 <div class="workflow-label">{eachWorkflow.WorkflowLabel__c}</div>
                             </td>
                         </tr>

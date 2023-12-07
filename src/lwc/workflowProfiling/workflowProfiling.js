@@ -2,10 +2,9 @@ import { LightningElement, wire, api, track } from 'lwc';
 import getWorkflows from '@salesforce/apex/WorkflowProfilingController.getWorkflows';
 import getWorkflowProfilingsByAccount from '@salesforce/apex/WorkflowProfilingController.getWorkflowProfilingsByAccount';
 import createOrUpdateWorkflowProfilings from '@salesforce/apex/WorkflowProfilingController.createOrUpdateWorkflowProfilings';
+import deleteWorkflowProfilings from '@salesforce/apex/WorkflowProfilingController.deleteWorkflowProfilings';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import HOT_ICON from '@salesforce/resourceUrl/HotIcon';
-import COLD_ICON from '@salesforce/resourceUrl/ColdIcon';
-
 
 
 export default class WorkflowProfiling extends LightningElement {
@@ -15,7 +14,6 @@ export default class WorkflowProfiling extends LightningElement {
     workflowProfilings = [];
 
     hotIconUrl = HOT_ICON;
-    coldIconUrl = COLD_ICON;
 
     @wire(getWorkflows, { accountId: '$recordId' })
     wiredWorkflows({ error, data }) {
@@ -23,9 +21,12 @@ export default class WorkflowProfiling extends LightningElement {
             // Add the 'rating' property to each workflow
             this.workflowsList = data.map(workflow => ({
                 ...workflow,
-                rating: 0 // Default rating to 0
+                isChecked: false,
+                itemClass: 'disabled-td',
+                rating: 0
             }));
-            console.log('Workflows', this.workflowsList);
+
+            // console.log("Workflows", JSON.parse(JSON.stringify(this.workflowsList)))
 
             // After getting workflows, fetch the workflowProfilings
             this.fetchWorkflowProfilings();
@@ -54,11 +55,31 @@ export default class WorkflowProfiling extends LightningElement {
             const matchingProfiling = this.workflowProfilings.find(profiling => profiling.Workflow__c === workflow.Id);
             if (matchingProfiling) {
                 workflow.rating = matchingProfiling.Rating__c;
+                workflow.isChecked = true;
+                workflow.itemClass = ''
             }
         });
 
-        console.log("Updated Worklows", this.workflowsList);
+        // console.log("Updated Workflows", JSON.parse(JSON.stringify(this.workflowsList)));
     }
+
+    handleRowToggle(event) {
+        const rowId = event.currentTarget.dataset.rowid;
+        const isChecked = event.target.checked;
+
+        this.workflowsList = this.workflowsList.map(workflow => {
+            if (workflow.Id === rowId) {
+                workflow.isChecked = isChecked;
+                workflow.itemClass = isChecked ? '' : 'disabled-td';
+            }
+            return workflow;
+        });
+
+        // console.log("Changed Workflows after toggle", JSON.parse(JSON.stringify(this.workflowsList)));
+
+        this.saveData(); // Save the data upon toggle change
+    }
+
 
     handleSliderChange(event) {
         const workflowId = event.currentTarget.dataset.workflowid;
@@ -72,37 +93,63 @@ export default class WorkflowProfiling extends LightningElement {
             return workflow;
         });
 
-        console.log('Changed workflows', this.workflowsList);
+        // console.log('Changed workflows after slider change', JSON.parse(JSON.stringify(this.workflowsList)));
 
         // Save data upon change
         this.saveData();
     }
 
     saveData() {
-        // Create WorkflowProfiling objects by filtering the list of workflows with a rating higher than 0
-        let workflowProfilingsToCreate = this.workflowsList.map(workflow => ({
-            Account__c: this.recordId,
-            Workflow__c: workflow.Id,
-            Rating__c: workflow.rating
-        }));
+        // Filter the workflowsList for records to upsert and delete
+        let recordsToUpsert = [];
+        let recordsToDelete = [];
 
-        console.log('Worfklow profilings to create', workflowProfilingsToCreate);
+        this.workflowsList.forEach(workflow => {
+            if (workflow.isChecked) {
+                // Create records for upsert with isChecked as true
+                recordsToUpsert.push({
+                    Account__c: this.recordId,
+                    Workflow__c: workflow.Id,
+                    Rating__c: workflow.rating
+                });
+            } else {
+                // Add Ids of records to delete if isChecked is false
+                const associatedWorkflowProfiling = this.workflowProfilings.find(profiling => profiling.Workflow__c === workflow.Id);
+                if (associatedWorkflowProfiling) {
+                    recordsToDelete.push(associatedWorkflowProfiling.Id);
+                }
+            }
+        });
 
-        if (workflowProfilingsToCreate.length > 0) {
-            // Call the Apex method to save Workflow Profilings
-            createOrUpdateWorkflowProfilings({ newRecords: workflowProfilingsToCreate })
-                .then(result => {
-                    // this.showToast('Success', 'Records saved successfully', 'success');
+        // console.log('Workflow profilings to upsert', recordsToUpsert);
+        // console.log('Workflow profilings to delete', recordsToDelete);
+
+        if (recordsToUpsert.length > 0) {
+            // Call the Apex method to upsert Workflow Profilings
+            createOrUpdateWorkflowProfilings({ newRecords: recordsToUpsert })
+                .then(() => {
                     console.log('Workflow profiles created or updated successfully.');
                 })
                 .catch(error => {
                     this.showToast('Error', 'An error occurred while saving records', 'error');
                     console.error('Error creating or updating workflow profiles:', error);
                 });
+        }
+
+        if (recordsToDelete.length > 0) {
+            // Call the delete method if there are no records to upsert
+            deleteWorkflowProfilings({ recordIdsToDelete: recordsToDelete })
+                .then(() => {
+                    console.log('Workflow profiles deleted successfully.');
+                })
+                .catch(deleteError => {
+                    console.error('Error deleting workflow profiles:', deleteError);
+                });
         } else {
-            console.log('No workflow profiles to create or update.');
+            console.log('No workflow profiles to create, update, or delete.');
         }
     }
+
 
     showToast(title, message, variant) {
         const evt = new ShowToastEvent({

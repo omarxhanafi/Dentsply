@@ -89,8 +89,6 @@ N
 src/classes/TriggerHandler.cls,3/4/341409e3e1a7a90226534de468d57113641c0141
 U
 %src/classes/ContactTriggerHandler.cls,4/f/4f3e7eb78112c8442d4f62d3c5b978ff4527aba9
-[
-+src/classes/WorkflowProfilingController.cls,1/5/15f4f4c2e40fcd97747804bbccfde185a017e797
 s
 Csrc/aura/ProductProfilingComponent/ProductProfilingComponent.design,4/b/4b10c927324dd59a665dfa77169de87f96ee2333
 p

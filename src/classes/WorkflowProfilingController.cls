@@ -1,5 +1,22 @@
+/**
+ * @Author          Omar (ohanafi@salesforce.com)
+ * @Description     Workflow Profiling Controller Class.
+ * @Test-Class      Test_WorkflowProfilingController
+ *
+ * @History
+ * 15-09-2023   Omar     TFUS-000006118 - Create Workflow Profiling Controller Class
+ * 07-12-2023   Omar     Added the deleteWorkflowProfilings method
+ */
 public with sharing class WorkflowProfilingController {
 
+    /**
+     * getWorkflows Return a list of workflows based on the provided account Id
+     * @author ohanafi@salesforce.com | 15-09-2023
+     *
+     * @param accountId   Account Id to fetch workflows
+     *
+     * @return List<Workflow__c> - List of workflows
+     */
     @AuraEnabled(cacheable=true)
     public static List<Workflow__c> getWorkflows(Id accountId) {
         Account acc = [SELECT Id, Country__c from Account where id = :accountId LIMIT 1];
@@ -12,11 +29,25 @@ public with sharing class WorkflowProfilingController {
         return null;
     }
 
+    /**
+     * getWorkflowProfilingsByAccount Return a list of Workflow Profiling records based on the provided account Id
+     * @author ohanafi@salesforce.com | 15-09-2023
+     *
+     * @param accountId   Account Id to fetch Workflow Profilings
+     *
+     * @return List<WorkflowProfiling__c> - List of Workflow Profiling records
+     */
     @AuraEnabled(cacheable=true)
     public static List<WorkflowProfiling__c> getWorkflowProfilingsByAccount(Id accountId) {
         return [SELECT Id, Name, Rating__c, Account__c, Workflow__c FROM WorkflowProfiling__c WHERE Account__c = :accountId];
     }
 
+    /**
+     * createOrUpdateWorkflowProfilings Upsert or insert Workflow Profiling records based on the provided list of records
+     * @author ohanafi@salesforce.com | 15-09-2023
+     *
+     * @param newRecords   List of Workflow Profiling records to upsert or insert
+     */
     @AuraEnabled
     public static void createOrUpdateWorkflowProfilings(List<WorkflowProfiling__c> newRecords) {
         // Fetch existing records
@@ -63,8 +94,23 @@ public with sharing class WorkflowProfilingController {
             }
         }
 
+    }
 
+    /**
+     * deleteWorkflowProfilings Delete Workflow Profiling records based on the provided list of record IDs
+     * @author ohanafi@salesforce.com | 07-12-2023
+     *
+     * @param recordIdsToDelete   List of Workflow Profiling record Ids to delete
+     */
+    @AuraEnabled
+    public static void deleteWorkflowProfilings(List<Id> recordIdsToDelete) {
+        if(recordIdsToDelete != null && !recordIdsToDelete.isEmpty()) {
+            List<WorkflowProfiling__c> recordsToDelete = [SELECT Id FROM WorkflowProfiling__c WHERE Id IN :recordIdsToDelete];
 
+            if(!recordsToDelete.isEmpty()) {
+                delete recordsToDelete;
+            }
+        }
     }
 }
 
