@@ -59,6 +59,7 @@ export default class WorkflowProfiling extends LightningElement {
             const matchingProfiling = this.workflowProfilings.find(profiling => profiling.Workflow__c === workflow.Id);
             if (matchingProfiling) {
                 workflow.rating = matchingProfiling.Rating__c;
+                workflow.icons = this.generateIcons(workflow.rating);
                 workflow.isChecked = true;
                 workflow.itemClass = ''
             }
@@ -92,16 +93,28 @@ export default class WorkflowProfiling extends LightningElement {
         // Update the 'rating' property based on the slider's value
         this.workflowsList = this.workflowsList.map(workflow => {
             if (workflow.Id === workflowId) {
-                return { ...workflow, rating: rating };
+                return { ...workflow, rating: rating};
             }
             return workflow;
         });
+
+        setTimeout(() => {
+            this.updateIcons();
+        }, 300); // Adjust the delay time as needed
 
         // console.log('Changed workflows after slider change', JSON.parse(JSON.stringify(this.workflowsList)));
 
         // Save data upon change
         this.saveData();
     }
+
+    updateIcons() {
+        this.workflowsList = this.workflowsList.map(workflow => {
+            workflow.icons = this.generateIcons(workflow.rating);
+            return workflow;
+        });
+    }
+
 
     saveData() {
         // Disable all toggles while the save/delete process is running
@@ -163,6 +176,25 @@ export default class WorkflowProfiling extends LightningElement {
             .catch(deleteError => {
                 console.error('Error deleting workflow profiles:', deleteError);
             });
+    }
+
+    generateIcons(rating) {
+        const hotIconsCount = rating;
+        const coldIconsCount = 5 - rating;
+
+        const icons = [];
+
+        // Add hot icons
+        for (let i = 0; i < hotIconsCount; i++) {
+            icons.push({ key: `hot${i}`, iconUrl: this.hotIconUrl });
+        }
+
+        // Add cold icons
+        for (let i = 0; i < coldIconsCount; i++) {
+            icons.push({ key: `cold${i}`, iconUrl: this.coldIconUrl });
+        }
+
+        return icons;
     }
 
     get disabledToggleClass() {
