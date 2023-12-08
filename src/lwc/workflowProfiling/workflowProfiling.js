@@ -5,6 +5,7 @@ import createOrUpdateWorkflowProfilings from '@salesforce/apex/WorkflowProfiling
 import deleteWorkflowProfilings from '@salesforce/apex/WorkflowProfilingController.deleteWorkflowProfilings';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import HOT_ICON from '@salesforce/resourceUrl/HotIcon';
+import COLD_ICON from '@salesforce/resourceUrl/ColdIcon';
 
 
 export default class WorkflowProfiling extends LightningElement {
@@ -13,7 +14,10 @@ export default class WorkflowProfiling extends LightningElement {
     @track workflowsList = [];
     workflowProfilings = [];
 
+    isProcessing = false;
+
     hotIconUrl = HOT_ICON;
+    coldIconUrl = COLD_ICON;
 
     @wire(getWorkflows, { accountId: '$recordId' })
     wiredWorkflows({ error, data }) {
@@ -100,6 +104,9 @@ export default class WorkflowProfiling extends LightningElement {
     }
 
     saveData() {
+        // Disable all toggles while the save/delete process is running
+        this.isProcessing = true;
+
         // Filter the workflowsList for records to upsert and delete
         let recordsToUpsert = [];
         let recordsToDelete = [];
@@ -125,31 +132,42 @@ export default class WorkflowProfiling extends LightningElement {
         // console.log('Workflow profilings to delete', recordsToDelete);
 
         if (recordsToUpsert.length > 0) {
-            // Call the Apex method to upsert Workflow Profilings
-            createOrUpdateWorkflowProfilings({ newRecords: recordsToUpsert })
-                .then(() => {
-                    console.log('Workflow profiles created or updated successfully.');
-                })
-                .catch(error => {
-                    this.showToast('Error', 'An error occurred while saving records', 'error');
-                    console.error('Error creating or updating workflow profiles:', error);
-                });
+            this.upsertWorkflowProfilings(recordsToUpsert);
         }
-
-        if (recordsToDelete.length > 0) {
-            // Call the delete method if there are no records to upsert
-            deleteWorkflowProfilings({ recordIdsToDelete: recordsToDelete })
-                .then(() => {
-                    console.log('Workflow profiles deleted successfully.');
-                })
-                .catch(deleteError => {
-                    console.error('Error deleting workflow profiles:', deleteError);
-                });
-        } else {
-            console.log('No workflow profiles to create, update, or delete.');
+        else if (recordsToDelete.length > 0) {
+            this.deleteWorkflowProfilings(recordsToDelete);
         }
     }
 
+
+    upsertWorkflowProfilings(recordsToUpsert) {
+        // Call the Apex method to upsert Workflow Profilings
+        createOrUpdateWorkflowProfilings({newRecords: recordsToUpsert})
+            .then(() => {
+                this.isProcessing = false; // Enabling the toggles
+                console.log('Workflow profiles created or updated successfully.');
+            })
+            .catch(error => {
+                this.showToast('Error', 'An error occurred while saving records', 'error');
+                console.error('Error creating or updating workflow profiles:', error);
+            });
+    }
+
+    deleteWorkflowProfilings(recordsToDelete) {
+        // Call the delete method if there are records to delete
+        deleteWorkflowProfilings({recordIdsToDelete: recordsToDelete})
+            .then(() => {
+                this.isProcessing = false; // Enabling the toggles
+                console.log('Workflow profiles deleted successfully.');
+            })
+            .catch(deleteError => {
+                console.error('Error deleting workflow profiles:', deleteError);
+            });
+    }
+
+    get disabledToggleClass() {
+        return this.isProcessing ? 'disabled-toggle' : '';
+    }
 
     showToast(title, message, variant) {
         const evt = new ShowToastEvent({

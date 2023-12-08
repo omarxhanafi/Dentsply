@@ -6,7 +6,7 @@
                 <tbody>
                     <template for:each={workflowsList} for:item="eachWorkflow">
                         <tr key={eachWorkflow.Id}>
-                            <td>
+                            <td class={disabledToggleClass}>
                                 <lightning-input
                                         type="checkbox-button"
                                         label="Enable Row"
