@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.js" afterDir="false" />
     </list>
@@ -18685,7 +18686,7 @@
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1701768665000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1695713716562" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1702051248279" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1702047587856" />
                       <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1695383392000" />
                       <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1695383392000" />
                     </map>
@@ -19170,7 +19171,7 @@
       <workItem from="1698229191841" duration="1636000" />
       <workItem from="1699451916839" duration="13663000" />
       <workItem from="1700735801888" duration="22476000" />
-      <workItem from="1701603113622" duration="23713000" />
+      <workItem from="1701603113622" duration="22397000" />
     </task>
     <servers />
   </component>
