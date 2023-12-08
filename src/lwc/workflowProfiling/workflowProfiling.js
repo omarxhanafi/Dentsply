@@ -59,6 +59,7 @@ export default class WorkflowProfiling extends LightningElement {
             const matchingProfiling = this.workflowProfilings.find(profiling => profiling.Workflow__c === workflow.Id);
             if (matchingProfiling) {
                 workflow.rating = matchingProfiling.Rating__c;
+                workflow.icons = this.generateIcons(workflow.rating);
                 workflow.isChecked = true;
                 workflow.itemClass = ''
             }
@@ -81,7 +82,10 @@ export default class WorkflowProfiling extends LightningElement {
 
         // console.log("Changed Workflows after toggle", JSON.parse(JSON.stringify(this.workflowsList)));
 
-        this.saveData(); // Save the data upon toggle change
+        // Update fire icons
+        this.updateIcons();
+
+        this.saveData(isChecked); // Save the data upon toggle change
     }
 
 
@@ -92,18 +96,29 @@ export default class WorkflowProfiling extends LightningElement {
         // Update the 'rating' property based on the slider's value
         this.workflowsList = this.workflowsList.map(workflow => {
             if (workflow.Id === workflowId) {
-                return { ...workflow, rating: rating };
+                return { ...workflow, rating: rating};
             }
             return workflow;
         });
 
         // console.log('Changed workflows after slider change', JSON.parse(JSON.stringify(this.workflowsList)));
 
+        // Update fire icons
+        this.updateIcons();
+
         // Save data upon change
-        this.saveData();
+        this.saveData(true);
     }
 
-    saveData() {
+    updateIcons() {
+        this.workflowsList = this.workflowsList.map(workflow => {
+            workflow.icons = this.generateIcons(workflow.rating);
+            return workflow;
+        });
+    }
+
+
+    saveData(isUpdate) {
         // Disable all toggles while the save/delete process is running
         this.isProcessing = true;
 
@@ -128,13 +143,14 @@ export default class WorkflowProfiling extends LightningElement {
             }
         });
 
-        // console.log('Workflow profilings to upsert', recordsToUpsert);
-        // console.log('Workflow profilings to delete', recordsToDelete);
+        console.log('Workflow profilings to upsert', recordsToUpsert);
+        console.log('Workflow profilings to delete', recordsToDelete);
 
-        if (recordsToUpsert.length > 0) {
+        if (isUpdate && recordsToUpsert.length > 0) {
             this.upsertWorkflowProfilings(recordsToUpsert);
         }
-        else if (recordsToDelete.length > 0) {
+
+        if (!isUpdate && recordsToDelete.length > 0) {
             this.deleteWorkflowProfilings(recordsToDelete);
         }
     }
@@ -163,6 +179,25 @@ export default class WorkflowProfiling extends LightningElement {
             .catch(deleteError => {
                 console.error('Error deleting workflow profiles:', deleteError);
             });
+    }
+
+    generateIcons(rating) {
+        const hotIconsCount = rating;
+        const coldIconsCount = 5 - rating;
+
+        const icons = [];
+
+        // Add hot icons
+        for (let i = 0; i < hotIconsCount; i++) {
+            icons.push({ key: `hot${i}`, iconUrl: this.hotIconUrl });
+        }
+
+        // Add cold icons
+        for (let i = 0; i < coldIconsCount; i++) {
+            icons.push({ key: `cold${i}`, iconUrl: this.coldIconUrl });
+        }
+
+        return icons;
     }
 
     get disabledToggleClass() {

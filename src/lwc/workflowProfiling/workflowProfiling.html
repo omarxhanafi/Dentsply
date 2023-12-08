@@ -27,7 +27,9 @@
                                             value={eachWorkflow.rating}
                                             onchange={handleSliderChange}
                                     ></lightning-slider>
-                                    <img src={hotIconUrl} class="custom-icon"/>
+                                    <template for:each={eachWorkflow.icons} for:item="icon">
+                                        <img key={icon.key} src={icon.iconUrl} class="custom-icon"/>
+                                    </template>
                                 </div>
                             </td>
                             <td class={eachWorkflow.itemClass}>

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.js" afterDir="false" />
     </list>
@@ -18661,7 +18661,7 @@
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1692194892939" />
                       <entry key="APEXCLASS:TEST_ACTIVITYSCORECARDCONTROLLER" value="1697197787769" />
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1701198065808" />
-                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1701952512485" />
+                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1702052648120" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1701769067315" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1701609281507" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGEDIT" value="1701608075510" />
@@ -18686,7 +18686,7 @@
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1701768665000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1695713716562" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1702047587856" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1702053617423" />
                       <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1695383392000" />
                       <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1695383392000" />
                     </map>
@@ -18792,20 +18792,14 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select id, name, productfamilylabel__c from ProductFamily__c" />
-                  <option name="connectionName" value="UAT" />
+                  <option name="body" value="select id, Workflow__c, rating__C from WorkflowProfiling__c where Account__c ='0015r00000qASgNAAW'" />
+                  <option name="connectionName" value="acc360" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="select id, productfamily__c from Non_ERP_Products__c where Countries__c INCLUDES ('US')" />
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 2" />
-                </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="1" />
+            <option name="selectedSavedDocumentIndex" value="0" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -19171,7 +19165,7 @@
       <workItem from="1698229191841" duration="1636000" />
       <workItem from="1699451916839" duration="13663000" />
       <workItem from="1700735801888" duration="22476000" />
-      <workItem from="1701603113622" duration="22397000" />
+      <workItem from="1701603113622" duration="23713000" />
     </task>
     <servers />
   </component>

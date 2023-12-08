@@ -90,6 +90,7 @@ public with sharing class WorkflowProfilingController {
 
             // Perform the upsert operation to either insert or update records
             if (!recordsToUpsert.isEmpty()) {
+                System.debug('recordsToUpsert : ' + recordsToUpsert);
                 upsert recordsToUpsert;
             }
         }
