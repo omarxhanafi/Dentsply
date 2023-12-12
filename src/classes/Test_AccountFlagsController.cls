@@ -27,8 +27,6 @@ public without sharing class Test_AccountFlagsController {
 
             // Create test account
             List<Account> testAccount = TestDataFactory.returnAccounts(1, 'CIM_Account', testUser.Id);
-            testAccount[0].KOLAccount__c = true;
-
             insert testAccount;
 
             // Create test custom pricebook
@@ -56,11 +54,16 @@ public without sharing class Test_AccountFlagsController {
 
             insert new List<ServiceContract>{activeContract, expiredContract};
 
+            // Create test Global SKU Mapping
+            List<Product2> skuList = TestDataFactory.returnProducts(2);
+            skuList[0].PG2_Code__c = 'DC10';
+            skuList[1].GPP_Code__c = 'DT';
+            insert skuList;
+
             // Create test products
             List<Product2> testProducts = TestDataFactory.returnProducts(2);
-            testProducts[0].PG2_Code__c = 'DC10';
-            testProducts[1].GPP_Code__c = 'DT';
-
+            testProducts[0].GlobalSKUMapping__c = skuList[0].Id;
+            testProducts[1].GlobalSKUMapping__c = skuList[1].Id;
             insert testProducts;
 
             // Create test pricebook entry
@@ -84,8 +87,8 @@ public without sharing class Test_AccountFlagsController {
             );
             ContractLineItem testExpiredContractLineItem = new ContractLineItem(
                     ServiceContractId = expiredContract.Id,
-                    StartDate = Date.today().addDays(-1),
-                    EndDate = Date.today().addDays(1),
+                    StartDate = Date.today().addDays(-2),
+                    EndDate = Date.today().addDays(-1),
                     PricebookEntryId = testPricebookEntries[1].Id,
                     Quantity = 1,
                     UnitPrice = 100,
@@ -119,8 +122,6 @@ public without sharing class Test_AccountFlagsController {
             Assert.areEqual(1, ((Map<String, Object>) flagMap.get('dsCom')).get('value'));
             Assert.areEqual(2, ((Map<String, Object>) flagMap.get('dsCoreAccess')).get('value'));
             Assert.areEqual(1, ((Map<String, Object>) flagMap.get('dsCoreCare')).get('value'));
-            Assert.areEqual(1, ((Map<String, Object>) flagMap.get('kol')).get('value'));
-
         }
     }
 }

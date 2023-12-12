@@ -121,7 +121,6 @@ public with sharing class AccountFlagsController {
         AccountFlag cerecClub = getCerecClubFlag(accountId);
         results.put('cerecClub', cerecClub);
 
-        System.debug(results);
 
         return JSON.serialize(results);
     }
@@ -277,8 +276,6 @@ public with sharing class AccountFlagsController {
             contractLineItemsMap.get(lineItem.ServiceContractId).add(lineItem);
         }
 
-        System.debug('Contract line items : ' + contractLineItemsMap);
-
         for (Id serviceContractId : contractLineItemsMap.keySet()) {
             for (ContractLineItem eachLineItem : contractLineItemsMap.get(serviceContractId)) {
 
@@ -297,6 +294,8 @@ public with sharing class AccountFlagsController {
                 dsCoreAdvanced = (tempDsCoreAdvanced > dsCoreAdvanced.value) ? new AccountFlag(tempDsCoreAdvanced, eachLineItem.Id) : dsCoreAdvanced;
                 dsCoreCare = (tempDsCoreCare > dsCoreCare.value) ? new AccountFlag(tempDsCoreCare, eachLineItem.Id) : dsCoreCare;
                 dsCoreLab = (tempDsCoreLab > dsCoreLab.value) ? new AccountFlag(tempDsCoreLab, eachLineItem.Id) : dsCoreLab;
+
+                System.debug('dsCoreAccess : ' + dsCoreAccess);
             }
         }
 

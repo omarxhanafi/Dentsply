@@ -6,6 +6,8 @@ import deleteWorkflowProfilings from '@salesforce/apex/WorkflowProfilingControll
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import HOT_ICON from '@salesforce/resourceUrl/HotIcon';
 import COLD_ICON from '@salesforce/resourceUrl/ColdIcon';
+import FORM_FACTOR from '@salesforce/client/formFactor';
+
 
 
 export default class WorkflowProfiling extends LightningElement {
@@ -18,6 +20,8 @@ export default class WorkflowProfiling extends LightningElement {
 
     hotIconUrl = HOT_ICON;
     coldIconUrl = COLD_ICON;
+
+    isMobile = FORM_FACTOR === 'Small';
 
     @wire(getWorkflows, { accountId: '$recordId' })
     wiredWorkflows({ error, data }) {
@@ -143,8 +147,8 @@ export default class WorkflowProfiling extends LightningElement {
             }
         });
 
-        console.log('Workflow profilings to upsert', recordsToUpsert);
-        console.log('Workflow profilings to delete', recordsToDelete);
+        // console.log('Workflow profilings to upsert', recordsToUpsert);
+        // console.log('Workflow profilings to delete', recordsToDelete);
 
         if (isUpdate && recordsToUpsert.length > 0) {
             this.upsertWorkflowProfilings(recordsToUpsert);

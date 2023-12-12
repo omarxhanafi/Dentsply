@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_WorkflowProfilingController.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_WorkflowProfilingController.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/ae546cbec7d875f0e7d652d26a2e3fd90dc6dbef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Test_AccountFlagsController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_AccountFlagsController.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.js" afterDir="false" />
     </list>
@@ -18,9 +25,9 @@
         <option value="Apex Unit Test Class" />
         <option value="Lightning Web Component HTML" />
         <option value="Lightning Web Component JavaScript" />
+        <option value="Lightning Web Component CSS" />
         <option value="Apex Class" />
         <option value="Apex Metadata" />
-        <option value="Lightning Web Component CSS" />
       </list>
     </option>
   </component>
@@ -18654,14 +18661,15 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1696171694728" />
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1702387541699" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1697198113771" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1701202971105" />
-                      <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1692194892939" />
+                      <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1702387725302" />
                       <entry key="APEXCLASS:TEST_ACTIVITYSCORECARDCONTROLLER" value="1697197787769" />
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1701198065808" />
-                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1702052648120" />
+                      <entry key="APEXCLASS:TEST_WORKFLOWPROFILINGCONTROLLER" value="1702385009288" />
+                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1702054100920" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1701769067315" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1701609281507" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGEDIT" value="1701608075510" />
@@ -18686,7 +18694,7 @@
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1701768665000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1695713716562" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1702053617423" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1702383373061" />
                       <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1695383392000" />
                       <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1695383392000" />
                     </map>
@@ -18841,7 +18849,7 @@
       <recent name="$PROJECT_DIR$/src/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Apex Unit Tests.Test_ProductProfilingHierarchyController.testERPProducts">
+  <component name="RunManager" selected="Apex Unit Tests.Test_AccountFlagsController.testGetAccountFlagsJSON">
     <configuration name="Test_AccountFlagsController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -18928,7 +18936,7 @@
       <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_ActivityScorecardController.testGetAccountActivityScorecard" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="Test_WorkflowProfilingController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
@@ -18944,7 +18952,46 @@
           <entry key="Dentsply">
             <value>
               <set>
-                <option value="Test_ActivityScorecardController" />
+                <option value="Test_WorkflowProfilingController" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map />
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_WorkflowProfilingController.testCreateOrUpdateWorkflowProfilings" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="connectionName" value="acc360" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_WorkflowProfilingController" />
               </set>
             </value>
           </entry>
@@ -18959,10 +19006,10 @@
       <option name="systemLogLevel" value="DEBUG" />
       <option name="testClassToTestMethodNames">
         <map>
-          <entry key="Test_ActivityScorecardController">
+          <entry key="Test_WorkflowProfilingController">
             <value>
               <set>
-                <option value="testGetAccountActivityScorecard" />
+                <option value="testCreateOrUpdateWorkflowProfilings" />
               </set>
             </value>
           </entry>
@@ -18975,99 +19022,60 @@
       <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_ProductProfilingHierarchyController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="Test_WorkflowProfilingController.testGetWorkflows" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="FINER" />
+      <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
       <option name="connectionName" value="acc360" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="ERROR" />
+      <option name="databaseLogLevel" value="INFO" />
       <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="true" />
+      <option name="logLevelsInitialized" value="false" />
       <option name="moduleToTestClassNames">
         <map>
           <entry key="Dentsply">
             <value>
               <set>
-                <option value="Test_ProductProfilingHierarchyController" />
+                <option value="Test_WorkflowProfilingController" />
               </set>
             </value>
           </entry>
         </map>
       </option>
-      <option name="nbaLogLevel" value="ERROR" />
-      <option name="profilingLogLevel" value="ERROR" />
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="systemLogLevel" value="ERROR" />
-      <option name="testClassToTestMethodNames">
-        <map />
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="ERROR" />
-      <option name="visualforceLogLevel" value="FINE" />
-      <option name="waveLogLevel" value="ERROR" />
-      <option name="workflowLogLevel" value="ERROR" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_ProductProfilingHierarchyController.testERPProducts" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="FINER" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="ERROR" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="true" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_ProductProfilingHierarchyController" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="ERROR" />
-      <option name="profilingLogLevel" value="ERROR" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="ERROR" />
+      <option name="systemLogLevel" value="DEBUG" />
       <option name="testClassToTestMethodNames">
         <map>
-          <entry key="Test_ProductProfilingHierarchyController">
+          <entry key="Test_WorkflowProfilingController">
             <value>
               <set>
-                <option value="testERPProducts" />
+                <option value="testGetWorkflows" />
               </set>
             </value>
           </entry>
         </map>
       </option>
       <option name="testSuiteName" />
-      <option name="validationLogLevel" value="ERROR" />
-      <option name="visualforceLogLevel" value="FINE" />
-      <option name="waveLogLevel" value="ERROR" />
-      <option name="workflowLogLevel" value="ERROR" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Apex Unit Tests.Test_ProductProfilingHierarchyController.testERPProducts" />
-        <item itemvalue="Apex Unit Tests.Test_ProductProfilingHierarchyController" />
-        <item itemvalue="Apex Unit Tests.Test_ActivityScorecardController.testGetAccountActivityScorecard" />
-        <item itemvalue="Apex Unit Tests.Test_AccountFlagsController" />
         <item itemvalue="Apex Unit Tests.Test_AccountFlagsController.testGetAccountFlagsJSON" />
+        <item itemvalue="Apex Unit Tests.Test_AccountFlagsController" />
+        <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController" />
+        <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController.testCreateOrUpdateWorkflowProfilings" />
+        <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController.testGetWorkflows" />
       </list>
     </recent_temporary>
   </component>
@@ -19166,6 +19174,7 @@
       <workItem from="1699451916839" duration="13663000" />
       <workItem from="1700735801888" duration="22476000" />
       <workItem from="1701603113622" duration="23713000" />
+      <workItem from="1702208403774" duration="7706000" />
     </task>
     <servers />
   </component>
@@ -19219,6 +19228,7 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_ES_FreezeUserHandler_testHandleInboundEmail.ic2" NAME="Freeze Coverage Results" MODIFIED="1684228757679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ProcedureTrackerTriggerHelper_testcheckUniqueness.ic2" NAME="StgJan Coverage Results" MODIFIED="1673520387472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMarginsForCanada.ic2" NAME="MarginCA Coverage Results" MODIFIED="1681743541440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="MarginCA" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_AccountFlagsController_testGetAccountFlagsJSON.ic2" NAME="acc360 Coverage Results" MODIFIED="1702387544184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="acc360" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchCreateProcedureTrackers_testBatchCreateProcedureTrackers.ic2" NAME="StgJan Coverage Results" MODIFIED="1673859457008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchSetAccountSubSegmentation.ic2" NAME="Production Coverage Results" MODIFIED="1674815707650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Production" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
@@ -19229,6 +19239,5 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_UpdateContactsBypassDuplicate_testUpdateContact.ic2" NAME="Lead Coverage Results" MODIFIED="1675421607460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMargins.ic2" NAME="Margin Coverage Results" MODIFIED="1677067029631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_ProductProfilingHierarchyController_testERPProducts.ic2" NAME="acc360 Coverage Results" MODIFIED="1701198079701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="acc360" CONNECTION_TYPE="OAUTH" />
   </component>
 </project>

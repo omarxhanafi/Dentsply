@@ -14,8 +14,11 @@
 }
 
 .slider-container {
-    display: flex;
     text-align: center;
+}
+
+.flex-slider {
+    display: flex;
 }
 
 .slider-class {

@@ -16,8 +16,8 @@
                                         data-rowid={eachWorkflow.Id}
                                 ></lightning-input>
                             </td>
-                            <td style="width: 60%;" class={eachWorkflow.itemClass}>
-                                <div class="slider-container">
+                            <td if:false={isMobile} style="width: 60%;" class={eachWorkflow.itemClass}>
+                                <div class="slider-container flex-slider">
                                     <lightning-slider
                                             class="slider-class"
                                             min="0"
@@ -30,6 +30,23 @@
                                     <template for:each={eachWorkflow.icons} for:item="icon">
                                         <img key={icon.key} src={icon.iconUrl} class="custom-icon"/>
                                     </template>
+                                </div>
+                            </td>
+                            <!-- Mobile experience -->
+                            <td if:true={isMobile} style="width: 80%;" class={eachWorkflow.itemClass}>
+                                <div class="slider-container">
+                                    <template for:each={eachWorkflow.icons} for:item="icon">
+                                        <img key={icon.key} src={icon.iconUrl} class="custom-icon"/>
+                                    </template>
+                                    <lightning-slider
+                                            class="slider-class"
+                                            min="0"
+                                            max="5"
+                                            step="1"
+                                            data-workflowid={eachWorkflow.Id}
+                                            value={eachWorkflow.rating}
+                                            onchange={handleSliderChange}
+                                    ></lightning-slider>
                                 </div>
                             </td>
                             <td class={eachWorkflow.itemClass}>
