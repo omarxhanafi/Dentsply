@@ -109,10 +109,6 @@ c
 3src/classes/ProductProfilingHierarchyController.cls,7/b/7bf285b53fabc12bb4626af92af2822a40fadbca
 p
 @src/aura/ProductProfilingComponent/ProductProfilingComponent.cmp,2/4/241c0e9db6182f0b54e8f3702ace35ae107c2cb6
-\
-,src/lwc/accountFlagsLwc/accountFlagsLwc.html,3/8/38713d0d9afea46ac83e95ad7e96de21334b7365
-Z
-*src/lwc/accountFlagsLwc/accountFlagsLwc.js,2/d/2d023c109c9ed5bc55d2b91f7cdf0bb68e943a28
 u
 Esrc/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js,b/7/b73d98ef0ae135c31a85e485c5a3e8ea726c91ed
 y
@@ -125,3 +121,15 @@ T
 $src/staticresources/HotIcon.resource,f/8/f859eb3ea2f8c45717e92b5e394613c6a1b16b7d
 _
 /src/lwc/workflowProfiling/workflowProfiling.css,0/0/006dc8b7e2f77fa5a67ba944319cb5a1752734df
+[
++src/classes/WorkflowProfilingController.cls,1/5/15f4f4c2e40fcd97747804bbccfde185a017e797
+`
+0src/classes/Test_WorkflowProfilingController.cls,e/5/e54b8cf8fc9a3c9c1c6e59b30dfd1d4fb5ee76ab
+V
+&src/classes/AccountFlagsController.cls,a/e/ae546cbec7d875f0e7d652d26a2e3fd90dc6dbef
+[
++src/classes/Test_AccountFlagsController.cls,7/b/7bfd11c35b574e718c0fc7af72dca280a63f16bd
+`
+0src/lwc/workflowProfiling/workflowProfiling.html,d/b/dbbede8323174e889d8912a9591588f8277d02f9
+^
+.src/lwc/workflowProfiling/workflowProfiling.js,b/7/b7457e136903de8dc9510cab5e4837f7fd2a8513

@@ -1,8 +1,6 @@
-    import { LightningElement, api, wire } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import getAccountFlagsJSON from '@salesforce/apex/AccountFlagsController.getAccountFlagsJSON';
 import {NavigationMixin} from "lightning/navigation";
-// import FORM_FACTOR from '@salesforce/client/formFactor';
-// import LOCALE from '@salesforce/i18n/locale';
 import HEADER from '@salesforce/label/c.AccountFlagsHeader';
 import ACCESS from '@salesforce/label/c.AccountFlagsAccess';
 import LIGHT from '@salesforce/label/c.AccountFlagsLight';
