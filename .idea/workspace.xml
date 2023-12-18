@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2d023c109c9ed5bc55d2b91f7cdf0bb68e943a28" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/8/38713d0d9afea46ac83e95ad7e96de21334b7365" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/7295bef49ccade8f3b8fbf66e7e3c1a7b1d124a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/1/8142d91b81d9e8901ff6be5c6003b044381f6112" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/dbbede8323174e889d8912a9591588f8277d02f9" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchy.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchy.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfiling/workflowProfiling.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18668,7 +18671,7 @@
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1701769067315" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1701609281507" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGEDIT" value="1701608075510" />
-                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1701774447861" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1702912846868" />
                       <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.CLASSIFICATIONTYPE__C" value="1695383392000" />
                       <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.GBU__C" value="1695383392000" />
                       <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.GPHCODE__C" value="1695383392000" />
@@ -18689,7 +18692,7 @@
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1702644977499" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1695713716562" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1702383373061" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1702913394857" />
                       <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1695383392000" />
                       <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1695383392000" />
                     </map>
@@ -19170,7 +19173,8 @@
       <workItem from="1700735801888" duration="22476000" />
       <workItem from="1701603113622" duration="23713000" />
       <workItem from="1702208403774" duration="9731000" />
-      <workItem from="1702644871250" duration="658000" />
+      <workItem from="1702644871250" duration="1015000" />
+      <workItem from="1702900487195" duration="2014000" />
     </task>
     <servers />
   </component>

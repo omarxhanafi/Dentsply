@@ -276,6 +276,7 @@ init: function (cmp, event, helper) {
         console.log('filter', filter);
 
         if((filter.manufacturer != '' && filter.focus == false && filter.competitor == false) || filter.searchString.length > 1 || filter.workflow != '' || filter.competitor != false || filter.focus != false){
+            cmp.set("v.disableCollapse", false);
             helper.getChildProductsServer(cmp, event,'','',filter.manufacturer,filter.searchString,'',filter.competitor,filter.focus,'', filter.workflow);
         }
         else if(filter.searchString.length == 0){
@@ -284,6 +285,7 @@ init: function (cmp, event, helper) {
 
             helper.getManufacturers(cmp, event, "Manufacturer__c", "v.manufacturers", '');
 
+            cmp.set("v.disableCollapse", true);
             cmp.set('v.expandedRows', expanded);
             cmp.set('v.gridWrapperFilteredData', completeData);
             if(cmp.find('mytree')){
@@ -476,14 +478,17 @@ init: function (cmp, event, helper) {
         var filter = helper.createFilterObject(cmp, event);
         
         if(searchFilter.length>1){
+            cmp.set("v.disableCollapse", false);
             helper.getChildProductsServer(cmp, event, '','', filter.manufacturer, searchFilter,'', filter.competitor, filter.focus,'', filter.workflow);
         }
         else if((filter.manufacturer != '' && filter.focus == false && filter.competitor == false) || filter.focus == true || filter.competitor == true|| filter.workflow != ''){
+            cmp.set("v.disableCollapse", false);
             searchFilter = '';
             helper.getChildProductsServer(cmp, event, '','',filter.manufacturer, searchFilter,'', filter.competitor, filter.focus,'', filter.workflow);
         }
         else if(searchFilter.length == 0){
             console.log('Resetting data');
+            cmp.set("v.disableCollapse", true);
 
             var expanded = [];
             cmp.set('v.expandActionLaunched', true);

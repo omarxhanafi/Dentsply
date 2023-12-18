@@ -3,7 +3,7 @@
 }
 
 .workflow-table tr {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px #ddd;
 }
 
 .workflow-table th,

@@ -26,6 +26,7 @@ Description:   	Component to select Non-ERP products (in a Hierarchy where the p
     <aura:attribute name="showSpinner" type="Boolean" default="false"/>
     <aura:attribute name="hideFilters" type="Boolean" default="true"/>
     <aura:attribute name="hideToggleFilters" type="Boolean" default="true"/>
+    <aura:attribute name="disableCollapse" type="Boolean" default="true"/>
     <aura:attribute name="hideSelection" type="Boolean" default="true"/>
     <aura:attribute name="dataLoaded" type="Boolean" default="false"/>
 
@@ -98,7 +99,7 @@ Description:   	Component to select Non-ERP products (in a Hierarchy where the p
             <lightning:combobox aura:id="manufactFilter" variant="label-hidden" label="Manufacturer" placeholder="Select Manufacturer" options="{! v.manufacturers }" onchange="{!c.filterTable}"/>
         </div>
         <div class="slds-p-bottom_small slds-p-left_small slds-size--1-of-1 slds-medium-size--3-of-12 slds-large-size--3-of-12">
-            <lightning:button iconName="utility:toggle" variant="brand" onclick="{!c.toggleCollapseAll}" label="Expand / Collapse All"></lightning:button>
+            <lightning:buttonIcon iconName="utility:toggle" variant="brand" onclick="{!c.toggleCollapseAll}" disabled="{!v.disableCollapse}"></lightning:buttonIcon>
         </div>
 
         
