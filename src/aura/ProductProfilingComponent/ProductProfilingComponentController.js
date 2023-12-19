@@ -282,16 +282,16 @@ init: function (cmp, event, helper) {
         
         
     },
-    
+
     /*------------------------------------------------------------	
 	Description:   	Method to find records in the data table based on multiple filters
-	------------------------------------------------------------*/      
-        
-        filterTable : function(cmp, event, helper){
+	------------------------------------------------------------*/
+
+    filterTable : function(cmp, event, helper){
         var allRecords = cmp.get("v.gridWrapperData");
         var currentRecords = cmp.get("v.gridWrapperFilteredData");
         var filter = {};
-                
+
         filter.focus = cmp.find('focusFilter').get('v.checked');
         filter.competitor = cmp.find('competitorFilter').get('v.checked');
 //        filter.SBU = cmp.find('sbuFilter').get('v.value');
@@ -299,40 +299,53 @@ init: function (cmp, event, helper) {
 //        filter.categories = cmp.find('categoryFilter').get('v.value');
         var tempArray = [];
         var arrayLength =allRecords.length;
-            //console.log("Filter: ", filter);            
-		
-       	for(var i=0; i < arrayLength; i++){
-        
-        var record = {
-            nodeName: allRecords[i].nodeName,
-            productName: allRecords[i].productName,
-            productUrl: allRecords[i].productUrl};
-            
-        var children = {};
-        children = allRecords[i]._children;
+        //console.log("Filter: ", filter);
+
+        for(var i=0; i < arrayLength; i++){
+
+            var record = {
+                nodeName: allRecords[i].nodeName,
+                productName: allRecords[i].productName,
+                productUrl: allRecords[i].productUrl};
+
+            var children = {};
+            children = allRecords[i]._children;
             //console.log("Children: ", children);    
-            
-        var filterTest = [];
-            			
-        filterTest = children.filter( 
+
+            var filterTest = [];
+
+            filterTest = children.filter(
                 function(product){
-                	return (
-                    (filter.focus == true ? (product.focusProduct == filter.focus) : true) &&
-					(filter.competitor == true ? (product.competitor != filter.competitor) : true)
+                    return (
+                        (filter.focus == true ? (product.focusProduct == filter.focus) : true) &&
+                        (filter.competitor == true ? (product.competitor != filter.competitor) : true)
                     );
-                    }
-                   
-        );
-       	
+                }
+
+            );
+
             if(filterTest.length > 0){
-       			record._children = filterTest;
-	   			tempArray.push(record);
+                record._children = filterTest;
+                tempArray.push(record);
             }
-            
-       }
-            //console.log("Filtered records to assign: ", tempArray);    
+
+        }
+        //console.log("Filtered records to assign: ", tempArray);
         cmp.set("v.gridWrapperFilteredData",tempArray);
 
     },
+
+    /*-----------------------------------------------------------------
+	Description:   	Method to expand & refresh / collapse all rows
+	-----------------------------------------------------------------*/
+    toggleCollapseAll : function(cmp, event, helper){
+        var treeGridCmp = cmp.find('mytree');
+
+        if(treeGridCmp.getCurrentExpandedRows().length > 0){
+            treeGridCmp.collapseAll();
+        } else {
+            $A.enqueueAction(cmp.get('c.init'));
+        }
+    }
     
 })

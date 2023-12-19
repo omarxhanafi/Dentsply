@@ -44,7 +44,7 @@ Description:   	Component to show Product Profiling records (in a Hierarchy wher
         </aura:set>
         
         <aura:set attribute="actions">
-            <lightning:buttonIcon iconName="utility:sync" onclick="{!c.init}"/>
+            <lightning:buttonIcon iconName="utility:toggle" variant="brand" onclick="{!c.toggleCollapseAll}"/>
             <aura:if isTrue="{!$Browser.formFactor == 'DESKTOP'}">
               <aura:if isTrue="{!not(empty(v.gridWrapperFilteredData))}"> 
               	<aura:if isTrue="{!not(v.isAccountPlanRecord)}">
