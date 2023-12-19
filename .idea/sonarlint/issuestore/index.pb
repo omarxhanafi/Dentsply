@@ -71,10 +71,6 @@ N
 src/objects/Workflow__c.object,e/8/e82cdc4821cd7b34a41c3afc856933af291e4c41
 `
 0src/globalValueSets/ProductFamily.globalValueSet,8/8/88748c22cab72111ccd59796ddebb059b62110dc
-[
-+src/classes/ActivityScorecardController.cls,a/d/ad6cf685edfd5e115942ab85060b14eb8911c084
-y
-Isrc/aura/ProductProfilingHierarchy/ProductProfilingHierarchy.cmp-meta.xml,e/7/e74af207f4485179c80ef5f2606638c81bae134d
 S
 #src/objects/ProductFamily__c.object,f/2/f28fb1d0f51a92c97d03865042e17efddb686ee1
 T
@@ -103,16 +99,6 @@ l
 <src/aura/ProductProfilingDetails/ProductProfilingDetails.cmp,2/8/2896ffe9c932642d1ea44ad50465d37c5f6d9934
 f
 6src/aura/ProductProfilingEdit/ProductProfilingEdit.cmp,5/5/556cdd98ad6c8c5d69a0901966b49588331ba1a5
-y
-Isrc/aura/ProductProfilingComponent/ProductProfilingComponentController.js,4/c/4cd14365cae38c458babc4e25aadccf14e98498d
-c
-3src/classes/ProductProfilingHierarchyController.cls,7/b/7bf285b53fabc12bb4626af92af2822a40fadbca
-p
-@src/aura/ProductProfilingComponent/ProductProfilingComponent.cmp,2/4/241c0e9db6182f0b54e8f3702ace35ae107c2cb6
-u
-Esrc/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js,b/7/b73d98ef0ae135c31a85e485c5a3e8ea726c91ed
-u
-Esrc/aura/ProductProfilingHierarchy/ProductProfilingHierarchyHelper.js,d/6/d65eb531e685f5d5c0e45d03e5c80a30002a2ae6
 T
 $src/staticresources/HotIcon.resource,f/8/f859eb3ea2f8c45717e92b5e394613c6a1b16b7d
 _
