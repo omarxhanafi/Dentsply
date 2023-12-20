@@ -10,7 +10,7 @@ import FORM_FACTOR from '@salesforce/client/formFactor';
 
 
 
-export default class WorkflowProfiling extends LightningElement {
+export default class WorkflowProfilingLwc extends LightningElement {
 
     @api recordId; // Account record Id
     @track workflowsList = [];
