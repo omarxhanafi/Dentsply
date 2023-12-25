@@ -17,7 +17,7 @@
                                 ></lightning-input>
                             </td>
                             <td if:false={isMobile} style="width: 60%;" class={eachWorkflow.itemClass}>
-                                <div class="slider-container flex-slider">
+                                <div class="slider-container flex-slider range-hidden">
                                     <lightning-slider
                                             class="slider-class"
                                             min="0"
@@ -26,6 +26,7 @@
                                             data-workflowid={eachWorkflow.Id}
                                             value={eachWorkflow.rating}
                                             onchange={handleSliderChange}
+                                            variant="label-hidden"
                                     ></lightning-slider>
                                     <template for:each={eachWorkflow.icons} for:item="icon">
                                         <img key={icon.key} src={icon.iconUrl} class="custom-icon"/>
@@ -34,7 +35,7 @@
                             </td>
                             <!-- Mobile experience -->
                             <td if:true={isMobile} style="width: 80%;" class={eachWorkflow.itemClass}>
-                                <div class="slider-container">
+                                <div class="slider-container range-hidden">
                                     <template for:each={eachWorkflow.icons} for:item="icon">
                                         <img key={icon.key} src={icon.iconUrl} class="custom-icon"/>
                                     </template>

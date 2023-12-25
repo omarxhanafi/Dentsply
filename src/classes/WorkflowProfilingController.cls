@@ -39,7 +39,7 @@ public with sharing class WorkflowProfilingController {
      */
     @AuraEnabled(cacheable=true)
     public static List<WorkflowProfiling__c> getWorkflowProfilingsByAccount(Id accountId) {
-        return [SELECT Id, Name, Rating__c, Account__c, Workflow__c FROM WorkflowProfiling__c WHERE Account__c = :accountId];
+        return [SELECT Id, Name, Rating__c, Account__c, Inactive__c, Workflow__c FROM WorkflowProfiling__c WHERE Account__c = :accountId];
     }
 
     /**
@@ -79,6 +79,7 @@ public with sharing class WorkflowProfilingController {
                 if (existingRecord != null) {
                     // Update the existing record's rating
                     existingRecord.Rating__c = newRecord.Rating__c;
+                    existingRecord.Inactive__c = newRecord.Inactive__c;
                     recordsToUpsert.add(existingRecord);
                 } else {
                     // No matching record found, insert a new record
@@ -97,20 +98,93 @@ public with sharing class WorkflowProfilingController {
     }
 
     /**
-     * deleteWorkflowProfilings Delete Workflow Profiling records based on the provided list of record IDs
-     * @author ohanafi@salesforce.com | 07-12-2023
+     * getProductFamilyListByWorkflowId Get a list of ProductFamily__c records and its associated Non_ERP_Products__c
+     * @author ohanafi@salesforce.com | 22-12-2023
      *
-     * @param recordIdsToDelete   List of Workflow Profiling record Ids to delete
+     * @param workflowId   Workflow ID
+     * @param accountId   Account ID
+     *
+     * @return List<ProductFamilyWrapper> - List of ProductFamily__c records
      */
     @AuraEnabled
-    public static void deleteWorkflowProfilings(List<Id> recordIdsToDelete) {
-        if(recordIdsToDelete != null && !recordIdsToDelete.isEmpty()) {
-            List<WorkflowProfiling__c> recordsToDelete = [SELECT Id FROM WorkflowProfiling__c WHERE Id IN :recordIdsToDelete];
+    public static List<ProductFamilyWrapper> getProductFamilyListByWorkflowId(Id workflowId, Id accountId) {
+        List<ProductFamilyWrapper> productFamilyWrapperList = new List<ProductFamilyWrapper>();
 
-            if(!recordsToDelete.isEmpty()) {
-                delete recordsToDelete;
+        List<ProductFamily__c> productFamilyList = [
+                SELECT Id, ProductFamilyLabel__c,
+                (SELECT Id, Name, Competitor_Product__c FROM Non_ERP_Products__r)
+                FROM ProductFamily__c
+                WHERE Id IN (
+                        SELECT ProductFamily__c
+                        FROM WorkflowLine__c
+                        WHERE Workflow__c = :workflowId
+                )
+        ];
+
+        // Collect Non_ERP_Products__c Ids
+        Set<String> nonERPProductIds = new Set<String>();
+        for (ProductFamily__c productFamily : productFamilyList) {
+            for (Non_ERP_Products__c nonERPProduct : productFamily.Non_ERP_Products__r) {
+                nonERPProductIds.add(nonERPProduct.Id);
             }
         }
+
+        // Map to hold ProductProfiling__c Ids related to Non_ERP_Products__c
+        Set<Id> activeNonErpProductsIds = new Set<Id>();
+        for (Product_Profiling__c productProfiling : [
+                SELECT Id, Product_Name__c
+                FROM Product_Profiling__c
+                WHERE Inactive__c = false AND Product_Name__c IN :nonERPProductIds AND Account__c = :accountId
+        ]) {
+            activeNonErpProductsIds.add(productProfiling.Product_Name__c);
+        }
+        
+        // Populate ProductFamilyWrapperList
+        for (ProductFamily__c productFamily : productFamilyList) {
+            ProductFamilyWrapper wrapper = new ProductFamilyWrapper();
+            wrapper.productFamily = productFamily;
+
+            for (Non_ERP_Products__c nonERPProduct : productFamily.Non_ERP_Products__r) {
+                if (nonERPProduct.Competitor_Product__c) {
+                    wrapper.competitorProducts.add(new NonERPProductWrapper(nonERPProduct, activeNonErpProductsIds.contains(nonERPProduct.Id) ? true : false));
+                } else {
+                    wrapper.dsProducts.add(new NonERPProductWrapper(nonERPProduct, activeNonErpProductsIds.contains(nonERPProduct.Id) ? true : false));
+                }
+            }
+
+            productFamilyWrapperList.add(wrapper);
+        }
+
+        return productFamilyWrapperList;
+
     }
+
+    public class NonERPProductWrapper {
+        @AuraEnabled public Non_ERP_Products__c product;
+        @AuraEnabled public Boolean active;
+
+        public NonERPProductWrapper(Non_ERP_Products__c product, Boolean active) {
+            this.product = product;
+            this.active = active;
+        }
+    }
+
+    public class ProductFamilyWrapper {
+        @AuraEnabled public ProductFamily__c productFamily;
+        @AuraEnabled public List<NonERPProductWrapper> competitorProducts;
+        @AuraEnabled public List<NonERPProductWrapper> dsProducts;
+
+        public ProductFamilyWrapper(ProductFamily__c productFamily, List<NonERPProductWrapper> competitorProducts, List<NonERPProductWrapper> dsProducts) {
+            this.productFamily = productFamily;
+            this.competitorProducts = competitorProducts;
+            this.dsProducts = dsProducts;
+        }
+
+        public ProductFamilyWrapper(){
+            this.competitorProducts = new List<NonERPProductWrapper>();
+            this.dsProducts = new List<NonERPProductWrapper>();
+        }
+    }
+
 }
 

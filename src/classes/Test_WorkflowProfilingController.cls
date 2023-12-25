@@ -103,34 +103,4 @@ public without sharing class Test_WorkflowProfilingController {
         }
     }
 
-    @isTest
-    static void testDeleteWorkflowProfilings() {
-        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-
-        System.runAs(testUser) {
-
-            // Create test account
-            List<Account> testAccount = TestDataFactory.returnAccounts(1, 'CIM_Account', testUser.Id);
-            testAccount[0].Country__c = 'US';
-            insert testAccount;
-
-            Workflow__c testWorkflow = new Workflow__c(Name = 'Test Workflow', Countries__c = 'US');
-            insert testWorkflow;
-
-            WorkflowProfiling__c testWorkflowProfiling = new WorkflowProfiling__c(Account__c = testAccount[0].Id, Workflow__c = testWorkflow.Id);
-            insert testWorkflowProfiling;
-
-            List<Id> recordIdsToDelete = new List<Id>{ testWorkflowProfiling.Id };
-
-            Test.startTest();
-            WorkflowProfilingController.deleteWorkflowProfilings(recordIdsToDelete);
-            Test.stopTest();
-
-            // Assertions
-            List<WorkflowProfiling__c> deletedRecords = [SELECT Id FROM WorkflowProfiling__c WHERE Id = :testWorkflowProfiling.Id];
-            System.assertEquals(0, deletedRecords.size());
-
-
-        }
-    }
 }

@@ -2,12 +2,13 @@ import { LightningElement, wire, api, track } from 'lwc';
 import getWorkflows from '@salesforce/apex/WorkflowProfilingController.getWorkflows';
 import getWorkflowProfilingsByAccount from '@salesforce/apex/WorkflowProfilingController.getWorkflowProfilingsByAccount';
 import createOrUpdateWorkflowProfilings from '@salesforce/apex/WorkflowProfilingController.createOrUpdateWorkflowProfilings';
-import deleteWorkflowProfilings from '@salesforce/apex/WorkflowProfilingController.deleteWorkflowProfilings';
+import getProductFamilyListByWorkflowId from '@salesforce/apex/WorkflowProfilingController.getProductFamilyListByWorkflowId';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import HOT_ICON from '@salesforce/resourceUrl/HotIcon';
 import COLD_ICON from '@salesforce/resourceUrl/ColdIcon';
 import FORM_FACTOR from '@salesforce/client/formFactor';
-
+import Sliders from '@salesforce/resourceUrl/Sliders';
+import {loadStyle} from "lightning/platformResourceLoader";
 
 
 export default class WorkflowProfilingLwc extends LightningElement {
@@ -22,6 +23,20 @@ export default class WorkflowProfilingLwc extends LightningElement {
     coldIconUrl = COLD_ICON;
 
     isMobile = FORM_FACTOR === 'Small';
+
+    async connectedCallback() {
+        // Hiding the slider's range label
+        await loadStyle(this, Sliders);
+
+        getProductFamilyListByWorkflowId({ workflowId: 'a7u5r000000RuYZAA0', accountId: this.recordId })
+            .then(result => {
+                console.log('Product Families', result);
+            })
+            .catch(error => {
+                console.error('Error fetching Workflow Profilings:', error);
+            });
+    }
+
 
     @wire(getWorkflows, { accountId: '$recordId' })
     wiredWorkflows({ error, data }) {
@@ -64,8 +79,10 @@ export default class WorkflowProfilingLwc extends LightningElement {
             if (matchingProfiling) {
                 workflow.rating = matchingProfiling.Rating__c;
                 workflow.icons = this.generateIcons(workflow.rating);
-                workflow.isChecked = true;
-                workflow.itemClass = ''
+                if(!matchingProfiling.Inactive__c){
+                    workflow.isChecked = true;
+                    workflow.itemClass = ''
+                }
             }
         });
 
@@ -89,7 +106,7 @@ export default class WorkflowProfilingLwc extends LightningElement {
         // Update fire icons
         this.updateIcons();
 
-        this.saveData(isChecked); // Save the data upon toggle change
+        this.saveData(); // Save the data upon toggle change
     }
 
 
@@ -111,7 +128,7 @@ export default class WorkflowProfilingLwc extends LightningElement {
         this.updateIcons();
 
         // Save data upon change
-        this.saveData(true);
+        this.saveData();
     }
 
     updateIcons() {
@@ -122,41 +139,29 @@ export default class WorkflowProfilingLwc extends LightningElement {
     }
 
 
-    saveData(isUpdate) {
+    saveData() {
         // Disable all toggles while the save/delete process is running
         this.isProcessing = true;
 
         // Filter the workflowsList for records to upsert and delete
         let recordsToUpsert = [];
-        let recordsToDelete = [];
 
         this.workflowsList.forEach(workflow => {
-            if (workflow.isChecked) {
                 // Create records for upsert with isChecked as true
                 recordsToUpsert.push({
                     Account__c: this.recordId,
                     Workflow__c: workflow.Id,
-                    Rating__c: workflow.rating
+                    Rating__c: workflow.rating,
+                    Inactive__c: workflow.isChecked ? false : true
                 });
-            } else {
-                // Add Ids of records to delete if isChecked is false
-                const associatedWorkflowProfiling = this.workflowProfilings.find(profiling => profiling.Workflow__c === workflow.Id);
-                if (associatedWorkflowProfiling) {
-                    recordsToDelete.push(associatedWorkflowProfiling.Id);
-                }
-            }
         });
 
         // console.log('Workflow profilings to upsert', recordsToUpsert);
-        // console.log('Workflow profilings to delete', recordsToDelete);
 
-        if (isUpdate && recordsToUpsert.length > 0) {
+        if (recordsToUpsert.length > 0) {
             this.upsertWorkflowProfilings(recordsToUpsert);
         }
 
-        if (!isUpdate && recordsToDelete.length > 0) {
-            this.deleteWorkflowProfilings(recordsToDelete);
-        }
     }
 
 
@@ -170,18 +175,6 @@ export default class WorkflowProfilingLwc extends LightningElement {
             .catch(error => {
                 this.showToast('Error', 'An error occurred while saving records', 'error');
                 console.error('Error creating or updating workflow profiles:', error);
-            });
-    }
-
-    deleteWorkflowProfilings(recordsToDelete) {
-        // Call the delete method if there are records to delete
-        deleteWorkflowProfilings({recordIdsToDelete: recordsToDelete})
-            .then(() => {
-                this.isProcessing = false; // Enabling the toggles
-                console.log('Workflow profiles deleted successfully.');
-            })
-            .catch(deleteError => {
-                console.error('Error deleting workflow profiles:', deleteError);
             });
     }
 

@@ -2954,4 +2954,7 @@
     <orderEntry type="jdk" jdkName="IlluminatedCloud (Dentsply/acc360)" jdkType="IlluminatedCloud" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="ac088ead-b497-4b47-9f6b-d788b155af57" />
+  </component>
 </module>
