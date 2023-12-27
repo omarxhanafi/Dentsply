@@ -48,3 +48,7 @@
     cursor: not-allowed; /* Cursor indicating non-interactivity */
     pointer-events: none; /* Disable pointer events */
 }
+
+.collapsed-section {
+    display: none;
+}

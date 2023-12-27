@@ -6,6 +6,7 @@ import getProductFamilyListByWorkflowId from '@salesforce/apex/WorkflowProfiling
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import HOT_ICON from '@salesforce/resourceUrl/HotIcon';
 import COLD_ICON from '@salesforce/resourceUrl/ColdIcon';
+import DS_LOGO_ICON from '@salesforce/resourceUrl/DS_logoIcon';
 import FORM_FACTOR from '@salesforce/client/formFactor';
 import Sliders from '@salesforce/resourceUrl/Sliders';
 import {loadStyle} from "lightning/platformResourceLoader";
@@ -21,20 +22,13 @@ export default class WorkflowProfilingLwc extends LightningElement {
 
     hotIconUrl = HOT_ICON;
     coldIconUrl = COLD_ICON;
+    dsLogoIconUrl = DS_LOGO_ICON;
 
     isMobile = FORM_FACTOR === 'Small';
 
     async connectedCallback() {
         // Hiding the slider's range label
         await loadStyle(this, Sliders);
-
-        getProductFamilyListByWorkflowId({ workflowId: 'a7u5r000000RuYZAA0', accountId: this.recordId })
-            .then(result => {
-                console.log('Product Families', result);
-            })
-            .catch(error => {
-                console.error('Error fetching Workflow Profilings:', error);
-            });
     }
 
 
@@ -46,6 +40,8 @@ export default class WorkflowProfilingLwc extends LightningElement {
                 ...workflow,
                 isChecked: false,
                 itemClass: 'disabled-td',
+                isExpanded: false,
+                accordionIcon: 'utility:chevronright',
                 rating: 0
             }));
 
@@ -200,6 +196,49 @@ export default class WorkflowProfilingLwc extends LightningElement {
     get disabledToggleClass() {
         return this.isProcessing ? 'disabled-toggle' : '';
     }
+
+    handleExpand(event) {
+        const rowId = event.currentTarget.dataset.rowid;
+
+        // We expand the selected workflow and collapse all the others
+        this.workflowsList = this.workflowsList.map(workflow => {
+            if (workflow.Id === rowId) {
+                // If it's the selected workflow, we expand it
+                return {
+                    ...workflow,
+                    isExpanded: !workflow.isExpanded,
+                    accordionIcon: workflow.isExpanded ? 'utility:chevronright' : 'utility:chevrondown'
+                };
+            } else {
+                // Collapse all other workflows
+                return {
+                    ...workflow,
+                    isExpanded: false,
+                    accordionIcon: 'utility:chevronright'
+                };
+            }
+        });
+
+        // Find the workflow in the list based on the rowId
+        let selectedWorkflow = this.workflowsList.find(workflow => workflow.Id === rowId);
+
+        if (selectedWorkflow && !selectedWorkflow.families) {
+            // Retrieve the list of families / products only if they are not already loaded
+            getProductFamilyListByWorkflowId({ workflowId: selectedWorkflow.Id, accountId: this.recordId })
+                .then(result => {
+                    // Assigning the families to the workflow
+                    selectedWorkflow.families = result;
+
+                    // No need to toggle isExpanded or update accordionIcon here because it's already been done above
+
+                    console.log("Expanded workflow", JSON.parse(JSON.stringify(selectedWorkflow)));
+                })
+                .catch(error => {
+                    console.error('Error fetching Product Families & Products:', error);
+                });
+        }
+    }
+
 
     showToast(title, message, variant) {
         const evt = new ShowToastEvent({

@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/staticresources/Sliders.resource" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/staticresources/Sliders.resource-meta.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/15f4f4c2e40fcd97747804bbccfde185a017e797" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/ae546cbec7d875f0e7d652d26a2e3fd90dc6dbef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/7/b7457e136903de8dc9510cab5e4837f7fd2a8513" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1daf6dae190093603e3a8ea8f8266025f70cef4e" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Test_WorkflowProfilingController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_WorkflowProfilingController.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.js" afterDir="false" />
@@ -18675,7 +18670,7 @@
                       <entry key="APEXCLASS:TEST_ACTIVITYSCORECARDCONTROLLER" value="1697197787769" />
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1701198065808" />
                       <entry key="APEXCLASS:TEST_WORKFLOWPROFILINGCONTROLLER" value="1703070265276" />
-                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1703500926681" />
+                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1703582465422" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1702998491010" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1701609281507" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGEDIT" value="1701608075510" />
@@ -18698,9 +18693,9 @@
                       <entry key="CUSTOMOBJECT:WORKFLOW__C" value="1695383392000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTCONTAINERLWC" value="1689951225892" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1702644977499" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1702999353904" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1703516423900" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1703497191146" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1703668331108" />
                       <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1695383392000" />
                       <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1695383392000" />
                       <entry key="STATICRESOURCE:SLIDERS" value="1703066996000" />
@@ -19188,7 +19183,7 @@
       <workItem from="1703091824937" duration="37000" />
       <workItem from="1703091883288" duration="253000" />
       <workItem from="1703092150849" duration="2353000" />
-      <workItem from="1703496052270" duration="3945000" />
+      <workItem from="1703496052270" duration="14041000" />
     </task>
     <servers />
   </component>

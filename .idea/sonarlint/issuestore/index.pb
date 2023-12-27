@@ -103,8 +103,6 @@ T
 $src/staticresources/HotIcon.resource,f/8/f859eb3ea2f8c45717e92b5e394613c6a1b16b7d
 [
 +src/classes/Test_AccountFlagsController.cls,7/b/7bfd11c35b574e718c0fc7af72dca280a63f16bd
-f
-6src/lwc/activityScorecardLwc/activityScorecardLwc.html,1/d/1daf6dae190093603e3a8ea8f8266025f70cef4e
 m
 =src/lwc/workflowProfilingLwc/workflowProfilingLwc.js-meta.xml,6/1/61ab1731be76828e1c9ce247db68053a3a1383fe
 ]

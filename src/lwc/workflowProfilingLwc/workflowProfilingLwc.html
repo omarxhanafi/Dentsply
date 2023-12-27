@@ -6,6 +6,14 @@
                 <tbody>
                     <template for:each={workflowsList} for:item="eachWorkflow">
                         <tr key={eachWorkflow.Id}>
+                            <td if:false={isMobile}>
+                                <lightning-button-icon
+                                        icon-name={eachWorkflow.accordionIcon}
+                                        variant="bare"
+                                        onclick={handleExpand}
+                                        data-rowid={eachWorkflow.Id}
+                                ></lightning-button-icon>
+                            </td>
                             <td class={disabledToggleClass}>
                                 <lightning-input
                                         type="checkbox-button"
@@ -52,6 +60,73 @@
                             </td>
                             <td class={eachWorkflow.itemClass}>
                                 <div class="workflow-label">{eachWorkflow.WorkflowLabel__c}</div>
+                            </td>
+                        </tr>
+                        <tr key={eachWorkflow.Id} if:true={eachWorkflow.isExpanded}>
+                            <td colspan="4" if:false={eachWorkflow.families}>
+                                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                            </td>
+                            <td colspan="4" if:true={eachWorkflow.families}>
+                                <div  class="slds-box slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+                                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                        <thead>
+                                        <tr class="slds-line-height_reset">
+                                            <th scope="col">
+                                                <div class="slds-truncate" title="Product Family">Product Family</div>
+                                            </th>
+                                            <th scope="col">
+                                                <div class="slds-truncate" title="DS Products">DS Products</div>
+                                            </th>
+                                            <th scope="col">
+                                                <div class="slds-truncate" title="Competitor Products">Competitor Products</div>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <template for:each={eachWorkflow.families} for:item="family">
+                                            <tr key={family.productFamily.Id} class="slds-hint-parent">
+                                                <td data-label="Product Family">
+                                                    <div class="slds-truncate" title={family.productFamily.ProductFamilyLabel__c}>
+                                                        {family.productFamily.ProductFamilyLabel__c}
+                                                        <!-- Icon for DS products -->
+                                                        <template if:true={family.dsProducts.length}>
+                                                            <img src={dsLogoIconUrl} style="width: 25px; height: 25px" class="slds-m-left_small"/>
+                                                        </template>
+                                                        <!-- Icon for Competitor products -->
+                                                        <template if:true={family.competitorProducts.length}>
+                                                            <lightning-icon style="transform: scale(0.73);" icon-name="action:bug" size="small" class="slds-m-left_xx-small"></lightning-icon>
+                                                        </template>
+                                                    </div>
+                                                </td>
+                                                <td data-label="DS Products">
+                                                    <!-- DS Products -->
+                                                    <template for:each={family.dsProducts} for:item="dsProduct">
+                                                        <div key={dsProduct.product.Id} class="slds-truncate" title={dsProduct.product.Name}>
+                                                            {dsProduct.product.Name}
+                                                            <!-- Show icon if active -->
+                                                            <template if:true={dsProduct.active}>
+                                                                <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
+                                                            </template>
+                                                        </div>
+                                                    </template>
+                                                </td>
+                                                <td data-label="Competitor Products">
+                                                    <!-- Competitor Products -->
+                                                    <template for:each={family.competitorProducts} for:item="compProduct">
+                                                        <div key={compProduct.product.Id} class="slds-truncate" title={compProduct.product.Name}>
+                                                            {compProduct.product.Name}
+                                                            <!-- Show icon if active -->
+                                                            <template if:true={compProduct.active}>
+                                                                <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
+                                                            </template>
+                                                        </div>
+                                                    </template>
+                                                </td>
+                                            </tr>
+                                        </template>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </td>
                         </tr>
                     </template>

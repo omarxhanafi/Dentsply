@@ -138,7 +138,7 @@ public with sharing class WorkflowProfilingController {
         ]) {
             activeNonErpProductsIds.add(productProfiling.Product_Name__c);
         }
-        
+
         // Populate ProductFamilyWrapperList
         for (ProductFamily__c productFamily : productFamilyList) {
             ProductFamilyWrapper wrapper = new ProductFamilyWrapper();
@@ -146,7 +146,9 @@ public with sharing class WorkflowProfilingController {
 
             for (Non_ERP_Products__c nonERPProduct : productFamily.Non_ERP_Products__r) {
                 if (nonERPProduct.Competitor_Product__c) {
-                    wrapper.competitorProducts.add(new NonERPProductWrapper(nonERPProduct, activeNonErpProductsIds.contains(nonERPProduct.Id) ? true : false));
+                    if(activeNonErpProductsIds.contains(nonERPProduct.Id)){
+                        wrapper.competitorProducts.add(new NonERPProductWrapper(nonERPProduct, true));
+                    }
                 } else {
                     wrapper.dsProducts.add(new NonERPProductWrapper(nonERPProduct, activeNonErpProductsIds.contains(nonERPProduct.Id) ? true : false));
                 }
