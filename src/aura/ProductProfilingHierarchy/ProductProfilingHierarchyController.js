@@ -6,7 +6,7 @@
 	------------------------------------------------------------*/    
     
 init: function (cmp, event, helper) {
-        cmp.set('v.showSpinner', true);    	
+        cmp.set('v.showSpinner', true);
 
 		var focusActions = [
             {label: 'Focus products', type: 'text', name:'focus', iconName:"utility:filterList", checked: cmp.get('v.focusFilter')},
@@ -37,34 +37,42 @@ init: function (cmp, event, helper) {
         helper.getProductProfilingRecords(cmp, event, record);
 
         var selectedProducts = cmp.get("v.currentSelectedRows");
+
         var productsWrapper = [];
-                
-        var rowsCount = 0;        
-    
-    	for(var prod in selectedProducts){
- 			            
-            var bundl = {};
-            bundl.productId = selectedProducts[prod].Id;
-            bundl.productName = selectedProducts[prod].Name;
-            bundl.manufacturerName = selectedProducts[prod].Manufacturer__c;
-            
-            productsWrapper.push(bundl);
-            rowsCount++;
-           
-    	}
+        var rowsCount = 0;
+
+        if(selectedProducts.length > 0 && Array.isArray(selectedProducts)){
+            for(var prod in selectedProducts){
+
+                var bundl = {};
+                bundl.productId = selectedProducts[prod].Id;
+                bundl.productName = selectedProducts[prod].Name;
+                bundl.manufacturerName = selectedProducts[prod].Manufacturer__c;
+
+                productsWrapper.push(bundl);
+                rowsCount++;
+
+            }
+        } else {
+            cmp.set("v.currentSelectedRows", []);
+        }
+
     	cmp.set('v.currentSelectedRowWrapper', productsWrapper);
     	cmp.set('v.currentSelectedRowsCount', rowsCount);
-                
-        var formFactor = $A.get("$Browser.formFactor");            
-            
+
+        console.log("rowsCount", rowsCount);
+
+        var formFactor = $A.get("$Browser.formFactor");
+
         if(formFactor != 'DESKTOP'){
            //$A.enqueueAction(cmp.get('c.getRowsMobile'));
-       	}
-        else{
+        }
+        else {
            cmp.set("v.hideFilters", false);
            $A.enqueueAction(cmp.get('c.getSelectedRows'));
-        }             
-    },
+        }
+
+},
     
     /*------------------------------------------------------------	
 	Description:   	Method to handle row selection
