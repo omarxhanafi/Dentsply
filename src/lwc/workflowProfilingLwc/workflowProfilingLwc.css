@@ -52,3 +52,12 @@
 .collapsed-section {
     display: none;
 }
+
+.custom-popover-positioning {
+    position: absolute;
+    right: 90px;
+}
+
+
+
+

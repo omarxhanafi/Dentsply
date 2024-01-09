@@ -12,9 +12,9 @@ export default class PopoverRecordInfo extends LightningElement {
     @api columns = FORM_FACTOR === 'Large' ? 2 : 1;;
 
     connectedCallback() {
-        console.log('displaying flds :: ' + this.fields);
-        console.log('displaying cols :: ' + this.columns);
-        console.log('displaying title :: ' + this.title);
+        // console.log('displaying flds :: ' + this.fields);
+        // console.log('displaying cols :: ' + this.columns);
+        // console.log('displaying title :: ' + this.title);
     }
 
     get recordUrl() {

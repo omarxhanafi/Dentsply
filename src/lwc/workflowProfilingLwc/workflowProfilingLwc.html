@@ -1,6 +1,5 @@
 <template>
     <div if:true={workflowsList} class="slds-box slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
-<!--        <lightning-card variant="Narrow" title="Workflow Profiling" icon-name="standard:account_info">-->
         <lightning-card variant="Narrow">
             <table class="workflow-table">
                 <tbody>
@@ -67,17 +66,17 @@
                                 <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
                             </td>
                             <td colspan="4" if:true={eachWorkflow.families}>
-                                <div  class="slds-box slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
-                                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                <div class="slds-box slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+                                    <table class="slds-table slds-table_cell-buffer slds-table_bordered" style="table-layout: fixed">
                                         <thead>
                                         <tr class="slds-line-height_reset">
-                                            <th scope="col">
+                                            <th style="width: 30%">
                                                 <div class="slds-truncate" title="Product Family">Product Family</div>
                                             </th>
-                                            <th scope="col">
+                                            <th style="width: 40%">
                                                 <div class="slds-truncate" title="DS Products">DS Products</div>
                                             </th>
-                                            <th scope="col">
+                                            <th style="width: 30%">
                                                 <div class="slds-truncate" title="Competitor Products">Competitor Products</div>
                                             </th>
                                         </tr>
@@ -86,26 +85,56 @@
                                         <template for:each={eachWorkflow.families} for:item="family">
                                             <tr key={family.productFamily.Id} class="slds-hint-parent">
                                                 <td data-label="Product Family">
-                                                    <div class="slds-truncate" title={family.productFamily.ProductFamilyLabel__c}>
-                                                        {family.productFamily.ProductFamilyLabel__c}
-                                                        <!-- Icon for DS products -->
-                                                        <template if:true={family.dsProducts.length}>
-                                                            <img src={dsLogoIconUrl} style="width: 25px; height: 25px" class="slds-m-left_small"/>
-                                                        </template>
-                                                        <!-- Icon for Competitor products -->
-                                                        <template if:true={family.competitorProducts.length}>
-                                                            <lightning-icon style="transform: scale(0.73);" icon-name="action:bug" size="small" class="slds-m-left_xx-small"></lightning-icon>
-                                                        </template>
-                                                    </div>
+                                                    <lightning-layout>
+                                                        <lightning-layout-item flexibility="auto">
+                                                            {family.productFamily.ProductFamilyLabel__c}
+                                                        </lightning-layout-item>
+                                                        <lightning-layout-item flexibility="auto" class="slds-text-align_right" style="margin-right: 10px">
+                                                            <!-- Icon for DS products -->
+                                                            <template if:true={family.hasDSCoreProduct}>
+                                                                <img src={dsLogoIconUrl} style="width: 25px; height: 25px"/>
+                                                            </template>
+                                                            <!-- Icon for Competitor products -->
+                                                            <template if:true={family.hasCompetitorProduct}>
+                                                                <lightning-icon style="transform: scale(0.70);" icon-name="action:bug" size="small" class="slds-m-left_xx-small"></lightning-icon>
+                                                            </template>
+                                                        </lightning-layout-item>
+                                                    </lightning-layout>
                                                 </td>
                                                 <td data-label="DS Products">
                                                     <!-- DS Products -->
                                                     <template for:each={family.dsProducts} for:item="dsProduct">
                                                         <div key={dsProduct.product.Id} class="slds-truncate" title={dsProduct.product.Name}>
-                                                            {dsProduct.product.Name}
-                                                            <!-- Show icon if active -->
+                                                            <!-- Show icon & popover if active -->
                                                             <template if:true={dsProduct.active}>
-                                                                <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
+                                                                <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-right_xx-small"></lightning-icon>
+
+                                                                <a
+                                                                   onclick={handleRedirection}
+                                                                   onmouseover={handleMouseOver}
+                                                                   onmouseout={handleMouseOut}
+                                                                   data-productid={dsProduct.product.Id}
+                                                                   data-workflowid={eachWorkflow.Id}
+                                                                >
+                                                                    {dsProduct.product.Name}
+                                                                </a>
+
+                                                                <template if:true={dsProduct.isMouseOver}>
+                                                                    <div class="custom-popover-positioning">
+                                                                        <c-popover-record-info
+                                                                                key={dsProduct.product.Id}
+                                                                                record-id={dsProduct.product.Id}
+                                                                                url={dsProduct.product.Id}
+                                                                                title={dsProduct.product.Name}
+                                                                                object-api-name="Non_ERP_Products__c"
+                                                                                icon-name="standard:product">
+                                                                        </c-popover-record-info>
+                                                                    </div>
+                                                                </template>
+
+                                                            </template>
+                                                            <template if:false={dsProduct.active}>
+                                                                {dsProduct.product.Name}
                                                             </template>
                                                         </div>
                                                     </template>
@@ -114,10 +143,32 @@
                                                     <!-- Competitor Products -->
                                                     <template for:each={family.competitorProducts} for:item="compProduct">
                                                         <div key={compProduct.product.Id} class="slds-truncate" title={compProduct.product.Name}>
-                                                            {compProduct.product.Name}
-                                                            <!-- Show icon if active -->
                                                             <template if:true={compProduct.active}>
-                                                                <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
+                                                                <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-right_xx-small"></lightning-icon>
+
+                                                                <a class="flag-text"
+                                                                   onclick={handleRedirection}
+                                                                   onmouseover={handleMouseOver}
+                                                                   onmouseout={handleMouseOut}
+                                                                   data-productid={compProduct.product.Id}
+                                                                   data-workflowid={eachWorkflow.Id}
+                                                                >
+                                                                    {compProduct.product.Name}
+                                                                </a>
+                                                                <template if:true={compProduct.isMouseOver}>
+                                                                    <div class="custom-popover-positioning">
+                                                                        <c-popover-record-info
+                                                                                record-id={compProduct.product.Id}
+                                                                                url={compProduct.product.Id}
+                                                                                title={compProduct.product.Name}
+                                                                                object-api-name="Non_ERP_Products__c"
+                                                                                icon-name="standard:product">
+                                                                        </c-popover-record-info>
+                                                                    </div>
+                                                                </template>
+                                                            </template>
+                                                            <template if:false={compProduct.active}>
+                                                                {compProduct.product.Name}
                                                             </template>
                                                         </div>
                                                     </template>

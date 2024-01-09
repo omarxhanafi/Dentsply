@@ -10,9 +10,10 @@ import DS_LOGO_ICON from '@salesforce/resourceUrl/DS_logoIcon';
 import FORM_FACTOR from '@salesforce/client/formFactor';
 import Sliders from '@salesforce/resourceUrl/Sliders';
 import {loadStyle} from "lightning/platformResourceLoader";
+import {NavigationMixin} from "lightning/navigation";
 
 
-export default class WorkflowProfilingLwc extends LightningElement {
+export default class WorkflowProfilingLwc extends NavigationMixin(LightningElement) {
 
     @api recordId; // Account record Id
     @track workflowsList = [];
@@ -24,7 +25,7 @@ export default class WorkflowProfilingLwc extends LightningElement {
     coldIconUrl = COLD_ICON;
     dsLogoIconUrl = DS_LOGO_ICON;
 
-    isMobile = FORM_FACTOR === 'Small';
+    isMobile = FORM_FACTOR === 'Small' || (FORM_FACTOR === 'Medium' && window.innerWidth < window.innerHeight);
 
     async connectedCallback() {
         // Hiding the slider's range label
@@ -58,7 +59,7 @@ export default class WorkflowProfilingLwc extends LightningElement {
         getWorkflowProfilingsByAccount({ accountId: this.recordId })
             .then(result => {
                 this.workflowProfilings = result;
-                console.log('Workflow Profilings', this.workflowProfilings);
+                // console.log('Workflow Profilings', this.workflowProfilings);
 
                 // We update the ratings
                 this.updateWorkflowsWithRatings();
@@ -229,14 +230,88 @@ export default class WorkflowProfilingLwc extends LightningElement {
                     // Assigning the families to the workflow
                     selectedWorkflow.families = result;
 
-                    // No need to toggle isExpanded or update accordionIcon here because it's already been done above
+                    selectedWorkflow.families.forEach(family => {
+                        // Initialize flags
+                        family.hasDSCoreProduct = false;
+                        family.hasCompetitorProduct = false;
 
-                    console.log("Expanded workflow", JSON.parse(JSON.stringify(selectedWorkflow)));
+                        family.dsProducts.forEach(product => {
+                            if (product.active) {
+                                family.hasDSCoreProduct = true;
+                                return;
+                            }
+                        });
+
+                        family.competitorProducts.forEach(product => {
+                            if (product.active) {
+                                family.hasCompetitorProduct = true;
+                                return;
+                            }
+                        });
+                    });
+
+                    // console.log("Expanded workflow", JSON.parse(JSON.stringify(selectedWorkflow)));
                 })
                 .catch(error => {
                     console.error('Error fetching Product Families & Products:', error);
                 });
         }
+    }
+
+    handleMouseOver(event) {
+        this.handleMouseEvent(event, true);
+    }
+
+    handleMouseOut(event) {
+        this.handleMouseEvent(event, false);
+    }
+
+    handleMouseEvent(event, isOver) {
+        const productId = event.target.dataset.productid;
+        const workflowId = event.target.dataset.workflowid;
+        let foundProduct = null;
+
+        // Iterate through each workflow to find the hovered over product
+        for (let workflow of this.workflowsList) {
+            if(workflow.Id == workflowId){
+                // Iterate through each family
+                for (let family of workflow.families) {
+                    // Check in DS products
+                    foundProduct = family.dsProducts.find(eachProduct => eachProduct.product.Id === productId);
+                    if (foundProduct) break;
+
+                    // Check in competitor products
+                    foundProduct = family.competitorProducts.find(eachProduct => eachProduct.product.Id === productId);
+                    if (foundProduct) break;
+                }
+                if (foundProduct) break;
+            }
+        }
+
+        if (foundProduct) {
+            // Display or hide the related popover
+            foundProduct.isMouseOver = isOver;
+
+            // console.log('Product found:', JSON.parse(JSON.stringify(foundProduct)));
+        } else {
+            console.log('No product found with the given ID.');
+        }
+    }
+
+
+    handleRedirection(event){
+        event.preventDefault();
+
+        const productId = event.target.dataset.productid;
+
+        this[NavigationMixin.Navigate]({
+            type: "standard__recordPage",
+            attributes: {
+                objectApiName: 'Non_ERP_Products__c',
+                actionName: "view",
+                recordId: productId
+            }
+        });
     }
 
 

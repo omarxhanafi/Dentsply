@@ -47,8 +47,6 @@ d
 4src/lwc/selectProductsOmLwc/selectProductsOmLwc.html,2/2/22d6b260ef6641a89a04a6c0bd1488d032ac9422
 h
 8src/lwc/accountAttentionPoint/accountAttentionPoint.html,9/7/977866406bc1159ac8b5c64e60a0d12e6c0b7773
-`
-0src/lwc/popoverRecordInfo/popoverRecordInfo.html,9/d/9dc46076a5c4bcf57c7046ad0e600d3c5b67f930
 S
 #src/objects/Source_Record__c.object,b/e/bee6fce0b02b65d910c7da2229a5a99868be7d77
 T
@@ -111,3 +109,11 @@ T
 $src/staticresources/Sliders.resource,e/0/e0e49b53e23da83a21b0e8a4e49cca909375258b
 `
 0src/classes/Test_WorkflowProfilingController.cls,e/5/e54b8cf8fc9a3c9c1c6e59b30dfd1d4fb5ee76ab
+W
+'src/objects/Product_Profiling__c.object,7/3/737d109aaf27941e04a60fff74496913c6445f1f
+V
+&src/classes/AccountFlagsController.cls,a/e/ae546cbec7d875f0e7d652d26a2e3fd90dc6dbef
+f
+6src/lwc/activityScorecardLwc/activityScorecardLwc.html,1/d/1daf6dae190093603e3a8ea8f8266025f70cef4e
+c
+3src/classes/ProductProfilingHierarchyController.cls,7/b/7bf285b53fabc12bb4626af92af2822a40fadbca
