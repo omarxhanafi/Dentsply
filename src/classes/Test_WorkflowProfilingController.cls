@@ -103,4 +103,51 @@ public without sharing class Test_WorkflowProfilingController {
         }
     }
 
+    @isTest
+    static void testGetProductFamilyListByWorkflowId() {
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
+
+        System.runAs(testUser) {
+
+            // Create test account
+            List<Account> testAccount = TestDataFactory.returnAccounts(1, 'CIM_Account', testUser.Id);
+            testAccount[0].Country__c = 'US';
+            insert testAccount;
+
+            // Create and insert test Workflow
+            Workflow__c testWorkflow = new Workflow__c(Name = 'Test Workflow');
+            insert testWorkflow;
+
+            // Create and insert Product Families
+            ProductFamily__c family1 = new ProductFamily__c(Name = 'Family 1');
+            ProductFamily__c family2 = new ProductFamily__c(Name = 'Family 2');
+            insert new List<ProductFamily__c>{family1, family2};
+
+            // Create and insert Workflow Lines with Order
+            WorkflowLine__c line1 = new WorkflowLine__c(Workflow__c = testWorkflow.Id, ProductFamily__c = family1.Id, Order__c = 1);
+            WorkflowLine__c line2 = new WorkflowLine__c(Workflow__c = testWorkflow.Id, ProductFamily__c = family2.Id, Order__c = 2);
+            insert new List<WorkflowLine__c>{line1, line2};
+
+            // Create and insert Non ERP Products
+            Non_ERP_Products__c product1 = new Non_ERP_Products__c(Name = 'Product 1', ProductFamily__c = family1.Id);
+            Non_ERP_Products__c product2 = new Non_ERP_Products__c(Name = 'Product 2', ProductFamily__c = family2.Id);
+            insert new List<Non_ERP_Products__c>{product1, product2};
+
+            // Create and insert Product Profilings
+            Product_Profiling__c profiling1 = new Product_Profiling__c(Product_Name__c = product1.Id, Account__c = testAccount[0].Id, Inactive__c = false);
+            Product_Profiling__c profiling2 = new Product_Profiling__c(Product_Name__c = product2.Id, Account__c = testAccount[0].Id, Inactive__c = true);
+            insert new List<Product_Profiling__c>{profiling1, profiling2};
+
+            // Testing the method
+            Test.startTest();
+            List<WorkflowProfilingController.ProductFamilyWrapper> result = WorkflowProfilingController.getProductFamilyListByWorkflowId(testWorkflow.Id, testAccount[0].Id);
+            Test.stopTest();
+
+            // Assertions
+            System.assertNotEquals(null, result, 'Result should not be null');
+            System.assertEquals(2, result.size(), 'Result should have 2 families');
+
+        }
+    }
+
 }

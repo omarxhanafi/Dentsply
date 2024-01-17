@@ -21,7 +21,7 @@ public with sharing class WorkflowProfilingController {
     public static List<Workflow__c> getWorkflows(Id accountId) {
         Account acc = [SELECT Id, Country__c from Account where id = :accountId LIMIT 1];
 
-        if(acc != null){
+        if (acc != null) {
             String country = acc.Country__c;
             return [SELECT Id, WorkflowLabel__c FROM Workflow__c WHERE Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE];
         }
@@ -53,18 +53,19 @@ public with sharing class WorkflowProfilingController {
         // Fetch existing records
         Map<Id, WorkflowProfiling__c> existingRecordsMap = new Map<Id, WorkflowProfiling__c>();
 
-        if(!newRecords.isEmpty()){
+        if (!newRecords.isEmpty()) {
 
             Set<Id> accountIds = new Set<Id>();
 
-            for(WorkflowProfiling__c eachWorkflowProfiling : newRecords){
+            for (WorkflowProfiling__c eachWorkflowProfiling : newRecords) {
                 accountIds.add(eachWorkflowProfiling.Account__c);
             }
 
             for (WorkflowProfiling__c existingRecord : [
                     SELECT Id, Workflow__c, Rating__c
                     FROM WorkflowProfiling__c
-                    WHERE Account__c = :accountIds]
+                    WHERE Account__c = :accountIds
+            ]
             ) {
                 existingRecordsMap.put(existingRecord.Workflow__c, existingRecord);
             }
@@ -111,8 +112,7 @@ public with sharing class WorkflowProfilingController {
         List<ProductFamilyWrapper> productFamilyWrapperList = new List<ProductFamilyWrapper>();
 
         List<ProductFamily__c> productFamilyList = [
-                SELECT Id, ProductFamilyLabel__c,
-                (SELECT Id, Name, Competitor_Product__c FROM Non_ERP_Products__r)
+                SELECT Id, ProductFamilyLabel__c, (SELECT Id, Name, Competitor_Product__c FROM Non_ERP_Products__r)
                 FROM ProductFamily__c
                 WHERE Id IN (
                         SELECT ProductFamily__c
@@ -139,14 +139,19 @@ public with sharing class WorkflowProfilingController {
             activeNonErpProductsIds.add(productProfiling.Product_Name__c);
         }
 
+        // Get the order values for each ProductFamily__c in a map
+        Map<Id, Integer> familyOrderMap = new Map<Id, Integer>();
+        for (WorkflowLine__c line : [SELECT ProductFamily__c, Order__c FROM WorkflowLine__c WHERE Workflow__c = :workflowId]) {
+            familyOrderMap.put(line.ProductFamily__c, (Integer) line.Order__c);
+        }
+
         // Populate ProductFamilyWrapperList
         for (ProductFamily__c productFamily : productFamilyList) {
-            ProductFamilyWrapper wrapper = new ProductFamilyWrapper();
-            wrapper.productFamily = productFamily;
+            ProductFamilyWrapper wrapper = new ProductFamilyWrapper(familyOrderMap, productFamily);
 
             for (Non_ERP_Products__c nonERPProduct : productFamily.Non_ERP_Products__r) {
                 if (nonERPProduct.Competitor_Product__c) {
-                    if(activeNonErpProductsIds.contains(nonERPProduct.Id)){
+                    if (activeNonErpProductsIds.contains(nonERPProduct.Id)) {
                         wrapper.competitorProducts.add(new NonERPProductWrapper(nonERPProduct, true));
                     }
                 } else {
@@ -156,6 +161,13 @@ public with sharing class WorkflowProfilingController {
 
             productFamilyWrapperList.add(wrapper);
         }
+
+        // Sorting Product Families based on the Workflow Lines order
+        productFamilyWrapperList.sort();
+
+//        for(ProductFamilyWrapper wrapper : productFamilyWrapperList){
+//            System.debug(wrapper.orderMap.get(wrapper.productFamily.Id));
+//        }
 
         return productFamilyWrapperList;
 
@@ -171,22 +183,32 @@ public with sharing class WorkflowProfilingController {
         }
     }
 
-    public class ProductFamilyWrapper {
+    public class ProductFamilyWrapper implements Comparable {
         @AuraEnabled public ProductFamily__c productFamily;
         @AuraEnabled public List<NonERPProductWrapper> competitorProducts;
         @AuraEnabled public List<NonERPProductWrapper> dsProducts;
+        private Map<Id, Integer> orderMap; // Map to hold the order
 
-        public ProductFamilyWrapper(ProductFamily__c productFamily, List<NonERPProductWrapper> competitorProducts, List<NonERPProductWrapper> dsProducts) {
+        public ProductFamilyWrapper(Map<Id, Integer> orderMap, ProductFamily__c productFamily) {
+            this.competitorProducts = new List<NonERPProductWrapper>();
+            this.dsProducts = new List<NonERPProductWrapper>();
+            this.orderMap = orderMap;
             this.productFamily = productFamily;
-            this.competitorProducts = competitorProducts;
-            this.dsProducts = dsProducts;
         }
 
-        public ProductFamilyWrapper(){
+        public ProductFamilyWrapper() {
             this.competitorProducts = new List<NonERPProductWrapper>();
             this.dsProducts = new List<NonERPProductWrapper>();
         }
+
+        // Method to sort Product Families based on the order retrieved from the Workflow Lines
+        public Integer compareTo(Object other) {
+            Integer thisOrder = orderMap.containsKey(this.productFamily.Id) ? orderMap.get(this.productFamily.Id) : 99999999;
+            Integer otherOrder = orderMap.containsKey(((ProductFamilyWrapper)other).productFamily.Id) ? orderMap.get(((ProductFamilyWrapper)other).productFamily.Id) : 99999999;
+            if (thisOrder == otherOrder) return 0;
+            if (thisOrder > otherOrder) return 1;
+            return -1;
+        }
+
     }
-
 }
-

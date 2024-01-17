@@ -7,3 +7,17 @@ f
 6src/lwc/activityScorecardLwc/activityScorecardLwc.html,1/d/1daf6dae190093603e3a8ea8f8266025f70cef4e
 c
 3src/classes/ProductProfilingHierarchyController.cls,7/b/7bf285b53fabc12bb4626af92af2822a40fadbca
+`
+0src/lwc/popoverRecordInfo/popoverRecordInfo.html,9/d/9dc46076a5c4bcf57c7046ad0e600d3c5b67f930
+\
+,src/lwc/accountFlagsLwc/accountFlagsLwc.html,3/8/38713d0d9afea46ac83e95ad7e96de21334b7365
+u
+Esrc/aura/ProductProfilingHierarchy/ProductProfilingHierarchyHelper.js,d/6/d65eb531e685f5d5c0e45d03e5c80a30002a2ae6
+u
+Esrc/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js,b/7/b73d98ef0ae135c31a85e485c5a3e8ea726c91ed
+y
+Isrc/aura/ProductProfilingComponent/ProductProfilingComponentController.js,4/c/4cd14365cae38c458babc4e25aadccf14e98498d
+y
+Isrc/aura/ProductProfilingHierarchy/ProductProfilingHierarchyController.js,7/2/7295bef49ccade8f3b8fbf66e7e3c1a7b1d124a5
+Z
+*src/lwc/accountFlagsLwc/accountFlagsLwc.js,2/d/2d023c109c9ed5bc55d2b91f7cdf0bb68e943a28

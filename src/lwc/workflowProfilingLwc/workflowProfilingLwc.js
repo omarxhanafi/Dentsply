@@ -11,6 +11,10 @@ import FORM_FACTOR from '@salesforce/client/formFactor';
 import Sliders from '@salesforce/resourceUrl/Sliders';
 import {loadStyle} from "lightning/platformResourceLoader";
 import {NavigationMixin} from "lightning/navigation";
+import WPHelpText from "@salesforce/label/c.WPHelpText";
+import WPProductFamily from "@salesforce/label/c.WPProductFamily";
+import WPDSProducts from "@salesforce/label/c.WPDSProducts";
+import WPCompetitorProducts from "@salesforce/label/c.WPCompetitorProducts";
 
 
 export default class WorkflowProfilingLwc extends NavigationMixin(LightningElement) {
@@ -26,6 +30,14 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
     dsLogoIconUrl = DS_LOGO_ICON;
 
     isMobile = FORM_FACTOR === 'Small' || (FORM_FACTOR === 'Medium' && window.innerWidth < window.innerHeight);
+
+    // Custom labels
+    labels = {
+        WPHelpText,
+        WPProductFamily,
+        WPDSProducts,
+        WPCompetitorProducts
+    };
 
     async connectedCallback() {
         // Hiding the slider's range label

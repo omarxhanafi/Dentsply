@@ -2,22 +2,23 @@
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
         <fullName>ASalesLeadHasBeenCancelled</fullName>
-        <categories>AccountBriefing</categories>
+        <categories>AccountNews</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>ASalesLeadHasBeenCancelled</shortDescription>
-        <value>A Sales lead has been cancelled</value>
+        <value>Yikes, a Sales lead has been canceled...</value>
     </labels>
     <labels>
         <fullName>AccountDeBriefing</fullName>
-        <categories>AccountBriefing</categories>
+        <categories>AccountNews</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AccountDebriefing</shortDescription>
-        <value>Account Debriefing - Identified attention points:</value>
+        <value>Account News: Catch up on recent interactions and latest insights ...</value>
     </labels>
     <labels>
         <fullName>AccountFlagsAccess</fullName>
+        <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AccountFlagsAccess</shortDescription>
@@ -25,6 +26,7 @@
     </labels>
     <labels>
         <fullName>AccountFlagsAdvanced</fullName>
+        <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AccountFlagsAdvanced</shortDescription>
@@ -32,6 +34,7 @@
     </labels>
     <labels>
         <fullName>AccountFlagsCustomerNumber</fullName>
+        <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AccountFlagsCustomerNumber</shortDescription>
@@ -39,6 +42,7 @@
     </labels>
     <labels>
         <fullName>AccountFlagsHeader</fullName>
+        <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AccountFlagsHeader</shortDescription>
@@ -46,6 +50,7 @@
     </labels>
     <labels>
         <fullName>AccountFlagsLight</fullName>
+        <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AccountFlagsLight</shortDescription>
@@ -53,6 +58,7 @@
     </labels>
     <labels>
         <fullName>AccountFlagsOnlineOrdering</fullName>
+        <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AccountFlagsOnlineOrdering</shortDescription>
@@ -60,6 +66,7 @@
     </labels>
     <labels>
         <fullName>AccountFlagsStandard</fullName>
+        <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AccountFlagsStandard</shortDescription>
@@ -67,38 +74,75 @@
     </labels>
     <labels>
         <fullName>ActivityScoreboardCallsLogged</fullName>
+        <categories>Activity Scoreboard</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Activity Scoreboard Calls Logged</shortDescription>
-        <value>calls logged out of</value>
+        <value>call(s)</value>
     </labels>
     <labels>
         <fullName>ActivityScoreboardEmailsSent</fullName>
+        <categories>Activity Scoreboard</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Activity Scoreboard Emails Sent</shortDescription>
-        <value>emails sent out of</value>
+        <value>email(s)</value>
     </labels>
     <labels>
         <fullName>ActivityScoreboardEventsLogged</fullName>
+        <categories>Activity Scoreboard</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Activity Scoreboard Events Logged</shortDescription>
-        <value>events logged out of</value>
+        <value>event(s) out of a benchmark midpoint of</value>
     </labels>
     <labels>
         <fullName>ActivityScoreboardTasksCompleted</fullName>
+        <categories>Activity Scoreboard</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Activity Scoreboard Tasks Completed</shortDescription>
-        <value>tasks completed out of</value>
+        <value>task(s)</value>
     </labels>
     <labels>
         <fullName>ActivityScorecardHeader</fullName>
+        <categories>Activity Scoreboard</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>ActivityScorecardHeader</shortDescription>
-        <value>Activity Scorecard</value>
+        <value>360 Activity Scorecard</value>
+    </labels>
+    <labels>
+        <fullName>WPHelpText</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPHelpText</shortDescription>
+        <value>Fire icons represent workflow ratings</value>
+    </labels>
+    <labels>
+        <fullName>WPProductFamily</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPProductFamily</shortDescription>
+        <value>Product Family</value>
+    </labels>
+    <labels>
+        <fullName>WPDSProducts</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPDSProducts</shortDescription>
+        <value>DS Products</value>
+    </labels>
+    <labels>
+        <fullName>WPCompetitorProducts</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPCompetitorProducts</shortDescription>
+        <value>Competitor Products</value>
     </labels>
     <labels>
         <fullName>Add</fullName>
@@ -142,7 +186,7 @@
     </labels>
     <labels>
         <fullName>AnEventIsUpcomingSoon</fullName>
-        <categories>AccountBriefing</categories>
+        <categories>AccountNews</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AnEventIsUpcomingSoon</shortDescription>
@@ -1359,7 +1403,7 @@
     </labels>
     <labels>
         <fullName>NoDataMessage</fullName>
-        <categories>AccountBriefing</categories>
+        <categories>AccountNews</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>NoDataMessage</shortDescription>
@@ -1932,14 +1976,6 @@
         <value>It&apos;s only possible to create 1 Workflow Profiling record per Account.</value>
     </labels>
     <labels>
-        <fullName>OpenCaseAttention</fullName>
-        <categories>AccountBriefing</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>OpenCaseAttention</shortDescription>
-        <value>There&apos;s an open case associated with this account.</value>
-    </labels>
-    <labels>
         <fullName>OpenCases</fullName>
         <categories>Service Cloud</categories>
         <language>en_US</language>
@@ -1949,19 +1985,19 @@
     </labels>
     <labels>
         <fullName>OpportunitiesSoonClosing</fullName>
-        <categories>AccountDebriefing</categories>
+        <categories>AccountNews</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>OpportunitiesSoonClosing</shortDescription>
-        <value>Opportunities closing soon</value>
+        <value>Watch out! An opportunity is closing soon ...</value>
     </labels>
     <labels>
         <fullName>OpportunityRecentlyWon</fullName>
-        <categories>AccountBriefing</categories>
+        <categories>AccountNews</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>OpportunityRecentlyWon</shortDescription>
-        <value>An opportunity was recently successfully closed won.</value>
+        <value>An opportunity was recently successfully closed won ...</value>
     </labels>
     <labels>
         <fullName>Order_Add_dealer</fullName>
@@ -2650,11 +2686,11 @@ If you don’t send updates, and you only extend the recurrence end date, then f
     </labels>
     <labels>
         <fullName>SalesLeadHasBeenCancelled</fullName>
-        <categories>AccountBriefing</categories>
+        <categories>AccountNews</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>SalesLeadHasBeenCancelled</shortDescription>
-        <value>A Sales Lead has been cancelled</value>
+        <value>Oops, a Sales Lead has been cancelled ...</value>
     </labels>
     <labels>
         <fullName>Sales_Opportunity_Territory_Assignment</fullName>

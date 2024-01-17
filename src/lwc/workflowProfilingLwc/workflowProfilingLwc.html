@@ -1,8 +1,13 @@
 <template>
-    <div if:true={workflowsList} class="slds-box slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
-        <lightning-card variant="Narrow">
-            <table class="workflow-table">
-                <tbody>
+    <template if:true={workflowsList}>
+        <div class="slds-box slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+            <div class="slds-grid slds-grid_align-spread slds-p-around_x-small slds-p-horizontal_medium">
+                <h2 class="slds-card__header-title">Workflow Profiling</h2>
+                <lightning-helptext content={labels.WPHelpText}></lightning-helptext>
+            </div>
+            <lightning-card variant="Narrow">
+                <table class="workflow-table">
+                    <tbody>
                     <template for:each={workflowsList} for:item="eachWorkflow">
                         <tr key={eachWorkflow.Id}>
                             <td if:false={isMobile}>
@@ -71,13 +76,13 @@
                                         <thead>
                                         <tr class="slds-line-height_reset">
                                             <th style="width: 30%">
-                                                <div class="slds-truncate" title="Product Family">Product Family</div>
+                                                <div class="slds-truncate" title="Product Family">{labels.WPProductFamily}</div>
                                             </th>
                                             <th style="width: 40%">
-                                                <div class="slds-truncate" title="DS Products">DS Products</div>
+                                                <div class="slds-truncate" title="DS Products">{labels.WPDSProducts}</div>
                                             </th>
                                             <th style="width: 30%">
-                                                <div class="slds-truncate" title="Competitor Products">Competitor Products</div>
+                                                <div class="slds-truncate" title="Competitor Products">{labels.WPCompetitorProducts}</div>
                                             </th>
                                         </tr>
                                         </thead>
@@ -110,11 +115,11 @@
                                                                 <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-right_xx-small"></lightning-icon>
 
                                                                 <a
-                                                                   onclick={handleRedirection}
-                                                                   onmouseover={handleMouseOver}
-                                                                   onmouseout={handleMouseOut}
-                                                                   data-productid={dsProduct.product.Id}
-                                                                   data-workflowid={eachWorkflow.Id}
+                                                                        onclick={handleRedirection}
+                                                                        onmouseover={handleMouseOver}
+                                                                        onmouseout={handleMouseOut}
+                                                                        data-productid={dsProduct.product.Id}
+                                                                        data-workflowid={eachWorkflow.Id}
                                                                 >
                                                                     {dsProduct.product.Name}
                                                                 </a>
@@ -181,8 +186,9 @@
                             </td>
                         </tr>
                     </template>
-                </tbody>
-            </table>
-        </lightning-card>
-    </div>
+                    </tbody>
+                </table>
+            </lightning-card>
+        </div>
+    </template>
 </template>
