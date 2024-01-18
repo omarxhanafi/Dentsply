@@ -5,15 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHandler.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHandler.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/triggers/ProductTrigger.trigger" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/triggers/ProductTrigger.trigger-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1daf6dae190093603e3a8ea8f8266025f70cef4e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2d023c109c9ed5bc55d2b91f7cdf0bb68e943a28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/8/38713d0d9afea46ac83e95ad7e96de21334b7365" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/d/1daf6dae190093603e3a8ea8f8266025f70cef4e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/d/2d023c109c9ed5bc55d2b91f7cdf0bb68e943a28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/8/38713d0d9afea46ac83e95ad7e96de21334b7365" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/labels/CustomLabels.labels" beforeDir="false" afterPath="$PROJECT_DIR$/src/labels/CustomLabels.labels" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18700,14 +18708,14 @@
                       <entry key="CUSTOMFIELD:WORKFLOWPROFILING__C.WORKFLOW__C" value="1695383392000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.COUNTRIES__C" value="1695383392000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.WORKFLOWLABEL__C" value="1695383392000" />
-                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1704802160000" />
+                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1705565657000" />
                       <entry key="CUSTOMOBJECT:PRODUCTFAMILY__C" value="1695383392000" />
                       <entry key="CUSTOMOBJECT:WORKFLOWLINE__C" value="1695383392000" />
                       <entry key="CUSTOMOBJECT:WORKFLOWPROFILING__C" value="1695383392000" />
                       <entry key="CUSTOMOBJECT:WORKFLOW__C" value="1695383392000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTCONTAINERLWC" value="1689951225892" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1702644977499" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1703516423900" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1705565900000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1705564730000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:POPOVERRECORDINFO" value="1704301044075" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1705061499024" />
@@ -19217,7 +19225,7 @@
       <workItem from="1703496052270" duration="14232000" />
       <workItem from="1704014408320" duration="121000" />
       <workItem from="1704276723716" duration="22175000" />
-      <workItem from="1705057345317" duration="7710000" />
+      <workItem from="1705057345317" duration="9082000" />
     </task>
     <servers />
   </component>

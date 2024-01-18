@@ -6,6 +6,9 @@ import TASKS_COMPLETED from '@salesforce/label/c.ActivityScoreboardTasksComplete
 import CALLS_LOGGED from '@salesforce/label/c.ActivityScoreboardCallsLogged';
 import EMAILS_SENT from '@salesforce/label/c.ActivityScoreboardEmailsSent';
 import EVENTS_LOGGED from '@salesforce/label/c.ActivityScoreboardEventsLogged';
+import FIRST_EVENT_DATE from '@salesforce/label/c.ActivityScorecardFirstEventDate';
+import REPORTED_LAST_MONTHS from '@salesforce/label/c.ActivityReported12LastMonths';
+import PLANNED_CFES from '@salesforce/label/c.ActivityScorecardPlannedCFEs';
 
 
 
@@ -30,7 +33,10 @@ export default class ActivityScorecardLwc extends LightningElement {
         TASKS_COMPLETED,
         CALLS_LOGGED,
         EMAILS_SENT,
-        EVENTS_LOGGED
+        EVENTS_LOGGED,
+        FIRST_EVENT_DATE,
+        REPORTED_LAST_MONTHS,
+        PLANNED_CFES
     };
 
     @wire(getAccountEventsJSON, { accountId: '$recordId' })

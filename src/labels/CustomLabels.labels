@@ -73,6 +73,62 @@
         <value>Standard</value>
     </labels>
     <labels>
+        <fullName>AccountFlagsDSCoreLab</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsDSCoreLab</shortDescription>
+        <value>DS Core Lab</value>
+    </labels>
+    <labels>
+        <fullName>AccountFlagsDSCoreCare</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsDSCoreCare</shortDescription>
+        <value>DS Core Care</value>
+    </labels>
+    <labels>
+        <fullName>AccountFlagsSureSmile</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsSureSmile</shortDescription>
+        <value>SureSmile</value>
+    </labels>
+    <labels>
+        <fullName>AccountFlagsAWO</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsAWO</shortDescription>
+        <value>AWO</value>
+    </labels>
+    <labels>
+        <fullName>AccountFlagsDSCom</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsDSCom</shortDescription>
+        <value>DS.Com</value>
+    </labels>
+    <labels>
+        <fullName>AccountFlagsCerec</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsCerec</shortDescription>
+        <value>CEREC Club</value>
+    </labels>
+    <labels>
+        <fullName>AccountFlagsSiroForce</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsSiroForce</shortDescription>
+        <value>SiroForce</value>
+    </labels>
+    <labels>
         <fullName>ActivityScoreboardCallsLogged</fullName>
         <categories>Activity Scoreboard</categories>
         <language>en_US</language>
@@ -111,6 +167,38 @@
         <protected>false</protected>
         <shortDescription>ActivityScorecardHeader</shortDescription>
         <value>360 Activity Scorecard</value>
+    </labels>
+    <labels>
+        <fullName>ActivityScorecardFirstEventDate</fullName>
+        <categories>Activity Scoreboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActivityScorecardFirstEventDate</shortDescription>
+        <value>First Event Date</value>
+    </labels>
+    <labels>
+        <fullName>ActivityReported12LastMonths</fullName>
+        <categories>Activity Scoreboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActivityReported12LastMonths</shortDescription>
+        <value>Reported in the last 12 months:</value>
+    </labels>
+    <labels>
+        <fullName>ActivityScorecardPlannedCFEs</fullName>
+        <categories>Activity Scoreboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActivityScorecardPlannedCFEs</shortDescription>
+        <value># Planned CFEs</value>
+    </labels>
+    <labels>
+        <fullName>WPHeader</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPHeader</shortDescription>
+        <value>Workflow Profiling</value>
     </labels>
     <labels>
         <fullName>WPHelpText</fullName>

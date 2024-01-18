@@ -8,6 +8,13 @@ import STANDARD from '@salesforce/label/c.AccountFlagsStandard';
 import ADVANCED from '@salesforce/label/c.AccountFlagsAdvanced';
 import ONLINE_ORDERING from '@salesforce/label/c.AccountFlagsOnlineOrdering';
 import CUSTOMER_NUMBER from '@salesforce/label/c.AccountFlagsCustomerNumber';
+import DS_CORE_LAB from '@salesforce/label/c.AccountFlagsDSCoreLab';
+import DS_CORE_CARE from '@salesforce/label/c.AccountFlagsDSCoreCare';
+import SURE_SMILE from '@salesforce/label/c.AccountFlagsSureSmile';
+import AWO from '@salesforce/label/c.AccountFlagsAWO';
+import DS_COM from '@salesforce/label/c.AccountFlagsDSCom';
+import CEREC from '@salesforce/label/c.AccountFlagsCerec';
+import SIRO_FORCE from '@salesforce/label/c.AccountFlagsSiroForce';
 
 export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
 
@@ -56,7 +63,14 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
         STANDARD,
         ADVANCED,
         ONLINE_ORDERING,
-        CUSTOMER_NUMBER
+        CUSTOMER_NUMBER,
+        DS_CORE_LAB,
+        DS_CORE_CARE,
+        SURE_SMILE,
+        AWO,
+        DS_COM,
+        CEREC,
+        SIRO_FORCE
     };
 
     @wire(getAccountFlagsJSON, { accountId: '$recordId' })

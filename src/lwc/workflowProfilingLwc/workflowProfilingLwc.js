@@ -11,6 +11,7 @@ import FORM_FACTOR from '@salesforce/client/formFactor';
 import Sliders from '@salesforce/resourceUrl/Sliders';
 import {loadStyle} from "lightning/platformResourceLoader";
 import {NavigationMixin} from "lightning/navigation";
+import WPHeader from "@salesforce/label/c.WPHeader";
 import WPHelpText from "@salesforce/label/c.WPHelpText";
 import WPProductFamily from "@salesforce/label/c.WPProductFamily";
 import WPDSProducts from "@salesforce/label/c.WPDSProducts";
@@ -33,6 +34,7 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
 
     // Custom labels
     labels = {
+        WPHeader,
         WPHelpText,
         WPProductFamily,
         WPDSProducts,

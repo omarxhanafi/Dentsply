@@ -4,7 +4,7 @@
                 <lightning-layout>
                     <lightning-layout-item flexibility="auto" padding="around-small">
                         <div class="custom-box slds-box slds-p-around_small slds-text-align_center">
-                            <p>First Event Date</p>
+                            <p>{labels.FIRST_EVENT_DATE}</p>
                                 <template if:true={activityScorecardResult.firstEvent}>
                                     <p class="activity-counter">{activityScorecardResult.firstEvent}</p>
                                 </template>
@@ -16,7 +16,7 @@
                     </lightning-layout-item>
                     <lightning-layout-item flexibility="auto" padding="around-small">
                         <div class="custom-box slds-box slds-p-around_small slds-text-align_center">
-                            <p># Planned CFEs</p>
+                            <p>{labels.PLANNED_CFES}</p>
                             <p class="activity-counter">{activityScorecardResult.futureEventsCount}</p>
                         </div>
                     </lightning-layout-item>
@@ -26,7 +26,7 @@
                         <lightning-card>
                             <h2 slot="title">
                                 <!--<lightning-icon icon-name="custom:custom109" size="small"></lightning-icon>-->
-                                <span class="activity-title">Reported in the last 12 months:</span>
+                                <span class="activity-title">{labels.REPORTED_LAST_MONTHS}</span>
                             </h2>
                             
                             <lightning-layout>
@@ -79,127 +79,3 @@
                 </lightning-layout>
             </span>
 </template>
-
-
-<!--
-    <template>
-        <div if:true={activityScorecardResult} class="slds-box slds-p-around_small slds-m-top_x-small slds-m-bottom_small slds-m-horizontal_none">
-            <div if:true={activityScorecardResult}>    
-                <lightning-card variant="Narrow" title="Activity Scorecard" icon-name="standard:unified_health_score">
-                    <lightning-layout>
-                        <lightning-layout-item flexibility="auto" padding="around-small">
-                            <div class="custom-box slds-box slds-p-around_small slds-text-align_center">
-                                <p>First Event Date</p>
-                                    <template if:true={activityScorecardResult.firstEvent}>
-                                        <p class="activity-counter">{activityScorecardResult.firstEvent}</p>
-                                    </template>
-                                    <template if:false={activityScorecardResult.firstEvent}>
-                                        <p class="activity-counter">N/A</p>
-                                    </template>
-                                </p>
-                            </div>
-                        </lightning-layout-item>
-                        <lightning-layout-item flexibility="auto" padding="around-small">
-                            <div class="custom-box slds-box slds-p-around_small slds-text-align_center">
-                                <p># Planned Activities</p>
-                                <p class="activity-counter">{activityScorecardResult.futureEventsCount}</p>
-                            </div>
-                        </lightning-layout-item>
-                    </lightning-layout>
-                    <lightning-layout>
-                        <lightning-layout-item flexibility="auto" padding="around-small">
-                            <lightning-card>
-                                <h2 slot="title">
-                                    <lightning-icon icon-name="custom:custom109" size="small"></lightning-icon>
-                                    <span class="activity-title">Last 12 months:</span>
-                                </h2>
-                                
-                                <lightning-layout>
-                                    <lightning-layout-item size="1" padding="around-small">
-                                        <div class="slds-m-right_small">
-                                            <lightning-icon icon-name="standard:event" size={iconSize}></lightning-icon>
-                                        </div>
-                                    </lightning-layout-item>
-                                    <lightning-layout-item size="11" padding="around-small">
-                                        <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-4">
-                                            <span><b>{activityScorecardResult.eventsLoggedCount}</b> {labels.EVENTS_LOGGED} <b>{eventsLoggedBenchmark}</b></span>
-                                            <span aria-hidden="true">
-                                              <strong>{eventsLoggedPercentage}%</strong>
-                                            </span>
-                                        </div>
-                                        <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.eventsLoggedCount} aria-labelledby="progress-bar-label-id-4" role="progressbar">
-                                            <span class="slds-progress-bar__value" style={eventsLoggedWidth}>
-                                            </span>
-                                        </div>
-                                    </lightning-layout-item>
-                                </lightning-layout>
-    
-                                <lightning-layout>
-                                    <lightning-layout-item size="1" padding="around-small">
-                                        <div class="slds-m-right_small">
-                                            <lightning-icon icon-name="standard:task" size={iconSize}></lightning-icon>
-                                        </div>
-                                    </lightning-layout-item>
-                                    <lightning-layout-item size="11" padding="around-small">
-                                        <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-1">
-                                            <span><b>{activityScorecardResult.completedTasksCount}</b> {labels.TASKS_COMPLETED} <b>{completedTasksBenchmark}</b></span>
-                                            <span aria-hidden="true">
-                                              <strong>{completedTasksPercentage}%</strong>
-                                            </span>
-                                        </div>
-                                        <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.completedTasksCount} aria-labelledby="progress-bar-label-id-1" role="progressbar">
-                                            <span class="slds-progress-bar__value" style={completedTasksWidth}>
-                                            </span>
-                                        </div>
-                                    </lightning-layout-item>
-                                </lightning-layout>
-    
-                                <lightning-layout>
-                                    <lightning-layout-item size="1" padding="around-small">
-                                        <div class="slds-m-right_small">
-                                            <lightning-icon icon-name="standard:log_a_call" size={iconSize}></lightning-icon>
-                                        </div>
-                                    </lightning-layout-item>
-                                    <lightning-layout-item size="11" padding="around-small">
-                                        <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-2">
-                                            <span><b>{activityScorecardResult.callsLoggedCount}</b> {labels.CALLS_LOGGED} <b>{callsLoggedBenchmark}</b></span>
-                                            <span aria-hidden="true">
-                                              <strong>{callsLoggedPercentage}%</strong>
-                                            </span>
-                                        </div>
-                                        <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.callsLoggedCount} aria-labelledby="progress-bar-label-id-2" role="progressbar">
-                                            <span class="slds-progress-bar__value" style={callsLoggedWidth}>
-                                            </span>
-                                        </div>
-                                    </lightning-layout-item>
-                                </lightning-layout>
-    
-                                <lightning-layout>
-                                    <lightning-layout-item size="1" padding="around-small">
-                                        <div class="slds-m-right_small">
-                                            <lightning-icon icon-name="standard:email" size={iconSize}></lightning-icon>
-                                        </div>
-                                    </lightning-layout-item>
-                                    <lightning-layout-item size="11" padding="around-small">
-                                        <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-3">
-                                            <span><b>{activityScorecardResult.emailsSentCount}</b> {labels.EMAILS_SENT} <b>{emailsSentBenchmark}</b></span>
-                                            <span aria-hidden="true">
-                                              <strong>{emailsSentPercentage}%</strong>
-                                            </span>
-                                        </div>
-                                        <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.emailsSentCount} aria-labelledby="progress-bar-label-id-3" role="progressbar">
-                                            <span class="slds-progress-bar__value" style={emailsSentWidth}>
-                                            </span>
-                                        </div>
-                                    </lightning-layout-item>
-                                </lightning-layout>
-    
-                                
-    
-                            </lightning-card>
-                        </lightning-layout-item>
-                    </lightning-layout>
-                </lightning-card>
-            </div>
-    </template>
--->
