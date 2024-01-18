@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e54b8cf8fc9a3c9c1c6e59b30dfd1d4fb5ee76ab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHandler.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHandler.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/triggers/ProductTrigger.trigger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/triggers/ProductTrigger.trigger-meta.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Test_WorkflowProfilingController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_WorkflowProfilingController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labels/CustomLabels.labels" beforeDir="false" afterPath="$PROJECT_DIR$/src/labels/CustomLabels.labels" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +28,7 @@
         <option value="Lightning Web Component JavaScript" />
         <option value="Lightning Web Component CSS" />
         <option value="Apex Class" />
+        <option value="Apex Trigger" />
         <option value="Apex Metadata" />
       </list>
     </option>
@@ -65,23 +65,31 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="List&lt;WorkflowProfiling__c&gt; profs = [SELECT id from WorkflowProfiling__c where Account__c = '0015r00000qASgNAAW'];&#10;&#10;DELETE profs;&#10;" />
-                  <option name="name" value="Anonymous Apex 2" />
+                  <option name="body" value="List&lt;Product2&gt; productList = new List&lt;Product2&gt;();&#10;productList.add(new Product2(&#10;        Name = 'Test',&#10;        PG4_Code__c = 'I9Y000',&#10;        PG3_Code__c = 'I9Y00',&#10;        PG2_Code__c = 'I9Y0',&#10;        PG1_Code__c = 'I9Y',&#10;        Article__c = 'a0j5r00000ADfFXAA1'&#10;));&#10;&#10;insert productList;" />
+                  <option name="name" value="Anonymous Apex 4" />
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="System.debug(WorkflowProfilingController.getProductFamilyListByWorkflowId('a7u5r000000RuYZAA0', '0015r00000qASgNAAW'));" />
-                  <option name="connectionName" value="acc360" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="Anonymous Apex 1" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="String workflowId = 'a7u5r000000RuYZAA0';&#10;String accountId = '0015r00000qASgNAAW';&#10;&#10;List&lt;ProductFamily__c&gt; productFamilyList = [&#10;        SELECT Id, ProductFamilyLabel__c,&#10;        (SELECT Id, Name, Competitor_Product__c FROM Non_ERP_Products__r)&#10;        FROM ProductFamily__c&#10;        WHERE Id IN (&#10;                SELECT ProductFamily__c&#10;                FROM WorkflowLine__c&#10;                WHERE Workflow__c = :workflowId&#10;        )&#10;];&#10;&#10;// Collect Non_ERP_Products__c Ids&#10;Set&lt;String&gt; nonERPProductIds = new Set&lt;String&gt;();&#10;for (ProductFamily__c productFamily : productFamilyList) {&#10;    for (Non_ERP_Products__c nonERPProduct : productFamily.Non_ERP_Products__r) {&#10;        nonERPProductIds.add(nonERPProduct.Id);&#10;    }&#10;}&#10;&#10;System.debug('nonERPProductIds : ' + nonERPProductIds);&#10;&#10;// Map to hold ProductProfiling__c Ids related to Non_ERP_Products__c&#10;Set&lt;Id&gt; activeNonErpProductsIds = new Set&lt;Id&gt;();&#10;for (Product_Profiling__c productProfiling : [&#10;        SELECT Id, Non_Erp_Product_ID__c&#10;        FROM Product_Profiling__c&#10;        WHERE Inactive__c = false AND Product_Name__c IN :nonERPProductIds&#10;]) {&#10;    activeNonErpProductsIds.add(productProfiling.Non_Erp_Product_ID__c);&#10;}&#10;&#10;System.debug('activeNonErpProductsIds : ' + activeNonErpProductsIds);" />
-                  <option name="name" value="Anonymous Apex 3" />
+                  <option name="body" value="List&lt;Product2&gt; products = [select Id from product2 where NonERPProduct__c != null and GlobalProductFamily__c != null and CreatedDate = TODAY];&#10;&#10;delete products;" />
+                  <option name="name" value="Anonymous Apex 5" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="1" />
+            <option name="selectedSavedDocumentIndex" value="0" />
           </AnonymousApexSettings>
+        </option>
+        <option name="connectionMruWorkspaceSettings">
+          <ConnectionMruWorkspaceSettings>
+            <option name="mruEntries">
+              <list>
+                <ConnectionMruEntry>
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="lastUsed" value="1705486990440" />
+                  <option name="numUsages" value="2" />
+                </ConnectionMruEntry>
+              </list>
+            </option>
+          </ConnectionMruWorkspaceSettings>
         </option>
         <option name="connectionWorkspaceSettings">
           <map>
@@ -18668,11 +18676,14 @@
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1697198113771" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1702996934343" />
+                      <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1705488766849" />
+                      <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1705490866528" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1702387725302" />
                       <entry key="APEXCLASS:TEST_ACTIVITYSCORECARDCONTROLLER" value="1697197787769" />
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1701198065808" />
                       <entry key="APEXCLASS:TEST_WORKFLOWPROFILINGCONTROLLER" value="1704806112539" />
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1704806293121" />
+                      <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1705488774047" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1702998491010" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1701609281507" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGEDIT" value="1701608075510" />
@@ -18806,10 +18817,10 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select id from account" />
+                  <option name="body" value="SELECT Id, AssignmentRuleCodes__c, ProductFamily__c&#10;FROM Non_ERP_Products__c&#10;WHERE AssignmentRuleCodes__c != null" />
                   <option name="connectionName" value="acc360" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 1" />
+                  <option name="name" value="SOQL Query 4" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
@@ -19206,7 +19217,7 @@
       <workItem from="1703496052270" duration="14232000" />
       <workItem from="1704014408320" duration="121000" />
       <workItem from="1704276723716" duration="22175000" />
-      <workItem from="1705057345317" duration="2083000" />
+      <workItem from="1705057345317" duration="7710000" />
     </task>
     <servers />
   </component>
