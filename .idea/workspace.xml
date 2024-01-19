@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4cd14365cae38c458babc4e25aadccf14e98498d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/7295bef49ccade8f3b8fbf66e7e3c1a7b1d124a5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7bf285b53fabc12bb4626af92af2822a40fadbca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/7/b73d98ef0ae135c31a85e485c5a3e8ea726c91ed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d65eb531e685f5d5c0e45d03e5c80a30002a2ae6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/c/4cd14365cae38c458babc4e25aadccf14e98498d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/2/7295bef49ccade8f3b8fbf66e7e3c1a7b1d124a5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/b/7bf285b53fabc12bb4626af92af2822a40fadbca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/7/b73d98ef0ae135c31a85e485c5a3e8ea726c91ed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/6/d65eb531e685f5d5c0e45d03e5c80a30002a2ae6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +79,12 @@
                   <option name="connectionType" value="OAUTH" />
                   <option name="lastUsed" value="1705486990440" />
                   <option name="numUsages" value="2" />
+                </ConnectionMruEntry>
+                <ConnectionMruEntry>
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="lastUsed" value="1705655676412" />
+                  <option name="numUsages" value="1" />
                 </ConnectionMruEntry>
               </list>
             </option>
@@ -18234,7 +18228,7 @@
                       <entry key="APEXCLASS:FLOWLOOKUPLWCCONTROLLER" value="1675243532479" />
                       <entry key="APEXCLASS:OPPORTUNITYINSERTASYNCH" value="1668510513326" />
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1666193185822" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1699618608061" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1705655686717" />
                       <entry key="APEXCLASS:USERSINACCOUNTTERRITORIES" value="1667389763476" />
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1699614933148" />
                       <entry key="AURADEFINITIONBUNDLE:FLOW_SUGGESTEDUSERSBASEDONBRAND" value="1667402512131" />
@@ -18680,19 +18674,19 @@
                       <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1702387753277" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1697198113771" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1702996934343" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1705655527893" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1705488766849" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1705490866528" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1702387725302" />
                       <entry key="APEXCLASS:TEST_ACTIVITYSCORECARDCONTROLLER" value="1697197787769" />
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1701198065808" />
                       <entry key="APEXCLASS:TEST_WORKFLOWPROFILINGCONTROLLER" value="1704806112539" />
-                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1704806293121" />
+                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1705655442403" />
                       <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1705488774047" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1702998491010" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1701609281507" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGEDIT" value="1701608075510" />
-                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1704797678110" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1705655523134" />
                       <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.CLASSIFICATIONTYPE__C" value="1695383392000" />
                       <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.GBU__C" value="1695383392000" />
                       <entry key="CUSTOMFIELD:PRODUCTFAMILY__C.GPHCODE__C" value="1695383392000" />
@@ -19222,7 +19216,7 @@
       <workItem from="1703496052270" duration="14232000" />
       <workItem from="1704014408320" duration="121000" />
       <workItem from="1704276723716" duration="22175000" />
-      <workItem from="1705057345317" duration="11255000" />
+      <workItem from="1705057345317" duration="12308000" />
     </task>
     <servers />
   </component>

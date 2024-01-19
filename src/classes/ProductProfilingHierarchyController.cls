@@ -37,10 +37,10 @@ public with sharing class ProductProfilingHierarchyController {
     List<AggregateResult> results = new List<AggregateResult>();
         
         if(SBU != '' && SBU != null){
-    		results = [SELECT count(Id), ProductFamily__r.ProductFamilyLabel__c family FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) AND ProductGroupText__c =: SBU GROUP BY ProductFamily__r.ProductFamilyLabel__c];   //OR (Valid_in_my_Market__c =: true AND Market__c != '')
+    		results = [SELECT count(Id), ProductFamily__r.ProductFamilyLabel__c family FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) AND ProductGroupText__c =: SBU  AND ProductFamily__c != null GROUP BY ProductFamily__r.ProductFamilyLabel__c];   //OR (Valid_in_my_Market__c =: true AND Market__c != '')
         }   
         else{
-    		results = [SELECT count(Id), ProductFamily__r.ProductFamilyLabel__c family FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) GROUP BY ProductFamily__r.ProductFamilyLabel__c];
+    		results = [SELECT count(Id), ProductFamily__r.ProductFamilyLabel__c family FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) AND ProductFamily__c != null GROUP BY ProductFamily__r.ProductFamilyLabel__c];
         }
 
         
@@ -68,13 +68,13 @@ public with sharing class ProductProfilingHierarchyController {
     List<Product_Profiling__c> profilings = new List<Product_Profiling__c>();
         
         if(recordId.startsWith('003')){
-            profilings = [SELECT Id, Product_Name__c, Quantity__c, Product_Category__c, InUseSince__c, Inactive__c, Source__c, Product_Name__r.ProductFamily__r.ProductFamilyLabel__c, Product_Name__r.Id, Product_Name__r.Manufacturer__c, Product_Name__r.Product_Category__c, Product_Name__r.Name, Product_Name__r.SBU__c, Product_Name__r.Competitor_Product__c, Product_Name__r.KeyProduct__c, Product_Name__r.ProductGroupText__c, Product_Name__r.QuantityUnitOfMeasure__c, Status__c, Account__c, Contact__c, Contact__r.FirstName, Contact__r.LastName FROM Product_Profiling__c WHERE Contact__c =: recordId AND Product_Name__c!= null];
+            profilings = [SELECT Id, Product_Name__c, Quantity__c, Product_Category__c, InUseSince__c, Inactive__c, Source__c, Product_Name__r.ProductFamily__r.ProductFamilyLabel__c, Product_Name__r.Id, Product_Name__r.Manufacturer__c, Product_Name__r.Product_Category__c, Product_Name__r.Name, Product_Name__r.SBU__c, Product_Name__r.Competitor_Product__c, Product_Name__r.KeyProduct__c, Product_Name__r.ProductGroupText__c, Product_Name__r.QuantityUnitOfMeasure__c, Status__c, Account__c, Contact__c, Contact__r.FirstName, Contact__r.LastName FROM Product_Profiling__c WHERE Contact__c =: recordId AND Product_Name__c!= null AND Product_Name__r.ProductFamily__c != null];
         }
         else if(recordId.startsWith('a5q')){
             String accId = [SELECT Account__c FROM  Account_Plan__c WHERE id =: recordId LIMIT 1][0].Account__c;
-            profilings = [SELECT Id, Product_Name__c, Quantity__c, Product_Category__c, InUseSince__c, Inactive__c, Source__c, Product_Name__r.ProductFamily__r.ProductFamilyLabel__c, Product_Name__r.Id, Product_Name__r.Manufacturer__c, Product_Name__r.Product_Category__c, Product_Name__r.Name, Product_Name__r.SBU__c, Product_Name__r.Competitor_Product__c, Product_Name__r.KeyProduct__c, Product_Name__r.ProductGroupText__c, Product_Name__r.QuantityUnitOfMeasure__c, Status__c, Account__c, Contact__c, Contact__r.FirstName, Contact__r.LastName FROM Product_Profiling__c WHERE Account__c =: accId  AND Product_Name__c!= null ORDER BY Contact__c ASC NULLS FIRST]; // AND Contact__c =:''
+            profilings = [SELECT Id, Product_Name__c, Quantity__c, Product_Category__c, InUseSince__c, Inactive__c, Source__c, Product_Name__r.ProductFamily__r.ProductFamilyLabel__c, Product_Name__r.Id, Product_Name__r.Manufacturer__c, Product_Name__r.Product_Category__c, Product_Name__r.Name, Product_Name__r.SBU__c, Product_Name__r.Competitor_Product__c, Product_Name__r.KeyProduct__c, Product_Name__r.ProductGroupText__c, Product_Name__r.QuantityUnitOfMeasure__c, Status__c, Account__c, Contact__c, Contact__r.FirstName, Contact__r.LastName FROM Product_Profiling__c WHERE Account__c =: accId  AND Product_Name__c!= null AND Product_Name__r.ProductFamily__c != null ORDER BY Contact__c ASC NULLS FIRST]; // AND Contact__c =:''
         }else {
-          	profilings = [SELECT Id, Product_Name__c, Quantity__c, Product_Category__c, InUseSince__c, Inactive__c, Source__c, Product_Name__r.ProductFamily__r.ProductFamilyLabel__c, Product_Name__r.Id, Product_Name__r.Manufacturer__c, Product_Name__r.Product_Category__c, Product_Name__r.Name, Product_Name__r.SBU__c, Product_Name__r.Competitor_Product__c, Product_Name__r.KeyProduct__c, Product_Name__r.ProductGroupText__c, Product_Name__r.QuantityUnitOfMeasure__c, Status__c, Account__c, Contact__c, Contact__r.FirstName, Contact__r.LastName FROM Product_Profiling__c WHERE Account__c =: recordId  AND Product_Name__c!= null ORDER BY Contact__c ASC NULLS FIRST]; // AND Contact__c =:''
+          	profilings = [SELECT Id, Product_Name__c, Quantity__c, Product_Category__c, InUseSince__c, Inactive__c, Source__c, Product_Name__r.ProductFamily__r.ProductFamilyLabel__c, Product_Name__r.Id, Product_Name__r.Manufacturer__c, Product_Name__r.Product_Category__c, Product_Name__r.Name, Product_Name__r.SBU__c, Product_Name__r.Competitor_Product__c, Product_Name__r.KeyProduct__c, Product_Name__r.ProductGroupText__c, Product_Name__r.QuantityUnitOfMeasure__c, Status__c, Account__c, Contact__c, Contact__r.FirstName, Contact__r.LastName FROM Product_Profiling__c WHERE Account__c =: recordId  AND Product_Name__c!= null AND Product_Name__r.ProductFamily__c != null ORDER BY Contact__c ASC NULLS FIRST]; // AND Contact__c =:''
         }
      
     return profilings;
@@ -265,7 +265,7 @@ public with sharing class ProductProfilingHierarchyController {
 
         // If a workflow filter is applied, we look for the product families through the workflow lines
         if(workflow != ''){
-            workflowLines = [SELECT Id, ProductFamily__c, ProductFamily__r.ProductFamilyLabel__c, Order__c FROM WorkflowLine__c where Workflow__c = :workflow order by Order__c];
+            workflowLines = [SELECT Id, ProductFamily__c, ProductFamily__r.ProductFamilyLabel__c, Order__c FROM WorkflowLine__c where Workflow__c = :workflow AND ProductFamily__c != null order by Order__c];
 
             for(WorkflowLine__c eachWorkflowLine : workflowLines){
                 productFamiliesSet.add(eachWorkflowLine.ProductFamily__c);
