@@ -22,8 +22,8 @@ public with sharing class AccountFlagsController {
         // Get number of kol contract records related to the account
         Integer kolCount = [
                 SELECT COUNT()
-                FROM KOL_Contract__c
-                WHERE Account__c = :accountId
+                FROM Contact
+                WHERE Active_KOL__c = true AND AccountId = :accountId
                 LIMIT 1
         ];
 
