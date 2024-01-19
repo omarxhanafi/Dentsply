@@ -1,6 +1,7 @@
 <!-- Activity Scorecard -->
 <template>
-        <span if:true={activityScorecardResult}>    
+        <span if:true={activityScorecardResult}>
+            <lightning-card>
                 <lightning-layout>
                     <lightning-layout-item flexibility="auto" padding="around-small">
                         <div class="custom-box slds-box slds-p-around_small slds-text-align_center">
@@ -77,5 +78,6 @@
                         </lightning-card>
                     </lightning-layout-item>
                 </lightning-layout>
-            </span>
+            </lightning-card>
+        </span>
 </template>
