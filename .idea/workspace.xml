@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/341409e3e1a7a90226534de468d57113641c0141" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductTriggerHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHandler.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/triggers/ProductTrigger.trigger" beforeDir="false" afterPath="$PROJECT_DIR$/src/triggers/ProductTrigger.trigger" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,8 +77,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1705658354072" />
-                  <option name="numUsages" value="3" />
+                  <option name="lastUsed" value="1705999850952" />
+                  <option name="numUsages" value="6" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
@@ -18287,7 +18283,7 @@
                       <entry key="CUSTOMFIELD:WORKFLOW__C.COUNTRIES__C" value="1699613011000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.GLOBALPRODUCTSHOWTOALLCOUNTRIES__C" value="1699613011000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.WORKFLOWLABEL__C" value="1699613011000" />
-                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1695385506000" />
+                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1705999834000" />
                       <entry key="CUSTOMOBJECT:NON_ERP_PRODUCTS__C" value="1699613750000" />
                       <entry key="CUSTOMOBJECT:PRODUCTFAMILY__C" value="1699613224000" />
                       <entry key="CUSTOMOBJECT:WORKFLOWLINE__C" value="1695386160000" />
@@ -18305,6 +18301,7 @@
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:LEADMATCHCONTACTHANDLING" value="1666275637000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:SELECTPRODUCTSOMLWC" value="1666187952046" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1699614946000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1705999851000" />
                       <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.ALL" value="1699613750000" />
                       <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.AT" value="1699613750000" />
                       <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.CH" value="1699613750000" />
@@ -18713,7 +18710,7 @@
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1705566719229" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:POPOVERRECORDINFO" value="1704301044075" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1705566066000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1705999670035" />
                       <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1695383392000" />
                       <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1695383392000" />
                       <entry key="STATICRESOURCE:SLIDERS" value="1703066996000" />
@@ -18736,7 +18733,7 @@
                       <entry key="DEPLOY">
                         <value>
                           <BuildViewToggles>
-                            <option name="showLocalAndServer" value="true" />
+                            <option name="showLocalAndServer" value="false" />
                             <option name="showLocalOnly" value="true" />
                             <option name="showServerOnly" value="false" />
                             <option name="showSubscribedByParent" value="true" />
@@ -19229,7 +19226,7 @@
       <workItem from="1705670781809" duration="13000" />
       <workItem from="1705670887993" duration="336000" />
       <workItem from="1705671294077" duration="943000" />
-      <workItem from="1705672385841" duration="1985000" />
+      <workItem from="1705672385841" duration="2929000" />
     </task>
     <servers />
   </component>
