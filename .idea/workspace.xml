@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/ae546cbec7d875f0e7d652d26a2e3fd90dc6dbef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/341409e3e1a7a90226534de468d57113641c0141" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/e/ae546cbec7d875f0e7d652d26a2e3fd90dc6dbef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ProductTriggerHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHandler.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/triggers/ProductTrigger.trigger" beforeDir="false" afterPath="$PROJECT_DIR$/src/triggers/ProductTrigger.trigger" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +62,11 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="List&lt;Product2&gt; productList = new List&lt;Product2&gt;();&#10;productList.add(new Product2(&#10;        Name = 'Test',&#10;        PG4_Code__c = 'I9Y000',&#10;        PG3_Code__c = 'I9Y00',&#10;        PG2_Code__c = 'I9Y0',&#10;        PG1_Code__c = 'I9Y',&#10;        Article__c = 'a0j5r00000ADfFXAA1'&#10;));&#10;&#10;insert productList;" />
+                  <option name="body" value="Product2 prod = new Product2(&#10;        Name = 'Test',&#10;        PG4_Code__c = 'I9Y000',&#10;        PG3_Code__c = 'I9Y00',&#10;        PG2_Code__c = 'I9Y0',&#10;        PG1_Code__c = 'I9Y',&#10;        Article__c = 'a0j5r00000ADfFXAA1'&#10;);&#10;&#10;insert prod;" />
                   <option name="name" value="Anonymous Apex 4" />
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="List&lt;Product2&gt; products = [select Id from product2 where NonERPProduct__c != null and GlobalProductFamily__c != null and CreatedDate = TODAY];&#10;&#10;delete products;" />
+                  <option name="body" value="List&lt;Product2&gt; products = [select Id from product2 where CreatedDate = THIS_WEEK];&#10;&#10;delete products;" />
                   <option name="name" value="Anonymous Apex 5" />
                 </AnonymousApexSavedDocument>
               </list>
@@ -79,16 +79,16 @@
             <option name="mruEntries">
               <list>
                 <ConnectionMruEntry>
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="lastUsed" value="1705658354072" />
+                  <option name="numUsages" value="3" />
+                </ConnectionMruEntry>
+                <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="lastUsed" value="1705486990440" />
                   <option name="numUsages" value="2" />
-                </ConnectionMruEntry>
-                <ConnectionMruEntry>
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1705655676412" />
-                  <option name="numUsages" value="1" />
                 </ConnectionMruEntry>
               </list>
             </option>
@@ -18223,7 +18223,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1699614320693" />
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1705658191594" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1699614336006" />
                       <entry key="APEXCLASS:CAMPAIGNMEMBERTRIGGERHELPER" value="1668005778242" />
                       <entry key="APEXCLASS:CHANGEOWNER" value="1669800166407" />
@@ -18675,18 +18675,18 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1702387753277" />
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1705658172459" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1697198113771" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1705655527893" />
-                      <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1705488766849" />
-                      <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1705490866528" />
+                      <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1705672315494" />
+                      <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1705676039829" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1702387725302" />
                       <entry key="APEXCLASS:TEST_ACTIVITYSCORECARDCONTROLLER" value="1697197787769" />
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1701198065808" />
                       <entry key="APEXCLASS:TEST_WORKFLOWPROFILINGCONTROLLER" value="1704806112539" />
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1705655442403" />
-                      <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1705488774047" />
+                      <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1705671438066" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1702998491010" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1701609281507" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGEDIT" value="1701608075510" />
@@ -18825,9 +18825,13 @@
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 4" />
                 </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="select Id, NonERPProduct__c, GlobalProductFamily__c from product2 where NonERPProduct__c != null and GlobalProductFamily__c != null and CreatedDate = THIS_WEEK" />
+                  <option name="name" value="SOQL Query 1" />
+                </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="0" />
+            <option name="selectedSavedDocumentIndex" value="1" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -19220,7 +19224,12 @@
       <workItem from="1703496052270" duration="14232000" />
       <workItem from="1704014408320" duration="121000" />
       <workItem from="1704276723716" duration="22175000" />
-      <workItem from="1705057345317" duration="12787000" />
+      <workItem from="1705057345317" duration="15126000" />
+      <workItem from="1705670516495" duration="250000" />
+      <workItem from="1705670781809" duration="13000" />
+      <workItem from="1705670887993" duration="336000" />
+      <workItem from="1705671294077" duration="943000" />
+      <workItem from="1705672385841" duration="1985000" />
     </task>
     <servers />
   </component>

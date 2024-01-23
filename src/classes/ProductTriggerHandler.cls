@@ -15,6 +15,10 @@ public with sharing class ProductTriggerHandler extends TriggerHandler {
         newProductMap = (Map<Id, Product2>) Trigger.newMap;
     }
     protected override void beforeInsert() {
-        ProductTriggerHelper.assignNonERPProduct(newProductList);
-    }   
+        ProductTriggerHelper.assignNonERPProduct(oldProductMap, newProductList);
+    }
+
+    protected override void beforeUpdate() {
+        ProductTriggerHelper.assignNonERPProduct(oldProductMap, newProductList);
+    }
 }

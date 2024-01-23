@@ -77,8 +77,6 @@ O
 src/classes/TestDataFactory.cls,d/e/de9cc9e83ac53b03d331c74c7fe4b8a665cacd4d
 S
 #src/triggers/ContactTrigger.trigger,f/2/f2eca984ff1b89ad3dc9ecc7a3f3e2b43bd0d79c
-N
-src/classes/TriggerHandler.cls,3/4/341409e3e1a7a90226534de468d57113641c0141
 U
 %src/classes/ContactTriggerHandler.cls,4/f/4f3e7eb78112c8442d4f62d3c5b978ff4527aba9
 s
