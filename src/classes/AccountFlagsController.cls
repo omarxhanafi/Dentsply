@@ -75,6 +75,10 @@ public with sharing class AccountFlagsController {
                 results.put('dsCoreCare', expiredResults.get('dsCoreCare'));
             }
 
+            if(results.get('dsCoreLab').value == 0){
+                results.put('dsCoreLab', expiredResults.get('dsCoreLab'));
+            }
+
         } else {
             results.putAll(getContractFlags(expiredContracts, false));
         }

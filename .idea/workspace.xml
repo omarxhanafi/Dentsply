@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/labels/CustomLabels.labels" beforeDir="false" afterPath="$PROJECT_DIR$/src/labels/CustomLabels.labels" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,8 +81,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1705999850952" />
-                  <option name="numUsages" value="6" />
+                  <option name="lastUsed" value="1706010926110" />
+                  <option name="numUsages" value="10" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
@@ -18219,7 +18223,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1705658191594" />
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1706002353943" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1699614336006" />
                       <entry key="APEXCLASS:CAMPAIGNMEMBERTRIGGERHELPER" value="1668005778242" />
                       <entry key="APEXCLASS:CHANGEOWNER" value="1669800166407" />
@@ -18283,7 +18287,7 @@
                       <entry key="CUSTOMFIELD:WORKFLOW__C.COUNTRIES__C" value="1699613011000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.GLOBALPRODUCTSHOWTOALLCOUNTRIES__C" value="1699613011000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.WORKFLOWLABEL__C" value="1699613011000" />
-                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1705999834000" />
+                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1706010918000" />
                       <entry key="CUSTOMOBJECT:NON_ERP_PRODUCTS__C" value="1699613750000" />
                       <entry key="CUSTOMOBJECT:PRODUCTFAMILY__C" value="1699613224000" />
                       <entry key="CUSTOMOBJECT:WORKFLOWLINE__C" value="1695386160000" />
@@ -18293,7 +18297,7 @@
                       <entry key="GLOBALVALUESET:GBU" value="1695386095000" />
                       <entry key="GLOBALVALUESET:PRODUCTFAMILY" value="1699613196000" />
                       <entry key="GLOBALVALUESET:WORKFLOWS" value="1695386095000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1699614972000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1706010927000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARD" value="1682075429551" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1699614994000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CLONEORDEROMLWC" value="1666105134000" />
@@ -18672,7 +18676,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1705658172459" />
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1706002029669" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1697198113771" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1705655527893" />
@@ -18700,17 +18704,17 @@
                       <entry key="CUSTOMFIELD:WORKFLOWPROFILING__C.WORKFLOW__C" value="1695383392000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.COUNTRIES__C" value="1695383392000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.WORKFLOWLABEL__C" value="1695383392000" />
-                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1705566066000" />
+                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1706010872000" />
                       <entry key="CUSTOMOBJECT:PRODUCTFAMILY__C" value="1695383392000" />
                       <entry key="CUSTOMOBJECT:WORKFLOWLINE__C" value="1695383392000" />
                       <entry key="CUSTOMOBJECT:WORKFLOWPROFILING__C" value="1695383392000" />
                       <entry key="CUSTOMOBJECT:WORKFLOW__C" value="1695383392000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTCONTAINERLWC" value="1689951225892" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1705565900000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1706010872000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1705566719229" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:POPOVERRECORDINFO" value="1704301044075" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1705999670035" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1706002508653" />
                       <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1695383392000" />
                       <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1695383392000" />
                       <entry key="STATICRESOURCE:SLIDERS" value="1703066996000" />
@@ -18733,7 +18737,7 @@
                       <entry key="DEPLOY">
                         <value>
                           <BuildViewToggles>
-                            <option name="showLocalAndServer" value="false" />
+                            <option name="showLocalAndServer" value="true" />
                             <option name="showLocalOnly" value="true" />
                             <option name="showServerOnly" value="false" />
                             <option name="showSubscribedByParent" value="true" />
@@ -19226,7 +19230,7 @@
       <workItem from="1705670781809" duration="13000" />
       <workItem from="1705670887993" duration="336000" />
       <workItem from="1705671294077" duration="943000" />
-      <workItem from="1705672385841" duration="2929000" />
+      <workItem from="1705672385841" duration="4906000" />
     </task>
     <servers />
   </component>

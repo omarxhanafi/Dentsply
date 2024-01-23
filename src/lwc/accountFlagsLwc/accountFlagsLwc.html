@@ -8,7 +8,7 @@
                                 <tbody>
                                     <tr if:true={showDSCoreInactive}>
                                         <td>
-                                            <div class="flag-text">DS Core</div>
+                                            <div class="flag-text">{labels.DS_CORE}</div>
                                         </td>
                                         <td>
                                             <div class="flag-square flag-white"></div>
@@ -23,7 +23,7 @@
                                                data-itemid={dsCoreAccessId}
                                                data-flagtype='dsCoreAccess'
                                             >
-                                                {labels.ACCESS}
+                                                {labels.DS_CORE}
                                             </a>
                                             <template if:true={isMouseOverDSCoreAccess}>
                                                 <div class="slds-is-relative slds-float_right">
@@ -37,6 +37,9 @@
                                         <td>
                                             <div class={dsCoreAccessClass}></div>
                                         </td>
+                                        <td>
+                                            <div class="flag-text"><strong>{labels.ACCESS}</strong></div>
+                                        </td>
                                     </tr>
                                     <tr if:true={showLight}>
                                         <td>
@@ -47,7 +50,7 @@
                                                data-itemid={dsCoreLightId}
                                                data-flagtype='dsCoreLight'
                                             >
-                                                {labels.LIGHT}
+                                                {labels.DS_CORE}
                                             </a>
                                             <template if:true={isMouseOverDSCoreLight}>
                                                 <div class="slds-is-relative slds-float_right">
@@ -61,6 +64,9 @@
                                         <td>
                                             <div class={dsCoreLightClass}></div>
                                         </td>
+                                        <td>
+                                            <div class="flag-text"><strong>{labels.LIGHT}</strong></div>
+                                        </td>
                                     </tr>
                                     <tr if:true={showStandard}>
                                         <td>
@@ -71,7 +77,7 @@
                                                data-itemid={dsCoreStandardId}
                                                data-flagtype='dsCoreStandard'
                                             >
-                                                {labels.STANDARD}
+                                                {labels.DS_CORE}
                                             </a>
                                             <template if:true={isMouseOverDSCoreStandard}>
                                                 <div class="slds-is-relative slds-float_right">
@@ -85,6 +91,9 @@
                                         <td>
                                             <div class={dsCoreStandardClass}></div>
                                         </td>
+                                        <td>
+                                            <div class="flag-text"><strong>{labels.STANDARD}</strong></div>
+                                        </td>
                                     </tr>
                                     <tr if:true={showAdvanced}>
                                         <td>
@@ -95,7 +104,7 @@
                                                data-itemid={dsCoreAdvancedId}
                                                data-flagtype='dsCoreAdvanced'
                                             >
-                                                {labels.ADVANCED}
+                                                {labels.DS_CORE}
                                             </a>
                                             <template if:true={isMouseOverDSCoreAdvanced}>
                                                 <div class="slds-is-relative slds-float_right">
@@ -109,6 +118,9 @@
                                         <td>
                                             <div class={dsCoreAdvancedClass}></div>
                                         </td>
+                                        <td>
+                                            <div class="flag-text"><strong>{labels.ADVANCED}</strong></div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -120,19 +132,19 @@
                                                    data-itemid={dsCoreLabId}
                                                    data-flagtype='dsCoreLab'
                                                 >
-                                                    DS Core Lab
+                                                    {labels.DS_CORE_LAB}
                                                 </a>
                                                 <template if:true={isMouseOverDSCoreLab}>
                                                     <div class="slds-is-relative slds-float_right">
                                                         <c-popover-record-info
                                                                 record-id={dsCoreLabId} url={dsCoreLabId}
-                                                                title="DS Core Lab" object-api-name="ContractLineItem"
+                                                                title={labels.DS_CORE_LAB} object-api-name="ContractLineItem"
                                                                 icon-name="standard:contract_line_item"></c-popover-record-info>
                                                     </div>
                                                 </template>
                                             </template>
                                             <template if:false={dsCoreLabId}>
-                                                <div class="flag-text">DS Core Lab</div>
+                                                <div class="flag-text">{labels.DS_CORE_LAB}</div>
                                             </template>
                                         </td>
                                         <td>
@@ -149,19 +161,19 @@
                                                    data-itemid={dsCoreCareId}
                                                    data-flagtype='dsCoreCare'
                                                 >
-                                                    DS Core Care
+                                                    {labels.DS_CORE_CARE}
                                                 </a>
                                                 <template if:true={isMouseOverDSCoreCare}>
                                                     <div class="slds-is-relative slds-float_right">
                                                         <c-popover-record-info
                                                                 record-id={dsCoreCareId} url={dsCoreCareId}
-                                                                title="DS Core Care" object-api-name="ContractLineItem"
+                                                                title={labels.DS_CORE_CARE} object-api-name="ContractLineItem"
                                                                 icon-name="standard:contract_line_item"></c-popover-record-info>
                                                     </div>
                                                 </template>
                                             </template>
                                             <template if:false={dsCoreCareId}>
-                                                <div class="flag-text">DS Core Care</div>
+                                                <div class="flag-text">{labels.DS_CORE_CARE}</div>
                                             </template>
                                         </td>
                                         <td>
@@ -178,19 +190,19 @@
                                                    data-itemid={sureSmileId}
                                                    data-flagtype='sureSmile'
                                                 >
-                                                    SureSmile
+                                                    {labels.SURE_SMILE}
                                                 </a>
                                                 <template if:true={isMouseOverSureSmile}>
                                                     <div class="slds-is-relative slds-float_right">
                                                         <c-popover-record-info
                                                                 record-id={sureSmileId} url={sureSmileId}
-                                                                title="SureSmile" object-api-name="Source_Record__c"
+                                                                title={labels.SURE_SMILE} object-api-name="Source_Record__c"
                                                                 icon-name="custom:custom43"></c-popover-record-info>
                                                     </div>
                                                 </template>
                                             </template>
                                             <template if:false={sureSmileId}>
-                                                <div class="flag-text">SureSmile</div>
+                                                <div class="flag-text">{labels.SURE_SMILE}</div>
                                             </template>
                                         </td>
                                         <td>
@@ -207,19 +219,19 @@
                                                    data-itemid={awoId}
                                                    data-flagtype='awo'
                                                 >
-                                                    AWO
+                                                    {labels.AWO}
                                                 </a>
                                                 <template if:true={isMouseOverAwo}>
                                                     <div class="slds-is-relative slds-float_right">
                                                         <c-popover-record-info
                                                                 record-id={awoId} url={awoId}
-                                                                title="AWO" object-api-name="Source_Record__c"
+                                                                title={labels.AWO} object-api-name="Source_Record__c"
                                                                 icon-name="custom:custom43"></c-popover-record-info>
                                                     </div>
                                                 </template>
                                             </template>
                                             <template if:false={awoId}>
-                                                <div class="flag-text">AWO</div>
+                                                <div class="flag-text">{labels.AWO}</div>
                                             </template>
                                         </td>
                                         <td>
@@ -284,19 +296,19 @@
                                                    data-itemid={dsComId}
                                                    data-flagtype='dsCom'
                                                 >
-                                                    DS.Com
+                                                    {labels.DS_COM}
                                                 </a>
                                                 <template if:true={isMouseOverDSCom}>
                                                     <div class="slds-is-relative slds-float_right">
                                                         <c-popover-record-info
                                                                 record-id={dsComId} url={dsComId}
-                                                                title="DS.Com" object-api-name="Source_Record__c"
+                                                                title={labels.DS_COM} object-api-name="Source_Record__c"
                                                                 icon-name="custom:custom43"></c-popover-record-info>
                                                     </div>
                                                 </template>
                                             </template>
                                             <template if:false={dsComId}>
-                                                <div class="flag-text">DS.Com</div>
+                                                <div class="flag-text">{labels.DS_COM}</div>
                                             </template>
                                         </td>
                                         <td>
@@ -314,19 +326,19 @@
                                                    data-itemid={cerecClubId}
                                                    data-flagtype='cerecClub'
                                                 >
-                                                    CEREC Club
+                                                    {labels.CEREC_CLUB}
                                                 </a>
                                                 <template if:true={isMouseOverCerecClub}>
                                                     <div class="slds-is-relative slds-float_right">
                                                         <c-popover-record-info
                                                                 record-id={cerecClubId} url={cerecClubId}
-                                                                title="CEREC Club" object-api-name="Contract"
+                                                                title={labels.CEREC_CLUB} object-api-name="Contract"
                                                                 icon-name="standard:contract"></c-popover-record-info>
                                                     </div>
                                                 </template>
                                             </template>
                                             <template if:false={cerecClubId}>
-                                                <div class="flag-text">CEREC Club</div>
+                                                <div class="flag-text">{labels.CEREC_CLUB}</div>
                                             </template>
                                         </td>
                                         <td>
@@ -344,19 +356,19 @@
                                                    data-itemid={siroForceId}
                                                    data-flagtype='siroForce'
                                                 >
-                                                    SiroForce
+                                                    {labels.SIRO_FORCE}
                                                 </a>
                                                 <template if:true={isMouseOverSiroForce}>
                                                     <div class="slds-is-relative slds-float_right">
                                                         <c-popover-record-info
                                                                 record-id={siroForceId} url={siroForceId}
-                                                                title="SiroForce" object-api-name="Source_Record__c"
+                                                                title={labels.SIRO_FORCE} object-api-name="Source_Record__c"
                                                                 icon-name="custom:custom43"></c-popover-record-info>
                                                     </div>
                                                 </template>
                                             </template>
                                             <template if:false={siroForceId}>
-                                                <div class="flag-text">SiroForce</div>
+                                                <div class="flag-text">{labels.SIRO_FORCE}</div>
                                             </template>
                                         </td>
                                         <td>

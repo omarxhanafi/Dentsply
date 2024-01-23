@@ -90,21 +90,21 @@
                                         <template for:each={eachWorkflow.families} for:item="family">
                                             <tr key={family.productFamily.Id} class="slds-hint-parent">
                                                 <td data-label="Product Family">
-                                                    <lightning-layout>
-                                                        <lightning-layout-item flexibility="auto">
+<!--                                                    <lightning-layout>-->
+<!--                                                        <lightning-layout-item flexibility="auto">-->
                                                             {family.productFamily.ProductFamilyLabel__c}
-                                                        </lightning-layout-item>
-                                                        <lightning-layout-item flexibility="auto" class="slds-text-align_right" style="margin-right: 10px">
-                                                            <!-- Icon for DS products -->
-                                                            <template if:true={family.hasDSCoreProduct}>
-                                                                <img src={dsLogoIconUrl} style="width: 25px; height: 25px"/>
-                                                            </template>
-                                                            <!-- Icon for Competitor products -->
-                                                            <template if:true={family.hasCompetitorProduct}>
-                                                                <lightning-icon style="transform: scale(0.70);" icon-name="action:bug" size="small" class="slds-m-left_xx-small"></lightning-icon>
-                                                            </template>
-                                                        </lightning-layout-item>
-                                                    </lightning-layout>
+<!--                                                        </lightning-layout-item>-->
+<!--                                                        <lightning-layout-item flexibility="auto" class="slds-text-align_right" style="margin-right: 10px">-->
+<!--                                                            &lt;!&ndash; Icon for DS products &ndash;&gt;-->
+<!--                                                            <template if:true={family.hasDSCoreProduct}>-->
+<!--                                                                <img src={dsLogoIconUrl} style="width: 25px; height: 25px"/>-->
+<!--                                                            </template>-->
+<!--                                                            &lt;!&ndash; Icon for Competitor products &ndash;&gt;-->
+<!--                                                            <template if:true={family.hasCompetitorProduct}>-->
+<!--                                                                <lightning-icon style="transform: scale(0.70);" icon-name="action:bug" size="small" class="slds-m-left_xx-small"></lightning-icon>-->
+<!--                                                            </template>-->
+<!--                                                        </lightning-layout-item>-->
+<!--                                                    </lightning-layout>-->
                                                 </td>
                                                 <td data-label="DS Products">
                                                     <!-- DS Products -->
@@ -112,8 +112,6 @@
                                                         <div key={dsProduct.product.Id} class="slds-truncate" title={dsProduct.product.Name}>
                                                             <!-- Show icon & popover if active -->
                                                             <template if:true={dsProduct.active}>
-                                                                <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-right_xx-small"></lightning-icon>
-
                                                                 <a
                                                                         onclick={handleRedirection}
                                                                         onmouseover={handleMouseOver}
@@ -123,6 +121,8 @@
                                                                 >
                                                                     {dsProduct.product.Name}
                                                                 </a>
+
+                                                                <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
 
                                                                 <template if:true={dsProduct.isMouseOver}>
                                                                     <div class="custom-popover-positioning">
@@ -149,8 +149,6 @@
                                                     <template for:each={family.competitorProducts} for:item="compProduct">
                                                         <div key={compProduct.product.Id} class="slds-truncate" title={compProduct.product.Name}>
                                                             <template if:true={compProduct.active}>
-                                                                <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-right_xx-small"></lightning-icon>
-
                                                                 <a class="flag-text"
                                                                    onclick={handleRedirection}
                                                                    onmouseover={handleMouseOver}
@@ -160,6 +158,9 @@
                                                                 >
                                                                     {compProduct.product.Name}
                                                                 </a>
+
+                                                                <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
+
                                                                 <template if:true={compProduct.isMouseOver}>
                                                                     <div class="custom-popover-positioning">
                                                                         <c-popover-record-info

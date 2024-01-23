@@ -73,6 +73,14 @@
         <value>Standard</value>
     </labels>
     <labels>
+        <fullName>AccountFlagsDSCore</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsDSCore</shortDescription>
+        <value>DS Core</value>
+    </labels>
+    <labels>
         <fullName>AccountFlagsDSCoreLab</fullName>
         <categories>AccountFlags</categories>
         <language>en_US</language>
@@ -113,11 +121,11 @@
         <value>DS.Com</value>
     </labels>
     <labels>
-        <fullName>AccountFlagsCerec</fullName>
+        <fullName>AccountFlagsCerecClub</fullName>
         <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>AccountFlagsCerec</shortDescription>
+        <shortDescription>AccountFlagsCerecClub</shortDescription>
         <value>CEREC Club</value>
     </labels>
     <labels>
