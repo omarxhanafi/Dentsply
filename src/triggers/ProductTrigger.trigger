@@ -1,5 +1,5 @@
 /*------------------------------------------------------------
-Author:         Omar Hanafi (Salesforce) 17/01/2023
+Author:         Omar Hanafi (Salesforce) 17/01/2024
 Description:    Generic Trigger for Product2 (Following Trigger Framework)
 ------------------------------------------------------------*/
 trigger ProductTrigger on Product2  (

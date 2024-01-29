@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/classes/BatchUpdateProducts.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/BatchUpdateProducts.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_ProductTrigger.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_ProductTrigger.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/7/977866406bc1159ac8b5c64e60a0d12e6c0b7773" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/e/de9cc9e83ac53b03d331c74c7fe4b8a665cacd4d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/f/df1a39c7f853529e4b4cfb4c324c3bb83455b808" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labels/CustomLabels.labels" beforeDir="false" afterPath="$PROJECT_DIR$/src/labels/CustomLabels.labels" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ProductTriggerHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHandler.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Non_ERP_Products__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Non_ERP_Products__c.object" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/triggers/ProductTrigger.trigger" beforeDir="false" afterPath="$PROJECT_DIR$/src/triggers/ProductTrigger.trigger" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +31,8 @@
         <option value="Lightning Web Component HTML" />
         <option value="Lightning Web Component JavaScript" />
         <option value="Lightning Web Component CSS" />
-        <option value="Apex Class" />
         <option value="Apex Trigger" />
+        <option value="Apex Class" />
         <option value="Apex Metadata" />
       </list>
     </option>
@@ -69,9 +76,23 @@
                   <option name="body" value="List&lt;Product2&gt; products = [select Id from product2 where CreatedDate = THIS_WEEK];&#10;&#10;delete products;" />
                   <option name="name" value="Anonymous Apex 5" />
                 </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="body" value="Set&lt;String&gt; pg1Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg2Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg3Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg4Codes = new Set&lt;String&gt;();&#10;&#10;List&lt;Non_ERP_Products__c&gt; nonErpProducts = [&#10;        SELECT Id, AssignmentRuleCodes__c&#10;        FROM Non_ERP_Products__c&#10;        WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE&#10;];&#10;&#10;Set&lt;String&gt; pgCodes = new Set&lt;String&gt;();&#10;&#10;for (Non_ERP_Products__c product : nonErpProducts) {&#10;    if (product.AssignmentRuleCodes__c != null &amp;&amp; product.AssignmentRuleCodes__c != '') {&#10;        pgCodes.addAll(product.AssignmentRuleCodes__c.split(','));&#10;    }&#10;}&#10;&#10;for(String eachPgCode : pgCodes){&#10;    if(eachPgCode.length() == 3){&#10;        pg1Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 4){&#10;        pg2Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 5){&#10;        pg3Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 6){&#10;        pg4Codes.add(eachPgCode);&#10;    }&#10;}&#10;&#10;System.debug('PG1 Count: ' + pg1Codes.size());&#10;System.debug('PG2 Count: ' + pg2Codes.size());&#10;System.debug('PG3 Count: ' + pg3Codes.size());&#10;System.debug('PG4 Count: ' + pg4Codes.size());&#10;&#10;System.debug('PG1 Codes: ' + pg1Codes);&#10;System.debug('PG2 Codes: ' + pg2Codes);&#10;System.debug('PG3 Codes: ' + pg3Codes);&#10;System.debug('PG4 Codes: ' + pg4Codes);&#10;&#10;BatchUpdateProducts batch = new BatchUpdateProducts(pg1Codes, pg2Codes, pg3Codes, pg4Codes);&#10;Database.executeBatch(batch, 5000);&#10;" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="Anonymous Apex 1" />
+                  <option name="splitterProportion" value="0.4481044" />
+                </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="body" value="List&lt;Non_ERP_Products__c&gt; nonErpProducts = [&#10;        SELECT Id, AssignmentRuleCodes__c, Details__c&#10;        FROM Non_ERP_Products__c&#10;        WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE&#10;];&#10;&#10;for (Non_ERP_Products__c product : nonErpProducts) {&#10;    String details = product.Details__c.trim();&#10;&#10;    if (details.contains('PG1:')) {&#10;        product.AssignmentRuleCodes__c = details.substringAfter('PG1:').replaceAll('\\s+', '');&#10;    }&#10;&#10;    if (details.contains('PG2:')) {&#10;        product.AssignmentRuleCodes__c = details.substringAfter('PG2:').replaceAll('\\s+', '');&#10;    }&#10;&#10;    if (details.contains('PG3:')) {&#10;        product.AssignmentRuleCodes__c = details.substringAfter('PG3:').replaceAll('\\s+', '');&#10;    }&#10;&#10;    if (details.contains('PG4:')) {&#10;        product.AssignmentRuleCodes__c = details.substringAfter('PG4:').replaceAll('\\s+', '');&#10;    }&#10;}&#10;&#10;update nonErpProducts;" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="Anonymous Apex 2" />
+                  <option name="splitterProportion" value="0.46985707" />
+                </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="0" />
+            <option name="selectedSavedDocumentIndex" value="2" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionMruWorkspaceSettings">
@@ -81,8 +102,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1706010926110" />
-                  <option name="numUsages" value="10" />
+                  <option name="lastUsed" value="1706191066545" />
+                  <option name="numUsages" value="80" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
@@ -18225,6 +18246,7 @@
                     <map>
                       <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1706002353943" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1699614336006" />
+                      <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1706176876000" />
                       <entry key="APEXCLASS:CAMPAIGNMEMBERTRIGGERHELPER" value="1668005778242" />
                       <entry key="APEXCLASS:CHANGEOWNER" value="1669800166407" />
                       <entry key="APEXCLASS:FINDLEADMATCH" value="1668161656809" />
@@ -18233,13 +18255,19 @@
                       <entry key="APEXCLASS:OPPORTUNITYINSERTASYNCH" value="1668510513326" />
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1666193185822" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1705655686717" />
+                      <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706094605000" />
+                      <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1706190531666" />
+                      <entry key="APEXCLASS:TEST_PRODUCTTRIGGER" value="1706094629000" />
                       <entry key="APEXCLASS:USERSINACCOUNTTERRITORIES" value="1667389763476" />
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1699614933148" />
+                      <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1706094617000" />
                       <entry key="AURADEFINITIONBUNDLE:FLOW_SUGGESTEDUSERSBASEDONBRAND" value="1667402512131" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1699613853000" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1699612519000" />
                       <entry key="AURADEFINITIONBUNDLE:SERVICECLOUD_FLOWINPUTFIELD" value="1674823830000" />
+                      <entry key="COMPACTLAYOUT:NON_ERP_PRODUCTS__C.NON_ERP_PRODUCT_COMPACT_LAYOUT" value="1706094541000" />
                       <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.ADDITIONAL_NAME__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.ASSIGNMENTRULECODES__C" value="1706094541000" />
                       <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.CATCH_PHRASE__C" value="1699613749000" />
                       <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.COMPETITOR_PRODUCT__C" value="1699613749000" />
                       <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.COUNTRIES__C" value="1699613749000" />
@@ -18252,7 +18280,7 @@
                       <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.MANUFACTURER__C" value="1699613749000" />
                       <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.MARKET__C" value="1699613749000" />
                       <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.OLD_PRODUCT_ID__C" value="1699613749000" />
-                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.PRODUCTFAMILY__C" value="1699613749000" />
+                      <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.PRODUCTFAMILY__C" value="1706094541000" />
                       <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.PRODUCTGROUPTEXT__C" value="1699613749000" />
                       <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.PRODUCT_CATEGORY__C" value="1699613749000" />
                       <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.PRODUCT_IMAGE_1__C" value="1699613750000" />
@@ -18678,16 +18706,18 @@
                     <map>
                       <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1706002029669" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1697198113771" />
+                      <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1706176851000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1705655527893" />
-                      <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1705672315494" />
-                      <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1705676039829" />
+                      <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706087844965" />
+                      <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1706190511430" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1702387725302" />
                       <entry key="APEXCLASS:TEST_ACTIVITYSCORECARDCONTROLLER" value="1697197787769" />
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1701198065808" />
+                      <entry key="APEXCLASS:TEST_PRODUCTTRIGGER" value="1706087829144" />
                       <entry key="APEXCLASS:TEST_WORKFLOWPROFILINGCONTROLLER" value="1704806112539" />
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1705655442403" />
-                      <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1705671438066" />
+                      <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1706087849202" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1702998491010" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1701609281507" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGEDIT" value="1701608075510" />
@@ -18830,9 +18860,21 @@
                   <option name="body" value="select Id, NonERPProduct__c, GlobalProductFamily__c from product2 where NonERPProduct__c != null and GlobalProductFamily__c != null and CreatedDate = THIS_WEEK" />
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="select count() from product2 where NonERPProduct__c != null and GlobalProductFamily__c != null" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="SOQL Query 2" />
+                </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="SELECT Id, AssignmentRuleCodes__c, ProductFamily__c&#10;FROM Non_ERP_Products__c&#10;WHERE AssignmentRuleCodes__c != null" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="SOQL Query 3" />
+                </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="1" />
+            <option name="selectedSavedDocumentIndex" value="2" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -18860,6 +18902,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Apex Unit Tests.Test_ProductTrigger.executor&quot;: &quot;Run&quot;,
     &quot;Apex Unit Tests.Test_WorkflowProfilingController.executor&quot;: &quot;Run&quot;,
     &quot;Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -18885,8 +18928,8 @@
       <recent name="$PROJECT_DIR$/src/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId">
-    <configuration name="Test_AccountFlagsController.testGetAccountFlagsJSON" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+  <component name="RunManager" selected="Apex Unit Tests.Test_ProductTrigger">
+    <configuration name="Test_ProductTrigger" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
@@ -18902,7 +18945,7 @@
           <entry key="Dentsply">
             <value>
               <set>
-                <option value="Test_AccountFlagsController" />
+                <option value="Test_ProductTrigger" />
               </set>
             </value>
           </entry>
@@ -18916,15 +18959,7 @@
       </option>
       <option name="systemLogLevel" value="DEBUG" />
       <option name="testClassToTestMethodNames">
-        <map>
-          <entry key="Test_AccountFlagsController">
-            <value>
-              <set>
-                <option value="testGetAccountFlagsJSON" />
-              </set>
-            </value>
-          </entry>
-        </map>
+        <map />
       </option>
       <option name="testSuiteName" />
       <option name="validationLogLevel" value="INFO" />
@@ -19115,6 +19150,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Apex Unit Tests.Test_ProductTrigger" />
         <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId" />
         <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController" />
       </list>
@@ -19230,7 +19266,8 @@
       <workItem from="1705670781809" duration="13000" />
       <workItem from="1705670887993" duration="336000" />
       <workItem from="1705671294077" duration="943000" />
-      <workItem from="1705672385841" duration="4906000" />
+      <workItem from="1705672385841" duration="21471000" />
+      <workItem from="1706415883564" duration="142000" />
     </task>
     <servers />
   </component>
@@ -19249,8 +19286,8 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Dentsply$Test_WorkflowProfilingController_testGetProductFamilyListByWorkflowId.ic2" NAME="acc360 Coverage Results" MODIFIED="1704806118057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="acc360" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ES_FreezeUserHandler_testHandleInboundEmail.ic2" NAME="Freeze Coverage Results" MODIFIED="1684228757679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_ProductTrigger.ic2" NAME="acc360 Coverage Results" MODIFIED="1706087720675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="acc360" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMargins.ic2" NAME="Margin Coverage Results" MODIFIED="1677067029631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />

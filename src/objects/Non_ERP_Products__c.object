@@ -141,7 +141,15 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>Non_ERP_Product_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Non_ERP_Product_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>ProductFamily__c</fields>
+        <fields>Competitor_Product__c</fields>
+        <fields>Inactive__c</fields>
+        <label>Non-ERP Product Compact Layout</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -162,6 +170,17 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>AssignmentRuleCodes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Comma-separated PG4, PG4, PG2 or PG1 codes to be used to identify the Non-ERP Product as well as the Product Family upon inserting a regular DS product.</inlineHelpText>
+        <label>Assignment Rule Codes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Catch_Phrase__c</fullName>

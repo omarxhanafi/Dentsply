@@ -3,9 +3,18 @@
  * Description       : Product trigger helper
  * Test class        : Test_ProductTriggerHelper
  * History	
- * 17-01-2023         Created ProductTriggerHelper class (TFUS-000006278)
+ * 17-01-2024         Created ProductTriggerHelper class (TFUS-000006278)
 --------------------------------------------------------------------------------------------------*/
 public with sharing class ProductTriggerHelper {
+
+    /**
+     * assignNonERPProduct Assigns a Non ERP Product and Product Family to the provided list of Products
+     * @author ohanafi@salesforce.com | 17-01-2024
+     *
+     * @param oldProductMap   Map of old products
+     * @param newProductList   List of new products
+     *
+     */
     public static void assignNonERPProduct(Map<Id, Product2> oldProductMap, List<Product2> newProductList) {
         // Query all Non ERP Products that have a non-null AssignmentRuleCodes__c
         List<Non_ERP_Products__c> nonErpProducts = [
@@ -17,7 +26,7 @@ public with sharing class ProductTriggerHelper {
         // Create a map to associate codes with Non ERP Products
         Map<String, Non_ERP_Products__c> codeToNonErpProductMap = new Map<String, Non_ERP_Products__c>();
         for (Non_ERP_Products__c nonErpProduct : nonErpProducts) {
-            List<String> ruleCodes = nonErpProduct.AssignmentRuleCodes__c.split(';');
+            List<String> ruleCodes = nonErpProduct.AssignmentRuleCodes__c.split(',');
             for (String code : ruleCodes) {
                 codeToNonErpProductMap.put(code, nonErpProduct);
             }
@@ -38,6 +47,9 @@ public with sharing class ProductTriggerHelper {
                     }
                 }
             }
+
+            System.debug('Should process ' + shouldProcess);
+
 
             // We check the PG codes by order
             if (shouldProcess) {
