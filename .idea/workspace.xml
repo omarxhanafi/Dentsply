@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/BatchUpdateProducts.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/BatchUpdateProducts.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Test_ProductTrigger.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Test_ProductTrigger.cls-meta.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/7/977866406bc1159ac8b5c64e60a0d12e6c0b7773" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/e/de9cc9e83ac53b03d331c74c7fe4b8a665cacd4d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/f/df1a39c7f853529e4b4cfb4c324c3bb83455b808" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductTriggerHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHandler.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/Non_ERP_Products__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Non_ERP_Products__c.object" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/triggers/ProductTrigger.trigger" beforeDir="false" afterPath="$PROJECT_DIR$/src/triggers/ProductTrigger.trigger" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,18 +66,38 @@
                   <option name="name" value="Anonymous Apex 5" />
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
+                  <option name="apexLogLevel" value="FINEST" />
                   <option name="body" value="Set&lt;String&gt; pg1Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg2Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg3Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg4Codes = new Set&lt;String&gt;();&#10;&#10;List&lt;Non_ERP_Products__c&gt; nonErpProducts = [&#10;        SELECT Id, AssignmentRuleCodes__c&#10;        FROM Non_ERP_Products__c&#10;        WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE&#10;];&#10;&#10;Set&lt;String&gt; pgCodes = new Set&lt;String&gt;();&#10;&#10;for (Non_ERP_Products__c product : nonErpProducts) {&#10;    if (product.AssignmentRuleCodes__c != null &amp;&amp; product.AssignmentRuleCodes__c != '') {&#10;        pgCodes.addAll(product.AssignmentRuleCodes__c.split(','));&#10;    }&#10;}&#10;&#10;for(String eachPgCode : pgCodes){&#10;    if(eachPgCode.length() == 3){&#10;        pg1Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 4){&#10;        pg2Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 5){&#10;        pg3Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 6){&#10;        pg4Codes.add(eachPgCode);&#10;    }&#10;}&#10;&#10;System.debug('PG1 Count: ' + pg1Codes.size());&#10;System.debug('PG2 Count: ' + pg2Codes.size());&#10;System.debug('PG3 Count: ' + pg3Codes.size());&#10;System.debug('PG4 Count: ' + pg4Codes.size());&#10;&#10;System.debug('PG1 Codes: ' + pg1Codes);&#10;System.debug('PG2 Codes: ' + pg2Codes);&#10;System.debug('PG3 Codes: ' + pg3Codes);&#10;System.debug('PG4 Codes: ' + pg4Codes);&#10;&#10;BatchUpdateProducts batch = new BatchUpdateProducts(pg1Codes, pg2Codes, pg3Codes, pg4Codes);&#10;Database.executeBatch(batch, 5000);&#10;" />
+                  <option name="calloutsLogLevel" value="FINEST" />
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
+                  <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 1" />
+                  <option name="nbaLogLevel" value="FINEST" />
+                  <option name="profilingLogLevel" value="FINEST" />
                   <option name="splitterProportion" value="0.4481044" />
+                  <option name="systemLogLevel" value="FINEST" />
+                  <option name="validationLogLevel" value="FINEST" />
+                  <option name="visualforceLogLevel" value="FINEST" />
+                  <option name="waveLogLevel" value="FINEST" />
+                  <option name="workflowLogLevel" value="FINEST" />
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
+                  <option name="apexLogLevel" value="FINEST" />
                   <option name="body" value="List&lt;Non_ERP_Products__c&gt; nonErpProducts = [&#10;        SELECT Id, AssignmentRuleCodes__c, Details__c&#10;        FROM Non_ERP_Products__c&#10;        WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE&#10;];&#10;&#10;for (Non_ERP_Products__c product : nonErpProducts) {&#10;    String details = product.Details__c.trim();&#10;&#10;    if (details.contains('PG1:')) {&#10;        product.AssignmentRuleCodes__c = details.substringAfter('PG1:').replaceAll('\\s+', '');&#10;    }&#10;&#10;    if (details.contains('PG2:')) {&#10;        product.AssignmentRuleCodes__c = details.substringAfter('PG2:').replaceAll('\\s+', '');&#10;    }&#10;&#10;    if (details.contains('PG3:')) {&#10;        product.AssignmentRuleCodes__c = details.substringAfter('PG3:').replaceAll('\\s+', '');&#10;    }&#10;&#10;    if (details.contains('PG4:')) {&#10;        product.AssignmentRuleCodes__c = details.substringAfter('PG4:').replaceAll('\\s+', '');&#10;    }&#10;}&#10;&#10;update nonErpProducts;" />
+                  <option name="calloutsLogLevel" value="FINEST" />
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
+                  <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 2" />
+                  <option name="nbaLogLevel" value="FINEST" />
+                  <option name="profilingLogLevel" value="FINEST" />
                   <option name="splitterProportion" value="0.46985707" />
+                  <option name="systemLogLevel" value="FINEST" />
+                  <option name="validationLogLevel" value="FINEST" />
+                  <option name="visualforceLogLevel" value="FINEST" />
+                  <option name="waveLogLevel" value="FINEST" />
+                  <option name="workflowLogLevel" value="FINEST" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
@@ -102,8 +111,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1706191066545" />
-                  <option name="numUsages" value="80" />
+                  <option name="lastUsed" value="1706524142323" />
+                  <option name="numUsages" value="89" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
@@ -18245,7 +18254,7 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1706002353943" />
-                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1699614336006" />
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1706524148866" />
                       <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1706176876000" />
                       <entry key="APEXCLASS:CAMPAIGNMEMBERTRIGGERHELPER" value="1668005778242" />
                       <entry key="APEXCLASS:CHANGEOWNER" value="1669800166407" />
@@ -18705,7 +18714,7 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1706002029669" />
-                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1697198113771" />
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1706524139542" />
                       <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1706176851000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1705655527893" />
@@ -18872,9 +18881,15 @@
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 3" />
                 </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="SELECT Id, Subject, ActivityDate&#10;FROM Task&#10;WHERE (WhatId = '0010J00001rE6bcQAC' or AccountId = '0010J00001rE6bcQAC')&#10;AND TaskSubtype = 'Call'&#10;AND ActivityDate = LAST_N_DAYS:365" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="SOQL Query 5" />
+                </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="2" />
+            <option name="selectedSavedDocumentIndex" value="4" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -19267,7 +19282,7 @@
       <workItem from="1705670887993" duration="336000" />
       <workItem from="1705671294077" duration="943000" />
       <workItem from="1705672385841" duration="21471000" />
-      <workItem from="1706415883564" duration="142000" />
+      <workItem from="1706415883564" duration="2249000" />
     </task>
     <servers />
   </component>

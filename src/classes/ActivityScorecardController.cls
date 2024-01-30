@@ -24,7 +24,7 @@ public class ActivityScorecardController {
         List<Event> events = [
                 SELECT ActivityDate
                 FROM Event
-                WHERE WhatId = :accountId
+                WHERE (WhatId = :accountId OR AccountId = :accountId)
                 ORDER BY ActivityDate ASC
                 LIMIT 1
         ];
@@ -40,7 +40,7 @@ public class ActivityScorecardController {
         Integer futureEventsCount = [
                 SELECT COUNT()
                 FROM Event
-                WHERE WhatId = :accountId
+                WHERE (WhatId = :accountId OR AccountId = :accountId)
                 AND ActivityDate > TODAY
         ];
 
@@ -48,7 +48,7 @@ public class ActivityScorecardController {
         Integer completedTasksCount = [
                 SELECT COUNT()
                 FROM Task
-                WHERE WhatId = :accountId
+                WHERE (WhatId = :accountId OR AccountId = :accountId)
                 AND IsClosed = true
                 AND TaskSubtype <> 'Call'
                 AND Type <> 'Email'
@@ -59,7 +59,7 @@ public class ActivityScorecardController {
         Integer callsLoggedCount = [
                 SELECT COUNT()
                 FROM Task
-                WHERE WhatId = :accountId
+                WHERE (WhatId = :accountId OR AccountId = :accountId)
                 AND TaskSubtype = 'Call'
                 AND ActivityDate = LAST_N_DAYS:365
         ];
@@ -68,7 +68,7 @@ public class ActivityScorecardController {
         Integer emailsSentCount = [
                 SELECT COUNT()
                 FROM Task
-                WHERE WhatId = :accountId
+                WHERE (WhatId = :accountId OR AccountId = :accountId)
                 AND Type = 'Email'
                 AND ActivityDate = LAST_N_DAYS:365
         ];
@@ -77,7 +77,7 @@ public class ActivityScorecardController {
         Integer eventsLoggedCount = [
                 SELECT COUNT()
                 FROM Event
-                WHERE WhatId = :accountId
+                WHERE (WhatId = :accountId OR AccountId = :accountId)
                 AND ActivityDate = LAST_N_DAYS:365
         ];
 
