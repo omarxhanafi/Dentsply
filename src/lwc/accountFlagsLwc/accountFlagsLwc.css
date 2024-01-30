@@ -41,3 +41,8 @@
 .flag-table td {
     padding-bottom: 10px;
 }
+
+.flag-value {
+    font-size: 12px;
+    font-style: italic;
+}

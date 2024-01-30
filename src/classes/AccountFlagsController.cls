@@ -64,18 +64,18 @@ public with sharing class AccountFlagsController {
             Map<String, AccountFlag> expiredResults = getContractFlags(expiredContracts, false);
 
             // If no DS Core results were found from the active contracts, we get the expired results
-            if(results.get('dsCoreAccess').value == 0 && results.get('dsCoreLight').value == 0 && results.get('dsCoreStandard').value == 0 && results.get('dsCoreAdvanced').value == 0){
+            if(results.get('dsCoreAccess').level == 0 && results.get('dsCoreLight').level == 0 && results.get('dsCoreStandard').level == 0 && results.get('dsCoreAdvanced').level == 0){
                 results.put('dsCoreAccess', expiredResults.get('dsCoreAccess'));
                 results.put('dsCoreLight', expiredResults.get('dsCoreLight'));
                 results.put('dsCoreStandard', expiredResults.get('dsCoreStandard'));
                 results.put('dsCoreAdvanced', expiredResults.get('dsCoreAdvanced'));
             }
 
-            if(results.get('dsCoreCare').value == 0){
+            if(results.get('dsCoreCare').level == 0){
                 results.put('dsCoreCare', expiredResults.get('dsCoreCare'));
             }
 
-            if(results.get('dsCoreLab').value == 0){
+            if(results.get('dsCoreLab').level == 0){
                 results.put('dsCoreLab', expiredResults.get('dsCoreLab'));
             }
 
@@ -85,7 +85,7 @@ public with sharing class AccountFlagsController {
 
         // Retrieve source records  related to the account
         List<Source_Record__c> sourceRecordsList = [
-                SELECT Name, Status__c, Customer_Id__c, Source_Id__c, SearchInfo__c, Company_Code__c, SuresmileAlignerPlatform__c, Atlantis_Web_Order_Customer__c
+                SELECT Name, Status__c, Customer_Id__c, Source_Id__c, SearchInfo__c, Company_Code__c, SuresmileAlignerPlatform__c, SuresmileOrthoPlatform__c, SuresmileAdvancedPlatform__c, Atlantis_Web_Order_Customer__c
                 FROM Source_Record__c
                 WHERE CIM_Account__c = :accountId
         ];
@@ -113,7 +113,7 @@ public with sharing class AccountFlagsController {
             for(String key : inactiveResults.keySet()){
                 if(new List<String>{'customerNumber', 'dsCom', 'sureSmile', 'awo'}.contains(key)){
                     // If the flags related to the active source records are empty, we get the flag value from the inactive ones
-                    if(results.get(key).value == 0){
+                    if(results.get(key).level == 0){
                         results.put(key, inactiveResults.get(key));
                     }
                 }
@@ -193,8 +193,13 @@ public with sharing class AccountFlagsController {
                 }
             }
 
-            if(eachSourceRecord.SuresmileAlignerPlatform__c == true){
-                sureSmile = new AccountFlag(isActive ? 1 : 2, eachSourceRecord.Id);
+            // Check the Suresmile platform fields
+            if (eachSourceRecord.SuresmileAdvancedPlatform__c == true) {
+                sureSmile = new AccountFlag(isActive ? 1 : 2, eachSourceRecord.Id, 'Advanced');
+            } else if (eachSourceRecord.SuresmileOrthoPlatform__c == true && (sureSmile.value != 'Advanced' || sureSmile.level == 0)) {
+                sureSmile = new AccountFlag(isActive ? 1 : 2, eachSourceRecord.Id, 'Ortho');
+            } else if (eachSourceRecord.SuresmileAlignerPlatform__c == true && (sureSmile.level == 0)) {
+                sureSmile = new AccountFlag(isActive ? 1 : 2, eachSourceRecord.Id, 'Aligner');
             }
 
             if(eachSourceRecord.Atlantis_Web_Order_Customer__c != null){
@@ -292,12 +297,12 @@ public with sharing class AccountFlagsController {
                 Integer tempDsCoreLab = eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.GPP_Code__c == 'DL' ? (isActive ? 1 : 2) : 0;
 
                 // We compare the current flag value with the previous one
-                dsCoreAccess = (tempDsCoreAccess > dsCoreAccess.value) ? new AccountFlag(tempDsCoreAccess, eachLineItem.Id) : dsCoreAccess;
-                dsCoreLight = (tempDsCoreLight > dsCoreLight.value) ? new AccountFlag(tempDsCoreLight, eachLineItem.Id) : dsCoreLight;
-                dsCoreStandard = (tempDsCoreStandard > dsCoreStandard.value) ? new AccountFlag(tempDsCoreStandard, eachLineItem.Id) : dsCoreStandard;
-                dsCoreAdvanced = (tempDsCoreAdvanced > dsCoreAdvanced.value) ? new AccountFlag(tempDsCoreAdvanced, eachLineItem.Id) : dsCoreAdvanced;
-                dsCoreCare = (tempDsCoreCare > dsCoreCare.value) ? new AccountFlag(tempDsCoreCare, eachLineItem.Id) : dsCoreCare;
-                dsCoreLab = (tempDsCoreLab > dsCoreLab.value) ? new AccountFlag(tempDsCoreLab, eachLineItem.Id) : dsCoreLab;
+                dsCoreAccess = (tempDsCoreAccess > dsCoreAccess.level) ? new AccountFlag(tempDsCoreAccess, eachLineItem.Id) : dsCoreAccess;
+                dsCoreLight = (tempDsCoreLight > dsCoreLight.level) ? new AccountFlag(tempDsCoreLight, eachLineItem.Id) : dsCoreLight;
+                dsCoreStandard = (tempDsCoreStandard > dsCoreStandard.level) ? new AccountFlag(tempDsCoreStandard, eachLineItem.Id) : dsCoreStandard;
+                dsCoreAdvanced = (tempDsCoreAdvanced > dsCoreAdvanced.level) ? new AccountFlag(tempDsCoreAdvanced, eachLineItem.Id) : dsCoreAdvanced;
+                dsCoreCare = (tempDsCoreCare > dsCoreCare.level) ? new AccountFlag(tempDsCoreCare, eachLineItem.Id) : dsCoreCare;
+                dsCoreLab = (tempDsCoreLab > dsCoreLab.level) ? new AccountFlag(tempDsCoreLab, eachLineItem.Id) : dsCoreLab;
 
                 System.debug('dsCoreAccess : ' + dsCoreAccess);
             }
@@ -317,23 +322,23 @@ public with sharing class AccountFlagsController {
 
     // Wrapper class for flag data
     public class AccountFlag {
-        // Value of the flag (0, 1, 2)
-        @AuraEnabled public Integer value;
+        // Flag level (0, 1, 2)
+        @AuraEnabled public Integer level;
 
         // Id of the Contract Line Item, Contract or Source Record
         @AuraEnabled public String itemId;
 
         // Customer number (optional)
-        @AuraEnabled public String customerNumber;
+        @AuraEnabled public String value;
 
-        public AccountFlag(Integer value, String itemId, String customerNumber) {
-            this.value = value;
+        public AccountFlag(Integer level, String itemId, String value) {
+            this.level = level;
             this.itemId = itemId;
-            this.customerNumber = customerNumber;
+            this.value = value;
         }
 
-        public AccountFlag(Integer value, String itemId) {
-            this.value = value;
+        public AccountFlag(Integer level, String itemId) {
+            this.level = level;
             this.itemId = itemId;
         }
     }

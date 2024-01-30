@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18713,7 +18719,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1706002029669" />
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1706609834678" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1706524139542" />
                       <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1706176851000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
@@ -18749,11 +18755,11 @@
                       <entry key="CUSTOMOBJECT:WORKFLOWPROFILING__C" value="1695383392000" />
                       <entry key="CUSTOMOBJECT:WORKFLOW__C" value="1695383392000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTCONTAINERLWC" value="1689951225892" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1706010872000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1706615030531" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1705566719229" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:POPOVERRECORDINFO" value="1704301044075" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1706002508653" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1706613629203" />
                       <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1695383392000" />
                       <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1695383392000" />
                       <entry key="STATICRESOURCE:SLIDERS" value="1703066996000" />
@@ -19282,7 +19288,7 @@
       <workItem from="1705670887993" duration="336000" />
       <workItem from="1705671294077" duration="943000" />
       <workItem from="1705672385841" duration="21471000" />
-      <workItem from="1706415883564" duration="2249000" />
+      <workItem from="1706415883564" duration="6857000" />
     </task>
     <servers />
   </component>

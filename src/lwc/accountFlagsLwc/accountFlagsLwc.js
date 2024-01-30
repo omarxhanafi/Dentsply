@@ -1,4 +1,4 @@
-import { LightningElement, api, wire } from 'lwc';
+import { LightningElement, api, wire, track } from 'lwc';
 import getAccountFlagsJSON from '@salesforce/apex/AccountFlagsController.getAccountFlagsJSON';
 import {NavigationMixin} from "lightning/navigation";
 import HEADER from '@salesforce/label/c.AccountFlagsHeader';
@@ -16,14 +16,18 @@ import AWO from '@salesforce/label/c.AccountFlagsAWO';
 import DS_COM from '@salesforce/label/c.AccountFlagsDSCom';
 import CEREC_CLUB from '@salesforce/label/c.AccountFlagsCerecClub';
 import SIRO_FORCE from '@salesforce/label/c.AccountFlagsSiroForce';
+import FORM_FACTOR from '@salesforce/client/formFactor';
+
 
 export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
 
     @api recordId;
+    @track isMobile = FORM_FACTOR === 'Small';
 
     accountFlagsResult;
 
     customerNumber;
+    sureSmileType;
 
     showAccess = false;
     showLight = false;
@@ -82,52 +86,53 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
             console.log("this.accountFlagsResult", this.accountFlagsResult);
 
             // We only show the customer number if the flag is green, otherwise we only show the flag
-            if(this.accountFlagsResult?.customerNumber?.itemId != null && this.accountFlagsResult?.customerNumber?.value == 1){
-                this.customerNumber = this.accountFlagsResult?.customerNumber?.customerNumber;
+            if(this.accountFlagsResult?.customerNumber?.itemId != null && this.accountFlagsResult?.customerNumber?.level == 1){
+                this.customerNumber = this.accountFlagsResult?.customerNumber?.value;
                 this.customerNumberId = this.accountFlagsResult?.customerNumber?.itemId;
             }
 
-            if(this.accountFlagsResult?.dsCoreAdvanced?.value > 0){
+            if(this.accountFlagsResult?.dsCoreAdvanced?.level > 0){
                 this.showAdvanced = true;
                 this.dsCoreAdvancedId = this.accountFlagsResult?.dsCoreAdvanced?.itemId;
-            } else if (this.accountFlagsResult?.dsCoreStandard?.value > 0){
+            } else if (this.accountFlagsResult?.dsCoreStandard?.level > 0){
                 this.showStandard = true;
                 this.dsCoreStandardId = this.accountFlagsResult?.dsCoreStandard?.itemId;
-            } else if (this.accountFlagsResult?.dsCoreLight?.value > 0) {
+            } else if (this.accountFlagsResult?.dsCoreLight?.level > 0) {
                 this.showLight = true;
                 this.dsCoreLightId = this.accountFlagsResult?.dsCoreLight?.itemId;
-            } else if (this.accountFlagsResult?.dsCoreAccess?.value > 0) {
+            } else if (this.accountFlagsResult?.dsCoreAccess?.level > 0) {
                 this.showAccess = true;
                 this.dsCoreAccessId = this.accountFlagsResult?.dsCoreAccess?.itemId;
             } else {
                 this.showDSCoreInactive = true;
             }
 
-            if(this.accountFlagsResult?.dsCoreLab?.value > 0){
+            if(this.accountFlagsResult?.dsCoreLab?.level > 0){
                 this.dsCoreLabId = this.accountFlagsResult?.dsCoreLab?.itemId;
             }
 
-            if(this.accountFlagsResult?.dsCoreCare?.value > 0){
+            if(this.accountFlagsResult?.dsCoreCare?.level > 0){
                 this.dsCoreCareId = this.accountFlagsResult?.dsCoreCare?.itemId;
             }
 
-            if(this.accountFlagsResult?.cerecClub?.value > 0){
+            if(this.accountFlagsResult?.cerecClub?.level > 0){
                 this.cerecClubId = this.accountFlagsResult?.cerecClub?.itemId;
             }
 
-            if(this.accountFlagsResult?.dsCom?.value > 0){
+            if(this.accountFlagsResult?.dsCom?.level > 0){
                 this.dsComId = this.accountFlagsResult?.dsCom?.itemId;
             }
 
-            if(this.accountFlagsResult?.sureSmile?.value > 0){
+            if(this.accountFlagsResult?.sureSmile?.level > 0){
+                this.sureSmileType = this.accountFlagsResult?.sureSmile?.value;
                 this.sureSmileId = this.accountFlagsResult?.sureSmile?.itemId;
             }
 
-            if(this.accountFlagsResult?.awo?.value > 0){
+            if(this.accountFlagsResult?.awo?.level > 0){
                 this.awoId = this.accountFlagsResult?.awo?.itemId;
             }
 
-            if(this.accountFlagsResult?.awo?.value > 0){
+            if(this.accountFlagsResult?.awo?.level > 0){
                 this.siroForceId = this.accountFlagsResult?.siroForce?.itemId;
             }
 
@@ -137,55 +142,55 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
     }
 
     get kolClass() {
-        return this.getFlag(this.accountFlagsResult?.kol?.value);
+        return this.getFlag(this.accountFlagsResult?.kol?.level);
     }
 
     get customerNumberClass() {
-        return this.getFlag(this.accountFlagsResult?.customerNumber?.value);
+        return this.getFlag(this.accountFlagsResult?.customerNumber?.level);
     }
 
     get dsCoreAccessClass() {
-        return this.getFlag(this.accountFlagsResult?.dsCoreAccess?.value);
+        return this.getFlag(this.accountFlagsResult?.dsCoreAccess?.level);
     }
 
     get dsCoreLightClass() {
-        return this.getFlag(this.accountFlagsResult?.dsCoreLight?.value);
+        return this.getFlag(this.accountFlagsResult?.dsCoreLight?.level);
     }
 
     get dsCoreStandardClass() {
-        return this.getFlag(this.accountFlagsResult?.dsCoreStandard?.value);
+        return this.getFlag(this.accountFlagsResult?.dsCoreStandard?.level);
     }
 
     get dsCoreAdvancedClass() {
-        return this.getFlag(this.accountFlagsResult?.dsCoreAdvanced?.value);
+        return this.getFlag(this.accountFlagsResult?.dsCoreAdvanced?.level);
     }
 
     get dsCoreLabClass() {
-        return this.getFlag(this.accountFlagsResult?.dsCoreLab?.value);
+        return this.getFlag(this.accountFlagsResult?.dsCoreLab?.level);
     }
 
     get dsCoreCareClass() {
-        return this.getFlag(this.accountFlagsResult?.dsCoreCare?.value);
+        return this.getFlag(this.accountFlagsResult?.dsCoreCare?.level);
     }
 
     get cerecClubClass() {
-        return this.getFlag(this.accountFlagsResult?.cerecClub?.value);
+        return this.getFlag(this.accountFlagsResult?.cerecClub?.level);
     }
 
     get dsComCLass() {
-        return this.getFlag(this.accountFlagsResult?.dsCom?.value);
+        return this.getFlag(this.accountFlagsResult?.dsCom?.level);
     }
 
     get sureSmileClass() {
-        return this.getFlag(this.accountFlagsResult?.sureSmile?.value);
+        return this.getFlag(this.accountFlagsResult?.sureSmile?.level);
     }
 
     get awoClass() {
-        return this.getFlag(this.accountFlagsResult?.awo?.value);
+        return this.getFlag(this.accountFlagsResult?.awo?.level);
     }
 
     get siroForceClass() {
-        return this.getFlag(this.accountFlagsResult?.siroForce?.value);
+        return this.getFlag(this.accountFlagsResult?.siroForce?.level);
     }
 
     getFlag(flagValue){

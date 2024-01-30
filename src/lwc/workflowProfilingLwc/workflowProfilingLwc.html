@@ -1,11 +1,11 @@
 <template>
     <template if:true={workflowsList}>
         <div class="slds-box slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
-            <div class="slds-grid slds-grid_align-spread slds-p-around_x-small slds-p-horizontal_medium">
-                <h2 class="slds-card__header-title">{labels.WPHeader}</h2>
-                <lightning-helptext content={labels.WPHelpText}></lightning-helptext>
-            </div>
             <lightning-card variant="Narrow">
+                <div class="slds-grid slds-grid_align-spread slds-p-around_x-small slds-p-horizontal_medium">
+                    <h2 class="slds-card__header-title">{labels.WPHeader}</h2>
+                    <lightning-helptext content={labels.WPHelpText}></lightning-helptext>
+                </div>
                 <table class="workflow-table">
                     <tbody>
                     <template for:each={workflowsList} for:item="eachWorkflow">
