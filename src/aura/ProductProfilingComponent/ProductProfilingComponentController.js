@@ -339,12 +339,35 @@ init: function (cmp, event, helper) {
 	Description:   	Method to expand & refresh / collapse all rows
 	-----------------------------------------------------------------*/
     toggleCollapseAll : function(cmp, event, helper){
-        var treeGridCmp = cmp.find('mytree');
+        var formFactor = cmp.get("v.formFactor");
 
-        if(treeGridCmp.getCurrentExpandedRows().length > 0){
-            treeGridCmp.collapseAll();
+        if (formFactor === 'DESKTOP') {
+            // Handle desktop tree grid collapse/expand
+            var treeGridCmp = cmp.find('mytree');
+
+            if(treeGridCmp.getCurrentExpandedRows().length > 0){
+                treeGridCmp.collapseAll();
+            } else {
+                $A.enqueueAction(cmp.get('c.init'));
+            }
         } else {
-            $A.enqueueAction(cmp.get('c.init'));
+            var accordion = cmp.find('myaccordion');
+            if (accordion) {
+                var sections = accordion.get('v.activeSectionName');
+
+                if (sections && sections.length > 0) {
+                    // If there are active sections, collapse all
+                    accordion.set('v.activeSectionName', []);
+                } else {
+                    // If all sections are collapsed, expand all
+                    var expandedSections = [];
+                    var gridWrapperFilteredData = cmp.get("v.gridWrapperFilteredData");
+                    gridWrapperFilteredData.forEach(function(currentProduct) {
+                        expandedSections.push(currentProduct.nodeName);
+                    });
+                    accordion.set('v.activeSectionName', expandedSections);
+                }
+            }
         }
     }
     

@@ -80,7 +80,7 @@ Description:   	Component to show Product Profiling records (in a Hierarchy wher
     <aura:set attribute="else">
  
 	<div class="slds-size_1-of-1">
-        <lightning:accordion allowMultipleSectionsOpen="true">
+        <lightning:accordion allowMultipleSectionsOpen="true" aura:id="myaccordion">
         	<aura:iteration items="{!v.gridWrapperFilteredData }" var="currentProduct">
         		<lightning:accordionSection name="{!currentProduct.nodeName}" label="{!currentProduct.nodeName}">
                 	<aura:set attribute="body">

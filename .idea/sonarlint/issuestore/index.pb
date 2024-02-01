@@ -73,18 +73,12 @@ S
 #src/triggers/ContactTrigger.trigger,f/2/f2eca984ff1b89ad3dc9ecc7a3f3e2b43bd0d79c
 U
 %src/classes/ContactTriggerHandler.cls,4/f/4f3e7eb78112c8442d4f62d3c5b978ff4527aba9
-s
-Csrc/aura/ProductProfilingComponent/ProductProfilingComponent.design,4/b/4b10c927324dd59a665dfa77169de87f96ee2333
-p
-@src/aura/ProductProfilingComponent/ProductProfilingComponent.css,2/f/2ff675275bd3b4ef20c5ec199a33b7d93ec722bb
 h
 8src/classes/Test_ProductProfilingHierarchyController.cls,e/f/ef36f38c52a067c1ad114b21aa1e28fb54932713
 o
 ?src/aura/ProductProfilingDetails/ProductProfilingDetails.design,b/3/b3731ae3bc68549aa8e1dd9c05021a306de3b4e8
 o
 ?src/aura/ProductProfilingEdit/ProductProfilingEditController.js,9/b/9bf12b6e3c7c3203ffaf4222c2903b4b0aa98ca8
-u
-Esrc/aura/ProductProfilingDetails/ProductProfilingDetailsController.js,6/9/69eb05a5724d642e1c1e2462221fb856d9753978
 l
 <src/aura/ProductProfilingDetails/ProductProfilingDetails.cmp,2/8/2896ffe9c932642d1ea44ad50465d37c5f6d9934
 f
@@ -99,7 +93,5 @@ m
 -src/staticresources/Sliders.resource-meta.xml,6/5/65a73b4e08f61d9be9251c045e0456a32e127b12
 T
 $src/staticresources/Sliders.resource,e/0/e0e49b53e23da83a21b0e8a4e49cca909375258b
-W
-'src/objects/Product_Profiling__c.object,7/3/737d109aaf27941e04a60fff74496913c6445f1f
 `
 0src/lwc/popoverRecordInfo/popoverRecordInfo.html,9/d/9dc46076a5c4bcf57c7046ad0e600d3c5b67f930
