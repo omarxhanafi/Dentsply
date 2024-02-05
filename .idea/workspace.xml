@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/f/2ff675275bd3b4ef20c5ec199a33b7d93ec722bb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4b10c927324dd59a665dfa77169de87f96ee2333" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/9/69eb05a5724d642e1c1e2462221fb856d9753978" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/737d109aaf27941e04a60fff74496913c6445f1f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/3/737d109aaf27941e04a60fff74496913c6445f1f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHandler.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHandler.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHelper.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHelper.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/triggers/ProductProfilingTrigger.trigger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/triggers/ProductProfilingTrigger.trigger-meta.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponent.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponent.cmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls-meta.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,8 +117,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1706794804674" />
-                  <option name="numUsages" value="93" />
+                  <option name="lastUsed" value="1707124655852" />
+                  <option name="numUsages" value="94" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
@@ -18351,7 +18349,7 @@
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:LEADMATCHCONTACTHANDLING" value="1666275637000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:SELECTPRODUCTSOMLWC" value="1666187952046" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1699614946000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1705999851000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1707124658000" />
                       <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.ALL" value="1699613750000" />
                       <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.AT" value="1699613750000" />
                       <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.CH" value="1699613750000" />
@@ -18727,6 +18725,8 @@
                       <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1706176851000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1705655527893" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1706891579000" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1706893508210" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706087844965" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1706190511430" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1702387725302" />
@@ -18735,6 +18735,7 @@
                       <entry key="APEXCLASS:TEST_PRODUCTTRIGGER" value="1706087829144" />
                       <entry key="APEXCLASS:TEST_WORKFLOWPROFILINGCONTROLLER" value="1704806112539" />
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1705655442403" />
+                      <entry key="APEXTRIGGER:PRODUCTPROFILINGTRIGGER" value="1706891602398" />
                       <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1706087849202" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1706794234238" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1701609281507" />
@@ -18859,7 +18860,7 @@
         </option>
         <option name="logAnalyzerSettings">
           <LogAnalyzerSettings>
-            <option name="splitterProportion" value="0.50476193" />
+            <option name="splitterProportion" value="0.51522845" />
           </LogAnalyzerSettings>
         </option>
         <option name="retrieveAndMergeDefault" value="false" />
@@ -19296,7 +19297,7 @@
       <workItem from="1705671294077" duration="943000" />
       <workItem from="1705672385841" duration="21471000" />
       <workItem from="1706415883564" duration="8478000" />
-      <workItem from="1706776694092" duration="3020000" />
+      <workItem from="1706776694092" duration="9050000" />
     </task>
     <servers />
   </component>
