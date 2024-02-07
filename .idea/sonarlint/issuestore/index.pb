@@ -77,8 +77,6 @@ h
 8src/classes/Test_ProductProfilingHierarchyController.cls,e/f/ef36f38c52a067c1ad114b21aa1e28fb54932713
 o
 ?src/aura/ProductProfilingDetails/ProductProfilingDetails.design,b/3/b3731ae3bc68549aa8e1dd9c05021a306de3b4e8
-o
-?src/aura/ProductProfilingEdit/ProductProfilingEditController.js,9/b/9bf12b6e3c7c3203ffaf4222c2903b4b0aa98ca8
 l
 <src/aura/ProductProfilingDetails/ProductProfilingDetails.cmp,2/8/2896ffe9c932642d1ea44ad50465d37c5f6d9934
 f

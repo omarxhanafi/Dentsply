@@ -226,14 +226,14 @@
                 cmp.set('v.productProfilingData', productProfilingData);
 
                	//Expand all rows by default in the Desktop version
-               	var formFactor = $A.get("$Browser.formFactor");
-                
-                if(formFactor == 'DESKTOP'){
-                	var tree = cmp.find('mytree');
-                    if(tree){
-        				tree.expandAll();
-                    }    
-                }    
+               	// var formFactor = $A.get("$Browser.formFactor");
+                //
+                // if(formFactor == 'DESKTOP'){
+                // 	var tree = cmp.find('mytree');
+                //     if(tree){
+        		// 		tree.expandAll();
+                //     }
+                // }
            	
             }else if(state === "ERROR"){
                 var error = response.getError();

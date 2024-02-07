@@ -1,27 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionCalls>
-        <name>Nav_to_Account</name>
-        <label>Nav to Account</label>
-        <locationX>1784</locationX>
-        <locationY>342</locationY>
-        <actionName>c:Flow_NavigateToSObject</actionName>
-        <actionType>component</actionType>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>recordId</name>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>objectType</name>
-            <value>
-                <stringValue>Account</stringValue>
-            </value>
-        </inputParameters>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </actionCalls>
     <apiVersion>50.0</apiVersion>
     <assignments>
         <name>Add_product_profiling_record</name>
@@ -110,6 +88,22 @@
             <targetReference>Products_assigned</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Get_Error_Message</name>
+        <label>Get Error Message</label>
+        <locationX>1180</locationX>
+        <locationY>609</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Display_Error_Message</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>ContactDecision</name>
         <label>Contact?</label>
@@ -160,6 +154,9 @@
             <label>Yes</label>
         </rules>
     </decisions>
+    <description>V6 - Refreshing the PP Component instead of reloading the whole page upon the creation of PP records (TFD-000000349)
+V5 - Adding Try Catch and display full error message (TFUS-000005889)</description>
+    <environments>Default</environments>
     <formulas>
         <name>AccountIdFormula</name>
         <dataType>String</dataType>
@@ -209,11 +206,11 @@
     <recordCreates>
         <name>CreateProfilingRecords</name>
         <label>CreateProfilingRecords</label>
-        <locationX>1583</locationX>
-        <locationY>341</locationY>
-        <connector>
-            <targetReference>Nav_to_Account</targetReference>
-        </connector>
+        <locationX>1453</locationX>
+        <locationY>474</locationY>
+        <faultConnector>
+            <targetReference>Get_Error_Message</targetReference>
+        </faultConnector>
         <inputReference>ProductProfilingRecords</inputReference>
     </recordCreates>
     <recordLookups>
@@ -245,8 +242,8 @@
     <screens>
         <name>Assign_product_profiling_details</name>
         <label>Assign product profiling details</label>
-        <locationX>1428</locationX>
-        <locationY>342</locationY>
+        <locationX>1259</locationX>
+        <locationY>376</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -287,6 +284,33 @@
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Display_Error_Message</name>
+        <label>Display Error Message</label>
+        <locationX>1106</locationX>
+        <locationY>796</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Error_Occurred</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>An unhandled fault has occurred in this flow</stringValue>
+            </defaultValue>
+            <fieldText>Error Occurred</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Display_Error_Message_Screen</name>
+            <fieldText>&lt;p&gt;{!ErrorMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
     </screens>
     <screens>
         <name>Product_selection</name>
@@ -342,6 +366,13 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Product_Profiling__c</objectType>
+    </variables>
+    <variables>
+        <name>ErrorMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>LoopProduct</name>

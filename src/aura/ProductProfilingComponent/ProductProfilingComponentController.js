@@ -137,6 +137,7 @@ init: function (cmp, event, helper) {
         //console.log(event.getParam('status'));
         if(event.getParam('status') === "FINISHED") {
             component.set("v.isOpenNew", false);
+            $A.enqueueAction(component.get('c.init'));
         }
     },
     
@@ -144,7 +145,6 @@ init: function (cmp, event, helper) {
         component.set("v.isOpenNew", false);
         component.set("v.isOpenEdit", false);
         $A.enqueueAction(component.get('c.init'));
-        
     },
     
     gotoRelatedList : function (component, event, helper) {
@@ -348,7 +348,7 @@ init: function (cmp, event, helper) {
             if(treeGridCmp.getCurrentExpandedRows().length > 0){
                 treeGridCmp.collapseAll();
             } else {
-                $A.enqueueAction(cmp.get('c.init'));
+                treeGridCmp.expandAll();
             }
         } else {
             var accordion = cmp.find('myaccordion');
