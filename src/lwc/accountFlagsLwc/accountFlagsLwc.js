@@ -12,6 +12,9 @@ import DS_CORE from '@salesforce/label/c.AccountFlagsDSCore';
 import DS_CORE_LAB from '@salesforce/label/c.AccountFlagsDSCoreLab';
 import DS_CORE_CARE from '@salesforce/label/c.AccountFlagsDSCoreCare';
 import SURE_SMILE from '@salesforce/label/c.AccountFlagsSureSmile';
+import SURE_SMILE_ALIGNER from '@salesforce/label/c.AccountFlagsSureSmileAligner';
+import SURE_SMILE_ORTHO from '@salesforce/label/c.AccountFlagsSureSmileOrtho';
+import SURE_SMILE_ADVANCED from '@salesforce/label/c.AccountFlagsSureSmileAdvanced';
 import AWO from '@salesforce/label/c.AccountFlagsAWO';
 import DS_COM from '@salesforce/label/c.AccountFlagsDSCom';
 import CEREC_CLUB from '@salesforce/label/c.AccountFlagsCerecClub';
@@ -27,7 +30,9 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
     accountFlagsResult;
 
     customerNumber;
-    sureSmileType;
+    sureSmileAlignerId;
+    sureSmileOrthoId;
+    sureSmileAdvancedId;
 
     showAccess = false;
     showLight = false;
@@ -73,6 +78,9 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
         DS_CORE_LAB,
         DS_CORE_CARE,
         SURE_SMILE,
+        SURE_SMILE_ALIGNER,
+        SURE_SMILE_ORTHO,
+        SURE_SMILE_ADVANCED,
         AWO,
         DS_COM,
         CEREC_CLUB,
@@ -124,7 +132,9 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
             }
 
             if(this.accountFlagsResult?.sureSmile?.level > 0){
-                this.sureSmileType = this.accountFlagsResult?.sureSmile?.value;
+                this.sureSmileAlignerId = this.accountFlagsResult?.sureSmile?.sureSmileAlignerId;
+                this.sureSmileOrthoId = this.accountFlagsResult?.sureSmile?.sureSmileOrthoId;
+                this.sureSmileAdvancedId = this.accountFlagsResult?.sureSmile?.sureSmileAdvancedId;
                 this.sureSmileId = this.accountFlagsResult?.sureSmile?.itemId;
             }
 

@@ -182,6 +182,11 @@ public with sharing class AccountFlagsController {
         AccountFlag awo = new AccountFlag(0, null);
         AccountFlag siroForce = new AccountFlag(0, null);
 
+        // Init SureSmile source record IDs
+        Id sureSmileAlignerId = null;
+        Id sureSmileOrthoId = null;
+        Id sureSmileAdvancedId = null;
+
         // Init list of source records related to an erp customer
         List<Source_Record__c> erpSourceRecords = new List<Source_Record__c>();
 
@@ -194,12 +199,10 @@ public with sharing class AccountFlagsController {
             }
 
             // Check the Suresmile platform fields
-            if (eachSourceRecord.SuresmileAdvancedPlatform__c == true) {
-                sureSmile = new AccountFlag(isActive ? 1 : 2, eachSourceRecord.Id, 'Advanced');
-            } else if (eachSourceRecord.SuresmileOrthoPlatform__c == true && (sureSmile.value != 'Advanced' || sureSmile.level == 0)) {
-                sureSmile = new AccountFlag(isActive ? 1 : 2, eachSourceRecord.Id, 'Ortho');
-            } else if (eachSourceRecord.SuresmileAlignerPlatform__c == true && (sureSmile.level == 0)) {
-                sureSmile = new AccountFlag(isActive ? 1 : 2, eachSourceRecord.Id, 'Aligner');
+            if (eachSourceRecord.SuresmileAlignerPlatform__c == true || eachSourceRecord.SuresmileOrthoPlatform__c == true || eachSourceRecord.SuresmileAdvancedPlatform__c == true) {
+                sureSmileAlignerId = (eachSourceRecord.SuresmileAlignerPlatform__c == true) ? eachSourceRecord.Id : null;
+                sureSmileOrthoId = (eachSourceRecord.SuresmileOrthoPlatform__c == true) ? eachSourceRecord.Id : null;
+                sureSmileAdvancedId = (eachSourceRecord.SuresmileAdvancedPlatform__c == true) ? eachSourceRecord.Id : null;
             }
 
             if(eachSourceRecord.Atlantis_Web_Order_Customer__c != null){
@@ -215,11 +218,16 @@ public with sharing class AccountFlagsController {
                 erpSourceRecords.add(eachSourceRecord);
             }
 
-            System.debug('Source ID : ' + eachSourceRecord.Source_Id__c);
+//            System.debug('Source ID : ' + eachSourceRecord.Source_Id__c);
 
         }
 
-        System.debug('erpSourceRecords ' + erpSourceRecords);
+//        System.debug('erpSourceRecords ' + erpSourceRecords);
+
+        // Creating the SureSmile flag
+        sureSmile = new AccountFlag(isActive ? 1 : 2,
+                sureSmileAdvancedId != null ? sureSmileAdvancedId : sureSmileOrthoId != null ? sureSmileOrthoId : sureSmileAlignerId,
+                sureSmileAlignerId, sureSmileOrthoId, sureSmileAdvancedId);
 
         if(!erpSourceRecords.isEmpty()){
             if(erpSourceRecords.size() > 1){
@@ -328,8 +336,18 @@ public with sharing class AccountFlagsController {
         // Id of the Contract Line Item, Contract or Source Record
         @AuraEnabled public String itemId;
 
-        // Customer number (optional)
+        // Flag value (optional)
         @AuraEnabled public String value;
+
+        // SureSmile Source record IDs
+        @AuraEnabled public String sureSmileAlignerId;
+        @AuraEnabled public String sureSmileOrthoId;
+        @AuraEnabled public String sureSmileAdvancedId;
+
+        public AccountFlag(Integer level, String itemId) {
+            this.level = level;
+            this.itemId = itemId;
+        }
 
         public AccountFlag(Integer level, String itemId, String value) {
             this.level = level;
@@ -337,9 +355,12 @@ public with sharing class AccountFlagsController {
             this.value = value;
         }
 
-        public AccountFlag(Integer level, String itemId) {
+        public AccountFlag(Integer level, String itemId, String sureSmileAlignerId, String sureSmileOrthoId, String sureSmileAdvancedId) {
             this.level = level;
             this.itemId = itemId;
+            this.sureSmileAlignerId = sureSmileAlignerId;
+            this.sureSmileOrthoId = sureSmileOrthoId;
+            this.sureSmileAdvancedId = sureSmileAdvancedId;
         }
     }
 

@@ -202,9 +202,21 @@
                                                                 icon-name="custom:custom43"></c-popover-record-info>
                                                     </div>
                                                 </template>
-                                                <div class="flag-value slds-text-title_bold">
-                                                    <span>{sureSmileType}</span>
-                                                </div>
+                                                <template if:true={sureSmileAdvancedId}>
+                                                    <div class="flag-value slds-text-title_bold">
+                                                        <span>{labels.SURE_SMILE_ADVANCED}</span>
+                                                    </div>
+                                                </template>
+                                                <template if:true={sureSmileOrthoId}>
+                                                    <div class="flag-value slds-text-title_bold">
+                                                        <span>{labels.SURE_SMILE_ORTHO}</span>
+                                                    </div>
+                                                </template>
+                                                <template if:true={sureSmileAlignerId}>
+                                                    <div class="flag-value slds-text-title_bold">
+                                                        <span>{labels.SURE_SMILE_ALIGNER}</span>
+                                                    </div>
+                                                </template>
                                             </template>
                                             <template if:false={sureSmileId}>
                                                 <div class="flag-text">{labels.SURE_SMILE}</div>

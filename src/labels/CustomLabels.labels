@@ -14,7 +14,15 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AccountDebriefing</shortDescription>
-        <value>Account News: Catch up on recent interactions and latest insights ...</value>
+        <value>Account News: Catch up on key attention points, interactions, and latest insights ...</value>
+    </labels>
+    <labels>
+        <fullName>AccountFlagsAWO</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsAWO</shortDescription>
+        <value>AWO</value>
     </labels>
     <labels>
         <fullName>AccountFlagsAccess</fullName>
@@ -33,12 +41,52 @@
         <value>Advanced</value>
     </labels>
     <labels>
+        <fullName>AccountFlagsCerecClub</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsCerecClub</shortDescription>
+        <value>CEREC Club</value>
+    </labels>
+    <labels>
         <fullName>AccountFlagsCustomerNumber</fullName>
         <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AccountFlagsCustomerNumber</shortDescription>
         <value>Customer Number</value>
+    </labels>
+    <labels>
+        <fullName>AccountFlagsDSCom</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsDSCom</shortDescription>
+        <value>DS.Com</value>
+    </labels>
+    <labels>
+        <fullName>AccountFlagsDSCore</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsDSCore</shortDescription>
+        <value>DS Core</value>
+    </labels>
+    <labels>
+        <fullName>AccountFlagsDSCoreCare</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsDSCoreCare</shortDescription>
+        <value>DS Core Care</value>
+    </labels>
+    <labels>
+        <fullName>AccountFlagsDSCoreLab</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsDSCoreLab</shortDescription>
+        <value>DS Core Lab</value>
     </labels>
     <labels>
         <fullName>AccountFlagsHeader</fullName>
@@ -65,36 +113,20 @@
         <value>Online Ordering &amp; Service</value>
     </labels>
     <labels>
+        <fullName>AccountFlagsSiroForce</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsSiroForce</shortDescription>
+        <value>SiroForce</value>
+    </labels>
+    <labels>
         <fullName>AccountFlagsStandard</fullName>
         <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AccountFlagsStandard</shortDescription>
         <value>Standard</value>
-    </labels>
-    <labels>
-        <fullName>AccountFlagsDSCore</fullName>
-        <categories>AccountFlags</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AccountFlagsDSCore</shortDescription>
-        <value>DS Core</value>
-    </labels>
-    <labels>
-        <fullName>AccountFlagsDSCoreLab</fullName>
-        <categories>AccountFlags</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AccountFlagsDSCoreLab</shortDescription>
-        <value>DS Core Lab</value>
-    </labels>
-    <labels>
-        <fullName>AccountFlagsDSCoreCare</fullName>
-        <categories>AccountFlags</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AccountFlagsDSCoreCare</shortDescription>
-        <value>DS Core Care</value>
     </labels>
     <labels>
         <fullName>AccountFlagsSureSmile</fullName>
@@ -105,36 +137,36 @@
         <value>SureSmile</value>
     </labels>
     <labels>
-        <fullName>AccountFlagsAWO</fullName>
+        <fullName>AccountFlagsSureSmileAligner</fullName>
         <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>AccountFlagsAWO</shortDescription>
-        <value>AWO</value>
+        <shortDescription>AccountFlagsSureSmileAligner</shortDescription>
+        <value>Aligner</value>
     </labels>
     <labels>
-        <fullName>AccountFlagsDSCom</fullName>
+        <fullName>AccountFlagsSureSmileOrtho</fullName>
         <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>AccountFlagsDSCom</shortDescription>
-        <value>DS.Com</value>
+        <shortDescription>AccountFlagsSureSmileOrtho</shortDescription>
+        <value>Ortho</value>
     </labels>
     <labels>
-        <fullName>AccountFlagsCerecClub</fullName>
+        <fullName>AccountFlagsSureSmileAdvanced</fullName>
         <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>AccountFlagsCerecClub</shortDescription>
-        <value>CEREC Club</value>
+        <shortDescription>AccountFlagsSureSmileAdvanced</shortDescription>
+        <value>Advanced</value>
     </labels>
     <labels>
-        <fullName>AccountFlagsSiroForce</fullName>
-        <categories>AccountFlags</categories>
+        <fullName>ActivityReported12LastMonths</fullName>
+        <categories>Activity Scoreboard</categories>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>AccountFlagsSiroForce</shortDescription>
-        <value>SiroForce</value>
+        <shortDescription>ActivityReported12LastMonths</shortDescription>
+        <value>Reported in the last 12 months:</value>
     </labels>
     <labels>
         <fullName>ActivityScoreboardCallsLogged</fullName>
@@ -169,14 +201,6 @@
         <value>task(s)</value>
     </labels>
     <labels>
-        <fullName>ActivityScorecardHeader</fullName>
-        <categories>Activity Scoreboard</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>ActivityScorecardHeader</shortDescription>
-        <value>360 Activity Scorecard</value>
-    </labels>
-    <labels>
         <fullName>ActivityScorecardFirstEventDate</fullName>
         <categories>Activity Scoreboard</categories>
         <language>en_US</language>
@@ -185,12 +209,12 @@
         <value>First Event Date</value>
     </labels>
     <labels>
-        <fullName>ActivityReported12LastMonths</fullName>
+        <fullName>ActivityScorecardHeader</fullName>
         <categories>Activity Scoreboard</categories>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>ActivityReported12LastMonths</shortDescription>
-        <value>Reported in the last 12 months:</value>
+        <shortDescription>ActivityScorecardHeader</shortDescription>
+        <value>360 Activity Scorecard</value>
     </labels>
     <labels>
         <fullName>ActivityScorecardPlannedCFEs</fullName>
@@ -199,46 +223,6 @@
         <protected>false</protected>
         <shortDescription>ActivityScorecardPlannedCFEs</shortDescription>
         <value># Planned CFEs</value>
-    </labels>
-    <labels>
-        <fullName>WPHeader</fullName>
-        <categories>WorkflowProfiling</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>WPHeader</shortDescription>
-        <value>Workflow Profiling</value>
-    </labels>
-    <labels>
-        <fullName>WPHelpText</fullName>
-        <categories>WorkflowProfiling</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>WPHelpText</shortDescription>
-        <value>Fire icons represent workflow ratings</value>
-    </labels>
-    <labels>
-        <fullName>WPProductFamily</fullName>
-        <categories>WorkflowProfiling</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>WPProductFamily</shortDescription>
-        <value>Product Family</value>
-    </labels>
-    <labels>
-        <fullName>WPDSProducts</fullName>
-        <categories>WorkflowProfiling</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>WPDSProducts</shortDescription>
-        <value>DS Products</value>
-    </labels>
-    <labels>
-        <fullName>WPCompetitorProducts</fullName>
-        <categories>WorkflowProfiling</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>WPCompetitorProducts</shortDescription>
-        <value>Competitor Products</value>
     </labels>
     <labels>
         <fullName>Add</fullName>
@@ -2880,6 +2864,46 @@ Please contact your Administrator (CRM Analyst).</value>
         <protected>false</protected>
         <shortDescription>View Invoice</shortDescription>
         <value>View Invoice</value>
+    </labels>
+    <labels>
+        <fullName>WPCompetitorProducts</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPCompetitorProducts</shortDescription>
+        <value>Competitor Products</value>
+    </labels>
+    <labels>
+        <fullName>WPDSProducts</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPDSProducts</shortDescription>
+        <value>DS Products</value>
+    </labels>
+    <labels>
+        <fullName>WPHeader</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPHeader</shortDescription>
+        <value>Workflow Profiling</value>
+    </labels>
+    <labels>
+        <fullName>WPHelpText</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPHelpText</shortDescription>
+        <value>Fire icons represent workflow ratings</value>
+    </labels>
+    <labels>
+        <fullName>WPProductFamily</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPProductFamily</shortDescription>
+        <value>Product Family</value>
     </labels>
     <labels>
         <fullName>WarningMessage</fullName>
