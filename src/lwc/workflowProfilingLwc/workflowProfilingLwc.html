@@ -10,7 +10,7 @@
                     <tbody>
                     <template for:each={workflowsList} for:item="eachWorkflow">
                         <tr key={eachWorkflow.Id}>
-                            <td if:false={isMobile}>
+                            <td>
                                 <lightning-button-icon
                                         icon-name={eachWorkflow.accordionIcon}
                                         variant="bare"
@@ -76,54 +76,50 @@
                                         <thead>
                                         <tr class="slds-line-height_reset">
                                             <th style="width: 30%">
-                                                <div class="slds-truncate" title="Product Family">{labels.WPProductFamily}</div>
+                                                <div class="custom-truncate" style={collapsibleTextSize} title="Product Family">{labels.WPProductFamily}</div>
                                             </th>
                                             <th style="width: 40%">
-                                                <div class="slds-truncate" title="DS Products">{labels.WPDSProducts}</div>
+                                                <div class="custom-truncate" style={collapsibleTextSize} title="DS Products">{labels.WPDSProducts}</div>
                                             </th>
                                             <th style="width: 30%">
-                                                <div class="slds-truncate" title="Competitor Products">{labels.WPCompetitorProducts}</div>
+                                                <div class="custom-truncate" style={collapsibleTextSize} title="Competitor Products">{labels.WPCompetitorProducts}</div>
                                             </th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <template for:each={eachWorkflow.families} for:item="family">
                                             <tr key={family.productFamily.Id} class="slds-hint-parent">
-                                                <td data-label="Product Family">
-<!--                                                    <lightning-layout>-->
-<!--                                                        <lightning-layout-item flexibility="auto">-->
-                                                            {family.productFamily.ProductFamilyLabel__c}
-<!--                                                        </lightning-layout-item>-->
-<!--                                                        <lightning-layout-item flexibility="auto" class="slds-text-align_right" style="margin-right: 10px">-->
-<!--                                                            &lt;!&ndash; Icon for DS products &ndash;&gt;-->
-<!--                                                            <template if:true={family.hasDSCoreProduct}>-->
-<!--                                                                <img src={dsLogoIconUrl} style="width: 25px; height: 25px"/>-->
-<!--                                                            </template>-->
-<!--                                                            &lt;!&ndash; Icon for Competitor products &ndash;&gt;-->
-<!--                                                            <template if:true={family.hasCompetitorProduct}>-->
-<!--                                                                <lightning-icon style="transform: scale(0.70);" icon-name="action:bug" size="small" class="slds-m-left_xx-small"></lightning-icon>-->
-<!--                                                            </template>-->
-<!--                                                        </lightning-layout-item>-->
-<!--                                                    </lightning-layout>-->
+                                                <td data-label="Product Family" style={collapsibleTextSize}>
+                                                    <div class="custom-truncate">
+                                                        {family.productFamily.ProductFamilyLabel__c}
+                                                    </div>
                                                 </td>
-                                                <td data-label="DS Products">
+                                                <td data-label="DS Products" style={collapsibleTextSize}>
                                                     <!-- DS Products -->
                                                     <template for:each={family.dsProducts} for:item="dsProduct">
-                                                        <div key={dsProduct.product.Id} class="slds-truncate" title={dsProduct.product.Name}>
+                                                        <div key={dsProduct.product.Id} class="custom-truncate" title={dsProduct.product.Name}>
                                                             <!-- Show icon & popover if active -->
                                                             <template if:true={dsProduct.active}>
-                                                                <a
-                                                                        onclick={handleRedirection}
-                                                                        onmouseover={handleMouseOver}
-                                                                        onmouseout={handleMouseOut}
-                                                                        data-productid={dsProduct.product.Id}
-                                                                        data-workflowid={eachWorkflow.Id}
-                                                                >
-                                                                    {dsProduct.product.Name}
-                                                                </a>
-
-                                                                <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
-
+                                                                <template if:false={isMobile}>
+                                                                    <a
+                                                                            onclick={handleRedirection}
+                                                                            onmouseover={handleMouseOver}
+                                                                            onmouseout={handleMouseOut}
+                                                                            data-productid={dsProduct.product.Id}
+                                                                            data-workflowid={eachWorkflow.Id}
+                                                                    >
+                                                                        {dsProduct.product.Name}
+                                                                    </a>
+                                                                    <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
+                                                                </template>
+                                                                <template if:true={isMobile}>
+                                                                    <a
+                                                                            onclick={handleRedirection}
+                                                                            data-productid={dsProduct.product.Id}
+                                                                    >
+                                                                        {dsProduct.product.Name}
+                                                                    </a>
+                                                                </template>
                                                                 <template if:true={dsProduct.isMouseOver}>
                                                                     <div class="custom-popover-positioning">
                                                                         <c-popover-record-info
@@ -136,7 +132,6 @@
                                                                         </c-popover-record-info>
                                                                     </div>
                                                                 </template>
-
                                                             </template>
                                                             <template if:false={dsProduct.active}>
                                                                 <span class="slds-color__text_gray-8">{dsProduct.product.Name}</span>
@@ -144,23 +139,31 @@
                                                         </div>
                                                     </template>
                                                 </td>
-                                                <td data-label="Competitor Products">
+                                                <td data-label="Competitor Products" style={collapsibleTextSize}>
                                                     <!-- Competitor Products -->
                                                     <template for:each={family.competitorProducts} for:item="compProduct">
-                                                        <div key={compProduct.product.Id} class="slds-truncate" title={compProduct.product.Name}>
+                                                        <div key={compProduct.product.Id} class="custom-truncate" title={compProduct.product.Name}>
                                                             <template if:true={compProduct.active}>
-                                                                <a class="flag-text"
-                                                                   onclick={handleRedirection}
-                                                                   onmouseover={handleMouseOver}
-                                                                   onmouseout={handleMouseOut}
-                                                                   data-productid={compProduct.product.Id}
-                                                                   data-workflowid={eachWorkflow.Id}
-                                                                >
-                                                                    {compProduct.product.Name}
-                                                                </a>
-
-                                                                <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
-
+                                                                <template if:false={isMobile}>
+                                                                    <a
+                                                                            onclick={handleRedirection}
+                                                                            onmouseover={handleMouseOver}
+                                                                            onmouseout={handleMouseOut}
+                                                                            data-productid={compProduct.product.Id}
+                                                                            data-workflowid={eachWorkflow.Id}
+                                                                    >
+                                                                        {compProduct.product.Name}
+                                                                    </a>
+                                                                    <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
+                                                                </template>
+                                                                <template if:true={isMobile}>
+                                                                    <a
+                                                                            onclick={handleRedirection}
+                                                                            data-productid={compProduct.product.Id}
+                                                                    >
+                                                                        {compProduct.product.Name}
+                                                                    </a>
+                                                                </template>
                                                                 <template if:true={compProduct.isMouseOver}>
                                                                     <div class="custom-popover-positioning">
                                                                         <c-popover-record-info

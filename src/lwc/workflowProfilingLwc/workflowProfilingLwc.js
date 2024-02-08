@@ -328,7 +328,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         });
     }
 
-
     showToast(title, message, variant) {
         const evt = new ShowToastEvent({
             title: title,
@@ -336,5 +335,9 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
             variant: variant,
         });
         this.dispatchEvent(evt);
+    }
+
+    get collapsibleTextSize() {
+        return this.isMobile ? 'font-size: 13px' : '';
     }
 }
