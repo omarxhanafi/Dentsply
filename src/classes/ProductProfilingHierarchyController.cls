@@ -474,6 +474,17 @@ public with sharing class ProductProfilingHierarchyController {
         return procedureTracker.PracticeAccount__c;
     }
 
+    /**
+     * publishPPCreationEvent Send a platform event to refresh the WP component upon the creation of PP records
+     * @author ohanafi@salesforce.com | 12-02-2024
+     */
+    @AuraEnabled
+    public static void publishPPCreationEvent() {
+        PPCreation__e event = new PPCreation__e();
+        // Publishing the event
+        EventBus.publish(event);
+    }
+
 
     public class HierarchyNode {
     @AuraEnabled public Non_ERP_Products__c node;

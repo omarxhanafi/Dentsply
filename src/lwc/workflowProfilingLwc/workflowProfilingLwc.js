@@ -1,4 +1,5 @@
 import { LightningElement, wire, api, track } from 'lwc';
+import { subscribe, unsubscribe } from 'lightning/empApi';
 import getWorkflows from '@salesforce/apex/WorkflowProfilingController.getWorkflows';
 import getWorkflowProfilingsByAccount from '@salesforce/apex/WorkflowProfilingController.getWorkflowProfilingsByAccount';
 import createOrUpdateWorkflowProfilings from '@salesforce/apex/WorkflowProfilingController.createOrUpdateWorkflowProfilings';
@@ -24,6 +25,8 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
     @track workflowsList = [];
     workflowProfilings = [];
 
+    subscription = null;
+
     isProcessing = false;
 
     hotIconUrl = HOT_ICON;
@@ -44,8 +47,42 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
     async connectedCallback() {
         // Hiding the slider's range label
         await loadStyle(this, Sliders);
+
+        // Subscribe to the platform event
+        this.subscribeToPlatformEvent();
     }
 
+    disconnectedCallback() {
+        // Unsubscribe from the platform event
+        this.unsubscribeFromPlatformEvent();
+    }
+
+    subscribeToPlatformEvent() {
+        const messageCallback = (response) => {
+            if (response) {
+                // Refresh the workflow profiling list upon PP creation
+                this.fetchWorkflowProfilings();
+            }
+        };
+
+        // Subscribe to the platform event
+        subscribe('/event/PPCreation__e', -1, messageCallback)
+            .then(response => {
+                this.subscription = response;
+            })
+            .catch(error => {
+                console.error('Error subscribing to platform event:', JSON.stringify(error));
+            });
+    }
+
+    unsubscribeFromPlatformEvent() {
+        // Unsubscribe from the platform event
+        if (this.subscription) {
+            unsubscribe(this.subscription, response => {
+                console.log('Unsubscribed from platform event:', JSON.stringify(response));
+            });
+        }
+    }
 
     @wire(getWorkflows, { accountId: '$recordId' })
     wiredWorkflows({ error, data }) {
