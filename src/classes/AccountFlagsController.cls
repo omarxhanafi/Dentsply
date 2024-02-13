@@ -225,9 +225,11 @@ public with sharing class AccountFlagsController {
 //        System.debug('erpSourceRecords ' + erpSourceRecords);
 
         // Creating the SureSmile flag
-        sureSmile = new AccountFlag(isActive ? 1 : 2,
-                sureSmileAdvancedId != null ? sureSmileAdvancedId : sureSmileOrthoId != null ? sureSmileOrthoId : sureSmileAlignerId,
-                sureSmileAlignerId, sureSmileOrthoId, sureSmileAdvancedId);
+        if(sureSmileAlignerId != null || sureSmileOrthoId != null || sureSmileAdvancedId != null){
+            sureSmile = new AccountFlag(isActive ? 1 : 2,
+                    sureSmileAdvancedId != null ? sureSmileAdvancedId : sureSmileOrthoId != null ? sureSmileOrthoId : sureSmileAlignerId,
+                    sureSmileAlignerId, sureSmileOrthoId, sureSmileAdvancedId);
+        }
 
         if(!erpSourceRecords.isEmpty()){
             if(erpSourceRecords.size() > 1){

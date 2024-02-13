@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,50 +58,14 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="Product2 prod = new Product2(&#10;        Name = 'Test',&#10;        PG4_Code__c = 'I9Y000',&#10;        PG3_Code__c = 'I9Y00',&#10;        PG2_Code__c = 'I9Y0',&#10;        PG1_Code__c = 'I9Y',&#10;        Article__c = 'a0j5r00000ADfFXAA1'&#10;);&#10;&#10;insert prod;" />
-                  <option name="name" value="Anonymous Apex 4" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="List&lt;Product2&gt; products = [select Id from product2 where CreatedDate = THIS_WEEK];&#10;&#10;delete products;" />
-                  <option name="name" value="Anonymous Apex 5" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="Set&lt;String&gt; pg1Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg2Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg3Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg4Codes = new Set&lt;String&gt;();&#10;&#10;List&lt;Non_ERP_Products__c&gt; nonErpProducts = [&#10;        SELECT Id, AssignmentRuleCodes__c&#10;        FROM Non_ERP_Products__c&#10;        WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE&#10;];&#10;&#10;Set&lt;String&gt; pgCodes = new Set&lt;String&gt;();&#10;&#10;for (Non_ERP_Products__c product : nonErpProducts) {&#10;    if (product.AssignmentRuleCodes__c != null &amp;&amp; product.AssignmentRuleCodes__c != '') {&#10;        pgCodes.addAll(product.AssignmentRuleCodes__c.split(','));&#10;    }&#10;}&#10;&#10;for(String eachPgCode : pgCodes){&#10;    if(eachPgCode.length() == 3){&#10;        pg1Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 4){&#10;        pg2Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 5){&#10;        pg3Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 6){&#10;        pg4Codes.add(eachPgCode);&#10;    }&#10;}&#10;&#10;System.debug('PG1 Count: ' + pg1Codes.size());&#10;System.debug('PG2 Count: ' + pg2Codes.size());&#10;System.debug('PG3 Count: ' + pg3Codes.size());&#10;System.debug('PG4 Count: ' + pg4Codes.size());&#10;&#10;System.debug('PG1 Codes: ' + pg1Codes);&#10;System.debug('PG2 Codes: ' + pg2Codes);&#10;System.debug('PG3 Codes: ' + pg3Codes);&#10;System.debug('PG4 Codes: ' + pg4Codes);&#10;&#10;BatchUpdateProducts batch = new BatchUpdateProducts(pg1Codes, pg2Codes, pg3Codes, pg4Codes);&#10;Database.executeBatch(batch, 5000);&#10;" />
-                  <option name="calloutsLogLevel" value="FINEST" />
+                  <option name="body" value="System.debug(AccountFlagsController.getAccountFlagsJSON('0010J00001rE6bcQAC'));" />
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 1" />
-                  <option name="nbaLogLevel" value="FINEST" />
-                  <option name="profilingLogLevel" value="FINEST" />
-                  <option name="splitterProportion" value="0.4481044" />
-                  <option name="systemLogLevel" value="FINEST" />
-                  <option name="validationLogLevel" value="FINEST" />
-                  <option name="visualforceLogLevel" value="FINEST" />
-                  <option name="waveLogLevel" value="FINEST" />
-                  <option name="workflowLogLevel" value="FINEST" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="List&lt;Non_ERP_Products__c&gt; nonErpProducts = [&#10;        SELECT Id, AssignmentRuleCodes__c, Details__c&#10;        FROM Non_ERP_Products__c&#10;        WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE&#10;];&#10;&#10;for (Non_ERP_Products__c product : nonErpProducts) {&#10;    String details = product.Details__c.trim();&#10;&#10;    if (details.contains('PG1:')) {&#10;        product.AssignmentRuleCodes__c = details.substringAfter('PG1:').replaceAll('\\s+', '');&#10;    }&#10;&#10;    if (details.contains('PG2:')) {&#10;        product.AssignmentRuleCodes__c = details.substringAfter('PG2:').replaceAll('\\s+', '');&#10;    }&#10;&#10;    if (details.contains('PG3:')) {&#10;        product.AssignmentRuleCodes__c = details.substringAfter('PG3:').replaceAll('\\s+', '');&#10;    }&#10;&#10;    if (details.contains('PG4:')) {&#10;        product.AssignmentRuleCodes__c = details.substringAfter('PG4:').replaceAll('\\s+', '');&#10;    }&#10;}&#10;&#10;update nonErpProducts;" />
-                  <option name="calloutsLogLevel" value="FINEST" />
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="databaseLogLevel" value="FINEST" />
-                  <option name="name" value="Anonymous Apex 2" />
-                  <option name="nbaLogLevel" value="FINEST" />
-                  <option name="profilingLogLevel" value="FINEST" />
-                  <option name="splitterProportion" value="0.46985707" />
-                  <option name="systemLogLevel" value="FINEST" />
-                  <option name="validationLogLevel" value="FINEST" />
-                  <option name="visualforceLogLevel" value="FINEST" />
-                  <option name="waveLogLevel" value="FINEST" />
-                  <option name="workflowLogLevel" value="FINEST" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="2" />
+            <option name="selectedSavedDocumentIndex" value="0" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionMruWorkspaceSettings">
@@ -114,8 +75,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1707396850541" />
-                  <option name="numUsages" value="102" />
+                  <option name="lastUsed" value="1707822846322" />
+                  <option name="numUsages" value="106" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
@@ -18256,7 +18217,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1707231109911" />
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1707822852324" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1706524148866" />
                       <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1706176876000" />
                       <entry key="APEXCLASS:CAMPAIGNMEMBERTRIGGERHELPER" value="1668005778242" />
@@ -18719,7 +18680,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1707226794000" />
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1707822841259" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1707226796000" />
                       <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1706176851000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
@@ -18769,7 +18730,7 @@
                       <entry key="STATICRESOURCE:SLIDERS" value="1703066996000" />
                     </map>
                   </option>
-                  <option name="lastBuildScope" value="CUSTOM" />
+                  <option name="lastBuildScope" value="CONTEXT" />
                   <option name="lastBuildViewToggles">
                     <map>
                       <entry key="DELETE">
@@ -19300,7 +19261,7 @@
       <workItem from="1706415883564" duration="8478000" />
       <workItem from="1706776694092" duration="20202000" />
       <workItem from="1707686223700" duration="641000" />
-      <workItem from="1707741593607" duration="6650000" />
+      <workItem from="1707741593607" duration="7825000" />
     </task>
     <servers />
   </component>
