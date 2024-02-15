@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/AccountFlagsController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls-meta.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +62,7 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="System.debug(AccountFlagsController.getAccountFlagsJSON('0010J00001rE6bcQAC'));" />
+                  <option name="body" value="Datetime currentDate = Datetime.now();&#10;&#10;Account accWithActivityHistories = [&#10;        SELECT Id, (SELECT Id, ActivityType, ActivitySubtype, Description FROM ActivityHistories WHERE ActivityDate = LAST_N_DAYS:365 AND ActivitySubtype = 'Call') FROM Account where id = '0010J00001rE6bcQAC'&#10;];&#10;&#10;System.debug(accWithActivityHistories.ActivityHistories.size());&#10;&#10;&#10;" />
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="Anonymous Apex 1" />
@@ -75,8 +79,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1707822846322" />
-                  <option name="numUsages" value="106" />
+                  <option name="lastUsed" value="1707831403374" />
+                  <option name="numUsages" value="126" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
@@ -18218,7 +18222,7 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1707822852324" />
-                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1706524148866" />
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1707831408584" />
                       <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1706176876000" />
                       <entry key="APEXCLASS:CAMPAIGNMEMBERTRIGGERHELPER" value="1668005778242" />
                       <entry key="APEXCLASS:CHANGEOWNER" value="1669800166407" />
@@ -18681,7 +18685,7 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1707822841259" />
-                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1707226796000" />
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1707831371254" />
                       <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1706176851000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1707757491312" />
@@ -18831,40 +18835,12 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Id, AssignmentRuleCodes__c, ProductFamily__c&#10;FROM Non_ERP_Products__c&#10;WHERE AssignmentRuleCodes__c != null" />
-                  <option name="connectionName" value="acc360" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 4" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="select Id, NonERPProduct__c, GlobalProductFamily__c from product2 where NonERPProduct__c != null and GlobalProductFamily__c != null and CreatedDate = THIS_WEEK" />
+                  <option name="body" value="SELECT (SELECT Id, ActivityType, ActivitySubtype, ActivityDate, ActivityDateTime FROM ActivityHistories ORDER BY ActivityDate ASC) FROM Account where id = '0015r00000xC7iZAAS'" />
                   <option name="name" value="SOQL Query 1" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="select count() from product2 where NonERPProduct__c != null and GlobalProductFamily__c != null" />
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 2" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Id, AssignmentRuleCodes__c, ProductFamily__c&#10;FROM Non_ERP_Products__c&#10;WHERE AssignmentRuleCodes__c != null" />
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 3" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Id, Subject, ActivityDate&#10;FROM Task&#10;WHERE (WhatId = '0010J00001rE6bcQAC' or AccountId = '0010J00001rE6bcQAC')&#10;AND TaskSubtype = 'Call'&#10;AND ActivityDate = LAST_N_DAYS:365" />
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 5" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="select id, Unique_Key_Product_Contact__c from Product_Profiling__c" />
-                  <option name="name" value="SOQL Query 6" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="5" />
+            <option name="selectedSavedDocumentIndex" value="0" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -18890,29 +18866,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Apex Unit Tests.Test_ProductTrigger.executor": "Run",
-    "Apex Unit Tests.Test_WorkflowProfilingController.executor": "Run",
-    "Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/ohanafi/IdeaProjects/Dentsply/src/objects",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.29852837",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Apex Unit Tests.Test_ProductTrigger.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_WorkflowProfilingController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ohanafi/IdeaProjects/Dentsply/src/objects&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29852837&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/objects" />
@@ -19141,9 +19117,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Apex Unit Tests.Test_ProductTrigger" />
+        <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController.testGetWorkflows" />
         <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId" />
+        <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController.testCreateOrUpdateWorkflowProfilings" />
         <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController" />
+        <item itemvalue="Apex Unit Tests.Test_ProductTrigger" />
       </list>
     </recent_temporary>
   </component>
@@ -19261,7 +19239,10 @@
       <workItem from="1706415883564" duration="8478000" />
       <workItem from="1706776694092" duration="20202000" />
       <workItem from="1707686223700" duration="641000" />
-      <workItem from="1707741593607" duration="7825000" />
+      <workItem from="1707741593607" duration="16280000" />
+      <workItem from="1707928468049" duration="327000" />
+      <workItem from="1707928834378" duration="209000" />
+      <workItem from="1707929102036" duration="1325000" />
     </task>
     <servers />
   </component>
