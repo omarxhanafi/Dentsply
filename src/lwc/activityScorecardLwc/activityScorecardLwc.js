@@ -43,7 +43,7 @@ export default class ActivityScorecardLwc extends LightningElement {
     wiredGetAccountEvents({ error, data }){
         if (data) {
             this.activityScorecardResult = JSON.parse(data);
-            console.log("this.activityScorecardResult", this.activityScorecardResult);
+            // console.log("this.activityScorecardResult", this.activityScorecardResult);
 
             // Adapt the benchmark if the value is higher than the threshold
             if (this.activityScorecardResult?.completedTasksCount > this.completedTasksBenchmark){

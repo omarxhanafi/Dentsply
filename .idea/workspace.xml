@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7bf285b53fabc12bb4626af92af2822a40fadbca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8acbc36a0cc73a9e245f3cb6131562d26ade41f7" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/b/7bf285b53fabc12bb4626af92af2822a40fadbca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/a/8acbc36a0cc73a9e245f3cb6131562d26ade41f7" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/acc360/OfflineSymbolTable.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js-meta.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,8 +83,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1707831403374" />
-                  <option name="numUsages" value="126" />
+                  <option name="lastUsed" value="1708092372846" />
+                  <option name="numUsages" value="137" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
@@ -18222,8 +18226,7 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1707822852324" />
-                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1707831408584" />
-                      <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1706176876000" />
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1708091639614" />
                       <entry key="APEXCLASS:CAMPAIGNMEMBERTRIGGERHELPER" value="1668005778242" />
                       <entry key="APEXCLASS:CHANGEOWNER" value="1669800166407" />
                       <entry key="APEXCLASS:FINDLEADMATCH" value="1668161656809" />
@@ -18307,7 +18310,7 @@
                       <entry key="GLOBALVALUESET:WORKFLOWS" value="1695386095000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1707231095000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARD" value="1682075429551" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1699614994000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1708092373000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CLONEORDEROMLWC" value="1666105134000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:FLOW_LOOKUPLWC" value="1675243668000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:LEADMATCHCONTACTHANDLING" value="1666275637000" />
@@ -18685,8 +18688,7 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1707822841259" />
-                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1707831371254" />
-                      <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1706176851000" />
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1708091634000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1707757491312" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1706891579000" />
@@ -18725,7 +18727,7 @@
                       <entry key="CUSTOMOBJECT:WORKFLOW__C" value="1695383392000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTCONTAINERLWC" value="1689951225892" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1707231046116" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1705566719229" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1708092377706" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:POPOVERRECORDINFO" value="1704301044075" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1707757391091" />
@@ -18774,7 +18776,7 @@
                   </option>
                   <option name="lastCustomSelectionUrls">
                     <set>
-                      <option value="metadata://CustomObject/PPCreation__e" />
+                      <option value="metadata://ApexClass/BatchUpdateProducts" />
                     </set>
                   </option>
                   <option name="lastDeleteOptions">
@@ -18838,9 +18840,15 @@
                   <option name="body" value="SELECT (SELECT Id, ActivityType, ActivitySubtype, ActivityDate, ActivityDateTime FROM ActivityHistories ORDER BY ActivityDate ASC) FROM Account where id = '0015r00000xC7iZAAS'" />
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="select id, Name from ApexClass where name = 'ActivityScorecardController'" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="SOQL Query 2" />
+                </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="0" />
+            <option name="selectedSavedDocumentIndex" value="1" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -19242,7 +19250,7 @@
       <workItem from="1707741593607" duration="16280000" />
       <workItem from="1707928468049" duration="327000" />
       <workItem from="1707928834378" duration="209000" />
-      <workItem from="1707929102036" duration="1325000" />
+      <workItem from="1707929102036" duration="5787000" />
     </task>
     <servers />
   </component>

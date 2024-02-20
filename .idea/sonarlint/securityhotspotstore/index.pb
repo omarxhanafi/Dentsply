@@ -11,12 +11,8 @@ H
 src/lwc/pubsub/pubsub.js,e/9/e9af4aad6dc4c4c81fa543e5c5ddbf803b4e0f47
 ?
 src/package.xml,c/6/c68d22217eca46b2bb465de47815fc70728a518b
-d
-4src/lwc/workflowProfilingLwc/workflowProfilingLwc.js,8/a/8acbc36a0cc73a9e245f3cb6131562d26ade41f7
 y
 Isrc/aura/ProductProfilingComponent/ProductProfilingComponentController.js,4/c/4cd14365cae38c458babc4e25aadccf14e98498d
-c
-3src/classes/ProductProfilingHierarchyController.cls,7/b/7bf285b53fabc12bb4626af92af2822a40fadbca
 Z
 *src/lwc/accountFlagsLwc/accountFlagsLwc.js,2/d/2d023c109c9ed5bc55d2b91f7cdf0bb68e943a28
 \

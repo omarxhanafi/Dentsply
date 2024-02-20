@@ -6,7 +6,7 @@
  * @History
  * 22-06-2023   Omar     Create new ActivityScorecardController class
  */
-public class ActivityScorecardController {
+public without sharing class ActivityScorecardController {
 
      /**
      * getAccountActivityScorecard Return a map of scorecard info related to the provided account
