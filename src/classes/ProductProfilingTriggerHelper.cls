@@ -29,7 +29,7 @@ public with sharing class ProductProfilingTriggerHelper {
 
                 // Calculate the unique key identifier based on the account, contact and
                 String uniqueKeyIdentifier = calculateUniqueKeyIdentifier(record);
-                record.Unique_Key_Product_Contact__c = uniqueKeyIdentifier;
+                record.DEPUniqueKey__c = uniqueKeyIdentifier;
             }
         }
     }
@@ -43,10 +43,12 @@ public with sharing class ProductProfilingTriggerHelper {
      */
     private static String calculateUniqueKeyIdentifier(Product_Profiling__c record) {
         String uniqueKeyIdentifier;
-        if (String.isBlank(record.Contact__c)) {
-            uniqueKeyIdentifier = (String) record.Account__c + (String) record.Non_Erp_Product_ID__c;
+        if (String.isBlank(record.Contact__c)) { // We use the 15-digit ID
+            uniqueKeyIdentifier = String.valueOf(record.Account__c).substring(0, 15) + String.valueOf(record.Non_Erp_Product_ID__c).substring(0, 15);
         } else {
-            uniqueKeyIdentifier = (String) record.Account__c + (String) record.Contact__c + (String) record.Non_Erp_Product_ID__c;
+            uniqueKeyIdentifier = String.valueOf(record.Account__c).substring(0, 15) +
+                    String.valueOf(record.Contact__c).substring(0, 15) +
+                    String.valueOf(record.Non_Erp_Product_ID__c).substring(0, 15);
         }
         return uniqueKeyIdentifier;
     }

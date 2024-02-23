@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9e89aa434f66513751701f66a6d6b2a3099b4a81" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b8801f68c3bf98746796e2b1f78c7a7c5bc012d9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/e/9e89aa434f66513751701f66a6d6b2a3099b4a81" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/8/b8801f68c3bf98746796e2b1f78c7a7c5bc012d9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHandler.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHandler.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHelper.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHelper.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHelper.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/triggers/ProductProfilingTrigger.trigger-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/triggers/ProductProfilingTrigger.trigger-meta.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,8 +78,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1708092372846" />
-                  <option name="numUsages" value="137" />
+                  <option name="lastUsed" value="1708430856513" />
+                  <option name="numUsages" value="140" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
@@ -18333,8 +18330,8 @@
                       <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.US" value="1699613750000" />
                       <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1699613224000" />
                       <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1699613011000" />
-                      <entry key="STATICRESOURCE:COLDICON" value="1695386286000" />
-                      <entry key="STATICRESOURCE:HOTICON" value="1695386286000" />
+                      <entry key="STATICRESOURCE:COLDICON" value="1708430728000" />
+                      <entry key="STATICRESOURCE:HOTICON" value="1708430728000" />
                     </map>
                   </option>
                   <option name="lastBuildScope" value="CUSTOM" />
@@ -18689,8 +18686,8 @@
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1708091634000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1707757491312" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1706891579000" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1706893508210" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1708697831000" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1708698661049" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706087844965" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1706190511430" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1702387725302" />
@@ -18699,7 +18696,7 @@
                       <entry key="APEXCLASS:TEST_PRODUCTTRIGGER" value="1706087829144" />
                       <entry key="APEXCLASS:TEST_WORKFLOWPROFILINGCONTROLLER" value="1704806112539" />
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1705655442403" />
-                      <entry key="APEXTRIGGER:PRODUCTPROFILINGTRIGGER" value="1706891602398" />
+                      <entry key="APEXTRIGGER:PRODUCTPROFILINGTRIGGER" value="1708697833000" />
                       <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1706087849202" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1707757418588" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1701609281507" />
@@ -19248,7 +19245,7 @@
       <workItem from="1707741593607" duration="16280000" />
       <workItem from="1707928468049" duration="327000" />
       <workItem from="1707928834378" duration="209000" />
-      <workItem from="1707929102036" duration="6269000" />
+      <workItem from="1707929102036" duration="8958000" />
     </task>
     <servers />
   </component>
