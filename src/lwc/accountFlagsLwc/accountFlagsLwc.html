@@ -281,14 +281,15 @@
                                                                 icon-name="custom:custom43"></c-popover-record-info>
                                                     </div>
                                                 </template>
-                                                <div class="flag-value slds-text-title_bold">
-                                                    <template if:true={customerNumber}>
-                                                        <span>{customerNumber}</span>
-                                                    </template>
-                                                </div>
+
                                             </template>
                                             <template if:false={customerNumberId}>
                                                 <div class="flag-text">{labels.CUSTOMER_NUMBER}</div>
+                                            </template>
+                                            <template if:true={customerNumber}>
+                                                <div class="flag-value slds-text-title_bold">
+                                                    <span>{customerNumber}</span>
+                                                </div>
                                             </template>
                                         </td>
                                         <td>

@@ -57,6 +57,14 @@
         <value>Customer Number</value>
     </labels>
     <labels>
+        <fullName>AccountFlagsMultipleFound</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsMultipleFound</shortDescription>
+        <value>Multiple Found</value>
+    </labels>
+    <labels>
         <fullName>AccountFlagsDSCom</fullName>
         <categories>AccountFlags</categories>
         <language>en_US</language>

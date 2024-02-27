@@ -233,7 +233,7 @@ public with sharing class AccountFlagsController {
 
         if(!erpSourceRecords.isEmpty()){
             if(erpSourceRecords.size() > 1){
-                customerNumber = new AccountFlag(isActive ? 1 : 2, erpSourceRecords[0].Id, erpSourceRecords[0].SearchInfo__c);
+                customerNumber = new AccountFlag(isActive ? 1 : 2, null, null);
             } else {
                 customerNumber = new AccountFlag(isActive ? 1 : 2, erpSourceRecords[0].Id, erpSourceRecords[0].Customer_Id__c);
             }

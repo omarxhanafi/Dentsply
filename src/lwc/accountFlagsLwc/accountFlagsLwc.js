@@ -8,6 +8,7 @@ import STANDARD from '@salesforce/label/c.AccountFlagsStandard';
 import ADVANCED from '@salesforce/label/c.AccountFlagsAdvanced';
 import ONLINE_ORDERING from '@salesforce/label/c.AccountFlagsOnlineOrdering';
 import CUSTOMER_NUMBER from '@salesforce/label/c.AccountFlagsCustomerNumber';
+import MULTIPLE_FOUND from '@salesforce/label/c.AccountFlagsMultipleFound';
 import DS_CORE from '@salesforce/label/c.AccountFlagsDSCore';
 import DS_CORE_LAB from '@salesforce/label/c.AccountFlagsDSCoreLab';
 import DS_CORE_CARE from '@salesforce/label/c.AccountFlagsDSCoreCare';
@@ -74,6 +75,7 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
         ADVANCED,
         ONLINE_ORDERING,
         CUSTOMER_NUMBER,
+        MULTIPLE_FOUND,
         DS_CORE,
         DS_CORE_LAB,
         DS_CORE_CARE,
@@ -94,9 +96,13 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
             console.log("this.accountFlagsResult", this.accountFlagsResult);
 
             // We only show the customer number if the flag is green, otherwise we only show the flag
-            if(this.accountFlagsResult?.customerNumber?.itemId != null && this.accountFlagsResult?.customerNumber?.level == 1){
-                this.customerNumber = this.accountFlagsResult?.customerNumber?.value;
-                this.customerNumberId = this.accountFlagsResult?.customerNumber?.itemId;
+            if(this.accountFlagsResult?.customerNumber?.level == 1){
+                if(this.accountFlagsResult?.customerNumber?.itemId != null){
+                    this.customerNumber = this.accountFlagsResult?.customerNumber?.value;
+                    this.customerNumberId = this.accountFlagsResult?.customerNumber?.itemId;
+                } else {
+                    this.customerNumber = this.labels.MULTIPLE_FOUND;
+                }
             }
 
             if(this.accountFlagsResult?.dsCoreAdvanced?.level > 0){
