@@ -10,23 +10,14 @@ import FIRST_EVENT_DATE from '@salesforce/label/c.ActivityScorecardFirstEventDat
 import REPORTED_LAST_MONTHS from '@salesforce/label/c.ActivityReported12LastMonths';
 import PLANNED_CFES from '@salesforce/label/c.ActivityScorecardPlannedCFEs';
 
-
-
-
 export default class ActivityScorecardLwc extends LightningElement {
 
     @api recordId;
 
     activityScorecardResult;
 
-    completedTasksBenchmark = 5;
-    callsLoggedBenchmark = 5;
-    emailsSentBenchmark = 5;
     eventsLoggedBenchmark = 10;
 
-    completedTasksPercentage;
-    callsLoggedPercentage;
-    emailsSentPercentage;
     eventsLoggedPercentage;
 
     labels = {
@@ -43,29 +34,13 @@ export default class ActivityScorecardLwc extends LightningElement {
     wiredGetAccountEvents({ error, data }){
         if (data) {
             this.activityScorecardResult = JSON.parse(data);
-            // console.log("this.activityScorecardResult", this.activityScorecardResult);
 
             // Adapt the benchmark if the value is higher than the threshold
-            if (this.activityScorecardResult?.completedTasksCount > this.completedTasksBenchmark){
-                this.completedTasksBenchmark = this.activityScorecardResult?.completedTasksCount;
-            }
-
-            if (this.activityScorecardResult?.callsLoggedCount > this.callsLoggedBenchmark){
-                this.callsLoggedBenchmark = this.activityScorecardResult?.callsLoggedCount;
-            }
-
-            if (this.activityScorecardResult?.emailsSentCount > this.emailsSentBenchmark){
-                this.emailsSentBenchmark = this.activityScorecardResult?.emailsSentCount;
-            }
-
             if (this.activityScorecardResult?.eventsLoggedCount > this.eventsLoggedBenchmark){
-                this.eventsLoggedBenchmark = this.activityScorecardResult?.eventsLoggedCount;
+                this.activityScorecardResult.eventsLoggedCount = this.eventsLoggedBenchmark;
             }
 
             // Calculating percentages
-            this.completedTasksPercentage = this.activityScorecardResult?.completedTasksCount / this.completedTasksBenchmark * 100;
-            this.callsLoggedPercentage = this.activityScorecardResult?.callsLoggedCount / this.callsLoggedBenchmark * 100;
-            this.emailsSentPercentage = this.activityScorecardResult?.emailsSentCount / this.emailsSentBenchmark * 100;
             this.eventsLoggedPercentage = this.activityScorecardResult?.eventsLoggedCount / this.eventsLoggedBenchmark * 100;
 
             // Format first event's date to the user’s locale
@@ -74,18 +49,6 @@ export default class ActivityScorecardLwc extends LightningElement {
         } else if (error) {
             console.error(error);
         }
-    }
-
-    get completedTasksWidth() {
-        return `width: ${this.completedTasksPercentage}%`;
-    }
-
-    get callsLoggedWidth() {
-        return `width: ${this.callsLoggedPercentage}%`;
-    }
-
-    get emailsSentWidth() {
-        return `width: ${this.emailsSentPercentage}%`;
     }
 
     get eventsLoggedWidth() {

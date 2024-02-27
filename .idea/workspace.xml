@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/BatchCalculatePPUniqueKey.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/BatchCalculatePPUniqueKey.cls-meta.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/BatchCalculatePPUniqueKey.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/BatchCalculatePPUniqueKey.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js-meta.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,8 +89,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1709030537701" />
-                  <option name="numUsages" value="149" />
+                  <option name="lastUsed" value="1709031916340" />
+                  <option name="numUsages" value="150" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
@@ -18316,7 +18319,7 @@
                       <entry key="GLOBALVALUESET:WORKFLOWS" value="1695386095000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1707231095000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARD" value="1682075429551" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1708092373000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1709031917000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CLONEORDEROMLWC" value="1666105134000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:FLOW_LOOKUPLWC" value="1675243668000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:LEADMATCHCONTACTHANDLING" value="1666275637000" />
@@ -18733,7 +18736,7 @@
                       <entry key="CUSTOMOBJECT:WORKFLOW__C" value="1695383392000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTCONTAINERLWC" value="1689951225892" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1707231046116" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1708092377706" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1709031753002" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:POPOVERRECORDINFO" value="1704301044075" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1708420844674" />
@@ -19252,7 +19255,7 @@
       <workItem from="1707741593607" duration="16280000" />
       <workItem from="1707928468049" duration="327000" />
       <workItem from="1707928834378" duration="209000" />
-      <workItem from="1707929102036" duration="13071000" />
+      <workItem from="1707929102036" duration="15196000" />
     </task>
     <servers />
   </component>
