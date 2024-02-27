@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/classes/BatchCalculatePPUniqueKey.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/BatchCalculatePPUniqueKey.cls-meta.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHandler.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHandler.cls-meta.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHelper.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHelper.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHelper.cls-meta.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/triggers/ProductProfilingTrigger.trigger-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/triggers/ProductProfilingTrigger.trigger-meta.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +59,20 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="Datetime currentDate = Datetime.now();&#10;&#10;Account accWithActivityHistories = [&#10;        SELECT Id, (SELECT Id, ActivityType, ActivitySubtype, Description FROM ActivityHistories WHERE ActivityDate = LAST_N_DAYS:365 AND ActivitySubtype = 'Call') FROM Account where id = '0010J00001rE6bcQAC'&#10;];&#10;&#10;System.debug(accWithActivityHistories.ActivityHistories.size());&#10;&#10;&#10;" />
+                  <option name="apexLogLevel" value="FINEST" />
+                  <option name="body" value="Database.executeBatch(new BatchCalculatePPUniqueKey());" />
+                  <option name="calloutsLogLevel" value="FINEST" />
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
+                  <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 1" />
+                  <option name="nbaLogLevel" value="FINEST" />
+                  <option name="profilingLogLevel" value="FINEST" />
+                  <option name="systemLogLevel" value="FINEST" />
+                  <option name="validationLogLevel" value="FINEST" />
+                  <option name="visualforceLogLevel" value="FINEST" />
+                  <option name="waveLogLevel" value="FINEST" />
+                  <option name="workflowLogLevel" value="FINEST" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
@@ -78,8 +86,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1708430856513" />
-                  <option name="numUsages" value="140" />
+                  <option name="lastUsed" value="1709030537701" />
+                  <option name="numUsages" value="149" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
@@ -18230,11 +18238,14 @@
                       <entry key="APEXCLASS:OPPORTUNITYINSERTASYNCH" value="1668510513326" />
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1666193185822" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1705655686717" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1708698803000" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1708698787000" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706094605000" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1706190531666" />
                       <entry key="APEXCLASS:TEST_PRODUCTTRIGGER" value="1706094629000" />
                       <entry key="APEXCLASS:USERSINACCOUNTTERRITORIES" value="1667389763476" />
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1699614933148" />
+                      <entry key="APEXTRIGGER:PRODUCTPROFILINGTRIGGER" value="1708698816000" />
                       <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1706094617000" />
                       <entry key="AURADEFINITIONBUNDLE:FLOW_SUGGESTEDUSERSBASEDONBRAND" value="1667402512131" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1707312710000" />
@@ -18687,7 +18698,7 @@
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1707757491312" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1708697831000" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1708698661049" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1708698702110" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706087844965" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1706190511430" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1702387725302" />
@@ -18828,22 +18839,18 @@
         <option name="retrieveAndMergeDefault" value="false" />
         <option name="soqlQuerySettings">
           <SoqlQuerySettings>
-            <option name="resultsSplitterProportion" value="0.6433121" />
+            <option name="resultsSplitterProportion" value="0.37461302" />
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT (SELECT Id, ActivityType, ActivitySubtype, ActivityDate, ActivityDateTime FROM ActivityHistories ORDER BY ActivityDate ASC) FROM Account where id = '0015r00000xC7iZAAS'" />
-                  <option name="name" value="SOQL Query 1" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="select id, Name from ApexClass where name = 'ActivityScorecardController'" />
+                  <option name="body" value="select id, Name from Product_Profiling__c where Product_Name__c = 'a1c6M000006av7zQAA' and Account__c = '001200000064tpxAAA'" />
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 2" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="1" />
+            <option name="selectedSavedDocumentIndex" value="0" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -19245,7 +19252,7 @@
       <workItem from="1707741593607" duration="16280000" />
       <workItem from="1707928468049" duration="327000" />
       <workItem from="1707928834378" duration="209000" />
-      <workItem from="1707929102036" duration="8958000" />
+      <workItem from="1707929102036" duration="13071000" />
     </task>
     <servers />
   </component>
