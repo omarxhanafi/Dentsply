@@ -2,7 +2,7 @@
  * Author            : ohanafi@salesforce.com
  * Description       : Product trigger test class
  * History
- * 24-01-2024         Created Test_ProductTriggerHelper class (TFUS-000006278)
+ * 24-01-2024         Created Test_ProductTrigger class (TFUS-000006278)
 --------------------------------------------------------------------------------------------------*/
 
 @isTest(seeAllData=false)

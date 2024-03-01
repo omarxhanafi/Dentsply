@@ -1,7 +1,7 @@
 /*-------------------------------------------------------------------------------------------------	
  * Author            : ohanafi@salesforce.com
  * Description       : Product trigger helper
- * Test class        : Test_ProductTriggerHelper
+ * Test class        : Test_ProductTrigger
  * History	
  * 17-01-2024         Created ProductTriggerHelper class (TFUS-000006278)
 --------------------------------------------------------------------------------------------------*/
