@@ -21,4 +21,8 @@ public with sharing class ProductProfilingTriggerHandler extends TriggerHandler 
     protected override void beforeUpdate() {
         ProductProfilingTriggerHelper.assignUniqueKeyIdentifier(oldProductProfilingMap, newProductProfilingList);
     }
+
+    protected override void beforeDelete() {
+        ProductProfilingTriggerHelper.preventDeletion(oldProductProfilingList);
+    }
 }

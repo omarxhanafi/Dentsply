@@ -69,10 +69,6 @@ S
 #src/objects/ProductFamily__c.object,f/2/f28fb1d0f51a92c97d03865042e17efddb686ee1
 T
 $src/classes/TestDataFactoryUtils.cls,c/7/c7a6e029d4efc7170f8092950ac5b529b386173e
-S
-#src/triggers/ContactTrigger.trigger,f/2/f2eca984ff1b89ad3dc9ecc7a3f3e2b43bd0d79c
-U
-%src/classes/ContactTriggerHandler.cls,4/f/4f3e7eb78112c8442d4f62d3c5b978ff4527aba9
 h
 8src/classes/Test_ProductProfilingHierarchyController.cls,e/f/ef36f38c52a067c1ad114b21aa1e28fb54932713
 o

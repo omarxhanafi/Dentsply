@@ -209,6 +209,19 @@ Dynamic Checkbox that shows if the logged in user created the products profiling
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>DEPUniqueKey__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>(String) record.Account__c + (String) record.Contact__c + (String) record.Non_Erp_Product_ID__c;</description>
+        <externalId>true</externalId>
+        <inlineHelpText>(String) record.Account__c + (String) record.Contact__c + (String) record.Non_Erp_Product_ID__c;</inlineHelpText>
+        <label>DEP Unique Key</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
         <fullName>Date_of_purchase__c</fullName>
         <description>Requested in case 00144434.</description>
         <externalId>false</externalId>
@@ -216,6 +229,53 @@ Dynamic Checkbox that shows if the logged in user created the products profiling
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DoNotDelete__c</fullName>
+        <externalId>false</externalId>
+        <formula>AND(
+    Integrated__c,
+    NOT(
+        OR(
+            $Profile.Name = &quot;System Administrator&quot;,
+            $Profile.Name = &quot;#System: System Administrator&quot;
+        )
+    )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Do Not Delete</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InUseSince__c</fullName>
+        <externalId>false</externalId>
+        <label>In Use Since?</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Products that are no longer associated with the account (Obsolete, Lapsed Usage)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Products that are no longer associated with the account (Obsolete, Lapsed Usage)</inlineHelpText>
+        <label>Inactive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Integrated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>To identify if a record was created by integration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>To identify if a record was created by integration.</inlineHelpText>
+        <label>Integrated ?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Intention_to_buy_date__c</fullName>
@@ -279,6 +339,16 @@ Dynamic Checkbox that shows if the logged in user created the products profiling
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>ProductName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product_Name__r.Name</formula>
+        <label>Product Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Product_Category__c</fullName>
         <externalId>false</externalId>
         <formula>Product_Name__r.Product_Category__c</formula>
@@ -292,7 +362,7 @@ Dynamic Checkbox that shows if the logged in user created the products profiling
     <fields>
         <fullName>Product_Name__c</fullName>
         <externalId>false</externalId>
-        <label>Product Name</label>
+        <label>Non-ERP Product</label>
         <referenceTo>Non_ERP_Products__c</referenceTo>
         <relationshipLabel>Products Profiling</relationshipLabel>
         <relationshipName>Products_Profiling</relationshipName>
@@ -333,6 +403,45 @@ Dynamic Checkbox that shows if the logged in user created the products profiling
         <label>Remote Service</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Source</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assets</fullName>
+                    <default>false</default>
+                    <label>Assets</label>
+                </value>
+                <value>
+                    <fullName>Dealer Sales</fullName>
+                    <default>false</default>
+                    <label>Dealer Sales</label>
+                </value>
+                <value>
+                    <fullName>Orders</fullName>
+                    <default>false</default>
+                    <label>Orders</label>
+                </value>
+                <value>
+                    <fullName>Sales Lines</fullName>
+                    <default>false</default>
+                    <label>Sales Lines</label>
+                </value>
+                <value>
+                    <fullName>Service Contracts</fullName>
+                    <default>false</default>
+                    <label>Service Contracts</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Status__c</fullName>
@@ -393,18 +502,6 @@ Dynamic Checkbox that shows if the logged in user created the products profiling
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Unique_Key_Product_Contact__c</fullName>
-        <caseSensitive>true</caseSensitive>
-        <description>Unique Key for avoiding duplicates</description>
-        <externalId>false</externalId>
-        <label>Unique Key Product Contact</label>
-        <length>255</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>true</unique>
     </fields>
     <fields>
         <fullName>Value__c</fullName>

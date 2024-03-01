@@ -4,6 +4,7 @@ Description:    Generic Trigger for Product_Profiling__c (Following Trigger Fram
 ----------------------------------------------------------------------------------------*/
 trigger ProductProfilingTrigger on Product_Profiling__c  (
     before insert
-    , before update) {
+    , before update
+    , before delete ) {
     new ProductProfilingTriggerHandler().run();
 }

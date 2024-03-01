@@ -52,4 +52,19 @@ public with sharing class ProductProfilingTriggerHelper {
         }
         return uniqueKeyIdentifier;
     }
+
+    /**
+     * preventDeletion Prevent the deletion of the records that are automatically created
+     * @author ohanafi@salesforce.com | 28-02-2024
+     *
+     * @param productProfilingList   List of product profiling records
+     *
+     */
+    public static void preventDeletion(List<Product_Profiling__c> productProfilingList){
+        for(Product_Profiling__c record : productProfilingList){
+            if(record.DoNotDelete__c) {
+                record.addError('You are not authorised to delete this Product Profiling Record, please contact your administrator.');
+            }
+        }
+    }
 }
