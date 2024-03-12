@@ -209,12 +209,20 @@
         <value>task(s)</value>
     </labels>
     <labels>
-        <fullName>ActivityScorecardFirstEventDate</fullName>
+        <fullName>ActivityScorecardLastEventDate</fullName>
         <categories>Activity Scoreboard</categories>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>ActivityScorecardFirstEventDate</shortDescription>
-        <value>First Event Date</value>
+        <shortDescription>ActivityScorecardLastEventDate</shortDescription>
+        <value>Last Event Date</value>
+    </labels>
+    <labels>
+        <fullName>ActivityScorecardMyLastEventDate</fullName>
+        <categories>Activity Scoreboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActivityScorecardMyLastEventDate</shortDescription>
+        <value>My Last Event Date</value>
     </labels>
     <labels>
         <fullName>ActivityScorecardHeader</fullName>

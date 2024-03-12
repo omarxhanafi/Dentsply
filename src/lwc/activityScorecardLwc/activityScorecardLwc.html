@@ -5,14 +5,18 @@
                 <lightning-layout>
                     <lightning-layout-item flexibility="auto" padding="around-small">
                         <div class="custom-box slds-box slds-p-around_small slds-text-align_center">
-                            <p>{labels.FIRST_EVENT_DATE}</p>
-                                <template if:true={activityScorecardResult.firstEvent}>
-                                    <p class="activity-counter">{activityScorecardResult.firstEvent}</p>
-                                </template>
-                                <template if:false={activityScorecardResult.firstEvent}>
-                                    <p class="activity-counter">N/A</p>
-                                </template>
-                            </p>
+                            <template if:true={activityScorecardResult.isLastEventAssignedToCurrentUser}>
+                                <p>{labels.MY_LAST_EVENT_DATE}</p>
+                            </template>
+                            <template if:false={activityScorecardResult.isLastEventAssignedToCurrentUser}>
+                                <p>{labels.LAST_EVENT_DATE}</p>
+                            </template>
+                            <template if:true={activityScorecardResult.lastEventDate}>
+                                <p class="activity-counter">{activityScorecardResult.lastEventDate}</p>
+                            </template>
+                            <template if:false={activityScorecardResult.lastEventDate}>
+                                <p class="activity-counter">N/A</p>
+                            </template>
                         </div>
                     </lightning-layout-item>
                     <lightning-layout-item flexibility="auto" padding="around-small">

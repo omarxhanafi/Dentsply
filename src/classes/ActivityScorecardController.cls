@@ -19,24 +19,38 @@ public without sharing class ActivityScorecardController {
     @AuraEnabled(Cacheable = true)
     public static String getAccountActivityScorecard(Id accountId) {
         // Query for the oldest event on the account
-        String firstEventDate;
+        String lastEventDate;
+
+        // Variable that indicates if the last event is assigned to the current user
+        Boolean isLastEventAssignedToCurrentUser = false;
 
         Account accWithEvents = [
                 SELECT Id,
-                    (SELECT Id, ActivityDate
-                    FROM ActivityHistories
-                    WHERE ActivitySubtype = 'Event'
-                    ORDER BY ActivityDate ASC)
+                (SELECT Id, ActivityDate, OwnerId
+                FROM ActivityHistories
+                WHERE ActivitySubtype = 'Event'
+                ORDER BY ActivityDate DESC
+                LIMIT 1)
                 FROM Account WHERE Id = :accountId
         ];
 
-
         if (accWithEvents != null) {
             if(!accWithEvents.ActivityHistories.isEmpty()){
-                firstEventDate = String.valueOf(accWithEvents.ActivityHistories[0].ActivityDate);
+                // Get the first event from the list
+                ActivityHistory lastEvent = accWithEvents.ActivityHistories[0];
+                lastEventDate = String.valueOf(lastEvent.ActivityDate);
+
+                // Check if the event is assigned to the current user
+                if (lastEvent.OwnerId == UserInfo.getUserId()) {
+                    isLastEventAssignedToCurrentUser = true;
+                }
+
+                System.debug('Owner Id ' + lastEvent.OwnerId);
+                System.debug('Event Id ' + lastEvent.Id);
+                System.debug('User Id ' + UserInfo.getUserId());
             }
         } else {
-                firstEventDate = null;
+            lastEventDate = null;
         }
 
         // Count the number of future events on the account
@@ -118,7 +132,8 @@ public without sharing class ActivityScorecardController {
 
         // Construct a Map of the results
         Map<String, Object> results = new Map<String, Object>();
-        results.put('firstEvent', firstEventDate);
+        results.put('lastEventDate', lastEventDate);
+        results.put('isLastEventAssignedToCurrentUser', isLastEventAssignedToCurrentUser);
         results.put('futureEventsCount', futureEventsCount);
         results.put('completedTasksCount', completedTasksCount);
         results.put('callsLoggedCount', callsLoggedCount);

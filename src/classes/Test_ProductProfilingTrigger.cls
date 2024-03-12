@@ -44,7 +44,7 @@ public with sharing class Test_ProductProfilingTrigger {
             // Assert the result
             System.assertEquals(
                     testPPRecord.DEPUniqueKey__c,
-                    String.valueOf(testAccount[0].Id).substring(0, 15) + String.valueOf(nonERPProduct.Id).substring(0, 15)
+                    String.valueOf(testAccount[0].Id) + String.valueOf(nonERPProduct.Id)
             );
         }
 

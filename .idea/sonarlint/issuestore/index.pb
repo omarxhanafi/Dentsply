@@ -85,8 +85,6 @@ m
 =src/lwc/workflowProfilingLwc/workflowProfilingLwc.js-meta.xml,6/1/61ab1731be76828e1c9ce247db68053a3a1383fe
 ]
 -src/staticresources/Sliders.resource-meta.xml,6/5/65a73b4e08f61d9be9251c045e0456a32e127b12
-T
-$src/staticresources/Sliders.resource,e/0/e0e49b53e23da83a21b0e8a4e49cca909375258b
 `
 0src/lwc/popoverRecordInfo/popoverRecordInfo.html,9/d/9dc46076a5c4bcf57c7046ad0e600d3c5b67f930
 X

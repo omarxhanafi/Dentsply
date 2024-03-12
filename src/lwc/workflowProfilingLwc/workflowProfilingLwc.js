@@ -7,10 +7,7 @@ import getProductFamilyListByWorkflowId from '@salesforce/apex/WorkflowProfiling
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import HOT_ICON from '@salesforce/resourceUrl/HotIcon';
 import COLD_ICON from '@salesforce/resourceUrl/ColdIcon';
-import DS_LOGO_ICON from '@salesforce/resourceUrl/DS_logoIcon';
 import FORM_FACTOR from '@salesforce/client/formFactor';
-import Sliders from '@salesforce/resourceUrl/Sliders';
-import {loadStyle} from "lightning/platformResourceLoader";
 import {NavigationMixin} from "lightning/navigation";
 import WPHeader from "@salesforce/label/c.WPHeader";
 import WPHelpText from "@salesforce/label/c.WPHelpText";
@@ -31,7 +28,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
 
     hotIconUrl = HOT_ICON;
     coldIconUrl = COLD_ICON;
-    dsLogoIconUrl = DS_LOGO_ICON;
 
     isMobile = FORM_FACTOR === 'Small' || (FORM_FACTOR === 'Medium' && window.innerWidth < window.innerHeight);
 
@@ -45,9 +41,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
     };
 
     async connectedCallback() {
-        // Hiding the slider's range label
-        await loadStyle(this, Sliders);
-
         // Subscribe to the platform event
         this.subscribeToPlatformEvent();
     }
@@ -113,20 +106,18 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
                 // console.log('Workflow Profilings', this.workflowProfilings);
 
                 // We update the ratings
-                this.updateWorkflowsWithRatings();
+                this.updateWorkflowsFromProfilings();
             })
             .catch(error => {
                 console.error('Error fetching Workflow Profilings:', error);
             });
     }
 
-    updateWorkflowsWithRatings() {
+    updateWorkflowsFromProfilings() {
         // Iterate through both lists and update ratings
         this.workflowsList.forEach(workflow => {
             const matchingProfiling = this.workflowProfilings.find(profiling => profiling.Workflow__c === workflow.Id);
             if (matchingProfiling) {
-                workflow.rating = matchingProfiling.Rating__c;
-                workflow.icons = this.generateIcons(workflow.rating);
                 if(!matchingProfiling.Inactive__c){
                     workflow.isChecked = true;
                     workflow.itemClass = ''
@@ -151,39 +142,7 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
 
         // console.log("Changed Workflows after toggle", JSON.parse(JSON.stringify(this.workflowsList)));
 
-        // Update fire icons
-        this.updateIcons();
-
         this.saveData(); // Save the data upon toggle change
-    }
-
-
-    handleSliderChange(event) {
-        const workflowId = event.currentTarget.dataset.workflowid;
-        const rating = event.target.value;
-
-        // Update the 'rating' property based on the slider's value
-        this.workflowsList = this.workflowsList.map(workflow => {
-            if (workflow.Id === workflowId) {
-                return { ...workflow, rating: rating};
-            }
-            return workflow;
-        });
-
-        // console.log('Changed workflows after slider change', JSON.parse(JSON.stringify(this.workflowsList)));
-
-        // Update fire icons
-        this.updateIcons();
-
-        // Save data upon change
-        this.saveData();
-    }
-
-    updateIcons() {
-        this.workflowsList = this.workflowsList.map(workflow => {
-            workflow.icons = this.generateIcons(workflow.rating);
-            return workflow;
-        });
     }
 
 
@@ -199,7 +158,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
                 recordsToUpsert.push({
                     Account__c: this.recordId,
                     Workflow__c: workflow.Id,
-                    Rating__c: workflow.rating,
                     Inactive__c: workflow.isChecked ? false : true
                 });
         });
@@ -224,25 +182,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
                 this.showToast('Error', 'An error occurred while saving records', 'error');
                 console.error('Error creating or updating workflow profiles:', error);
             });
-    }
-
-    generateIcons(rating) {
-        const hotIconsCount = rating;
-        const coldIconsCount = 5 - rating;
-
-        const icons = [];
-
-        // Add hot icons
-        for (let i = 0; i < hotIconsCount; i++) {
-            icons.push({ key: `hot${i}`, iconUrl: this.hotIconUrl });
-        }
-
-        // Add cold icons
-        for (let i = 0; i < coldIconsCount; i++) {
-            icons.push({ key: `cold${i}`, iconUrl: this.coldIconUrl });
-        }
-
-        return icons;
     }
 
     get disabledToggleClass() {

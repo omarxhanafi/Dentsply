@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/Test_ProductProfilingTrigger.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Test_ProductProfilingTrigger.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/0/e0e49b53e23da83a21b0e8a4e49cca909375258b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Test_ProductTrigger.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_ProductTrigger.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHelper.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Test_ProductProfilingTrigger.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_ProductProfilingTrigger.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/labels/CustomLabels.labels" beforeDir="false" afterPath="$PROJECT_DIR$/src/labels/CustomLabels.labels" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +94,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1709031916340" />
-                  <option name="numUsages" value="150" />
+                  <option name="lastUsed" value="1710247222646" />
+                  <option name="numUsages" value="157" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
@@ -18230,7 +18236,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1707822852324" />
+                      <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1710247227319" />
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1708091639614" />
                       <entry key="APEXCLASS:CAMPAIGNMEMBERTRIGGERHELPER" value="1668005778242" />
                       <entry key="APEXCLASS:CHANGEOWNER" value="1669800166407" />
@@ -18241,9 +18247,10 @@
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1666193185822" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1705655686717" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1708698803000" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1708698787000" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1710148308936" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706094605000" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1706190531666" />
+                      <entry key="APEXCLASS:TEST_PRODUCTPROFILINGTRIGGER" value="1710148374000" />
                       <entry key="APEXCLASS:TEST_PRODUCTTRIGGER" value="1706094629000" />
                       <entry key="APEXCLASS:USERSINACCOUNTTERRITORIES" value="1667389763476" />
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1699614933148" />
@@ -18304,7 +18311,7 @@
                       <entry key="CUSTOMFIELD:WORKFLOW__C.COUNTRIES__C" value="1699613011000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.GLOBALPRODUCTSHOWTOALLCOUNTRIES__C" value="1699613011000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.WORKFLOWLABEL__C" value="1699613011000" />
-                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1707231073000" />
+                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1710246966000" />
                       <entry key="CUSTOMOBJECT:NON_ERP_PRODUCTS__C" value="1699613750000" />
                       <entry key="CUSTOMOBJECT:PRODUCTFAMILY__C" value="1699613224000" />
                       <entry key="CUSTOMOBJECT:WORKFLOWLINE__C" value="1695386160000" />
@@ -18316,7 +18323,7 @@
                       <entry key="GLOBALVALUESET:GBU" value="1695386095000" />
                       <entry key="GLOBALVALUESET:PRODUCTFAMILY" value="1699613196000" />
                       <entry key="GLOBALVALUESET:WORKFLOWS" value="1695386095000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1707231095000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1710246978000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARD" value="1682075429551" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1709031917000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CLONEORDEROMLWC" value="1666105134000" />
@@ -18696,17 +18703,17 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1709035952936" />
-                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1708091634000" />
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1709295954978" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1707757491312" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1709124008000" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1709124009000" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1710148033200" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706087844965" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1709286832297" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1702387725302" />
                       <entry key="APEXCLASS:TEST_ACTIVITYSCORECARDCONTROLLER" value="1697197787769" />
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1701198065808" />
-                      <entry key="APEXCLASS:TEST_PRODUCTPROFILINGTRIGGER" value="1709292524311" />
+                      <entry key="APEXCLASS:TEST_PRODUCTPROFILINGTRIGGER" value="1710148363645" />
                       <entry key="APEXCLASS:TEST_PRODUCTTRIGGER" value="1709291480000" />
                       <entry key="APEXCLASS:TEST_WORKFLOWPROFILINGCONTROLLER" value="1704806112539" />
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1705655442403" />
@@ -18728,7 +18735,7 @@
                       <entry key="CUSTOMFIELD:WORKFLOWPROFILING__C.WORKFLOW__C" value="1695383392000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.COUNTRIES__C" value="1695383392000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.WORKFLOWLABEL__C" value="1695383392000" />
-                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1709035585000" />
+                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1709295295000" />
                       <entry key="CUSTOMOBJECT:PPCREATION__E" value="1707743954000" />
                       <entry key="CUSTOMOBJECT:PRODUCTFAMILY__C" value="1695383392000" />
                       <entry key="CUSTOMOBJECT:WORKFLOWLINE__C" value="1695383392000" />
@@ -18736,10 +18743,10 @@
                       <entry key="CUSTOMOBJECT:WORKFLOW__C" value="1695383392000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTCONTAINERLWC" value="1689951225892" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1709040914036" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1709031753002" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1709295389000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:POPOVERRECORDINFO" value="1704301044075" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1708420844674" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1710248622248" />
                       <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1695383392000" />
                       <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1695383392000" />
                       <entry key="STATICRESOURCE:SLIDERS" value="1703066996000" />
@@ -18883,30 +18890,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Apex Unit Tests.Test_ProductProfilingTrigger.executor": "Run",
-    "Apex Unit Tests.Test_ProductTrigger.executor": "Run",
-    "Apex Unit Tests.Test_WorkflowProfilingController.executor": "Run",
-    "Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/ohanafi/IdeaProjects/Dentsply/src/objects",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.29852837",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductTrigger.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_WorkflowProfilingController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ohanafi/IdeaProjects/Dentsply/src/objects&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29852837&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/objects" />
@@ -19260,7 +19268,9 @@
       <workItem from="1707741593607" duration="16280000" />
       <workItem from="1707928468049" duration="327000" />
       <workItem from="1707928834378" duration="209000" />
-      <workItem from="1707929102036" duration="32076000" />
+      <workItem from="1707929102036" duration="32851000" />
+      <workItem from="1709293934081" duration="3540000" />
+      <workItem from="1709996731631" duration="3080000" />
     </task>
     <servers />
   </component>
@@ -19285,7 +19295,6 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMargins.ic2" NAME="Margin Coverage Results" MODIFIED="1677067029631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_UpdateContactsBypassDuplicate_testUpdateContact.ic2" NAME="Lead Coverage Results" MODIFIED="1675421607460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_GuidanceRendererController.ic2" NAME="Tracker Coverage Results" MODIFIED="1681118187685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_ProductProfilingTrigger.ic2" NAME="acc360 Coverage Results" MODIFIED="1709292529634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="acc360" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchSetAccountSubSegmentation.ic2" NAME="Production Coverage Results" MODIFIED="1674815707650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Production" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ProcedureTrackerTriggerHelper_testcheckUniqueness.ic2" NAME="StgJan Coverage Results" MODIFIED="1673520387472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_findLeadMatch_testExecuteLeadSearch.ic2" NAME="HOTFIX Coverage Results" MODIFIED="1667918143842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
@@ -19294,5 +19303,6 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMarginsForCanada.ic2" NAME="MarginCA Coverage Results" MODIFIED="1681743541440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="MarginCA" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OrderManagement_CC_testCloneOrderWithPricingMicroServiceCallOutWithNoSourceRecord.ic2" NAME="DevNov Coverage Results" MODIFIED="1666690699780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_ProductProfilingTrigger_testPreventDeletion.ic2" NAME="acc360 Coverage Results" MODIFIED="1709292827427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="acc360" CONNECTION_TYPE="OAUTH" />
   </component>
 </project>

@@ -6,7 +6,8 @@ import TASKS_COMPLETED from '@salesforce/label/c.ActivityScoreboardTasksComplete
 import CALLS_LOGGED from '@salesforce/label/c.ActivityScoreboardCallsLogged';
 import EMAILS_SENT from '@salesforce/label/c.ActivityScoreboardEmailsSent';
 import EVENTS_LOGGED from '@salesforce/label/c.ActivityScoreboardEventsLogged';
-import FIRST_EVENT_DATE from '@salesforce/label/c.ActivityScorecardFirstEventDate';
+import LAST_EVENT_DATE from '@salesforce/label/c.ActivityScorecardLastEventDate';
+import MY_LAST_EVENT_DATE from '@salesforce/label/c.ActivityScorecardMyLastEventDate';
 import REPORTED_LAST_MONTHS from '@salesforce/label/c.ActivityReported12LastMonths';
 import PLANNED_CFES from '@salesforce/label/c.ActivityScorecardPlannedCFEs';
 
@@ -25,7 +26,8 @@ export default class ActivityScorecardLwc extends LightningElement {
         CALLS_LOGGED,
         EMAILS_SENT,
         EVENTS_LOGGED,
-        FIRST_EVENT_DATE,
+        LAST_EVENT_DATE,
+        MY_LAST_EVENT_DATE,
         REPORTED_LAST_MONTHS,
         PLANNED_CFES
     };
@@ -44,8 +46,8 @@ export default class ActivityScorecardLwc extends LightningElement {
             this.eventsLoggedPercentage = this.activityScorecardResult?.eventsLoggedCount / this.eventsLoggedBenchmark * 100;
 
             // Format first event's date to the user’s locale
-            const dateObject = new Date(this.activityScorecardResult?.firstEvent);
-            this.activityScorecardResult.firstEvent = this.activityScorecardResult?.firstEvent != null ? dateObject.toLocaleDateString(LOCALE) : null;
+            const dateObject = new Date(this.activityScorecardResult?.lastEventDate);
+            this.activityScorecardResult.lastEventDate = this.activityScorecardResult?.lastEventDate != null ? dateObject.toLocaleDateString(LOCALE) : null;
         } else if (error) {
             console.error(error);
         }

@@ -44,11 +44,11 @@ public with sharing class ProductProfilingTriggerHelper {
     private static String calculateUniqueKeyIdentifier(Product_Profiling__c record) {
         String uniqueKeyIdentifier;
         if (String.isBlank(record.Contact__c)) { // We use the 15-digit ID
-            uniqueKeyIdentifier = String.valueOf(record.Account__c).substring(0, 15) + String.valueOf(record.Non_Erp_Product_ID__c).substring(0, 15);
+            uniqueKeyIdentifier = String.valueOf(record.Account__c) + String.valueOf(record.Non_Erp_Product_ID__c);
         } else {
-            uniqueKeyIdentifier = String.valueOf(record.Account__c).substring(0, 15) +
-                    String.valueOf(record.Contact__c).substring(0, 15) +
-                    String.valueOf(record.Non_Erp_Product_ID__c).substring(0, 15);
+            uniqueKeyIdentifier = String.valueOf(record.Account__c) +
+                    String.valueOf(record.Contact__c) +
+                    String.valueOf(record.Non_Erp_Product_ID__c);
         }
         return uniqueKeyIdentifier;
     }
