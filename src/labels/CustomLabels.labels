@@ -105,6 +105,14 @@
         <value>Account 360 Flags</value>
     </labels>
     <labels>
+        <fullName>AccountFlagsHelpText</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsHelpText</shortDescription>
+        <value>White: N/A, Red: Inactive, Green: Active</value>
+    </labels>
+    <labels>
         <fullName>AccountFlagsLight</fullName>
         <categories>AccountFlags</categories>
         <language>en_US</language>

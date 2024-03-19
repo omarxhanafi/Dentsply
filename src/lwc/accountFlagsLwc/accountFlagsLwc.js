@@ -2,6 +2,7 @@ import { LightningElement, api, wire, track } from 'lwc';
 import getAccountFlagsJSON from '@salesforce/apex/AccountFlagsController.getAccountFlagsJSON';
 import {NavigationMixin} from "lightning/navigation";
 import HEADER from '@salesforce/label/c.AccountFlagsHeader';
+import HELP_TEXT from '@salesforce/label/c.AccountFlagsHelpText';
 import ACCESS from '@salesforce/label/c.AccountFlagsAccess';
 import LIGHT from '@salesforce/label/c.AccountFlagsLight';
 import STANDARD from '@salesforce/label/c.AccountFlagsStandard';
@@ -69,6 +70,7 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
 
     labels = {
         HEADER,
+        HELP_TEXT,
         ACCESS,
         LIGHT,
         STANDARD,

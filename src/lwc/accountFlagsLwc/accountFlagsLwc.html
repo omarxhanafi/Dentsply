@@ -4,6 +4,10 @@
             <!-- Desktop experience -->
             <template if:false={isMobile}>
                 <div class="slds-box slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+                    <div class="slds-grid slds-grid_align-spread slds-p-around_x-small slds-p-horizontal_medium">
+                        <h2 class="slds-card__header-title">{labels.HEADER}</h2>
+                        <lightning-helptext content={labels.HELP_TEXT}></lightning-helptext>
+                    </div>
                     <lightning-layout multiple-rows="true">
                         <lightning-layout-item flexibility="auto" padding="around-small" size="12" large-device-size="3" small-device-size="12">
                             <table class="flag-table">
