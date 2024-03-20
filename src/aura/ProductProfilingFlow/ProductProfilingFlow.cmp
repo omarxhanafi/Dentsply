@@ -3,8 +3,11 @@
     <aura:attribute name="recordId" type="String" />
     <aura:attribute name="testVar" type="String" />
     <aura:attribute name="pageReference" type="Object"/>
+
+    <lightning:navigation aura:id="navService"/>
+
     <lightning:card>
-    	<lightning:flow aura:id="flowData" />
+    	<lightning:flow aura:id="flowData" onstatuschange="{!c.statusChange}"/>
     </lightning:card>
     
 	

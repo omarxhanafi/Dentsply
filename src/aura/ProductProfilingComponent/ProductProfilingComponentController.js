@@ -109,7 +109,8 @@ init: function (cmp, event, helper) {
                 "componentName": "c__ProductProfilingFlow"    
             },    
             "state": {
-                "c__testVar": component.get("v.profilingRecordId")
+                "c__testVar": component.get("v.profilingRecordId"),
+                "c__accountId": component.get("v.recordId")
            	}
         	};
 			
