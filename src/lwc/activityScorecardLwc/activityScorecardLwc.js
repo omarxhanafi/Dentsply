@@ -32,23 +32,25 @@ export default class ActivityScorecardLwc extends LightningElement {
         PLANNED_CFES
     };
 
-    @wire(getAccountEventsJSON, { accountId: '$recordId' })
-    wiredGetAccountEvents({ error, data }){
-        if (data) {
-            this.activityScorecardResult = JSON.parse(data);
+    async connectedCallback() {
+        try {
+            const result = await getAccountEventsJSON({ accountId: this.recordId });
+            this.activityScorecardResult = JSON.parse(result);
+
+            this.eventsLoggedBenchmark = this.activityScorecardResult?.totalCFEs != null ? this.activityScorecardResult?.totalCFEs : this.eventsLoggedBenchmark;
 
             // Adapt the benchmark if the value is higher than the threshold
-            if (this.activityScorecardResult?.eventsLoggedCount > this.eventsLoggedBenchmark){
+            if (this.activityScorecardResult?.eventsLoggedCount > this.eventsLoggedBenchmark) {
                 this.activityScorecardResult.eventsLoggedCount = this.eventsLoggedBenchmark;
             }
 
             // Calculating percentages
-            this.eventsLoggedPercentage = this.activityScorecardResult?.eventsLoggedCount / this.eventsLoggedBenchmark * 100;
+            this.eventsLoggedPercentage = Math.floor((this.activityScorecardResult?.eventsLoggedCount / this.eventsLoggedBenchmark) * 100);
 
             // Format first event's date to the user’s locale
             const dateObject = new Date(this.activityScorecardResult?.lastEventDate);
-            this.activityScorecardResult.lastEventDate = this.activityScorecardResult?.lastEventDate != null ? dateObject.toLocaleDateString(LOCALE) : null;
-        } else if (error) {
+            this.activityScorecardResult.lastEventDate = this.activityScorecardResult?.lastEventDate != null ? dateObject.toLocaleDateString() : null;
+        } catch (error) {
             console.error(error);
         }
     }
