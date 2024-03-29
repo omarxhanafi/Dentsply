@@ -1,7 +1,6 @@
-import { LightningElement, api, wire } from 'lwc';
+import { LightningElement, api } from 'lwc';
 import getAccountEventsJSON from '@salesforce/apex/ActivityScorecardController.getAccountActivityScorecard';
 import FORM_FACTOR from '@salesforce/client/formFactor';
-import LOCALE from '@salesforce/i18n/locale';
 import TASKS_COMPLETED from '@salesforce/label/c.ActivityScoreboardTasksCompleted';
 import CALLS_LOGGED from '@salesforce/label/c.ActivityScoreboardCallsLogged';
 import EMAILS_SENT from '@salesforce/label/c.ActivityScoreboardEmailsSent';
@@ -10,6 +9,7 @@ import LAST_EVENT_DATE from '@salesforce/label/c.ActivityScorecardLastEventDate'
 import MY_LAST_EVENT_DATE from '@salesforce/label/c.ActivityScorecardMyLastEventDate';
 import REPORTED_LAST_MONTHS from '@salesforce/label/c.ActivityReported12LastMonths';
 import PLANNED_CFES from '@salesforce/label/c.ActivityScorecardPlannedCFEs';
+import NOT_AVAILABLE from '@salesforce/label/c.ActivityScoreboardNotAvailable';
 
 export default class ActivityScorecardLwc extends LightningElement {
 
@@ -29,7 +29,8 @@ export default class ActivityScorecardLwc extends LightningElement {
         LAST_EVENT_DATE,
         MY_LAST_EVENT_DATE,
         REPORTED_LAST_MONTHS,
-        PLANNED_CFES
+        PLANNED_CFES,
+        NOT_AVAILABLE
     };
 
     async connectedCallback() {

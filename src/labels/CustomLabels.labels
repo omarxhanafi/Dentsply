@@ -185,6 +185,14 @@
         <value>Reported in the last 12 months:</value>
     </labels>
     <labels>
+        <fullName>ActivityScoreboardNotAvailable</fullName>
+        <categories>Activity Scoreboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActivityScoreboardNotAvailable</shortDescription>
+        <value>Not Available</value>
+    </labels>
+    <labels>
         <fullName>ActivityScoreboardCallsLogged</fullName>
         <categories>Activity Scoreboard</categories>
         <language>en_US</language>

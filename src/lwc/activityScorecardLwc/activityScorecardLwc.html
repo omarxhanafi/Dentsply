@@ -15,7 +15,7 @@
                                 <p class="activity-counter">{activityScorecardResult.lastEventDate}</p>
                             </template>
                             <template if:false={activityScorecardResult.lastEventDate}>
-                                <p class="activity-counter">N/A</p>
+                                <p class="activity-counter">{labels.NOT_AVAILABLE}</p>
                             </template>
                         </div>
                     </lightning-layout-item>
