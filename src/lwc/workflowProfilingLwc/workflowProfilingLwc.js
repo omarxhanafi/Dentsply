@@ -1,12 +1,11 @@
 import { LightningElement, wire, api, track } from 'lwc';
 import { subscribe, unsubscribe } from 'lightning/empApi';
 import getWorkflows from '@salesforce/apex/WorkflowProfilingController.getWorkflows';
+import getProductProfiling from '@salesforce/apex/ProductProfilingHierarchyController.getProductProfiling';
 import getWorkflowProfilingsByAccount from '@salesforce/apex/WorkflowProfilingController.getWorkflowProfilingsByAccount';
 import createOrUpdateWorkflowProfilings from '@salesforce/apex/WorkflowProfilingController.createOrUpdateWorkflowProfilings';
 import getProductFamilyListByWorkflowId from '@salesforce/apex/WorkflowProfilingController.getProductFamilyListByWorkflowId';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import HOT_ICON from '@salesforce/resourceUrl/HotIcon';
-import COLD_ICON from '@salesforce/resourceUrl/ColdIcon';
 import FORM_FACTOR from '@salesforce/client/formFactor';
 import {NavigationMixin} from "lightning/navigation";
 import WPHeader from "@salesforce/label/c.WPHeader";
@@ -16,18 +15,20 @@ import WPDSProducts from "@salesforce/label/c.WPDSProducts";
 import WPCompetitorProducts from "@salesforce/label/c.WPCompetitorProducts";
 
 
+
 export default class WorkflowProfilingLwc extends NavigationMixin(LightningElement) {
 
     @api recordId; // Account record Id
     @track workflowsList = [];
     workflowProfilings = [];
+    @track productProfilingRecords = [];
 
     subscription = null;
 
     isProcessing = false;
 
-    hotIconUrl = HOT_ICON;
-    coldIconUrl = COLD_ICON;
+    isNewOpen = false;
+    isEditOpen = false;
 
     isMobile = FORM_FACTOR === 'Small' || (FORM_FACTOR === 'Medium' && window.innerWidth < window.innerHeight);
 
@@ -304,6 +305,67 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         });
     }
 
+    handleNewPP() {
+        // If on desktop we open the PP creation flow on a modal dialog
+        if(!this.isMobile){
+            this.isNewOpen = true;
+        } else { // Otherwise we redirect to the flow on mobile
+            this[NavigationMixin.Navigate]({
+                type: 'standard__component',
+                attributes: {
+                    componentName: 'c__ProductProfilingFlow'
+                },
+                state: {
+                    c__recordId: this.recordId,
+                    c__testVar: this.recordId
+                }
+            });
+        }
+    }
+
+    handleUpdatePP(){
+        this.fetchProductProfilingRecords();
+    }
+
+    get inputVariables() {
+        return [
+            {
+                name : 'recordId',
+                type : 'String',
+                value : this.recordId
+            }
+        ];
+    }
+
+    handleStatusChange(event) {
+        if (event.detail.status === 'FINISHED') {
+            this.handleCloseFlowModal();
+        }
+    }
+
+    // CLose the modal dialog after flow completion
+    handleCloseFlowModal(){
+        this.isNewOpen = false;
+        this.isEditOpen = false;
+    }
+
+    // Method to fetch PP records
+    fetchProductProfilingRecords() {
+        // Fetch workflowProfilings based on this.recordId
+        getProductProfiling({ recordId: this.recordId })
+            .then(result => {
+                // Order the result by Product Family Label in ascending order
+                result.sort((a, b) => (a.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c > b.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c) ? 1 : -1);
+
+                console.log('Product Profiling records', result);
+                this.isEditOpen = true;
+                this.productProfilingRecords = result;
+            })
+            .catch(error => {
+                console.error('Error fetching Product Profiling records:', error);
+            });
+    }
+
     showToast(title, message, variant) {
         const evt = new ShowToastEvent({
             title: title,
@@ -315,5 +377,13 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
 
     get collapsibleTextSize() {
         return this.isMobile ? 'font-size: 13px' : '';
+    }
+
+    get wrapperClass() {
+        return this.isMobile ? '' : 'slds-box slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none';
+    }
+
+    get headerClass() {
+        return this.isMobile ? 'slds-grid slds-wrap slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none' : 'slds-grid slds-wrap';
     }
 }

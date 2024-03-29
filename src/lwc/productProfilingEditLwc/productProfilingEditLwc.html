@@ -1,0 +1,62 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </template>
+
+    <div style="height: 400px;">
+        <div class="slds-scrollable--y" style="height: 100%;">
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                <thead>
+                <tr>
+                    <th style="width: 20%; height: 40px;">Product</th>
+                    <th style="width: 20%; height: 40px;">Product Family</th>
+                    <th style="width: 15%; height: 40px;">Contact</th>
+                    <th style="width: 15%; height: 40px;">Quantity</th>
+                    <th style="width: 15%; height: 40px;" class="slds-line-height_reset slds-text-align_left">
+                        <div class="slds-grid slds-grid_vertical-align-center">
+                            <span>In Use Since?</span>
+                            <div class="slds-p-left_x-small">
+                                <lightning-helptext content="Year of installation/first usage" icon-name="utility:info"></lightning-helptext>
+                            </div>
+                        </div>
+                    </th>
+                    <th style="width: 10%; height: 40px;"></th>
+                    <th style="width: 5%; height: 40px;">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <template for:each={selectedProducts} for:item="item" for:index="index">
+                    <tr key={item.Id}>
+                        <td>
+                            <lightning-input name="productName" readonly value={item.Product_Name__r.Name}></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-input readonly value={item.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c}></lightning-input>
+                        </td>
+                        <td>
+                            <template if:true={item.Contact__c}>
+                                <a href="#" onclick={navigateToRecord} data-recordid={item.Contact__c}>{item.Contact__r.FirstName} {item.Contact__r.LastName}</a>
+                            </template>
+                        </td>
+                        <td>
+                            <lightning-input type="number" name="quantity" value={item.Quantity__c} data-recordid={item.Id} onchange={handleQuantityChange}></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-combobox name="inUseSince" value={item.InUseSince__c} options={yearOptions} data-recordid={item.Id} onchange={handleInUseSinceChange}></lightning-combobox>
+                        </td>
+                        <td>
+                            <lightning-input type="checkbox" name="inactive" label="Inactive?" checked={item.Inactive__c} data-recordid={item.Id} onchange={handleInactiveChange}></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-button-icon name={item.Id} size="large" icon-name="utility:delete" variant="bare" alternative-text="Delete" title="Delete" onclick={deleteRecord} data-recordid={item.Id}></lightning-button-icon>
+                        </td>
+                    </tr>
+                </template>
+                </tbody>
+            </table>
+        </div>
+        <div class="slds-m-top_medium slds-float--right sticky-button_bottom-container">
+            <lightning-button variant="brand" label="Save" onclick={updateRecords}></lightning-button>
+        </div>
+    </div>
+</template>

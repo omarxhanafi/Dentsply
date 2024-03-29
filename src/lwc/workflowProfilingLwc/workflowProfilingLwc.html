@@ -1,10 +1,18 @@
 <template>
     <template if:true={workflowsList}>
-        <div class="slds-box slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+        <div class={wrapperClass}>
             <lightning-card variant="Narrow">
-                <div class="slds-grid slds-grid_align-spread slds-p-around_x-small slds-p-horizontal_medium">
-                    <h2 class="slds-card__header-title">{labels.WPHeader}</h2>
-                    <lightning-helptext content={labels.WPHelpText}></lightning-helptext>
+                <div class={headerClass}>
+                    <div class="slds-col slds-size_1-of-2">
+                        <h2 class="slds-card__header-title">{labels.WPHeader}</h2>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-text-align_right">
+                        <lightning-helptext content={labels.WPHelpText}></lightning-helptext>
+                        <template if:false={isMobile}>
+                            <lightning-button label="Update" onclick={handleUpdatePP} class="slds-m-left_small"></lightning-button>
+                        </template>
+                        <lightning-button label="New" onclick={handleNewPP} class="slds-m-left_small"></lightning-button>
+                    </div>
                 </div>
                 <table class="workflow-table">
                     <tbody>
@@ -158,6 +166,38 @@
                     </template>
                     </tbody>
                 </table>
+
+                <div if:true={isNewOpen}>
+                    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large">
+                        <div class="slds-modal__container">
+                            <header class="slds-modal__header slds-modal__header_empty">
+                                <lightning-button-icon icon-name="utility:close" class="slds-modal__close" variant="bare-inverse" onclick={handleCloseFlowModal}></lightning-button-icon>
+                            </header>
+                            <div class="slds-modal__content slds-p-around_medium">
+                                <lightning-flow
+                                        flow-api-name='Product_Profiling_Create_Product_Profiling_from_Contact'
+                                        flow-input-variables={inputVariables}
+                                        onstatuschange={handleStatusChange}
+                                >
+                                </lightning-flow>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </div>
+                <div if:true={isEditOpen}>
+                    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large">
+                        <div class="slds-modal__container">
+                            <header class="slds-modal__header slds-modal__header_empty">
+                                <lightning-button-icon icon-name="utility:close" class="slds-modal__close" variant="bare-inverse" onclick={handleCloseFlowModal}></lightning-button-icon>
+                            </header>
+                            <div class="slds-modal__content slds-p-around_medium">
+                                <c-product-profiling-edit-lwc selected-products={productProfilingRecords}></c-product-profiling-edit-lwc>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </div>
             </lightning-card>
         </div>
     </template>
