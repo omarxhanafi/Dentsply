@@ -88,8 +88,6 @@ public with sharing class WorkflowProfilingController {
                 }
             }
 
-            System.debug(recordsToUpsert);
-
             // Perform the upsert operation to either insert or update records
             if (!recordsToUpsert.isEmpty()) {
                 upsert recordsToUpsert;
@@ -164,10 +162,6 @@ public with sharing class WorkflowProfilingController {
 
         // Sorting Product Families based on the Workflow Lines order
         productFamilyWrapperList.sort();
-
-//        for(ProductFamilyWrapper wrapper : productFamilyWrapperList){
-//            System.debug(wrapper.orderMap.get(wrapper.productFamily.Id));
-//        }
 
         return productFamilyWrapperList;
 

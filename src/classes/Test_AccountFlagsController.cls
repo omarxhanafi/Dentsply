@@ -118,10 +118,10 @@ public without sharing class Test_AccountFlagsController {
 
             Map<String, Object> flagMap = (Map<String, Object>) JSON.deserializeUntyped(flagsJSON);
 
-            Assert.areEqual(1, ((Map<String, Object>) flagMap.get('awo')).get('value'));
-            Assert.areEqual(1, ((Map<String, Object>) flagMap.get('dsCom')).get('value'));
-            Assert.areEqual(2, ((Map<String, Object>) flagMap.get('dsCoreAccess')).get('value'));
-            Assert.areEqual(1, ((Map<String, Object>) flagMap.get('dsCoreCare')).get('value'));
+            Assert.areEqual(1, ((Map<String, Object>) flagMap.get('awo')).get('level'));
+            Assert.areEqual(1, ((Map<String, Object>) flagMap.get('dsCom')).get('level'));
+            Assert.areEqual(2, ((Map<String, Object>) flagMap.get('dsCoreAccess')).get('level'));
+            Assert.areEqual(1, ((Map<String, Object>) flagMap.get('dsCoreCare')).get('level'));
         }
     }
 }

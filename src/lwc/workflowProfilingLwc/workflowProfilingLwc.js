@@ -91,8 +91,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
                 rating: 0
             }));
 
-            // console.log("Workflows", JSON.parse(JSON.stringify(this.workflowsList)))
-
             // After getting workflows, fetch the workflowProfilings
             this.fetchWorkflowProfilings();
         }
@@ -104,7 +102,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         getWorkflowProfilingsByAccount({ accountId: this.recordId })
             .then(result => {
                 this.workflowProfilings = result;
-                // console.log('Workflow Profilings', this.workflowProfilings);
 
                 // We update the ratings
                 this.updateWorkflowsFromProfilings();
@@ -125,8 +122,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
                 }
             }
         });
-
-        // console.log("Updated Workflows", JSON.parse(JSON.stringify(this.workflowsList)));
     }
 
     handleRowToggle(event) {
@@ -140,8 +135,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
             }
             return workflow;
         });
-
-        // console.log("Changed Workflows after toggle", JSON.parse(JSON.stringify(this.workflowsList)));
 
         this.saveData(); // Save the data upon toggle change
     }
@@ -163,8 +156,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
                 });
         });
 
-        // console.log('Workflow profilings to upsert', recordsToUpsert);
-
         if (recordsToUpsert.length > 0) {
             this.upsertWorkflowProfilings(recordsToUpsert);
         }
@@ -177,7 +168,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         createOrUpdateWorkflowProfilings({newRecords: recordsToUpsert})
             .then(() => {
                 this.isProcessing = false; // Enabling the toggles
-                console.log('Workflow profiles created or updated successfully.');
             })
             .catch(error => {
                 this.showToast('Error', 'An error occurred while saving records', 'error');
@@ -240,8 +230,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
                             }
                         });
                     });
-
-                    // console.log("Expanded workflow", JSON.parse(JSON.stringify(selectedWorkflow)));
                 })
                 .catch(error => {
                     console.error('Error fetching Product Families & Products:', error);
@@ -282,10 +270,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         if (foundProduct) {
             // Display or hide the related popover
             foundProduct.isMouseOver = isOver;
-
-            // console.log('Product found:', JSON.parse(JSON.stringify(foundProduct)));
-        } else {
-            console.log('No product found with the given ID.');
         }
     }
 
@@ -357,7 +341,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
                 // Order the result by Product Family Label in ascending order
                 result.sort((a, b) => (a.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c > b.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c) ? 1 : -1);
 
-                console.log('Product Profiling records', result);
                 this.isEditOpen = true;
                 this.productProfilingRecords = result;
             })

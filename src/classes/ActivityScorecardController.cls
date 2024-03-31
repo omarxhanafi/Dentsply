@@ -149,8 +149,6 @@ public without sharing class ActivityScorecardController {
         results.put('eventsLoggedCount', eventsLoggedCount);
         results.put('totalCFEs', totalCFEs);
 
-        System.debug(results);
-
         return JSON.serialize(results);
     }
 
@@ -169,22 +167,13 @@ public without sharing class ActivityScorecardController {
 
         if (datasetDetails[0] != null && datasetDetails[1] != null) {
 
-//  Query for PROD
-//            String query = 'q = load "' + datasetDetails[0] + '/' + datasetDetails[1] + '";';
-//            query = query + 'acct = filter q by \'Account.OneSF_Id__c\' == "SF0982657";';
-//            query = query + 'totals = group q by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\', \'FM_Category_AnySBU\');';
-//            query = query + 'totals = foreach totals generate \'Geography.Hierarchy.ETMCountry\',totals.\'Products.Global.SBU_Name__c\' as \'Products.Global.SBU_Name__c\', totals.\'Account.OneAccount_Type__c\' as \'Account.OneAccount_Type__c\', totals.\'FM_Category_AnySBU\' as \'FM_Category_AnySBU\', avg(totals.\'CFECount\') as \'AvgCFEs\';';
-//            query = query + 'result = group acct by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\', \'FM_Category_AnySBU\'), totals by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\', \'FM_Category_AnySBU\');';
-//            query = query + 'result = foreach result generate coalesce(acct.\'Geography.Hierarchy.ETMCountry\',totals.\'Geography.Hierarchy.ETMCountry\') as \'Geography.Hierarchy.ETMCountry\',coalesce(acct.\'Products.Global.SBU_Name__c\',totals.\'Products.Global.SBU_Name__c\') as \'Products.Global.SBU_Name__c\',coalesce(acct.\'Account.OneAccount_Type__c\',totals.\'Account.OneAccount_Type__c\') as \'Account.OneAccount_Type__c\',coalesce(acct.\'FM_Category_AnySBU\',totals.\'FM_Category_AnySBU\') as \'FM_Category_AnySBU\', sum(totals.\'AvgCFEs\') as \'TotalCFEs\';';
-//            query = query + 'result = group result by all;';
-//            query = query + 'result = foreach result generate round(sum(\'TotalCFEs\')) as \'TotalCFEs\';';
-
+            // SAQL Query
             String query = 'q = load "' + datasetDetails[0] + '/' + datasetDetails[1] + '";';
-            query = query + 'acct = filter q by \'Account.OneSF_Id__c\' == "' + oneSfId + '";';
-            query = query + 'totals = group q by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\');';
-            query = query + 'totals = foreach totals generate \'Geography.Hierarchy.ETMCountry\',totals.\'Products.Global.SBU_Name__c\' as \'Products.Global.SBU_Name__c\', totals.\'Account.OneAccount_Type__c\' as \'Account.OneAccount_Type__c\', avg(totals.\'CFECount\') as \'AvgCFEs\';';
-            query = query + 'result = group acct by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\'), totals by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\');';
-            query = query + 'result = foreach result generate coalesce(acct.\'Geography.Hierarchy.ETMCountry\',totals.\'Geography.Hierarchy.ETMCountry\') as \'Geography.Hierarchy.ETMCountry\',coalesce(acct.\'Products.Global.SBU_Name__c\',totals.\'Products.Global.SBU_Name__c\') as \'Products.Global.SBU_Name__c\',coalesce(acct.\'Account.OneAccount_Type__c\',totals.\'Account.OneAccount_Type__c\') as \'Account.OneAccount_Type__c\', sum(totals.\'AvgCFEs\') as \'TotalCFEs\';';
+            query = query + 'acct = filter q by \'Account.OneSF_Id__c\' == "SF0982657";';
+            query = query + 'totals = group q by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\', \'FM_Category_AnySBU\');';
+            query = query + 'totals = foreach totals generate \'Geography.Hierarchy.ETMCountry\',totals.\'Products.Global.SBU_Name__c\' as \'Products.Global.SBU_Name__c\', totals.\'Account.OneAccount_Type__c\' as \'Account.OneAccount_Type__c\', totals.\'FM_Category_AnySBU\' as \'FM_Category_AnySBU\', avg(totals.\'CFECount\') as \'AvgCFEs\';';
+            query = query + 'result = group acct by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\', \'FM_Category_AnySBU\'), totals by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\', \'FM_Category_AnySBU\');';
+            query = query + 'result = foreach result generate coalesce(acct.\'Geography.Hierarchy.ETMCountry\',totals.\'Geography.Hierarchy.ETMCountry\') as \'Geography.Hierarchy.ETMCountry\',coalesce(acct.\'Products.Global.SBU_Name__c\',totals.\'Products.Global.SBU_Name__c\') as \'Products.Global.SBU_Name__c\',coalesce(acct.\'Account.OneAccount_Type__c\',totals.\'Account.OneAccount_Type__c\') as \'Account.OneAccount_Type__c\',coalesce(acct.\'FM_Category_AnySBU\',totals.\'FM_Category_AnySBU\') as \'FM_Category_AnySBU\', sum(totals.\'AvgCFEs\') as \'TotalCFEs\';';
             query = query + 'result = group result by all;';
             query = query + 'result = foreach result generate round(sum(\'TotalCFEs\')) as \'TotalCFEs\';';
 

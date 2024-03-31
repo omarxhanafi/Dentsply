@@ -95,7 +95,6 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
     wiredGetAccountFlags({ error, data }){
         if (data) {
             this.accountFlagsResult = JSON.parse(data);
-            console.log("this.accountFlagsResult", this.accountFlagsResult);
 
             // We only show the customer number if the flag is green, otherwise we only show the flag
             if(this.accountFlagsResult?.customerNumber?.level == 1){

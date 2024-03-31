@@ -48,9 +48,6 @@ public with sharing class ProductTriggerHelper {
                 }
             }
 
-            System.debug('Should process ' + shouldProcess);
-
-
             // We check the PG codes by order
             if (shouldProcess) {
                 for (String pgField : new List<String>{'PG4_Code__c', 'PG3_Code__c', 'PG2_Code__c', 'PG1_Code__c'}) {
@@ -64,7 +61,5 @@ public with sharing class ProductTriggerHelper {
                 }
             }
         }
-
-        System.debug('Updated products : ' + newProductList);
     }
 }

@@ -47,9 +47,6 @@ public with sharing class AccountFlagsController {
             }
         }
 
-        System.debug('activeContracts : ' + activeContracts);
-        System.debug('expiredContracts : ' + expiredContracts);
-
         // Init a Map of the results
         Map<String, AccountFlag> results = new Map<String, AccountFlag>();
 
@@ -218,11 +215,7 @@ public with sharing class AccountFlagsController {
                 erpSourceRecords.add(eachSourceRecord);
             }
 
-//            System.debug('Source ID : ' + eachSourceRecord.Source_Id__c);
-
         }
-
-//        System.debug('erpSourceRecords ' + erpSourceRecords);
 
         // Creating the SureSmile flag
         if(sureSmileAlignerId != null || sureSmileOrthoId != null || sureSmileAdvancedId != null){
@@ -314,7 +307,6 @@ public with sharing class AccountFlagsController {
                 dsCoreCare = (tempDsCoreCare > dsCoreCare.level) ? new AccountFlag(tempDsCoreCare, eachLineItem.Id) : dsCoreCare;
                 dsCoreLab = (tempDsCoreLab > dsCoreLab.level) ? new AccountFlag(tempDsCoreLab, eachLineItem.Id) : dsCoreLab;
 
-                System.debug('dsCoreAccess : ' + dsCoreAccess);
             }
         }
 

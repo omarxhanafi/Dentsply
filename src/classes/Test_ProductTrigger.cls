@@ -25,12 +25,12 @@ public class Test_ProductTrigger {
         List<Non_ERP_Products__c> nonErpProducts = new List<Non_ERP_Products__c>{
                 new Non_ERP_Products__c(
                         Name = 'NonERP1',
-                        AssignmentRuleCodes__c = 'Code1;Code2',
+                        AssignmentRuleCodes__c = 'Code1,Code2',
                         ProductFamily__c = productFamilies[0].Id
                 ),
                 new Non_ERP_Products__c(
                         Name = 'NonERP2',
-                        AssignmentRuleCodes__c = 'Code3;Code4',
+                        AssignmentRuleCodes__c = 'Code3,Code4',
                         ProductFamily__c = productFamilies[1].Id
                 )
                 // Add more Non ERP products as needed

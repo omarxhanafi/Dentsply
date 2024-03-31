@@ -43,13 +43,18 @@ public with sharing class ProductProfilingTriggerHelper {
      */
     private static String calculateUniqueKeyIdentifier(Product_Profiling__c record) {
         String uniqueKeyIdentifier;
-        if (String.isBlank(record.Contact__c)) { // We use the 15-digit ID
-            uniqueKeyIdentifier = String.valueOf(record.Account__c) + String.valueOf(record.Non_Erp_Product_ID__c);
+
+        String product15digitId = record.Non_Erp_Product_ID__c;
+        Id product18digitId = Id.valueOf(product15digitId); // Convert 15-digit Id to 18-digit Id
+
+        if (String.isBlank(record.Contact__c)) {
+            uniqueKeyIdentifier = String.valueOf(record.Account__c) + String.valueOf(product18digitId);
         } else {
             uniqueKeyIdentifier = String.valueOf(record.Account__c) +
                     String.valueOf(record.Contact__c) +
-                    String.valueOf(record.Non_Erp_Product_ID__c);
+                    String.valueOf(product18digitId);
         }
+
         return uniqueKeyIdentifier;
     }
 
