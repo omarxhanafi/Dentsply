@@ -1,0 +1,4 @@
+<design:component >
+    <design:attribute name="passedRecordId" label="Campaign ID" />
+    <design:attribute name="passedRecordTypeId" label="Campaign Record Type ID" />
+</design:component>

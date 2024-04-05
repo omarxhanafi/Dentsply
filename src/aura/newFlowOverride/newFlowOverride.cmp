@@ -1,0 +1,52 @@
+<aura:component implements="lightning:actionOverride,lightning:hasPageReference" access="global" controller="flowOverrideController">
+    <aura:attribute name="passedRecordId" type="String" />
+    <aura:attribute name="passedRecordTypeId" type="String" />
+    <aura:attribute name="parentFieldId" access="global" type="String" />
+    <aura:attribute name="parentFieldName" access="global" type="String" />
+    <aura:attribute name="backgroundContext" type="String" />
+    <aura:attribute name="pageReference" type="Object" />
+    <aura:attribute name="flowFinished" type="Boolean" default="false" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.pageRefChange}"/>
+    <aura:handler event="c:newFlowOverrideEvent" action="{!c.handleFlowEvent}" />
+
+    <lightning:navigation aura:id="navService"/>
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+
+    <aura:html tag="style">
+        .cuf-content {
+            padding: 0 0rem !important;
+        }
+        .cuf-scroller-content {
+            background: rgb(255, 255, 255) !important;
+        }
+        .cuf-scroller-inside {
+            padding: 0 0rem !important;
+        }
+        .slds-modal__content {
+            padding: 0rem !important;
+            height: unset !important;
+            max-height: unset !important;
+        }
+        .slds-modal__container{
+            max-width: 80% !important;
+            width: 70rem !important;
+        }
+        .slds-modal__close:focus {
+            color: var(--slds-c-button-brand-text-color, 
+                var(--sds-c-button-brand-text-color, 
+                var(--lwc-colorTextBrandPrimary,rgb(255, 255, 255)))); 
+                border: 0px; 
+                box-shadow: 0 0 0 0;
+        }
+    </aura:html>
+
+    <aura:if isTrue="{!$Browser.formFactor == 'DESKTOP' || v.parentFieldId != null}">
+                <div>
+                </div> 
+        <aura:set attribute="else">
+            <lightning:flow aura:id="flowData"  />
+        </aura:set>
+    </aura:if>   
+</aura:component>

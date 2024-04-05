@@ -127,10 +127,6 @@ l
 <src/lwc/productProfilingEditLwc/productProfilingEditLwc.html,7/c/7c45b45944a6771423e5ed3e8e6f19daa46441d8
 N
 src/labels/CustomLabels.labels,7/3/73b9ee7c12ebd48082987fdfaed38468f2a99eea
-d
-4src/lwc/activityScorecardLwc/activityScorecardLwc.js,f/f/ff25ea74f937fad429fe27671f5c3017cf608c9a
-[
-+src/classes/ActivityScorecardController.cls,a/d/ad6cf685edfd5e115942ab85060b14eb8911c084
 `
 0src/classes/Test_ActivityScorecardController.cls,8/9/89ed1f0d412a4dd758ea6ecf944c75cc85d200cf
 Z

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>JourneyMapStringCalculation</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Account__r.OneSF_Id__c} &amp; &quot; - &quot; &amp; {!$Record.RecordType.Name} &amp; &quot; - &quot; &amp; TEXT(YEAR(today()))</expression>
+    </formulas>
+    <interviewLabel>Go-To-Market Journey: Before Handler {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Go-To-Market Journey: Before Handler</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>UpdateName</name>
+        <label>Update Name</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>JourneyMapStringCalculation</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>UpdateName</targetReference>
+        </connector>
+        <filterFormula>{!$Setup.GlobalBypassProcessesSettings__c.RunFlows__c}=True</filterFormula>
+        <object>GTMJourney__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>JourneyMapName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <elementReference>JourneyMapStringCalculation</elementReference>
+        </value>
+    </variables>
+</Flow>

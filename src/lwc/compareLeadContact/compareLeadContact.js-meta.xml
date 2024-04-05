@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+
+   <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="leadId" type="String" label="Lead Id" description="Id of the current lead"/>
+            <property name="contactId" type="String" label="Contact Id" description="Id of the current contact"/>
+            <property name="updateSalutation" type="Boolean" label="Update contact salutation?" description="Checked if the lead's salutation should override the contact's salutation"/>
+            <property name="updateFirstName" type="Boolean" label="Update contact first name?" description="Checked if the lead's first name should override the contact's first name"/>
+            <property name="updateLastName" type="Boolean" label="Update contact last name?" description="Checked if the lead's last name should override the contact's last name"/>
+            <property name="updatePhone" type="Boolean" label="Update contact phone?" description="Checked if the lead's phone number should override the contact's phone number"/>
+            <property name="updateEmail" type="Boolean" label="Update contact email?" description="Checked if the lead's email should override the contact's email"/>
+            <property name="updateProfession" type="Boolean" label="Update contact profession?" description="Checked if the lead's profession should override the contact's profession"/>
+            <property name="updateSpecialty" type="Boolean" label="Update contact specialty?" description="Checked if the lead's specialty should override the contact's specialty"/>
+            <property name="updateLanguage" type="Boolean" label="Update contact language?" description="Checked if the lead's language should override the contact's language"/>
+
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

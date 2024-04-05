@@ -1,0 +1,309 @@
+<template>
+
+    
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table">
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Field name">Field name</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Lead">
+                <lightning-icon icon-name="standard:lead" alternative-text="Lead" title="Lead"></lightning-icon> Lead
+            </div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Contact">
+                <lightning-icon icon-name="standard:contact" alternative-text="Contact" title="Contact"></lightning-icon> Contact
+            </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody onload={compareRecords}>
+
+            <!-- SALUTATION -->
+            <template if:true={salutationDiff}> 
+                <tr class="slds-hint-parent">
+                  <th data-label="Field name" scope="row">
+                      <div class="slds-truncate">Salutation</div>
+                  </th>
+                  <td data-label="Lead">
+                      <fieldset class="slds-form-element">
+                          <div class="slds-truncate slds-form-element__control">
+                              <span class="slds-radio">
+                                  <input type="radio" id="leadSalutation" name="salutation" onchange={handleSalutationChange} value="leadSalutation" checked={contactSalutationEmpty} disabled={contactSalutationEmpty}>
+                                  <label class="slds-radio__label" for="leadSalutation">
+                                      <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                      <span class="slds-form-element__label" style="margin-right:0.5rem !important;">{leadSalutation}</span>
+                                  </label>
+                              </span>
+                          </div>
+                      </fieldset>
+                  </td>
+                  <td data-label="Contact">
+                      <fieldset class="slds-form-element">
+                          <div class="slds-truncate slds-form-element__control">
+                              <span class="slds-radio">
+                                  <input type="radio" id="contactSalutation" onchange={handleSalutationChange} name="salutation" value="contactSalutation" checked={contactSalutation} disabled={contactSalutationEmpty}>
+                                  <label class="slds-radio__label" for="contactSalutation">
+                                      <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                      <span class="slds-form-element__label">{contactSalutation}</span>
+                                  </label>
+                              </span>
+                          </div>
+                      </fieldset>
+                  </td>
+                </tr>
+                </template>            
+
+            <!-- FIRSTNAME -->
+            <template if:true={firstnameDiff}> 
+                <tr class="slds-hint-parent">
+                  <th data-label="Field name" scope="row">
+                      <div class="slds-truncate">First Name</div>
+                  </th>
+                  <td data-label="Lead">
+                      <fieldset class="slds-form-element">
+                          <div class="slds-truncate slds-form-element__control">
+                              <span class="slds-radio">
+                                  <input type="radio" id="leadFirstName" name="firstname" onchange={handleFirstNameChange} value="leadFirstName" checked={contactFirstnameEmpty} disabled={contactFirstnameEmpty}>
+                                  <label class="slds-radio__label" for="leadFirstName">
+                                      <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                      <span class="slds-form-element__label" style="margin-right:0.5rem !important;">{leadFirstName}</span>
+                                  </label>
+                              </span>
+                          </div>
+                      </fieldset>
+                  </td>
+                  <td data-label="Contact">
+                      <fieldset class="slds-form-element">
+                          <div class="slds-truncate slds-form-element__control">
+                              <span class="slds-radio">
+                                  <input type="radio" id="contactFirstName" onchange={handleFirstNameChange} name="firstname" value="contactFirstName" checked={contactFirstName} disabled={contactFirstnameEmpty}>
+                                  <label class="slds-radio__label" for="contactFirstName">
+                                      <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                      <span class="slds-form-element__label">{contactFirstName}</span>
+                                  </label>
+                              </span>
+                          </div>
+                      </fieldset>
+                  </td>
+                </tr>
+                </template>
+
+            <!-- LASTNAME -->
+            <template if:true={lastnameDiff}> 
+                <tr class="slds-hint-parent">
+                  <th data-label="Field name" scope="row">
+                      <div class="slds-truncate">Last Name</div>
+                  </th>
+                  <td data-label="Lead">
+                      <fieldset class="slds-form-element">
+                          <div class="slds-truncate slds-form-element__control">
+                              <span class="slds-radio">
+                                  <input type="radio" id="leadLastName" name="lastname" onchange={handleLastNameChange} value="leadLastName" checked={contactLastnameEmpty} disabled={contactLastnameEmpty}>
+                                  <label class="slds-radio__label" for="leadLastName">
+                                      <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                      <span class="slds-form-element__label" style="margin-right:0.5rem !important;">{leadLastName}</span>
+                                  </label>
+                              </span>
+                          </div>
+                      </fieldset>
+                  </td>
+                  <td data-label="Contact">
+                      <fieldset class="slds-form-element">
+                          <div class="slds-truncate slds-form-element__control">
+                              <span class="slds-radio">
+                                  <input type="radio" id="contactLastName" onchange={handleLastNameChange} name="lastname" value="contactLastName" checked={contactLastName} disabled={contactLastnameEmpty}>
+                                  <label class="slds-radio__label" for="contactLastName">
+                                      <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                      <span class="slds-form-element__label">{contactLastName}</span>
+                                  </label>
+                              </span>
+                          </div>
+                      </fieldset>
+                  </td>
+                </tr>
+                </template>
+
+        <!-- PHONE -->        
+        <template if:true={phoneDiff}> 
+          <tr class="slds-hint-parent">
+            <th data-label="Field name" scope="row">
+                <div class="slds-truncate">Phone</div>
+            </th>
+            <td data-label="Lead">
+                <fieldset class="slds-form-element">
+                    <div class="slds-truncate slds-form-element__control">
+                        <span class="slds-radio">
+                            <input type="radio" id="leadPhone" name="phone" onchange={handlePhoneChange} value="leadPhone" checked={contactPhoneEmpty} disabled={contactPhoneEmpty}>
+                            <label class="slds-radio__label" for="leadPhone">
+                                <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                <span class="slds-form-element__label" style="margin-right:0.5rem !important;">{leadPhone}</span>
+                            </label>
+                        </span>
+                    </div>
+                </fieldset>
+            </td>
+            <td data-label="Contact">
+                <fieldset class="slds-form-element">
+                    <div class="slds-truncate slds-form-element__control">
+                        <span class="slds-radio">
+                            <input type="radio" id="contactPhone" onchange={handlePhoneChange} name="phone" value="contactPhone" checked={contactPhone} disabled={contactPhoneEmpty}>
+                            <label class="slds-radio__label" for="contactPhone">
+                                <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                <span class="slds-form-element__label">{contactPhone}</span>
+                            </label>
+                        </span>
+                    </div>
+                </fieldset>
+            </td>
+          </tr>
+          </template>
+
+          <!-- EMAIL -->
+          <template if:true={emailDiff}>
+          <tr class="slds-hint-parent">
+            <th data-label="Field name" scope="row">
+                <div class="slds-truncate">Email</div>
+            </th>
+            <td data-label="Lead">
+                <fieldset class="slds-form-element">
+                    <div class="slds-truncate slds-form-element__control">
+                        <span class="slds-radio">
+                            <input type="radio" id="leadEmail" onchange={handleEmailChange} name="email" value="leadEmail" checked={contactEmailEmpty} disabled={contactEmailEmpty}>
+                            <label class="slds-radio__label" for="leadEmail">
+                                <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                <span class="slds-form-element__label" style="margin-right:0.5rem !important;">{leadEmail}</span>
+                            </label>
+                        </span>
+                    </div>
+                </fieldset>
+            </td>
+            <td data-label="Contact">
+                <fieldset class="slds-form-element">
+                    <div class="slds-truncate slds-form-element__control">
+                        <span class="slds-radio">
+                            <input type="radio" id="contactEmail" onchange={handleEmailChange} name="email" value="contactEmail" checked={contactEmail} disabled={contactEmailEmpty}>
+                            <label class="slds-radio__label" for="contactEmail">
+                                <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                <span class="slds-form-element__label">{contactEmail}</span>
+                            </label>
+                        </span>
+                    </div>
+                </fieldset>
+            </td>
+          </tr>
+        </template>
+
+          <!-- PROFESSION -->
+          <template if:true={professionDiff}>
+            <tr class="slds-hint-parent">
+              <th data-label="Field name" scope="row">
+                  <div class="slds-truncate">Role/Profession</div>
+              </th>
+              <td data-label="Lead">
+                  <fieldset class="slds-form-element">
+                      <div class="slds-truncate slds-form-element__control">
+                          <span class="slds-radio">
+                              <input type="radio" id="leadProfession" onchange={handleProfessionChange} name="profession" value="leadProfession" checked={contactProfessionEmpty} disabled={contactProfessionEmpty}>
+                              <label class="slds-radio__label" for="leadProfession">
+                                  <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                  <span class="slds-form-element__label" style="margin-right:0.5rem !important;">{leadProfession}</span>
+                              </label>
+                          </span>
+                      </div>
+                  </fieldset>
+              </td>
+              <td data-label="Contact">
+                  <fieldset class="slds-form-element">
+                      <div class="slds-truncate slds-form-element__control">
+                          <span class="slds-radio">
+                              <input type="radio" id="contactProfession" onchange={handleProfessionChange} name="profession" value="contactProfession" checked={contactProfession} disabled={contactProfessionEmpty}>
+                              <label class="slds-radio__label" for="contactProfession">
+                                  <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                  <span class="slds-form-element__label">{contactProfession}</span>
+                              </label>
+                          </span>
+                      </div>
+                  </fieldset>
+              </td>
+            </tr>
+          </template>
+
+                    <!-- SPECIALTY -->
+                    <template if:true={specialtyDiff}>
+                        <tr class="slds-hint-parent">
+                          <th data-label="Field name" scope="row">
+                              <div class="slds-truncate">Specialty</div>
+                          </th>
+                          <td data-label="Lead">
+                              <fieldset class="slds-form-element">
+                                  <div class="slds-truncate slds-form-element__control">
+                                      <span class="slds-radio">
+                                          <input type="radio" id="leadSpecialty" onchange={handleSpecialtyChange} name="specialty" value="leadSpecialty" checked={contactSpecialtyEmpty} disabled={contactSpecialtyEmpty}>
+                                          <label class="slds-radio__label" for="leadSpecialty">
+                                              <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                              <span class="slds-form-element__label" style="margin-right:0.5rem !important;">{leadSpecialty}</span>
+                                          </label>
+                                      </span>
+                                  </div>
+                              </fieldset>
+                          </td>
+                          <td data-label="Contact">
+                              <fieldset class="slds-form-element">
+                                  <div class="slds-truncate slds-form-element__control">
+                                      <span class="slds-radio">
+                                          <input type="radio" id="contactSpecialty" onchange={handleSpecialtyChange} name="specialty" value="contactSpecialty" checked={contactSpecialty} disabled={contactSpecialtyEmpty}>
+                                          <label class="slds-radio__label" for="contactSpecialty">
+                                              <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                              <span class="slds-form-element__label">{contactSpecialty}</span>
+                                          </label>
+                                      </span>
+                                  </div>
+                              </fieldset>
+                          </td>
+                        </tr>
+                      </template>
+
+                     <!-- LANGUAGE -->
+                     <template if:true={languageDiff}>
+                        <tr class="slds-hint-parent">
+                          <th data-label="Field name" scope="row">
+                              <div class="slds-truncate">Preferred Language</div>
+                          </th>
+                          <td data-label="Lead">
+                              <fieldset class="slds-form-element">
+                                  <div class="slds-truncate slds-form-element__control">
+                                      <span class="slds-radio">
+                                          <input type="radio" id="leadLanguage" onchange={handleLanguageChange} name="language" value="leadLanguage" checked={contactLanguageEmpty} disabled={contactLanguageEmpty}>
+                                          <label class="slds-radio__label" for="leadLanguage">
+                                              <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                              <span class="slds-form-element__label" style="margin-right:0.5rem !important;">{leadLanguage}</span>
+                                          </label>
+                                      </span>
+                                  </div>
+                              </fieldset>
+                          </td>
+                          <td data-label="Contact">
+                              <fieldset class="slds-form-element">
+                                  <div class="slds-truncate slds-form-element__control">
+                                      <span class="slds-radio">
+                                          <input type="radio" id="contactLanguage" onchange={handleLanguageChange} name="language" value="contactLanguage" checked={contactLanguage} disabled={contactLanguageEmpty}>
+                                          <label class="slds-radio__label" for="contactLanguage">
+                                              <span class="slds-radio_faux" style="margin-right:0.5rem !important;"></span>
+                                              <span class="slds-form-element__label">{contactLanguage}</span>
+                                          </label>
+                                      </span>
+                                  </div>
+                              </fieldset>
+                          </td>
+                        </tr>
+                      </template>
+                     
+
+        </tbody>
+      </table>
+
+
+</template>

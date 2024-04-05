@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Assign Suggested Owner to Sales Leads</description>
+        <name>Assign_Suggested_Owner_to_Sales_Leads</name>
+        <label>Assign Suggested Owner to Sales Leads</label>
+        <locationX>176</locationX>
+        <locationY>384</locationY>
+        <actionName>SuggestedOwnerManager</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>salesLeadsIds</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>SuggestedOwnerManager</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <decisions>
+        <description>Checks the Custom Settings: Global Admin Settings Detail - Assign Suggested Owner to Sales Leads</description>
+        <name>Check_ByPass_Assign_Suggested_Owner_to_Sales_Leads_Custom_Settings</name>
+        <label>Check ByPass Assign Suggested Owner to Sales Leads Custom Settings</label>
+        <locationX>440</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Custom_Settings_is_ON</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.GlobalAdminSettings__c.AssignSuggestedOwnerToSalesLeads__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Suggested_Owner_to_Sales_Leads</targetReference>
+            </connector>
+            <label>Custom Settings is ON</label>
+        </rules>
+        <rules>
+            <name>Custom_Settings_is_OFF</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.GlobalAdminSettings__c.AssignSuggestedOwnerToSalesLeads__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Custom Settings is OFF</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Sales Lead: Asynchronous {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Sales Lead: Asynchronous Processes</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Sales_Rep__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Field_Sales_Project_Members__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>Check_ByPass_Assign_Suggested_Owner_to_Sales_Leads_Custom_Settings</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

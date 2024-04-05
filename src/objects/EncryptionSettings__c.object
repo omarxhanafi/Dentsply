@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>This custom setting stores configuration data related to encryption settings. It includes essential information such as encryption keys and other parameters required for secure data handling</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AESKey__c</fullName>
+        <description>[TFUS-000006026]  This field stores the AES key used for encrypting custom data included as a GET parameter within a DS.com link. The purpose is to initiate an invitation/registration email process tailored for a specific customer, identified by the encrypted data.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field stores the AES key used for encrypting custom data included as a GET parameter within a DS.com link. The purpose is to initiate an invitation/registration email process tailored for a specific customer, identified by the encrypted data.</inlineHelpText>
+        <label>AES Key</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Encryption Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

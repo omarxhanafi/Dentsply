@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AssignSuggestedOwnerToSalesLeads__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>It will assign suggested owners to the new sales lead record inserted or imported. The sales lead records should not have an owner pre-populated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>It will assign suggested owners to the new sales lead record inserted or imported. The sales lead records should not have an owner pre-populated.</inlineHelpText>
+        <label>Assign Suggested Owner to Sales Leads</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Global Admin Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

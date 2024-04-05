@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>SendOutBoundMessage</name>
+        <label>SendOutBoundMessage</label>
+        <locationX>644</locationX>
+        <locationY>479</locationY>
+        <actionName>IntegrationLog__c.OrderIntegration</actionName>
+        <actionType>outboundMessage</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>IntegrationLog__c.OrderIntegration</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <decisions>
+        <name>IsOrder</name>
+        <label>IsOrder</label>
+        <locationX>775</locationX>
+        <locationY>370</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Order</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FormulaOrderInewOrResubmit</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SendOutBoundMessage</targetReference>
+            </connector>
+            <label>Order</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>FormulaOrderInewOrResubmit</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Record.Object_type__c} = &apos;Order&apos; &amp;&amp; ((ISNEW() &amp;&amp; {!$Record.Status__c}= &apos;New&apos;)) || ({!$Record.Status__c}= &apos;ReSubmit&apos; &amp;&amp; ISCHANGED({!$Record.Status__c}))</expression>
+    </formulas>
+    <interviewLabel>Integration Log {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Integration Log</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>650</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>IsOrder</targetReference>
+        </connector>
+        <object>IntegrationLog__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

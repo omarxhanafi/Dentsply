@@ -1,0 +1,9 @@
+<aura:component implements="lightning:actionOverride,lightning:hasPageReference,lightning:isUrlAddressable" access="global" >
+    <aura:attribute name="passedRecordId" type="String" />
+    <aura:attribute name="passedRecordTypeId" type="String" />
+    <aura:attribute name="backgroundContext" type="String" />
+    <aura:attribute name="pageReference" type="Object" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <lightning:navigation aura:id="navService"/>
+    <lightning:flow aura:id="flowData"  />
+</aura:component>

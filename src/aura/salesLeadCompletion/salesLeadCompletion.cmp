@@ -1,0 +1,46 @@
+<aura:component implements="force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global">
+
+    <aura:html tag="style">
+        .cuf-content {
+            padding: 0 0rem !important;
+        }
+        .cuf-scroller-content {
+            background: rgb(255, 255, 255) !important;
+        }
+        .cuf-scroller-inside {
+            padding: 0 0rem !important;
+        }
+        .slds-modal__content {
+            height: unset !important;
+            max-height: unset !important;
+        }
+        .slds-modal__container{
+            max-width: 80% !important;
+            width: 70rem !important;
+        }
+    </aura:html>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="objectType" type="String" default="Field_Sales_Project_Members__c"/>
+    <aura:attribute name="stepName" type="String" default="Completed"/>
+    <aura:attribute name="completed" type="Boolean" default="true"/>
+    <aura:attribute name="showCancel" type="Boolean" default="true"/>
+
+    <aura:handler name="hideCancelEvent" event="c:selectedsObjectRecordEvent" action="{!c.hideCancel}" />
+
+    <lightning:overlayLibrary aura:id="overlayLib" />
+
+    <div class="slds-is-relative">
+        <aura:if isTrue="{!$Browser.formFactor != 'DESKTOP'}">
+            <aura:if isTrue="{!v.showCancel == true}">
+                <div class="slds-p-vertical_medium"> 
+                    <div class="slds-size_6-of-6">
+                        <lightning:buttonIcon class="slds-float_right" iconName="utility:close" size="large" variant="bare" onclick="{!c.handleCancel}" alternativeText="Close"/>
+                    </div>
+                </div>
+            </aura:if>
+        </aura:if>
+        <c:OppStageGuidanceModalContent recordId="{!v.recordId}" objectType="{!v.objectType}" stepName="{!v.stepName}" completedSalesLead="{!v.completed}"/>
+        <!--<lightning:button label="Cancel" onclick="{!c.handleCancel}"/>-->
+    </div>
+
+</aura:component>

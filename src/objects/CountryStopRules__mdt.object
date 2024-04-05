@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>The name has to be the country code in 2 digits</description>
+    <fields>
+        <fullName>DentalSupportOrganization__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>account.OneAccount_Type__c == &apos;Dental Support Organization&apos;</inlineHelpText>
+        <label>Dental Support Organization</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Set Flag</fullName>
+                    <default>false</default>
+                    <label>Set Flag</label>
+                </value>
+                <value>
+                    <fullName>Stop Order</fullName>
+                    <default>false</default>
+                    <label>Stop Order</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EducationPublic__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>account.OneAccount_Type__c == &apos;Education&apos; &amp;&amp; (account.Sub_Account_Type__c == &apos;Teaching Hospital&apos; || account.Sub_Account_Type__c == &apos;Dental School&apos;)</inlineHelpText>
+        <label>Education Public</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Set Flag</fullName>
+                    <default>false</default>
+                    <label>Set Flag</label>
+                </value>
+                <value>
+                    <fullName>Stop Order</fullName>
+                    <default>false</default>
+                    <label>Stop Order</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HasCustomerServiceCommunication__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>order.Communication_to_Customer_Service__c != null &amp;&amp; order.Communication_to_Customer_Service__c != &apos;&apos;</inlineHelpText>
+        <label>Has Customer Service Communication</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HasDiscount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>order.Discount_Applied__c &gt; 0</inlineHelpText>
+        <label>Has Discount</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HasOfferCode__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>order.Count_Offer_Codes__c &gt; 0</inlineHelpText>
+        <label>Has Offer Code</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HasParentKitProducts__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>order.ParentKitProduct__c &gt; 0</inlineHelpText>
+        <label>Has Parent Kit Products</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HasPricebookStopOrder__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>pricebook.StopOrdersinERP__c == true</inlineHelpText>
+        <label>Has Pricebook Stop Order</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsMedicalGeneral__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>account.OneAccount_Type__c == &apos;Medical&apos; &amp;&amp; account.Sub_Account_Type__c == &apos;General Hospital&apos;</inlineHelpText>
+        <label>Is Medical General</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Set Flag</fullName>
+                    <default>true</default>
+                    <label>Set Flag</label>
+                </value>
+                <value>
+                    <fullName>Stop Order</fullName>
+                    <default>false</default>
+                    <label>Stop Order</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MedicalPublic__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>account.OneAccount_Type__c == &apos;Medical&apos; &amp;&amp; (account.Sub_Account_Type__c == &apos;Private Hospital&apos; || account.Sub_Account_Type__c == &apos;Public Health&apos; )</inlineHelpText>
+        <label>Medical Public</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Set Flag</fullName>
+                    <default>false</default>
+                    <label>Set Flag</label>
+                </value>
+                <value>
+                    <fullName>Stop Order</fullName>
+                    <default>false</default>
+                    <label>Stop Order</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>NotFranceIn116__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>account.Country__c != &apos;FR&apos; &amp;&amp; pricebook.CompanyCode__c == &apos;116&apos;</inlineHelpText>
+        <label>Not France In 116</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Country Stop Rules</label>
+    <pluralLabel>Country Stop Rules</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

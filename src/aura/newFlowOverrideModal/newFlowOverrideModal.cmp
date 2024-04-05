@@ -1,0 +1,8 @@
+<aura:component>
+    <aura:attribute name="inputVariables" type="Object" default="[]"/>
+    <aura:attribute name="flowName" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:registerEvent name="flowEvent" type="c:newFlowOverrideEvent"/>
+
+    <lightning:flow aura:id="flowData" onstatuschange="{!c.flowStatusChange}"/>
+</aura:component>

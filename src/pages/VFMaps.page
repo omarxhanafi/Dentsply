@@ -1,0 +1,100 @@
+<apex:page controller="VFMapAnythingController" action="{!init}" showheader="false" sidebar="false" standardStylesheets="false" lightningStylesheets="true" title="Show Accounts on Map" >
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="x-ua-compatible" content="ie=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            
+            <apex:slds />
+            
+            <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"/>
+            
+            <style>
+                .intrinsic-container {
+                position: relative;
+                height: 0;
+                overflow: hidden;
+                padding-bottom: 100%;
+                }
+                
+                .intrinsic-container iframe {
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                }
+            </style>
+        </head>
+        <body>    
+            
+            <div class="slds-scope">
+                <div class="demo-only" style="height:6rem">
+                    
+                    <div class="slds-spinner_container">
+                        
+                        <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                            
+                            <span class="slds-assistive-text">Loading</span>
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                        </div>
+                        <div class="slds-text-heading_large" style="margin-left: 37%;margin-top: 30%;">
+                                Sending data to Maps....
+                         </div>
+                    </div>
+                </div>  
+                
+                
+                
+                
+                <script>
+                $(function() {
+                    $.ajaxSetup({
+                        headers: {"Authorization": 'Bearer {!$Api.Session_ID}'}
+                    });
+                    
+                    setTimeout(executeQuery, 1000);
+                });
+                
+                /* Executes the SAQL query and displays the resulting accounts. 
+                Note: Account.Name and AccountId referenced below refer to the dataset field names. 
+                Update them to match your dataset fields. */                
+                function executeQuery() {
+                    var query = {};
+                    query.statements = "{!JSENCODE(query)}";
+                    var queryObj = {query: query.statements};
+                    
+                    $.ajax({
+                        type: 'POST',
+                        url: '/services/data/v39.0/wave/query',
+                        data: JSON.stringify(queryObj),
+                        contentType: 'application/json',
+                        success: function(data) {
+                            $('#loadingMap').hide();
+                            var idArray = [];
+                            /* BM NOTE ! any SF Ids included above ["Id1,"Id2"] are hard coded. 
+                            replace with [] to be dynamic but ensure your dataset has Id fields then uncomment below. 
+                            Replace Id in {idArray.push(data.results.records[i].Id)} with the Id field in your dataset e.g. AccountId  /*
+                            
+                            /* list of ids - comment out this section to use hard coded Ids if required  */ 
+                            var numberOfLoops = data.results.records.length < 500 ? data.results.records.length : 500 ;
+                            for (var i = 0; i < numberOfLoops; i++) {
+                           
+                                idArray.push(data.results.records[i]["Account.Id"]);
+
+                            }
+                            
+                            
+                            var ids = encodeURIComponent(idArray.join(','));
+                            var url =  '/apex/maps__maps?baseObjectId=a8F6M000000CcESUA0&tooltipField=Name&tooltipField2=BillingAddress&zoom=16&color=%2366FF00&recordIds='+ids;
+                            window.location.href=url;
+                            
+                            }
+                        });
+                    }
+                </script>
+            </div>
+        </body>
+    </html>
+</apex:page>
