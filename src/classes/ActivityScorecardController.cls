@@ -169,7 +169,7 @@ public without sharing class ActivityScorecardController {
 
             // SAQL Query
             String query = 'q = load "' + datasetDetails[0] + '/' + datasetDetails[1] + '";';
-            query = query + 'acct = filter q by \'Account.OneSF_Id__c\' == "SF0982657";';
+            query = query + 'acct = filter q by \'Account.OneSF_Id__c\' == "' + oneSfId + '";';
             query = query + 'totals = group q by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\', \'FM_Category_AnySBU\');';
             query = query + 'totals = foreach totals generate \'Geography.Hierarchy.ETMCountry\',totals.\'Products.Global.SBU_Name__c\' as \'Products.Global.SBU_Name__c\', totals.\'Account.OneAccount_Type__c\' as \'Account.OneAccount_Type__c\', totals.\'FM_Category_AnySBU\' as \'FM_Category_AnySBU\', avg(totals.\'CFECount\') as \'AvgCFEs\';';
             query = query + 'result = group acct by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\', \'FM_Category_AnySBU\'), totals by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\', \'FM_Category_AnySBU\');';
