@@ -79,7 +79,7 @@ init: function (cmp, event, helper) {
 
     //Callback function invoked for every Platform Event received
     const callback = function (message) {
-        $A.enqueueAction(component.get('c.init'));
+        $A.enqueueAction(cmp.get('c.init'));
     };
 
     // Subscribe to the Platform Event
