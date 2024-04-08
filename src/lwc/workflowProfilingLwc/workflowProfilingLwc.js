@@ -324,6 +324,8 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
     handleStatusChange(event) {
         if (event.detail.status === 'FINISHED') {
             this.handleCloseFlowModal();
+            // Update WP records upon PP save
+            this.fetchWorkflowProfilings();
         }
     }
 
