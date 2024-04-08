@@ -57,14 +57,6 @@
         <value>Customer Number</value>
     </labels>
     <labels>
-        <fullName>AccountFlagsMultipleFound</fullName>
-        <categories>AccountFlags</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AccountFlagsMultipleFound</shortDescription>
-        <value>Multiple Found</value>
-    </labels>
-    <labels>
         <fullName>AccountFlagsDSCom</fullName>
         <categories>AccountFlags</categories>
         <language>en_US</language>
@@ -121,6 +113,14 @@
         <value>Light</value>
     </labels>
     <labels>
+        <fullName>AccountFlagsMultipleFound</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsMultipleFound</shortDescription>
+        <value>Multiple Found</value>
+    </labels>
+    <labels>
         <fullName>AccountFlagsOnlineOrdering</fullName>
         <categories>AccountFlags</categories>
         <language>en_US</language>
@@ -153,6 +153,14 @@
         <value>SureSmile</value>
     </labels>
     <labels>
+        <fullName>AccountFlagsSureSmileAdvanced</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsSureSmileAdvanced</shortDescription>
+        <value>Advanced</value>
+    </labels>
+    <labels>
         <fullName>AccountFlagsSureSmileAligner</fullName>
         <categories>AccountFlags</categories>
         <language>en_US</language>
@@ -169,28 +177,12 @@
         <value>Ortho</value>
     </labels>
     <labels>
-        <fullName>AccountFlagsSureSmileAdvanced</fullName>
-        <categories>AccountFlags</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AccountFlagsSureSmileAdvanced</shortDescription>
-        <value>Advanced</value>
-    </labels>
-    <labels>
         <fullName>ActivityReported12LastMonths</fullName>
         <categories>Activity Scoreboard</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>ActivityReported12LastMonths</shortDescription>
         <value>Reported in the last 12 months:</value>
-    </labels>
-    <labels>
-        <fullName>ActivityScoreboardNotAvailable</fullName>
-        <categories>Activity Scoreboard</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>ActivityScoreboardNotAvailable</shortDescription>
-        <value>Not Available</value>
     </labels>
     <labels>
         <fullName>ActivityScoreboardCallsLogged</fullName>
@@ -217,12 +209,28 @@
         <value>event(s) out of a benchmark midpoint of</value>
     </labels>
     <labels>
+        <fullName>ActivityScoreboardNotAvailable</fullName>
+        <categories>Activity Scoreboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActivityScoreboardNotAvailable</shortDescription>
+        <value>Not Available</value>
+    </labels>
+    <labels>
         <fullName>ActivityScoreboardTasksCompleted</fullName>
         <categories>Activity Scoreboard</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Activity Scoreboard Tasks Completed</shortDescription>
         <value>task(s)</value>
+    </labels>
+    <labels>
+        <fullName>ActivityScorecardHeader</fullName>
+        <categories>Activity Scoreboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActivityScorecardHeader</shortDescription>
+        <value>360 Activity Scorecard</value>
     </labels>
     <labels>
         <fullName>ActivityScorecardLastEventDate</fullName>
@@ -239,14 +247,6 @@
         <protected>false</protected>
         <shortDescription>ActivityScorecardMyLastEventDate</shortDescription>
         <value>My Last Event Date</value>
-    </labels>
-    <labels>
-        <fullName>ActivityScorecardHeader</fullName>
-        <categories>Activity Scoreboard</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>ActivityScorecardHeader</shortDescription>
-        <value>360 Activity Scorecard</value>
     </labels>
     <labels>
         <fullName>ActivityScorecardPlannedCFEs</fullName>
