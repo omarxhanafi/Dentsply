@@ -71,6 +71,20 @@ init: function (cmp, event, helper) {
         helper.getProfilingHierarchy(cmp, event, recordId);
     }
 
+    //Subscribing to a Platform Event published upon creation/update of PP records inside the WP component
+    var channel = '/event/PPCreationWP__e';
+    const replayId = -1;
+
+    const empApi = cmp.find("empApi");
+
+    //Callback function invoked for every Platform Event received
+    const callback = function (message) {
+        $A.enqueueAction(component.get('c.init'));
+    };
+
+    // Subscribe to the Platform Event
+    empApi.subscribe(channel, replayId, callback).then(function(newSubscription) {});
+
     },
     
     /*------------------------------------------------------------	
@@ -139,7 +153,7 @@ init: function (cmp, event, helper) {
         if(event.getParam('status') === "FINISHED") {
             component.set("v.isOpenNew", false);
 
-            // Upon creation of PP records, send a platform event to refresh the WP component
+            // Upon creation of PP records, send a Platform Event to refresh the WP component
             var action = component.get("c.publishPPCreationEvent");
             action.setCallback(this, function(response) {
                 var state = response.getState();

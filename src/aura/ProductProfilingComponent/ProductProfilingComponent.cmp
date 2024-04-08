@@ -28,6 +28,8 @@ Description:   	Component to show Product Profiling records (in a Hierarchy wher
 
     <lightning:navigation aura:id="navService"/>
     <aura:attribute name="pageReference" type="Object"/>
+
+    <lightning:empApi aura:id="empApi" />
   
      	<div class="slds-hide">
                <lightning:input type="toggle" label="Only focus products" aura:id="focusFilter" name="focusFilter" value="focusFilter" /> <!-- onchange="{!c.filterTable}" -->

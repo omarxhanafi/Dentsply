@@ -2,6 +2,7 @@ import { LightningElement, wire, api, track } from 'lwc';
 import { subscribe, unsubscribe } from 'lightning/empApi';
 import getWorkflows from '@salesforce/apex/WorkflowProfilingController.getWorkflows';
 import getProductProfiling from '@salesforce/apex/ProductProfilingHierarchyController.getProductProfiling';
+import publishPPCreationEventWP from '@salesforce/apex/ProductProfilingHierarchyController.publishPPCreationEventWP';
 import getWorkflowProfilingsByAccount from '@salesforce/apex/WorkflowProfilingController.getWorkflowProfilingsByAccount';
 import createOrUpdateWorkflowProfilings from '@salesforce/apex/WorkflowProfilingController.createOrUpdateWorkflowProfilings';
 import getProductFamilyListByWorkflowId from '@salesforce/apex/WorkflowProfilingController.getProductFamilyListByWorkflowId';
@@ -323,14 +324,31 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
 
     handleStatusChange(event) {
         if (event.detail.status === 'FINISHED') {
-            this.handleCloseFlowModal();
+            // Closing the modal
+            this.handleCloseModal();
+
             // Update WP records upon PP save
             this.fetchWorkflowProfilings();
+
+            // Publishing a platform event to update the PP component
+            publishPPCreationEventWP().then(() => {}).catch(error => {
+                console.error('Error publishing platform event :', error);
+            });
         }
     }
 
+    handleMassUpdate(){
+        // Closing the modal
+        this.handleCloseModal();
+
+        // Publishing a platform event to update the PP component
+        publishPPCreationEventWP().then(() => {}).catch(error => {
+            console.error('Error publishing platform event :', error);
+        });
+    }
+
     // CLose the modal dialog after flow completion
-    handleCloseFlowModal(){
+    handleCloseModal(){
         this.isNewOpen = false;
         this.isEditOpen = false;
     }

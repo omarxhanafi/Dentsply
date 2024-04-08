@@ -171,7 +171,7 @@
                     <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large">
                         <div class="slds-modal__container">
                             <header class="slds-modal__header slds-modal__header_empty">
-                                <lightning-button-icon icon-name="utility:close" class="slds-modal__close" variant="bare-inverse" onclick={handleCloseFlowModal}></lightning-button-icon>
+                                <lightning-button-icon icon-name="utility:close" class="slds-modal__close" variant="bare-inverse" onclick={handleCloseModal}></lightning-button-icon>
                             </header>
                             <div class="slds-modal__content slds-p-around_medium">
                                 <lightning-flow
@@ -189,10 +189,10 @@
                     <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large">
                         <div class="slds-modal__container">
                             <header class="slds-modal__header slds-modal__header_empty">
-                                <lightning-button-icon icon-name="utility:close" class="slds-modal__close" variant="bare-inverse" onclick={handleCloseFlowModal}></lightning-button-icon>
+                                <lightning-button-icon icon-name="utility:close" class="slds-modal__close" variant="bare-inverse" onclick={handleCloseModal}></lightning-button-icon>
                             </header>
                             <div class="slds-modal__content slds-p-around_medium">
-                                <c-product-profiling-edit-lwc selected-products={productProfilingRecords} onsave={handleCloseFlowModal}></c-product-profiling-edit-lwc>
+                                <c-product-profiling-edit-lwc selected-products={productProfilingRecords} onsave={handleMassUpdate}></c-product-profiling-edit-lwc>
                             </div>
                         </div>
                     </section>
