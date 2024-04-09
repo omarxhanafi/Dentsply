@@ -17,7 +17,7 @@
                 <table class="workflow-table">
                     <tbody>
                     <template for:each={workflowsList} for:item="eachWorkflow">
-                        <tr key={eachWorkflow.Id}>
+                        <tr lwc:if={isMobile} key={eachWorkflow.Id}>
                             <td>
                                 <lightning-button-icon
                                         icon-name={eachWorkflow.accordionIcon}
@@ -38,6 +38,29 @@
                             </td>
                             <td class={eachWorkflow.itemClass}>
                                 <div class="workflow-label">{eachWorkflow.WorkflowLabel__c}</div>
+                            </td>
+                        </tr>
+                        <tr lwc:else key={eachWorkflow.Id}>
+                            <td>
+                                <div class={rowHeaderClass}>
+                                    <lightning-button-icon
+                                            style="padding-top: 5px"
+                                            icon-name={eachWorkflow.accordionIcon}
+                                            variant="bare"
+                                            onclick={handleExpand}
+                                            data-rowid={eachWorkflow.Id}
+                                    ></lightning-button-icon>
+                                    <lightning-input
+                                            class={disabledToggleClass}
+                                            type="checkbox-button"
+                                            label="Enable Row"
+                                            name={eachWorkflow.Id}
+                                            checked={eachWorkflow.isChecked}
+                                            onchange={handleRowToggle}
+                                            data-rowid={eachWorkflow.Id}
+                                    ></lightning-input>
+                                    <div class="workflow-label">{eachWorkflow.WorkflowLabel__c}</div>
+                                </div>
                             </td>
                         </tr>
                         <tr key={eachWorkflow.Id} if:true={eachWorkflow.isExpanded}>

@@ -389,4 +389,8 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
     get headerClass() {
         return this.isMobile ? 'slds-grid slds-wrap slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none' : 'slds-grid slds-wrap';
     }
+
+    get rowHeaderClass(){
+        return this.isMobile ? 'row-header-mobile' : 'row-header-desktop'
+    }
 }
