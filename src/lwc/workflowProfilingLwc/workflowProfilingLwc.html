@@ -73,7 +73,7 @@
                                                     <template for:each={family.dsProducts} for:item="dsProduct">
                                                         <div key={dsProduct.product.Id} class="custom-truncate" title={dsProduct.product.Name}>
                                                             <!-- Show icon & popover if active -->
-                                                            <template if:true={dsProduct.active}>
+                                                            <template lwc:if={dsProduct.active}>
                                                                 <template if:false={isMobile}>
                                                                     <a
                                                                             onclick={handleRedirection}
@@ -107,7 +107,41 @@
                                                                     </div>
                                                                 </template>
                                                             </template>
-                                                            <template if:false={dsProduct.active}>
+                                                            <template lwc:elseif={dsProduct.inactive}>
+                                                                <template if:false={isMobile}>
+                                                                    <a
+                                                                            onclick={handleRedirection}
+                                                                            onmouseover={handleMouseOver}
+                                                                            onmouseout={handleMouseOut}
+                                                                            data-productid={dsProduct.product.Id}
+                                                                            data-workflowid={eachWorkflow.Id}
+                                                                    >
+                                                                        {dsProduct.product.Name}
+                                                                    </a>
+                                                                    <lightning-icon icon-name="utility:close" variant="error" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
+                                                                </template>
+                                                                <template if:true={isMobile}>
+                                                                    <a
+                                                                            onclick={handleRedirection}
+                                                                            data-productid={dsProduct.product.Id}
+                                                                    >
+                                                                        {dsProduct.product.Name}
+                                                                    </a>
+                                                                </template>
+                                                                <template if:true={dsProduct.isMouseOver}>
+                                                                    <div class="custom-popover-positioning">
+                                                                        <c-popover-record-info
+                                                                                key={dsProduct.product.Id}
+                                                                                record-id={dsProduct.product.Id}
+                                                                                url={dsProduct.product.Id}
+                                                                                title={dsProduct.product.Name}
+                                                                                object-api-name="Non_ERP_Products__c"
+                                                                                icon-name="standard:product">
+                                                                        </c-popover-record-info>
+                                                                    </div>
+                                                                </template>
+                                                            </template>
+                                                            <template lwc:else>
                                                                 <span class="slds-color__text_gray-8">{dsProduct.product.Name}</span>
                                                             </template>
                                                         </div>
@@ -117,7 +151,7 @@
                                                     <!-- Competitor Products -->
                                                     <template for:each={family.competitorProducts} for:item="compProduct">
                                                         <div key={compProduct.product.Id} class="custom-truncate" title={compProduct.product.Name}>
-                                                            <template if:true={compProduct.active}>
+                                                            <template lwc:if={compProduct.active}>
                                                                 <template if:false={isMobile}>
                                                                     <a
                                                                             onclick={handleRedirection}
@@ -150,7 +184,40 @@
                                                                     </div>
                                                                 </template>
                                                             </template>
-                                                            <template if:false={compProduct.active}>
+                                                            <template lwc:elseif={compProduct.inactive}>
+                                                                <template if:false={isMobile}>
+                                                                    <a
+                                                                            onclick={handleRedirection}
+                                                                            onmouseover={handleMouseOver}
+                                                                            onmouseout={handleMouseOut}
+                                                                            data-productid={compProduct.product.Id}
+                                                                            data-workflowid={eachWorkflow.Id}
+                                                                    >
+                                                                        {compProduct.product.Name}
+                                                                    </a>
+                                                                    <lightning-icon icon-name="utility:close" variant="error" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
+                                                                </template>
+                                                                <template if:true={isMobile}>
+                                                                    <a
+                                                                            onclick={handleRedirection}
+                                                                            data-productid={compProduct.product.Id}
+                                                                    >
+                                                                        {compProduct.product.Name}
+                                                                    </a>
+                                                                </template>
+                                                                <template if:true={compProduct.isMouseOver}>
+                                                                    <div class="custom-popover-positioning">
+                                                                        <c-popover-record-info
+                                                                                record-id={compProduct.product.Id}
+                                                                                url={compProduct.product.Id}
+                                                                                title={compProduct.product.Name}
+                                                                                object-api-name="Non_ERP_Products__c"
+                                                                                icon-name="standard:product">
+                                                                        </c-popover-record-info>
+                                                                    </div>
+                                                                </template>
+                                                            </template>
+                                                            <template lwc:else>
                                                                 {compProduct.product.Name}
                                                             </template>
                                                         </div>
