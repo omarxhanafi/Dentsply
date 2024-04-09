@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingTriggerHelper.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,8 +91,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1712585030906" />
-                  <option name="numUsages" value="254" />
+                  <option name="lastUsed" value="1712660498669" />
+                  <option name="numUsages" value="259" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="DevApr" />
@@ -18265,7 +18265,7 @@
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1666193185822" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1712584760953" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1708698803000" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1710148308936" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1712660028013" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706094605000" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1706190531666" />
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGTRIGGER" value="1710148374000" />
@@ -18275,7 +18275,7 @@
                       <entry key="APEXTRIGGER:PRODUCTPROFILINGTRIGGER" value="1708698816000" />
                       <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1706094617000" />
                       <entry key="AURADEFINITIONBUNDLE:FLOW_SUGGESTEDUSERSBASEDONBRAND" value="1667402512131" />
-                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1712584725000" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1712585225000" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1699613853000" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1699612519000" />
                       <entry key="AURADEFINITIONBUNDLE:SERVICECLOUD_FLOWINPUTFIELD" value="1674823830000" />
@@ -18727,7 +18727,7 @@
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1712583194880" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1709124008000" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1711722654516" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1712659936897" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706087844965" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1711721020580" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1711720875000" />
@@ -18739,7 +18739,7 @@
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1711720913710" />
                       <entry key="APEXTRIGGER:PRODUCTPROFILINGTRIGGER" value="1709122857850" />
                       <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1706087849202" />
-                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1712584017737" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1712585202085" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1701609281507" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGEDIT" value="1707312525538" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGFLOW" value="1710953793000" />
@@ -18866,7 +18866,7 @@
         </option>
         <option name="logAnalyzerSettings">
           <LogAnalyzerSettings>
-            <option name="splitterProportion" value="0.3088875" />
+            <option name="splitterProportion" value="0.65158373" />
           </LogAnalyzerSettings>
         </option>
         <option name="retrieveAndMergeDefault" value="false" />
@@ -18876,7 +18876,7 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select id, GlobalProductFamily__c, NonERPProduct__c from product2 limit 50" />
+                  <option name="body" value="select id, DEPUniqueKey__c from Product_Profiling__c where id in ('a1o7a000002rVySAAU', 'a1o7a000002rVyTAAU', 'a1o7a000002rVyUAAU', 'a1o7a000002rVyVAAU', 'a1o7a000002rVyWAAU', 'a1o7a000002rVyXAAU', 'a1o7a000002rVyYAAU', 'a1o7a000002rVyZAAU', 'a1o7a000002rVyaAAE', 'a1o7a000002rVybAAE', 'a1o7a000002rVycAAE', 'a1o7a000002rVydAAE', 'a1o7a000002rVyeAAE', 'a1o7a000002rVyfAAE', 'a1o7a000002rVygAAE', 'a1o7a000002rVyhAAE', 'a1o7a000002rVyiAAE', 'a1o7a000002rVyjAAE', 'a1o7a000002rVykAAE', 'a1o7a000002rVylAAE', 'a1o7a000002rVymAAE', 'a1o7a000002rVynAAE', 'a1o7a000002rVyoAAE', 'a1o7a000002rVypAAE', 'a1o7a000002rVyqAAE', 'a1o7a000002rVyrAAE', 'a1o7a000002rVysAAE', 'a1o7a000002rVytAAE', 'a1o7a000002rVyuAAE', 'a1o7a000002rVyvAAE', 'a1o7a000002rVywAAE', 'a1o7a000002rVyxAAE', 'a1o7a000002rVyyAAE', 'a1o7a000002rVyzAAE', 'a1o7a000002rVz0AAE', 'a1o7a000002rVz1AAE', 'a1o7a000002rVz2AAE', 'a1o7a000002rVz3AAE', 'a1o7a000002rVz4AAE', 'a1o7a000002rVz5AAE', 'a1o7a000002rVz6AAE', 'a1o7a000002rVz7AAE', 'a1o7a000002rVz8AAE', 'a1o7a000002rVz9AAE', 'a1o7a000002rVzAAAU', 'a1o7a000002rVzBAAU', 'a1o7a000002rVzCAAU', 'a1o7a000002rVzDAAU', 'a1o7a000002rVzEAAU', 'a1o7a000002rVzFAAU', 'a1o7a000002rVzGAAU', 'a1o7a000002rVzHAAU', 'a1o7a000002rVzIAAU', 'a1o7a000002rVzJAAU', 'a1o7a000002rVzKAAU', 'a1o7a000002rVzLAAU', 'a1o7a000002rVzMAAU', 'a1o7a000002rVzNAAU', 'a1o7a000002rVzOAAU', 'a1o7a000002rVzPAAU', 'a1o7a000002rVzQAAU', 'a1o7a000002rVzRAAU', 'a1o7a000002rVzSAAU', 'a1o7a000002rVzTAAU', 'a1o7a000002rVzUAAU', 'a1o7a000002rVzVAAU', 'a1o7a000002rVzWAAU', 'a1o7a000002rVzXAAU', 'a1o7a000002rVzYAAU', 'a1o7a000002rVzZAAU', 'a1o7a000002rVzaAAE', 'a1o7a000002rVzbAAE', 'a1o7a000002rVzcAAE', 'a1o7a000002rVzdAAE', 'a1o7a000002rVzeAAE', 'a1o7a000002rVzfAAE', 'a1o7a000002rVzgAAE', 'a1o7a000002rVzhAAE', 'a1o7a000002rVziAAE', 'a1o7a000002rVzjAAE', 'a1o7a000002rVzkAAE', 'a1o7a000002rVzlAAE', 'a1o7a000002rVzmAAE', 'a1o7a000002rVznAAE', 'a1o7a000002rVzoAAE', 'a1o7a000002rVzpAAE', 'a1o7a000002rVzqAAE', 'a1o7a000002rVzrAAE', 'a1o7a000002rVzsAAE', 'a1o7a000002rVztAAE', 'a1o7a000002rVzuAAE', 'a1o7a000002rVzvAAE', 'a1o7a000002rVzwAAE', 'a1o7a000002rVzxAAE', 'a1o7a000002rVzyAAE', 'a1o7a000002rVzzAAE', 'a1o7a000002rW00AAE', 'a1o7a000002rW01AAE', 'a1o7a000002rW02AAE')" />
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 2" />
@@ -18950,7 +18950,7 @@
       <recent name="$PROJECT_DIR$/src/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier">
+  <component name="RunManager" selected="Apex Unit Tests.Test_ProductProfilingTrigger">
     <configuration name="Test_ProductProfilingHierarchyController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -19156,8 +19156,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier" />
         <item itemvalue="Apex Unit Tests.Test_ProductProfilingTrigger" />
+        <item itemvalue="Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier" />
         <item itemvalue="Apex Unit Tests.Test_ProductTrigger" />
         <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController" />
         <item itemvalue="Apex Unit Tests.Test_ProductProfilingHierarchyController" />
@@ -19290,7 +19290,7 @@
       <workItem from="1711359236693" duration="18646000" />
       <workItem from="1711893529789" duration="2242000" />
       <workItem from="1712314331612" duration="6909000" />
-      <workItem from="1712567726067" duration="6934000" />
+      <workItem from="1712567726067" duration="8718000" />
     </task>
     <servers />
   </component>
@@ -19315,8 +19315,8 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMargins.ic2" NAME="Margin Coverage Results" MODIFIED="1677067029631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_UpdateContactsBypassDuplicate_testUpdateContact.ic2" NAME="Lead Coverage Results" MODIFIED="1675421607460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_GuidanceRendererController.ic2" NAME="Tracker Coverage Results" MODIFIED="1681118187685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_ProductProfilingTrigger.ic2" NAME="acc360 Coverage Results" MODIFIED="1712659944838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="acc360" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchSetAccountSubSegmentation.ic2" NAME="Production Coverage Results" MODIFIED="1674815707650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="acc360" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_ProductProfilingTrigger_testAssignUniqueKeyIdentifier.ic2" NAME="acc360 Coverage Results" MODIFIED="1711722602008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="acc360" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ProcedureTrackerTriggerHelper_testcheckUniqueness.ic2" NAME="StgJan Coverage Results" MODIFIED="1673520387472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_findLeadMatch_testExecuteLeadSearch.ic2" NAME="HOTFIX Coverage Results" MODIFIED="1667918143842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchCreateProcedureTrackers_testBatchCreateProcedureTrackers.ic2" NAME="StgJan Coverage Results" MODIFIED="1673859457008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />

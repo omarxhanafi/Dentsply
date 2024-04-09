@@ -21,11 +21,16 @@ public with sharing class ProductProfilingTriggerHelper {
 
         for (Product_Profiling__c record : newProductProfilingList) {
             // Check if the record is new or any relevant fields have changed
-            if (isInsert ||
-                    (oldProductProfilingMap != null &&
-                            (record.Account__c != oldProductProfilingMap.get(record.Id).Account__c ||
-                                    record.Contact__c != oldProductProfilingMap.get(record.Id).Contact__c ||
-                                    record.Product_Name__c != oldProductProfilingMap.get(record.Id).Product_Name__c))) {
+            if (
+                    (record.Account__c != null && record.Product_Name__c != null && !record.Integrated__c) &&
+                            (isInsert
+                                    || (oldProductProfilingMap != null &&
+                                        (record.Account__c != oldProductProfilingMap.get(record.Id).Account__c ||
+                                        record.Contact__c != oldProductProfilingMap.get(record.Id).Contact__c ||
+                                        record.Product_Name__c != oldProductProfilingMap.get(record.Id).Product_Name__c)
+                                    )
+                            )
+            ) {
 
                 // Calculate the unique key identifier based on the account, contact and
                 String uniqueKeyIdentifier = calculateUniqueKeyIdentifier(record);
@@ -44,7 +49,7 @@ public with sharing class ProductProfilingTriggerHelper {
     private static String calculateUniqueKeyIdentifier(Product_Profiling__c record) {
         String uniqueKeyIdentifier;
 
-        String product15digitId = record.Non_Erp_Product_ID__c;
+        String product15digitId = record.Product_Name__c;
         Id product18digitId = Id.valueOf(product15digitId); // Convert 15-digit Id to 18-digit Id
 
         if (String.isBlank(record.Contact__c)) {
