@@ -26,16 +26,6 @@
                                         data-rowid={eachWorkflow.Id}
                                 ></lightning-button-icon>
                             </td>
-                            <td class={disabledToggleClass}>
-                                <lightning-input
-                                        type="checkbox-button"
-                                        label="Enable Row"
-                                        name={eachWorkflow.Id}
-                                        checked={eachWorkflow.isChecked}
-                                        onchange={handleRowToggle}
-                                        data-rowid={eachWorkflow.Id}
-                                ></lightning-input>
-                            </td>
                             <td class={eachWorkflow.itemClass}>
                                 <div class="workflow-label">{eachWorkflow.WorkflowLabel__c}</div>
                             </td>
@@ -44,21 +34,12 @@
                             <td>
                                 <div class={rowHeaderClass}>
                                     <lightning-button-icon
-                                            style="padding-top: 5px"
+                                            style="padding-top: 8px"
                                             icon-name={eachWorkflow.accordionIcon}
                                             variant="bare"
                                             onclick={handleExpand}
                                             data-rowid={eachWorkflow.Id}
                                     ></lightning-button-icon>
-                                    <lightning-input
-                                            class={disabledToggleClass}
-                                            type="checkbox-button"
-                                            label="Enable Row"
-                                            name={eachWorkflow.Id}
-                                            checked={eachWorkflow.isChecked}
-                                            onchange={handleRowToggle}
-                                            data-rowid={eachWorkflow.Id}
-                                    ></lightning-input>
                                     <div class="workflow-label">{eachWorkflow.WorkflowLabel__c}</div>
                                 </div>
                             </td>

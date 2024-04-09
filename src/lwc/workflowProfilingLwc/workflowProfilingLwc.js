@@ -4,9 +4,7 @@ import getWorkflows from '@salesforce/apex/WorkflowProfilingController.getWorkfl
 import getProductProfiling from '@salesforce/apex/ProductProfilingHierarchyController.getProductProfiling';
 import publishPPCreationEventWP from '@salesforce/apex/ProductProfilingHierarchyController.publishPPCreationEventWP';
 import getWorkflowProfilingsByAccount from '@salesforce/apex/WorkflowProfilingController.getWorkflowProfilingsByAccount';
-import createOrUpdateWorkflowProfilings from '@salesforce/apex/WorkflowProfilingController.createOrUpdateWorkflowProfilings';
 import getProductFamilyListByWorkflowId from '@salesforce/apex/WorkflowProfilingController.getProductFamilyListByWorkflowId';
-import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import FORM_FACTOR from '@salesforce/client/formFactor';
 import {NavigationMixin} from "lightning/navigation";
 import WPHeader from "@salesforce/label/c.WPHeader";
@@ -25,8 +23,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
     @track productProfilingRecords = [];
 
     subscription = null;
-
-    isProcessing = false;
 
     isNewOpen = false;
     isEditOpen = false;
@@ -123,61 +119,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
                 }
             }
         });
-    }
-
-    handleRowToggle(event) {
-        const rowId = event.currentTarget.dataset.rowid;
-        const isChecked = event.target.checked;
-
-        this.workflowsList = this.workflowsList.map(workflow => {
-            if (workflow.Id === rowId) {
-                workflow.isChecked = isChecked;
-                workflow.itemClass = isChecked ? '' : 'disabled-td';
-            }
-            return workflow;
-        });
-
-        this.saveData(); // Save the data upon toggle change
-    }
-
-
-    saveData() {
-        // Disable all toggles while the save/delete process is running
-        this.isProcessing = true;
-
-        // Filter the workflowsList for records to upsert and delete
-        let recordsToUpsert = [];
-
-        this.workflowsList.forEach(workflow => {
-                // Create records for upsert with isChecked as true
-                recordsToUpsert.push({
-                    Account__c: this.recordId,
-                    Workflow__c: workflow.Id,
-                    Inactive__c: workflow.isChecked ? false : true
-                });
-        });
-
-        if (recordsToUpsert.length > 0) {
-            this.upsertWorkflowProfilings(recordsToUpsert);
-        }
-
-    }
-
-
-    upsertWorkflowProfilings(recordsToUpsert) {
-        // Call the Apex method to upsert Workflow Profilings
-        createOrUpdateWorkflowProfilings({newRecords: recordsToUpsert})
-            .then(() => {
-                this.isProcessing = false; // Enabling the toggles
-            })
-            .catch(error => {
-                this.showToast('Error', 'An error occurred while saving records', 'error');
-                console.error('Error creating or updating workflow profiles:', error);
-            });
-    }
-
-    get disabledToggleClass() {
-        return this.isProcessing ? 'disabled-toggle' : '';
     }
 
     handleExpand(event) {
@@ -367,15 +308,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
             .catch(error => {
                 console.error('Error fetching Product Profiling records:', error);
             });
-    }
-
-    showToast(title, message, variant) {
-        const evt = new ShowToastEvent({
-            title: title,
-            message: message,
-            variant: variant,
-        });
-        this.dispatchEvent(evt);
     }
 
     get collapsibleTextSize() {
