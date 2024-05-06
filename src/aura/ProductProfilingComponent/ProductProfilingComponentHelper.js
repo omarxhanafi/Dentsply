@@ -57,20 +57,21 @@
 					for(var key in result){
                        
                        var record = result[key];
-                        //console.log(record);
-                                             
+
                        if(record.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c == categories[catKey]){
                            		
                            		//Create child record
                        			var childToAdd = {};
                            		var q = '';
-                           		if(record.Quantity__c){
+                           		if(record.Quantity__c != null){
                                		var q1 = record.Quantity__c;
                                     q=q1.toString();
                                     //console.log(q);
                                     if(record.Product_Name__r.QuantityUnitOfMeasure__c){
                                			q = q + ' ' + record.Product_Name__r.QuantityUnitOfMeasure__c;
                            			}
+                                } else {
+                                       q = '0';
                                 }
                            		
                            		childToAdd.nodeName =  record.Product_Name__r.Name;

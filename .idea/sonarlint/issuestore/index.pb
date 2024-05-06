@@ -111,8 +111,6 @@ Esrc/aura/ProductProfilingHierarchy/ProductProfilingHierarchyHelper.js,d/6/d65e
 -src/classes/OpportunityStageGuidanceClass.cls,d/b/db0fa555d1d382cbd820da3960432723ca862a4b
 ƒ
 Ssrc/aura/ServiceCloud_CasesRelToAccount/ServiceCloud_CasesRelToAccountController.js,b/e/bea18927b68f4b4c311fcb312dc4ba6971995285
-u
-Esrc/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js,b/7/b73d98ef0ae135c31a85e485c5a3e8ea726c91ed
 y
 Isrc/aura/ProductProfilingComponent/ProductProfilingComponent.cmp-meta.xml,c/a/ca34d6a51fff059f7d4a5b458e3b507d4555a6b3
 s
@@ -131,3 +129,5 @@ f
 6src/lwc/activityScorecardLwc/activityScorecardLwc.html,1/d/1daf6dae190093603e3a8ea8f8266025f70cef4e
 Z
 *src/flexipages/Lightning_Account.flexipage,4/d/4dad7cccaf1892f1d07675df175fbda3e4c17de3
+o
+?src/aura/ProductProfilingEdit/ProductProfilingEditController.js,9/b/9bf12b6e3c7c3203ffaf4222c2903b4b0aa98ca8
