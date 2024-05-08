@@ -153,18 +153,6 @@ init: function (cmp, event, helper) {
         if(event.getParam('status') === "FINISHED") {
             component.set("v.isOpenNew", false);
 
-            // Upon creation of PP records, send a Platform Event to refresh the WP component
-            var action = component.get("c.publishPPCreationEvent");
-            action.setCallback(this, function(response) {
-                var state = response.getState();
-                if (state === "SUCCESS") {
-                    console.log('Platform Event Fired Successfully');
-                } else {
-                    console.error('Error firing Platform Event');
-                }
-            });
-            $A.enqueueAction(action);
-
             $A.enqueueAction(component.get('c.init'));
         }
     },

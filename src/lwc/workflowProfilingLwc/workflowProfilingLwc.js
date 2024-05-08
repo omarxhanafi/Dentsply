@@ -1,9 +1,7 @@
 import { LightningElement, wire, api, track } from 'lwc';
-import { subscribe, unsubscribe } from 'lightning/empApi';
 import getWorkflows from '@salesforce/apex/WorkflowProfilingController.getWorkflows';
 import getProductProfiling from '@salesforce/apex/ProductProfilingHierarchyController.getProductProfiling';
 import publishPPCreationEventWP from '@salesforce/apex/ProductProfilingHierarchyController.publishPPCreationEventWP';
-import getWorkflowProfilingsByAccount from '@salesforce/apex/WorkflowProfilingController.getWorkflowProfilingsByAccount';
 import getProductFamilyListByWorkflowId from '@salesforce/apex/WorkflowProfilingController.getProductFamilyListByWorkflowId';
 import FORM_FACTOR from '@salesforce/client/formFactor';
 import {NavigationMixin} from "lightning/navigation";
@@ -19,7 +17,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
 
     @api recordId; // Account record Id
     @track workflowsList = [];
-    workflowProfilings = [];
     @track productProfilingRecords = [];
 
     subscription = null;
@@ -38,110 +35,40 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         WPCompetitorProducts
     };
 
-    async connectedCallback() {
-        // Subscribe to the platform event
-        this.subscribeToPlatformEvent();
-    }
-
-    disconnectedCallback() {
-        // Unsubscribe from the platform event
-        this.unsubscribeFromPlatformEvent();
-    }
-
-    subscribeToPlatformEvent() {
-        const messageCallback = (response) => {
-            if (response) {
-                // Refresh the workflow profiling list upon PP creation
-                this.fetchWorkflowProfilings();
-            }
-        };
-
-        // Subscribe to the platform event
-        subscribe('/event/PPCreation__e', -1, messageCallback)
-            .then(response => {
-                this.subscription = response;
-            })
-            .catch(error => {
-                console.error('Error subscribing to platform event:', JSON.stringify(error));
-            });
-    }
-
-    unsubscribeFromPlatformEvent() {
-        // Unsubscribe from the platform event
-        if (this.subscription) {
-            unsubscribe(this.subscription, response => {
-                console.log('Unsubscribed from platform event:', JSON.stringify(response));
-            });
-        }
-    }
-
     @wire(getWorkflows, { accountId: '$recordId' })
     wiredWorkflows({ error, data }) {
         if (data) {
-            // Add the 'rating' property to each workflow
             this.workflowsList = data.map(workflow => ({
                 ...workflow,
-                isChecked: false,
-                itemClass: 'disabled-td',
                 isExpanded: false,
                 accordionIcon: 'utility:chevronright',
-                rating: 0
             }));
-
-            // After getting workflows, fetch the workflowProfilings
-            this.fetchWorkflowProfilings();
         }
-    }
-
-    // Custom method to fetch workflowProfilings
-    fetchWorkflowProfilings() {
-        // Fetch workflowProfilings based on this.recordId
-        getWorkflowProfilingsByAccount({ accountId: this.recordId })
-            .then(result => {
-                this.workflowProfilings = result;
-
-                // We update the ratings
-                this.updateWorkflowsFromProfilings();
-            })
-            .catch(error => {
-                console.error('Error fetching Workflow Profilings:', error);
-            });
-    }
-
-    updateWorkflowsFromProfilings() {
-        // Iterate through both lists and update ratings
-        this.workflowsList.forEach(workflow => {
-            const matchingProfiling = this.workflowProfilings.find(profiling => profiling.Workflow__c === workflow.Id);
-            if (matchingProfiling) {
-                if(!matchingProfiling.Inactive__c){
-                    workflow.isChecked = true;
-                    workflow.itemClass = ''
-                }
-            }
-        });
     }
 
     handleExpand(event) {
         const rowId = event.currentTarget.dataset.rowid;
 
+        // Create a new array to hold the updated workflows
+        const updatedWorkflowsList = JSON.parse(JSON.stringify(this.workflowsList));
+
         // We expand the selected workflow and collapse all the others
-        this.workflowsList = this.workflowsList.map(workflow => {
+        for (let i = 0; i < updatedWorkflowsList.length; i++) {
+            const workflow = updatedWorkflowsList[i];
+
             if (workflow.Id === rowId) {
                 // If it's the selected workflow, we expand it
-                return {
-                    ...workflow,
-                    isExpanded: !workflow.isExpanded,
-                    accordionIcon: workflow.isExpanded ? 'utility:chevronright' : 'utility:chevrondown'
-                };
+                updatedWorkflowsList[i].isExpanded = !workflow.isExpanded;
+                updatedWorkflowsList[i].accordionIcon = workflow.isExpanded ? 'utility:chevrondown' : 'utility:chevronright';
             } else {
                 // Collapse all other workflows
-                return {
-                    ...workflow,
-                    isExpanded: false,
-                    accordionIcon: 'utility:chevronright'
-                };
+                updatedWorkflowsList[i].isExpanded = false;
+                updatedWorkflowsList[i].accordionIcon = 'utility:chevronright';
             }
-        });
+        }
+
+        // Update the workflowsList property with the new array
+        this.workflowsList = updatedWorkflowsList;
 
         // Find the workflow in the list based on the rowId
         let selectedWorkflow = this.workflowsList.find(workflow => workflow.Id === rowId);
@@ -178,6 +105,7 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
                 });
         }
     }
+
 
     handleMouseOver(event) {
         this.handleMouseEvent(event, true);
@@ -267,9 +195,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         if (event.detail.status === 'FINISHED') {
             // Closing the modal
             this.handleCloseModal();
-
-            // Update WP records upon PP save
-            this.fetchWorkflowProfilings();
 
             // Publishing a platform event to update the PP component
             publishPPCreationEventWP().then(() => {}).catch(error => {

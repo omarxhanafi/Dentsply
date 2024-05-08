@@ -475,17 +475,6 @@ public with sharing class ProductProfilingHierarchyController {
     }
 
     /**
-     * publishPPCreationEvent Send a platform event to refresh the WP component upon the creation of PP records
-     * @author ohanafi@salesforce.com | 12-02-2024
-     */
-    @AuraEnabled
-    public static void publishPPCreationEvent() {
-        PPCreation__e event = new PPCreation__e();
-        // Publishing the event
-        EventBus.publish(event);
-    }
-
-    /**
      * publishPPCreationEvent Send a platform event to refresh the PP component upon the creation of PP records from the WP component
      * @author ohanafi@salesforce.com | 08-04-2024
      */
