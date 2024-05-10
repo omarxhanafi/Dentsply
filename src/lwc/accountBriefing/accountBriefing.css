@@ -1,8 +1,8 @@
 .component-container {
-    padding: .85rem;
     background: white;
 }
 
+/* All Icons used in our component */
 .slds-icon {
  border-radius: 10%;
 }
@@ -19,4 +19,27 @@
 
 .slds-card__header-title {
     margin-bottom: 1rem;
+}
+
+/* Modern card container */
+.slds-card-modern {
+    border: 1px solid #e0e0e0;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Modern card hover effect */
+.slds-card-modern:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-group-container {
+    display: block; /* By default, the container is displayed */
+}
+
+/* Media query to hide the container when the screen width is less than 1024px */
+@media (max-width: 1024px) {
+    .button-group-container {
+        display: none; /* Hide the container on small screens */
+    }
 }

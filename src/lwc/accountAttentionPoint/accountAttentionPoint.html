@@ -20,13 +20,13 @@
 
                 <div class="slds-media__figure">
                     <span class={iconClasses}> <svg class="slds-icon" aria-hidden="true">
-                        <use xlink:href={iconUrl}></use> </svg> <span class="slds-assistive-text">{iconName}</span>
+                        <use xlink:href={iconUrl} onerror={handleIconError}></use> </svg> <span class="slds-assistive-text">{iconName}</span>
                     </span>
                 </div>
                 <div class="slds-media__body">
                     <!-- FIELD ONE -->
                     <div class="slds-clearfix">
-                        <a class="slds-float_left" onclick={handleRedirection} onmouseover={handleMouseOver} onmouseout={handleMouseOut}>{name}
+                        <a class="slds-float_left slds-truncate" onclick={handleRedirection} onmouseover={handleMouseOver} onmouseout={handleMouseOut}>{name}
                             <template if:true={isObjectSupported}>
                                 <template if:false={isMobile}>
                                     <template if:true={isMouseOver}>
@@ -46,17 +46,30 @@
                     <div class="slds-tile__detail">
                         <dl class="slds-list_horizontal slds-wrap">
                             <template for:each={fields} for:item="field">
+                                <!-- FIELD LABEL -->
                                 <dt class="slds-item_label slds-text-color_weak slds-truncate" key={field}
                                     title={field.label}>{field.label}:
                                 </dt>
+
+                                <!-- FIELD VALUE -->
                                 <dd class="slds-item_detail slds-truncate" key={field} >
 
                                     <template if:false={field.isTypeDateOrDateTime}>
-                                        {field.value}
+                                        <!-- FORMAT IF CURRENCY -->
+                                        <template if:true={field.isCurrency}>
+                                            <!--<lightning-formatted-number minimum-fraction-digits="2" value={field.value}></lightning-formatted-number>-->
+                                            {field.formattedValue}
+                                        </template>
+                                        <template if:false={field.isCurrency}>
+                                            {field.value}
+                                        </template>
                                     </template>
+
+                                    <!-- FORMAT IF DATE -->
                                     <template if:true={field.isTypeDateOrDateTime}>
                                         <lightning-formatted-date-time value={field.formattedValue}></lightning-formatted-date-time>
                                     </template>
+
                                 </dd>
                             </template>
                         </dl>

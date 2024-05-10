@@ -13,7 +13,6 @@ export default class AccountAttentionPoint extends NavigationMixin(LightningElem
 
 
     connectedCallback() {
-
     }
 
     // Attention Point Getters
@@ -30,7 +29,7 @@ export default class AccountAttentionPoint extends NavigationMixin(LightningElem
         return this.attentionPoint.id;
     }
     get isObjectSupported() {
-        return !['Event','Field_Sales_Project_Members__c'].includes(this.objectType);
+        return !['Event','Field_Sales_Project_Members__c','Case'].includes(this.objectType);
     }
 
     get name(){ // First field
@@ -49,6 +48,10 @@ export default class AccountAttentionPoint extends NavigationMixin(LightningElem
         return "slds-icon_container slds-icon-standard-" + this.iconName;
     }
 
+    handleIconError(event){
+        console.log('the icon is not showing correctly. ' + JSON.stringify(event,null,2));
+    }
+
     handleMouseOver() {
         this.isMouseOver = true;
     }
@@ -59,8 +62,6 @@ export default class AccountAttentionPoint extends NavigationMixin(LightningElem
 
     handleRedirection(event){
         event.preventDefault();
-        console.log('redirect to record id : ' + this.attentionPoint.id);
-
         this[NavigationMixin.Navigate]({
             type: "standard__recordPage",
             attributes: {

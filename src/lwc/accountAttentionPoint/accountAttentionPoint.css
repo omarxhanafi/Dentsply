@@ -6,3 +6,10 @@
     font-size: .9rem;
     font-weight: 500;
 }
+
+.slds-item_detail {
+    width: 60%;
+}
+.slds-item_label {
+    width: 40%;
+}

@@ -44,26 +44,41 @@
         <valueSet>
             <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
                 <value>
                     <fullName>Account</fullName>
                     <default>true</default>
                     <label>Account</label>
                 </value>
                 <value>
-                    <fullName>Event</fullName>
+                    <fullName>Account_Create_Change_Request__c</fullName>
                     <default>false</default>
-                    <label>Event</label>
+                    <label>Account_Create_Change_Request__c</label>
                 </value>
                 <value>
-                    <fullName>Task</fullName>
+                    <fullName>AccountContactRelation</fullName>
                     <default>false</default>
-                    <label>Task</label>
+                    <label>AccountContactRelation</label>
                 </value>
                 <value>
-                    <fullName>Opportunity</fullName>
+                    <fullName>Asset</fullName>
                     <default>false</default>
-                    <label>Opportunity</label>
+                    <label>Asset</label>
+                </value>
+                <value>
+                    <fullName>CampaignMember</fullName>
+                    <default>false</default>
+                    <label>CampaignMember</label>
+                </value>
+                <value>
+                    <fullName>Case</fullName>
+                    <default>false</default>
+                    <label>Case</label>
+                </value>
+                <value>
+                    <fullName>Contact</fullName>
+                    <default>false</default>
+                    <label>Contact</label>
                 </value>
                 <value>
                     <fullName>Contract</fullName>
@@ -71,14 +86,59 @@
                     <label>Contract</label>
                 </value>
                 <value>
+                    <fullName>Event</fullName>
+                    <default>false</default>
+                    <label>Event</label>
+                </value>
+                <value>
                     <fullName>Field_Sales_Project_Members__c</fullName>
                     <default>false</default>
                     <label>Field_Sales_Project_Members__c</label>
                 </value>
                 <value>
-                    <fullName>Case</fullName>
+                    <fullName>Opportunity</fullName>
                     <default>false</default>
-                    <label>Case</label>
+                    <label>Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Order</fullName>
+                    <default>false</default>
+                    <label>Order</label>
+                </value>
+                <value>
+                    <fullName>ProcedureTracker__c</fullName>
+                    <default>false</default>
+                    <label>ProcedureTracker__c</label>
+                </value>
+                <value>
+                    <fullName>Product_Profiling__c</fullName>
+                    <default>false</default>
+                    <label>Product_Profiling__c</label>
+                </value>
+                <value>
+                    <fullName>Quote</fullName>
+                    <default>false</default>
+                    <label>Quote</label>
+                </value>
+                <value>
+                    <fullName>ServiceAppointment</fullName>
+                    <default>false</default>
+                    <label>ServiceAppointment</label>
+                </value>
+                <value>
+                    <fullName>Source_Record__c</fullName>
+                    <default>false</default>
+                    <label>Source_Record__c</label>
+                </value>
+                <value>
+                    <fullName>Task</fullName>
+                    <default>false</default>
+                    <label>Task</label>
+                </value>
+                <value>
+                    <fullName>WorkOrder</fullName>
+                    <default>false</default>
+                    <label>WorkOrder</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -119,6 +179,15 @@
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>TechnicalComments__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Technical Comments</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Title__c</fullName>
         <description>Custom label full name to display a Title of the attention point.</description>
         <externalId>false</externalId>
@@ -130,21 +199,7 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <label>Attention Point</label>
-    <listViews>
-        <fullName>All_Attention_Points</fullName>
-        <columns>MasterLabel</columns>
-        <columns>ObjectType__c</columns>
-        <columns>Relevance__c</columns>
-        <columns>Title__c</columns>
-        <columns>FieldsToShow__c</columns>
-        <columns>Icon__c</columns>
-        <columns>SOQLQuery__c</columns>
-        <columns>RelationshipField__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All Attention Points</label>
-        <language>en_US</language>
-    </listViews>
-    <pluralLabel>Attention Points</pluralLabel>
+    <label>Account 360 News</label>
+    <pluralLabel>Account 360 News</pluralLabel>
     <visibility>Public</visibility>
 </CustomObject>

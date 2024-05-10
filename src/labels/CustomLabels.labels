@@ -97,28 +97,12 @@
         <value>Account 360 Flags</value>
     </labels>
     <labels>
-        <fullName>AccountFlagsHelpText</fullName>
-        <categories>AccountFlags</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AccountFlagsHelpText</shortDescription>
-        <value>White: N/A, Red: Inactive, Green: Active</value>
-    </labels>
-    <labels>
         <fullName>AccountFlagsLight</fullName>
         <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AccountFlagsLight</shortDescription>
         <value>Light</value>
-    </labels>
-    <labels>
-        <fullName>AccountFlagsMultipleFound</fullName>
-        <categories>AccountFlags</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AccountFlagsMultipleFound</shortDescription>
-        <value>Multiple Found</value>
     </labels>
     <labels>
         <fullName>AccountFlagsOnlineOrdering</fullName>
@@ -209,14 +193,6 @@
         <value>event(s) out of a benchmark midpoint of</value>
     </labels>
     <labels>
-        <fullName>ActivityScoreboardNotAvailable</fullName>
-        <categories>Activity Scoreboard</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>ActivityScoreboardNotAvailable</shortDescription>
-        <value>Not Available</value>
-    </labels>
-    <labels>
         <fullName>ActivityScoreboardTasksCompleted</fullName>
         <categories>Activity Scoreboard</categories>
         <language>en_US</language>
@@ -231,22 +207,6 @@
         <protected>false</protected>
         <shortDescription>ActivityScorecardHeader</shortDescription>
         <value>360 Activity Scorecard</value>
-    </labels>
-    <labels>
-        <fullName>ActivityScorecardLastEventDate</fullName>
-        <categories>Activity Scoreboard</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>ActivityScorecardLastEventDate</shortDescription>
-        <value>Last Event Date</value>
-    </labels>
-    <labels>
-        <fullName>ActivityScorecardMyLastEventDate</fullName>
-        <categories>Activity Scoreboard</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>ActivityScorecardMyLastEventDate</shortDescription>
-        <value>My Last Event Date</value>
     </labels>
     <labels>
         <fullName>ActivityScorecardPlannedCFEs</fullName>
@@ -2927,7 +2887,9 @@ Please contact your Administrator (CRM Analyst).</value>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>WPHelpText</shortDescription>
-        <value>Fire icons represent workflow ratings</value>
+        <value>Uncollapse the workflow to access details about the practice&apos;s products that have been either manually added or automatically assigned by the system. 
+Inactive products marked with an &quot;X&quot; are perceived as not being associated with the account due to lapsed usage.
+Click new to add more ...</value>
     </labels>
     <labels>
         <fullName>WPProductFamily</fullName>
