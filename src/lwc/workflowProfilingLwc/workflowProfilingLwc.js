@@ -40,72 +40,48 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         if (data) {
             this.workflowsList = data.map(workflow => ({
                 ...workflow,
-                isExpanded: false,
-                accordionIcon: 'utility:chevronright',
+                families: null
             }));
         }
     }
 
     handleExpand(event) {
-        const rowId = event.currentTarget.dataset.rowid;
+        const openSections = event.detail.openSections;
 
-        // Create a new array to hold the updated workflows
-        const updatedWorkflowsList = JSON.parse(JSON.stringify(this.workflowsList));
+        openSections.forEach(workflowId => {
+            const selectedWorkflow = this.workflowsList.find(workflow => workflow.Id === workflowId);
 
-        // We expand the selected workflow and collapse all the others
-        for (let i = 0; i < updatedWorkflowsList.length; i++) {
-            const workflow = updatedWorkflowsList[i];
+            if (selectedWorkflow && !selectedWorkflow.families) {
+                getProductFamilyListByWorkflowId({ workflowId: selectedWorkflow.Id, accountId: this.recordId })
+                    .then(result => {
+                        selectedWorkflow.families = result;
 
-            if (workflow.Id === rowId) {
-                // If it's the selected workflow, we expand it
-                updatedWorkflowsList[i].isExpanded = !workflow.isExpanded;
-                updatedWorkflowsList[i].accordionIcon = workflow.isExpanded ? 'utility:chevrondown' : 'utility:chevronright';
-            } else {
-                // Collapse all other workflows
-                updatedWorkflowsList[i].isExpanded = false;
-                updatedWorkflowsList[i].accordionIcon = 'utility:chevronright';
-            }
-        }
+                        selectedWorkflow.families.forEach(family => {
+                            // Initialize flags
+                            family.hasDSCoreProduct = false;
+                            family.hasCompetitorProduct = false;
 
-        // Update the workflowsList property with the new array
-        this.workflowsList = updatedWorkflowsList;
+                            family.dsProducts.forEach(product => {
+                                if (product.active) {
+                                    family.hasDSCoreProduct = true;
+                                    return;
+                                }
+                            });
 
-        // Find the workflow in the list based on the rowId
-        let selectedWorkflow = this.workflowsList.find(workflow => workflow.Id === rowId);
-
-        if (selectedWorkflow && !selectedWorkflow.families) {
-            // Retrieve the list of families / products only if they are not already loaded
-            getProductFamilyListByWorkflowId({ workflowId: selectedWorkflow.Id, accountId: this.recordId })
-                .then(result => {
-                    // Assigning the families to the workflow
-                    selectedWorkflow.families = result;
-
-                    selectedWorkflow.families.forEach(family => {
-                        // Initialize flags
-                        family.hasDSCoreProduct = false;
-                        family.hasCompetitorProduct = false;
-
-                        family.dsProducts.forEach(product => {
-                            if (product.active) {
-                                family.hasDSCoreProduct = true;
-                                return;
-                            }
+                            family.competitorProducts.forEach(product => {
+                                if (product.active) {
+                                    family.hasCompetitorProduct = true;
+                                    return;
+                                }
+                            });
                         });
-
-                        family.competitorProducts.forEach(product => {
-                            if (product.active) {
-                                family.hasCompetitorProduct = true;
-                                return;
-                            }
-                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching Product Families & Products:', error);
                     });
-                })
-                .catch(error => {
-                    console.error('Error fetching Product Families & Products:', error);
-                });
-        }
+            }
+        });
     }
-
 
     handleMouseOver(event) {
         this.handleMouseEvent(event, true);
