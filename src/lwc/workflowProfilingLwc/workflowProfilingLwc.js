@@ -75,8 +75,6 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
                                 }
                             });
                         });
-
-                        console.log('updated workflows : ', JSON.parse(JSON.stringify(this.workflowsList)));
                     })
                     .catch(error => {
                         console.error('Error fetching Product Families & Products:', error);
