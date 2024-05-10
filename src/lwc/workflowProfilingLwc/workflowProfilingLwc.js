@@ -75,6 +75,8 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
                                 }
                             });
                         });
+
+                        console.log('updated workflows : ', JSON.parse(JSON.stringify(this.workflowsList)));
                     })
                     .catch(error => {
                         console.error('Error fetching Product Families & Products:', error);
@@ -102,11 +104,11 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
                 // Iterate through each family
                 for (let family of workflow.families) {
                     // Check in DS products
-                    foundProduct = family.dsProducts.find(eachProduct => eachProduct.product.Id === productId);
+                    foundProduct = family.dsProducts.find(eachProduct => eachProduct.productProfilingId === productId);
                     if (foundProduct) break;
 
                     // Check in competitor products
-                    foundProduct = family.competitorProducts.find(eachProduct => eachProduct.product.Id === productId);
+                    foundProduct = family.competitorProducts.find(eachProduct => eachProduct.productProfilingId === productId);
                     if (foundProduct) break;
                 }
                 if (foundProduct) break;
@@ -128,7 +130,7 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         this[NavigationMixin.Navigate]({
             type: "standard__recordPage",
             attributes: {
-                objectApiName: 'Non_ERP_Products__c',
+                objectApiName: 'Product_Profiling__c',
                 actionName: "view",
                 recordId: productId
             }

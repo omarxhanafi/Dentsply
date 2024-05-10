@@ -128,10 +128,10 @@ public with sharing class WorkflowProfilingController {
         }
 
         // Map to hold active ProductProfiling__c Ids related to Non_ERP_Products__c
-        Set<Id> activeNonErpProductsIds = new Set<Id>();
+        Map<Id, Id> activeNonErpProductsIds = new Map<Id, Id>();
 
         // Map to hold inactive ProductProfiling__c Ids related to Non_ERP_Products__c
-        Set<Id> inactiveNonErpProductsIds = new Set<Id>();
+        Map<Id, Id> inactiveNonErpProductsIds = new Map<Id, Id>();
 
         for (Product_Profiling__c productProfiling : [
                 SELECT Id, Product_Name__c, Inactive__c
@@ -139,9 +139,9 @@ public with sharing class WorkflowProfilingController {
                 WHERE Product_Name__c IN :nonERPProductIds AND Account__c = :accountId
         ]) {
             if(!productProfiling.Inactive__c){
-                activeNonErpProductsIds.add(productProfiling.Product_Name__c);
+                activeNonErpProductsIds.put(productProfiling.Product_Name__c, productProfiling.Id);
             } else {
-                inactiveNonErpProductsIds.add(productProfiling.Product_Name__c);
+                inactiveNonErpProductsIds.put(productProfiling.Product_Name__c, productProfiling.Id);
             }
         }
 
@@ -157,11 +157,13 @@ public with sharing class WorkflowProfilingController {
 
             for (Non_ERP_Products__c nonERPProduct : productFamily.Non_ERP_Products__r) {
                 if (nonERPProduct.Competitor_Product__c) {
-                    if (activeNonErpProductsIds.contains(nonERPProduct.Id)) {
-                        wrapper.competitorProducts.add(new NonERPProductWrapper(nonERPProduct, true, false));
+                    if (activeNonErpProductsIds.containsKey(nonERPProduct.Id)) {
+                        wrapper.competitorProducts.add(new NonERPProductWrapper(nonERPProduct, true, false, activeNonErpProductsIds.get(nonERPProduct.Id)));
                     }
                 } else {
-                    wrapper.dsProducts.add(new NonERPProductWrapper(nonERPProduct, activeNonErpProductsIds.contains(nonERPProduct.Id) ? true : false, inactiveNonErpProductsIds.contains(nonERPProduct.Id) ? true : false));
+                    Boolean isActive = activeNonErpProductsIds.containsKey(nonERPProduct.Id);
+                    Boolean isInactive = inactiveNonErpProductsIds.containsKey(nonERPProduct.Id);
+                    wrapper.dsProducts.add(new NonERPProductWrapper(nonERPProduct, isActive, isInactive, isActive ? activeNonErpProductsIds.get(nonERPProduct.Id) : (isInactive ? inactiveNonErpProductsIds.get(nonERPProduct.Id) : null)));
                 }
             }
 
@@ -179,11 +181,13 @@ public with sharing class WorkflowProfilingController {
         @AuraEnabled public Non_ERP_Products__c product;
         @AuraEnabled public Boolean active;
         @AuraEnabled public Boolean inactive;
+        @AuraEnabled public String productProfilingId;
 
-        public NonERPProductWrapper(Non_ERP_Products__c product, Boolean active, Boolean inactive) {
+        public NonERPProductWrapper(Non_ERP_Products__c product, Boolean active, Boolean inactive, String productProfilingId) {
             this.product = product;
             this.active = active;
             this.inactive = inactive;
+            this.productProfilingId = productProfilingId;
         }
     }
 

@@ -53,7 +53,7 @@
                                                                                 onclick={handleRedirection}
                                                                                 onmouseover={handleMouseOver}
                                                                                 onmouseout={handleMouseOut}
-                                                                                data-productid={dsProduct.product.Id}
+                                                                                data-productid={dsProduct.productProfilingId}
                                                                                 data-workflowid={eachWorkflow.Id}
                                                                         >
                                                                             {dsProduct.product.Name}
@@ -63,7 +63,7 @@
                                                                     <template if:true={isMobile}>
                                                                         <a
                                                                                 onclick={handleRedirection}
-                                                                                data-productid={dsProduct.product.Id}
+                                                                                data-productid={dsProduct.productProfilingId}
                                                                         >
                                                                             {dsProduct.product.Name}
                                                                         </a>
@@ -71,11 +71,11 @@
                                                                     <template if:true={dsProduct.isMouseOver}>
                                                                         <div class="custom-popover-positioning">
                                                                             <c-popover-record-info
-                                                                                    key={dsProduct.product.Id}
-                                                                                    record-id={dsProduct.product.Id}
-                                                                                    url={dsProduct.product.Id}
+                                                                                    key={dsProduct.productProfilingId}
+                                                                                    record-id={dsProduct.productProfilingId}
+                                                                                    url={dsProduct.productProfilingId}
                                                                                     title={dsProduct.product.Name}
-                                                                                    object-api-name="Non_ERP_Products__c"
+                                                                                    object-api-name="Product_Profiling__c"
                                                                                     icon-name="standard:product">
                                                                             </c-popover-record-info>
                                                                         </div>
@@ -87,7 +87,7 @@
                                                                                 onclick={handleRedirection}
                                                                                 onmouseover={handleMouseOver}
                                                                                 onmouseout={handleMouseOut}
-                                                                                data-productid={dsProduct.product.Id}
+                                                                                data-productid={dsProduct.productProfilingId}
                                                                                 data-workflowid={eachWorkflow.Id}
                                                                         >
                                                                             {dsProduct.product.Name}
@@ -97,7 +97,7 @@
                                                                     <template if:true={isMobile}>
                                                                         <a
                                                                                 onclick={handleRedirection}
-                                                                                data-productid={dsProduct.product.Id}
+                                                                                data-productid={dsProduct.productProfilingId}
                                                                         >
                                                                             {dsProduct.product.Name}
                                                                         </a>
@@ -105,11 +105,11 @@
                                                                     <template if:true={dsProduct.isMouseOver}>
                                                                         <div class="custom-popover-positioning">
                                                                             <c-popover-record-info
-                                                                                    key={dsProduct.product.Id}
-                                                                                    record-id={dsProduct.product.Id}
-                                                                                    url={dsProduct.product.Id}
+                                                                                    key={dsProduct.productProfilingId}
+                                                                                    record-id={dsProduct.productProfilingId}
+                                                                                    url={dsProduct.productProfilingId}
                                                                                     title={dsProduct.product.Name}
-                                                                                    object-api-name="Non_ERP_Products__c"
+                                                                                    object-api-name="Product_Profiling__c"
                                                                                     icon-name="standard:product">
                                                                             </c-popover-record-info>
                                                                         </div>
@@ -131,7 +131,7 @@
                                                                                 onclick={handleRedirection}
                                                                                 onmouseover={handleMouseOver}
                                                                                 onmouseout={handleMouseOut}
-                                                                                data-productid={compProduct.product.Id}
+                                                                                data-productid={compProduct.productProfilingId}
                                                                                 data-workflowid={eachWorkflow.Id}
                                                                         >
                                                                             {compProduct.product.Name}
@@ -141,7 +141,7 @@
                                                                     <template if:true={isMobile}>
                                                                         <a
                                                                                 onclick={handleRedirection}
-                                                                                data-productid={compProduct.product.Id}
+                                                                                data-productid={compProduct.productProfilingId}
                                                                         >
                                                                             {compProduct.product.Name}
                                                                         </a>
@@ -149,10 +149,10 @@
                                                                     <template if:true={compProduct.isMouseOver}>
                                                                         <div class="custom-popover-positioning">
                                                                             <c-popover-record-info
-                                                                                    record-id={compProduct.product.Id}
-                                                                                    url={compProduct.product.Id}
+                                                                                    record-id={compProduct.productProfilingId}
+                                                                                    url={compProduct.productProfilingId}
                                                                                     title={compProduct.product.Name}
-                                                                                    object-api-name="Non_ERP_Products__c"
+                                                                                    object-api-name="Product_Profiling__c"
                                                                                     icon-name="standard:product">
                                                                             </c-popover-record-info>
                                                                         </div>
@@ -164,7 +164,7 @@
                                                                                 onclick={handleRedirection}
                                                                                 onmouseover={handleMouseOver}
                                                                                 onmouseout={handleMouseOut}
-                                                                                data-productid={compProduct.product.Id}
+                                                                                data-productid={compProduct.productProfilingId}
                                                                                 data-workflowid={eachWorkflow.Id}
                                                                         >
                                                                             {compProduct.product.Name}
@@ -174,7 +174,7 @@
                                                                     <template if:true={isMobile}>
                                                                         <a
                                                                                 onclick={handleRedirection}
-                                                                                data-productid={compProduct.product.Id}
+                                                                                data-productid={compProduct.productProfilingId}
                                                                         >
                                                                             {compProduct.product.Name}
                                                                         </a>
@@ -182,10 +182,10 @@
                                                                     <template if:true={compProduct.isMouseOver}>
                                                                         <div class="custom-popover-positioning">
                                                                             <c-popover-record-info
-                                                                                    record-id={compProduct.product.Id}
-                                                                                    url={compProduct.product.Id}
+                                                                                    record-id={compProduct.productProfilingId}
+                                                                                    url={compProduct.productProfilingId}
                                                                                     title={compProduct.product.Name}
-                                                                                    object-api-name="Non_ERP_Products__c"
+                                                                                    object-api-name="Product_Profiling__c"
                                                                                     icon-name="standard:product">
                                                                             </c-popover-record-info>
                                                                         </div>
