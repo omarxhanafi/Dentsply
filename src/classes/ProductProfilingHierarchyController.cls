@@ -6,6 +6,7 @@
  * @History
  * 2019-11-27   Richard  Created ProductProfilingHierarchyController class
  * 2023-03-27   Omar     TFUS-000005477 / TFUS-000005470 - Included Procedure Tracker in the Product Profiling component as well as being able to select all countries for a Non_ERP_Products__c record.
+ * 2024-05-14   Omar     TFUS-000006676 - Being able to exclude countries from the global definition of the product profiling
 
  */
 
@@ -35,15 +36,22 @@ public with sharing class ProductProfilingHierarchyController {
     	        
 	//Collect all top nodes in the hierarchy    
     List<AggregateResult> results = new List<AggregateResult>();
-        
-        if(SBU != '' && SBU != null){
-    		results = [SELECT count(Id), ProductFamily__r.ProductFamilyLabel__c family FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) AND ProductGroupText__c =: SBU  AND ProductFamily__c != null GROUP BY ProductFamily__r.ProductFamilyLabel__c];   //OR (Valid_in_my_Market__c =: true AND Market__c != '')
-        }   
-        else{
-    		results = [SELECT count(Id), ProductFamily__r.ProductFamilyLabel__c family FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) AND ProductFamily__c != null GROUP BY ProductFamily__r.ProductFamilyLabel__c];
-        }
 
-        
+    // TFUS-000006676 Excluding Germany, Austria and Switzerland from the global definition
+    if (!new List<String>{'AT', 'DE', 'CH'}.contains(country)) {
+        results = [SELECT COUNT(Id), ProductFamily__r.ProductFamilyLabel__c family
+        FROM Non_ERP_Products__c
+        WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true)
+        AND ProductFamily__c != null
+        GROUP BY ProductFamily__r.ProductFamilyLabel__c];
+    } else {
+        results = [SELECT COUNT(Id), ProductFamily__r.ProductFamilyLabel__c family
+        FROM Non_ERP_Products__c
+        WHERE Inactive__c = false AND (GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country))
+        AND ProductFamily__c != null
+        GROUP BY ProductFamily__r.ProductFamilyLabel__c];
+    }
+
     List<String> uniqueNames = new List<String>();
         
     for (AggregateResult result : results) {
@@ -144,9 +152,18 @@ public with sharing class ProductProfilingHierarchyController {
             Account acc = [SELECT Id, Country__c FROM Account WHERE Id =: recordId];
             country = acc.Country__c;
         }
-                
-    	List<Non_ERP_Products__c> records = [SELECT Id, Name, Countries__c, SBU__c, Manufacturer__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, ProductGroupText__c 
-                                             FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) ]; //OR Valid_in_my_Market__c =: true
+
+    	List<Non_ERP_Products__c> records = new List<Non_ERP_Products__c>();
+
+        if (!new List<String>{'AT', 'DE', 'CH'}.contains(country)) {
+            records = [SELECT Id, Name, Countries__c, SBU__c, Manufacturer__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, ProductGroupText__c
+            FROM Non_ERP_Products__c
+            WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true)];
+        } else {
+            records = [SELECT Id, Name, Countries__c, SBU__c, Manufacturer__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, ProductGroupText__c
+            FROM Non_ERP_Products__c
+            WHERE Inactive__c = false AND (GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country))];
+        }
 		
         for(Non_ERP_Products__c so : records){
             String fieldValue = (String) so.get(field_name);
@@ -222,11 +239,15 @@ public with sharing class ProductProfilingHierarchyController {
     	        
     List<Non_ERP_Products__c> allProducts = new List<Non_ERP_Products__c>();    
 
-    String query = 'SELECT Id, Name, Countries__c, SBU__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, ProductFamily__r.ProductFamilyLabel__c, ProductFamily__c, Manufacturer__c, ProductGroupText__c, QuantityUnitOfMeasure__c FROM Non_ERP_Products__c';
-    query += ' WHERE Inactive__c = FALSE AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE) AND ProductFamily__c != NULL';
-     
-        
-    Boolean filterIsApplied = false;    
+        String query = 'SELECT Id, Name, Countries__c, SBU__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, ProductFamily__r.ProductFamilyLabel__c, ProductFamily__c, Manufacturer__c, ProductGroupText__c, QuantityUnitOfMeasure__c FROM Non_ERP_Products__c';
+
+        if (!new List<String>{'AT', 'DE', 'CH'}.contains(country)) {
+            query += ' WHERE Inactive__c = FALSE AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE) AND ProductFamily__c != NULL';
+        } else {
+            query += ' WHERE Inactive__c = FALSE AND (GlobalProductShowtoallcountries__c = FALSE AND Countries__c INCLUDES (:country)) AND ProductFamily__c != NULL';
+        }
+
+        Boolean filterIsApplied = false;
         if(node != '' && node != null){
             node = String.EscapeSingleQuotes(node);
             query += ' AND ProductFamily__r.ProductFamilyLabel__c =: node';
@@ -354,8 +375,21 @@ public with sharing class ProductProfilingHierarchyController {
             Account acc = [SELECT Id, Country__c FROM Account WHERE Id =: recordId];
             country = acc.Country__c;
         }
-                
-        AggregateResult[] results = [SELECT count(Id), ProductGroupText__c FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) GROUP BY ProductGroupText__c]; //OR Valid_in_my_Market__c =: true)
+
+        List<AggregateResult> results = new List<AggregateResult>();
+
+        if (!new List<String>{'AT', 'DE', 'CH'}.contains(country)) {
+            results = [SELECT COUNT(Id), ProductGroupText__c
+            FROM Non_ERP_Products__c
+            WHERE Inactive__c = FALSE AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE)
+            GROUP BY ProductGroupText__c];
+        } else {
+            results = [SELECT COUNT(Id), ProductGroupText__c
+            FROM Non_ERP_Products__c
+            WHERE Inactive__c = FALSE AND (GlobalProductShowtoallcountries__c = FALSE AND Countries__c INCLUDES (:country))
+            GROUP BY ProductGroupText__c];
+        }
+
         List<String> uniqueNames = new List<String>();
         for (AggregateResult result : results) {
             uniqueNames.add((String)result.get('ProductGroupText__c'));
@@ -383,12 +417,20 @@ public with sharing class ProductProfilingHierarchyController {
             country = acc.Country__c;
         }
                 
-        AggregateResult[] results = [SELECT count(Id), Manufacturer__c FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) GROUP BY Manufacturer__c]; //OR Valid_in_my_Market__c =: true)
-        
-        if(SBU != ''){
-        	    results = [SELECT count(Id), Manufacturer__c FROM Non_ERP_Products__c WHERE Inactive__c = false AND ProductGroupText__c =: SBU AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) GROUP BY Manufacturer__c]; //OR Valid_in_my_Market__c =: true)
+        List<AggregateResult> results = new List<AggregateResult>();
+
+        if (!new List<String>{'AT', 'DE', 'CH'}.contains(country)) {
+            results = [SELECT COUNT(Id), Manufacturer__c
+            FROM Non_ERP_Products__c
+            WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE)
+            GROUP BY Manufacturer__c];
+        } else {
+            results = [SELECT COUNT(Id), Manufacturer__c
+            FROM Non_ERP_Products__c
+            WHERE Inactive__c = false AND (GlobalProductShowtoallcountries__c = FALSE AND Countries__c INCLUDES (:country))
+            GROUP BY Manufacturer__c];
         }
-        
+
         List<String> uniqueNames = new List<String>();
         for (AggregateResult result : results) {
             uniqueNames.add((String)result.get('Manufacturer__c'));
@@ -411,9 +453,17 @@ public with sharing class ProductProfilingHierarchyController {
     public static List<Workflow__c> getWorkflows(Id recordId) {
         Account acc = [SELECT Id, Country__c from Account where id = :recordId LIMIT 1];
 
-        if(acc != null){
+        if (acc != null) {
             String country = acc.Country__c;
-            return [SELECT Id, WorkflowLabel__c FROM Workflow__c WHERE Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE];
+            if (!new List<String>{'AT', 'DE', 'CH'}.contains(country)) {
+                return [SELECT Id, WorkflowLabel__c
+                FROM Workflow__c
+                WHERE Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE];
+            } else {
+                return [SELECT Id, WorkflowLabel__c
+                FROM Workflow__c
+                WHERE (GlobalProductShowtoallcountries__c = FALSE AND Countries__c INCLUDES (:country))];
+            }
         }
 
         return null;
@@ -436,18 +486,18 @@ public with sharing class ProductProfilingHierarchyController {
             country = acc.Country__c;
         }
                 
-        AggregateResult[] results = [SELECT count(Id), Product_Category__c FROM Non_ERP_Products__c WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) GROUP BY Product_Category__c]; //OR Valid_in_my_Market__c =: true)
-        
-        if(SBU != '' && (manufacturer == '' || manufacturer == null)){
-        	  results = [SELECT count(Id), Product_Category__c FROM Non_ERP_Products__c WHERE Inactive__c = false AND ProductGroupText__c =: SBU AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) GROUP BY Product_Category__c]; //OR Valid_in_my_Market__c =: true)
-        }
-        
-        if(manufacturer != '' && (SBU == '' || SBU == null)){
-             results = [SELECT count(Id), Product_Category__c FROM Non_ERP_Products__c WHERE Inactive__c = false AND Manufacturer__c =: manufacturer AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) GROUP BY Product_Category__c]; //OR Valid_in_my_Market__c =: true)
-        }
-        
-        if(SBU != '' && SBU != null && manufacturer != '' && manufacturer != null){
-             results = [SELECT count(Id), Product_Category__c FROM Non_ERP_Products__c WHERE Inactive__c = false AND Manufacturer__c =: manufacturer AND ProductGroupText__c =: SBU AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = true) GROUP BY Product_Category__c]; //OR Valid_in_my_Market__c =: true)
+        List<AggregateResult> results = new List<AggregateResult>();
+
+        if (!new List<String>{'AT', 'DE', 'CH'}.contains(country)) {
+            results = [SELECT COUNT(Id), Product_Category__c
+            FROM Non_ERP_Products__c
+            WHERE Inactive__c = false AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE)
+            GROUP BY Product_Category__c];
+        } else {
+            results = [SELECT COUNT(Id), Product_Category__c
+            FROM Non_ERP_Products__c
+            WHERE Inactive__c = false AND (GlobalProductShowtoallcountries__c = FALSE AND Countries__c INCLUDES (:country))
+            GROUP BY Product_Category__c];
         }
         
         List<String> uniqueNames = new List<String>();
