@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/IlluminatedCloud/DevJun24/OfflineSymbolTable.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/InsideSalesCampaignTrackerController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/InsideSalesCampaignTrackerController.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

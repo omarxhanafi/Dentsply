@@ -113,10 +113,6 @@ public with sharing class InsideSalesCampaignTrackerController {
              camapignsDetails.put(campaign.name,campaign.Id);
         }
 
-        System.debug('campaignsRelatedToAccount' + campaignsRelatedToAccount);
-        System.debug('campaignsRelatedToContacts' + campaignsRelatedToContacts);
-        System.debug('tasksData' + tasksData);
-
 		for(Object taskdata : tasksData){
             Map<String,Object> mappedData = (Map<String,Object>)taskdata;
             Task tasktoBeCreated =  new Task();
