@@ -4,6 +4,7 @@
  * Test class        : Test_InsideSalesCampaignTrackerCntl
  * History	
  * 03-03-2022        : Created (#TFUS-000004085)
+ * 16-05-2024        : Assigning the Campaign to the created task (TFUS-000006250)
 --------------------------------------------------------------------------------------------------*/
 public with sharing class InsideSalesCampaignTrackerController {
 	/*------------------------------------------------------------	
@@ -80,7 +81,7 @@ public with sharing class InsideSalesCampaignTrackerController {
         List<Task> tasksList = new List<Task>();
         List<CampaignMember> campaignMemberListToUpdate = new List<CampaignMember>();
         Map<String,Id> campaignsRelatedToAccount = new Map<String,Id>();
-        Map<String,Id> campaignsRelatedToContacts = new Map<String,Id>();
+            Map<String,Id> campaignsRelatedToContacts = new Map<String,Id>();
         Map<String,String> campaignMemberStatusMap = new Map<String,String>();
         set<String> selectedMembersIds = new set<String>();
         List<Object> tasksData = (List<Object>)JSON.deserializeUntyped(data);
@@ -89,7 +90,7 @@ public with sharing class InsideSalesCampaignTrackerController {
             selectedMembersIds.add((String)mappedData.get('memberId'));
         }
         //get campaign members and filter the ones related to account and the ones related to contact
-        List<CampaignMember> campaignsMembers = [SELECT Id, Status, Campaign.Name, AccountId, ContactId FROM CampaignMember where Id IN:selectedMembersIds ];
+        List<CampaignMember> campaignsMembers = [SELECT Id, Status, Campaign.Name, CampaignId, AccountId, ContactId FROM CampaignMember where Id IN:selectedMembersIds ];
         for(CampaignMember member:campaignsMembers){
             if(member.AccountId != null){
                 if(campaignsRelatedToAccount.get(member.Campaign.Name) == null){
@@ -111,6 +112,10 @@ public with sharing class InsideSalesCampaignTrackerController {
         for(Campaign campaign: Campaigns){
              camapignsDetails.put(campaign.name,campaign.Id);
         }
+
+        System.debug('campaignsRelatedToAccount' + campaignsRelatedToAccount);
+        System.debug('campaignsRelatedToContacts' + campaignsRelatedToContacts);
+        System.debug('tasksData' + tasksData);
 
 		for(Object taskdata : tasksData){
             Map<String,Object> mappedData = (Map<String,Object>)taskdata;
@@ -137,6 +142,15 @@ public with sharing class InsideSalesCampaignTrackerController {
             // Don't create an activity when the campaign member's status is Canceled - TFUS-000005230
             if((String)mappedData.get('memberStatus') != 'Canceled'){
                 tasksList.add(tasktoBeCreated);
+            }
+
+            // Assign campaign to task - TFUS-000006250
+            if((String)mappedData.get('memberId') != null){
+                for(CampaignMember eachCampaignMember : campaignsMembers){
+                    if(eachCampaignMember.Id == (String)mappedData.get('memberId')){
+                        tasktoBeCreated.Campaign__c = eachCampaignMember.CampaignId;
+                    }
+                }
             }
 
             campaignMemberStatusMap.put((String)mappedData.get('name'), (String)mappedData.get('memberStatus'));
