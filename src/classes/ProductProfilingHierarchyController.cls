@@ -454,23 +454,31 @@ public with sharing class ProductProfilingHierarchyController {
      * @return List<Workflow__c> - List of workflows
      */
     @AuraEnabled(cacheable=true)
-    public static List<Workflow__c> getWorkflows(Id recordId) {
-        Account acc = [SELECT Id, Country__c from Account where id = :recordId LIMIT 1];
+    public static List<Workflow__c> getWorkflows(String recordId) {
+        String country = '';
 
-        if (acc != null) {
-            String country = acc.Country__c;
-            if (!new List<String>{'AT', 'DE', 'CH'}.contains(country)) {
-                return [SELECT Id, WorkflowLabel__c
-                FROM Workflow__c
-                WHERE Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE];
-            } else {
-                return [SELECT Id, WorkflowLabel__c
-                FROM Workflow__c
-                WHERE ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT(Countries__c INCLUDES (:country))))))];
-            }
+        if (recordId.left(3) == '003'){
+            Contact con = [SELECT Id, Account.Country__c FROM Contact WHERE Id =: recordId];
+            country = con.Account.Country__c;
+        } else if(recordId.startsWith('a5q')){
+            String accId = [SELECT Account__c FROM  Account_Plan__c WHERE id =: recordId LIMIT 1][0].Account__c;
+            Account acc = [SELECT Id, Country__c FROM Account WHERE Id =: accId];
+            country = acc.Country__c;
+        } else{
+            Account acc = [SELECT Id, Country__c FROM Account WHERE Id =: recordId];
+            country = acc.Country__c;
         }
 
-        return null;
+        if (!new List<String>{'AT', 'DE', 'CH'}.contains(country)) {
+            return [SELECT Id, WorkflowLabel__c
+            FROM Workflow__c
+            WHERE Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE];
+        } else {
+            return [SELECT Id, WorkflowLabel__c
+            FROM Workflow__c
+            WHERE ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT(Countries__c INCLUDES (:country))))))];
+        }
+
     }
     
     @AuraEnabled
