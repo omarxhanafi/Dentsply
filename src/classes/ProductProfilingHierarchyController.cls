@@ -47,7 +47,8 @@ public with sharing class ProductProfilingHierarchyController {
     } else {
         results = [SELECT COUNT(Id), ProductFamily__r.ProductFamilyLabel__c family
         FROM Non_ERP_Products__c
-        WHERE Inactive__c = false AND (GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country))
+        WHERE Inactive__c = false
+        AND ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT(Countries__c INCLUDES (:country))))))
         AND ProductFamily__c != null
         GROUP BY ProductFamily__r.ProductFamilyLabel__c];
     }
@@ -162,7 +163,8 @@ public with sharing class ProductProfilingHierarchyController {
         } else {
             records = [SELECT Id, Name, Countries__c, SBU__c, Manufacturer__c, Competitor_Product__c, KeyProduct__c, Product_Category__c, ProductGroupText__c
             FROM Non_ERP_Products__c
-            WHERE Inactive__c = false AND (GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country))];
+            WHERE Inactive__c = false
+            AND ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT(Countries__c INCLUDES (:country))))))];
         }
 		
         for(Non_ERP_Products__c so : records){
@@ -244,7 +246,7 @@ public with sharing class ProductProfilingHierarchyController {
         if (!new List<String>{'AT', 'DE', 'CH'}.contains(country)) {
             query += ' WHERE Inactive__c = FALSE AND (Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE) AND ProductFamily__c != NULL';
         } else {
-            query += ' WHERE Inactive__c = FALSE AND (GlobalProductShowtoallcountries__c = FALSE AND Countries__c INCLUDES (:country)) AND ProductFamily__c != NULL';
+            query += ' WHERE Inactive__c = FALSE AND ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT(Countries__c INCLUDES (:country)))))) AND ProductFamily__c != NULL';
         }
 
         Boolean filterIsApplied = false;
@@ -386,7 +388,8 @@ public with sharing class ProductProfilingHierarchyController {
         } else {
             results = [SELECT COUNT(Id), ProductGroupText__c
             FROM Non_ERP_Products__c
-            WHERE Inactive__c = FALSE AND (GlobalProductShowtoallcountries__c = FALSE AND Countries__c INCLUDES (:country))
+            WHERE Inactive__c = FALSE
+            AND ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT(Countries__c INCLUDES (:country))))))
             GROUP BY ProductGroupText__c];
         }
 
@@ -427,7 +430,8 @@ public with sharing class ProductProfilingHierarchyController {
         } else {
             results = [SELECT COUNT(Id), Manufacturer__c
             FROM Non_ERP_Products__c
-            WHERE Inactive__c = false AND (GlobalProductShowtoallcountries__c = FALSE AND Countries__c INCLUDES (:country))
+            WHERE Inactive__c = false
+            AND ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT(Countries__c INCLUDES (:country))))))
             GROUP BY Manufacturer__c];
         }
 
@@ -462,7 +466,7 @@ public with sharing class ProductProfilingHierarchyController {
             } else {
                 return [SELECT Id, WorkflowLabel__c
                 FROM Workflow__c
-                WHERE (GlobalProductShowtoallcountries__c = FALSE AND Countries__c INCLUDES (:country))];
+                WHERE ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT(Countries__c INCLUDES (:country))))))];
             }
         }
 
@@ -496,7 +500,8 @@ public with sharing class ProductProfilingHierarchyController {
         } else {
             results = [SELECT COUNT(Id), Product_Category__c
             FROM Non_ERP_Products__c
-            WHERE Inactive__c = false AND (GlobalProductShowtoallcountries__c = FALSE AND Countries__c INCLUDES (:country))
+            WHERE Inactive__c = false
+            AND ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT(Countries__c INCLUDES (:country))))))
             GROUP BY Product_Category__c];
         }
         

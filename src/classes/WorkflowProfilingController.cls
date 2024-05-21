@@ -4,6 +4,7 @@
  * @Test-Class      Test_WorkflowProfilingController
  *
  * @History
+ * 21-05-2023   Omar     TFUS-000006676 - Excluding Germany, Austria and Switzerland from the global definition
  * 15-09-2023   Omar     TFUS-000006118 - Create Workflow Profiling Controller Class
  * 07-12-2023   Omar     Added the deleteWorkflowProfilings method
  */
@@ -23,7 +24,16 @@ public with sharing class WorkflowProfilingController {
 
         if (acc != null) {
             String country = acc.Country__c;
-            return [SELECT Id, WorkflowLabel__c FROM Workflow__c WHERE Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE];
+
+            if (!new List<String>{'AT', 'DE', 'CH'}.contains(country)) {
+                return [SELECT Id, WorkflowLabel__c FROM Workflow__c WHERE Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE];
+            } else {
+                return [
+                        SELECT Id, WorkflowLabel__c
+                        FROM Workflow__c
+                        WHERE ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT(Countries__c INCLUDES (:country))))))
+                ];
+            }
         }
 
         return null;
@@ -109,15 +119,46 @@ public with sharing class WorkflowProfilingController {
     public static List<ProductFamilyWrapper> getProductFamilyListByWorkflowId(Id workflowId, Id accountId) {
         List<ProductFamilyWrapper> productFamilyWrapperList = new List<ProductFamilyWrapper>();
 
-        List<ProductFamily__c> productFamilyList = [
-                SELECT Id, ProductFamilyLabel__c, (SELECT Id, Name, Competitor_Product__c FROM Non_ERP_Products__r)
-                FROM ProductFamily__c
-                WHERE Id IN (
-                        SELECT ProductFamily__c
-                        FROM WorkflowLine__c
-                        WHERE Workflow__c = :workflowId
-                )
-        ];
+        Account acc = [SELECT Id, Country__c from Account where id = :accountId LIMIT 1];
+
+        String country = '';
+
+        if (acc != null) {
+            country = acc.Country__c;
+        }
+
+        List<ProductFamily__c> productFamilyList = new List<ProductFamily__c>();
+
+        if (!new List<String>{'AT', 'DE', 'CH'}.contains(country)) {
+            productFamilyList = [
+                    SELECT Id, ProductFamilyLabel__c, (
+                            SELECT Id, Name, Competitor_Product__c
+                            FROM Non_ERP_Products__r
+                            WHERE GlobalProductShowtoallcountries__c = true OR Countries__c INCLUDES (:country)
+                    )
+                    FROM ProductFamily__c
+                    WHERE Id IN (
+                            SELECT ProductFamily__c
+                            FROM WorkflowLine__c
+                            WHERE Workflow__c = :workflowId
+                    )
+            ];        } else {
+            productFamilyList = [
+                    SELECT Id, ProductFamilyLabel__c, (
+                            SELECT Id, Name, Competitor_Product__c
+                            FROM Non_ERP_Products__r
+                            WHERE ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT(Countries__c INCLUDES (:country))))))
+                    )
+                    FROM ProductFamily__c
+                    WHERE Id IN (
+                            SELECT ProductFamily__c
+                            FROM WorkflowLine__c
+                            WHERE Workflow__c = :workflowId
+                    )
+            ];
+        }
+
+
 
         // Collect Non_ERP_Products__c Ids
         Set<String> nonERPProductIds = new Set<String>();
