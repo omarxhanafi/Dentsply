@@ -70,8 +70,6 @@
                                     if(record.Product_Name__r.QuantityUnitOfMeasure__c){
                                			q = q + ' ' + record.Product_Name__r.QuantityUnitOfMeasure__c;
                            			}
-                                } else {
-                                       q = '0';
                                 }
                            		
                            		childToAdd.nodeName =  record.Product_Name__r.Name;
