@@ -60,8 +60,6 @@ init: function (cmp, event, helper) {
     	cmp.set('v.currentSelectedRowWrapper', productsWrapper);
     	cmp.set('v.currentSelectedRowsCount', rowsCount);
 
-        console.log("rowsCount", rowsCount);
-
         var formFactor = $A.get("$Browser.formFactor");
 
         if(formFactor != 'DESKTOP'){
@@ -79,8 +77,6 @@ init: function (cmp, event, helper) {
 	------------------------------------------------------------*/    
         
     getSelectedRows: function(cmp, event, helper) {
-        console.log('Launching getSelectedRows');
-
         var treeGridCmp = cmp.find('mytree');
         
         var selected = treeGridCmp.getSelectedRows();
@@ -181,7 +177,6 @@ init: function (cmp, event, helper) {
 	------------------------------------------------------------*/ 
     
         getRowsMobile : function(cmp, event, helper){
-        console.log('Get rows mobile');
         var val = event.getSource().get("v.value");
         var selected = event.getSource().get("v.checked");
             
@@ -277,11 +272,7 @@ init: function (cmp, event, helper) {
 	------------------------------------------------------------*/      
         
     filterTable : function(cmp, event, helper){
-		console.log('Launching filter table');        
-
         var filter = helper.createFilterObject(cmp, event);
-
-        console.log('filter', filter);
 
         if((filter.manufacturer != '' && filter.focus == false && filter.competitor == false) || filter.searchString.length > 1 || filter.workflow != '' || filter.competitor != false || filter.focus != false){
             cmp.set("v.disableCollapse", false);
@@ -417,7 +408,6 @@ init: function (cmp, event, helper) {
     },
     
     getChildren : function(cmp, event, helper){
-        console.log('Expand/collapse');
         var expandActionLaunched = cmp.get('v.expandActionLaunched');
       	var rowName = event.getParam('name');
         var hasChildrenContent = event.getParam('hasChildrenContent');
@@ -427,7 +417,6 @@ init: function (cmp, event, helper) {
         
         //Handle Mobile
         var openSections = event.getParam('openSections');
-        console.log('Open sections? : ' + openSections);
 
         if(openSections){
 
@@ -463,8 +452,7 @@ init: function (cmp, event, helper) {
     searchKeyChange : function(component, event, helper) {
         
         var searchFilter = component.find('searchBox').get('v.value');
-        console.log('Launching Search input: ' + searchFilter);
-        
+
         var timer = component.get('v.timer');
         clearTimeout(timer);
 
@@ -495,7 +483,6 @@ init: function (cmp, event, helper) {
             helper.getChildProductsServer(cmp, event, '','',filter.manufacturer, searchFilter,'', filter.competitor, filter.focus,'', filter.workflow);
         }
         else if(searchFilter.length == 0){
-            console.log('Resetting data');
             cmp.set("v.disableCollapse", true);
 
             var expanded = [];
@@ -533,7 +520,6 @@ init: function (cmp, event, helper) {
     
     changeSelectionDisplay : function(cmp, event, helper){
         var hideSelection = cmp.get("v.hideSelection");
-        console.log('Show/hide selection');
         if(hideSelection == false){
             cmp.set("v.hideSelection", true);
         }
@@ -543,8 +529,6 @@ init: function (cmp, event, helper) {
     },
 
     deleteSelectedProduct : function(cmp, event, helper){
-        console.log('Delete ' + event.getSource().get("v.value"));
-
         var prodId = event.getSource().get("v.value");
 
         var selProdWrapper = cmp.get('v.currentSelectedRowWrapper');

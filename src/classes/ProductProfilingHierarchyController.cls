@@ -20,8 +20,7 @@ public with sharing class ProductProfilingHierarchyController {
 
     @AuraEnabled
     public static List<String> getAllCategories(String recordId, String SBU) {
-    System.debug(SBU);
-    String country = '';    
+    String country = '';
         if(recordId.left(3) == '003'){
             Contact con = [SELECT Id, Account.Country__c FROM Contact WHERE Id =: recordId];
         	country = con.Account.Country__c;
@@ -170,7 +169,6 @@ public with sharing class ProductProfilingHierarchyController {
         for(Non_ERP_Products__c so : records){
             String fieldValue = (String) so.get(field_name);
             valList.add(fieldValue);
-            System.debug(fieldValue);
         }
         
         List<String> results = new List<String>();
@@ -213,15 +211,6 @@ public with sharing class ProductProfilingHierarchyController {
 
     @AuraEnabled
     public static List<HierarchyNode> getChildProducts(String recordId, String node, String manufacturer, String searchString, String category, Boolean competitor, Boolean focus, String localcat, String workflow) {
-    
-    System.debug('Record Id: ' + recordId);
-    System.debug('Manufacturer: ' + manufacturer);
-    System.debug('Search string: ' + searchString);
-    System.debug('Category: ' + category);
-    System.debug('Node name: ' + node);
-    System.debug('Local categ: ' + localcat);
-    System.debug('Competitor: ' + competitor);
-    System.debug('Workflow: ' + workflow);
 
     String country = '';    
         if(recordId.left(3) == '003'){
@@ -319,45 +308,18 @@ public with sharing class ProductProfilingHierarchyController {
             allProducts = Database.query(query);
         }
 
-        System.debug('allproducts : ' + allProducts);
 
+        List<HierarchyNode> nodes = new List<HierarchyNode>();
 
-        /*if(searchString != ''){
-
-              Map<String, Non_ERP_Products__c> recordMap = new Map<String, Non_ERP_Products__c>();
-
-            for(Non_ERP_Products__c so : allProducts){
-                if(category != '' && category != null){
-                    if(so.ProductGroupText__c == category){
-                        recordMap.put(so.Id, so);
-                    }
-                }
-                if(manufacturer != '' && manufacturer != null){
-                    if(so.Manufacturer__c == manufacturer){
-                        recordMap.put(so.Id, so);
-                    }
-                }
-
+        for (Non_ERP_Products__c a : allProducts) {
+            if(workflow != ''){
+                nodes.add(new HierarchyNode(a, false, productOrderMap.get(a.ProductFamily__c)));
+            } else {
+                nodes.add(new HierarchyNode(a, false));
             }
-            if(recordMap.values().size()>0){
-                allProducts = recordMap.values();
-            }
-
-            System.debug(allProducts);
-        }*/
-        
-        
-    List<HierarchyNode> nodes = new List<HierarchyNode>();
- 
-    for (Non_ERP_Products__c a : allProducts) {
-        if(workflow != ''){
-            nodes.add(new HierarchyNode(a, false, productOrderMap.get(a.ProductFamily__c)));
-        } else {
-            nodes.add(new HierarchyNode(a, false));
         }
-    }
 
-    return nodes;
+        return nodes;
     }
         
     @AuraEnabled
@@ -397,8 +359,7 @@ public with sharing class ProductProfilingHierarchyController {
         for (AggregateResult result : results) {
             uniqueNames.add((String)result.get('ProductGroupText__c'));
         }
-        system.debug(uniqueNames);           
-        
+
         return uniqueNames;
         
     }
@@ -439,8 +400,7 @@ public with sharing class ProductProfilingHierarchyController {
         for (AggregateResult result : results) {
             uniqueNames.add((String)result.get('Manufacturer__c'));
         }
-        system.debug(uniqueNames);           
-        
+
         return uniqueNames;
         
     }
@@ -517,8 +477,7 @@ public with sharing class ProductProfilingHierarchyController {
         for (AggregateResult result : results) {
             uniqueNames.add((String)result.get('Product_Category__c'));
         }
-        system.debug(uniqueNames);           
-        
+
         return uniqueNames;
         
     }

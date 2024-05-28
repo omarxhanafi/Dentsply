@@ -24,13 +24,14 @@
 
             if (state === "SUCCESS") {
                 var result=response.getReturnValue();
-                //console.log(result);
                 var categories = {};
-				var productCount = {};    
+				var productCount = {};
+
                 //Find all categories
-                  for(var prodKey in result){					   
+                  for(var prodKey in result){
+                    var catId = result[prodKey].Product_Name__r.ProductFamily__r.Id;
 					var cat = result[prodKey].Product_Name__r.ProductFamily__r.ProductFamilyLabel__c;
-                    categories[cat] = cat; 
+                    categories[catId] = cat;
                      
                     var prodId = result[prodKey].Product_Name__r.Id;
                     if(productCount[prodId]>0){
@@ -40,14 +41,14 @@
                         productCount[prodId] = 1;
                     }  
                    }
-                                
+
                 //Loop all categories
                 for(var catKey in categories){
                     
                     //Create parent records for each category
                     var recordToAdd = {};
 					recordToAdd.nodeName = categories[catKey];
-                    recordToAdd.productUrl = categories[catKey];
+                    recordToAdd.productUrl = '/' + catKey;
                     recordToAdd.productName = categories[catKey];
 					
                     var childrenToAdd = [];
@@ -66,7 +67,6 @@
                            		if(record.Quantity__c != null){
                                		var q1 = record.Quantity__c;
                                     q=q1.toString();
-                                    //console.log(q);
                                     if(record.Product_Name__r.QuantityUnitOfMeasure__c){
                                			q = q + ' ' + record.Product_Name__r.QuantityUnitOfMeasure__c;
                            			}
@@ -87,16 +87,11 @@
                            		if(productCount[record.Product_Name__r.Id]==1){
                            			childToAdd.status = record.Status__c;
                            			childToAdd.quantity = q;
-                                    //console.log("Assign quantity: ", q);
                                 }
                            		else{
                                		childToAdd.hasChildren = true;
                            		}
-                           		
-                           		/*if(record.Contact__c != null){
-                           			childToAdd.contactName = record.Contact__r.FirstName + ' ' + record.Contact__r.LastName;
-                           			childToAdd.contactUrl = '/' + record.Contact__c;
-                                }*/
+
                            		productProfilingData.push(record);
                      
                             if(record.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c){
@@ -151,7 +146,6 @@
   
 											subChildrenToAdd.push(subChild);
                                             childToAdd._children = subChildrenToAdd;
-                                            //console.log(childToAdd);    
                                             }
                                         }
                                         
@@ -223,16 +217,6 @@
                 cmp.set('v.gridWrapperFilteredData', data);
                 cmp.set('v.currentSelectedRows', []);                
                 cmp.set('v.productProfilingData', productProfilingData);
-
-               	//Expand all rows by default in the Desktop version
-               	// var formFactor = $A.get("$Browser.formFactor");
-                //
-                // if(formFactor == 'DESKTOP'){
-                // 	var tree = cmp.find('mytree');
-                //     if(tree){
-        		// 		tree.expandAll();
-                //     }
-                // }
            	
             }else if(state === "ERROR"){
                 var error = response.getError();
@@ -246,7 +230,6 @@
 
         getRowActions: function (cmp, row, doneCallback) {
         var actions = [];
-        console.log(row['_children']);    
         if (row['productId'] && row['hasChildren'] != true) {
  		{
             actions.push({
@@ -312,9 +295,6 @@
     },
 
 	deleteProduct: function(cmp, event, recordId, action, parentRecord){
-        
-        //console.log('Delete product ' + recordId);
-        
        	var action = cmp.get("c.deleteProductProfilingRecord");
         	
         action.setParams({
@@ -325,8 +305,6 @@
          	var state = response.getState();
             
             if (state === "SUCCESS") {
-                var result=response.getReturnValue();
-                //console.log('Delete successful: ' + result);
                 this.getProfilingHierarchy(cmp, event, parentRecord);
             }    
         });

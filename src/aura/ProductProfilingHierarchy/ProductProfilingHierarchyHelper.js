@@ -6,7 +6,6 @@
 	------------------------------------------------------------*/     
     
     getProfilingData : function(cmp, event, recordId) { 
-        	console.log('Launching getProfilingData');
 			var action = cmp.get("c.getProductProfilingMap");
         	
             action.setParams({
@@ -92,7 +91,6 @@
 	------------------------------------------------------------*/     
 
 	getProductsWithHierarchyNew : function(cmp, event, recordId, SBU) { 
-        console.log('Launching getProductsWithHierarchy');
 		var action = cmp.get("c.getAllCategories");
             action.setParams({
                 recordId : cmp.get("v.recordId"),
@@ -103,21 +101,12 @@
             var data = cmp.get("v.gridWrapperData");
             var fullData = cmp.get("v.completeDataSet");
             var dataToAdd = [];
-            var fullDataToAdd = [];
-            var recordsWOCat = [];
-            var int = 0;
-            var formFactor = $A.get("$Browser.formFactor");            
-            var selectedProducts = cmp.get('v.currentSelectedRows');
-            
             var expanded = [];
             
             if (state === "SUCCESS") {
                 var result=response.getReturnValue();
                 var categories = {};
-                var categoriesToExpand = {};
-                
-                console.log('Result length: ' + result.length);
-                
+
                 for(var key in result){
                     
                     var recordToAdd = {};
@@ -125,7 +114,6 @@
                     recordToAdd.isCat = true;
                     recordToAdd.nodeId = result[key];
                     
-                    var childrenToAdd = [];
                     recordToAdd._children = [];
                     
                     dataToAdd.push(recordToAdd);
@@ -134,19 +122,6 @@
                 
                 data = dataToAdd;
                 fullData = dataToAdd;
-				                    
-                //Handle records that do not have a category assigned
-                /*if(recordsWOCat.length > 0){
-                    
-                    var othersCat = {};
-                    othersCat.nodeName = "Without Category";
-                    othersCat._children = recordsWOCat;
-                    dataToAdd.push(othersCat);
-                    fullDataToAdd.push(othersCat);
-                };*/
-                                   
-                //data = dataToAdd;
-                //fullData = fullDataToAdd;
                 
                 //Sort node records ascending 
                 this.sortTable(cmp, event, true, data, "nodeName");
@@ -169,25 +144,6 @@
             			}
         		}
                 
-                var actions = [ ];
-                
-                /*this.getDistinctValues(cmp, event, "Product_Category__c", "v.categories"); 
-                
-                var categories = cmp.get("v.categories");
-                    
-                var cat = categories[0];
-                	
-                for(var i in cat){
-                    var actionToAdd = 
-                        {label: cat[i], type: 'text', name:cat[i], checked: false, iconName: 'utility:filterList'}
-            			;
-                    actions.push(actionToAdd);
-                }
-                this.sortTable(cmp, event, true, actions, "label");
-                actions.push({label: 'Show all', type: 'text', name: 'showAll', checked: false});
-                actions.unshift({label: 'Expand all', type: 'text', name:'expandAll', checked: false, iconName: 'utility:expand_all'});
-                columns[idx].actions = actions;*/
-                
                 cmp.set('v.gridWrapperColumns', columns);
                   
             }else if(state === "ERROR"){
@@ -204,7 +160,6 @@
     },
 
     preFillhelper: function(cmp, event) {
-      	console.log('Launching PreFill Helper');
         var expanded = cmp.get('v.expandedRows');
                   
         if(expanded.length>0){
@@ -216,7 +171,6 @@
         var selectedRows = cmp.get('v.currentSelectedRows');
         var shownRows = cmp.get('v.gridWrapperFilteredData');
         var records = [];
-        var expandedNodes = [];
 
         if(selectedRows.length > 0){
 
@@ -226,13 +180,11 @@
                 var getElementIndex = shownRows.indexOf(selectedRows);
                 if(getElementIndex == -1){
                 	records.push(selectedRows[i].Id);
-                    //expandedNodes.push(selectedRows[i].Product_Category__c);
-                }    
+                }
             }	
             
             if(cmp.find('mytree')){
                 cmp.find('mytree').set('v.selectedRows', records);
-                //cmp.find('mytree').set('v.expandedRows', expandedNodes);
             }
         
         }
@@ -423,7 +375,6 @@
 	------------------------------------------------------------*/     
     
     getChildProductsServer : function(cmp, event, recordId, category, manufacturer, searchString, nodeName, competitor, focus, localcat, workflow) {
-        console.log('Launching getChildProducts');
         cmp.set('v.showSpinner', true);
                 
         if(nodeName == null){
@@ -599,7 +550,6 @@
                 else if(searchString.length==0){
                     cmp.set('v.gridWrapperFilteredData', data);
                 }
-                console.log('Expanded: ' + expanded);
                 cmp.set('v.expandActionLaunched', true);
                 cmp.set('v.expandedRows', expanded);
                 cmp.find("accordion").set('v.activeSectionName', expanded);
@@ -611,8 +561,7 @@
                 alert('Problem with connection. Please try again.');
             }
             
-         //this.preFillhelper(cmp, event);   
-         
+
         });
 		$A.enqueueAction(action);        
     },

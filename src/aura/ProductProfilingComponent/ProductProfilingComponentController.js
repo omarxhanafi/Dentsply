@@ -39,8 +39,6 @@ init: function (cmp, event, helper) {
 
     if (objectPrefix === "a6R") {
         // Check if the record ID is a Procedure Tracker
-        console.log('Procedure tracker');
-
         var action = cmp.get("c.getAccountFromProcedureTracker");
 
         action.setParams({
@@ -149,7 +147,6 @@ init: function (cmp, event, helper) {
     },
 
 	closeModalOnFinish : function(component, event, helper) {
-        //console.log(event.getParam('status'));
         if(event.getParam('status') === "FINISHED") {
             component.set("v.isOpenNew", false);
 
@@ -178,12 +175,9 @@ init: function (cmp, event, helper) {
     
     goToProduct: function(cmp, event){
         var navService = cmp.find("navService");
-        
-        console.log("Id: " + event.currentTarget.id);
 
         if(event.currentTarget.id != ''){
-        //console.log("Navigating");
-            
+
         var pageReference = {
             type: 'standard__recordPage',
             attributes: {
@@ -198,7 +192,6 @@ init: function (cmp, event, helper) {
     },
  
     handleRowAction: function (cmp, event, helper) {
-        //console.log(JSON.stringify(event));
         var row = event.getParam('row');
         var action = event.getParam('action');
         var recordId = row.productId;
@@ -218,7 +211,6 @@ init: function (cmp, event, helper) {
     handleHeaderAction: function(cmp, event, helper){    
         // gives the selection header action name
         var actionName = event.getParam('action').name;
-        //console.log("Data: ", cmp.get("v.gridWrapperFilteredData"));        
         // gives selected column definition
     	var colDef = event.getParam('columnDefinition');
        	// assigning columns to new variable
@@ -305,17 +297,13 @@ init: function (cmp, event, helper) {
 
     filterTable : function(cmp, event, helper){
         var allRecords = cmp.get("v.gridWrapperData");
-        var currentRecords = cmp.get("v.gridWrapperFilteredData");
         var filter = {};
 
         filter.focus = cmp.find('focusFilter').get('v.checked');
         filter.competitor = cmp.find('competitorFilter').get('v.checked');
-//        filter.SBU = cmp.find('sbuFilter').get('v.value');
-//        filter.manufacturer = cmp.find('manufactFilter').get('v.value');    
-//        filter.categories = cmp.find('categoryFilter').get('v.value');
+
         var tempArray = [];
         var arrayLength =allRecords.length;
-        //console.log("Filter: ", filter);
 
         for(var i=0; i < arrayLength; i++){
 
@@ -326,7 +314,6 @@ init: function (cmp, event, helper) {
 
             var children = {};
             children = allRecords[i]._children;
-            //console.log("Children: ", children);    
 
             var filterTest = [];
 
@@ -346,7 +333,6 @@ init: function (cmp, event, helper) {
             }
 
         }
-        //console.log("Filtered records to assign: ", tempArray);
         cmp.set("v.gridWrapperFilteredData",tempArray);
 
     },

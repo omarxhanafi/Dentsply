@@ -11,13 +11,9 @@
             productMap[productId] = productWrapperList[product].productName;
             productFamilyLabelMap[productId] = productWrapperList[product].productFamilyLabel;
         }
-        
-        console.log('Product map: ' + JSON.stringify(productMap));
-        
+
         var products = [];
         products = cmp.get("v.selectedProducts");
-
-        console.log("Selected products : " + JSON.stringify(products));
 
 
         for(var prod in products){
@@ -29,9 +25,7 @@
         cmp.set('v.columns', [
             {label: 'Product', fieldName: 'Non_ERP_Product_Id__c', type: 'text'}
         ]);
-        
-        console.log('Products to show in detail section: ' + JSON.stringify(products));
-        
+
         cmp.set("v.outputProducts", products);
 
         // Get the current year

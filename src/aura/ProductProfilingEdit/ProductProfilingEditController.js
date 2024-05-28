@@ -1,17 +1,5 @@
 ({
     init: function (cmp, event, helper) {
-		// cmp.set("v.showSpinner", true);
-
-        // var products = cmp.get("v.selectedProducts");
-        //
-        // var currentOrder = true;
-		// products.sort(function(a,b) {
-        //     var t1 = a.Product_Name__r.Name == b.Product_Name__r.Name, t2 = a.Product_Name__r.Name < b.Product_Name__r.Name;
-        //     return t1? 0: (currentOrder?-1:1)*(t2?1:-1);
-        // });
-
-        console.log('products', cmp.get('v.selectedProducts'));
-
         // Get the current year
         var currentYear = new Date().getFullYear();
 
@@ -24,50 +12,25 @@
         // Set the yearOptions attribute
         cmp.set('v.yearOptions', yearOptions);
     },
-    //
-    // sortProducts: function(cmp, event){
-    //     console.log("here?");
-    //
-    //     var products = cmp.get("v.selectedProducts");
-    //
-    //     var currentOrder = true;
-    //     products.sort(function(a,b) {
-    //         var t1 = a.Product_Name__r.Name == b.Product_Name__r.Name, t2 = a.Product_Name__r.Name < b.Product_Name__r.Name;
-    //         return t1? 0: (currentOrder?-1:1)*(t2?1:-1);
-    //     });
-    //
-    //     cmp.set("v.selectedProducts", products);
-    // },
+
     
     hideSpinner: function(cmp, event, helper){
-      	console.log('Hide spinner');
         var recordId = event.getSource().get("v.recordId");
         var loadedRecords = cmp.get("v.productsLoaded");
+
         loadedRecords[recordId] = true;
+
         cmp.set("v.productsLoaded", loadedRecords);
-        
-		let keys = Reflect.ownKeys(loadedRecords);
-        
-        console.log(keys.length);
-        
-        var products = cmp.get("v.selectedProducts");
-        
-        console.log(products.length);
-        
-        //if(keys.length == products.length){
-        	cmp.set("v.showSpinner", false);
-        //}    
+
+        cmp.set("v.showSpinner", false);
     },
     
     handleError: function(cmp, event, helper){
       cmp.set("v.showSpinner", false);
-      console.log(event.getParameters());      
     },
 
     setValues: function(cmp, event, helper){
         var products = cmp.get("v.selectedProducts");
-
-        console.log("Products to update", products);
 
         cmp.set("v.showSpinner", true);
 
@@ -104,7 +67,6 @@
 	deleteProduct: function(cmp, event){
         
         var recordId = event.getSource().get("v.name");
-        console.log('Record to delete: ' + recordId);
        	var cmpEvent = cmp.getEvent('cmpEvent');
         cmpEvent.setParams({"message" : recordId});  
         
@@ -113,7 +75,6 @@
         var recordToDelete = {};
         
         for(var i in allRecords){
-        	console.log(allRecords[i]);
             if(allRecords[i].Id == recordId){
                allRecords.splice(i, 1); 
             }
@@ -131,8 +92,6 @@
             
             if (state === "SUCCESS") {
                 var result=response.getReturnValue();
-                console.log('Delete successful: ' + result);	
-        		//cmpEvent.fire(); 
         		cmp.set("v.selectedProducts", allRecords);
         		             
             }    
