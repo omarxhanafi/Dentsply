@@ -2,84 +2,139 @@
 <template>
         <span if:true={activityScorecardResult}>
             <lightning-card>
-                <lightning-layout>
-                    <lightning-layout-item flexibility="auto" padding="around-small">
-                        <div class="custom-box slds-box slds-p-around_small slds-text-align_center">
-                            <template if:true={activityScorecardResult.isLastEventAssignedToCurrentUser}>
-                                <p>{labels.MY_LAST_EVENT_DATE}</p>
-                            </template>
-                            <template if:false={activityScorecardResult.isLastEventAssignedToCurrentUser}>
-                                <p>{labels.LAST_EVENT_DATE}</p>
-                            </template>
-                            <template if:true={activityScorecardResult.lastEventDate}>
-                                <p class="activity-counter">{activityScorecardResult.lastEventDate}</p>
-                            </template>
-                            <template if:false={activityScorecardResult.lastEventDate}>
-                                <p class="activity-counter">{labels.NOT_AVAILABLE}</p>
-                            </template>
-                        </div>
-                    </lightning-layout-item>
-                    <lightning-layout-item flexibility="auto" padding="around-small">
-                        <div class="custom-box slds-box slds-p-around_small slds-text-align_center">
-                            <p>{labels.PLANNED_CFES}</p>
-                            <p class="activity-counter">{activityScorecardResult.futureEventsCount}</p>
-                        </div>
-                    </lightning-layout-item>
-                </lightning-layout>
-                <lightning-layout>
-                    <lightning-layout-item flexibility="auto" padding="around-small">
-                        <lightning-card>
-                            <h2 slot="title">
-                                <!--<lightning-icon icon-name="custom:custom109" size="small"></lightning-icon>-->
-                                <span class="activity-title">{labels.REPORTED_LAST_MONTHS}</span>
-                            </h2>
-                            
-                            <lightning-layout>
-                                <lightning-layout-item size="1" padding="around-small">
-                                    <div class="slds-m-right_small">
-                                        <lightning-icon icon-name="standard:event" size={iconSize}></lightning-icon>
-                                    </div>
-                                </lightning-layout-item>
-                                <lightning-layout-item size="11" padding="around-small">
-                                    <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-4">
-                                        <span><b>{activityScorecardResult.eventsLoggedCount}</b> {labels.EVENTS_LOGGED} <b>{eventsLoggedBenchmark}</b></span>
-                                        <span aria-hidden="true">
-                                          <strong>{eventsLoggedPercentage}%</strong>
-                                        </span>
-                                    </div>
-                                    <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={activityScorecardResult.eventsLoggedCount} aria-labelledby="progress-bar-label-id-4" role="progressbar">
-                                        <span class="slds-progress-bar__value" style={eventsLoggedWidth}>
-                                        </span>
-                                    </div>
-                                </lightning-layout-item>
-                            </lightning-layout>
-
+                <!-- Desktop Experience -->
+                <table class="activity-table" if:false={isMobile}>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="custom-box slds-box slds-text-align_center">
+                                    <template if:true={activityScorecardResult.isLastEventAssignedToCurrentUser}>
+                                        <p>{labels.MY_LAST_EVENT_DATE}</p>
+                                    </template>
+                                    <template if:false={activityScorecardResult.isLastEventAssignedToCurrentUser}>
+                                        <p>{labels.LAST_EVENT_DATE}</p>
+                                    </template>
+                                    <template if:true={activityScorecardResult.lastEventDate}>
+                                        <p class="activity-counter">{activityScorecardResult.lastEventDate}</p>
+                                    </template>
+                                    <template if:false={activityScorecardResult.lastEventDate}>
+                                        <p class="activity-counter">{labels.NOT_AVAILABLE}</p>
+                                    </template>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-box slds-box slds-text-align_center">
+                                    <p>{labels.PLANNED_CFES}</p>
+                                    <p class="activity-counter">{activityScorecardResult.futureEventsCount}</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-box slds-box slds-text-align_center">
+                                    <p>{labels.EVENTS_LOGGED}</p>
+                                    <p class="activity-counter">{activityScorecardResult.eventsLoggedCount}</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <br>
+                                <h2 slot="title">
+                                    <span class="activity-title">{labels.REPORTED_LAST_MONTHS}</span>
+                                </h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="custom-box slds-box slds-text-align_center">
+                                    <lightning-icon icon-name="standard:task" size={iconSize}></lightning-icon>
+                                    <span><b> {activityScorecardResult.completedTasksCount}</b> {labels.TASKS_COMPLETED}</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-box slds-box slds-text-align_center">
+                                    <lightning-icon icon-name="standard:log_a_call" size={iconSize}></lightning-icon>
+                                    <span><b> {activityScorecardResult.callsLoggedCount}</b> {labels.CALLS_LOGGED}</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-box slds-box slds-text-align_center">
+                                    <lightning-icon icon-name="standard:email" size={iconSize}></lightning-icon>
+                                    <span><b> {activityScorecardResult.emailsSentCount}</b> {labels.EMAILS_SENT}</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Mobile Experience -->
+                <lightning-layout if:true={isMobile}>
+                    <lightning-layout-item flexibility="auto">
                             <lightning-layout horizontal-align="stretch" multiple-rows="true">
+                                <!-- Last Event Date Indicator -->
+                                <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                                    <div class="custom-box slds-box slds-p-around_small slds-text-align_center">
+                                        <template if:true={activityScorecardResult.isLastEventAssignedToCurrentUser}>
+                                            <p>{labels.MY_LAST_EVENT_DATE}</p>
+                                        </template>
+                                        <template if:false={activityScorecardResult.isLastEventAssignedToCurrentUser}>
+                                            <p>{labels.LAST_EVENT_DATE}</p>
+                                        </template>
+                                        <template if:true={activityScorecardResult.lastEventDate}>
+                                            <p class="activity-counter">{activityScorecardResult.lastEventDate}</p>
+                                        </template>
+                                        <template if:false={activityScorecardResult.lastEventDate}>
+                                            <p class="activity-counter">{labels.NOT_AVAILABLE}</p>
+                                        </template>
+                                    </div>
+                                </lightning-layout-item>
+
+                                <!-- Future Events Count Indicator -->
+                                <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                                    <div class="custom-box slds-box slds-p-around_small slds-text-align_center">
+                                        <p>{labels.PLANNED_CFES}</p>
+                                        <p class="activity-counter">{activityScorecardResult.futureEventsCount}</p>
+                                    </div>
+                                </lightning-layout-item>
+
+                                <!-- Events Logged Count Indicator -->
+                                <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                                    <div class="custom-box slds-box slds-p-around_small slds-text-align_center">
+                                        <p>{labels.EVENTS_LOGGED}</p>
+                                        <p class="activity-counter">{activityScorecardResult.eventsLoggedCount}</p>
+                                    </div>
+                                </lightning-layout-item>
+
+                                <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                                    <br>
+                                    <h2>
+                                        <span class="activity-title-mobile">{labels.REPORTED_LAST_MONTHS}</span>
+                                    </h2>
+                                </lightning-layout-item>
+
+
                                 <!-- Task Indicator -->
-                                <lightning-layout-item flexibility="auto" padding="around-small" size="12" small-device-size="4" medium-device-size="4" large-device-size="4">
+                                <lightning-layout-item flexibility="auto" padding="around-small" size="12">
                                     <div class="custom-box slds-box slds-p-around_small slds-text-align_center">
                                         <lightning-icon icon-name="standard:task" size={iconSize}></lightning-icon>
                                         <span><b> {activityScorecardResult.completedTasksCount}</b> {labels.TASKS_COMPLETED}</span>
                                     </div>
                                 </lightning-layout-item>
 
-                                                            <!-- Call Indicator -->
-                                <lightning-layout-item flexibility="auto" padding="around-small" size="12" small-device-size="4" medium-device-size="4" large-device-size="4">
+                                <!-- Call Indicator -->
+                                <lightning-layout-item flexibility="auto" padding="around-small" size="12">
                                     <div class="custom-box slds-box slds-p-around_small slds-text-align_center">
                                         <lightning-icon icon-name="standard:log_a_call" size={iconSize}></lightning-icon>
                                         <span><b> {activityScorecardResult.callsLoggedCount}</b> {labels.CALLS_LOGGED}</span>
                                     </div>
                                 </lightning-layout-item>
 
-                                                            <!-- Email Indicator -->
-                                <lightning-layout-item flexibility="auto" padding="around-small" size="12" small-device-size="4" medium-device-size="4" large-device-size="4">
+                                <!-- Email Indicator -->
+                                <lightning-layout-item flexibility="auto" padding="around-small" size="12">
                                     <div class="custom-box slds-box slds-p-around_small slds-text-align_center">
                                         <lightning-icon icon-name="standard:email" size={iconSize}></lightning-icon>
                                         <span><b> {activityScorecardResult.emailsSentCount}</b> {labels.EMAILS_SENT}</span>
                                     </div>
                                 </lightning-layout-item>
                             </lightning-layout>
-                        </lightning-card>
                     </lightning-layout-item>
                 </lightning-layout>
             </lightning-card>

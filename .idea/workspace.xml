@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1daf6dae190093603e3a8ea8f8266025f70cef4e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/d/1daf6dae190093603e3a8ea8f8266025f70cef4e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/labels/CustomLabels.labels" beforeDir="false" afterPath="$PROJECT_DIR$/src/labels/CustomLabels.labels" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/activityScorecardLwc/activityScorecardLwc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,14 +88,20 @@
                   <option name="name" value="Anonymous Apex 2" />
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
-                  <option name="body" value="System.debug(AccountBriefingUtils.getLabel('SalesLeadRecentlyCreated'));" />
+                  <option name="body" value="Set&lt;String&gt; pg1Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg2Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg3Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg4Codes = new Set&lt;String&gt;();&#10;&#10;List&lt;Non_ERP_Products__c&gt; nonErpProducts = [&#10;        SELECT Id, AssignmentRuleCodes__c&#10;        FROM Non_ERP_Products__c&#10;        WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE&#10;];&#10;&#10;Set&lt;String&gt; pgCodes = new Set&lt;String&gt;();&#10;&#10;for (Non_ERP_Products__c product : nonErpProducts) {&#10;    if (product.AssignmentRuleCodes__c != null &amp;&amp; product.AssignmentRuleCodes__c != '') {&#10;        pgCodes.addAll(product.AssignmentRuleCodes__c.split(','));&#10;    }&#10;}&#10;&#10;for(String eachPgCode : pgCodes){&#10;    if(eachPgCode.length() == 3){&#10;        pg1Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 4){&#10;        pg2Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 5){&#10;        pg3Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 6){&#10;        pg4Codes.add(eachPgCode);&#10;    }&#10;}&#10;&#10;System.debug('PG1 Count: ' + pg1Codes.size());&#10;System.debug('PG2 Count: ' + pg2Codes.size());&#10;System.debug('PG3 Count: ' + pg3Codes.size());&#10;System.debug('PG4 Count: ' + pg4Codes.size());&#10;&#10;System.debug('PG1 Codes: ' + pg1Codes);&#10;System.debug('PG2 Codes: ' + pg2Codes);&#10;System.debug('PG3 Codes: ' + pg3Codes);&#10;System.debug('PG4 Codes: ' + pg4Codes);&#10;&#10;BatchUpdateProducts batch = new BatchUpdateProducts(pg1Codes, pg2Codes, pg3Codes, pg4Codes);&#10;Database.executeBatch(batch, 200);" />
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="Anonymous Apex 3" />
                 </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="body" value="Set&lt;String&gt; pg1Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg2Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg3Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg4Codes = new Set&lt;String&gt;();&#10;&#10;List&lt;Non_ERP_Products__c&gt; nonErpProducts = [&#10;        SELECT Id, AssignmentRuleCodes__c&#10;        FROM Non_ERP_Products__c&#10;        WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE&#10;];&#10;&#10;Set&lt;String&gt; pgCodes = new Set&lt;String&gt;();&#10;&#10;for (Non_ERP_Products__c product : nonErpProducts) {&#10;    if (product.AssignmentRuleCodes__c != null &amp;&amp; product.AssignmentRuleCodes__c != '') {&#10;        pgCodes.addAll(product.AssignmentRuleCodes__c.split(','));&#10;    }&#10;}&#10;&#10;for(String eachPgCode : pgCodes){&#10;    if(eachPgCode.length() == 3){&#10;        pg1Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 4){&#10;        pg2Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 5){&#10;        pg3Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 6){&#10;        pg4Codes.add(eachPgCode);&#10;    }&#10;}&#10;&#10;System.debug('PG1 Count: ' + pg1Codes.size());&#10;System.debug('PG2 Count: ' + pg2Codes.size());&#10;System.debug('PG3 Count: ' + pg3Codes.size());&#10;System.debug('PG4 Count: ' + pg4Codes.size());&#10;&#10;System.debug('PG1 Codes: ' + pg1Codes);&#10;System.debug('PG2 Codes: ' + pg2Codes);&#10;System.debug('PG3 Codes: ' + pg3Codes);&#10;System.debug('PG4 Codes: ' + pg4Codes);" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="Anonymous Apex 4" />
+                </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="2" />
+            <option name="selectedSavedDocumentIndex" value="3" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionMruWorkspaceSettings">
@@ -98,8 +111,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1716295498593" />
-                  <option name="numUsages" value="300" />
+                  <option name="lastUsed" value="1716811982210" />
+                  <option name="numUsages" value="333" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="DevApr" />
@@ -18270,7 +18283,7 @@
                       <entry key="APEXCLASS:FLOWLOOKUPLWCCONTROLLER" value="1675243532479" />
                       <entry key="APEXCLASS:OPPORTUNITYINSERTASYNCH" value="1668510513326" />
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1666193185822" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1716295502325" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1716378634100" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1708698803000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1712660028013" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706094605000" />
@@ -18337,7 +18350,7 @@
                       <entry key="CUSTOMFIELD:WORKFLOW__C.COUNTRIES__C" value="1699613011000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.GLOBALPRODUCTSHOWTOALLCOUNTRIES__C" value="1699613011000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.WORKFLOWLABEL__C" value="1699613011000" />
-                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1710246966000" />
+                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1716797768000" />
                       <entry key="CUSTOMOBJECT:NON_ERP_PRODUCTS__C" value="1699613750000" />
                       <entry key="CUSTOMOBJECT:PPCREATIONWP__E" value="1712584741000" />
                       <entry key="CUSTOMOBJECT:PRODUCTFAMILY__C" value="1699613224000" />
@@ -18354,7 +18367,7 @@
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTATTENTIONPOINT" value="1715157465000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1710246978000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARD" value="1682075429551" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1711296455000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1716811118000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CLONEORDEROMLWC" value="1666105134000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:FLOW_LOOKUPLWC" value="1675243668000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:LEADMATCHCONTACTHANDLING" value="1666275637000" />
@@ -18735,7 +18748,7 @@
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1712571300573" />
                       <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1712661810000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1716299922765" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1716299938085" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1709124008000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1712659936897" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706087844965" />
@@ -18767,7 +18780,7 @@
                       <entry key="CUSTOMFIELD:WORKFLOWPROFILING__C.WORKFLOW__C" value="1695383392000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.COUNTRIES__C" value="1695383392000" />
                       <entry key="CUSTOMFIELD:WORKFLOW__C.WORKFLOWLABEL__C" value="1695383392000" />
-                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1711715241000" />
+                      <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1716797548000" />
                       <entry key="CUSTOMOBJECT:PPCREATIONWP__E" value="1712579517000" />
                       <entry key="CUSTOMOBJECT:PRODUCTFAMILY__C" value="1695383392000" />
                       <entry key="CUSTOMOBJECT:WORKFLOWLINE__C" value="1695383392000" />
@@ -18775,7 +18788,7 @@
                       <entry key="CUSTOMOBJECT:WORKFLOW__C" value="1695383392000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTCONTAINERLWC" value="1689951225892" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1711720417000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1711715241000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1716810895991" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:POPOVERRECORDINFO" value="1704301044075" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:PRODUCTPROFILINGEDITLWC" value="1711626981467" />
@@ -18825,7 +18838,7 @@
                   </option>
                   <option name="lastCustomSelectionUrls">
                     <set>
-                      <option value="metadata://ApexClass/BatchUpdateProducts" />
+                      <option value="metadata://CustomLabel/ActivityScoreboardEventsLogged" />
                     </set>
                   </option>
                   <option name="lastDeleteOptions">
@@ -18886,24 +18899,24 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Id, WorkflowLabel__c, GlobalProductShowtoallcountries__c&#10;FROM Workflow__c&#10;WHERE ((GlobalProductShowtoallcountries__c = true AND Countries__c NOT IN ('AT', 'DE', 'CH')) OR (GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES ('AT')))&#10;            " />
-                  <option name="name" value="SOQL Query 3" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="select id, name, GlobalProductShowtoallcountries__c, Countries__c from Workflow__c" />
-                  <option name="name" value="SOQL Query 1" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="select name, GlobalProductShowtoallcountries__c, Countries__c from Non_ERP_Products__c where name like '%Not DACH%'" />
-                  <option name="name" value="SOQL Query 2" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
                   <option name="body" value="Select name from workflow__c where not(Countries__c includes ('DE'))" />
                   <option name="name" value="SOQL Query 3" />
                 </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="SELECT Id, Status, JobType, CreatedDate, CompletedDate, NumberOfErrors, TotalJobItems, JobItemsProcessed&#10;FROM AsyncApexJob&#10;WHERE ApexClassId IN (SELECT Id FROM ApexClass WHERE Name = 'BatchUpdateProducts')&#10;" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="SOQL Query 4" />
+                </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="select count() from product2 where NonERPProduct__c != null" />
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="SOQL Query 1" />
+                </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="2" />
+            <option name="selectedSavedDocumentIndex" value="0" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -19319,6 +19332,11 @@
       <workItem from="1714591189900" duration="248000" />
       <workItem from="1714906242922" duration="9651000" />
       <workItem from="1715248227206" duration="19085000" />
+      <workItem from="1716555792334" duration="250000" />
+      <workItem from="1716556078846" duration="2229000" />
+      <workItem from="1716797330184" duration="1395000" />
+      <workItem from="1716799719459" duration="1024000" />
+      <workItem from="1716807056875" duration="2573000" />
     </task>
     <servers />
   </component>

@@ -9,3 +9,19 @@
     font-weight: bold;
     padding-left: 10px;
 }
+
+.activity-title-mobile {
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.activity-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.activity-table th, .activity-table td {
+    border: none;
+    padding: 5px;
+}

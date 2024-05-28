@@ -17,9 +17,7 @@ export default class ActivityScorecardLwc extends LightningElement {
 
     activityScorecardResult;
 
-    eventsLoggedBenchmark = 10;
-
-    eventsLoggedPercentage;
+    isMobile = FORM_FACTOR === 'Small' || (FORM_FACTOR === 'Medium' && window.innerWidth < window.innerHeight);
 
     labels = {
         TASKS_COMPLETED,
@@ -38,26 +36,12 @@ export default class ActivityScorecardLwc extends LightningElement {
             const result = await getAccountEventsJSON({ accountId: this.recordId });
             this.activityScorecardResult = JSON.parse(result);
 
-            this.eventsLoggedBenchmark = this.activityScorecardResult?.totalCFEs != null ? this.activityScorecardResult?.totalCFEs : this.eventsLoggedBenchmark;
-
-            // Adapt the benchmark if the value is higher than the threshold
-            if (this.activityScorecardResult?.eventsLoggedCount > this.eventsLoggedBenchmark) {
-                this.activityScorecardResult.eventsLoggedCount = this.eventsLoggedBenchmark;
-            }
-
-            // Calculating percentages
-            this.eventsLoggedPercentage = Math.floor((this.activityScorecardResult?.eventsLoggedCount / this.eventsLoggedBenchmark) * 100);
-
             // Format first event's date to the user’s locale
             const dateObject = new Date(this.activityScorecardResult?.lastEventDate);
             this.activityScorecardResult.lastEventDate = this.activityScorecardResult?.lastEventDate != null ? dateObject.toLocaleDateString() : null;
         } catch (error) {
             console.error(error);
         }
-    }
-
-    get eventsLoggedWidth() {
-        return `width: ${this.eventsLoggedPercentage}%`;
     }
 
     get iconSize(){

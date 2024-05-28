@@ -129,15 +129,6 @@ public without sharing class ActivityScorecardController {
             eventsLoggedCount = accWithPastEvents.ActivityHistories != null ? accWithPastEvents.ActivityHistories.size() : 0;
         }
 
-        Decimal totalCFEs = 10;
-
-        try{
-            // Getting the events logged benchmark through a SAQL query
-            totalCFEs = getTotalCFEs(oneSfId);
-        } catch (Exception e){
-            DebugLog.addException(e, 'Failed to load the SAQL query');
-        }
-
         // Construct a Map of the results
         Map<String, Object> results = new Map<String, Object>();
         results.put('lastEventDate', lastEventDate);
@@ -147,60 +138,8 @@ public without sharing class ActivityScorecardController {
         results.put('callsLoggedCount', callsLoggedCount);
         results.put('emailsSentCount', emailsSentCount);
         results.put('eventsLoggedCount', eventsLoggedCount);
-        results.put('totalCFEs', totalCFEs);
 
         return JSON.serialize(results);
-    }
-
-    /**
-    * getTotalCFEs Retrieving the events logged benchmark by loading a SAQL query
-    * @author ohanafi@salesforce.com | 24-03-2024
-    *
-    * @param oneSfId OneSfId of the account
-    *
-    * @return Decimal - Total CFEs
-    */
-    private static Decimal getTotalCFEs(String oneSfId) {
-        Decimal totalCFEs = 10;
-
-        List<String> datasetDetails = findDatasetVersion('AccountRFM');
-
-        if (datasetDetails[0] != null && datasetDetails[1] != null) {
-
-            // SAQL Query
-            String query = 'q = load "' + datasetDetails[0] + '/' + datasetDetails[1] + '";';
-            query = query + 'acct = filter q by \'Account.OneSF_Id__c\' == "' + oneSfId + '";';
-            query = query + 'totals = group q by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\', \'FM_Category_AnySBU\');';
-            query = query + 'totals = foreach totals generate \'Geography.Hierarchy.ETMCountry\',totals.\'Products.Global.SBU_Name__c\' as \'Products.Global.SBU_Name__c\', totals.\'Account.OneAccount_Type__c\' as \'Account.OneAccount_Type__c\', totals.\'FM_Category_AnySBU\' as \'FM_Category_AnySBU\', avg(totals.\'CFECount\') as \'AvgCFEs\';';
-            query = query + 'result = group acct by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\', \'FM_Category_AnySBU\'), totals by (\'Geography.Hierarchy.ETMCountry\',\'Products.Global.SBU_Name__c\', \'Account.OneAccount_Type__c\', \'FM_Category_AnySBU\');';
-            query = query + 'result = foreach result generate coalesce(acct.\'Geography.Hierarchy.ETMCountry\',totals.\'Geography.Hierarchy.ETMCountry\') as \'Geography.Hierarchy.ETMCountry\',coalesce(acct.\'Products.Global.SBU_Name__c\',totals.\'Products.Global.SBU_Name__c\') as \'Products.Global.SBU_Name__c\',coalesce(acct.\'Account.OneAccount_Type__c\',totals.\'Account.OneAccount_Type__c\') as \'Account.OneAccount_Type__c\',coalesce(acct.\'FM_Category_AnySBU\',totals.\'FM_Category_AnySBU\') as \'FM_Category_AnySBU\', sum(totals.\'AvgCFEs\') as \'TotalCFEs\';';
-            query = query + 'result = group result by all;';
-            query = query + 'result = foreach result generate round(sum(\'TotalCFEs\')) as \'TotalCFEs\';';
-
-            String response = '';
-            if (!Test.isRunningTest()) {
-                ConnectApi.LiteralJson queryresult = ConnectApi.Wave.executeQuery(query);
-                response = queryresult.json;
-            } else {
-                response = '{"results":{"records":[{"TotalCFEs":19}]}, "id":"56789"}';
-            }
-
-            Map<String, Object> results = (Map<String, Object>) JSON.deserializeUntyped(response);
-            Object resultList = results.get('results');
-
-            Map<String, Object> tempMap = (Map<String, Object>) resultList;
-            List<Object> records = (List<Object>) tempMap.get('records');
-
-            if (!records.IsEmpty()) {
-                String recordJSON = JSON.serialize(records[0]);
-                Map<String, Object> recordFields = (Map<String, Object>) JSON.deserializeUntyped(recordJSON);
-
-                totalCFEs = (Decimal) recordFields.get('TotalCFEs');
-            }
-
-        }
-
-        return totalCFEs;
     }
 
     /**

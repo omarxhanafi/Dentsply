@@ -190,7 +190,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Activity Scoreboard Events Logged</shortDescription>
-        <value>event(s) out of a benchmark midpoint of</value>
+        <value># Last 12 months CFEs</value>
     </labels>
     <labels>
         <fullName>ActivityScoreboardTasksCompleted</fullName>

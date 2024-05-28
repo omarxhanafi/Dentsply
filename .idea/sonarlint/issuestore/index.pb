@@ -121,8 +121,6 @@ S
 #src/classes/Test_ProductTrigger.cls,f/e/fe8107926047f5cb97beb173c876ff8d75ad9801
 e
 5src/flexipages/DK_Claus_David_Account_Intro.flexipage,e/5/e53d1503e1613f05b3380f39c3b8144b420356f6
-f
-6src/lwc/activityScorecardLwc/activityScorecardLwc.html,1/d/1daf6dae190093603e3a8ea8f8266025f70cef4e
 Z
 *src/flexipages/Lightning_Account.flexipage,4/d/4dad7cccaf1892f1d07675df175fbda3e4c17de3
 o
