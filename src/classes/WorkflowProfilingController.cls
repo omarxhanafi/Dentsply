@@ -198,9 +198,9 @@ public with sharing class WorkflowProfilingController {
 
             for (Non_ERP_Products__c nonERPProduct : productFamily.Non_ERP_Products__r) {
                 if (nonERPProduct.Competitor_Product__c) {
-                    if (activeNonErpProductsIds.containsKey(nonERPProduct.Id)) {
-                        wrapper.competitorProducts.add(new NonERPProductWrapper(nonERPProduct, true, false, activeNonErpProductsIds.get(nonERPProduct.Id)));
-                    }
+                    Boolean isActive = activeNonErpProductsIds.containsKey(nonERPProduct.Id);
+                    Boolean isInactive = inactiveNonErpProductsIds.containsKey(nonERPProduct.Id);
+                    wrapper.competitorProducts.add(new NonERPProductWrapper(nonERPProduct, isActive, isInactive, isActive ? activeNonErpProductsIds.get(nonERPProduct.Id) : (isInactive ? inactiveNonErpProductsIds.get(nonERPProduct.Id) : null)));
                 } else {
                     Boolean isActive = activeNonErpProductsIds.containsKey(nonERPProduct.Id);
                     Boolean isInactive = inactiveNonErpProductsIds.containsKey(nonERPProduct.Id);

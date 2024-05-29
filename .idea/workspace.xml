@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/8/2832e6fd5ede4887b27317000f6618d7ea617cff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fe8107926047f5cb97beb173c876ff8d75ad9801" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/8/2832e6fd5ede4887b27317000f6618d7ea617cff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/e/fe8107926047f5cb97beb173c876ff8d75ad9801" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingDetails/ProductProfilingDetailsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingDetails/ProductProfilingDetailsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingEdit/ProductProfilingEditController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingEdit/ProductProfilingEditController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingHierarchy/ProductProfilingHierarchyHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,14 +87,28 @@
                   <option name="name" value="Anonymous Apex 3" />
                 </AnonymousApexSavedDocument>
                 <AnonymousApexSavedDocument>
+                  <option name="apexLogLevel" value="FINEST" />
                   <option name="body" value="Set&lt;String&gt; pg1Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg2Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg3Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg4Codes = new Set&lt;String&gt;();&#10;&#10;List&lt;Non_ERP_Products__c&gt; nonErpProducts = [&#10;        SELECT Id, AssignmentRuleCodes__c&#10;        FROM Non_ERP_Products__c&#10;        WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE&#10;];&#10;&#10;Set&lt;String&gt; pgCodes = new Set&lt;String&gt;();&#10;&#10;for (Non_ERP_Products__c product : nonErpProducts) {&#10;    if (product.AssignmentRuleCodes__c != null &amp;&amp; product.AssignmentRuleCodes__c != '') {&#10;        pgCodes.addAll(product.AssignmentRuleCodes__c.split(','));&#10;    }&#10;}&#10;&#10;for(String eachPgCode : pgCodes){&#10;    if(eachPgCode.length() == 3){&#10;        pg1Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 4){&#10;        pg2Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 5){&#10;        pg3Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 6){&#10;        pg4Codes.add(eachPgCode);&#10;    }&#10;}&#10;&#10;System.debug('PG1 Count: ' + pg1Codes.size());&#10;System.debug('PG2 Count: ' + pg2Codes.size());&#10;System.debug('PG3 Count: ' + pg3Codes.size());&#10;System.debug('PG4 Count: ' + pg4Codes.size());&#10;&#10;System.debug('PG1 Codes: ' + pg1Codes);&#10;System.debug('PG2 Codes: ' + pg2Codes);&#10;System.debug('PG3 Codes: ' + pg3Codes);&#10;System.debug('PG4 Codes: ' + pg4Codes);" />
+                  <option name="calloutsLogLevel" value="FINEST" />
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
+                  <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 4" />
+                  <option name="nbaLogLevel" value="FINEST" />
+                  <option name="profilingLogLevel" value="FINEST" />
+                  <option name="systemLogLevel" value="FINEST" />
+                  <option name="validationLogLevel" value="FINEST" />
+                  <option name="visualforceLogLevel" value="FINEST" />
+                  <option name="waveLogLevel" value="FINEST" />
+                  <option name="workflowLogLevel" value="FINEST" />
+                </AnonymousApexSavedDocument>
+                <AnonymousApexSavedDocument>
+                  <option name="body" value="List&lt;Id&gt; test = new List&lt;Id&gt;();&#10;system.debug([select count() from account where id in :test]);" />
+                  <option name="name" value="Anonymous Apex 5" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="3" />
+            <option name="selectedSavedDocumentIndex" value="4" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionMruWorkspaceSettings">
@@ -115,8 +118,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1716894140768" />
-                  <option name="numUsages" value="335" />
+                  <option name="lastUsed" value="1716899674344" />
+                  <option name="numUsages" value="339" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="DevApr" />
@@ -18300,9 +18303,10 @@
                       <entry key="APEXTRIGGER:PRODUCTPROFILINGTRIGGER" value="1708698816000" />
                       <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1706094617000" />
                       <entry key="AURADEFINITIONBUNDLE:FLOW_SUGGESTEDUSERSBASEDONBRAND" value="1667402512131" />
-                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1715248437000" />
-                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1699613853000" />
-                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1699612519000" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1716899168000" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1716899327000" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGEDIT" value="1716899583000" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1716899676000" />
                       <entry key="AURADEFINITIONBUNDLE:SERVICECLOUD_FLOWINPUTFIELD" value="1674823830000" />
                       <entry key="COMPACTLAYOUT:NON_ERP_PRODUCTS__C.NON_ERP_PRODUCT_COMPACT_LAYOUT" value="1706094541000" />
                       <entry key="CUSTOMFIELD:NON_ERP_PRODUCTS__C.ADDITIONAL_NAME__C" value="1699613749000" />
@@ -18752,7 +18756,7 @@
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1716893880000" />
                       <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1712661810000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1716299938085" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1716899130772" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1709124008000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1712659936897" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706087844965" />
@@ -18764,7 +18768,7 @@
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGTRIGGER" value="1710148363645" />
                       <entry key="APEXCLASS:TEST_PRODUCTTRIGGER" value="1711721191592" />
                       <entry key="APEXCLASS:TEST_WORKFLOWPROFILINGCONTROLLER" value="1704806112539" />
-                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1716294234977" />
+                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1716973578000" />
                       <entry key="APEXTRIGGER:PRODUCTPROFILINGTRIGGER" value="1709122857850" />
                       <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1706087849202" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1716898722940" />
@@ -18796,7 +18800,7 @@
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:POPOVERRECORDINFO" value="1704301044075" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:PRODUCTPROFILINGEDITLWC" value="1711626981467" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1715348137358" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1716973581000" />
                       <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1695383392000" />
                       <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1695383392000" />
                       <entry key="STATICRESOURCE:SLIDERS" value="1703066996000" />
@@ -18903,7 +18907,7 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="Select name from workflow__c where not(Countries__c includes ('DE'))" />
+                  <option name="body" value="" />
                   <option name="name" value="SOQL Query 3" />
                 </SoqlQuerySavedDocument>
                 <SoqlQuerySavedDocument>
@@ -19324,7 +19328,7 @@
       <workItem from="1716556078846" duration="2229000" />
       <workItem from="1716797330184" duration="1395000" />
       <workItem from="1716799719459" duration="1024000" />
-      <workItem from="1716807056875" duration="5884000" />
+      <workItem from="1716807056875" duration="7597000" />
     </task>
     <servers />
   </component>
