@@ -208,6 +208,10 @@ public with sharing class WorkflowProfilingController {
                 }
             }
 
+            // Sorting the Non ERP Products alphabetically (asc)
+            wrapper.dsProducts.sort();
+            wrapper.competitorProducts.sort();
+
             productFamilyWrapperList.add(wrapper);
         }
 
@@ -218,7 +222,7 @@ public with sharing class WorkflowProfilingController {
 
     }
 
-    public class NonERPProductWrapper {
+    public class NonERPProductWrapper implements Comparable {
         @AuraEnabled public Non_ERP_Products__c product;
         @AuraEnabled public Boolean active;
         @AuraEnabled public Boolean inactive;
@@ -229,6 +233,11 @@ public with sharing class WorkflowProfilingController {
             this.active = active;
             this.inactive = inactive;
             this.productProfilingId = productProfilingId;
+        }
+
+        public Integer compareTo(Object other) {
+            NonERPProductWrapper otherWrapper = (NonERPProductWrapper) other;
+            return this.product.Name.compareTo(otherWrapper.product.Name);
         }
     }
 
