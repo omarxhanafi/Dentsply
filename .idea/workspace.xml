@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/2/f22599a167cc7bedae68d0a0ac5bbac8ec69a5c5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/2/f22599a167cc7bedae68d0a0ac5bbac8ec69a5c5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductTriggerHelper.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/BatchUpdateProducts.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/BatchUpdateProducts.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ProductProfilingHierarchyController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/workflowProfilingLwc/workflowProfilingLwc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,8 +128,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="UAT" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1717510548365" />
-                  <option name="numUsages" value="390" />
+                  <option name="lastUsed" value="1717583483546" />
+                  <option name="numUsages" value="395" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="DevApr" />
@@ -11953,6 +11951,11 @@
                 <ConnectionWorkspaceSettings />
               </value>
             </entry>
+            <entry key="DevJun24">
+              <value>
+                <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
             <entry key="DevMar">
               <value>
                 <ConnectionWorkspaceSettings>
@@ -18283,6 +18286,11 @@
                 <ConnectionWorkspaceSettings />
               </value>
             </entry>
+            <entry key="StgJun">
+              <value>
+                <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
             <entry key="SureSmile">
               <value>
                 <ConnectionWorkspaceSettings />
@@ -18302,7 +18310,7 @@
                       <entry key="APEXCLASS:FLOWLOOKUPLWCCONTROLLER" value="1675243532479" />
                       <entry key="APEXCLASS:OPPORTUNITYINSERTASYNCH" value="1668510513326" />
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1666193185822" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1716378634100" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1717582439960" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1708698803000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1712660028013" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706094605000" />
@@ -18311,11 +18319,11 @@
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGTRIGGER" value="1710148374000" />
                       <entry key="APEXCLASS:TEST_PRODUCTTRIGGER" value="1706094629000" />
                       <entry key="APEXCLASS:USERSINACCOUNTTERRITORIES" value="1667389763476" />
-                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1716988655318" />
+                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1717578213722" />
                       <entry key="APEXTRIGGER:PRODUCTPROFILINGTRIGGER" value="1708698816000" />
                       <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1706094617000" />
                       <entry key="AURADEFINITIONBUNDLE:FLOW_SUGGESTEDUSERSBASEDONBRAND" value="1667402512131" />
-                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1716899168000" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1717583485000" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1716899327000" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGEDIT" value="1716899583000" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1716899676000" />
@@ -18393,7 +18401,7 @@
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:LEADMATCHCONTACTHANDLING" value="1666275637000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:SELECTPRODUCTSOMLWC" value="1666187952046" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILING" value="1699614946000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1716988667000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1717583106000" />
                       <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.ALL" value="1699613750000" />
                       <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.AT" value="1699613750000" />
                       <entry key="LISTVIEW:NON_ERP_PRODUCTS__C.CH" value="1699613750000" />
@@ -18768,11 +18776,11 @@
                       <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1716893880000" />
                       <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1712661810000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
-                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1716899130772" />
+                      <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1717582434524" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHANDLER" value="1709124008000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1712659936897" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706087844965" />
-                      <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1717506311023" />
+                      <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1717578059277" />
                       <entry key="APEXCLASS:TEST_ACCOUNTFLAGSCONTROLLER" value="1711720875000" />
                       <entry key="APEXCLASS:TEST_ACTIVITYSCORECARDCONTROLLER" value="1711110100412" />
                       <entry key="APEXCLASS:TEST_BATCHUPDATEPRODUCTS" value="1712663493366" />
@@ -18780,10 +18788,10 @@
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGTRIGGER" value="1710148363645" />
                       <entry key="APEXCLASS:TEST_PRODUCTTRIGGER" value="1711721191592" />
                       <entry key="APEXCLASS:TEST_WORKFLOWPROFILINGCONTROLLER" value="1704806112539" />
-                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1716973578000" />
+                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1717578059277" />
                       <entry key="APEXTRIGGER:PRODUCTPROFILINGTRIGGER" value="1709122857850" />
                       <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1706087849202" />
-                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1716898722940" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1717583391627" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1716898919000" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGEDIT" value="1716898920000" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGFLOW" value="1710953793000" />
@@ -18812,7 +18820,7 @@
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1687337259000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:POPOVERRECORDINFO" value="1704301044075" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:PRODUCTPROFILINGEDITLWC" value="1711626981467" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1716973958014" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1717583330000" />
                       <entry key="LISTVIEW:PRODUCTFAMILY__C.ALL" value="1695383392000" />
                       <entry key="LISTVIEW:WORKFLOW__C.ALL" value="1695383392000" />
                       <entry key="STATICRESOURCE:SLIDERS" value="1703066996000" />
@@ -19352,7 +19360,7 @@
       <workItem from="1716556078846" duration="2229000" />
       <workItem from="1716797330184" duration="1395000" />
       <workItem from="1716799719459" duration="1024000" />
-      <workItem from="1716807056875" duration="22966000" />
+      <workItem from="1716807056875" duration="28611000" />
     </task>
     <servers />
   </component>

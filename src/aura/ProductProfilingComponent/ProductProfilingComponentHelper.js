@@ -92,8 +92,10 @@
                                		childToAdd.hasChildren = true;
                            		}
 
-                           		productProfilingData.push(record);
-                     
+                                if(!record.Integrated__c){
+                                    productProfilingData.push(record);
+                                }
+
                             if(record.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c){
                                 if(productCount[record.Product_Name__r.Id]==1){
                                     

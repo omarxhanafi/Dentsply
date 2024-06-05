@@ -200,11 +200,14 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         // Fetch workflowProfilings based on this.recordId
         getProductProfiling({ recordId: this.recordId })
             .then(result => {
-                // Order the result by Product Family Label in ascending order
-                result.sort((a, b) => (a.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c > b.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c) ? 1 : -1);
+                // Filter out records where Integrated__c is true
+                const filteredResult = result.filter(record => !record.Integrated__c);
+
+                // Order the filtered result by Product Family Label in ascending order
+                filteredResult.sort((a, b) => (a.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c > b.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c) ? 1 : -1);
 
                 this.isEditOpen = true;
-                this.productProfilingRecords = result;
+                this.productProfilingRecords = filteredResult;
             })
             .catch(error => {
                 console.error('Error fetching Product Profiling records:', error);
