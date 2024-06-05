@@ -26,10 +26,28 @@ public with sharing class ProductTriggerHelper {
         // Create a map to associate codes with Non ERP Products
         Map<String, Non_ERP_Products__c> codeToNonErpProductMap = new Map<String, Non_ERP_Products__c>();
         for (Non_ERP_Products__c nonErpProduct : nonErpProducts) {
-            List<String> ruleCodes = nonErpProduct.AssignmentRuleCodes__c.split(',');
+            List<String> ruleCodes = nonErpProduct.AssignmentRuleCodes__c.replaceAll('\\s', '').split(',');
             for (String code : ruleCodes) {
                 codeToNonErpProductMap.put(code, nonErpProduct);
             }
+        }
+
+        // Collect the IDs of the GlobalSKUMapping__c lookup records
+        Set<Id> globalSkuMappingIds = new Set<Id>();
+        for (Product2 newProduct : newProductList) {
+            if (newProduct.GlobalSKUMapping__c != null) {
+                globalSkuMappingIds.add(newProduct.GlobalSKUMapping__c);
+            }
+        }
+
+        // Query the GlobalSKUMapping__c lookup records
+        Map<Id, Product2> globalSkuMappingMap = new Map<Id, Product2>();
+        if (!globalSkuMappingIds.isEmpty()) {
+            globalSkuMappingMap = new Map<Id, Product2>([
+                    SELECT Id, PG1_Code__c, PG2_Code__c, PG3_Code__c, PG4_Code__c
+                    FROM Product2
+                    WHERE Id IN :globalSkuMappingIds
+            ]);
         }
 
         // Iterate over the new Product2 records
@@ -52,8 +70,16 @@ public with sharing class ProductTriggerHelper {
             if (shouldProcess) {
                 for (String pgField : new List<String>{'PG4_Code__c', 'PG3_Code__c', 'PG2_Code__c', 'PG1_Code__c'}) {
                     String pgCode = (String)newProduct.get(pgField);
+                    String parentPgCode = (globalSkuMappingMap.containsKey(newProduct.GlobalSKUMapping__c)) ?
+                            (String)globalSkuMappingMap.get(newProduct.GlobalSKUMapping__c).get(pgField) : null;
+
                     if (pgCode != null && codeToNonErpProductMap.containsKey(pgCode)) {
                         Non_ERP_Products__c matchingNonErpProduct = codeToNonErpProductMap.get(pgCode);
+                        newProduct.NonErpProduct__c = matchingNonErpProduct.Id;
+                        newProduct.GlobalProductFamily__c = matchingNonErpProduct.ProductFamily__c;
+                        break; // Stop checking other PG codes if a match is found
+                    } else if (parentPgCode != null && codeToNonErpProductMap.containsKey(parentPgCode)) {
+                        Non_ERP_Products__c matchingNonErpProduct = codeToNonErpProductMap.get(parentPgCode);
                         newProduct.NonErpProduct__c = matchingNonErpProduct.Id;
                         newProduct.GlobalProductFamily__c = matchingNonErpProduct.ProductFamily__c;
                         break; // Stop checking other PG codes if a match is found
