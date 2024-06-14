@@ -62,6 +62,16 @@
         });
 
         $A.enqueueAction(action);
+
+        // Upon update of PP records, send a Platform Event to refresh the WP component
+        var action = cmp.get("c.publishPPCreationEvent");
+        action.setCallback(this, function(response) {
+            var state = response.getState();
+            if (state != "SUCCESS") {
+                console.error('Error firing Platform Event');
+            }
+        });
+        $A.enqueueAction(action);
     },
 
 	deleteProduct: function(cmp, event){

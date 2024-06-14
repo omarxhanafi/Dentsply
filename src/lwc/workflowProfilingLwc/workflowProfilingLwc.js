@@ -1,4 +1,5 @@
 import { LightningElement, wire, api, track } from 'lwc';
+import { subscribe, unsubscribe } from 'lightning/empApi';
 import getWorkflows from '@salesforce/apex/WorkflowProfilingController.getWorkflows';
 import getProductProfiling from '@salesforce/apex/ProductProfilingHierarchyController.getProductProfiling';
 import publishPPCreationEventWP from '@salesforce/apex/ProductProfilingHierarchyController.publishPPCreationEventWP';
@@ -35,6 +36,45 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         WPCompetitorProducts
     };
 
+    async connectedCallback() {
+        // Subscribe to the platform event
+        this.subscribeToPlatformEvent();
+    }
+
+    disconnectedCallback() {
+        // Unsubscribe from the platform event
+        this.unsubscribeFromPlatformEvent();
+    }
+
+    subscribeToPlatformEvent() {
+        const messageCallback = (response) => {
+            if (response) {
+                // Refreshing the workflow products
+                this.workflowsList.forEach(eachWorkflow => {
+                    this.getWorkflowProducts(eachWorkflow);
+                })
+            }
+        };
+
+        // Subscribe to the platform event
+        subscribe('/event/PPCreation__e', -1, messageCallback)
+            .then(response => {
+                this.subscription = response;
+            })
+            .catch(error => {
+                console.error('Error subscribing to platform event:', JSON.stringify(error));
+            });
+    }
+
+    unsubscribeFromPlatformEvent() {
+        // Unsubscribe from the platform event
+        if (this.subscription) {
+            unsubscribe(this.subscription, response => {
+                console.log('Unsubscribed from platform event:', JSON.stringify(response));
+            });
+        }
+    }
+
     @wire(getWorkflows, { accountId: '$recordId' })
     wiredWorkflows({ error, data }) {
         if (data) {
@@ -51,36 +91,40 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         openSections.forEach(workflowId => {
             const selectedWorkflow = this.workflowsList.find(workflow => workflow.Id === workflowId);
 
-            if (selectedWorkflow && !selectedWorkflow.families) {
-                getProductFamilyListByWorkflowId({ workflowId: selectedWorkflow.Id, accountId: this.recordId })
-                    .then(result => {
-                        selectedWorkflow.families = result;
-
-                        selectedWorkflow.families.forEach(family => {
-                            // Initialize flags
-                            family.hasDSCoreProduct = false;
-                            family.hasCompetitorProduct = false;
-
-                            family.dsProducts.forEach(product => {
-                                if (product.active) {
-                                    family.hasDSCoreProduct = true;
-                                    return;
-                                }
-                            });
-
-                            family.competitorProducts.forEach(product => {
-                                if (product.active) {
-                                    family.hasCompetitorProduct = true;
-                                    return;
-                                }
-                            });
-                        });
-                    })
-                    .catch(error => {
-                        console.error('Error fetching Product Families & Products:', error);
-                    });
-            }
+            this.getWorkflowProducts(selectedWorkflow);
         });
+    }
+
+    getWorkflowProducts(selectedWorkflow) {
+        if (selectedWorkflow) {
+            getProductFamilyListByWorkflowId({workflowId: selectedWorkflow.Id, accountId: this.recordId})
+                .then(result => {
+                    selectedWorkflow.families = result;
+
+                    selectedWorkflow.families.forEach(family => {
+                        // Initialize flags
+                        family.hasDSCoreProduct = false;
+                        family.hasCompetitorProduct = false;
+
+                        family.dsProducts.forEach(product => {
+                            if (product.active) {
+                                family.hasDSCoreProduct = true;
+                                return;
+                            }
+                        });
+
+                        family.competitorProducts.forEach(product => {
+                            if (product.active) {
+                                family.hasCompetitorProduct = true;
+                                return;
+                            }
+                        });
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching Product Families & Products:', error);
+                });
+        }
     }
 
     handleMouseOver(event) {
@@ -172,6 +216,11 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
             // Closing the modal
             this.handleCloseModal();
 
+            // Refreshing the workflow products
+            this.workflowsList.forEach(eachWorkflow => {
+                this.getWorkflowProducts(eachWorkflow);
+            })
+
             // Publishing a platform event to update the PP component
             publishPPCreationEventWP().then(() => {}).catch(error => {
                 console.error('Error publishing platform event :', error);
@@ -182,6 +231,11 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
     handleMassUpdate(){
         // Closing the modal
         this.handleCloseModal();
+
+        // Refreshing the workflow products
+        this.workflowsList.forEach(eachWorkflow => {
+            this.getWorkflowProducts(eachWorkflow);
+        })
 
         // Publishing a platform event to update the PP component
         publishPPCreationEventWP().then(() => {}).catch(error => {
