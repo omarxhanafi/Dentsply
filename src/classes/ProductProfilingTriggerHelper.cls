@@ -22,7 +22,7 @@ public with sharing class ProductProfilingTriggerHelper {
         for (Product_Profiling__c record : newProductProfilingList) {
             // Check if the record is new or any relevant fields have changed
             if (
-                    (record.Account__c != null && record.Product_Name__c != null && !record.Integrated__c) &&
+                    (record.Account__c != null && record.Product_Name__c != null) &&
                             (isInsert
                                     || (oldProductProfilingMap != null &&
                                         (record.Account__c != oldProductProfilingMap.get(record.Id).Account__c ||
