@@ -1,11 +1,12 @@
-/*-------------------------------------------------------------------------------------------------	
+/*-----------------------------------------------------------------------------------------------------------
  * Author            : naoussar@salesforce.com
  * Description       : InsideSalesCampaignTrackerController Apex controller of InsideSalesCampaignTracker LWC
  * Test class        : Test_InsideSalesCampaignTrackerCntl
  * History	
  * 03-03-2022        : Created (#TFUS-000004085)
  * 16-05-2024        : Assigning the Campaign to the created task (TFUS-000006250)
---------------------------------------------------------------------------------------------------*/
+ * 21-06-2024        : Fixing bug when selecting both a campaign and 'Activity Unrelated to a Campaign'
+-----------------------------------------------------------------------------------------------------------*/
 public with sharing class InsideSalesCampaignTrackerController {
 	/*------------------------------------------------------------	
 	Description: Get campaigns related to an account (if campaign members is the account itself or contacts of that account)
@@ -89,8 +90,10 @@ public with sharing class InsideSalesCampaignTrackerController {
             Map<String,Object> mappedData = (Map<String,Object>)dataItem;
             selectedMembersIds.add((String)mappedData.get('memberId'));
         }
+
         //get campaign members and filter the ones related to account and the ones related to contact
         List<CampaignMember> campaignsMembers = [SELECT Id, Status, Campaign.Name, CampaignId, AccountId, ContactId FROM CampaignMember where Id IN:selectedMembersIds ];
+
         for(CampaignMember member:campaignsMembers){
             if(member.AccountId != null){
                 if(campaignsRelatedToAccount.get(member.Campaign.Name) == null){
@@ -135,18 +138,18 @@ public with sharing class InsideSalesCampaignTrackerController {
             tasktoBeCreated.ActivityDate = System.Today();
             tasktoBeCreated.TaskSubtype = 'Call';
 
-            // Don't create an activity when the campaign member's status is Canceled - TFUS-000005230
-            if((String)mappedData.get('memberStatus') != 'Canceled'){
-                tasksList.add(tasktoBeCreated);
-            }
-
             // Assign campaign to task - TFUS-000006250
             if((String)mappedData.get('memberId') != null){
                 for(CampaignMember eachCampaignMember : campaignsMembers){
-                    if(eachCampaignMember.Id == (String)mappedData.get('memberId')){
+                    if(String.valueOf(eachCampaignMember.Id) == (String)mappedData.get('memberId')){
                         tasktoBeCreated.Campaign__c = eachCampaignMember.CampaignId;
                     }
                 }
+            }
+
+            // Don't create an activity when the campaign member's status is Canceled - TFUS-000005230
+            if((String)mappedData.get('memberStatus') != 'Canceled'){
+                tasksList.add(tasktoBeCreated);
             }
 
             campaignMemberStatusMap.put((String)mappedData.get('name'), (String)mappedData.get('memberStatus'));
@@ -160,6 +163,7 @@ public with sharing class InsideSalesCampaignTrackerController {
         	update campaignMemberListToUpdate;
 
             if(!tasksList.isEmpty()){
+
                 insert tasksList;
 
                 if(tasksList.size() == 1)
