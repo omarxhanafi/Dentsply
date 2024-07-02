@@ -11,8 +11,10 @@ import ACCOUNT_CITY from '@salesforce/schema/Account.BillingCity';
 import LEAD_FIRSTNAME from '@salesforce/schema/Lead.FirstName';
 import LEAD_LASTNAME from '@salesforce/schema/Lead.LastName';
 import LEAD_EMAIL from '@salesforce/schema/Lead.Email';
+import LEAD_PHONE from '@salesforce/schema/Lead.Phone';
 import LEAD_SALUTATION from '@salesforce/schema/Lead.Salutation';
-import LEAD_PROFESSION from '@salesforce/schema/Lead.Profession__c';
+import LEAD_PROFESSION from '@salesforce/schema/Lead.RoleProfession__c';
+import LEAD_SPECIALTY from '@salesforce/schema/Lead.Specialty__c';
 import LEAD_LANGUAGE from '@salesforce/schema/Lead.PreferredLanguage__c';
 
 export default class LeadMatchContactHandling extends LightningElement {
@@ -40,8 +42,11 @@ export default class LeadMatchContactHandling extends LightningElement {
     @api contactfields = '';
     @track contactSelected;
     @track showSpinner = true;
+    @api updateContactEmail;
+    @api updateContactPhone;
 
     connectedCallback(){
+        console.log('Selected account: ' + this.selectedAccountId);
         this.accountSelected = false;
         this.contactSelected = false;
         this.showMoreContacts = false;
@@ -134,7 +139,7 @@ export default class LeadMatchContactHandling extends LightningElement {
         return getFieldValue(this.selectedAccount.data, ACCOUNT_CITY);
     }
 
-    @wire(getRecord, { recordId: '$recordId', fields: [LEAD_FIRSTNAME, LEAD_LASTNAME, LEAD_EMAIL]})
+    @wire(getRecord, { recordId: '$recordId', fields: [LEAD_FIRSTNAME, LEAD_LASTNAME, LEAD_EMAIL, LEAD_PROFESSION, LEAD_LANGUAGE, LEAD_PHONE]})
     lead;
 
     get leadFirstName() {
@@ -149,6 +154,10 @@ export default class LeadMatchContactHandling extends LightningElement {
         return getFieldValue(this.lead.data, LEAD_EMAIL);
     }
 
+    get leadPhone() {
+        return getFieldValue(this.lead.data, LEAD_PHONE);
+    }
+
     get leadSalutation() {
         return getFieldValue(this.lead.data, LEAD_SALUTATION);
     }
@@ -157,8 +166,68 @@ export default class LeadMatchContactHandling extends LightningElement {
         return getFieldValue(this.lead.data, LEAD_PROFESSION);
     }
 
+    get leadSpecialty() {
+        return getFieldValue(this.lead.data, LEAD_SPECIALTY);
+    }
+
     get leadLanguage() {
         return getFieldValue(this.lead.data, LEAD_LANGUAGE);
+    }
+
+    get emailDiff(){
+        let leadEmail = getFieldValue(this.lead.data, LEAD_EMAIL);
+        console.log(leadEmail);
+
+        for(let i=0;i<this.matchRelatedContactList.length; i++){
+            console.log(JSON.stringify(this.matchRelatedContactList[i]));
+            if(this.matchRelatedContactList[i].matchRecord.Id == this.selectedContactId){
+                this.selectedContact = this.matchRelatedContactList[i].matchRecord;
+                this.selectedContactEmail = this.matchRelatedContactList[i].matchRecord.Email;
+                console.log('Matched email: ' + this.selectedContactEmail);
+            }
+        }
+
+        if(leadEmail != this.selectedContactEmail){
+            console.log('Not matching emails!');
+            return true;
+        }
+        else{
+            console.log('Matching emails - no diff!');
+            return false;
+        }
+    }
+
+    get emailDiffLabel(){
+        let label = 'Set to ' + this.leadEmail;
+        return label;
+    }
+
+    get phoneDiff(){
+        let leadPhone = getFieldValue(this.lead.data, LEAD_PHONE);
+        console.log(leadPhone);
+
+        for(let i=0;i<this.matchRelatedContactList.length; i++){
+            console.log(JSON.stringify(this.matchRelatedContactList[i]));
+            if(this.matchRelatedContactList[i].matchRecord.Id == this.selectedContactId){
+                this.selectedContact = this.matchRelatedContactList[i].matchRecord;
+                this.selectedContactPhone = this.matchRelatedContactList[i].matchRecord.Phone;
+                console.log('Matched phone: ' + this.selectedContactPhone);
+            }
+        }
+
+        if(leadPhone != null && this.selectedContactPhone!= null && leadPhone != this.selectedContactPhone){
+            console.log('Not matching phone number!');
+            return true;
+        }
+        else{
+            console.log('Matching phone numbers - no diff!');
+            return false;
+        }
+    }
+
+    get phoneDiffLabel(){
+        let label = 'Set to ' + this.leadPhone;
+        return label;
     }
 
     handleAccountSelection(event) {
@@ -263,5 +332,39 @@ export default class LeadMatchContactHandling extends LightningElement {
 
         this.newContact = fields;
         console.log(fields);
+    }
+
+    handleEmailDiff(event){
+        this.updateContactEmail = event.target.checked;
+    }
+
+    handlePhoneDiff(event){
+        this.updateContactPhone = event.target.checked;
+    }
+
+    @api
+    validate(event) {
+        console.log('Validating');
+        let validCmp = true;
+
+        if(this.createContact == true){
+            this.template.querySelectorAll('lightning-input-field').forEach(element => {
+                if (element.reportValidity() == false) {
+                    validCmp = false;
+                };
+            })
+        }
+
+        if (validCmp == true) {
+            return { isValid: true };
+        }
+        else {
+            // If the component is invalid, return the isValid parameter 
+            // as false and return an error message. 
+            return {
+                isValid: false,
+                errorMessage: 'Please make sure to fill out all required contact fields'
+            };
+        }
     }
 }
