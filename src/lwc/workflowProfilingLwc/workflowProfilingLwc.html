@@ -116,6 +116,14 @@
                                                                     </template>
                                                                 </template>
                                                                 <template lwc:else>
+                                                                    <lightning-icon
+                                                                            icon-name="utility:new"
+                                                                            alternative-text="Add PP Record"
+                                                                            data-productid={dsProduct.product.Id}
+                                                                            class="slds-m-right_xx-small clickable-icon"
+                                                                            size="x-small"
+                                                                            onclick={handleAddPPRecord}>
+                                                                    </lightning-icon>
                                                                     <span class="slds-color__text_gray-8">{dsProduct.product.Name}</span>
                                                                 </template>
                                                             </div>
@@ -192,6 +200,14 @@
                                                                     </template>
                                                                 </template>
                                                                 <template lwc:else>
+                                                                    <lightning-icon
+                                                                            icon-name="utility:new"
+                                                                            alternative-text="Add PP Record"
+                                                                            data-productid={compProduct.product.Id}
+                                                                            class="slds-m-right_xx-small clickable-icon"
+                                                                            size="x-small"
+                                                                            onclick={handleAddPPRecord}>
+                                                                    </lightning-icon>
                                                                     <span class="slds-color__text_gray-8">{compProduct.product.Name}</span>
                                                                 </template>
                                                             </div>
@@ -237,6 +253,26 @@
                             <div class="slds-modal__content slds-p-around_medium">
                                 <c-product-profiling-edit-lwc selected-products={productProfilingRecords} onsave={handleMassUpdate}></c-product-profiling-edit-lwc>
                             </div>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </div>
+                <div if:true={showAddModal}>
+                    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            <header class="slds-modal__header">
+                                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleModalClose}>
+                                    <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                                </button>
+                                <h2 class="slds-text-heading_medium">{labels.WPConfirmationHeader}</h2>
+                            </header>
+                            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                <p>{labels.WPConfirmationText}</p>
+                            </div>
+                            <footer class="slds-modal__footer">
+                                <lightning-button variant="neutral" label="No" onclick={handleModalNo}></lightning-button>
+                                <lightning-button variant="brand" label="Yes" class="slds-m-left_x-small" onclick={handleModalYes}></lightning-button>
+                            </footer>
                         </div>
                     </section>
                     <div class="slds-backdrop slds-backdrop_open"></div>

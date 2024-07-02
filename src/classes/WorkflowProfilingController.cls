@@ -222,6 +222,28 @@ public with sharing class WorkflowProfilingController {
 
     }
 
+    /**
+     * createProductProfiling Creates a new Product Profiling record for the given Account and Non ERP Product Id
+     * @author ohanafi@salesforce.com | 28-06-2024
+     *
+     * @param accountId          Account Id
+     * @param nonErpProductId    Non ERP Product Id
+     */
+    @AuraEnabled
+    public static void createProductProfiling(Id accountId, Id nonErpProductId) {
+        Product_Profiling__c newPPRecord = new Product_Profiling__c();
+        newPPRecord.Account__c = accountId;
+        newPPRecord.Product_Name__c = nonErpProductId;
+
+        try {
+            insert newPPRecord;
+            System.debug('newPPRecord: ' + newPPRecord);
+        } catch (Exception e) {
+            DebugLog.addException(e, 'WorkflowProfilingController.createProductProfiling');
+        }
+    }
+
+
     public class NonERPProductWrapper implements Comparable {
         @AuraEnabled public Non_ERP_Products__c product;
         @AuraEnabled public Boolean active;

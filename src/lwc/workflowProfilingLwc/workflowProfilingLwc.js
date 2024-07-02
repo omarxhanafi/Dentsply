@@ -4,6 +4,7 @@ import getWorkflows from '@salesforce/apex/WorkflowProfilingController.getWorkfl
 import getProductProfiling from '@salesforce/apex/ProductProfilingHierarchyController.getProductProfiling';
 import publishPPCreationEventWP from '@salesforce/apex/ProductProfilingHierarchyController.publishPPCreationEventWP';
 import getProductFamilyListByWorkflowId from '@salesforce/apex/WorkflowProfilingController.getProductFamilyListByWorkflowId';
+import createProductProfiling from '@salesforce/apex/WorkflowProfilingController.createProductProfiling';
 import FORM_FACTOR from '@salesforce/client/formFactor';
 import {NavigationMixin} from "lightning/navigation";
 import WPHeader from "@salesforce/label/c.WPHeader";
@@ -11,6 +12,8 @@ import WPHelpText from "@salesforce/label/c.WPHelpText";
 import WPProductFamily from "@salesforce/label/c.WPProductFamily";
 import WPDSProducts from "@salesforce/label/c.WPDSProducts";
 import WPCompetitorProducts from "@salesforce/label/c.WPCompetitorProducts";
+import WPConfirmationHeader from "@salesforce/label/c.WPConfirmationHeader";
+import WPConfirmationText from "@salesforce/label/c.WPConfirmationText";
 
 
 
@@ -19,6 +22,10 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
     @api recordId; // Account record Id
     @track workflowsList = [];
     @track productProfilingRecords = [];
+
+    @track showAddModal = false;
+    @track productToAddId;
+
 
     subscription = null;
 
@@ -33,7 +40,9 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         WPHelpText,
         WPProductFamily,
         WPDSProducts,
-        WPCompetitorProducts
+        WPCompetitorProducts,
+        WPConfirmationHeader,
+        WPConfirmationText
     };
 
     async connectedCallback() {
@@ -266,6 +275,44 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
             .catch(error => {
                 console.error('Error fetching Product Profiling records:', error);
             });
+    }
+
+    handleAddPPRecord(event) {
+        this.productToAddId = event.target.dataset.productid;
+        this.showAddModal = true;
+    }
+
+    handleModalYes() {
+        // Creating the PP record
+        createProductProfiling({
+            accountId: this.recordId,
+            nonErpProductId: this.productToAddId
+        })
+            .then(() => {
+                // Refreshing the workflow products
+                this.workflowsList.forEach(eachWorkflow => {
+                    this.getWorkflowProducts(eachWorkflow);
+                })
+                // Close the modal
+                this.showAddModal = false;
+            })
+            .catch(error => {
+                // Handle error
+                console.error('Error creating Product Profiling record: ', error);
+
+                // Close the modal
+                this.showAddModal = false;
+            });
+    }
+
+    handleModalNo() {
+        // Close the modal
+        this.showAddModal = false;
+    }
+
+    handleModalClose() {
+        // Handle modal close action (similar to No button action)
+        this.handleModalNo();
     }
 
     get collapsibleTextSize() {

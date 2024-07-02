@@ -2900,6 +2900,22 @@ Click new to add more ...</value>
         <value>Product Family</value>
     </labels>
     <labels>
+        <fullName>WPConfirmationHeader</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPConfirmationHeader</shortDescription>
+        <value>Confirmation</value>
+    </labels>
+    <labels>
+        <fullName>WPConfirmationText</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPConfirmationText</shortDescription>
+        <value>Are you sure you want to create a Product Profiling record?</value>
+    </labels>
+    <labels>
         <fullName>WarningMessage</fullName>
         <categories>LWCshowDuplicatCasesWarning</categories>
         <language>en_US</language>

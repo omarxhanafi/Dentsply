@@ -82,7 +82,6 @@ export default class ProductProfilingEditLwc extends LightningElement {
         // Deleting the PP record
         deleteProductProfilingRecord({ recordId: recordId })
             .then(() => {
-                console.log('Record deleted successfully.');
             })
             .catch(error => {
                 console.error('Error deleting record:', error);

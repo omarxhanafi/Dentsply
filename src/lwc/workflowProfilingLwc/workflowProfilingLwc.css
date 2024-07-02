@@ -81,3 +81,12 @@
     justify-content: flex-start;
     gap: 5px
 }
+
+.clickable-icon {
+    cursor: pointer;
+}
+
+.clickable-icon:hover {
+    opacity: 0.8;
+}
+
