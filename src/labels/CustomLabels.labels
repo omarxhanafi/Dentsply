@@ -2908,12 +2908,20 @@ Click new to add more ...</value>
         <value>Confirmation</value>
     </labels>
     <labels>
-        <fullName>WPConfirmationText</fullName>
+        <fullName>WPConfirmationText1</fullName>
         <categories>WorkflowProfiling</categories>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>WPConfirmationText</shortDescription>
-        <value>Are you sure you want to create a Product Profiling record?</value>
+        <shortDescription>WPConfirmationText1</shortDescription>
+        <value>Are you sure you want to add</value>
+    </labels>
+    <labels>
+        <fullName>WPConfirmationText2</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPConfirmationText2</shortDescription>
+        <value>to</value>
     </labels>
     <labels>
         <fullName>WarningMessage</fullName>

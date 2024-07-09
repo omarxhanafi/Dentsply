@@ -49,6 +49,7 @@
                                                                 <!-- Show icon & popover if active -->
                                                                 <template lwc:if={dsProduct.active}>
                                                                     <template if:false={isMobile}>
+                                                                        <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-right_xx-small"></lightning-icon>
                                                                         <a
                                                                                 onclick={handleRedirection}
                                                                                 onmouseover={handleMouseOver}
@@ -58,7 +59,6 @@
                                                                         >
                                                                             {dsProduct.product.Name}
                                                                         </a>
-                                                                        <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
                                                                     </template>
                                                                     <template if:true={isMobile}>
                                                                         <a
@@ -83,6 +83,7 @@
                                                                 </template>
                                                                 <template lwc:elseif={dsProduct.inactive}>
                                                                     <template if:false={isMobile}>
+                                                                        <lightning-icon icon-name="utility:clear" variant="error" size="x-small" class="slds-m-right_xx-small"></lightning-icon>
                                                                         <a
                                                                                 onclick={handleRedirection}
                                                                                 onmouseover={handleMouseOver}
@@ -92,7 +93,6 @@
                                                                         >
                                                                             {dsProduct.product.Name}
                                                                         </a>
-                                                                        <lightning-icon icon-name="utility:clear" variant="error" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
                                                                     </template>
                                                                     <template if:true={isMobile}>
                                                                         <a
@@ -116,15 +116,19 @@
                                                                     </template>
                                                                 </template>
                                                                 <template lwc:else>
-                                                                    <lightning-icon
-                                                                            icon-name="utility:new"
-                                                                            alternative-text="Add PP Record"
-                                                                            data-productid={dsProduct.product.Id}
-                                                                            class="slds-m-right_xx-small clickable-icon"
-                                                                            size="x-small"
-                                                                            onclick={handleAddPPRecord}>
-                                                                    </lightning-icon>
                                                                     <span class="slds-color__text_gray-8">{dsProduct.product.Name}</span>
+                                                                    <template if:false={isMobile}>
+                                                                        <lightning-icon
+                                                                                icon-name="utility:new"
+                                                                                alternative-text="Add PP Record"
+                                                                                data-productid={dsProduct.product.Id}
+                                                                                data-familyid={family.productFamily.Id}
+                                                                                data-workflowid={eachWorkflow.Id}
+                                                                                class="slds-m-left_xx-small clickable-icon"
+                                                                                size="x-small"
+                                                                                onclick={handleAddPPRecord}>
+                                                                        </lightning-icon>
+                                                                    </template>
                                                                 </template>
                                                             </div>
                                                         </template>
@@ -135,6 +139,7 @@
                                                             <div key={compProduct.product.Id} class="custom-truncate" title={compProduct.product.Name}>
                                                                 <template lwc:if={compProduct.active}>
                                                                     <template if:false={isMobile}>
+                                                                        <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-right_xx-small"></lightning-icon>
                                                                         <a
                                                                                 onclick={handleRedirection}
                                                                                 onmouseover={handleMouseOver}
@@ -144,7 +149,6 @@
                                                                         >
                                                                             {compProduct.product.Name}
                                                                         </a>
-                                                                        <lightning-icon icon-name="utility:success" variant="success" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
                                                                     </template>
                                                                     <template if:true={isMobile}>
                                                                         <a
@@ -168,6 +172,7 @@
                                                                 </template>
                                                                 <template lwc:elseif={compProduct.inactive}>
                                                                     <template if:false={isMobile}>
+                                                                        <lightning-icon icon-name="utility:clear" variant="error" size="x-small" class="slds-m-right_xx-small"></lightning-icon>
                                                                         <a
                                                                                 onclick={handleRedirection}
                                                                                 onmouseover={handleMouseOver}
@@ -177,7 +182,6 @@
                                                                         >
                                                                             {compProduct.product.Name}
                                                                         </a>
-                                                                        <lightning-icon icon-name="utility:clear" variant="error" size="x-small" class="slds-m-left_xx-small"></lightning-icon>
                                                                     </template>
                                                                     <template if:true={isMobile}>
                                                                         <a
@@ -200,15 +204,19 @@
                                                                     </template>
                                                                 </template>
                                                                 <template lwc:else>
-                                                                    <lightning-icon
-                                                                            icon-name="utility:new"
-                                                                            alternative-text="Add PP Record"
-                                                                            data-productid={compProduct.product.Id}
-                                                                            class="slds-m-right_xx-small clickable-icon"
-                                                                            size="x-small"
-                                                                            onclick={handleAddPPRecord}>
-                                                                    </lightning-icon>
                                                                     <span class="slds-color__text_gray-8">{compProduct.product.Name}</span>
+                                                                    <template if:false={isMobile}>
+                                                                        <lightning-icon
+                                                                                icon-name="utility:new"
+                                                                                alternative-text="Add PP Record"
+                                                                                data-productid={compProduct.product.Id}
+                                                                                data-familyid={family.productFamily.Id}
+                                                                                data-workflowid={eachWorkflow.Id}
+                                                                                class="slds-m-left_xx-small clickable-icon"
+                                                                                size="x-small"
+                                                                                onclick={handleAddPPRecord}>
+                                                                        </lightning-icon>
+                                                                    </template>
                                                                 </template>
                                                             </div>
                                                         </template>
@@ -267,7 +275,7 @@
                                 <h2 class="slds-text-heading_medium">{labels.WPConfirmationHeader}</h2>
                             </header>
                             <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
-                                <p>{labels.WPConfirmationText}</p>
+                                <p>{labels.WPConfirmationText1} <b>{productToAddName}</b> {labels.WPConfirmationText2} <b>{accountName}</b>?</p>
                             </div>
                             <footer class="slds-modal__footer">
                                 <lightning-button variant="neutral" label="No" onclick={handleModalNo}></lightning-button>

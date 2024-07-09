@@ -1,4 +1,6 @@
 import { LightningElement, wire, api, track } from 'lwc';
+import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
+import ACCOUNT_NAME_FIELD from '@salesforce/schema/Account.Name';
 import { subscribe, unsubscribe } from 'lightning/empApi';
 import getWorkflows from '@salesforce/apex/WorkflowProfilingController.getWorkflows';
 import getProductProfiling from '@salesforce/apex/ProductProfilingHierarchyController.getProductProfiling';
@@ -13,7 +15,8 @@ import WPProductFamily from "@salesforce/label/c.WPProductFamily";
 import WPDSProducts from "@salesforce/label/c.WPDSProducts";
 import WPCompetitorProducts from "@salesforce/label/c.WPCompetitorProducts";
 import WPConfirmationHeader from "@salesforce/label/c.WPConfirmationHeader";
-import WPConfirmationText from "@salesforce/label/c.WPConfirmationText";
+import WPConfirmationText1 from "@salesforce/label/c.WPConfirmationText1";
+import WPConfirmationText2 from "@salesforce/label/c.WPConfirmationText2";
 
 
 
@@ -25,7 +28,14 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
 
     @track showAddModal = false;
     @track productToAddId;
+    @track productToAddName;
 
+    @wire(getRecord, { recordId: '$recordId', fields: [ACCOUNT_NAME_FIELD] })
+    account;
+
+    get accountName() {
+        return getFieldValue(this.account.data, ACCOUNT_NAME_FIELD);
+    }
 
     subscription = null;
 
@@ -42,7 +52,8 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         WPDSProducts,
         WPCompetitorProducts,
         WPConfirmationHeader,
-        WPConfirmationText
+        WPConfirmationText1,
+        WPConfirmationText2
     };
 
     async connectedCallback() {
@@ -280,6 +291,40 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
     handleAddPPRecord(event) {
         this.productToAddId = event.target.dataset.productid;
         this.showAddModal = true;
+
+        let workflowId = event.target.dataset.workflowid;
+        let familyId = event.target.dataset.familyid;
+
+        // Searching for the productName to display in the modal dialog
+        this.findProductName(workflowId, familyId);
+    }
+
+    findProductName(workflowId, familyId) {
+        // Find the workflow in workflowsList with matching workflowId
+        const workflow = this.workflowsList.find(workflow => workflow.Id === workflowId);
+        if (workflow) {
+            // Find the family within the workflow's families array with matching familyId
+            const family = workflow.families.find(family => family.productFamily.Id === familyId);
+
+            if (family) {
+                // Find the product within the family's dsProducts or competitorProducts array with matching productId
+                let product = family.dsProducts.find(dsProduct => dsProduct.product.Id === this.productToAddId);
+                if (!product) {
+                    product = family.competitorProducts.find(compProduct => compProduct.product.Id === this.productToAddId);
+                }
+
+                if (product) {
+                    // Log the product's name
+                    this.productToAddName = product.product.Name;
+                } else {
+                    console.error('Product not found for productId:', productId);
+                }
+            } else {
+                console.error('Family not found for familyId:', familyId);
+            }
+        } else {
+            console.error('Workflow not found for workflowId:', workflowId);
+        }
     }
 
     handleModalYes() {
@@ -325,9 +370,5 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
 
     get headerClass() {
         return this.isMobile ? 'slds-grid slds-wrap slds-p-around_medium slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none' : 'slds-grid slds-wrap';
-    }
-
-    get rowHeaderClass(){
-        return this.isMobile ? 'row-header-mobile' : 'row-header-desktop'
     }
 }
