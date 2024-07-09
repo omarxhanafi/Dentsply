@@ -213,8 +213,21 @@
                 data = dataToAdd;
                 
                 //Sort node records ascending 
-                this.sortTable(cmp, event, true, data, "nodeName");               
-               
+                this.sortTable(cmp, event, true, data, "nodeName");
+
+                // Sort the productProfilingData by ProductFamilyLabel__c in ascending order
+                productProfilingData.sort(function(a, b) {
+                    var familyA = a.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c.toUpperCase();
+                    var familyB = b.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c.toUpperCase();
+                    if (familyA < familyB) {
+                        return -1;
+                    }
+                    if (familyA > familyB) {
+                        return 1;
+                    }
+                    return 0;
+                });
+
                 cmp.set('v.gridWrapperData', data);
                 cmp.set('v.gridWrapperFilteredData', data);
                 cmp.set('v.currentSelectedRows', []);                
