@@ -2924,6 +2924,22 @@ Click new to add more ...</value>
         <value>to</value>
     </labels>
     <labels>
+        <fullName>WPSuccessText1</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPSuccessText1</shortDescription>
+        <value>Successfully added</value>
+    </labels>
+    <labels>
+        <fullName>WPSuccessText2</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPSuccessText2</shortDescription>
+        <value>to</value>
+    </labels>
+    <labels>
         <fullName>WarningMessage</fullName>
         <categories>LWCshowDuplicatCasesWarning</categories>
         <language>en_US</language>

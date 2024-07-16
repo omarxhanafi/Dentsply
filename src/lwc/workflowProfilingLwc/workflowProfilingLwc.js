@@ -1,4 +1,5 @@
 import { LightningElement, wire, api, track } from 'lwc';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
 import ACCOUNT_NAME_FIELD from '@salesforce/schema/Account.Name';
 import { subscribe, unsubscribe } from 'lightning/empApi';
@@ -17,6 +18,8 @@ import WPCompetitorProducts from "@salesforce/label/c.WPCompetitorProducts";
 import WPConfirmationHeader from "@salesforce/label/c.WPConfirmationHeader";
 import WPConfirmationText1 from "@salesforce/label/c.WPConfirmationText1";
 import WPConfirmationText2 from "@salesforce/label/c.WPConfirmationText2";
+import WPSuccessText1 from "@salesforce/label/c.WPSuccessText1";
+import WPSuccessText2 from "@salesforce/label/c.WPSuccessText2";
 
 
 
@@ -53,7 +56,9 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
         WPCompetitorProducts,
         WPConfirmationHeader,
         WPConfirmationText1,
-        WPConfirmationText2
+        WPConfirmationText2,
+        WPSuccessText1,
+        WPSuccessText2
     };
 
     async connectedCallback() {
@@ -290,7 +295,10 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
 
     handleAddPPRecord(event) {
         this.productToAddId = event.target.dataset.productid;
-        this.showAddModal = true;
+
+        this.handleModalYes();
+
+        // this.showAddModal = true;
 
         let workflowId = event.target.dataset.workflowid;
         let familyId = event.target.dataset.familyid;
@@ -340,6 +348,13 @@ export default class WorkflowProfilingLwc extends NavigationMixin(LightningEleme
                 })
                 // Close the modal
                 this.showAddModal = false;
+                // Show toast
+                const evt = new ShowToastEvent({
+                    title: 'Success',
+                    message: this.labels.WPSuccessText1 + ' ' + this.productToAddName + ' ' + this.labels.WPSuccessText2 + ' ' + this.accountName,
+                    variant: 'success',
+                });
+                this.dispatchEvent(evt);
             })
             .catch(error => {
                 // Handle error
