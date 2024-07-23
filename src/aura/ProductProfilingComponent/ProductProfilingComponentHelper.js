@@ -82,7 +82,7 @@
 					   			childToAdd.focusProduct = record.Product_Name__r.KeyProduct__c;
                            		childToAdd.manufacturer = record.Product_Name__r.Manufacturer__c;
                                 childToAdd.source = record.Source__c;
-                                childToAdd.inactive = record.Inactive__c;
+                                // childToAdd.inactive = record.Inactive__c;
                            		
                            		if(productCount[record.Product_Name__r.Id]==1){
                            			childToAdd.status = record.Status__c;
@@ -138,6 +138,7 @@
                        						subChild.competitor = record.Product_Name__r.Competitor_Product__c;
 					   						subChild.focusProduct = record.Product_Name__r.KeyProduct__c;                           		
                            					subChild.status = record.Status__c;
+                                            subChild.inactive = record.Inactive__c;
                            					subChild.quantity = q;
                                             //subChild.contact = record.Contact__c;
                                             
@@ -168,6 +169,7 @@
 					   					subChild.focusProduct = record.Product_Name__r.KeyProduct__c;                           		
                            				subChild.status = record.Status__c;
                            				subChild.quantity = q;
+                                        subChild.inactive = record.Inactive__c;
                                         
                                         if(record.Contact__c != null){
                            						subChild.contactName = record.Contact__r.FirstName + ' ' + record.Contact__r.LastName;
@@ -177,7 +179,7 @@
                                         subChildren.push(subChild);
                                         childToAdd._children = subChildren;
                                         childrenToAdd.push(childToAdd);
-                    				}                                   
+                    				}
                                     
                                 }
                         	}

@@ -168,23 +168,11 @@ public with sharing class WorkflowProfilingController {
             }
         }
 
-        // Map to hold active ProductProfiling__c Ids related to Non_ERP_Products__c
-        Map<Id, Id> activeNonErpProductsIds = new Map<Id, Id>();
-
-        // Map to hold inactive ProductProfiling__c Ids related to Non_ERP_Products__c
-        Map<Id, Id> inactiveNonErpProductsIds = new Map<Id, Id>();
-
-        for (Product_Profiling__c productProfiling : [
-                SELECT Id, Product_Name__c, Inactive__c
+        List<Product_Profiling__c> productProfilingList = [
+                SELECT Id, Product_Name__c, Inactive__c, Contact__c
                 FROM Product_Profiling__c
                 WHERE Product_Name__c IN :nonERPProductIds AND Account__c = :accountId
-        ]) {
-            if(!productProfiling.Inactive__c){
-                activeNonErpProductsIds.put(productProfiling.Product_Name__c, productProfiling.Id);
-            } else {
-                inactiveNonErpProductsIds.put(productProfiling.Product_Name__c, productProfiling.Id);
-            }
-        }
+        ];
 
         // Get the order values for each ProductFamily__c in a map
         Map<Id, Integer> familyOrderMap = new Map<Id, Integer>();
@@ -197,15 +185,75 @@ public with sharing class WorkflowProfilingController {
             ProductFamilyWrapper wrapper = new ProductFamilyWrapper(familyOrderMap, productFamily);
 
             for (Non_ERP_Products__c nonERPProduct : productFamily.Non_ERP_Products__r) {
-                if (nonERPProduct.Competitor_Product__c) {
-                    Boolean isActive = activeNonErpProductsIds.containsKey(nonERPProduct.Id);
-                    Boolean isInactive = inactiveNonErpProductsIds.containsKey(nonERPProduct.Id);
-                    wrapper.competitorProducts.add(new NonERPProductWrapper(nonERPProduct, isActive, isInactive, isActive ? activeNonErpProductsIds.get(nonERPProduct.Id) : (isInactive ? inactiveNonErpProductsIds.get(nonERPProduct.Id) : null)));
-                } else {
-                    Boolean isActive = activeNonErpProductsIds.containsKey(nonERPProduct.Id);
-                    Boolean isInactive = inactiveNonErpProductsIds.containsKey(nonERPProduct.Id);
-                    wrapper.dsProducts.add(new NonERPProductWrapper(nonERPProduct, isActive, isInactive, isActive ? activeNonErpProductsIds.get(nonERPProduct.Id) : (isInactive ? inactiveNonErpProductsIds.get(nonERPProduct.Id) : null)));
+                List<Product_Profiling__c> matchingPPRecords = new List<Product_Profiling__c>();
+
+                Product_Profiling__c selectedPPRecord = null;
+
+                for(Product_Profiling__c eachProductProfiling : productProfilingList){
+                    if(eachProductProfiling.Product_Name__c == nonERPProduct.Id){
+                        matchingPPRecords.add(eachProductProfiling);
+                    }
                 }
+
+                if (!matchingPPRecords.isEmpty()) {
+                    // Prioritize records linked to the Account (Contact__c == null)
+                    List<Product_Profiling__c> accountPPRecords = new List<Product_Profiling__c>();
+                    for (Product_Profiling__c record : matchingPPRecords) {
+                        if (record.Contact__c == null) {
+                            accountPPRecords.add(record);
+                        }
+                    }
+
+                    if (!accountPPRecords.isEmpty()) {
+                        // From accountPPRecords, prioritize active ones
+                        List<Product_Profiling__c> activeRecords = new List<Product_Profiling__c>();
+                        for (Product_Profiling__c record : accountPPRecords) {
+                            if (!record.Inactive__c) {
+                                activeRecords.add(record);
+                            }
+                        }
+
+                        if (!activeRecords.isEmpty()) {
+                            // Choose the first active record
+                            selectedPPRecord = activeRecords[0];
+                        } else {
+                            // If no active record, choose the first record with Contact__c == null
+                            selectedPPRecord = accountPPRecords[0];
+                        }
+                    } else {
+                        // If no records with Contact__c == null, prioritize active ones from matching records
+                        List<Product_Profiling__c> activeRecords = new List<Product_Profiling__c>();
+                        for (Product_Profiling__c record : matchingPPRecords) {
+                            if (!record.Inactive__c) {
+                                activeRecords.add(record);
+                            }
+                        }
+
+                        if (!activeRecords.isEmpty()) {
+                            // Choose the first active record
+                            selectedPPRecord = activeRecords[0];
+                        } else {
+                            // If no active record, choose the first matching record
+                            selectedPPRecord = matchingPPRecords[0];
+                        }
+                    }
+                }
+
+                if(!nonERPProduct.Competitor_Product__c){
+                    if(selectedPPRecord != null){
+                        wrapper.dsProducts.add(new NonERPProductWrapper(nonERPProduct, !selectedPPRecord.Inactive__c, selectedPPRecord.Inactive__c, selectedPPRecord.Id));
+                    } else {
+                        wrapper.dsProducts.add(new NonERPProductWrapper(nonERPProduct, false, false, null));
+                    }
+
+                } else {
+                    if(selectedPPRecord != null){
+                        wrapper.competitorProducts.add(new NonERPProductWrapper(nonERPProduct, !selectedPPRecord.Inactive__c, selectedPPRecord.Inactive__c, selectedPPRecord.Id));
+                    } else {
+                        wrapper.competitorProducts.add(new NonERPProductWrapper(nonERPProduct, false, false, null));
+                    }
+                }
+
             }
 
             // Sorting the Non ERP Products alphabetically (asc)
@@ -237,7 +285,6 @@ public with sharing class WorkflowProfilingController {
 
         try {
             insert newPPRecord;
-            System.debug('newPPRecord: ' + newPPRecord);
         } catch (Exception e) {
             DebugLog.addException(e, 'WorkflowProfilingController.createProductProfiling');
         }
@@ -285,8 +332,12 @@ public with sharing class WorkflowProfilingController {
         public Integer compareTo(Object other) {
             Integer thisOrder = orderMap.containsKey(this.productFamily.Id) ? orderMap.get(this.productFamily.Id) : 99999999;
             Integer otherOrder = orderMap.containsKey(((ProductFamilyWrapper)other).productFamily.Id) ? orderMap.get(((ProductFamilyWrapper)other).productFamily.Id) : 99999999;
-            if (thisOrder == otherOrder) return 0;
-            if (thisOrder > otherOrder) return 1;
+            if (thisOrder == otherOrder){
+                return 0;
+            }
+            if (thisOrder > otherOrder){
+                return 1;
+            }
             return -1;
         }
 
