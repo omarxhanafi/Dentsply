@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +143,12 @@
           <ConnectionMruWorkspaceSettings>
             <option name="mruEntries">
               <list>
+                <ConnectionMruEntry>
+                  <option name="connectionName" value="DevAug24" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="lastUsed" value="1721734033734" />
+                  <option name="numUsages" value="1" />
+                </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
                   <option name="connectionType" value="OAUTH" />
@@ -11966,6 +11968,7 @@
                     <map>
                       <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1720527946107" />
                       <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1720528142000" />
+                      <entry key="FLOW:TARGET_LIST_ASSIGN_TARGET_LIST_NAME" value="1721734041000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:WORKFLOWPROFILINGLWC" value="1720528140117" />
                     </map>
                   </option>
@@ -18937,7 +18940,7 @@
                       <entry key="RETRIEVE">
                         <value>
                           <BuildViewToggles>
-                            <option name="showLocalAndServer" value="true" />
+                            <option name="showLocalAndServer" value="false" />
                             <option name="showLocalOnly" value="false" />
                             <option name="showServerOnly" value="true" />
                             <option name="showSubscribedByParent" value="false" />
@@ -19450,7 +19453,8 @@
       <workItem from="1717598655691" duration="5504000" />
       <workItem from="1718197873487" duration="1491000" />
       <workItem from="1720512257540" duration="22514000" />
-      <workItem from="1721636828642" duration="722000" />
+      <workItem from="1721636828642" duration="1365000" />
+      <workItem from="1721733855822" duration="586000" />
     </task>
     <servers />
   </component>
