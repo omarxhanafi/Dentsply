@@ -57,11 +57,9 @@ Description:   	Component to mass edit Product Profiling records - embedded in c
 							<lightning:input readonly="true" value="{!item.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c}"/>
 						</td>
 						<td>
-							<aura:if isTrue="{!not(empty(item.Contact__c))}">
-								<a onclick="{!c.navigateToRecord}" data-recordid="{!item.Contact__c}">
-									{!item.Contact__r.FirstName}&nbsp;{!item.Contact__r.LastName}
-								</a>
-							</aura:if>
+							<lightning:recordEditForm objectApiName="Product_Profiling__c" recordId="{!item.Id}">
+								<lightning:inputField fieldName="Contact__c" value="{!item.Contact__c}" />
+							</lightning:recordEditForm>
 						</td>
 						<td>
 							<lightning:input type="number" name="quantity" value="{!item.Quantity__c}"/>

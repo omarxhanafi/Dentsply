@@ -34,9 +34,10 @@
                             <lightning-input readonly value={item.Product_Name__r.ProductFamily__r.ProductFamilyLabel__c}></lightning-input>
                         </td>
                         <td>
-                            <template if:true={item.Contact__c}>
-                                <a href="#" onclick={navigateToRecord} data-recordid={item.Contact__c}>{item.Contact__r.FirstName} {item.Contact__r.LastName}</a>
-                            </template>
+                            <lightning-record-edit-form object-api-name="Product_Profiling__c">
+                                <lightning-input-field field-name={contactField} value={item.Contact__c} onchange={handleContactChange} data-recordid={item.Id}>
+                                </lightning-input-field>
+                            </lightning-record-edit-form>
                         </td>
                         <td>
                             <lightning-input type="number" name="quantity" value={item.Quantity__c} data-recordid={item.Id} onchange={handleQuantityChange}></lightning-input>

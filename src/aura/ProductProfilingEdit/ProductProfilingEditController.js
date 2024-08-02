@@ -41,6 +41,13 @@
             "productProfilingList": products
         });
 
+        // Remove Contact__c field if empty array
+        products.forEach(item => {
+            if (typeof item.Contact__c !== 'string') {
+                item.Contact__c = '';
+            }
+        });
+
         action.setCallback(this, function(response) {
             var state = response.getState();
             if (state === "SUCCESS") {

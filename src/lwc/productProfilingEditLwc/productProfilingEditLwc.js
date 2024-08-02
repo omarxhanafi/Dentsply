@@ -1,11 +1,17 @@
 import { LightningElement, api } from 'lwc';
 import updateProductProfilingRecords from '@salesforce/apex/ProductProfilingHierarchyController.updateProductProfilingRecords';
 import deleteProductProfilingRecord from '@salesforce/apex/ProductProfilingHierarchyController.deleteProductProfilingRecord';
+import CONTACT_FIELD from '@salesforce/schema/Product_Profiling__c.Contact__c';
+
 
 export default class ProductProfilingEditLwc extends LightningElement {
     @api selectedProducts = [];
     showSpinner = false;
     yearOptions = [];
+
+    @api objectApiName;
+    contactField = CONTACT_FIELD;
+
 
     connectedCallback() {
         const currentYear = new Date().getFullYear();
@@ -55,6 +61,22 @@ export default class ProductProfilingEditLwc extends LightningElement {
             }
             return item;
         });
+
+        this.selectedProducts = updatedProducts;
+    }
+
+    handleContactChange(event) {
+        const recordId = event.target.dataset.recordid;
+        const updatedContact = event.target.value;
+
+        const updatedProducts = this.selectedProducts.map(item => {
+            if (item.Id === recordId) {
+                return { ...item, Contact__c: updatedContact };
+            }
+            return item;
+        });
+
+        console.log('updatedProducts', JSON.parse(JSON.stringify(updatedProducts)));
 
         this.selectedProducts = updatedProducts;
     }
