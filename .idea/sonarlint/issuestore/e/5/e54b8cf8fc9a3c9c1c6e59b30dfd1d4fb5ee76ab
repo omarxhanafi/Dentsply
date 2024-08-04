@@ -1,121 +1,0 @@
-
-p
-AZBm5FfZi9dtgbuJnek3sf:CommentRequired"0Private method constructor comments are Required(¦ê”Úüÿÿÿÿ8Ù›”·†2
-u
-AZBm5FfZi9dtgbuJnek5sf:LocalVariableCouldBeFinal"1Local variable 'userList' could be declared final(©òãf8Ù›”·†2
-v
-AZBm5FfZi9dtgbuJnek7sf:LocalVariableCouldBeFinal"1Local variable 'testUser' could be declared final(æô¥È8Ù›”·†2
-y
-AZBm5FfZi9dtgbuJnek9sf:LocalVariableCouldBeFinal"4Local variable 'testAccount' could be declared final(®è•8Ù›”·†2
-£
-AZBm5FfZi9dtgbuJnek-sf:AvoidDuplicateLiterals"aThe String literal 'cim_account' appears 4 times in this file; the first occurrence is on line 29(®è•8Ù›”·†2
-`
-AZBm5FfZi9dtgbuJnelAsf:AvoidDMLInUnitTests"!Avoid DML In Unit Tests functions(ˆî¸¶8Ù›”·†2
-z
-AZBm5FfZi9dtgbuJnelCsf:LocalVariableCouldBeFinal!"5Local variable 'testWorkflow' could be declared final(åÜÅú8Ù›”·†2
-¥
-AZBm5FfZi9dtgbuJnelDsf:AvoidDuplicateLiterals!"cThe String literal 'test workflow' appears 4 times in this file; the first occurrence is on line 33(åÜÅú8Ù›”·†2
-e
-AZBm5FfZi9dtgbuJnelEsf:AvoidDMLInUnitTests""!Avoid DML In Unit Tests functions(ØŸüÅşÿÿÿÿ8Ù›”·†2
-w
-AZBm5FfZi9dtgbuJnelGsf:LocalVariableCouldBeFinal%"2Local variable 'workflows' could be declared final(’¥ùÔ8Ù›”·†2
-i
-AZBm5FfZi9dtgbuJnelHsf:RefactorAssert)"/Consider using Assert in place of System.Assert(ß›âó8Ù›”·†2
-v
-AZBm5FfZi9dtgbuJnelI%sf:UnitAssertionsShouldIncludeMessage)"(Unit assertions should include a message(ß›âó8Ù›”·†2
-v
-AZBm5FfZi9dtgbuJnelKsf:LocalVariableCouldBeFinal/"1Local variable 'testUser' could be declared final(æô¥È8Ù›”·†2
-y
-AZBm5FfZi9dtgbuJnelMsf:LocalVariableCouldBeFinal4"4Local variable 'testAccount' could be declared final(®è•8Ù›”·†2
-`
-AZBm5FfZi9dtgbuJnelOsf:AvoidDMLInUnitTests6"!Avoid DML In Unit Tests functions(ˆî¸¶8Ù›”·†2
-z
-AZBm5FfZi9dtgbuJnelQsf:LocalVariableCouldBeFinal8"5Local variable 'testWorkflow' could be declared final(åÜÅú8Ù›”·†2
-e
-AZBm5FfZi9dtgbuJnelRsf:AvoidDMLInUnitTests9"!Avoid DML In Unit Tests functions(ØŸüÅşÿÿÿÿ8Ù›”·†2
-}
-AZBm5FfZi9dtgbuJnelSsf:LongVariable;"@Avoid excessively long variable names like testWorkflowProfiling(¤ä·ÿÿÿÿÿ8Ù›”·†2
-ˆ
-AZBm5FfZi9dtgbuJnelUsf:LocalVariableCouldBeFinal;">Local variable 'testWorkflowProfiling' could be declared final(¤ä·ÿÿÿÿÿ8Ù›”·†2
-e
-AZBm5FfZi9dtgbuJnelVsf:AvoidDMLInUnitTests<"!Avoid DML In Unit Tests functions(ıÇ»ºşÿÿÿÿ8Ù›”·†2
-z
-AZBm5FfZi9dtgbuJnelWsf:LongVariable?"=Avoid excessively long variable names like workflowProfilings(µ™¥şÿÿÿÿ8Ù›”·†2
-…
-AZBm5FfZi9dtgbuJnelYsf:LocalVariableCouldBeFinal?";Local variable 'workflowProfilings' could be declared final(µ™¥şÿÿÿÿ8Ù›”·†2
-n
-AZBm5FfZi9dtgbuJnelZsf:RefactorAssertC"/Consider using Assert in place of System.Assert(¼ß÷±ùÿÿÿÿ8Ù›”·†2
-{
-AZBm5FfZi9dtgbuJnela%sf:UnitAssertionsShouldIncludeMessageC"(Unit assertions should include a message(¼ß÷±ùÿÿÿÿ8­œ”·†2
-n
-AZBm5FfZi9dtgbuJnelcsf:RefactorAssertD"/Consider using Assert in place of System.Assert(ùù¨Üıÿÿÿÿ8­œ”·†2
-{
-AZBm5FfZi9dtgbuJneld%sf:UnitAssertionsShouldIncludeMessageD"(Unit assertions should include a message(ùù¨Üıÿÿÿÿ8­œ”·†2
-v
-AZBm5FfZi9dtgbuJnelfsf:LocalVariableCouldBeFinalK"1Local variable 'testUser' could be declared final(æô¥È8­œ”·†2
-y
-AZBm5FfZi9dtgbuJnelhsf:LocalVariableCouldBeFinalP"4Local variable 'testAccount' could be declared final(®è•8­œ”·†2
-`
-AZBm5FfZi9dtgbuJneljsf:AvoidDMLInUnitTestsR"!Avoid DML In Unit Tests functions(ˆî¸¶8­œ”·†2
-z
-AZBm5FfZi9dtgbuJnellsf:LocalVariableCouldBeFinalT"5Local variable 'testWorkflow' could be declared final(åÜÅú8­œ”·†2
-e
-AZBm5FfZi9dtgbuJnelmsf:AvoidDMLInUnitTestsU"!Avoid DML In Unit Tests functions(ØŸüÅşÿÿÿÿ8­œ”·†2
-x
-AZBm5FfZi9dtgbuJnelnsf:LongVariableW"@Avoid excessively long variable names like testWorkflowProfiling(Âú®ú8­œ”·†2
-ƒ
-AZBm5FfZi9dtgbuJnelpsf:LocalVariableCouldBeFinalW">Local variable 'testWorkflowProfiling' could be declared final(Âú®ú8­œ”·†2
-e
-AZBm5FfZi9dtgbuJnelqsf:AvoidDMLInUnitTestsX"!Avoid DML In Unit Tests functions(ıÇ»ºşÿÿÿÿ8­œ”·†2
-}
-AZBm5FfZi9dtgbuJnelssf:LocalVariableCouldBeFinal["3Local variable 'newRecords' could be declared final(Ÿ…¿´üÿÿÿÿ8­œ”·†2
-}
-AZBm5FfZi9dtgbuJneltsf:LocalVariableCouldBeFinalb"8Local variable 'insertedRecords' could be declared final(å·§Ê8­œ”·†2
-n
-AZBm5FfZi9dtgbuJnelvsf:RefactorAssertc"/Consider using Assert in place of System.Assert(° œşúÿÿÿÿ8­œ”·†2
-{
-AZBm5FfZi9dtgbuJnelw%sf:UnitAssertionsShouldIncludeMessagec"(Unit assertions should include a message(° œşúÿÿÿÿ8­œ”·†2
-n
-AZBm5FfZi9dtgbuJnelysf:RefactorAssertd"/Consider using Assert in place of System.Assert(­‡Î©ùÿÿÿÿ8­œ”·†2
-{
-AZBm5FfZi9dtgbuJnelz%sf:UnitAssertionsShouldIncludeMessaged"(Unit assertions should include a message(­‡Î©ùÿÿÿÿ8­œ”·†2
-v
-AZBm5FfZi9dtgbuJnel1sf:LocalVariableCouldBeFinall"1Local variable 'testUser' could be declared final(æô¥È8­œ”·†2
-y
-AZBm5FfZi9dtgbuJnel3sf:LocalVariableCouldBeFinalq"4Local variable 'testAccount' could be declared final(®è•8­œ”·†2
-`
-AZBm5FfZi9dtgbuJnel5sf:AvoidDMLInUnitTestss"!Avoid DML In Unit Tests functions(ˆî¸¶8­œ”·†2
-y
-AZBm5FfZi9dtgbuJnel6sf:LocalVariableCouldBeFinalv"5Local variable 'testWorkflow' could be declared final(èÕ¼8­œ”·†2
-e
-AZBm5FfZi9dtgbuJnel7sf:AvoidDMLInUnitTestsw"!Avoid DML In Unit Tests functions(ØŸüÅşÿÿÿÿ8­œ”·†2
-u
-AZBm5FfZi9dtgbuJnel8sf:LocalVariableCouldBeFinalz"0Local variable 'family1' could be declared final(ÁÖÕ²8­œ”·†2
-u
-AZBm5FfZi9dtgbuJnel-sf:LocalVariableCouldBeFinal{"0Local variable 'family2' could be declared final(ë²ùÓ8­œ”·†2
-e
-AZBm5FfZi9dtgbuJnel_sf:AvoidDMLInUnitTests|"!Avoid DML In Unit Tests functions(áüŒ„úÿÿÿÿ8­œ”·†2
-s
-AZBm5FfZi9dtgbuJnemAsf:LocalVariableCouldBeFinal".Local variable 'line1' could be declared final(”±™®8­œ”·†2
-y
-AZBm5FfZi9dtgbuJnemCsf:LocalVariableCouldBeFinal€".Local variable 'line2' could be declared final(İ’ş¸øÿÿÿÿ8­œ”·†2
-a
-AZBm5FfZi9dtgbuJnemDsf:AvoidDMLInUnitTests"!Avoid DML In Unit Tests functions(Ù½ï£8­œ”·†2
-|
-AZBm5FfZi9dtgbuJnemEsf:LocalVariableCouldBeFinal„"1Local variable 'product1' could be declared final(ùËË»şÿÿÿÿ8­œ”·†2
-|
-AZBm5FfZi9dtgbuJnemGsf:LocalVariableCouldBeFinal…"1Local variable 'product2' could be declared final(¸›÷øÿÿÿÿ8­œ”·†2
-f
-AZBm5FfZi9dtgbuJnemHsf:AvoidDMLInUnitTests†"!Avoid DML In Unit Tests functions(¦ØÏ±øÿÿÿÿ8­œ”·†2
-~
-AZBm5FfZi9dtgbuJnemIsf:LocalVariableCouldBeFinal‰"3Local variable 'profiling1' could be declared final(êÅâüÿÿÿÿ8­œ”·†2
-y
-AZBm5FfZi9dtgbuJnemKsf:LocalVariableCouldBeFinalŠ"3Local variable 'profiling2' could be declared final(‘„–¦8­œ”·†2
-f
-AZBm5FfZi9dtgbuJnemLsf:AvoidDMLInUnitTests‹"!Avoid DML In Unit Tests functions(§İ¹Åıÿÿÿÿ8­œ”·†2
-z
-AZBm5FfZi9dtgbuJnemNsf:LocalVariableCouldBeFinal"/Local variable 'result' could be declared final(¨Šàøÿÿÿÿ8­œ”·†2
-j
-AZBm5FfZi9dtgbuJnemOsf:RefactorAssert“"/Consider using Assert in place of System.Assert(÷ÙÓ”8­œ”·†2
-j
-AZBm5FfZi9dtgbuJnemQsf:RefactorAssert”"/Consider using Assert in place of System.Assert(šØèÏ8­œ”·†2

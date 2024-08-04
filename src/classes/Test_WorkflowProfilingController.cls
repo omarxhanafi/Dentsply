@@ -129,8 +129,8 @@ public without sharing class Test_WorkflowProfilingController {
             insert new List<WorkflowLine__c>{line1, line2};
 
             // Create and insert Non ERP Products
-            Non_ERP_Products__c product1 = new Non_ERP_Products__c(Name = 'Product 1', ProductFamily__c = family1.Id);
-            Non_ERP_Products__c product2 = new Non_ERP_Products__c(Name = 'Product 2', ProductFamily__c = family2.Id);
+            Non_ERP_Products__c product1 = new Non_ERP_Products__c(Name = 'Product 1', ProductFamily__c = family1.Id, GlobalProductShowtoallcountries__c = true);
+            Non_ERP_Products__c product2 = new Non_ERP_Products__c(Name = 'Product 2', ProductFamily__c = family2.Id, GlobalProductShowtoallcountries__c = true);
             insert new List<Non_ERP_Products__c>{product1, product2};
 
             // Create and insert Product Profilings
@@ -149,5 +149,31 @@ public without sharing class Test_WorkflowProfilingController {
 
         }
     }
+
+    @isTest
+    static void testCreateProductProfiling() {
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
+
+        System.runAs(testUser) {
+
+            // Create test account
+            List<Account> testAccount = TestDataFactory.returnAccounts(1, 'CIM_Account', testUser.Id);
+            insert testAccount;
+
+            // Create Non ERP Product
+            Non_ERP_Products__c testNonErpProduct = new Non_ERP_Products__c(Name = 'Test Product');
+            insert testNonErpProduct;
+
+            Test.startTest();
+            // Call the method to test
+            WorkflowProfilingController.createProductProfiling(testAccount[0].Id, testNonErpProduct.Id);
+            Test.stopTest();
+
+            // Verify that the Product_Profiling__c record was created
+            Product_Profiling__c createdProductProfiling = [SELECT Id, Account__c, Product_Name__c FROM Product_Profiling__c WHERE Account__c = :testAccount[0].Id AND Product_Name__c = :testNonErpProduct.Id LIMIT 1];
+            System.assertNotEquals(null, createdProductProfiling, 'Product Profiling should have been created.');
+        }
+    }
+
 
 }

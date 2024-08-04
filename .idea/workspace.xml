@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8acbc36a0cc73a9e245f3cb6131562d26ade41f7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9e89aa434f66513751701f66a6d6b2a3099b4a81" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/73b9ee7c12ebd48082987fdfaed38468f2a99eea" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e54b8cf8fc9a3c9c1c6e59b30dfd1d4fb5ee76ab" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/a/8acbc36a0cc73a9e245f3cb6131562d26ade41f7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/e/9e89aa434f66513751701f66a6d6b2a3099b4a81" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/5/e54b8cf8fc9a3c9c1c6e59b30dfd1d4fb5ee76ab" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingEdit/ProductProfilingEdit.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingEdit/ProductProfilingEdit.cmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingEdit/ProductProfilingEditController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingEdit/ProductProfilingEditController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/productProfilingEditLwc/productProfilingEditLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/productProfilingEditLwc/productProfilingEditLwc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/productProfilingEditLwc/productProfilingEditLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/productProfilingEditLwc/productProfilingEditLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Test_WorkflowProfilingController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_WorkflowProfilingController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/WorkflowProfilingController.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,62 +66,12 @@
               <list>
                 <AnonymousApexSavedDocument>
                   <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="ActivityScorecardController.getAccountActivityScorecard('0010J00001rE6bcQAC');" />
+                  <option name="body" value="WorkflowProfilingController.getProductFamilyListByWorkflowId('a7u5r000000RuYdAAK', '0015r00000qASgNAAW');" />
                   <option name="calloutsLogLevel" value="FINEST" />
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="databaseLogLevel" value="FINEST" />
-                  <option name="name" value="Anonymous Apex 1" />
-                  <option name="nbaLogLevel" value="FINEST" />
-                  <option name="profilingLogLevel" value="FINEST" />
-                  <option name="systemLogLevel" value="FINEST" />
-                  <option name="validationLogLevel" value="FINEST" />
-                  <option name="visualforceLogLevel" value="FINEST" />
-                  <option name="waveLogLevel" value="FINEST" />
-                  <option name="workflowLogLevel" value="FINEST" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="Set&lt;String&gt; pg1Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg2Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg3Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg4Codes = new Set&lt;String&gt;();&#10;&#10;List&lt;Non_ERP_Products__c&gt; nonErpProducts = [&#10;        SELECT Id, AssignmentRuleCodes__c&#10;        FROM Non_ERP_Products__c&#10;        WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE&#10;];&#10;&#10;Set&lt;String&gt; pgCodes = new Set&lt;String&gt;();&#10;&#10;for (Non_ERP_Products__c product : nonErpProducts) {&#10;    if (product.AssignmentRuleCodes__c != null &amp;&amp; product.AssignmentRuleCodes__c != '') {&#10;        pgCodes.addAll(product.AssignmentRuleCodes__c.split(','));&#10;    }&#10;}&#10;&#10;for(String eachPgCode : pgCodes){&#10;    if(eachPgCode.length() == 3){&#10;        pg1Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 4){&#10;        pg2Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 5){&#10;        pg3Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 6){&#10;        pg4Codes.add(eachPgCode);&#10;    }&#10;}&#10;&#10;System.debug('PG1 Count: ' + pg1Codes.size());&#10;System.debug('PG2 Count: ' + pg2Codes.size());&#10;System.debug('PG3 Count: ' + pg3Codes.size());&#10;System.debug('PG4 Count: ' + pg4Codes.size());&#10;&#10;System.debug('PG1 Codes: ' + pg1Codes);&#10;System.debug('PG2 Codes: ' + pg2Codes);&#10;System.debug('PG3 Codes: ' + pg3Codes);&#10;System.debug('PG4 Codes: ' + pg4Codes);&#10;&#10;BatchUpdateProducts batch = new BatchUpdateProducts(pg1Codes, pg2Codes, pg3Codes, pg4Codes);&#10;Database.executeBatch(batch, 200);" />
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="Anonymous Apex 2" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="Set&lt;String&gt; pg1Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg2Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg3Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg4Codes = new Set&lt;String&gt;();&#10;&#10;List&lt;Non_ERP_Products__c&gt; nonErpProducts = [&#10;        SELECT Id, AssignmentRuleCodes__c&#10;        FROM Non_ERP_Products__c&#10;        WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE&#10;];&#10;&#10;Set&lt;String&gt; pgCodes = new Set&lt;String&gt;();&#10;&#10;for (Non_ERP_Products__c product : nonErpProducts) {&#10;    if (product.AssignmentRuleCodes__c != null &amp;&amp; product.AssignmentRuleCodes__c != '') {&#10;        pgCodes.addAll(product.AssignmentRuleCodes__c.split(','));&#10;    }&#10;}&#10;&#10;for(String eachPgCode : pgCodes){&#10;    if(eachPgCode.length() == 3){&#10;        pg1Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 4){&#10;        pg2Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 5){&#10;        pg3Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 6){&#10;        pg4Codes.add(eachPgCode);&#10;    }&#10;}&#10;&#10;System.debug('PG1 Count: ' + pg1Codes.size());&#10;System.debug('PG2 Count: ' + pg2Codes.size());&#10;System.debug('PG3 Count: ' + pg3Codes.size());&#10;System.debug('PG4 Count: ' + pg4Codes.size());&#10;&#10;System.debug('PG1 Codes: ' + pg1Codes);&#10;System.debug('PG2 Codes: ' + pg2Codes);&#10;System.debug('PG3 Codes: ' + pg3Codes);&#10;System.debug('PG4 Codes: ' + pg4Codes);&#10;&#10;BatchUpdateProducts batch = new BatchUpdateProducts(pg1Codes, pg2Codes, pg3Codes, pg4Codes);&#10;Database.executeBatch(batch, 200);" />
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="Anonymous Apex 3" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="Set&lt;String&gt; pg1Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg2Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg3Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg4Codes = new Set&lt;String&gt;();&#10;&#10;List&lt;Non_ERP_Products__c&gt; nonErpProducts = [&#10;        SELECT Id, AssignmentRuleCodes__c&#10;        FROM Non_ERP_Products__c&#10;        WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE&#10;];&#10;&#10;Set&lt;String&gt; pgCodes = new Set&lt;String&gt;();&#10;&#10;for (Non_ERP_Products__c product : nonErpProducts) {&#10;    if (product.AssignmentRuleCodes__c != null &amp;&amp; product.AssignmentRuleCodes__c != '') {&#10;        pgCodes.addAll(product.AssignmentRuleCodes__c.split(','));&#10;    }&#10;}&#10;&#10;for(String eachPgCode : pgCodes){&#10;    if(eachPgCode.length() == 3){&#10;        pg1Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 4){&#10;        pg2Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 5){&#10;        pg3Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 6){&#10;        pg4Codes.add(eachPgCode);&#10;    }&#10;}&#10;&#10;System.debug('PG1 Count: ' + pg1Codes.size());&#10;System.debug('PG2 Count: ' + pg2Codes.size());&#10;System.debug('PG3 Count: ' + pg3Codes.size());&#10;System.debug('PG4 Count: ' + pg4Codes.size());&#10;&#10;System.debug('PG1 Codes: ' + pg1Codes);&#10;System.debug('PG2 Codes: ' + pg2Codes);&#10;System.debug('PG3 Codes: ' + pg3Codes);&#10;System.debug('PG4 Codes: ' + pg4Codes);" />
-                  <option name="calloutsLogLevel" value="FINEST" />
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="databaseLogLevel" value="FINEST" />
-                  <option name="name" value="Anonymous Apex 4" />
-                  <option name="nbaLogLevel" value="FINEST" />
-                  <option name="profilingLogLevel" value="FINEST" />
-                  <option name="systemLogLevel" value="FINEST" />
-                  <option name="validationLogLevel" value="FINEST" />
-                  <option name="visualforceLogLevel" value="FINEST" />
-                  <option name="waveLogLevel" value="FINEST" />
-                  <option name="workflowLogLevel" value="FINEST" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="List&lt;Id&gt; test = new List&lt;Id&gt;();&#10;system.debug([select count() from account where id in :test]);" />
                   <option name="connectionName" value="acc360" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="Anonymous Apex 5" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="Set&lt;String&gt; pg1Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg2Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg3Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg4Codes = new Set&lt;String&gt;();&#10;&#10;List&lt;Non_ERP_Products__c&gt; nonErpProducts = [&#10;        SELECT Id, AssignmentRuleCodes__c&#10;        FROM Non_ERP_Products__c&#10;        WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE&#10;];&#10;&#10;Set&lt;String&gt; pgCodes = new Set&lt;String&gt;();&#10;&#10;for (Non_ERP_Products__c product : nonErpProducts) {&#10;    if (product.AssignmentRuleCodes__c != null &amp;&amp; product.AssignmentRuleCodes__c != '') {&#10;        pgCodes.addAll(product.AssignmentRuleCodes__c.replaceAll('\\s', '').split(','));&#10;    }&#10;}&#10;&#10;for(String eachPgCode : pgCodes){&#10;    if(eachPgCode.length() == 3){&#10;        pg1Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 4){&#10;        pg2Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 5){&#10;        pg3Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 6){&#10;        pg4Codes.add(eachPgCode);&#10;    }&#10;}&#10;&#10;System.debug('PG1 Count: ' + pg1Codes.size());&#10;System.debug('PG2 Count: ' + pg2Codes.size());&#10;System.debug('PG3 Count: ' + pg3Codes.size());&#10;System.debug('PG4 Count: ' + pg4Codes.size());&#10;&#10;System.debug('PG1 Codes: ' + pg1Codes);&#10;System.debug('PG2 Codes: ' + pg2Codes);&#10;System.debug('PG3 Codes: ' + pg3Codes);&#10;System.debug('PG4 Codes: ' + pg4Codes);&#10;&#10;BatchUpdateProducts batch = new BatchUpdateProducts(pg1Codes, pg2Codes, pg3Codes, pg4Codes);&#10;Database.executeBatch(batch, 200);" />
-                  <option name="calloutsLogLevel" value="FINEST" />
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
                   <option name="databaseLogLevel" value="FINEST" />
-                  <option name="name" value="Anonymous Apex 6" />
+                  <option name="name" value="Anonymous Apex 8" />
                   <option name="nbaLogLevel" value="FINEST" />
                   <option name="profilingLogLevel" value="FINEST" />
                   <option name="systemLogLevel" value="FINEST" />
@@ -131,18 +79,6 @@
                   <option name="visualforceLogLevel" value="FINEST" />
                   <option name="waveLogLevel" value="FINEST" />
                   <option name="workflowLogLevel" value="FINEST" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="Set&lt;String&gt; pg1Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg2Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg3Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg4Codes = new Set&lt;String&gt;{'TS7111'};&#10;&#10;List&lt;Product2&gt; products = [SELECT Id, PG1_Code__c, PG2_Code__c, PG3_Code__c, PG4_Code__c FROM Product2&#10;WHERE PG1_Code__c IN :pg1Codes&#10;OR GlobalSKUMapping__r.PG1_Code__c IN :pg1Codes&#10;OR PG2_Code__c IN :pg2Codes&#10;OR GlobalSKUMapping__r.PG2_Code__c IN :pg2Codes&#10;OR PG3_Code__c IN :pg3Codes&#10;OR GlobalSKUMapping__r.PG3_Code__c IN :pg3Codes&#10;OR PG4_Code__c IN :pg4Codes&#10;OR GlobalSKUMapping__r.PG4_Code__c IN :pg4Codes];&#10;&#10;system.debug(products);&#10;&#10;" />
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="Anonymous Apex 7" />
-                </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="" />
-                  <option name="connectionName" value="StgJun24" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="Anonymous Apex 8" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
@@ -18868,7 +18804,7 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:ACCOUNTFLAGSCONTROLLER" value="1711720410807" />
-                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1716893880000" />
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1722590646596" />
                       <entry key="APEXCLASS:BATCHUPDATEPRODUCTS" value="1717676568285" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGBUNDLE" value="1699460960000" />
                       <entry key="APEXCLASS:PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1718105992000" />
@@ -18882,8 +18818,8 @@
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGHIERARCHYCONTROLLER" value="1701198065808" />
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGTRIGGER" value="1710148363645" />
                       <entry key="APEXCLASS:TEST_PRODUCTTRIGGER" value="1711721191592" />
-                      <entry key="APEXCLASS:TEST_WORKFLOWPROFILINGCONTROLLER" value="1721136618000" />
-                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1721136621000" />
+                      <entry key="APEXCLASS:TEST_WORKFLOWPROFILINGCONTROLLER" value="1722597304141" />
+                      <entry key="APEXCLASS:WORKFLOWPROFILINGCONTROLLER" value="1722595846046" />
                       <entry key="APEXTRIGGER:PRODUCTPROFILINGTRIGGER" value="1709122857850" />
                       <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1706087849202" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1722443674241" />
@@ -19013,7 +18949,8 @@
         </option>
         <option name="logAnalyzerSettings">
           <LogAnalyzerSettings>
-            <option name="splitterProportion" value="0.35227272" />
+            <option name="splitVertical" value="false" />
+            <option name="splitterProportion" value="0.3523928" />
           </LogAnalyzerSettings>
         </option>
         <option name="retrieveAndMergeDefault" value="false" />
@@ -19052,9 +18989,13 @@
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 5" />
                 </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="select id, Name from Workflow__c" />
+                  <option name="name" value="SOQL Query 6" />
+                </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="4" />
+            <option name="selectedSavedDocumentIndex" value="5" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -19080,122 +19021,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Apex Offline Debugger.Test_ProductTrigger.executor&quot;: &quot;Debug&quot;,
-    &quot;Apex Unit Tests.Test_AccountFlagsController.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ActivityScorecardController.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_BatchUpdateProducts.testBatchUpdateProducts.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductProfilingHierarchyController.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductTrigger.executor&quot;: &quot;Debug&quot;,
-    &quot;Apex Unit Tests.Test_WorkflowProfilingController.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ohanafi/IdeaProjects/Dentsply/src/objects&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.29852837&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Apex Offline Debugger.Test_ProductTrigger.executor": "Debug",
+    "Apex Unit Tests.Test_AccountFlagsController.executor": "Run",
+    "Apex Unit Tests.Test_ActivityScorecardController.executor": "Run",
+    "Apex Unit Tests.Test_BatchUpdateProducts.testBatchUpdateProducts.executor": "Run",
+    "Apex Unit Tests.Test_ProductProfilingHierarchyController.executor": "Run",
+    "Apex Unit Tests.Test_ProductProfilingTrigger.executor": "Run",
+    "Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier.executor": "Run",
+    "Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor": "Run",
+    "Apex Unit Tests.Test_ProductTrigger.executor": "Debug",
+    "Apex Unit Tests.Test_WorkflowProfilingController.executor": "Run",
+    "Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling.executor": "Run",
+    "Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/ohanafi/IdeaProjects/Dentsply/src/objects",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.29852837",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/objects" />
       <recent name="$PROJECT_DIR$/src/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Apex Unit Tests.Test_WorkflowProfilingController">
-    <configuration name="Test_AccountFlagsController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_AccountFlagsController" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map />
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_ActivityScorecardController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_ActivityScorecardController" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map />
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling">
     <configuration name="Test_ProductProfilingHierarchyController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -19313,13 +19177,107 @@
       <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
+    <configuration name="Test_WorkflowProfilingController.testCreateProductProfiling" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="connectionName" value="acc360" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_WorkflowProfilingController" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map>
+          <entry key="Test_WorkflowProfilingController">
+            <value>
+              <set>
+                <option value="testCreateProductProfiling" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="connectionName" value="acc360" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_WorkflowProfilingController" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map>
+          <entry key="Test_WorkflowProfilingController">
+            <value>
+              <set>
+                <option value="testGetProductFamilyListByWorkflowId" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling" />
+        <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId" />
         <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController" />
         <item itemvalue="Apex Unit Tests.Test_ProductTrigger" />
         <item itemvalue="Apex Unit Tests.Test_ProductProfilingHierarchyController" />
-        <item itemvalue="Apex Unit Tests.Test_AccountFlagsController" />
-        <item itemvalue="Apex Unit Tests.Test_ActivityScorecardController" />
       </list>
     </recent_temporary>
   </component>
@@ -19464,7 +19422,7 @@
       <workItem from="1718197873487" duration="1491000" />
       <workItem from="1720512257540" duration="22514000" />
       <workItem from="1721636828642" duration="1365000" />
-      <workItem from="1721733855822" duration="8233000" />
+      <workItem from="1721733855822" duration="12392000" />
     </task>
     <servers />
   </component>
@@ -19495,7 +19453,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Dentsply$Test_WorkflowProfilingController.ic2" NAME="acc360 Coverage Results" MODIFIED="1721135485501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="acc360" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_WorkflowProfilingController_testCreateProductProfiling.ic2" NAME="acc360 Coverage Results" MODIFIED="1722597164717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="acc360" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ES_FreezeUserHandler_testHandleInboundEmail.ic2" NAME="Freeze Coverage Results" MODIFIED="1684228757679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
