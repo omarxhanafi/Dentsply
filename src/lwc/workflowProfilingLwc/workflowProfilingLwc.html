@@ -117,18 +117,16 @@
                                                                 </template>
                                                                 <template lwc:else>
                                                                     <span class="slds-color__text_gray-8">{dsProduct.product.Name}</span>
-                                                                    <template if:false={isMobile}>
-                                                                        <lightning-icon
-                                                                                icon-name="utility:new"
-                                                                                alternative-text="Add PP Record"
-                                                                                data-productid={dsProduct.product.Id}
-                                                                                data-familyid={family.productFamily.Id}
-                                                                                data-workflowid={eachWorkflow.Id}
-                                                                                class="slds-m-left_xx-small clickable-icon"
-                                                                                size="x-small"
-                                                                                onclick={handleAddPPRecord}>
-                                                                        </lightning-icon>
-                                                                    </template>
+                                                                    <lightning-icon
+                                                                            icon-name="utility:new"
+                                                                            alternative-text="Add PP Record"
+                                                                            data-productid={dsProduct.product.Id}
+                                                                            data-familyid={family.productFamily.Id}
+                                                                            data-workflowid={eachWorkflow.Id}
+                                                                            class="slds-m-left_xx-small clickable-icon"
+                                                                            size="x-small"
+                                                                            onclick={handleAddPPRecord}>
+                                                                    </lightning-icon>
                                                                 </template>
                                                             </div>
                                                         </template>
@@ -205,18 +203,16 @@
                                                                 </template>
                                                                 <template lwc:else>
                                                                     <span class="slds-color__text_gray-8">{compProduct.product.Name}</span>
-                                                                    <template if:false={isMobile}>
-                                                                        <lightning-icon
-                                                                                icon-name="utility:new"
-                                                                                alternative-text="Add PP Record"
-                                                                                data-productid={compProduct.product.Id}
-                                                                                data-familyid={family.productFamily.Id}
-                                                                                data-workflowid={eachWorkflow.Id}
-                                                                                class="slds-m-left_xx-small clickable-icon"
-                                                                                size="x-small"
-                                                                                onclick={handleAddPPRecord}>
-                                                                        </lightning-icon>
-                                                                    </template>
+                                                                    <lightning-icon
+                                                                            icon-name="utility:new"
+                                                                            alternative-text="Add PP Record"
+                                                                            data-productid={compProduct.product.Id}
+                                                                            data-familyid={family.productFamily.Id}
+                                                                            data-workflowid={eachWorkflow.Id}
+                                                                            class="slds-m-left_xx-small clickable-icon"
+                                                                            size="x-small"
+                                                                            onclick={handleAddPPRecord}>
+                                                                    </lightning-icon>
                                                                 </template>
                                                             </div>
                                                         </template>
