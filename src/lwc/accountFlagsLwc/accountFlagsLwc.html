@@ -12,402 +12,404 @@
                         <lightning-layout-item flexibility="auto" padding="around-small" size="12" large-device-size="3" small-device-size="12">
                             <table class="flag-table">
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <template if:true={customerNumberId}>
-                                                <a class="flag-text"
-                                                   onclick={handleRedirection}
-                                                   onmouseover={handleMouseOver}
-                                                   onmouseout={handleMouseOut}
-                                                   data-itemid={customerNumberId}
-                                                   data-flagtype='customerNumber'
-                                                >
-                                                    {labels.CUSTOMER_NUMBER}
-                                                </a>
-                                                <template if:true={isMouseOverCustomerNumber}>
-                                                    <div class="slds-is-relative slds-float_right">
-                                                        <c-popover-record-info
-                                                                record-id={customerNumberId} url={customerNumberId}
-                                                                title={labels.CUSTOMER_NUMBER} object-api-name="Source_Record__c"
-                                                                icon-name="custom:custom43"></c-popover-record-info>
-                                                    </div>
-                                                </template>
+                                <tr>
+                                    <td>
+                                        <template if:true={customerNumberId}>
+                                            <a class="flag-text"
+                                               onclick={handleRedirection}
+                                               onmouseover={handleMouseOver}
+                                               onmouseout={handleMouseOut}
+                                               data-itemid={customerNumberId}
+                                               data-flagtype='customerNumber'
+                                            >
+                                                {labels.CUSTOMER_NUMBER}
+                                            </a>
+                                            <template if:true={isMouseOverCustomerNumber}>
+                                                <div class="slds-is-relative slds-float_right">
+                                                    <c-popover-record-info
+                                                            record-id={customerNumberId} url={customerNumberId}
+                                                            title={labels.CUSTOMER_NUMBER} object-api-name="Source_Record__c"
+                                                            icon-name="custom:custom43"></c-popover-record-info>
+                                                </div>
+                                            </template>
 
+                                        </template>
+                                        <template if:false={customerNumberId}>
+                                            <div class="flag-text">{labels.CUSTOMER_NUMBER}</div>
+                                        </template>
+                                        <template if:true={customerNumber}>
+                                            <div class="flag-value slds-text-title_bold">
+                                                <span>{customerNumber}</span>
+                                            </div>
+                                        </template>
+                                    </td>
+                                    <td>
+                                        <div class={customerNumberClass}></div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="flag-text">KOL</div>
+                                    </td>
+                                    <td>
+                                        <div class={kolClass}></div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" padding="around-small" size="12" large-device-size="3" small-device-size="12">
+                            <table class="flag-table">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <template if:true={sureSmileId}>
+                                            <a class="flag-text"
+                                               onclick={handleRedirection}
+                                               onmouseover={handleMouseOver}
+                                               onmouseout={handleMouseOut}
+                                               data-itemid={sureSmileId}
+                                               data-flagtype='sureSmile'
+                                            >
+                                                {labels.SURE_SMILE}
+                                            </a>
+                                            <template if:true={isMouseOverSureSmile}>
+                                                <div class="slds-is-relative slds-float_right">
+                                                    <c-popover-record-info
+                                                            record-id={sureSmileId} url={sureSmileId}
+                                                            title={labels.SURE_SMILE} object-api-name="Source_Record__c"
+                                                            icon-name="custom:custom43"></c-popover-record-info>
+                                                </div>
                                             </template>
-                                            <template if:false={customerNumberId}>
-                                                <div class="flag-text">{labels.CUSTOMER_NUMBER}</div>
-                                            </template>
-                                            <template if:true={customerNumber}>
+                                            <template if:true={sureSmileAdvancedId}>
                                                 <div class="flag-value slds-text-title_bold">
-                                                    <span>{customerNumber}</span>
+                                                    <span>{labels.SURE_SMILE_ADVANCED}</span>
                                                 </div>
                                             </template>
-                                        </td>
-                                        <td>
-                                            <div class={customerNumberClass}></div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="flag-text">KOL</div>
-                                        </td>
-                                        <td>
-                                            <div class={kolClass}></div>
-                                        </td>
-                                    </tr>
+                                            <template if:true={sureSmileOrthoId}>
+                                                <div class="flag-value slds-text-title_bold">
+                                                    <span>{labels.SURE_SMILE_ORTHO}</span>
+                                                </div>
+                                            </template>
+                                            <template if:true={sureSmileAlignerId}>
+                                                <div class="flag-value slds-text-title_bold">
+                                                    <span>{labels.SURE_SMILE_ALIGNER}</span>
+                                                </div>
+                                            </template>
+                                        </template>
+                                        <template if:false={sureSmileId}>
+                                            <div class="flag-text">{labels.SURE_SMILE}</div>
+                                        </template>
+                                    </td>
+                                    <td>
+                                        <div class={sureSmileClass}></div>
+                                    </td>
+                                </tr>
+                                <!-- // TFD-000000374: Temporarely disabled - to be enabled at a later stage -->
+                                <!--
+                                <tr>
+                                    <td>
+                                        <template if:true={awoId}>
+                                            <a class="flag-text"
+                                               onclick={handleRedirection}
+                                               onmouseover={handleMouseOver}
+                                               onmouseout={handleMouseOut}
+                                               data-itemid={awoId}
+                                               data-flagtype='awo'
+                                            >
+                                                {labels.AWO}
+                                            </a>
+                                            <template if:true={isMouseOverAwo}>
+                                                <div class="slds-is-relative slds-float_right">
+                                                    <c-popover-record-info
+                                                            record-id={awoId} url={awoId}
+                                                            title={labels.AWO} object-api-name="Source_Record__c"
+                                                            icon-name="custom:custom43"></c-popover-record-info>
+                                                </div>
+                                            </template>
+                                        </template>
+                                        <template if:false={awoId}>
+                                            <div class="flag-text">{labels.AWO}</div>
+                                        </template>
+                                    </td>
+                                    <td>
+                                        <div class={awoClass}></div>
+                                    </td>
+                                </tr>-->
+                                <tr>
+                                    <td>
+                                        <template if:true={dsComId}>
+                                            <a class="flag-text"
+                                               onclick={handleRedirection}
+                                               onmouseover={handleMouseOver}
+                                               onmouseout={handleMouseOut}
+                                               data-itemid={dsComId}
+                                               data-flagtype='dsCom'
+                                            >
+                                                {labels.DS_COM}
+                                            </a>
+                                            <template if:true={isMouseOverDSCom}>
+                                                <div class="slds-is-relative slds-float_right">
+                                                    <c-popover-record-info
+                                                            record-id={dsComId} url={dsComId}
+                                                            title={labels.DS_COM} object-api-name="Source_Record__c"
+                                                            icon-name="custom:custom43"></c-popover-record-info>
+                                                </div>
+                                            </template>
+                                        </template>
+                                        <template if:false={dsComId}>
+                                            <div class="flag-text">{labels.DS_COM}</div>
+                                        </template>
+                                    </td>
+                                    <td>
+                                        <div class={dsComCLass}></div>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </lightning-layout-item>
                         <lightning-layout-item flexibility="auto" padding="around-small" size="12" large-device-size="3" small-device-size="12">
                             <table class="flag-table">
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <template if:true={sureSmileId}>
-                                                <a class="flag-text"
-                                                   onclick={handleRedirection}
-                                                   onmouseover={handleMouseOver}
-                                                   onmouseout={handleMouseOut}
-                                                   data-itemid={sureSmileId}
-                                                   data-flagtype='sureSmile'
-                                                >
-                                                    {labels.SURE_SMILE}
-                                                </a>
-                                                <template if:true={isMouseOverSureSmile}>
-                                                    <div class="slds-is-relative slds-float_right">
-                                                        <c-popover-record-info
-                                                                record-id={sureSmileId} url={sureSmileId}
-                                                                title={labels.SURE_SMILE} object-api-name="Source_Record__c"
-                                                                icon-name="custom:custom43"></c-popover-record-info>
-                                                    </div>
-                                                </template>
-                                                <template if:true={sureSmileAdvancedId}>
-                                                    <div class="flag-value slds-text-title_bold">
-                                                        <span>{labels.SURE_SMILE_ADVANCED}</span>
-                                                    </div>
-                                                </template>
-                                                <template if:true={sureSmileOrthoId}>
-                                                    <div class="flag-value slds-text-title_bold">
-                                                        <span>{labels.SURE_SMILE_ORTHO}</span>
-                                                    </div>
-                                                </template>
-                                                <template if:true={sureSmileAlignerId}>
-                                                    <div class="flag-value slds-text-title_bold">
-                                                        <span>{labels.SURE_SMILE_ALIGNER}</span>
-                                                    </div>
-                                                </template>
+                                <tr if:true={showDSCoreInactive}>
+                                    <td>
+                                        <div class="flag-text">{labels.DS_CORE}</div>
+                                    </td>
+                                    <td>
+                                        <div class="flag-square flag-white"></div>
+                                    </td>
+                                </tr>
+                                <tr if:true={showAccess}>
+                                    <td>
+                                        <a class="flag-text"
+                                           onclick={handleRedirection}
+                                           onmouseover={handleMouseOver}
+                                           onmouseout={handleMouseOut}
+                                           data-itemid={dsCoreAccessId}
+                                           data-flagtype='dsCoreAccess'
+                                        >
+                                            {labels.DS_CORE}
+                                        </a>
+                                        <template if:true={isMouseOverDSCoreAccess}>
+                                            <div class="slds-is-relative slds-float_right">
+                                                <c-popover-record-info
+                                                        record-id={dsCoreAccessId} url={dsCoreAccessId}
+                                                        title={labels.ACCESS} object-api-name="ContractLineItem"
+                                                        icon-name="standard:contract_line_item"></c-popover-record-info>
+                                            </div>
+                                        </template>
+                                        <div class="flag-value slds-text-title_bold">
+                                            <span>{labels.ACCESS}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class={dsCoreAccessClass}></div>
+                                    </td>
+                                </tr>
+                                <tr if:true={showLight}>
+                                    <td>
+                                        <a class="flag-text"
+                                           onclick={handleRedirection}
+                                           onmouseover={handleMouseOver}
+                                           onmouseout={handleMouseOut}
+                                           data-itemid={dsCoreLightId}
+                                           data-flagtype='dsCoreLight'
+                                        >
+                                            {labels.DS_CORE}
+                                        </a>
+                                        <template if:true={isMouseOverDSCoreLight}>
+                                            <div class="slds-is-relative slds-float_right">
+                                                <c-popover-record-info
+                                                        record-id={dsCoreLightId} url={dsCoreLightId}
+                                                        title={labels.LIGHT} object-api-name="ContractLineItem"
+                                                        icon-name="standard:contract_line_item"></c-popover-record-info>
+                                            </div>
+                                        </template>
+                                        <div class="flag-value slds-text-title_bold">
+                                            <span>{labels.LIGHT}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class={dsCoreLightClass}></div>
+                                    </td>
+                                </tr>
+                                <tr if:true={showStandard}>
+                                    <td>
+                                        <a class="flag-text"
+                                           onclick={handleRedirection}
+                                           onmouseover={handleMouseOver}
+                                           onmouseout={handleMouseOut}
+                                           data-itemid={dsCoreStandardId}
+                                           data-flagtype='dsCoreStandard'
+                                        >
+                                            {labels.DS_CORE}
+                                        </a>
+                                        <template if:true={isMouseOverDSCoreStandard}>
+                                            <div class="slds-is-relative slds-float_right">
+                                                <c-popover-record-info
+                                                        record-id={dsCoreStandardId} url={dsCoreStandardId}
+                                                        title={labels.STANDARD} object-api-name="ContractLineItem"
+                                                        icon-name="standard:contract_line_item"></c-popover-record-info>
+                                            </div>
+                                        </template>
+                                        <div class="flag-value slds-text-title_bold">
+                                            <span>{labels.STANDARD}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class={dsCoreStandardClass}></div>
+                                    </td>
+                                </tr>
+                                <tr if:true={showAdvanced}>
+                                    <td>
+                                        <a class="flag-text"
+                                           onclick={handleRedirection}
+                                           onmouseover={handleMouseOver}
+                                           onmouseout={handleMouseOut}
+                                           data-itemid={dsCoreAdvancedId}
+                                           data-flagtype='dsCoreAdvanced'
+                                        >
+                                            {labels.DS_CORE}
+                                        </a>
+                                        <template if:true={isMouseOverDSCoreAdvanced}>
+                                            <div class="slds-is-relative slds-float_right">
+                                                <c-popover-record-info
+                                                        record-id={dsCoreAdvancedId} url={dsCoreAdvancedId}
+                                                        title={labels.ADVANCED} object-api-name="ContractLineItem"
+                                                        icon-name="standard:contract_line_item"></c-popover-record-info>
+                                            </div>
+                                        </template>
+                                        <div class="flag-value slds-text-title_bold">
+                                            <span>{labels.ADVANCED}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class={dsCoreAdvancedClass}></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <template if:true={dsCoreLabId}>
+                                            <a class="flag-text"
+                                               onclick={handleRedirection}
+                                               onmouseover={handleMouseOver}
+                                               onmouseout={handleMouseOut}
+                                               data-itemid={dsCoreLabId}
+                                               data-flagtype='dsCoreLab'
+                                            >
+                                                {labels.DS_CORE_LAB}
+                                            </a>
+                                            <template if:true={isMouseOverDSCoreLab}>
+                                                <div class="slds-is-relative slds-float_right">
+                                                    <c-popover-record-info
+                                                            record-id={dsCoreLabId} url={dsCoreLabId}
+                                                            title={labels.DS_CORE_LAB} object-api-name="ContractLineItem"
+                                                            icon-name="standard:contract_line_item"></c-popover-record-info>
+                                                </div>
                                             </template>
-                                            <template if:false={sureSmileId}>
-                                                <div class="flag-text">{labels.SURE_SMILE}</div>
+                                        </template>
+                                        <template if:false={dsCoreLabId}>
+                                            <div class="flag-text">{labels.DS_CORE_LAB}</div>
+                                        </template>
+                                    </td>
+                                    <td>
+                                        <div class={dsCoreLabClass}></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <template if:true={dsCoreCareId}>
+                                            <a class="flag-text"
+                                               onclick={handleRedirection}
+                                               onmouseover={handleMouseOver}
+                                               onmouseout={handleMouseOut}
+                                               data-itemid={dsCoreCareId}
+                                               data-flagtype='dsCoreCare'
+                                            >
+                                                {labels.DS_CORE_CARE}
+                                            </a>
+                                            <template if:true={isMouseOverDSCoreCare}>
+                                                <div class="slds-is-relative slds-float_right">
+                                                    <c-popover-record-info
+                                                            record-id={dsCoreCareId} url={dsCoreCareId}
+                                                            title={labels.DS_CORE_CARE} object-api-name="ContractLineItem"
+                                                            icon-name="standard:contract_line_item"></c-popover-record-info>
+                                                </div>
                                             </template>
-                                        </td>
-                                        <td>
-                                            <div class={sureSmileClass}></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <template if:true={awoId}>
-                                                <a class="flag-text"
-                                                   onclick={handleRedirection}
-                                                   onmouseover={handleMouseOver}
-                                                   onmouseout={handleMouseOut}
-                                                   data-itemid={awoId}
-                                                   data-flagtype='awo'
-                                                >
-                                                    {labels.AWO}
-                                                </a>
-                                                <template if:true={isMouseOverAwo}>
-                                                    <div class="slds-is-relative slds-float_right">
-                                                        <c-popover-record-info
-                                                                record-id={awoId} url={awoId}
-                                                                title={labels.AWO} object-api-name="Source_Record__c"
-                                                                icon-name="custom:custom43"></c-popover-record-info>
-                                                    </div>
-                                                </template>
-                                            </template>
-                                            <template if:false={awoId}>
-                                                <div class="flag-text">{labels.AWO}</div>
-                                            </template>
-                                        </td>
-                                        <td>
-                                            <div class={awoClass}></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <template if:true={dsComId}>
-                                                <a class="flag-text"
-                                                   onclick={handleRedirection}
-                                                   onmouseover={handleMouseOver}
-                                                   onmouseout={handleMouseOut}
-                                                   data-itemid={dsComId}
-                                                   data-flagtype='dsCom'
-                                                >
-                                                    {labels.DS_COM}
-                                                </a>
-                                                <template if:true={isMouseOverDSCom}>
-                                                    <div class="slds-is-relative slds-float_right">
-                                                        <c-popover-record-info
-                                                                record-id={dsComId} url={dsComId}
-                                                                title={labels.DS_COM} object-api-name="Source_Record__c"
-                                                                icon-name="custom:custom43"></c-popover-record-info>
-                                                    </div>
-                                                </template>
-                                            </template>
-                                            <template if:false={dsComId}>
-                                                <div class="flag-text">{labels.DS_COM}</div>
-                                            </template>
-                                        </td>
-                                        <td>
-                                            <div class={dsComCLass}></div>
-                                        </td>
-                                    </tr>
+                                        </template>
+                                        <template if:false={dsCoreCareId}>
+                                            <div class="flag-text">{labels.DS_CORE_CARE}</div>
+                                        </template>
+                                    </td>
+                                    <td>
+                                        <div class={dsCoreCareClass}></div>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </lightning-layout-item>
                         <lightning-layout-item flexibility="auto" padding="around-small" size="12" large-device-size="3" small-device-size="12">
                             <table class="flag-table">
                                 <tbody>
-                                    <tr if:true={showDSCoreInactive}>
-                                        <td>
-                                            <div class="flag-text">{labels.DS_CORE}</div>
-                                        </td>
-                                        <td>
-                                            <div class="flag-square flag-white"></div>
-                                        </td>
-                                    </tr>
-                                    <tr if:true={showAccess}>
-                                        <td>
+                                <tr>
+                                    <td>
+                                        <template if:true={cerecClubId}>
                                             <a class="flag-text"
                                                onclick={handleRedirection}
                                                onmouseover={handleMouseOver}
                                                onmouseout={handleMouseOut}
-                                               data-itemid={dsCoreAccessId}
-                                               data-flagtype='dsCoreAccess'
+                                               data-itemid={cerecClubId}
+                                               data-flagtype='cerecClub'
                                             >
-                                                {labels.DS_CORE}
+                                                {labels.CEREC_CLUB}
                                             </a>
-                                            <template if:true={isMouseOverDSCoreAccess}>
+                                            <template if:true={isMouseOverCerecClub}>
                                                 <div class="slds-is-relative slds-float_right">
                                                     <c-popover-record-info
-                                                            record-id={dsCoreAccessId} url={dsCoreAccessId}
-                                                            title={labels.ACCESS} object-api-name="ContractLineItem"
-                                                            icon-name="standard:contract_line_item"></c-popover-record-info>
+                                                            record-id={cerecClubId} url={cerecClubId}
+                                                            title={labels.CEREC_CLUB} object-api-name="Contract"
+                                                            icon-name="standard:contract"></c-popover-record-info>
                                                 </div>
                                             </template>
-                                            <div class="flag-value slds-text-title_bold">
-                                                <span>{labels.ACCESS}</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class={dsCoreAccessClass}></div>
-                                        </td>
-                                    </tr>
-                                    <tr if:true={showLight}>
-                                        <td>
+                                        </template>
+                                        <template if:false={cerecClubId}>
+                                            <div class="flag-text">{labels.CEREC_CLUB}</div>
+                                        </template>
+                                    </td>
+                                    <td>
+                                        <div class={cerecClubClass}></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <template if:true={siroForceId}>
                                             <a class="flag-text"
                                                onclick={handleRedirection}
                                                onmouseover={handleMouseOver}
                                                onmouseout={handleMouseOut}
-                                               data-itemid={dsCoreLightId}
-                                               data-flagtype='dsCoreLight'
+                                               data-itemid={siroForceId}
+                                               data-flagtype='siroForce'
                                             >
-                                                {labels.DS_CORE}
+                                                {labels.SIRO_FORCE}
                                             </a>
-                                            <template if:true={isMouseOverDSCoreLight}>
+                                            <template if:true={isMouseOverSiroForce}>
                                                 <div class="slds-is-relative slds-float_right">
                                                     <c-popover-record-info
-                                                            record-id={dsCoreLightId} url={dsCoreLightId}
-                                                            title={labels.LIGHT} object-api-name="ContractLineItem"
-                                                            icon-name="standard:contract_line_item"></c-popover-record-info>
+                                                            record-id={siroForceId} url={siroForceId}
+                                                            title={labels.SIRO_FORCE} object-api-name="Source_Record__c"
+                                                            icon-name="custom:custom43"></c-popover-record-info>
                                                 </div>
                                             </template>
-                                            <div class="flag-value slds-text-title_bold">
-                                                <span>{labels.LIGHT}</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class={dsCoreLightClass}></div>
-                                        </td>
-                                    </tr>
-                                    <tr if:true={showStandard}>
-                                        <td>
-                                            <a class="flag-text"
-                                               onclick={handleRedirection}
-                                               onmouseover={handleMouseOver}
-                                               onmouseout={handleMouseOut}
-                                               data-itemid={dsCoreStandardId}
-                                               data-flagtype='dsCoreStandard'
-                                            >
-                                                {labels.DS_CORE}
-                                            </a>
-                                            <template if:true={isMouseOverDSCoreStandard}>
-                                                <div class="slds-is-relative slds-float_right">
-                                                    <c-popover-record-info
-                                                            record-id={dsCoreStandardId} url={dsCoreStandardId}
-                                                            title={labels.STANDARD} object-api-name="ContractLineItem"
-                                                            icon-name="standard:contract_line_item"></c-popover-record-info>
-                                                </div>
-                                            </template>
-                                            <div class="flag-value slds-text-title_bold">
-                                                <span>{labels.STANDARD}</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class={dsCoreStandardClass}></div>
-                                        </td>
-                                    </tr>
-                                    <tr if:true={showAdvanced}>
-                                        <td>
-                                            <a class="flag-text"
-                                               onclick={handleRedirection}
-                                               onmouseover={handleMouseOver}
-                                               onmouseout={handleMouseOut}
-                                               data-itemid={dsCoreAdvancedId}
-                                               data-flagtype='dsCoreAdvanced'
-                                            >
-                                                {labels.DS_CORE}
-                                            </a>
-                                            <template if:true={isMouseOverDSCoreAdvanced}>
-                                                <div class="slds-is-relative slds-float_right">
-                                                    <c-popover-record-info
-                                                            record-id={dsCoreAdvancedId} url={dsCoreAdvancedId}
-                                                            title={labels.ADVANCED} object-api-name="ContractLineItem"
-                                                            icon-name="standard:contract_line_item"></c-popover-record-info>
-                                                </div>
-                                            </template>
-                                            <div class="flag-value slds-text-title_bold">
-                                                <span>{labels.ADVANCED}</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class={dsCoreAdvancedClass}></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <template if:true={dsCoreLabId}>
-                                                <a class="flag-text"
-                                                   onclick={handleRedirection}
-                                                   onmouseover={handleMouseOver}
-                                                   onmouseout={handleMouseOut}
-                                                   data-itemid={dsCoreLabId}
-                                                   data-flagtype='dsCoreLab'
-                                                >
-                                                    {labels.DS_CORE_LAB}
-                                                </a>
-                                                <template if:true={isMouseOverDSCoreLab}>
-                                                    <div class="slds-is-relative slds-float_right">
-                                                        <c-popover-record-info
-                                                                record-id={dsCoreLabId} url={dsCoreLabId}
-                                                                title={labels.DS_CORE_LAB} object-api-name="ContractLineItem"
-                                                                icon-name="standard:contract_line_item"></c-popover-record-info>
-                                                    </div>
-                                                </template>
-                                            </template>
-                                            <template if:false={dsCoreLabId}>
-                                                <div class="flag-text">{labels.DS_CORE_LAB}</div>
-                                            </template>
-                                        </td>
-                                        <td>
-                                            <div class={dsCoreLabClass}></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <template if:true={dsCoreCareId}>
-                                                <a class="flag-text"
-                                                   onclick={handleRedirection}
-                                                   onmouseover={handleMouseOver}
-                                                   onmouseout={handleMouseOut}
-                                                   data-itemid={dsCoreCareId}
-                                                   data-flagtype='dsCoreCare'
-                                                >
-                                                    {labels.DS_CORE_CARE}
-                                                </a>
-                                                <template if:true={isMouseOverDSCoreCare}>
-                                                    <div class="slds-is-relative slds-float_right">
-                                                        <c-popover-record-info
-                                                                record-id={dsCoreCareId} url={dsCoreCareId}
-                                                                title={labels.DS_CORE_CARE} object-api-name="ContractLineItem"
-                                                                icon-name="standard:contract_line_item"></c-popover-record-info>
-                                                    </div>
-                                                </template>
-                                            </template>
-                                            <template if:false={dsCoreCareId}>
-                                                <div class="flag-text">{labels.DS_CORE_CARE}</div>
-                                            </template>
-                                        </td>
-                                        <td>
-                                            <div class={dsCoreCareClass}></div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </lightning-layout-item>
-                        <lightning-layout-item flexibility="auto" padding="around-small" size="12" large-device-size="3" small-device-size="12">
-                            <table class="flag-table">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <template if:true={cerecClubId}>
-                                                <a class="flag-text"
-                                                   onclick={handleRedirection}
-                                                   onmouseover={handleMouseOver}
-                                                   onmouseout={handleMouseOut}
-                                                   data-itemid={cerecClubId}
-                                                   data-flagtype='cerecClub'
-                                                >
-                                                    {labels.CEREC_CLUB}
-                                                </a>
-                                                <template if:true={isMouseOverCerecClub}>
-                                                    <div class="slds-is-relative slds-float_right">
-                                                        <c-popover-record-info
-                                                                record-id={cerecClubId} url={cerecClubId}
-                                                                title={labels.CEREC_CLUB} object-api-name="Contract"
-                                                                icon-name="standard:contract"></c-popover-record-info>
-                                                    </div>
-                                                </template>
-                                            </template>
-                                            <template if:false={cerecClubId}>
-                                                <div class="flag-text">{labels.CEREC_CLUB}</div>
-                                            </template>
-                                        </td>
-                                        <td>
-                                            <div class={cerecClubClass}></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <template if:true={siroForceId}>
-                                                <a class="flag-text"
-                                                   onclick={handleRedirection}
-                                                   onmouseover={handleMouseOver}
-                                                   onmouseout={handleMouseOut}
-                                                   data-itemid={siroForceId}
-                                                   data-flagtype='siroForce'
-                                                >
-                                                    {labels.SIRO_FORCE}
-                                                </a>
-                                                <template if:true={isMouseOverSiroForce}>
-                                                    <div class="slds-is-relative slds-float_right">
-                                                        <c-popover-record-info
-                                                                record-id={siroForceId} url={siroForceId}
-                                                                title={labels.SIRO_FORCE} object-api-name="Source_Record__c"
-                                                                icon-name="custom:custom43"></c-popover-record-info>
-                                                    </div>
-                                                </template>
-                                            </template>
-                                            <template if:false={siroForceId}>
-                                                <div class="flag-text">{labels.SIRO_FORCE}</div>
-                                            </template>
-                                        </td>
-                                        <td>
-                                            <div class={siroForceClass}></div>
-                                        </td>
-                                    </tr>
+                                        </template>
+                                        <template if:false={siroForceId}>
+                                            <div class="flag-text">{labels.SIRO_FORCE}</div>
+                                        </template>
+                                    </td>
+                                    <td>
+                                        <div class={siroForceClass}></div>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </lightning-layout-item>
@@ -416,374 +418,374 @@
             </template>
             <!-- Mobile experience -->
             <template if:true={isMobile}>
-                    <table class="flag-table">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <template if:true={customerNumberId}>
-                                        <a class="flag-text"
-                                           onclick={handleRedirection}
-                                           onmouseover={handleMouseOver}
-                                           onmouseout={handleMouseOut}
-                                           data-itemid={customerNumberId}
-                                           data-flagtype='customerNumber'
-                                        >
-                                            {labels.CUSTOMER_NUMBER}
-                                        </a>
-                                        <template if:true={isMouseOverCustomerNumber}>
-                                            <div class="slds-is-relative slds-float_right">
-                                                <c-popover-record-info
-                                                        record-id={customerNumberId} url={customerNumberId}
-                                                        title={labels.CUSTOMER_NUMBER} object-api-name="Source_Record__c"
-                                                        icon-name="custom:custom43"></c-popover-record-info>
-                                            </div>
-                                        </template>
-                                        <div class="flag-value slds-text-title_bold">
-                                            <template if:true={customerNumber}>
-                                                <span>{customerNumber}</span>
-                                            </template>
-                                        </div>
-                                    </template>
-                                    <template if:false={customerNumberId}>
-                                        <div class="flag-text">{labels.CUSTOMER_NUMBER}</div>
-                                    </template>
-                                </td>
-                                <td>
-                                    <div class={customerNumberClass}></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="flag-text">KOL</div>
-                                </td>
-                                <td>
-                                    <div class={kolClass}></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <template if:true={sureSmileId}>
-                                        <a class="flag-text"
-                                           onclick={handleRedirection}
-                                           onmouseover={handleMouseOver}
-                                           onmouseout={handleMouseOut}
-                                           data-itemid={sureSmileId}
-                                           data-flagtype='sureSmile'
-                                        >
-                                            {labels.SURE_SMILE}
-                                        </a>
-                                        <template if:true={isMouseOverSureSmile}>
-                                            <div class="slds-is-relative slds-float_right">
-                                                <c-popover-record-info
-                                                        record-id={sureSmileId} url={sureSmileId}
-                                                        title={labels.SURE_SMILE} object-api-name="Source_Record__c"
-                                                        icon-name="custom:custom43"></c-popover-record-info>
-                                            </div>
-                                        </template>
-                                        <div class="flag-value slds-text-title_bold">
-                                            <span>{sureSmileType}</span>
-                                        </div>
-                                    </template>
-                                    <template if:false={sureSmileId}>
-                                        <div class="flag-text">{labels.SURE_SMILE}</div>
-                                    </template>
-                                </td>
-                                <td>
-                                    <div class={sureSmileClass}></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <template if:true={awoId}>
-                                        <a class="flag-text"
-                                           onclick={handleRedirection}
-                                           onmouseover={handleMouseOver}
-                                           onmouseout={handleMouseOut}
-                                           data-itemid={awoId}
-                                           data-flagtype='awo'
-                                        >
-                                            {labels.AWO}
-                                        </a>
-                                        <template if:true={isMouseOverAwo}>
-                                            <div class="slds-is-relative slds-float_right">
-                                                <c-popover-record-info
-                                                        record-id={awoId} url={awoId}
-                                                        title={labels.AWO} object-api-name="Source_Record__c"
-                                                        icon-name="custom:custom43"></c-popover-record-info>
-                                            </div>
-                                        </template>
-                                    </template>
-                                    <template if:false={awoId}>
-                                        <div class="flag-text">{labels.AWO}</div>
-                                    </template>
-                                </td>
-                                <td>
-                                    <div class={awoClass}></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <template if:true={dsComId}>
-                                        <a class="flag-text"
-                                           onclick={handleRedirection}
-                                           onmouseover={handleMouseOver}
-                                           onmouseout={handleMouseOut}
-                                           data-itemid={dsComId}
-                                           data-flagtype='dsCom'
-                                        >
-                                            {labels.DS_COM}
-                                        </a>
-                                        <template if:true={isMouseOverDSCom}>
-                                            <div class="slds-is-relative slds-float_right">
-                                                <c-popover-record-info
-                                                        record-id={dsComId} url={dsComId}
-                                                        title={labels.DS_COM} object-api-name="Source_Record__c"
-                                                        icon-name="custom:custom43"></c-popover-record-info>
-                                            </div>
-                                        </template>
-                                    </template>
-                                    <template if:false={dsComId}>
-                                        <div class="flag-text">{labels.DS_COM}</div>
-                                    </template>
-                                </td>
-                                <td>
-                                    <div class={dsComCLass}></div>
-                                </td>
-                            </tr>
-                            <tr if:true={showDSCoreInactive}>
-                                <td>
-                                    <div class="flag-text">{labels.DS_CORE}</div>
-                                </td>
-                                <td>
-                                    <div class="flag-square flag-white"></div>
-                                </td>
-                            </tr>
-                            <tr if:true={showAccess}>
-                                <td>
-                                    <a class="flag-text"
-                                       onclick={handleRedirection}
-                                       onmouseover={handleMouseOver}
-                                       onmouseout={handleMouseOut}
-                                       data-itemid={dsCoreAccessId}
-                                       data-flagtype='dsCoreAccess'
-                                    >
-                                        {labels.DS_CORE}
-                                    </a>
-                                    <template if:true={isMouseOverDSCoreAccess}>
-                                        <div class="slds-is-relative slds-float_right">
-                                            <c-popover-record-info
-                                                    record-id={dsCoreAccessId} url={dsCoreAccessId}
-                                                    title={labels.ACCESS} object-api-name="ContractLineItem"
-                                                    icon-name="standard:contract_line_item"></c-popover-record-info>
-                                        </div>
-                                    </template>
-                                    <div class="flag-value slds-text-title_bold">
-                                        <span>{labels.ACCESS}</span>
+                <table class="flag-table">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <template if:true={customerNumberId}>
+                                <a class="flag-text"
+                                   onclick={handleRedirection}
+                                   onmouseover={handleMouseOver}
+                                   onmouseout={handleMouseOut}
+                                   data-itemid={customerNumberId}
+                                   data-flagtype='customerNumber'
+                                >
+                                    {labels.CUSTOMER_NUMBER}
+                                </a>
+                                <template if:true={isMouseOverCustomerNumber}>
+                                    <div class="slds-is-relative slds-float_right">
+                                        <c-popover-record-info
+                                                record-id={customerNumberId} url={customerNumberId}
+                                                title={labels.CUSTOMER_NUMBER} object-api-name="Source_Record__c"
+                                                icon-name="custom:custom43"></c-popover-record-info>
                                     </div>
-                                </td>
-                                <td>
-                                    <div class={dsCoreAccessClass}></div>
-                                </td>
-                            </tr>
-                            <tr if:true={showLight}>
-                                <td>
-                                    <a class="flag-text"
-                                       onclick={handleRedirection}
-                                       onmouseover={handleMouseOver}
-                                       onmouseout={handleMouseOut}
-                                       data-itemid={dsCoreLightId}
-                                       data-flagtype='dsCoreLight'
-                                    >
-                                        {labels.DS_CORE}
-                                    </a>
-                                    <template if:true={isMouseOverDSCoreLight}>
-                                        <div class="slds-is-relative slds-float_right">
-                                            <c-popover-record-info
-                                                    record-id={dsCoreLightId} url={dsCoreLightId}
-                                                    title={labels.LIGHT} object-api-name="ContractLineItem"
-                                                    icon-name="standard:contract_line_item"></c-popover-record-info>
-                                        </div>
+                                </template>
+                                <div class="flag-value slds-text-title_bold">
+                                    <template if:true={customerNumber}>
+                                        <span>{customerNumber}</span>
                                     </template>
-                                    <div class="flag-value slds-text-title_bold">
-                                        <span>{labels.LIGHT}</span>
+                                </div>
+                            </template>
+                            <template if:false={customerNumberId}>
+                                <div class="flag-text">{labels.CUSTOMER_NUMBER}</div>
+                            </template>
+                        </td>
+                        <td>
+                            <div class={customerNumberClass}></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="flag-text">KOL</div>
+                        </td>
+                        <td>
+                            <div class={kolClass}></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <template if:true={sureSmileId}>
+                                <a class="flag-text"
+                                   onclick={handleRedirection}
+                                   onmouseover={handleMouseOver}
+                                   onmouseout={handleMouseOut}
+                                   data-itemid={sureSmileId}
+                                   data-flagtype='sureSmile'
+                                >
+                                    {labels.SURE_SMILE}
+                                </a>
+                                <template if:true={isMouseOverSureSmile}>
+                                    <div class="slds-is-relative slds-float_right">
+                                        <c-popover-record-info
+                                                record-id={sureSmileId} url={sureSmileId}
+                                                title={labels.SURE_SMILE} object-api-name="Source_Record__c"
+                                                icon-name="custom:custom43"></c-popover-record-info>
                                     </div>
-                                </td>
-                                <td>
-                                    <div class={dsCoreLightClass}></div>
-                                </td>
-                            </tr>
-                            <tr if:true={showStandard}>
-                                <td>
-                                    <a class="flag-text"
-                                       onclick={handleRedirection}
-                                       onmouseover={handleMouseOver}
-                                       onmouseout={handleMouseOut}
-                                       data-itemid={dsCoreStandardId}
-                                       data-flagtype='dsCoreStandard'
-                                    >
-                                        {labels.DS_CORE}
-                                    </a>
-                                    <template if:true={isMouseOverDSCoreStandard}>
-                                        <div class="slds-is-relative slds-float_right">
-                                            <c-popover-record-info
-                                                    record-id={dsCoreStandardId} url={dsCoreStandardId}
-                                                    title={labels.STANDARD} object-api-name="ContractLineItem"
-                                                    icon-name="standard:contract_line_item"></c-popover-record-info>
-                                        </div>
-                                    </template>
-                                    <div class="flag-value slds-text-title_bold">
-                                        <span>{labels.STANDARD}</span>
+                                </template>
+                                <div class="flag-value slds-text-title_bold">
+                                    <span>{sureSmileType}</span>
+                                </div>
+                            </template>
+                            <template if:false={sureSmileId}>
+                                <div class="flag-text">{labels.SURE_SMILE}</div>
+                            </template>
+                        </td>
+                        <td>
+                            <div class={sureSmileClass}></div>
+                        </td>
+                    </tr>
+                    <!-- // TFD-000000374: Temporarely disabled - to be enabled at a later stage -->
+<!--                        <td>-->
+<!--                            <template if:true={awoId}>-->
+<!--                                <a class="flag-text"-->
+<!--                                   onclick={handleRedirection}-->
+<!--                                   onmouseover={handleMouseOver}-->
+<!--                                   onmouseout={handleMouseOut}-->
+<!--                                   data-itemid={awoId}-->
+<!--                                   data-flagtype='awo'-->
+<!--                                >-->
+<!--                                    {labels.AWO}-->
+<!--                                </a>-->
+<!--                                <template if:true={isMouseOverAwo}>-->
+<!--                                    <div class="slds-is-relative slds-float_right">-->
+<!--                                        <c-popover-record-info-->
+<!--                                                record-id={awoId} url={awoId}-->
+<!--                                                title={labels.AWO} object-api-name="Source_Record__c"-->
+<!--                                                icon-name="custom:custom43"></c-popover-record-info>-->
+<!--                                    </div>-->
+<!--                                </template>-->
+<!--                            </template>-->
+<!--                            <template if:false={awoId}>-->
+<!--                                <div class="flag-text">{labels.AWO}</div>-->
+<!--                            </template>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <div class={awoClass}></div>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+                    <tr>
+                        <td>
+                            <template if:true={dsComId}>
+                                <a class="flag-text"
+                                   onclick={handleRedirection}
+                                   onmouseover={handleMouseOver}
+                                   onmouseout={handleMouseOut}
+                                   data-itemid={dsComId}
+                                   data-flagtype='dsCom'
+                                >
+                                    {labels.DS_COM}
+                                </a>
+                                <template if:true={isMouseOverDSCom}>
+                                    <div class="slds-is-relative slds-float_right">
+                                        <c-popover-record-info
+                                                record-id={dsComId} url={dsComId}
+                                                title={labels.DS_COM} object-api-name="Source_Record__c"
+                                                icon-name="custom:custom43"></c-popover-record-info>
                                     </div>
-                                </td>
-                                <td>
-                                    <div class={dsCoreStandardClass}></div>
-                                </td>
-                            </tr>
-                            <tr if:true={showAdvanced}>
-                                <td>
-                                    <a class="flag-text"
-                                       onclick={handleRedirection}
-                                       onmouseover={handleMouseOver}
-                                       onmouseout={handleMouseOut}
-                                       data-itemid={dsCoreAdvancedId}
-                                       data-flagtype='dsCoreAdvanced'
-                                    >
-                                        {labels.DS_CORE}
-                                    </a>
-                                    <template if:true={isMouseOverDSCoreAdvanced}>
-                                        <div class="slds-is-relative slds-float_right">
-                                            <c-popover-record-info
-                                                    record-id={dsCoreAdvancedId} url={dsCoreAdvancedId}
-                                                    title={labels.ADVANCED} object-api-name="ContractLineItem"
-                                                    icon-name="standard:contract_line_item"></c-popover-record-info>
-                                        </div>
-                                    </template>
-                                    <div class="flag-value slds-text-title_bold">
-                                        <span>{labels.ADVANCED}</span>
+                                </template>
+                            </template>
+                            <template if:false={dsComId}>
+                                <div class="flag-text">{labels.DS_COM}</div>
+                            </template>
+                        </td>
+                        <td>
+                            <div class={dsComCLass}></div>
+                        </td>
+                    </tr>
+                    <tr if:true={showDSCoreInactive}>
+                        <td>
+                            <div class="flag-text">{labels.DS_CORE}</div>
+                        </td>
+                        <td>
+                            <div class="flag-square flag-white"></div>
+                        </td>
+                    </tr>
+                    <tr if:true={showAccess}>
+                        <td>
+                            <a class="flag-text"
+                               onclick={handleRedirection}
+                               onmouseover={handleMouseOver}
+                               onmouseout={handleMouseOut}
+                               data-itemid={dsCoreAccessId}
+                               data-flagtype='dsCoreAccess'
+                            >
+                                {labels.DS_CORE}
+                            </a>
+                            <template if:true={isMouseOverDSCoreAccess}>
+                                <div class="slds-is-relative slds-float_right">
+                                    <c-popover-record-info
+                                            record-id={dsCoreAccessId} url={dsCoreAccessId}
+                                            title={labels.ACCESS} object-api-name="ContractLineItem"
+                                            icon-name="standard:contract_line_item"></c-popover-record-info>
+                                </div>
+                            </template>
+                            <div class="flag-value slds-text-title_bold">
+                                <span>{labels.ACCESS}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class={dsCoreAccessClass}></div>
+                        </td>
+                    </tr>
+                    <tr if:true={showLight}>
+                        <td>
+                            <a class="flag-text"
+                               onclick={handleRedirection}
+                               onmouseover={handleMouseOver}
+                               onmouseout={handleMouseOut}
+                               data-itemid={dsCoreLightId}
+                               data-flagtype='dsCoreLight'
+                            >
+                                {labels.DS_CORE}
+                            </a>
+                            <template if:true={isMouseOverDSCoreLight}>
+                                <div class="slds-is-relative slds-float_right">
+                                    <c-popover-record-info
+                                            record-id={dsCoreLightId} url={dsCoreLightId}
+                                            title={labels.LIGHT} object-api-name="ContractLineItem"
+                                            icon-name="standard:contract_line_item"></c-popover-record-info>
+                                </div>
+                            </template>
+                            <div class="flag-value slds-text-title_bold">
+                                <span>{labels.LIGHT}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class={dsCoreLightClass}></div>
+                        </td>
+                    </tr>
+                    <tr if:true={showStandard}>
+                        <td>
+                            <a class="flag-text"
+                               onclick={handleRedirection}
+                               onmouseover={handleMouseOver}
+                               onmouseout={handleMouseOut}
+                               data-itemid={dsCoreStandardId}
+                               data-flagtype='dsCoreStandard'
+                            >
+                                {labels.DS_CORE}
+                            </a>
+                            <template if:true={isMouseOverDSCoreStandard}>
+                                <div class="slds-is-relative slds-float_right">
+                                    <c-popover-record-info
+                                            record-id={dsCoreStandardId} url={dsCoreStandardId}
+                                            title={labels.STANDARD} object-api-name="ContractLineItem"
+                                            icon-name="standard:contract_line_item"></c-popover-record-info>
+                                </div>
+                            </template>
+                            <div class="flag-value slds-text-title_bold">
+                                <span>{labels.STANDARD}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class={dsCoreStandardClass}></div>
+                        </td>
+                    </tr>
+                    <tr if:true={showAdvanced}>
+                        <td>
+                            <a class="flag-text"
+                               onclick={handleRedirection}
+                               onmouseover={handleMouseOver}
+                               onmouseout={handleMouseOut}
+                               data-itemid={dsCoreAdvancedId}
+                               data-flagtype='dsCoreAdvanced'
+                            >
+                                {labels.DS_CORE}
+                            </a>
+                            <template if:true={isMouseOverDSCoreAdvanced}>
+                                <div class="slds-is-relative slds-float_right">
+                                    <c-popover-record-info
+                                            record-id={dsCoreAdvancedId} url={dsCoreAdvancedId}
+                                            title={labels.ADVANCED} object-api-name="ContractLineItem"
+                                            icon-name="standard:contract_line_item"></c-popover-record-info>
+                                </div>
+                            </template>
+                            <div class="flag-value slds-text-title_bold">
+                                <span>{labels.ADVANCED}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class={dsCoreAdvancedClass}></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <template if:true={dsCoreLabId}>
+                                <a class="flag-text"
+                                   onclick={handleRedirection}
+                                   onmouseover={handleMouseOver}
+                                   onmouseout={handleMouseOut}
+                                   data-itemid={dsCoreLabId}
+                                   data-flagtype='dsCoreLab'
+                                >
+                                    {labels.DS_CORE_LAB}
+                                </a>
+                                <template if:true={isMouseOverDSCoreLab}>
+                                    <div class="slds-is-relative slds-float_right">
+                                        <c-popover-record-info
+                                                record-id={dsCoreLabId} url={dsCoreLabId}
+                                                title={labels.DS_CORE_LAB} object-api-name="ContractLineItem"
+                                                icon-name="standard:contract_line_item"></c-popover-record-info>
                                     </div>
-                                </td>
-                                <td>
-                                    <div class={dsCoreAdvancedClass}></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <template if:true={dsCoreLabId}>
-                                        <a class="flag-text"
-                                           onclick={handleRedirection}
-                                           onmouseover={handleMouseOver}
-                                           onmouseout={handleMouseOut}
-                                           data-itemid={dsCoreLabId}
-                                           data-flagtype='dsCoreLab'
-                                        >
-                                            {labels.DS_CORE_LAB}
-                                        </a>
-                                        <template if:true={isMouseOverDSCoreLab}>
-                                            <div class="slds-is-relative slds-float_right">
-                                                <c-popover-record-info
-                                                        record-id={dsCoreLabId} url={dsCoreLabId}
-                                                        title={labels.DS_CORE_LAB} object-api-name="ContractLineItem"
-                                                        icon-name="standard:contract_line_item"></c-popover-record-info>
-                                            </div>
-                                        </template>
-                                    </template>
-                                    <template if:false={dsCoreLabId}>
-                                        <div class="flag-text">{labels.DS_CORE_LAB}</div>
-                                    </template>
-                                </td>
-                                <td>
-                                    <div class={dsCoreLabClass}></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <template if:true={dsCoreCareId}>
-                                        <a class="flag-text"
-                                           onclick={handleRedirection}
-                                           onmouseover={handleMouseOver}
-                                           onmouseout={handleMouseOut}
-                                           data-itemid={dsCoreCareId}
-                                           data-flagtype='dsCoreCare'
-                                        >
-                                            {labels.DS_CORE_CARE}
-                                        </a>
-                                        <template if:true={isMouseOverDSCoreCare}>
-                                            <div class="slds-is-relative slds-float_right">
-                                                <c-popover-record-info
-                                                        record-id={dsCoreCareId} url={dsCoreCareId}
-                                                        title={labels.DS_CORE_CARE} object-api-name="ContractLineItem"
-                                                        icon-name="standard:contract_line_item"></c-popover-record-info>
-                                            </div>
-                                        </template>
-                                    </template>
-                                    <template if:false={dsCoreCareId}>
-                                        <div class="flag-text">{labels.DS_CORE_CARE}</div>
-                                    </template>
-                                </td>
-                                <td>
-                                    <div class={dsCoreCareClass}></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <template if:true={cerecClubId}>
-                                        <a class="flag-text"
-                                           onclick={handleRedirection}
-                                           onmouseover={handleMouseOver}
-                                           onmouseout={handleMouseOut}
-                                           data-itemid={cerecClubId}
-                                           data-flagtype='cerecClub'
-                                        >
-                                            {labels.CEREC_CLUB}
-                                        </a>
-                                        <template if:true={isMouseOverCerecClub}>
-                                            <div class="slds-is-relative slds-float_right">
-                                                <c-popover-record-info
-                                                        record-id={cerecClubId} url={cerecClubId}
-                                                        title={labels.CEREC_CLUB} object-api-name="Contract"
-                                                        icon-name="standard:contract"></c-popover-record-info>
-                                            </div>
-                                        </template>
-                                    </template>
-                                    <template if:false={cerecClubId}>
-                                        <div class="flag-text">{labels.CEREC_CLUB}</div>
-                                    </template>
-                                </td>
-                                <td>
-                                    <div class={cerecClubClass}></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <template if:true={siroForceId}>
-                                        <a class="flag-text"
-                                           onclick={handleRedirection}
-                                           onmouseover={handleMouseOver}
-                                           onmouseout={handleMouseOut}
-                                           data-itemid={siroForceId}
-                                           data-flagtype='siroForce'
-                                        >
-                                            {labels.SIRO_FORCE}
-                                        </a>
-                                        <template if:true={isMouseOverSiroForce}>
-                                            <div class="slds-is-relative slds-float_right">
-                                                <c-popover-record-info
-                                                        record-id={siroForceId} url={siroForceId}
-                                                        title={labels.SIRO_FORCE} object-api-name="Source_Record__c"
-                                                        icon-name="custom:custom43"></c-popover-record-info>
-                                            </div>
-                                        </template>
-                                    </template>
-                                    <template if:false={siroForceId}>
-                                        <div class="flag-text">{labels.SIRO_FORCE}</div>
-                                    </template>
-                                </td>
-                                <td>
-                                    <div class={siroForceClass}></div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                </template>
+                            </template>
+                            <template if:false={dsCoreLabId}>
+                                <div class="flag-text">{labels.DS_CORE_LAB}</div>
+                            </template>
+                        </td>
+                        <td>
+                            <div class={dsCoreLabClass}></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <template if:true={dsCoreCareId}>
+                                <a class="flag-text"
+                                   onclick={handleRedirection}
+                                   onmouseover={handleMouseOver}
+                                   onmouseout={handleMouseOut}
+                                   data-itemid={dsCoreCareId}
+                                   data-flagtype='dsCoreCare'
+                                >
+                                    {labels.DS_CORE_CARE}
+                                </a>
+                                <template if:true={isMouseOverDSCoreCare}>
+                                    <div class="slds-is-relative slds-float_right">
+                                        <c-popover-record-info
+                                                record-id={dsCoreCareId} url={dsCoreCareId}
+                                                title={labels.DS_CORE_CARE} object-api-name="ContractLineItem"
+                                                icon-name="standard:contract_line_item"></c-popover-record-info>
+                                    </div>
+                                </template>
+                            </template>
+                            <template if:false={dsCoreCareId}>
+                                <div class="flag-text">{labels.DS_CORE_CARE}</div>
+                            </template>
+                        </td>
+                        <td>
+                            <div class={dsCoreCareClass}></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <template if:true={cerecClubId}>
+                                <a class="flag-text"
+                                   onclick={handleRedirection}
+                                   onmouseover={handleMouseOver}
+                                   onmouseout={handleMouseOut}
+                                   data-itemid={cerecClubId}
+                                   data-flagtype='cerecClub'
+                                >
+                                    {labels.CEREC_CLUB}
+                                </a>
+                                <template if:true={isMouseOverCerecClub}>
+                                    <div class="slds-is-relative slds-float_right">
+                                        <c-popover-record-info
+                                                record-id={cerecClubId} url={cerecClubId}
+                                                title={labels.CEREC_CLUB} object-api-name="Contract"
+                                                icon-name="standard:contract"></c-popover-record-info>
+                                    </div>
+                                </template>
+                            </template>
+                            <template if:false={cerecClubId}>
+                                <div class="flag-text">{labels.CEREC_CLUB}</div>
+                            </template>
+                        </td>
+                        <td>
+                            <div class={cerecClubClass}></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <template if:true={siroForceId}>
+                                <a class="flag-text"
+                                   onclick={handleRedirection}
+                                   onmouseover={handleMouseOver}
+                                   onmouseout={handleMouseOut}
+                                   data-itemid={siroForceId}
+                                   data-flagtype='siroForce'
+                                >
+                                    {labels.SIRO_FORCE}
+                                </a>
+                                <template if:true={isMouseOverSiroForce}>
+                                    <div class="slds-is-relative slds-float_right">
+                                        <c-popover-record-info
+                                                record-id={siroForceId} url={siroForceId}
+                                                title={labels.SIRO_FORCE} object-api-name="Source_Record__c"
+                                                icon-name="custom:custom43"></c-popover-record-info>
+                                    </div>
+                                </template>
+                            </template>
+                            <template if:false={siroForceId}>
+                                <div class="flag-text">{labels.SIRO_FORCE}</div>
+                            </template>
+                        </td>
+                        <td>
+                            <div class={siroForceClass}></div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </template>
         </lightning-card>
     </div>
