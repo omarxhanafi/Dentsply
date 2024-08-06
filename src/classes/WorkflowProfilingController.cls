@@ -4,9 +4,10 @@
  * @Test-Class      Test_WorkflowProfilingController
  *
  * @History
- * 21-05-2023   Omar     TFUS-000006676 - Excluding Germany, Austria and Switzerland from the global definition
  * 15-09-2023   Omar     TFUS-000006118 - Create Workflow Profiling Controller Class
  * 07-12-2023   Omar     Added the deleteWorkflowProfilings method
+ * 21-05-2024   Omar     TFUS-000006676 - Excluding Germany, Austria and Switzerland from the global definition
+ * 05-08-2024   Omar     TFUS-000006810 / TFUS-000006847 - Creating a PP record from the WP component & Prioritizing displaying PP records that are linked to the account
  */
 public with sharing class WorkflowProfilingController {
 
@@ -127,38 +128,8 @@ public with sharing class WorkflowProfilingController {
             country = acc.Country__c;
         }
 
-        List<ProductFamily__c> productFamilyList = new List<ProductFamily__c>();
-
-        if (!new List<String>{'AT', 'DE', 'CH'}.contains(country)) {
-            productFamilyList = [
-                    SELECT Id, ProductFamilyLabel__c, (
-                            SELECT Id, Name, Competitor_Product__c
-                            FROM Non_ERP_Products__r
-                            WHERE GlobalProductShowtoallcountries__c = true OR Countries__c INCLUDES (:country)
-                    )
-                    FROM ProductFamily__c
-                    WHERE Id IN (
-                            SELECT ProductFamily__c
-                            FROM WorkflowLine__c
-                            WHERE Workflow__c = :workflowId
-                    )
-            ];        } else {
-            productFamilyList = [
-                    SELECT Id, ProductFamilyLabel__c, (
-                            SELECT Id, Name, Competitor_Product__c
-                            FROM Non_ERP_Products__r
-                            WHERE ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT(Countries__c INCLUDES (:country))))))
-                    )
-                    FROM ProductFamily__c
-                    WHERE Id IN (
-                            SELECT ProductFamily__c
-                            FROM WorkflowLine__c
-                            WHERE Workflow__c = :workflowId
-                    )
-            ];
-        }
-
-
+        // Getting the list of product families
+        List<ProductFamily__c> productFamilyList = getProductFamilyList(country, workflowId);
 
         // Collect Non_ERP_Products__c Ids
         Set<String> nonERPProductIds = new Set<String>();
@@ -185,59 +156,7 @@ public with sharing class WorkflowProfilingController {
             ProductFamilyWrapper wrapper = new ProductFamilyWrapper(familyOrderMap, productFamily);
 
             for (Non_ERP_Products__c nonERPProduct : productFamily.Non_ERP_Products__r) {
-                List<Product_Profiling__c> matchingPPRecords = new List<Product_Profiling__c>();
-
-                Product_Profiling__c selectedPPRecord = null;
-
-                for(Product_Profiling__c eachProductProfiling : productProfilingList){
-                    if(eachProductProfiling.Product_Name__c == nonERPProduct.Id){
-                        matchingPPRecords.add(eachProductProfiling);
-                    }
-                }
-
-                if (!matchingPPRecords.isEmpty()) {
-                    // Prioritize records linked to the Account (Contact__c == null)
-                    List<Product_Profiling__c> accountPPRecords = new List<Product_Profiling__c>();
-                    for (Product_Profiling__c record : matchingPPRecords) {
-                        if (record.Contact__c == null) {
-                            accountPPRecords.add(record);
-                        }
-                    }
-
-                    if (!accountPPRecords.isEmpty()) {
-                        // From accountPPRecords, prioritize active ones
-                        List<Product_Profiling__c> activeRecords = new List<Product_Profiling__c>();
-                        for (Product_Profiling__c record : accountPPRecords) {
-                            if (!record.Inactive__c) {
-                                activeRecords.add(record);
-                            }
-                        }
-
-                        if (!activeRecords.isEmpty()) {
-                            // Choose the first active record
-                            selectedPPRecord = activeRecords[0];
-                        } else {
-                            // If no active record, choose the first record with Contact__c == null
-                            selectedPPRecord = accountPPRecords[0];
-                        }
-                    } else {
-                        // If no records with Contact__c == null, prioritize active ones from matching records
-                        List<Product_Profiling__c> activeRecords = new List<Product_Profiling__c>();
-                        for (Product_Profiling__c record : matchingPPRecords) {
-                            if (!record.Inactive__c) {
-                                activeRecords.add(record);
-                            }
-                        }
-
-                        if (!activeRecords.isEmpty()) {
-                            // Choose the first active record
-                            selectedPPRecord = activeRecords[0];
-                        } else {
-                            // If no active record, choose the first matching record
-                            selectedPPRecord = matchingPPRecords[0];
-                        }
-                    }
-                }
+                Product_Profiling__c selectedPPRecord = findProductProfilingRecord(productProfilingList, nonERPProduct);
 
                 if(!nonERPProduct.Competitor_Product__c){
                     if(selectedPPRecord != null){
@@ -271,6 +190,116 @@ public with sharing class WorkflowProfilingController {
     }
 
     /**
+     * findProductProfilingRecord Find the corresponding PP record from a Non ERP Product by prioritizing the ones that are linked to the account instead of the contact
+     * @author ohanafi@salesforce.com | 05-08-2024
+     *
+     * @param productProfilingList   List of PP records
+     * @param nonERPProduct   Non ERP Product
+     *
+     * @return Product_Profiling__c - Selected PP record
+     */
+    private static Product_Profiling__c findProductProfilingRecord(List<Product_Profiling__c> productProfilingList, Non_ERP_Products__c nonERPProduct) {
+        List<Product_Profiling__c> matchingPPRecords = new List<Product_Profiling__c>();
+        Product_Profiling__c selectedPPRecord = null;
+
+        for (Product_Profiling__c eachProductProfiling : productProfilingList) {
+            if (eachProductProfiling.Product_Name__c == nonERPProduct.Id) {
+                matchingPPRecords.add(eachProductProfiling);
+            }
+        }
+
+        if (!matchingPPRecords.isEmpty()) {
+            // Prioritize records linked to the Account (Contact__c == null)
+            List<Product_Profiling__c> accountPPRecords = new List<Product_Profiling__c>();
+            for (Product_Profiling__c record : matchingPPRecords) {
+                if (record.Contact__c == null) {
+                    accountPPRecords.add(record);
+                }
+            }
+
+            if (!accountPPRecords.isEmpty()) {
+                // From accountPPRecords, prioritize active ones
+                List<Product_Profiling__c> activeRecords = new List<Product_Profiling__c>();
+                for (Product_Profiling__c record : accountPPRecords) {
+                    if (!record.Inactive__c) {
+                        activeRecords.add(record);
+                    }
+                }
+
+                if (!activeRecords.isEmpty()) {
+                    // Choose the first active record
+                    selectedPPRecord = activeRecords[0];
+                } else {
+                    // If no active record, choose the first record with Contact__c == null
+                    selectedPPRecord = accountPPRecords[0];
+                }
+            } else {
+                // If no records with Contact__c == null, prioritize active ones from matching records
+                List<Product_Profiling__c> activeRecords = new List<Product_Profiling__c>();
+                for (Product_Profiling__c record : matchingPPRecords) {
+                    if (!record.Inactive__c) {
+                        activeRecords.add(record);
+                    }
+                }
+
+                if (!activeRecords.isEmpty()) {
+                    // Choose the first active record
+                    selectedPPRecord = activeRecords[0];
+                } else {
+                    // If no active record, choose the first matching record
+                    selectedPPRecord = matchingPPRecords[0];
+                }
+            }
+        }
+        return selectedPPRecord;
+    }
+
+    /**
+     * getProductFamilyList Get a list of ProductFamily__c records based on the country and the workflow
+     * @author ohanafi@salesforce.com | 05-08-2024
+     *
+     * @param country   Country
+     * @param workflowId   Workflow ID
+     *
+     * @return List<ProductFamily__c> - List of ProductFamily__c records
+     */
+    private static List<ProductFamily__c> getProductFamilyList(String country, Id workflowId) {
+        List<ProductFamily__c> productFamilyList = new List<ProductFamily__c>();
+
+        if (!new List<String>{'AT', 'DE', 'CH'}.contains(country)) {
+            productFamilyList = [
+                    SELECT Id, ProductFamilyLabel__c, (
+                            SELECT Id, Name, Competitor_Product__c
+                            FROM Non_ERP_Products__r
+                            WHERE GlobalProductShowtoallcountries__c = true OR Countries__c INCLUDES (:country)
+                    )
+                    FROM ProductFamily__c
+                    WHERE Id IN (
+                            SELECT ProductFamily__c
+                            FROM WorkflowLine__c
+                            WHERE Workflow__c = :workflowId
+                    )
+            ];
+        } else {
+            productFamilyList = [
+                    SELECT Id, ProductFamilyLabel__c, (
+                            SELECT Id, Name, Competitor_Product__c
+                            FROM Non_ERP_Products__r
+                            WHERE ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT (Countries__c INCLUDES (:country))))))
+                    )
+                    FROM ProductFamily__c
+                    WHERE Id IN (
+                            SELECT ProductFamily__c
+                            FROM WorkflowLine__c
+                            WHERE Workflow__c = :workflowId
+                    )
+            ];
+        }
+
+        return productFamilyList;
+    }
+
+    /**
      * createProductProfiling Creates a new Product Profiling record for the given Account and Non ERP Product Id
      * @author ohanafi@salesforce.com | 28-06-2024
      *
@@ -291,12 +320,30 @@ public with sharing class WorkflowProfilingController {
     }
 
 
+    /**
+     * Wrapper class for Non_ERP_Products__c.
+     */
     public class NonERPProductWrapper implements Comparable {
+        //The product associated with the wrapper.
         @AuraEnabled public Non_ERP_Products__c product;
+
+        //Indicates if the product is active.
         @AuraEnabled public Boolean active;
+
+        //Indicates if the product is inactive.
         @AuraEnabled public Boolean inactive;
+
+        //The ID of the product profiling record.
         @AuraEnabled public String productProfilingId;
 
+        /**
+         * Constructor for NonERPProductWrapper.
+         *
+         * @param product The Non_ERP_Products__c object.
+         * @param active Boolean indicating if the product is active.
+         * @param inactive Boolean indicating if the product is inactive.
+         * @param productProfilingId The ID of the product profiling record.
+         */
         public NonERPProductWrapper(Non_ERP_Products__c product, Boolean active, Boolean inactive, String productProfilingId) {
             this.product = product;
             this.active = active;
@@ -304,18 +351,41 @@ public with sharing class WorkflowProfilingController {
             this.productProfilingId = productProfilingId;
         }
 
+        /**
+         * Compares this NonERPProductWrapper to another based on product name.
+         *
+         * @param other
+         * @return Integer Comparison result.
+         */
         public Integer compareTo(Object other) {
             NonERPProductWrapper otherWrapper = (NonERPProductWrapper) other;
             return this.product.Name.compareTo(otherWrapper.product.Name);
         }
     }
 
+    /**
+     * Wrapper class for ProductFamily__c.
+     */
     public class ProductFamilyWrapper implements Comparable {
-        @AuraEnabled public ProductFamily__c productFamily;
-        @AuraEnabled public List<NonERPProductWrapper> competitorProducts;
-        @AuraEnabled public List<NonERPProductWrapper> dsProducts;
-        private Map<Id, Integer> orderMap; // Map to hold the order
 
+        //The product family associated with the wrapper.
+        @AuraEnabled public ProductFamily__c productFamily;
+
+        //List of competitor products.
+        @AuraEnabled public List<NonERPProductWrapper> competitorProducts;
+
+        //List of DS products.
+        @AuraEnabled public List<NonERPProductWrapper> dsProducts;
+
+        //Map to hold the order of product families.
+        private Map<Id, Integer> orderMap;
+
+        /**
+         * Constructor for ProductFamilyWrapper.
+         *
+         * @param orderMap Map containing the order of product families.
+         * @param productFamily The ProductFamily__c object.
+         */
         public ProductFamilyWrapper(Map<Id, Integer> orderMap, ProductFamily__c productFamily) {
             this.competitorProducts = new List<NonERPProductWrapper>();
             this.dsProducts = new List<NonERPProductWrapper>();
@@ -323,12 +393,20 @@ public with sharing class WorkflowProfilingController {
             this.productFamily = productFamily;
         }
 
+        /**
+         * Default constructor for ProductFamilyWrapper.
+         */
         public ProductFamilyWrapper() {
             this.competitorProducts = new List<NonERPProductWrapper>();
             this.dsProducts = new List<NonERPProductWrapper>();
         }
 
-        // Method to sort Product Families based on the order retrieved from the Workflow Lines
+        /**
+         * Method to sort Product Families based on the order retrieved from the Workflow Lines
+         *
+         * @param other
+         * @return Integer Comparison result.
+         */
         public Integer compareTo(Object other) {
             Integer thisOrder = orderMap.containsKey(this.productFamily.Id) ? orderMap.get(this.productFamily.Id) : 99999999;
             Integer otherOrder = orderMap.containsKey(((ProductFamilyWrapper)other).productFamily.Id) ? orderMap.get(((ProductFamilyWrapper)other).productFamily.Id) : 99999999;

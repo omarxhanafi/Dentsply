@@ -76,8 +76,6 @@ export default class ProductProfilingEditLwc extends LightningElement {
             return item;
         });
 
-        console.log('updatedProducts', JSON.parse(JSON.stringify(updatedProducts)));
-
         this.selectedProducts = updatedProducts;
     }
 
