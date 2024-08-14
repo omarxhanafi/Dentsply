@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/IlluminatedCloud/DevSep24/OfflineSymbolTable.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/CallReportQuickActionPocController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/CallReportQuickActionPocController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/callReportQuickActionPocLwc/callReportQuickActionPocLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/callReportQuickActionPocLwc/callReportQuickActionPocLwc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,20 +63,10 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="WorkflowProfilingController.getProductFamilyListByWorkflowId('a7u5r000000RuYdAAK', '0015r00000qASgNAAW');" />
-                  <option name="calloutsLogLevel" value="FINEST" />
-                  <option name="connectionName" value="acc360" />
+                  <option name="body" value="System.debug(CallReportQuickActionPocController.getPickListValuesIntoMap());" />
+                  <option name="connectionName" value="DevSep24" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="databaseLogLevel" value="FINEST" />
                   <option name="name" value="Anonymous Apex 8" />
-                  <option name="nbaLogLevel" value="FINEST" />
-                  <option name="profilingLogLevel" value="FINEST" />
-                  <option name="systemLogLevel" value="FINEST" />
-                  <option name="validationLogLevel" value="FINEST" />
-                  <option name="visualforceLogLevel" value="FINEST" />
-                  <option name="waveLogLevel" value="FINEST" />
-                  <option name="workflowLogLevel" value="FINEST" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
@@ -111,12 +106,6 @@
                   <option name="connectionType" value="OAUTH" />
                   <option name="lastUsed" value="1712577466615" />
                   <option name="numUsages" value="3" />
-                </ConnectionMruEntry>
-                <ConnectionMruEntry>
-                  <option name="connectionName" value="DevSep24" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1722958645109" />
-                  <option name="numUsages" value="1" />
                 </ConnectionMruEntry>
               </list>
             </option>
@@ -17876,7 +17865,9 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
+                      <entry key="APEXCLASS:CALLREPORTQUICKACTIONPOCCONTROLLER" value="1723658293831" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1722958646000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1723658188000" />
                     </map>
                   </option>
                 </ConnectionWorkspaceSettings>
@@ -18964,7 +18955,7 @@
         <option name="logAnalyzerSettings">
           <LogAnalyzerSettings>
             <option name="splitVertical" value="false" />
-            <option name="splitterProportion" value="0.3523928" />
+            <option name="splitterProportion" value="0.29707894" />
           </LogAnalyzerSettings>
         </option>
         <option name="retrieveAndMergeDefault" value="false" />
@@ -19079,7 +19070,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="DevSep24" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -19118,7 +19109,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="FINER" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="DevSep24" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="ERROR" />
@@ -19157,7 +19148,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="DevSep24" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -19196,7 +19187,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="DevSep24" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -19243,7 +19234,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="acc360" />
+      <option name="connectionName" value="DevSep24" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -19466,7 +19457,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Dentsply$Test_WorkflowProfilingController_testCreateProductProfiling.ic2" NAME="acc360 Coverage Results" MODIFIED="1722597164717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="acc360" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_WorkflowProfilingController_testCreateProductProfiling.ic2" NAME="acc360 Coverage Results" MODIFIED="1722597164717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevSep24" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ES_FreezeUserHandler_testHandleInboundEmail.ic2" NAME="Freeze Coverage Results" MODIFIED="1684228757679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />

@@ -32,7 +32,7 @@ import apexSearch from '@salesforce/apex/EventMultiWhoController.search';
 import getContacts from '@salesforce/apex/EventMultiWhoController.getContacts';
 // test createEvent Apex method
 import createEvent from '@salesforce/apex/CallReportQuickActionPocController.createEvent';
-import getCotravelPicklist from '@salesforce/apex/CallReportQuickActionPocController.getPickListValuesIntoList';
+import getCotravelPicklistMap from '@salesforce/apex/CallReportQuickActionPocController.getPickListValuesIntoMap';
 import getProcedureTrackerData from '@salesforce/apex/CallReportQuickActionPocController.getProcedureTrackerDataList';
 import {encodeDefaultFieldValues} from "lightning/pageReferenceUtils";
 
@@ -110,17 +110,12 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
 
     constructor(){
         super()
-        getCotravelPicklist().then((params) => {
-            this.coTravelTypes = params.map(function (coTravelType) {
-                return {
-                    label: coTravelType,
-                    value:coTravelType
-                }
-            });
+        getCotravelPicklistMap().then((data) => {
+            this.coTravelTypes = Object.keys(data).map(key => ({
+                label: data[key],
+                value: key
+            }));
         })
-
-
-
     }
     get userCountry() {
         return getFieldValue(this.currentUser.data, USER_FIELDS[0]);
@@ -203,16 +198,6 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
         }
     }
 
-    /* @wire(getContacts, { contactId: '$recordId' })
-    wiredContacts(value) {
-        const { data, error } = value;
-        if (data) {
-            this.initialSelection = [...data];
-        } else if (error) {
-            this.error = handleApexError({ error: error });
-        }
-    } */
-
 
     nearestQuarterDateTime(minutes = 0, date = Date.now()) {
         let timeToReturn = new Date(date + minutes * 60000);
@@ -268,8 +253,6 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
     handleSelectionChange() {
         this.errors = [];
         const selection = this.template.querySelector('c-lookup-lwc').getSelection();
-        console.log('selection::' + JSON.stringify(selection.map(element => element.id)));
-        // console.table(selection);
     }
 
     handleLoad(event) {
@@ -279,7 +262,6 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
             this.isInitialLoad = false;
             this.isLoading = false;
         }
-        console.log('initialLoadSbu::'+this.userDefaultSbu);
     }
 
     handleCancel() {
@@ -349,7 +331,6 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
         const payload = event.detail;
         this.callReportId = payload.id;
         this.error = null;
-        console.log('success::'+JSON.stringify(payload));
             if(payload.fields.CourseOrEventPromotion__c != null)
             {
                 this.courseEventPromotionChange = !!(payload.fields.CourseOrEventPromotion__c.value);

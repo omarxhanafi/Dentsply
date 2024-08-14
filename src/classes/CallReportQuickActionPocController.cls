@@ -101,15 +101,16 @@ public with sharing class CallReportQuickActionPocController {
 
         return newEvent.Id;
     }
+
     @AuraEnabled(cacheable=true)
-    public static List<String> getPickListValuesIntoList(){
-       List<String> pickListValuesList= new List<String>();
-		Schema.DescribeFieldResult fieldResult = Event.Co_travel__c.getDescribe();
-		List<Schema.PicklistEntry> ple = fieldResult.getPicklistValues();
-		for( Schema.PicklistEntry pickListVal : ple){
-			pickListValuesList.add(pickListVal.getLabel());
-		}     
-		return pickListValuesList;
+    public static Map<String, String> getPickListValuesIntoMap(){
+        Map<String, String> pickListValuesMap = new Map<String, String>();
+        Schema.DescribeFieldResult fieldResult = Event.Co_travel__c.getDescribe();
+        List<Schema.PicklistEntry> ple = fieldResult.getPicklistValues();
+        for( Schema.PicklistEntry pickListVal : ple){
+            pickListValuesMap.put(pickListVal.getValue(), pickListVal.getLabel());
+        }
+        return pickListValuesMap;
     }
     
     @AuraEnabled(cacheable=true)
