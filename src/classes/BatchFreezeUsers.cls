@@ -1,11 +1,12 @@
-/*-------------------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------------------------------------------------
 Author:         Miguel Coimbra(Salesforce) 2020709
 Description:    Class to automatically freeze users if they don't login for more than X number of days and if they are not 
                     flagged as "Do not Freeze" 
 Test Class:     Test_BatchFreezeUsers
 History 
-20200326    Miguel Coimbra           Created class. 
-----------------------------------------------------------------------------------------*/
+20200326    Miguel Coimbra           Created class.
+20240827    Omar Hanafi              TFUS-000006405 - Added a new field ExpirationDate__c on the user object to manage user deactivation
+------------------------------------------------------------------------------------------------------------------------------------------*/
 
 global class BatchFreezeUsers implements Database.Batchable<SObject>, Database.Stateful {
 
@@ -22,9 +23,10 @@ global class BatchFreezeUsers implements Database.Batchable<SObject>, Database.S
         if (nrOfDays == null) return null ; 
         String limitToFreezeDateAsString = String.valueOf(System.today() - nrOfDays);
 
-        String  query = 'SELECT Id, LastLoginDate FROM User WHERE isActive = true AND Profile.UserLicense.Name = \'Salesforce\' AND doNotFreeze__c = false AND lastlogindate <> null';
-                query += ' AND DAY_ONLY(LastLoginDate) < '+ limitToFreezeDateAsString;  
-                query += ' AND Id in (SELECT UserId FROM UserLogin where isFrozen = false)'; 
+        String  query = 'SELECT Id, LastLoginDate FROM User WHERE isActive = true AND Profile.UserLicense.Name = \'Salesforce\' AND doNotFreeze__c = false';
+                query += ' AND ((LastLoginDate <> null AND DAY_ONLY(LastLoginDate) < '+ limitToFreezeDateAsString + ')';
+                query += ' OR ExpirationDate__c < TODAY)';
+                query += ' AND Id in (SELECT UserId FROM UserLogin where isFrozen = false)';
         		if(Test.isRunningTest()) query+= ' limit 50'; // Class System.UnexpectedException: No more than one executeBatch can be called from within a test method.
         return Database.getQueryLocator(query);
     }

@@ -1,206 +1,0 @@
-
-o
-AZBm5Ez3i9dtgbuJneEqsf:ClassWithoutTestClass
-".Class does not have a corresponding test class(ÿûäĞ8Ç˜”·†2
-_
-AZBm5Ez3i9dtgbuJneErsf:GodClass
-"+Possible God class (WMC=73, ATFD=67, TCC=0)(ÿûäĞ8Ç˜”·†2
-”
-AZBm5Ez3i9dtgbuJneEssf:CyclomaticComplexity
-"TThe class 'AccountFlagsController' has a Cyclomatic Complexity of 20 (Highest = 26).(ÿûäĞ8Ç˜”·†2
-u
-AZBm5Ez3i9dtgbuJneEtsf:AuraEnabledWithoutCatchBlock".@AuraEnabled should have proper error handling(úàÏ%8Ç˜”·†2
-‚
-AZBm5Ez3i9dtgbuJneEvsf:CyclomaticComplexity"CThe method 'getAccountFlagsJSON' has a Cyclomatic Complexity of 19.(úàÏ%8Ç˜”·†2
-z
-AZBm5Ez3i9dtgbuJneEwsf:NPathComplexity"@The method getAccountFlagsJSON() has an NPath complexity of 3360(úàÏ%8Ç˜”·†2
-v
-AZBm5Ez3i9dtgbuJneExsf:LocalVariableCouldBeFinal"1Local variable 'kolCount' could be declared final(±‰ä˜8Ç˜”·†2
-w
-AZBm5Ez3i9dtgbuJneEysf:LongVariable"?Avoid excessively long variable names like serviceContractsList(¼Å¢é8Ç˜”·†2
-‚
-AZBm5Ez3i9dtgbuJneEzsf:LocalVariableCouldBeFinal"=Local variable 'serviceContractsList' could be declared final(¼Å¢é8Ç˜”·†2
-‹
-AZBm5Ez3i9dtgbuJneE0sf:FieldLevelSecurity "HPermissions should be checked before accessing resource servicecontract.(²£“Ìøÿÿÿÿ8Ç˜”·†2
-‚
-AZBm5Ez3i9dtgbuJneE1sf:LocalVariableCouldBeFinal&"8Local variable 'activeContracts' could be declared final(Éú·³şÿÿÿÿ8Ç˜”·†2
-~
-AZBm5Ez3i9dtgbuJneE2sf:LocalVariableCouldBeFinal'"9Local variable 'expiredContracts' could be declared final(—Úû8Ç˜”·†2
-
-AZBm5Ez3i9dtgbuJneE4sf:IfElseDefaultCase+"DAlways include an "else" statement at the end of "if" and "else if".(Ö‘¾ê8Ç˜”·†2
-t
-AZBm5Ez3i9dtgbuJneE5sf:AvoidLiteralsInIfCondition+".Avoid using Literals in Conditional Statements(Ö‘¾ê8Ç˜”·†2
-y
-AZBm5Ez3i9dtgbuJneE8sf:AvoidLiteralsInIfCondition-".Avoid using Literals in Conditional Statements(†ø…¸úÿÿÿÿ8Ç˜”·†2
-z
-AZBm5Ez3i9dtgbuJneE_sf:LocalVariableCouldBeFinal3"0Local variable 'results' could be declared final(Àè­»ùÿÿÿÿ8Ç˜”·†2
-
-AZBm5Ez3i9dtgbuJneFBsf:LocalVariableCouldBeFinal="7Local variable 'expiredResults' could be declared final(ú¥ãéùÿÿÿÿ8Ç˜”·†2
-¤
-AZBm5Ez3i9dtgbuJneFDsf:AvoidDuplicateLiterals@"bThe String literal 'dscoreaccess' appears 4 times in this file; the first occurrence is on line 64(«˜çø8Ç˜”·†2
-¦
-AZBm5Ez3i9dtgbuJneFEsf:AvoidDuplicateLiterals@"dThe String literal 'dscoreadvanced' appears 4 times in this file; the first occurrence is on line 64(«˜çø8Ç˜”·†2
-£
-AZBm5Ez3i9dtgbuJneFFsf:AvoidDuplicateLiterals@"aThe String literal 'dscorelight' appears 4 times in this file; the first occurrence is on line 64(«˜çø8Ç˜”·†2
-¦
-AZBm5Ez3i9dtgbuJneFGsf:AvoidDuplicateLiterals@"dThe String literal 'dscorestandard' appears 4 times in this file; the first occurrence is on line 64(«˜çø8Ç˜”·†2
-§
-AZBm5Ez3i9dtgbuJneFNsf:AvoidDuplicateLiteralsG"`The String literal 'dscorecare' appears 4 times in this file; the first occurrence is on line 71(ĞÚÒ²ÿÿÿÿÿ8Ç˜”·†2
-¡
-AZBm5Ez3i9dtgbuJneFRsf:AvoidDuplicateLiteralsK"_The String literal 'dscorelab' appears 4 times in this file; the first occurrence is on line 75(í³‹¼8Ç˜”·†2
-„
-AZBm5Ez3i9dtgbuJneFVsf:LocalVariableCouldBeFinalT":Local variable 'sourceRecordsList' could be declared final(Ã¾Ôşÿÿÿÿ8Ç˜”·†2
-‡
-AZBm5Ez3i9dtgbuJneFWsf:FieldLevelSecurityU"IPermissions should be checked before accessing resource source_record__c.(•Ó®8Ç˜”·†2
-v
-AZBm5Ez3i9dtgbuJneFXsf:LongVariable[">Avoid excessively long variable names like activeSourceRecords(®™²³8Ç˜”·†2
-
-AZBm5Ez3i9dtgbuJneFYsf:LocalVariableCouldBeFinal["<Local variable 'activeSourceRecords' could be declared final(®™²³8Ç˜”·†2
-}
-AZBm5Ez3i9dtgbuJneFZsf:LongVariable\"@Avoid excessively long variable names like inactiveSourceRecords(Ï¬íœÿÿÿÿÿ8Ç˜”·†2
-ˆ
-AZBm5Ez3i9dtgbuJneFasf:LocalVariableCouldBeFinal\">Local variable 'inactiveSourceRecords' could be declared final(Ï¬íœÿÿÿÿÿ8Ç˜”·†2
-†
-AZBm5Ez3i9dtgbuJneFcsf:IfElseDefaultCase`"DAlways include an "else" statement at the end of "if" and "else if".(àÔ‰üùÿÿÿÿ8Ç˜”·†2
-y
-AZBm5Ez3i9dtgbuJneFdsf:AvoidLiteralsInIfCondition`".Avoid using Literals in Conditional Statements(àÔ‰üùÿÿÿÿ8Ç˜”·†2
-y
-AZBm5Ez3i9dtgbuJneFgsf:AvoidLiteralsInIfConditionb".Avoid using Literals in Conditional Statements(¸Ä©ÿÿÿÿÿ8Ç˜”·†2
-}
-AZBm5Ez3i9dtgbuJneFksf:LocalVariableCouldBeFinall"8Local variable 'inactiveResults' could be declared final(ñ²í8Ç˜”·†2
-}
-AZBm5Ez3i9dtgbuJneFm#sf:AvoidInstantiatingObjectsInLoopso",Avoid instantiating new objects inside loops(®ˆ¤ìùÿÿÿÿ8Ç˜”·†2
-o
-AZBm5Ez3i9dtgbuJneFpsf:CollapsibleIfStatementsq",These nested if statements could be combined(ıÇşÍ8Ç˜”·†2
-|
-AZBm5Ez3i9dtgbuJneFssf:LocalVariableCouldBeFinalz"2Local variable 'cerecClub' could be declared final(÷ü¢€øÿÿÿÿ8Ç˜”·†2
-‚
-AZBm5Ez3i9dtgbuJneFvsf:LocalVariableCouldBeFinal"7Local variable 'cerecContracts' could be declared final(‰Èì¢ùÿÿÿÿ8Ç˜”·†2
-€
-AZBm5Ez3i9dtgbuJneFwsf:FieldLevelSecurity"APermissions should be checked before accessing resource contract.(Ø¹Ù8Ç˜”·†2
-‡
-AZBm5Ez3i9dtgbuJneFzsf:IfElseDefaultCaseš"DAlways include an "else" statement at the end of "if" and "else if".(„îøİüÿÿÿÿ8Ç˜”·†2
-y
-AZBm5Ez3i9dtgbuJneF2#sf:AvoidInstantiatingObjectsInLoops›",Avoid instantiating new objects inside loops(€Òêæ8Ç˜”·†2
-y
-AZBm5Ez3i9dtgbuJneF7#sf:AvoidInstantiatingObjectsInLoops",Avoid instantiating new objects inside loops(çÑŒ¿8Ç˜”·†2
-…
-AZBm5Ez3i9dtgbuJneF_sf:CyclomaticComplexity®"DThe method 'getSourceRecordFlags' has a Cyclomatic Complexity of 26.(ËÍš’8Ç˜”·†2
-~
-AZBm5Ez3i9dtgbuJneGAsf:NPathComplexity®"BThe method getSourceRecordFlags() has an NPath complexity of 35685(ËÍš’8Ç˜”·†2
-{
-AZBm5Ez3i9dtgbuJneGFsf:LongVariable·"=Avoid excessively long variable names like sureSmileAlignerId(×åÇòøÿÿÿÿ8Ç˜”·†2
-w
-AZBm5Ez3i9dtgbuJneGHsf:LongVariable¹">Avoid excessively long variable names like sureSmileAdvancedId(†¸ØÚ8Ç˜”·†2
-
-AZBm5Ez3i9dtgbuJneGJsf:LocalVariableCouldBeFinal¼"9Local variable 'erpSourceRecords' could be declared final(¤‡†ä8Ç˜”·†2
-p
-AZBm5Ez3i9dtgbuJneGOsf:CollapsibleIfStatementsÁ",These nested if statements could be combined(¤Àš’8­™”·†2
-y
-AZBm5Ez3i9dtgbuJneGP#sf:AvoidInstantiatingObjectsInLoopsÂ",Avoid instantiating new objects inside loops(å©ë8­™”·†2
-~
-AZBm5Ez3i9dtgbuJneGTsf:NullAssignmentÈ"CAssigning an Object to null is a code smell.  Consider refactoring.(ç¢½Ÿ8­™”·†2
-~
-AZBm5Ez3i9dtgbuJneGVsf:NullAssignmentÉ"CAssigning an Object to null is a code smell.  Consider refactoring.(´ø§ş8­™”·†2
-ƒ
-AZBm5Ez3i9dtgbuJneGXsf:NullAssignmentÊ"CAssigning an Object to null is a code smell.  Consider refactoring.(‹¾¬Øûÿÿÿÿ8­™”·†2
-~
-AZBm5Ez3i9dtgbuJneGb#sf:AvoidInstantiatingObjectsInLoopsÎ",Avoid instantiating new objects inside loops(Íû§Ôúÿÿÿÿ8­™”·†2
-z
-AZBm5Ez3i9dtgbuJneGesf:AvoidLiteralsInIfConditionÑ".Avoid using Literals in Conditional Statements(È¾½¯ûÿÿÿÿ8­™”·†2
-y
-AZBm5Ez4i9dtgbuJneGh#sf:AvoidInstantiatingObjectsInLoopsÒ",Avoid instantiating new objects inside loops(¼›Ó†8­™”·†2
-x
-AZBm5Ez4i9dtgbuJneGk#sf:AvoidInstantiatingObjectsInLoopsÖ",Avoid instantiating new objects inside loops(ß—Ü$8­™”·†2
-~
-AZBm5Ez4i9dtgbuJneGqsf:NullCoalescingOperatorß"6Consider using the Salesforce Null Coalescing Operator(àö½õøÿÿÿÿ8­™”·†2
-~
-AZBm5Ez4i9dtgbuJneGrsf:NullCoalescingOperatorß"6Consider using the Salesforce Null Coalescing Operator(àö½õøÿÿÿÿ8­™”·†2
-u
-AZBm5Ez4i9dtgbuJneGtsf:AvoidLiteralsInIfConditionä".Avoid using Literals in Conditional Statements(™©Ù²8­™”·†2
-{
-AZBm5Ez4i9dtgbuJneG1sf:LocalVariableCouldBeFinalì"0Local variable 'results' could be declared final(Àè­»ùÿÿÿÿ8­™”·†2
-
-AZBm5Ez4i9dtgbuJneG8sf:CyclomaticComplexityÿ"@The method 'getContractFlags' has a Cyclomatic Complexity of 24.(‰¸üƒ8­™”·†2
-{
-AZBm5Ez4i9dtgbuJneG9sf:NPathComplexityÿ"?The method getContractFlags() has an NPath complexity of 279948(‰¸üƒ8­™”·†2
-v
-AZBm5Ez4i9dtgbuJneG-sf:LongVariable"=Avoid excessively long variable names like serviceContractIds(³¤¶¦8­™”·†2
-
-AZBm5Ez4i9dtgbuJneG_sf:LocalVariableCouldBeFinal";Local variable 'serviceContractIds' could be declared final(³¤¶¦8­™”·†2
-…
-AZBm5Ez4i9dtgbuJneHMsf:LocalVariableCouldBeFinal–":Local variable 'contractLineItems' could be declared final(†üƒÖùÿÿÿÿ8­™”·†2
-V
-AZBm5Ez4i9dtgbuJneHNsf:SOQLInjection–"SOQL Injection possible(†üƒÖùÿÿÿÿ8­™”·†2
-x
-AZBm5Ez4i9dtgbuJneHOsf:LongVariable™"?Avoid excessively long variable names like contractLineItemsMap(ØÇ¦Ô8­™”·†2
-ƒ
-AZBm5Ez4i9dtgbuJneHPsf:LocalVariableCouldBeFinal™"=Local variable 'contractLineItemsMap' could be declared final(ØÇ¦Ô8­™”·†2
-~
-AZBm5Ez4i9dtgbuJneHS#sf:AvoidInstantiatingObjectsInLoops",Avoid instantiating new objects inside loops(Îı¬Éøÿÿÿÿ8­™”·†2
-r
-AZBm5Ez4i9dtgbuJneHVsf:LongLines§"<Limiting line length improves readability and understanding.(ñ÷ûÀ8­™”·†2
-
-AZBm5Ez4i9dtgbuJneHWsf:LocalVariableCouldBeFinal§"9Local variable 'tempDsCoreAccess' could be declared final(ñ÷ûÀ8­™”·†2
-S
-AZBm5Ez4i9dtgbuJneHXsf:UselessParentheses§"Useless parentheses.(ñ÷ûÀ8­™”·†2
-ƒ
-AZBm5Ez4i9dtgbuJneHZsf:LocalVariableCouldBeFinal¨"8Local variable 'tempDsCoreLight' could be declared final(Äê”™ûÿÿÿÿ8­™”·†2
-v
-AZBm5Ez4i9dtgbuJneHasf:LongVariable©"=Avoid excessively long variable names like tempDsCoreStandard(ÌÜùû8­™”·†2
-
-AZBm5Ez4i9dtgbuJneHcsf:LocalVariableCouldBeFinal©";Local variable 'tempDsCoreStandard' could be declared final(ÌÜùû8­™”·†2
-v
-AZBm5Ez4i9dtgbuJneHdsf:LongVariableª"=Avoid excessively long variable names like tempDsCoreAdvanced(÷Æ¸Ï8­™”·†2
-
-AZBm5Ez4i9dtgbuJneHfsf:LocalVariableCouldBeFinalª";Local variable 'tempDsCoreAdvanced' could be declared final(÷Æ¸Ï8­™”·†2
-}
-AZBm5Ez4i9dtgbuJneHhsf:LocalVariableCouldBeFinal«"7Local variable 'tempDsCoreCare' could be declared final(¯ÉÜÇ8­™”·†2
-|
-AZBm5Ez4i9dtgbuJneHjsf:LocalVariableCouldBeFinal¬"6Local variable 'tempDsCoreLab' could be declared final(Ş­£ª8­™”·†2
-~
-AZBm5Ez4i9dtgbuJneHk#sf:AvoidInstantiatingObjectsInLoops¯",Avoid instantiating new objects inside loops(û¸Áùıÿÿÿÿ8­™”·†2
-X
-AZBm5Ez4i9dtgbuJneHlsf:UselessParentheses¯"Useless parentheses.(û¸Áùıÿÿÿÿ8­™”·†2
-y
-AZBm5Ez4i9dtgbuJneHm#sf:AvoidInstantiatingObjectsInLoops°",Avoid instantiating new objects inside loops(™‰Á´8­™”·†2
-S
-AZBm5Ez4i9dtgbuJneHnsf:UselessParentheses°"Useless parentheses.(™‰Á´8­™”·†2
-~
-AZBm5Ez4i9dtgbuJneHo#sf:AvoidInstantiatingObjectsInLoops±",Avoid instantiating new objects inside loops(‘Ûëüúÿÿÿÿ8­™”·†2
-X
-AZBm5Ez4i9dtgbuJneHpsf:UselessParentheses±"Useless parentheses.(‘Ûëüúÿÿÿÿ8­™”·†2
-y
-AZBm5Ez4i9dtgbuJneHq#sf:AvoidInstantiatingObjectsInLoops²",Avoid instantiating new objects inside loops(†îöï8­™”·†2
-S
-AZBm5Ez4i9dtgbuJneHrsf:UselessParentheses²"Useless parentheses.(†îöï8­™”·†2
-~
-AZBm5Ez4i9dtgbuJneHs#sf:AvoidInstantiatingObjectsInLoops³",Avoid instantiating new objects inside loops(Õìóâúÿÿÿÿ8­™”·†2
-X
-AZBm5Ez4i9dtgbuJneHtsf:UselessParentheses³"Useless parentheses.(Õìóâúÿÿÿÿ8­™”·†2
-~
-AZBm5Ez4i9dtgbuJneHu#sf:AvoidInstantiatingObjectsInLoops´",Avoid instantiating new objects inside loops(­˜ÌÜúÿÿÿÿ8­™”·†2
-X
-AZBm5Ez4i9dtgbuJneHvsf:UselessParentheses´"Useless parentheses.(­˜ÌÜúÿÿÿÿ8­™”·†2
-{
-AZBm5Ez4i9dtgbuJneHwsf:LocalVariableCouldBeFinalº"0Local variable 'results' could be declared final(Àè­»ùÿÿÿÿ8­™”·†2
-]
-AZBm5Ez4i9dtgbuJneH3sf:CommentRequiredÆ"Header comments are Required(ÿ’£Éşÿÿÿÿ8­™”·†2
-v
-AZBm5Ez4i9dtgbuJneH4sf:LongVariableÑ"=Avoid excessively long variable names like sureSmileAlignerId(„ãƒ8­™”·†2
-W
-AZBm5Ez4i9dtgbuJneH5sf:CommentRequiredÒ"Field comments are Required(ª‹Ã–8­™”·†2
-w
-AZBm5Ez4i9dtgbuJneH6sf:LongVariableÓ">Avoid excessively long variable names like sureSmileAdvancedId(ñŞ©ƒ8­™”·†2
-W
-AZBm5Ez4i9dtgbuJneH7sf:CommentRequiredÓ"Field comments are Required(ñŞ©ƒ8­™”·†2
-t
-AZBm5Ez4i9dtgbuJneH9sf:CommentRequiredÕ"3Public method and constructor comments are Required(Ü€Ç¤ıÿÿÿÿ8­™”·†2
-o
-AZBm5Ez4i9dtgbuJneH_sf:CommentRequiredÚ"3Public method and constructor comments are Required(¿ĞùŸ8­™”·†2
-|
-AZBm5Ez4i9dtgbuJneIAsf:LongVariableà">Avoid excessively long variable names like sureSmileAdvancedId(õ“»¼øÿÿÿÿ8­™”·†2
-{
-AZBm5Ez4i9dtgbuJneIBsf:LongVariableà"=Avoid excessively long variable names like sureSmileAlignerId(õ“»¼øÿÿÿÿ8­™”·†2
-t
-AZBm5Ez4i9dtgbuJneIDsf:CommentRequiredà"3Public method and constructor comments are Required(õ“»¼øÿÿÿÿ8­™”·†2
