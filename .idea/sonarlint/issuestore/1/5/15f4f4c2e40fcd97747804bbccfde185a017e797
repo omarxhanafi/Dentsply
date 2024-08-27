@@ -1,0 +1,70 @@
+
+'sf:CommentSize
+"Line too long(—‚ª±
+Rsf:ClassWithoutTestClass".Class does not have a corresponding test class(ôºïÃ
+{sf:CyclomaticComplexity"XThe class 'WorkflowProfilingController' has a Cyclomatic Complexity of 6 (Highest = 13).(ôºïÃ
+Ysf:AuraEnabledWithoutCatchBlock".@AuraEnabled should have proper error handling(ëÓ¯›
+Ssf:LocalVariableCouldBeFinal",Local variable 'acc' could be declared final(Ó–’\
+`sf:FieldLevelSecurity"@Permissions should be checked before accessing resource account.(Ó–’\
+Xsf:LocalVariableCouldBeFinal"0Local variable 'country' could be declared final(ÓĞÍ¹
+Isf:OnlyOneReturn"-Methods should only have 1 return statements.(©çû³
+esf:FieldLevelSecurity"DPermissions should be checked before accessing resource workflow__c.(©çû³
+jsf:AvoidSoqlWithNullInWhere!">Avoid using null conditions in where clause of SOQL statements(¯ƒ´Æùÿÿÿÿ
+jsf:FieldLevelSecurity!"DPermissions should be checked before accessing resource workflow__c.(¯ƒ´Æùÿÿÿÿ
+^sf:AuraEnabledWithoutCatchBlock4".@AuraEnabled should have proper error handling(üû¾­ûÿÿÿÿ
+ssf:FieldLevelSecurity5"MPermissions should be checked before accessing resource workflowprofiling__c.(øãš÷şÿÿÿÿ
+^sf:AuraEnabledWithoutCatchBlock?".@AuraEnabled should have proper error handling(­›ùÿÿÿÿ
+Xsf:LongVariableA"=Avoid excessively long variable names like existingRecordsMap(û”·Ë
+csf:LocalVariableCouldBeFinalA";Local variable 'existingRecordsMap' could be declared final(û”·Ë
+[sf:LocalVariableCouldBeFinalE"3Local variable 'accountIds' could be declared final(ñßæ‡
+`sf:LongVariableG"@Avoid excessively long variable names like eachWorkflowProfiling(Ûƒ´³øÿÿÿÿ
+ssf:FieldLevelSecurityL"MPermissions should be checked before accessing resource workflowprofiling__c.(Ó·ãŞùÿÿÿÿ
+`sf:LocalVariableCouldBeFinalT"8Local variable 'recordsToUpsert' could be declared final(ÎÙˆè
+dsf:LocalVariableCouldBeFinalY"7Local variable 'existingRecord' could be declared final(“‚„ïıÿÿÿÿ
+nsf:FieldLevelSecurityh"MPermissions should be checked before accessing resource WorkflowProfiling__c.(ï¬”´
+nsf:FieldLevelSecurityh"MPermissions should be checked before accessing resource WorkflowProfiling__c.(ï¬”´
+^sf:AuraEnabledWithoutCatchBlockx".@AuraEnabled should have proper error handling(ÄÊµ‹üÿÿÿÿ
+xsf:CyclomaticComplexityx"PThe method 'getProductFamilyListByWorkflowId' has a Cyclomatic Complexity of 10.(ÄÊµ‹üÿÿÿÿ
+^sf:LongVariabley"CAvoid excessively long variable names like productFamilyWrapperList(ğ‰×‰
+isf:LocalVariableCouldBeFinaly"ALocal variable 'productFamilyWrapperList' could be declared final(ğ‰×‰
+Ssf:LocalVariableCouldBeFinal{",Local variable 'acc' could be declared final(Ó–’\
+`sf:FieldLevelSecurity{"@Permissions should be checked before accessing resource account.(Ó–’\
+csf:LocalVariableCouldBeFinal„":Local variable 'productFamilyList' could be declared final(šÆå¬
+bsf:LocalVariableCouldBeFinal‡"9Local variable 'nonERPProductIds' could be declared final(îì±Ä
+[sf:LongVariable"?Avoid excessively long variable names like productProfilingList(Ï¸š…
+fsf:LocalVariableCouldBeFinal"=Local variable 'productProfilingList' could be declared final(Ï¸š…
+tsf:FieldLevelSecurity"MPermissions should be checked before accessing resource product_profiling__c.(ÿì“ÿÿÿÿÿ
+esf:LocalVariableCouldBeFinal•"7Local variable 'familyOrderMap' could be declared final(À¡”†şÿÿÿÿ
+jsf:FieldLevelSecurity–"HPermissions should be checked before accessing resource workflowline__c.(¹ÏÜÜ
+a#sf:AvoidInstantiatingObjectsInLoopsœ",Avoid instantiating new objects inside loops(ßÖ”¾ÿÿÿÿÿ
+^sf:LocalVariableCouldBeFinalœ"0Local variable 'wrapper' could be declared final(ßÖ”¾ÿÿÿÿÿ
+bsf:LocalVariableCouldBeFinalŸ"9Local variable 'selectedPPRecord' could be declared final(Õ¡‡Æ
+\#sf:AvoidInstantiatingObjectsInLoops£",Avoid instantiating new objects inside loops(ÁÆ¤—
+a#sf:AvoidInstantiatingObjectsInLoops¥",Avoid instantiating new objects inside loops(®¶‚Ñşÿÿÿÿ
+\#sf:AvoidInstantiatingObjectsInLoopsª",Avoid instantiating new objects inside loops(¶Ë²Ğ
+a#sf:AvoidInstantiatingObjectsInLoops¬",Avoid instantiating new objects inside loops(Â³óáøÿÿÿÿ
+-sf:CommentSizeÁ"Line too long(À…ô¡ûÿÿÿÿ
+[sf:LongVariableÉ"?Avoid excessively long variable names like productProfilingList(èÜß•
+nsf:CyclomaticComplexityÉ"JThe method 'findProductProfilingRecord' has a Cyclomatic Complexity of 13.(èÜß•
+csf:LocalVariableCouldBeFinalÊ":Local variable 'matchingPPRecords' could be declared final(¸ß›ü
+`sf:LongVariableÍ"?Avoid excessively long variable names like eachProductProfiling(ï¿’øÿÿÿÿ
+bsf:LocalVariableCouldBeFinalÕ"9Local variable 'accountPPRecords' could be declared final(¦ª„Ä
+dsf:LocalVariableCouldBeFinalŞ"6Local variable 'activeRecords' could be declared final(ıé„Êşÿÿÿÿ
+dsf:LocalVariableCouldBeFinalî"6Local variable 'activeRecords' could be declared final(ıé„Êşÿÿÿÿ
+nsf:FieldLevelSecurity"LPermissions should be checked before accessing resource non_erp_products__r.(£‚õº
+ksf:FieldLevelSecurity"IPermissions should be checked before accessing resource productfamily__c.(£‚õº
+jsf:FieldLevelSecurity"HPermissions should be checked before accessing resource workflowline__c.(£‚õº
+fsf:AvoidSoqlWithNullInWhere">Avoid using null conditions in where clause of SOQL statements(£‚õº
+nsf:FieldLevelSecurity"LPermissions should be checked before accessing resource non_erp_products__r.(£‚õº
+ksf:FieldLevelSecurity"IPermissions should be checked before accessing resource productfamily__c.(£‚õº
+jsf:FieldLevelSecurity"HPermissions should be checked before accessing resource workflowline__c.(£‚õº
+Zsf:AuraEnabledWithoutCatchBlock¶".@AuraEnabled should have proper error handling(ÊœÊ 
+bsf:LocalVariableCouldBeFinal·"4Local variable 'newPPRecord' could be declared final(£Íê™üÿÿÿÿ
+osf:FieldLevelSecurity¼"MPermissions should be checked before accessing resource Product_Profiling__c.(«º´”
+Ysf:LongVariableÑ"=Avoid excessively long variable names like productProfilingId(õÂÿË
+Ysf:LongVariableÛ"=Avoid excessively long variable names like productProfilingId(ä¤Îà
+^sf:LocalVariableCouldBeFinalé"5Local variable 'otherWrapper' could be declared final(üæƒ
+^sf:LongVariable÷"=Avoid excessively long variable names like competitorProducts(îòàøÿÿÿÿ
+Zsf:LocalVariableCouldBeFinal›"2Local variable 'thisOrder' could be declared final(¤’Ä3
+\sf:LocalVariableCouldBeFinalœ"3Local variable 'otherOrder' could be declared final(„Ëñú
+Jsf:OnlyOneReturn"-Methods should only have 1 return statements.(”·³›

@@ -9,6 +9,7 @@
  * Modifications Log 
  * Ver   Date         Author                     Modification
  * 1.0   12-10-2020   kdoruibin@salesforce.com   Initial Version
+ * 2.0   14-08-2024   ohanafi@salesforce.com     TFUS-000006884 - Co_travel__c translation bug fix
 **/
 public with sharing class CallReportQuickActionPocController {
     @AuraEnabled

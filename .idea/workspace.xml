@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/IlluminatedCloud/DevSep24/OfflineSymbolTable.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/CallReportQuickActionPocController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/CallReportQuickActionPocController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/callReportQuickActionPocLwc/callReportQuickActionPocLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/callReportQuickActionPocLwc/callReportQuickActionPocLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Test_CallReportQuickActionPocController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_CallReportQuickActionPocController.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,16 +76,16 @@
             <option name="mruEntries">
               <list>
                 <ConnectionMruEntry>
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="lastUsed" value="1724676542423" />
+                  <option name="numUsages" value="18" />
+                </ConnectionMruEntry>
+                <ConnectionMruEntry>
                   <option name="connectionName" value="DevAug24" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="lastUsed" value="1722958440931" />
                   <option name="numUsages" value="14" />
-                </ConnectionMruEntry>
-                <ConnectionMruEntry>
-                  <option name="connectionName" value="Production" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1722957389170" />
-                  <option name="numUsages" value="3" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="StgJun24" />
@@ -17865,9 +17863,10 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:CALLREPORTQUICKACTIONPOCCONTROLLER" value="1723658293831" />
+                      <entry key="APEXCLASS:CALLREPORTQUICKACTIONPOCCONTROLLER" value="1724764667366" />
+                      <entry key="APEXCLASS:TEST_CALLREPORTQUICKACTIONPOCCONTROLLER" value="1724764667366" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1722958646000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1723658188000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1723658362000" />
                     </map>
                   </option>
                 </ConnectionWorkspaceSettings>
@@ -18995,8 +18994,11 @@
                   <option name="name" value="SOQL Query 5" />
                 </SoqlQuerySavedDocument>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select id, Name from Workflow__c" />
-                  <option name="name" value="SOQL Query 6" />
+                  <option name="body" value="SELECT Name, ApiVersion, CreatedBy.Name, NamespacePrefix FROM ApexClass WHERE NamespacePrefix = NULL AND ApiVersion &lt;= 52.0 ORDER BY ApiVersion ASC&#10;" />
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="filePath" value="file://$USER_HOME$/Downloads/Api Versions.soql" />
+                  <option name="name" value="Api Versions" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
@@ -19026,82 +19028,84 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Apex Offline Debugger.Test_ProductTrigger.executor&quot;: &quot;Debug&quot;,
-    &quot;Apex Unit Tests.Test_AccountFlagsController.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ActivityScorecardController.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_BatchUpdateProducts.testBatchUpdateProducts.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductProfilingHierarchyController.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductTrigger.executor&quot;: &quot;Debug&quot;,
-    &quot;Apex Unit Tests.Test_WorkflowProfilingController.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ohanafi/IdeaProjects/Dentsply/src/objects&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.29852837&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Apex Offline Debugger.Test_CallReportQuickActionPocController.executor": "Debug",
+    "Apex Offline Debugger.Test_ProductTrigger.executor": "Debug",
+    "Apex Unit Tests.Test_AccountFlagsController.executor": "Run",
+    "Apex Unit Tests.Test_ActivityScorecardController.executor": "Run",
+    "Apex Unit Tests.Test_BatchUpdateProducts.testBatchUpdateProducts.executor": "Run",
+    "Apex Unit Tests.Test_CallReportQuickActionPocController.executor": "Run",
+    "Apex Unit Tests.Test_ProductProfilingHierarchyController.executor": "Run",
+    "Apex Unit Tests.Test_ProductProfilingTrigger.executor": "Run",
+    "Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier.executor": "Run",
+    "Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor": "Run",
+    "Apex Unit Tests.Test_ProductTrigger.executor": "Debug",
+    "Apex Unit Tests.Test_WorkflowProfilingController.executor": "Run",
+    "Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling.executor": "Run",
+    "Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/ohanafi/IdeaProjects/Dentsply/src/objects",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.29852837",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/objects" />
       <recent name="$PROJECT_DIR$/src/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling">
-    <configuration name="Test_ProductProfilingHierarchyController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+  <component name="RunManager" selected="Apex Unit Tests.Test_CallReportQuickActionPocController">
+    <configuration name="Test_CallReportQuickActionPocController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
+      <option name="apexLogLevel" value="FINER" />
       <option name="calloutsLogLevel" value="INFO" />
       <option name="connectionName" value="DevSep24" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
+      <option name="databaseLogLevel" value="ERROR" />
       <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
+      <option name="logLevelsInitialized" value="true" />
       <option name="moduleToTestClassNames">
         <map>
           <entry key="Dentsply">
             <value>
               <set>
-                <option value="Test_ProductProfilingHierarchyController" />
+                <option value="Test_CallReportQuickActionPocController" />
               </set>
             </value>
           </entry>
         </map>
       </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
+      <option name="nbaLogLevel" value="ERROR" />
+      <option name="profilingLogLevel" value="ERROR" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="systemLogLevel" value="DEBUG" />
+      <option name="systemLogLevel" value="ERROR" />
       <option name="testClassToTestMethodNames">
         <map />
       </option>
       <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
+      <option name="validationLogLevel" value="ERROR" />
+      <option name="visualforceLogLevel" value="FINE" />
+      <option name="waveLogLevel" value="ERROR" />
+      <option name="workflowLogLevel" value="ERROR" />
       <method v="2" />
     </configuration>
     <configuration name="Test_ProductTrigger" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
@@ -19278,11 +19282,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Apex Unit Tests.Test_CallReportQuickActionPocController" />
         <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling" />
         <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId" />
         <item itemvalue="Apex Unit Tests.Test_WorkflowProfilingController" />
         <item itemvalue="Apex Unit Tests.Test_ProductTrigger" />
-        <item itemvalue="Apex Unit Tests.Test_ProductProfilingHierarchyController" />
       </list>
     </recent_temporary>
   </component>
@@ -19428,6 +19432,8 @@
       <workItem from="1720512257540" duration="22514000" />
       <workItem from="1721636828642" duration="1365000" />
       <workItem from="1721733855822" duration="16296000" />
+      <workItem from="1724207613904" duration="1159000" />
+      <workItem from="1724660298630" duration="3719000" />
     </task>
     <servers />
   </component>
@@ -19463,6 +19469,7 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMargins.ic2" NAME="Margin Coverage Results" MODIFIED="1677067029631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_UpdateContactsBypassDuplicate_testUpdateContact.ic2" NAME="Lead Coverage Results" MODIFIED="1675421607460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_CallReportQuickActionPocController.ic2" NAME="DevSep24 Coverage Results" MODIFIED="1724764321078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevSep24" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_GuidanceRendererController.ic2" NAME="Tracker Coverage Results" MODIFIED="1681118187685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ProductProfilingHierarchyController.ic2" NAME="acc360 Coverage Results" MODIFIED="1715854183266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJul24" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchSetAccountSubSegmentation.ic2" NAME="Production Coverage Results" MODIFIED="1674815707650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJul24" CONNECTION_TYPE="OAUTH" />

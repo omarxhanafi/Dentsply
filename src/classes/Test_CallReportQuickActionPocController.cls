@@ -7,7 +7,7 @@
  * Modifications Log 
  * Ver   Date         Author                     Modification
  * 1.1   09-09-2021   kdoruibin@salesforce.com   added system.runAs()
- * 1.0   12-09-2020   kdoruibin@salesforce.com   Initial Version
+ * 2.0   14-08-2024   ohanafi@salesforce.com     TFUS-000006884 - Co_travel__c translation bug fix
 **/
 @isTest(seeAllData=false)
 public without sharing class Test_CallReportQuickActionPocController {
@@ -61,4 +61,44 @@ public without sharing class Test_CallReportQuickActionPocController {
         System.assertEquals(Schema.Event.SObjectType, createdEventId.getSobjectType());
         Test.stopTest();
     }
+
+    @isTest
+    private static void testGetPickListValuesIntoMap() {
+        Test.startTest();
+        // Call the method and store the result in a map
+        Map<String, String> pickListValuesMap = CallReportQuickActionPocController.getPickListValuesIntoMap();
+
+        // Assert that the map is not empty
+        System.assertNotEquals(0, pickListValuesMap.size(), 'Expected non-empty map of picklist values');
+
+        Test.stopTest();
+    }
+
+    @isTest
+    private static void testGetProcedureTrackerDataList() {
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
+        List<Account> testAccountList = [SELECT Id FROM Account WHERE Ownerid = :testUser.Id];
+        testAccountList[0].Country__c = 'US';
+        update testAccountList[0];
+
+
+        // Create a ProcedureTracker__c record
+        ProcedureTracker__c procedureTracker = new ProcedureTracker__c(
+                PracticeAccount__c = testAccountList[0].Id,
+                RecordTypeId = Schema.SObjectType.ProcedureTracker__c.getRecordTypeInfosByName().get('Clear Aligners - US').getRecordTypeId()
+        );
+        insert procedureTracker;
+
+        Test.startTest();
+
+        // Call the method and retrieve the ProcedureTracker__c record by its ID
+        ProcedureTracker__c result = CallReportQuickActionPocController.getProcedureTrackerDataList(procedureTracker.Id);
+
+        // Assert that the returned record is not null
+        System.assertNotEquals(null, result, 'Expected non-null ProcedureTracker__c record');
+
+        Test.stopTest();
+    }
+
+
 }
