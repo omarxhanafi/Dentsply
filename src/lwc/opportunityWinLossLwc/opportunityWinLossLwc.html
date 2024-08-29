@@ -2,14 +2,14 @@
     <lightning-messages></lightning-messages>
     <lightning-record-edit-form object-api-name="Opportunity" record-type-id={recordTypeId} onsubmit={validateFields}>
         <div class="slds-form-element">
-            <lightning-input-field field-name="StageName" value={stageName} onchange={handleStageNameChange}></lightning-input-field>
+            <lightning-input-field field-name={stageField} value={stageName} onchange={handleStageNameChange}></lightning-input-field>
         </div>
         <template if:true={showWinLossFields}>
             <div class="slds-form-element">
-                <lightning-input-field field-name="Win_Loss_Reason__c" required onchange={handleWinLossReasonChange} value={winLossReason}></lightning-input-field>
+                <lightning-input-field field-name={wlReasonField} required onchange={handleWinLossReasonChange} value={winLossReason}></lightning-input-field>
             </div>
             <div class="slds-form-element">
-                <lightning-input-field field-name="Win_Loss_Description__c" onchange={handleWinLossDescriptionChange}></lightning-input-field>
+                <lightning-input-field field-name={wlDescriptionField} onchange={handleWinLossDescriptionChange}></lightning-input-field>
             </div>
         </template>
     </lightning-record-edit-form>

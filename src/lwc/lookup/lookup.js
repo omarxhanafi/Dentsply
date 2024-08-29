@@ -269,6 +269,7 @@ export default class Lookup extends NavigationMixin(LightningElement) {
         this.processSelectionUpdate(true);
     }
 
+    @api
     handleClearSelection() {
         this._curSelection = [];
         this._hasFocus = false;

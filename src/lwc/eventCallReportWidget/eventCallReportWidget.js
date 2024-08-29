@@ -1,5 +1,5 @@
 import { LightningElement, api, track, wire } from 'lwc';
-import { handleApexError } from 'c/utils';
+import {formatApexError, handleApexError, handleApexErrors, reduceErrors} from 'c/utils';
 import { getRecord, getFieldValue, getRecordNotifyChange } from 'lightning/uiRecordApi';
 import FORM_FACTOR from '@salesforce/client/formFactor';
 import getEventRecord from '@salesforce/apex/RelatedRecordWidget_CC.getEventRecord';
@@ -74,12 +74,12 @@ export default class EventCallReportWidget extends LightningElement {
         // this.getEventFields();
     }
 
-    @wire(getEventRecord, { recordId: '$recordId', fields: 'Call_Report__c, SBU__c, IsChild, Created_by_me__c, Event_Status__c' })
+    @wire(getEventRecord, { recordId: '$recordId', fields: 'Call_Report__c, SBU__c, IsChild, Created_by_me__c, Assigned_to_me__c, Event_Status__c' })
     wiredEventRecord({ error, data }) {   
         if (data) {
             this.callReportId = data.Call_Report__c;
             this.eventSbu = data.SBU__c;
-            this.enableEditMode = data.IsChild || !data.Created_by_me__c ? false : true;
+            this.enableEditMode = data.IsChild || (!data.Created_by_me__c && !data.Assigned_to_me__c) ? false : true;
             this.disableSaveAndComplete = data.Event_Status__c === 'Completed';
         } else if (error) {
             this.isLoading = false;
@@ -218,7 +218,19 @@ export default class EventCallReportWidget extends LightningElement {
     handleError(event) {
         this.saveAndComplete = false;
         this.isLoading = false;
-        this.error = event.detail;
+
+        // Log full error in the console
+        console.error(JSON.stringify(event.detail,null,2));
+
+        // Try to simplify the error message for the user
+        try {
+            this.error = {
+                message: 'An error occurred',
+                detail: handleApexErrors(event.detail.output.errors)
+            }
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     get spinnerVariant() {

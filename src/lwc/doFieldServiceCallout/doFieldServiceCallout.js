@@ -22,8 +22,7 @@ export default class DoFieldServiceCallout extends NavigationMixin(LightningElem
     connectedCallback() {
         this.allIds.push(this.varRecordId);
         this.checkIfSentBefore();
-        //this.updateJSONVersion();
-        //this.doFieldServiceCalloutERP();
+
     }
 
     checkIfSentBefore(){
@@ -33,8 +32,7 @@ export default class DoFieldServiceCallout extends NavigationMixin(LightningElem
                 this.processingMessage = result;
                 if(result == 'processing'){
                     this.processingMessage = PROCESSING;
-                    //this.updateJSONVersion();
-                    this.doFieldServiceCalloutERP();
+                      this.doFieldServiceCalloutERP();
                 } 
                 if(result == 'alreadySent'){
                     this.processingMessage = NODUPS;
@@ -52,39 +50,32 @@ export default class DoFieldServiceCallout extends NavigationMixin(LightningElem
         doFieldServiceCalloutERP({ recordIds : this.allIds })
         .then(result => {
             this.responseERP = result;
-            let successResult;
             const obj = JSON.parse(this.responseERP);
-            if(result && (obj.hasOwnProperty('SFDC_ACK') || obj.hasOwnProperty('ProductOrder_ACK'))){
-                //successResult = success;
+            if(obj && (obj.hasOwnProperty('SFDC_ACK') || obj.hasOwnProperty('ProductOrder_ACK'))){
                 this.message = obj.hasOwnProperty('SFDC_ACK') ? obj.SFDC_ACK.Status : obj.ProductOrder_ACK.Status;
                 this.updateRecords();
 
             }else{
-                //successResult = error;
                 this.message = this.responseERP;
                 this.showToastMessage('Error', this.responseERP , 'error' );
             }
-
-
-            //this.responseERP = result;
-            /*if( this.responseERP.includes("Fault")) {
-                this.showToastMessage('Error', this.responseERP , 'error' );
-            } else {
-                this.updateRecords();
-            }*/
-
             
             
         })
         .catch(error => {
-           this.showToastMessage('Error', error.body.message + error.body.stackTrace , 'error' );
+            
+            if(error.body.message ==='Read timed out'){
+                this.message = 'Biztalk ' + error.body.message;
+                this.updateRecords();            
+            } else {
+                this.showToastMessage('Error', error.body.message + error.body.stackTrace , 'error' );
+            }
         });
     }
 
     updateRecords() {
         updateRecords({ recordIds : this.allIds, message : this.message })
         .then(result => {
-            //this.showToastMessage('Success', this.message , 'success' );
             if(result){
                 this.handleGoFinish();
             }
@@ -112,6 +103,5 @@ export default class DoFieldServiceCallout extends NavigationMixin(LightningElem
             mode: 'dismissable'
         });
         this.dispatchEvent(evt);
-        //this.handleGoFinish();          
     }
 }

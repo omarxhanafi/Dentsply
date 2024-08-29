@@ -195,6 +195,7 @@ export default class SelectProductsOmLwc extends LightningElement {
                                         Name : products[i].Name,
                                         //UnitPrice : this.order.Pricebook2.ShowPricingfromMicroServiceOM__c && foundInAX ? foundInAX.basePrice : products[i].PricebookEntries[0].UnitPrice,
                                         UnitPrice : this.order.Pricebook2.ShowPricingfromMicroServiceOM__c && foundInAX ? foundInAX.basePrice : products[i].PricebookEntries[0].UnitPrice,
+                                        AXCustomerPrice__c : this.order.Pricebook2.ShowPricingfromMicroServiceOM__c && foundInAX ? foundInAX.basePrice : null,
                                         
                                         AXRetailPrice__c : this.order.Pricebook2.ShowPricingfromMicroServiceOM__c && foundInAX ? foundInAX.retailPrice : null,
                                         AXDiscount__c : this.order.Pricebook2.ShowPricingfromMicroServiceOM__c && foundInAX.basePrice >  0 ? parseFloat(100 * (1 - ( foundInAX.basePrice / foundInAX.retailPrice ))).toFixed(2) /*100 * (1 - ( foundInAX.basePrice / foundInAX.retailPrice ))*/ : 0,
@@ -399,9 +400,9 @@ export default class SelectProductsOmLwc extends LightningElement {
                         let foundInAX2;
                         foundInAX2 = this.AXPrices.find(element => this.orderItems[i].Article__c === element.productEntry.productId);
                         this.orderItems[i].UnitPrice = foundInAX2.basePrice;
+                        this.orderItems[i].AXCustomerPrice__c = foundInAX2.basePrice;
                         this.orderItems[i].AXRetailPrice__c = foundInAX2.retailPrice;
-                        //this.orderItems[i].UnitPrice = parseFloat(foundInAX2.basePrice).toFixed(2);
-                        //this.orderItems[i].AXRetailPrice__c = parseFloat(foundInAX2.retailPrice).toFixed(2);
+                        
                     }
                     
                 

@@ -9,6 +9,10 @@
           <option name="defaultModuleName" value="Dentsply" />
           <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/DevSep24/OfflineSymbolTable.zip" />
         </IlluminatedCloudConnection>
+        <IlluminatedCloudConnection>
+          <option name="connectionName" value="UAT" />
+          <option name="connectionType" value="OAUTH" />
+        </IlluminatedCloudConnection>
       </list>
     </option>
     <option name="ignoreJavaScriptLanguageLevel" value="true" />

@@ -75,7 +75,7 @@ export default class ProductProfilingEditLwc extends LightningElement {
             }
             return item;
         });
-
+        
         this.selectedProducts = updatedProducts;
     }
 

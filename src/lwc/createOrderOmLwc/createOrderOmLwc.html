@@ -6,6 +6,21 @@
                 <h6>{labels.createOrderInstructionsLabel}</h6>
             </template>
         </div> 
+        <template if:true={displayAccountSelection}>
+            <div class="slds-col slds-size_6-of-6 slds-medium-size_3-of-6 slds-large-size_2-of-6">
+                <c-lookup
+                label="Account"
+                placeholder={labels.searchLabel}
+                is-multi-entry={isMultiEntry}
+                selection={initialSelection}
+                errors={errors}
+                onsearch={handleAccountSearch}
+                new-record-options={newRecordOptions}
+                onselectionchange={handleAccountChange}
+                ></c-lookup>
+            </div>
+            
+        </template>
         <template if:true={displayPricebooksCombo}>
             <div class="slds-col slds-size_6-of-6  slds-medium-size_3-of-6 slds-large-size_2-of-6">
                 <lightning-combobox required
@@ -18,8 +33,11 @@
                 </lightning-combobox>
             </div>
         </template>
-        <template if:false={displayPricebooksCombo}>
+        <template if:true={showNoAccessPriceBookError}>
             <h6 style="color:red;">{labels.noPricebooksAccess}</h6>
+        </template>
+        <template if:true={allowedToCreateOrder}>
+            <h6 style="color:red;">{labels.OMCanNotCreateOrder}</h6>
         </template>
         <template if:true={displayCurrenciesCombo}>
             <div class="slds-col slds-size_6-of-6 slds-medium-size_3-of-6 slds-large-size_2-of-6">
@@ -55,6 +73,23 @@
                     options={soruceRecordOptions}  
                     onchange={handleSourceRecordChange} >
                 </lightning-combobox> <!--soruceRecordOptions handleSourceRecordChange-->
+            </div>
+        </template>
+        <template if:true={showAutoSelectedSourceRecord}>
+            <div class="slds-col slds-size_6-of-6  slds-medium-size_3-of-6 slds-large-size_2-of-6">
+                <lightning-textarea name="autoSourceRecord" disabled value={autoSelectedSourceName} label="Auto Selected Unique Source Record" ></lightning-textarea>
+            </div>
+        </template>
+        <template if:true={displayAddressCombo}>
+            <div class="slds-col slds-size_6-of-6  slds-medium-size_3-of-6 slds-large-size_2-of-6">
+                <lightning-combobox required
+                    label="Shipping Address"
+                    name="ShippingAddress"
+                    value={selectedAddressRecordId}
+                    placeholder={labels.selectPricebook}
+                    options={addressRecordsOptions}  
+                    onchange={handleAddressChange} >
+                </lightning-combobox> 
             </div>
         </template>
         <template if:true={displayContractsCombo}>

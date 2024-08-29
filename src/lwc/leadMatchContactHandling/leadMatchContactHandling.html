@@ -126,7 +126,8 @@
                                                                 <lightning-input-field field-name="FirstName" value={leadFirstName} onchange={updateNewContact}></lightning-input-field>
                                                                 <lightning-input-field field-name="LastName" value={leadLastName} onchange={updateNewContact}></lightning-input-field>
                                                                 <lightning-input-field field-name="Email" value={leadEmail} onchange={updateNewContact}></lightning-input-field>
-                                                                <lightning-input-field field-name="Profession__c" value={leadProfession} onchange={updateNewContact}></lightning-input-field>
+                                                                <lightning-input-field field-name="Profession__c" value={leadProfession} onchange={updateNewContact} required></lightning-input-field>
+                                                                <lightning-input-field field-name="Specialty__c" value={leadSpecialty} onchange={updateNewContact}></lightning-input-field>
                                                                 <lightning-input-field field-name="Preferred_Language__c" value={leadLanguage} onchange={updateNewContact}></lightning-input-field>
                                                                 <lightning-input-field field-name="AccountId" value={selectedAccountId} read-only="true"></lightning-input-field>
                                                             </lightning-record-edit-form>
@@ -162,6 +163,16 @@
                             <lightning-record-view-form record-id={selectedContactId} object-api-name="Contact">
                                 <lightning-output-field field-name="Name" variant="label-hidden"></lightning-output-field>
                                 <lightning-output-field field-name="Email" variant="label-hidden"></lightning-output-field>
+
+                                <!--<template if:true={emailDiff}>
+                                    <lightning-input type="checkbox" label={emailDiffLabel} name="emailDiff" onchange={handleEmailDiff}></lightning-input>
+                                </template>
+                                
+                                <template if:true={phoneDiff}>
+                                    <br/>
+                                    <lightning-output-field lwc:ref="contactPhone" field-name="Phone" variant="label-hidden"></lightning-output-field>
+                                    <lightning-input type="checkbox" label={phoneDiffLabel} name="phoneDiff" onchange={handlePhoneDiff}></lightning-input>
+                                </template>-->
                             </lightning-record-view-form>
                             <!--<ul>
                                 <li>{selectedContactId}</li>

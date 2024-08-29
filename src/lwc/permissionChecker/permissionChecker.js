@@ -2,6 +2,7 @@ import { LightningElement, api} from 'lwc';
 import accountProgramMember from '@salesforce/customPermission/AccountProgramMember';
 import orderAccess from '@salesforce/customPermission/Order';
 import salesLeadAccess from '@salesforce/customPermission/canEditSalesLeads';
+import completeSalesLeadAccess from '@salesforce/customPermission/CanCompleteSalesLeadWoOrderOpp';
 
 export default class PermissionChecker extends LightningElement {
 
@@ -11,6 +12,8 @@ export default class PermissionChecker extends LightningElement {
         let accMember = false;
         let ordr = false;
         let salesLead = false;
+        let completeSalesLead = false;
+
         if(accountProgramMember == true){
             accMember = true;
         }
@@ -20,9 +23,13 @@ export default class PermissionChecker extends LightningElement {
         if(salesLeadAccess == true){
             salesLead = true;
         }
+        if(completeSalesLeadAccess == true){
+            completeSalesLead = true;
+        }
         permissions.set('AccountProgramMember', accMember);
         permissions.set('Order', ordr);
         permissions.set('SalesLead', salesLead);
+        permissions.set('CompleteSalesLead', completeSalesLead);
 
         //console.log(permissions);
         const permissionCheckEvent = new CustomEvent('permissioncheck', {

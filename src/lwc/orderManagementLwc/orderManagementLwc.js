@@ -4,6 +4,7 @@ import { NavigationMixin } from 'lightning/navigation';
 
 //Apex Controllers
 import uIThemeDisplayed from '@salesforce/apex/OrderManagement_CC.uIThemeDisplayed';
+import navType from '@salesforce/apex/OrderManagement_CC.getNavType';
 import getOrder from '@salesforce/apex/OrderManagement_CC.getOrder';
 import createOrder from '@salesforce/apex/OrderManagement_CC.createOrder';
 // Custom Labels
@@ -15,6 +16,7 @@ import addMoreProducts from '@salesforce/label/c.OM_Add_More_Products';
 const ORDER_SOBJECT_API_NAME = 'Order';
 export default class OrderManagementLwc  extends NavigationMixin(LightningElement) {
     @track userUiTheme = '';
+    @track userNavType = '';
     @api recordId;
     @api sobjectName;
     @api lightningOut;
@@ -23,6 +25,7 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
     @track selectedCurrency = '';
     @track selectedAccountsWithContactId = '';
     @track selectedSourceRecordId = '';
+    @track selectedAddressRecordId = '';
     @track order;
     @track showSelectProducts = false;
     @track showOrderItems = false;
@@ -41,13 +44,14 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
 
     connectedCallback() {
         this.uIThemeDisplayed();
+        this.navType();
     
     }
     uIThemeDisplayed() {
         uIThemeDisplayed()
         .then(result => {
             this.userUiTheme = result;
-            if(this.isOrder) {
+            if(this.isOrder && this.recordId) {
                 this.getOrder();
             } else {
                 this.orderCreationSkip = false;
@@ -56,6 +60,15 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
         })
         .catch(error => {
             showToast(this, this.userUiTheme, 'Error', JSON.stringify(error) , 'error');
+        });
+    }
+    navType() {
+        navType()
+        .then(result => {
+            this.userNavType = result;
+        })
+        .catch(error => {
+            showToast(this, this.userNavType, 'Error', JSON.stringify(error) , 'error');
         });
     }
     handleSelectedPriceBook(event) {
@@ -68,9 +81,13 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
     handleOrderCreation(event) {
         this.selectContractId = event.detail.contractId;
         this.seletedPricebookId = event.detail.pricebookId;
-        this.selectedrelatedAccountsWithContactId = event.detail.accountId; 
+        this.selectedrelatedAccountsWithContactId = event.detail.selectedAccountsWithContactId; 
         this.selectedSourceRecordId = event.detail.sourceRecordId; 
+        this.selectedAddressRecordId = event.detail.addressRecordId;
         this.selectedCurrency = event.detail.currency;
+        if(event.detail.accountId){
+            this.recordId = event.detail.accountId;
+        }
         this.insertOrder();
     }
     insertOrder() {
@@ -79,6 +96,7 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
                     contractId : this.selectContractId,
                     currencyIsoCode : this.selectedCurrency,
                     sourceRecordId : this.selectedSourceRecordId,
+                    addressRecordId : this.selectedAddressRecordId,
                     accountId : this.selectedrelatedAccountsWithContactId })
         .then(result => {
             this.order = result;
@@ -116,7 +134,13 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
         this.dispatchEvent(closeQA);
     }
     goToOrder() {
-        goToRecord(this.userUiTheme,this.order.Id, this, /*this.lightningOut*/ false);
+        this[NavigationMixin.Navigate]({
+            type: 'standard__recordPage',
+            attributes: {
+                recordId: this.order.Id,
+                actionName: 'view',
+            },
+        });
     }
 
     goToNewOrder(event) {

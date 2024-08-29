@@ -2,6 +2,7 @@ import { LightningElement, track, api, wire} from 'lwc';
 import { showToast, goToRecord } from 'c/utils';
 import apexSearch from '@salesforce/apex/flowLookupLwcController.search';
 import getRecentlyViewed from '@salesforce/apex/flowLookupLwcController.getRecentlyViewed';
+import prePopulateContact from '@salesforce/apex/flowLookupLwcController.prePopulateContact';
 
 export default class Flow_lookupLwc extends LightningElement {
 
@@ -16,7 +17,7 @@ export default class Flow_lookupLwc extends LightningElement {
     @track loading = false;
     @track keyword = '';
 
-    initialSelection = [];
+    @track initialSelection = [];
     errors = [];
     recentlyViewed = [];
 
@@ -27,19 +28,18 @@ export default class Flow_lookupLwc extends LightningElement {
     /**
      * Loads recently viewed records and set them as default lookup search results (optional)
      */
-    @wire(getRecentlyViewed, {accountId: '$accountId', recordId: '$recordId'})
+    /*@wire(getRecentlyViewed, {accountId: '$accountId', recordId: '$recordId'})
     getRecentlyViewed({data}) {
         console.log('Recently viewed: ', data);
         if (data) {
             this.recentlyViewed = data;
             this.initLookupDefaultResults();
         }
-    }
+    }*/
 
     connectedCallback(){
         this.initLookup();
-        //this.initLookupDefaultResults();
-    }
+     }
 
     /**
      * Initializes the lookup component by adding new record options and objects to search based on the sObjectName attribute.
@@ -47,6 +47,16 @@ export default class Flow_lookupLwc extends LightningElement {
     initLookup(){
         if (this.sObjectName.includes('Contact'))
         {
+            if(this.recordId)
+            {
+                prePopulateContact({ contactId: this.recordId})
+                    .then(result => {
+                         this.initialSelection.push(result);
+                    })
+                    .catch(error => {
+                        console.error('Error initiating default value of contact ' + error);
+                    });
+            }
             this.newRecordOptions.push({ value: 'Contact', label: 'New Contact' });
             this.objectsToSearch.push('Contact');
         }
@@ -86,13 +96,19 @@ export default class Flow_lookupLwc extends LightningElement {
      * @param event - The selection change event
      */
     handleLookupSelectionChange(event) {
-        this.checkForErrors();
-        const value = this.template.querySelector('c-lookup').getSelection();
-        console.log(value);
-        const valueString = JSON.stringify(value);
-        this.recordId = value[0].id;
-        console.log('Assigned the following id: ' + this.recordId);
-
+        try {
+            this.checkForErrors();
+            const value = this.template.querySelector('c-lookup').getSelection();
+            const valueString = JSON.stringify(value);
+            if(value && value.length > 0) {
+                this.recordId = value[0].id;
+            }else
+            {
+                this.recordId = null;
+            }
+        }catch (e){
+            console.error('Error in Flow_lookupLwc.handleLookupSelectionChange : '+e)
+        }
     }
 
     /**
@@ -105,7 +121,7 @@ export default class Flow_lookupLwc extends LightningElement {
         const lookup = this.template.querySelector('c-lookup');
         if (lookup) {
             console.log('Recently viewed length', this.recentlyViewed.length);
-            if(this.recentlyViewed.length == 1){
+            /*if(this.recentlyViewed.length == 1){
                 this.initialSelection = [{
                     id: this.recentlyViewed[0].id,
                     sObjectType: this.recentlyViewed[0].sObjectType,
@@ -114,9 +130,9 @@ export default class Flow_lookupLwc extends LightningElement {
                 }];
                 lookup.initialSelection = this.initialSelection;
             }
-            else if(this.recentlyViewed.length>1){
+            else if(this.recentlyViewed.length>1){*/
                 lookup.setDefaultResults(this.recentlyViewed);
-            }
+            //}
         }
     }
 

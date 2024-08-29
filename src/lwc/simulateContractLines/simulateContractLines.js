@@ -19,7 +19,6 @@ import SAVE_CONTRACT from '@salesforce/label/c.SaveContractSimulationNewLWCPrici
 import YEARS from '@salesforce/label/c.YearsNewLWCPricingLabels';
 import ERROR from '@salesforce/label/c.ErrorNewLWCPricingLabels';
 
-//import SUCCESS from '@salesforce/label/c.YearsNewLWCPricingLabels';
 
 
 
@@ -75,7 +74,6 @@ export default class SimulateContractInQouteLines  extends NavigationMixin(Light
     @track errorMessage;
     @track showMessageLine = false;
     @track numOfSelectedItems = 0;
-    @track disableSimulateButton = true;
     @track selectedDiscountModelProduct;
     @track showSimulationTable = false;
     @track contractItem;
@@ -89,7 +87,7 @@ export default class SimulateContractInQouteLines  extends NavigationMixin(Light
     @track showButtons = false;
     isInsert = true;
     SALESCALCULATIONMESSAGE = 'We are calculating sales and discounts. Please wait';
-    
+
     connectedCallback() 
     {
         this.getDecimalSeparator();
@@ -219,7 +217,6 @@ export default class SimulateContractInQouteLines  extends NavigationMixin(Light
         let index = event.target.dataset.index;
         let isSelected = event.target.checked;
         this.numOfSelectedItems = isSelected ? this.numOfSelectedItems + 1 : this.numOfSelectedItems - 1;
-        this.disableSimulateButton = this.numOfSelectedItems > 0 ? false : true;
         this.discountModelOptionsToSelect[index].isSelected = isSelected;
         this.contractItem = {Name : this.discountModelOptionsToSelect[index].Product__c,
                             CurrencyIsoCode: this.contractRecord.CurrencyIsoCode,
@@ -234,7 +231,18 @@ export default class SimulateContractInQouteLines  extends NavigationMixin(Light
         let index = event.target.dataset.index;
         let isSelected = event.target.checked;
         this.sourceRecords[index].isSelected = isSelected;
+    }
 
+    get disableSimulateButton(){
+        return !(this.isDiscountSelected && this.isSourceRecordSelected);
+    }
+
+    get isSourceRecordSelected(){
+        return this.sourceRecords.some(sourceRecord => sourceRecord.isSelected);
+    }
+
+    get isDiscountSelected(){
+        return (this.numOfSelectedItems > 0);
     }
 
     handleSelectPrimescan(event){
@@ -308,9 +316,7 @@ export default class SimulateContractInQouteLines  extends NavigationMixin(Light
                 this.contractItem.TGSimplant__c = salesData.results.records.length > 0 && salesData.results.records[0].Simplant > 0 ? true : false ;
                 this.contractItem.TGSimplantManuallyUpdated__c = salesData.results.records.length > 0 ? this.contractItem.TGSimplant__c : 0;
 
-
-
-                this.calculateDiscounts();
+                 this.calculateDiscounts();
                 this.showSalesCalculation = false;
 
             })
@@ -344,7 +350,7 @@ export default class SimulateContractInQouteLines  extends NavigationMixin(Light
                     this.contractItem.TotalNetSalesDiscount__c = this.discountPlan.Discount_row__r[i].Discount_lever__c == 'Total Net Sales' && this.contractItem.TotalNetSales__c >= this.discountPlan.Discount_row__r[i].MinNumber__c && this.contractItem.TotalNetSales__c < this.discountPlan.Discount_row__r[i].MaxNumber__c && this.contractItem.TotalNetSales__c > this.discountPlan.Discount_row__r[i].MinTotalSalesNet__c ? this.discountPlan.Discount_row__r[i].Allowed_discount__c : this.contractItem.TotalNetSalesDiscount__c;
                     this.contractItem.PGsPurchasedDiscount__c = this.discountPlan.Discount_row__r[i].Discount_lever__c == 'Workflow coverage' && this.contractItem.PGsPurchased__c >= this.discountPlan.Discount_row__r[i].MinNumber__c && this.contractItem.PGsPurchased__c < this.discountPlan.Discount_row__r[i].MaxNumber__c && this.contractItem.TotalNetSales__c > this.discountPlan.Discount_row__r[i].MinTotalSalesNet__c ? this.discountPlan.Discount_row__r[i].Allowed_discount__c : this.contractItem.PGsPurchasedDiscount__c;
                     this.contractItem.GrowthDiscount__c = this.discountPlan.Discount_row__r[i].Discount_lever__c == 'Growth' && this.contractItem.Growth__c >= this.discountPlan.Discount_row__r[i].MinNumber__c && this.contractItem.Growth__c < this.discountPlan.Discount_row__r[i].MaxNumber__c && this.contractItem.TotalNetSales__c > this.discountPlan.Discount_row__r[i].MinTotalSalesNet__c ? this.discountPlan.Discount_row__r[i].Allowed_discount__c : this.contractItem.GrowthDiscount__c;
-                    this.contractItem.ofYearsPurchasingFromDSDiscount__c = this.discountPlan.Discount_row__r[i].Discount_lever__c == 'Loyalty' && this.contractItem.ofYearsPurchasingFromDS__c >= this.discountPlan.Discount_row__r[i].MinNumber__c && this.contractItem.ofYearsPurchasingFromDS__c < this.discountPlan.Discount_row__r[i].MaxNumber__c && this.contractItem.TotalNetSales__c > this.discountPlan.Discount_row__r[i].MinTotalSalesNet__c ? this.discountPlan.Discount_row__r[i].Allowed_discount__c : this.contractItem.ofYearsPurchasingFromDSDiscount__c;
+                    this.contractItem.ofYearsPurchasingFromDSDiscount__c = this.discountPlan.Discount_row__r[i].Discount_lever__c == 'Loyalty' && this.contractItem.ofYearsPurchasingFromDS__c >= this.discountPlan.Discount_row__r[i].MinNumber__c && this.contractItem.ofYearsPurchasingFromDS__c < this.discountPlan.Discount_row__r[i].MaxNumber__c && this.contractItem.TotalNetSales__c > this.discountPlan.Discount_row__r[i].MinTotalSalesNet__c && this.contractItem.TotalNetSales__c <= this.discountPlan.Discount_row__r[i].MaxTotalSalesNet__c ? this.discountPlan.Discount_row__r[i].Allowed_discount__c : this.contractItem.ofYearsPurchasingFromDSDiscount__c;
                 }
                 this.contractItem.RecommendedDiscount__c = this.contractItem.SegmentationDiscount__c +  this.contractItem.TotalNetSalesDiscount__c + this.contractItem.PGsPurchasedDiscount__c + this.contractItem.GrowthDiscount__c + this.contractItem.ofYearsPurchasingFromDSDiscount__c;
                 
