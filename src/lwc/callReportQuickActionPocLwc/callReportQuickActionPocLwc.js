@@ -1,5 +1,5 @@
 import { LightningElement, track, api, wire } from 'lwc';
-import { handleApexError } from 'c/utils';
+import {handleApexError, reduceErrors, handleApexErrors, formatApexError} from 'c/utils';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { getRecord, getFieldValue, deleteRecord } from 'lightning/uiRecordApi';
 import { getObjectInfo, getPicklistValues } from 'lightning/uiObjectInfoApi';
@@ -38,13 +38,9 @@ import {encodeDefaultFieldValues} from "lightning/pageReferenceUtils";
 
 export default class CallReportQuickActionPocLwc extends NavigationMixin(LightningElement) {
 
-    @wire(getObjectInfo, { objectApiName: Event })
+    @wire(getObjectInfo, {objectApiName: Event})
     eventObjectInfo;
-    //picklist
-    // @wire(getCotravelPicklist)
-    // coTravelPicklistValues;
 
-    //
     @api recordId;
     @api sObjectName;
     isSaveAndNew = false;
@@ -72,28 +68,34 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
     coTravelTypes = [];
     selectedCoTravelType;
     courseEventPromotionChange = false;
-    @wire(getObjectInfo, { objectApiName: CALL_REPORT_OBJECT })
+    @wire(getObjectInfo, {objectApiName: CALL_REPORT_OBJECT})
     callReportInfo;
 
     // Get current User.User_Country__c to be used in Call_Report__c.Assigned_To_User_Country__c
     @track currentUser;
-    @wire(getRecord, { recordId: '$userId', fields: USER_FIELDS })
+
+    @wire(getRecord, {recordId: '$userId', fields: USER_FIELDS})
     wiredUser(value) {
         this.currentUser = value;
-        const { data, error } = value;
+        const {data, error} = value;
         if (data) {
             const userDefaultActivityLength = getFieldValue(this.currentUser.data, USER_FIELDS[2]);
             if (userDefaultActivityLength) this._startTime = this.nearestQuarterDateTime(-userDefaultActivityLength);
+        }else if(error)
+        {
+            console.error('Error Fetching User record:' + JSON.stringify(error) );
         }
     }
-    @wire(getRecord, { recordId: '$recordId', fields: [CONTACT_ACCOUNT_ID_FIELD] })
+
+    @wire(getRecord, {recordId: '$recordId', fields: [CONTACT_ACCOUNT_ID_FIELD]})
     contact;
 
     get contactAccountId() {
         return getFieldValue(this.contact.data, CONTACT_ACCOUNT_ID_FIELD);
     }
-    @wire(getPicklistValues, { recordTypeId: '$callReportRTId', fieldApiName: ACTIVITY_TYPE_FIELD })
-    getActivityPicklistDefaultValue({ error, data }) {
+
+    @wire(getPicklistValues, {recordTypeId: '$callReportRTId', fieldApiName: ACTIVITY_TYPE_FIELD})
+    getActivityPicklistDefaultValue({error, data}) {
         if (data) {
             this.defaultCallReportActivityType = data.values.find(p => p.value == 'In Person Meeting')?.value;
         }
@@ -108,7 +110,7 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
         return recordTypeId;
     }
 
-    constructor(){
+    constructor() {
         super()
         getCotravelPicklistMap().then((data) => {
             this.coTravelTypes = Object.keys(data).map(key => ({
@@ -117,6 +119,7 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
             }));
         })
     }
+
     get userCountry() {
         return getFieldValue(this.currentUser.data, USER_FIELDS[0]);
     }
@@ -164,20 +167,20 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
         this.endTimeDirty = true;
     }
 
-    handleCoTravelChange(event){
+    handleCoTravelChange(event) {
         this.selectedCoTravelType = event.detail.value;
     }
 
     connectedCallback() {
         // Might need to add case for 'Medium' since that is tablet form factor
         // this._mobileFormFactor = FORM_FACTOR == 'Small' ? true : false;
-        //if parent object is procedure tracker pre default some fields
-        if(this.sObjectName === 'ProcedureTracker__c'){
-            getProcedureTrackerData({recordId : this.recordId}).then((result) => {
+        // if parent object is procedure tracker pre default some fields
+        if (this.sObjectName === 'ProcedureTracker__c') {
+            getProcedureTrackerData({recordId: this.recordId}).then((result) => {
                 this.procedureTrackingObjectives = result.LastActivity__c;
                 this.procedureTrackerSubject = result.LastActivity__c;
-                if(result.LastActivity__c.trim() !== '' && result.LastActivityNotes__c.trim() !== ''){
-                    this.procedureTrackingObjectives = this.procedureTrackingObjectives+"\n" +result.LastActivityNotes__c;
+                if (result.LastActivity__c.trim() !== '' && result.LastActivityNotes__c.trim() !== '') {
+                    this.procedureTrackingObjectives = this.procedureTrackingObjectives + "\n" + result.LastActivityNotes__c;
                 }
             })
         }
@@ -190,14 +193,13 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
 
     async getContacts() {
         try {
-            const contacts = await getContacts({ contactId: this.recordId });
+            const contacts = await getContacts({contactId: this.recordId});
             this.initialSelection = [...contacts];
         } catch (error) {
             this.isLoading = false;
-            this.error = handleApexError({ error: error });
+            this.error = handleApexError({error: error});
         }
     }
-
 
     nearestQuarterDateTime(minutes = 0, date = Date.now()) {
         let timeToReturn = new Date(date + minutes * 60000);
@@ -252,7 +254,6 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
 
     handleSelectionChange() {
         this.errors = [];
-        const selection = this.template.querySelector('c-lookup-lwc').getSelection();
     }
 
     handleLoad(event) {
@@ -268,7 +269,6 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
         const closeQA = new CustomEvent('close');
         this.dispatchEvent(closeQA);
     }
-
 
 
     handleSaveAndNew() {
@@ -312,19 +312,30 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
         const fields = event.detail.fields;
         fields[CALL_REPORT_EVENT_WHOIDS_FIELD.fieldApiName] = JSON.stringify(eventWhoIdsSelection.map(element => element.id));
 
-        // this.checkForErrors();
         if (this.errors.length === 0) {
             this.template.querySelector('lightning-record-edit-form').submit(fields);
-            // this.notifyUser('Success', 'The form was submitted.', 'success');
         } else {
             this.isLoading = false;
         }
     }
 
     handleError(event) {
-        this.error = event.detail;
         this.isLoading = false;
+
+        // Log the full error in the console
+        console.error('We received an error here: ' + JSON.stringify(event.detail, null, 2));
+
+        try {
+            this.error = {
+                message: 'An error occurred',
+                detail: handleApexErrors(event.detail.output.errors)
+            }
+        }
+        catch(e) {
+            console.error(e);
+        }
     }
+
 
     handleSuccess(event) {
         try {
@@ -360,16 +371,6 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
                 },
             };
 
-            /* // POC same behavior for mobile and desktop
-            const event = new ShowToastEvent({
-                title: 'Success!',
-                message: 'Your call report was successfully created.',
-                variant: 'success'
-            });
-            this.dispatchEvent(event);
-            this[NavigationMixin.Navigate](eventPageRef);
-            // POC end */
-
             // Don't navigate to the event, but provide link in toast message if desktop
             // On mobile, navigate to the new event
             if (!this.isSaveAndNew) {
@@ -402,7 +403,11 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
         } catch (error) {
             deleteRecord(this.callReportId);
             this.isLoading = false;
-            this.error = handleApexError({ error: error });
+            console.error('An error occurred: ' + JSON.stringify(error,null,2));
+            this.error = {
+                message: 'An error occurred',
+                detail: formatApexError(error.body.message)
+            }
         }
     }
 
@@ -410,13 +415,6 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
         const refreshView = new CustomEvent('refreshview');
         this.dispatchEvent(refreshView);
 
-        // const inputFields = this.template.querySelectorAll('lightning-input-field');
-        // if (inputFields) inputFields.forEach(field => field.reset());
-
-        // const contactLookupField = this.template.querySelector('c-lookup-lwc');
-        // contactLookupField.selection = [...this.initialSelection];
-
-        // this.connectedCallback();
         this.isLoading = false;
         this.isInitialLoad = true;
         this.renderInputs = false;

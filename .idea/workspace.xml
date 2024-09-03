@@ -5,46 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/1575803798fcf088d7865f966f8781d8350a51de" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/15f4f4c2e40fcd97747804bbccfde185a017e797" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a26aa71cfdeb17ad7a369b55e67f3e09cd0867b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2d023c109c9ed5bc55d2b91f7cdf0bb68e943a28" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/8/38713d0d9afea46ac83e95ad7e96de21334b7365" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/c/3c972a3b541e5badda4c3c29bb25b73480d656dc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/d/5d7361191424ec55a2a5f0f3fa1375a857cf796d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f6cbeb7cb7675417724ae0040dc45af8ad87c33" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/73b9ee7c12ebd48082987fdfaed38468f2a99eea" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7e86e5b46e052b2773f46a49e93314421a85cc38" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/5/959a8b605aa8f383f579edfcb46695ca40c28e4d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aa5e1bda0a59dd6fa1e67998decdff215aa3bbb4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/ae546cbec7d875f0e7d652d26a2e3fd90dc6dbef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/0/d0b38042f8e383bfb7c23d52ee025d4a054f179a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da58fd6909d3d713f03444249c0ecde9bb94cc68" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f96473d100035a751661cf43bbdd3915bc8eeb49" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/f/ff25ea74f937fad429fe27671f5c3017cf608c9a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/f/ff4add1d87b6bfdba78726b7eaacddec01b6faf9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/5/1575803798fcf088d7865f966f8781d8350a51de" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/5/15f4f4c2e40fcd97747804bbccfde185a017e797" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/a/1a26aa71cfdeb17ad7a369b55e67f3e09cd0867b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/d/2d023c109c9ed5bc55d2b91f7cdf0bb68e943a28" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/8/38713d0d9afea46ac83e95ad7e96de21334b7365" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/c/3c972a3b541e5badda4c3c29bb25b73480d656dc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/d/5d7361191424ec55a2a5f0f3fa1375a857cf796d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/f/6f6cbeb7cb7675417724ae0040dc45af8ad87c33" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/3/73b9ee7c12ebd48082987fdfaed38468f2a99eea" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/e/7e86e5b46e052b2773f46a49e93314421a85cc38" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/5/959a8b605aa8f383f579edfcb46695ca40c28e4d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/a/aa5e1bda0a59dd6fa1e67998decdff215aa3bbb4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/e/ae546cbec7d875f0e7d652d26a2e3fd90dc6dbef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/0/d0b38042f8e383bfb7c23d52ee025d4a054f179a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/a/da58fd6909d3d713f03444249c0ecde9bb94cc68" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/9/f96473d100035a751661cf43bbdd3915bc8eeb49" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/f/ff25ea74f937fad429fe27671f5c3017cf608c9a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/f/ff4add1d87b6bfdba78726b7eaacddec01b6faf9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/BatchFreezeUsers.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/BatchFreezeUsers.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/callReportQuickActionPocLwc/callReportQuickActionPocLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/callReportQuickActionPocLwc/callReportQuickActionPocLwc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,8 +84,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1724676542423" />
-                  <option name="numUsages" value="18" />
+                  <option name="lastUsed" value="1725356350082" />
+                  <option name="numUsages" value="19" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="DevAug24" />
@@ -17911,7 +17873,23 @@
                       <entry key="APEXCLASS:CALLREPORTQUICKACTIONPOCCONTROLLER" value="1724764667366" />
                       <entry key="APEXCLASS:TEST_CALLREPORTQUICKACTIONPOCCONTROLLER" value="1724764667366" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1722958646000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1723658362000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CALLREPORTQUICKACTIONPOCLWC" value="1725356837000" />
+                    </map>
+                  </option>
+                  <option name="lastBuildScope" value="CONTEXT" />
+                  <option name="lastBuildViewToggles">
+                    <map>
+                      <entry key="RETRIEVE">
+                        <value>
+                          <BuildViewToggles>
+                            <option name="showLocalAndServer" value="true" />
+                            <option name="showLocalOnly" value="false" />
+                            <option name="showServerOnly" value="true" />
+                            <option name="showSubscribedByParent" value="true" />
+                            <option name="showSubscribedOnly" value="true" />
+                          </BuildViewToggles>
+                        </value>
+                      </entry>
                     </map>
                   </option>
                 </ConnectionWorkspaceSettings>
@@ -19077,40 +19055,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Apex Offline Debugger.Test_CallReportQuickActionPocController.executor": "Debug",
-    "Apex Offline Debugger.Test_ProductTrigger.executor": "Debug",
-    "Apex Unit Tests.Test_AccountFlagsController.executor": "Run",
-    "Apex Unit Tests.Test_ActivityScorecardController.executor": "Run",
-    "Apex Unit Tests.Test_BatchUpdateProducts.testBatchUpdateProducts.executor": "Run",
-    "Apex Unit Tests.Test_CallReportQuickActionPocController.executor": "Run",
-    "Apex Unit Tests.Test_ProductProfilingHierarchyController.executor": "Run",
-    "Apex Unit Tests.Test_ProductProfilingTrigger.executor": "Run",
-    "Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier.executor": "Run",
-    "Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor": "Run",
-    "Apex Unit Tests.Test_ProductTrigger.executor": "Debug",
-    "Apex Unit Tests.Test_WorkflowProfilingController.executor": "Run",
-    "Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling.executor": "Run",
-    "Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/ohanafi/IdeaProjects/Dentsply/src/objects",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.29852837",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Apex Offline Debugger.Test_CallReportQuickActionPocController.executor&quot;: &quot;Debug&quot;,
+    &quot;Apex Offline Debugger.Test_ProductTrigger.executor&quot;: &quot;Debug&quot;,
+    &quot;Apex Unit Tests.Test_AccountFlagsController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ActivityScorecardController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_BatchUpdateProducts.testBatchUpdateProducts.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_CallReportQuickActionPocController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductProfilingHierarchyController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductTrigger.executor&quot;: &quot;Debug&quot;,
+    &quot;Apex Unit Tests.Test_WorkflowProfilingController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ohanafi/IdeaProjects/Dentsply/src/objects&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29852837&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/objects" />
