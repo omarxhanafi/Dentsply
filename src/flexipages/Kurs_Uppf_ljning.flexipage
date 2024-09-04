@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>linkedToDesignKit</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;600&quot;&gt;
+ &lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+     &lt;tbody&gt;
+      &lt;tr valign=&quot;top&quot;&gt;
+       &lt;td width=&quot;100%&quot;&gt;
+        &lt;table&gt;
+         &lt;tbody&gt;
+          &lt;tr&gt;
+           &lt;td&gt;
+            &lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; id=&quot;contentRegion&quot;&gt;
+             &lt;tbody&gt;
+              &lt;tr&gt;
+               &lt;td&gt;Hej {{{Recipient.FirstName}}},&lt;/td&gt;
+              &lt;/tr&gt;
+             &lt;/tbody&gt;
+            &lt;/table&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+         &lt;/tbody&gt;
+        &lt;/table&gt; &lt;br /&gt; Hoppas att SureSmile&amp;nbsp;kursen var givande och att ni är inspirerade att komma igång med aligner behandling på kliniken. Skickar med tips på hur man integrerar SureSmile på kliniken samt länkar till marknadsmaterial. Tveka inte att ta kontakt med mig eller Catharina eller någon annan i vårt team&amp;nbsp;om det är några frågor.&lt;br /&gt; &lt;br /&gt; &lt;strong&gt;SureSmile Integration&lt;/strong&gt;
+        &lt;ul&gt;
+         &lt;li&gt;&lt;strong&gt;Kunskap är en färskvara​&lt;/strong&gt;&lt;/li&gt;
+         &lt;li style=&quot;margin-left: 40px;&quot;&gt;Kom i gång direkt och fortsätt göra fall regelbundet (familj, släkt och vänner eller någon i teamet)​&lt;/li&gt;
+         &lt;li style=&quot;margin-left: 40px;&quot;&gt;Tät kontakt med SureSmile-specialist​&lt;/li&gt;
+         &lt;li style=&quot;margin-left: 40px;&quot;&gt;SureSmileU: support- och utbildningsplattform​&lt;/li&gt;
+         &lt;li style=&quot;margin-left: 40px;&quot;&gt;Case review med klinisk expert​&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul&gt;
+         &lt;li&gt;&lt;strong&gt;Marknadsföring​&lt;/strong&gt;&lt;/li&gt;
+         &lt;li style=&quot;margin-left: 40px;&quot;&gt;Behandla någon i teamet​&lt;/li&gt;
+         &lt;li style=&quot;margin-left: 40px;&quot;&gt;Väntrum och reception: patientfolder, väntrums-tv, poster​&lt;/li&gt;
+         &lt;li style=&quot;margin-left: 40px;&quot;&gt;Hemsida och sociala medier​&lt;/li&gt;
+         &lt;li style=&quot;margin-left: 40px;&quot;&gt;Information på toalett​&lt;/li&gt;
+         &lt;li style=&quot;margin-left: 40px;&quot;&gt;Öppet hus​&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul&gt;
+         &lt;li&gt;Alla i teamet ska ha kunskap om SureSmile-behandling​&lt;/li&gt;
+         &lt;li&gt;Rabatt eller erbjudande till de första patienterna (läropengar)&lt;/li&gt;
+        &lt;/ul&gt; &lt;br /&gt; &lt;strong&gt;Material till hemsida, sociala medier och utskick:&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+     &lt;/tbody&gt;
+    &lt;/table&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+ &lt;li&gt;&lt;a href=&quot;https://www.dentsplysirona.com/sv-se/explore/orthodontics/suresmile-aligner/suresmile-marketing-support.html&quot;&gt;SureSmile Aligners Marketing Support | Dentsply Sirona Sweden&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href=&quot;https://www.suresmile.com/sv-se/&quot;&gt;SureSmile Clear Aligners | Dentsply Sirona Clear alignerbehandling för ditt perfekta leende | SureSmile Sverige&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt; {{{Sender.Name}}}&lt;br /&gt; &lt;br /&gt; {{{Sender.Title}}}&lt;br /&gt; &lt;br /&gt; &lt;img alt=&quot;ds-line-email&quot; src=&quot;&quot; title=&quot;ds-line-email&quot; /&gt;&lt;br /&gt; &lt;br /&gt; &lt;img alt=&quot;ds-logo-email&quot; src=&quot;&quot; title=&quot;ds-logo-email&quot; /&gt;&lt;br /&gt; &lt;br /&gt; {{{Sender.Address}}}&lt;br /&gt; &lt;br /&gt; {{{Sender.MobilePhone}}}&lt;br /&gt; {{{Sender.Email}}}&lt;br /&gt; &lt;br /&gt; &lt;a href=&quot;http://www.dentsplysirona.com/&quot;&gt;www.dentsplysirona.&lt;/a&gt;&lt;br /&gt; &lt;br /&gt; &lt;img alt=&quot;SureSmile email signature Predictable results June 2023&quot; src=&quot;&quot; style=&quot;max-width: 100%&quot; title=&quot;SureSmile email signature Predictable results June 2023&quot; /&gt;&lt;a href=&quot;http://www.dentsplysirona.com/&quot;&gt;com&lt;/a&gt;</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:richText</componentName>
+                <identifier>contentbuilder_richText</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-4d3f30b5-c682-4865-86a6-2ddde2264ef1</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-4d3f30b5-c682-4865-86a6-2ddde2264ef1</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnCount</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnIndex</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-5e7be1ff-d295-40c8-a8b1-4dbdd85d96ed</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-5e7be1ff-d295-40c8-a8b1-4dbdd85d96ed</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Kurs_Uppf_ljning</masterLabel>
+    <template>
+        <name>contentpage:defaultEmailTemplatePageTemplate</name>
+        <properties>
+            <name>backgroundColor</name>
+            <value>#E9EAEC</value>
+        </properties>
+        <properties>
+            <name>backgroundImageUrl</name>
+        </properties>
+        <properties>
+            <name>bodyColor</name>
+            <value>#FFFFFF</value>
+        </properties>
+        <properties>
+            <name>paddingBottom</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingLeft</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingRight</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingTop</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>preheader</name>
+        </properties>
+    </template>
+    <type>EmailTemplatePage</type>
+</FlexiPage>

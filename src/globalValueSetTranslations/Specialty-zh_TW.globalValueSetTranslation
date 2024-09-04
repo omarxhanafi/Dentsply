@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Alloys</masterLabel>
+        <translation><!-- Alloys --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CAD/CAM</masterLabel>
+        <translation><!-- CAD/CAM --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ceramic</masterLabel>
+        <translation><!-- Ceramic --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Crown &amp; Bridge</masterLabel>
+        <translation><!-- Crown &amp; Bridge --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dental Public Health</masterLabel>
+        <translation>牙科公共衛生</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dentist Anesthesiologist</masterLabel>
+        <translation>牙醫麻醉師</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Emergency Medicine</masterLabel>
+        <translation>急救醫學</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Endodontics</masterLabel>
+        <translation>牙髓病學</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Esthetics &amp; Plastic Surgery</masterLabel>
+        <translation>美容與整形外科</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>General Medicine</masterLabel>
+        <translation>一般藥學</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>General Practice</masterLabel>
+        <translation>一般治療</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Generalist</masterLabel>
+        <translation><!-- Generalist --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Imaging</masterLabel>
+        <translation><!-- Imaging --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Implantology</masterLabel>
+        <translation>植牙</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Investments</masterLabel>
+        <translation><!-- Investments --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Model Casting</masterLabel>
+        <translation><!-- Model Casting --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Oral and Maxillofacial Pathology</masterLabel>
+        <translation>口腔頜面病理學</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Oral and Maxillofacial Radiology</masterLabel>
+        <translation>口腔頜面放射科</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Oral and Maxillofacial Surgery</masterLabel>
+        <translation>口腔頜面外科</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Orofacial Pain</masterLabel>
+        <translation>口面部疼痛</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Orthodontics and Dentofacial Orthopedics</masterLabel>
+        <translation>牙齒矯正和牙面矯形</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pediatric Dentistry</masterLabel>
+        <translation>小兒牙科</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Periodontics</masterLabel>
+        <translation>牙周病學</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Prevention</masterLabel>
+        <translation>預防</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Prosthodontics</masterLabel>
+        <translation>口腔修復</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Removable Prosthetics</masterLabel>
+        <translation><!-- Removable Prosthetics --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Restorative</masterLabel>
+        <translation><!-- Restorative --></translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

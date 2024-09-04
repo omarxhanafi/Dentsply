@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>3rd Party Tech</masterLabel>
+        <translation>第三方技術</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Calibration – compliance</masterLabel>
+        <translation>校準 - 合規性</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Chargeable call with call out</masterLabel>
+        <translation>付費撥出通話</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contract</masterLabel>
+        <translation>合約</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Do and Charge Call - No call out</masterLabel>
+        <translation>無需收費通話 - 沒有撥出</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Free Service</masterLabel>
+        <translation>免費服務</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Installation</masterLabel>
+        <translation>安裝</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Intego Replacement</masterLabel>
+        <translation>Intego 換置</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Internal Work</masterLabel>
+        <translation>內部作業</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Parts Warranty Only</masterLabel>
+        <translation>僅零件保修</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Phone or Remote Access Support</masterLabel>
+        <translation>電話或線上支援</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Preventative Maintenance</masterLabel>
+        <translation>預防性維護</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Recall - Parts Charged</masterLabel>
+        <translation>收回 - 收費零件</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>SalesSupport</masterLabel>
+        <translation>銷售支援</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Technical Unavailable (Not used after test)</masterLabel>
+        <translation>技術不可用（測試後未使用）</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Warranty</masterLabel>
+        <translation>保修單</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Workshop</masterLabel>
+        <translation>工作坊</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

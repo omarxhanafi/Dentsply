@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Stores the Cvent connections history.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>CventEvents__AccessToken__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the access token obtained during OAuth 2.0 flow.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the access token obtained during OAuth 2.0 flow.</inlineHelpText>
+        <label>Access Token</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CventEvents__AccountName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the name of Cvent account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the name of Cvent account.</inlineHelpText>
+        <label>Account Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__AccountNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the environment-level-unique Cvent account identifier.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the environment-level-unique Cvent account identifier.</inlineHelpText>
+        <label>Account Number</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__ConfigurationId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the unique identifier of the selected Cvent configuration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the unique identifier of the selected Cvent configuration.</inlineHelpText>
+        <label>Configuration Id</label>
+        <length>36</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__ConnectedBy__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the full name of the person who selected the Cvent configuration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the full name of the person who selected the Cvent configuration.</inlineHelpText>
+        <label>Connected By</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__ConnectedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the date and time the Cvent configuration was selected.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the date and time the Cvent configuration was selected.</inlineHelpText>
+        <label>Connected Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__EnvironmentName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the environment name which the target account belongs to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the environment name which the target account belongs to.</inlineHelpText>
+        <label>Environment Name</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CventEvents__IsActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Shows which connection is currently in use. There might be only one active connection in a time.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Shows which connection is currently in use. There might be only one active connection in a time.</inlineHelpText>
+        <label>Is Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CventEvents__LicenseType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the license type of Cvent account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the license type of Cvent account.</inlineHelpText>
+        <label>License Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Premium</fullName>
+                    <default>false</default>
+                    <label>Premium</label>
+                </value>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>false</default>
+                    <label>Standard</label>
+                </value>
+                <value>
+                    <fullName>Data Connector</fullName>
+                    <default>false</default>
+                    <label>Data Connector</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CventEvents__RefreshToken__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the refresh token obtained during OAuth 2.0 flow.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the refresh token obtained during OAuth 2.0 flow.</inlineHelpText>
+        <label>Refresh Token</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Cvent Connection</label>
+    <listViews>
+        <fullName>CventEvents__All</fullName>
+        <columns>NAME</columns>
+        <columns>CventEvents__IsActive__c</columns>
+        <columns>CventEvents__AccountName__c</columns>
+        <columns>CventEvents__EnvironmentName__c</columns>
+        <columns>CventEvents__ConfigurationId__c</columns>
+        <columns>CventEvents__ConnectedBy__c</columns>
+        <columns>CventEvents__ConnectedDate__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CC-{00000000}</displayFormat>
+        <label>Cvent Connection Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Cvent Connection</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <searchResultsAdditionalFields>CventEvents__IsActive__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CventEvents__AccountName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CventEvents__EnvironmentName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CventEvents__ConfigurationId__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CventEvents__ConnectedBy__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CventEvents__ConnectedDate__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

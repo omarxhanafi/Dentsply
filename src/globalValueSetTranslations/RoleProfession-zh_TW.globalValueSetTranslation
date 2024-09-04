@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Advanced Practice Dental Therapist</masterLabel>
+        <translation><!-- Advanced Practice Dental Therapist --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Clinical Director</masterLabel>
+        <translation>臨床主任</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Consultant</masterLabel>
+        <translation>顧問</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contractor</masterLabel>
+        <translation>承包商</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>DS Employee</masterLabel>
+        <translation>DS員工</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dean / Head</masterLabel>
+        <translation>院長</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dental Assistant</masterLabel>
+        <translation>牙醫助理</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dental Hygienist</masterLabel>
+        <translation>口腔衛生師</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dental Laboratory General Manager</masterLabel>
+        <translation><!-- Dental Laboratory General Manager --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dental Laboratory Office Manager</masterLabel>
+        <translation><!-- Dental Laboratory Office Manager --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dental Laboratory Technician</masterLabel>
+        <translation>牙技所技術員</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dental Therapist</masterLabel>
+        <translation>牙科治療師</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dentist</masterLabel>
+        <translation>牙醫</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Denturist</masterLabel>
+        <translation>牙托技師（一般無執照）</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Distributor General Manager</masterLabel>
+        <translation><!-- Distributor General Manager --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Distributor Sales Rep</masterLabel>
+        <translation>經銷商銷售代表</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Doctor</masterLabel>
+        <translation>醫生</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Employee</masterLabel>
+        <translation>員工</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>General Manager</masterLabel>
+        <translation>總經理</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Implant Manager</masterLabel>
+        <translation>植牙經理</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Office Manager</masterLabel>
+        <translation>辦公室主管</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Office Staff/Front Desk</masterLabel>
+        <translation>辦公室職員/前台</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Oral Medicinist</masterLabel>
+        <translation>口腔內科</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation>其他</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Owner</masterLabel>
+        <translation>所有者</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Post Graduate Trainee</masterLabel>
+        <translation>研究生實習生</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Prevention Professional</masterLabel>
+        <translation>預防專家</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Professor</masterLabel>
+        <translation>教授</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Purchaser</masterLabel>
+        <translation><!-- Purchaser --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Purchasing Assistant</masterLabel>
+        <translation><!-- Purchasing Assistant --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Registered Nurse</masterLabel>
+        <translation><!-- Registered Nurse --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Registrar</masterLabel>
+        <translation><!-- Registrar --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Student in an Organized Health Care Education/Training Program</masterLabel>
+        <translation><!-- Student in an Organized Health Care Education/Training Program --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Surgeon</masterLabel>
+        <translation><!-- Surgeon --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Veterinarian</masterLabel>
+        <translation><!-- Veterinarian --></translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveDataset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <application>TCRM_Team_Development</application>
+    <description>Created from the Create - Account Scoring Attributes recipe.</description>
+    <masterLabel>Account Scoring Attributes</masterLabel>
+    <type>default</type>
+</WaveDataset>
