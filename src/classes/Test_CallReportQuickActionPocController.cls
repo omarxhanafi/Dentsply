@@ -62,42 +62,54 @@ public without sharing class Test_CallReportQuickActionPocController {
         Test.stopTest();
     }
 
+    /**
+     * testGetPickListValuesIntoMap Test method for CallReportQuickActionPocController.getPickListValuesIntoMap()
+     */
     @isTest
     private static void testGetPickListValuesIntoMap() {
-        Test.startTest();
-        // Call the method and store the result in a map
-        Map<String, String> pickListValuesMap = CallReportQuickActionPocController.getPickListValuesIntoMap();
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
+        System.runAs(testUser) {
+            Test.startTest();
+            // Call the method and store the result in a map
+            Map<String, String> pickListValuesMap = CallReportQuickActionPocController.getPickListValuesIntoMap();
 
-        // Assert that the map is not empty
-        System.assertNotEquals(0, pickListValuesMap.size(), 'Expected non-empty map of picklist values');
+            // Assert that the map is not empty
+            System.assertNotEquals(0, pickListValuesMap.size(), 'Expected non-empty map of picklist values');
 
-        Test.stopTest();
+            Test.stopTest();
+        }
     }
 
+    /**
+     * testGetProcedureTrackerDataList Test method for CallReportQuickActionPocController.getProcedureTrackerDataList()
+     */
     @isTest
     private static void testGetProcedureTrackerDataList() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> testAccountList = [SELECT Id FROM Account WHERE Ownerid = :testUser.Id];
-        testAccountList[0].Country__c = 'US';
-        update testAccountList[0];
+
+        System.runAs(testUser) {
+            List<Account> testAccountList = [SELECT Id FROM Account WHERE Ownerid = :testUser.Id];
+            testAccountList[0].Country__c = 'US';
+            update testAccountList[0];
 
 
-        // Create a ProcedureTracker__c record
-        ProcedureTracker__c procedureTracker = new ProcedureTracker__c(
-                PracticeAccount__c = testAccountList[0].Id,
-                RecordTypeId = Schema.SObjectType.ProcedureTracker__c.getRecordTypeInfosByName().get('Clear Aligners - US').getRecordTypeId()
-        );
-        insert procedureTracker;
+            // Create a ProcedureTracker__c record
+            ProcedureTracker__c procedureTracker = new ProcedureTracker__c(
+                    PracticeAccount__c = testAccountList[0].Id,
+                    RecordTypeId = Schema.SObjectType.ProcedureTracker__c.getRecordTypeInfosByName().get('Clear Aligners - US').getRecordTypeId()
+            );
+            insert procedureTracker;
 
-        Test.startTest();
+            Test.startTest();
 
-        // Call the method and retrieve the ProcedureTracker__c record by its ID
-        ProcedureTracker__c result = CallReportQuickActionPocController.getProcedureTrackerDataList(procedureTracker.Id);
+            // Call the method and retrieve the ProcedureTracker__c record by its ID
+            ProcedureTracker__c result = CallReportQuickActionPocController.getProcedureTrackerDataList(procedureTracker.Id);
 
-        // Assert that the returned record is not null
-        System.assertNotEquals(null, result, 'Expected non-null ProcedureTracker__c record');
+            // Assert that the returned record is not null
+            System.assertNotEquals(null, result, 'Expected non-null ProcedureTracker__c record');
 
-        Test.stopTest();
+            Test.stopTest();
+        }
     }
 
 

@@ -49,7 +49,7 @@ public with sharing class SimulateContractLineController {
         //system.debug(contractItem);
         try {
             Discount_model__c discountModel = new Discount_model__c();
-            discountModel = [SELECT Id, MaxDiscountToOffer__c, Product__c, SAQLQuery__c, CompanyCodes__c, FirstLevelApproval__c, SecondLevelApproval__c, (SELECT Id, MinTotalSalesNet__c, TextMatchResult__c, Discount_lever__c, Allowed_discount__c, MaxNumber__c, MinNumber__c, Equals__c FROM Discount_row__r) FROM Discount_model__c WHERE Id =: discountModelId LIMIT 1];
+            discountModel = [SELECT Id, MaxDiscountToOffer__c, Product__c, SAQLQuery__c, CompanyCodes__c, FirstLevelApproval__c, SecondLevelApproval__c, (SELECT Id, MinTotalSalesNet__c, MaxTotalSalesNet__c, TextMatchResult__c, Discount_lever__c, Allowed_discount__c, MaxNumber__c, MinNumber__c, Equals__c FROM Discount_row__r) FROM Discount_model__c WHERE Id =: discountModelId LIMIT 1];
             return(discountModel);
         }
         catch (Exception e) {
@@ -64,7 +64,7 @@ public with sharing class SimulateContractLineController {
             List<Discount_model__c> discountRecords = new List<Discount_model__c>();
             Account acc = new Account();
             acc = [SELECT country__c FROM Account WHERE id =: accountId LIMIT 1];
-            discountRecords = [SELECT Id, MaxDiscountToOffer__c, Product__c, SAQLQuery__c, CompanyCodes__c, FirstLevelApproval__c, SecondLevelApproval__c, (SELECT Id, MinTotalSalesNet__c, TextMatchResult__c, Discount_lever__c, Allowed_discount__c, MaxNumber__c, MinNumber__c, Equals__c FROM Discount_row__r) FROM Discount_model__c WHERE Country__c =: acc.Country__c AND Active__c = true ];
+            discountRecords = [SELECT Id, MaxDiscountToOffer__c, Product__c, SAQLQuery__c, CompanyCodes__c, FirstLevelApproval__c, SecondLevelApproval__c, (SELECT Id, MinTotalSalesNet__c, MaxTotalSalesNet__c, TextMatchResult__c, Discount_lever__c, Allowed_discount__c, MaxNumber__c, MinNumber__c, Equals__c FROM Discount_row__r) FROM Discount_model__c WHERE Country__c =: acc.Country__c AND Active__c = true ];
             return(discountRecords);
         }
         catch (Exception e) {
@@ -147,6 +147,7 @@ public with sharing class SimulateContractLineController {
         try{
             List<String> datasetDetails = findDatasetVersion('AccountSalesDetail');
             List<String> datasetAssetsDetails = findDatasetVersion('Assets');
+            List<String> datasetOpenOrders = findDatasetVersion('OpenOrders');
             Map<String,Object> results = new Map<String,Object>();
             Account acc = [SELECT Id, OneSF_Id__c FROM Account WHERE Id =: accountId LIMIT 1];
 
@@ -154,6 +155,7 @@ public with sharing class SimulateContractLineController {
                 String querySAQLtoFilter = querySAQL;
                 querySAQLtoFilter = querySAQLtoFilter.replace('*replaceAccountSalesDetail*',datasetDetails[0] + '/' + datasetDetails[1]);
                 querySAQLtoFilter = querySAQLtoFilter.replace('*replaceAssets*',datasetAssetsDetails[0] + '/' + datasetAssetsDetails[1]);
+                querySAQLtoFilter = querySAQLtoFilter.replace('*replaceOpenOrders*',datasetOpenOrders[0] + '/' + datasetOpenOrders[1]);
                 querySAQLtoFilter = querySAQLtoFilter.replace('*replaceSFDCOneId*',acc.OneSF_Id__c);
                 
             String response = '';

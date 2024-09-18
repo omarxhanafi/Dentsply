@@ -4,6 +4,7 @@
  * Test class        : Test_ProductProfilingTriggerHelper
  * History	
  * 02-02-2024         Created ProductProfilingTriggerHelper class (TFUS-000006225)
+ * 19-06-2024 		  Miguel Coimbra	Hotfix: Removed filter condition on  "&& !record.Integrated__c" to allow us to edit non-erp product records and assign the right unique key
 --------------------------------------------------------------------------------------------------*/
 public with sharing class ProductProfilingTriggerHelper {
 

@@ -15,7 +15,7 @@ public class AccountBriefingControllerTest {
         List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
 
         List<Opportunity> opp = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
-        opp[0].CloseDate = Date.today().addMonths(-1);
+        opp[0].CloseDate = Date.today().addDays(-5);
         opp[0].StageName = 'Closed Won';
         opp[0].AccountId = accounts1[0].Id;
         insert opp;

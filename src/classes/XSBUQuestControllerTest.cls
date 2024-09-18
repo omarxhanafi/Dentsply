@@ -106,20 +106,7 @@ public class XSBUQuestControllerTest {
         //Try with user
         XSBUQuestController.Save('', 'Imaging', 'Sirona Opportunity', '', testAccount.Id, testQuestionnaire.Id, '', testContact.Id, UserInfo.getUserId()); //JSON.serialize(qList)
 		
-        /*Territory2 TestETM = new Territory2();
-        TestETM.DeveloperName = 'Test_ETM';
-        insert TestETM;
         
-        ObjectTerritory2Association Acc2ETM = new ObjectTerritory2Association();
-        Acc2ETM = [SELECT ObjectId, Territory2Id FROM ObjectTerritory2Association WHERE ObjectId =: testAccount.Id];
-        Acc2ETM.ObjectId = testAccount.Id;
-        Acc2ETM.Territory2Id = TestETM.Id;
-        insert Acc2ETM;
-                
-        UserTerritory2Association User2ETM = new UserTerritory2Association();
-        User2ETM.Territory2Id = TestETM.Id;
-        User2ETM.UserId = UserInfo.getUserId();
-        insert User2ETM;*/
         
         List<UserTerritory2Association> UsrLst = XSBUQuestController.getUserList(testAccount.Id);
         System.assertNotEquals(null, UsrLst);

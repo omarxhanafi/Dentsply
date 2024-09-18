@@ -328,30 +328,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div data-field-for="Event.new_customer_acquisition_DE__c"> 
-                                <h3>{!$ObjectType.Event.fields.new_customer_acquisition_DE__c.Label}</h3>
-                                <div class="form-control-group">
-                                    <div class="form-control form-control-checkbox">
-                                        <input type="checkbox" data-checked="{!Event.new_customer_acquisition_DE__c}" id="Event.new_customer_acquisition_DE__c" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-field-for="Event.Number_of_implants_TR__c"> 
-                                <h3>{!$ObjectType.Event.fields.Number_of_implants_TR__c.Label}</h3>
-                                <div class="form-control-group">
-                                    <div class="form-control form-control-date">
-                                        <input type="number" value="{!Event.Number_of_implants_TR__c}" id="Event.Number_of_implants_TR__c" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-field-for="Event.Number_of_patients_TR__c"> 
-                                <h3>{!$ObjectType.Event.fields.Number_of_patients_TR__c.Label}</h3>
-                                <div class="form-control-group">
-                                    <div class="form-control form-control-date">
-                                        <input type="number" value="{!Event.Number_of_patients_TR__c}" id="Event.Number_of_patients_TR__c" />
-                                    </div>
-                                </div>
-                            </div>
                             <!--<div data-field-for="Event.NA_of_Open_Implant_GET_Opps__c"> 
                                 <h3>{!$ObjectType.Event.fields.NA_of_Open_Implant_GET_Opps__c.Label}</h3>
                                 <div class="form-control-group">
@@ -657,29 +633,6 @@
                                                 <input type="text" placeholder="{!$Label.CallReport_SearchPlaceholder}" />
                                             </li>
                                         </ul>                                   
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    <div class="visible-when" data-visibility-control="Event.Astra_Tech_Type__c" data-visibility-when="Educational Event">
-                        <div class="list-view-header">{!$Label.CallReport_Header_Educational}</div>     
-                        <section class="border-bottom">
-                            <div class="content">
-                                <div data-field-for="Event.Create_Campiagn__c"> 
-                                    <h3>{!$ObjectType.Event.fields.Create_Campiagn__c.Label}</h3>
-                                    <div class="form-control-group">
-                                        <div class="form-control form-control-checkbox">
-                                            <input type="checkbox" data-checked="{!Event.Create_Campiagn__c}" id="Event.Create_Campiagn__c" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div data-field-for="Event.Event_Speaker__c"> 
-                                    <h3>{!$ObjectType.Event.fields.Event_Speaker__c.Label}</h3>
-                                    <div class="form-control-group">
-                                        <div class="form-control form-control-date">
-                                            <input type="text" value="{!Event.Event_Speaker__c}" id="Event.Event_Speaker__c" />
-                                        </div>
                                     </div>
                                 </div>
                             </div>

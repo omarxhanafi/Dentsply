@@ -1,12 +1,17 @@
 /*-------------------------------------------------------------------------------------------------------
 Author:         Ahmed LOUDRASSI (Salesforce) 20191023
 Description:    Campaign  Trigger Helper Class
+Test Class:     Test_CampaignTrigger
 History
-20191023   Ahmed LOUDRASSI   Migrated  CampMgmtCampaignSessionTrigger, CampMgmtCampaignTrigger, CampMgmtCampaignTrigger2, CampMgmtCampaignSharingTrigger triggers. (#)
-20191023   Ahmed LOUDRASSI   Migrated Campaign Workflows. (#)
-20200102    Miguel           Bug fix setCampaignMemberStatus + Do not create sharing record if Owner  <> Approver (TFUS-000001389)
-20210817    Richard          Added details for new Campaign record type 'In-person & Virtual Event Campaign' 
-20220729   Roberto Narbona            TFUS-000004576
+23/10/2019   Ahmed LOUDRASSI  Migrated  CampMgmtCampaignSessionTrigger, CampMgmtCampaignTrigger, CampMgmtCampaignTrigger2, CampMgmtCampaignSharingTrigger triggers. (#)
+23/10/2019   Ahmed LOUDRASSI  Migrated Campaign Workflows. (#)
+02/01/2020   Miguel           Bug fix setCampaignMemberStatus + Do not create sharing record if Owner  <> Approver (TFUS-000001389)
+17/08/2021   Richard          Added details for new Campaign record type 'In-person & Virtual Event Campaign'
+29/07/2022   Roberto Narbona  TFUS-000004576
+13/11/2023   Houssam ADIB     TFUS-000006137 Is Converted field logic
+15/01/2024	 Miguel Coimbra	  TFUS-000006400 - Session Campaign Record Type
+01/02/2024	 Houssam ADIB	  TFUS-000006365 - Delete Child Session Campaigns if the parent campaign is deleted
+25/04/2024	 Roberto		  TFUS-000006632 - Delete some campaign member status
 ----------------------------------------------------------------------------------------*/
 public with sharing class CampaignTriggerHelper {
     /*------------------------------------------------------------
@@ -70,7 +75,8 @@ public with sharing class CampaignTriggerHelper {
                 'Inside_Sales_Campaign' => 'Inside_Sales_Campaign',
                 'Digital_Marketing_Campaign' => 'Digital_Marketing_Campaign',
                 'CventCampaign' => 'CventCampaign',
-                'InPersonEventCampaign' => 'InPersonEventCampaign'};
+                'InPersonEventCampaign' => 'InPersonEventCampaign',
+				'CVENT_Session_Campaign' => 'CVENT_Session_Campaign'};
             Map<String, String> rtDiCampaignList = new Map<String, String> {'DI_Campaign' => 'DI_Campaign',
                 'NA_Activity_Request_Form' => 'NA_Activity_Request_Form', 
                 'NATradeShow' => 'NATradeShow', 'NA_Sponsorship' => 'NA_Sponsorship'};
@@ -141,12 +147,7 @@ public with sharing class CampaignTriggerHelper {
                     statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Declined', 5, false, false));
                     statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Visited', 6, false, true));
                     statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Waitlisted', 7, false, false));
-                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Assigned to Sales', 8, false, false));
-                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Sales Lead Cancelled', 9, false, false));
-                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Opportunity Created', 10, false, false));
-                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Opportunity Closed Won', 11, false, false));
-                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Opportunity Closed Lost', 12, false, false));
-                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Removed From Campaign', 13, false, false));
+                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Removed From Campaign', 8, false, false));
                 }
                 else if (campaign.RecordTypeId.equals(GlobalUtils.getRecordTypeId('Campaign', 'CventCampaign')))
                 {
@@ -158,6 +159,15 @@ public with sharing class CampaignTriggerHelper {
                     statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Visited', 7, false, true));
                     statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Waitlisted', 8, false, true));
                     statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Cancelled', 9, false, true));
+                }
+				else if (campaign.RecordTypeId.equals(GlobalUtils.getRecordTypeId('Campaign', 'CVENT_Session_Campaign')))
+                {
+                    statiTempInsert.add(returnCampaignMemberStatus(campaign.Id,'Temporary', 99, true, true));
+                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Added to Session Waitlist', 3, true, false));
+                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Registered for Session', 4, false, true));
+                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Canceled Registration for Session', 5, false, false));
+                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Checked in to Session', 6, false, true));
+                    statiInsert.add(returnCampaignMemberStatus(campaign.Id,'Submitted Session Feedback', 7, false, true));
                 }
                 //Cvent attendee statuses:
                 // - No response
@@ -388,4 +398,121 @@ public with sharing class CampaignTriggerHelper {
             }
         }
     }
+
+    /**
+     * Process new Cvent Session campaigns inserted
+     * @author hadib@salesforce.com | 05-07-2023
+     * @param newCampaigns New Campaigns
+     */
+    public static void processCventSessionCampaign(List<Campaign> newCampaigns)
+    {
+        // Assort CVENT Session Campaigns in a map
+        Map<String,List<Campaign>> sessionCampaignsByEventStub = new Map<String, List<Campaign>>();
+        String eventStub;
+        for (Campaign campaign : newCampaigns)
+        {
+            if(campaign.CventEvents__EventStub__c != null) // Main filter to detect session campaigns
+            {
+                eventStub = campaign.CventEvents__EventStub__c;
+                if(sessionCampaignsByEventStub.containsKey(eventStub))
+                {
+                    sessionCampaignsByEventStub.get(eventStub).add(campaign);
+                }
+                else
+                {
+                    sessionCampaignsByEventStub.put(eventStub, new List<Campaign>{campaign});
+                }
+            }
+        }
+
+        // If we find CVENT Session Campaigns campaign we populate their parent campaign
+        if (!sessionCampaignsByEventStub.isEmpty())
+        {
+            populateChildSessionCampaignFields(sessionCampaignsByEventStub);
+        }
+    }
+
+    /**
+     * Populates the parent field for the session campaign records newly inserted
+     * @author hadib@salesforce.com | 05-07-2023
+     * @param sessionCampaignsByEventStub Session Campaign Map
+     */
+    public static void populateChildSessionCampaignFields(Map<String, List<Campaign>> sessionCampaignsByEventStub)
+    {
+        Id sessionCampaignRTId = GlobalUtils.getRecordTypeId('Campaign', 'CVENT_Session_Campaign');
+        Id memberRecordTypeId  = GlobalUtils.getRecordTypeId('CampaignMember', 'CVENT_Session_Campaign_Member');
+
+        Map<String, Id> mapEventStubToParentCampaign = new Map<String, Id>();
+
+        CventEvents__EventCampaignEntry__c[] entries = [
+                SELECT Id, CventEvents__Campaign__c, CventEvents__Event__r.CventEvents__pkg_EventStub__c
+                FROM CventEvents__EventCampaignEntry__c
+                WHERE CventEvents__Event__r.CventEvents__pkg_EventStub__c IN :sessionCampaignsByEventStub.keySet()
+        ];
+
+        for (CventEvents__EventCampaignEntry__c entry : entries) {
+            mapEventStubToParentCampaign.put(entry.CventEvents__Event__r.CventEvents__pkg_EventStub__c, entry.CventEvents__Campaign__c);
+        }
+
+        for (String eventStubValue : sessionCampaignsByEventStub.keySet()) {
+            for (Campaign campaign : sessionCampaignsByEventStub.get(eventStubValue)) {
+                campaign.Parent_Event__c = mapEventStubToParentCampaign.get(eventStubValue);
+                campaign.RecordTypeId = sessionCampaignRTId;
+                campaign.CampaignMemberRecordTypeId = memberRecordTypeId;
+            }
+        }
+    }
+
+    /**
+     * Marks the Parent CVENT event record as non converted if the related campaign is being deleted
+     * @author hadib@salesforce.com | 01-11-2023
+     * @param oldCampaignList List of old values of the deleted campaign records
+     */
+    public static void tickCventParentEventAsNotConverted(List<Campaign> oldCampaignList)
+    {
+        Set<Id> deletedCampaignIds = new Set<Id>();
+
+        for (Campaign deletedCampaign : oldCampaignList) {
+            deletedCampaignIds.add(deletedCampaign.Id);
+        }
+
+        // Call the method to unconvert events related to the deleted campaigns
+        List<CventEvents__EventCampaignEntry__c> deletedEntries =
+            [SELECT Id, CventEvents__Event__c
+            FROM CventEvents__EventCampaignEntry__c
+            WHERE CventEvents__Campaign__c IN :deletedCampaignIds];
+
+        CventManagement.tickParentEventAs(deletedEntries,false);
+    }
+
+    /**
+     * Deletes Child CVENT Session Campaigns related to a parent Cvent Campaign.
+     * @author hadib@salesforce.com | 31-01-2024
+     * @param oldCampaignList List of the deleted campaign records
+     */
+    public static void deleteChildSessionCampaigns(List<Campaign> oldCampaignList)
+    {
+        Id CventCampaignRTId = GlobalUtils.getRecordTypeId('Campaign', 'CventCampaign');
+        Id sessionCampaignRTId = GlobalUtils.getRecordTypeId('Campaign', 'CVENT_Session_Campaign');
+
+        Set<Id> cventCampaignsDeleted = new Set<Id>();
+
+        for (Campaign deletedCampaign : oldCampaignList)
+        {
+            if(deletedCampaign.RecordTypeId == CventCampaignRTId) // Main Filter to find Cvent Campaigns
+            {
+                cventCampaignsDeleted.add(deletedCampaign.Id);
+            }
+        }
+
+        List<Campaign> childCventSessionCampaigns = [SELECT Id FROM Campaign WHERE Parent_Event__c IN :cventCampaignsDeleted AND RecordTypeId = :sessionCampaignRTId];
+
+        try{
+            delete ChildCventSessionCampaigns;
+        }catch(Exception exc) {
+            DebugLog.addException(exc, 'Unable to delete Child Session Campaigns');
+        }
+    }
+
+
 }

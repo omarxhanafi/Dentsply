@@ -103,6 +103,13 @@ public with sharing class CallReportQuickActionPocController {
         return newEvent.Id;
     }
 
+    /**
+     * getPickListValuesIntoMap Return the Co_travel__c picklist data as a Label/Value map
+     * @author ohanafi@salesforce.com | 14-08-2024
+     *
+     *
+     * @return Map<String,String> - Label/Value map
+     */
     @AuraEnabled(cacheable=true)
     public static Map<String, String> getPickListValuesIntoMap(){
         Map<String, String> pickListValuesMap = new Map<String, String>();

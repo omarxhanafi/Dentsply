@@ -4,7 +4,7 @@ public class ServiceCloud_TestClass {
     @isTest
     private static void Case_Test(){
         
-    	
+        
         Account acc = new Account(Name='Test account 1', CurrencyIsoCode = 'EUR', Country__c = 'NL');
         insert acc;
         
@@ -14,7 +14,7 @@ public class ServiceCloud_TestClass {
         Country__c country = new Country__c(name='australia',Country__c = 'AUS',Country_Name__c = 'Australia AUS');
         insert country;
         
-        Case c = new Case(Subject='Test case', ContactId = con.Id, AccountId = acc.Id, OwnerId = UserInfo.getUserId(),Teamforce_Product__c= 'Events',related_Country__c=country.Id);
+        Case c = new Case(Subject='Test case', ContactId = con.Id, AccountId = acc.Id, OwnerId = UserInfo.getUserId(),related_Country__c=country.Id);
         insert c;       
         
         ApexPages.StandardController stdController = new ApexPages.StandardController(c);
@@ -151,7 +151,7 @@ public class ServiceCloud_TestClass {
         Country__c country = new Country__c(name='australia',Country__c = 'AUS',Country_Name__c = 'Australia AUS');
         insert country;
         
-        Case c = new Case(Subject='Test case', ContactId = con.Id, AccountId = acc.Id, OwnerId = UserInfo.getUserId(),Teamforce_Product__c= 'Events',related_Country__c=country.Id);
+        Case c = new Case(Subject='Test case', ContactId = con.Id, AccountId = acc.Id, OwnerId = UserInfo.getUserId(),related_Country__c=country.Id);
         insert c;      
          
         Account aInfo = ServiceCloud_Account.getAccountInfo(acc.Id);
@@ -230,7 +230,7 @@ public class ServiceCloud_TestClass {
         Country__c country = new Country__c(name='australia',Country__c = 'AUS',Country_Name__c = 'Australia AUS');
         insert country;
         
-        Case c = new Case(Subject='Test case', ContactId = con.Id, AccountId = acc.Id, OwnerId = UserInfo.getUserId(),Teamforce_Product__c= 'Events',related_Country__c=country.Id);
+        Case c = new Case(Subject='Test case', ContactId = con.Id, AccountId = acc.Id, OwnerId = UserInfo.getUserId(),related_Country__c=country.Id);
         insert c;
         
         Case res = ServiceCloud_FlowLookupController_ver2.getCaseInfo(c.Id);

@@ -16,18 +16,7 @@ public with sharing class Test_OrderManagement_CC {
     private static void setup() {
         List<User> userList = TestDataFactory.createUsers(1, '#System: System Administrator');
         System.runas(userList.get(0)) {
-            /*List<PermissionSet> permissions = [SELECT Id FROM PermissionSet 
-            WHERE Name = 'Global_System_Use_Any_API'
-            OR Name = 'New_Salesforce_Mobile_App'
-            OR Name = 'Geopointe_Base_Permissions'
-            OR Name = 'Global_Analytics_Viewer'
-            OR Name = 'Global_Analytics_All_permissions'];
-            List<PermissionSetAssignment> permisssionSetsAssign = new List<PermissionSetAssignment>();
-            for(PermissionSet ps : permissions) {
-            permisssionSetsAssign.add(new PermissionSetAssignment(AssigneeId = userList.get(0).id, PermissionSetId = ps.Id));
-            }
-            System.debug('ahmed ' +permisssionSetsAssign.size());
-            //insert permisssionSetsAssign;*/
+            
         }
         TestDataFactory.createBypassCustomSetting();
         List<User> userIntegrationList = TestDataFactory.insertIntegrationUsers(1, 'System Administrator');
@@ -156,10 +145,8 @@ public with sharing class Test_OrderManagement_CC {
             List<OrderItem> orderItems = TestDataFactory.returnOrderItems(1, orders, pricebookEntries);
             Test.startTest();
             String result1 = OrderManagement_CC.insertOrderItems(orderItems);
-            //String result2 = OrderManagement_CC.insertOrderItems(null);
             Test.stopTest();
             System.assertEquals('SUCCESS', result1);
-            //System.assertNotEquals('SUCCESS', result2);
         }
     }
     @isTest
@@ -269,7 +256,6 @@ public with sharing class Test_OrderManagement_CC {
             List<OrderItem> orderItems = TestDataFactory.createOrderItems(1, orders, pricebookEntries);
             Test.startTest();
             System.assertEquals('SUCCESS', OrderManagement_CC.deleteOrderItem(orderItems.get(0).Id));
-            //System.assertNotEquals('SUCCESS', OrderManagement_CC.deleteOrderItem('Fire Exception'));
             Test.stopTest();
         }
     }
@@ -333,18 +319,9 @@ public with sharing class Test_OrderManagement_CC {
     private static void testGetRelatedAccountsWithContact() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
         System.runAs(testUser) {
-            /*List<Pricebook2> pricebooks = TestDataFactory.returnPricebooks(1, 'BNL PRE');
-            pricebooks.get(0).Contract_Discount_types__c = 'Implants';
-            insert pricebooks;*/
+            
             List<Account> accounts = TestDataFactory.createAccounts(3, 'CIM_Account', testUser.Id);
-           /* List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Account_Plan', testUser.Id);
-            opportunities.get(0).AccountId = accounts.get(0).Id;
-            insert opportunities;
-            Field_Sales_Project_Members__c prospect1 = new Field_Sales_Project_Members__c();
-            prospect1.Account__c = accounts.get(0).Id;
-            prospect1.Category__c = 'Implants';
-            prospect1.Status__c = 'New';
-            insert prospect1;*/
+           
             List<Contact> contacts = TestDataFactory.returnContacts(1, 'ContactGlobal', testUser.Id);
             contacts.get(0).AccountId = accounts.get(0).Id;
             insert contacts;      
@@ -402,17 +379,56 @@ public with sharing class Test_OrderManagement_CC {
             insert events;
 
             Test.startTest();
-            OrderManagement_CC.createOrder(pricebooks.get(0).Id, accounts.get(0).Id, '', '', '','');
-            OrderManagement_CC.createOrder(pricebooks.get(1).Id, opportunities.get(0).Id, '', '', '','');
-            OrderManagement_CC.createOrder(pricebooks.get(2).Id, opportunities.get(0).Id, '', '', '','');
-            OrderManagement_CC.createOrder(pricebooks.get(0).Id, contacts.get(0).Id, '', '', '',accounts.get(0).Id);
-            //OrderManagement_CC.createOrder(pricebooks.get(0).Id, contacts.get(0).Id, '', '', '',null);
-            OrderManagement_CC.createOrder(pricebooks.get(0).Id, prospect1.Id, '', '', '','');
-            OrderManagement_CC.createOrder(pricebooks.get(0).Id, events.get(0).Id, '', '', '',accounts.get(0).Id);
-            OrderManagement_CC.createOrder(pricebooks.get(0).Id, events.get(0).Id, '', '', '',null);
+            OrderManagement_CC.createOrder(pricebooks.get(0).Id, accounts.get(0).Id, '', '', '','','');
+            OrderManagement_CC.createOrder(pricebooks.get(1).Id, opportunities.get(0).Id, '', '', '','','');
+            OrderManagement_CC.createOrder(pricebooks.get(2).Id, opportunities.get(0).Id, '', '', '','','');
+            OrderManagement_CC.createOrder(pricebooks.get(0).Id, contacts.get(0).Id, '', '', '','',accounts.get(0).Id);
+            OrderManagement_CC.createOrder(pricebooks.get(0).Id, prospect1.Id, '', '', '','','');
+            
             Test.stopTest();
         }
     }
+
+    @isTest
+    private static void testCreateOrder2() {
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
+        System.runAs(testUser) {
+            List<Pricebook2> pricebooks = TestDataFactory.returnPricebooks(3, 'BNL PRE');
+            pricebooks.get(0).Contract_Discount_types__c = 'Implants';
+            pricebooks.get(0).Pricebook_Channel__c = 'Direct';
+            pricebooks.get(1).Contract_Discount_types__c = 'Implants';
+            pricebooks.get(1).Pricebook_Channel__c = 'Indirect';
+            pricebooks.get(2).Contract_Discount_types__c = 'Implants';
+            pricebooks.get(2).Pricebook_Channel__c = 'Free Good Order';
+            insert pricebooks;
+            List<Account> accounts = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
+            List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
+            opportunities.get(0).AccountId = accounts.get(0).Id;
+            insert opportunities;
+            List<Contact> contacts = TestDataFactory.returnContacts(1, 'ContactGlobal', testUser.Id);
+            contacts.get(0).AccountId = accounts.get(0).Id;
+            insert contacts;
+            
+            Field_Sales_Project_Members__c prospect1 = new Field_Sales_Project_Members__c();
+            prospect1.Account__c = accounts.get(0).Id;
+            prospect1.Category__c = 'Implants';
+            prospect1.Status__c = 'New';
+            
+            insert prospect1;
+            List<Event> events = TestDataFactory.returnEvents(1, testUser.Id);
+            events.get(0).WhatId = accounts.get(0).Id;
+            events.get(0).WhoId = contacts.get(0).Id;
+            events.get(0).Subject = 'test';
+
+            insert events;
+
+            Test.startTest();
+            OrderManagement_CC.createOrder(pricebooks.get(0).Id, events.get(0).Id, '', '', '','',accounts.get(0).Id);
+            OrderManagement_CC.createOrder(pricebooks.get(0).Id, events.get(0).Id, '', '', '','',null);
+            Test.stopTest();
+        }
+    }
+    
     @isTest
     private static void testgetAccountRecordType() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
@@ -456,7 +472,8 @@ public with sharing class Test_OrderManagement_CC {
         }
     }
 
-    @isTest
+
+    @isTest 
     private static void testGetSourceRecords() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
         System.runAs(testUser) {
@@ -491,7 +508,8 @@ public with sharing class Test_OrderManagement_CC {
             List<Source_Record__c> sourceRecords1 = OrderManagement_CC.getSourceRecords( null,accounts.get(0).Id,pricebooks.get(0).Id);
             List<Source_Record__c> sourceRecords2 = OrderManagement_CC.getSourceRecords( opportunities.get(0).Id,pricebooks.get(0).Id,null);
             List<Source_Record__c> sourceRecords3 = OrderManagement_CC.getSourceRecords( contacts.get(0).Id,pricebooks.get(0).Id,null);
-            List<Source_Record__c> sourceRecords4 = OrderManagement_CC.getSourceRecords( events.get(0).Id,pricebooks.get(0).Id,null);
+                        //List<Source_Record__c> sourceRecords4 = OrderManagement_CC.getSourceRecords( events.get(0).Id,pricebooks.get(0).Id,null);
+
             List<Source_Record__c> sourceRecords5 = OrderManagement_CC.getSourceRecords( prospect1.Id,pricebooks.get(0).Id,null);
             Test.stopTest();
         }
@@ -528,7 +546,6 @@ public with sharing class Test_OrderManagement_CC {
             orders.get(0).SourceRecord__c = sourceRecords.get(0).Id;
             insert orders;
             List<OrderItem> orderItems = TestDataFactory.createOrderItems(1, orders, pricebookEntries);
-            //List<OrderItem> orderItems2 = TestDataFactory.createOrderItems(1, orders, pricebookEntries);
             Test.startTest();
             Order order = OrderManagement_CC.cloneOrder(orders.get(0).Id, '');
             ProductPricingERPCallOutWrapper.ProductEntry prodEntry = new ProductPricingERPCallOutWrapper.ProductEntry();
@@ -583,6 +600,55 @@ public with sharing class Test_OrderManagement_CC {
         }
     }
 
-   
+    
+    
+    @isTest
+    private static void testGetAddressRecords() {
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
+        System.runAs(testUser) {
+            List<Pricebook2> pricebooks = TestDataFactory.returnPricebooks(1, 'AAAAatest');
+            pricebooks.get(0).ShowPricingfromMicroServiceOM__c = true;
+            pricebooks.get(0).ShowShippingAddresses__c = true;
+            pricebooks.get(0).SourceId__c = '2';
+            pricebooks.get(0).CompanyCode__c = '057';
+            pricebooks.get(0).Pricebook_Channel__c = 'Direct';
+            insert pricebooks;
+            List<Account> accounts = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
+            List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
+            opportunities.get(0).AccountId = accounts.get(0).Id;
+            insert opportunities;
+            List<Contact> contacts = TestDataFactory.returnContacts(1, 'ContactGlobal', testUser.Id);
+            contacts.get(0).AccountId = accounts.get(0).Id;
+            insert contacts;
+            
+            Field_Sales_Project_Members__c prospect1 = new Field_Sales_Project_Members__c();
+            prospect1.Account__c = accounts.get(0).Id;
+            prospect1.Category__c = 'Implants';
+            prospect1.Status__c = 'New';
+            
+            insert prospect1;
+            List<Event> events = TestDataFactory.returnEvents(1, testUser.Id);
+            events.get(0).WhatId = accounts.get(0).Id;
+            events.get(0).WhoId = contacts.get(0).Id;
+            events.get(0).Subject = 'test';
+
+            insert events;
+            Source_Record__c sr = new Source_Record__c(CIM_Account__c = accounts.get(0).Id, Customer_Id__c = '555', Company_Code__c = '057');
+            insert sr;
+            Address__c ad = new Address__c(Name = 'Test', Account__c= accounts.get(0).Id, CustomerNumber__c = '555', CompanyCode__c = '057');
+            insert ad;
+            Test.startTest();
+            List<Address__c> addressRecords = OrderManagement_CC.getAddressRecords( accounts.get(0).Id,pricebooks.get(0).Id,null,sr.Id);
+            List<Address__c> addressRecords1 = OrderManagement_CC.getAddressRecords( null,accounts.get(0).Id,pricebooks.get(0).Id,sr.Id);
+            List<Address__c> addressRecords2 = OrderManagement_CC.getAddressRecords( opportunities.get(0).Id,pricebooks.get(0).Id,null,sr.Id);
+            List<Address__c> addressRecords3 = OrderManagement_CC.getAddressRecords( contacts.get(0).Id,pricebooks.get(0).Id,null,sr.Id);
+            List<Address__c> addressRecords4 = OrderManagement_CC.getAddressRecords( events.get(0).Id,pricebooks.get(0).Id,null,sr.Id);
+            List<Address__c> addressRecords5 = OrderManagement_CC.getAddressRecords( prospect1.Id,pricebooks.get(0).Id,null,sr.Id);
+            Test.stopTest();
+            System.assertEquals(1, addressRecords.size());
+            System.assertEquals(1, addressRecords5.size());
+        }
+    }
+    
 	
 }

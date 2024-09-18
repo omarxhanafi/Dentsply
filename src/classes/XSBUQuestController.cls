@@ -268,7 +268,7 @@ public class XSBUQuestController {
                 opp.Primary_contact__c = contactIdx;
             }
 
-            opp.RecordTypeId = [Select Id From RecordType  Where SobjectType = 'Opportunity' and DeveloperName = 'xsbu_prospecting'].Id;
+            opp.RecordTypeId = [Select Id From RecordType  Where SobjectType = 'Opportunity' and DeveloperName = 'Lightning_Pipeline_Opportunity'].Id;
             pb = [Select Id from Pricebook2 Where Name =: 'Sirona Products'];
             opp.Pricebook2Id = pb[0].Id;
             

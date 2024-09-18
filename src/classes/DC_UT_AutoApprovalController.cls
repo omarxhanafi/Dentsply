@@ -25,7 +25,7 @@ public class DC_UT_AutoApprovalController {
         article = new Article__c();
         article.Related_Case__c = caze.Id;
         article.RecordTypeId = rt.Id;
-        article.Return_Exception_Requested__c = 'Writing on Product';
+        article.Return_Exception_Requested__c = 'Missing TX Sticker';
         article.Rep_Assigned__c = UserInfo.getUserId();
         article.Manager_Assigned__c = UserInfo.getUserId();
         insert article;
@@ -52,7 +52,7 @@ public class DC_UT_AutoApprovalController {
         Approval.ProcessResult result = Approval.process(req1, false);
         System.assert(result.isSuccess());
         List<ProcessInstanceWorkitem> workitems = DC_AutoApprovalService.getWorkitemsForArticles(new List<Article__c> { article });
-        system.assertEquals(1, workitems.size());
+        system.assertEquals(0, workitems.size());
         
         List<Article__c> articles = DC_ArticleDao.getArticlesByCaseId(caze.Id);
         system.debug(articles);

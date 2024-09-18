@@ -8,6 +8,10 @@ History:
 201015          Added readAccess check on getPriceBooks()
 230131			TFUS-000005107
 230420          TFUS-000005506
+230829          TFUS-000005926
+231117			TFUS-000006243
+230712          TFUS-000006293 TFUS-000006294 TFUS-000006228 TFUS-000006320 (Roberto)
+240103          TFUS-000006379 Adding "AXCustomerPrice__c" to query when fetching items
 ----------------------------------------------------------------------------------------*/
 public with sharing class OrderManagement_CC {
 
@@ -30,6 +34,18 @@ public with sharing class OrderManagement_CC {
             throw new AuraHandledException(e.getMessage());    
         }
     }
+
+    /*------------------------------------------------------------  
+    Description:    Method to select the current User navigation type.
+    Inputs:         
+    ------------------------------------------------------------*/
+    @AuraEnabled
+    public static String getNavType() { 
+        UserAppInfo userAppInfo = [SELECT Id, AppDefinitionId FROM UserAppInfo WHERE UserId = :UserInfo.getUserId() LIMIT 1];
+        AppDefinition appDefinition = [SELECT DurableId, NavType FROM AppDefinition Where DurableId = :userAppInfo.AppDefinitionId LIMIT 1];
+        return appDefinition.NavType;
+    }
+
     /*------------------------------------------------------------  
     Description:    Method to select the List of the active currencies related to a pricebook.
     Inputs:          @param ID pricebookId
@@ -101,9 +117,9 @@ public with sharing class OrderManagement_CC {
     @AuraEnabled
     public static List<OrderItem> getOrderItems(ID orderId, Integer pageNumber, Integer pageSize) {
         try {
-            return [SELECT Id, Quantity, AXRetailPrice__c, AXDiscount__c, TotalPrice, UnitPrice, Total_Line_Item_Price__c, DiscountedAmount__c, Free_Of_Charge__c,Free_of_Charge_Delivery__c,
+            return [SELECT Id, AXCustomerPrice__c, Quantity, Article_Number__c, AXRetailPrice__c, AXDiscount__c, TotalPrice, UnitPrice, Total_Line_Item_Price__c, DiscountedAmount__c, Free_Of_Charge__c,Free_of_Charge_Delivery__c,
             Product2.Name, Product2.Article__c, PricebookEntry.LocalProductDescription__c,PricebookEntry.FreeProductThreshold__c, PricebookEntry.Primary__c, PricebookEntry.ApprovalLevel1__c, PricebookEntry.ApprovalLevel2__c, PricebookEntry.ApprovalLevel3__c, 
-            Order.CurrencyIsoCode, Discount_Percent__c, ApprovalLevel__c, UseCoupon__c, AvailableCouponCode__c, LineApprovalLevel__c, Offer_code_dna__c, Offer_code_dna__r.QuantityLimit__c FROM OrderItem
+            Order.CurrencyIsoCode, Discount_Percent__c, ApprovalLevel__c, UseCoupon__c, AvailableCouponCode__c, LineApprovalLevel__c, Offer_code_dna__c, Offer_code_dna__r.QuantityLimit__c, PricebookEntry.Pricebook2.ShowPricingfromMicroServiceOM__c FROM OrderItem
             WHERE OrderId =:orderId 
             ORDER BY CreatedDate DESC
             LIMIT :pageSize OFFSET :(pageNumber-1)* pageSize];
@@ -126,7 +142,6 @@ public with sharing class OrderManagement_CC {
         } catch(Exception e) {
             DebugLog.addException(e, 'OrderManagement_CC.deleteOrderItem');
             throw new AuraHandledException(e.getMessage());
-            //return e.getMessage();
         }
 
     }
@@ -260,21 +275,7 @@ public with sharing class OrderManagement_CC {
                             dupProds.add(orderItem.Product2.Article__c);
                             dupPricingProdsRequest.add(prodRequest);
                         }
-                        /*
-                        if (uniqueProds.contains(orderItem.Product2.Article__c)){
-                            if(dupProds.isEmpty()){
-                                dupProds.add(orderItem.Product2.Article__c);
-                                dupPricingProdsRequest.add(prodRequest);
-                            } else {
-                                if (! dupProds.contains(orderItem.Product2.Article__c)){
-                                    dupPricingProdsRequest.add(prodRequest);
-                                    dupProds.add(orderItem.Product2.Article__c);
-                                }
-                            }
-                        } else {
-                            pricingProdsRequest.add(prodRequest);
-                            uniqueProds.add(orderItem.Product2.Article__c);
-                        }*/
+                        
                     }
                 }
             }
@@ -340,15 +341,14 @@ public with sharing class OrderManagement_CC {
                         if(orderItem.Product2.Article__c == prices.Entries[j].productEntry.productId && orderItem.Quantity == prices.Entries[j].productEntry.quantity) {
                             orderItem.OrderId = clonedOrder.Id;
                             orderItem.UnitPrice = prices.Entries[j].basePrice;
+                            orderItem.AXCustomerPrice__c = prices.Entries[j].basePrice;
                             orderItem.AXRetailPrice__c = prices.Entries[j].retailPrice;
                         }
                         j++;
                     }
                 }
-               /* } else{
-                    orderItem.UnitPrice = prices.Entries[j].basePrice;
-                    orderItem.AXRetailPrice__c = prices.Entries[j].retailPrice;
-                }*/
+               
+                
                 if(orderItem.OrderId == clonedOrder.Id){
                     clonedOrderItemsToInsert.add(orderItem);
 
@@ -356,52 +356,8 @@ public with sharing class OrderManagement_CC {
                 
             }
 
-            /*
-            if(order.Pricebook2.ShowPricingfromMicroServiceOM__c == false){
-                insert clonedOrder;
-                for(OrderItem orderItem : clonedOrderItems) {
-                    if(orderItem.PricebookEntry.IsActive ) {
-                        orderItem.OrderId = clonedOrder.Id;
-                        pricebookEntriesIds.add(orderItem.PricebookEntryId);
-                        clonedOrderItemsToInsert.add(orderItem);
-                    }
-                }
-                Map<Id, PricebookEntry> pricebookEntries = new Map<Id, PricebookEntry>
-                    ([SELECT Id,Product2Id, UnitPrice FROM PricebookEntry WHERE Id IN :pricebookEntriesIds]);
-                for(OrderItem orderItem : clonedOrderItemsToInsert) {
-                    PricebookEntry pricebookEntry = pricebookEntries.get(orderItem.PricebookEntryId);
-                    orderItem.UnitPrice = pricebookEntry.UnitPrice;
-                }
-            }
-            //When ERP pricing callout is needed
-            else{
-                List <ProductPricingERPCallOutWrapper.ProductEntry> pricingProdsRequest = new List<ProductPricingERPCallOutWrapper.ProductEntry>();
-                for(OrderItem orderItem : clonedOrderItems) {
-                    if(orderItem.PricebookEntry.IsActive ) {
-                        ProductPricingERPCallOutWrapper.ProductEntry prodRequest = new ProductPricingERPCallOutWrapper.ProductEntry();
-                        prodRequest.productId = orderItem.Product2.Article__c;
-                        prodRequest.quantity = orderItem.Quantity.intValue();
-                        pricingProdsRequest.add(prodRequest);
-                    }
-                }
-                If(!pricingProdsRequest.isEmpty()){
-                    ProductPricingERPCallOutWrapper.ProductPricingResponse prices = ProdPricingERPCallOut(Order.Id, pricingProdsRequest );
-                    insert clonedOrder;
-                    for(OrderItem orderItem : clonedOrderItems) {
-                        integer j=0;
-                        for(ProductPricingERPCallOutWrapper.Entries price: prices.entries){
-                            if(orderItem.PricebookEntry.IsActive  && (orderItem.Product2.Article__c == prices.Entries[j].productEntry.productId)) {
-                                orderItem.OrderId = clonedOrder.Id;
-                                orderItem.UnitPrice = prices.Entries[j].basePrice;
-                                orderItem.AXRetailPrice__c = prices.Entries[j].retailPrice;
-                                clonedOrderItemsToInsert.add(orderItem);
-                            }
-                            j++;
-                        }
-                        
-                    }
-                }
-            }*/
+            
+            
             insert clonedOrderItemsToInsert;
             return  getOrder(clonedOrder.Id);
         }
@@ -422,35 +378,35 @@ public with sharing class OrderManagement_CC {
         }catch(Exception e) {
             DebugLog.addException(e, 'OrderManagement_CC.insertOrderItems');
             throw new AuraHandledException(e.getMessage());
-            //return e.getMessage();
         }
     }
     @AuraEnabled
     public static OrderItem cloneOrderItems(Id orderItemId){
         try {
-            List<OrderItem> orderItemToCloneList = [
+            OrderItem orderItemToClone = [
                 SELECT Id, Quantity, PricebookEntryId, UnitPrice, Free_Of_Charge__c, Product2.Name, Product2.Article__c, OrderId,
                 PricebookEntry.IsActive, Order.CurrencyIsoCode, Discount_Percent__c, Order.Pricebook2.ShowPricingfromMicroServiceOM__c
                 FROM OrderItem
-                WHERE Id = :orderItemId
+                WHERE Id = :orderItemId LIMIT 1
             ];
-            List<OrderItem> clonedOrderItemList = orderItemToCloneList.deepClone();
+            OrderItem clonedOrderItem = orderItemToClone.clone(false, false, false, false);
             //microservice call out
 
-            If(orderItemToCloneList[0].Order.Pricebook2.ShowPricingfromMicroServiceOM__c == true){
+            If(orderItemToClone.Order.Pricebook2.ShowPricingfromMicroServiceOM__c == true){
                 List <ProductPricingERPCallOutWrapper.ProductEntry> pricingProdsRequest = new List<ProductPricingERPCallOutWrapper.ProductEntry>();
                 ProductPricingERPCallOutWrapper.ProductEntry prodRequest = new ProductPricingERPCallOutWrapper.ProductEntry();
-                prodRequest.productId = orderItemToCloneList[0].Product2.Article__c;
-                prodRequest.quantity = orderItemToCloneList[0].Quantity.intValue();
+                prodRequest.productId = clonedOrderItem.Product2.Article__c;
+                prodRequest.quantity = clonedOrderItem.Quantity.intValue();
                 pricingProdsRequest.add(prodRequest);
                 ProductPricingERPCallOutWrapper.ProductPricingResponse prices = new ProductPricingERPCallOutWrapper.ProductPricingResponse();
-                prices = getProductPricingERPCalloutResponse(orderItemToCloneList[0].OrderId, pricingProdsRequest);
-                orderItemToCloneList[0].UnitPrice = prices.Entries[0].basePrice;
-                orderItemToCloneList[0].AXRetailPrice__c = prices.Entries[0].retailPrice;
-
+                prices = getProductPricingERPCalloutResponse(orderItemToClone.OrderId, pricingProdsRequest);
+                clonedOrderItem.UnitPrice = prices.Entries[0].basePrice;
+                clonedOrderItem.AXCustomerPrice__c = prices.Entries[0].basePrice;
+                clonedOrderItem.AXRetailPrice__c = prices.Entries[0].retailPrice;
             }
-            insert clonedOrderItemList;
-            return clonedOrderItemList[0];
+           
+            insert clonedOrderItem;
+            return clonedOrderItem;
         } catch (Exception e) {
             DebugLog.addException(e, 'OrderManagement_CC.cloneOrderItems');
             throw new AuraHandledException(e.getMessage());
@@ -505,7 +461,7 @@ public with sharing class OrderManagement_CC {
     Inputs:          @param pricebookId, @param parentId, @param currencyIsoCode,  @param contractId
     ------------------------------------------------------------*/
     @AuraEnabled
-    public static Order createOrder(String pricebookId, ID parentId, String currencyIsoCode, String contractId, String sourceRecordId, string accountId) {
+    public static Order createOrder(String pricebookId, ID parentId, String currencyIsoCode, String contractId, String sourceRecordId, String addressRecordId, string accountId ) {
         try {
             Boolean isParentaLead = false;
             Field_Sales_Project_Members__c salesLead;
@@ -514,6 +470,9 @@ public with sharing class OrderManagement_CC {
             order.Pricebook2Id = pricebookId;
             order.Order_Type__c = pricebook.PriceBook_Type__c;
             order.Order_subtype__c = pricebook.Pricebook_Subtype__c;
+            if (String.isNotEmpty(addressRecordId)) {
+                order.ShippingAddress__c = addressRecordId; 
+            }
             order.Status = 'Created';
             if ('Direct'.equals(pricebook.Pricebook_Channel__c)) {
                 order.RecordTypeId = GlobalUtils.getRecordTypeId('Order', 'Direct_global_order');
@@ -587,7 +546,6 @@ public with sharing class OrderManagement_CC {
             return getOrder(order.Id);
         } catch (Exception e) {
             DebugLog.addException(e, 'OrderManagement_CC.createOrder');
-            system.debug('OrderManagement_CC.createOrder'+ e.getMessage());
             throw new AuraHandledException(e.getMessage());    
         }
     }
@@ -671,9 +629,7 @@ public with sharing class OrderManagement_CC {
             query += ' FROM Product2 WHERE Id IN  :productsIds';
             query += queryBuilder(pricebookId, parentId, keywordSearch, currencyIsoCode, 
             valueDesc1, valueDesc2, valueDesc3, valueDesc4);
-            // if(superProducts) {
-            //     query += ' ORDER BY Name DESC';
-            // }
+            
             query += ' ORDER BY Article__c';
             Integer offset = (pageNumber-1)*pageSize;
             query += ' LIMIT :pageSize OFFSET :offset';
@@ -702,7 +658,6 @@ public with sharing class OrderManagement_CC {
                     Boolean isFirst = true;
                     queryFilter += ' AND (';
                     for(String word : keywordsArticles) {
-                        // word = '%' + word + '%'; // TFUS-000002897: Removed wild card matching
                         if(isFirst) {
                             isFirst = false;
                         } else {
@@ -834,10 +789,10 @@ public with sharing class OrderManagement_CC {
     public static List<Source_Record__c> getSourceRecords(ID parentId, String pricebookId, String accountId)
     {
         try {
-            List<Source_Record__c> sourceRecords = new List<Source_Record__c>();
-            List<Pricebook2> pricebook =  [ SELECT  Id, CompanyCode__c, SourceId__c, Pricebook_Channel__c, ShowPricingfromMicroServiceOM__c
+            List<Pricebook2> pricebook =  [ SELECT  Id, CompanyCode__c, OMExtraSourceRecordSOQLFilter__c, SourceId__c, Pricebook_Channel__c, ShowPricingfromMicroServiceOM__c
                                             FROM Pricebook2
                                             WHERE   Pricebook_Channel__c = 'Direct' AND Id = :pricebookId LIMIT 1];
+            
 
             if (    (pricebook.size() > 0)  &&      (pricebook[0].ShowPricingfromMicroServiceOM__c == true
                                                     ||
@@ -846,63 +801,162 @@ public with sharing class OrderManagement_CC {
                 String parentSObjectName = parentId.getSObjectType().getDescribe().getName();
 
                 if ('Account'.equals(parentSObjectName)) {
-                    sourceRecords = [   SELECT Id, Combined_Fields__c
-                                        FROM Source_Record__c
-                                        WHERE   CIM_Account__c      = :parentId
-                                                AND Source_Id__c    = :pricebook[0].SourceId__c
-                                                AND Company_Code__c = :pricebook[0].CompanyCode__c
-                                                AND Status__c       = 'Active'];
+                    String query ='SELECT Id, Combined_Fields__c, Customer_Id__c FROM Source_Record__c WHERE CIM_Account__c = \'' + parentId +'\' ';
+                    query = query + 'AND Source_Id__c    = \'' + pricebook[0].SourceId__c +'\' '; 
+                    query = query + 'AND Company_Code__c = \'' + pricebook[0].CompanyCode__c +'\' ';
+                    query = query + 'AND Status__c       = \'Active\'';
+                    if(pricebook[0].OMExtraSourceRecordSOQLFilter__c != null)
+                        query = query + pricebook[0].OMExtraSourceRecordSOQLFilter__c;
+                    
+                    return(Database.query(query));
+                    
                 }
                 else if ('Opportunity'.equals(parentSObjectName)) {
                     Opportunity parentOpp = [SELECT Id, AccountId FROM Opportunity WHERE Id = :parentId];
-
-                    sourceRecords = [   SELECT Id, Combined_Fields__c
-                                        FROM Source_Record__c
-                                        WHERE   CIM_Account__c      = :parentOpp.AccountId
-                                                AND Source_Id__c    = :pricebook[0].SourceId__c
-                                                AND Company_Code__c = :pricebook[0].CompanyCode__c
-                                                AND Status__c       = 'Active'];
+                    String query ='SELECT Id, Combined_Fields__c, Customer_Id__c FROM Source_Record__c WHERE CIM_Account__c = \'' + parentOpp.AccountId +'\' ';
+                    query = query + 'AND Source_Id__c    = \'' + pricebook[0].SourceId__c +'\' '; 
+                    query = query + 'AND Company_Code__c = \'' + pricebook[0].CompanyCode__c +'\' ';
+                    query = query + 'AND Status__c       = \'Active\'';
+                    if(pricebook[0].OMExtraSourceRecordSOQLFilter__c != null)
+                        query = query + pricebook[0].OMExtraSourceRecordSOQLFilter__c;
+                    
+                    return(Database.query(query));
+                    
                 }
                 else if ('Field_Sales_Project_Members__c'.equals(parentSObjectName)) {
                     Field_Sales_Project_Members__c parentSalesLead = [SELECT Id, Account__c FROM Field_Sales_Project_Members__c WHERE Id = :parentId];
 
-                    sourceRecords = [   SELECT Id, Combined_Fields__c
-                                        FROM Source_Record__c
-                                        WHERE   CIM_Account__c      = :parentSalesLead.Account__c
-                                                AND Source_Id__c    = :pricebook[0].SourceId__c
-                                                AND Company_Code__c = :pricebook[0].CompanyCode__c
-                                                AND Status__c       = 'Active'];
+                    String query ='SELECT Id, Combined_Fields__c, Customer_Id__c FROM Source_Record__c WHERE CIM_Account__c = \'' + parentSalesLead.Account__c +'\' ';
+                    query = query + 'AND Source_Id__c    = \'' + pricebook[0].SourceId__c +'\' '; 
+                    query = query + 'AND Company_Code__c = \'' + pricebook[0].CompanyCode__c +'\' ';
+                    query = query + 'AND Status__c       = \'Active\'';
+                    if(pricebook[0].OMExtraSourceRecordSOQLFilter__c != null)
+                        query = query + pricebook[0].OMExtraSourceRecordSOQLFilter__c;
+                    
+                    return(Database.query(query));
+
                 }
                 else if ('Event'.equals(parentSObjectName)) {
                     Event parentEvent = [SELECT Id, WhatId FROM Event WHERE Id = :parentId];
                     String accIDToFilter = accountId == '' ? parentEvent.WhatId : accountId ;
+
+                    String query ='SELECT Id, Combined_Fields__c, Customer_Id__c FROM Source_Record__c  WHERE CIM_Account__c = \'' + accIDToFilter +'\' ';
+                    query = query + 'AND Source_Id__c    = \'' + pricebook[0].SourceId__c +'\' '; 
+                    query = query + 'AND Company_Code__c = \'' + pricebook[0].CompanyCode__c +'\' ';
+                    query = query + 'AND Status__c       = \'Active\'';
+                    if(pricebook[0].OMExtraSourceRecordSOQLFilter__c != null)
+                        query = query + pricebook[0].OMExtraSourceRecordSOQLFilter__c;
                     
-                    sourceRecords = [   SELECT Id, Combined_Fields__c
-                                        FROM Source_Record__c
-                                        WHERE   CIM_Account__c      = :accIDToFilter
-                                                AND Source_Id__c    = :pricebook[0].SourceId__c
-                                                AND Company_Code__c = :pricebook[0].CompanyCode__c
-                                                AND Status__c       = 'Active'];
+                    return(Database.query(query));
+                    
+
                 }
                 else if ('Contact'.equals(parentSObjectName)) {
                     if (accountID != null) {
-                        sourceRecords =[SELECT Id, Combined_Fields__c
-                                        FROM Source_Record__c
-                                        WHERE   CIM_Account__c = :accountId
-                                                AND Source_Id__c = :pricebook[0].SourceId__c
-                                                AND Company_Code__c = :pricebook[0].CompanyCode__c
-                                                AND Status__c       = 'Active'];
+                        String query ='SELECT Id, Combined_Fields__c, Customer_Id__c FROM Source_Record__c  WHERE CIM_Account__c = \'' + accountId +'\' ';
+                        query = query + 'AND Source_Id__c    = \'' + pricebook[0].SourceId__c +'\' '; 
+                        query = query + 'AND Company_Code__c = \'' + pricebook[0].CompanyCode__c +'\' ';
+                        query = query + 'AND Status__c       = \'Active\'';
+                        if(pricebook[0].OMExtraSourceRecordSOQLFilter__c != null)
+                            query = query + pricebook[0].OMExtraSourceRecordSOQLFilter__c;
+                    
+                        return(Database.query(query));
+
                     }
                 }
-                if (!sourceRecords.isEmpty()) {
-                    return sourceRecords;
-                }
+
             }
             return null;
 
         }
         catch (Exception e) {
             DebugLog.addException(e, 'OrderManagement_CC.getSourceRecords');
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+
+
+    /*------------------------------------------------------------  
+    Description:    Method to select a getAddressRecords Records List related to the parent(Account,Opportunity, Event, Lead)
+                    filtred by accountID.
+    
+    ------------------------------------------------------------*/
+
+    @AuraEnabled
+    public static List<Address__c> getAddressRecords(ID parentId, String pricebookId, String accountId, String sourceRecId)
+    {
+        try {
+            List<Address__c> addressRecords = new List<Address__c>();
+            List<Pricebook2> pricebook =  [ SELECT  Id, CompanyCode__c, SourceId__c, Pricebook_Channel__c, ShowShippingAddresses__c
+                                            FROM Pricebook2
+                                            WHERE   Pricebook_Channel__c = 'Direct' AND Id = :pricebookId LIMIT 1];
+            List<Source_Record__c> sourceRecordDetail = [SELECT Id, Customer_Id__c, Company_Code__c FROM Source_Record__c WHERE ID =: sourceRecId LIMIT 1];
+            if (    (pricebook.size() > 0)  &&      (pricebook[0].ShowShippingAddresses__c == true))
+            {
+                String parentSObjectName = parentId.getSObjectType().getDescribe().getName();
+
+                if ('Account'.equals(parentSObjectName)) {
+                    addressRecords = [   SELECT Id, CombinedFieldsOrder__c
+                                        FROM Address__c
+                                        WHERE   Account__c      = :parentId
+                                                AND Stopped__c    = false
+                                                AND IsDeleted__c    = false
+                                                AND CustomerNumber__c =: sourceRecordDetail[0].Customer_Id__c
+                                                AND CompanyCode__c = :pricebook[0].CompanyCode__c];
+                }
+                else if ('Opportunity'.equals(parentSObjectName)) {
+                    Opportunity parentOpp = [SELECT Id, AccountId FROM Opportunity WHERE Id = :parentId];
+
+                    addressRecords = [   SELECT Id, CombinedFieldsOrder__c
+                                        FROM Address__c
+                                        WHERE   Account__c      = :parentOpp.AccountId
+                                                AND Stopped__c    = false
+                                                AND IsDeleted__c    = false
+                                                AND CustomerNumber__c =: sourceRecordDetail[0].Customer_Id__c
+                                                AND CompanyCode__c = :pricebook[0].CompanyCode__c];
+                }
+                else if ('Field_Sales_Project_Members__c'.equals(parentSObjectName)) {
+                    Field_Sales_Project_Members__c parentSalesLead = [SELECT Id, Account__c FROM Field_Sales_Project_Members__c WHERE Id = :parentId];
+
+                    addressRecords = [   SELECT Id, CombinedFieldsOrder__c
+                                        FROM Address__c
+                                        WHERE   Account__c      = :parentSalesLead.Account__c
+                                                AND Stopped__c    = false
+                                                AND IsDeleted__c    = false
+                                                AND CustomerNumber__c =: sourceRecordDetail[0].Customer_Id__c
+                                                AND CompanyCode__c = :pricebook[0].CompanyCode__c];
+                }
+                else if ('Event'.equals(parentSObjectName)) {
+                    Event parentEvent = [SELECT Id, WhatId FROM Event WHERE Id = :parentId];
+                    String accIDToFilter = accountId == '' ? parentEvent.WhatId : accountId ;
+                    addressRecords = [   SELECT Id, CombinedFieldsOrder__c
+                                        FROM Address__c
+                                        WHERE   Account__c      = :accIDToFilter
+                                                AND Stopped__c    = false
+                                                AND IsDeleted__c    = false
+                                                AND CustomerNumber__c =: sourceRecordDetail[0].Customer_Id__c
+                                                AND CompanyCode__c = :pricebook[0].CompanyCode__c];
+                }
+                else if ('Contact'.equals(parentSObjectName)) {
+                    if (accountID != null) {
+                        addressRecords =[SELECT Id, CombinedFieldsOrder__c
+                                        FROM Address__c
+                                        WHERE   Account__c = :accountId
+                                                AND Stopped__c    = false
+                                                AND IsDeleted__c    = false
+                                                AND CustomerNumber__c =: sourceRecordDetail[0].Customer_Id__c
+                                                AND CompanyCode__c = :pricebook[0].CompanyCode__c];
+                    }
+                }
+                if (!addressRecords.isEmpty()) {
+                    return addressRecords;
+                }
+            }
+            return null;
+
+        }
+        catch (Exception e) {
+            DebugLog.addException(e, 'OrderManagement_CC.getAddressRecords');
             throw new AuraHandledException(e.getMessage());
         }
     }
@@ -918,23 +972,27 @@ public with sharing class OrderManagement_CC {
     public static List<AccountContactRelation > getRelatedAccountsWithContact(ID parentId) {
         try {
             List<AccountContactRelation> relatedAccountsWithContact = new List<AccountContactRelation>();
-            String parentSObjectName = parentId.getSObjectType().getDescribe().getName();
-            if('Contact'.equals(parentSObjectName)) {
-                relatedAccountsWithContact = [SELECT AccountId,Account.Name, ContactId FROM AccountContactRelation WHERE ContactId =: parentId ];
-                return relatedAccountsWithContact;
-            } else {
-                if('Event'.equals(parentSObjectName)) {
-                    Event parentEvent = [SELECT Id, WhoId FROM Event WHERE Id =: parentId LIMIT 1];
-                    String whoIdSObjectName = parentEvent.WhoId != null ? parentEvent.WhoId.getSObjectType().getDescribe().getName() :  null;
-                    if(whoIdSObjectName != null && 'Contact'.equals(whoIdSObjectName)) {
-                        relatedAccountsWithContact = [SELECT AccountId,Account.Name, ContactId FROM AccountContactRelation WHERE ContactId =: parentEvent.WhoId ];
-                        return relatedAccountsWithContact;
+
+            if(parentId!=null){
+                String parentSObjectName = parentId.getSObjectType().getDescribe().getName();
+                if('Contact'.equals(parentSObjectName)) {
+                    relatedAccountsWithContact = [SELECT AccountId,Account.Name, ContactId FROM AccountContactRelation WHERE ContactId =: parentId ];
+                    return relatedAccountsWithContact;
+                } else {
+                    if('Event'.equals(parentSObjectName)) {
+                        Event parentEvent = [SELECT Id, WhoId FROM Event WHERE Id =: parentId LIMIT 1];
+                        String whoIdSObjectName = parentEvent.WhoId != null ? parentEvent.WhoId.getSObjectType().getDescribe().getName() :  null;
+                        if(whoIdSObjectName != null && 'Contact'.equals(whoIdSObjectName)) {
+                            relatedAccountsWithContact = [SELECT AccountId,Account.Name, ContactId FROM AccountContactRelation WHERE ContactId =: parentEvent.WhoId ];
+                            return relatedAccountsWithContact;
+                        }
+                        
                     }
                     
                 }
-                
             } 
             return null;
+
         } catch (Exception e) {
             DebugLog.addException(e, 'OrderManagement_CC.getSourceRecords');
             throw new AuraHandledException(e.getMessage());    
@@ -962,9 +1020,10 @@ public with sharing class OrderManagement_CC {
     private static ProductPricingERPCallOutWrapper.ProductPricingResponse getProductPricingERPCalloutResponse(Id parentId, List<ProductPricingERPCallOutWrapper.ProductEntry> prodPriceRequests) {
         try {
             string codeERPId = '';
-            order orderDetail = [SELECT Id, Account.GDWUniqueKey_CustomerMaster__c, Account.RecordTypeId, Account.RecordType.DeveloperName, SourceRecord__r.Customer_Id__c, CurrencyIsoCode, Pricebook2.CompanyCode__c FROM order WHERE Id = :parentId LIMIT 1];
+            final order orderDetail = [SELECT Id, Account.GDWUniqueKey_CustomerMaster__c, Account.RecordTypeId, Account.RecordType.DeveloperName, 
+            SourceRecord__r.Customer_Id__c, CurrencyIsoCode, Pricebook2.SalesChannel__c, Pricebook2.CompanyCode__c, Pricebook2.SourceId__c 
+            FROM order WHERE Id = :parentId LIMIT 1];
             If (Schema.SObjectType.Account.getRecordTypeInfosById().get(orderDetail.Account.RecordTypeId).getDeveloperName() == 'CIM_Account') {
-                //If(orderDetail.Account.RecordType.DeveloperName == 'CIM_Account'){
 
                 codeERPId = orderDetail.SourceRecord__r.Customer_Id__c;
 
@@ -973,13 +1032,14 @@ public with sharing class OrderManagement_CC {
                 }
             }
             If (Schema.SObjectType.Account.getRecordTypeInfosById().get(orderDetail.Account.RecordTypeId).getDeveloperName() == 'ERP_Account') {
-                //If(orderDetail.Account.RecordType.DeveloperName == 'ERP_Account'){
                 List<string> codeERPSplit = orderDetail.Account.GDWUniqueKey_CustomerMaster__c.split('_');
                 If (codeERPSplit[0] == '2') {
                     codeERPId = codeERPSplit[2];
                 }
             }
-            ProductPricingERPCallOutWrapper.ProductPricingResponse priceResponse = ProductPricingERPCallOutResponse.ProductPricingERPCallOutResponse(codeERPId, orderDetail.CurrencyIsoCode, orderDetail.Pricebook2.CompanyCode__c, prodPriceRequests);
+            final ProductPricingERPCallOutWrapper.ProductPricingResponse priceResponse = 
+            ProductPricingERPCallOutResponse.prodsToPriceERPCallOut(codeERPId, prodPriceRequests, orderDetail);
+            
             return priceResponse;
         } catch (Exception e) {
             DebugLog.addException(e, 'OrderManagement_CC.getProductPricingERPCalloutResponse');
@@ -1046,17 +1106,61 @@ public with sharing class OrderManagement_CC {
         return formattedValue.substring(1, 2);
     }
 
-    /*@AuraEnabled
-    public static Order refreshFormulasOrder(Order o){
+    /*------------------------------------------------------------
+    Description:    Check if is possible to create order for that account
+    Outputs:        Boolean
+    ------------------------------------------------------------*/
+    @AuraEnabled
+    public static Boolean checkIfAllowToCreateOrder(Id parentId)
+    {
+        try {
+			Boolean allowed = false;
+            CountryStopRules__mdt countryRules;
+            Account accountToCheck;
+            String parentSObjectName = parentId.getSObjectType().getDescribe().getName();
+            if ('Account'.equals(parentSObjectName)) {
+                accountToCheck = [SELECT Id, Country__c, OneAccount_Type__c, Sub_Account_Type__c FROM Account WHERE Id=:parentId LIMIT 1];
+            } else if ('Contact'.equals(parentSObjectName)) {
+                Contact con = [SELECT Id, AccountId FROM Contact WHERE Id=:parentId LIMIT 1];
+                accountToCheck = [SELECT Id, Country__c, OneAccount_Type__c, Sub_Account_Type__c FROM Account WHERE Id=: con.AccountId LIMIT 1];
+                
+            } else if ('Opportunity'.equals(parentSObjectName)) {
+                Opportunity opp = [SELECT Id, AccountId FROM Opportunity WHERE Id=:parentId LIMIT 1];
+                accountToCheck = [SELECT Id, Country__c, OneAccount_Type__c, Sub_Account_Type__c FROM Account WHERE Id=:opp.AccountId LIMIT 1];
+
+            } else if ('Field_Sales_Project_Members__c'.equals(parentSObjectName)) {
+                Field_Sales_Project_Members__c salesLead = [SELECT Id, Account__c FROM Field_Sales_Project_Members__c WHERE Id=:parentId LIMIT 1];
+                accountToCheck = [SELECT Id, Country__c, OneAccount_Type__c, Sub_Account_Type__c FROM Account WHERE Id=:salesLead.Account__c LIMIT 1];
+                
+            } else if ('Event'.equals(parentSObjectName)) {
+                Event ev = [SELECT Id, AccountId, WhatId, Account.Country__c, Account.OneAccount_Type__c, Account.Sub_Account_Type__c FROM Event WHERE Id=:parentId LIMIT 1];
+                if(ev.WhatId.getSObjectType().getDescribe().getName() == 'Account'){//only if whatID is an account
+                    accountToCheck = [SELECT Id, Country__c, OneAccount_Type__c, Sub_Account_Type__c FROM Account WHERE Id=:ev.WhatId LIMIT 1];
+                } else {
+                    return false;
+                }
+            }
+            if(accountToCheck.Country__c != null){
+                countryRules = CountryStopRules__mdt.getInstance(accountToCheck.Country__c);
+            } else {
+                return false;
+            }
+            if(countryRules != null){
+                allowed = OrderTriggerHelper.calculateSetFlag(accountToCheck, countryRules, 'Stop Order');
+                return allowed;
+            } else {
+                return false;
+            }
+            
         
-        List<Order> items = new List<Order>();
-        items.add(o);
-        List<FormulaRecalcResult> results = Formula.recalculateFormulas(items);
+        } catch (Exception e) {
+            DebugLog.addException(e, 'OrderManagement_CC.ProdPricingERPCallOut');
+            throw new AuraHandledException(e.getMessage());
+        
+        }
+        
+    }
 
-        o = items[0];
-
-        return o;
-
-    }*/    
+     
    
 }

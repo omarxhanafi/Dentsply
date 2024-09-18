@@ -82,4 +82,44 @@ private class Test_leadConvert {
         Test.stopTest();
 
     }
+    @isTest
+    private static void testExceptionThrown(){
+        Account a = new Account();
+        a.Name = 'Test company';
+        a.BillingPostalCode = '12345';
+        a.BillingStreet = 'Test street 1';
+        insert a;
+
+        Lead l = new Lead();
+        l.Company = 'Test company';
+        l.PostalCode = '12345';
+        l.Street = 'Test street 1';
+        l.FirstName = 'Test';
+        l.LastName = 'Testsson';
+        l.Email = 'testing@dentsplysirona.com.invalid';
+        insert l;
+
+        leadConvert.ConvertLeadRequest req = new leadConvert.ConvertLeadRequest();
+        req.sendEmailToOwner = false;
+        req.accountId = a.Id;
+        req.convertedStatus = 'Qualified';
+        req.createOpportunity = false;
+        req.overWriteLeadSource = true;
+        req.sendEmailToOwner = true;
+
+
+        Test.startTest();
+
+        List<leadConvert.ConvertLeadRequest> input = new List<leadConvert.ConvertLeadRequest>();
+        input.add(req);
+
+        try {
+            List<String> result = leadConvert.convertLead(input);
+        }
+        catch (Exception e) {
+            system.assertNotEquals(null,e,'Exception not thrown correctly');
+        }
+
+        Test.stopTest();
+    }
 }

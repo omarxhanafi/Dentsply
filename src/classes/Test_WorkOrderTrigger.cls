@@ -16,12 +16,13 @@ public class Test_WorkOrderTrigger {
     @isTest static void myUnitTest() {
         Account acc = new Account(Name='testacc', OneAccount_Type__c = 'Dental Clinic',Country__c = 'AU');
         acc.RecordTypeId=Schema.sObjectType.Account.getRecordTypeInfosByName().get('CIM Account').getRecordTypeId();
+        Test.startTest();
         insert acc;
         
         Contact con = new Contact(FirstName='john', LastName='doe', Email='john@doe.com', Profession__c= 'Consultant',InsertEmailMarketingConsentCollected__c = 'No',AccountId=acc.Id);
         con.RecordTypeId = Schema.sObjectType.Contact.getRecordTypeInfosByName().get('Contact Global').getRecordTypeId();
         insert con;
-        
+        Test.stopTest();
         Asset ass = new Asset(AccountId=acc.Id,ContactId=con.Id, Name='testing');
         insert ass;
         
@@ -68,10 +69,10 @@ public class Test_WorkOrderTrigger {
         insert ec2;
         WorkOrder w1 = new WorkOrder(ContactId= con.Id,AccountId=acc.Id, Subject='Test Subject',Status='New');
     	
-        Test.startTest();
+        //Test.startTest();
             insert w1;
             update w1;
-        Test.stopTest();
+        //Test.stopTest();
     }
     
         @isTest static void milestoneTestMethod(){

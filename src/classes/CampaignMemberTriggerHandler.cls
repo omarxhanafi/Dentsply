@@ -5,6 +5,7 @@ History
 2019-10-22      Ahmed LOUDRASSI     Migrated CampMgmtCampaignMemberTrigger and CampMgmtCampaignMemberTrigger2 triggers. (#)
 2019-10-22      Ahmed LOUDRASSI     Migrated CampaignMember Workflows. (#)
 2023-03-01      Houssam ADIB        Refactored The Trigger
+2023-11-22      Richard Trum        Removed triggering of the method setInternationSpeaker (TFUS-6215)
 ----------------------------------------------------------------------------------------*/
 public class CampaignMemberTriggerHandler extends TriggerHandler {
 
@@ -20,17 +21,16 @@ public class CampaignMemberTriggerHandler extends TriggerHandler {
     protected override void beforeInsert() {
         CampaignMemberTriggerHelper.updateCampaignMemberAccount(newCampaignMemberList);                     // Low Consumption
         CampaignMemberTriggerHelper.updateCampaignMembersInfo(newCampaignMemberList);                       // Low Consumption
-        CampaignMemberTriggerHelper.setInternationalSpeaker(newCampaignMemberList);                         // Low Consumption
     }
     protected override void beforeUpdate() {
-        CampaignMemberTriggerHelper.setInternationalSpeaker(newCampaignMemberList);                         // Low Consumption
+
     }
     protected override void afterInsert() {
         CampaignMemberTriggerHelper.leadOwnerAssignment(newCampaignMemberList);         // Execute Lead Trigger (Moved to After context) (Made Future)
-        CampaignMemberTriggerHelper.createOpportunities(newCampaignMemberList, oldCampaignMemberMap, false);
+        CampaignMemberTriggerHelper.convertMemberToSalesLeadOrOpportunity(newCampaignMemberList, oldCampaignMemberMap, false);
     }
     protected override void afterUpdate() {
         CampaignMemberTriggerHelper.leadOwnerAssignment(newCampaignMemberList);         // Execute Lead Trigger (Moved to After context) (Made Future)
-        CampaignMemberTriggerHelper.createOpportunities(newCampaignMemberList, oldCampaignMemberMap, false);
+        CampaignMemberTriggerHelper.convertMemberToSalesLeadOrOpportunity(newCampaignMemberList, oldCampaignMemberMap, false);
     }
 }

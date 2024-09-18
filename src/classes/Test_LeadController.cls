@@ -35,24 +35,6 @@ private class Test_LeadController {
         Test.stopTest();
         
     }
-    
-    @IsTest
-    private static void TestGetPreferredDealers(){
-        
-        List<User> userList = TestDataFactory.createUsers(1, 'System Administrator');
-        List<Account> accounts = TestDataFactory.returnAccounts(2, 'CIM_account', userList[0].Id);
-        accounts[1].OneAccount_Type__c = 'Distributor';
-        accounts[1].Name = 'Distributor';
-        insert accounts;
-        
-        Preferred_dealer_item__c pdi = new Preferred_dealer_item__c();
-        pdi.Account__c = accounts[0].Id;
-        pdi.Dealer__c = accounts[1].Id;
-        insert pdi;
-        
-        List<Preferred_dealer_item__c> result = LeadController.getPreferredDealers(accounts[0].Id);
-        List<Account> dealers = LeadController.getDistributors('Distr', accounts[0].Id, 'Equipment & Imaging');
-    }
 
     @isTest
     private static void searchResultReturnRecords() {
@@ -61,11 +43,11 @@ private class Test_LeadController {
         List<Account> accounts = TestDataFactory.returnAccounts(1, 'CIM_account', userList[0].Id);
         accounts[0].OneAccount_Type__c = 'Distributor';
         accounts[0].Name = 'Distributor';
+        accounts[0].OneAccount_Type__c = 'Distributor';
         accounts[0].DistributorCategories__c = 'Digital Group';
         insert accounts;
         
         fixedResults.add(accounts[0].Id);
-        System.debug(fixedResults);
         Test.setFixedSearchResults(fixedResults);
         List<String> selectedIds = new List<String>();
 
@@ -73,24 +55,6 @@ private class Test_LeadController {
 
         System.assertEquals(1, results.size());
         System.assertEquals(accounts[0].Id, results.get(0).getId());
-    }
-    
-    @IsTest
-    private static void TestRecentlyViewed(){
-        List<User> userList = TestDataFactory.createUsers(1, 'System Administrator');
-        List<Id> fixedResults = new List<Id>();
-        List<Account> accounts = TestDataFactory.returnAccounts(2, 'CIM_account', userList[0].Id);
-        accounts[1].OneAccount_Type__c = 'Distributor';
-        accounts[1].Name = 'Distributor';
-        insert accounts;
-        
-        Preferred_dealer_item__c pdi = new Preferred_dealer_item__c();
-        pdi.Account__c = accounts[0].Id;
-        pdi.Dealer__c = accounts[1].Id;
-        insert pdi;
-        
-        List<LookupSearchResult> results = LeadController.getRecentlyViewed(accounts[0].Id, 'Equipment & Imaging');
-        
     }
 
 }

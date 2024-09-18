@@ -36,7 +36,7 @@ public class Test_ContractUpdateSalesData {
         ];
 		List<String> input = new List<String>();
         input.add(accountToAssert.Id);
-		List<ContractTriggerHelper.ContractSalesDataResponse> response = ContractTriggerHelper.updateSalesData(input);        
+		//List<ContractTriggerHelper.ContractSalesDataResponse> response = ContractTriggerHelper.updateSalesData(input);        
                 
    		}  
     

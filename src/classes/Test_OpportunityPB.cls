@@ -6,7 +6,7 @@ History
 20210906    kdoruibin           Updated testLightningPipelineOpportunityNamingConvention to assert the default naming
 20230326    Roberto Narbona     TFUS-000003734
 20230503    Richard Trum        Commented out code related to old Process Builder steps/nodes as well as old Record Types (TFUS-5578)
-
+20230908    Richard Trum        Added test classes for both methods in the OpportunityTriggerHelper class as well as flowOpportunityTeamMember class
 ------------------------------------------------------------*/
 
 @isTest(seeAllData=false)
@@ -243,6 +243,50 @@ public class Test_OpportunityPB {
         }
         Test.stopTest();
 
+    }
+    
+    @isTest
+    public static void testSetActualCloseDate() {
+        User testUser = [SELECT Id, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
+        List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
+        for(Opportunity opportunity : opportunities) {
+            opportunity.AccountId = accounts1[0].Id;
+        }
+        Test.startTest();
+        System.runAs(testUser) {
+            insert opportunities;
+        }
+        
+        opportunities[0].StageName = 'Closed Lost';
+        update opportunities;
+        
+        Test.stopTest();
+        System.assertEquals(Date.today(), [SELECT Id, Last_Stage_Change_Date__c  FROM Opportunity LIMIT 1].Last_Stage_Change_Date__c );
+    }
+    
+    @isTest
+    public static void testFlowOpportunityTeamMember() {
+        User testUser = [SELECT Id, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
+        List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
+        for(Opportunity opportunity : opportunities) {
+            opportunity.AccountId = accounts1[0].Id;
+        }
+        Test.startTest();
+        System.runAs(testUser) {
+            insert opportunities;
+        }
+        
+        List<String> inp = new List<String>();
+        List<List<String>> inpList = new List<List<String>>();
+        inp.add(opportunities[0].Id);
+        inp.add(testUser.Id);
+        inpList.add(inp);
+		flowOpportunityTeamMember.createMembers(inpList);
+        
+        Test.stopTest();
+        //System.assertEquals(Date.today(), [SELECT Id, Last_Stage_Change_Date__c  FROM Opportunity LIMIT 1].Last_Stage_Change_Date__c );
     }
     
     

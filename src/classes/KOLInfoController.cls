@@ -4,6 +4,7 @@ Description:   	KOL Information (Expert__c) class to handle Apex related to comp
 History	
 <Date>      <Authors Name>     <Brief Description of Change>
 20200921 	Richard Trum	 	Updated the getMyCventEvents method to loop records in reverse order due to delete action
+20240126    Richard Trum        TFUS-000006420 (updated the method getMyCventEvents)
 ------------------------------------------------------------*/
 
 public with sharing class KOLInfoController {
@@ -35,7 +36,7 @@ public with sharing class KOLInfoController {
         
         //Check contracted speaker field
         Expert__c KOL = [SELECT Name, Contact__r.Full_Name__c, Contact__c FROM Expert__c WHERE Id =:recordId];
-        eventList = [SELECT Id, Name, ContractedSpeaker__c, CventEvents__pkg_StartDate__c, CventEvents__pkg_StartTime__c, CventEvents__pkg_Title__c FROM CventEvents__Event__c WHERE ContractedSpeaker__c LIKE: KOL.Contact__r.Full_Name__c];
+        eventList = [SELECT Id, Name, ContractedSpeaker__c, CventEvents__pkg_StartDate__c, CventEvents__pkg_StartTime__c, CventEvents__pkg_EndDate__c, CventEvents__pkg_Title__c FROM CventEvents__Event__c WHERE ContractedSpeaker__c LIKE: KOL.Contact__r.Full_Name__c];
         
         Set<Id> eventIds = (new Map<Id, CventEvents__Event__c>(eventList)).keySet().clone();
         Map<Id, KOL_Contract_Deliverable__c> eventsWithDeliverables = new Map<Id, KOL_Contract_Deliverable__c>();
@@ -58,7 +59,7 @@ public with sharing class KOLInfoController {
         
        	//Check deliverables
         List<KOL_Contract_Deliverable__c> delList = new List<KOL_Contract_Deliverable__c>();
-        delList = [SELECT Id, CventEventUpd__c, CventEventUpd__r.Name, KOL_Contract__c, KOL_Contract__r.Name, KOL_Contract__r.Expert__c, CventEventUpd__r.ContractedSpeaker__c, CventEventUpd__r.CventEvents__pkg_StartDate__c, CventEventUpd__r.CventEvents__pkg_Title__c 
+        delList = [SELECT Id, CventEventUpd__c, CventEventUpd__r.Name, KOL_Contract__c, KOL_Contract__r.Name, KOL_Contract__r.Expert__c, CventEventUpd__r.ContractedSpeaker__c, CventEventUpd__r.CventEvents__pkg_StartDate__c, CventEventUpd__r.CventEvents__pkg_EndDate__c, CventEventUpd__r.CventEvents__pkg_Title__c 
                    FROM KOL_Contract_Deliverable__c WHERE KOL_Contract__r.Expert__c =: recordId];
         
         if(!delList.IsEmpty()){
@@ -73,7 +74,7 @@ public with sharing class KOLInfoController {
             }       
         }
         
-        eventList = [SELECT Id, Name, ContractedSpeaker__c, CventEvents__pkg_StartDate__c, CventEvents__pkg_StartTime__c, CventEvents__pkg_Title__c FROM CventEvents__Event__c WHERE Id IN: eventIds];
+        eventList = [SELECT Id, Name, ContractedSpeaker__c, CventEvents__pkg_StartDate__c, CventEvents__pkg_StartTime__c, CventEvents__pkg_EndDate__c, CventEvents__pkg_Title__c FROM CventEvents__Event__c WHERE Id IN: eventIds ORDER BY CventEvents__pkg_StartTime__c DESC];
         Integer eventListLen = eventList.size();
         
         for(Integer j = 0;j<eventListLen;j++){
@@ -100,25 +101,31 @@ public with sharing class KOLInfoController {
         List<CventEvents__Event__c> eventList = new List<CventEvents__Event__c>();
         eventList = [SELECT Id, Name, CventEvents__pkg_Status__c, CventEvents__pkg_PlanningStatus__c, ContractedSpeaker__c, KOLManageremail__c, CventEvents__pkg_StartDate__c, CventEvents__pkg_StartTime__c, CventEvents__pkg_Title__c FROM CventEvents__Event__c WHERE (KOLManageremail__c =: userEmail AND CventEvents__pkg_PlanningStatus__c!='Cancelled') ORDER BY CventEvents__pkg_StartDate__c ASC];
         Integer listLen = eventList.size();
+        Map<Id, CventEvents__Event__c> eventMap = new Map<Id, CventEvents__Event__c>();
         
         if(!eventList.IsEmpty()){
-        for(Integer i = listLen; i >= 0; i--){
+
+            for(Integer j=0;j<listLen;j++){
+                eventMap.put(eventList[j].Id, eventList[j]);
+            }
 
             List<KOL_Contract_Deliverable__c> deliverables = new List<KOL_Contract_Deliverable__c>();
             try{
-            	deliverables = [SELECT Id, Name, CventEventUpd__c FROM KOL_Contract_Deliverable__c WHERE CventEventUpd__c =: eventList[i].Id];    
+                deliverables = [SELECT Id, Name, CventEventUpd__c FROM KOL_Contract_Deliverable__c WHERE CventEventUpd__c IN: eventMap.keySet()];    
             }
             catch(exception e){
                 System.debug(e);
             }
-            
-            if(!deliverables.IsEmpty()){
-                eventList.remove(i);
+
+            for(KOL_Contract_Deliverable__c deliverable : deliverables){
+                if(eventMap.containsKey(deliverable.CventEventUpd__c)){
+                    eventMap.remove(deliverable.CventEventUpd__c);
+                }
             }
-        }
+
         }    
          
-        return eventList;
+        return eventMap.values();
 
     }
       

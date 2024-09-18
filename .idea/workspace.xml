@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/EventTriggerHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/EventTriggerHandler.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/EventTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/EventTriggerHelper.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CallReportEvent.page" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CallReportEvent.page" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CallReportEventMobile.page" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CallReportEventMobile.page" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,8 +75,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1725372326331" />
-                  <option name="numUsages" value="21" />
+                  <option name="lastUsed" value="1726650123232" />
+                  <option name="numUsages" value="32" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="DevAug24" />
@@ -120,7 +122,7 @@
                       <entry key="APEXCLASS:EVENTTRIGGERHELPER" value="1726061036157" />
                     </map>
                   </option>
-                  <option name="lastBuildScope" value="CONTEXT" />
+                  <option name="lastBuildScope" value="CUSTOM" />
                   <option name="lastBuildViewToggles">
                     <map>
                       <entry key="RETRIEVE">
@@ -135,6 +137,104 @@
                         </value>
                       </entry>
                     </map>
+                  </option>
+                  <option name="lastCustomSelectionUrls">
+                    <set>
+                      <option value="metadata://ApexComponent/DateTimePicker" />
+                      <option value="metadata://ApexComponent/EventRecurrence" />
+                      <option value="metadata://ApexComponent/EventRelations" />
+                      <option value="metadata://ApexComponent/Invitees" />
+                      <option value="metadata://ApexComponent/OrderEmailBOMs" />
+                      <option value="metadata://ApexComponent/OrderPdfBOMs" />
+                      <option value="metadata://ApexComponent/SiteFooter" />
+                      <option value="metadata://ApexComponent/SiteHeader" />
+                      <option value="metadata://ApexComponent/SiteLogin" />
+                      <option value="metadata://ApexComponent/SitePoweredBy" />
+                      <option value="metadata://ApexPage/Account_Page_Sales" />
+                      <option value="metadata://ApexPage/AnswersHome" />
+                      <option value="metadata://ApexPage/BandwidthExceeded" />
+                      <option value="metadata://ApexPage/blankCaseWS" />
+                      <option value="metadata://ApexPage/BulkCFEs" />
+                      <option value="metadata://ApexPage/BulkCFEsAccounts" />
+                      <option value="metadata://ApexPage/CallReport" />
+                      <option value="metadata://ApexPage/CallReport_CFE" />
+                      <option value="metadata://ApexPage/CallReportEvent" />
+                      <option value="metadata://ApexPage/CallReportEventMobile" />
+                      <option value="metadata://ApexPage/CampMgmtSessionsPage" />
+                      <option value="metadata://ApexPage/ChangePassword" />
+                      <option value="metadata://ApexPage/ChatterDeleteBlocker" />
+                      <option value="metadata://ApexPage/CimCreateAccount" />
+                      <option value="metadata://ApexPage/CommunitiesLanding" />
+                      <option value="metadata://ApexPage/CommunitiesLogin" />
+                      <option value="metadata://ApexPage/CommunitiesSelfReg" />
+                      <option value="metadata://ApexPage/CommunitiesSelfRegConfirm" />
+                      <option value="metadata://ApexPage/CommunitiesTemplate" />
+                      <option value="metadata://ApexPage/ContactCard" />
+                      <option value="metadata://ApexPage/Contract_Allowed_discounts" />
+                      <option value="metadata://ApexPage/Contract_Discount_simulation" />
+                      <option value="metadata://ApexPage/Contract_Performance_levers" />
+                      <option value="metadata://ApexPage/Contract_Sales_followup" />
+                      <option value="metadata://ApexPage/Contract_Status" />
+                      <option value="metadata://ApexPage/CRM_Team_Home_Page_DB" />
+                      <option value="metadata://ApexPage/cross_xbu_vf_page" />
+                      <option value="metadata://ApexPage/Custom_Links_VF" />
+                      <option value="metadata://ApexPage/DC_ApproveSubmittedArticlesPage" />
+                      <option value="metadata://ApexPage/DC_ArticlesSubmitForApprovalPage" />
+                      <option value="metadata://ApexPage/DC_BatchPage" />
+                      <option value="metadata://ApexPage/DC_OBIEEPage" />
+                      <option value="metadata://ApexPage/DNA_Campaign_Flow" />
+                      <option value="metadata://ApexPage/DNA_Wave_Asset" />
+                      <option value="metadata://ApexPage/DNA_Wave_Asset1" />
+                      <option value="metadata://ApexPage/DNA_Wave_Asset3" />
+                      <option value="metadata://ApexPage/DNA_Wave_Asset4" />
+                      <option value="metadata://ApexPage/DontDeleteERPAcct" />
+                      <option value="metadata://ApexPage/DynamicLabel" />
+                      <option value="metadata://ApexPage/EA_InsideSalesAccountPage" />
+                      <option value="metadata://ApexPage/EA_ServiceCloudAccount" />
+                      <option value="metadata://ApexPage/EventAttendeesPage" />
+                      <option value="metadata://ApexPage/Exception" />
+                      <option value="metadata://ApexPage/FileNotFound" />
+                      <option value="metadata://ApexPage/ForgotPassword" />
+                      <option value="metadata://ApexPage/ForgotPasswordConfirm" />
+                      <option value="metadata://ApexPage/getOrderDetailsVF" />
+                      <option value="metadata://ApexPage/Global_Order_Cancel" />
+                      <option value="metadata://ApexPage/IdeasHome" />
+                      <option value="metadata://ApexPage/InMaintenance" />
+                      <option value="metadata://ApexPage/IntegrationJournal" />
+                      <option value="metadata://ApexPage/Lightning_Account_Page_link" />
+                      <option value="metadata://ApexPage/Ltng_ViewAllActivityHistory" />
+                      <option value="metadata://ApexPage/MicrobatchSelfReg" />
+                      <option value="metadata://ApexPage/My_Tasks" />
+                      <option value="metadata://ApexPage/MyProfilePage" />
+                      <option value="metadata://ApexPage/newCampaignOverridePage" />
+                      <option value="metadata://ApexPage/OneDSCanadaTermsAndConditions" />
+                      <option value="metadata://ApexPage/OpportunityChangeOwnerVF" />
+                      <option value="metadata://ApexPage/Order_PDF_USC_TeleSales" />
+                      <option value="metadata://ApexPage/Order_print_as_PDF" />
+                      <option value="metadata://ApexPage/orderCloneVF" />
+                      <option value="metadata://ApexPage/orderDealerVF" />
+                      <option value="metadata://ApexPage/orderManagementVF" />
+                      <option value="metadata://ApexPage/Preferred_dealer_searchbox" />
+                      <option value="metadata://ApexPage/Product_profilling_new_override_page" />
+                      <option value="metadata://ApexPage/Sales_by_ATL_Brands_Stock_Abuts" />
+                      <option value="metadata://ApexPage/Sales_by_Implant_System_Brand" />
+                      <option value="metadata://ApexPage/Sales_by_Implant_System_Brand_Contact" />
+                      <option value="metadata://ApexPage/Sales_by_Implant_System_Brand_Opp" />
+                      <option value="metadata://ApexPage/SideBarLoginPage" />
+                      <option value="metadata://ApexPage/SiteLogin" />
+                      <option value="metadata://ApexPage/SiteRegister" />
+                      <option value="metadata://ApexPage/SiteRegisterConfirm" />
+                      <option value="metadata://ApexPage/SiteTemplate" />
+                      <option value="metadata://ApexPage/StdExceptionTemplate" />
+                      <option value="metadata://ApexPage/TeamForceDelete" />
+                      <option value="metadata://ApexPage/Unauthorized" />
+                      <option value="metadata://ApexPage/UnderConstruction" />
+                      <option value="metadata://ApexPage/UserToReportPackageVF" />
+                      <option value="metadata://ApexPage/VFMaps" />
+                      <option value="metadata://ApexPage/VFNearbyMap" />
+                      <option value="metadata://ApexPage/ViewAllActivityHistory" />
+                      <option value="metadata://ApexPage/XSBUQuest" />
+                    </set>
                   </option>
                 </ConnectionWorkspaceSettings>
               </value>
@@ -19000,11 +19100,13 @@
         <option name="retrieveAndMergeDefault" value="false" />
         <option name="soqlQuerySettings">
           <SoqlQuerySettings>
-            <option name="resultsSplitterProportion" value="0.5674157" />
+            <option name="resultsSplitterProportion" value="0.73756903" />
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select id from WaveDataflow" />
+                  <option name="body" value="select Co_travel__c, count(Id) from event group by Co_travel__c" />
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
               </list>
@@ -19035,41 +19137,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Apex Offline Debugger.Test_CallReportQuickActionPocController.executor": "Debug",
-    "Apex Offline Debugger.Test_ProductTrigger.executor": "Debug",
-    "Apex Unit Tests.Test_AccountFlagsController.executor": "Run",
-    "Apex Unit Tests.Test_ActivityScorecardController.executor": "Run",
-    "Apex Unit Tests.Test_BatchUpdateProducts.testBatchUpdateProducts.executor": "Run",
-    "Apex Unit Tests.Test_CallReportQuickActionPocController.executor": "Run",
-    "Apex Unit Tests.Test_EventTrigger.executor": "Run",
-    "Apex Unit Tests.Test_ProductProfilingHierarchyController.executor": "Run",
-    "Apex Unit Tests.Test_ProductProfilingTrigger.executor": "Run",
-    "Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier.executor": "Run",
-    "Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor": "Run",
-    "Apex Unit Tests.Test_ProductTrigger.executor": "Debug",
-    "Apex Unit Tests.Test_WorkflowProfilingController.executor": "Run",
-    "Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling.executor": "Run",
-    "Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/ohanafi/IdeaProjects/Dentsply/src/objects",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.29852837",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Apex Offline Debugger.Test_CallReportQuickActionPocController.executor&quot;: &quot;Debug&quot;,
+    &quot;Apex Offline Debugger.Test_ProductTrigger.executor&quot;: &quot;Debug&quot;,
+    &quot;Apex Unit Tests.Test_AccountFlagsController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ActivityScorecardController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_BatchUpdateProducts.testBatchUpdateProducts.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_CallReportQuickActionPocController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_EventTrigger.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductProfilingHierarchyController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductTrigger.executor&quot;: &quot;Debug&quot;,
+    &quot;Apex Unit Tests.Test_WorkflowProfilingController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ohanafi/IdeaProjects/Dentsply/src/objects&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29852837&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/objects" />
@@ -19442,6 +19544,8 @@
       <workItem from="1721733855822" duration="16296000" />
       <workItem from="1724207613904" duration="1159000" />
       <workItem from="1724660298630" duration="6503000" />
+      <workItem from="1726579585798" duration="4061000" />
+      <workItem from="1726648607978" duration="1339000" />
     </task>
     <servers />
   </component>

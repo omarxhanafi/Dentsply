@@ -7,6 +7,8 @@ History
 2021-03-18  Roberto Narbona		Added DebugLog line if insert fails. TFUS-000003578
 2023-03-01  Houssam ADIB        Migrated the create opportunity method from the trigger (Campaign Refactoring)
 2023-05-03  Richard Trum        Commented out usage of Opportunity Dealer record type (TFUS-5578)
+2024-01-29  Houssam ADIB        TFUS-000005641 - Add Sales lead generation on Cvent Contact Attendees
+2024-01-29  Houssam ADIB        TFUS-000006742 - Exclude Speaker / KOL from the Sales Follow-Up Process
 ----------------------------------------------------------------------------------------*/
 public class OpportunityInsertAsynch implements Queueable {
 
@@ -31,7 +33,7 @@ public class OpportunityInsertAsynch implements Queueable {
      */
     public void execute(QueueableContext context)
     {
-        createOpportunities(newCampaignMembers,oldCampaignMemberMap,overrideHasResponded);
+        convertMembers(newCampaignMembers,oldCampaignMemberMap,overrideHasResponded);
     }
 
     /**
@@ -70,14 +72,13 @@ public class OpportunityInsertAsynch implements Queueable {
     Description:    Method for creating Opportunities based on Campaign Member related to Eloqua Campaigns (TFUS-[...]2201)
     Inputs:         @param newCampaignMembers
     ------------------------------------------------------------*/
-    public void createOpportunities(List<CampaignMember> newCampaignMembers, Map<Id, CampaignMember> oldCampaignMemberMap, Boolean overrideHasResponded)
+    public void convertMembers(List<CampaignMember> newCampaignMembers, Map<Id, CampaignMember> oldCampaignMemberMap, Boolean overrideHasResponded)
     {
         BatchSettings__c settings = BatchSettings__c.getInstance('Default');
 
         if (Test.isRunningTest() || settings.CampMgmtCampaignMemberTriggerIsEnabled__c)
         {
             List<RecordType> oppRT =        [SELECT Id, Name FROM RecordType WHERE SobjectType='Opportunity' AND DeveloperName='Lightning_Pipeline_Opportunity'];
-            //List<RecordType> oppDealerRT =  [SELECT Id, Name FROM RecordType WHERE SobjectType='Opportunity' AND DeveloperName='Dealer_Community'];
 
             Set<Id> campaignIds     = new Set<Id>();
             Set<Id> contactIds      = new Set<Id>();
@@ -102,7 +103,8 @@ public class OpportunityInsertAsynch implements Queueable {
 
             for(Campaign campaign : campaigns.values())
             {
-                if(campaign.RecordType.DeveloperName == 'Digital_Marketing_Campaign' || campaign.RecordType.DeveloperName == 'InPersonEventCampaign')
+                if(campaign.RecordType.DeveloperName == 'Digital_Marketing_Campaign' || campaign.RecordType.DeveloperName == 'InPersonEventCampaign'
+                || campaign.RecordType.DeveloperName == 'CventCampaign')
                 {
                     recordTypeCheck = true;
                     categoryOppDependencyRuleCheck          = (campaign.Convert_To__c == 'Opportunity');
@@ -145,16 +147,18 @@ public class OpportunityInsertAsynch implements Queueable {
                 Map<String, String>                         pricebookSettingMap     = getPricebookSettingMap();
 
                 List<CampaignMemberTriggerHelper.oppWrapper> oppList = new List<CampaignMemberTriggerHelper.oppWrapper>();
-                Map<Id,Field_Sales_Project_Members__c> memberIdWithLead = new Map<Id,Field_Sales_Project_Members__c>();
 
                 Map<Id, Lead> stdLeads = getStdLeads(stdLeadIds);
 
+                List<GenerationResult> failedResults = new List<GenerationResult>();
+                Map<Id,Field_Sales_Project_Members__c> memberIdWithSalesLead = new Map<Id,Field_Sales_Project_Members__c>();
                 for (CampaignMember campaignMember : newCampaignMembers)
                 {
                     String  recordType          = campaigns.get(campaignMember.CampaignId).RecordType.DeveloperName;
                     String  includeInCommunity  = campaigns.get(campaignMember.CampaignId).Include_in_Dealer_Community__c;
                     String  convertTo           = campaigns.get(campaignMember.CampaignId).Convert_To__c;
                     Boolean assignFromDealer    = campaigns.get(campaignMember.CampaignId).AssignRepFromDealer__c;
+                    String  mainBrand           = campaigns.get(campaignMember.CampaignId).Brands__c;
                     Boolean respondedBefore     = false;
 
                     CampaignMember oldMember;
@@ -173,19 +177,19 @@ public class OpportunityInsertAsynch implements Queueable {
                         isIDSLogic = getIsIDSLogic(campaignMember, oldMember, isIDSIntegrationUser);
                     }
 
-                    Boolean triggerConversion = getIfTriggerConversion(recordType, campaignMember, respondedBefore, overrideHasResponded, isIDSLogic);
+                    GenerationResult triggerConversionResult = getIfTriggerConversion(recordType, campaignMember, respondedBefore, overrideHasResponded, isIDSLogic, mainBrand);
 
-                    //Get all Leads related to the included Campaign Members
+
 
 
                     //SALES LEAD CONVERSION
-                    if (convertTo == 'Sales Lead' && triggerConversion)
+                    if (convertTo == 'Sales Lead' && triggerConversionResult.generate)
                     {
-                        Field_Sales_Project_Members__c lead = new Field_Sales_Project_Members__c();
+                        Field_Sales_Project_Members__c salesLead = new Field_Sales_Project_Members__c();
 
-                        lead.Status__c = 'New';
-                        lead.Source__c = campaigns.get(campaignMember.CampaignId).Source_Origin__c != null ? campaigns.get(campaignMember.CampaignId).Source_Origin__c : null;
-                        lead.VoucherCode__c = campaignMember.VoucherCode__c;
+                        salesLead.Status__c = 'New';
+                        salesLead.Source__c = campaigns.get(campaignMember.CampaignId).Source_Origin__c != null ? campaigns.get(campaignMember.CampaignId).Source_Origin__c : null;
+                        salesLead.VoucherCode__c = campaignMember.VoucherCode__c;
 
                         //Potentially comment out these lines in case no brand should be assigned
                         String brand = campaignMember.Brand__c;
@@ -194,7 +198,7 @@ public class OpportunityInsertAsynch implements Queueable {
                         }
 
                         if (campaignMember.Dealer__c != null) {
-                            lead.Dealer__c = campaignMember.Dealer__c;
+                            salesLead.Dealer__c = campaignMember.Dealer__c;
                         }
 
                         //Please note! This logic is now built around the CMDT CountryCodeMap__mdt
@@ -202,16 +206,16 @@ public class OpportunityInsertAsynch implements Queueable {
                         String userCountry =    countriesMap.get(accountCountry);
 
                         if (userCountry != null) {
-                            lead.UserCountry__c = userCountry;
+                            salesLead.UserCountry__c = userCountry;
                         }
 
-                        Lead.Category__c = GlobalUtils.getCategoryFromBrand(userCountry, brand, dependentPicklistSalesLeadCountryCategoryMap, dependentPicklistSalesLeadCategoryBrandMap);
+                        salesLead.Category__c = GlobalUtils.getCategoryFromBrand(userCountry, brand, dependentPicklistSalesLeadCountryCategoryMap, dependentPicklistSalesLeadCategoryBrandMap);
 
-                        Lead.Brand__c = brand;
-                        lead.Account__c = campaignMember.LeadId == null ? contacts.get(campaignMember.ContactId).AccountId : stdLeads.get(campaignMember.LeadId).ConvertedAccountId;
-                        lead.Contact__c = campaignMember.ContactId;
-                        lead.Campaign__c = campaignMember.CampaignId;
-                        lead.CustomerNotes__c = campaignMember.Description__c;
+                        salesLead.Brand__c = brand;
+                        salesLead.Account__c = campaignMember.LeadId == null ? contacts.get(campaignMember.ContactId).AccountId : stdLeads.get(campaignMember.LeadId).ConvertedAccountId;
+                        salesLead.Contact__c = campaignMember.ContactId;
+                        salesLead.Campaign__c = campaignMember.CampaignId;
+                        salesLead.CustomerNotes__c = campaignMember.Description__c;
 
                         Set<String> roleMap = new Set<String>();
                         if (settingsMap != null && settingsMap.get(brand) != null && settingsMap.get(brand).UserRoles__c != null) {
@@ -230,12 +234,12 @@ public class OpportunityInsertAsynch implements Queueable {
                             accUsers.add(accUser);
                         }
                         else {
-                            accUsers = customerUserMap.get(lead.Account__c);
+                            accUsers = customerUserMap.get(salesLead.Account__c);
                         }
                         if (accUsers != null) {
                             for (UserTerritory2Association user : accUsers) {
                                 if (roleMap.contains(user.RoleInTerritory2)) {
-                                    lead.Sales_Rep__c = user.UserId;
+                                    salesLead.Sales_Rep__c = user.UserId;
                                 }
                             }
                         }
@@ -250,29 +254,29 @@ public class OpportunityInsertAsynch implements Queueable {
                                 dealerusers.add(dealerUser);
                             }
                             else {
-                                dealerUsers = dealerUserMap.get(lead.Dealer__c);
+                                dealerUsers = dealerUserMap.get(salesLead.Dealer__c);
                             }
                         }
 
                         if (dealerUsers != null && assignFromDealer == true) {
                             for (UserTerritory2Association user : dealerUsers) {
                                 if (roleMap.contains(user.RoleInTerritory2)) {
-                                    lead.Sales_Rep__c = user.UserId;
+                                    salesLead.Sales_Rep__c = user.UserId;
                                 }
                             }
                         }
 
-                        if (lead.Sales_Rep__c == null) {
-                            lead.Sales_Rep__c = campaigns.get(campaignMember.CampaignId).OwnerId;
+                        if (salesLead.Sales_Rep__c == null) {
+                            salesLead.Sales_Rep__c = campaigns.get(campaignMember.CampaignId).OwnerId;
                         }
 
                         //leadList.add(lead);
-                        memberIdWithLead.put(campaignMember.Id, lead);
+                        memberIdWithSalesLead.put(campaignMember.Id, salesLead);
 
                     }
 
                     //OPPORTUNITY CONVERSION
-                    if (convertTo == 'Opportunity' && triggerConversion)
+                    if (convertTo == 'Opportunity' && triggerConversionResult.generate)
                     {
                         String brand = campaignMember.Brand__c;
                         if (brand == null) {
@@ -291,7 +295,7 @@ public class OpportunityInsertAsynch implements Queueable {
 
                         //opp.LeadSource = 'Email Campaign'; //campaigns.get(campaignMember.CampaignId).Source_Origin__c != null ? campaigns.get(campaignMember.CampaignId).Source_Origin__c : null;
                         opp.CampaignId          = campaignMember.CampaignId;
-                        opp.Campaign__c         = campaignMember.CampaignId; //Added to have related list in campaigns page layout.
+                        //opp.Campaign__c         = campaignMember.CampaignId; //Added to have related list in campaigns page layout.
                         opp.Primary_Contact__c  = campaignMember.ContactId;
                         opp.ContactId           = campaignMember.ContactId;
                         opp.CustomerNotes__c    = campaignMember.Description__c;
@@ -443,21 +447,27 @@ public class OpportunityInsertAsynch implements Queueable {
                         oppList.add(oppRecord);
 
                     }
+
+                    //Get all Leads related to the included Campaign Members
+                    if(!triggerConversionResult.generate && (convertTo == 'Sales Lead' || convertTo == 'Opportunity'))
+                    {
+                        failedResults.add(triggerConversionResult);
+                    }
                 }
 
                 List<CampaignMember>  campaignMemberToUpdateList = new List<CampaignMember>();
 
                 //Sales Lead creation
-                if( !memberIdWithLead.values().isempty() )
+                if( !memberIdWithSalesLead.values().isEmpty() )
                 {
-                    insertSalesLeads(memberIdWithLead.values());
+                    insertSalesLeads(memberIdWithSalesLead.values());
 
                     for (CampaignMember campaignMemberToUpdate : [  SELECT Id, VoucherCode__c, Dealer__c, Description__c, URL_Source__c, CampaignId, ContactId, SalesLead__c
-                    FROM CampaignMember
-                    WHERE Id IN :memberIdWithLead.keySet()])
+                                                                    FROM CampaignMember
+                                                                    WHERE Id IN :memberIdWithSalesLead.keySet()])
                     {
 
-                        campaignMemberToUpdate.SalesLead__c = memberIdWithLead.get(campaignMemberToUpdate.Id).Id;
+                        campaignMemberToUpdate.SalesLead__c = memberIdWithSalesLead.get(campaignMemberToUpdate.Id).Id;
 
                         if(isIDSIntegrationUser == false)
                         {
@@ -505,13 +515,29 @@ public class OpportunityInsertAsynch implements Queueable {
                     }
                 }
 
+                if(!failedResults.isEmpty())
+                {
+                    List<CampaignMember> membersToUpdateTheirReasons = new List<CampaignMember>();
+                    for(GenerationResult result : failedResults)
+                    {
+                        if(result.campaignMemberId != null)
+                        {
+                            CampaignMember member = new CampaignMember(Id=result.campaignMemberId,ConversionResultDetail__c=result.reasonNotGenerated);
+                            membersToUpdateTheirReasons.add(member);
+                        }
+                    }
+                     campaignMemberToUpdateList.addAll(membersToUpdateTheirReasons);
+                }
+
+
                 if(!campaignMemberToUpdateList.isempty())
                 {
                     try{
+                        TriggerHandler.bypass('CampaignMemberTriggerHandler');
                         update campaignMemberToUpdateList;
                     }
                     catch(Exception e){
-                        DebugLog.addError(e.getMessage());
+                        DebugLog.addError('OpportunityInsertAsynch update campaignMemberToUpdateList',e.getMessage());
                     }
                 }
 
@@ -674,7 +700,7 @@ public class OpportunityInsertAsynch implements Queueable {
     public static Map<Id, Contact> getContacts(Set<Id> contactIds)
     {
         Map<Id, Contact> contacts = new Map<Id, Contact>(
-                [SELECT Id, AccountId, Account.Country__c FROM Contact WHERE Id IN :contactIds]
+                [SELECT Id, AccountId, Contact_Type__c, Account.Country__c FROM Contact WHERE Id IN :contactIds]
         );
         return contacts;
     }
@@ -906,18 +932,78 @@ public class OpportunityInsertAsynch implements Queueable {
      * @param respondedBefore       Whether the member has responded before
      * @param overrideHasResponded  Override the value of responded
      * @param isIDSLogic            IDS Logic
+     * @param mainBrand             main Brand
+     * @param reasonWhyNotGenerated reasonWhyNotGenerated
      *
      * @return Boolean - Trigger Conversion or not
      */
-    public static Boolean getIfTriggerConversion(String recordType, CampaignMember campaignMember, Boolean respondedBefore, Boolean overrideHasResponded, Boolean isIDSLogic)
+    public static GenerationResult getIfTriggerConversion(String recordType, CampaignMember campaignMember, Boolean respondedBefore, Boolean overrideHasResponded, Boolean isIDSLogic, String mainBrand)
     {
-        Boolean triggerConversion = (
-                (recordType == 'Digital_Marketing_Campaign' || recordType == 'InPersonEventCampaign')
-                        && campaignMember.ContactId != null
-                        && campaignMember.HasResponded == true
-                        && (respondedBefore == false || overrideHasResponded == true || isIDSLogic)
-        );
-        return triggerConversion;
+
+        GenerationResult result = new GenerationResult(campaignMember.Id,false,'');
+
+        Set<String> doNotConvertContactTypes = new Set<String>{'Dentsply Sirona Employee', 'Speaker', 'Dentsply Sirona Staff', 'Dentsply Sirona'};
+
+
+        if (recordType == 'Digital_Marketing_Campaign' || recordType == 'InPersonEventCampaign') {
+            if (campaignMember.ContactId != null) {
+                if (campaignMember.HasResponded) {
+                    if (campaignMember.SalesLead__c == null) {
+                        if (campaignMember.Opportunity__c == null) {
+                            if (respondedBefore == false || overrideHasResponded || isIDSLogic)
+                            {
+                                result.generate = true;
+                                return result;
+                            } else {
+                                result.reasonNotGenerated = 'We couldn\'t convert this member. Condition not respected : (respondedBefore == false || overrideHasResponded || isIDSLogic)';
+                            }
+                        } else {
+                            result.reasonNotGenerated = 'We couldn\'t convert this member. The Member is already linked to an opportunity.';
+                        }
+                    } else {
+                        result.reasonNotGenerated = 'We couldn\'t convert this member. The Member already linked to a Sales lead.';
+                    }
+                } else {
+                    result.reasonNotGenerated = 'We couldn\'t convert this member. The Member hasn\'t responded yet.';
+                }
+            } else {
+                result.reasonNotGenerated = 'We couldn\'t convert this member. The Contact Id is null';
+            }
+        }
+        else if (recordType == 'CventCampaign') {
+            if (mainBrand != null) {
+                if (campaignMember.ContactId != null) {
+                    if (campaignMember.SalesLead__c == null) {
+                        if (campaignMember.Opportunity__c == null) {
+                            if (campaignMember.CVENT_Attended__c == 'Yes') {
+                                if (!doNotConvertContactTypes.contains(campaignMember.AttendeeContactType__c)) {
+                                    result.reasonNotGenerated = 'All conditions met for CventCampaign RTs';
+                                    result.generate = true;
+                                    return result;
+
+                                } else {
+                                    result.reasonNotGenerated = 'We couldn\'t convert this CVENT member. These contact types are not allowed : ' + JSON.serializePretty(doNotConvertContactTypes);
+                                }
+                            } else {
+                                result.reasonNotGenerated = 'We couldn\'t convert this CVENT member. Attended Status is different from Yes';
+                            }
+                        } else {
+                            result.reasonNotGenerated = 'We couldn\'t convert this CVENT member. The Member is already linked to an opportunity.';
+                        }
+                    } else {
+                        result.reasonNotGenerated = 'We couldn\'t convert this CVENT member. The Member already linked to a Sales lead.';
+                    }
+                } else {
+                    result.reasonNotGenerated = 'We couldn\'t convert this CVENT member. The Contact Id is null';
+                }
+            } else {
+                result.reasonNotGenerated = 'We couldn\'t convert this CVENT member. The Parent Campaign Main Brand is empty';
+            }
+        } else {
+            result.reasonNotGenerated = 'We couldn\'t convert this member. Record type is neither Digital_Marketing_Campaign, InPersonEventCampaign, nor CventCampaign';
+        }
+
+        return result;
     }
 
     /**
@@ -933,22 +1019,36 @@ public class OpportunityInsertAsynch implements Queueable {
     public static Boolean getIsIDSLogic(CampaignMember campaignMember, CampaignMember oldMember, Boolean isIDSIntegrationUser)
     {
         Boolean isIDSLogic =
-                (       (
-                        campaignMember.ContactId        != null
+                (
+                        (
+                                campaignMember.ContactId        != null
                                 && oldMember.ContactId          != null
                                 && campaignMember.ContactId     != oldMember.ContactId
-                )
+                        )
                         ||
                         (
                                 isIDSIntegrationUser
-                                        &&
-                                        (   oldMember.VoucherCode__c    != campaignMember.VoucherCode__c
-                                                || (oldMember.Brand__c      != campaignMember.Brand__c)
-                                                || (oldMember.Dealer__c     != campaignMember.Dealer__c)
-                                        )
+                                &&
+                                (   oldMember.VoucherCode__c    != campaignMember.VoucherCode__c
+                                    || (oldMember.Brand__c      != campaignMember.Brand__c)
+                                    || (oldMember.Dealer__c     != campaignMember.Dealer__c)
+                                )
                         )
                 );
         return isIDSLogic;
     }
 
+
+    public class GenerationResult {
+        public Id campaignMemberId;
+        public String reasonNotGenerated;
+        public Boolean generate;
+
+        public GenerationResult(Id memberId, Boolean generate, String reason)
+        {
+            this.campaignMemberId = memberId;
+            this.generate = generate;
+            this.reasonNotGenerated = reason;
+        }
+    }
 }

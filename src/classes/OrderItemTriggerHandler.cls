@@ -19,11 +19,13 @@ public class OrderItemTriggerHandler extends TriggerHandler {
         OrderItemTriggerHelper.set100PercentForFOC(newOrderItemList);
         OrderItemTriggerHelper.totalAmountOfSamplesAndFreeProducts(newOrderItemList);
         OrderItemTriggerHelper.orderProductEvaluation(newOrderItemList);
+        OrderItemTriggerHelper.setParentKitProduct(newOrderItemList);
     }
     protected override void beforeUpdate() {
         OrderItemTriggerHelper.set100PercentForFOC(newOrderItemList);
         OrderItemTriggerHelper.totalAmountOfSamplesAndFreeProducts(newOrderItemList);
         OrderItemTriggerHelper.orderProductEvaluation(newOrderItemList);
+        OrderItemTriggerHelper.setParentKitProduct(newOrderItemList);
     }
     protected override void afterInsert() {
         OrderItemTriggerHelper.setDiscountAllowedforTurkey(newOrderItemList);
