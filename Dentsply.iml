@@ -23,6 +23,7 @@
                 <option value="Flow" />
                 <option value="GlobalValueSet" />
                 <option value="GlobalValueSetTranslation" />
+                <option value="Layout" />
                 <option value="LightningComponentBundle" />
                 <option value="StaticResource" />
                 <option value="WaveDataset" />
