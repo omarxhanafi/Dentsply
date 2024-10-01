@@ -32,7 +32,7 @@ import apexSearch from '@salesforce/apex/EventMultiWhoController.search';
 import getContacts from '@salesforce/apex/EventMultiWhoController.getContacts';
 // test createEvent Apex method
 import createEvent from '@salesforce/apex/CallReportQuickActionPocController.createEvent';
-import getCotravelPicklist from '@salesforce/apex/CallReportQuickActionPocController.getPickListValuesIntoList';
+import getCotravelPicklistMap from '@salesforce/apex/CallReportQuickActionPocController.getPickListValuesIntoMap';
 import getProcedureTrackerData from '@salesforce/apex/CallReportQuickActionPocController.getProcedureTrackerDataList';
 import {encodeDefaultFieldValues} from "lightning/pageReferenceUtils";
 
@@ -112,16 +112,12 @@ export default class CallReportQuickActionPocLwc extends NavigationMixin(Lightni
 
     constructor() {
         super()
-        getCotravelPicklist().then((params) => {
-            this.coTravelTypes = params.map(function (coTravelType) {
-                return {
-                    label: coTravelType,
-                    value: coTravelType
-                }
-            });
+        getCotravelPicklistMap().then((data) => {
+            this.coTravelTypes = Object.keys(data).map(key => ({
+                label: data[key],
+                value: key
+            }));
         })
-
-
     }
 
     get userCountry() {

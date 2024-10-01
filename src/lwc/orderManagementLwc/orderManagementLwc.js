@@ -4,7 +4,6 @@ import { NavigationMixin } from 'lightning/navigation';
 
 //Apex Controllers
 import uIThemeDisplayed from '@salesforce/apex/OrderManagement_CC.uIThemeDisplayed';
-import navType from '@salesforce/apex/OrderManagement_CC.getNavType';
 import getOrder from '@salesforce/apex/OrderManagement_CC.getOrder';
 import createOrder from '@salesforce/apex/OrderManagement_CC.createOrder';
 // Custom Labels
@@ -16,7 +15,6 @@ import addMoreProducts from '@salesforce/label/c.OM_Add_More_Products';
 const ORDER_SOBJECT_API_NAME = 'Order';
 export default class OrderManagementLwc  extends NavigationMixin(LightningElement) {
     @track userUiTheme = '';
-    @track userNavType = '';
     @api recordId;
     @api sobjectName;
     @api lightningOut;
@@ -44,7 +42,6 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
 
     connectedCallback() {
         this.uIThemeDisplayed();
-        this.navType();
     
     }
     uIThemeDisplayed() {
@@ -62,15 +59,7 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
             showToast(this, this.userUiTheme, 'Error', JSON.stringify(error) , 'error');
         });
     }
-    navType() {
-        navType()
-        .then(result => {
-            this.userNavType = result;
-        })
-        .catch(error => {
-            showToast(this, this.userNavType, 'Error', JSON.stringify(error) , 'error');
-        });
-    }
+    
     handleSelectedPriceBook(event) {
         this.seletedPricebookId = event.detail;
     }
