@@ -5,19 +5,95 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/7/37faf4ee5d0f1715a5d6d41c25fa7130eab3de93" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/6/46c5cd11bcad50aca97474a145e137a26c79e11d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4bde9920f8064fb484e5567659491eedbb97285a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/518f61f7441b5be83c12bba3a225a9fed9c1cff4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/0/80b97a500b0f647783f1916c5dd7968c8096b6b0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/c/bcde9da49d6520a3a8471c7e1716852dd18781fe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/7/37faf4ee5d0f1715a5d6d41c25fa7130eab3de93" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/6/46c5cd11bcad50aca97474a145e137a26c79e11d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/b/4bde9920f8064fb484e5567659491eedbb97285a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/1/518f61f7441b5be83c12bba3a225a9fed9c1cff4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/0/80b97a500b0f647783f1916c5dd7968c8096b6b0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/c/bcde9da49d6520a3a8471c7e1716852dd18781fe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/CallReportExtension.cls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/CallReportExtension.cls-meta.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/CallReportExtensionTest.cls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/CallReportExtensionTest.cls-meta.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/EventWithCallReport.cls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/EventWithCallReport.cls-meta.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/EventWithCallReportTests.cls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/EventWithCallReportTests.cls-meta.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/EventWithCallReportTests2.cls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/EventWithCallReportTests2.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/CampMgmtSessionExtension.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/CampMgmtSessionExtension.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/CampMgmtSessionExtensionTest.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/CampMgmtSessionExtensionTest.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/CimAccountController.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/CimAccountController.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/CimAccountControllerTest.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/CimAccountControllerTest.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ContactCardControllerExtension.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ContactCardControllerExtension.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ContactCardControllerExtensionTest.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ContactCardControllerExtensionTest.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/DC_CampaignFlowController.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/DC_CampaignFlowController.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/EventAttendeesController.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/EventAttendeesController.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/EventAttendeesControllerTest.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/EventAttendeesControllerTest.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/getContract.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/getContract.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/getContractTest.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/getContractTest.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/newCampaignOverride.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/newCampaignOverride.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/newCampaignOverrideTest.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/newCampaignOverrideTest.cls-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CRM_Team_Home_Page_DB.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CRM_Team_Home_Page_DB.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CampMgmtSessionsPage.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CampMgmtSessionsPage.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ChatterDeleteBlocker.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ChatterDeleteBlocker.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CimCreateAccount.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CimCreateAccount.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ContactCard.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ContactCard.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Contract_Allowed_discounts.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Contract_Allowed_discounts.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Contract_Discount_simulation.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Contract_Discount_simulation.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Contract_Performance_levers.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Contract_Performance_levers.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Contract_Sales_followup.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Contract_Sales_followup.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Contract_Status.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Contract_Status.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DC_ArticlesSubmitForApprovalPage.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DC_ArticlesSubmitForApprovalPage.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DNA_Campaign_Flow.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DNA_Campaign_Flow.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DNA_Wave_Asset.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DNA_Wave_Asset.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DNA_Wave_Asset1.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DNA_Wave_Asset1.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DNA_Wave_Asset3.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DNA_Wave_Asset3.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DNA_Wave_Asset4.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DNA_Wave_Asset4.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DontDeleteERPAcct.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DontDeleteERPAcct.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EA_InsideSalesAccountPage.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EA_InsideSalesAccountPage.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EA_ServiceCloudAccount.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EA_ServiceCloudAccount.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EventAttendeesPage.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EventAttendeesPage.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/IntegrationJournal.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/IntegrationJournal.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Ltng_ViewAllActivityHistory.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Ltng_ViewAllActivityHistory.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/My_Tasks.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/My_Tasks.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/newCampaignOverridePage.page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/newCampaignOverridePage.page-meta.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19114,7 +19190,7 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select id, name from ApexPage where name = 'CallReportEventMobile'" />
+                  <option name="body" value="SELECT Id, Name&#10;FROM ApexPage&#10;WHERE Name IN ('cross_xbu_vf_page', 'Contract_Performance_levers') order by name&#10;" />
                   <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
               </list>
