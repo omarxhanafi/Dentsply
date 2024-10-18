@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/accountFlagsLwc/accountFlagsLwc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/callReportQuickActionPocLwc/callReportQuickActionPocLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/callReportQuickActionPocLwc/callReportQuickActionPocLwc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/orderManagementLwc/orderManagementLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/orderManagementLwc/orderManagementLwc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwc/selectProductsOmLwc/selectProductsOmLwc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/selectProductsOmLwc/selectProductsOmLwc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/createSalesLeadFlowLWC/createSalesLeadFlowLWC.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/createSalesLeadFlowLWC/createSalesLeadFlowLWC.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,23 +58,14 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="apexLogLevel" value="FINER" />
-                  <option name="body" value="Integer nrOfDays = 2;&#10;&#10;String limitToFreezeDateAsString = String.valueOf(System.today() - nrOfDays);&#10;&#10;String  query = 'SELECT Id, LastLoginDate FROM User WHERE isActive = true AND Profile.UserLicense.Name = \'Salesforce\' AND doNotFreeze__c = false';&#10;query += ' AND ((LastLoginDate &lt;&gt; null AND DAY_ONLY(LastLoginDate) &lt; '+ limitToFreezeDateAsString + ')';&#10;query += ' OR ExpirationDate__c &lt; TODAY)';&#10;query += ' AND Id in (SELECT UserId FROM UserLogin where isFrozen = false)';&#10;&#10;//String  query = 'SELECT Id, LastLoginDate FROM User WHERE isActive = true AND Profile.UserLicense.Name = \'Salesforce\' AND doNotFreeze__c = false AND lastlogindate &lt;&gt; null';&#10;//query += ' AND DAY_ONLY(LastLoginDate) &lt; '+ limitToFreezeDateAsString;&#10;//query += ' AND Id in (SELECT UserId FROM UserLogin where isFrozen = false)';&#10;&#10;List&lt;User&gt; results = Database.query(query);&#10;System.debug(results);&#10;" />
-                  <option name="connectionName" value="DevSep24" />
+                  <option name="body" value="Set&lt;String&gt; pg1Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg2Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg3Codes = new Set&lt;String&gt;();&#10;Set&lt;String&gt; pg4Codes = new Set&lt;String&gt;();&#10;&#10;List&lt;Non_ERP_Products__c&gt; nonErpProducts = [&#10;        SELECT Id, AssignmentRuleCodes__c&#10;        FROM Non_ERP_Products__c&#10;        WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE AND CreatedDate = THIS_MONTH&#10;];&#10;&#10;Set&lt;String&gt; pgCodes = new Set&lt;String&gt;();&#10;&#10;for (Non_ERP_Products__c product : nonErpProducts) {&#10;    if (product.AssignmentRuleCodes__c != null &amp;&amp; product.AssignmentRuleCodes__c != '') {&#10;        pgCodes.addAll(product.AssignmentRuleCodes__c.replaceAll('\\s', '').split(','));&#10;    }&#10;}&#10;&#10;for(String eachPgCode : pgCodes){&#10;    if(eachPgCode.length() == 2 || eachPgCode.length() == 3){&#10;        pg1Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 4){&#10;        pg2Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 5){&#10;        pg3Codes.add(eachPgCode);&#10;    } else if(eachPgCode.length() == 6){&#10;        pg4Codes.add(eachPgCode);&#10;    }&#10;}&#10;&#10;System.debug('PG1 Count: ' + pg1Codes.size());&#10;System.debug('PG2 Count: ' + pg2Codes.size());&#10;System.debug('PG3 Count: ' + pg3Codes.size());&#10;System.debug('PG4 Count: ' + pg4Codes.size());&#10;&#10;System.debug('PG1 Codes: ' + pg1Codes);&#10;System.debug('PG2 Codes: ' + pg2Codes);&#10;System.debug('PG3 Codes: ' + pg3Codes);&#10;System.debug('PG4 Codes: ' + pg4Codes);&#10;&#10;system.debug([SELECT count(Id) FROM Product2 WHERE PG3_Code__c IN :pg3Codes OR GlobalSKUMapping__r.PG3_Code__c IN :pg3Codes]);&#10;" />
+                  <option name="connectionName" value="Production" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="databaseLogLevel" value="ERROR" />
-                  <option name="name" value="Anonymous Apex 8" />
-                  <option name="nbaLogLevel" value="ERROR" />
-                  <option name="profilingLogLevel" value="ERROR" />
-                  <option name="systemLogLevel" value="ERROR" />
-                  <option name="validationLogLevel" value="ERROR" />
-                  <option name="visualforceLogLevel" value="FINE" />
-                  <option name="waveLogLevel" value="ERROR" />
-                  <option name="workflowLogLevel" value="ERROR" />
+                  <option name="name" value="Anonymous Apex 1" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="7" />
+            <option name="selectedSavedDocumentIndex" value="1" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionMruWorkspaceSettings">
@@ -88,8 +75,8 @@
                 <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1724676542423" />
-                  <option name="numUsages" value="18" />
+                  <option name="lastUsed" value="1729083565491" />
+                  <option name="numUsages" value="70" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="DevAug24" />
@@ -18437,7 +18424,7 @@
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARD" value="1682075429551" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ACTIVITYSCORECARDLWC" value="1716894141000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CLONEORDEROMLWC" value="1666105134000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CREATESALESLEADFLOWLWC" value="1727441584648" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CREATESALESLEADFLOWLWC" value="1728995916167" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:FLOW_LOOKUPLWC" value="1675243668000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:LEADMATCHCONTACTHANDLING" value="1666275637000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:SELECTPRODUCTSOMLWC" value="1666187952046" />
@@ -18720,12 +18707,32 @@
                   <option name="name" value="Api Versions" />
                 </SoqlQuerySavedDocument>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="SELECT Id, LastLoginDate, DoNotFreeze__c FROM User where LastLoginDate &lt;&gt; null" />
+                  <option name="body" value="SELECT Id, AssignmentRuleCodes__c&#10;FROM Non_ERP_Products__c&#10;WHERE ProductFamily__c != null AND Competitor_Product__c = FALSE AND CreatedDate = THIS_MONTH" />
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 6" />
+                </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="select id, NonErpProduct__c, GlobalProductFamily__c, PG4_Code__c from product2 where PG4_Code__c = 'RI22B0'" />
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="SOQL Query 7" />
+                </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="SELECT Id, Status, JobType, CreatedDate, CompletedDate, NumberOfErrors, TotalJobItems, JobItemsProcessed&#10;FROM AsyncApexJob&#10;WHERE ApexClassId IN (SELECT Id FROM ApexClass WHERE Name = 'BatchUpdateProducts')" />
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="SOQL Query 8" />
+                </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="SELECT Id, PG1_Code__c, PG2_Code__c, PG3_Code__c, PG4_Code__c FROM Product2 WHERE PG1_Code__c IN :pg1Codes OR GlobalSKUMapping__r.PG1_Code__c IN :pg1Codes OR PG2_Code__c IN :pg2Codes OR GlobalSKUMapping__r.PG2_Code__c IN :pg2Codes OR PG3_Code__c IN :pg3Codes OR GlobalSKUMapping__r.PG3_Code__c IN :pg3Codes OR PG4_Code__c IN :pg4Codes OR GlobalSKUMapping__r.PG4_Code__c IN :pg4Codes" />
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="SOQL Query 9" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="6" />
+            <option name="selectedSavedDocumentIndex" value="8" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -19159,6 +19166,7 @@
       <workItem from="1724660298630" duration="6503000" />
       <workItem from="1724928426141" duration="507000" />
       <workItem from="1727439802756" duration="2083000" />
+      <workItem from="1728642498557" duration="6790000" />
     </task>
     <servers />
   </component>

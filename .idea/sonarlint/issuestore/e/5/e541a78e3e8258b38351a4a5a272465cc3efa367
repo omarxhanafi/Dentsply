@@ -1,0 +1,49 @@
+
+T
+AZBm5GLMi9dtgbuJnfInsf:AvoidGlobalModifier	"Avoid global classes.(¢øÆŞ8˜‘†·†2
+o
+AZBm5GLMi9dtgbuJnfIosf:ClassWithoutTestClass	".Class does not have a corresponding test class(¢øÆŞ8˜‘†·†2
+
+AZBm5GLMi9dtgbuJnfIpsf:CyclomaticComplexity	"PThe class 'BatchUpdateProducts' has a Cyclomatic Complexity of 4 (Highest = 12).(¢øÆŞ8˜‘†·†2
+s
+AZBm5GLMi9dtgbuJnfIvsf:CommentRequired"3Public method and constructor comments are Required(À¢¬ıÿÿÿÿ8˜‘†·†2
+f
+AZBm5GLMi9dtgbuJnfIwsf:ShortVariable"(Avoid variables with short names like BC(¿èÕÀıÿÿÿÿ8˜‘†·†2
+s
+AZBm5GLMi9dtgbuJnfIysf:CommentRequired"3Public method and constructor comments are Required(¿èÕÀıÿÿÿÿ8˜‘†·†2
+¢
+AZBm5GLMi9dtgbuJnfIzsf:VariableNamingConventions"XVariables should start with a lowercase character, 'BC' starts with uppercase character.(¿èÕÀıÿÿÿÿ8˜‘†·†2
+s
+AZBm5GLMi9dtgbuJnfI1sf:LocalVariableCouldBeFinal".Local variable 'query' could be declared final(•ä˜8˜‘†·†2
+`
+AZBm5GLMi9dtgbuJnfI-sf:ShortVariable#"(Avoid variables with short names like BC(¼ÏÚW8˜‘†·†2
+m
+AZBm5GLMi9dtgbuJnfJAsf:CommentRequired#"3Public method and constructor comments are Required(¼ÏÚW8˜‘†·†2
+v
+AZBm5GLMi9dtgbuJnfJBsf:CyclomaticComplexity#"7The method 'execute' has a Cyclomatic Complexity of 12.(¼ÏÚW8˜‘†·†2
+m
+AZBm5GLMi9dtgbuJnfJCsf:NPathComplexity#"3The method execute() has an NPath complexity of 290(¼ÏÚW8˜‘†·†2
+œ
+AZBm5GLMi9dtgbuJnfJDsf:VariableNamingConventions#"XVariables should start with a lowercase character, 'BC' starts with uppercase character.(¼ÏÚW8˜‘†·†2
+}
+AZBm5GLMi9dtgbuJnfJHsf:NullCoalescingOperator&"6Consider using the Salesforce Null Coalescing Operator(Şø¼Øúÿÿÿÿ8˜‘†·†2
+x
+AZBm5GLMi9dtgbuJnfJJsf:NullCoalescingOperator'"6Consider using the Salesforce Null Coalescing Operator(¶ÔÁù8˜‘†·†2
+}
+AZBm5GLMi9dtgbuJnfJLsf:NullCoalescingOperator("6Consider using the Salesforce Null Coalescing Operator(ï“â·ıÿÿÿÿ8˜‘†·†2
+}
+AZBm5GLMi9dtgbuJnfJNsf:NullCoalescingOperator)"6Consider using the Salesforce Null Coalescing Operator(ˆÖ’¦ÿÿÿÿÿ8˜‘†·†2
+s
+AZBm5GLMi9dtgbuJnfJPsf:IfStmtsMustUseBraces.".Avoid using if statements without curly braces(©³­Šøÿÿÿÿ8˜‘†·†2
+m
+AZBm5GLMi9dtgbuJnfJSsf:IfStmtsMustUseBraces/".Avoid using if statements without curly braces(µâî(8˜‘†·†2
+s
+AZBm5GLMi9dtgbuJnfJVsf:IfStmtsMustUseBraces0".Avoid using if statements without curly braces(¢€ĞÜûÿÿÿÿ8˜‘†·†2
+s
+AZBm5GLMi9dtgbuJnfJYsf:IfStmtsMustUseBraces1".Avoid using if statements without curly braces(¸Ä¯¬ÿÿÿÿÿ8˜‘†·†2
+a
+AZBm5GLMi9dtgbuJnfJdsf:ShortVariable9"(Avoid variables with short names like BC(øÛò8˜‘†·†2
+n
+AZBm5GLMi9dtgbuJnfJfsf:CommentRequired9"3Public method and constructor comments are Required(øÛò8˜‘†·†2
+
+AZBm5GLMi9dtgbuJnfJgsf:VariableNamingConventions9"XVariables should start with a lowercase character, 'BC' starts with uppercase character.(øÛò8˜‘†·†2
