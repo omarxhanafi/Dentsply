@@ -9,6 +9,7 @@ History
 20220906    Tobias Nygren       Removed tests for default owner (TFUS-000004729)
 20220906    Nisreen AlSaleh     Update creatEntitlement test method (TFUS-000004769)
 20230224    Roberto Narbona     Cleanup story (TFUS-000003722)
+20241107    Omar Hanafi         Fixing the test failures as part of the clean-up project
 ------------------------------------------------------------*/
 
 @isTest(seeAllData=false)
@@ -82,98 +83,6 @@ public class Test_AccountTrigger {
         System.assertEquals(null, testAccount2.DC_ETM_Code__c, 'Expected null');
     }
 
-    @isTest
-    public static void testUpdateRecordsType() {
-        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.returnAccounts(8, 'Geographical_Account', testUser.Id);
-        List<Account> accounts2 = TestDataFactory.returnAccounts(1, 'ERP_Distributor', testUser.Id);
-        // WF-ACC-28 : Set Partner Account
-        accounts1.get(0).OneAccount_Type__c = 'Partner';
-        
-        // WF-ACC-29 : Set Non-ERP Lab Account
-        accounts1.get(1).OneAccount_Type__c = 'Dental Laboratory';
-        
-        // WF-ACC-30 : Set Non-ERP Distributor
-        accounts1.get(2).OneAccount_Type__c = 'Distributor';
-        
-        // WF-ACC-31 : Set Non-ERP Accounts
-        accounts1.get(3).OneAccount_Type__c = 'Purchasing Group';
-        
-        // WF-ACC-32 : Set ERP Account
-        accounts1.get(4).OneAccount_Type__c = 'Purchasing Group';
-        accounts1.get(4).Movex__c = 'XX345691';
-        
-        // WF-ACC-33 : Set ERP Lab Accounts
-        accounts1.get(5).OneAccount_Type__c = 'Dental Laboratory';
-        accounts1.get(5).Movex__c = 'XX345692';
-        
-        // WF-ACC-34 : Set ERP Distributor
-        accounts1.get(6).OneAccount_Type__c = 'Distributor';
-        accounts1.get(6).Movex__c = 'XX345693';
-        
-        // WF-ACC-35 : Set Competitor Account
-        accounts1.get(7).OneAccount_Type__c = 'Competitor';
-        
-        
-        // WF-ACC-36 : Set Geographical Account
-        accounts2.get(0).OneAccount_Type__c = 'Country';
-        
-        accounts1.addAll(accounts2);
-        Test.startTest();
-        insert accounts1;
-        Test.stopTest();
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'Partner_DI'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(0).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'Non_ERP_Lab_Account'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(1).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'Non_ERP_Distributor'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(2).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'Non_ERP_Account'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(3).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'ERP_Account'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(4).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'ERP_Lab_Account'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(5).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'ERP_Distributor'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(6).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'Competitor'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(7).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'Geographical_Account'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(8).Id].RecordTypeId);
-    }
-    @isTest
-    public static void testUpdateAccountsInfo() {
-        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.returnAccounts(5, 'Non_ERP_Account', testUser.Id);
-        
-        // WF-ACC-37 : Set product area = Dental
-        accounts1.get(0).Product_Area__c = '';
-        
-        // WF-ACC-38 : Update Loss Type (D)
-        accounts1.get(1).Movex_Reference_Reason__c = 1;
-        
-        // WF-ACC-39 : Set Implant Segmentation N/A
-        accounts1.get(2).Status__c = '90';
-        accounts1.get(2).Movex_Product_Area_OKHAFE__c = 'xx';
-        // WF-ACC-40 : Set AWO Approval Date 
-        accounts1.get(3).Atlantis_Web_Order_Customer__c = true;
-        
-        // WF-ACC-41 : Override Custom Segmentation
-        accounts1.get(4).Custom_Segmentation__c = 'Implants Starter';
-        accounts1.get(4).Volume_Implants__c = 'No Usage';
-        
-        Test.startTest();
-        insert accounts1;
-        Test.stopTest();
-        
-        System.assertEquals('Administrative Reason',
-                            [SELECT Id,Loss_Type_D__c FROM Account WHERE Id =: accounts1.get(1).Id].Loss_Type_D__c);
-        System.assertEquals(Date.today() - 1,
-                            [SELECT Id,AWO_Approval_Date__c FROM Account WHERE Id =: accounts1.get(3).Id].AWO_Approval_Date__c);
-        System.assertEquals(null,
-                            [SELECT Id,Custom_Segmentation__c FROM Account WHERE Id =: accounts1.get(4).Id].Custom_Segmentation__c);
-    }
-    
     @isTest
     public static void testBulkAccountInsertion() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];

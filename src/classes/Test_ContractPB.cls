@@ -2,7 +2,9 @@
 Author: 		Ahmed LOUDRASSI (Salesforce) 2019-11-25
 Description:   	Test Class for the Contract Process Builder.
 History
-<Date>      <Authors Name>     <Brief Description of Change>
+2019-11-25      Ahmed LOUDRASSI     Created the test class
+2024-11-07      Omar HANAFI         Fixing the test failures as part of the clean-up project
+
 
 ------------------------------------------------------------*/
 
@@ -39,7 +41,7 @@ public class Test_ContractPB {
     @isTest
     private static void testManagersManagerisASM() {
         User testUser = [SELECT Id, Manager_workaround__r.Id FROM User WHERE Alias = 'test1'];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
         List<Contract> contracts = TestDataFactory.returnContracts(1, 'DiscountContract', testUser.Id, accounts1);
         contracts.get(0).Revenue_forecast__c = 10000;
         contracts.get(0).Sales_Correction__c = true;
@@ -68,7 +70,7 @@ public class Test_ContractPB {
     @isTest
     private static void testClearContractOwnerExpirationNoticeOnExpiredContracts() {
         User testUser = [SELECT Id, Manager_workaround__r.Id FROM User WHERE Alias = 'test1'];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
         List<Contract> contracts = TestDataFactory.returnContracts(1, 'DiscountContract', testUser.Id, accounts1);
         contracts.get(0).Status = 'Active';
         contracts.get(0).OwnerExpirationNotice = '90';
@@ -83,7 +85,7 @@ public class Test_ContractPB {
     @isTest
     private static void testDESetMaxApprovedDiscount() {
         User testUser = [SELECT Id, Manager_workaround__r.Id FROM User WHERE Alias = 'test1'];
-        List<Account> accounts1 = TestDataFactory.returnAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.returnAccounts(1, 'CIM_Account', testUser.Id);
         accounts1.get(0).Country__c = 'DE';
         insert accounts1;
         List<Contract> contracts = TestDataFactory.returnContracts(1, 'DiscountContract', testUser.Id, accounts1);
@@ -99,7 +101,7 @@ public class Test_ContractPB {
     @isTest
     private static void testSetApprovalStatusFieldOnCreation() {
         User testUser = [SELECT Id, Manager_workaround__r.Id FROM User WHERE Alias = 'test1'];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
         List<Contract> contracts = TestDataFactory.returnContracts(1, 'DiscountContract', testUser.Id, accounts1);
         contracts.get(0).Approval_Status__c = 'Pending';
         contracts.get(0).Revenue_forecast__c = 10000;
@@ -112,7 +114,7 @@ public class Test_ContractPB {
     @isTest
     private static void testSetContractExternalID() {
         User testUser = [SELECT Id, Manager_workaround__r.Id FROM User WHERE Alias = 'test1'];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
         List<Contract> contracts = TestDataFactory.returnContracts(1, 'DiscountContract', testUser.Id, accounts1);
         contracts.get(0).Revenue_forecast__c = 10000;
         contracts.get(0).Sales_Correction__c = true;
@@ -125,7 +127,7 @@ public class Test_ContractPB {
     @isTest
     private static void testSetOwnerExpirationNotice() {
         User testUser = [SELECT Id, Manager_workaround__r.Id FROM User WHERE Alias = 'test1'];
-        List<Account> accounts1 = TestDataFactory.returnAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.returnAccounts(1, 'CIM_Account', testUser.Id);
         accounts1.get(0).Country__c = 'DE';
         insert accounts1;
         List<Contract> contracts = TestDataFactory.returnContracts(1, 'DiscountContract', testUser.Id, accounts1);
@@ -141,7 +143,7 @@ public class Test_ContractPB {
     @isTest
     private static void testSetOwnersManagersEmailDE() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
         List<Contract> contracts = TestDataFactory.returnContracts(1, 'DiscountContract', testUser.Id, accounts1);
         contracts.get(0).Revenue_forecast__c = 10000;
         contracts.get(0).Sales_Correction__c = true;
@@ -167,7 +169,7 @@ public class Test_ContractPB {
     @isTest
     private static void testUpdateContractEndDate() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
         List<Contract> contracts = TestDataFactory.returnContracts(1, 'DiscountContract', testUser.Id, accounts1);
         contracts.get(0).StartDate = Date.today();
         contracts.get(0).Status = 'Draft';
@@ -181,7 +183,7 @@ public class Test_ContractPB {
     @isTest
     private static void testUpdateContractSalesOnEnd() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
         List<Contract> contracts = TestDataFactory.returnContracts(1, 'DiscountContract', testUser.Id, accounts1);
         contracts.get(0).Contract_End_Date__c = Date.today();
         contracts.get(0).Revenue_forecast__c = 10000;

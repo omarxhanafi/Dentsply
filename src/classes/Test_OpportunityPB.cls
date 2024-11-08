@@ -1,4 +1,4 @@
-/*------------------------------------------------------------
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------
 Author: 		Ahmed LOUDRASSI (Salesforce) 2019-10-21
 Description:   	Test Class for the Opportunity Process Builder.
 History
@@ -7,7 +7,8 @@ History
 20230326    Roberto Narbona     TFUS-000003734
 20230503    Richard Trum        Commented out code related to old Process Builder steps/nodes as well as old Record Types (TFUS-5578)
 20230908    Richard Trum        Added test classes for both methods in the OpportunityTriggerHelper class as well as flowOpportunityTeamMember class
-------------------------------------------------------------*/
+20141107    Omar Hanafi         Fixing the test failures as part of the clean-up project
+--------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @isTest(seeAllData=false)
 public class Test_OpportunityPB {
@@ -81,7 +82,7 @@ public class Test_OpportunityPB {
     @isTest
     public static void testLightningPipelineOpportunityNamingConvention () {
         User testUser = [SELECT Id, Name, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
         List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
 
         String categoryString = 'Implants';
@@ -155,7 +156,7 @@ public class Test_OpportunityPB {
     @isTest
     public static void testxSbuStages () {
         User testUser = [SELECT Id, Name, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
         List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'xsbu_prospecting', testUser.Id);
         for(Opportunity opportunity : opportunities) {
             opportunity.AccountId = accounts1[0].Id;

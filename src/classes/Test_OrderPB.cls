@@ -1,10 +1,11 @@
-/*------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------------------------------
 Author: 		Ahmed LOUDRASSI (Salesforce) 2019-10-21
 Description:   	Test Class for the Opportunity Process Builder.
 History
 <Date>      <Authors Name>     <Brief Description of Change>
-
-------------------------------------------------------------*/
+2019-10-21    Ahmed LOUDRASSI     Created the class
+2014-11-07    Omar Hanafi         Fixing the test failures as part of the clean-up project
+------------------------------------------------------------------------------------------------------------------------*/
 
 @isTest(seeAllData=false)
 public class Test_OrderPB {
@@ -35,7 +36,7 @@ public class Test_OrderPB {
     private static void testSetCurrencyToEURInNordics() {
         
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
-        List<Account> accounts1 = TestDataFactory.returnAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.returnAccounts(1, 'CIM_Account', testUser.Id);
         accounts1.get(0).Country__c = 'SE';
         insert accounts1;
         List<Order> orders = TestDataFactory.returnOrders(1, 'Free_Good_Order', accounts1);
@@ -48,7 +49,7 @@ public class Test_OrderPB {
     @isTest
     private static void testGlobalOrderUpdatePayer() {
         User testUser = [SELECT Id, Personal_Order_Account__c FROM User WHERE Alias = 'test1'];
-        List<Account> accounts1 = TestDataFactory.returnAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.returnAccounts(1, 'CIM_Account', testUser.Id);
         insert accounts1;
         List<Order> orders = TestDataFactory.returnOrders(1, 'Free_Good_Order', accounts1);
         orders.get(0).Country__c = 'CA';
@@ -62,7 +63,7 @@ public class Test_OrderPB {
     @isTest
     private static void testUpdateCSResponsibleDateTime() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
-        List<Account> accounts1 = TestDataFactory.returnAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.returnAccounts(1, 'CIM_Account', testUser.Id);
         insert accounts1;
         List<Order> orders = TestDataFactory.returnOrders(1, 'Free_Good_Order', accounts1);
         orders.get(0).Customer_Service_Rep_Responsible__c = testUser.Id;

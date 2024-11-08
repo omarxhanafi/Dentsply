@@ -5,7 +5,9 @@ History
 20191113 	Ahmed LOUDRASSI			OrderSetAccountOwner triggers. (#)
 12092019	Miguel					Added GDW Integration User creation into the setup method
 18102020    Miguel                  Added testSetDiscountAllowedforTurkey User Story: #1833
-12072024    Roberto                 Added Turkey support 
+12072024    Roberto                 Added Turkey support
+07112024    Omar HANAFI             Fixing the test failures as part of the clean-up project
+
 --------------------------------------------------------------------------------------------------------*/
 
 @isTest(seeAllData=false)
@@ -36,7 +38,7 @@ public with sharing class Test_OrderTrigger {
     @isTest
     public static void testGetAddressRecords() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' limit 1];
-        List<Account> accounts = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
         Address__c ad = new Address__c(Name = 'Test', Account__c= accounts.get(0).Id, CustomerNumber__c = '555', CompanyCode__c = '057',Country__c = 'SV', 
                                        Street__c = 'Street', City__c = 'City', PostalCode__c='9809', StateProvince__c = 'Province');
 
@@ -128,7 +130,7 @@ public with sharing class Test_OrderTrigger {
     @isTest
     public static void testOrderSetAccountOwner() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' limit 1];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
         
         List<Order> orders = TestDataFactory.returnOrders(1, 'Free_Good_Order', accounts1);
         Test.startTest();
