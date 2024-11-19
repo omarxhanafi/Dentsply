@@ -1,0 +1,353 @@
+
+I
+AYecacEvRAiBJFfK0iULsf:CommentSize"Line too long(í×çïúÿÿÿÿ8ˆ®˜ãù0
+o
+AZBm5FZei9dtgbuJnee5sf:ClassWithoutTestClass".Class does not have a corresponding test class(  ¦¥8˜Š²úÉ0
+_
+AZBm5FZei9dtgbuJnee6sf:GodClass"+Possible God class (WMC=65, ATFD=40, TCC=0)(  ¦¥8˜Š²úÉ0
+ 
+AYSfT0A89rgjCr823PkZsf:CyclomaticComplexity"`The class 'ProductProfilingHierarchyController' has a Cyclomatic Complexity of 5 (Highest = 20).(  ¦¥8˜Š²úÉ0
+s
+AZBm5FZei9dtgbuJnee7sf:TooManyMethods"9This class has too many methods, consider refactoring it.(  ¦¥8˜Š²úÉ0
+{
+AYSfT0A89rgjCr823Pkasf:AuraEnabledWithoutCatchBlock".@AuraEnabled should have proper error handling(òëÚ¥üÿÿÿÿ8˜Š²úÉ0
+£
+AZBm5FZei9dtgbuJnee9sf:VariableNamingConventions"YVariables should start with a lowercase character, 'SBU' starts with uppercase character.(òëÚ¥üÿÿÿÿ8˜Š²úÉ0
+t
+AZBm5FZei9dtgbuJnee_sf:AvoidLiteralsInIfCondition".Avoid using Literals in Conditional Statements(•ÏÛõ8˜Š²úÉ0
+›
+AZBm5FZei9dtgbuJnefCsf:AvoidDuplicateLiterals"YThe String literal '003' appears 9 times in this file; the first occurrence is on line 24(•ÏÛõ8˜‘†·†2
+q
+AZBm5FZei9dtgbuJnefDsf:LocalVariableCouldBeFinal",Local variable 'con' could be declared final(Óáí8˜Š²úÉ0
+~
+AYSfT0A89rgjCr823Pkcsf:FieldLevelSecurity"@Permissions should be checked before accessing resource contact.(Óáí8˜Š²úÉ0
+ 
+AZBm5FZei9dtgbuJnefGsf:AvoidDuplicateLiterals"YThe String literal 'a5q' appears 9 times in this file; the first occurrence is on line 27(í›Ÿşÿÿÿÿ8˜‘†·†2
+x
+AZBm5FZei9dtgbuJnefIsf:LocalVariableCouldBeFinal".Local variable 'accId' could be declared final(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+‹
+AYSfT0A89rgjCr823Pkesf:FieldLevelSecurity"HPermissions should be checked before accessing resource account_plan__c.(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+v
+AZBm5FZei9dtgbuJnefJsf:LocalVariableCouldBeFinal",Local variable 'acc' could be declared final(¨á‘Îşÿÿÿÿ8˜Š²úÉ0
+ƒ
+AYSfT0A89rgjCr823Pkfsf:FieldLevelSecurity"@Permissions should be checked before accessing resource account.(¨á‘Îşÿÿÿÿ8˜Š²úÉ0
+v
+AZBm5FZei9dtgbuJnefLsf:LocalVariableCouldBeFinal ",Local variable 'acc' could be declared final(ª—Ëéÿÿÿÿÿ8˜Š²úÉ0
+ƒ
+AYSfT0A89rgjCr823Pkgsf:FieldLevelSecurity "@Permissions should be checked before accessing resource account.(ª—Ëéÿÿÿÿÿ8˜Š²úÉ0
+x
+AZBm5FZei9dtgbuJnefNsf:AvoidSoqlWithNegativeLogic)"-Avoid using negative logic in soql statements(ô¾—ßûÿÿÿÿ8˜‘†·†2
+
+AZBm5FZei9dtgbuJnefOsf:FieldLevelSecurity)"LPermissions should be checked before accessing resource non_erp_products__c.(ô¾—ßûÿÿÿÿ8˜‘†·†2
+x
+AZBm5FZei9dtgbuJnefQsf:AvoidSoqlWithNegativeLogic/"-Avoid using negative logic in soql statements(ô¾—ßûÿÿÿÿ8˜‘†·†2
+‡
+AZBm5FZei9dtgbuJnefRsf:AvoidSoqlWithNullInWhere/">Avoid using null conditions in where clause of SOQL statements(ô¾—ßûÿÿÿÿ8˜‘†·†2
+
+AZBm5FZei9dtgbuJnefSsf:FieldLevelSecurity/"LPermissions should be checked before accessing resource non_erp_products__c.(ô¾—ßûÿÿÿÿ8˜‘†·†2
+y
+AZBm5FZei9dtgbuJnefTsf:LocalVariableCouldBeFinal7"4Local variable 'uniqueNames' could be declared final(ÓäÈ 8˜Š²úÉ0
+{
+AYSfT0A89rgjCr823Pkksf:AuraEnabledWithoutCatchBlockK".@AuraEnabled should have proper error handling(„‚Í«şÿÿÿÿ8˜Š²úÉ0
+s
+AZBm5FZei9dtgbuJnefbsf:AvoidSoqlWithNegativeLogicO"-Avoid using negative logic in soql statements(¦»’—8˜‘†·†2
+q
+AZBm5FZei9dtgbuJnefcsf:LongLinesO"<Limiting line length improves readability and understanding.(¦»’—8˜‘†·†2
+‹
+AZBm5FZei9dtgbuJnefdsf:FieldLevelSecurityO"MPermissions should be checked before accessing resource product_profiling__c.(¦»’—8˜‘†·†2
+x
+AZBm5FZei9dtgbuJnefhsf:LocalVariableCouldBeFinalR".Local variable 'accId' could be declared final(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+‹
+AZBm5FZei9dtgbuJnefisf:FieldLevelSecurityR"HPermissions should be checked before accessing resource account_plan__c.(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+s
+AZBm5FZei9dtgbuJnefjsf:AvoidSoqlWithNegativeLogicS"-Avoid using negative logic in soql statements(÷ô‡ß8˜‘†·†2
+q
+AZBm5FZei9dtgbuJnefksf:LongLinesS"<Limiting line length improves readability and understanding.(÷ô‡ß8˜‘†·†2
+‹
+AZBm5FZei9dtgbuJneflsf:FieldLevelSecurityS"MPermissions should be checked before accessing resource product_profiling__c.(÷ô‡ß8˜‘†·†2
+x
+AZBm5FZei9dtgbuJnefnsf:AvoidSoqlWithNegativeLogicU"-Avoid using negative logic in soql statements(š½Âèıÿÿÿÿ8˜‘†·†2
+v
+AZBm5FZei9dtgbuJnefosf:LongLinesU"<Limiting line length improves readability and understanding.(š½Âèıÿÿÿÿ8˜‘†·†2
+
+AZBm5FZei9dtgbuJnefpsf:FieldLevelSecurityU"MPermissions should be checked before accessing resource product_profiling__c.(š½Âèıÿÿÿÿ8˜‘†·†2
+w
+AZBm5FZei9dtgbuJnefqsf:LongVariabled"?Avoid excessively long variable names like productProfilingList(«†¦8˜‘†·†2
+‹
+AZBm5FZei9dtgbuJneftsf:FieldLevelSecurityf"MPermissions should be checked before accessing resource Product_Profiling__c.(ñó…Á8˜‘†·†2
+Q
+AZBm5FZei9dtgbuJnefvsf:SystemDebugh"Avoid calling System.debug(º±êÏ8˜‘†·†2
+{
+AYSfT0A89rgjCr823Pkpsf:AuraEnabledWithoutCatchBlockt".@AuraEnabled should have proper error handling(ùÖö€şÿÿÿÿ8˜Š²úÉ0
+x
+AZAZpLAMa2VgEBovstNPsf:AvoidSoqlWithNegativeLogicx"-Avoid using negative logic in soql statements(¢Ïıÿüÿÿÿÿ8˜Š²úÉ0
+v
+AZBm5FZei9dtgbuJnefzsf:LongLinesx"<Limiting line length improves readability and understanding.(¢Ïıÿüÿÿÿÿ8˜Š²úÉ0
+
+AZBm5FZei9dtgbuJnef0sf:FieldLevelSecurityx"MPermissions should be checked before accessing resource product_profiling__c.(¢Ïıÿüÿÿÿÿ8˜Š²úÉ0
+x
+AZBm5FZei9dtgbuJnef4sf:LocalVariableCouldBeFinalz".Local variable 'accId' could be declared final(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+‹
+AZBm5FZei9dtgbuJnef5sf:FieldLevelSecurityz"HPermissions should be checked before accessing resource account_plan__c.(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+s
+AZAZpLAMa2VgEBovstNQsf:AvoidSoqlWithNegativeLogic{"-Avoid using negative logic in soql statements(Úüîø8˜Š²úÉ0
+q
+AZBm5FZei9dtgbuJnef6sf:LongLines{"<Limiting line length improves readability and understanding.(Úüîø8˜Š²úÉ0
+‹
+AZBm5FZei9dtgbuJnef7sf:FieldLevelSecurity{"MPermissions should be checked before accessing resource product_profiling__c.(Úüîø8˜Š²úÉ0
+x
+AZAZpLAMa2VgEBovstNRsf:AvoidSoqlWithNegativeLogic}"-Avoid using negative logic in soql statements(ç…£¶øÿÿÿÿ8˜Š²úÉ0
+v
+AZBm5FZei9dtgbuJnef9sf:LongLines}"<Limiting line length improves readability and understanding.(ç…£¶øÿÿÿÿ8˜Š²úÉ0
+
+AZBm5FZei9dtgbuJnef-sf:FieldLevelSecurity}"MPermissions should be checked before accessing resource product_profiling__c.(ç…£¶øÿÿÿÿ8˜Š²úÉ0
+€
+AZBm5FZei9dtgbuJnef_sf:LocalVariableCouldBeFinal€"5Local variable 'profilingMap' could be declared final(Ï€¹¾ÿÿÿÿÿ8˜Š²úÉ0
+w
+AYSfT0A89rgjCr823Pkusf:AuraEnabledWithoutCatchBlockŒ".@AuraEnabled should have proper error handling(¶áá8˜Š²úÉ0
+Î
+AZBm5FZei9dtgbuJnegAsf:VariableNamingConventionsŒ"‡Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'field_name' is not final.(¶áá8˜Š²úÉ0
+o
+AZBm5FZei9dtgbuJnegCsf:CommentRequiredŒ"3Public method and constructor comments are Required(¶áá8˜Š²úÉ0
+v
+AZBm5FZei9dtgbuJnegDsf:LocalVariableCouldBeFinal"0Local variable 'valList' could be declared final(å»åÙ8˜Š²úÉ0
+u
+AZBm5FZei9dtgbuJnegFsf:AvoidLiteralsInIfCondition".Avoid using Literals in Conditional Statements(•ÏÛõ8˜Š²úÉ0
+r
+AZBm5FZei9dtgbuJnegIsf:LocalVariableCouldBeFinal‘",Local variable 'con' could be declared final(Óáí8˜Š²úÉ0
+
+AZBm5FZei9dtgbuJnegJsf:FieldLevelSecurity‘"@Permissions should be checked before accessing resource contact.(Óáí8˜Š²úÉ0
+y
+AZBm5FZei9dtgbuJnegNsf:LocalVariableCouldBeFinal”".Local variable 'accId' could be declared final(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+Œ
+AZBm5FZei9dtgbuJnegOsf:FieldLevelSecurity”"HPermissions should be checked before accessing resource account_plan__c.(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+w
+AZBm5FZei9dtgbuJnegPsf:LocalVariableCouldBeFinal•",Local variable 'acc' could be declared final(¨á‘Îşÿÿÿÿ8˜Š²úÉ0
+„
+AZBm5FZei9dtgbuJnegQsf:FieldLevelSecurity•"@Permissions should be checked before accessing resource account.(¨á‘Îşÿÿÿÿ8˜Š²úÉ0
+w
+AZBm5FZei9dtgbuJnegSsf:LocalVariableCouldBeFinal˜",Local variable 'acc' could be declared final(ª—Ëéÿÿÿÿÿ8˜Š²úÉ0
+„
+AZBm5FZei9dtgbuJnegTsf:FieldLevelSecurity˜"@Permissions should be checked before accessing resource account.(ª—Ëéÿÿÿÿÿ8˜Š²úÉ0
+‹
+AZBm5FZei9dtgbuJnegVsf:FieldLevelSecurityŸ"LPermissions should be checked before accessing resource non_erp_products__c.(Óˆ·ƒ8˜‘†·†2
+ƒ
+AZBm5FZei9dtgbuJnegXsf:AvoidSoqlWithNullInWhere£">Avoid using null conditions in where clause of SOQL statements(Óˆ·ƒ8˜‘†·†2
+r
+AZBm5FZei9dtgbuJnegYsf:LongLines£"<Limiting line length improves readability and understanding.(Óˆ·ƒ8˜‘†·†2
+‹
+AZBm5FZei9dtgbuJnegZsf:FieldLevelSecurity£"LPermissions should be checked before accessing resource non_erp_products__c.(Óˆ·ƒ8˜‘†·†2
+y
+AZBm5FZei9dtgbuJnegbsf:LocalVariableCouldBeFinalª"3Local variable 'fieldValue' could be declared final( ÓÙ8˜Š²úÉ0
+v
+AZBm5FZei9dtgbuJnegcsf:LocalVariableCouldBeFinal®"0Local variable 'results' could be declared final(Šöäñ8˜Š²úÉ0
+ 
+AZBm5FZei9dtgbuJnege,sf:AvoidForLoopToJustAddElementsToCollection±"EConsider using results.addAll instead of looping through all elements(ò¤Şêşÿÿÿÿ8˜Š²úÉ0
+|
+AYSfT0A89rgjCr823Pk1sf:AuraEnabledWithoutCatchBlock¹".@AuraEnabled should have proper error handling(ÜÏÓùúÿÿÿÿ8˜Š²úÉ0
+t
+AZBm5FZei9dtgbuJneggsf:CommentRequired¹"3Public method and constructor comments are Required(ÜÏÓùúÿÿÿÿ8˜Š²úÉ0
+w
+AZBm5FZei9dtgbuJneghsf:LocalVariableCouldBeFinal»"1Local variable 'ppRecord' could be declared final(Ø‘ìô8˜Š²úÉ0
+Œ
+AZBm5FZei9dtgbuJnegisf:FieldLevelSecurity»"MPermissions should be checked before accessing resource product_profiling__c.(Ø‘ìô8˜Š²úÉ0
+Œ
+AZBm5FZei9dtgbuJneglsf:FieldLevelSecurity¾"MPermissions should be checked before accessing resource Product_Profiling__c.(–æÉÿ8˜Š²úÉ0
+R
+AZAZpLAMa2VgEBovstNTsf:SystemDebugÀ"Avoid calling System.debug(¦¼ƒù8˜Š²úÉ0
+|
+AZBm5FZei9dtgbuJnegosf:AuraEnabledWithoutCatchBlockÕ".@AuraEnabled should have proper error handling(¥İıÿÿÿÿ8˜‘†·†2
+†
+AZBm5FZei9dtgbuJnegqsf:CyclomaticComplexityÕ"@The method 'getChildProducts' has a Cyclomatic Complexity of 20.(¥İıÿÿÿÿ8˜‘†·†2
+
+AZBm5FZei9dtgbuJnegrsf:NPathComplexityÕ">The method getChildProducts() has an NPath complexity of 93312(¥İıÿÿÿÿ8˜‘†·†2
+u
+AZBm5FZei9dtgbuJnegtsf:AvoidLiteralsInIfConditionØ".Avoid using Literals in Conditional Statements(•ÏÛõ8˜Š²úÉ0
+r
+AZBm5FZei9dtgbuJnegwsf:LocalVariableCouldBeFinalÙ",Local variable 'con' could be declared final(Óáí8˜Š²úÉ0
+
+AZBm5FZei9dtgbuJnegxsf:FieldLevelSecurityÙ"@Permissions should be checked before accessing resource contact.(Óáí8˜Š²úÉ0
+y
+AZBm5FZei9dtgbuJneg1sf:LocalVariableCouldBeFinalÜ".Local variable 'accId' could be declared final(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+Œ
+AZBm5FZei9dtgbuJneg2sf:FieldLevelSecurityÜ"HPermissions should be checked before accessing resource account_plan__c.(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+w
+AZBm5FZei9dtgbuJneg3sf:LocalVariableCouldBeFinalİ",Local variable 'acc' could be declared final(¨á‘Îşÿÿÿÿ8˜Š²úÉ0
+„
+AZBm5FZei9dtgbuJneg4sf:FieldLevelSecurityİ"@Permissions should be checked before accessing resource account.(¨á‘Îşÿÿÿÿ8˜Š²úÉ0
+w
+AZBm5FZei9dtgbuJneg6sf:LocalVariableCouldBeFinalá",Local variable 'acc' could be declared final(ª—Ëéÿÿÿÿÿ8˜Š²úÉ0
+„
+AZBm5FZei9dtgbuJneg7sf:FieldLevelSecurityá"@Permissions should be checked before accessing resource account.(ª—Ëéÿÿÿÿÿ8˜Š²úÉ0
+{
+AZBm5FZei9dtgbuJneg8sf:LongVariableå"=Avoid excessively long variable names like productFamiliesSet(ğî€ˆúÿÿÿÿ8˜‘†·†2
+†
+AZBm5FZei9dtgbuJneg9sf:LocalVariableCouldBeFinalå";Local variable 'productFamiliesSet' could be declared final(ğî€ˆúÿÿÿÿ8˜‘†·†2
+w
+AZBm5FZei9dtgbuJneg_sf:LongLinesé"<Limiting line length improves readability and understanding.(Ç·ÍÑşÿÿÿÿ8˜‘†·†2
+w
+AZBm5FZei9dtgbuJnehEsf:LongLinesî"<Limiting line length improves readability and understanding.(šˆœÇıÿÿÿÿ8˜‘†·†2
+~
+AZBm5FZei9dtgbuJnehbsf:LocalVariableCouldBeFinal”"8Local variable 'productOrderMap' could be declared final(Úàèı8˜‘†·†2
+y
+AZBm5FZei9dtgbuJnehdsf:AvoidSoqlWithNegativeLogic˜"-Avoid using negative logic in soql statements(Èœ¿ÿúÿÿÿÿ8˜‘†·†2
+w
+AZBm5FZei9dtgbuJnehesf:LongLines˜"<Limiting line length improves readability and understanding.(Èœ¿ÿúÿÿÿÿ8˜‘†·†2
+Œ
+AZBm5FZei9dtgbuJnehfsf:FieldLevelSecurity˜"HPermissions should be checked before accessing resource workflowline__c.(Èœ¿ÿúÿÿÿÿ8˜‘†·†2
+t
+AZBm5FZei9dtgbuJnehvsf:LocalVariableCouldBeFinal¸".Local variable 'nodes' could be declared final(§öö¹8˜Š²úÉ0
+~
+AZBm5FZei9dtgbuJnehz#sf:AvoidInstantiatingObjectsInLoops¼",Avoid instantiating new objects inside loops(ñµ»Îùÿÿÿÿ8˜‘†·†2
+~
+AZBm5FZei9dtgbuJneh2#sf:AvoidInstantiatingObjectsInLoops¾",Avoid instantiating new objects inside loops(å§øüÿÿÿÿ8˜Š²úÉ0
+v
+AYSfT0A89rgjCr823PlIsf:AuraEnabledWithoutCatchBlockÆ".@AuraEnabled should have proper error handling(Åî½r8˜Š²úÉ0
+n
+AZBm5FZei9dtgbuJneh5sf:CommentRequiredÆ"3Public method and constructor comments are Required(Åî½r8˜Š²úÉ0
+v
+AZBm5FZei9dtgbuJneh6sf:LocalVariableCouldBeFinalÇ"0Local variable 'valList' could be declared final(å»åÙ8˜Š²úÉ0
+u
+AZBm5FZei9dtgbuJneh8sf:AvoidLiteralsInIfConditionÊ".Avoid using Literals in Conditional Statements(•ÏÛõ8˜Š²úÉ0
+r
+AZBm5FZei9dtgbuJneh_sf:LocalVariableCouldBeFinalË",Local variable 'con' could be declared final(Óáí8˜Š²úÉ0
+
+AZBm5FZei9dtgbuJneiAsf:FieldLevelSecurityË"@Permissions should be checked before accessing resource contact.(Óáí8˜Š²úÉ0
+y
+AZBm5FZei9dtgbuJneiEsf:LocalVariableCouldBeFinalÎ".Local variable 'accId' could be declared final(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+Œ
+AZBm5FZei9dtgbuJneiFsf:FieldLevelSecurityÎ"HPermissions should be checked before accessing resource account_plan__c.(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+w
+AZBm5FZei9dtgbuJneiGsf:LocalVariableCouldBeFinalÏ",Local variable 'acc' could be declared final(¨á‘Îşÿÿÿÿ8˜Š²úÉ0
+„
+AZBm5FZei9dtgbuJneiHsf:FieldLevelSecurityÏ"@Permissions should be checked before accessing resource account.(¨á‘Îşÿÿÿÿ8˜Š²úÉ0
+w
+AZBm5FZei9dtgbuJneiJsf:LocalVariableCouldBeFinalÓ",Local variable 'acc' could be declared final(ª—Ëéÿÿÿÿÿ8˜Š²úÉ0
+„
+AZBm5FZei9dtgbuJneiKsf:FieldLevelSecurityÓ"@Permissions should be checked before accessing resource account.(ª—Ëéÿÿÿÿÿ8˜Š²úÉ0
+
+AZBm5FZei9dtgbuJneiMsf:FieldLevelSecurityÚ"LPermissions should be checked before accessing resource non_erp_products__c.(Ş¹Ï×ûÿÿÿÿ8˜‘†·†2
+ˆ
+AZBm5FZei9dtgbuJneiOsf:AvoidSoqlWithNullInWhereß">Avoid using null conditions in where clause of SOQL statements(Ş¹Ï×ûÿÿÿÿ8˜‘†·†2
+
+AZBm5FZei9dtgbuJneiPsf:FieldLevelSecurityß"LPermissions should be checked before accessing resource non_erp_products__c.(Ş¹Ï×ûÿÿÿÿ8˜‘†·†2
+z
+AZBm5FZei9dtgbuJneiQsf:LocalVariableCouldBeFinalæ"4Local variable 'uniqueNames' could be declared final(ÓäÈ 8˜Š²úÉ0
+w
+AYSfT0A89rgjCr823PlPsf:AuraEnabledWithoutCatchBlockğ".@AuraEnabled should have proper error handling(ãÉÑÁ8˜Š²úÉ0
+o
+AZBm5FZei9dtgbuJneiUsf:CommentRequiredğ"3Public method and constructor comments are Required(ãÉÑÁ8˜Š²úÉ0
+Ÿ
+AZBm5FZei9dtgbuJneiVsf:VariableNamingConventionsğ"YVariables should start with a lowercase character, 'SBU' starts with uppercase character.(ãÉÑÁ8˜Š²úÉ0
+v
+AZBm5FZei9dtgbuJneiWsf:LocalVariableCouldBeFinalñ"0Local variable 'valList' could be declared final(å»åÙ8˜Š²úÉ0
+u
+AZBm5FZei9dtgbuJneiYsf:AvoidLiteralsInIfConditionô".Avoid using Literals in Conditional Statements(•ÏÛõ8˜Š²úÉ0
+r
+AZBm5FZei9dtgbuJneibsf:LocalVariableCouldBeFinalõ",Local variable 'con' could be declared final(Óáí8˜Š²úÉ0
+
+AZBm5FZei9dtgbuJneicsf:FieldLevelSecurityõ"@Permissions should be checked before accessing resource contact.(Óáí8˜Š²úÉ0
+y
+AZBm5FZei9dtgbuJneigsf:LocalVariableCouldBeFinalø".Local variable 'accId' could be declared final(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+Œ
+AZBm5FZei9dtgbuJneihsf:FieldLevelSecurityø"HPermissions should be checked before accessing resource account_plan__c.(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+w
+AZBm5FZei9dtgbuJneiisf:LocalVariableCouldBeFinalù",Local variable 'acc' could be declared final(¨á‘Îşÿÿÿÿ8˜Š²úÉ0
+„
+AZBm5FZei9dtgbuJneijsf:FieldLevelSecurityù"@Permissions should be checked before accessing resource account.(¨á‘Îşÿÿÿÿ8˜Š²úÉ0
+w
+AZBm5FZei9dtgbuJneilsf:LocalVariableCouldBeFinalü",Local variable 'acc' could be declared final(ª—Ëéÿÿÿÿÿ8˜Š²úÉ0
+„
+AZBm5FZei9dtgbuJneimsf:FieldLevelSecurityü"@Permissions should be checked before accessing resource account.(ª—Ëéÿÿÿÿÿ8˜Š²úÉ0
+Š
+AZBm5FZei9dtgbuJneiosf:FieldLevelSecurityƒ"LPermissions should be checked before accessing resource non_erp_products__c.(”îf8˜‘†·†2
+‚
+AZBm5FZei9dtgbuJneiqsf:AvoidSoqlWithNullInWhereˆ">Avoid using null conditions in where clause of SOQL statements(”îf8˜‘†·†2
+Š
+AZBm5FZei9dtgbuJneirsf:FieldLevelSecurityˆ"LPermissions should be checked before accessing resource non_erp_products__c.(”îf8˜‘†·†2
+z
+AZBm5FZei9dtgbuJneissf:LocalVariableCouldBeFinal"4Local variable 'uniqueNames' could be declared final(ÓäÈ 8˜Š²úÉ0
+v
+AZBm5FZei9dtgbuJneivsf:AuraEnabledWithoutCatchBlock¡".@AuraEnabled should have proper error handling(Šçl8˜‘†·†2
+u
+AZBm5FZei9dtgbuJneiysf:AvoidLiteralsInIfCondition¤".Avoid using Literals in Conditional Statements(•ÏÛõ8˜‘†·†2
+r
+AZBm5FZei9dtgbuJnei1sf:LocalVariableCouldBeFinal¥",Local variable 'con' could be declared final(Óáí8˜‘†·†2
+
+AZBm5FZei9dtgbuJnei2sf:FieldLevelSecurity¥"@Permissions should be checked before accessing resource contact.(Óáí8˜‘†·†2
+y
+AZBm5FZei9dtgbuJnei6sf:LocalVariableCouldBeFinal¨".Local variable 'accId' could be declared final(Çìæ¾üÿÿÿÿ8˜‘†·†2
+Œ
+AZBm5FZei9dtgbuJnei7sf:FieldLevelSecurity¨"HPermissions should be checked before accessing resource account_plan__c.(Çìæ¾üÿÿÿÿ8˜‘†·†2
+w
+AZBm5FZei9dtgbuJnei8sf:LocalVariableCouldBeFinal©",Local variable 'acc' could be declared final(¨á‘Îşÿÿÿÿ8˜‘†·†2
+„
+AZBm5FZei9dtgbuJnei9sf:FieldLevelSecurity©"@Permissions should be checked before accessing resource account.(¨á‘Îşÿÿÿÿ8˜‘†·†2
+w
+AZBm5FZei9dtgbuJnei_sf:LocalVariableCouldBeFinal¬",Local variable 'acc' could be declared final(ª—Ëéÿÿÿÿÿ8˜‘†·†2
+„
+AZBm5FZei9dtgbuJnejAsf:FieldLevelSecurity¬"@Permissions should be checked before accessing resource account.(ª—Ëéÿÿÿÿÿ8˜‘†·†2
+l
+AZBm5FZei9dtgbuJnejCsf:OnlyOneReturn±"-Methods should only have 1 return statements.(ÆëÂşÿÿÿÿÿ8˜‘†·†2
+ˆ
+AZBm5FZei9dtgbuJnejDsf:FieldLevelSecurity±"DPermissions should be checked before accessing resource workflow__c.(ÆëÂşÿÿÿÿÿ8˜‘†·†2
+ˆ
+AZBm5FZei9dtgbuJnejFsf:AvoidSoqlWithNullInWhereµ">Avoid using null conditions in where clause of SOQL statements(ÆëÂşÿÿÿÿÿ8˜‘†·†2
+w
+AZBm5FZei9dtgbuJnejGsf:LongLinesµ"<Limiting line length improves readability and understanding.(ÆëÂşÿÿÿÿÿ8˜‘†·†2
+ˆ
+AZBm5FZei9dtgbuJnejHsf:FieldLevelSecurityµ"DPermissions should be checked before accessing resource workflow__c.(ÆëÂşÿÿÿÿÿ8˜‘†·†2
+w
+AYSfT0A89rgjCr823PlXsf:AuraEnabledWithoutCatchBlock½".@AuraEnabled should have proper error handling(ö¤ú8˜Š²úÉ0
+o
+AZBm5FZei9dtgbuJnejJsf:CommentRequired½"3Public method and constructor comments are Required(ö¤ú8˜Š²úÉ0
+Ÿ
+AZBm5FZei9dtgbuJnejKsf:VariableNamingConventions½"YVariables should start with a lowercase character, 'SBU' starts with uppercase character.(ö¤ú8˜Š²úÉ0
+v
+AZBm5FZei9dtgbuJnejLsf:LocalVariableCouldBeFinal¾"0Local variable 'valList' could be declared final(å»åÙ8˜Š²úÉ0
+u
+AZBm5FZei9dtgbuJnejNsf:AvoidLiteralsInIfConditionÁ".Avoid using Literals in Conditional Statements(•ÏÛõ8˜Š²úÉ0
+r
+AZBm5FZei9dtgbuJnejQsf:LocalVariableCouldBeFinalÂ",Local variable 'con' could be declared final(Óáí8˜Š²úÉ0
+
+AZBm5FZei9dtgbuJnejRsf:FieldLevelSecurityÂ"@Permissions should be checked before accessing resource contact.(Óáí8˜Š²úÉ0
+u
+AZBm5FZei9dtgbuJnejSsf:AvoidLiteralsInIfConditionÄ".Avoid using Literals in Conditional Statements(¨§Ìó8˜Š²úÉ0
+y
+AZBm5FZei9dtgbuJnejWsf:LocalVariableCouldBeFinalÅ".Local variable 'accId' could be declared final(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+Œ
+AZBm5FZei9dtgbuJnejXsf:FieldLevelSecurityÅ"HPermissions should be checked before accessing resource account_plan__c.(Çìæ¾üÿÿÿÿ8˜Š²úÉ0
+w
+AZBm5FZei9dtgbuJnejYsf:LocalVariableCouldBeFinalÆ",Local variable 'acc' could be declared final(¨á‘Îşÿÿÿÿ8˜Š²úÉ0
+„
+AZBm5FZei9dtgbuJnejZsf:FieldLevelSecurityÆ"@Permissions should be checked before accessing resource account.(¨á‘Îşÿÿÿÿ8˜Š²úÉ0
+w
+AZBm5FZei9dtgbuJnejbsf:LocalVariableCouldBeFinalÉ",Local variable 'acc' could be declared final(ª—Ëéÿÿÿÿÿ8˜Š²úÉ0
+„
+AZBm5FZei9dtgbuJnejcsf:FieldLevelSecurityÉ"@Permissions should be checked before accessing resource account.(ª—Ëéÿÿÿÿÿ8˜Š²úÉ0
+
+AZBm5FZei9dtgbuJnejesf:FieldLevelSecurityĞ"LPermissions should be checked before accessing resource non_erp_products__c.(ÖÀÛ½üÿÿÿÿ8˜‘†·†2
+ˆ
+AZBm5FZei9dtgbuJnejgsf:AvoidSoqlWithNullInWhereÕ">Avoid using null conditions in where clause of SOQL statements(ÖÀÛ½üÿÿÿÿ8˜‘†·†2
+
+AZBm5FZei9dtgbuJnejhsf:FieldLevelSecurityÕ"LPermissions should be checked before accessing resource non_erp_products__c.(ÖÀÛ½üÿÿÿÿ8˜‘†·†2
+z
+AZBm5FZei9dtgbuJnejisf:LocalVariableCouldBeFinalÜ"4Local variable 'uniqueNames' could be declared final(ÓäÈ 8˜Š²úÉ0
+w
+AYecacEvRAiBJFfK0iUVsf:AuraEnabledWithoutCatchBlockî".@AuraEnabled should have proper error handling(Á”Ë8ˆ®˜ãù0
+v
+AZBm5FZei9dtgbuJnejlsf:LongVariableî"=Avoid excessively long variable names like procedureTrackerId(Á”Ë8ˆ®˜ãù0
+
+AZBm5FZei9dtgbuJnejnsf:LocalVariableCouldBeFinalï"9Local variable 'procedureTracker' could be declared final(¦°”¨8ˆ®˜ãù0
+‹
+AZBm5FZei9dtgbuJnejosf:FieldLevelSecurityï"LPermissions should be checked before accessing resource proceduretracker__c.(¦°”¨8ˆ®˜ãù0
+w
+AZBm5FZei9dtgbuJnejpsf:AuraEnabledWithoutCatchBlockø".@AuraEnabled should have proper error handling(¼ é8˜‘†·†2
+t
+AZBm5FZei9dtgbuJnejrsf:LocalVariableCouldBeFinalù".Local variable 'event' could be declared final(ñë†8˜‘†·†2
+w
+AZBm5FZei9dtgbuJnejssf:AuraEnabledWithoutCatchBlockƒ".@AuraEnabled should have proper error handling(¬Š½Š8˜‘†·†2
+y
+AZBm5FZei9dtgbuJnejusf:LocalVariableCouldBeFinal„".Local variable 'event' could be declared final(äšÀ¬ùÿÿÿÿ8˜‘†·†2
+X
+AZBm5FZei9dtgbuJnejvsf:CommentRequiredŠ"Header comments are Required(úËè¹8˜Š²úÉ0

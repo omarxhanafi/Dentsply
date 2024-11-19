@@ -5,44 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c97435614f83c907271393225091bad979e0b4c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/d/8dbc5bae7c061598c14fc1c5baa2dfc85a438fbf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a4dcf6d007cbadf8177460531c4d9ac6a93b03d8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a6c9654624fbee5b49d7aaf32bee06018388c87f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/6/b6ba6e98aa44f77463432606c17db19449ca2223" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/c/cc5ff8c41a9e39661dc496805d65337726dc5ef6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d5fafb01bca3825e5588848af7c95caf3a4f7af9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ed9f9b83fd6e53574607f0a6145672b209edf6f0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/6/a6c9654624fbee5b49d7aaf32bee06018388c87f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/4/a4dcf6d007cbadf8177460531c4d9ac6a93b03d8" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/Cleanup/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/Cleanup/OfflineSymbolTable.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/TeamForce_CaseHierarchy/TeamForce_CaseHierarchy.cmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/TeamForce_CaseHierarchy/TeamForce_CaseHierarchy.cmp-meta.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/TeamForce_CaseHierarchy/TeamForce_CaseHierarchyController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/AccountBriefingControllerTest.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/AccountBriefingControllerTest.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/DC_UT_EventNoticesManagement.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/DC_UT_EventNoticesManagement.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/TeamForce_CaseHierarchy.cls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/TeamForce_CaseHierarchy.cls-meta.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/TeamForce_CaseHierarchy_Test.cls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/TeamForce_CaseHierarchy_Test.cls-meta.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Test_AccountTrigger.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_AccountTrigger.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Test_ContractPB.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_ContractPB.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Test_OpportunityPB.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_OpportunityPB.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Test_OrderPB.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_OrderPB.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Test_OrderTrigger.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_OrderTrigger.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/XSBUQuestController.cls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/XSBUQuestController.cls-meta.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/XSBUQuestControllerTest.cls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/XSBUQuestControllerTest.cls-meta.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/scheduledIntegrationProgress.cls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/scheduledIntegrationProgress.cls-meta.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/scheduledIntegrationProgressTest.cls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/scheduledIntegrationProgressTest.cls-meta.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/AccountInvoiceSalesSummary__c.object" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/AccountInvoiceSalesSummary__c.object" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/XSBUQuest.page" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/XSBUQuest.page-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/UAT/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/UAT/OfflineSymbolTable.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/ProductProfilingComponent/ProductProfilingComponentHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/FakeTests.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/FakeTests.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,16 +78,22 @@
             <option name="mruEntries">
               <list>
                 <ConnectionMruEntry>
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="lastUsed" value="1732031435727" />
+                  <option name="numUsages" value="57" />
+                </ConnectionMruEntry>
+                <ConnectionMruEntry>
+                  <option name="connectionName" value="StgNov" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="lastUsed" value="1731578208741" />
+                  <option name="numUsages" value="2" />
+                </ConnectionMruEntry>
+                <ConnectionMruEntry>
                   <option name="connectionName" value="Agent" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="lastUsed" value="1731057376340" />
                   <option name="numUsages" value="4" />
-                </ConnectionMruEntry>
-                <ConnectionMruEntry>
-                  <option name="connectionName" value="Production" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1730988376179" />
-                  <option name="numUsages" value="55" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="DevAug24" />
@@ -130,12 +108,6 @@
                   <option name="numUsages" value="8" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
-                  <option name="connectionName" value="UAT" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1718117596456" />
-                  <option name="numUsages" value="472" />
-                </ConnectionMruEntry>
-                <ConnectionMruEntry>
                   <option name="connectionName" value="DevApr" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="lastUsed" value="1712577466615" />
@@ -147,6 +119,11 @@
         </option>
         <option name="connectionWorkspaceSettings">
           <map>
+            <entry key="Agent">
+              <value>
+                <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
             <entry key="ApexSuperbadge">
               <value>
                 <ConnectionWorkspaceSettings />
@@ -161,6 +138,7 @@
                       <entry key="APEXCLASS:DC_UT_EVENTNOTICESMANAGEMENT" value="1730988563908" />
                       <entry key="APEXCLASS:EVENTTRIGGERHANDLER" value="1726061036157" />
                       <entry key="APEXCLASS:EVENTTRIGGERHELPER" value="1726061036157" />
+                      <entry key="APEXCLASS:FAKETESTS" value="1731409362823" />
                       <entry key="APEXCLASS:TEST_ACCOUNTTRIGGER" value="1730985128885" />
                       <entry key="APEXCLASS:TEST_CONTRACTPB" value="1730984671790" />
                       <entry key="APEXCLASS:TEST_EVENTTRIGGER" value="1726821260844" />
@@ -18114,6 +18092,11 @@
                 </ConnectionWorkspaceSettings>
               </value>
             </entry>
+            <entry key="LWCPackage">
+              <value>
+                <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
             <entry key="Lead">
               <value>
                 <ConnectionWorkspaceSettings>
@@ -18523,6 +18506,17 @@
                 </ConnectionWorkspaceSettings>
               </value>
             </entry>
+            <entry key="StgNov">
+              <value>
+                <ConnectionWorkspaceSettings>
+                  <option name="buildSuccessDatesBySourceRootRelativePath">
+                    <map>
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1731578209000" />
+                    </map>
+                  </option>
+                </ConnectionWorkspaceSettings>
+              </value>
+            </entry>
             <entry key="SureSmile">
               <value>
                 <ConnectionWorkspaceSettings />
@@ -18556,7 +18550,7 @@
                       <entry key="APEXTRIGGER:PRODUCTPROFILINGTRIGGER" value="1708698816000" />
                       <entry key="APEXTRIGGER:PRODUCTTRIGGER" value="1706094617000" />
                       <entry key="AURADEFINITIONBUNDLE:FLOW_SUGGESTEDUSERSBASEDONBRAND" value="1667402512131" />
-                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1718107068000" />
+                      <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGCOMPONENT" value="1731533237182" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGDETAILS" value="1716899327000" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGEDIT" value="1718107018000" />
                       <entry key="AURADEFINITIONBUNDLE:PRODUCTPROFILINGHIERARCHY" value="1716899676000" />
@@ -18658,7 +18652,7 @@
                       <entry key="STATICRESOURCE:HOTICON" value="1708430728000" />
                     </map>
                   </option>
-                  <option name="lastBuildScope" value="CUSTOM" />
+                  <option name="lastBuildScope" value="CONTEXT" />
                   <option name="lastBuildViewToggles">
                     <map>
                       <entry key="DEPLOY">
@@ -19163,10 +19157,16 @@
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select id from actioncadencetracker" />
-                  <option name="connectionName" value="Agent" />
+                  <option name="body" value="select name, id from ApexPage where name = 'CallReportEventMobile'" />
+                  <option name="connectionName" value="Production" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 2" />
+                </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="select id, name from ApexClass where name ='" />
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="name" value="SOQL Query 1" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
@@ -19196,56 +19196,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Apex Offline Debugger.DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsUpdated.executor": "Debug",
-    "Apex Offline Debugger.Test_CallReportQuickActionPocController.executor": "Debug",
-    "Apex Offline Debugger.Test_ProductTrigger.executor": "Debug",
-    "Apex Unit Tests.AccountBriefingControllerTest.testGetAttentionPoints.executor": "Run",
-    "Apex Unit Tests.CallReportExtensionTest.executor": "Run",
-    "Apex Unit Tests.DC_UT_EventNoticesManagement.executor": "Run",
-    "Apex Unit Tests.DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsInserted.executor": "Run",
-    "Apex Unit Tests.DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsUpdated.executor": "Run",
-    "Apex Unit Tests.Test_AccountFlagsController.executor": "Run",
-    "Apex Unit Tests.Test_AccountTrigger.executor": "Run",
-    "Apex Unit Tests.Test_AccountTrigger.testUpdateAccountsInfo.executor": "Run",
-    "Apex Unit Tests.Test_AccountTrigger.testUpdateRecordsType.executor": "Run",
-    "Apex Unit Tests.Test_ActivityScorecardController.executor": "Run",
-    "Apex Unit Tests.Test_BatchUpdateProducts.testBatchUpdateProducts.executor": "Run",
-    "Apex Unit Tests.Test_CallReportQuickActionPocController.executor": "Run",
-    "Apex Unit Tests.Test_ContractPB.executor": "Run",
-    "Apex Unit Tests.Test_EventTrigger.executor": "Run",
-    "Apex Unit Tests.Test_EventTrigger.testCallReportEvent2.executor": "Run",
-    "Apex Unit Tests.Test_OpportunityPB.executor": "Run",
-    "Apex Unit Tests.Test_OrderPB.executor": "Run",
-    "Apex Unit Tests.Test_OrderTrigger.testGetAddressRecords.executor": "Run",
-    "Apex Unit Tests.Test_OrderTrigger.testOrderSetAccountOwner.executor": "Run",
-    "Apex Unit Tests.Test_ProductProfilingHierarchyController.executor": "Run",
-    "Apex Unit Tests.Test_ProductProfilingTrigger.executor": "Run",
-    "Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier.executor": "Run",
-    "Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor": "Run",
-    "Apex Unit Tests.Test_ProductTrigger.executor": "Debug",
-    "Apex Unit Tests.Test_WorkflowProfilingController.executor": "Run",
-    "Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling.executor": "Run",
-    "Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/ohanafi/IdeaProjects/Dentsply/src/objects",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.29852837",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Apex Offline Debugger.DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsUpdated.executor&quot;: &quot;Debug&quot;,
+    &quot;Apex Offline Debugger.Test_CallReportQuickActionPocController.executor&quot;: &quot;Debug&quot;,
+    &quot;Apex Offline Debugger.Test_ProductTrigger.executor&quot;: &quot;Debug&quot;,
+    &quot;Apex Unit Tests.AccountBriefingControllerTest.testGetAttentionPoints.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.CallReportExtensionTest.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.DC_UT_EventNoticesManagement.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsInserted.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsUpdated.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_AccountFlagsController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_AccountTrigger.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_AccountTrigger.testUpdateAccountsInfo.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_AccountTrigger.testUpdateRecordsType.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ActivityScorecardController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_BatchUpdateProducts.testBatchUpdateProducts.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_CallReportQuickActionPocController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ContractPB.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_EventTrigger.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_EventTrigger.testCallReportEvent2.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_OpportunityPB.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_OrderPB.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_OrderTrigger.testGetAddressRecords.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_OrderTrigger.testOrderSetAccountOwner.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductProfilingHierarchyController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_ProductTrigger.executor&quot;: &quot;Debug&quot;,
+    &quot;Apex Unit Tests.Test_WorkflowProfilingController.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling.executor&quot;: &quot;Run&quot;,
+    &quot;Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ohanafi/IdeaProjects/Dentsply/src/objects&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29852837&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/objects" />
@@ -19258,7 +19258,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="Cleanup" />
+      <option name="connectionName" value="UAT" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -19297,7 +19297,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="Cleanup" />
+      <option name="connectionName" value="UAT" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -19344,7 +19344,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="FINER" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="Cleanup" />
+      <option name="connectionName" value="UAT" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="ERROR" />
@@ -19391,7 +19391,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="Cleanup" />
+      <option name="connectionName" value="UAT" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -19430,7 +19430,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
       <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="Cleanup" />
+      <option name="connectionName" value="UAT" />
       <option name="connectionType" value="OAUTH" />
       <option name="contextConfiguration" value="true" />
       <option name="databaseLogLevel" value="INFO" />
@@ -19627,6 +19627,10 @@
       <workItem from="1729863928633" duration="11052000" />
       <workItem from="1730276349443" duration="6888000" />
       <workItem from="1730967669538" duration="8168000" />
+      <workItem from="1731531190447" duration="2621000" />
+      <workItem from="1731663320736" duration="246000" />
+      <workItem from="1731983205388" duration="21334000" />
+      <workItem from="1732018684421" duration="730000" />
     </task>
     <servers />
   </component>
@@ -19660,15 +19664,15 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Dentsply$Test_WorkflowProfilingController_testCreateProductProfiling.ic2" NAME="acc360 Coverage Results" MODIFIED="1722597164717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Cleanup" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_WorkflowProfilingController_testCreateProductProfiling.ic2" NAME="acc360 Coverage Results" MODIFIED="1722597164717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Agent" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ES_FreezeUserHandler_testHandleInboundEmail.ic2" NAME="Freeze Coverage Results" MODIFIED="1684228757679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_AccountFlagsController.ic2" NAME="DevSep24 Coverage Results" MODIFIED="1725884884727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevSep24" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$DC_UT_EventNoticesManagement.ic2" NAME="Cleanup Coverage Results" MODIFIED="1730988565248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Cleanup" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$DC_UT_EventNoticesManagement.ic2" NAME="Cleanup Coverage Results" MODIFIED="1730988565248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Agent" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMargins.ic2" NAME="Margin Coverage Results" MODIFIED="1677067029631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_UpdateContactsBypassDuplicate_testUpdateContact.ic2" NAME="Lead Coverage Results" MODIFIED="1675421607460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_CallReportQuickActionPocController.ic2" NAME="DevSep24 Coverage Results" MODIFIED="1724764321078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Cleanup" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_CallReportQuickActionPocController.ic2" NAME="DevSep24 Coverage Results" MODIFIED="1724764321078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Agent" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_GuidanceRendererController.ic2" NAME="Tracker Coverage Results" MODIFIED="1681118187685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ProductProfilingHierarchyController.ic2" NAME="acc360 Coverage Results" MODIFIED="1715854183266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJul24" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchUpdateProducts_testBatchUpdateProducts.ic2" NAME="acc360 Coverage Results" MODIFIED="1712663235319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJul24" CONNECTION_TYPE="OAUTH" />
