@@ -1,55 +1,0 @@
-
-o
-AZBm5L1di9dtgbuJnjdXsf:ClassWithoutTestClass".Class does not have a corresponding test class(ÏýÔŽ8˜‘†·†2
-’
-AZBm5L1di9dtgbuJnjdYsf:CyclomaticComplexity"RThe class 'ProductTriggerHelper' has a Cyclomatic Complexity of 19 (Highest = 18).(ÏýÔŽ8˜‘†·†2
-‚
-AZBm5L1di9dtgbuJnjdasf:CyclomaticComplexity"CThe method 'assignNonERPProduct' has a Cyclomatic Complexity of 18.(¸í—8˜‘†·†2
-z
-AZBm5L1di9dtgbuJnjdbsf:NPathComplexity"@The method assignNonERPProduct() has an NPath complexity of 1746(¸í—8˜‘†·†2
-|
-AZBm5L1di9dtgbuJnjdcsf:LocalVariableCouldBeFinal"7Local variable 'nonErpProducts' could be declared final(ÒÚÃÛ8˜‘†·†2
-s
-AZBm5L1ei9dtgbuJnjddsf:AvoidSoqlWithNegativeLogic"-Avoid using negative logic in soql statements(è’øÐ8˜‘†·†2
-Š
-AZBm5L1ei9dtgbuJnjdesf:FieldLevelSecurity"LPermissions should be checked before accessing resource non_erp_products__c.(è’øÐ8˜‘†·†2
-~
-AZBm5L1ei9dtgbuJnjdfsf:LongVariable"AAvoid excessively long variable names like codeToNonErpProductMap(…Ëí¬ûÿÿÿÿ8˜‘†·†2
-‰
-AZBm5L1ei9dtgbuJnjdgsf:LocalVariableCouldBeFinal"?Local variable 'codeToNonErpProductMap' could be declared final(…Ëí¬ûÿÿÿÿ8˜‘†·†2
-w
-AZBm5L1ei9dtgbuJnjdjsf:LocalVariableCouldBeFinal"2Local variable 'ruleCodes' could be declared final(üÜÎ•8˜‘†·†2
-{
-AZBm5L1ei9dtgbuJnjdlsf:LongVariable$">Avoid excessively long variable names like globalSkuMappingIds(š„ãÝÿÿÿÿÿ8˜‘†·†2
-†
-AZBm5L1ei9dtgbuJnjdmsf:LocalVariableCouldBeFinal$"<Local variable 'globalSkuMappingIds' could be declared final(š„ãÝÿÿÿÿÿ8˜‘†·†2
-{
-AZBm5L1ei9dtgbuJnjdqsf:LongVariable,">Avoid excessively long variable names like globalSkuMappingMap(ÚËÜöûÿÿÿÿ8˜‘†·†2
-„
-AZBm5L1ei9dtgbuJnjdssf:FieldLevelSecurity/"APermissions should be checked before accessing resource product2.(ªçý™ýÿÿÿÿ8˜‘†·†2
-‚
-AZBm5L1ei9dtgbuJnjdusf:NullAssignment7"CAssigning an Object to null is a code smell.  Consider refactoring.(¹«ï´ýÿÿÿÿ8˜‘†·†2
-}
-AZBm5L1ei9dtgbuJnjdwsf:LocalVariableCouldBeFinal7"3Local variable 'oldProduct' could be declared final(¹«ï´ýÿÿÿÿ8˜‘†·†2
-x
-AZBm5L1ei9dtgbuJnjdy#sf:AvoidInstantiatingObjectsInLoops=",Avoid instantiating new objects inside loops(–ëÀ§8˜‘†·†2
-x
-AZBm5L1ei9dtgbuJnjd3#sf:AvoidInstantiatingObjectsInLoopsG",Avoid instantiating new objects inside loops(–ëÀ§8˜‘†·†2
-t
-AZBm5L1ei9dtgbuJnjd5sf:LocalVariableCouldBeFinalH"/Local variable 'pgCode' could be declared final(ýÝ‚ý8˜‘†·†2
-z
-AZBm5L1ei9dtgbuJnjd6sf:LocalVariableCouldBeFinalI"5Local variable 'parentPgCode' could be declared final(ÕÛ™€8˜‘†·†2
-R
-AZBm5L1ei9dtgbuJnjd7sf:UselessParenthesesI"Useless parentheses.(ÕÛ™€8˜‘†·†2
-}
-AZBm5L1ei9dtgbuJnjd8sf:NullAssignmentJ"CAssigning an Object to null is a code smell.  Consider refactoring.(ëüÒ8˜‘†·†2
-†
-AZBm5L1ei9dtgbuJnjd-sf:IfElseDefaultCaseL"DAlways include an "else" statement at the end of "if" and "else if".(Û¿ŒÚýÿÿÿÿ8˜‘†·†2
-}
-AZBm5L1ei9dtgbuJnjeAsf:LongVariableM"@Avoid excessively long variable names like matchingNonErpProduct(úþª¦ùÿÿÿÿ8˜‘†·†2
-ˆ
-AZBm5L1ei9dtgbuJnjeBsf:LocalVariableCouldBeFinalM">Local variable 'matchingNonErpProduct' could be declared final(úþª¦ùÿÿÿÿ8˜‘†·†2
-x
-AZBm5L1ei9dtgbuJnjeDsf:LongVariableR"@Avoid excessively long variable names like matchingNonErpProduct(›†Ž×8˜‘†·†2
-ƒ
-AZBm5L1ei9dtgbuJnjeEsf:LocalVariableCouldBeFinalR">Local variable 'matchingNonErpProduct' could be declared final(›†Ž×8˜‘†·†2

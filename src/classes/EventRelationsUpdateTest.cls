@@ -5,11 +5,13 @@
 
 @isTest
 public class EventRelationsUpdateTest {
-  
-@isTest
-    
+
+    private final static String IN_PERSON_MEETING = 'In Person Meeting';
+    private final static String AFTER_SALES_FOLLOWUP = 'After Sales Follow-up';
+
+    @isTest
     static void changeStatusAcceptedTest(){
-   test.startTest();
+    test.startTest();
          Account a = new Account();
         a.Name = 'TestAccount';
         a.OneAccount_Type__c = 'Distributor';
@@ -47,11 +49,11 @@ public class EventRelationsUpdateTest {
         insert u2;
         Event childEvnt= new Event(WhatId=a.Id, Call_Report__c= cr.Id, subject='Test1', StartDateTime=System.Today()+10,
                               EndDateTime=System.Today()+20, SBU__c='Implants;Preventive',
-                             Astra_Tech_Type__c='In Person Meeting', Customer_Facing_Event__c=true);
+                             Astra_Tech_Type__c=IN_PERSON_MEETING, Customer_Facing_Event__c=true, Activity_Subtype__c = AFTER_SALES_FOLLOWUP);
         insert childEvnt;
         Event childEvnt2= new Event(WhatId=a.Id, Call_Report__c= cr.Id, subject='Test1', StartDateTime=System.Today()+10,
                               EndDateTime=System.Today()+20, SBU__c='Implants;Preventive',
-                             Astra_Tech_Type__c='In Person Meeting', Customer_Facing_Event__c=true);
+                             Astra_Tech_Type__c=IN_PERSON_MEETING, Customer_Facing_Event__c=true, Activity_Subtype__c = AFTER_SALES_FOLLOWUP);
         insert childEvnt2;
         EventRelation er=new  EventRelation(status= 'New', EventId=childEvnt.id, RelationId= u1.Id);
         insert er;
@@ -106,11 +108,11 @@ public class EventRelationsUpdateTest {
         insert u2; 
         Event Evnt = new Event(WhatId=a.Id, Call_Report__c=cr.Id, subject='Test1', StartDateTime=System.Today()+10,
                               EndDateTime=System.Today()+20, SBU__c='Implants;Preventive',
-                             Astra_Tech_Type__c='In Person Meeting', Customer_Facing_Event__c=true);
+                             Astra_Tech_Type__c=IN_PERSON_MEETING, Customer_Facing_Event__c=true,Activity_Subtype__c='After Sales Follow-up');
         insert Evnt;
         Event Evnt2 = new Event(WhatId=a.Id, Call_Report__c=cr.Id, subject='Test1', StartDateTime=System.Today()+10,
                               EndDateTime=System.Today()+20, SBU__c='Implants;Preventive',
-                             Astra_Tech_Type__c='In Person Meeting', Customer_Facing_Event__c=true);
+                             Astra_Tech_Type__c=IN_PERSON_MEETING, Customer_Facing_Event__c=true,Activity_Subtype__c='After Sales Follow-up');
         insert Evnt2;
         
      EventRelation vr=new  EventRelation(status= 'New', EventId=Evnt.id, RelationId= u1.Id );
