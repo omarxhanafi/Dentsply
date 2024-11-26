@@ -19,10 +19,8 @@ public with sharing class Test_EventTrigger {
     @testSetup
     private static void setup() {
         TestDataFactory.createBypassCustomSetting();
-        List<User> userList = TestDataFactory.createUsers(1, 'System Administrator');
-        List<User> userIntegrationList = TestDataFactory.insertIntegrationUsers(1, 'System Administrator');
-        TestDataFactory.createGlobalIntegrationSettings(userIntegrationList);
-        TestDataFactory.createEvents(1, userList.get(0).Id); 
+        List<User> userList = TestDataFactory.createUsers(1, '#System: System Administrator');
+        TestDataFactory.createEvents(1, userList.get(0).Id);
     }
 
     @isTest
@@ -58,9 +56,9 @@ public with sharing class Test_EventTrigger {
         List<Event> events = TestDataFactory.returnEvents(1, testUser.Id);
         events.get(0).WhoId = contactList.get(0).Id;
         events.get(0).Customer_Facing_Event__c = true;
-        events.get(0).Astra_Tech_Type__c = 'In Person Meeting';
-        events.get(0).Activity_Subtype__c = 'Book Appointment';
-        
+        events.get(0).Astra_Tech_Type__c='Virtual Meeting';
+        events.get(0).Activity_Subtype__c='After Sales Follow-up';
+
         Test.startTest();
         insert events;
         Test.stopTest();
@@ -69,9 +67,7 @@ public with sharing class Test_EventTrigger {
     @isTest
     private static void testManageNoticesOnEventsInserted() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        PermissionSet ps = [SELECT Id FROM PermissionSet WHERE Name = 'Lightning_Sync'];
-		insert new PermissionSetAssignment(AssigneeId = testUser.id, PermissionSetId = ps.Id);
-        
+
 		System.runAs(testUser) {
             List<Event> events = [SELECT Id, DurationInMinutes FROM Event];       
             Test.startTest();
@@ -84,8 +80,6 @@ public with sharing class Test_EventTrigger {
     @isTest
     private static void testTrackBeforeDelete() {
 		User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        PermissionSet ps = [SELECT Id FROM PermissionSet WHERE Name = 'Lightning_Sync'];
-		insert new PermissionSetAssignment(AssigneeId = testUser.id, PermissionSetId = ps.Id);
 
         System.runAs(testUser) {
             List<Event> events = TestDataFactory.createEvents(1, testUser.Id); 

@@ -39,7 +39,7 @@ public class EventRelationDetailsTest {
         insert u1;
         Event childEvnt= new Event(WhatId=a.Id, Call_Report__c= cr.Id, subject='Test1', StartDateTime=System.Today()+10,
                               EndDateTime=System.Today()+20, SBU__c='Implants;Preventive',
-                             Astra_Tech_Type__c='In Person Meeting', Customer_Facing_Event__c=true);
+                             Astra_Tech_Type__c='In Person Meeting', Customer_Facing_Event__c=true,Activity_Subtype__c='After Sales Follow-up');
         insert childEvnt;
         EventRelation er=new  EventRelation(status= 'new', EventId=childEvnt.id, RelationId= u1.Id);
         insert er;

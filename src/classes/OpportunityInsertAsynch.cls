@@ -104,7 +104,7 @@ public class OpportunityInsertAsynch implements Queueable {
             for(Campaign campaign : campaigns.values())
             {
                 if(campaign.RecordType.DeveloperName == 'Digital_Marketing_Campaign' || campaign.RecordType.DeveloperName == 'InPersonEventCampaign'
-                || campaign.RecordType.DeveloperName == 'CventCampaign')
+                        || campaign.RecordType.DeveloperName == 'CventCampaign')
                 {
                     recordTypeCheck = true;
                     categoryOppDependencyRuleCheck          = (campaign.Convert_To__c == 'Opportunity');
@@ -463,8 +463,8 @@ public class OpportunityInsertAsynch implements Queueable {
                     insertSalesLeads(memberIdWithSalesLead.values());
 
                     for (CampaignMember campaignMemberToUpdate : [  SELECT Id, VoucherCode__c, Dealer__c, Description__c, URL_Source__c, CampaignId, ContactId, SalesLead__c
-                                                                    FROM CampaignMember
-                                                                    WHERE Id IN :memberIdWithSalesLead.keySet()])
+                    FROM CampaignMember
+                    WHERE Id IN :memberIdWithSalesLead.keySet()])
                     {
 
                         campaignMemberToUpdate.SalesLead__c = memberIdWithSalesLead.get(campaignMemberToUpdate.Id).Id;
@@ -526,7 +526,7 @@ public class OpportunityInsertAsynch implements Queueable {
                             membersToUpdateTheirReasons.add(member);
                         }
                     }
-                     campaignMemberToUpdateList.addAll(membersToUpdateTheirReasons);
+                    campaignMemberToUpdateList.addAll(membersToUpdateTheirReasons);
                 }
 
 
@@ -636,7 +636,7 @@ public class OpportunityInsertAsynch implements Queueable {
     public static void insertSalesLeads(List<Field_Sales_Project_Members__c> salesLeads)
     {
         try {
-            insert salesLeads;
+            Database.insert(salesLeads,false);
         }
         catch (Exception e) {
             DebugLog.addException(e, 'CampaignMemberTriggerHelper.createOpportunities.insertSalesLeads Sales Lead not created.');
@@ -1022,18 +1022,18 @@ public class OpportunityInsertAsynch implements Queueable {
                 (
                         (
                                 campaignMember.ContactId        != null
-                                && oldMember.ContactId          != null
-                                && campaignMember.ContactId     != oldMember.ContactId
+                                        && oldMember.ContactId          != null
+                                        && campaignMember.ContactId     != oldMember.ContactId
                         )
-                        ||
-                        (
-                                isIDSIntegrationUser
-                                &&
-                                (   oldMember.VoucherCode__c    != campaignMember.VoucherCode__c
-                                    || (oldMember.Brand__c      != campaignMember.Brand__c)
-                                    || (oldMember.Dealer__c     != campaignMember.Dealer__c)
+                                ||
+                                (
+                                        isIDSIntegrationUser
+                                                &&
+                                                (   oldMember.VoucherCode__c    != campaignMember.VoucherCode__c
+                                                        || (oldMember.Brand__c      != campaignMember.Brand__c)
+                                                        || (oldMember.Dealer__c     != campaignMember.Dealer__c)
+                                                )
                                 )
-                        )
                 );
         return isIDSLogic;
     }

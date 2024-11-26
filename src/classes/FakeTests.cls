@@ -45,5 +45,6 @@ private class FakeTests {
         //erps.Save();
         
         
+        ApexPages.currentPage().getParameters().put('who_id',contact.Id);
     }
 }

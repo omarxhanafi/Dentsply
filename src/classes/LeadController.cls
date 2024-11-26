@@ -4,6 +4,7 @@ Description:   	Class for handling CRUD calls related to the Lead__c and Field_S
 History:
 23-07-2023   Houssam Adib        Sync the dealer filter with the lookup filter [TFUS-000006089]
 01-01-2024   Houssam Adib        Refactor the code and change filter logic to use DistributorCategorisation__c rather than DistributorCategories__c
+31-10-2024   Houssam Adib        Change the order of selected initiatives to order them by title [TFUS-000007049]
 ------------------------------------------------------------*/
 
 public with sharing class LeadController {
@@ -14,10 +15,11 @@ public with sharing class LeadController {
     @AuraEnabled
     public static List<Field_Sales_Project__c> getInitiatives(){
 
-        List<Field_Sales_Project__c> inits = [SELECT Id, Title__c, Category__c, Brand__c, Status__c FROM Field_Sales_Project__c WHERE (AllowUsersToAddNewLeads__c =: true AND Status__c=:'Active')];
-
+        List<Field_Sales_Project__c> inits = [  SELECT Id, Title__c, Category__c, Brand__c, Status__c
+                                                FROM Field_Sales_Project__c
+                                                WHERE (AllowUsersToAddNewLeads__c =: true AND Status__c=:'Active')
+                                                ORDER BY Title__c];
         return inits;
-
     }
 
     @AuraEnabled

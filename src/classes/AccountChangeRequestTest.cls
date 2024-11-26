@@ -7,29 +7,45 @@
  */
 @isTest
 private class AccountChangeRequestTest {
+
+    /**
+     * Test method
+     */
+    @testSetup
+    private static void setup() {
+        TestDataFactory.createBypassCustomSetting();
+        List<User> userList = TestDataFactory.createUsers(1, 'System Administrator');
+    }
+
     @isTest
-    static void getAccountDetailsMethod() {
-        Account a = new Account(name = 'Testdta', Phone = '9866763002', billingstate = 'California', billingcity = 'anah', billingcountry = 'United States', billingpostalcode = '92801', billingstreet = 'ls');
-        insert a;
+    static void getAccountDetailsMethod()
+    {
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
+        System.runAs(testUser)
+        {
+            Account a = new Account(name = 'Testdta', Phone = '9866763002', billingstate = 'California', billingcity = 'anah', billingcountry = 'United States', billingpostalcode = '92801', billingstreet = 'ls');
+            insert a;
 
-        AccountChangeRequest.getAccountDetails(a.id);
-        System.assertNotEquals(Null, a);
+            AccountChangeRequest.getAccountDetails(a.id);
+            System.assertNotEquals(Null, a);
 
-        Account_Create_Change_Request__c ac = new Account_Create_Change_Request__c(
-			Comments__c = 'Test',
-			Status__c = 'Created', 
-			CurrencyIsoCode = 'USD', 
-			Existing_Account__c = a.Id,
-			Request__c = 'Account Change Request',
-			Request_Type__c = 'Account Info Change');
-        insert ac;
-        try{
-            AccountChangeRequest.createRecord(ac);
+            Account_Create_Change_Request__c ac = new Account_Create_Change_Request__c(
+                    Comments__c = 'Test',
+                    AccountCountry__c = 'BE',
+                    Status__c = 'Created',
+                    CurrencyIsoCode = 'USD',
+                    Existing_Account__c = a.Id,
+                    Request__c = 'Account Change Request',
+                    Request_Type__c = 'Account Info Change');
+            insert ac;
+            try{
+                AccountChangeRequest.createRecord(ac);
+            }
+            catch(Exception e){
+                System.debug('Script-thrown exception : '+e.getMessage());
+            }
+            System.assertNotEquals(Null, ac);
         }
-        catch(Exception e){
-            System.debug('Script-thrown exception : '+e.getMessage());
-        }
-        System.assertNotEquals(Null, ac);
     }
      @isTest
     static void getselectOptionsTest() {
