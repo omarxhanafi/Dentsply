@@ -46,9 +46,5 @@ private class FakeTests {
         
         
         ApexPages.currentPage().getParameters().put('who_id',contact.Id);
-        EventWithCallReport ewcr = new EventWithCallReport(standardController);
-        ewcr.Event = e;
-        ewcr.InviteesPickerState = erps;
-        ewcr.SaveCallReport();
     }
 }

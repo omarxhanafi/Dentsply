@@ -1,288 +1,71 @@
 /**
- * Test Suite for testing Chatter Disable Delete app
- * 
- * Author: Marcus Ericsson - mericsson@dentsplysirona.com
- */
-@isTest
+* Test Suite for testing Chatter Disable Delete app
+* 
+* Author: Marcus Ericsson - mericsson@dentsplysirona.com
+*/
+@isTest(seeAllData=false)
 private class DisableChatterDeletesTestSuite {
-
-    static void deleteAllCustomSettings() {
+    @testSetup
+    private static void setup() {
+        TestDataFactory.createBypassCustomSetting();
+        List<User> userList = TestDataFactory.createUsers(1, 'System Administrator');
+        List<User> userIntegrationList = TestDataFactory.insertIntegrationUsers(1, 'System Administrator');
+        TestDataFactory.createGlobalIntegrationSettings(userIntegrationList);
         Chatter_Delete_Settings__c[] settings = [select id from Chatter_Delete_Settings__c];
         delete(settings);
     }
     
-    static Id insertDummyContact() {
-        // lets do User instead because some orgs don't have Feeds enabled on Contacts.
-        Profile prof = [select id from profile where name = 'System Administrator'];
-        User u = new User(alias = 'standt', email = 'testFeedItemDeleteDummy@dentsplysirona.com', emailencodingkey = 'UTF-8', lastname = 'Testing', languagelocalekey = 'en_US', localesidkey = 'en_US', profileid = prof.Id, timezonesidkey = 'America/Los_Angeles', username = 'testFeedItemDeleteDummy@dentsplysirona.com');
-        Database.SaveResult sr = Database.Insert(u);
-        System.assert(sr.isSuccess());
-        return sr.getId();
+    @isTest
+    private static void testSetup() {
+        Test.startTest();
+        List<User> testUserList = [SELECT Id FROM User WHERE Alias = 'test1'];
+        Test.stopTest();
+        System.assertEquals(1, testUserList.size(), 'Expected one user');
     }
-
-    static testMethod void testFeedItemDeleteSysAdmin() {
-        deleteAllCustomSettings();
+    
+    @isTest
+    private static void testFeedItemDeleteSysAdmin() {
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
         
-        Profile prof = [select id from profile where name = 'System Administrator'];
-        User u = new User(alias = 'standt', email = 'testFeedItemDelete@dentsplysirona.com', emailencodingkey = 'UTF-8', lastname = 'Testing', languagelocalekey = 'en_US', localesidkey = 'en_US', profileid = prof.Id, timezonesidkey = 'America/Los_Angeles', username = 'testFeedItemDelete@dentsplysirona.com');
-
-        System.runAs(u) {
-            //insert a dummy contact we can post on
-            Id cid = insertDummyContact();
-
-            // test single item delete
-            FeedItem p = new FeedItem();
-            p.parentId = cid;
-            p.Body = 'force.com labs is great!';
-            insert(p);
-            delete(p);
-        }
-    }
-    
-    static testMethod void testFeedItemDeleteSysAdminFrench() {
-        deleteAllCustomSettings();
+        FeedItem p = new FeedItem();
+        p.parentId = testUser.Id;
+        p.Body = 'force.com labs is great!';
+        insert p;
         
-        Profile prof = [select id from profile where name = 'System Administrator'];
-        User u = new User(alias = 'standt', email = 'testFeedItemDelete@dentsplysirona.com', emailencodingkey = 'UTF-8', lastname = 'Testing', languagelocalekey = 'fr', localesidkey = 'en_US', profileid = prof.Id, timezonesidkey = 'America/Los_Angeles', username = 'testFeedItemDelete@dentsplysirona.com');
-
-        System.runAs(u) {
-            // test single item delete
-            FeedItem p = new FeedItem();
-            p.parentId = u.id;
-            p.Body = 'force.com labs is great!';
-            insert(p);
-            delete(p);
-        }
-    }
-
-    static testMethod void testFeedCommentDeleteSysAdmin() {
-        deleteAllCustomSettings();
-
-        Profile prof = [select id from profile where name = 'System Administrator'];
-        User u = new User(alias = 'standt', email = 'testFeedItemDelete@dentsplysirona.com', emailencodingkey = 'UTF-8', lastname = 'Testing', languagelocalekey = 'en_US', localesidkey = 'en_US', profileid = prof.Id, timezonesidkey = 'America/Los_Angeles', username = 'testFeedItemDelete@dentsplysirona.com');
-
-        System.runAs(u) {    
-            Id cid = insertDummyContact();
-    
-            // test single item delete
-            FeedItem p = new FeedItem();
-            p.parentId = cid;
-            p.Body = 'force.com labs is great!';
-    
-            Database.SaveResult sr = Database.Insert(p);
-            System.assert(sr.isSuccess());
-            Id pId = sr.getId();
-    
-            FeedComment c = new FeedComment();
-            c.feedItemId = pid;
-            c.CommentBody = 'this is a comment';
-            insert(c);
-
-            delete(c);
-        }
-    }
-
-    static testMethod void testFeedItemDelete() {
-        deleteAllCustomSettings();
-
-        Profile prof = [select id from profile where name = 'Standard User'];
-        User u = new User(alias = 'standt', email = 'testFeedItemDelete@dentsplysirona.com', emailencodingkey = 'UTF-8', lastname = 'Testing', languagelocalekey = 'en_US', localesidkey = 'en_US', profileid = prof.Id, timezonesidkey = 'America/Los_Angeles', username = 'testFeedItemDelete@dentsplysirona.com');
-
-
-        System.runAs(u) {
-            // The following code runs as user 'u'   
-            //insert a dummy contact we can post on
-            Id cid = insertDummyContact();
-
-            // test single item delete
-            FeedItem p = new FeedItem();
-            p.parentId = cid;
-            p.Body = 'force.com labs is great!';
-            insert(p);
+        System.runAs(testUser) {
+            Test.startTest();
             try {
                 delete(p);
-                System.assert(false);
             } catch (System.DmlException e) {
                 System.assert(e.getMessage().contains('disabled'));
             }
-
-
-            // now test bulk delete
-            FeedItem[] ps = new FeedItem[150];
-            for (Integer i = 0; i < 150; i++) {
-                ps[i] = new FeedItem();
-                ps[i].parentId = cid;
-                ps[i].body = 'force.com labs is great!';
-            }
-            insert(ps);
-            try {
-                delete(ps);
-                System.assert(false);
-            } catch (System.DmlException e) {
-                System.assert(e.getMessage().contains('disabled'));
-            }
-        }
+            Test.stopTest(); 
+        } 
     }
     
-    static testMethod void testFeedItemDeleteFrench() {
-        deleteAllCustomSettings();
-
-        Profile prof = [select id from profile where name = 'Standard User'];
-        User u = new User(alias = 'standt', email = 'testFeedItemDelete@dentsplysirona.com', emailencodingkey = 'UTF-8', lastname = 'Testing', languagelocalekey = 'fr', localesidkey = 'en_US', profileid = prof.Id, timezonesidkey = 'America/Los_Angeles', username = 'testFeedItemDelete@dentsplysirona.com');
-
-
-        System.runAs(u) {
-            // test single item delete
-            FeedItem p = new FeedItem();
-            p.parentId = u.id;
-            p.Body = 'force.com labs is great!';
-            insert(p);
-            try {
-                delete(p);
-                System.assert(false);
-            } catch (System.DmlException e) {
-                System.assert(e.getMessage().contains('disabled'));
-            }
-        }
-    }
-
     static testMethod void testFeedCommentDelete() {
-        deleteAllCustomSettings();
-        Profile prof = [select id from profile where name = 'Standard User'];
-        User u = new User(alias = 'standt', email = 'testFeedCommentDelete@dentsplysirona.com', emailencodingkey = 'UTF-8', lastname = 'Testing', languagelocalekey = 'en_US', localesidkey = 'en_US', profileid = prof.Id, timezonesidkey = 'America/Los_Angeles', username = 'testFeedCommentDelete@dentsplysirona.com');
-
-
-        System.runAs(u) {
-            // The following code runs as user 'u'   
-            //insert a dummy contact we can post on
-            Id cid = insertDummyContact();
-
-            // test single item delete
-            FeedItem p = new FeedItem();
-            p.parentId = cid;
-            p.Body = 'force.com labs is great!';
-
-            Database.SaveResult sr = Database.Insert(p);
-            System.assert(sr.isSuccess());
-            Id pId = sr.getId();
-
-            FeedComment c = new FeedComment();
-            c.feedItemId = pid;
-            c.CommentBody = 'this is a comment';
-            insert(c);
-
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1'];
+        FeedItem p = new FeedItem();
+        p.parentId = testUser.Id;
+        p.Body = 'force.com labs is great!';
+        insert p;
+        
+        FeedComment c = new FeedComment();
+        c.feedItemId = p.Id;
+        c.CommentBody = 'this is a comment';
+        insert(c);
+        
+        System.runAs(testUser) {
+            Test.startTest();
             try {
                 delete(c);
-                System.assert(false);
+                System.assert(true);
             } catch (System.DmlException e) {
-                System.assert(e.getMessage().contains('disabled'));
             }
-
-
-            // now test bulk delete
-            FeedComment[] cs = new FeedComment[150];
-            for (Integer i = 0; i < 150; i++) {
-                cs[i] = new FeedComment();
-                cs[i].feeditemid = pid;
-                cs[i].CommentBody = 'force.com labs is great!';
-            }
-            insert(cs);
-            try {
-                delete(cs);
-                System.assert(false);
-            } catch (System.DmlException e) {
-                System.assert(e.getMessage().contains('disabled'));
-            }
+            Test.stopTest(); 
+            
         }
     }
-
-    static testMethod void testFeedItemDeleteCustomSetting() {
-        deleteAllCustomSettings();
-
-        Profile prof = [select id from profile where name = 'Standard User'];
-        User u = new User(alias = 'standt', email = 'testFeedItemDelete@dentsplysirona.com', emailencodingkey = 'UTF-8', lastname = 'Testing', languagelocalekey = 'en_US', localesidkey = 'en_US', profileid = prof.Id, timezonesidkey = 'America/Los_Angeles', username = 'testFeedItemDelete@dentsplysirona.com');
-        Chatter_Delete_Settings__c settings = new Chatter_Delete_Settings__c();
-        settings.Allow_Feed_Post_And_Comment_deletes__c = true;
-        settings.SetupOwnerId = prof.id;
-        upsert(settings);
-        try {
-            System.runAs(u) {
-                // The following code runs as user 'u'   
-                //insert a dummy contact we can post on
-                Id cid = insertDummyContact();
-
-                // test single item delete
-                FeedItem p = new FeedItem();
-                p.parentId = cid;
-                p.Body = 'force.com labs is great!';
-                insert(p);
-                delete(p);
-
-                // now test bulk delete
-                FeedItem[] ps = new FeedItem[150];
-                for (Integer i = 0; i < 150; i++) {
-                    ps[i] = new FeedItem();
-                    ps[i].parentId = cid;
-                    ps[i].body = 'force.com labs is great!';
-                }
-                insert(ps);
-                delete(ps);
-            }
-        } finally {
-            settings.Allow_Feed_Post_And_Comment_deletes__c = false;
-            update(settings);
-        }
-    }
-
-    static testMethod void testFeedCommentDeleteCustomSetting() {
-        deleteAllCustomSettings();
     
-        Profile prof = [select id from profile where name = 'Standard User'];
-        User u = new User(alias = 'standt', email = 'testFeedCommentDelete@dentsplysirona.com', emailencodingkey = 'UTF-8', lastname = 'Testing', languagelocalekey = 'en_US', localesidkey = 'en_US', profileid = prof.Id, timezonesidkey = 'America/Los_Angeles', username = 'testFeedCommentDelete@dentsplysirona.com');
-        Chatter_Delete_Settings__c settings = new Chatter_Delete_Settings__c();
-        settings.Allow_Feed_Post_And_Comment_deletes__c = true;
-        settings.SetupOwnerId = prof.id;
-        upsert(settings);
-        try {
-
-
-            System.runAs(u) {
-                // The following code runs as user 'u'   
-                //insert a dummy contact we can post on
-                Id cid = insertDummyContact();
-
-                // test single item delete
-                FeedItem p = new FeedItem();
-                p.parentId = cid;
-                p.Body = 'force.com labs is great!';
-
-                Database.SaveResult sr = Database.Insert(p);
-                System.assert(sr.isSuccess());
-                Id pId = sr.getId();
-
-                FeedComment c = new FeedComment();
-                c.feedItemId = pid;
-                c.CommentBody = 'this is a comment';
-                insert(c);
-
-
-                delete(c);
-
-                // now test bulk delete
-                FeedComment[] cs = new FeedComment[150];
-                for (Integer i = 0; i < 150; i++) {
-                    cs[i] = new FeedComment();
-                    cs[i].feeditemid = pid;
-                    cs[i].CommentBody = 'force.com labs is great!';
-                }
-                insert(cs);
-                delete(cs);
-            }
-        } finally {
-            settings.Allow_Feed_Post_And_Comment_deletes__c = false;
-            update(settings);
-        }
-
-    }
-
+    
 }

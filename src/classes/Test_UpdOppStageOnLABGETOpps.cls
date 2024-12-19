@@ -19,8 +19,8 @@ private class Test_UpdOppStageOnLABGETOpps
         
         Account testAcc = [select id from Account where id=:testAccount.Id];
         
-        Opportunity testOpp = [select id, AWO_Customer__c, StageName, RecordTypeId, Account.Name from Opportunity where id =:AtlOpp.Id];
-        System.debug('2:: Opportunity AWO Customer?' + testOpp.AWO_Customer__c+ testOpp.RecordTypeId + testOpp.StageName + testOpp.Id);
+        Opportunity testOpp = [select id, StageName, RecordTypeId, Account.Name from Opportunity where id =:AtlOpp.Id]; //AWO_Customer__c
+        System.debug('2:: Opportunity AWO Customer?' + testOpp.RecordTypeId + testOpp.StageName + testOpp.Id); //+ testOpp.AWO_Customer__c
         
         test.startTest();
         
@@ -30,8 +30,8 @@ private class Test_UpdOppStageOnLABGETOpps
         test.stopTest();
         
         // Retrieve the opportunity & account.
-        testOpp = [select id, AWO_Customer__c, StageName, RecordTypeId, Account.Name from Opportunity where id =:AtlOpp.Id];
-        System.debug('3:: Opportunity AWO Customer?' + testOpp.AWO_Customer__c+ testOpp.RecordTypeId + testOpp.StageName + testOpp.Id);
+        testOpp = [select id, StageName, RecordTypeId, Account.Name from Opportunity where id =:AtlOpp.Id]; //AWO_Customer__c
+        System.debug('3:: Opportunity AWO Customer?' + testOpp.RecordTypeId + testOpp.StageName + testOpp.Id); //+ testOpp.AWO_Customer__c
         
         testAcc = [select id from Account where id=:testAccount.Id];
     }

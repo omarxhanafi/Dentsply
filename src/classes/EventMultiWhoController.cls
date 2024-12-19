@@ -1,5 +1,10 @@
 public with sharing class EventMultiWhoController {
     private final static Integer MAX_RESULTS = 5;
+    private final static String CONTACT_ICON = 'standard:contact';
+    private final static String CONTACT_API_NAME = 'contact';
+    private final static String SALES_LEAD_API_NAME = 'Field_Sales_Project_Members__c';
+    private final static String OPPORTUNITY_API_NAME = 'Opportunity';
+    private final static String ICON = 'icon';
 
     @AuraEnabled(Cacheable=true)
     public static List<LookupSearchResult> search(String searchTerm, List<String> selectedIds) {
@@ -19,16 +24,16 @@ public with sharing class EventMultiWhoController {
             ];
     
             // Extract Contacts & convert them into LookupSearchResult
-            String contactIcon = 'standard:contact';
+            String contactIcon = CONTACT_ICON;
             Contact[] contacts = ((List<Contact>) searchResults[0]);
             for (Contact contact : contacts) {
                 results.add(new LookupSearchResult(
                         contact.Id
-                        , 'Contact'
+                        , CONTACT_API_NAME
                         , contactIcon
                         , contact.Name
                         , contact.Account.Name/* 'Contact • ' + contact.Email */
-                        , 'icon'
+                        , ICON
                 ));
             }
         } catch (Exception e) {
@@ -52,11 +57,11 @@ public with sharing class EventMultiWhoController {
             for (Contact contactRecord : ContactList) {
                 LookupSearchResult searchResult = new LookupSearchResult(
                     contactRecord.Id
-                    , 'Contact'
-                    , 'standard:contact'
+                    , CONTACT_API_NAME
+                    , CONTACT_ICON
                     , contactRecord.Name
                     , contactRecord.Account.Name /* 'Contact • ' + contactRecord.Email */
-                    , 'icon'
+                    , ICON
                 );
                 results.add(searchResult);
             }
@@ -67,6 +72,80 @@ public with sharing class EventMultiWhoController {
         return results;
     }
 
+    /**
+     * Make get contacts supports multiple object types
+     * @author hadib@salesforce.com | 02-12-2024
+     * @param sObjectName Object Type
+     * @param recordId The object recordId
+     *
+     * @return List<LookupSearchResult> - Search result
+     */
+    @AuraEnabled(Cacheable=true)
+    public static List<LookupSearchResult> getContact(String sObjectName, Id recordId) {
+        List<LookupSearchResult> results = new List<LookupSearchResult>();
+
+        try {
+            if (sObjectName == CONTACT_API_NAME) {
+                Contact contactRecord = [
+                        SELECT Id, Name, Email, Account.Name
+                        FROM Contact
+                        WHERE Id = :recordId
+                        LIMIT 1
+                ];
+                results.add(new LookupSearchResult(
+                        contactRecord.Id,
+                        CONTACT_API_NAME,
+                        CONTACT_ICON,
+                        contactRecord.Name,
+                        contactRecord.Account.Name,
+                        ICON
+                ));
+            } else if (sObjectName == SALES_LEAD_API_NAME) {
+                Field_Sales_Project_Members__c fieldSales = [
+                        SELECT Contact__c, Contact__r.Name, Contact__r.Account.Name
+                        FROM Field_Sales_Project_Members__c
+                        WHERE Id = :recordId
+                        LIMIT 1
+                ];
+                if (fieldSales.Contact__c != null) {
+                    results.add(new LookupSearchResult(
+                            fieldSales.Contact__c,
+                            CONTACT_API_NAME,
+                            CONTACT_ICON,
+                            fieldSales.Contact__r.Name,
+                            fieldSales.Contact__r.Account.Name,
+                            ICON
+                    ));
+                }
+            } else if (sObjectName == OPPORTUNITY_API_NAME) {
+                Opportunity opp = [
+                        SELECT Primary_Contact__c, Primary_Contact__r.Name, Primary_Contact__r.Account.Name
+                        FROM Opportunity
+                        WHERE Id = :recordId
+                        LIMIT 1
+                ];
+                if (opp.Primary_Contact__c != null) {
+                    results.add(new LookupSearchResult(
+                            opp.Primary_Contact__c,
+                            CONTACT_API_NAME,
+                            CONTACT_ICON,
+                            opp.Primary_Contact__r.Name,
+                            opp.Primary_Contact__r.Account.Name,
+                            ICON
+                    ));
+                }
+            } else {
+                throw new AuraHandledException('Unsupported sObjectName: ' + sObjectName);
+            }
+        } catch (Exception e) {
+            DebugLog.addException(e, 'getContacts');
+            throw new AuraHandledException('Error retrieving contacts: ' + e.getMessage());
+        }
+
+        return results;
+    }
+
+
     @AuraEnabled(Cacheable=true)
     public static List<LookupSearchResult> getEventWhoIds(Id eventId) {
         List<LookupSearchResult> results = new List<LookupSearchResult>();
@@ -74,17 +153,17 @@ public with sharing class EventMultiWhoController {
             List<EventRelation> eventRelationList = new List<EventRelation>([
                 SELECT RelationId, Relation.Name, Relation.Email, Account.Name, Event.WhoId 
                 FROM EventRelation 
-                WHERE EventId=:eventId AND isParent=true AND isWhat=false AND Relation.Type='Contact'
+                WHERE EventId=:eventId AND isParent=true AND isWhat=false AND Relation.Type=:CONTACT_API_NAME
             ]); 
             
             for (EventRelation eventRelation : eventRelationList) {
                 LookupSearchResult searchResult = new LookupSearchResult(
                     eventRelation.RelationId
-                    , 'Contact'
-                    , 'standard:contact'
+                    , CONTACT_API_NAME
+                    , CONTACT_ICON
                     , eventRelation.Relation.Name
                     , eventRelation.Account.Name /* 'Contact • ' + eventRelation.Relation.Email */
-                    , 'icon'
+                    , ICON
                 );
                 if (eventRelation.Event.WhoId.equals(eventRelation.RelationId) && !results.isEmpty()) {
                     results.add(0, searchResult);

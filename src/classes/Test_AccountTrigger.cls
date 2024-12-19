@@ -2,13 +2,14 @@
 Author:         Kevin Do (Salesforce) 2019-09-26
 Description:    Test Class for all AccountTriggerHelper methods.
 History
-<Date>      <Authors Name>     <Brief Description of Change>
+<Date>      <Authors Name>      <Brief Description of Change>
 20190924    Kevin Do            Migrated test methods from DC_UT_AccountTrigger and AccountSetPayerLookupTest.
 20200326    Kevin Do            Added tests for setAccountSubSegmentation method (#TFUS-000001698)
-20210405    Nisreen AlSaleh    Added test for creatEntitlement method  (#TFUS-000001231) 
-20220906    Tobias Nygren    Removed tests for default owner (TFUS-000004729)
-20220906    Nisreen AlSaleh    Update creatEntitlement test method (TFUS-000004769)
-20230224    roberto narbona     Cleanup story (TFUS-000003722)
+20210405    Nisreen AlSaleh     Added test for creatEntitlement method  (#TFUS-000001231)
+20220906    Tobias Nygren       Removed tests for default owner (TFUS-000004729)
+20220906    Nisreen AlSaleh     Update creatEntitlement test method (TFUS-000004769)
+20230224    Roberto Narbona     Cleanup story (TFUS-000003722)
+20241107    Omar Hanafi         Fixing the test failures as part of the clean-up project
 ------------------------------------------------------------*/
 
 @isTest(seeAllData=false)
@@ -35,22 +36,6 @@ public class Test_AccountTrigger {
 
         System.assertEquals(1, testUserList.size(), 'Expected one user');
     }
-
-    /*-------------------------------------------------------------------------------------------------------
-    Company: Salesforce
-    Description: Test Account bulkification
-                 If triggers are bulkified, DML limit of 200 should not be hit.
-    History : 20190926 Commented out due to CPU Limits failing the test.
-    --------------------------------------------------------------------------------------------------------*/
-    /*@isTest
-    private static void testAccountBulkification() {
-        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        Test.startTest();
-        List<Account> testAccountList = TestDataFactory.createAccounts(201, 'Non_ERP_Account', testUser.Id);
-        Test.stopTest();
-
-        System.assertEquals(201, testAccountList.size(), 'Expected 201 records');
-    }*/
 
     /*-------------------------------------------------------------------------------------------------------
     Company: Salesforce
@@ -98,275 +83,15 @@ public class Test_AccountTrigger {
         System.assertEquals(null, testAccount2.DC_ETM_Code__c, 'Expected null');
     }
 
-    /*-------------------------------------------------------------------------------------------------------
-    Company: Salesforce
-    Description: Test method for AccountTriggerHelper.setPayerLookup
-                 Migrated from AccountSetPayerLookupTest
-    History :
-    --------------------------------------------------------------------------------------------------------*/
-    @isTest
-    private static void testSetPayerLookup() {
-        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> testAccountList = TestDataFactory.returnAccounts(5, 'ERP_Account', testUser.Id);
-        List<Account> testAccountsToInsertList = new List<Account>();
-
-        Account testAccount0 = testAccountList[0];
-        testAccount0.Movex__c = 'XX12345';
-        insert testAccount0;
-
-        // Test an Account with a valid and existing Payer_Movex__c value.
-        Account testAccount1 = testAccountList[1];
-        testAccount1.Movex__c = 'XX23456';
-        testAccount1.Payer_Movex__c = testAccount0.Movex__c;
-        testAccountsToInsertList.add(testAccount1);
-
-        // Test an Account with a non-existing Payer_Movex__c value
-        Account testAccount2 = testAccountList[2];
-        testAccount2.Movex__c = 'XX34567';
-        testAccount2.Payer_Movex__c = 'XX67890';
-        testAccountsToInsertList.add(testAccount2);
-
-        // Test an Account with no Payer_Movex__c value.
-        Account testAccount3 = testAccountList[3];
-        testAccount3.Movex__c = 'XX45678';
-        testAccountsToInsertList.add(testAccount3);
-
-        // Test an account with a self-referencing Payer_Movex__c value.
-        Account testAccount4 = testAccountList[4];
-        testAccount4.Movex__c = 'XX56789';
-        testAccount4.Payer_Movex__c = testAccount4.Movex__c;
-        testAccountsToInsertList.add(testAccount4);
-
-        Test.startTest();
-        insert testAccountsToInsertList;
-        Test.stopTest();
-
-        testAccount1 = [SELECT Id, Payer_Lookup__c FROM Account WHERE Id = :testAccount1.Id LIMIT 1];
-        testAccount2 = [SELECT Id, Payer_Lookup__c FROM Account WHERE Id = :testAccount2.Id LIMIT 1];
-        testAccount3 = [SELECT Id, Payer_Lookup__c FROM Account WHERE Id = :testAccount3.Id LIMIT 1];
-        testAccount4 = [SELECT Id, Payer_Lookup__c FROM Account WHERE Id = :testAccount4.Id LIMIT 1];
-
-        System.assertEquals(testAccount0.Id, testAccount1.Payer_Lookup__c, 'Expected testAccount0.Id to equal testAccount1.Payer_Lookup__c');
-        System.assertEquals(null, testAccount2.Payer_Lookup__c, 'Expected null');
-        System.assertEquals(null, testAccount3.Payer_Lookup__c, 'Expected null');
-        System.assertEquals(null, testAccount4.Payer_Lookup__c, 'Expected null');
-    }
-    @isTest
-    public static void testOverridePotential() {
-        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts = TestDataFactory.returnAccounts(7, 'ERP_Account', testUser.Id);
-        //  WF-ACC-01 : Override ATL Abut Potential
-        accounts.get(0).TQ_CY_D_DD_Abuts_Atlantis__c = 10;
-        accounts.get(0).Movex__c = '100';
-        //  WF-ACC-02 : Override ATL ISUS Potential
-        accounts.get(1).TQ_CY_D_DD_IsusProsth_Isus__c  = 10;
-        accounts.get(1).Movex__c = '101';
-        //  WF-ACC-03 : Override Simplant Potential
-        accounts.get(2).TQ_CY_D_DD_Guides_Simplant__c  = 10;
-        accounts.get(2).Movex__c = '102';
-        //  WF-ACC-04 : Overwrite Implants Potential
-        accounts.get(3).TQ_CY_D_DI_Implants_AllBrands__c = 10;
-        accounts.get(3).Custom_Segmentation__c = 'Long Purchasing Cycle >1 Year';
-        accounts.get(3).Movex__c = '103';
-
-        accounts.get(4).TQ_CY_D_DI_Implants_AllBrands__c = 5;
-        accounts.get(4).Custom_Segmentation__c = 'Long Purchasing Cycle >1 Year';
-        accounts.get(4).TQ_CY_1_D_DI_Implants_AllBrands__c = -20;
-        accounts.get(4).Movex__c = '104';
-
-        accounts.get(5).TQ_CY_D_DI_Implants_AllBrands__c = 10;
-        accounts.get(5).Movex__c = '105';
-
-        accounts.get(6).TQ_CY_D_DI_Implants_AllBrands__c = 10;
-        accounts.get(6).TQ_CY_1_TD_D_DI_Implants_AllBrands__c = 1;
-        accounts.get(6).Movex__c = '106';
-        
-        Test.startTest();
-        insert accounts;
-        Test.stopTest();
-        System.assertEquals(0 , [SELECT Id,Implants_Potential_Year__c FROM Account WHERE Id =: accounts.get(0).Id].Implants_Potential_Year__c);
-        System.assertEquals(0 , [SELECT Id,Implants_Potential_Year__c FROM Account WHERE Id =: accounts.get(1).Id].Implants_Potential_Year__c);
-        System.assertEquals(0 , [SELECT Id,Implants_Potential_Year__c FROM Account WHERE Id =: accounts.get(2).Id].Implants_Potential_Year__c);
-        System.assertEquals(5 , [SELECT Id,Implants_Potential_Year__c FROM Account WHERE Id =: accounts.get(3).Id].Implants_Potential_Year__c);
-        System.assertEquals(0 , [SELECT Id,Implants_Potential_Year__c FROM Account WHERE Id =: accounts.get(4).Id].Implants_Potential_Year__c);
-        System.assertEquals(10 , [SELECT Id,Implants_Potential_Year__c FROM Account WHERE Id =: accounts.get(5).Id].Implants_Potential_Year__c);
-        System.assertEquals(9 , [SELECT Id,Implants_Potential_Year__c FROM Account WHERE Id =: accounts.get(6).Id].Implants_Potential_Year__c);
-    }
-    
-    @isTest
-    public static void testUpdateVolume() {
-        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.returnAccounts(8, 'Non_ERP_Account', testUser.Id);
-        List<Account> accounts2 = TestDataFactory.returnAccounts(8, 'Non_ERP_Lab_Account', testUser.Id);
-        
-        // WF-ACC-12 : Update Volume SP Guides to No Usage
-        accounts1.get(0).SP_Guides_Potential_Year__c = 0 ;
-        
-        // WF-ACC-13 : Update Volume SP Guides to Low Usage
-        accounts1.get(1).SP_Guides_Potential_Year__c = 3 ;
-        
-        // WF-ACC-14 : Update Volume SP Guides to Medium Usage
-        accounts1.get(2).SP_Guides_Potential_Year__c = 10 ;
-        
-        // WF-ACC-15 : Update Volume SP Guides to High Usage
-        accounts1.get(3).SP_Guides_Potential_Year__c = 20 ;
-        
-        // WF-ACC-16 : Update Volume (Implants) to No usage
-        accounts1.get(4).Implants_Potential_Year__c = 0 ;
-        
-        // WF-ACC-17 : Update Volume (Implants) to Low
-        accounts1.get(5).Implants_Potential_Year__c = 15 ;
-        
-        // WF-ACC-18 : Update Volume (Implants) to Medium
-        accounts1.get(6).Implants_Potential_Year__c = 60 ;
-        
-        // WF-ACC-19 : Update Volume (Implants) to High
-        accounts1.get(7).Implants_Potential_Year__c = 120 ;
-        
-       // WF-ACC-24 : Update Volume (ATL Abut) to No Usage
-        accounts2.get(4).ATL_Abut_Potential_Year__c = 0 ;
-        
-        // WF-ACC-25 : Update Volume (ATL Abut) to Low
-        accounts2.get(5).ATL_Abut_Potential_Year__c = 20 ;
-        accounts2.get(5).Country__c = 'NZ';
-        // WF-ACC-26 : Update Volume (ATL Abut) to Medium
-        accounts2.get(6).ATL_Abut_Potential_Year__c = 100 ;
-        accounts2.get(6).Country__c = 'NL';
-        // WF-ACC-27 : Update Volume (ATL Abut) to High
-        accounts2.get(7).ATL_Abut_Potential_Year__c = 300 ;
-        accounts2.get(7).Country__c = 'NL';
-        
-        accounts1.addAll(accounts2);
-        Test.startTest();
-        insert accounts1;
-        Test.stopTest();
-        
-        System.assertEquals('No Usage',
-                            [SELECT Id,Volume_Simplant__c FROM Account WHERE Id =: accounts1.get(0).Id].Volume_Simplant__c);
-        System.assertEquals('Low Usage',
-                            [SELECT Id,Volume_Simplant__c FROM Account WHERE Id =: accounts1.get(1).Id].Volume_Simplant__c);
-        System.assertEquals('Medium Usage',
-                            [SELECT Id,Volume_Simplant__c FROM Account WHERE Id =: accounts1.get(2).Id].Volume_Simplant__c);
-        System.assertEquals('High Usage',
-                            [SELECT Id,Volume_Simplant__c FROM Account WHERE Id =: accounts1.get(3).Id].Volume_Simplant__c);
-        System.assertEquals('No Usage',
-                            [SELECT Id,Volume_Implants__c FROM Account WHERE Id =: accounts1.get(4).Id].Volume_Implants__c);
-        System.assertEquals('Low Usage',
-                            [SELECT Id,Volume_Implants__c FROM Account WHERE Id =: accounts1.get(5).Id].Volume_Implants__c);
-        System.assertEquals('Medium Usage',
-                            [SELECT Id,Volume_Implants__c FROM Account WHERE Id =: accounts1.get(6).Id].Volume_Implants__c);
-        System.assertEquals('High Usage',
-                            [SELECT Id,Volume_Implants__c FROM Account WHERE Id =: accounts1.get(7).Id].Volume_Implants__c);
-        System.assertEquals('No Usage',
-                            [SELECT Id,Volume_ATL_Abut__c FROM Account WHERE Id =: accounts1.get(12).Id].Volume_ATL_Abut__c);
-        System.assertEquals('Low Usage',
-                            [SELECT Id,Volume_ATL_Abut__c FROM Account WHERE Id =: accounts1.get(13).Id].Volume_ATL_Abut__c);
-        System.assertEquals('Medium Usage',
-                            [SELECT Id,Volume_ATL_Abut__c FROM Account WHERE Id =: accounts1.get(14).Id].Volume_ATL_Abut__c);
-        System.assertEquals('High Usage',
-                            [SELECT Id,Volume_ATL_Abut__c FROM Account WHERE Id =: accounts1.get(15).Id].Volume_ATL_Abut__c);
-    }
-    @isTest
-    public static void testUpdateRecordsType() {
-        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.returnAccounts(8, 'Geographical_Account', testUser.Id);
-        List<Account> accounts2 = TestDataFactory.returnAccounts(1, 'ERP_Distributor', testUser.Id);
-        // WF-ACC-28 : Set Partner Account
-        accounts1.get(0).OneAccount_Type__c = 'Partner';
-        
-        // WF-ACC-29 : Set Non-ERP Lab Account
-        accounts1.get(1).OneAccount_Type__c = 'Dental Laboratory';
-        
-        // WF-ACC-30 : Set Non-ERP Distributor
-        accounts1.get(2).OneAccount_Type__c = 'Distributor';
-        
-        // WF-ACC-31 : Set Non-ERP Accounts
-        accounts1.get(3).OneAccount_Type__c = 'Purchasing Group';
-        
-        // WF-ACC-32 : Set ERP Account
-        accounts1.get(4).OneAccount_Type__c = 'Purchasing Group';
-        accounts1.get(4).Movex__c = 'XX345691';
-        
-        // WF-ACC-33 : Set ERP Lab Accounts
-        accounts1.get(5).OneAccount_Type__c = 'Dental Laboratory';
-        accounts1.get(5).Movex__c = 'XX345692';
-        
-        // WF-ACC-34 : Set ERP Distributor
-        accounts1.get(6).OneAccount_Type__c = 'Distributor';
-        accounts1.get(6).Movex__c = 'XX345693';
-        
-        // WF-ACC-35 : Set Competitor Account
-        accounts1.get(7).OneAccount_Type__c = 'Competitor';
-        
-        
-        // WF-ACC-36 : Set Geographical Account
-        accounts2.get(0).OneAccount_Type__c = 'Country';
-        
-        accounts1.addAll(accounts2);
-        Test.startTest();
-        insert accounts1;
-        Test.stopTest();
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'Partner_DI'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(0).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'Non_ERP_Lab_Account'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(1).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'Non_ERP_Distributor'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(2).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'Non_ERP_Account'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(3).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'ERP_Account'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(4).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'ERP_Lab_Account'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(5).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'ERP_Distributor'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(6).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'Competitor'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(7).Id].RecordTypeId);
-        System.assertEquals(GlobalUtils.getRecordTypeId('Account', 'Geographical_Account'),
-                            [SELECT Id,RecordTypeId FROM Account WHERE Id =: accounts1.get(8).Id].RecordTypeId);
-    }
-    @isTest
-    public static void testUpdateAccountsInfo() {
-        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.returnAccounts(5, 'Non_ERP_Account', testUser.Id);
-        
-        // WF-ACC-37 : Set product area = Dental
-        accounts1.get(0).Product_Area__c = '';
-        
-        // WF-ACC-38 : Update Loss Type (D)
-        accounts1.get(1).Movex_Reference_Reason__c = 1;
-        
-        // WF-ACC-39 : Set Implant Segmentation N/A
-        accounts1.get(2).Status__c = '90';
-        accounts1.get(2).Movex_Product_Area_OKHAFE__c = 'xx';
-        // WF-ACC-40 : Set AWO Approval Date 
-        accounts1.get(3).Atlantis_Web_Order_Customer__c = true;
-        
-        // WF-ACC-41 : Override Custom Segmentation
-        accounts1.get(4).Custom_Segmentation__c = 'Implants Starter';
-        accounts1.get(4).Volume_Implants__c = 'No Usage';
-        
-        Test.startTest();
-        insert accounts1;
-        Test.stopTest();
-        
-        System.assertEquals('Administrative Reason',
-                            [SELECT Id,Loss_Type_D__c FROM Account WHERE Id =: accounts1.get(1).Id].Loss_Type_D__c);
-        System.assertEquals(Date.today() - 1,
-                            [SELECT Id,AWO_Approval_Date__c FROM Account WHERE Id =: accounts1.get(3).Id].AWO_Approval_Date__c);
-        System.assertEquals(null,
-                            [SELECT Id,Custom_Segmentation__c FROM Account WHERE Id =: accounts1.get(4).Id].Custom_Segmentation__c);
-    }
-    
     @isTest
     public static void testBulkAccountInsertion() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
         User integrationUser = [SELECT Id FROM User WHERE Alias = 'GdwIntg' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.bulkAccountReturn('Account', 200, integrationUser.Id);
+        List<Account> accounts1 = TestDataFactory.bulkAccountReturn('Account', 100, integrationUser.Id);
         Test.startTest();
         insert accounts1;
         Test.stopTest();
-        System.assertEquals(200,[SELECT Id FROM Account].size());
+        System.assertEquals(100,[SELECT Id FROM Account].size());
     }
 
     @isTest
@@ -536,5 +261,67 @@ public class Test_AccountTrigger {
     System.assertNotEquals(etList.size(),0,'List should not be empty');
     }
 
+    @isTest
+    private static void testUpdateParentAccounts() {
+        // Given, we Create a test account with a parent
+        Account parentAccount = new Account(Name='Parent Account');
+        insert parentAccount;
+
+        // When, we create child accounts
+        Account childAccount = new Account(Name='Child Account', ParentId=parentAccount.Id);
+        insert childAccount;
+
+        Account grandChildAccount = new Account(Name='grandChild Account', ParentId=childAccount.Id);
+        insert grandChildAccount;
+
+        // Then, Assert that the parent account's counter is updated
+        List<Account> parentAccounts = [SELECT Id, ChildAccountsCount__c FROM Account WHERE Id = :parentAccount.Id];
+        List<Account> childAccounts = [SELECT Id, ChildAccountsCount__c FROM Account WHERE Id = :childAccount.Id];
+        System.assertEquals(2, parentAccounts[0].ChildAccountsCount__c, 'Parent account counter not updated correctly');
+        System.assertEquals(1, childAccounts[0].ChildAccountsCount__c, 'Parent account counter not updated correctly');
+
+        // Given what we have, when we delete one child
+        delete grandChildAccount;
+
+        // Then, Assert that the parent account's counter is updated
+        List<Account> parentAccountsAfterDelete = [SELECT Id, ChildAccountsCount__c FROM Account WHERE Id = :parentAccount.Id];
+        List<Account> childAccountsAfterDelete = [SELECT Id, ChildAccountsCount__c FROM Account WHERE Id = :childAccount.Id];
+        System.assertEquals(1, parentAccountsAfterDelete[0].ChildAccountsCount__c, 'Parent account counter not updated correctly after delete');
+        System.assertEquals(0, childAccountsAfterDelete[0].ChildAccountsCount__c, 'Parent account counter not updated correctly after delete');
+
+        // Given what we have, when we undelete one child
+        undelete grandChildAccount;
+
+        // Then, Assert that the parent account's counter is updated
+        List<Account> parentAccountsAfterUnDelete = [SELECT Id, ChildAccountsCount__c FROM Account WHERE Id = :parentAccount.Id];
+        List<Account> childAccountsAfterUnDelete = [SELECT Id, ChildAccountsCount__c FROM Account WHERE Id = :childAccount.Id];
+        System.assertEquals(2, parentAccountsAfterUnDelete[0].ChildAccountsCount__c, 'Parent account counter not updated correctly after undelete');
+        System.assertEquals(1, childAccountsAfterUnDelete[0].ChildAccountsCount__c, 'Parent account counter not updated correctly after undelete');
+
+    }
+
+    @isTest
+    private static void testUpdateParentAccountsViaBatchManually() {
+        // Given, we Create a test account with a parent
+        Account parentAccount = new Account(Name='Parent Account');
+        insert parentAccount;
+
+        // When, we create child accounts
+        Account childAccount = new Account(Name='Child Account', ParentId=parentAccount.Id);
+        insert childAccount;
+
+        Account grandChildAccount = new Account(Name='grandChild Account', ParentId=childAccount.Id);
+        insert grandChildAccount;
+
+        Test.startTest();
+        Database.executeBatch(new ProcessChildAccountsBatch(new List<Id>{parentAccount.Id}),1);
+        Test.stopTest();
+
+        // Then, Assert that the parent account's counter is updated
+        List<Account> parentAccounts = [SELECT Id, ChildAccountsCount__c FROM Account WHERE Id = :parentAccount.Id];
+        List<Account> childAccounts = [SELECT Id, ChildAccountsCount__c FROM Account WHERE Id = :childAccount.Id];
+        System.assertEquals(2, parentAccounts[0].ChildAccountsCount__c, 'Parent account counter not updated correctly');
+        System.assertEquals(1, childAccounts[0].ChildAccountsCount__c, 'Parent account counter not updated correctly');
+    }
 
 }

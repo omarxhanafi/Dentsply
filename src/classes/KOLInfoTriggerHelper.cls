@@ -42,7 +42,11 @@ public with sharing class KOLInfoTriggerHelper {
     Map<Id, Contact> contactMap = new Map<Id, Contact>([SELECT Id, FirstName, LastName FROM Contact WHERE Id IN: expertContactIds]);
         
     for(Expert__c exp:expertlist){
-        if(exp.Contact__c != null){
+        
+        if(exp.NameEnglish__c != null){
+            exp.Name = exp.NameEnglish__c + ' - KOL info';
+        }
+        else if(exp.Contact__c != null){
             Contact c = contactMap.get(exp.Contact__c);
             exp.Name = c.FirstName + ' ' + c.LastName + ' - KOL info';
         }

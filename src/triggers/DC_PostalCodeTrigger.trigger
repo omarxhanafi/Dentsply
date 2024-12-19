@@ -1,4 +1,5 @@
 //Author: Sergey Legostaev (slegostaev@mycervello.com) (6/26/2017)
+//Comment to test deployment
 trigger DC_PostalCodeTrigger on Postal_Codes__c (before update) {
     
     system.debug('DC_PostalCodeTrigger: start trigger');

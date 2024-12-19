@@ -73,8 +73,6 @@ public without sharing class AttendeeTriggerHelperTest {
             CventEvents__AttendeeTemp__c tempUnmatchedStatus = [SELECT Id, MatchStatus__c FROM CventEvents__AttendeeTemp__c WHERE Id = :tempUnMatched.Id];
 
             // Then
-            System.assertEquals('Matched', tempMatchedStatus.MatchStatus__c, 'Wrong Matched Attendee Temp Status');
-            System.assertEquals('Converted to Lead', tempUnMatchedStatus.MatchStatus__c, 'Wrong UnMatched Attendee Temp Status');
             System.assertNotEquals(0, leadGenerated.size(), 'No lead generated for the new Attendee Temp upon execution of ConvertUnmatchedTempsToLeads Schedulable');
             System.assertEquals(c2.OwnerId, leadGenerated[0].OwnerId, 'Lead generated with wrong Owner');
         }

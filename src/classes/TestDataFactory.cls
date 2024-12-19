@@ -1475,6 +1475,37 @@ History :
     }
 
     /**
+     * Return an instanced Sales lead Record
+     * @param accountId Account
+     * @param category Category
+     * @param brand Brand
+     *
+     * @return Account
+     */
+    public static Field_Sales_Project_Members__c returnSalesLead(Id accountId, String category, String brand)
+    {
+        Field_Sales_Project_Members__c salesLead = new Field_Sales_Project_Members__c();
+        salesLead.Account__c = accountId;
+        salesLead.Category__c = category;
+        salesLead.Brand__c = brand;
+
+        return salesLead;
+    }
+
+    public static Field_Sales_Project_Members__c createSalesLead(Id accountId, String category, String brand, Boolean isInserted)
+    {
+        Field_Sales_Project_Members__c salesLead = returnSalesLead(accountId,category,brand);
+
+        if(isInserted)
+        {
+            insert salesLead;
+        }
+
+        return salesLead;
+    }
+
+
+    /**
      * Return an instanced Attendee Record
      * @param contact       Attendee's contact
      * @param event         Attendee's event
@@ -1517,12 +1548,12 @@ History :
     }
 
     /**
-     * Assign Cvent Permission Sets to the current user before executing tests
+     * Assign Permission Set to the current user before executing tests
      */
-    public static void assignCventPermissionSet(Id userId)
+    public static void assignPermissionSet(Id userId, String permissionSetName)
     {
         // Query for the permission set ID
-        List<PermissionSet> ps2 = [SELECT Id FROM PermissionSet WHERE Name = 'Global_Campaigns_CVENT_Campaigns'];
+        List<PermissionSet> ps2 = [SELECT Id FROM PermissionSet WHERE Name = :permissionSetName];
 
         if (!ps2.isEmpty())
         {
@@ -1537,11 +1568,11 @@ History :
                 insert psa2;
             }
         }else {
-            System.assert(false,'Global_Campaigns_CVENT_Campaigns Permission set is missing in the environment');
+            System.assert(false,permissionSetName + ' Permission set is missing in the environment');
         }
 
         List<PermissionSetAssignment> existingPsa2Res = [SELECT Id FROM PermissionSetAssignment WHERE AssigneeId = :userId AND PermissionSetId = :ps2[0].Id];
-        System.assertEquals(1,existingPsa2Res.size(),'Global_Campaigns_CVENT_Campaigns Permission set is not assigned');
+        System.assertEquals(1,existingPsa2Res.size(), permissionSetName + ' Permission set is not assigned');
     }
 
 }

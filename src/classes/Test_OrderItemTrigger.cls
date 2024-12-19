@@ -91,8 +91,9 @@ public class Test_OrderItemTrigger {
             insert orderItems;
             update orderItems;
             Test.stopTest();
-            OrderItem orderItem = [SELECT Id, Value_of_Samples_for_Sales_Rep__c, Quantity, UnitPrice FROM OrderItem LIMIT 1];
+            OrderItem orderItem = [SELECT Id, Value_of_Samples_for_Sales_Rep__c, Quantity, UnitPrice, Offer_Code_Applied_Number__c FROM OrderItem LIMIT 1];
             System.assertEquals(true, orderItem.Value_of_Samples_for_Sales_Rep__c == (orderItem.Quantity * orderItem.UnitPrice));
+            System.assertEquals(0, orderItem.Offer_Code_Applied_Number__c );
         }
     }
     @isTest
@@ -103,7 +104,7 @@ public class Test_OrderItemTrigger {
             List<Product2> products = TestDataFactory.createProducts(1);
             List<PricebookEntry> pricebookEntries = TestDataFactory.createPricebookEntries(1, pricebooks, products);
             List<Account> accounts = TestDataFactory.createAccounts(1, 'Non_ERP_Account', testUser.Id);
-            List<Contract> contracts = TestDataFactory.returnContracts(1, 'Pricing_contract', testUser.Id, accounts);
+            List<Contract> contracts = TestDataFactory.returnContracts(1, 'Purchasing_Contract_Turnover', testUser.Id, accounts);
             contracts.get(0).Revenue_forecast__c = 10000;
             contracts.get(0).Sales_Correction__c = true;
             contracts.get(0).Discount_End_year__c = 15;

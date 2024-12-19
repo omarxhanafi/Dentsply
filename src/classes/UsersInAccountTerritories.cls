@@ -289,12 +289,20 @@ public with sharing class UsersInAccountTerritories {
             if (String.isNotBlank(categoryInput) && String.isNotBlank(brandInput))
             {
                 Boolean isOrdered = false;
+                Account currentAccount;
+                // The account is required to find the Lead Opp Settings for its country
+                List<Account> accountQuery = [SELECT Id, Country__c FROM Account WHERE Id = :accountId];
+                if(!accountQuery.isEmpty()) {
+                    currentAccount = accountQuery[0];
+                } else {
+                    return suggestedUsers;
+                }
 
                 // Retrieve all Territories (Account+Dealer's ones)
                 Map<String, List<ObjectTerritory2Association>> allAccountAndDealerTerritories = getAccountAndDealerTerritories(accountId, dealerId);
 
                 // Step 3 - Retrieve the leadOpp Settings that let us know which object will be used to get the obj territories (Dealer or Account)
-                Account currentAccount = [SELECT Id, Country__c FROM Account WHERE Id = :accountId];
+
                 LeadOpportunitySetting__mdt leadOppSettings = getLeadOppSettingsByCountryAndCategoryAndBrand(currentAccount?.Country__c, categoryInput, brandInput);
 
                 // We retrieved by (category,Account Country). Then we will filter by (brand), and we return one record.
@@ -358,8 +366,12 @@ public with sharing class UsersInAccountTerritories {
         List<UserTerritory2Association> preferredUsers = new List<UserTerritory2Association>();
         List<UserTerritory2Association> restOfUsers = new List<UserTerritory2Association>();
 
-        String userRoleInSettings = leadOppSettings.UserRoles__c;
-        List<String> rolesList = userRoleInSettings.split(';');
+        String userRoleInSettings = leadOppSettings?.UserRoles__c;
+        List<String> rolesList = new List<String>();
+
+        if (userRoleInSettings != null) {
+            rolesList.addAll(userRoleInSettings.split(';'));
+        }
 
         for(UserTerritory2Association user : suggestedUsers)
         {

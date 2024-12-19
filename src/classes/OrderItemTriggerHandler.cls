@@ -17,13 +17,17 @@ public class OrderItemTriggerHandler extends TriggerHandler {
     }
     protected override void beforeInsert() {
         OrderItemTriggerHelper.set100PercentForFOC(newOrderItemList);
+        OrderItemTriggerHelper.setFloorPrice(newOrderItemList);
         OrderItemTriggerHelper.totalAmountOfSamplesAndFreeProducts(newOrderItemList);
         OrderItemTriggerHelper.orderProductEvaluation(newOrderItemList);
+        OrderItemTriggerHelper.setParentKitProduct(newOrderItemList);
     }
     protected override void beforeUpdate() {
         OrderItemTriggerHelper.set100PercentForFOC(newOrderItemList);
+        OrderItemTriggerHelper.setFloorPrice(newOrderItemList);
         OrderItemTriggerHelper.totalAmountOfSamplesAndFreeProducts(newOrderItemList);
         OrderItemTriggerHelper.orderProductEvaluation(newOrderItemList);
+        OrderItemTriggerHelper.setParentKitProduct(newOrderItemList);
     }
     protected override void afterInsert() {
         OrderItemTriggerHelper.setDiscountAllowedforTurkey(newOrderItemList);

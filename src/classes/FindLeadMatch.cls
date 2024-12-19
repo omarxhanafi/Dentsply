@@ -558,9 +558,9 @@ public with sharing class FindLeadMatch {
     public static List<leadMatchResult> getRelatedContacts(String leadId, String accountId){
 
 
-        Lead lead = [SELECT Id, Name, FirstName, LastName, PostalCode, Country, Email FROM Lead WHERE Id =: leadId];
+        Lead lead = [SELECT Id, Name, FirstName, LastName, PostalCode, Country, Email, Phone FROM Lead WHERE Id =: leadId];
         List<Contact> contacts = new List<Contact>();
-        contacts = [SELECT Id, FirstName, LastName, Email, Full_Name__c FROM Contact WHERE AccountId =: accountId];
+        contacts = [SELECT Id, FirstName, LastName, Email, Full_Name__c, Phone FROM Contact WHERE AccountId =: accountId];
 
 
         List<AccountContactRelation> acrList = [SELECT Id, ContactId, AccountId, Contact.FirstName, Contact.LastName, Contact.Full_Name__c, Contact.Email, Contact.Phone FROM AccountContactRelation WHERE AccountId =: accountId AND IsDirect = false AND IsActive = true];

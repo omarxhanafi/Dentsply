@@ -16,6 +16,7 @@ History:
 2022-08-25      Miguel  Coimbra     TFUS-000004715
 2022-12-05      Roberto Narbona     IDS logic introduced.
 2023-03-01      Houssam ADIB        Refactored The Trigger
+2023-11-22      Richard Trum        Removed the method setInternationSpeaker (TFUS-6215)
 ----------------------------------------------------------------------------------------*/
 public class CampaignMemberTriggerHelper {
 
@@ -38,32 +39,77 @@ public class CampaignMemberTriggerHelper {
 
         if (Test.isRunningTest() || settings.CampMgmtCampaignMemberTriggerIsEnabled__c)
         {
-            Set<Id> contactIdList = new Set<Id>();
-            CampaignMember member;
-            for(Integer i=0, j= newCampaignMembers.size(); i < j; i++)
+            Set<Id> contactIdList = getContactIds(newCampaignMembers);
+            setAccountOnCampaignMembers(contactIdList, newCampaignMembers);
+        }
+    }
+
+    /**
+     * Sets the custom account field from the contact or the account if its a person account member
+     * @param contactIdList List of campaign members contact ids
+     * @param newCampaignMembers List of new campaign members inserted
+     */
+    public static void setAccountOnCampaignMembers(Set<Id> contactIdList, List<CampaignMember> newCampaignMembers)
+    {
+        CampaignMember member;
+        Map<Id, Contact> contactMap = new Map<Id, Contact>([SELECT Id, AccountId FROM Contact WHERE Id IN :contactIdList]);
+
+        for (Integer i = 0, j = newCampaignMembers.size(); i < j; i++)
+        {
+            member = newCampaignMembers[i];
+
+            String accountId = getPersonAccountId(member);
+
+            // 1- Set Account for (Contact) Campaign Members
+            if (member.ContactId != null)
             {
-                member = newCampaignMembers[i];
-                if(member.ContactId != null)
-                {
-                    contactIdList.add(member.ContactId);
+
+                Contact contact = contactMap.get(member.ContactId);
+                if (contact?.AccountId != null) {
+                    member.Account__c = contact.AccountId;
                 }
             }
-
-            if(!contactIdList.isEmpty())
+            // 2- Set Account for (Person Account) Campaign Members
+            else if(String.isNotBlank(accountId))
             {
-                Map<Id, Contact> contactMap = new Map<Id, Contact>([SELECT Id, AccountId FROM Contact WHERE Id IN :contactIdList]);
-
-                for(Integer i=0, j= newCampaignMembers.size(); i < j; i++)
-                {
-                    member = newCampaignMembers[i];
-                    if(member.ContactId != null)
-                    {
-                        Contact c = contactMap.get(member.ContactId);
-                        member.Account__c = c.AccountId;
-                    }
-                }
+                member.Account__c = accountId;
             }
         }
+    }
+
+    /**
+     * The sole method to retrieve the AccountId field is by serializing the object. Attempting to access the field value through the usual means results in an error,
+     * specifically: "Variable does not exist: AccountId." This issue persists even though the class is running in system mode.
+     * @param member New Campaign Member
+     *
+     * @return String - Account Id
+     */
+    public static String getPersonAccountId(CampaignMember member)
+    {
+        String memberJson = JSON.serialize(member);
+        Map<String, Object> memberMap = (Map<String, Object>) JSON.deserializeUntyped(memberJson);
+        String accountId = (String) memberMap.get('AccountId');
+
+        return accountId;
+    }
+
+    /**
+     * Extracts the list of contact ids of a list of campaign members
+     * @param newCampaignMembers List of new Campaign Members
+     *
+     * @return Set<Id> - Set of members contact Ids
+     */
+    public static Set<Id> getContactIds(List<CampaignMember> newCampaignMembers)
+    {
+        Set<Id> contactIdList = new Set<Id>();
+        CampaignMember member;
+        for (Integer i = 0, j = newCampaignMembers.size(); i < j; i++) {
+            member = newCampaignMembers[i];
+            if (member.ContactId != null) {
+                contactIdList.add(member.ContactId);
+            }
+        }
+        return contactIdList;
     }
 
     /**
@@ -127,36 +173,6 @@ public class CampaignMemberTriggerHelper {
                         member.VAT__c = member.Campaign.VAT__c;
                     }
                 }
-            }
-        }
-    }
-
-    /**
-     * Method migrated from  Workflows
-     * WF-CAMM-03 : 'Set international speaker field' (Created on 12/10/2015)
-     *
-     * @param newCampaignMembers  New Campaign members
-     */
-    public static void setInternationalSpeaker(List<CampaignMember> newCampaignMembers)
-    {
-        List<Id> contactIds = new List<Id> ();
-
-        CampaignMember member;
-        for(Integer i=0, j= newCampaignMembers.size(); i < j; i++)
-        {
-            member = newCampaignMembers[i];
-            contactIds.add(member.ContactId);
-        }
-
-        Map<Id,Contact> contacts = new Map<Id,Contact> ([SELECT Id, International_Speaker__c FROM  Contact WHERE Id IN :contactIds]);
-
-        for(Integer i=0, j= newCampaignMembers.size(); i < j; i++)
-        {
-            member = newCampaignMembers[i];
-            // Set international speaker
-            if(member.ContactId != null && contacts.get(member.ContactId).International_Speaker__c)
-            {
-                member.International_Speaker__c = true;
             }
         }
     }
@@ -365,7 +381,7 @@ public class CampaignMemberTriggerHelper {
      * @param oldMembers    The Map of the members with old values
      * @param overrideHasResponded      Override has responded value
      */
-    public static void createOpportunities(List<CampaignMember> newMembers, Map<Id, CampaignMember> oldMembers, Boolean overrideHasResponded)
+    public static void convertMemberToSalesLeadOrOpportunity(List<CampaignMember> newMembers, Map<Id, CampaignMember> oldMembers, Boolean overrideHasResponded)
     {
         OpportunityInsertAsynch.enqueueJob(newMembers,oldMembers,overrideHasResponded);
     }

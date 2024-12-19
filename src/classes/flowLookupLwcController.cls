@@ -5,6 +5,7 @@
  * History
  * 2021-06-23   Richard Trum (richard.trum@glimt.se)     Create New Class
  * 2022-01-01   Houssam ADIB (hadib@salesforce.com)      Add Support to Account search back - Refactor the class - Comment the class
+ * 2022-01-01   Houssam ADIB (hadib@salesforce.com)      Add prepopulate method TFUS-000006660
  */
 public with sharing class flowLookupLwcController {
 
@@ -84,6 +85,26 @@ public with sharing class flowLookupLwcController {
     }
 
     /**
+     * Helps in pre-populating the contact lookup in New Sales Lead Flow.
+     * @param contactId The default Contact ID in the context of LWC
+     * @author Houssam ADIB (hadib@salesforce.com)
+     *
+     * @return LookupSearchResult - Search Result
+     */
+    @AuraEnabled
+    public static LookupSearchResult prePopulateContact(String contactId)
+    {
+        LookupSearchResult result;
+        Contact defaultContactValue = [SELECT Id, Name, FirstName, LastName, Email, Phone FROM Contact WHERE Id=:contactId LIMIT 1];
+        if(defaultContactValue != null)
+        {
+            result = new LookupSearchResult(defaultContactValue.Id, 'Contact',
+                    STANDARD_CONTACT_ICON, defaultContactValue.Name, 'Contact • ' + defaultContactValue.Name);
+        }
+        return result;
+    }
+
+    /**
      * Searches for accounts that match the given search term and returns the results as a list of LookupSearchResult objects.
      * The search results are filtered to exclude any accounts with IDs in the given list of IDs to exclude.
      * @author          Richard Trum (richard.trum@glimt.se)
@@ -143,7 +164,7 @@ public with sharing class flowLookupLwcController {
 
         List<Contact> recentRecords = new List<Contact>();
 
-        if(recordId.left(3) == '003')
+        if(recordId != null && recordId.left(3) == '003')
         {
             recentRecords = [
                     SELECT Id, Name, FirstName, LastName
@@ -159,7 +180,6 @@ public with sharing class flowLookupLwcController {
                     WHERE AccountId =: accountId
             ];
         }
-
         // Convert recent records into LookupSearchResult
         for (Contact recentRecord : recentRecords)
         {

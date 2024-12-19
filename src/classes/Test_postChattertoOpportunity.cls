@@ -3,24 +3,24 @@ Author: 		unknown ?
 Description:   	
 History
 <Date>      <Authors Name>     <Brief Description of Change>
-12092019	Miguel				Added Custom Bypass CS Data data creation 
+12092019	Miguel				Added Custom Bypass CS Data data creation
+20230725	Roberto				Fixing DML error after new flow on users was introduced
 ------------------------------------------------------------*/
 @IsTest(SeeAllData=true) 
 private class Test_postChattertoOpportunity{
     
-     static testMethod void testPostChatter(){
+    static testMethod void testPostChatter(){
         // setup() methods cannot be created because this test class is annotated with @IsTest(SeeAllData=true)as it's covering a Chatter post 
-		// thus added methods in the testMethod itself 
-        TestDataFactory.createBypassCustomSetting();
-        List<User> userList = TestDataFactory.createUsers(1, 'System Administrator'); 
-        TestDataFactory.createGlobalIntegrationSettings(userList);
-        TestDataFactory.createDefaultOrgLevelBypassPB();
-        TestDataFactory.createDefaultOrgLevelBypassPB();
-         
-         Account acc = new Account(Name='Test Acc');
-         insert acc;
-        RecordType recTyp= [SELECT Id, Name, DeveloperName, SobjectType FROM RecordType WHERE RecordType.DeveloperName = 'Implant_GET_AP'];
-
+        // thus added methods in the testMethod itself 
+        
+        //We query Support user because it will rarely change and cause
+        //we cannot create users without having DML mixim error
+        
+        
+        Account acc = new Account(Name='Test Acc');
+        insert acc;
+        RecordType recTyp= [SELECT Id, Name, DeveloperName, SobjectType FROM RecordType WHERE RecordType.DeveloperName = 'Lightning_Pipeline_Opportunity'];
+        
         Opportunity opp= new Opportunity(
             Name='Test Opp',
             StageName='In Progress', 
@@ -29,17 +29,12 @@ private class Test_postChattertoOpportunity{
             CloseDate=System.today(),
             AccountID=acc.Id);
         insert opp;
-        Profile p = [SELECT Id FROM Profile WHERE Name='Lightning Sales Rep']; 
-        User usr = new User(Alias = 'lngSlUsr', Email='lngSalesRepUsr@dentsplysirona.com', 
-            EmailEncodingKey='UTF-8', LastName='Testing', LanguageLocaleKey='en_US', 
-            LocaleSidKey='en_US', ProfileId = p.Id, 
-            TimeZoneSidKey='America/Los_Angeles', UserName='lngSalesRepUsr@tstdnsply.com');
-        insert usr;
-        
+        User usr = [SELECT Id FROM user WHERE name = 'Support' LIMIT 1];
         OpportunityTeamMember oppTeam = new OpportunityTeamMember(OpportunityId=opp.Id,UserId=usr.Id,TeamMemberRole='Account Manager');
         insert oppTeam;
         List<id> oppTeamId = new List<id>();
         oppTeamId.add(oppTeam.Id);
+        
         postChattertoOpportunity.postChatter(oppTeamId);
     }
 }

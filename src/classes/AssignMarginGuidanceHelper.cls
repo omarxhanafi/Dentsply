@@ -22,13 +22,15 @@ public with sharing class AssignMarginGuidanceHelper {
          */
     public static void calculateMargin(Id orderId) {
         // Get the order and its related line items
+        system.debug('k0');
         Order order = [
-                SELECT Id, Account.DC_ETM_Code__c, Account.Country__c, AccountId, Pricebook2.MarginGuidanceCalculation__c, (SELECT Id, Product2Id, Quantity, ListPrice, TotalPrice, SalesPrice__c, MarginGuidance__c FROM OrderItems)
+                SELECT Id, Account.DC_ETM_Code__c, Account.Country__c, AccountId, Pricebook2.MarginGuidanceCalculation__c, (SELECT Id, Product2Id, Quantity, ListPrice, TotalPrice, SalesPrice__c, MarginGuidance__c, PricebookEntry.FloorPrice__c FROM OrderItems)
                 FROM Order
                 WHERE Id = :orderId
         ];
 
         if (!order?.Pricebook2?.MarginGuidanceCalculation__c && !order?.OrderItems.isEmpty()) {
+            system.debug('k1');
             // SKIP if Pricebook2.MarginGuidanceCalculation__c = false or no order items
             return;
         }
@@ -157,6 +159,11 @@ public with sharing class AssignMarginGuidanceHelper {
 
             eachOrderItem.TotalCost__c = eachMarginGuidance.Cost__c * eachOrderItem.Quantity;
             eachOrderItem.Cost__c = eachMarginGuidance.Cost__c;
+            /*if(! String.isBlank(String.Valueof(eachOrderItem.PricebookEntry.FloorPrice__c))){
+            	eachOrderItem.TotalFloorPrice__c = eachOrderItem.PricebookEntry.FloorPrice__c * eachOrderItem.Quantity;
+            	eachOrderItem.FloorPrice__c = eachOrderItem.PricebookEntry.FloorPrice__c;
+            	eachOrderItem.TotalFloorPriceDeviation__c = (eachOrderItem.SalesPrice__c - eachOrderItem.PricebookEntry.FloorPrice__c) * eachOrderItem.Quantity;
+            }*/
 
             // Associate margin guidance to the order item
             eachOrderItem.MarginGuidance__c = eachMarginGuidance.Id;

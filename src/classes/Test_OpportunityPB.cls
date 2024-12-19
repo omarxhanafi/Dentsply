@@ -1,4 +1,4 @@
-/*------------------------------------------------------------
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------
 Author: 		Ahmed LOUDRASSI (Salesforce) 2019-10-21
 Description:   	Test Class for the Opportunity Process Builder.
 History
@@ -6,12 +6,16 @@ History
 20210906    kdoruibin           Updated testLightningPipelineOpportunityNamingConvention to assert the default naming
 20230326    Roberto Narbona     TFUS-000003734
 20230503    Richard Trum        Commented out code related to old Process Builder steps/nodes as well as old Record Types (TFUS-5578)
-
-------------------------------------------------------------*/
+20230908    Richard Trum        Added test classes for both methods in the OpportunityTriggerHelper class as well as flowOpportunityTeamMember class
+20141107    Omar Hanafi         Fixing the test failures as part of the clean-up project
+--------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @isTest(seeAllData=false)
 public class Test_OpportunityPB {
-	/*-------------------------------------------------------------------------------------------------------
+
+    private final static String CIM_RT = 'CIM_Account';
+
+    /*-------------------------------------------------------------------------------------------------------
     Company: Salesforce
     Description: Setup one user for the test class
     History :
@@ -34,7 +38,7 @@ public class Test_OpportunityPB {
     @isTest
     public static void testSetOpportunityUserCountry() {
         User testUser = [SELECT Id, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, CIM_RT, testUser.Id);
         List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
         for(Opportunity opportunity : opportunities) {
             opportunity.AccountId = accounts1[0].Id;
@@ -75,13 +79,13 @@ public class Test_OpportunityPB {
             insert opportunities;
         }
         Test.stopTest();
-        System.assertEquals('Implant GROW & KEEP AP - '+ accounts1[0].Name + ' -  Implants', 
+        System.assertEquals('Implant GROW & KEEP AP - '+ accounts1[0].Name + ' -  Implants',
                             [SELECT Id, Name  FROM Opportunity LIMIT 1].Name);
     }*/
     @isTest
     public static void testLightningPipelineOpportunityNamingConvention () {
         User testUser = [SELECT Id, Name, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, CIM_RT, testUser.Id);
         List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
 
         String categoryString = 'Implants';
@@ -106,12 +110,12 @@ public class Test_OpportunityPB {
         Test.stopTest();
 
         List<Object> namingParameters = new List<Object>{
-            spacingString
-            , categoryString
-            , brandString
-            , typeString
-            , closingDate
-            , testUser.Name
+                spacingString
+                , categoryString
+                , brandString
+                , typeString
+                , closingDate
+                , testUser.Name
         };
 
         String nameTemplate = '{1}{0}{2}{0}{3}{0}{4}{0}{5}';
@@ -132,7 +136,7 @@ public class Test_OpportunityPB {
             insert opportunities;
         }
         Test.stopTest();
-        System.assertEquals('Account Plan - '+ accounts1[0].Name, 
+        System.assertEquals('Account Plan - '+ accounts1[0].Name,
                             [SELECT Id, Name  FROM Opportunity LIMIT 1].Name);
     }*/
     /*@isTest
@@ -149,13 +153,13 @@ public class Test_OpportunityPB {
             insert opportunities;
         }
         Test.stopTest();
-        
+
     }*/
-    
+
     @isTest
     public static void testxSbuStages () {
         User testUser = [SELECT Id, Name, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, CIM_RT, testUser.Id);
         List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'xsbu_prospecting', testUser.Id);
         for(Opportunity opportunity : opportunities) {
             opportunity.AccountId = accounts1[0].Id;
@@ -168,33 +172,33 @@ public class Test_OpportunityPB {
         Test.stopTest();
         //System.assertEquals(Date.today(), [SELECT Id, CloseDate  FROM Opportunity LIMIT 1].CloseDate);
     }
-     /*@isTest
-    public static void testUpdateCloseDateToDec () {
-        User testUser = [SELECT Id, Name, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
-        List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'GROW_Lab_Atlantis', testUser.Id);
-        for(Opportunity opportunity : opportunities) {
-            opportunity.AccountId = accounts1[0].Id;
-        }
-        opportunities.get(0).StageName = 'Closed Won';
-        Test.startTest();
-        System.runAs(testUser) {
-            insert opportunities;
-        }
-        Test.stopTest();
-        System.assertEquals(date.newInstance(Date.today().year() , 12, 31),
-                            [SELECT Id, CloseDate  FROM Opportunity LIMIT 1].CloseDate);
-    }*/
-    
+    /*@isTest
+   public static void testUpdateCloseDateToDec () {
+       User testUser = [SELECT Id, Name, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
+       List<Account> accounts1 = TestDataFactory.createAccounts(1, 'Geographical_Account', testUser.Id);
+       List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'GROW_Lab_Atlantis', testUser.Id);
+       for(Opportunity opportunity : opportunities) {
+           opportunity.AccountId = accounts1[0].Id;
+       }
+       opportunities.get(0).StageName = 'Closed Won';
+       Test.startTest();
+       System.runAs(testUser) {
+           insert opportunities;
+       }
+       Test.stopTest();
+       System.assertEquals(date.newInstance(Date.today().year() , 12, 31),
+                           [SELECT Id, CloseDate  FROM Opportunity LIMIT 1].CloseDate);
+   }*/
+
     @isTest
     public static void testSendDealerEmail () {
         User testUser = [SELECT Id, Name, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
-        List<Account> accountsList = TestDataFactory.createAccounts(2, 'CIM_Account', testUser.Id);
+        List<Account> accountsList = TestDataFactory.createAccounts(2, CIM_RT, testUser.Id);
         accountsList[0].Country__c = 'DE';
         accountsList[1].Country__c = 'DE';
-        accountsList[1].OneAccount_Type__c = 'Distributor';      
+        accountsList[1].OneAccount_Type__c = 'Distributor';
         update accountsList;
-        
+
         List<Contact> contactList = TestDataFactory.returnContacts(2, 'ContactGlobal', testUser.Id);
         contactList.get(0).AccountId = accountsList.get(0).Id;
         contactList.get(0).Email = 'test1.test@dentsplysirona.com.invalid';
@@ -203,9 +207,9 @@ public class Test_OpportunityPB {
         contactList.get(1).Email = 'test2.test@dentsplysirona.com.invalid';
         contactList.get(1).InsertEmailMarketingConsentCollected__c = 'No';
         insert contactList;
-        
+
         List<AccountContactRelation> relations = [SELECT AccountId, ContactId, Specialty__c FROM AccountContactRelation WHERE AccountId =: accountsList.get(1).Id];
-        
+
         for(AccountContactRelation rel : relations){
             rel.Specialty__c = 'Dealer Sales Rep (CEREC)';
         }
@@ -215,7 +219,7 @@ public class Test_OpportunityPB {
         campaignList.get(0).Brands__c = 'Sinius';
         campaignList.get(0).Notify_Dealer_Sales_Rep_by_Email__c = 'Yes';
         insert campaignList;
-        
+
         List<CampaignMember> campaignMembertList = TestDataFactory.returnCampaignMembers(1);
 
         campaignMembertList.get(0).ContactId = contactList.get(0).Id;
@@ -234,17 +238,61 @@ public class Test_OpportunityPB {
         }
         insert opportunities;
         //--
-        
+
         Test.startTest();
         System.runAs(testUser) {
-                insert campaignMembertList;
-        		campaignMembertList.get(0).Status = 'Responded';
-        		update campaignMembertList;
+            insert campaignMembertList;
+            campaignMembertList.get(0).Status = 'Responded';
+            update campaignMembertList;
         }
         Test.stopTest();
 
     }
-    
-    
-    
+
+    @isTest
+    public static void testSetActualCloseDate() {
+        User testUser = [SELECT Id, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, CIM_RT, testUser.Id);
+        List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
+        for(Opportunity opportunity : opportunities) {
+            opportunity.AccountId = accounts1[0].Id;
+        }
+        Test.startTest();
+        System.runAs(testUser) {
+            insert opportunities;
+        }
+
+        opportunities[0].StageName = 'Closed Lost';
+        update opportunities;
+
+        Test.stopTest();
+        System.assertEquals(Date.today(), [SELECT Id, Last_Stage_Change_Date__c  FROM Opportunity LIMIT 1].Last_Stage_Change_Date__c );
+    }
+
+    @isTest
+    public static void testFlowOpportunityTeamMember() {
+        User testUser = [SELECT Id, User_Country__c FROM User WHERE Alias = 'test1' LIMIT 1];
+        List<Account> accounts1 = TestDataFactory.createAccounts(1, CIM_RT, testUser.Id);
+        List<Opportunity> opportunities = TestDataFactory.returnOpportunities(1, 'Lightning_Pipeline_Opportunity', testUser.Id);
+        for(Opportunity opportunity : opportunities) {
+            opportunity.AccountId = accounts1[0].Id;
+        }
+        Test.startTest();
+        System.runAs(testUser) {
+            insert opportunities;
+        }
+
+        List<String> inp = new List<String>();
+        List<List<String>> inpList = new List<List<String>>();
+        inp.add(opportunities[0].Id);
+        inp.add(testUser.Id);
+        inpList.add(inp);
+        flowOpportunityTeamMember.createMembers(inpList);
+
+        Test.stopTest();
+        //System.assertEquals(Date.today(), [SELECT Id, Last_Stage_Change_Date__c  FROM Opportunity LIMIT 1].Last_Stage_Change_Date__c );
+    }
+
+
+
 }

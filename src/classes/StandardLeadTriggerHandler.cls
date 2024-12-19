@@ -16,8 +16,19 @@ public class StandardLeadTriggerHandler extends TriggerHandler {
         oldLeadMap = (Map<Id, Lead>) Trigger.oldMap;
         newLeadMap = (Map<Id, Lead>) Trigger.newMap;
     }
-    
+
+    /**
+     * After Insert Context
+     */
+    protected override void afterInsert() {
+        StandardLeadTriggerHelper.processLeads(newLeadMap, null);
+    }
+
+    /**
+     * After Update Context
+     */
     protected override void afterUpdate() {
         StandardLeadTriggerHelper.updateCampaignMembers(oldLeadMap,newLeadMap);
+        StandardLeadTriggerHelper.processLeads(newLeadMap, oldLeadMap);
     }
 }

@@ -19,10 +19,9 @@ public class ContractTriggerHandler extends TriggerHandler {
 
     protected override void beforeInsert() {
         ContractTriggerHelper.setStartParameters(newContractList);
-        ContractTriggerHelper.updateAllowedDiscount(newContractList, oldContractMap);
     }
 
     protected override void beforeUpdate() {
-        ContractTriggerHelper.updateAllowedDiscount(newContractList, oldContractMap);
+
     }
 }

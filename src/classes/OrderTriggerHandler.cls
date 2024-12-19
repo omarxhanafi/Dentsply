@@ -3,6 +3,7 @@ Author: 		Miguel Coimbra (Salesforce) 2020-06-09
 Description:    Order Trigger Handler Class. 
 History 
 <Date>      <Authors Name>     <Brief Description of Change>
+20231005        Roberto         User Story TFUS-000006097 setERPStopFlag new method created
 ------------------------------------------------------------*/
 public class OrderTriggerHandler extends TriggerHandler {
     private List<Order> oldOrderList, newOrderList;
@@ -17,10 +18,13 @@ public class OrderTriggerHandler extends TriggerHandler {
     
     protected override void beforeInsert() {
         OrderTriggerHelper.setAccountOwnerAndRegionalManagerOnOrder(newOrderList);
+        OrderTriggerHelper.setShipmentAddress(newOrderList);
         //OrderTriggerHelper.evaluateOrderLineApproval(newOrderList, newOrderMap);
     }
     
     protected override void beforeUpdate() {
+        OrderTriggerHelper.setShipmentAddress(newOrderList);
+        OrderTriggerHelper.setERPStopFlag(newOrderList);
         OrderTriggerHelper.setAccountOwnerAndRegionalManagerOnOrder(newOrderList);
         OrderTriggerHelper.calculateAllowedDiscount(newOrderList);
         OrderTriggerHelper.evaluateOrderLineApproval(newOrderList, newOrderMap);   

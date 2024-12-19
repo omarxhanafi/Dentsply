@@ -4,7 +4,8 @@ Description:    Cvent Management Class
 Test class:     MappingManagementTest
 
 History
-20-03-2023     Create new class
+20-03-2023     Houssam ADIB - Create new class
+29-01-2024     Houssam ADIB - TFUS-000006858 - Map new fields from Temp to attendee ( static mapping ) and fix contact type not flowing
 ----------------------------------------------------------------------------------------*/
 public without sharing class CventManagement {
 
@@ -39,11 +40,13 @@ public without sharing class CventManagement {
      *
      * @param sourceCvent Event
      *
-     * @return List<CventEvents__Attendee__c> - List of attendees
+     * @return Map<String,List<CventEvents__Attendee__c> - Map of attendees to their attendee stubs
      */
-    public static List<CventEvents__Attendee__c> getMatchedAttendees(CventEvents__Event__c sourceCvent)
+    public static Map<String,CventEvents__Attendee__c> getMatchedAttendees(CventEvents__Event__c sourceCvent)
     {
-        List<CventEvents__Attendee__c> attendees = [
+        Map<String,CventEvents__Attendee__c>  matchedAttendeesMap = new Map<String,CventEvents__Attendee__c>();
+
+        for(CventEvents__Attendee__c attendee : [
                 SELECT Id, Name, CventEvents__AttendeeName__c, CventEvents__AttendeeStub__c,
                         CventEvents__Company__c, CventEvents__CurrencyCode__c, CventEvents__CurrencyName__c,
                         CventEvents__Status__c, CventEvents__Email__c, CventEvents__EventStartDate__c,
@@ -52,9 +55,12 @@ public without sharing class CventManagement {
                         CventEvents__Lead__c, CventEvents__IsFreeloader__c, CventEvents__IsGroupLeader__c,
                         CventEvents__UnsubscribedFromEvent__c, CventEvents__Contact__c, CventEvents__Attended__c, ContactType__c
                 FROM CventEvents__Attendee__c
-                WHERE CventEvents__Event__c = :sourceCvent.Id
-        ];
-        return attendees;
+                WHERE CventEvents__Event__c = :sourceCvent.Id])
+        {
+            matchedAttendeesMap.put(attendee.CventEvents__AttendeeStub__c,attendee);
+        }
+
+        return matchedAttendeesMap;
     }
 
     /**
@@ -65,7 +71,7 @@ public without sharing class CventManagement {
      */
     public static Map<String, Lead> getStubToLead()
     {
-        List<Lead> existingLeads = [SELECT Id, AttendeeStub__c FROM Lead WHERE AttendeeStub__c != NULL];
+        List<Lead> existingLeads = [SELECT Id, AttendeeStub__c FROM Lead WHERE AttendeeStub__c != NULL      ];
         Map<String, Lead> stubToLead = new Map<String, Lead>();
         Lead lead;
         for (Integer i = 0, j = existingLeads.size(); i < j; i++) {
@@ -193,12 +199,15 @@ public without sharing class CventManagement {
             CventEvents__Attendee__c attendee = new CventEvents__Attendee__c();
             if (!wrapper.matched)
             {
-                // Create New Attendee for unmatched Temps
-                attendee.CventEvents__Status__c         = wrapper.tempAttendee.CventEvents__pkg_AttendeeStatus__c;
+                // Create New Attendee for unmatched Temps. (+Static Cvent Fields.)
+                attendee.CventEvents__Lead__c           = wrapper.lead.Id;
                 attendee.CventEvents__Event__c          = wrapper.event.Id;
+                attendee.CventEvents__Status__c         = wrapper.tempAttendee.CventEvents__pkg_AttendeeStatus__c;
                 attendee.CventEvents__AttendeeStub__c   = wrapper.tempAttendee.CventEvents__pkg_AttendeeStub__c;
                 attendee.CventEvents__Attended__c       = wrapper.tempAttendee.CventEvents__pkg_Attended__c;
-                attendee.CventEvents__Lead__c           = wrapper.lead.Id;
+                attendee.ContactType__c                 = wrapper.tempAttendee.CventEvents__pkg_ContactTypeName__c;
+                attendee.IntraoralScannerInUse__c       = wrapper.tempAttendee.Doyouhaveanintraoralscannerinyour__c;
+                attendee.SolutionsInterest__c           = wrapper.tempAttendee.Whichsolutionsareyouinterestedin__c;
             }
             else
             {

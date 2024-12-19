@@ -19,7 +19,9 @@ global class ConvertUnmatchedTempsToLeadsSchedulable implements Schedulable {
                     'CventEvents__pkg_AttendeeStatus__c',
                     'MatchStatus__c',
                     'CventEvents__pkg_EventStub__c',
-                    'CventEvents__pkg_Attended__c'
+                    'CventEvents__pkg_Attended__c',
+                    'Doyouhaveanintraoralscannerinyour__c',
+                    'Whichsolutionsareyouinterestedin__c'
             };
 
             // 2-Add the Dynamic ones

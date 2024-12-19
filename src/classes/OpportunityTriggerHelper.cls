@@ -8,6 +8,7 @@ History
 20220729   Roberto Narbona            TFUS-000004576
 20230322    Roberto                 added setActualCloseDate method TFUS-000005474
 20230503    Richard Trum            commented out usage of old record types (TFUS-5578)
+20230824    Richard                 Migrated methods from the Opportunity: After Handler flow trigger
 
 ----------------------------------------------------------------------------------------*/
 
@@ -22,6 +23,8 @@ public with sharing class OpportunityTriggerHelper {
     public static void setPreDefinedFields(List<Opportunity> newOpportunityList, Map<Id, Opportunity> oldOpportunityMap)
     {
         setActualCloseDate(newOpportunityList , oldOpportunityMap);
+        setLastStageChangeDate(newOpportunityList , oldOpportunityMap);
+        setUserCountry(newOpportunityList , oldOpportunityMap);
         setOpportunityName(newOpportunityList);
         setOpportunityOverallNotes(newOpportunityList);
     }
@@ -360,5 +363,46 @@ public with sharing class OpportunityTriggerHelper {
             }
         }        
     }
+
+
+    /*------------------------------------------------------------  
+    Description:    Setting the Last_Stage_Change_Date__c for new or updated records
+    Inputs:         @param newOpportunityList and @param oldOpportunityMap
+    ------------------------------------------------------------*/
+    public static void setLastStageChangeDate(List<Opportunity> newOpportunityList, Map<Id, Opportunity> oldOpportunityMap) {
+        
+        for(Integer i=0; i < newOpportunityList.Size(); i++){
+            /* for updates when opp stage has been changed*/
+            if( oldOpportunityMap != null && 
+                oldOpportunityMap.get(newOpportunityList[i].Id).StageName != newOpportunityList[i].StageName){
+                    newOpportunityList[i].Last_Stage_Change_Date__c = date.today();
+            }
+            /* for inserts */
+            if(oldOpportunityMap == null && newOpportunityList[i].StageName != null){
+                newOpportunityList[i].Last_Stage_Change_Date__c = date.today();
+            }
+        }        
+    }
+
+    /*------------------------------------------------------------  
+    Description:    Setting the User Country for new or updated records
+    Inputs:         @param newOpportunityList and @param oldOpportunityMap
+    ------------------------------------------------------------*/
+    public static void setUserCountry(List<Opportunity> newOpportunityList, Map<Id, Opportunity> oldOpportunityMap) {
+
+        Set<Id> userSet = new Set<Id>();
+
+        for(Integer i=0; i < newOpportunityList.Size(); i++){
+            userSet.add(newOpportunityList[i].OwnerId);
+            userSet.add(newOpportunityList[i].CreatedById);
+        }
+        
+        Map<Id, User> userMap = new Map<Id, User>([SELECT Id, User_Country__c FROM User WHERE Id IN: userSet]);
+        
+        for(Integer j=0; j < newOpportunityList.Size(); j++){
+            newOpportunityList[j].User_Country__c = userMap.get(newOpportunityList[j].OwnerId).User_Country__c;
+        }
+        
+    }    
 
 }

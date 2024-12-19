@@ -4,6 +4,8 @@ Description:   	Event Trigger Handler Class
 History	
 20191107 	Ahmed LOUDRASSI			CallReportEventTrigger, CallReportEventTriggerAfterInsert, DC_EventBackgroundJobs an DeleteClonedChildEvent triggers. (#)
 20230426    Roberto Narbona         TFUS-000005610
+20231128	Miguel	Coimbra			TFUS-000005745
+20240911    Omar Hanafi             TFUS-000006941
 --------------------------------------------------------------------------------------------------------*/
 
 public class EventTriggerHandler extends TriggerHandler {
@@ -22,28 +24,22 @@ public class EventTriggerHandler extends TriggerHandler {
         EventTriggerHelper.callReportEvent2(newEventList);
         EventTriggerHelper.updateNewOutlookEvent(newEventList);
         EventTriggerHelper.setEventDescription(newEventList, oldEventMap);
-        EventTriggerHelper.beforeSalesforceMapsScheduled(newEventList);
     }
     protected override void beforeUpdate() {
         EventTriggerHelper.preventRecurringCFE(newEventList);
-        EventTriggerHelper.trackBeforeUpdate(newEventList);
         EventTriggerHelper.outlookReccurenceCheck(newEventList, oldEventMap);
         EventTriggerHelper.setEventDescription(newEventList, oldEventMap);
     }
     protected override void afterInsert() {
-        EventTriggerHelper.manageNoticesOnEventsInserted(newEventList);
         EventTriggerHelper.setEventSubject(newEventMap, oldEventMap);
     }
     protected override void afterUpdate() {
-        EventTriggerHelper.trackAfterUpdate(newEventList, oldEventMap);
         EventTriggerHelper.deleteClonedChildEventOnUpdate(newEventMap);
         EventTriggerHelper.setEventSubject(newEventMap, oldEventMap);
     }
     protected override void beforeDelete() {
-        EventTriggerHelper.trackBeforeDelete(oldEventList);
     }
     protected override void afterDelete() {
-        EventTriggerHelper.manageNoticesOnEventsDeleted(oldEventList);
         EventTriggerHelper.deleteClonedChildEventOnDelete(oldEventMap);
     }
 }

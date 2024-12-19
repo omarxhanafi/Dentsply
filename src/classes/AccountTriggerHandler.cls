@@ -22,37 +22,30 @@ public class AccountTriggerHandler extends TriggerHandler {
     }
 
     protected override void beforeInsert() {
-        AccountTriggerHelper.setPostalCodeInfoAndEtmCode(newAccountList, oldAccountMap);
-        AccountTriggerHelper.setPayerLookup(newAccountList, oldAccountMap);
-        // WorkFlows
-        for(Account account : newAccountList) {
-            AccountTriggerHelper.overridePotential(account);
-        }
-        AccountTriggerHelper.updateRecordsType(newAccountList);
-        AccountTriggerHelper.updateVolume(newAccountList);
-        AccountTriggerHelper.updateAccountsInfo(newAccountList);
+        AccountTriggerHelper.beforeTriggerLoopOnAccounts(newAccountList, oldAccountList, newAccountMap, oldAccountMap);
         AccountTriggerHelper.setAccountSubSegmentation(newAccountList, oldAccountMap);
     }
 
     protected override void beforeUpdate() {
-        AccountTriggerHelper.setPostalCodeInfoAndEtmCode(newAccountList, oldAccountMap);
-        AccountTriggerHelper.setPayerLookup(newAccountList, oldAccountMap);
-        // WorkFlows
-        for(Account account : newAccountList) {
-            AccountTriggerHelper.overridePotential(account);
-        }
-        AccountTriggerHelper.updateRecordsType(newAccountList);
-        AccountTriggerHelper.updateVolume(newAccountList);
-        AccountTriggerHelper.updateAccountsInfo(newAccountList);
-        AccountTriggerHelper.setAccountSubSegmentation(newAccountList, oldAccountMap);  
+        AccountTriggerHelper.beforeTriggerLoopOnAccounts(newAccountList,oldAccountList,newAccountMap,oldAccountMap);
+        AccountTriggerHelper.setAccountSubSegmentation(newAccountList, oldAccountMap);
     }
 
     protected override void afterUpdate(){
         AccountTriggerHelper.updateRelatedContactAddresses(newAccountList, oldAccountMap, newAccountMap);
         AccountTriggerHelper.createEntitlement(newAccountList);
-        
+        AccountTriggerHelper.updateParentAccounts(newAccountList,oldAccountMap,null);
     }
     protected override void afterInsert() {
-       AccountTriggerHelper.createEntitlement(newAccountList);
+        AccountTriggerHelper.createEntitlement(newAccountList);
+       AccountTriggerHelper.updateParentAccounts(newAccountList,oldAccountMap,1);
+    }
+
+    protected override void afterDelete() {
+        AccountTriggerHelper.updateParentAccounts(newAccountList,oldAccountMap,-1);
+    }
+
+    protected override void afterUndelete() {
+        AccountTriggerHelper.updateParentAccounts(newAccountList,oldAccountMap,1);
     }
 }

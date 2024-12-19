@@ -1,13 +1,14 @@
 /**
  * @description       : This batch class updates the Suggested Owner on Sales Leads based on LeadOpportunitySetting__mdt
  * @author            : kdoruibin@salesforce.com
- * @group             : 
- * @last modified on  : 06-15-2021
- * @last modified by  : kdoruibin@salesforce.com
- * Modifications Log 
+ * @group             :
+ * @testClass         : Test_BatchSalesLeadAssignSOwner
+ * Modifications Log
  * Ver   Date         Author                     Modification
  * 1.0   06-15-2021   kdoruibin@salesforce.com   Initial Version
- *       20-07.2022   Roberto Narbona            TFUS-000004576
+ * 1.1   20-07.2022   Roberto Narbona            TFUS-000004576
+ * 1.2   11-09-2023   Refactor the code to be used for other objects
+ *
 **/
 global without sharing class BatchSalesLeadAssignSuggestedOwner implements Database.Batchable<sObject>, Database.Stateful {
     private String country;
@@ -35,7 +36,9 @@ global without sharing class BatchSalesLeadAssignSuggestedOwner implements Datab
             , String.isBlank(category) ? '' : 'AND Category__c = \'' + category + '\''
         };
         
-        queryTemplate = 'SELECT Id, Account__c, Dealer__c, Account__r.Country__c, Dealer__r.Country__c, Category__c, Brand__c, SuggestedOwner__c FROM Field_Sales_Project_Members__c WHERE Status__c != \'Completed\' AND Status__c != \'Cancelled\' AND Status__c != \'Expired\' {0} {1}';
+        queryTemplate = 'SELECT Id, Account__c, Dealer__c, Account__r.Country__c, Dealer__r.Country__c, Category__c, Brand__c, SuggestedOwner__c ' +
+                'FROM Field_Sales_Project_Members__c ' +
+                'WHERE Status__c != \'Completed\' AND Status__c != \'Cancelled\' AND Status__c != \'Expired\' {0} {1}';
 
         return Database.getQueryLocator(String.format(queryTemplate, queryParameters));
     }
@@ -43,18 +46,10 @@ global without sharing class BatchSalesLeadAssignSuggestedOwner implements Datab
     global void execute(Database.BatchableContext bc, List<Field_Sales_Project_Members__c> scope) {
         
         try {
-            Set<Id> accountIdSet = new Set<Id>();
-    
-            for (Field_Sales_Project_Members__c salesLead : scope) {
-                // Sets used to query the right AccountUserTerritory2View records
-                accountIdSet.add(salesLead.Account__c);
-                accountIdSet.add(salesLead.Dealer__c);
-            }
-            
-            Map<String, List<LeadOpportunitySetting__mdt>> leadOpptySettingMap = AssignSuggestedOwnerHelper.getLeadOpportunitySettings();
-            Map<Id,List<Id>> accountTerritoryMap = AssignSuggestedOwnerHelper.getAccountTerritoryMap(accountIdSet);
-            Set<Id> flattenedTerritoryIdSet = AssignSuggestedOwnerHelper.getFlattenedTerritoryIdSet(accountTerritoryMap);
-            Map<Id, Map<String, UserTerritory2Association>> territoryIdUserAssociationMap = AssignSuggestedOwnerHelper.getTerritoryIdUserAssociationMap(flattenedTerritoryIdSet);
+            Set<Id> accountIdSet                                                            = SuggestedOwnerManager.extractLeadAccountIds(scope);
+            Map<String, List<LeadOpportunitySetting__mdt>> leadOpptySettingMap              = SuggestedOwnerManager.getLeadOpportunitySettings();
+            Map<Id,List<Id>> accountTerritoryMap                                            = SuggestedOwnerManager.getAccountTerritoryMap(accountIdSet);
+            Map<Id, Map<String, UserTerritory2Association>> territoryIdUserAssociationMap   = SuggestedOwnerManager.getTerritoryIdUserAssociationMap(accountTerritoryMap);
 
             List<Field_Sales_Project_Members__c> salesLeadToUpdateList = new List<Field_Sales_Project_Members__c>();
 
@@ -97,7 +92,7 @@ global without sharing class BatchSalesLeadAssignSuggestedOwner implements Datab
             }
             update salesLeadToUpdateList;
         } catch (Exception e) {
-            DebugLog.addException(e, 'Error occured on: BatchAssignSuggestedOwner');
+            DebugLog.addException(e, 'Error occurred on: BatchAssignSuggestedOwner');
         }
 
     }

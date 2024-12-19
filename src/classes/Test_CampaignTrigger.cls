@@ -122,4 +122,62 @@ public with sharing class Test_CampaignTrigger {
         Test.stopTest();
 
     }
+
+    @IsTest
+    public static void testDeleteChildSessionCampaigns()
+    {
+        TestDataFactory.assignPermissionSet(UserInfo.getUserId(),'Global_Campaigns_CVENT_Campaigns');
+        System.runAs(new User(Id=UserInfo.getUserId()))
+        {
+            //Given
+            List<Campaign> parentCampaign = TestDataFactory.returnCampaigns(1, 'CventCampaign', UserInfo.getUserId());
+            insert parentCampaign;
+
+            List<Campaign> childSessionCampaigns = TestDataFactory.returnCampaigns(1, 'CVENT_Session_Campaign', UserInfo.getUserId());
+            Set<Id> childIds = new Set<Id>();
+            for(Campaign sessionCampaign : childSessionCampaigns)
+            {
+                childIds.add(sessionCampaign.Id);
+                sessionCampaign.Parent_Event__c = parentCampaign[0].Id;
+            }
+            insert childSessionCampaigns;
+
+            // When
+            Test.startTest();
+            delete parentCampaign;
+            Test.stopTest();
+
+            //Then
+            List<Campaign> childSessions = [SELECT Id FROM Campaign WHERE Id IN :childIds ];
+            System.assertEquals(0, childSessions.size(), 'Child Session Campaigns not deleted after the parent campaign was deleted.');
+        }
+    }
+
+    @isTest
+    public static void testPopulateChildSessionCampaignFields()
+    {
+        TestDataFactory.assignPermissionSet(UserInfo.getUserId(),'Global_Campaigns_CVENT_Campaigns');
+
+        System.runAs(new User(Id=UserInfo.getUserId()))
+        {
+            //Given
+            String eventCode = 'P7N2MG8Y827';
+            CventEvents__Event__c event = TestDataFactory.createCventEvent(eventCode, true);
+            quickCreateCampaignFromCventController.ResultWrapper resultOne = quickCreateCampaignFromCventController.createCampaignFromCvent(eventCode,'',false);
+
+            // Create a session campaign with the event stub and insert it
+            List<Campaign> childSessionCampaigns = TestDataFactory.returnCampaigns(1, 'CVENT_Session_Campaign', UserInfo.getUserId());
+            Campaign sessionCampaign = childSessionCampaigns[0];
+            sessionCampaign.CventEvents__EventStub__c = event.CventEvents__pkg_EventStub__c;
+
+            // When
+            Test.startTest();
+            insert sessionCampaign;
+            Test.stopTest();
+
+            //Then
+            List<Campaign> childSessions = [SELECT Id,Parent_Event__c FROM Campaign WHERE Id = :sessionCampaign.Id ];
+            System.assertEquals(childSessions[0].Parent_Event__c,resultOne.result,'Invalid Parent Campaign Id on the session campaign record.');
+        }
+    }
 }

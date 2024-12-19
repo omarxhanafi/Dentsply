@@ -164,8 +164,8 @@ public class EventWithCallReportService {
             Related_to_Account_Opportunity__c, SBU__c, Objective__c, Co_travel__c, Co_Travel_Manager__c,
             WhatCount, WhatId, WhoCount, WhoId, AccountId, EventOrigin__c, Activity_Subtype__c,
             DurationInMinutes, EventSubtype, Event_Status__c, EndDateTime, Location, Dealer_Customer__c,
-            IsAllDayEvent, IsArchived, IsDeleted, ActivityDateTime, IsGroupEvent, new_customer_acquisition_DE__c,
-            Number_of_implants_TR__c, ActivityDate, Number_of_patients_TR__c, ShowAs, IsPrivate, RecordTypeId,
+            IsAllDayEvent, IsArchived, IsDeleted, ActivityDateTime, IsGroupEvent,
+            ActivityDate, ShowAs, IsPrivate, RecordTypeId,
             StartDateTime, Subject from Event where id =: parEventId limit 1
         ][0];
         List <EventAttendees__c> att = [SELECT Id, EventId__c, RelationId__c
@@ -182,9 +182,7 @@ public class EventWithCallReportService {
             ];
             for (Event clEvent: childEvents) {
                 clEvent.Astra_Tech_Type__c = parEvent.Astra_Tech_Type__c;
-                clEvent.new_customer_acquisition_DE__c = parEvent.new_customer_acquisition_DE__c;
                 clEvent.Customer_Facing_Event__c = parEvent.Customer_Facing_Event__c;
-                clEvent.Number_of_implants_TR__c = parEvent.Number_of_implants_TR__c;
                 clEvent.SBU__c = parEvent.SBU__c;
                 clEvent.Co_Travel_Manager__c = parEvent.Co_Travel_Manager__c;
                 clEvent.WhatId = parEvent.WhatId;
@@ -207,7 +205,6 @@ public class EventWithCallReportService {
                 clEvent.ActivityDate = parEvent.ActivityDate;
                 clEvent.ActivityDateTime = parEvent.ActivityDateTime;
                 clEvent.Dealer_Customer__c = parEvent.Dealer_Customer__c;
-                clEvent.Number_of_patients_TR__c = parEvent.Number_of_patients_TR__c;
                 childEventUpdate.add(clEvent);
             }
             database.update(childEvents);

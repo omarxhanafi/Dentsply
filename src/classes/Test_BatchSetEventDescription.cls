@@ -20,6 +20,8 @@ public class Test_BatchSetEventDescription {
         List<Event> testEventList = TestDataFactory.returnEvents(2, userList.get(0).Id);
         for (Event testEvent : testEventList) {
             testEvent.Customer_Facing_Event__c = true;
+            testEvent.Astra_Tech_Type__c='Virtual Meeting';
+            testEvent.Activity_Subtype__c='After Sales Follow-up';
         }
         insert testEventList;
     }

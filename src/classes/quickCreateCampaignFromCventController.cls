@@ -6,6 +6,9 @@ Test class      CreateCampaignFromCventControllerTest
 History
 01-01-2023     Houssam ADIB - Create new class
 01-01-2024     Houssam ADIB - Refactoring and adding Phase 2 ( Sales Lead Generation )
+01-10-2024     Houssam ADIB - TFUS-000006858 - Map new fields from Temp to attendee ( static mapping ) + Add logic to SharedGlobally field
+01-12-2024     Houssam ADIB - TFUS-000007227 - Fix null pointer
+
 ----------------------------------------------------------------------------------------*/
 public without sharing class quickCreateCampaignFromCventController {
 
@@ -119,32 +122,31 @@ public without sharing class quickCreateCampaignFromCventController {
         {
             // Find Cvent Event
             List<CventEvents__Event__c> sourceCvent = CventManagement.findCventByCode(cventCode);
-
-            // Find existing matched Attendees
-            List<CventEvents__Attendee__c> matchedAttendees = CventManagement.getMatchedAttendees(sourceCvent[0]);
-
-            Set<String> existingAttendeesStubs  = new Set<String>();
-
+            List<DynamicMapping__mdt> mappings = MappingManagement.getMapping(CventManagement.SOURCE_OBJECT_TEMP, CventManagement.TARGET_OBJECT_LEAD,true);
+            Map<String,CventEvents__AttendeeTemp__c> allTemps = getAllTemps(sourceCvent,mappings);
             // Find existing leads by stub in case we already generated leads for temps
             Map<String, Lead> stubToLead = CventManagement.getStubToLead();
 
-            // Put matched attendees in wrappers to prepare for recreation (recreating the attendees is the only way to secure conversion to member by cvent app)
-            attendeeWrappers.addAll(prepareMatchedAttendeesForReCreation(matchedAttendees, existingAttendeesStubs, sourceCvent));
 
-            // Find all Temps
-            List<DynamicMapping__mdt> mappings = MappingManagement.getMapping(CventManagement.SOURCE_OBJECT_TEMP, CventManagement.TARGET_OBJECT_LEAD,true);
-            List<CventEvents__AttendeeTemp__c> allTemps = getAllTemps(sourceCvent,mappings);
+            // Find existing matched Attendees
+            Map<String,CventEvents__Attendee__c> matchedAttendees = CventManagement.getMatchedAttendees(sourceCvent[0]);
 
             // Partition Temps in matched and unmatched
-            List<CventEvents__AttendeeTemp__c> matchedTempAttendees = new List<CventEvents__AttendeeTemp__c>();
-            Map<Id,CventEvents__AttendeeTemp__c> unmatchedAttendees = new Map<Id,CventEvents__AttendeeTemp__c>();
-            partitionTemps(allTemps, existingAttendeesStubs, matchedTempAttendees, unmatchedAttendees);
+            Map<String,CventEvents__AttendeeTemp__c> matchedTempAttendees = new Map<String,CventEvents__AttendeeTemp__c>();
+            Map<Id,CventEvents__AttendeeTemp__c> unmatchedTempAttendees = new Map<Id,CventEvents__AttendeeTemp__c>();
+            partitionTemps(allTemps, matchedAttendees.keySet(),     // Input
+                    matchedTempAttendees, unmatchedTempAttendees);  // will be Output
+
+            // Put matched attendees in wrappers to prepare for recreation (recreating the attendees is the only way to secure conversion to member by cvent app)
+            attendeeWrappers.addAll(prepareMatchedAttendeesForReCreation(sourceCvent, matchedAttendees, matchedTempAttendees));
+
+
 
             // Create Leads for unmatched Temps
             List<Lead> newLeads = new List<Lead>();
             List<CventEvents__AttendeeTemp__c> newTempsConvertedToLeads = new List<CventEvents__AttendeeTemp__c>();
 
-            newLeads = CventManagement.InstantiateLeadsForUnmatchedTemps(   unmatchedAttendees.values(), newTempsConvertedToLeads, sourceCvent[0],
+            newLeads = CventManagement.InstantiateLeadsForUnmatchedTemps(   unmatchedTempAttendees.values(), newTempsConvertedToLeads, sourceCvent[0],
                     mappings, stubToLead, new Map<String,Campaign>(),attendeeWrappers);
 
             TriggerHandler.bypass('StandardLeadTriggerHandler');
@@ -153,7 +155,7 @@ public without sharing class quickCreateCampaignFromCventController {
             TriggerHandler.bypass('AttendeeTempTriggerHandler');
             CventManagement.updateTempStatus(newTempsConvertedToLeads);
 
-            result.result = unmatchedAttendees.size() + ' Leads created for unmatched Temps and matchedTempAttendees size=' + matchedTempAttendees.size();
+            result.result = unmatchedTempAttendees.size() + ' Leads created for unmatched Temps and matchedTempAttendees size=' + matchedTempAttendees.size();
             result.attendeeWrappers = attendeeWrappers;
 
         }
@@ -171,7 +173,8 @@ public without sharing class quickCreateCampaignFromCventController {
     }
 
     /** STAGE 3
-     * We create attendees for leads. And we re-create attendees if were existing to trigger campaign member creation
+     * Root method that creates attendees
+     * For leads we create new attendees. And for matched temps to contacts, we re-create their existing attendees to trigger members generation by the app.
      * @author hadib@salesforce.com | 20-03-2023
      *
      * @param attendeeWrappers Wrappers of attendees
@@ -204,26 +207,38 @@ public without sharing class quickCreateCampaignFromCventController {
      * The wrappers we will be used in a follow stage to recreate the records
      * @author hadib@salesforce.com | 20-03-2023
      *
-     * @param matchedAttendees          Matched Attendees
-     * @param existingAttendeesStubs    Existing Attendees Stubs
      * @param sourceCvent               Event
+     * @param matchedAttendees          The Matched Attendees records
+     * @param matchedTempAttendees      The Matched Attendees Temps records
      *
      * @return List<AttendeeWrapper> - Wrappers
      */
-    public static List<AttendeeWrapper> prepareMatchedAttendeesForReCreation(List<CventEvents__Attendee__c> matchedAttendees, Set<String> existingAttendeesStubs, List<CventEvents__Event__c> sourceCvent)
+    public static List<AttendeeWrapper> prepareMatchedAttendeesForReCreation(   List<CventEvents__Event__c> sourceCvent,
+                                                                                Map<String,CventEvents__Attendee__c>        matchedAttendees,
+                                                                                Map<String,CventEvents__AttendeeTemp__c>    matchedTempAttendees)
     {
         List<AttendeeWrapper> attendeeWrappers = new List<AttendeeWrapper>();
         CventEvents__Attendee__c attendee;
-        for (Integer i = 0, j = matchedAttendees.size(); i < j; i++) {
-            attendee = matchedAttendees[i];
-            existingAttendeesStubs.add(attendee.CventEvents__AttendeeStub__c);
+        CventEvents__AttendeeTemp__c temp;
 
-            AttendeeWrapper attendeeWrapper = new AttendeeWrapper();
-            attendeeWrapper.matched = true;
-            attendeeWrapper.attendee = attendee;
-            attendeeWrapper.event = sourceCvent[0];
+        for (Integer i = 0, j = matchedAttendees.values().size(); i < j; i++) {
+            attendee = matchedAttendees.values()[i];
+            if(!String.isBlank(attendee.CventEvents__AttendeeStub__c))
+            {
+                temp = matchedTempAttendees.get(attendee.CventEvents__AttendeeStub__c);
+                if (temp != null)
+                {
+                    attendee.ContactType__c             = temp.CventEvents__pkg_ContactTypeName__c;
+                    attendee.IntraoralScannerInUse__c   = temp.Doyouhaveanintraoralscannerinyour__c;
+                    attendee.SolutionsInterest__c       = temp.Whichsolutionsareyouinterestedin__c;
+                    AttendeeWrapper attendeeWrapper = new AttendeeWrapper();
+                    attendeeWrapper.matched = true;
+                    attendeeWrapper.attendee = attendee;
+                    attendeeWrapper.event = sourceCvent[0];
 
-            attendeeWrappers.add(attendeeWrapper);
+                    attendeeWrappers.add(attendeeWrapper);
+                }
+            }
         }
         return attendeeWrappers;
     }
@@ -237,16 +252,19 @@ public without sharing class quickCreateCampaignFromCventController {
      * @param matchedTempAttendees      Matched attendees to populate
      * @param unmatchedAttendees        Unmatched Attendees to populate
      */
-    public static void partitionTemps(List<CventEvents__AttendeeTemp__c> allTemps, Set<String> existingAttendeesStubs, List<CventEvents__AttendeeTemp__c> matchedTempAttendees, Map<Id,CventEvents__AttendeeTemp__c> unmatchedAttendees)
+    public static void partitionTemps(  Map<String,CventEvents__AttendeeTemp__c>    allTemps,
+                                        Set<String>                                 existingAttendeesStubs,
+                                        Map<String,CventEvents__AttendeeTemp__c>    matchedTempAttendees,
+                                        Map<Id,CventEvents__AttendeeTemp__c>        unmatchedTempAttendees)
     {
         CventEvents__AttendeeTemp__c temp;
-        for (Integer i = 0, j = allTemps.size(); i < j; i++) {
-            temp = allTemps[i];
+        for (Integer i = 0, j = allTemps.values().size(); i < j; i++) {
+            temp = allTemps.values()[i];
             if (existingAttendeesStubs.contains(temp.CventEvents__pkg_AttendeeStub__c)) {
-                matchedTempAttendees.add(temp);
+                matchedTempAttendees.put(temp.CventEvents__pkg_AttendeeStub__c,temp);
             }
             else {
-                unmatchedAttendees.put(temp.Id,temp);
+                unmatchedTempAttendees.put(temp.Id,temp);
             }
         }
     }
@@ -260,15 +278,15 @@ public without sharing class quickCreateCampaignFromCventController {
      *
      * @return List<CventEvents__AttendeeTemp__c> - List of Temp records
      */
-    public static List<CventEvents__AttendeeTemp__c> getAllTemps(List<CventEvents__Event__c> sourceCvent, List<DynamicMapping__mdt> mappings )
+    public static Map<String,CventEvents__AttendeeTemp__c> getAllTemps(List<CventEvents__Event__c> sourceCvent, List<DynamicMapping__mdt> mappings )
     {
         List<CventEvents__AttendeeTemp__c> allTemps = new List<CventEvents__AttendeeTemp__c>();
+        Map<String,CventEvents__AttendeeTemp__c> allTempsMap = new Map<String,CventEvents__AttendeeTemp__c>();
         String eventStub = sourceCvent[0].CventEvents__pkg_EventStub__c;
 
-        Set<String> allFields = new Set<String>{'CventEvents__pkg_AttendeeStub__c',
-                'CventEvents__pkg_AttendeeStatus__c',
-                'CventEvents__pkg_Attended__c',
-                'MatchStatus__c'}; // Required fields not mapped
+        Set<String> allFields = new Set<String>{'CventEvents__pkg_AttendeeStub__c', 'CventEvents__pkg_AttendeeStatus__c',
+                'CventEvents__pkg_Attended__c', 'MatchStatus__c', 'Doyouhaveanintraoralscannerinyour__c','CventEvents__pkg_ContactTypeName__c',
+                'Whichsolutionsareyouinterestedin__c'}; // (+Static Cvent Fields.)
         DynamicMapping__mdt mapping;
         for (Integer i = 0, j = mappings.size(); i < j; i++) {
             mapping = mappings[i];
@@ -282,7 +300,12 @@ public without sharing class quickCreateCampaignFromCventController {
         // Execute Query
         allTemps  = Database.query(queryString);
 
-        return allTemps;
+        for(CventEvents__AttendeeTemp__c temp : allTemps)
+        {
+            allTempsMap.put(temp.CventEvents__pkg_AttendeeStub__c,temp);
+        }
+
+        return allTempsMap;
     }
 
     /**
@@ -411,7 +434,7 @@ public without sharing class quickCreateCampaignFromCventController {
                         sourceEvent.Id,
                         CventManagement.SOURCE_OBJECT_EVENT,
                         mappings,
-                        new Set<String>{'CventEvents__pkg_CountryCode__c'});
+                        new Set<String>{'CventEvents__pkg_CountryCode__c,CventEvents__pkg_EventStub__c,TotalEstimatedBudget__c'});
             }
             catch (Exception e)
             {
@@ -474,6 +497,7 @@ public without sharing class quickCreateCampaignFromCventController {
             campaign.Convert_To__c = 'Sales Lead';
         }
 
+        setTotalCostBudget(retrievedSourceData, campaign);
         setCampaignCountry(retrievedSourceData, campaign);
 
         if(campaignRecordTypeId != null)
@@ -544,6 +568,31 @@ public without sharing class quickCreateCampaignFromCventController {
             }
         }
     }
+
+    /**
+     * Sets the total cost budget on the campaign by converting a string value on the event TotalEstimatedBudget__c field
+     * @author hadib@salesforce.com | 31-10-2023
+     *
+     * @param retrievedSourceData Event Data
+     * @param campaign The new Campaign record
+     */
+    private static void setTotalCostBudget(SObject retrievedSourceData, Campaign campaign)
+    {
+        String totalEstimatedStringValue;
+
+        if (retrievedSourceData != null) {
+            totalEstimatedStringValue = (String) retrievedSourceData.get('TotalEstimatedBudget__c');
+        }
+
+        try {
+            Decimal totalEstimatedBudget = Decimal.valueOf(totalEstimatedStringValue);
+            campaign.TotalCostBudgetCvent__c = totalEstimatedBudget;
+        } catch (Exception ex) {
+            // Ignoring error, leaving the campaign field as null
+            return;
+        }
+    }
+
 
     /**
      * Inserts the campaign record and handle mappings errors

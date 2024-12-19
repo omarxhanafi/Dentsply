@@ -2,8 +2,9 @@
 Author:         Ahmed LOUDRASSI (Salesforce) 20191023
 Description:    Campaign  Trigger Handler Class
 History
-20191023   Ahmed LOUDRASSI   Migrated  CampMgmtCampaignSessionTrigger, CampMgmtCampaignTrigger, CampMgmtCampaignTrigger2, CampMgmtCampaignSharingTrigger triggers. (#)
-20191023   Ahmed LOUDRASSI   Migrated Campaign Workflows. (#)
+2019-10-23      Ahmed LOUDRASSI     Migrated  CampMgmtCampaignSessionTrigger, CampMgmtCampaignTrigger, CampMgmtCampaignTrigger2, CampMgmtCampaignSharingTrigger triggers. (#)
+2019-10-23      Ahmed LOUDRASSI     Migrated Campaign Workflows. (#)
+2024-02-01	    Houssam ADIB	    TFUS-000006365 - Delete Child Session Campaigns if the parent campaign is deleted
 ----------------------------------------------------------------------------------------*/
 public with sharing class CampaignTriggerHandler extends TriggerHandler{
     private List<Campaign> oldCampaignList, newCampaignList;
@@ -19,6 +20,7 @@ public with sharing class CampaignTriggerHandler extends TriggerHandler{
         CampaignTriggerHelper.setCampaignSessionsDefaultValues(newCampaignList);
         CampaignTriggerHelper.ownerAssignment(newCampaignList);
         CampaignTriggerHelper.setAlignmentOnCountryFields(newCampaignList,newCampaignMap, oldCampaignMap);
+        CampaignTriggerHelper.processCventSessionCampaign(newCampaignList);
     }
     protected override void beforeUpdate() {
         CampaignTriggerHelper.setAlignmentOnCountryFields(newCampaignList,newCampaignMap, oldCampaignMap);
@@ -31,5 +33,9 @@ public with sharing class CampaignTriggerHandler extends TriggerHandler{
     protected override void afterUpdate() {
         CampaignTriggerHelper.deactivateCampaignSessions(newCampaignMap, oldCampaignMap);
         CampaignTriggerHelper.campaignSharing(newCampaignMap, oldCampaignMap);
+    }
+    protected override void beforeDelete() {
+        CampaignTriggerHelper.deleteChildSessionCampaigns(oldCampaignList);
+        CampaignTriggerHelper.tickCventParentEventAsNotConverted(oldCampaignList);
     }
 }

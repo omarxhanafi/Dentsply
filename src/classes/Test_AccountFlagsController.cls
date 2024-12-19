@@ -27,6 +27,7 @@ public without sharing class Test_AccountFlagsController {
 
             // Create test account
             List<Account> testAccount = TestDataFactory.returnAccounts(1, 'CIM_Account', testUser.Id);
+            testAccount[0].Country__c = 'US';
             insert testAccount;
 
             // Create test custom pricebook

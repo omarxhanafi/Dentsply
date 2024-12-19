@@ -3,6 +3,11 @@ Author: 		Miguel Coimbra (Salesforce) 2020-06-10
 Description:    Order Trigger Helper Class
 Test Class:     Test_OrderTrigger
 History 
+Updated date:   Updated by:     Description:
+20231005        Roberto         User Story TFUS-000006097 setERPStopFlag new method created
+20230712        Roberto         TFUS-000006293 TFUS-000006294 
+20230219		Roberto			TFUS-000006492
+
 ----------------------------------------------------------------------------------------*/
 public class OrderTriggerHelper {
     /*------------------------------------------------------------  
@@ -28,12 +33,12 @@ public class OrderTriggerHelper {
         final String REVENUE_MATERIALS = 'Revenue: materials';
         final String PAYMENT_TYPE = 'Payment type';
         // Provide all related Discount Rows (associated with the relevant Discount Models 
-        List<Discount_row__c> discountRowsList = [SELECT Id, Max__c, Min__c, Discount_Model__c, Discount_lever__c, Equals__c, Allowed_discount__c, Payment_terms_months__c FROM Discount_row__c WHERE 
+        List<Discount_row__c> discountRowsList = [SELECT Id, Max__c, Min__c, Discount_Model__c, Discount_lever__c, Equals__c, Allowed_discount__c, Payment_terms_months__c FROM Discount_row__c WHERE
                                                         (Discount_lever__c =: REVENUE_MATERIALS OR Discount_lever__c =: PAYMENT_TYPE ) and Discount_Model__c in: pbId_dmIdMap.Values()];
 
         for (Order o: ordersList){
-            // OrderAmountglobal is calculated with the right value when a field referenced by a Roll Up Summary field is modified. (This happens for instance when a new value is added) 
-            Double OrderAmountglobal = o.Order_Amount_global__c ; 
+            // Order Amount global is calculated with the right value when a field referenced by a Roll Up Summary field is modified. (This happens for instance when a new value is added)
+            Double OrderAmountglobal = o.TotalAmount ;
             if (String.isBlank(o.Payment_type__c)){
                 o.Payment_type_discount__c = 0 ;
             }else{
@@ -56,7 +61,7 @@ public class OrderTriggerHelper {
         }     
     }
      /*------------------------------------------------------------  
-    Description:    Code migrated from OrderSetAccountOwner (as a result,  OrderSetAccountOwner.trigger has been removed. )
+    Description:    Code migrated from OrderSetoAccuntOwner (as a result,  OrderSetAccountOwner.trigger has been removed. )
                     Called before Insert and before Update                    
     Author:    Miguel Coimbra (20200615)
     ------------------------------------------------------------*/
@@ -84,6 +89,173 @@ public class OrderTriggerHelper {
                     o.Account_Owner__c = a.OwnerId; 
                     o.Regional_Manager__c = a.Owner.ManagerId; 
                 }
+            }
+        }
+    }
+
+    /*------------------------------------------------------------  
+    Description:    This is to apply rules regarding ERP integration
+                      
+    Author:    Roberto Narbona 2023/10/05
+    ------------------------------------------------------------*/
+
+    public static void setERPStopFlag(List<Order> newOrdersList){ 
+        
+        // Don't run unless configured to do so.
+        BatchSettings__c settings = BatchSettings__c.getInstance('Default');
+        if (!Test.isRunningTest() && !settings.OrderSetAccountOwnerIsEnabled__c)
+            return; 
+
+        Set<ID> relatedAccountIds = new Set<ID>();
+        Set<ID> relatedPricebookIds = new Set<ID>();
+        for (Order o : newOrdersList){
+            if (o.AccountId != null)
+                relatedAccountIds.add(o.AccountId);
+            if (o.Pricebook2Id != null)
+                relatedPricebookIds.add(o.Pricebook2Id);
+        }
+            
+        Map<ID, Account> accountMap = new Map<Id, Account>([SELECT Id, Country__c, OneAccount_Type__c, Sub_Account_Type__c FROM Account WHERE Id IN :relatedAccountIds]);
+        Map<ID, Pricebook2> pricebook2Map = new Map<Id, Pricebook2>([SELECT Id, CompanyCode__c, SendToERPOM__c, StopOrdersinERP__c FROM Pricebook2 WHERE Id IN :relatedPricebookIds]);
+
+
+        
+        for (Order o : newOrdersList)
+        {
+            Account account = new Account();
+            CountryStopRules__mdt countryRules = new CountryStopRules__mdt();
+            if (o.AccountId != null)
+            {
+                account = accountMap.get(o.AccountId);
+                countryRules = CountryStopRules__mdt.getInstance(account.Country__c);
+            }
+            Pricebook2 orderPriceBook = new Pricebook2();
+            if (o.Pricebook2Id != null){
+                orderPriceBook = pricebook2Map.get(o.Pricebook2Id);
+            }
+            o.ERPStopFlag__c = false;
+            if (account != null && orderPriceBook != null && orderPriceBook.SendToERPOM__c == true && countryRules != null)
+                {
+                    o.ERPStopFlag__c = calculateStopFlags(account, o, countryRules, orderPriceBook);
+                }
+            
+        }
+    }
+
+    //This is to check if a quote can be create or if it should be etop in ERP for human interaction in ERP side
+    public static Boolean calculateStopFlags(Account account, Order order, CountryStopRules__mdt countryRule, Pricebook2 pricebook){
+        if(calculateSetFlag(account, countryRule, 'Set Flag'))
+            return(true);
+        if(countryRule.NotFranceIn116__c == true && account.Country__c != 'FR' && pricebook.CompanyCode__c == '116')
+            return(true);  
+        if(countryRule.HasOfferCode__c == true && order.Count_Offer_Codes__c > 0)
+            return(true);
+        if(countryRule.HasDiscount__c == true && order.Discount_Applied__c > 0)
+            return(true);
+        if(countryRule.HasParentKitProducts__c == true && order.ParentKitProduct__c > 0)
+            return(true);
+        if(countryRule.HasCustomerServiceCommunication__c == true && order.Communication_to_Customer_Service__c != null && order.Communication_to_Customer_Service__c != '')
+            return(true);
+        if(countryRule.HasPricebookStopOrder__c == true && pricebook.StopOrdersinERP__c == true)
+            return(true);
+        return(false);
+
+    }
+
+    
+    
+    /*------------------------------------------------------------  
+    Description:    here are the account rules to calculate the ERP flag or not allow the order
+                      
+    Author:    Roberto Narbona 2023/13/07
+    ------------------------------------------------------------*/
+    public static Boolean calculateSetFlag(Account account, CountryStopRules__mdt countryRule, String stopQuoteOrSetFlag){
+        if(calculateSetFlag(countryRule.MedicalPublic__c, stopQuoteOrSetFlag) == true  && isMedicalPublic(account) == true )
+            return(true);
+        if(calculateSetFlag(countryRule.EducationPublic__c, stopQuoteOrSetFlag) == true && isEducational(account) == true)
+            return(true);
+        if(calculateSetFlag(countryRule.DentalSupportOrganization__c, stopQuoteOrSetFlag) == true  && account.OneAccount_Type__c == 'Dental Support Organization' )
+            return(true);             
+        if(calculateSetFlag(countryRule.IsMedicalGeneral__c, stopQuoteOrSetFlag) == true  && account.OneAccount_Type__c == 'Medical' && account.Sub_Account_Type__c == 'General Hospital')
+            return(true);
+        return(false);
+    }
+
+    /*------------------------------------------------------------  
+    Description:    here check if account is public medical
+                      
+    Author:    Roberto Narbona 2023/13/07
+    ------------------------------------------------------------*/
+    public static Boolean isMedicalPublic(Account account){
+        if( account.OneAccount_Type__c == 'Medical' && (account.Sub_Account_Type__c == 'Private Hospital' || account.Sub_Account_Type__c == 'Public Health' ))
+            return(true);
+        return(false);
+    }
+
+    /*------------------------------------------------------------  
+    Description:    here is to check if account is educational hospital or school
+                      
+    Author:    Roberto Narbona 2023/13/07
+    ------------------------------------------------------------*/
+    public static Boolean isEducational(Account account){
+        
+        if(account.OneAccount_Type__c == 'Education' && (account.Sub_Account_Type__c == 'Teaching Hospital' || account.Sub_Account_Type__c == 'Dental School'))
+            return(true);
+        return(false);
+    }
+
+    
+    /*------------------------------------------------------------  
+    Description:    here is to set if we need to evaluate the rule to Set Flag or rules to Stop Order creatation
+                      
+    Author:    Roberto Narbona 2023/13/07
+    ------------------------------------------------------------*/
+    public static Boolean calculateSetFlag(String fieldValue, String stopQuoteOrSetFlag){
+        if(stopQuoteOrSetFlag == 'Set Flag' && (fieldValue == 'Set Flag' || fieldValue == 'Stop Order'))
+            return(true);
+        if(stopQuoteOrSetFlag == 'Stop Order' && fieldValue == 'Stop Order')
+            return(true);
+        return(false);
+    }
+
+
+    /*------------------------------------------------------------  
+    Description:    This is to apply rules regarding ERP integration
+                      
+    Author:    Roberto Narbona 2023/10/05
+    ------------------------------------------------------------*/
+
+    public static void setShipmentAddress(List<Order> newOrdersList){ 
+        
+        // Don't run unless configured to do so.
+        BatchSettings__c settings = BatchSettings__c.getInstance('Default');
+        if (!Test.isRunningTest() && !settings.OrderSetAccountOwnerIsEnabled__c)
+            return; 
+
+        Set<ID> relatedShipmentAddressIds = new Set<ID>();
+        
+        for (Order o : newOrdersList){
+            if (o.ShippingAddress__c != null)
+            relatedShipmentAddressIds.add(o.ShippingAddress__c);
+            
+        }
+            
+        Map<ID, Address__c> addressMap = new Map<Id, Address__c>([SELECT Id, Street__c, City__c, StateProvince__c, PostalCode__c, Country__c FROM Address__c WHERE Id IN :relatedShipmentAddressIds]);
+
+        for (Order o : newOrdersList)
+        {
+            Address__c addres = new Address__c();
+            if (o.ShippingAddress__c != null)
+            {
+                addres = addressMap.get(o.ShippingAddress__c);
+            }
+
+            if(addres != null && o.ShippingAddress__c != null ){
+                o.ShippingStreet = addres.Street__c;
+                o.ShippingCity = addres.City__c;
+                o.ShippingState = addres.StateProvince__c;
+                o.ShippingPostalCode = addres.PostalCode__c;
+                o.ShippingCountry = addres.Country__c;
             }
         }
     }
@@ -150,7 +322,6 @@ public class OrderTriggerHelper {
             }
 
             o.ApprovalLevelSecondaryInt__c = secondaryApprovalLevel;
-            System.debug('Secondary approval level: ' + o.ApprovalLevelSecondaryInt__c);
 
             for(OrderItem i : items){
 
@@ -167,7 +338,6 @@ public class OrderTriggerHelper {
             }
                 
             //Adjust approval levels in case the discount percentage is high but the discount value is low
-            //if(o.Pricebook2.SourceId__c != null){
             	
                 String sourceId = ordersMap.get(o.Id).Pricebook2.SourceId__c;
                 
@@ -205,7 +375,6 @@ public class OrderTriggerHelper {
                 
 
             o.ApprovalLevelInt__c = approvalLevel;
-            //}
         }
 
     }

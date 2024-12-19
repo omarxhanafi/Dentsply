@@ -156,4 +156,35 @@ public class Test_CampaignMemberTrigger {
         Test.stopTest();        
         
     }
+    @isTest
+    private static void testProcessCventSessionCampaign(){
+
+        TestDataFactory.assignPermissionSet(UserInfo.getUserId(),'Global_Campaigns_CVENT_Campaigns');
+        System.runAs(new User(Id=UserInfo.getUserId()))
+        {
+            // Given a campaign linked to an event
+            String eventCode = 'P7N2MG8Y827';
+            CventEvents__Event__c event = TestDataFactory.createCventEvent(eventCode, true);
+            quickCreateCampaignFromCventController.ResultWrapper result = quickCreateCampaignFromCventController.createCampaignFromCvent(eventCode,'',false);
+
+            List<Campaign> sessionCampaigns = TestDataFactory.returnCampaigns(3,'CventCampaign',UserInfo.getUserId());
+            for (Campaign campaign : sessionCampaigns)
+            {
+                campaign.CventEvents__EventStub__c = event.CventEvents__pkg_EventStub__c;
+            }
+
+            // When we insert the session campaigns
+            Test.startTest();
+            insert sessionCampaigns;
+            Test.stopTest();
+
+            // Then, the session campaigns should be set as campaign childs to the parent campaign linked to the event
+            List<Campaign> sessionCampaignsAfterInsert = [ SELECT Id,Parent_Event__c FROM Campaign WHERE campaign.CventEvents__EventStub__c = :event.CventEvents__pkg_EventStub__c];
+            for (Campaign campaign : sessionCampaignsAfterInsert)
+            {
+                System.assertEquals(campaign.Parent_Event__c,result.result,'Wrong Parent_Event__c value on session campaign records');
+            }
+        }
+    }
+
 }

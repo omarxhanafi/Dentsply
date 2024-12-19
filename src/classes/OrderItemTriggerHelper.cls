@@ -6,6 +6,8 @@ History
 Kevin Ruibin Do 20210419    Updated totalAmountOfSamplesAndFreeProducts to also set value when there are no free products
 Richard Trum	20200804	Changed setDiscountAllowedforTurkey to use the Contract field Discount__c instead of Discount_End_year__c
 Miguel Coimbra	20200511	Added descriptions
+Roberto Narbona 20231218    TFUS-000006230 ne method setOfferCodeAppliedNumber
+Roberto			20240219	TFUS-000006492
 ----------------------------------------------------------------------------------------*/
 public class OrderItemTriggerHelper {
     /*------------------------------------------------------------  
@@ -37,6 +39,7 @@ public class OrderItemTriggerHelper {
     ------------------------------------------------------------*/
     public static void totalAmountOfSamplesAndFreeProducts(List<OrderItem> newOrderItemtList) { 
         for(OrderItem orderItem: newOrderItemtList) {
+            setOfferCodeAppliedNumber(orderItem);
             if(orderItem.Quantity > 0) {
                 // Amount Samples
                 if(String.isBlank(orderItem.Account_for_Sample_in_AX__c)) {
@@ -53,6 +56,17 @@ public class OrderItemTriggerHelper {
             }
         } 
     }
+    
+    /*------------------------------------------------------------  
+    Description:   Check if there is an offer code if yes set offer code applied number to 1
+                   Migrate prcess builder entries "Offer Code selected" and "Offer Code Deselected"
+    Inputs:         @param orderItem
+    ------------------------------------------------------------*/
+    public static void setOfferCodeAppliedNumber(OrderItem orderItem) { 
+        orderItem.Offer_Code_Applied_Number__c = String.isBlank(orderItem.Offer_Code_dna__c) ? 0 : 1;
+    }
+
+    	
     /*------------------------------------------------------------  
     Description:    
     Inputs:         @param newOrderItemList
@@ -99,7 +113,6 @@ public class OrderItemTriggerHelper {
               	String.isNotBlank(parentOrder.Pricebook2Id) &&
               	'Implants'.equals(parentOrder.Order_Type__c)) {
                	if(String.isNotBlank(parentOrder.ContractId)) {
-                  //parentOrder.Discount_to_be_used__c = parentOrder.Contract.Discount_End_year__c;
                 	parentOrder.Discount_to_be_used__c = parentOrder.Contract.Discount__c;
                 } else {
                     parentOrder.Discount_to_be_used__c = 0;
@@ -110,6 +123,34 @@ public class OrderItemTriggerHelper {
             }
         }
         update ordersToUpdate.values();
+    }
+    /*Set if product is related with parent kit */
+    public static void setParentKitProduct(List<OrderItem> newOrderItemtList) { 
+        Set<ID> productsIds = new Set<ID>();
+        for(OrderItem orderItem: newOrderItemtList) {
+            productsIds.add(orderItem.Product2Id);
+        }
+        Map<Id,Product2> parentProducts = new Map<ID, Product2>([SELECT Id, ParentKit__c FROM Product2 WHERE ID IN :productsIds]); 
+        for(OrderItem orderItem: newOrderItemtList) {
+            orderItem.ParentKit__c = parentProducts.get(orderItem.Product2Id).ParentKit__c;
+        }
+    }
+    
+    /*Set Floor Price */
+    public static void setFloorPrice(List<OrderItem> newOrderItemtList) { 
+        Set<ID> pricebookEntryIds = new Set<ID>();
+        for(OrderItem orderItem: newOrderItemtList) {
+            pricebookEntryIds.add(orderItem.PricebookEntryId);
+        }
+        Map<Id,PricebookEntry> pricebookEntries = new Map<ID, PricebookEntry>([SELECT Id, FloorPrice__c FROM PricebookEntry WHERE ID IN :pricebookEntryIds]); 
+        for(OrderItem orderItem: newOrderItemtList) {
+            Decimal floorPrice = pricebookEntries.get(orderItem.PricebookEntryId).FloorPrice__c;
+            if(! String.isBlank(String.Valueof(floorPrice))){
+            	orderItem.TotalFloorPrice__c = floorPrice * orderItem.Quantity;
+            	orderItem.FloorPrice__c = floorPrice;
+            	orderItem.TotalFloorPriceDeviation__c = (orderItem.SalesPrice__c - floorPrice) * orderItem.Quantity;
+            }
+        }
     }
 
 }

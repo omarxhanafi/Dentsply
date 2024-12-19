@@ -2,11 +2,11 @@
 Author:         Ahmed LOUDRASSI (Salesforce) 2019-09-30   
 Description:    Global Utils. 
 History 
-20190930    Ahmed LOUDRASSI    create getRecordTypeId and getCurrentUser. (#TFUS-000001032)
-20211011	Roberto Narbona	   create GetDependentPicklistValues and GetCategoryFromBrand. (TFUS-000003578)
-2021118		Roberto Narbona	   update GetCategoryFromBrand removed reference to GetDependentPicklistValues 
-							   method and improve performance(TFUS-000003722)
-
+2019-09-30      Ahmed LOUDRASSI     create getRecordTypeId and getCurrentUser. (#TFUS-000001032)
+2021-10-11	    Roberto Narbona	    create GetDependentPicklistValues and GetCategoryFromBrand. (TFUS-000003578)
+2021-11-08		Roberto Narbona	    update GetCategoryFromBrand removed reference to GetDependentPicklistValues
+							        method and improve performance(TFUS-000003722)
+2024-02-01      Houssam ADIB        Fix a case of null pointer on getCategoryFromBrand
 ------------------------------------------------------------*/
 public class GlobalUtils {
 	private static User currentUser;
@@ -51,31 +51,35 @@ public class GlobalUtils {
     Description:    Method to get Category field value from Brand and country values.
     Inputs:         @param country and @param brand and @param categoryField and @param brandField
     ------------------------------------------------------------*/
-    public static String getCategoryFromBrand(string country, string brand, Map<String,List<String>> categoryField, Map<String,List<String>> brandField) {
-            //Map<String,List<String>> dependentPicklistCountryCategoryMap = getDependentPicklistValues(categoryField);
-            //Map<String,List<String>> dependentPicklistCategoryBrandMap = getDependentPicklistValues(brandField);
-            for(String countryCategory : categoryField.get(country)){
-                
+    public static String getCategoryFromBrand(string country, string brand, Map<String,List<String>> categoryField, Map<String,List<String>> brandField)
+    {
+        if(categoryField != null)
+        {
+            List<String> countryCategories = new List<String>();
+            if(categoryField.containsKey(country))
+            {
+                countryCategories = categoryField.get(country);
+            }
+
+            for(String countryCategory : countryCategories)
+            {
                 List<String> brands = brandField.get(countryCategory);
-                
+
                 if(brands.size() == 1){
                     if(brands[0] == brand){
                         return(countryCategory);
-                    }     
+                    }
                 }
                 else if(brands.size()>1){
                     if(brandField.get(countryCategory).contains(brand) == true){
                         return(countryCategory);
-                    }    
+                    }
                 }
-                
-                /*if(brandField.get(countryCategory).contains(brand) == true){
-                    System.debug('Return category ' + countryCategory);
-                    return(countryCategory);
-                }*/
             }
-            return null;
         }
+
+        return null;
+    }
     
     /*------------------------------------------------------------  
     Description:    Method to get dependant picklist values. All credits to:

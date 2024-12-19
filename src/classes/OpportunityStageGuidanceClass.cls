@@ -2,6 +2,7 @@
 Author:         Richard Trum (Glimt) 2019-11-05     
 Description:    Class used for collecting data to be used in the Lightning Component OpportunityStageGuidance
                 210421  kdoruibin   added method to update opportunity stage
+                230516  rtrum       added method to get available account programs related to sales lead
 ------------------------------------------------------------*/
 
 public class OpportunityStageGuidanceClass {
@@ -133,6 +134,29 @@ public class OpportunityStageGuidanceClass {
             } catch (Exception e) {
                 DebugLog.addException(e, 'Could not query stage type');
                 throw new AuraHandledException(e.getMessage());
+            }
+        }
+
+        @AuraEnabled
+        public static List<LoyaltyProgram__c> checkAccountPrograms(String recordId){
+            
+            List<Field_Sales_Project_Members__c> salesLeads = [SELECT Id, Account__r.Country__c FROM Field_Sales_Project_Members__c WHERE Id =: recordId];
+
+            if(salesLeads.size()>0){
+                String country = salesLeads[0].Account__r.Country__c;
+                try {
+                    return [
+                        SELECT Id, Name 
+                        FROM LoyaltyProgram__c
+                        WHERE Status__c = 'Active' AND AllowProgramMembers__c = true AND Country__c INCLUDES(:country)
+                    ];
+                    
+                } catch (Exception e) {
+                    throw new AuraHandledException(e.getMessage());
+                }
+            }
+            else{
+                return new List<LoyaltyProgram__c>();
             }
         }
     

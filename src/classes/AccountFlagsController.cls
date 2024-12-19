@@ -19,6 +19,9 @@ public with sharing class AccountFlagsController {
      */
     @AuraEnabled(Cacheable = true)
     public static String getAccountFlagsJSON(Id accountId) {
+        // Get account data
+        Account thisAccount = [SELECT Country__c FROM Account where Id = :accountId];
+
         // Get number of kol contract records related to the account
         Integer kolCount = [
                 SELECT COUNT()
@@ -52,6 +55,12 @@ public with sharing class AccountFlagsController {
 
         // KOL flag
         results.put('kol', new AccountFlag(kolCount > 0 ? 1 : 0, null));
+
+        // Add One DS flag (Only for US and Canada)
+        if(new List<String>{'US', 'CA'}.contains(thisAccount?.Country__c)){
+            AccountFlag oneDsFlag = getOneDSFlag(accountId);
+            results.put('oneDs', oneDsFlag);
+        }
 
         if(!activeContracts.isEmpty()){
             // We first get the flag values from the active contracts
@@ -321,6 +330,50 @@ public with sharing class AccountFlagsController {
 
         return results;
     }
+
+    /**
+     * getOneDSFlag Return the OneDS flag
+     * @author ohanafi@salesforce.com | 06-09-2024
+     *
+     * @param accountId  Id of the account
+     *
+     * @return AccountFlag - OneDS flag
+     */
+    private static AccountFlag getOneDSFlag(Id accountId) {
+        // Initialize the One DS Flag
+        AccountFlag loyaltyProgramFlag = new AccountFlag(0, null);
+
+        // Query for active loyalty program participants
+        List<LoyaltyProgramParticipant__c> activeParticipants = [
+                SELECT Id, Level__c
+                FROM LoyaltyProgramParticipant__c
+                WHERE Account__c = :accountId
+                AND LoyaltyProgram__r.Status__c = 'Active'
+                AND LoyaltyEnabled__c = true
+        ];
+
+        if (!activeParticipants.isEmpty()) {
+            // If there is an active membership, set the flag to active
+            loyaltyProgramFlag = new AccountFlag(1, activeParticipants[0].Id, activeParticipants[0].Level__c);
+        } else {
+            // If not, check for inactive memberships
+            List<LoyaltyProgramParticipant__c> inactiveParticipants = [
+                    SELECT Id, Level__c
+                    FROM LoyaltyProgramParticipant__c
+                    WHERE Account__c = :accountId
+                    AND LoyaltyProgram__r.DEPRecordHash__c != null
+                    AND (LoyaltyProgram__r.Status__c = 'Inactive' OR LoyaltyEnabled__c = false)
+            ];
+
+            if (!inactiveParticipants.isEmpty()) {
+                // Set the flag to inactive
+                loyaltyProgramFlag = new AccountFlag(2, inactiveParticipants[0].Id, inactiveParticipants[0].Level__c);
+            }
+        }
+
+        return loyaltyProgramFlag;
+    }
+
 
     // Wrapper class for flag data
     public class AccountFlag {

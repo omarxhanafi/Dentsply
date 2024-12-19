@@ -6,6 +6,8 @@ History
 20200609    Kevin Ruibin Do         TFUS-000001933 Changed boolean flag on manageNoticesOnEventsInserted to true
 20191107    Ahmed LOUDRASSI         CallReportEventTrigger, CallReportEventTriggerAfterInsert, DC_EventBackgroundJobs an DeleteClonedChildEvent triggers. (#)
 20230426    Roberto Narbona         TFUS-000005610
+20231128	Miguel	Coimbra			TFUS-000005745
+20240911    Omar Hanafi             TFUS-000006941
 --------------------------------------------------------------------------------------------------------*/
 public  with sharing class EventTriggerHelper {
 
@@ -110,42 +112,7 @@ public  with sharing class EventTriggerHelper {
             }
         }
     }
-    /*------------------------------------------------------------  
-    Description:    Method migrated from DC_EventBackgroundJobs trigger
-    Inputs:         @param newEventList
-    ------------------------------------------------------------*/
-    public static void manageNoticesOnEventsInserted(List<Event> newEventList) {
-        DC_EventNoticesManager.manageNotices_onEventsInserted(newEventList, true);
-    }
-    /*------------------------------------------------------------  
-    Description:    Method migrated from DC_EventBackgroundJobs trigger
-    Inputs:         @param newEventList
-    ------------------------------------------------------------*/
-    public static void trackBeforeUpdate(List<Event> newEventList) {
-        DC_EventsUpdateTrackerForNotices.trackBeforeUpdate(newEventList);
-    }
-    /*------------------------------------------------------------  
-    Description:    Method migrated from DC_EventBackgroundJobs trigger
-    Inputs:         @param newEventList, @param oldEventMap
-    ------------------------------------------------------------*/
-    public static void trackAfterUpdate(List<Event> newEventList, Map<Id, Event> oldEventMap) {
-        DC_EventsUpdateTrackerForNotices.trackAfterUpdate(newEventList);
-        DC_EventNoticesManager.manageNotices_onEventsUpdated(oldEventMap, newEventList);
-    }
-    /*------------------------------------------------------------  
-    Description:    Method migrated from DC_EventBackgroundJobs trigger
-    Inputs:         @param oldEventList
-    ------------------------------------------------------------*/
-    public static void trackBeforeDelete(List<Event> oldEventList) {
-        DC_EventsDeletionTrackerForNotices.trackBeforeDelete(oldEventList);
-    }
-    /*------------------------------------------------------------  
-    Description:    Method migrated from DC_EventBackgroundJobs trigger
-    Inputs:         @param oldEventList
-    ------------------------------------------------------------*/
-    public static void manageNoticesOnEventsDeleted(List<Event> oldEventList) {
-        DC_EventNoticesManager.manageNotices_onEventsDeleted(oldEventList);
-    }
+
     /*------------------------------------------------------------  
     Description:    Method migrated from DeleteClonedChildEvent trigger
     Inputs:         @param oldEventMap
@@ -270,17 +237,4 @@ public  with sharing class EventTriggerHelper {
         }
     }
 
-
-    /*------------------------------------------------------------  
-    Description:    New Method story TFUS-000005610
-    Inputs:         @param newEventList
-    ------------------------------------------------------------*/
-    public static void beforeSalesforceMapsScheduled(List<Event> newEventList) {
-        for (Event eventToCheck : newEventList) {
-            if (eventToCheck.ScheduledRoutedInSalesforceMaps__c) {
-                eventToCheck.Customer_Facing_Event__c  = true;
-                eventToCheck.Astra_Tech_Type__c  = 'In Person Meeting';
-            }
-        }
-    }
 }

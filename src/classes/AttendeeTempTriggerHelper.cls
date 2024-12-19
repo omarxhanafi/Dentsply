@@ -4,8 +4,9 @@ Description:    Attendee Temp Trigger Helper Class
 Test class      AttendeeTempTriggerHelperTest
 
 History
-20-03-2023      Create new helper class
-29-01-2024      TFUS-000005641 - Add Contact Type on campaign member
+20-03-2023      Houssam ADIB - Create new helper class
+29-01-2024      Houssam ADIB - TFUS-000005641 - Add Contact Type on campaign member
+29-01-2024      Houssam ADIB - TFUS-000006858 - Map new fields from Temp to attendee ( static mapping )
 ----------------------------------------------------------------------------------------*/
 
 public with sharing class AttendeeTempTriggerHelper {
@@ -30,13 +31,10 @@ public with sharing class AttendeeTempTriggerHelper {
             {
                 CventEvents__AttendeeTemp__c oldTempAttendee = oldTempAttendeeMap.get(tempAttendee.Id);
 
-                if(tempAttendee.MatchStatus__c != 'Unmatched') // Process Only (Matched + Converted to Lead)
+                if(mappedFieldHasChanged(tempAttendee, oldTempAttendee,mappings))
                 {
-                    if(mappedFieldHasChanged(tempAttendee, oldTempAttendee,mappings))
-                    {
-                        attendeeWrapper.tempAttendee = tempAttendee;
-                        changedTempAttendeesToBeSynced.add(attendeeWrapper);
-                    }
+                    attendeeWrapper.tempAttendee = tempAttendee;
+                    changedTempAttendeesToBeSynced.add(attendeeWrapper);
                 }
             }
         }
@@ -82,10 +80,12 @@ public with sharing class AttendeeTempTriggerHelper {
             }
         }
 
-        // Manual Field mapped statically for Temp -> Attendee
+        // Manual Field mapped statically for Temp -> Attendee. (+Static Cvent Fields.)
         if( tempAttendee.CventEvents__pkg_AttendeeStatus__c         != oldTempAttendee.CventEvents__pkg_AttendeeStatus__c
             || tempAttendee.CventEvents__pkg_Attended__c            != oldTempAttendee.CventEvents__pkg_Attended__c
-            || tempAttendee.CventEvents__pkg_ContactTypeName__c     != oldTempAttendee.CventEvents__pkg_ContactTypeName__c )
+            || tempAttendee.CventEvents__pkg_ContactTypeName__c     != oldTempAttendee.CventEvents__pkg_ContactTypeName__c
+            || tempAttendee.Doyouhaveanintraoralscannerinyour__c    != oldTempAttendee.Doyouhaveanintraoralscannerinyour__c
+            || tempAttendee.Whichsolutionsareyouinterestedin__c     != oldTempAttendee.Whichsolutionsareyouinterestedin__c )
         {
             mappedFieldHasChanged = true;
         }
@@ -121,6 +121,8 @@ public with sharing class AttendeeTempTriggerHelper {
                 wrapper.attendee.CventEvents__Status__c     = wrapper.tempAttendee.CventEvents__pkg_AttendeeStatus__c;
                 wrapper.attendee.CventEvents__Attended__c   = wrapper.tempAttendee.CventEvents__pkg_Attended__c;
                 wrapper.attendee.ContactType__c             = wrapper.tempAttendee.CventEvents__pkg_ContactTypeName__c;
+                wrapper.attendee.IntraoralScannerInUse__c   = wrapper.tempAttendee.Doyouhaveanintraoralscannerinyour__c;
+                wrapper.attendee.SolutionsInterest__c       = wrapper.tempAttendee.Whichsolutionsareyouinterestedin__c;
                 attendeesToUpdate.add(wrapper.attendee);
             }
         }
