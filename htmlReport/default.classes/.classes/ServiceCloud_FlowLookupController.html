@@ -1,0 +1,105 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ServiceCloud_FlowLookupController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ServiceCloud_FlowLookupController (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ServiceCloud_FlowLookupController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 18)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>ServiceCloud_FlowLookupController</h2>
+<div class="sourceCode"><i>1</i>&nbsp;public class ServiceCloud_FlowLookupController {
+<i>2</i>&nbsp;    
+<i>3</i>&nbsp;    @AuraEnabled 
+<b class="nc"><i>4</i>&nbsp;    public static String searchDB(String objectName, String fld_API_Text, String fld_API_Val, </b>
+<i>5</i>&nbsp;                                  Integer lim,String fld_API_Search,String searchText ){
+<i>6</i>&nbsp;        
+<b class="nc"><i>7</i>&nbsp;        searchText=&#39;\&#39;%&#39; + String.escapeSingleQuotes(searchText.trim()) + &#39;%\&#39;&#39;;</b>
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;        
+<b class="nc"><i>10</i>&nbsp;        String query = &#39;SELECT &#39;+fld_API_Text+&#39; ,&#39;+fld_API_Val+</b>
+<b class="nc"><i>11</i>&nbsp;            			&#39; FROM &#39;+objectName+</b>
+<b class="nc"><i>12</i>&nbsp;            				&#39; WHERE &#39;+fld_API_Search+&#39; LIKE &#39;+searchText+ </b>
+<b class="nc"><i>13</i>&nbsp;            			&#39; LIMIT &#39;+lim;</b>
+<i>14</i>&nbsp;        
+<b class="nc"><i>15</i>&nbsp;        List&lt;sObject&gt; sobjList = Database.query(query);</b>
+<b class="nc"><i>16</i>&nbsp;        List&lt;ResultWrapper&gt; lstRet = new List&lt;ResultWrapper&gt;();</b>
+<i>17</i>&nbsp;        
+<b class="nc"><i>18</i>&nbsp;        for(SObject s : sobjList){</b>
+<b class="nc"><i>19</i>&nbsp;            ResultWrapper obj = new ResultWrapper();</b>
+<b class="nc"><i>20</i>&nbsp;            obj.objName = objectName;</b>
+<b class="nc"><i>21</i>&nbsp;            obj.text = String.valueOf(s.get(fld_API_Text)) ;</b>
+<b class="nc"><i>22</i>&nbsp;            obj.val = String.valueOf(s.get(fld_API_Val))  ;</b>
+<b class="nc"><i>23</i>&nbsp;            lstRet.add(obj);</b>
+<i>24</i>&nbsp;        } 
+<b class="nc"><i>25</i>&nbsp;         return JSON.serialize(lstRet) ;</b>
+<i>26</i>&nbsp;    }
+<i>27</i>&nbsp;    
+<i>28</i>&nbsp;    public class ResultWrapper{
+<b class="nc"><i>29</i>&nbsp;        public String objName {get;set;}</b>
+<b class="nc"><i>30</i>&nbsp;        public String text{get;set;}</b>
+<b class="nc"><i>31</i>&nbsp;        public String val{get;set;}</b>
+<i>32</i>&nbsp;    }   
+<i>33</i>&nbsp;    
+<i>34</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

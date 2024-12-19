@@ -1,0 +1,144 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: EinsteinAPIService</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: EinsteinAPIService (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">EinsteinAPIService</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 42)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>EinsteinAPIService</h2>
+<div class="sourceCode"><i>1</i>&nbsp;public  class EinsteinAPIService {
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;    public static FINAL STRING OAUTH_END_POINT = &#39;https://api.einstein.ai/v2/oauth/token&#39;;
+<i>5</i>&nbsp;
+<b class="nc"><i>6</i>&nbsp;    public static String imageOCR(String endPoint, String sample, String model, boolean isBase64, boolean isCard){</b>
+<b class="nc"><i>7</i>&nbsp;        String result = einsteinAPICall(endPoint, sample, model, isBase64, isCard);</b>
+<b class="nc"><i>8</i>&nbsp;        return result;</b>
+<i>9</i>&nbsp;    }
+<b class="nc"><i>10</i>&nbsp;    public static String predictImage(String endPoint, String sample, String model, boolean isBase64, boolean isCard){</b>
+<b class="nc"><i>11</i>&nbsp;        String result = einsteinAPICall(endPoint, sample, model, isBase64, isCard);</b>
+<b class="nc"><i>12</i>&nbsp;        return result;</b>
+<i>13</i>&nbsp;    }
+<i>14</i>&nbsp;
+<b class="nc"><i>15</i>&nbsp;    private static String einsteinAPICall(String endPoint, String sample, String model, boolean isBase64, boolean isCard) {</b>
+<b class="nc"><i>16</i>&nbsp;        string contentType = HttpFormBuilder.GetContentType();</b>
+<b class="nc"><i>17</i>&nbsp;        String access_token = EinsteinAPIAuthenticationHandler.getAccessToken(&#39;richard_trum&#39;);</b>
+<i>18</i>&nbsp;        
+<i>19</i>&nbsp;        //  Compose the form
+<b class="nc"><i>20</i>&nbsp;        string form64 = &#39;&#39;;</b>
+<i>21</i>&nbsp;		
+<b class="nc"><i>22</i>&nbsp;        form64 += HttpFormBuilder.WriteBoundary();</b>
+<b class="nc"><i>23</i>&nbsp;        form64 += HttpFormBuilder.WriteBodyParameter(&#39;modelId&#39;, EncodingUtil.urlEncode(model, &#39;UTF-8&#39;));</b>
+<b class="nc"><i>24</i>&nbsp;        form64 += HttpFormBuilder.WriteBoundary();</b>
+<b class="nc"><i>25</i>&nbsp;        if(isCard){</b>
+<b class="nc"><i>26</i>&nbsp;            form64 += HttpFormBuilder.WriteBodyParameter(&#39;task&#39;, EncodingUtil.urlEncode(&#39;contact&#39;, &#39;UTF-8&#39;));</b>
+<b class="nc"><i>27</i>&nbsp;            form64 += HttpFormBuilder.WriteBoundary();</b>
+<i>28</i>&nbsp;        }
+<b class="nc"><i>29</i>&nbsp;        if(isBase64) {</b>
+<b class="nc"><i>30</i>&nbsp;            form64 += HttpFormBuilder.WriteBodyParameter(&#39;sampleBase64Content&#39;, sample);</b>
+<i>31</i>&nbsp;        } else {
+<b class="nc"><i>32</i>&nbsp;            form64 += HttpFormBuilder.WriteBodyParameter(&#39;sampleLocation&#39;, sample);</b>
+<i>33</i>&nbsp;        }
+<i>34</i>&nbsp;        
+<b class="nc"><i>35</i>&nbsp;        form64 += HttpFormBuilder.WriteBoundary(HttpFormBuilder.EndingType.CrLf);</b>
+<i>36</i>&nbsp;        
+<b class="nc"><i>37</i>&nbsp;        blob formBlob = EncodingUtil.base64Decode(form64);</b>
+<b class="nc"><i>38</i>&nbsp;        string contentLength = string.valueOf(formBlob.size());</b>
+<i>39</i>&nbsp;        
+<b class="nc"><i>40</i>&nbsp;        HttpRequest httpRequest = new HttpRequest();</b>
+<i>41</i>&nbsp;
+<b class="nc"><i>42</i>&nbsp;        httpRequest.setBodyAsBlob(formBlob);</b>
+<b class="nc"><i>43</i>&nbsp;        httpRequest.setHeader(&#39;Connection&#39;, &#39;keep-alive&#39;);</b>
+<b class="nc"><i>44</i>&nbsp;        httpRequest.setHeader(&#39;Content-Length&#39;, contentLength);</b>
+<b class="nc"><i>45</i>&nbsp;        httpRequest.setHeader(&#39;Content-Type&#39;, contentType);</b>
+<b class="nc"><i>46</i>&nbsp;        httpRequest.setMethod(&#39;POST&#39;);</b>
+<b class="nc"><i>47</i>&nbsp;        httpRequest.setTimeout(120000);</b>
+<b class="nc"><i>48</i>&nbsp;        httpRequest.setHeader(&#39;Authorization&#39;,&#39;Bearer &#39; + access_token);</b>
+<b class="nc"><i>49</i>&nbsp;        httpRequest.setEndpoint(endPoint);</b>
+<i>50</i>&nbsp;
+<b class="nc"><i>51</i>&nbsp;        Http http = new Http();</b>
+<i>52</i>&nbsp;
+<b class="nc"><i>53</i>&nbsp;        if(!Test.isRunningTest()){</b>
+<b class="nc"><i>54</i>&nbsp;            try {</b>
+<b class="nc"><i>55</i>&nbsp;                HTTPResponse res = http.send(httpRequest);</b>
+<i>56</i>&nbsp;                System.debug(System.LoggingLevel.DEBUG, &#39; Response From Einstein Platform API &#39;+res.getBody());
+<b class="nc"><i>57</i>&nbsp;                if (res.getStatusCode() == 200) {</b>
+<b class="nc"><i>58</i>&nbsp;                    return res.getBody();</b>
+<i>59</i>&nbsp;                }
+<b class="nc"><i>60</i>&nbsp;            } catch(System.CalloutException e) {</b>
+<i>61</i>&nbsp;                System.debug(&#39;ERROR:&#39; + e);
+<b class="nc"><i>62</i>&nbsp;                return e.getStackTraceString();</b>
+<i>63</i>&nbsp;            }
+<i>64</i>&nbsp;        }
+<i>65</i>&nbsp;        else{
+<i>66</i>&nbsp;
+<b class="nc"><i>67</i>&nbsp;            String fakeResponse = &#39;{&quot;object&quot;:&quot;predictresponse&quot;,&quot;probabilities&quot;:[{&quot;probability&quot;:0.78376186,&quot;label&quot;:&quot;TOOLS&quot;,&quot;boundingBox&quot;:{&quot;minX&quot;:72,&quot;minY&quot;:130,&quot;maxX&quot;:134,&quot;maxY&quot;:146},&quot;attributes&quot;:{&quot;tag&quot;:&quot;ORG&quot;,&quot;pageNumber&quot;:&quot;1&quot;}},{&quot;probability&quot;:0.78376186,&quot;label&quot;:&quot;Firstname Lastname&quot;,&quot;boundingBox&quot;:{&quot;minX&quot;:72,&quot;minY&quot;:130,&quot;maxX&quot;:134,&quot;maxY&quot;:146},&quot;attributes&quot;:{&quot;tag&quot;:&quot;PERSON&quot;,&quot;pageNumber&quot;:&quot;1&quot;}},{&quot;probability&quot;:0.78376186,&quot;label&quot;:&quot;invalid@dentsplysirona.com&quot;,&quot;boundingBox&quot;:{&quot;minX&quot;:72,&quot;minY&quot;:130,&quot;maxX&quot;:134,&quot;maxY&quot;:146},&quot;attributes&quot;:{&quot;tag&quot;:&quot;EMAIL&quot;,&quot;pageNumber&quot;:&quot;1&quot;}},{&quot;probability&quot;:0.78376186,&quot;label&quot;:&quot;031-2342352&quot;,&quot;boundingBox&quot;:{&quot;minX&quot;:72,&quot;minY&quot;:130,&quot;maxX&quot;:134,&quot;maxY&quot;:146},&quot;attributes&quot;:{&quot;tag&quot;:&quot;PHONE&quot;,&quot;pageNumber&quot;:&quot;1&quot;}}]}&#39;;</b>
+<b class="nc"><i>68</i>&nbsp;            return fakeResponse; </b>
+<i>69</i>&nbsp;
+<i>70</i>&nbsp;        }
+<b class="nc"><i>71</i>&nbsp;        return null;</b>
+<i>72</i>&nbsp;    }
+<i>73</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

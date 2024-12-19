@@ -1,0 +1,130 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: BatchUpdateProducts</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: BatchUpdateProducts (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">BatchUpdateProducts</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92.3%
+  </span>
+  <span class="absValue">
+    (24/ 26)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>BatchUpdateProducts</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp; * Author            : ohanafi@salesforce.com
+<i>3</i>&nbsp; * Description       : Batch running the trigger on the product records with the provided PG Codes
+<i>4</i>&nbsp; * Test class        : Test_BatchUpdateProducts
+<i>5</i>&nbsp; * History
+<i>6</i>&nbsp; * 25-01-2024         Created BatchUpdateProducts class (TFUS-000006225)
+<i>7</i>&nbsp;--------------------------------------------------------------------------------------------------*/
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;global class BatchUpdateProducts implements Database.Batchable&lt;sObject&gt; {
+<i>10</i>&nbsp;    private Set&lt;String&gt; pg1Codes;
+<i>11</i>&nbsp;    private Set&lt;String&gt; pg2Codes;
+<i>12</i>&nbsp;    private Set&lt;String&gt; pg3Codes;
+<i>13</i>&nbsp;    private Set&lt;String&gt; pg4Codes;
+<i>14</i>&nbsp;
+<b class="fc"><i>15</i>&nbsp;    public BatchUpdateProducts(Set&lt;String&gt; pg1Codes, Set&lt;String&gt; pg2Codes, Set&lt;String&gt; pg3Codes, Set&lt;String&gt; pg4Codes) {</b>
+<b class="fc"><i>16</i>&nbsp;        this.pg1Codes = pg1Codes;</b>
+<b class="fc"><i>17</i>&nbsp;        this.pg2Codes = pg2Codes;</b>
+<b class="fc"><i>18</i>&nbsp;        this.pg3Codes = pg3Codes;</b>
+<b class="fc"><i>19</i>&nbsp;        this.pg4Codes = pg4Codes;</b>
+<i>20</i>&nbsp;    }
+<i>21</i>&nbsp;
+<b class="fc"><i>22</i>&nbsp;    global Database.QueryLocator start(Database.BatchableContext BC) {</b>
+<b class="fc"><i>23</i>&nbsp;        String query = &#39;SELECT Id, PG1_Code__c, PG2_Code__c, PG3_Code__c, PG4_Code__c FROM Product2 &#39; +</b>
+<i>24</i>&nbsp;                &#39;WHERE PG1_Code__c IN :pg1Codes &#39; +
+<i>25</i>&nbsp;                &#39;OR GlobalSKUMapping__r.PG1_Code__c IN :pg1Codes &#39; +
+<i>26</i>&nbsp;                &#39;OR PG2_Code__c IN :pg2Codes &#39; +
+<i>27</i>&nbsp;                &#39;OR GlobalSKUMapping__r.PG2_Code__c IN :pg2Codes &#39; +
+<i>28</i>&nbsp;                &#39;OR PG3_Code__c IN :pg3Codes &#39; +
+<i>29</i>&nbsp;                &#39;OR GlobalSKUMapping__r.PG3_Code__c IN :pg3Codes &#39; +
+<i>30</i>&nbsp;                &#39;OR PG4_Code__c IN :pg4Codes &#39; +
+<i>31</i>&nbsp;                &#39;OR GlobalSKUMapping__r.PG4_Code__c IN :pg4Codes &#39;;
+<b class="fc"><i>32</i>&nbsp;        return Database.getQueryLocator(query);</b>
+<i>33</i>&nbsp;    }
+<i>34</i>&nbsp;
+<b class="fc"><i>35</i>&nbsp;    global void execute(Database.BatchableContext BC, List&lt;Product2&gt; records) {</b>
+<b class="fc"><i>36</i>&nbsp;        try{</b>
+<b class="fc"><i>37</i>&nbsp;            for (Product2 product : records) {</b>
+<b class="fc"><i>38</i>&nbsp;                product.PG1_Code__c = product.PG1_Code__c != null ? product.PG1_Code__c += &#39;XX&#39; : &#39;XX&#39;;</b>
+<b class="fc"><i>39</i>&nbsp;                product.PG2_Code__c = product.PG2_Code__c != null ? product.PG2_Code__c += &#39;XX&#39; : &#39;XX&#39;;</b>
+<b class="fc"><i>40</i>&nbsp;                product.PG3_Code__c = product.PG3_Code__c != null ? product.PG3_Code__c += &#39;XX&#39; : &#39;XX&#39;;</b>
+<b class="fc"><i>41</i>&nbsp;                product.PG4_Code__c = product.PG4_Code__c != null ? product.PG4_Code__c += &#39;XX&#39; : &#39;XX&#39;;</b>
+<i>42</i>&nbsp;            }
+<b class="fc"><i>43</i>&nbsp;            update records;</b>
+<i>44</i>&nbsp;
+<b class="fc"><i>45</i>&nbsp;            for (Product2 product : records) {</b>
+<b class="fc"><i>46</i>&nbsp;                if (product.PG1_Code__c != null) product.PG1_Code__c = product.PG1_Code__c.substring(0, product.PG1_Code__c.length() - 2);</b>
+<b class="fc"><i>47</i>&nbsp;                if (product.PG2_Code__c != null) product.PG2_Code__c = product.PG2_Code__c.substring(0, product.PG2_Code__c.length() - 2);</b>
+<b class="fc"><i>48</i>&nbsp;                if (product.PG3_Code__c != null) product.PG3_Code__c = product.PG3_Code__c.substring(0, product.PG3_Code__c.length() - 2);</b>
+<b class="fc"><i>49</i>&nbsp;                if (product.PG4_Code__c != null) product.PG4_Code__c = product.PG4_Code__c.substring(0, product.PG4_Code__c.length() - 2);</b>
+<i>50</i>&nbsp;            }
+<b class="fc"><i>51</i>&nbsp;            update records;</b>
+<b class="nc"><i>52</i>&nbsp;        } catch (DmlException e){</b>
+<b class="nc"><i>53</i>&nbsp;            DebugLog.addException(e, &#39;Error occurred on: BatchUpdateProducts &#39;);</b>
+<i>54</i>&nbsp;        }
+<i>55</i>&nbsp;    }
+<i>56</i>&nbsp;
+<b class="fc"><i>57</i>&nbsp;    global void finish(Database.BatchableContext BC) {</b>
+<b class="fc"><i>58</i>&nbsp;        DebugLog.addinfo(&#39;Batch finished successfully: BatchUpdateProducts JobId:&#39;, bc.getJobId());    }</b>
+<i>59</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

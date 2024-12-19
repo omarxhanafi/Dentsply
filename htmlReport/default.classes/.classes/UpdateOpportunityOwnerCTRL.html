@@ -1,0 +1,92 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: UpdateOpportunityOwnerCTRL</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: UpdateOpportunityOwnerCTRL (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">UpdateOpportunityOwnerCTRL</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>UpdateOpportunityOwnerCTRL</h2>
+<div class="sourceCode"><i>1</i>&nbsp;public class UpdateOpportunityOwnerCTRL {
+<i>2</i>&nbsp;	ApexPages.StandardSetController setCon;
+<b class="nc"><i>3</i>&nbsp;	public boolean isSuccess = false;</b>
+<b class="nc"><i>4</i>&nbsp;    public UpdateOpportunityOwnerCTRL(ApexPages.StandardSetController controller) {</b>
+<b class="nc"><i>5</i>&nbsp;        setCon = controller;</b>
+<i>6</i>&nbsp;        /*if(setCon.save() != null) {
+<i>7</i>&nbsp;            isSuccess = true;
+<i>8</i>&nbsp;        }*/
+<i>9</i>&nbsp;    }
+<b class="nc"><i>10</i>&nbsp;	public boolean getIsSuccess() {</b>
+<b class="nc"><i>11</i>&nbsp;                return isSuccess;</b>
+<i>12</i>&nbsp;    }
+<b class="nc"><i>13</i>&nbsp;    public integer getMySelectedSize() {</b>
+<b class="nc"><i>14</i>&nbsp;                return setCon.getSelected().size();</b>
+<i>15</i>&nbsp;        }
+<i>16</i>&nbsp;       
+<b class="nc"><i>17</i>&nbsp;    public integer getMyRecordsSize() {</b>
+<b class="nc"><i>18</i>&nbsp;        return setCon.getRecords().size();</b>
+<i>19</i>&nbsp;    }
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,352 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: GlobalUtils</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: GlobalUtils (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">GlobalUtils</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    72.2%
+  </span>
+  <span class="absValue">
+    (83/ 115)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>GlobalUtils</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*------------------------------------------------------------  
+<i>2</i>&nbsp;Author:         Ahmed LOUDRASSI (Salesforce) 2019-09-30   
+<i>3</i>&nbsp;Description:    Global Utils. 
+<i>4</i>&nbsp;History 
+<i>5</i>&nbsp;2019-09-30      Ahmed LOUDRASSI     create getRecordTypeId and getCurrentUser. (#TFUS-000001032)
+<i>6</i>&nbsp;2021-10-11	    Roberto Narbona	    create GetDependentPicklistValues and GetCategoryFromBrand. (TFUS-000003578)
+<i>7</i>&nbsp;2021-11-08		Roberto Narbona	    update GetCategoryFromBrand removed reference to GetDependentPicklistValues
+<i>8</i>&nbsp;							        method and improve performance(TFUS-000003722)
+<i>9</i>&nbsp;2024-02-01      Houssam ADIB        Fix a case of null pointer on getCategoryFromBrand
+<i>10</i>&nbsp;------------------------------------------------------------*/
+<i>11</i>&nbsp;public class GlobalUtils {
+<i>12</i>&nbsp;	private static User currentUser;
+<b class="fc"><i>13</i>&nbsp;    private static Map&lt;String,ID&gt; recordTypes = new Map&lt;String,ID&gt; ();</b>
+<i>14</i>&nbsp;    /*------------------------------------------------------------  
+<i>15</i>&nbsp;    Description:    Method to retrieve recordTypeId of a SObject by SObjectName
+<i>16</i>&nbsp;					and RecordTypeApiName
+<i>17</i>&nbsp;    Inputs:         @param SObjectName and @param recordTypeApiName
+<i>18</i>&nbsp;    ------------------------------------------------------------*/
+<b class="fc"><i>19</i>&nbsp;    public static Id getRecordTypeId(String SObjectName, String recordTypeApiName){</b>
+<b class="fc"><i>20</i>&nbsp;        String key = SObjectName+recordTypeApiName;</b>
+<b class="fc"><i>21</i>&nbsp;        if(!recordTypes.containsKey(key)) {</b>
+<b class="fc"><i>22</i>&nbsp;            recordTypes.put(key, Schema.getGlobalDescribe()</b>
+<b class="fc"><i>23</i>&nbsp;                                        .get(SObjectName)</b>
+<b class="fc"><i>24</i>&nbsp;                                        .getDescribe()</b>
+<b class="fc"><i>25</i>&nbsp;                                        .getRecordTypeInfosByDeveloperName()</b>
+<b class="fc"><i>26</i>&nbsp;                                        .get(recordTypeApiName)</b>
+<b class="fc"><i>27</i>&nbsp;                                        .getRecordTypeId());</b>
+<i>28</i>&nbsp;        }
+<b class="fc"><i>29</i>&nbsp;        return recordTypes.get(key);</b>
+<i>30</i>&nbsp;    }
+<i>31</i>&nbsp;    /*------------------------------------------------------------  
+<i>32</i>&nbsp;    Description:    Method to verify if a recordTypeId is in a list of RecordTypes
+<i>33</i>&nbsp;    Inputs:         @param SObjectName and @param recordTypeApiName and @param recordTypeId
+<i>34</i>&nbsp;    ------------------------------------------------------------*/
+<b class="fc"><i>35</i>&nbsp;    public static Boolean ifRecordTypeInList(String SObjectName, List&lt;String&gt; recordTypesApiNames,Id recordTypeId){</b>
+<b class="fc"><i>36</i>&nbsp;       for(String recordTypeApiName : recordTypesApiNames) {</b>
+<b class="fc"><i>37</i>&nbsp;          if(getRecordTypeId(SObjectName, recordTypeApiName) == recordTypeId)</b>
+<b class="fc"><i>38</i>&nbsp;              	return true;</b>
+<i>39</i>&nbsp;       }
+<b class="fc"><i>40</i>&nbsp;        return false;</b>
+<i>41</i>&nbsp;    }
+<b class="fc"><i>42</i>&nbsp;    public static User getCurrentUser() {</b>
+<b class="fc"><i>43</i>&nbsp;        if(currentUser == null) {</b>
+<b class="fc"><i>44</i>&nbsp;            currentUser = [Select Id, User_Country__c, Full_Name__c, UserRole.Name</b>
+<i>45</i>&nbsp;                           FROM User
+<b class="fc"><i>46</i>&nbsp;                           WHERE Id =: UserInfo.getUserId()];</b>
+<i>47</i>&nbsp;        }
+<b class="fc"><i>48</i>&nbsp;        return currentUser;</b>
+<i>49</i>&nbsp;    }
+<i>50</i>&nbsp;    /*------------------------------------------------------------  
+<i>51</i>&nbsp;    Description:    Method to get Category field value from Brand and country values.
+<i>52</i>&nbsp;    Inputs:         @param country and @param brand and @param categoryField and @param brandField
+<i>53</i>&nbsp;    ------------------------------------------------------------*/
+<b class="fc"><i>54</i>&nbsp;    public static String getCategoryFromBrand(string country, string brand, Map&lt;String,List&lt;String&gt;&gt; categoryField, Map&lt;String,List&lt;String&gt;&gt; brandField)</b>
+<i>55</i>&nbsp;    {
+<b class="fc"><i>56</i>&nbsp;        if(categoryField != null)</b>
+<i>57</i>&nbsp;        {
+<b class="fc"><i>58</i>&nbsp;            List&lt;String&gt; countryCategories = new List&lt;String&gt;();</b>
+<b class="fc"><i>59</i>&nbsp;            if(categoryField.containsKey(country))</b>
+<i>60</i>&nbsp;            {
+<b class="fc"><i>61</i>&nbsp;                countryCategories = categoryField.get(country);</b>
+<i>62</i>&nbsp;            }
+<i>63</i>&nbsp;
+<b class="fc"><i>64</i>&nbsp;            for(String countryCategory : countryCategories)</b>
+<b class="fc"><i>65</i>&nbsp;            {</b>
+<b class="fc"><i>66</i>&nbsp;                List&lt;String&gt; brands = brandField.get(countryCategory);</b>
+<i>67</i>&nbsp;
+<b class="fc"><i>68</i>&nbsp;                if(brands.size() == 1){</b>
+<b class="nc"><i>69</i>&nbsp;                    if(brands[0] == brand){</b>
+<b class="nc"><i>70</i>&nbsp;                        return(countryCategory);</b>
+<i>71</i>&nbsp;                    }
+<i>72</i>&nbsp;                }
+<b class="fc"><i>73</i>&nbsp;                else if(brands.size()&gt;1){</b>
+<b class="fc"><i>74</i>&nbsp;                    if(brandField.get(countryCategory).contains(brand) == true){</b>
+<b class="fc"><i>75</i>&nbsp;                        return(countryCategory);</b>
+<i>76</i>&nbsp;                    }
+<i>77</i>&nbsp;                }
+<i>78</i>&nbsp;            }
+<i>79</i>&nbsp;        }
+<i>80</i>&nbsp;
+<b class="nc"><i>81</i>&nbsp;        return null;</b>
+<i>82</i>&nbsp;    }
+<i>83</i>&nbsp;    
+<i>84</i>&nbsp;    /*------------------------------------------------------------  
+<i>85</i>&nbsp;    Description:    Method to get dependant picklist values. All credits to:
+<i>86</i>&nbsp;					https://salesforceprofs.com/how-to-get-dependent-picklist-values-in-apex/
+<i>87</i>&nbsp;    Inputs:         @param dependToken
+<i>88</i>&nbsp;    ------------------------------------------------------------*/
+<b class="fc"><i>89</i>&nbsp;    public static Map&lt;String, List&lt;String&gt;&gt; getDependentPicklistValues(Schema.sObjectField dependToken) {</b>
+<b class="fc"><i>90</i>&nbsp;        Schema.DescribeFieldResult depend = dependToken.getDescribe();</b>
+<b class="fc"><i>91</i>&nbsp;        Schema.sObjectField controlToken = depend.getController();</b>
+<b class="fc"><i>92</i>&nbsp;        if (controlToken == null) {</b>
+<b class="nc"><i>93</i>&nbsp;            return new Map&lt;String, List&lt;String&gt;&gt;();</b>
+<i>94</i>&nbsp;        }
+<i>95</i>&nbsp;        
+<b class="fc"><i>96</i>&nbsp;        Schema.DescribeFieldResult control = controlToken.getDescribe();</b>
+<b class="fc"><i>97</i>&nbsp;        List&lt;Schema.PicklistEntry&gt; controlEntries;</b>
+<b class="fc"><i>98</i>&nbsp;        if(control.getType() != Schema.DisplayType.Boolean) {</b>
+<b class="fc"><i>99</i>&nbsp;            controlEntries = control.getPicklistValues();</b>
+<i>100</i>&nbsp;        }
+<i>101</i>&nbsp;        
+<b class="fc"><i>102</i>&nbsp;        String base64map = &#39;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#39;;</b>
+<b class="fc"><i>103</i>&nbsp;        Map&lt;String,List&lt;String&gt;&gt; dependentPicklistValues = new Map&lt;String,List&lt;String&gt;&gt;();</b>
+<b class="fc"><i>104</i>&nbsp;        for (Schema.PicklistEntry entry : depend.getPicklistValues()) {</b>
+<b class="fc"><i>105</i>&nbsp;            if (entry.isActive() &amp;&amp; String.isNotEmpty(String.valueOf(((Map&lt;String,Object&gt;) JSON.deserializeUntyped(JSON.serialize(entry))).get(&#39;validFor&#39;)))) {</b>
+<b class="fc"><i>106</i>&nbsp;                List&lt;String&gt; base64chars =</b>
+<b class="fc"><i>107</i>&nbsp;                    String.valueOf(((Map&lt;String,Object&gt;) JSON.deserializeUntyped(JSON.serialize(entry))).get(&#39;validFor&#39;)).split(&#39;&#39;);</b>
+<b class="fc"><i>108</i>&nbsp;                for (Integer index = 0; index &lt; (controlEntries != null ? controlEntries.size() : 2); index++) {</b>
+<b class="fc"><i>109</i>&nbsp;                    Object controlValue =</b>
+<b class="fc"><i>110</i>&nbsp;                        (controlEntries == null</b>
+<b class="nc"><i>111</i>&nbsp;                         ?   (Object) (index == 1)</b>
+<b class="fc"><i>112</i>&nbsp;                         :   (Object) (controlEntries[index].isActive() ? controlEntries[index].getValue() : null)</b>
+<i>113</i>&nbsp;                        );
+<b class="fc"><i>114</i>&nbsp;                    Integer bitIndex = index / 6;</b>
+<b class="fc"><i>115</i>&nbsp;                    if (bitIndex &gt; base64chars.size() - 1) {</b>
+<b class="nc"><i>116</i>&nbsp;                        break;</b>
+<i>117</i>&nbsp;                    }
+<b class="fc"><i>118</i>&nbsp;                    Integer bitShift = 5 - Math.mod(index, 6);</b>
+<b class="fc"><i>119</i>&nbsp;                    if  (controlValue == null || (base64map.indexOf( base64chars[ bitIndex ] ) &amp; (1 &lt;&lt; bitShift)) == 0)</b>
+<b class="fc"><i>120</i>&nbsp;                        continue;</b>
+<b class="fc"><i>121</i>&nbsp;                    if (!dependentPicklistValues.containsKey((String) controlValue)) {</b>
+<b class="fc"><i>122</i>&nbsp;                        dependentPicklistValues.put((String) controlValue, new List&lt;String&gt;());</b>
+<i>123</i>&nbsp;                    }
+<b class="fc"><i>124</i>&nbsp;                    dependentPicklistValues.get((String) controlValue).add(entry.getValue());</b>
+<i>125</i>&nbsp;                }
+<i>126</i>&nbsp;            }
+<i>127</i>&nbsp;        }
+<b class="fc"><i>128</i>&nbsp;        return dependentPicklistValues;</b>
+<i>129</i>&nbsp;    }
+<i>130</i>&nbsp;
+<i>131</i>&nbsp;    /**
+<i>132</i>&nbsp;     * Assort the Opportunity Settings data (LeadOpportunitySetting__mdt) in a Map
+<i>133</i>&nbsp;     * The map has either brand names or category names as keys and corresponding LeadOpportunitySetting__mdt values.
+<i>134</i>&nbsp;     * @author hadib@salesforce.com | 20-02-2023 (Campaign Refactoring)
+<i>135</i>&nbsp;     *
+<i>136</i>&nbsp;     * @param oppSettings   Opportunity Settings metadata
+<i>137</i>&nbsp;     *
+<i>138</i>&nbsp;     * @return Map&lt;String, LeadOpportunitySetting__mdt&gt; - Map of settings classified by Brand or Category
+<i>139</i>&nbsp;     */
+<b class="fc"><i>140</i>&nbsp;    public static Map&lt;String, LeadOpportunitySetting__mdt&gt; getSettingsMap(List&lt;LeadOpportunitySetting__mdt&gt; oppSettings)</b>
+<i>141</i>&nbsp;    {
+<b class="fc"><i>142</i>&nbsp;        Map&lt;String, LeadOpportunitySetting__mdt&gt; settingsMap = new Map&lt;String, LeadOpportunitySetting__mdt&gt;();</b>
+<i>143</i>&nbsp;
+<b class="fc"><i>144</i>&nbsp;        for (LeadOpportunitySetting__mdt setting : oppSettings)</b>
+<b class="fc"><i>145</i>&nbsp;        {</b>
+<b class="fc"><i>146</i>&nbsp;            if (setting.BrandsList__c != null)</b>
+<i>147</i>&nbsp;            {
+<b class="fc"><i>148</i>&nbsp;                String brands = setting.BrandsList__c;</b>
+<b class="fc"><i>149</i>&nbsp;                String[] brandList = brands.split(&#39;;&#39;);</b>
+<i>150</i>&nbsp;
+<b class="fc"><i>151</i>&nbsp;                for (String brand : brandList)</b>
+<b class="fc"><i>152</i>&nbsp;                {</b>
+<b class="fc"><i>153</i>&nbsp;                    settingsMap.put(brand, setting);</b>
+<i>154</i>&nbsp;                }
+<i>155</i>&nbsp;            }
+<i>156</i>&nbsp;            else
+<i>157</i>&nbsp;            {
+<b class="nc"><i>158</i>&nbsp;                settingsMap.put(setting.Category__c, setting);</b>
+<i>159</i>&nbsp;            }
+<i>160</i>&nbsp;        }
+<b class="fc"><i>161</i>&nbsp;        return settingsMap;</b>
+<i>162</i>&nbsp;    }
+<i>163</i>&nbsp;
+<i>164</i>&nbsp;    /**
+<i>165</i>&nbsp;     * Assort the Opportunity Settings data (LeadOpportunitySetting__mdt) in a Map
+<i>166</i>&nbsp;     * @author hadib@salesforce.com | 20-02-2023 (Campaign Refactoring)
+<i>167</i>&nbsp;     *
+<i>168</i>&nbsp;     * @param oppSettings   Opportunity Settings metadata
+<i>169</i>&nbsp;     *
+<i>170</i>&nbsp;     * @return Map&lt;String, LeadOpportunitySetting__mdt&gt; - Map of settings classified by Brand or Category
+<i>171</i>&nbsp;     */
+<b class="nc"><i>172</i>&nbsp;    public static Map&lt;String, LeadOpportunitySetting__mdt&gt; getSettingsMapWithNumberSignKey(LeadOpportunitySetting__mdt[] oppSettings)</b>
+<i>173</i>&nbsp;    {
+<b class="nc"><i>174</i>&nbsp;        Map&lt;String, LeadOpportunitySetting__mdt&gt; settingsMap = new Map&lt;String, LeadOpportunitySetting__mdt&gt;();</b>
+<i>175</i>&nbsp;
+<b class="nc"><i>176</i>&nbsp;        for (LeadOpportunitySetting__mdt setting : oppSettings)</b>
+<b class="nc"><i>177</i>&nbsp;        {</b>
+<b class="nc"><i>178</i>&nbsp;            if (setting.BrandsList__c != null)</b>
+<i>179</i>&nbsp;            {
+<b class="nc"><i>180</i>&nbsp;                String brands = setting.BrandsList__c;</b>
+<b class="nc"><i>181</i>&nbsp;                String[] brandList = brands.split(&#39;;&#39;);</b>
+<i>182</i>&nbsp;
+<b class="nc"><i>183</i>&nbsp;                for (String brand : brandList)</b>
+<b class="nc"><i>184</i>&nbsp;                {</b>
+<b class="nc"><i>185</i>&nbsp;                    settingsMap.put(setting.Country__c + &#39;#&#39; + brand, setting);</b>
+<i>186</i>&nbsp;                }
+<i>187</i>&nbsp;            }
+<i>188</i>&nbsp;        }
+<b class="nc"><i>189</i>&nbsp;        return settingsMap;</b>
+<i>190</i>&nbsp;    }
+<i>191</i>&nbsp;
+<i>192</i>&nbsp;    /**
+<i>193</i>&nbsp;     * Retrieve the list of settings corresponding for a country and a category
+<i>194</i>&nbsp;     * @author hadib@salesforce.com | 20-02-2023 (Campaign Refactoring)
+<i>195</i>&nbsp;     *
+<i>196</i>&nbsp;     * @param countryId         Country Id
+<i>197</i>&nbsp;     * @param categoryInput     Category
+<i>198</i>&nbsp;     *
+<i>199</i>&nbsp;     * @return List&lt;LeadOpportunitySetting__mdt&gt; - Map of lead/opportunity settings
+<i>200</i>&nbsp;     */
+<b class="nc"><i>201</i>&nbsp;    public static List&lt;LeadOpportunitySetting__mdt&gt; getOpportunitySettings(String countryId, String categoryInput)</b>
+<i>202</i>&nbsp;    {
+<b class="nc"><i>203</i>&nbsp;        List&lt;LeadOpportunitySetting__mdt&gt; filteredLeadOpportunitySettings = new List&lt;LeadOpportunitySetting__mdt&gt;();</b>
+<i>204</i>&nbsp;
+<b class="nc"><i>205</i>&nbsp;        List&lt;LeadOpportunitySetting__mdt&gt; leadOpportunitySettings = getOpportunitySettings(new Set&lt;String&gt;{countryId});</b>
+<i>206</i>&nbsp;
+<b class="nc"><i>207</i>&nbsp;        if(!leadOpportunitySettings.isEmpty())</b>
+<i>208</i>&nbsp;        {
+<b class="nc"><i>209</i>&nbsp;            for(LeadOpportunitySetting__mdt setting : leadOpportunitySettings)</b>
+<b class="nc"><i>210</i>&nbsp;            {</b>
+<b class="nc"><i>211</i>&nbsp;                if(setting.Category__c == categoryInput)</b>
+<i>212</i>&nbsp;                {
+<b class="nc"><i>213</i>&nbsp;                    filteredLeadOpportunitySettings.add(setting);</b>
+<i>214</i>&nbsp;                }
+<i>215</i>&nbsp;            }
+<i>216</i>&nbsp;        }
+<i>217</i>&nbsp;
+<b class="nc"><i>218</i>&nbsp;        return filteredLeadOpportunitySettings;</b>
+<i>219</i>&nbsp;    }
+<i>220</i>&nbsp;
+<i>221</i>&nbsp;    /**
+<i>222</i>&nbsp;     * Retrieve the list of settings corresponding for a country and a category
+<i>223</i>&nbsp;     * @author hadib@salesforce.com | 20-02-2023 (Campaign Refactoring)
+<i>224</i>&nbsp;     *
+<i>225</i>&nbsp;     * @param countriesSet2Digit    List of countries
+<i>226</i>&nbsp;     *
+<i>227</i>&nbsp;     * @return List&lt;LeadOpportunitySetting__mdt&gt; - Map of lead/opportunity settings
+<i>228</i>&nbsp;     */
+<b class="fc"><i>229</i>&nbsp;    public static List&lt;LeadOpportunitySetting__mdt&gt; getOpportunitySettings(Set&lt;String&gt; countriesSet2Digit)</b>
+<i>230</i>&nbsp;    {
+<b class="fc"><i>231</i>&nbsp;        List&lt;LeadOpportunitySetting__mdt&gt; leadOpportunitySettings = new List&lt;LeadOpportunitySetting__mdt&gt;{};</b>
+<b class="fc"><i>232</i>&nbsp;        if (Test.isRunningTest()) {</b>
+<b class="fc"><i>233</i>&nbsp;            leadOpportunitySettings = [</b>
+<i>234</i>&nbsp;                    SELECT  DeveloperName, ShowManualSalesLeadOwnerAssignment__c, Category__c, DefaultLeadOwner__c, BrandsList__c, Country__c,
+<i>235</i>&nbsp;                            AssignOwnerFrom__c, DefaultCampaignOwner__c, UserRoles__c, IsTest__c
+<i>236</i>&nbsp;                    FROM LeadOpportunitySetting__mdt
+<i>237</i>&nbsp;            ];
+<i>238</i>&nbsp;        }
+<i>239</i>&nbsp;        else {
+<b class="nc"><i>240</i>&nbsp;            leadOpportunitySettings = [</b>
+<i>241</i>&nbsp;                    SELECT  DeveloperName, ShowManualSalesLeadOwnerAssignment__c, Category__c, DefaultLeadOwner__c, BrandsList__c, Country__c,
+<i>242</i>&nbsp;                            AssignOwnerFrom__c, DefaultCampaignOwner__c, UserRoles__c, IsTest__c
+<i>243</i>&nbsp;                    FROM LeadOpportunitySetting__mdt
+<b class="nc"><i>244</i>&nbsp;                    WHERE   Country__c IN :countriesSet2Digit</b>
+<b class="nc"><i>245</i>&nbsp;                            AND IsTest__c = :false</b>
+<i>246</i>&nbsp;            ];
+<i>247</i>&nbsp;        }
+<b class="fc"><i>248</i>&nbsp;        return leadOpportunitySettings;</b>
+<i>249</i>&nbsp;    }
+<i>250</i>&nbsp;
+<i>251</i>&nbsp;    /**
+<i>252</i>&nbsp;     * Returns a map of LeadOpportunitySetting__mdt settings based on a set of countries codes
+<i>253</i>&nbsp;     * Key in a form of (setting.Country__c + &#39;#&#39; + brand)
+<i>254</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>255</i>&nbsp;     *
+<i>256</i>&nbsp;     * @param Counties2Digits Set of Countries codes
+<i>257</i>&nbsp;     *
+<i>258</i>&nbsp;     * @return Map&lt;String, LeadOpportunitySetting__mdt&gt; - Map of LeadOpportunitySetting__mdt
+<i>259</i>&nbsp;     */
+<b class="nc"><i>260</i>&nbsp;    public static Map&lt;String, LeadOpportunitySetting__mdt&gt;  getSettingsMapNumberSignKey(Set&lt;String&gt; Counties2Digits)</b>
+<i>261</i>&nbsp;    {
+<b class="nc"><i>262</i>&nbsp;        LeadOpportunitySetting__mdt[] oppSettings               = GlobalUtils.getOpportunitySettings(Counties2Digits);</b>
+<i>263</i>&nbsp;
+<b class="nc"><i>264</i>&nbsp;        Map&lt;String, LeadOpportunitySetting__mdt&gt; settingsMap    = GlobalUtils.getSettingsMapWithNumberSignKey(oppSettings);</b>
+<i>265</i>&nbsp;
+<b class="nc"><i>266</i>&nbsp;        return settingsMap;</b>
+<i>267</i>&nbsp;    }
+<i>268</i>&nbsp;
+<i>269</i>&nbsp;
+<i>270</i>&nbsp;    /*------------------------------------------------------------  
+<i>271</i>&nbsp;    Description:    Method to retrieve a map with key devname and Id value for SObject recordType
+<i>272</i>&nbsp;    Inputs:         @param SObjectName 
+<i>273</i>&nbsp;    ------------------------------------------------------------*/
+<b class="fc"><i>274</i>&nbsp;    public static Map&lt;String, Id&gt; getRecordTypeMapNameIds(String ObjectName){</b>
+<b class="fc"><i>275</i>&nbsp;        Map&lt;String, Id&gt; recorTypeMap = new Map&lt;String, Id&gt;();</b>
+<b class="fc"><i>276</i>&nbsp;        for(RecordType recorTypeInfo : [SELECT DeveloperName, Id FROM RecordType WHERE SobjectType =: ObjectName AND IsActive = true ]){</b>
+<b class="fc"><i>277</i>&nbsp;            recorTypeMap.put(recorTypeInfo.DeveloperName, recorTypeInfo.Id);</b>
+<i>278</i>&nbsp;        }
+<b class="fc"><i>279</i>&nbsp;        return recorTypeMap;</b>
+<i>280</i>&nbsp;    }
+<i>281</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

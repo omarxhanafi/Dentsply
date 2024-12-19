@@ -1,0 +1,210 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: OrderItemTriggerHelper</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: OrderItemTriggerHelper (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">OrderItemTriggerHelper</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95.2%
+  </span>
+  <span class="absValue">
+    (60/ 63)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>OrderItemTriggerHelper</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author: 		LOUDRASSI Ahmed (Salesforce) 2020-02-25
+<i>3</i>&nbsp;Description:    OrderItem Trigger Helper Class
+<i>4</i>&nbsp;Test Class:     
+<i>5</i>&nbsp;History 
+<i>6</i>&nbsp;Kevin Ruibin Do 20210419    Updated totalAmountOfSamplesAndFreeProducts to also set value when there are no free products
+<i>7</i>&nbsp;Richard Trum	20200804	Changed setDiscountAllowedforTurkey to use the Contract field Discount__c instead of Discount_End_year__c
+<i>8</i>&nbsp;Miguel Coimbra	20200511	Added descriptions
+<i>9</i>&nbsp;Roberto Narbona 20231218    TFUS-000006230 ne method setOfferCodeAppliedNumber
+<i>10</i>&nbsp;Roberto			20240219	TFUS-000006492
+<i>11</i>&nbsp;----------------------------------------------------------------------------------------*/
+<i>12</i>&nbsp;public class OrderItemTriggerHelper {
+<i>13</i>&nbsp;    /*------------------------------------------------------------  
+<i>14</i>&nbsp;    Description:    define Order Discount Percent to max 100 (as per logic defined on Order Management 2.0)
+<i>15</i>&nbsp;    Inputs:         @param newOrderItemList
+<i>16</i>&nbsp;    ------------------------------------------------------------*/
+<b class="fc"><i>17</i>&nbsp;    public static void set100PercentForFOC(List&lt;OrderItem&gt; newOrderItemtList) {</b>
+<b class="fc"><i>18</i>&nbsp;        Set&lt;ID&gt; orderIds = new Set&lt;ID&gt;();</b>
+<b class="fc"><i>19</i>&nbsp;        for(OrderItem orderItem: newOrderItemtList) {</b>
+<b class="fc"><i>20</i>&nbsp;            orderIds.add(orderItem.OrderId);</b>
+<i>21</i>&nbsp;        }
+<b class="fc"><i>22</i>&nbsp;        Map&lt;Id,Order&gt; parentOrders = new Map&lt;ID, Order&gt;([SELECT Id, Pricebook2Id, Pricebook_Name__c, Pricebook2.ShowApprovalLevelOrderLine__c FROM Order WHERE ID IN :orderIds]); </b>
+<b class="fc"><i>23</i>&nbsp;        for (OrderItem orderItem: newOrderItemtList) {</b>
+<b class="fc"><i>24</i>&nbsp;            Order parentOrder = parentOrders.get(orderItem.OrderId);</b>
+<b class="fc"><i>25</i>&nbsp;            if (parentOrder.Pricebook2Id != null &amp;&amp; (String.isNotBlank(orderItem.Free_of_Charge_Delivery__c) || (orderItem.UseCoupon__c == true &amp;&amp; orderItem.AvailableCouponCode__c != null))) { //|| (parentOrder.Pricebook2.ShowApprovalLevelOrderLine__c == true &amp;&amp; orderItem.Offer_code_dna__c != null)</b>
+<b class="fc"><i>26</i>&nbsp;                orderItem.Discount_Percent__c = 100;</b>
+<i>27</i>&nbsp;            }
+<i>28</i>&nbsp;
+<b class="fc"><i>29</i>&nbsp;            if(String.isNotBlank(parentOrder.Pricebook2Id) &amp;&amp; (orderItem.UseCoupon__c == true &amp;&amp; orderItem.AvailableCouponCode__c == null) ){</b>
+<b class="nc"><i>30</i>&nbsp;                orderItem.Discount_Percent__c = 0;</b>
+<b class="nc"><i>31</i>&nbsp;                orderItem.UseCoupon__c = false;</b>
+<i>32</i>&nbsp;            }
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;        }
+<i>35</i>&nbsp;    }
+<i>36</i>&nbsp;    /*------------------------------------------------------------  
+<i>37</i>&nbsp;    Description:   
+<i>38</i>&nbsp;    Inputs:         @param newOrderItemList
+<i>39</i>&nbsp;    ------------------------------------------------------------*/
+<b class="fc"><i>40</i>&nbsp;    public static void totalAmountOfSamplesAndFreeProducts(List&lt;OrderItem&gt; newOrderItemtList) { </b>
+<b class="fc"><i>41</i>&nbsp;        for(OrderItem orderItem: newOrderItemtList) {</b>
+<b class="fc"><i>42</i>&nbsp;            setOfferCodeAppliedNumber(orderItem);</b>
+<b class="fc"><i>43</i>&nbsp;            if(orderItem.Quantity &gt; 0) {</b>
+<i>44</i>&nbsp;                // Amount Samples
+<b class="fc"><i>45</i>&nbsp;                if(String.isBlank(orderItem.Account_for_Sample_in_AX__c)) {</b>
+<b class="fc"><i>46</i>&nbsp;                    orderItem.Value_of_Samples_for_Sales_Rep__c = 0;</b>
+<i>47</i>&nbsp;                } else {
+<b class="fc"><i>48</i>&nbsp;                    orderItem.Value_of_Samples_for_Sales_Rep__c = orderItem.UnitPrice * orderItem.Quantity;</b>
+<i>49</i>&nbsp;                }
+<i>50</i>&nbsp;                // Value of Free Products
+<b class="fc"><i>51</i>&nbsp;                if(orderItem.Discount_Percent__c == 100) {</b>
+<b class="fc"><i>52</i>&nbsp;                    orderItem.Value_of_free_product__c = orderItem.UnitPrice * orderItem.Quantity;</b>
+<i>53</i>&nbsp;                } else {
+<b class="fc"><i>54</i>&nbsp;                    orderItem.Value_of_free_product__c = 0;</b>
+<i>55</i>&nbsp;                }
+<i>56</i>&nbsp;            }
+<i>57</i>&nbsp;        } 
+<i>58</i>&nbsp;    }
+<i>59</i>&nbsp;    
+<i>60</i>&nbsp;    /*------------------------------------------------------------  
+<i>61</i>&nbsp;    Description:   Check if there is an offer code if yes set offer code applied number to 1
+<i>62</i>&nbsp;                   Migrate prcess builder entries &quot;Offer Code selected&quot; and &quot;Offer Code Deselected&quot;
+<i>63</i>&nbsp;    Inputs:         @param orderItem
+<i>64</i>&nbsp;    ------------------------------------------------------------*/
+<b class="fc"><i>65</i>&nbsp;    public static void setOfferCodeAppliedNumber(OrderItem orderItem) { </b>
+<b class="fc"><i>66</i>&nbsp;        orderItem.Offer_Code_Applied_Number__c = String.isBlank(orderItem.Offer_Code_dna__c) ? 0 : 1;</b>
+<i>67</i>&nbsp;    }
+<i>68</i>&nbsp;
+<i>69</i>&nbsp;    	
+<i>70</i>&nbsp;    /*------------------------------------------------------------  
+<i>71</i>&nbsp;    Description:    
+<i>72</i>&nbsp;    Inputs:         @param newOrderItemList
+<i>73</i>&nbsp;    ------------------------------------------------------------*/
+<b class="fc"><i>74</i>&nbsp;    public static void orderProductEvaluation(List&lt;OrderItem&gt; newOrderItemtList) { </b>
+<b class="fc"><i>75</i>&nbsp;        Set&lt;ID&gt; orderIds = new Set&lt;ID&gt;();</b>
+<b class="fc"><i>76</i>&nbsp;        for(OrderItem orderItem: newOrderItemtList) {</b>
+<b class="fc"><i>77</i>&nbsp;            orderIds.add(orderItem.OrderId);</b>
+<i>78</i>&nbsp;        }
+<b class="fc"><i>79</i>&nbsp;        Map&lt;Id,Order&gt; parentOrders = new Map&lt;ID, Order&gt;([SELECT Id, User_CountryPL__c FROM Order WHERE ID IN :orderIds]); </b>
+<b class="fc"><i>80</i>&nbsp;        for(OrderItem orderItem: newOrderItemtList) {</b>
+<b class="fc"><i>81</i>&nbsp;            if(String.isNotBlank(parentOrders.get(orderItem.OrderId).User_CountryPL__c)) {</b>
+<i>82</i>&nbsp;                // ORDER: Update SIMPLANT Evaluation
+<b class="fc"><i>83</i>&nbsp;                orderItem.SIMPLANT_Line_Item__c = &#39;SIMPLANT&#39;.equals(orderItem.PricebookEntry.Product2.Brand__c) ? 1 : 0;</b>
+<i>84</i>&nbsp;                // ORDER: Update MTF Evaluation
+<b class="fc"><i>85</i>&nbsp;                orderItem.MTF_EvaluationNumber__c = orderItem.MTF_Evaluation__c == 1 ? 1 : 0;</b>
+<i>86</i>&nbsp;                // ORDER: Discount Approval Evaluation
+<b class="fc"><i>87</i>&nbsp;                orderItem.DiscountApproval_Line_Item__c  = &#39;NO APPROVAL NEEDED&#39;.equals(orderItem.Discount_Approval_Eval__c) ? 0 : 1; </b>
+<i>88</i>&nbsp;                // ORDER: Update NON-SIMPLANT Evaluation
+<b class="fc"><i>89</i>&nbsp;                orderItem.Non_SIMPLANT_Evaluation__c = &#39;SIMPLANT&#39;.equals(orderItem.PricebookEntry.Product2.Brand__c) ? 0 : 1;</b>
+<i>90</i>&nbsp;                // SIMPLANT Software Line Item Eval
+<b class="fc"><i>91</i>&nbsp;                orderItem.SIMPLANT_Software_Line_Item__c = orderItem.SIMPLANT_Software_Evaluation__c;</b>
+<i>92</i>&nbsp;                // Update # of Items at 100% Discount
+<b class="fc"><i>93</i>&nbsp;                orderItem.Number_of_Items_at_100_Discount__c = orderItem.Item_at_100__c;</b>
+<i>94</i>&nbsp;            }
+<i>95</i>&nbsp;        }
+<i>96</i>&nbsp;    }
+<i>97</i>&nbsp;    /*------------------------------------------------------------  
+<i>98</i>&nbsp;    Description:    Method migrated from Process Builder on Order Product 
+<i>99</i>&nbsp;    Inputs:         @param newOrderItemList
+<i>100</i>&nbsp;    ------------------------------------------------------------*/
+<b class="fc"><i>101</i>&nbsp;    public static void setDiscountAllowedforTurkey(List&lt;OrderItem&gt; newOrderItemtList) { </b>
+<b class="fc"><i>102</i>&nbsp;        Set&lt;ID&gt; orderIds = new Set&lt;ID&gt;();</b>
+<b class="fc"><i>103</i>&nbsp;        for(OrderItem orderItem: newOrderItemtList) {</b>
+<b class="fc"><i>104</i>&nbsp;            orderIds.add(orderItem.OrderId);</b>
+<i>105</i>&nbsp;        }
+<b class="fc"><i>106</i>&nbsp;        Map&lt;Id,Order&gt; parentOrders = new Map&lt;ID, Order&gt;</b>
+<b class="fc"><i>107</i>&nbsp;            ([SELECT Id, Pricebook2Id, Country__c, Discount_to_be_used__c, </b>
+<b class="fc"><i>108</i>&nbsp;              Allowed_discount__c, Order_Type__c, Contract.Discount_End_year__c, Contract.Discount__c FROM Order WHERE ID IN :orderIds]); </b>
+<b class="fc"><i>109</i>&nbsp;        Map&lt;Id,Order&gt; ordersToUpdate = new Map&lt;Id,Order&gt; ();</b>
+<b class="fc"><i>110</i>&nbsp;        for(OrderItem orderItem: newOrderItemtList) {</b>
+<b class="fc"><i>111</i>&nbsp;            Order parentOrder = parentOrders.get(orderItem.OrderId);</b>
+<b class="fc"><i>112</i>&nbsp;            if(&#39;TR&#39;.equals(parentOrder.Country__c) &amp;&amp;</b>
+<b class="fc"><i>113</i>&nbsp;              	String.isNotBlank(parentOrder.Pricebook2Id) &amp;&amp;</b>
+<b class="fc"><i>114</i>&nbsp;              	&#39;Implants&#39;.equals(parentOrder.Order_Type__c)) {</b>
+<b class="fc"><i>115</i>&nbsp;               	if(String.isNotBlank(parentOrder.ContractId)) {</b>
+<b class="fc"><i>116</i>&nbsp;                	parentOrder.Discount_to_be_used__c = parentOrder.Contract.Discount__c;</b>
+<i>117</i>&nbsp;                } else {
+<b class="nc"><i>118</i>&nbsp;                    parentOrder.Discount_to_be_used__c = 0;</b>
+<i>119</i>&nbsp;                }
+<b class="fc"><i>120</i>&nbsp;                if(!ordersToUpdate.containsKey(parentOrder.Id)) {</b>
+<b class="fc"><i>121</i>&nbsp;                    ordersToUpdate.put(parentOrder.Id, parentOrder);</b>
+<i>122</i>&nbsp;                }
+<i>123</i>&nbsp;            }
+<i>124</i>&nbsp;        }
+<b class="fc"><i>125</i>&nbsp;        update ordersToUpdate.values();</b>
+<i>126</i>&nbsp;    }
+<i>127</i>&nbsp;    /*Set if product is related with parent kit */
+<b class="fc"><i>128</i>&nbsp;    public static void setParentKitProduct(List&lt;OrderItem&gt; newOrderItemtList) { </b>
+<b class="fc"><i>129</i>&nbsp;        Set&lt;ID&gt; productsIds = new Set&lt;ID&gt;();</b>
+<b class="fc"><i>130</i>&nbsp;        for(OrderItem orderItem: newOrderItemtList) {</b>
+<b class="fc"><i>131</i>&nbsp;            productsIds.add(orderItem.Product2Id);</b>
+<i>132</i>&nbsp;        }
+<b class="fc"><i>133</i>&nbsp;        Map&lt;Id,Product2&gt; parentProducts = new Map&lt;ID, Product2&gt;([SELECT Id, ParentKit__c FROM Product2 WHERE ID IN :productsIds]); </b>
+<b class="fc"><i>134</i>&nbsp;        for(OrderItem orderItem: newOrderItemtList) {</b>
+<b class="fc"><i>135</i>&nbsp;            orderItem.ParentKit__c = parentProducts.get(orderItem.Product2Id).ParentKit__c;</b>
+<i>136</i>&nbsp;        }
+<i>137</i>&nbsp;    }
+<i>138</i>&nbsp;
+<i>139</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

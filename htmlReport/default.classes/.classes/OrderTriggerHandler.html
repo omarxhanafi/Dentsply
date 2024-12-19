@@ -1,0 +1,110 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: OrderTriggerHandler</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: OrderTriggerHandler (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">OrderTriggerHandler</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (14/ 14)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>OrderTriggerHandler</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*------------------------------------------------------------  
+<i>2</i>&nbsp;Author: 		Miguel Coimbra (Salesforce) 2020-06-09
+<i>3</i>&nbsp;Description:    Order Trigger Handler Class. 
+<i>4</i>&nbsp;History 
+<i>5</i>&nbsp;&lt;Date&gt;      &lt;Authors Name&gt;     &lt;Brief Description of Change&gt;
+<i>6</i>&nbsp;20231005        Roberto         User Story TFUS-000006097 setERPStopFlag new method created
+<i>7</i>&nbsp;------------------------------------------------------------*/
+<i>8</i>&nbsp;public class OrderTriggerHandler extends TriggerHandler {
+<i>9</i>&nbsp;    private List&lt;Order&gt; oldOrderList, newOrderList;
+<i>10</i>&nbsp;    private Map&lt;Id, Order&gt; oldOrderMap, newOrderMap;
+<i>11</i>&nbsp;    
+<b class="fc"><i>12</i>&nbsp;    public OrderTriggerHandler() {</b>
+<b class="fc"><i>13</i>&nbsp;        oldOrderList = (List&lt;Order&gt;) Trigger.old;</b>
+<b class="fc"><i>14</i>&nbsp;        newOrderList = (List&lt;Order&gt;) Trigger.new;</b>
+<b class="fc"><i>15</i>&nbsp;        oldOrderMap = (Map&lt;Id, Order&gt;) Trigger.oldMap;</b>
+<b class="fc"><i>16</i>&nbsp;        newOrderMap = (Map&lt;Id, Order&gt;) Trigger.newMap;</b>
+<i>17</i>&nbsp;    }
+<i>18</i>&nbsp;    
+<b class="fc"><i>19</i>&nbsp;    protected override void beforeInsert() {</b>
+<b class="fc"><i>20</i>&nbsp;        OrderTriggerHelper.setAccountOwnerAndRegionalManagerOnOrder(newOrderList);</b>
+<b class="fc"><i>21</i>&nbsp;        OrderTriggerHelper.setShipmentAddress(newOrderList);</b>
+<i>22</i>&nbsp;        //OrderTriggerHelper.evaluateOrderLineApproval(newOrderList, newOrderMap);
+<i>23</i>&nbsp;    }
+<i>24</i>&nbsp;    
+<b class="fc"><i>25</i>&nbsp;    protected override void beforeUpdate() {</b>
+<b class="fc"><i>26</i>&nbsp;        OrderTriggerHelper.setShipmentAddress(newOrderList);</b>
+<b class="fc"><i>27</i>&nbsp;        OrderTriggerHelper.setERPStopFlag(newOrderList);</b>
+<b class="fc"><i>28</i>&nbsp;        OrderTriggerHelper.setAccountOwnerAndRegionalManagerOnOrder(newOrderList);</b>
+<b class="fc"><i>29</i>&nbsp;        OrderTriggerHelper.calculateAllowedDiscount(newOrderList);</b>
+<b class="fc"><i>30</i>&nbsp;        OrderTriggerHelper.evaluateOrderLineApproval(newOrderList, newOrderMap);   </b>
+<i>31</i>&nbsp;    }
+<i>32</i>&nbsp;    /*
+<i>33</i>&nbsp;    protected override void afterInsert() {
+<i>34</i>&nbsp;    }
+<i>35</i>&nbsp;    protected override void afterUpdate() {
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;    protected override void afterDelete() {
+<i>38</i>&nbsp;    }*/
+<i>39</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

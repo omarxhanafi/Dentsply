@@ -1,0 +1,159 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ObjectivesController_OGSM</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ObjectivesController_OGSM (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ObjectivesController_OGSM</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 42)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>ObjectivesController_OGSM</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         Nihad Aoussar (Salesforce) 20211020
+<i>3</i>&nbsp;Description:    OGSM objectives Controller Class
+<i>4</i>&nbsp;Test Class:     Test_ObjectivesController_OGSM
+<i>5</i>&nbsp;History:        
+<i>6</i>&nbsp;20211020        create fetchObjectives, updateObjectives, deleteObjective
+<i>7</i>&nbsp;20220926        create cloneObjective
+<i>8</i>&nbsp;----------------------------------------------------------------------------------------*/
+<i>9</i>&nbsp;public with sharing class ObjectivesController_OGSM {
+<i>10</i>&nbsp;   /*------------------------------------------------------------  
+<i>11</i>&nbsp;    Description:    Method to fetch objectives related to an accountPlan record
+<i>12</i>&nbsp;    Inputs:         Id of the account plan 
+<i>13</i>&nbsp;    ------------------------------------------------------------*/
+<i>14</i>&nbsp;    @AuraEnabled(cacheable=true)
+<b class="nc"><i>15</i>&nbsp;    public static List&lt;Objective__c&gt; fetchObjectives(Id accountPlanId){</b>
+<b class="nc"><i>16</i>&nbsp;        try {</b>
+<b class="nc"><i>17</i>&nbsp;            return [ SELECT Id, Name , Objective__c, Goals__c , Initiatives__c, Measures__c, Status__c, IndicatedActions__c,StatusNotes__c ,CreatedDate </b>
+<i>18</i>&nbsp;                        from Objective__c 
+<b class="nc"><i>19</i>&nbsp;                        where AccountPlan__c=:accountPlanId </b>
+<i>20</i>&nbsp;                         ];
+<b class="nc"><i>21</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>22</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>23</i>&nbsp;        }
+<i>24</i>&nbsp;    }
+<i>25</i>&nbsp;   /*------------------------------------------------------------  
+<i>26</i>&nbsp;    Description:    Method to update objective record
+<i>27</i>&nbsp;    Inputs:         Object to update  
+<i>28</i>&nbsp;    ------------------------------------------------------------*/
+<i>29</i>&nbsp;    @AuraEnabled(cacheable=false)
+<b class="nc"><i>30</i>&nbsp;    public static void updateObjectives(Object data){</b>
+<b class="nc"><i>31</i>&nbsp;        List &lt; Objective__c &gt; objectivesForUpdate = ( List &lt; Objective__c &gt; ) JSON.deserialize(</b>
+<b class="nc"><i>32</i>&nbsp;            JSON.serialize( data ),</b>
+<b class="nc"><i>33</i>&nbsp;            List &lt; Objective__c &gt;.class);</b>
+<b class="nc"><i>34</i>&nbsp;        try {</b>
+<b class="nc"><i>35</i>&nbsp;            update objectivesForUpdate;</b>
+<b class="nc"><i>36</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>37</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>38</i>&nbsp;        }
+<i>39</i>&nbsp;    }
+<i>40</i>&nbsp;   /*------------------------------------------------------------  
+<i>41</i>&nbsp;    Description:    Method to delete objective record
+<i>42</i>&nbsp;    Inputs:         Id of the record to update  
+<i>43</i>&nbsp;    ------------------------------------------------------------*/
+<i>44</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>45</i>&nbsp;    public static void deleteObjective(Id objectiveId){</b>
+<b class="nc"><i>46</i>&nbsp;        try {</b>
+<b class="nc"><i>47</i>&nbsp;            Objective__c obj = new Objective__c(Id = objectiveId);</b>
+<b class="nc"><i>48</i>&nbsp;            delete obj;</b>
+<i>49</i>&nbsp;          
+<i>50</i>&nbsp;        }
+<b class="nc"><i>51</i>&nbsp;        catch(Exception ex) {</b>
+<b class="nc"><i>52</i>&nbsp;            throw new AuraHandledException(ex.getMessage());</b>
+<i>53</i>&nbsp;        }
+<i>54</i>&nbsp;    }
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;    /*------------------------------------------------------------  
+<i>57</i>&nbsp;    Description:    Method to clone objective record when not completed in the current calendar year 
+<i>58</i>&nbsp;    Inputs:         Id of the record to update  
+<i>59</i>&nbsp;    ------------------------------------------------------------*/
+<i>60</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>61</i>&nbsp;    public static String cloneObjective(Id objectiveId, Id currentAccPlan ){</b>
+<b class="nc"><i>62</i>&nbsp;        try {</b>
+<b class="nc"><i>63</i>&nbsp;            Id userId = UserInfo.getUserId();</b>
+<b class="nc"><i>64</i>&nbsp;            Account_Plan__c newAccountPlan;</b>
+<b class="nc"><i>65</i>&nbsp;            String nextYear = &#39;&#39;+((system.today().year())+1);</b>
+<b class="nc"><i>66</i>&nbsp;            Objective__c objectiveToClone = [SELECT Id, Name , Objective__c, Goals__c , Initiatives__c, Measures__c, Status__c, IndicatedActions__c,StatusNotes__c </b>
+<b class="nc"><i>67</i>&nbsp;                                             FROM Objective__c WHERE Id =:objectiveId LIMIT 1];</b>
+<b class="nc"><i>68</i>&nbsp;            Objective__c clonedObjective = objectiveToClone.clone(false, true, false, false);</b>
+<b class="nc"><i>69</i>&nbsp;            Account_Plan__c currentAccountPlan = [SELECT Account__c,Year__c From Account_Plan__c WHERE Id=:currentAccPlan LIMIT 1];</b>
+<b class="nc"><i>70</i>&nbsp;            Id accountId = currentAccountPlan.Account__c;</b>
+<b class="nc"><i>71</i>&nbsp;            List&lt;Account_Plan__c&gt; nextYearAccPlan = [SELECT Id,Year__c,Account__c From Account_Plan__c WHERE Account__c=: accountId AND Year__c =:nextYear ];</b>
+<b class="nc"><i>72</i>&nbsp;            if(!nextYearAccPlan.isEmpty()){</b>
+<b class="nc"><i>73</i>&nbsp;                clonedObjective.AccountPlan__c = nextYearAccPlan[0].Id;</b>
+<i>74</i>&nbsp;            }else{
+<b class="nc"><i>75</i>&nbsp;                newAccountPlan = new Account_Plan__c (AccountPlanOwner__c = userId,</b>
+<b class="nc"><i>76</i>&nbsp;                                                    Year__c  = nextYear,</b>
+<b class="nc"><i>77</i>&nbsp;                                                    Account__c = accountId);</b>
+<b class="nc"><i>78</i>&nbsp;                insert  newAccountPlan;</b>
+<b class="nc"><i>79</i>&nbsp;                clonedObjective.AccountPlan__c = newAccountPlan.Id;</b>
+<i>80</i>&nbsp;    		}
+<b class="nc"><i>81</i>&nbsp;            insert clonedObjective;</b>
+<b class="nc"><i>82</i>&nbsp;            return clonedObjective.id;</b>
+<i>83</i>&nbsp;        }
+<b class="nc"><i>84</i>&nbsp;        catch(Exception ex) {</b>
+<b class="nc"><i>85</i>&nbsp;            throw new AuraHandledException(ex.getMessage());</b>
+<i>86</i>&nbsp;        }
+<i>87</i>&nbsp;    }
+<i>88</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

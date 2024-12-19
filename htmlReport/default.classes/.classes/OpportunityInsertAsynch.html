@@ -1,0 +1,1125 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: OpportunityInsertAsynch</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: OpportunityInsertAsynch (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">OpportunityInsertAsynch</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    57.7%
+  </span>
+  <span class="absValue">
+    (256/ 444)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>OpportunityInsertAsynch</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         Ahmed LOUDRASSI (Salesforce) 20191022
+<i>3</i>&nbsp;Description:    Opportunity Insert Asynch Class
+<i>4</i>&nbsp;History
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;2021-03-18  Roberto Narbona		Updated to send opp ID back into Opportunity__c field for Campaign Members and have physical relationship. Story TFUS-000002828
+<i>7</i>&nbsp;2021-03-18  Roberto Narbona		Added DebugLog line if insert fails. TFUS-000003578
+<i>8</i>&nbsp;2023-03-01  Houssam ADIB        Migrated the create opportunity method from the trigger (Campaign Refactoring)
+<i>9</i>&nbsp;2023-05-03  Richard Trum        Commented out usage of Opportunity Dealer record type (TFUS-5578)
+<i>10</i>&nbsp;2024-01-29  Houssam ADIB        TFUS-000005641 - Add Sales lead generation on Cvent Contact Attendees
+<i>11</i>&nbsp;2024-01-29  Houssam ADIB        TFUS-000006742 - Exclude Speaker / KOL from the Sales Follow-Up Process
+<i>12</i>&nbsp;----------------------------------------------------------------------------------------*/
+<i>13</i>&nbsp;public class OpportunityInsertAsynch implements Queueable {
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    private List&lt;CampaignMember&gt;    newCampaignMembers;
+<i>16</i>&nbsp;    private Map&lt;Id, CampaignMember&gt; oldCampaignMemberMap;
+<i>17</i>&nbsp;    private Boolean                 overrideHasResponded;
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    /**
+<i>20</i>&nbsp;     * @param newMembers        New Members
+<i>21</i>&nbsp;     * @param oldMap            Old Members Values
+<i>22</i>&nbsp;     * @param overrideInsert    Override the insert value
+<i>23</i>&nbsp;     */
+<b class="fc"><i>24</i>&nbsp;    public OpportunityInsertAsynch(List&lt;CampaignMember&gt; newMembers, Map&lt;Id, CampaignMember&gt; oldMap, Boolean overrideInsert)</b>
+<i>25</i>&nbsp;    {
+<b class="fc"><i>26</i>&nbsp;        newCampaignMembers      = newMembers;</b>
+<b class="fc"><i>27</i>&nbsp;        oldCampaignMemberMap    = oldMap;</b>
+<b class="fc"><i>28</i>&nbsp;        overrideHasResponded    = overrideInsert;</b>
+<i>29</i>&nbsp;    }
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    /**
+<i>32</i>&nbsp;     * @param context Queueable Context
+<i>33</i>&nbsp;     */
+<b class="fc"><i>34</i>&nbsp;    public void execute(QueueableContext context)</b>
+<i>35</i>&nbsp;    {
+<b class="fc"><i>36</i>&nbsp;        convertMembers(newCampaignMembers,oldCampaignMemberMap,overrideHasResponded);</b>
+<i>37</i>&nbsp;    }
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;    /**
+<i>40</i>&nbsp;     * Enqueues The class and avoids governor limits
+<i>41</i>&nbsp;     * @param newMembers        New Members
+<i>42</i>&nbsp;     * @param oldMap            Old Members Values
+<i>43</i>&nbsp;     * @param overrideInsert    Override the insert value
+<i>44</i>&nbsp;     */
+<b class="fc"><i>45</i>&nbsp;    public static void enqueueJob(List&lt;CampaignMember&gt; newMembers, Map&lt;Id, CampaignMember&gt; oldMap, Boolean overrideInsert)</b>
+<i>46</i>&nbsp;    {
+<b class="fc"><i>47</i>&nbsp;        Boolean isAlreadyInQueue = ([</b>
+<i>48</i>&nbsp;                SELECT COUNT()
+<i>49</i>&nbsp;                FROM AsyncApexJob
+<i>50</i>&nbsp;                WHERE ApexClass.Name = &#39;OpportunityInsertAsynch&#39;
+<i>51</i>&nbsp;                AND Status IN (&#39;Queued&#39;, &#39;Processing&#39;)
+<b class="fc"><i>52</i>&nbsp;        ] &gt; 0);</b>
+<i>53</i>&nbsp;
+<b class="fc"><i>54</i>&nbsp;        if ((Limits.getLimitQueueableJobs() - Limits.getQueueableJobs() &gt; 0)) {</b>
+<b class="fc"><i>55</i>&nbsp;            if(!System.isBatch())</b>
+<i>56</i>&nbsp;            {
+<b class="fc"><i>57</i>&nbsp;                System.enqueueJob(new OpportunityInsertAsynch(newMembers, oldMap, overrideInsert));</b>
+<i>58</i>&nbsp;            }
+<b class="nc"><i>59</i>&nbsp;            else if(!isAlreadyInQueue)</b>
+<i>60</i>&nbsp;            {
+<b class="nc"><i>61</i>&nbsp;                System.enqueueJob(new OpportunityInsertAsynch(newMembers, oldMap, overrideInsert));</b>
+<i>62</i>&nbsp;            }
+<i>63</i>&nbsp;        }
+<b class="nc"><i>64</i>&nbsp;        else if(!System.isBatch())</b>
+<i>65</i>&nbsp;        {
+<b class="nc"><i>66</i>&nbsp;            Integer delayInMinutes = 9;</b>
+<b class="nc"><i>67</i>&nbsp;            System.enqueueJob(new OpportunityInsertAsynch(newMembers, oldMap, overrideInsert), delayInMinutes);</b>
+<i>68</i>&nbsp;        }
+<i>69</i>&nbsp;    }
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;    /*------------------------------------------------------------
+<i>72</i>&nbsp;    Description:    Method for creating Opportunities based on Campaign Member related to Eloqua Campaigns (TFUS-[...]2201)
+<i>73</i>&nbsp;    Inputs:         @param newCampaignMembers
+<i>74</i>&nbsp;    ------------------------------------------------------------*/
+<b class="fc"><i>75</i>&nbsp;    public void convertMembers(List&lt;CampaignMember&gt; newCampaignMembers, Map&lt;Id, CampaignMember&gt; oldCampaignMemberMap, Boolean overrideHasResponded)</b>
+<i>76</i>&nbsp;    {
+<b class="fc"><i>77</i>&nbsp;        BatchSettings__c settings = BatchSettings__c.getInstance(&#39;Default&#39;);</b>
+<i>78</i>&nbsp;
+<b class="fc"><i>79</i>&nbsp;        if (Test.isRunningTest() || settings.CampMgmtCampaignMemberTriggerIsEnabled__c)</b>
+<i>80</i>&nbsp;        {
+<b class="fc"><i>81</i>&nbsp;            List&lt;RecordType&gt; oppRT =        [SELECT Id, Name FROM RecordType WHERE SobjectType=&#39;Opportunity&#39; AND DeveloperName=&#39;Lightning_Pipeline_Opportunity&#39;];</b>
+<i>82</i>&nbsp;
+<b class="fc"><i>83</i>&nbsp;            Set&lt;Id&gt; campaignIds     = new Set&lt;Id&gt;();</b>
+<b class="fc"><i>84</i>&nbsp;            Set&lt;Id&gt; contactIds      = new Set&lt;Id&gt;();</b>
+<b class="fc"><i>85</i>&nbsp;            Set&lt;Id&gt; dealerIds       = new Set&lt;Id&gt;();</b>
+<i>86</i>&nbsp;
+<b class="fc"><i>87</i>&nbsp;            Set&lt;Id&gt; stdLeadIds      = new Set&lt;Id&gt;();</b>
+<i>88</i>&nbsp;
+<b class="fc"><i>89</i>&nbsp;            populateIdsFromMembers( newCampaignMembers,                 // Input</b>
+<b class="fc"><i>90</i>&nbsp;                    campaignIds, contactIds, dealerIds, stdLeadIds);    // Output</b>
+<i>91</i>&nbsp;
+<i>92</i>&nbsp;            //Get all Campaigns related to the included Campaign Members
+<b class="fc"><i>93</i>&nbsp;            Map&lt;Id, Campaign&gt; campaigns = new Map&lt;Id, Campaign&gt;(</b>
+<b class="fc"><i>94</i>&nbsp;            [   SELECT Id, RecordTypeId, Source_Origin__c, OwnerId, Brands__c, Convert_To__c, RecordType.DeveloperName,</b>
+<i>95</i>&nbsp;                    AssignRepFromDealer__c, Include_in_Dealer_Community__c, Notify_Dealer_Sales_Rep_by_Email__c
+<i>96</i>&nbsp;            FROM Campaign
+<b class="fc"><i>97</i>&nbsp;            WHERE Id IN :campaignIds]</b>
+<i>98</i>&nbsp;            );
+<i>99</i>&nbsp;
+<b class="fc"><i>100</i>&nbsp;            Boolean categoryOppDependencyRuleCheck          = false;</b>
+<b class="fc"><i>101</i>&nbsp;            Boolean categorySalesLeadDependencyRuleCheck    = false;</b>
+<b class="fc"><i>102</i>&nbsp;            Boolean recordTypeCheck                         = false;</b>
+<i>103</i>&nbsp;
+<b class="fc"><i>104</i>&nbsp;            for(Campaign campaign : campaigns.values())</b>
+<b class="fc"><i>105</i>&nbsp;            {</b>
+<b class="fc"><i>106</i>&nbsp;                if(campaign.RecordType.DeveloperName == &#39;Digital_Marketing_Campaign&#39; || campaign.RecordType.DeveloperName == &#39;InPersonEventCampaign&#39;</b>
+<b class="fc"><i>107</i>&nbsp;                        || campaign.RecordType.DeveloperName == &#39;CventCampaign&#39;)</b>
+<i>108</i>&nbsp;                {
+<b class="fc"><i>109</i>&nbsp;                    recordTypeCheck = true;</b>
+<b class="fc"><i>110</i>&nbsp;                    categoryOppDependencyRuleCheck          = (campaign.Convert_To__c == &#39;Opportunity&#39;);</b>
+<b class="fc"><i>111</i>&nbsp;                    categorySalesLeadDependencyRuleCheck    = (campaign.Convert_To__c == &#39;Sales Lead&#39;);</b>
+<i>112</i>&nbsp;                }
+<i>113</i>&nbsp;            }
+<i>114</i>&nbsp;
+<b class="fc"><i>115</i>&nbsp;            if(recordTypeCheck == true)</b>
+<i>116</i>&nbsp;            {
+<i>117</i>&nbsp;                // Getting dependency rules if needed
+<b class="fc"><i>118</i>&nbsp;                Map&lt;String, List&lt;String&gt;&gt; dependentPicklistSalesLeadCountryCategoryMap</b>
+<b class="fc"><i>119</i>&nbsp;                        = getPickListValues(categorySalesLeadDependencyRuleCheck,Field_Sales_Project_Members__c.Category__c);</b>
+<i>120</i>&nbsp;
+<b class="fc"><i>121</i>&nbsp;                Map&lt;String,List&lt;String&gt;&gt; dependentPicklistSalesLeadCategoryBrandMap</b>
+<b class="fc"><i>122</i>&nbsp;                        = getPickListValues(categorySalesLeadDependencyRuleCheck,Field_Sales_Project_Members__c.Brand__c);</b>
+<i>123</i>&nbsp;
+<b class="fc"><i>124</i>&nbsp;                Map&lt;String,List&lt;String&gt;&gt; dependentPicklistOpportunityCountryCategoryMap</b>
+<b class="fc"><i>125</i>&nbsp;                        = getPickListValues(categoryOppDependencyRuleCheck,Opportunity.NA_Category__c);</b>
+<i>126</i>&nbsp;
+<b class="fc"><i>127</i>&nbsp;                Map&lt;String,List&lt;String&gt;&gt; dependentPicklistOpportunityCategoryBrandMap</b>
+<b class="fc"><i>128</i>&nbsp;                        = getPickListValues(categoryOppDependencyRuleCheck,Opportunity.NA_Brand__c);</b>
+<i>129</i>&nbsp;
+<b class="fc"><i>130</i>&nbsp;                Map&lt;Id, Contact&gt; contacts   = getContacts(contactIds);</b>
+<b class="fc"><i>131</i>&nbsp;                Set&lt;Id&gt; accountIds          = getAccountIds(contacts);</b>
+<i>132</i>&nbsp;
+<i>133</i>&nbsp;                //Get all Dealers related to the included Campaign Members
+<b class="fc"><i>134</i>&nbsp;                Map&lt;Id, Account&gt;                            dealers                 = getDealerAccounts(dealerIds);</b>
+<b class="fc"><i>135</i>&nbsp;                Map&lt;Id, Id&gt;                                 externalDealerUserMap   = getExternalDealerUserMap(dealers);</b>
+<i>136</i>&nbsp;
+<b class="fc"><i>137</i>&nbsp;                Map&lt;Id, List&lt;UserTerritory2Association&gt;&gt;    dealerUserMap           = getAccountsUserMap(dealerIds);</b>
+<i>138</i>&nbsp;
+<b class="fc"><i>139</i>&nbsp;                Map&lt;Id, List&lt;UserTerritory2Association&gt;&gt;    customerUserMap         = getAccountsUserMap(accountIds);</b>
+<i>140</i>&nbsp;
+<i>141</i>&nbsp;                //Get all Customers Accounts countries
+<b class="fc"><i>142</i>&nbsp;                Map&lt;Id, Account&gt;                            customers               = getCustomerAccounts(accountIds);</b>
+<b class="fc"><i>143</i>&nbsp;                Map&lt;String, LeadOpportunitySetting__mdt&gt;    settingsMap             = getSettingsMap(customers);</b>
+<b class="fc"><i>144</i>&nbsp;                Map&lt;String, String&gt;                         countriesMap            = getCountryMap();</b>
+<i>145</i>&nbsp;
+<b class="fc"><i>146</i>&nbsp;                Boolean                                     isIDSIntegrationUser    = (UserInfo.getName() == CampaignMemberTriggerHelper.IDS_INTEGRATION_USER);</b>
+<b class="fc"><i>147</i>&nbsp;                Map&lt;String, String&gt;                         pricebookSettingMap     = getPricebookSettingMap();</b>
+<i>148</i>&nbsp;
+<b class="fc"><i>149</i>&nbsp;                List&lt;CampaignMemberTriggerHelper.oppWrapper&gt; oppList = new List&lt;CampaignMemberTriggerHelper.oppWrapper&gt;();</b>
+<i>150</i>&nbsp;
+<b class="fc"><i>151</i>&nbsp;                Map&lt;Id, Lead&gt; stdLeads = getStdLeads(stdLeadIds);</b>
+<i>152</i>&nbsp;
+<b class="fc"><i>153</i>&nbsp;                List&lt;GenerationResult&gt; failedResults = new List&lt;GenerationResult&gt;();</b>
+<b class="fc"><i>154</i>&nbsp;                Map&lt;Id,Field_Sales_Project_Members__c&gt; memberIdWithSalesLead = new Map&lt;Id,Field_Sales_Project_Members__c&gt;();</b>
+<b class="fc"><i>155</i>&nbsp;                for (CampaignMember campaignMember : newCampaignMembers)</b>
+<b class="fc"><i>156</i>&nbsp;                {</b>
+<b class="fc"><i>157</i>&nbsp;                    String  recordType          = campaigns.get(campaignMember.CampaignId).RecordType.DeveloperName;</b>
+<b class="fc"><i>158</i>&nbsp;                    String  includeInCommunity  = campaigns.get(campaignMember.CampaignId).Include_in_Dealer_Community__c;</b>
+<b class="fc"><i>159</i>&nbsp;                    String  convertTo           = campaigns.get(campaignMember.CampaignId).Convert_To__c;</b>
+<b class="fc"><i>160</i>&nbsp;                    Boolean assignFromDealer    = campaigns.get(campaignMember.CampaignId).AssignRepFromDealer__c;</b>
+<b class="fc"><i>161</i>&nbsp;                    String  mainBrand           = campaigns.get(campaignMember.CampaignId).Brands__c;</b>
+<b class="fc"><i>162</i>&nbsp;                    Boolean respondedBefore     = false;</b>
+<i>163</i>&nbsp;
+<b class="fc"><i>164</i>&nbsp;                    CampaignMember oldMember;</b>
+<b class="fc"><i>165</i>&nbsp;                    if (oldCampaignMemberMap != null) {</b>
+<b class="fc"><i>166</i>&nbsp;                        if (oldCampaignMemberMap.containsKey(campaignMember.Id))</b>
+<i>167</i>&nbsp;                        {
+<b class="fc"><i>168</i>&nbsp;                            oldMember = oldCampaignMemberMap.get(campaignMember.Id);</b>
+<b class="fc"><i>169</i>&nbsp;                            respondedBefore = oldMember.HasResponded;</b>
+<i>170</i>&nbsp;                        }
+<i>171</i>&nbsp;                    }
+<i>172</i>&nbsp;
+<i>173</i>&nbsp;                    //Added for IDS trade show integration updates
+<b class="fc"><i>174</i>&nbsp;                    Boolean isIDSLogic = false;</b>
+<b class="fc"><i>175</i>&nbsp;                    if(oldCampaignMemberMap != null)</b>
+<i>176</i>&nbsp;                    {
+<b class="fc"><i>177</i>&nbsp;                        isIDSLogic = getIsIDSLogic(campaignMember, oldMember, isIDSIntegrationUser);</b>
+<i>178</i>&nbsp;                    }
+<i>179</i>&nbsp;
+<b class="fc"><i>180</i>&nbsp;                    GenerationResult triggerConversionResult = getIfTriggerConversion(recordType, campaignMember, respondedBefore, overrideHasResponded, isIDSLogic, mainBrand);</b>
+<i>181</i>&nbsp;
+<i>182</i>&nbsp;
+<i>183</i>&nbsp;
+<i>184</i>&nbsp;
+<i>185</i>&nbsp;                    //SALES LEAD CONVERSION
+<b class="fc"><i>186</i>&nbsp;                    if (convertTo == &#39;Sales Lead&#39; &amp;&amp; triggerConversionResult.generate)</b>
+<i>187</i>&nbsp;                    {
+<b class="fc"><i>188</i>&nbsp;                        Field_Sales_Project_Members__c salesLead = new Field_Sales_Project_Members__c();</b>
+<i>189</i>&nbsp;
+<b class="fc"><i>190</i>&nbsp;                        salesLead.Status__c = &#39;New&#39;;</b>
+<b class="fc"><i>191</i>&nbsp;                        salesLead.Source__c = campaigns.get(campaignMember.CampaignId).Source_Origin__c != null ? campaigns.get(campaignMember.CampaignId).Source_Origin__c : null;</b>
+<b class="fc"><i>192</i>&nbsp;                        salesLead.VoucherCode__c = campaignMember.VoucherCode__c;</b>
+<i>193</i>&nbsp;
+<i>194</i>&nbsp;                        //Potentially comment out these lines in case no brand should be assigned
+<b class="fc"><i>195</i>&nbsp;                        String brand = campaignMember.Brand__c;</b>
+<b class="fc"><i>196</i>&nbsp;                        if (brand == null || brand == &#39;&#39;) {</b>
+<b class="fc"><i>197</i>&nbsp;                            brand = campaigns.get(campaignMember.CampaignId).Brands__c;</b>
+<i>198</i>&nbsp;                        }
+<i>199</i>&nbsp;
+<b class="fc"><i>200</i>&nbsp;                        if (campaignMember.Dealer__c != null) {</b>
+<b class="fc"><i>201</i>&nbsp;                            salesLead.Dealer__c = campaignMember.Dealer__c;</b>
+<i>202</i>&nbsp;                        }
+<i>203</i>&nbsp;
+<i>204</i>&nbsp;                        //Please note! This logic is now built around the CMDT CountryCodeMap__mdt
+<b class="fc"><i>205</i>&nbsp;                        String accountCountry = contacts.get(campaignMember.ContactId).Account.Country__c;</b>
+<b class="fc"><i>206</i>&nbsp;                        String userCountry =    countriesMap.get(accountCountry);</b>
+<i>207</i>&nbsp;
+<b class="fc"><i>208</i>&nbsp;                        if (userCountry != null) {</b>
+<b class="fc"><i>209</i>&nbsp;                            salesLead.UserCountry__c = userCountry;</b>
+<i>210</i>&nbsp;                        }
+<i>211</i>&nbsp;
+<b class="fc"><i>212</i>&nbsp;                        salesLead.Category__c = GlobalUtils.getCategoryFromBrand(userCountry, brand, dependentPicklistSalesLeadCountryCategoryMap, dependentPicklistSalesLeadCategoryBrandMap);</b>
+<i>213</i>&nbsp;
+<b class="fc"><i>214</i>&nbsp;                        salesLead.Brand__c = brand;</b>
+<b class="fc"><i>215</i>&nbsp;                        salesLead.Account__c = campaignMember.LeadId == null ? contacts.get(campaignMember.ContactId).AccountId : stdLeads.get(campaignMember.LeadId).ConvertedAccountId;</b>
+<b class="fc"><i>216</i>&nbsp;                        salesLead.Contact__c = campaignMember.ContactId;</b>
+<b class="fc"><i>217</i>&nbsp;                        salesLead.Campaign__c = campaignMember.CampaignId;</b>
+<b class="fc"><i>218</i>&nbsp;                        salesLead.CustomerNotes__c = campaignMember.Description__c;</b>
+<i>219</i>&nbsp;
+<b class="fc"><i>220</i>&nbsp;                        Set&lt;String&gt; roleMap = new Set&lt;String&gt;();</b>
+<b class="fc"><i>221</i>&nbsp;                        if (settingsMap != null &amp;&amp; settingsMap.get(brand) != null &amp;&amp; settingsMap.get(brand).UserRoles__c != null) {</b>
+<b class="fc"><i>222</i>&nbsp;                            String roleList = settingsMap.get(brand).UserRoles__c;</b>
+<b class="fc"><i>223</i>&nbsp;                            String[] roles = roleList.split(&#39;;&#39;);</b>
+<b class="fc"><i>224</i>&nbsp;                            for (String role : roles) {</b>
+<b class="fc"><i>225</i>&nbsp;                                roleMap.add(role);</b>
+<i>226</i>&nbsp;                            }
+<i>227</i>&nbsp;                        }
+<i>228</i>&nbsp;
+<b class="fc"><i>229</i>&nbsp;                        List&lt;UserTerritory2Association&gt; accUsers = new List&lt;UserTerritory2Association&gt;();</b>
+<i>230</i>&nbsp;
+<b class="fc"><i>231</i>&nbsp;                        if (Test.isRunningTest()) {</b>
+<b class="fc"><i>232</i>&nbsp;                            UserTerritory2Association accUser = new UserTerritory2Association();</b>
+<b class="fc"><i>233</i>&nbsp;                            accUser.RoleInTerritory2 = &#39;Sales Rep (CERC)&#39;;</b>
+<b class="fc"><i>234</i>&nbsp;                            accUsers.add(accUser);</b>
+<i>235</i>&nbsp;                        }
+<i>236</i>&nbsp;                        else {
+<b class="nc"><i>237</i>&nbsp;                            accUsers = customerUserMap.get(salesLead.Account__c);</b>
+<i>238</i>&nbsp;                        }
+<b class="fc"><i>239</i>&nbsp;                        if (accUsers != null) {</b>
+<b class="fc"><i>240</i>&nbsp;                            for (UserTerritory2Association user : accUsers) {</b>
+<b class="fc"><i>241</i>&nbsp;                                if (roleMap.contains(user.RoleInTerritory2)) {</b>
+<b class="nc"><i>242</i>&nbsp;                                    salesLead.Sales_Rep__c = user.UserId;</b>
+<i>243</i>&nbsp;                                }
+<i>244</i>&nbsp;                            }
+<i>245</i>&nbsp;                        }
+<i>246</i>&nbsp;
+<i>247</i>&nbsp;                        //Check internal sales reps assigned through the dealer account&#39;s territories
+<b class="fc"><i>248</i>&nbsp;                        List&lt;UserTerritory2Association&gt; dealerUsers = new List&lt;UserTerritory2Association&gt;();</b>
+<b class="fc"><i>249</i>&nbsp;                        if (dealers != null &amp;&amp; assignFromDealer == true) {</b>
+<i>250</i>&nbsp;
+<b class="nc"><i>251</i>&nbsp;                            if (Test.isRunningTest()) {</b>
+<b class="nc"><i>252</i>&nbsp;                                UserTerritory2Association dealerUser = new UserTerritory2Association();</b>
+<b class="nc"><i>253</i>&nbsp;                                dealerUser.RoleInTerritory2 = &#39;Sales Rep (CERC)&#39;;</b>
+<b class="nc"><i>254</i>&nbsp;                                dealerusers.add(dealerUser);</b>
+<i>255</i>&nbsp;                            }
+<i>256</i>&nbsp;                            else {
+<b class="nc"><i>257</i>&nbsp;                                dealerUsers = dealerUserMap.get(salesLead.Dealer__c);</b>
+<i>258</i>&nbsp;                            }
+<i>259</i>&nbsp;                        }
+<i>260</i>&nbsp;
+<b class="fc"><i>261</i>&nbsp;                        if (dealerUsers != null &amp;&amp; assignFromDealer == true) {</b>
+<b class="nc"><i>262</i>&nbsp;                            for (UserTerritory2Association user : dealerUsers) {</b>
+<b class="nc"><i>263</i>&nbsp;                                if (roleMap.contains(user.RoleInTerritory2)) {</b>
+<b class="nc"><i>264</i>&nbsp;                                    salesLead.Sales_Rep__c = user.UserId;</b>
+<i>265</i>&nbsp;                                }
+<i>266</i>&nbsp;                            }
+<i>267</i>&nbsp;                        }
+<i>268</i>&nbsp;
+<b class="fc"><i>269</i>&nbsp;                        if (salesLead.Sales_Rep__c == null) {</b>
+<b class="fc"><i>270</i>&nbsp;                            salesLead.Sales_Rep__c = campaigns.get(campaignMember.CampaignId).OwnerId;</b>
+<i>271</i>&nbsp;                        }
+<i>272</i>&nbsp;
+<i>273</i>&nbsp;                        //leadList.add(lead);
+<b class="fc"><i>274</i>&nbsp;                        memberIdWithSalesLead.put(campaignMember.Id, salesLead);</b>
+<i>275</i>&nbsp;
+<i>276</i>&nbsp;                    }
+<i>277</i>&nbsp;
+<i>278</i>&nbsp;                    //OPPORTUNITY CONVERSION
+<b class="fc"><i>279</i>&nbsp;                    if (convertTo == &#39;Opportunity&#39; &amp;&amp; triggerConversionResult.generate)</b>
+<i>280</i>&nbsp;                    {
+<b class="nc"><i>281</i>&nbsp;                        String brand = campaignMember.Brand__c;</b>
+<b class="nc"><i>282</i>&nbsp;                        if (brand == null) {</b>
+<b class="nc"><i>283</i>&nbsp;                            brand = campaigns.get(campaignMember.CampaignId).Brands__c;</b>
+<i>284</i>&nbsp;                        }
+<i>285</i>&nbsp;
+<b class="nc"><i>286</i>&nbsp;                        Opportunity opp = new Opportunity();</b>
+<b class="nc"><i>287</i>&nbsp;                        if (includeInCommunity == &#39;Yes&#39;) {</b>
+<b class="nc"><i>288</i>&nbsp;                            opp.RecordTypeId = oppRT[0].Id; //oppDealerRT[0].Id;</b>
+<b class="nc"><i>289</i>&nbsp;                            opp.StageName = &#39;1. Needs analysis&#39;; //&#39;Registered&#39;;</b>
+<i>290</i>&nbsp;                        }
+<i>291</i>&nbsp;                        else {
+<b class="nc"><i>292</i>&nbsp;                            opp.RecordTypeId = oppRT[0].Id;</b>
+<b class="nc"><i>293</i>&nbsp;                            opp.StageName = &#39;1. Needs analysis&#39;;</b>
+<i>294</i>&nbsp;                        }
+<i>295</i>&nbsp;
+<i>296</i>&nbsp;                        //opp.LeadSource = &#39;Email Campaign&#39;; //campaigns.get(campaignMember.CampaignId).Source_Origin__c != null ? campaigns.get(campaignMember.CampaignId).Source_Origin__c : null;
+<b class="nc"><i>297</i>&nbsp;                        opp.CampaignId          = campaignMember.CampaignId;</b>
+<i>298</i>&nbsp;                        //opp.Campaign__c         = campaignMember.CampaignId; //Added to have related list in campaigns page layout.
+<b class="nc"><i>299</i>&nbsp;                        opp.Primary_Contact__c  = campaignMember.ContactId;</b>
+<b class="nc"><i>300</i>&nbsp;                        opp.ContactId           = campaignMember.ContactId;</b>
+<b class="nc"><i>301</i>&nbsp;                        opp.CustomerNotes__c    = campaignMember.Description__c;</b>
+<b class="nc"><i>302</i>&nbsp;                        opp.VoucherCode__c      = campaignMember.VoucherCode__c;</b>
+<b class="nc"><i>303</i>&nbsp;                        opp.LeadSource          = campaigns.get(campaignMember.CampaignId).Source_Origin__c != null ? campaigns.get(campaignMember.CampaignId).Source_Origin__c : null;</b>
+<b class="nc"><i>304</i>&nbsp;                        opp.CloseDate           = Date.today().addMonths(3);</b>
+<i>305</i>&nbsp;
+<i>306</i>&nbsp;                        //Please note! This logic is now built around the CMDT CountryCodeMap__mdt
+<b class="nc"><i>307</i>&nbsp;                        String accountCountry = contacts.get(campaignMember.ContactId).Account.Country__c;</b>
+<b class="nc"><i>308</i>&nbsp;                        String userCountry = countriesMap.get(accountCountry);</b>
+<b class="nc"><i>309</i>&nbsp;                        if (userCountry != null) {</b>
+<b class="nc"><i>310</i>&nbsp;                            opp.User_Country__c = userCountry;</b>
+<i>311</i>&nbsp;                        }
+<i>312</i>&nbsp;
+<b class="nc"><i>313</i>&nbsp;                        opp.NA_Brand__c = campaignMember.Brand__c;</b>
+<i>314</i>&nbsp;                        //The dealer assignment need to be collected from the Campaign Member
+<b class="nc"><i>315</i>&nbsp;                        if (campaignMember.Dealer__c != null) {</b>
+<b class="nc"><i>316</i>&nbsp;                            opp.Dealer__c = campaignMember.Dealer__c;</b>
+<i>317</i>&nbsp;                        }
+<i>318</i>&nbsp;
+<b class="nc"><i>319</i>&nbsp;                        String pricebookId = &#39;&#39;;</b>
+<b class="nc"><i>320</i>&nbsp;                        pricebookId = pricebookSettingMap.get(contacts.get(campaignMember.ContactId).Account.Country__c);</b>
+<i>321</i>&nbsp;
+<b class="nc"><i>322</i>&nbsp;                        if (pricebookId != &#39;&#39;) {</b>
+<b class="nc"><i>323</i>&nbsp;                            opp.Pricebook2Id = pricebookId;</b>
+<i>324</i>&nbsp;                        }
+<i>325</i>&nbsp;
+<i>326</i>&nbsp;                        //In case the Brand field is empty on the Campaign Member, collect it from the Campaign instead
+<b class="nc"><i>327</i>&nbsp;                        if (opp.NA_Brand__c == null || opp.NA_Brand__c == &#39;&#39;) {</b>
+<b class="nc"><i>328</i>&nbsp;                            opp.NA_Brand__c = campaigns.get(campaignMember.CampaignId).Brands__c;</b>
+<i>329</i>&nbsp;                        }
+<i>330</i>&nbsp;
+<b class="nc"><i>331</i>&nbsp;                        opp.AccountId = campaignMember.LeadId == null ? contacts.get(campaignMember.ContactId).AccountId : stdLeads.get(campaignMember.LeadId).ConvertedAccountId;</b>
+<i>332</i>&nbsp;
+<b class="nc"><i>333</i>&nbsp;                        List&lt;AccountContactRelation&gt; dealerContacts = new List&lt;AccountContactRelation&gt;();</b>
+<b class="nc"><i>334</i>&nbsp;                        if (dealers != null) {</b>
+<b class="nc"><i>335</i>&nbsp;                            Account dealerAcc = dealers.get(opp.Dealer__c);</b>
+<b class="nc"><i>336</i>&nbsp;                            if (dealerAcc != null) {</b>
+<b class="nc"><i>337</i>&nbsp;                                dealerContacts = dealers.get(opp.Dealer__c).AccountContactRelations;</b>
+<i>338</i>&nbsp;                            }
+<i>339</i>&nbsp;                        }
+<i>340</i>&nbsp;
+<b class="nc"><i>341</i>&nbsp;                        Map&lt;Id, OpportunityTeamMember&gt; oppMembers = new Map&lt;Id, OpportunityTeamMember&gt;();</b>
+<b class="nc"><i>342</i>&nbsp;                        String assignment = &#39;&#39;;</b>
+<b class="nc"><i>343</i>&nbsp;                        if (settingsMap.get(opp.NA_Brand__c) != null) {</b>
+<i>344</i>&nbsp;                            //opp.NA_Category__c = settingsMap.get(opp.NA_Brand__c).Category__c;
+<i>345</i>&nbsp;
+<i>346</i>&nbsp;                            //Check assignment based on category
+<b class="nc"><i>347</i>&nbsp;                            assignment = settingsMap.get(opp.NA_Brand__c).AssignOwnerFrom__c;</b>
+<i>348</i>&nbsp;                        }
+<b class="nc"><i>349</i>&nbsp;                        opp.NA_Category__c = GlobalUtils.getCategoryFromBrand(userCountry, brand, dependentPicklistOpportunityCountryCategoryMap, dependentPicklistOpportunityCategoryBrandMap);</b>
+<b class="nc"><i>350</i>&nbsp;                        Set&lt;String&gt; roleMap = new Set&lt;String&gt;();</b>
+<b class="nc"><i>351</i>&nbsp;                        if (settingsMap.get(opp.NA_Brand__c) != null &amp;&amp; settingsMap.get(opp.NA_Brand__c).UserRoles__c != null) {</b>
+<b class="nc"><i>352</i>&nbsp;                            String roleList = settingsMap.get(opp.NA_Brand__c).UserRoles__c;</b>
+<b class="nc"><i>353</i>&nbsp;                            String[] roles = roleList.split(&#39;;&#39;);</b>
+<b class="nc"><i>354</i>&nbsp;                            for (String role : roles) {</b>
+<b class="nc"><i>355</i>&nbsp;                                roleMap.add(role);</b>
+<i>356</i>&nbsp;                            }
+<i>357</i>&nbsp;                        }
+<i>358</i>&nbsp;
+<i>359</i>&nbsp;                        //Check internal sales reps assigned through the customer account&#39;s territories
+<b class="nc"><i>360</i>&nbsp;                        List&lt;UserTerritory2Association&gt; accUsers = new List&lt;UserTerritory2Association&gt;();</b>
+<i>361</i>&nbsp;
+<b class="nc"><i>362</i>&nbsp;                        if (Test.isRunningTest()) {</b>
+<b class="nc"><i>363</i>&nbsp;                            UserTerritory2Association accUser = new UserTerritory2Association();</b>
+<b class="nc"><i>364</i>&nbsp;                            accUser.RoleInTerritory2 = &#39;Sales Rep (CERC)&#39;;</b>
+<b class="nc"><i>365</i>&nbsp;                            accUsers.add(accUser);</b>
+<i>366</i>&nbsp;                        }
+<i>367</i>&nbsp;                        else {
+<b class="nc"><i>368</i>&nbsp;                            accUsers = customerUserMap.get(opp.AccountId);</b>
+<i>369</i>&nbsp;                        }
+<i>370</i>&nbsp;
+<i>371</i>&nbsp;                        //Check internal users assigned through the customer&#39;s ETM
+<b class="nc"><i>372</i>&nbsp;                        if (accUsers != null &amp;&amp; assignFromDealer != true) {</b>
+<b class="nc"><i>373</i>&nbsp;                            for (UserTerritory2Association user : accUsers) {</b>
+<b class="nc"><i>374</i>&nbsp;                                if (roleMap.contains(user.RoleInTerritory2)) {</b>
+<b class="nc"><i>375</i>&nbsp;                                    OpportunityTeamMember omAcc = new OpportunityTeamMember();</b>
+<b class="nc"><i>376</i>&nbsp;                                    opp.OwnerId = user.UserId;</b>
+<b class="nc"><i>377</i>&nbsp;                                    omAcc.UserId = user.UserId;</b>
+<b class="nc"><i>378</i>&nbsp;                                    omAcc.TeamMemberRole = &#39;Sales Representative&#39;;</b>
+<b class="nc"><i>379</i>&nbsp;                                    omAcc.OpportunityAccessLevel = &#39;Edit&#39;;</b>
+<b class="nc"><i>380</i>&nbsp;                                    oppMembers.put(omAcc.UserId, omAcc);</b>
+<i>381</i>&nbsp;                                }
+<i>382</i>&nbsp;                            }
+<i>383</i>&nbsp;                        }
+<i>384</i>&nbsp;
+<i>385</i>&nbsp;                        //Check internal sales reps assigned through the dealer account&#39;s territories
+<b class="nc"><i>386</i>&nbsp;                        List&lt;UserTerritory2Association&gt; dealerUsers = new List&lt;UserTerritory2Association&gt;();</b>
+<b class="nc"><i>387</i>&nbsp;                        if (dealers != null &amp;&amp; assignFromDealer == true) {</b>
+<i>388</i>&nbsp;
+<b class="nc"><i>389</i>&nbsp;                            if (Test.isRunningTest()) {</b>
+<b class="nc"><i>390</i>&nbsp;                                UserTerritory2Association dealerUser = new UserTerritory2Association();</b>
+<b class="nc"><i>391</i>&nbsp;                                dealerUser.RoleInTerritory2 = &#39;Sales Rep (CERC)&#39;;</b>
+<b class="nc"><i>392</i>&nbsp;                                dealerusers.add(dealerUser);</b>
+<i>393</i>&nbsp;                            }
+<i>394</i>&nbsp;                            else {
+<b class="nc"><i>395</i>&nbsp;                                dealerUsers = dealerUserMap.get(opp.Dealer__c);</b>
+<i>396</i>&nbsp;                            }
+<i>397</i>&nbsp;                        }
+<i>398</i>&nbsp;
+<b class="nc"><i>399</i>&nbsp;                        if (dealerUsers != null &amp;&amp; assignFromDealer == true) {</b>
+<b class="nc"><i>400</i>&nbsp;                            for (UserTerritory2Association user : dealerUsers) {</b>
+<b class="nc"><i>401</i>&nbsp;                                if (roleMap.contains(user.RoleInTerritory2)) {</b>
+<b class="nc"><i>402</i>&nbsp;                                    OpportunityTeamMember omDealerInt = new OpportunityTeamMember();</b>
+<b class="nc"><i>403</i>&nbsp;                                    opp.OwnerId = user.UserId;</b>
+<b class="nc"><i>404</i>&nbsp;                                    omDealerInt.UserId = user.UserId;</b>
+<b class="nc"><i>405</i>&nbsp;                                    omDealerInt.TeamMemberRole = &#39;Sales Representative&#39;;</b>
+<b class="nc"><i>406</i>&nbsp;                                    omDealerInt.OpportunityAccessLevel = &#39;Edit&#39;;</b>
+<b class="nc"><i>407</i>&nbsp;                                    oppMembers.put(omDealerInt.UserId, omDealerInt);</b>
+<i>408</i>&nbsp;                                }
+<i>409</i>&nbsp;                            }
+<i>410</i>&nbsp;                        }
+<i>411</i>&nbsp;
+<b class="nc"><i>412</i>&nbsp;                        if (includeInCommunity == &#39;Yes&#39;) {</b>
+<b class="nc"><i>413</i>&nbsp;                            if (dealerContacts != null) {</b>
+<b class="nc"><i>414</i>&nbsp;                                for (AccountContactRelation rel : dealerContacts) {</b>
+<b class="nc"><i>415</i>&nbsp;                                    if (rel.Specialty__c != null) {</b>
+<b class="nc"><i>416</i>&nbsp;                                        if (roleMap.contains(rel.Specialty__c)) {</b>
+<i>417</i>&nbsp;
+<b class="nc"><i>418</i>&nbsp;                                            OpportunityTeamMember omDealerExt = new OpportunityTeamMember();</b>
+<i>419</i>&nbsp;
+<b class="nc"><i>420</i>&nbsp;                                            omDealerExt.UserId = externalDealerUserMap.get(rel.ContactId);</b>
+<b class="nc"><i>421</i>&nbsp;                                            omDealerExt.OpportunityAccessLevel = &#39;Edit&#39;;</b>
+<b class="nc"><i>422</i>&nbsp;                                            omDealerExt.TeamMemberRole = &#39;Dealer Sales Rep&#39;;</b>
+<b class="nc"><i>423</i>&nbsp;                                            if (omDealerExt.UserId != null) {</b>
+<b class="nc"><i>424</i>&nbsp;                                                opp.OwnerId = externalDealerUserMap.get(rel.ContactId);</b>
+<b class="nc"><i>425</i>&nbsp;                                                oppMembers.put(omDealerExt.UserId, omDealerExt);</b>
+<i>426</i>&nbsp;                                            }
+<i>427</i>&nbsp;
+<i>428</i>&nbsp;                                        }
+<i>429</i>&nbsp;                                    }
+<i>430</i>&nbsp;                                }
+<i>431</i>&nbsp;                            }
+<i>432</i>&nbsp;                            else {
+<b class="nc"><i>433</i>&nbsp;                                opp.OwnerId = campaigns.get(campaignMember.CampaignId).OwnerId;</b>
+<i>434</i>&nbsp;                            }
+<i>435</i>&nbsp;                        }
+<i>436</i>&nbsp;
+<i>437</i>&nbsp;                        //Assign opportunities to the Campaign owner in case of exceptions
+<b class="nc"><i>438</i>&nbsp;                        if (opp.OwnerId == null) {</b>
+<b class="nc"><i>439</i>&nbsp;                            opp.OwnerId = campaigns.get(campaignMember.CampaignId).OwnerId;</b>
+<i>440</i>&nbsp;                        }
+<i>441</i>&nbsp;
+<b class="nc"><i>442</i>&nbsp;                        CampaignMemberTriggerHelper.OppWrapper oppRecord = new CampaignMemberTriggerHelper.OppWrapper();</b>
+<b class="nc"><i>443</i>&nbsp;                        oppRecord.opp = opp;</b>
+<i>444</i>&nbsp;
+<b class="nc"><i>445</i>&nbsp;                        oppRecord.oppMembers = oppMembers.values();</b>
+<b class="nc"><i>446</i>&nbsp;                        oppRecord.CampaignMemberIdUpdate = campaignMember.Id;</b>
+<b class="nc"><i>447</i>&nbsp;                        oppList.add(oppRecord);</b>
+<i>448</i>&nbsp;
+<i>449</i>&nbsp;                    }
+<i>450</i>&nbsp;
+<i>451</i>&nbsp;                    //Get all Leads related to the included Campaign Members
+<b class="fc"><i>452</i>&nbsp;                    if(!triggerConversionResult.generate &amp;&amp; (convertTo == &#39;Sales Lead&#39; || convertTo == &#39;Opportunity&#39;))</b>
+<i>453</i>&nbsp;                    {
+<b class="fc"><i>454</i>&nbsp;                        failedResults.add(triggerConversionResult);</b>
+<i>455</i>&nbsp;                    }
+<i>456</i>&nbsp;                }
+<i>457</i>&nbsp;
+<b class="fc"><i>458</i>&nbsp;                List&lt;CampaignMember&gt;  campaignMemberToUpdateList = new List&lt;CampaignMember&gt;();</b>
+<i>459</i>&nbsp;
+<i>460</i>&nbsp;                //Sales Lead creation
+<b class="fc"><i>461</i>&nbsp;                if( !memberIdWithSalesLead.values().isEmpty() )</b>
+<i>462</i>&nbsp;                {
+<b class="fc"><i>463</i>&nbsp;                    insertSalesLeads(memberIdWithSalesLead.values());</b>
+<i>464</i>&nbsp;
+<b class="fc"><i>465</i>&nbsp;                    for (CampaignMember campaignMemberToUpdate : [  SELECT Id, VoucherCode__c, Dealer__c, Description__c, URL_Source__c, CampaignId, ContactId, SalesLead__c</b>
+<i>466</i>&nbsp;                    FROM CampaignMember
+<b class="fc"><i>467</i>&nbsp;                    WHERE Id IN :memberIdWithSalesLead.keySet()])</b>
+<b class="fc"><i>468</i>&nbsp;                    {</b>
+<i>469</i>&nbsp;
+<b class="fc"><i>470</i>&nbsp;                        campaignMemberToUpdate.SalesLead__c = memberIdWithSalesLead.get(campaignMemberToUpdate.Id).Id;</b>
+<i>471</i>&nbsp;
+<b class="fc"><i>472</i>&nbsp;                        if(isIDSIntegrationUser == false)</b>
+<i>473</i>&nbsp;                        {
+<b class="fc"><i>474</i>&nbsp;                            CampaignMember member = oldCampaignMemberMap?.get(campaignMemberToUpdate.Id);</b>
+<i>475</i>&nbsp;
+<i>476</i>&nbsp;                            // VoucherCode__c
+<b class="fc"><i>477</i>&nbsp;                            if (oldCampaignMemberMap != null &amp;&amp; member != null &amp;&amp; member.VoucherCode__c != null) {</b>
+<b class="nc"><i>478</i>&nbsp;                                campaignMemberToUpdate.VoucherCode__c = member.VoucherCode__c;</b>
+<i>479</i>&nbsp;                            }
+<i>480</i>&nbsp;                            else {
+<b class="fc"><i>481</i>&nbsp;                                campaignMemberToUpdate.VoucherCode__c = campaignMemberToUpdate.VoucherCode__c;</b>
+<i>482</i>&nbsp;                            }
+<i>483</i>&nbsp;
+<i>484</i>&nbsp;                            // Dealer__c
+<b class="fc"><i>485</i>&nbsp;                            if (oldCampaignMemberMap != null &amp;&amp; member != null &amp;&amp; member.Dealer__c != null) {</b>
+<b class="nc"><i>486</i>&nbsp;                                campaignMemberToUpdate.Dealer__c = member.Dealer__c;</b>
+<i>487</i>&nbsp;                            }
+<i>488</i>&nbsp;                            else {
+<b class="fc"><i>489</i>&nbsp;                                campaignMemberToUpdate.Dealer__c = campaignMemberToUpdate.Dealer__c;</b>
+<i>490</i>&nbsp;                            }
+<i>491</i>&nbsp;
+<i>492</i>&nbsp;                            // Description__c
+<b class="fc"><i>493</i>&nbsp;                            if (oldCampaignMemberMap != null &amp;&amp; member != null &amp;&amp; member.Description__c != null) {</b>
+<b class="nc"><i>494</i>&nbsp;                                campaignMemberToUpdate.Description__c = member.Description__c;</b>
+<i>495</i>&nbsp;                            }
+<i>496</i>&nbsp;                            else {
+<b class="fc"><i>497</i>&nbsp;                                campaignMemberToUpdate.Description__c = campaignMemberToUpdate.Description__c;</b>
+<i>498</i>&nbsp;                            }
+<i>499</i>&nbsp;
+<i>500</i>&nbsp;                            // URL_Source__c
+<b class="fc"><i>501</i>&nbsp;                            if (oldCampaignMemberMap != null &amp;&amp; member != null &amp;&amp; member.URL_Source__c != null) {</b>
+<b class="nc"><i>502</i>&nbsp;                                campaignMemberToUpdate.URL_Source__c = member.URL_Source__c;</b>
+<i>503</i>&nbsp;                            }
+<i>504</i>&nbsp;                            else {
+<b class="fc"><i>505</i>&nbsp;                                campaignMemberToUpdate.URL_Source__c = campaignMemberToUpdate.URL_Source__c;</b>
+<i>506</i>&nbsp;                            }
+<i>507</i>&nbsp;
+<i>508</i>&nbsp;                            // IDSContact__c
+<b class="fc"><i>509</i>&nbsp;                            if (campaignMemberToUpdate.ContactId != null) {</b>
+<b class="fc"><i>510</i>&nbsp;                                campaignMemberToUpdate.IDSContact__c = campaignMemberToUpdate.ContactId + &#39;+&#39; + campaignMemberToUpdate.CampaignId ;</b>
+<i>511</i>&nbsp;                            }
+<i>512</i>&nbsp;                        }
+<i>513</i>&nbsp;
+<b class="fc"><i>514</i>&nbsp;                        campaignMemberToUpdateList.add(campaignMemberToUpdate);</b>
+<i>515</i>&nbsp;                    }
+<i>516</i>&nbsp;                }
+<i>517</i>&nbsp;
+<b class="fc"><i>518</i>&nbsp;                if(!failedResults.isEmpty())</b>
+<i>519</i>&nbsp;                {
+<b class="fc"><i>520</i>&nbsp;                    List&lt;CampaignMember&gt; membersToUpdateTheirReasons = new List&lt;CampaignMember&gt;();</b>
+<b class="fc"><i>521</i>&nbsp;                    for(GenerationResult result : failedResults)</b>
+<b class="fc"><i>522</i>&nbsp;                    {</b>
+<b class="fc"><i>523</i>&nbsp;                        if(result.campaignMemberId != null)</b>
+<i>524</i>&nbsp;                        {
+<b class="fc"><i>525</i>&nbsp;                            CampaignMember member = new CampaignMember(Id=result.campaignMemberId,ConversionResultDetail__c=result.reasonNotGenerated);</b>
+<b class="fc"><i>526</i>&nbsp;                            membersToUpdateTheirReasons.add(member);</b>
+<i>527</i>&nbsp;                        }
+<i>528</i>&nbsp;                    }
+<b class="fc"><i>529</i>&nbsp;                    campaignMemberToUpdateList.addAll(membersToUpdateTheirReasons);</b>
+<i>530</i>&nbsp;                }
+<i>531</i>&nbsp;
+<i>532</i>&nbsp;
+<b class="fc"><i>533</i>&nbsp;                if(!campaignMemberToUpdateList.isempty())</b>
+<i>534</i>&nbsp;                {
+<b class="fc"><i>535</i>&nbsp;                    try{</b>
+<b class="fc"><i>536</i>&nbsp;                        TriggerHandler.bypass(&#39;CampaignMemberTriggerHandler&#39;);</b>
+<b class="fc"><i>537</i>&nbsp;                        update campaignMemberToUpdateList;</b>
+<i>538</i>&nbsp;                    }
+<b class="nc"><i>539</i>&nbsp;                    catch(Exception e){</b>
+<b class="nc"><i>540</i>&nbsp;                        DebugLog.addError(&#39;OpportunityInsertAsynch update campaignMemberToUpdateList&#39;,e.getMessage());</b>
+<i>541</i>&nbsp;                    }
+<i>542</i>&nbsp;                }
+<i>543</i>&nbsp;
+<i>544</i>&nbsp;                //Opportunity creation
+<b class="fc"><i>545</i>&nbsp;                if(oppList.size()&gt;0){</b>
+<b class="nc"><i>546</i>&nbsp;                    executeInsertions(oppList);</b>
+<i>547</i>&nbsp;                }
+<i>548</i>&nbsp;            }
+<i>549</i>&nbsp;        }
+<i>550</i>&nbsp;    }
+<i>551</i>&nbsp;
+<i>552</i>&nbsp;    /**
+<i>553</i>&nbsp;     * @param opportunities opportunities wrappers to execute insertions
+<i>554</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>555</i>&nbsp;     */
+<b class="nc"><i>556</i>&nbsp;    public void executeInsertions(List&lt;CampaignMemberTriggerHelper.oppWrapper&gt; opportunities)</b>
+<i>557</i>&nbsp;    {
+<b class="nc"><i>558</i>&nbsp;        Map&lt;Id, Opportunity&gt; memberIdWithOpp = new Map&lt;Id, Opportunity&gt;();</b>
+<i>559</i>&nbsp;
+<b class="nc"><i>560</i>&nbsp;        List&lt;CampaignMember&gt; campaignMemberToUpdateList = new List&lt;CampaignMember&gt;();</b>
+<i>561</i>&nbsp;
+<i>562</i>&nbsp;        //Loop all opportunities to create
+<b class="nc"><i>563</i>&nbsp;        for (CampaignMemberTriggerHelper.oppWrapper opportunity : opportunities)</b>
+<b class="nc"><i>564</i>&nbsp;        {</b>
+<b class="nc"><i>565</i>&nbsp;            Opportunity opp = opportunity.opp;</b>
+<b class="nc"><i>566</i>&nbsp;            List&lt;OpportunityTeamMember&gt; oppMembers = opportunity.oppMembers;</b>
+<i>567</i>&nbsp;
+<i>568</i>&nbsp;            //Create opportunity if no open opportunity is found
+<i>569</i>&nbsp;
+<b class="nc"><i>570</i>&nbsp;            memberIdWithOpp.put(opportunity.CampaignMemberIdUpdate, opportunity.opp); //populating member ID with opportunity map</b>
+<i>571</i>&nbsp;
+<b class="nc"><i>572</i>&nbsp;            InsertOpportunity(opp);</b>
+<i>573</i>&nbsp;
+<b class="nc"><i>574</i>&nbsp;            for (OpportunityTeamMember oppMember : oppMembers) {</b>
+<b class="nc"><i>575</i>&nbsp;                oppMember.OpportunityId = opp.Id;</b>
+<i>576</i>&nbsp;            }
+<i>577</i>&nbsp;
+<b class="nc"><i>578</i>&nbsp;            insertOpportunityTeamMembers(oppMembers);</b>
+<i>579</i>&nbsp;        }
+<i>580</i>&nbsp;
+<i>581</i>&nbsp;        //identifying campaign members to update, assigning the right opportunity ID and updating the record.
+<i>582</i>&nbsp;
+<b class="nc"><i>583</i>&nbsp;        for (CampaignMember campaignMemberToUpdate : [SELECT ID, Opportunity__c FROM CampaignMember WHERE Id IN :memberIdWithOpp.keySet()]) {</b>
+<b class="nc"><i>584</i>&nbsp;            campaignMemberToUpdate.Opportunity__c = memberIdWithOpp.get(campaignMemberToUpdate.Id).Id;</b>
+<b class="nc"><i>585</i>&nbsp;            campaignMemberToUpdateList.add(campaignMemberToUpdate);</b>
+<i>586</i>&nbsp;        }
+<i>587</i>&nbsp;
+<b class="nc"><i>588</i>&nbsp;        if (campaignMemberToUpdateList.size() &gt; 0) {</b>
+<b class="nc"><i>589</i>&nbsp;            try {</b>
+<b class="nc"><i>590</i>&nbsp;                update campaignMemberToUpdateList;</b>
+<i>591</i>&nbsp;            }
+<b class="nc"><i>592</i>&nbsp;            catch (Exception e) {</b>
+<b class="nc"><i>593</i>&nbsp;                DebugLog.addError(e.getMessage());</b>
+<i>594</i>&nbsp;            }
+<i>595</i>&nbsp;        }
+<i>596</i>&nbsp;    }
+<i>597</i>&nbsp;
+<i>598</i>&nbsp;    /**
+<i>599</i>&nbsp;     * Inserts The opportunity
+<i>600</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>601</i>&nbsp;     *
+<i>602</i>&nbsp;     * @param opportunity   Opportunity
+<i>603</i>&nbsp;     */
+<b class="nc"><i>604</i>&nbsp;    public void InsertOpportunity(Opportunity opportunity)</b>
+<i>605</i>&nbsp;    {
+<b class="nc"><i>606</i>&nbsp;        try {</b>
+<b class="nc"><i>607</i>&nbsp;            insert opportunity;</b>
+<i>608</i>&nbsp;        }
+<b class="nc"><i>609</i>&nbsp;        catch (Exception e) {</b>
+<b class="nc"><i>610</i>&nbsp;            DebugLog.addException(e, &#39;OpportunityInsertAsynch class. Opportunity not created after responded campaign member&#39;);</b>
+<i>611</i>&nbsp;        }
+<i>612</i>&nbsp;    }
+<i>613</i>&nbsp;
+<i>614</i>&nbsp;    /**
+<i>615</i>&nbsp;     * Inserts Opportunity Team Members to insert
+<i>616</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>617</i>&nbsp;     *
+<i>618</i>&nbsp;     * @param opportunityTeamMembers    opportunity Team Members to insert
+<i>619</i>&nbsp;     */
+<b class="nc"><i>620</i>&nbsp;    public void insertOpportunityTeamMembers(List&lt;OpportunityTeamMember&gt; opportunityTeamMembers)</b>
+<i>621</i>&nbsp;    {
+<b class="nc"><i>622</i>&nbsp;        try {</b>
+<b class="nc"><i>623</i>&nbsp;            insert opportunityTeamMembers;</b>
+<i>624</i>&nbsp;        }
+<b class="nc"><i>625</i>&nbsp;        catch (Exception e) {</b>
+<b class="nc"><i>626</i>&nbsp;            DebugLog.addException(e, &#39;OpportunityInsertAsynch class. oppMembers not created after responded campaign member&#39;);</b>
+<i>627</i>&nbsp;        }
+<i>628</i>&nbsp;    }
+<i>629</i>&nbsp;
+<i>630</i>&nbsp;    /**
+<i>631</i>&nbsp;     * Inserts Sales Leads
+<i>632</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>633</i>&nbsp;     *
+<i>634</i>&nbsp;     * @param salesLeads Sales leads records to insert
+<i>635</i>&nbsp;     */
+<b class="fc"><i>636</i>&nbsp;    public static void insertSalesLeads(List&lt;Field_Sales_Project_Members__c&gt; salesLeads)</b>
+<i>637</i>&nbsp;    {
+<b class="fc"><i>638</i>&nbsp;        try {</b>
+<b class="fc"><i>639</i>&nbsp;            Database.insert(salesLeads,false);</b>
+<i>640</i>&nbsp;        }
+<b class="nc"><i>641</i>&nbsp;        catch (Exception e) {</b>
+<b class="nc"><i>642</i>&nbsp;            DebugLog.addException(e, &#39;CampaignMemberTriggerHelper.createOpportunities.insertSalesLeads Sales Lead not created.&#39;);</b>
+<i>643</i>&nbsp;        }
+<i>644</i>&nbsp;    }
+<i>645</i>&nbsp;
+<i>646</i>&nbsp;    /**
+<i>647</i>&nbsp;     * For each member we gather Campaign,Contact,Dealer and Lead Ids
+<i>648</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>649</i>&nbsp;     *
+<i>650</i>&nbsp;     * @param newCampaignMembers    New campaign members
+<i>651</i>&nbsp;     * @param campaignIds           Campaign Ids
+<i>652</i>&nbsp;     * @param contactIds            Contact Ids
+<i>653</i>&nbsp;     * @param dealerIds             Dealer Ids
+<i>654</i>&nbsp;     * @param stdLeadIds            stdLead Ids
+<i>655</i>&nbsp;     */
+<b class="fc"><i>656</i>&nbsp;    public static void populateIdsFromMembers(List&lt;CampaignMember&gt; newCampaignMembers, Set&lt;Id&gt; campaignIds, Set&lt;Id&gt; contactIds, Set&lt;Id&gt; dealerIds, Set&lt;Id&gt; stdLeadIds)</b>
+<i>657</i>&nbsp;    {
+<b class="fc"><i>658</i>&nbsp;        for (CampaignMember member : newCampaignMembers) {</b>
+<b class="fc"><i>659</i>&nbsp;            if (member.CampaignId != null) {</b>
+<b class="fc"><i>660</i>&nbsp;                campaignIds.add(member.CampaignId);</b>
+<i>661</i>&nbsp;            }
+<b class="fc"><i>662</i>&nbsp;            if (member.ContactId != null) {</b>
+<b class="fc"><i>663</i>&nbsp;                contactIds.add(member.ContactId);</b>
+<i>664</i>&nbsp;            }
+<b class="fc"><i>665</i>&nbsp;            if (member.Dealer__c != null) {</b>
+<b class="fc"><i>666</i>&nbsp;                dealerIds.add(member.Dealer__c);</b>
+<i>667</i>&nbsp;            }
+<b class="fc"><i>668</i>&nbsp;            if (member.LeadId != null) {</b>
+<b class="nc"><i>669</i>&nbsp;                stdLeadIds.add(member.LeadId);</b>
+<i>670</i>&nbsp;            }
+<i>671</i>&nbsp;        }
+<i>672</i>&nbsp;    }
+<i>673</i>&nbsp;
+<i>674</i>&nbsp;    /**
+<i>675</i>&nbsp;     * get Pick List Values
+<i>676</i>&nbsp;     * @author Roberto
+<i>677</i>&nbsp;     *
+<i>678</i>&nbsp;     * @param ruleCheck         Allow getting the values
+<i>679</i>&nbsp;     * @param pickListField     Pick list Field
+<i>680</i>&nbsp;     *
+<i>681</i>&nbsp;     * @return Map&lt;String, List&lt;String&gt;&gt; - Pick List Values
+<i>682</i>&nbsp;     */
+<b class="fc"><i>683</i>&nbsp;    public static Map&lt;String, List&lt;String&gt;&gt; getPickListValues(Boolean ruleCheck, SObjectField pickListField)</b>
+<i>684</i>&nbsp;    {
+<b class="fc"><i>685</i>&nbsp;        Map&lt;String, List&lt;String&gt;&gt; pickListValues;</b>
+<b class="fc"><i>686</i>&nbsp;        if(ruleCheck)</b>
+<i>687</i>&nbsp;        {
+<b class="fc"><i>688</i>&nbsp;            pickListValues = GlobalUtils.getDependentPicklistValues(pickListField);</b>
+<i>689</i>&nbsp;        }
+<b class="fc"><i>690</i>&nbsp;        return pickListValues;</b>
+<i>691</i>&nbsp;    }
+<i>692</i>&nbsp;
+<i>693</i>&nbsp;    /**
+<i>694</i>&nbsp;     * Retrieves a map of contacts
+<i>695</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>696</i>&nbsp;     * @param contactIds Contacts Ids
+<i>697</i>&nbsp;     *
+<i>698</i>&nbsp;     * @return Map&lt;Id, Contact&gt; - Map of contacts
+<i>699</i>&nbsp;     */
+<b class="fc"><i>700</i>&nbsp;    public static Map&lt;Id, Contact&gt; getContacts(Set&lt;Id&gt; contactIds)</b>
+<i>701</i>&nbsp;    {
+<b class="fc"><i>702</i>&nbsp;        Map&lt;Id, Contact&gt; contacts = new Map&lt;Id, Contact&gt;(</b>
+<b class="fc"><i>703</i>&nbsp;                [SELECT Id, AccountId, Contact_Type__c, Account.Country__c FROM Contact WHERE Id IN :contactIds]</b>
+<i>704</i>&nbsp;        );
+<b class="fc"><i>705</i>&nbsp;        return contacts;</b>
+<i>706</i>&nbsp;    }
+<i>707</i>&nbsp;
+<i>708</i>&nbsp;    /**
+<i>709</i>&nbsp;     * Returns the account records along with AccountUserTerritory2Views records
+<i>710</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>711</i>&nbsp;     *
+<i>712</i>&nbsp;     * @param accountIds Account Ids
+<i>713</i>&nbsp;     *
+<i>714</i>&nbsp;     * @return Map&lt;Id, Account&gt; - Customers Accounts
+<i>715</i>&nbsp;     */
+<b class="fc"><i>716</i>&nbsp;    public static Map&lt;Id, Account&gt; getCustomerAccounts(Set&lt;Id&gt; accountIds)</b>
+<i>717</i>&nbsp;    {
+<b class="fc"><i>718</i>&nbsp;        Map&lt;Id, Account&gt; customers = new Map&lt;Id, Account&gt;(</b>
+<b class="fc"><i>719</i>&nbsp;        [</b>
+<i>720</i>&nbsp;                SELECT Id, Name, Country__c, (
+<i>721</i>&nbsp;                        SELECT AccountId, RoleInTerritory2, UserId
+<i>722</i>&nbsp;                        FROM AccountUserTerritory2Views
+<i>723</i>&nbsp;                )
+<i>724</i>&nbsp;
+<i>725</i>&nbsp;                FROM Account
+<b class="fc"><i>726</i>&nbsp;                WHERE Id IN :accountIds</b>
+<i>727</i>&nbsp;        ]);
+<b class="fc"><i>728</i>&nbsp;        return customers;</b>
+<i>729</i>&nbsp;    }
+<i>730</i>&nbsp;
+<i>731</i>&nbsp;    /**
+<i>732</i>&nbsp;     * Retrieves Accounts along with AccountsAccountContactRelations and AccountUserTerritory2Views child records.
+<i>733</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>734</i>&nbsp;     *
+<i>735</i>&nbsp;     * @param dealerIds Set of dealers Ids
+<i>736</i>&nbsp;     *
+<i>737</i>&nbsp;     * @return Map&lt;Id, Account&gt; - Dealer Accounts
+<i>738</i>&nbsp;     */
+<b class="fc"><i>739</i>&nbsp;    public static Map&lt;Id, Account&gt; getDealerAccounts(Set&lt;Id&gt; dealerIds)</b>
+<i>740</i>&nbsp;    {
+<b class="fc"><i>741</i>&nbsp;        Map&lt;Id, Account&gt; dealers = new Map&lt;Id, Account&gt;(</b>
+<b class="fc"><i>742</i>&nbsp;        [</b>
+<i>743</i>&nbsp;                SELECT Id, Name, (
+<i>744</i>&nbsp;                        SELECT AccountId, ContactId, IsActive, IsDirect, Roles, Specialty__c, Contact.Email, Contact.Legacy_ID__c
+<i>745</i>&nbsp;                        FROM AccountContactRelations
+<i>746</i>&nbsp;                ),
+<i>747</i>&nbsp;
+<i>748</i>&nbsp;                (
+<i>749</i>&nbsp;                        SELECT AccountId, RoleInTerritory2, UserId
+<i>750</i>&nbsp;                        FROM AccountUserTerritory2Views
+<i>751</i>&nbsp;                )
+<i>752</i>&nbsp;                FROM Account
+<b class="fc"><i>753</i>&nbsp;                WHERE Id IN :dealerIds</b>
+<i>754</i>&nbsp;        ]);
+<b class="fc"><i>755</i>&nbsp;        return dealers;</b>
+<i>756</i>&nbsp;    }
+<i>757</i>&nbsp;
+<i>758</i>&nbsp;    /**
+<i>759</i>&nbsp;     * Retrieve the list of settings corresponding for a country and a category
+<i>760</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>761</i>&nbsp;     *
+<i>762</i>&nbsp;     * @return Map&lt;String, String&gt; - Pricebook Settings Map
+<i>763</i>&nbsp;     */
+<b class="fc"><i>764</i>&nbsp;    public static Map&lt;String, String&gt; getPricebookSettingMap()</b>
+<i>765</i>&nbsp;    {
+<b class="fc"><i>766</i>&nbsp;        Map&lt;String, String&gt; pricebookSettingMap = new Map&lt;String, String&gt;();</b>
+<i>767</i>&nbsp;
+<b class="fc"><i>768</i>&nbsp;        for (OpportunityAssignment__c pbSetting : [SELECT Country__c, PricebookId__c FROM OpportunityAssignment__c])</b>
+<b class="nc"><i>769</i>&nbsp;        {</b>
+<b class="nc"><i>770</i>&nbsp;            String countrySetting = pbSetting.Country__c;</b>
+<b class="nc"><i>771</i>&nbsp;            String[] countryList = countrySetting.split(&#39;;&#39;);</b>
+<i>772</i>&nbsp;
+<b class="nc"><i>773</i>&nbsp;            for (String c : countryList)</b>
+<b class="nc"><i>774</i>&nbsp;            {</b>
+<b class="nc"><i>775</i>&nbsp;                pricebookSettingMap.put(c, pbSetting.PricebookId__c);</b>
+<i>776</i>&nbsp;            }
+<i>777</i>&nbsp;        }
+<i>778</i>&nbsp;
+<b class="fc"><i>779</i>&nbsp;        return pricebookSettingMap;</b>
+<i>780</i>&nbsp;    }
+<i>781</i>&nbsp;
+<i>782</i>&nbsp;    /**
+<i>783</i>&nbsp;     * Retrieve CountryCodeMap__mdt records and assorts them by Country Code
+<i>784</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>785</i>&nbsp;     *
+<i>786</i>&nbsp;     * @return Map&lt;String, String&gt; - Map of (Code,Country)
+<i>787</i>&nbsp;     */
+<b class="fc"><i>788</i>&nbsp;    public static Map&lt;String, String&gt; getCountryMap()</b>
+<i>789</i>&nbsp;    {
+<b class="fc"><i>790</i>&nbsp;        Map&lt;String, String&gt; userCountryMap = new Map&lt;String, String&gt;();</b>
+<i>791</i>&nbsp;
+<b class="fc"><i>792</i>&nbsp;        List&lt;CountryCodeMap__mdt&gt; countryCodes = CampaignMemberTriggerHelper.retrieveCountriesCodes();</b>
+<i>793</i>&nbsp;
+<b class="fc"><i>794</i>&nbsp;        CountryCodeMap__mdt country;</b>
+<b class="fc"><i>795</i>&nbsp;        for(Integer i=0, j= countryCodes.size(); i &lt; j; i++)</b>
+<b class="fc"><i>796</i>&nbsp;        {</b>
+<b class="fc"><i>797</i>&nbsp;            country = countryCodes[i];</b>
+<b class="fc"><i>798</i>&nbsp;            userCountryMap.put(country.Country_Code_2_digit__c, country.Campaign_Country__c);</b>
+<i>799</i>&nbsp;        }
+<i>800</i>&nbsp;
+<b class="fc"><i>801</i>&nbsp;        return userCountryMap;</b>
+<i>802</i>&nbsp;    }
+<i>803</i>&nbsp;
+<i>804</i>&nbsp;    /**
+<i>805</i>&nbsp;     * Gets ExternalDealerUserMap
+<i>806</i>&nbsp;     * @author Roberto
+<i>807</i>&nbsp;     *
+<i>808</i>&nbsp;     * @param dealers   Dealer Accounts
+<i>809</i>&nbsp;     *
+<i>810</i>&nbsp;     * @return Map&lt;Id, Id&gt; - Map of ExternalDealerUserMap
+<i>811</i>&nbsp;     */
+<b class="fc"><i>812</i>&nbsp;    public static Map&lt;Id, Id&gt; getExternalDealerUserMap(Map&lt;Id, Account&gt; dealers)</b>
+<i>813</i>&nbsp;    {
+<b class="fc"><i>814</i>&nbsp;        Map&lt;Id, Id&gt; externalDealerUserMap = new Map&lt;Id, Id&gt;();</b>
+<b class="fc"><i>815</i>&nbsp;        if (dealers.size() &gt; 0) {</b>
+<b class="fc"><i>816</i>&nbsp;            Set&lt;Id&gt; externalDealerContacts = new Set&lt;Id&gt;();</b>
+<b class="fc"><i>817</i>&nbsp;            for (Account dealer : dealers.values()) {</b>
+<b class="fc"><i>818</i>&nbsp;                for (AccountContactRelation rel : dealer.AccountContactRelations) {</b>
+<b class="fc"><i>819</i>&nbsp;                    externalDealerContacts.add(rel.ContactId);</b>
+<i>820</i>&nbsp;                }
+<i>821</i>&nbsp;            }
+<i>822</i>&nbsp;
+<b class="fc"><i>823</i>&nbsp;            List&lt;User&gt; externalDealerUsers = new List&lt;User&gt;();</b>
+<b class="fc"><i>824</i>&nbsp;            if (!externalDealerContacts.isEmpty()) {</b>
+<b class="fc"><i>825</i>&nbsp;                externalDealerUsers = [SELECT Id, ContactId FROM User WHERE ContactId IN :externalDealerContacts];</b>
+<b class="fc"><i>826</i>&nbsp;                for (User externalUser : externalDealerUsers) {</b>
+<b class="nc"><i>827</i>&nbsp;                    externalDealerUserMap.put(externalUser.ContactId, externalUser.Id);</b>
+<i>828</i>&nbsp;                }
+<i>829</i>&nbsp;            }
+<i>830</i>&nbsp;        }
+<b class="fc"><i>831</i>&nbsp;        return externalDealerUserMap;</b>
+<i>832</i>&nbsp;    }
+<i>833</i>&nbsp;
+<i>834</i>&nbsp;    /**
+<i>835</i>&nbsp;     * Extracts the list of accounts ids from contact records
+<i>836</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>837</i>&nbsp;     *
+<i>838</i>&nbsp;     * @param contacts contacts
+<i>839</i>&nbsp;     *
+<i>840</i>&nbsp;     * @return Set&lt;Id&gt; - Set of Account ids
+<i>841</i>&nbsp;     */
+<b class="fc"><i>842</i>&nbsp;    public static Set&lt;Id&gt; getAccountIds(Map&lt;Id, Contact&gt; contacts)</b>
+<i>843</i>&nbsp;    {
+<b class="fc"><i>844</i>&nbsp;        Set&lt;Id&gt; accountIds = new Set&lt;Id&gt;();</b>
+<b class="fc"><i>845</i>&nbsp;        for (Contact c : contacts.values()) {</b>
+<b class="fc"><i>846</i>&nbsp;            accountIds.add(c.AccountId);</b>
+<i>847</i>&nbsp;        }
+<b class="fc"><i>848</i>&nbsp;        return accountIds;</b>
+<i>849</i>&nbsp;    }
+<i>850</i>&nbsp;
+<i>851</i>&nbsp;    /**
+<i>852</i>&nbsp;     * Get the list of Users associated with a set of accounts via UserTerritory2Association and ObjectTerritory2Association
+<i>853</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>854</i>&nbsp;     *
+<i>855</i>&nbsp;     * @param accountIds Account Ids
+<i>856</i>&nbsp;     *
+<i>857</i>&nbsp;     * @return Map&lt;Id, List&lt;UserTerritory2Association&gt;&gt;
+<i>858</i>&nbsp;     */
+<b class="fc"><i>859</i>&nbsp;    public static Map&lt;Id, List&lt;UserTerritory2Association&gt;&gt; getAccountsUserMap(Set&lt;Id&gt; accountIds)</b>
+<i>860</i>&nbsp;    {
+<b class="fc"><i>861</i>&nbsp;        Map&lt;Id, List&lt;UserTerritory2Association&gt;&gt; customerUserMap = new Map&lt;Id, List&lt;UserTerritory2Association&gt;&gt;();</b>
+<i>862</i>&nbsp;
+<b class="fc"><i>863</i>&nbsp;        if (!Test.isRunningTest()) {</b>
+<b class="nc"><i>864</i>&nbsp;            List&lt;Id&gt; accountIdList = new List&lt;Id&gt;();</b>
+<b class="nc"><i>865</i>&nbsp;            accountIdList.addAll(accountIds);</b>
+<b class="nc"><i>866</i>&nbsp;            customerUserMap = UsersInAccountTerritories.getUsersFromMultipleAccounts(accountIdList);</b>
+<i>867</i>&nbsp;        }
+<b class="fc"><i>868</i>&nbsp;        return customerUserMap;</b>
+<i>869</i>&nbsp;    }
+<i>870</i>&nbsp;
+<i>871</i>&nbsp;    /**
+<i>872</i>&nbsp;     * Get the customers settings
+<i>873</i>&nbsp;     * @author Roberto
+<i>874</i>&nbsp;     *
+<i>875</i>&nbsp;     * @param customers Customers Accounts
+<i>876</i>&nbsp;     *
+<i>877</i>&nbsp;     * @return Map&lt;String, LeadOpportunitySetting__mdt&gt; - customers settings mdt
+<i>878</i>&nbsp;     */
+<b class="fc"><i>879</i>&nbsp;    public static Map&lt;String, LeadOpportunitySetting__mdt&gt; getSettingsMap(Map&lt;Id, Account&gt; customers)</b>
+<i>880</i>&nbsp;    {
+<b class="fc"><i>881</i>&nbsp;        Set&lt;String&gt; countries = getCustomersCountries(customers);</b>
+<b class="fc"><i>882</i>&nbsp;        LeadOpportunitySetting__mdt[] oppSettings = GlobalUtils.getOpportunitySettings(countries);</b>
+<b class="fc"><i>883</i>&nbsp;        Map&lt;String, LeadOpportunitySetting__mdt&gt; settingsMap = GlobalUtils.getSettingsMap(oppSettings);</b>
+<b class="fc"><i>884</i>&nbsp;        return settingsMap;</b>
+<i>885</i>&nbsp;    }
+<i>886</i>&nbsp;
+<i>887</i>&nbsp;    /**
+<i>888</i>&nbsp;     * Returns the customers countries
+<i>889</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>890</i>&nbsp;     *
+<i>891</i>&nbsp;     * @param customers Map of customers
+<i>892</i>&nbsp;     *
+<i>893</i>&nbsp;     * @return Set&lt;String&gt; - Set of Customers Countries
+<i>894</i>&nbsp;     */
+<b class="fc"><i>895</i>&nbsp;    public static Set&lt;String&gt; getCustomersCountries(Map&lt;Id, Account&gt; customers)</b>
+<i>896</i>&nbsp;    {
+<b class="fc"><i>897</i>&nbsp;        Set&lt;String&gt; countries = new Set&lt;String&gt;();</b>
+<i>898</i>&nbsp;
+<b class="fc"><i>899</i>&nbsp;        for (Account customer : customers.values())</b>
+<b class="fc"><i>900</i>&nbsp;        {</b>
+<b class="fc"><i>901</i>&nbsp;            countries.add(customer.Country__c);</b>
+<i>902</i>&nbsp;        }
+<i>903</i>&nbsp;
+<b class="fc"><i>904</i>&nbsp;        return countries;</b>
+<i>905</i>&nbsp;    }
+<i>906</i>&nbsp;
+<i>907</i>&nbsp;    /**
+<i>908</i>&nbsp;     * Retrieves A Map of Leads
+<i>909</i>&nbsp;     * @author Roberto
+<i>910</i>&nbsp;     *
+<i>911</i>&nbsp;     * @param stdLeadIds Lead Ids
+<i>912</i>&nbsp;     *
+<i>913</i>&nbsp;     * @return Map of Leads
+<i>914</i>&nbsp;     */
+<b class="fc"><i>915</i>&nbsp;    public static Map&lt;Id, Lead&gt; getStdLeads(Set&lt;Id&gt; stdLeadIds)</b>
+<i>916</i>&nbsp;    {
+<b class="fc"><i>917</i>&nbsp;        Map&lt;Id, Lead&gt; stdLeads = new Map&lt;Id, Lead&gt;();</b>
+<b class="fc"><i>918</i>&nbsp;        if (!stdLeadIds.isEmpty()) {</b>
+<b class="nc"><i>919</i>&nbsp;            for (Lead lead : [SELECT Id, ConvertedAccountId FROM Lead WHERE Id IN :stdLeadIds]) {</b>
+<b class="nc"><i>920</i>&nbsp;                stdLeads.put(lead.Id, lead);</b>
+<i>921</i>&nbsp;            }
+<i>922</i>&nbsp;        }
+<b class="fc"><i>923</i>&nbsp;        return stdLeads;</b>
+<i>924</i>&nbsp;    }
+<i>925</i>&nbsp;
+<i>926</i>&nbsp;    /**
+<i>927</i>&nbsp;     * Tells whether we trigger the conversion to eventually Sales lead or Opportunity
+<i>928</i>&nbsp;     * @author Roberto
+<i>929</i>&nbsp;     *
+<i>930</i>&nbsp;     * @param recordType            Campaign Record type
+<i>931</i>&nbsp;     * @param campaignMember        Campaign Member
+<i>932</i>&nbsp;     * @param respondedBefore       Whether the member has responded before
+<i>933</i>&nbsp;     * @param overrideHasResponded  Override the value of responded
+<i>934</i>&nbsp;     * @param isIDSLogic            IDS Logic
+<i>935</i>&nbsp;     * @param mainBrand             main Brand
+<i>936</i>&nbsp;     * @param reasonWhyNotGenerated reasonWhyNotGenerated
+<i>937</i>&nbsp;     *
+<i>938</i>&nbsp;     * @return Boolean - Trigger Conversion or not
+<i>939</i>&nbsp;     */
+<b class="fc"><i>940</i>&nbsp;    public static GenerationResult getIfTriggerConversion(String recordType, CampaignMember campaignMember, Boolean respondedBefore, Boolean overrideHasResponded, Boolean isIDSLogic, String mainBrand)</b>
+<i>941</i>&nbsp;    {
+<i>942</i>&nbsp;
+<b class="fc"><i>943</i>&nbsp;        GenerationResult result = new GenerationResult(campaignMember.Id,false,&#39;&#39;);</b>
+<i>944</i>&nbsp;
+<b class="fc"><i>945</i>&nbsp;        Set&lt;String&gt; doNotConvertContactTypes = new Set&lt;String&gt;{&#39;Dentsply Sirona Employee&#39;, &#39;Speaker&#39;, &#39;Dentsply Sirona Staff&#39;, &#39;Dentsply Sirona&#39;};</b>
+<i>946</i>&nbsp;
+<i>947</i>&nbsp;
+<b class="fc"><i>948</i>&nbsp;        if (recordType == &#39;Digital_Marketing_Campaign&#39; || recordType == &#39;InPersonEventCampaign&#39;) {</b>
+<b class="fc"><i>949</i>&nbsp;            if (campaignMember.ContactId != null) {</b>
+<b class="fc"><i>950</i>&nbsp;                if (campaignMember.HasResponded) {</b>
+<b class="fc"><i>951</i>&nbsp;                    if (campaignMember.SalesLead__c == null) {</b>
+<b class="fc"><i>952</i>&nbsp;                        if (campaignMember.Opportunity__c == null) {</b>
+<b class="fc"><i>953</i>&nbsp;                            if (respondedBefore == false || overrideHasResponded || isIDSLogic)</b>
+<i>954</i>&nbsp;                            {
+<b class="fc"><i>955</i>&nbsp;                                result.generate = true;</b>
+<b class="fc"><i>956</i>&nbsp;                                return result;</b>
+<i>957</i>&nbsp;                            } else {
+<b class="fc"><i>958</i>&nbsp;                                result.reasonNotGenerated = &#39;We couldn\&#39;t convert this member. Condition not respected : (respondedBefore == false || overrideHasResponded || isIDSLogic)&#39;;</b>
+<i>959</i>&nbsp;                            }
+<i>960</i>&nbsp;                        } else {
+<b class="nc"><i>961</i>&nbsp;                            result.reasonNotGenerated = &#39;We couldn\&#39;t convert this member. The Member is already linked to an opportunity.&#39;;</b>
+<i>962</i>&nbsp;                        }
+<i>963</i>&nbsp;                    } else {
+<b class="nc"><i>964</i>&nbsp;                        result.reasonNotGenerated = &#39;We couldn\&#39;t convert this member. The Member already linked to a Sales lead.&#39;;</b>
+<i>965</i>&nbsp;                    }
+<i>966</i>&nbsp;                } else {
+<b class="nc"><i>967</i>&nbsp;                    result.reasonNotGenerated = &#39;We couldn\&#39;t convert this member. The Member hasn\&#39;t responded yet.&#39;;</b>
+<i>968</i>&nbsp;                }
+<i>969</i>&nbsp;            } else {
+<b class="nc"><i>970</i>&nbsp;                result.reasonNotGenerated = &#39;We couldn\&#39;t convert this member. The Contact Id is null&#39;;</b>
+<i>971</i>&nbsp;            }
+<i>972</i>&nbsp;        }
+<b class="nc"><i>973</i>&nbsp;        else if (recordType == &#39;CventCampaign&#39;) {</b>
+<b class="nc"><i>974</i>&nbsp;            if (mainBrand != null) {</b>
+<b class="nc"><i>975</i>&nbsp;                if (campaignMember.ContactId != null) {</b>
+<b class="nc"><i>976</i>&nbsp;                    if (campaignMember.SalesLead__c == null) {</b>
+<b class="nc"><i>977</i>&nbsp;                        if (campaignMember.Opportunity__c == null) {</b>
+<b class="nc"><i>978</i>&nbsp;                            if (campaignMember.CVENT_Attended__c == &#39;Yes&#39;) {</b>
+<b class="nc"><i>979</i>&nbsp;                                if (!doNotConvertContactTypes.contains(campaignMember.AttendeeContactType__c)) {</b>
+<b class="nc"><i>980</i>&nbsp;                                    result.reasonNotGenerated = &#39;All conditions met for CventCampaign RTs&#39;;</b>
+<b class="nc"><i>981</i>&nbsp;                                    result.generate = true;</b>
+<b class="nc"><i>982</i>&nbsp;                                    return result;</b>
+<i>983</i>&nbsp;
+<i>984</i>&nbsp;                                } else {
+<b class="nc"><i>985</i>&nbsp;                                    result.reasonNotGenerated = &#39;We couldn\&#39;t convert this CVENT member. These contact types are not allowed : &#39; + JSON.serializePretty(doNotConvertContactTypes);</b>
+<i>986</i>&nbsp;                                }
+<i>987</i>&nbsp;                            } else {
+<b class="nc"><i>988</i>&nbsp;                                result.reasonNotGenerated = &#39;We couldn\&#39;t convert this CVENT member. Attended Status is different from Yes&#39;;</b>
+<i>989</i>&nbsp;                            }
+<i>990</i>&nbsp;                        } else {
+<b class="nc"><i>991</i>&nbsp;                            result.reasonNotGenerated = &#39;We couldn\&#39;t convert this CVENT member. The Member is already linked to an opportunity.&#39;;</b>
+<i>992</i>&nbsp;                        }
+<i>993</i>&nbsp;                    } else {
+<b class="nc"><i>994</i>&nbsp;                        result.reasonNotGenerated = &#39;We couldn\&#39;t convert this CVENT member. The Member already linked to a Sales lead.&#39;;</b>
+<i>995</i>&nbsp;                    }
+<i>996</i>&nbsp;                } else {
+<b class="nc"><i>997</i>&nbsp;                    result.reasonNotGenerated = &#39;We couldn\&#39;t convert this CVENT member. The Contact Id is null&#39;;</b>
+<i>998</i>&nbsp;                }
+<i>999</i>&nbsp;            } else {
+<b class="nc"><i>1000</i>&nbsp;                result.reasonNotGenerated = &#39;We couldn\&#39;t convert this CVENT member. The Parent Campaign Main Brand is empty&#39;;</b>
+<i>1001</i>&nbsp;            }
+<i>1002</i>&nbsp;        } else {
+<b class="nc"><i>1003</i>&nbsp;            result.reasonNotGenerated = &#39;We couldn\&#39;t convert this member. Record type is neither Digital_Marketing_Campaign, InPersonEventCampaign, nor CventCampaign&#39;;</b>
+<i>1004</i>&nbsp;        }
+<i>1005</i>&nbsp;
+<b class="fc"><i>1006</i>&nbsp;        return result;</b>
+<i>1007</i>&nbsp;    }
+<i>1008</i>&nbsp;
+<i>1009</i>&nbsp;    /**
+<i>1010</i>&nbsp;     * Tells if its IDSLogic
+<i>1011</i>&nbsp;     * @author Roberto
+<i>1012</i>&nbsp;     *
+<i>1013</i>&nbsp;     * @param campaignMember        New campaign member
+<i>1014</i>&nbsp;     * @param oldMember             Old campaign member
+<i>1015</i>&nbsp;     * @param isIDSIntegrationUser  If the user is IDSIntegrationUser
+<i>1016</i>&nbsp;     *
+<i>1017</i>&nbsp;     * @return Boolean - if its IDSLogic
+<i>1018</i>&nbsp;     */
+<b class="fc"><i>1019</i>&nbsp;    public static Boolean getIsIDSLogic(CampaignMember campaignMember, CampaignMember oldMember, Boolean isIDSIntegrationUser)</b>
+<i>1020</i>&nbsp;    {
+<b class="fc"><i>1021</i>&nbsp;        Boolean isIDSLogic =</b>
+<i>1022</i>&nbsp;                (
+<i>1023</i>&nbsp;                        (
+<b class="fc"><i>1024</i>&nbsp;                                campaignMember.ContactId        != null</b>
+<b class="fc"><i>1025</i>&nbsp;                                        &amp;&amp; oldMember.ContactId          != null</b>
+<b class="fc"><i>1026</i>&nbsp;                                        &amp;&amp; campaignMember.ContactId     != oldMember.ContactId</b>
+<i>1027</i>&nbsp;                        )
+<i>1028</i>&nbsp;                                ||
+<i>1029</i>&nbsp;                                (
+<b class="fc"><i>1030</i>&nbsp;                                        isIDSIntegrationUser</b>
+<i>1031</i>&nbsp;                                                &amp;&amp;
+<b class="nc"><i>1032</i>&nbsp;                                                (   oldMember.VoucherCode__c    != campaignMember.VoucherCode__c</b>
+<b class="nc"><i>1033</i>&nbsp;                                                        || (oldMember.Brand__c      != campaignMember.Brand__c)</b>
+<b class="nc"><i>1034</i>&nbsp;                                                        || (oldMember.Dealer__c     != campaignMember.Dealer__c)</b>
+<i>1035</i>&nbsp;                                                )
+<i>1036</i>&nbsp;                                )
+<i>1037</i>&nbsp;                );
+<b class="fc"><i>1038</i>&nbsp;        return isIDSLogic;</b>
+<i>1039</i>&nbsp;    }
+<i>1040</i>&nbsp;
+<i>1041</i>&nbsp;
+<i>1042</i>&nbsp;    public class GenerationResult {
+<i>1043</i>&nbsp;        public Id campaignMemberId;
+<i>1044</i>&nbsp;        public String reasonNotGenerated;
+<i>1045</i>&nbsp;        public Boolean generate;
+<i>1046</i>&nbsp;
+<b class="fc"><i>1047</i>&nbsp;        public GenerationResult(Id memberId, Boolean generate, String reason)</b>
+<i>1048</i>&nbsp;        {
+<b class="fc"><i>1049</i>&nbsp;            this.campaignMemberId = memberId;</b>
+<b class="fc"><i>1050</i>&nbsp;            this.generate = generate;</b>
+<b class="fc"><i>1051</i>&nbsp;            this.reasonNotGenerated = reason;</b>
+<i>1052</i>&nbsp;        }
+<i>1053</i>&nbsp;    }
+<i>1054</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

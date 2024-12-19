@@ -1,0 +1,85 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SiteLoginController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SiteLoginController (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SiteLoginController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/ 6)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>SiteLoginController</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/**
+<i>2</i>&nbsp; * An apex page controller that exposes the site login functionality
+<i>3</i>&nbsp; */
+<i>4</i>&nbsp;global with sharing class SiteLoginController {
+<b class="nc"><i>5</i>&nbsp;    global String username {get; set;}</b>
+<b class="nc"><i>6</i>&nbsp;    global String password {get; set;}</b>
+<i>7</i>&nbsp;
+<b class="nc"><i>8</i>&nbsp;    global PageReference login() {</b>
+<b class="nc"><i>9</i>&nbsp;        String startUrl = System.currentPageReference().getParameters().get(&#39;startURL&#39;);</b>
+<b class="nc"><i>10</i>&nbsp;        return Site.login(username, password, startUrl);</b>
+<i>11</i>&nbsp;    }
+<i>12</i>&nbsp;    
+<b class="nc"><i>13</i>&nbsp;    global SiteLoginController () {}</b>
+<i>14</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

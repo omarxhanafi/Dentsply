@@ -1,0 +1,239 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: LightningCompSetup</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: LightningCompSetup (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LightningCompSetup</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 90)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>LightningCompSetup</h2>
+<div class="sourceCode"><i>1</i>&nbsp;public with sharing class LightningCompSetup {
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;   @AuraEnabled
+<b class="nc"><i>4</i>&nbsp;    public static List&lt;SObject&gt; loadRelatedRecord(String fullName, String fields) {</b>
+<b class="nc"><i>5</i>&nbsp;        List&lt;String&gt; fullNameParts = fullName.split(&#39;\\.&#39;);</b>
+<b class="nc"><i>6</i>&nbsp;        List&lt;SObject&gt; records = Database.query(&#39;select &#39; + fields + &#39; from &#39; + fullNameParts[0] + &#39;__mdt&#39;);      </b>
+<b class="nc"><i>7</i>&nbsp;        if(records.size()==0) {</b>
+<b class="nc"><i>8</i>&nbsp;            throw new AuraHandledException(&#39;Record not found&#39;);</b>
+<i>9</i>&nbsp;        }
+<b class="nc"><i>10</i>&nbsp;        records.sort();</b>
+<b class="nc"><i>11</i>&nbsp;        return records;</b>
+<i>12</i>&nbsp;    }
+<i>13</i>&nbsp;    
+<i>14</i>&nbsp;   @AuraEnabled
+<b class="nc"><i>15</i>&nbsp;    public static String upsertCmp(String record, String Descr, String Status, String Manager) {        </b>
+<b class="nc"><i>16</i>&nbsp;        return CustomMetadata.Operations</b>
+<b class="nc"><i>17</i>&nbsp;            .callback(</b>
+<b class="nc"><i>18</i>&nbsp;                MetadataDeployment__e.getSObjectType(),</b>
+<i>19</i>&nbsp;                MetadataDeployment__e.DeploymentId__c, 
+<i>20</i>&nbsp;                MetadataDeployment__e.Result__c)
+<b class="nc"><i>21</i>&nbsp;            .enqueueUpsertRecords(</b>
+<b class="nc"><i>22</i>&nbsp;                Lightning_Component__mdt.getSObjectType(),</b>
+<i>23</i>&nbsp;                
+<b class="nc"><i>24</i>&nbsp;                new List&lt;Map&lt;SObjectField, Object&gt;&gt; {</b>
+<i>25</i>&nbsp;            
+<i>26</i>&nbsp;            	// Custom Metadata record
+<b class="nc"><i>27</i>&nbsp;            	new Map&lt;SObjectField, Object&gt; {</b>
+<b class="nc"><i>28</i>&nbsp;                Lightning_Component__mdt.DeveloperName =&gt; record,</b>
+<b class="nc"><i>29</i>&nbsp;                Lightning_Component__mdt.Label =&gt; record,</b>
+<b class="nc"><i>30</i>&nbsp;                Lightning_Component__mdt.Status__c =&gt; Status,</b>
+<b class="nc"><i>31</i>&nbsp;                Lightning_Component__mdt.Description__c =&gt; Descr,</b>
+<b class="nc"><i>32</i>&nbsp;                Lightning_Component__mdt.Managed_by__c =&gt; Manager    </b>
+<i>33</i>&nbsp;                   
+<i>34</i>&nbsp;                    } } )    
+<b class="nc"><i>35</i>&nbsp;            .deployId;</b>
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;    
+<i>38</i>&nbsp;       @AuraEnabled
+<b class="nc"><i>39</i>&nbsp;    public static String upsertTeam(String record, String Country, String Descr, String Status) {        </b>
+<b class="nc"><i>40</i>&nbsp;        return CustomMetadata.Operations</b>
+<b class="nc"><i>41</i>&nbsp;            .callback(</b>
+<b class="nc"><i>42</i>&nbsp;                MetadataDeployment__e.getSObjectType(),</b>
+<i>43</i>&nbsp;                MetadataDeployment__e.DeploymentId__c, 
+<i>44</i>&nbsp;                MetadataDeployment__e.Result__c)
+<b class="nc"><i>45</i>&nbsp;            .enqueueUpsertRecords(</b>
+<b class="nc"><i>46</i>&nbsp;                Team_setup__mdt.getSObjectType(),</b>
+<i>47</i>&nbsp;                
+<b class="nc"><i>48</i>&nbsp;                new List&lt;Map&lt;SObjectField, Object&gt;&gt; {</b>
+<i>49</i>&nbsp;            
+<i>50</i>&nbsp;            	// Custom Metadata record
+<b class="nc"><i>51</i>&nbsp;            	new Map&lt;SObjectField, Object&gt; {</b>
+<b class="nc"><i>52</i>&nbsp;                Team_setup__mdt.DeveloperName =&gt; record,</b>
+<b class="nc"><i>53</i>&nbsp;                Team_setup__mdt.Label =&gt; record,</b>
+<b class="nc"><i>54</i>&nbsp;                Team_setup__mdt.Country__c =&gt; Country,</b>
+<b class="nc"><i>55</i>&nbsp;                Team_setup__mdt.Description__c =&gt; Descr,</b>
+<b class="nc"><i>56</i>&nbsp;                Team_setup__mdt.Status__c =&gt; Status    </b>
+<i>57</i>&nbsp;                    } } )    
+<b class="nc"><i>58</i>&nbsp;            .deployId;</b>
+<i>59</i>&nbsp;    }
+<i>60</i>&nbsp;    
+<i>61</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>62</i>&nbsp;    public static List&lt;String&gt; getPickListValuesIntoList(String CmpName, String fldName){</b>
+<b class="nc"><i>63</i>&nbsp;       List&lt;String&gt; pickListValuesList= new List&lt;String&gt;();</b>
+<b class="nc"><i>64</i>&nbsp;		Schema.SObjectField SObjField = Schema.getGlobalDescribe().get(CmpName).getDescribe().fields.getMap().get(fldName);        </b>
+<b class="nc"><i>65</i>&nbsp;        Schema.DescribeFieldResult fieldResult = SObjField.getDescribe();        </b>
+<b class="nc"><i>66</i>&nbsp;		List&lt;Schema.PicklistEntry&gt; ple = fieldResult.getPicklistValues();</b>
+<b class="nc"><i>67</i>&nbsp;		for( Schema.PicklistEntry pickListVal : ple){</b>
+<b class="nc"><i>68</i>&nbsp;			pickListValuesList.add(pickListVal.getLabel());</b>
+<i>69</i>&nbsp;		}     
+<b class="nc"><i>70</i>&nbsp;		return pickListValuesList;</b>
+<i>71</i>&nbsp;    }
+<i>72</i>&nbsp;    
+<i>73</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>74</i>&nbsp;    public static List&lt;User&gt; getUserList(String searchStr, String Country, String Team){  </b>
+<b class="nc"><i>75</i>&nbsp;       List&lt;User&gt; rawUserList = new List&lt;User&gt;();</b>
+<b class="nc"><i>76</i>&nbsp;        searchStr = searchStr.replace(&#39;*&#39;, &#39;%&#39;);</b>
+<b class="nc"><i>77</i>&nbsp;        if(searchStr == &#39;&#39;){</b>
+<b class="nc"><i>78</i>&nbsp;            searchStr = &#39;%&#39;;            </b>
+<i>79</i>&nbsp;        }
+<b class="nc"><i>80</i>&nbsp;        if(Country ==&#39;&#39;){</b>
+<b class="nc"><i>81</i>&nbsp;            		Country = &#39;%&#39;;</b>
+<i>82</i>&nbsp;            
+<b class="nc"><i>83</i>&nbsp;                    if(Team == &#39;&#39;) {</b>
+<b class="nc"><i>84</i>&nbsp;        			Team = &#39;%&#39;;        </b>
+<b class="nc"><i>85</i>&nbsp;        			rawUserList = [SELECT Id, FirstName, LastName, Full_Name__c, Profile__c, Team_Setup_ID__c, User_Country__c, IsActive FROM User </b>
+<b class="nc"><i>86</i>&nbsp;                       WHERE (Full_Name__c LIKE: searchStr) </b>
+<i>87</i>&nbsp;                       AND IsActive=true 
+<b class="nc"><i>88</i>&nbsp;                       AND ((User_Country__c LIKE: Country) OR User_Country__c = null) </b>
+<b class="nc"><i>89</i>&nbsp;                       AND ((Team_Setup_Id__c LIKE: Team) OR (Team_Setup_Id__c = null)) </b>
+<i>90</i>&nbsp;                       LIMIT 100];    
+<i>91</i>&nbsp;        				}
+<i>92</i>&nbsp;       				else{
+<b class="nc"><i>93</i>&nbsp;                 		rawUserList = [SELECT Id, FirstName, LastName, Full_Name__c, Profile__c, Team_Setup_ID__c, User_Country__c, IsActive FROM User </b>
+<b class="nc"><i>94</i>&nbsp;                      	WHERE (Full_Name__c LIKE: searchStr) </b>
+<i>95</i>&nbsp;                      	AND IsActive=true 
+<b class="nc"><i>96</i>&nbsp;                      	AND ((User_Country__c LIKE: Country) OR User_Country__c = null) </b>
+<b class="nc"><i>97</i>&nbsp;                      	AND (Team_Setup_Id__c LIKE: Team) </b>
+<i>98</i>&nbsp;                      	LIMIT 100];                        
+<i>99</i>&nbsp;                            }  
+<i>100</i>&nbsp;        }
+<i>101</i>&nbsp;        else{
+<b class="nc"><i>102</i>&nbsp;                  if(Team == &#39;&#39;) {</b>
+<b class="nc"><i>103</i>&nbsp;        			Team = &#39;%&#39;;        </b>
+<b class="nc"><i>104</i>&nbsp;        			rawUserList = [SELECT Id, FirstName, LastName, Full_Name__c, Profile__c, Team_Setup_ID__c, User_Country__c, IsActive FROM User </b>
+<b class="nc"><i>105</i>&nbsp;                       WHERE (Full_Name__c LIKE: searchStr) </b>
+<i>106</i>&nbsp;                       AND IsActive=true 
+<b class="nc"><i>107</i>&nbsp;                       AND (User_Country__c LIKE: Country)</b>
+<b class="nc"><i>108</i>&nbsp;                       AND ((Team_Setup_Id__c LIKE: Team) OR (Team_Setup_Id__c = null)) </b>
+<i>109</i>&nbsp;                       LIMIT 100];    
+<i>110</i>&nbsp;        				}
+<i>111</i>&nbsp;       				else{
+<b class="nc"><i>112</i>&nbsp;                 		rawUserList = [SELECT Id, FirstName, LastName, Full_Name__c, Profile__c, Team_Setup_ID__c, User_Country__c, IsActive FROM User </b>
+<b class="nc"><i>113</i>&nbsp;                      	WHERE (Full_Name__c LIKE: searchStr) </b>
+<i>114</i>&nbsp;                      	AND IsActive=true 
+<b class="nc"><i>115</i>&nbsp;                      	AND (User_Country__c LIKE: Country) </b>
+<b class="nc"><i>116</i>&nbsp;                      	AND (Team_Setup_Id__c LIKE: Team) </b>
+<i>117</i>&nbsp;                      	LIMIT 100];                        
+<i>118</i>&nbsp;                            }   
+<i>119</i>&nbsp;                   
+<i>120</i>&nbsp;        }
+<b class="nc"><i>121</i>&nbsp;        return rawUserList;        </b>
+<i>122</i>&nbsp;    }
+<i>123</i>&nbsp;    
+<i>124</i>&nbsp;    
+<i>125</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>126</i>&nbsp;    public static String updateUser(User Usr2Upd, String Team2Upd) {</b>
+<i>127</i>&nbsp;    	
+<b class="nc"><i>128</i>&nbsp;        Usr2Upd.Team_Setup_Id__c = Team2Upd;</b>
+<b class="nc"><i>129</i>&nbsp;        String result = &#39;Start&#39;;</b>
+<b class="nc"><i>130</i>&nbsp;        try{</b>
+<b class="nc"><i>131</i>&nbsp;            update Usr2Upd;</b>
+<b class="nc"><i>132</i>&nbsp;            result=&#39;Updated&#39;;</b>
+<i>133</i>&nbsp;        }
+<b class="nc"><i>134</i>&nbsp;        catch (Exception e){</b>
+<b class="nc"><i>135</i>&nbsp;            String errorMessage = &#39;Error: &#39; + e.getMessage() + &#39; &#39; + e.getStackTraceString();</b>
+<i>136</i>&nbsp;            system.debug(errorMessage);
+<b class="nc"><i>137</i>&nbsp;            result=&#39;error&#39;;</b>
+<i>138</i>&nbsp;        } 
+<i>139</i>&nbsp;        
+<b class="nc"><i>140</i>&nbsp;    return result;    </b>
+<i>141</i>&nbsp;    }
+<i>142</i>&nbsp;    
+<i>143</i>&nbsp;   /* @AuraEnabled
+<i>144</i>&nbsp;    public static String DetectAppName() {
+<i>145</i>&nbsp;        List&lt;CustomApplication&gt; TestApp = new CustomApplication ();
+<i>146</i>&nbsp;        TestApp = [SELECT FullName, DeveloperName, Label FROM CustomApplication]
+<i>147</i>&nbsp;        String result = &#39;Hej&#39;;
+<i>148</i>&nbsp;        return result;
+<i>149</i>&nbsp;    }*/
+<i>150</i>&nbsp;    
+<i>151</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>152</i>&nbsp;    public static String getCurrentApplication()</b>
+<i>153</i>&nbsp;    {
+<i>154</i>&nbsp;        // Get tab set describes for each app
+<b class="nc"><i>155</i>&nbsp;        List&lt;Schema.DescribeTabSetResult&gt; tabSetDesc = Schema.describeTabs();        </b>
+<b class="nc"><i>156</i>&nbsp;        List&lt;UserAppInfo&gt; Test2 = [SELECT UserId, Id, AppDefinitionId FROM UserAppInfo WHERE UserId =: UserInfo.getUserId()];</b>
+<b class="nc"><i>157</i>&nbsp;        String result = &#39;&#39;;</b>
+<b class="nc"><i>158</i>&nbsp;        List&lt;AppDefinition&gt; Test = new List&lt;AppDefinition&gt;();</b>
+<b class="nc"><i>159</i>&nbsp;        for(UserAppInfo tsr : Test2) {</b>
+<b class="nc"><i>160</i>&nbsp;            Test = [SELECT Id, DurableId, DeveloperName FROM AppDefinition WHERE DurableId =: tsr.AppDefinitionId];</b>
+<b class="nc"><i>161</i>&nbsp;            result = &#39;You are now logged into the &#39; + Test[0].DeveloperName +&#39; app&#39;;</b>
+<i>162</i>&nbsp;        }
+<b class="nc"><i>163</i>&nbsp;        return result;</b>
+<i>164</i>&nbsp;    }
+<i>165</i>&nbsp;    
+<i>166</i>&nbsp;    
+<i>167</i>&nbsp;    
+<i>168</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

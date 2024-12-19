@@ -1,0 +1,107 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CampaignMemberTriggerHandler</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CampaignMemberTriggerHandler (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CampaignMemberTriggerHandler</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (15/ 15)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>CampaignMemberTriggerHandler</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         Ahmed LOUDRASSI (Salesforce) 20191022
+<i>3</i>&nbsp;Description:    Campaign Member Trigger Handler Class
+<i>4</i>&nbsp;History
+<i>5</i>&nbsp;2019-10-22      Ahmed LOUDRASSI     Migrated CampMgmtCampaignMemberTrigger and CampMgmtCampaignMemberTrigger2 triggers. (#)
+<i>6</i>&nbsp;2019-10-22      Ahmed LOUDRASSI     Migrated CampaignMember Workflows. (#)
+<i>7</i>&nbsp;2023-03-01      Houssam ADIB        Refactored The Trigger
+<i>8</i>&nbsp;2023-11-22      Richard Trum        Removed triggering of the method setInternationSpeaker (TFUS-6215)
+<i>9</i>&nbsp;----------------------------------------------------------------------------------------*/
+<i>10</i>&nbsp;public class CampaignMemberTriggerHandler extends TriggerHandler {
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;    private List&lt;CampaignMember&gt; oldCampaignMemberList, newCampaignMemberList;
+<i>13</i>&nbsp;    private Map&lt;Id, CampaignMember&gt; oldCampaignMemberMap, newCampaignMemberMap;
+<i>14</i>&nbsp;
+<b class="fc"><i>15</i>&nbsp;    public CampaignMemberTriggerHandler() {</b>
+<b class="fc"><i>16</i>&nbsp;        oldCampaignMemberList = (List&lt;CampaignMember&gt;) Trigger.old;</b>
+<b class="fc"><i>17</i>&nbsp;        newCampaignMemberList = (List&lt;CampaignMember&gt;) Trigger.new;</b>
+<b class="fc"><i>18</i>&nbsp;        oldCampaignMemberMap = (Map&lt;Id, CampaignMember&gt;) Trigger.oldMap;</b>
+<b class="fc"><i>19</i>&nbsp;        newCampaignMemberMap = (Map&lt;Id, CampaignMember&gt;) Trigger.newMap;</b>
+<i>20</i>&nbsp;    }
+<b class="fc"><i>21</i>&nbsp;    protected override void beforeInsert() {</b>
+<b class="fc"><i>22</i>&nbsp;        CampaignMemberTriggerHelper.updateCampaignMemberAccount(newCampaignMemberList);                     // Low Consumption</b>
+<b class="fc"><i>23</i>&nbsp;        CampaignMemberTriggerHelper.updateCampaignMembersInfo(newCampaignMemberList);                       // Low Consumption</b>
+<i>24</i>&nbsp;    }
+<b class="fc"><i>25</i>&nbsp;    protected override void beforeUpdate() {</b>
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;    }
+<b class="fc"><i>28</i>&nbsp;    protected override void afterInsert() {</b>
+<b class="fc"><i>29</i>&nbsp;        CampaignMemberTriggerHelper.leadOwnerAssignment(newCampaignMemberList);         // Execute Lead Trigger (Moved to After context) (Made Future)</b>
+<b class="fc"><i>30</i>&nbsp;        CampaignMemberTriggerHelper.convertMemberToSalesLeadOrOpportunity(newCampaignMemberList, oldCampaignMemberMap, false);</b>
+<i>31</i>&nbsp;    }
+<b class="fc"><i>32</i>&nbsp;    protected override void afterUpdate() {</b>
+<b class="fc"><i>33</i>&nbsp;        CampaignMemberTriggerHelper.leadOwnerAssignment(newCampaignMemberList);         // Execute Lead Trigger (Moved to After context) (Made Future)</b>
+<b class="fc"><i>34</i>&nbsp;        CampaignMemberTriggerHelper.convertMemberToSalesLeadOrOpportunity(newCampaignMemberList, oldCampaignMemberMap, false);</b>
+<i>35</i>&nbsp;    }
+<i>36</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

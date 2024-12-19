@@ -1,0 +1,89 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: GetCases</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: GetCases (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">GetCases</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>GetCases</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author: 	    	Roberto Narbona 20220623
+<i>3</i>&nbsp;Description:   	This is a controller of LWC &quot;showDuplicateCasesWarning&quot;.
+<i>4</i>&nbsp;History	
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;--------------------------------------------------------------------------------------------------------*/
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;public with sharing class GetCases {
+<i>9</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>10</i>&nbsp;    public static List&lt;Case&gt; getCases(string caseId) {</b>
+<b class="nc"><i>11</i>&nbsp;        List&lt;Case&gt; dupCases = new List&lt;Case&gt;();</b>
+<b class="nc"><i>12</i>&nbsp;        Case caseDetail = [ SELECT CaseNumber, Id, Subject, SuppliedEmail, CreatedDate FROM Case WHERE Id =: caseId LIMIT 1];</b>
+<b class="nc"><i>13</i>&nbsp;        datetime createdDatePlusFiveMinutes = caseDetail.CreatedDate.addminutes(5);</b>
+<b class="nc"><i>14</i>&nbsp;        datetime createdDateMinusFiveMinutes = caseDetail.CreatedDate.addminutes(-5);</b>
+<b class="nc"><i>15</i>&nbsp;        dupCases = [ SELECT CaseNumber, Id FROM Case WHERE CreatedDate &gt;: createdDateMinusFiveMinutes AND CreatedDate &lt;: createdDatePlusFiveMinutes AND  Subject = :caseDetail.Subject AND SuppliedEmail != null AND SuppliedEmail = :caseDetail.SuppliedEmail AND Subject = :caseDetail.Subject AND CaseNumber !=: caseDetail.CaseNumber AND Status != &#39;Merged &amp; Cancelled&#39; AND RecordTypeId = &#39;01220000000AvOOAA0&#39; LIMIT 5 ];</b>
+<b class="nc"><i>16</i>&nbsp;        return(dupCases);</b>
+<i>17</i>&nbsp;    }
+<i>18</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

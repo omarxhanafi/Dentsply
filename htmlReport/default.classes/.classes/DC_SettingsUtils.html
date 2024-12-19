@@ -1,0 +1,188 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DC_SettingsUtils</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DC_SettingsUtils (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DC_SettingsUtils</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    30.6%
+  </span>
+  <span class="absValue">
+    (11/ 36)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>DC_SettingsUtils</h2>
+<div class="sourceCode"><i>1</i>&nbsp;// 
+<i>2</i>&nbsp;//This class provides access to custom settings
+<i>3</i>&nbsp;//
+<i>4</i>&nbsp;//Author: Gennadiy Pervukhin (30-10-2014)
+<i>5</i>&nbsp;public class DC_SettingsUtils
+<i>6</i>&nbsp;{
+<i>7</i>&nbsp;    //
+<i>8</i>&nbsp;    //Constants
+<i>9</i>&nbsp;    //
+<i>10</i>&nbsp;    public static final String TRIGGERS_ENABLED = &#39;TRIGGERS_ENABLED&#39;;
+<i>11</i>&nbsp;    
+<i>12</i>&nbsp;    public static final String EVENT_RTs_FOR_CUSTOM_NOTICES = &#39;EVENT_RTs_FOR_CUSTOM_NOTICES&#39;;
+<i>13</i>&nbsp;    private static final String SEPARATOR_OF_RT_IDs = &#39;,&#39;;
+<i>14</i>&nbsp;    public static final String SEND_EVENT_NOTICES_FROM_ADDRESS = &#39;SEND_EVENT_NOTICES_FROM_ADDRESS&#39;;
+<i>15</i>&nbsp;    public static final String ADDRESS_OF_REPLY_TO_EVENT_NOTICE = &#39;ADDRESS_OF_REPLY_TO_EVENT_NOTICE&#39;;
+<i>16</i>&nbsp;    public static final String CASE_RECORD_TYPE_NAME = &#39;CASE_RECORD_TYPE_NAME&#39;;
+<i>17</i>&nbsp;    public static final String ARTICLE_RECORD_TYPE_NAME = &#39;ARTICLE_RECORD_TYPE_NAME&#39;;
+<i>18</i>&nbsp;    public static final String AUTO_APPROVE_CASE_RECORD_TYPE = &#39;AUTO_APPROVE_CASE_RECORD_TYPE&#39;;
+<i>19</i>&nbsp;    public static final String AUTO_APPROVE_ARTICLE_RECORD_TYPE = &#39;AUTO_APPROVE_ARTICLE_RECORD_TYPE&#39;;
+<i>20</i>&nbsp;    
+<i>21</i>&nbsp;    //
+<i>22</i>&nbsp;    
+<i>23</i>&nbsp;    //
+<i>24</i>&nbsp;    //Variables
+<i>25</i>&nbsp;    //
+<i>26</i>&nbsp;    private static Boolean triggersEnabled;
+<i>27</i>&nbsp;    //
+<i>28</i>&nbsp;    
+<i>29</i>&nbsp;    //
+<i>30</i>&nbsp;    //Public static methods
+<i>31</i>&nbsp;    //
+<i>32</i>&nbsp;    //this method gets string value from a custom setting and returns it
+<b class="fc"><i>33</i>&nbsp;    public static String getStringValueByName(String settingName)</b>
+<i>34</i>&nbsp;    {
+<b class="fc"><i>35</i>&nbsp;        try</b>
+<i>36</i>&nbsp;        {
+<b class="fc"><i>37</i>&nbsp;            DC_Setting__c setting = DC_Setting__c.getValues(settingName);</b>
+<b class="fc"><i>38</i>&nbsp;            if (setting != null)</b>
+<i>39</i>&nbsp;            {
+<b class="nc"><i>40</i>&nbsp;                return setting.Value__c;</b>
+<i>41</i>&nbsp;            }
+<i>42</i>&nbsp;        }
+<i>43</i>&nbsp;        catch (Exception ex)
+<b class="nc"><i>44</i>&nbsp;        {</b>
+<i>45</i>&nbsp;            System.debug(LoggingLevel.WARN, ex);
+<i>46</i>&nbsp;        }
+<b class="fc"><i>47</i>&nbsp;        return null;</b>
+<i>48</i>&nbsp;    }
+<i>49</i>&nbsp;    
+<b class="nc"><i>50</i>&nbsp;    public static Set&lt;String&gt; getStringValuesByName(String settingName) {</b>
+<b class="nc"><i>51</i>&nbsp;        final String value = getStringValueByName(settingName);</b>
+<b class="nc"><i>52</i>&nbsp;        return String.isBlank(value) ? new Set&lt;String&gt;() </b>
+<b class="nc"><i>53</i>&nbsp;            : new Set&lt;String&gt;(value.split(SEPARATOR_OF_RT_IDs));</b>
+<i>54</i>&nbsp;    }
+<i>55</i>&nbsp;    
+<i>56</i>&nbsp;    /*this method gets string value from a custom setting, tries to convert it
+<i>57</i>&nbsp;    to a Boolean-value and returns the result*/
+<b class="nc"><i>58</i>&nbsp;    public static Boolean getBooleanValueByName(String settingName)</b>
+<i>59</i>&nbsp;    {
+<b class="nc"><i>60</i>&nbsp;        try</b>
+<i>61</i>&nbsp;        {
+<b class="nc"><i>62</i>&nbsp;            String settingValue = getStringValueByName(settingName);</b>
+<b class="nc"><i>63</i>&nbsp;            return Boolean.valueOf(settingValue);</b>
+<i>64</i>&nbsp;        }
+<i>65</i>&nbsp;        catch (Exception ex)
+<b class="nc"><i>66</i>&nbsp;        {</b>
+<i>67</i>&nbsp;            System.debug(LoggingLevel.WARN, ex);
+<i>68</i>&nbsp;        }
+<b class="nc"><i>69</i>&nbsp;        return null;</b>
+<i>70</i>&nbsp;    }
+<i>71</i>&nbsp;    
+<i>72</i>&nbsp;    /*this method returns the value which determines whether the triggers are
+<i>73</i>&nbsp;    enabled or no. The method reads custom setting only one time per a transaction
+<i>74</i>&nbsp;    and stores the value in a local static variable.*/ 
+<b class="fc"><i>75</i>&nbsp;    public static Boolean triggersEnabled()</b>
+<i>76</i>&nbsp;    {
+<b class="fc"><i>77</i>&nbsp;        if (triggersEnabled == null)</b>
+<i>78</i>&nbsp;        {
+<b class="fc"><i>79</i>&nbsp;            String settingForTriggersValue = getStringValueByName(TRIGGERS_ENABLED);</b>
+<b class="fc"><i>80</i>&nbsp;            if (settingForTriggersValue != null)</b>
+<i>81</i>&nbsp;            {
+<b class="nc"><i>82</i>&nbsp;                triggersEnabled = Boolean.valueOf(settingForTriggersValue);</b>
+<i>83</i>&nbsp;            }
+<i>84</i>&nbsp;            else
+<i>85</i>&nbsp;            {
+<b class="fc"><i>86</i>&nbsp;                triggersEnabled = true;</b>
+<i>87</i>&nbsp;            }
+<i>88</i>&nbsp;        }
+<b class="fc"><i>89</i>&nbsp;        return triggersEnabled;</b>
+<i>90</i>&nbsp;    }
+<i>91</i>&nbsp;    
+<b class="nc"><i>92</i>&nbsp;    public static void setTriggersSettingForCurrentRequest(Boolean areTriggersEnabled)</b>
+<i>93</i>&nbsp;    {
+<b class="nc"><i>94</i>&nbsp;        DC_SettingsUtils.triggersEnabled = areTriggersEnabled;</b>
+<i>95</i>&nbsp;    }
+<i>96</i>&nbsp;    
+<b class="nc"><i>97</i>&nbsp;    public static Set&lt;Id&gt; getIdsOfEventRTsForNotices()</b>
+<i>98</i>&nbsp;    {
+<i>99</i>&nbsp;    	//extract a string value from the custom setting
+<b class="nc"><i>100</i>&nbsp;    	String stringOfIds = getStringValueByName(EVENT_RTs_FOR_CUSTOM_NOTICES);</b>
+<b class="nc"><i>101</i>&nbsp;    	if (String.isBlank(stringOfIds))</b>
+<i>102</i>&nbsp;    	{
+<b class="nc"><i>103</i>&nbsp;    		return new Set&lt;Id&gt;();</b>
+<i>104</i>&nbsp;    	}
+<i>105</i>&nbsp;    	
+<i>106</i>&nbsp;    	//split the value into an array and trim each Id
+<b class="nc"><i>107</i>&nbsp;    	Set&lt;Id&gt; setOfIds = new Set&lt;Id&gt;(); </b>
+<b class="nc"><i>108</i>&nbsp;    	String[] idValues = stringOfIds.split(SEPARATOR_OF_RT_IDs);</b>
+<b class="nc"><i>109</i>&nbsp;    	for (String idValue : idValues)</b>
+<b class="nc"><i>110</i>&nbsp;    	{</b>
+<b class="nc"><i>111</i>&nbsp;    		setOfIds.add(idValue.trim());</b>
+<i>112</i>&nbsp;    	}
+<i>113</i>&nbsp;    	
+<b class="nc"><i>114</i>&nbsp;    	return setOfIds;</b>
+<i>115</i>&nbsp;    }
+<i>116</i>&nbsp;    //
+<i>117</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

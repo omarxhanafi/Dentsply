@@ -1,0 +1,171 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: EventRelationDetails</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: EventRelationDetails (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">EventRelationDetails</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    13.2%
+  </span>
+  <span class="absValue">
+    (5/ 38)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>EventRelationDetails</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*Version History
+<i>2</i>&nbsp; * Date: 27-Nov-2018
+<i>3</i>&nbsp; * Class Name: EventRelationDetails
+<i>4</i>&nbsp; * Created By: Amit Kumar Prabhat
+<i>5</i>&nbsp; * Related Test Class: EventRelationDetailsTest.cls
+<i>6</i>&nbsp; * 16-Apr-2019:amitkumar.prabhat@mindtree.com: added method getAttendeesList related to Lightning Sync Project
+<i>7</i>&nbsp; * 
+<i>8</i>&nbsp; */
+<i>9</i>&nbsp;public with Sharing class EventRelationDetails {
+<i>10</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>11</i>&nbsp;    public static List &lt; EventRelation &gt; getEventRelationDetails(String eventid) {</b>
+<i>12</i>&nbsp;
+<b class="nc"><i>13</i>&nbsp;        List &lt; EventRelation &gt; ev = [SELECT Relation.Name, IsInvitee, Status FROM EventRelation WHERE EventId =: eventid</b>
+<i>14</i>&nbsp;            AND IsInvitee = true
+<i>15</i>&nbsp;        ];
+<i>16</i>&nbsp;        
+<i>17</i>&nbsp;        
+<b class="nc"><i>18</i>&nbsp;        return ev;</b>
+<i>19</i>&nbsp;    }
+<i>20</i>&nbsp;    
+<i>21</i>&nbsp;     @AuraEnabled
+<b class="nc"><i>22</i>&nbsp;    public static List &lt;AttendeesWrapperClass.DisplayAttendeesRecords&gt; getAttendeesList(String eventid) {</b>
+<i>23</i>&nbsp;
+<b class="nc"><i>24</i>&nbsp;         List&lt;AttendeesWrapperClass.DisplayAttendeesRecords&gt; attnList = </b>
+<b class="nc"><i>25</i>&nbsp;		new List&lt;AttendeesWrapperClass.DisplayAttendeesRecords&gt;();</b>
+<i>26</i>&nbsp;        
+<b class="nc"><i>27</i>&nbsp;        List &lt; EventRelation &gt; ev = [SELECT Relation.Name, IsInvitee, Status FROM EventRelation WHERE EventId =: eventid</b>
+<i>28</i>&nbsp;            AND IsInvitee = true
+<i>29</i>&nbsp;        ];
+<i>30</i>&nbsp;        
+<b class="nc"><i>31</i>&nbsp;        if(ev != null &amp;&amp; ev.size() &gt; 0){</b>
+<i>32</i>&nbsp;            
+<b class="nc"><i>33</i>&nbsp;            for(EventRelation evlist : ev){</b>
+<i>34</i>&nbsp;                
+<b class="nc"><i>35</i>&nbsp;                AttendeesWrapperClass.DisplayAttendeesRecords newEvList = </b>
+<b class="nc"><i>36</i>&nbsp;				new AttendeesWrapperClass.DisplayAttendeesRecords();</b>
+<b class="nc"><i>37</i>&nbsp;                newEvList.AttendeesName = evlist.Relation.Name;</b>
+<b class="nc"><i>38</i>&nbsp;                newEvList.status = evlist.Status;</b>
+<i>39</i>&nbsp;                
+<b class="nc"><i>40</i>&nbsp;                attnList.add(newEvList);</b>
+<i>41</i>&nbsp;            }
+<i>42</i>&nbsp;            
+<i>43</i>&nbsp;        }
+<i>44</i>&nbsp;        
+<b class="nc"><i>45</i>&nbsp;          List &lt; EventAttendees__c &gt; ev1 = [SELECT RelationId__c,Status__c FROM EventAttendees__c WHERE EventId__c =: eventid];</b>
+<i>46</i>&nbsp;        
+<b class="nc"><i>47</i>&nbsp;        if(ev1 != null &amp;&amp; ev1.size() &gt; 0){</b>
+<i>48</i>&nbsp;            
+<b class="nc"><i>49</i>&nbsp;            for(EventAttendees__c evlist : ev1){</b>
+<i>50</i>&nbsp;                
+<b class="nc"><i>51</i>&nbsp;                AttendeesWrapperClass.DisplayAttendeesRecords newEvList = </b>
+<b class="nc"><i>52</i>&nbsp;				new AttendeesWrapperClass.DisplayAttendeesRecords();</b>
+<b class="nc"><i>53</i>&nbsp;                User usr = [Select Name from user where id=: evlist.RelationId__c];</b>
+<b class="nc"><i>54</i>&nbsp;                newEvList.AttendeesName = usr.Name;</b>
+<b class="nc"><i>55</i>&nbsp;                newEvList.status = evlist.Status__c;</b>
+<i>56</i>&nbsp;                
+<b class="nc"><i>57</i>&nbsp;                attnList.add(newEvList);</b>
+<i>58</i>&nbsp;            }
+<i>59</i>&nbsp;            
+<i>60</i>&nbsp;        }   
+<b class="nc"><i>61</i>&nbsp;        return attnList;</b>
+<i>62</i>&nbsp;    }
+<i>63</i>&nbsp;    
+<i>64</i>&nbsp;   /* 19-Apr-2019: amitkumar.prabhat@mindtree.com
+<i>65</i>&nbsp;     * Method returns the value which determines whether current profile is added to 
+<i>66</i>&nbsp;      LightningSyncProfile custom meta data type. We want to escape DC* from these profile 
+<i>67</i>&nbsp;     to be use with Lighting Sync product*/ 
+<b class="fc"><i>68</i>&nbsp;    public static Boolean lightningSyncEnabledProfile()</b>
+<i>69</i>&nbsp;    {
+<b class="fc"><i>70</i>&nbsp;       Boolean syncProfile = false;</b>
+<i>71</i>&nbsp;       //Profile usrPro = [select name from profile where id=:UserInfo.getProfileId()];
+<i>72</i>&nbsp;     //List&lt;LightningSyncProfiles__mdt&gt; syncProfiles = [SELECT Label FROM LightningSyncProfiles__mdt WHERE label =: usrPro.Name];
+<i>73</i>&nbsp;       // if(syncProfiles.size() &gt; 0) syncProfile = true;
+<i>74</i>&nbsp;         
+<b class="fc"><i>75</i>&nbsp;     List&lt;PermissionSetAssignment&gt; psa_cnt = [SELECT PermissionSet.Name FROM PermissionSetAssignment WHERE AssigneeId = :Userinfo.getUserId() </b>
+<i>76</i>&nbsp;        AND PermissionSet.Name = &#39;Lightning_Sync&#39;];
+<b class="fc"><i>77</i>&nbsp;        if(psa_cnt.size() &gt; 0) syncProfile = true;</b>
+<b class="fc"><i>78</i>&nbsp;        return syncProfile;</b>
+<i>79</i>&nbsp;    } 
+<i>80</i>&nbsp; /* 27-June-2019: amitkumar.prabhat@mindtree.com
+<i>81</i>&nbsp;     * Method Update Event Activity Type and CFE Flag if Event Origin is Outlook*/ 
+<b class="nc"><i>82</i>&nbsp;    public static void updateNewOutlookEvent(Event[] events)</b>
+<i>83</i>&nbsp;    {
+<i>84</i>&nbsp;       system.debug(&#39;Event from updateNewOutlookEvent&#39;);
+<b class="nc"><i>85</i>&nbsp;        List&lt;Event&gt; selectedEvents = new List&lt;Event&gt;();</b>
+<b class="nc"><i>86</i>&nbsp;        for (Event event : events)</b>
+<b class="nc"><i>87</i>&nbsp;        {</b>
+<i>88</i>&nbsp;               // String s = JSON.serialize(event);
+<i>89</i>&nbsp;                //if(s.contains(&#39;ProposedEventTimeframe&#39;))    
+<b class="nc"><i>90</i>&nbsp;               if(event.EventOrigin__c == null || event.EventOrigin__c == &#39;&#39;)</b>
+<i>91</i>&nbsp;                {
+<i>92</i>&nbsp;                // event.Astra_Tech_Type__c = &#39;Outlook&#39;;
+<b class="nc"><i>93</i>&nbsp;                event.EventOrigin__c = &#39;Outlook&#39;;</b>
+<b class="nc"><i>94</i>&nbsp;                event.Customer_Facing_Event__c = false;</b>
+<b class="nc"><i>95</i>&nbsp;                event.Send_Calendar_Invites__c = false;</b>
+<b class="nc"><i>96</i>&nbsp;                selectedEvents.add(event);</b>
+<i>97</i>&nbsp;            }
+<i>98</i>&nbsp;           } 
+<i>99</i>&nbsp;    }
+<i>100</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

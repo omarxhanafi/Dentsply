@@ -1,0 +1,753 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: UsersInAccountTerritories</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: UsersInAccountTerritories (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">UsersInAccountTerritories</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 233)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>UsersInAccountTerritories</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*------------------------------------------------------------	
+<i>2</i>&nbsp;Author: 	    Richard Trum (Glimt) 2019-11-20
+<i>3</i>&nbsp;Description:   	Generic class to find users related to an account through ETM
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;Test Class:     Test_UsersInAccountTerritories
+<i>6</i>&nbsp;History:
+<i>7</i>&nbsp;2022-07-29      Roberto Narbona     TFUS-000004576
+<i>8</i>&nbsp;2022-09-09      Aoussar Nihad       TFUS-000004326 (added getSuggestedUsers method )
+<i>9</i>&nbsp;2022-12-02      Houssam ADIB        TFUS-000005010 (re-Designed getSuggestedUsers method)
+<i>10</i>&nbsp;------------------------------------------------------------*/
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;public with sharing class UsersInAccountTerritories {
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    /**
+<i>15</i>&nbsp;     * isManualAssignmentVisible to check for a given category and brand if the lead is eligible for
+<i>16</i>&nbsp;     * a manual owner assignment
+<i>17</i>&nbsp;     * @author naoussar@salesforce.com | 23-09-2022
+<i>18</i>&nbsp;     *
+<i>19</i>&nbsp;     * @param recordId          recordId current account Id used to retrieve the country to match custom metadata
+<i>20</i>&nbsp;     * @param categoryInput     String categoryInput category name selected by the user
+<i>21</i>&nbsp;     * @param brandInput        String brandInput brand name selected by the user
+<i>22</i>&nbsp;     *
+<i>23</i>&nbsp;     * @return Boolean - isManualAssignmentVisible
+<i>24</i>&nbsp;     */
+<i>25</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>26</i>&nbsp;    public static Boolean isManualAssignmentVisible(String recordId, String categoryInput, String brandInput){</b>
+<b class="nc"><i>27</i>&nbsp;        Boolean isManualAssignmentVisible = false;</b>
+<b class="nc"><i>28</i>&nbsp;        Account acc = [SELECT Id, Country__c FROM Account WHERE Id =: recordId];</b>
+<i>29</i>&nbsp;        //Get Custom Metadata records
+<b class="nc"><i>30</i>&nbsp;        LeadOpportunitySetting__mdt[] oppSettings = new LeadOpportunitySetting__mdt[]{};</b>
+<b class="nc"><i>31</i>&nbsp;        if(Test.IsRunningTest()){</b>
+<b class="nc"><i>32</i>&nbsp;            oppSettings = [SELECT DeveloperName, ShowManualSalesLeadOwnerAssignment__c,Category__c, BrandsList__c, Country__c, AssignOwnerFrom__c, UserRoles__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE IsTest__c =: true];</b>
+<i>33</i>&nbsp;        }
+<i>34</i>&nbsp;        else{
+<b class="nc"><i>35</i>&nbsp;            oppSettings = [SELECT DeveloperName, ShowManualSalesLeadOwnerAssignment__c , Category__c, BrandsList__c , Country__c, AssignOwnerFrom__c, UserRoles__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE Country__c =: acc.Country__c AND Category__c =:categoryInput AND IsTest__c =: false];</b>
+<i>36</i>&nbsp;        }
+<b class="nc"><i>37</i>&nbsp;        Map&lt;String, LeadOpportunitySetting__mdt&gt; settingsMap = new Map&lt;String, LeadOpportunitySetting__mdt&gt;();</b>
+<b class="nc"><i>38</i>&nbsp;        for(LeadOpportunitySetting__mdt setting: oppSettings){</b>
+<b class="nc"><i>39</i>&nbsp;            if(setting.BrandsList__c  != null){</b>
+<b class="nc"><i>40</i>&nbsp;                String brands = setting.BrandsList__c ;</b>
+<b class="nc"><i>41</i>&nbsp;                String[] brandList = brands.split(&#39;;&#39;);</b>
+<b class="nc"><i>42</i>&nbsp;                for(String brand : brandList){</b>
+<b class="nc"><i>43</i>&nbsp;                    settingsMap.put(brand, setting);</b>
+<i>44</i>&nbsp;                }
+<i>45</i>&nbsp;            }
+<i>46</i>&nbsp;        }
+<i>47</i>&nbsp;
+<b class="nc"><i>48</i>&nbsp;        if(settingsMap.containsKey(brandInput))</b>
+<i>49</i>&nbsp;        {
+<b class="nc"><i>50</i>&nbsp;            isManualAssignmentVisible = settingsMap.get(brandInput).ShowManualSalesLeadOwnerAssignment__c;</b>
+<i>51</i>&nbsp;        }
+<b class="nc"><i>52</i>&nbsp;        return isManualAssignmentVisible;</b>
+<i>53</i>&nbsp;    }
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;    /**
+<i>56</i>&nbsp;     * TODO
+<i>57</i>&nbsp;     * @author Richard Trum | XX-XX-XXXX
+<i>58</i>&nbsp;     *
+<i>59</i>&nbsp;     * @param recordId          TODO
+<i>60</i>&nbsp;     * @param categoryInput     TODO
+<i>61</i>&nbsp;     * @param brandInput        TODO
+<i>62</i>&nbsp;     * @param dealerId          TODO
+<i>63</i>&nbsp;     *
+<i>64</i>&nbsp;     * @return List&lt;UserTerritory2Association&gt; - TODO
+<i>65</i>&nbsp;     */
+<i>66</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>67</i>&nbsp;    public static List&lt;UserTerritory2Association&gt; getUsers(String recordId, String categoryInput, String brandInput, String dealerId){</b>
+<i>68</i>&nbsp;            
+<b class="nc"><i>69</i>&nbsp;        List&lt;UserTerritory2Association&gt; users = new List&lt;UserTerritory2Association&gt;();</b>
+<b class="nc"><i>70</i>&nbsp;        Set&lt;Id&gt; userSet = new Set&lt;Id&gt;();</b>
+<i>71</i>&nbsp;            
+<b class="nc"><i>72</i>&nbsp;        if(recordId != null){</b>
+<i>73</i>&nbsp;         
+<b class="nc"><i>74</i>&nbsp;        	ObjectTerritory2Association[] territories = [SELECT ObjectId, SobjectType, Territory2Id </b>
+<i>75</i>&nbsp;                                                         FROM ObjectTerritory2Association 
+<b class="nc"><i>76</i>&nbsp;                                                         WHERE ObjectId =: recordId];</b>
+<i>77</i>&nbsp;            
+<b class="nc"><i>78</i>&nbsp;            ObjectTerritory2Association[] dealerTerritories = new List&lt;ObjectTerritory2Association&gt;();</b>
+<i>79</i>&nbsp;            
+<b class="nc"><i>80</i>&nbsp;            Account acc = [SELECT Id, Country__c FROM Account WHERE Id =: recordId];</b>
+<b class="nc"><i>81</i>&nbsp;            User currentUser = [SELECT Id, Name FROM User WHERE Id =: UserInfo.getUserId()];</b>
+<b class="nc"><i>82</i>&nbsp;            Set&lt;String&gt; roleMap = new Set&lt;String&gt;();</b>
+<i>83</i>&nbsp;            
+<b class="nc"><i>84</i>&nbsp;            if(acc.Country__c == &#39;DE&#39; &amp;&amp; (categoryInput == &#39;Equipment &amp; Imaging&#39; || categoryInput == &#39;Digital Group&#39;)){</b>
+<i>85</i>&nbsp;            
+<b class="nc"><i>86</i>&nbsp;                if(dealerId != null){                   </b>
+<b class="nc"><i>87</i>&nbsp;                    dealerTerritories = [SELECT ObjectId, SobjectType, Territory2Id </b>
+<i>88</i>&nbsp;                                                         FROM ObjectTerritory2Association 
+<b class="nc"><i>89</i>&nbsp;                                                         WHERE ObjectId =: dealerId];                </b>
+<i>90</i>&nbsp;                }
+<i>91</i>&nbsp;                
+<i>92</i>&nbsp;            //Get Custom Metadata records
+<b class="nc"><i>93</i>&nbsp;        	LeadOpportunitySetting__mdt[] oppSettings = new LeadOpportunitySetting__mdt[]{};</b>
+<b class="nc"><i>94</i>&nbsp;        	if(Test.IsRunningTest()){</b>
+<b class="nc"><i>95</i>&nbsp;            	oppSettings = [SELECT DeveloperName, Category__c, BrandsList__c, Country__c, AssignOwnerFrom__c, UserRoles__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE IsTest__c =: true];</b>
+<i>96</i>&nbsp;        	}
+<i>97</i>&nbsp;        	else{
+<b class="nc"><i>98</i>&nbsp;        		oppSettings = [SELECT DeveloperName, Category__c, BrandsList__c, Country__c, AssignOwnerFrom__c, UserRoles__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE Country__c =: acc.Country__c AND Category__c =:categoryInput AND IsTest__c =: false];</b>
+<i>99</i>&nbsp;        	}
+<i>100</i>&nbsp;            
+<b class="nc"><i>101</i>&nbsp;            Map&lt;String, LeadOpportunitySetting__mdt&gt; settingsMap = new Map&lt;String, LeadOpportunitySetting__mdt&gt;();</b>
+<b class="nc"><i>102</i>&nbsp;        	for(LeadOpportunitySetting__mdt setting: oppSettings){</b>
+<b class="nc"><i>103</i>&nbsp;            	if(setting.BrandsList__c != null){</b>
+<b class="nc"><i>104</i>&nbsp;                	String brands = setting.BrandsList__c;</b>
+<b class="nc"><i>105</i>&nbsp;                	String[] brandList = brands.split(&#39;;&#39;);</b>
+<b class="nc"><i>106</i>&nbsp;                	for(String brand : brandList){</b>
+<b class="nc"><i>107</i>&nbsp;                    	settingsMap.put(brand, setting);</b>
+<i>108</i>&nbsp;                	}
+<i>109</i>&nbsp;            	}
+<i>110</i>&nbsp;            	else{
+<b class="nc"><i>111</i>&nbsp;                	settingsMap.put(setting.Category__c, setting);</b>
+<i>112</i>&nbsp;            	}    
+<i>113</i>&nbsp;        	}
+<b class="nc"><i>114</i>&nbsp;            String roleList = settingsMap.get(brandInput).UserRoles__c;</b>
+<b class="nc"><i>115</i>&nbsp;            String[] roles = roleList.split(&#39;;&#39;);</b>
+<b class="nc"><i>116</i>&nbsp;            for(String role:roles){</b>
+<b class="nc"><i>117</i>&nbsp;                roleMap.add(role);</b>
+<i>118</i>&nbsp;            }
+<i>119</i>&nbsp;                
+<i>120</i>&nbsp;            }       
+<i>121</i>&nbsp;            else{
+<i>122</i>&nbsp;            			            
+<b class="nc"><i>123</i>&nbsp;            UserTerritory2Association currentUserRole = new UserTerritory2Association();</b>
+<b class="nc"><i>124</i>&nbsp;            currentUserRole.UserId = currentUser.Id;</b>
+<b class="nc"><i>125</i>&nbsp;            currentUserRole.User = currentUser;</b>
+<b class="nc"><i>126</i>&nbsp;            currentUserRole.RoleInTerritory2 = &#39;Current user&#39;;</b>
+<i>127</i>&nbsp;            
+<b class="nc"><i>128</i>&nbsp;           	users.add(currentUserRole);</b>
+<i>129</i>&nbsp;            
+<i>130</i>&nbsp;            }    
+<i>131</i>&nbsp;            
+<b class="nc"><i>132</i>&nbsp;        	for (ObjectTerritory2Association t2a : territories){</b>
+<i>133</i>&nbsp;                
+<b class="nc"><i>134</i>&nbsp;                List&lt;UserTerritory2Association&gt; usersToAdd = [SELECT UserId, User.Name, Territory2Id, RoleInTerritory2, IsActive </b>
+<i>135</i>&nbsp;                                                     FROM UserTerritory2Association 
+<b class="nc"><i>136</i>&nbsp;                                                     WHERE Territory2Id=:t2a.Territory2Id AND UserId !=: currentUser.Id</b>
+<i>137</i>&nbsp;                                                     ];
+<i>138</i>&nbsp;                
+<b class="nc"><i>139</i>&nbsp;                if(acc.Country__c == &#39;DE&#39; &amp;&amp; (categoryInput == &#39;Equipment &amp; Imaging&#39; || categoryInput == &#39;Digital Group&#39;)){</b>
+<b class="nc"><i>140</i>&nbsp;                	for(UserTerritory2Association user: usersToAdd){</b>
+<b class="nc"><i>141</i>&nbsp;                        if(roleMap.contains(user.RoleInTerritory2)){</b>
+<b class="nc"><i>142</i>&nbsp;							users.add(user);</b>
+<b class="nc"><i>143</i>&nbsp;                            userSet.add(user.UserId);</b>
+<i>144</i>&nbsp;                        }
+<i>145</i>&nbsp;               		}
+<i>146</i>&nbsp;                    
+<i>147</i>&nbsp;                }
+<i>148</i>&nbsp;                else{                                
+<b class="nc"><i>149</i>&nbsp; 					users.addAll(usersToAdd);</b>
+<i>150</i>&nbsp;                }    
+<i>151</i>&nbsp;            }
+<i>152</i>&nbsp;         
+<b class="nc"><i>153</i>&nbsp;            if(dealerId != null &amp;&amp; acc.Country__c == &#39;DE&#39; &amp;&amp; (categoryInput == &#39;Equipment &amp; Imaging&#39; || categoryInput == &#39;Digital Group&#39;)){        </b>
+<b class="nc"><i>154</i>&nbsp;            	for(ObjectTerritory2Association dt2a : dealerTerritories){</b>
+<i>155</i>&nbsp;                
+<b class="nc"><i>156</i>&nbsp;                 	List&lt;UserTerritory2Association&gt; dealerUsersToAdd = [SELECT UserId, User.Name, Territory2Id, RoleInTerritory2, IsActive </b>
+<i>157</i>&nbsp;                                                     FROM UserTerritory2Association 
+<b class="nc"><i>158</i>&nbsp;                                                     WHERE Territory2Id=:dt2a.Territory2Id AND UserId !=: currentUser.Id</b>
+<i>159</i>&nbsp;                                                     ];
+<i>160</i>&nbsp;                    
+<b class="nc"><i>161</i>&nbsp;                    for(UserTerritory2Association dealerUser: dealerUsersToAdd){</b>
+<b class="nc"><i>162</i>&nbsp;                        if(roleMap.contains(dealerUser.RoleInTerritory2) &amp;&amp; !userSet.contains(dealerUser.UserId)){</b>
+<b class="nc"><i>163</i>&nbsp;							users.add(dealerUser);</b>
+<i>164</i>&nbsp;                        }
+<i>165</i>&nbsp;               		}                
+<i>166</i>&nbsp;            	}
+<i>167</i>&nbsp;           }
+<i>168</i>&nbsp;        }
+<i>169</i>&nbsp;        
+<b class="nc"><i>170</i>&nbsp;      return users;  </b>
+<i>171</i>&nbsp;
+<i>172</i>&nbsp;    }
+<i>173</i>&nbsp;
+<i>174</i>&nbsp;    /**
+<i>175</i>&nbsp;     * TODO
+<i>176</i>&nbsp;     * @author Richard Trum | XX-XX-XXXX
+<i>177</i>&nbsp;     *
+<i>178</i>&nbsp;     * @param recordIds     TODO
+<i>179</i>&nbsp;     *
+<i>180</i>&nbsp;     * @return Map&lt;Id, List&lt;UserTerritory2Association&gt;&gt; - TODO
+<i>181</i>&nbsp;     */
+<i>182</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>183</i>&nbsp;    public static Map&lt;Id, List&lt;UserTerritory2Association&gt;&gt; getUsersFromMultipleAccounts(List&lt;Id&gt; recordIds){</b>
+<i>184</i>&nbsp;                        
+<b class="nc"><i>185</i>&nbsp;                ObjectTerritory2Association[] customerTerritories = [SELECT ObjectId, SobjectType, Territory2Id </b>
+<i>186</i>&nbsp;                                                                     FROM ObjectTerritory2Association 
+<b class="nc"><i>187</i>&nbsp;                                                                     WHERE ObjectId IN: recordIds];        </b>
+<b class="nc"><i>188</i>&nbsp;                Set&lt;Id&gt; customerTerritoryIds = new Set&lt;Id&gt;();</b>
+<b class="nc"><i>189</i>&nbsp;                Map&lt;Id, List&lt;Id&gt;&gt; accountTerritories = new Map&lt;Id, List&lt;Id&gt;&gt;();</b>
+<i>190</i>&nbsp;                
+<b class="nc"><i>191</i>&nbsp;                for(ObjectTerritory2Association terr : customerTerritories){</b>
+<b class="nc"><i>192</i>&nbsp;                    customerTerritoryIds.add(terr.Territory2Id);</b>
+<i>193</i>&nbsp;                    
+<b class="nc"><i>194</i>&nbsp;                    if(accountTerritories.containskey(terr.ObjectId)){</b>
+<b class="nc"><i>195</i>&nbsp;                        accountTerritories.get(terr.ObjectId).add(terr.Territory2Id);</b>
+<i>196</i>&nbsp;                    }
+<i>197</i>&nbsp;                    else{
+<b class="nc"><i>198</i>&nbsp;                        List&lt;Id&gt; terrIdList = new List&lt;Id&gt;();</b>
+<b class="nc"><i>199</i>&nbsp;                        terrIdList.add(terr.Territory2Id);</b>
+<b class="nc"><i>200</i>&nbsp;                        accountTerritories.put(terr.ObjectId, terrIdList);</b>
+<i>201</i>&nbsp;                    }
+<i>202</i>&nbsp;                }
+<i>203</i>&nbsp;        
+<b class="nc"><i>204</i>&nbsp;                List&lt;UserTerritory2Association&gt; usersToAdd = [SELECT UserId, User.Name, Territory2Id, RoleInTerritory2, IsActive </b>
+<i>205</i>&nbsp;                                                             FROM UserTerritory2Association 
+<b class="nc"><i>206</i>&nbsp;                                                             WHERE Territory2Id IN:customerTerritoryIds</b>
+<i>207</i>&nbsp;                                                             ];
+<b class="nc"><i>208</i>&nbsp;                Map&lt;Id, List&lt;UserTerritory2Association&gt;&gt; userTerritoryMap = new Map&lt;Id, List&lt;UserTerritory2Association&gt;&gt;();</b>
+<i>209</i>&nbsp;                
+<b class="nc"><i>210</i>&nbsp;                for(UserTerritory2Association userToAdd : usersToAdd){</b>
+<i>211</i>&nbsp;                        
+<b class="nc"><i>212</i>&nbsp;                    if(userTerritoryMap.containskey(userToAdd.Territory2Id)){</b>
+<b class="nc"><i>213</i>&nbsp;                        userTerritoryMap.get(userToAdd.Territory2Id).add(userToAdd);</b>
+<i>214</i>&nbsp;                    }
+<i>215</i>&nbsp;                    else{
+<b class="nc"><i>216</i>&nbsp;                        List&lt;UserTerritory2Association&gt; userIdList = new List&lt;UserTerritory2Association&gt;();</b>
+<b class="nc"><i>217</i>&nbsp;                        userIdList.add(userToAdd);</b>
+<b class="nc"><i>218</i>&nbsp;                        userTerritoryMap.put(userToAdd.Territory2Id, userIdList);</b>
+<i>219</i>&nbsp;                    }    
+<i>220</i>&nbsp;                        
+<i>221</i>&nbsp;                }
+<i>222</i>&nbsp;
+<b class="nc"><i>223</i>&nbsp;                Map&lt;Id, List&lt;UserTerritory2Association&gt;&gt; userAccountMap = new Map&lt;Id, List&lt;UserTerritory2Association&gt;&gt;();</b>
+<i>224</i>&nbsp;
+<b class="nc"><i>225</i>&nbsp;                for(Id accId : accountTerritories.keySet()){</b>
+<b class="nc"><i>226</i>&nbsp;                    List&lt;Id&gt; accTerritories = accountTerritories.get(accId);</b>
+<b class="nc"><i>227</i>&nbsp;                    List&lt;UserTerritory2Association&gt; userList = new List&lt;UserTerritory2Association&gt;();</b>
+<b class="nc"><i>228</i>&nbsp;                    for(Id terrId : accTerritories){</b>
+<b class="nc"><i>229</i>&nbsp;                        if(userTerritoryMap.get(terrId) != null){</b>
+<b class="nc"><i>230</i>&nbsp;                            userList.addAll(userTerritoryMap.get(terrId));</b>
+<i>231</i>&nbsp;                        }
+<i>232</i>&nbsp;                    }
+<i>233</i>&nbsp;                    
+<b class="nc"><i>234</i>&nbsp;                    if(userList.size()&gt;0){</b>
+<b class="nc"><i>235</i>&nbsp;                        userAccountMap.put(accId, userList);</b>
+<i>236</i>&nbsp;                    }    
+<i>237</i>&nbsp;                }
+<i>238</i>&nbsp;
+<i>239</i>&nbsp;
+<b class="nc"><i>240</i>&nbsp;                return userAccountMap;</b>
+<i>241</i>&nbsp;
+<i>242</i>&nbsp;    }
+<i>243</i>&nbsp;
+<i>244</i>&nbsp;    /**
+<i>245</i>&nbsp;     * TODO
+<i>246</i>&nbsp;     * @author          naoussar@salesforce.com | 23-09-2022
+<i>247</i>&nbsp;     * @param category  TODO
+<i>248</i>&nbsp;     * @param country   TODO
+<i>249</i>&nbsp;     *
+<i>250</i>&nbsp;     * @return List&lt;LeadOpportunitySetting__mdt&gt; - TODO
+<i>251</i>&nbsp;     */
+<i>252</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>253</i>&nbsp;    public static List&lt;LeadOpportunitySetting__mdt&gt; getSalesLeadSettings(String category, String country){</b>
+<i>254</i>&nbsp;        
+<b class="nc"><i>255</i>&nbsp;        List&lt;LeadOpportunitySetting__mdt&gt; settings = [SELECT DeveloperName, Category__c, Country__c, BrandsList__c, ShowDistributor__c, Dealer_Distributor_is_Mandatory__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE (Category__c =:category AND Country__c =: country)];</b>
+<i>256</i>&nbsp;        
+<b class="nc"><i>257</i>&nbsp;        return settings;</b>
+<i>258</i>&nbsp;    }
+<i>259</i>&nbsp;
+<i>260</i>&nbsp;    /**
+<i>261</i>&nbsp;     * Get proposed owner of a lead based on the category and brand selected and which roles are compatible from
+<i>262</i>&nbsp;	 * the custom metadata LeadOpportunitySetting__mdt used on the Flow_SuggestedUsersBasedOnBrand
+<i>263</i>&nbsp;     * @author          naoussar@salesforce.com | 23-09-2022
+<i>264</i>&nbsp;     * @redesignedBy    hadib@salesforce.com    | 01-12-2022
+<i>265</i>&nbsp;     *
+<i>266</i>&nbsp;     * @param accountId         Account Id
+<i>267</i>&nbsp;     * @param categoryInput     CategoryInput category name selected by the user
+<i>268</i>&nbsp;     * @param brandInput        Brand name selected by the user
+<i>269</i>&nbsp;     * @param dealerId          Selected dealer on the UI
+<i>270</i>&nbsp;     *
+<i>271</i>&nbsp;     * @return List&lt;UserTerritory2Association&gt; - Users to suggest as owner
+<i>272</i>&nbsp;     */
+<i>273</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>274</i>&nbsp;    public static List&lt;UserTerritory2Association&gt; getSuggestedUsers(String accountId, String categoryInput, String brandInput, String dealerId)</b>
+<i>275</i>&nbsp;    {
+<i>276</i>&nbsp;
+<i>277</i>&nbsp;        // Step 1 - Prepare the current user as a suggested user, as it will always be suggested.
+<b class="nc"><i>278</i>&nbsp;        List&lt;UserTerritory2Association&gt; suggestedUsers = new List&lt;UserTerritory2Association&gt;();</b>
+<b class="nc"><i>279</i>&nbsp;        User currentUser = [SELECT Id, Name FROM User WHERE Id = :UserInfo.getUserId()];</b>
+<b class="nc"><i>280</i>&nbsp;        suggestedUsers.add(createCurrentUserManually(currentUser));</b>
+<i>281</i>&nbsp;
+<b class="nc"><i>282</i>&nbsp;        try</b>
+<i>283</i>&nbsp;        {
+<i>284</i>&nbsp;            // Step 2 - We will add more suggested user only if the user has selected both required fields (category &amp; brand)
+<i>285</i>&nbsp;            //          If he does, we will provide new suggested users based on whether we have an existing leadOpp Settings for the combination of (Account Country,category,brand)
+<i>286</i>&nbsp;            //              YES -&gt; we check in the settings the field AssignOwnerFrom__c
+<i>287</i>&nbsp;            //                          Then we order the suggested users based on their role and the role specified in the settings
+<i>288</i>&nbsp;            //              NO  -&gt; we return all the sales team assigned to both account + dealer (if selected)
+<b class="nc"><i>289</i>&nbsp;            if (String.isNotBlank(categoryInput) &amp;&amp; String.isNotBlank(brandInput))</b>
+<i>290</i>&nbsp;            {
+<b class="nc"><i>291</i>&nbsp;                Boolean isOrdered = false;</b>
+<b class="nc"><i>292</i>&nbsp;                Account currentAccount;</b>
+<i>293</i>&nbsp;                // The account is required to find the Lead Opp Settings for its country
+<b class="nc"><i>294</i>&nbsp;                List&lt;Account&gt; accountQuery = [SELECT Id, Country__c FROM Account WHERE Id = :accountId];</b>
+<b class="nc"><i>295</i>&nbsp;                if(!accountQuery.isEmpty()) {</b>
+<b class="nc"><i>296</i>&nbsp;                    currentAccount = accountQuery[0];</b>
+<i>297</i>&nbsp;                } else {
+<b class="nc"><i>298</i>&nbsp;                    return suggestedUsers;</b>
+<i>299</i>&nbsp;                }
+<i>300</i>&nbsp;
+<i>301</i>&nbsp;                // Retrieve all Territories (Account+Dealer&#39;s ones)
+<b class="nc"><i>302</i>&nbsp;                Map&lt;String, List&lt;ObjectTerritory2Association&gt;&gt; allAccountAndDealerTerritories = getAccountAndDealerTerritories(accountId, dealerId);</b>
+<i>303</i>&nbsp;
+<i>304</i>&nbsp;                // Step 3 - Retrieve the leadOpp Settings that let us know which object will be used to get the obj territories (Dealer or Account)
+<i>305</i>&nbsp;
+<b class="nc"><i>306</i>&nbsp;                LeadOpportunitySetting__mdt leadOppSettings = getLeadOppSettingsByCountryAndCategoryAndBrand(currentAccount?.Country__c, categoryInput, brandInput);</b>
+<i>307</i>&nbsp;
+<i>308</i>&nbsp;                // We retrieved by (category,Account Country). Then we will filter by (brand), and we return one record.
+<b class="nc"><i>309</i>&nbsp;                List&lt;ObjectTerritory2Association&gt; filteredTerritories = new List&lt;ObjectTerritory2Association&gt;();</b>
+<b class="nc"><i>310</i>&nbsp;                if (leadOppSettings != null)</b>
+<i>311</i>&nbsp;                {
+<i>312</i>&nbsp;                    // We can filter by dealer || account. (The custom metadata field AssignOwnerFrom__c)
+<i>313</i>&nbsp;                    // We can sort the suggested users by the brand
+<b class="nc"><i>314</i>&nbsp;                    filteredTerritories = getFilteredTerritoriesBasedOnLeadOppSettings(leadOppSettings, accountId, dealerId, allAccountAndDealerTerritories);</b>
+<b class="nc"><i>315</i>&nbsp;                    isOrdered = true;</b>
+<i>316</i>&nbsp;                }
+<i>317</i>&nbsp;                else
+<i>318</i>&nbsp;                {
+<i>319</i>&nbsp;                    // We can&#39;t filter by dealer || account. We will return both.
+<i>320</i>&nbsp;                    // No ordering of the suggested users
+<b class="nc"><i>321</i>&nbsp;                    if(allAccountAndDealerTerritories?.get(accountId) != null)</b>
+<i>322</i>&nbsp;                    {
+<b class="nc"><i>323</i>&nbsp;                        filteredTerritories.addAll(allAccountAndDealerTerritories.get(accountId));  // Account Territories</b>
+<i>324</i>&nbsp;                    }
+<b class="nc"><i>325</i>&nbsp;                    if(allAccountAndDealerTerritories?.get(dealerId) != null)</b>
+<i>326</i>&nbsp;                    {
+<b class="nc"><i>327</i>&nbsp;                        filteredTerritories.addAll(allAccountAndDealerTerritories.get(dealerId));   // Dealer Territories</b>
+<i>328</i>&nbsp;                    }
+<i>329</i>&nbsp;                }
+<i>330</i>&nbsp;
+<i>331</i>&nbsp;                // Step 4 - We have the object territories, now, we will search for all the users assigned there.
+<b class="nc"><i>332</i>&nbsp;                List&lt;UserTerritory2Association&gt; territoriesUsers = getUserAssignedToAllTerritories(filteredTerritories, currentUser);</b>
+<b class="nc"><i>333</i>&nbsp;                suggestedUsers.addAll(territoriesUsers);</b>
+<i>334</i>&nbsp;
+<b class="nc"><i>335</i>&nbsp;                if(isOrdered)</b>
+<i>336</i>&nbsp;                {
+<i>337</i>&nbsp;                    // Step 5 - Order the suggested users if we went through a custom metadata settings, because it specifies the best role
+<b class="nc"><i>338</i>&nbsp;                    suggestedUsers = orderByRole(suggestedUsers,leadOppSettings);</b>
+<i>339</i>&nbsp;                }
+<i>340</i>&nbsp;            }
+<i>341</i>&nbsp;        }
+<i>342</i>&nbsp;        catch (Exception e)
+<b class="nc"><i>343</i>&nbsp;        {</b>
+<b class="nc"><i>344</i>&nbsp;            DebugLog.addException(e, &#39;UsersInAccountTerritories.getSuggestedUsers&#39;);</b>
+<b class="nc"><i>345</i>&nbsp;            if(Test.isRunningTest()){</b>
+<b class="nc"><i>346</i>&nbsp;                throw e;</b>
+<i>347</i>&nbsp;            }
+<i>348</i>&nbsp;        }
+<i>349</i>&nbsp;
+<b class="nc"><i>350</i>&nbsp;        return suggestedUsers;</b>
+<i>351</i>&nbsp;    }
+<i>352</i>&nbsp;
+<i>353</i>&nbsp;    /**
+<i>354</i>&nbsp;     * Sort manually the list of suggested users. We user a new List, we add the ones that has the right role (leadOppSettings.UserRoles__c)
+<i>355</i>&nbsp;     * Then we add the rest of the users.
+<i>356</i>&nbsp;     * We end up with an ordered list that starts with the ones having the preferred roles in leadOppSettings.UserRoles__c
+<i>357</i>&nbsp;     * @author hadib@salesforce.com | 01-12-2022
+<i>358</i>&nbsp;     *
+<i>359</i>&nbsp;     * @param suggestedUsers    The list of the suggested users to order based on their role
+<i>360</i>&nbsp;     * @param leadOppSettings   The lead opp custom metadata settings record
+<i>361</i>&nbsp;     *
+<i>362</i>&nbsp;     * @return List&lt;UserTerritory2Association&gt; - Sorted list of suggested users
+<i>363</i>&nbsp;     */
+<b class="nc"><i>364</i>&nbsp;    private static List&lt;UserTerritory2Association&gt; orderByRole(List&lt;UserTerritory2Association&gt; suggestedUsers, LeadOpportunitySetting__mdt leadOppSettings)</b>
+<i>365</i>&nbsp;    {
+<b class="nc"><i>366</i>&nbsp;        List&lt;UserTerritory2Association&gt; preferredUsers = new List&lt;UserTerritory2Association&gt;();</b>
+<b class="nc"><i>367</i>&nbsp;        List&lt;UserTerritory2Association&gt; restOfUsers = new List&lt;UserTerritory2Association&gt;();</b>
+<i>368</i>&nbsp;
+<b class="nc"><i>369</i>&nbsp;        String userRoleInSettings = leadOppSettings?.UserRoles__c;</b>
+<b class="nc"><i>370</i>&nbsp;        List&lt;String&gt; rolesList = new List&lt;String&gt;();</b>
+<i>371</i>&nbsp;
+<b class="nc"><i>372</i>&nbsp;        if (userRoleInSettings != null) {</b>
+<b class="nc"><i>373</i>&nbsp;            rolesList.addAll(userRoleInSettings.split(&#39;;&#39;));</b>
+<i>374</i>&nbsp;        }
+<i>375</i>&nbsp;
+<b class="nc"><i>376</i>&nbsp;        for(UserTerritory2Association user : suggestedUsers)</b>
+<b class="nc"><i>377</i>&nbsp;        {</b>
+<b class="nc"><i>378</i>&nbsp;            Boolean isPreferred = false;</b>
+<i>379</i>&nbsp;
+<i>380</i>&nbsp;            // Loop on role to see if this is a preferred User
+<b class="nc"><i>381</i>&nbsp;            for (String role : rolesList)</b>
+<b class="nc"><i>382</i>&nbsp;            {</b>
+<b class="nc"><i>383</i>&nbsp;                if(user.RoleInTerritory2 == role)</b>
+<i>384</i>&nbsp;                {
+<b class="nc"><i>385</i>&nbsp;                    isPreferred = true;</b>
+<i>386</i>&nbsp;                }
+<i>387</i>&nbsp;            }
+<i>388</i>&nbsp;
+<i>389</i>&nbsp;            // Add the user to one of the two lists: preferred and normal users
+<b class="nc"><i>390</i>&nbsp;            if(isPreferred)</b>
+<i>391</i>&nbsp;            {
+<b class="nc"><i>392</i>&nbsp;                preferredUsers.add(user);</b>
+<i>393</i>&nbsp;            }
+<i>394</i>&nbsp;            else{
+<b class="nc"><i>395</i>&nbsp;                restOfUsers.add(user);</b>
+<i>396</i>&nbsp;            }
+<i>397</i>&nbsp;        }
+<i>398</i>&nbsp;
+<i>399</i>&nbsp;        // The preferred users are already added in the preferredUsers list. Now we just add the rest of users at the end.
+<b class="nc"><i>400</i>&nbsp;        preferredUsers.addAll(restOfUsers);</b>
+<b class="nc"><i>401</i>&nbsp;        return preferredUsers;</b>
+<i>402</i>&nbsp;    }
+<i>403</i>&nbsp;
+<i>404</i>&nbsp;    /**
+<i>405</i>&nbsp;     * We will get a map of object territories, mainly account and dealer ones. and we will filter them based on
+<i>406</i>&nbsp;     * brandSettings.AssignOwnerFrom__c.
+<i>407</i>&nbsp;     * @author hadib@salesforce.com | 01-12-2022
+<i>408</i>&nbsp;     *
+<i>409</i>&nbsp;     * @param brandSettings     The lead opportunity settings that corresponds to the (category, brand) combination
+<i>410</i>&nbsp;     * @param accountId         The id of the current Account opened
+<i>411</i>&nbsp;     * @param dealerId          The id of the dealer selected in the &#39;New Sales Lead&#39; Modal
+<i>412</i>&nbsp;     * @param allAccountAndDealerTerritories    Map of object territories associated with the account and the dealer selected
+<i>413</i>&nbsp;     *
+<i>414</i>&nbsp;     * @return List&lt;ObjectTerritory2Association&gt; - The right object territories to use to find the suggested users.
+<i>415</i>&nbsp;     */
+<b class="nc"><i>416</i>&nbsp;    private static List&lt;ObjectTerritory2Association&gt; getFilteredTerritoriesBasedOnLeadOppSettings(</b>
+<i>417</i>&nbsp;            LeadOpportunitySetting__mdt brandSettings,
+<i>418</i>&nbsp;            String accountId,
+<i>419</i>&nbsp;            String dealerId,
+<i>420</i>&nbsp;            Map&lt;String, List&lt;ObjectTerritory2Association&gt;&gt; allAccountAndDealerTerritories)
+<i>421</i>&nbsp;    {
+<b class="nc"><i>422</i>&nbsp;        List&lt;ObjectTerritory2Association&gt; filteredObjectTerritories = new List&lt;ObjectTerritory2Association&gt;();</b>
+<i>423</i>&nbsp;
+<b class="nc"><i>424</i>&nbsp;        String objectId;</b>
+<i>425</i>&nbsp;
+<b class="nc"><i>426</i>&nbsp;        switch on brandSettings.AssignOwnerFrom__c {</b>
+<b class="nc"><i>427</i>&nbsp;            when &#39;Account&#39; {</b>
+<i>428</i>&nbsp;                // Get Users from account territories
+<b class="nc"><i>429</i>&nbsp;                objectId = accountId;</b>
+<i>430</i>&nbsp;            }
+<b class="nc"><i>431</i>&nbsp;            when &#39;Dealer&#39; {</b>
+<i>432</i>&nbsp;                // Fall back to the account if no dealer selected and the custom metadata wants the dealer
+<b class="nc"><i>433</i>&nbsp;                objectId = (String.isNotBlank(dealerId)) ? dealerId : accountId;</b>
+<i>434</i>&nbsp;            }
+<i>435</i>&nbsp;             // Otherwise, If it&#39;s &#39;Manual&#39;. Here normally the user will pick an owner manually. We don&#39;t have to suggest any.
+<i>436</i>&nbsp;        }
+<i>437</i>&nbsp;
+<b class="nc"><i>438</i>&nbsp;        if(allAccountAndDealerTerritories?.get(objectId) != null)</b>
+<i>439</i>&nbsp;        {
+<b class="nc"><i>440</i>&nbsp;            filteredObjectTerritories.addAll(allAccountAndDealerTerritories.get(objectId));</b>
+<i>441</i>&nbsp;        }
+<i>442</i>&nbsp;
+<b class="nc"><i>443</i>&nbsp;        return filteredObjectTerritories;</b>
+<i>444</i>&nbsp;    }
+<i>445</i>&nbsp;
+<i>446</i>&nbsp;    /**
+<i>447</i>&nbsp;     * Get a list of LeadOpportunitySetting__mdt based on the combination of (Country, Category and brand)
+<i>448</i>&nbsp;     * @author hadib@salesforce.com | 01-12-2022
+<i>449</i>&nbsp;     *
+<i>450</i>&nbsp;     * @param countryInput      Country input
+<i>451</i>&nbsp;     * @param categoryInput     Category selected in the &#39;New Sales Lead&#39; modal
+<i>452</i>&nbsp;     * @param brandInput        Brand selected in the &#39;New Sales Lead&#39; modal
+<i>453</i>&nbsp;     *
+<i>454</i>&nbsp;     * @return LeadOpportunitySetting__mdt - Correspondent settings for the combination of the current (account country,category,brand)
+<i>455</i>&nbsp;     */
+<b class="nc"><i>456</i>&nbsp;    private static LeadOpportunitySetting__mdt getLeadOppSettingsByCountryAndCategoryAndBrand(String countryInput, String categoryInput, String brandInput)</b>
+<i>457</i>&nbsp;    {
+<b class="nc"><i>458</i>&nbsp;        LeadOpportunitySetting__mdt[] leadOppSettings = getLeadOppSettingsByCountryAndCategory(countryInput, categoryInput);</b>
+<i>459</i>&nbsp;
+<b class="nc"><i>460</i>&nbsp;        LeadOpportunitySetting__mdt brandSettings = filterBrandSettings(leadOppSettings, brandInput);</b>
+<i>461</i>&nbsp;
+<b class="nc"><i>462</i>&nbsp;        return brandSettings;</b>
+<i>463</i>&nbsp;    }
+<i>464</i>&nbsp;
+<i>465</i>&nbsp;    /**
+<i>466</i>&nbsp;     * Get a list of LeadOpportunitySetting__mdt based on the combination of (Country, Category and brand)
+<i>467</i>&nbsp;     * @author hadib@salesforce.com | 01-12-2022
+<i>468</i>&nbsp;     *
+<i>469</i>&nbsp;     * @param countryInput      Country input
+<i>470</i>&nbsp;     * @param categoryInput     Category selected in the &#39;New Sales Lead&#39; modal
+<i>471</i>&nbsp;     * @param brandInput        Brand selected in the &#39;New Sales Lead&#39; modal
+<i>472</i>&nbsp;     *
+<i>473</i>&nbsp;     * @return LeadOpportunitySetting__mdt - Correspondent settings for the combination of the current (account country,category,brand)
+<i>474</i>&nbsp;     */
+<i>475</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>476</i>&nbsp;    public static LeadOpportunitySetting__mdt getLeadOppSettingsByCountryAndBrand(String countryInput, String brandInput)</b>
+<i>477</i>&nbsp;    {
+<b class="nc"><i>478</i>&nbsp;        LeadOpportunitySetting__mdt[] leadOppSettings = getLeadOppSettingsByCountry(countryInput);</b>
+<i>479</i>&nbsp;
+<b class="nc"><i>480</i>&nbsp;        LeadOpportunitySetting__mdt brandSettings = filterBrandSettings(leadOppSettings, brandInput);</b>
+<i>481</i>&nbsp;
+<b class="nc"><i>482</i>&nbsp;        return brandSettings;</b>
+<i>483</i>&nbsp;    }
+<i>484</i>&nbsp;
+<i>485</i>&nbsp;    /**
+<i>486</i>&nbsp;     * Get a filtered list of LeadOpportunitySetting__mdt based on the brand field and a list of LeadOpportunitySetting__mdt records
+<i>487</i>&nbsp;     * @author ohanafi@salesforce.com | 22-03-2023
+<i>488</i>&nbsp;     *
+<i>489</i>&nbsp;     * @param leadOppSettings      LeadOpportunitySetting__mdt records
+<i>490</i>&nbsp;     * @param brandInput        Brand selected in the &#39;New Sales Lead&#39; modal
+<i>491</i>&nbsp;     *
+<i>492</i>&nbsp;     * @return LeadOpportunitySetting__mdt - Filtered list based on brand
+<i>493</i>&nbsp;     */
+<b class="nc"><i>494</i>&nbsp;    private static LeadOpportunitySetting__mdt filterBrandSettings(LeadOpportunitySetting__mdt[] leadOppSettings, String brandInput) {</b>
+<b class="nc"><i>495</i>&nbsp;        LeadOpportunitySetting__mdt brandSettings;</b>
+<b class="nc"><i>496</i>&nbsp;        for (LeadOpportunitySetting__mdt setting : leadOppSettings) {</b>
+<b class="nc"><i>497</i>&nbsp;            if (String.isNotBlank(setting.BrandsList__c)) {</b>
+<b class="nc"><i>498</i>&nbsp;                String brands = setting.BrandsList__c ;</b>
+<b class="nc"><i>499</i>&nbsp;                List&lt;String&gt; brandList = brands.split(&#39;;&#39;);</b>
+<i>500</i>&nbsp;
+<b class="nc"><i>501</i>&nbsp;                if (brandList.contains(brandInput)) {</b>
+<b class="nc"><i>502</i>&nbsp;                    brandSettings = setting;</b>
+<b class="nc"><i>503</i>&nbsp;                    break;</b>
+<i>504</i>&nbsp;                }
+<i>505</i>&nbsp;            }
+<i>506</i>&nbsp;        }
+<b class="nc"><i>507</i>&nbsp;        return brandSettings;</b>
+<i>508</i>&nbsp;    }
+<i>509</i>&nbsp;
+<i>510</i>&nbsp;    /**
+<i>511</i>&nbsp;     * Get a list of LeadOpportunitySetting__mdt based on the combination of (Country and Category)
+<i>512</i>&nbsp;     * @author naoussar@salesforce.com | 23-09-2022
+<i>513</i>&nbsp;     *
+<i>514</i>&nbsp;     * @param countryInput      Country
+<i>515</i>&nbsp;     * @param categoryInput     Category selected in the modal
+<i>516</i>&nbsp;     * @return LeadOpportunitySetting__mdt - custom metadata records
+<i>517</i>&nbsp;     */
+<b class="nc"><i>518</i>&nbsp;    private static LeadOpportunitySetting__mdt[] getLeadOppSettingsByCountryAndCategory(String countryInput, String categoryInput)</b>
+<i>519</i>&nbsp;    {
+<b class="nc"><i>520</i>&nbsp;        LeadOpportunitySetting__mdt[] leadOppSettings = new LeadOpportunitySetting__mdt[]{};</b>
+<i>521</i>&nbsp;
+<b class="nc"><i>522</i>&nbsp;        leadOppSettings = [</b>
+<i>523</i>&nbsp;                SELECT  DeveloperName, ShowManualSalesLeadOwnerAssignment__c, Category__c, BrandsList__c, Country__c,
+<i>524</i>&nbsp;                        AssignOwnerFrom__c, UserRoles__c, IsTest__c
+<i>525</i>&nbsp;                FROM    LeadOpportunitySetting__mdt
+<b class="nc"><i>526</i>&nbsp;                WHERE   Country__c = :countryInput AND Category__c = :categoryInput AND IsTest__c = :false</b>
+<i>527</i>&nbsp;        ];
+<i>528</i>&nbsp;
+<b class="nc"><i>529</i>&nbsp;        return leadOppSettings;</b>
+<i>530</i>&nbsp;    }
+<i>531</i>&nbsp;
+<i>532</i>&nbsp;    /**
+<i>533</i>&nbsp;     * Get a list of LeadOpportunitySetting__mdt based on the Country field
+<i>534</i>&nbsp;     * @author ohanafi@salesforce.com | 22-03-2023
+<i>535</i>&nbsp;     *
+<i>536</i>&nbsp;     * @param countryInput      Country
+<i>537</i>&nbsp;     * @return LeadOpportunitySetting__mdt - custom metadata records
+<i>538</i>&nbsp;     */
+<b class="nc"><i>539</i>&nbsp;    private static LeadOpportunitySetting__mdt[] getLeadOppSettingsByCountry(String countryInput)</b>
+<i>540</i>&nbsp;    {
+<b class="nc"><i>541</i>&nbsp;        LeadOpportunitySetting__mdt[] leadOppSettings = new LeadOpportunitySetting__mdt[]{};</b>
+<i>542</i>&nbsp;
+<b class="nc"><i>543</i>&nbsp;        leadOppSettings = [</b>
+<i>544</i>&nbsp;                SELECT  DeveloperName, ShowManualSalesLeadOwnerAssignment__c, Category__c, BrandsList__c, Country__c,
+<i>545</i>&nbsp;                        AssignOwnerFrom__c, UserRoles__c, IsTest__c
+<i>546</i>&nbsp;                FROM    LeadOpportunitySetting__mdt
+<b class="nc"><i>547</i>&nbsp;                WHERE   Country__c = :countryInput AND IsTest__c = :false</b>
+<i>548</i>&nbsp;        ];
+<i>549</i>&nbsp;
+<b class="nc"><i>550</i>&nbsp;        return leadOppSettings;</b>
+<i>551</i>&nbsp;    }
+<i>552</i>&nbsp;
+<i>553</i>&nbsp;    /**
+<i>554</i>&nbsp;     * Retrieves object territories associated with both the account and the dealer and stores them in a map with two keys, dealer and account
+<i>555</i>&nbsp;     * @author hadib@salesforce.com | 01-12-2022
+<i>556</i>&nbsp;     *
+<i>557</i>&nbsp;     * @param accountId     The current account opened
+<i>558</i>&nbsp;     * @param dealerId      The dealer selected in the UI (Might be a null if nothing is selected)
+<i>559</i>&nbsp;     *
+<i>560</i>&nbsp;     * @return Map&lt;String,List&lt;ObjectTerritory2Association&gt;&gt; - Map of two keys (acc,dealer) with their object territories
+<i>561</i>&nbsp;     */
+<b class="nc"><i>562</i>&nbsp;    private static Map&lt;String,List&lt;ObjectTerritory2Association&gt;&gt; getAccountAndDealerTerritories(String accountId, String dealerId)</b>
+<i>563</i>&nbsp;    {
+<b class="nc"><i>564</i>&nbsp;        Map&lt;String,List&lt;ObjectTerritory2Association&gt;&gt; accountAndDealerTerritories = new Map&lt;String,List&lt;ObjectTerritory2Association&gt;&gt;();</b>
+<b class="nc"><i>565</i>&nbsp;        Set&lt;String&gt; objectsIds = new Set&lt;String&gt;{accountId, dealerId};</b>
+<b class="nc"><i>566</i>&nbsp;        List&lt;ObjectTerritory2Association&gt; allTerritories = [    SELECT ObjectId, SobjectType, Territory2Id</b>
+<i>567</i>&nbsp;                                                                FROM ObjectTerritory2Association
+<b class="nc"><i>568</i>&nbsp;                                                                WHERE ObjectId IN :objectsIds ];</b>
+<i>569</i>&nbsp;
+<b class="nc"><i>570</i>&nbsp;        for (ObjectTerritory2Association territory : allTerritories)</b>
+<b class="nc"><i>571</i>&nbsp;        {</b>
+<b class="nc"><i>572</i>&nbsp;            if(territory.ObjectId == accountId)</b>
+<i>573</i>&nbsp;            {
+<b class="nc"><i>574</i>&nbsp;                if(accountAndDealerTerritories.containsKey(accountId))</b>
+<i>575</i>&nbsp;                {
+<b class="nc"><i>576</i>&nbsp;                    accountAndDealerTerritories.get(accountId).add(territory);</b>
+<i>577</i>&nbsp;                }
+<i>578</i>&nbsp;                else {
+<b class="nc"><i>579</i>&nbsp;                    accountAndDealerTerritories.put(accountId,new List&lt;ObjectTerritory2Association&gt;{territory});</b>
+<i>580</i>&nbsp;                }
+<i>581</i>&nbsp;
+<i>582</i>&nbsp;            }
+<b class="nc"><i>583</i>&nbsp;            else if(territory.ObjectId == dealerId)</b>
+<i>584</i>&nbsp;            {
+<b class="nc"><i>585</i>&nbsp;                if(accountAndDealerTerritories.containsKey(dealerId))</b>
+<i>586</i>&nbsp;                {
+<b class="nc"><i>587</i>&nbsp;                    accountAndDealerTerritories.get(dealerId).add(territory);</b>
+<i>588</i>&nbsp;                }
+<i>589</i>&nbsp;                else {
+<b class="nc"><i>590</i>&nbsp;                    accountAndDealerTerritories.put(dealerId,new List&lt;ObjectTerritory2Association&gt;{territory});</b>
+<i>591</i>&nbsp;                }
+<i>592</i>&nbsp;            }
+<i>593</i>&nbsp;        }
+<i>594</i>&nbsp;
+<b class="nc"><i>595</i>&nbsp;        return accountAndDealerTerritories;</b>
+<i>596</i>&nbsp;    }
+<i>597</i>&nbsp;
+<i>598</i>&nbsp;    /**
+<i>599</i>&nbsp;     * Retrieves all the users assigned to a set of territories. All except the current user. we will add this one manually anyway.
+<i>600</i>&nbsp;     * @author hadib@salesforce.com | 01-12-2022
+<i>601</i>&nbsp;     *
+<i>602</i>&nbsp;     * @param territories List of object territories
+<i>603</i>&nbsp;     * @param currentUser Current user (will be omitted in the query)
+<i>604</i>&nbsp;     *
+<i>605</i>&nbsp;     * @return List&lt;UserTerritory2Association&gt; - List of users assigned the the object territories
+<i>606</i>&nbsp;     */
+<b class="nc"><i>607</i>&nbsp;    private static List&lt;UserTerritory2Association&gt; getUserAssignedToAllTerritories( ObjectTerritory2Association[] territories, User currentUser)</b>
+<i>608</i>&nbsp;    {
+<b class="nc"><i>609</i>&nbsp;        List&lt;UserTerritory2Association&gt; usersToAdd = new List&lt;UserTerritory2Association&gt;();</b>
+<b class="nc"><i>610</i>&nbsp;        if(territories != null)</b>
+<i>611</i>&nbsp;        {
+<b class="nc"><i>612</i>&nbsp;            Set&lt;Id&gt; territoriesIds = extractTerritoriesIds(territories);</b>
+<i>613</i>&nbsp;
+<i>614</i>&nbsp;            // Search for User assigned to the set of Territories
+<b class="nc"><i>615</i>&nbsp;            usersToAdd = [</b>
+<i>616</i>&nbsp;                    SELECT  UserId, User.Name, Territory2Id, RoleInTerritory2, IsActive
+<i>617</i>&nbsp;                    FROM    UserTerritory2Association
+<b class="nc"><i>618</i>&nbsp;                    WHERE   Territory2Id IN :territoriesIds</b>
+<i>619</i>&nbsp;                    AND
+<b class="nc"><i>620</i>&nbsp;                    UserId != :currentUser.Id</b>
+<i>621</i>&nbsp;            ];
+<i>622</i>&nbsp;        }
+<i>623</i>&nbsp;
+<b class="nc"><i>624</i>&nbsp;        return usersToAdd;</b>
+<i>625</i>&nbsp;    }
+<i>626</i>&nbsp;
+<i>627</i>&nbsp;    /**
+<i>628</i>&nbsp;     * Extracts all the values of ObjectTerritory2Association.Territory2Id in a Set
+<i>629</i>&nbsp;     * @author hadib@salesforce.com | 01-12-2022
+<i>630</i>&nbsp;     *
+<i>631</i>&nbsp;     * @param territories List of territories
+<i>632</i>&nbsp;     *
+<i>633</i>&nbsp;     * @return Set of ObjectTerritory2Association.Territory2Id values
+<i>634</i>&nbsp;     */
+<b class="nc"><i>635</i>&nbsp;    private static Set&lt;Id&gt; extractTerritoriesIds(ObjectTerritory2Association[] territories)</b>
+<i>636</i>&nbsp;    {
+<b class="nc"><i>637</i>&nbsp;        Set&lt;Id&gt; territoriesIds = new Set&lt;Id&gt;();</b>
+<b class="nc"><i>638</i>&nbsp;        for (ObjectTerritory2Association t2a : territories) {</b>
+<b class="nc"><i>639</i>&nbsp;            territoriesIds.add(t2a.Territory2Id);</b>
+<i>640</i>&nbsp;        }
+<b class="nc"><i>641</i>&nbsp;        return territoriesIds;</b>
+<i>642</i>&nbsp;    }
+<i>643</i>&nbsp;
+<i>644</i>&nbsp;    /**
+<i>645</i>&nbsp;     * Creates a fake assignment for the current user to a territory
+<i>646</i>&nbsp;     * @author hadib@salesforce.com | 1-12-2022
+<i>647</i>&nbsp;     *
+<i>648</i>&nbsp;     * @param currentUser The current logged in User
+<i>649</i>&nbsp;     *
+<i>650</i>&nbsp;     * @return UserTerritory2Association - User Territory assignment
+<i>651</i>&nbsp;     */
+<b class="nc"><i>652</i>&nbsp;    private static UserTerritory2Association createCurrentUserManually(User currentUser)</b>
+<i>653</i>&nbsp;    {
+<b class="nc"><i>654</i>&nbsp;        UserTerritory2Association currentUserRole = new UserTerritory2Association();</b>
+<b class="nc"><i>655</i>&nbsp;        currentUserRole.UserId = currentUser.Id;</b>
+<b class="nc"><i>656</i>&nbsp;        currentUserRole.User = currentUser;</b>
+<b class="nc"><i>657</i>&nbsp;        currentUserRole.RoleInTerritory2 = &#39;Current user&#39;;</b>
+<b class="nc"><i>658</i>&nbsp;        return currentUserRole;</b>
+<i>659</i>&nbsp;    }
+<i>660</i>&nbsp;
+<i>661</i>&nbsp;
+<i>662</i>&nbsp;    /**
+<i>663</i>&nbsp;     * TODO
+<i>664</i>&nbsp;     * @author          richard.trum@glimt.se | 28-03-2023
+<i>665</i>&nbsp;     * @param category  TODO
+<i>666</i>&nbsp;     * @param accountId   TODO
+<i>667</i>&nbsp;     *
+<i>668</i>&nbsp;     * @return List&lt;LeadOpportunitySetting__mdt&gt; - TODO
+<i>669</i>&nbsp;     */
+<i>670</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>671</i>&nbsp;    public static List&lt;LeadOpportunitySetting__mdt&gt; getOpportunitySettings(String category, String accountid){</b>
+<i>672</i>&nbsp;        
+<b class="nc"><i>673</i>&nbsp;        List&lt;Account&gt; accList = [SELECT Id, Country__c FROM Account WHERE Id =: accountId];</b>
+<i>674</i>&nbsp;
+<b class="nc"><i>675</i>&nbsp;        List&lt;LeadOpportunitySetting__mdt&gt; settings = new List&lt;LeadOpportunitySetting__mdt&gt;();</b>
+<b class="nc"><i>676</i>&nbsp;        if(accList.size()&gt;0){</b>
+<b class="nc"><i>677</i>&nbsp;            settings = [SELECT DeveloperName, Category__c, Country__c, BrandsList__c, ShowDistributor__c, Dealer_Distributor_is_Mandatory__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE (Category__c =:category AND Country__c =: accList[0].Country__c)];</b>
+<i>678</i>&nbsp;        }
+<i>679</i>&nbsp;        System.debug(settings);
+<b class="nc"><i>680</i>&nbsp;        return settings;</b>
+<i>681</i>&nbsp;    }
+<i>682</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

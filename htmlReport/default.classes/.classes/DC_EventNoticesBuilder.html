@@ -1,0 +1,249 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DC_EventNoticesBuilder</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DC_EventNoticesBuilder (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DC_EventNoticesBuilder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 50)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>DC_EventNoticesBuilder</h2>
+<div class="sourceCode"><i>1</i>&nbsp;//
+<i>2</i>&nbsp;//This is an abstract class for builders of event notices (invite/update/cancel). 
+<i>3</i>&nbsp;//
+<i>4</i>&nbsp;//Author: Gennadiy Pervukhin (28-10-2014)
+<i>5</i>&nbsp;public abstract class DC_EventNoticesBuilder
+<i>6</i>&nbsp;{
+<i>7</i>&nbsp;	//
+<i>8</i>&nbsp;	//Constructors
+<i>9</i>&nbsp;	//
+<b class="nc"><i>10</i>&nbsp;	public DC_EventNoticesBuilder(Event event, DC_EventNoticeReceiver[] noticeReceivers)</b>
+<i>11</i>&nbsp;	{
+<b class="nc"><i>12</i>&nbsp;		this.event = event;</b>
+<b class="nc"><i>13</i>&nbsp;		this.noticeReceivers = noticeReceivers;</b>
+<i>14</i>&nbsp;	}
+<i>15</i>&nbsp;	//
+<i>16</i>&nbsp;	
+<i>17</i>&nbsp;	//
+<i>18</i>&nbsp;	//Constants
+<i>19</i>&nbsp;	//
+<b class="nc"><i>20</i>&nbsp;	private static final String EMAIL_OF_SENDER = DC_SettingsUtils.getStringValueByName(</b>
+<b class="nc"><i>21</i>&nbsp;		DC_SettingsUtils.SEND_EVENT_NOTICES_FROM_ADDRESS);</b>
+<b class="nc"><i>22</i>&nbsp;	private static final String REPLY_TO_ADDRESS = DC_SettingsUtils.getStringValueByName(</b>
+<b class="nc"><i>23</i>&nbsp;		DC_SettingsUtils.ADDRESS_OF_REPLY_TO_EVENT_NOTICE);</b>
+<i>24</i>&nbsp;	
+<b class="nc"><i>25</i>&nbsp;	private static final String ICALENDAR_FILE_NAME = &#39;invite.ics&#39;;</b>
+<i>26</i>&nbsp;	//text/calendar; method=REQUEST - doesn&#39;t work for GMail
+<b class="nc"><i>27</i>&nbsp;	private static final String ICALENDAR_FILE_CONTENT_TYPE = &#39;text/calendar&#39;;</b>
+<i>28</i>&nbsp;	//
+<i>29</i>&nbsp;	
+<i>30</i>&nbsp;	//
+<i>31</i>&nbsp;	//Variables
+<i>32</i>&nbsp;	//
+<i>33</i>&nbsp;	protected Event event;
+<i>34</i>&nbsp;	protected DC_EventNoticeReceiver[] noticeReceivers;
+<i>35</i>&nbsp;	//
+<i>36</i>&nbsp;	
+<i>37</i>&nbsp;	//
+<i>38</i>&nbsp;	//Private abstract methods
+<i>39</i>&nbsp;	//
+<i>40</i>&nbsp;	private abstract String generateEmailSubject();
+<i>41</i>&nbsp;	private abstract void configureICalendarBuilder(DC_ICalendarTemplatedBuilder iCalendarBuilder);
+<i>42</i>&nbsp;	//
+<i>43</i>&nbsp;	
+<i>44</i>&nbsp;	//
+<i>45</i>&nbsp;	//Private virtual methods
+<i>46</i>&nbsp;	//
+<b class="nc"><i>47</i>&nbsp;	protected virtual String generateEmailBody(DC_EventNoticeContentBuilder contentBuilder)</b>
+<i>48</i>&nbsp;	{
+<b class="nc"><i>49</i>&nbsp;		return contentBuilder.buildContent();</b>
+<i>50</i>&nbsp;	}
+<i>51</i>&nbsp;	//
+<i>52</i>&nbsp;	
+<i>53</i>&nbsp;	//
+<i>54</i>&nbsp;	//Private methods
+<i>55</i>&nbsp;	//
+<i>56</i>&nbsp;	//the method initializes a new instance of the templated builder and configures it
+<b class="nc"><i>57</i>&nbsp;	private DC_ICalendarTemplatedBuilder createICalendarBuilder(String iCalendarTemplate)</b>
+<i>58</i>&nbsp;	{
+<b class="nc"><i>59</i>&nbsp;		DC_ICalendarTemplatedBuilder iCalendarBuilder =</b>
+<b class="nc"><i>60</i>&nbsp;			new DC_ICalendarTemplatedBuilder(iCalendarTemplate);</b>
+<i>61</i>&nbsp;		//- configure the builder according to implementation in child classes
+<b class="nc"><i>62</i>&nbsp;		this.configureICalendarBuilder(iCalendarBuilder);</b>
+<b class="nc"><i>63</i>&nbsp;		return iCalendarBuilder;</b>
+<i>64</i>&nbsp;	}
+<i>65</i>&nbsp;	
+<b class="nc"><i>66</i>&nbsp;	private DC_SingleEmailMessageBuilder createCommonEmailBuilder(</b>
+<i>67</i>&nbsp;		DC_EventNoticeContentBuilder contentBuilder)
+<i>68</i>&nbsp;	{
+<i>69</i>&nbsp;		//initialize builder
+<b class="nc"><i>70</i>&nbsp;		DC_SingleEmailMessageBuilder emailBuilder = new DC_SingleEmailMessageBuilder();</b>
+<i>71</i>&nbsp;		
+<i>72</i>&nbsp;		//set subject
+<b class="nc"><i>73</i>&nbsp;		emailBuilder.subject = this.generateEmailSubject();</b>
+<i>74</i>&nbsp;		//set orgWideEmailAddressId
+<b class="nc"><i>75</i>&nbsp;		emailBuilder.orgWideEmailAddressId =</b>
+<b class="nc"><i>76</i>&nbsp;			DC_OrgWideEmailReader.getOrgWideAddressIdByEmail(EMAIL_OF_SENDER);</b>
+<i>77</i>&nbsp;		//set Reply-To address
+<b class="nc"><i>78</i>&nbsp;		emailBuilder.replyToAddress = REPLY_TO_ADDRESS;</b>
+<i>79</i>&nbsp;		
+<i>80</i>&nbsp;		//set email body
+<b class="nc"><i>81</i>&nbsp;		emailBuilder.htmlBody = this.generateEmailBody(contentBuilder);</b>
+<i>82</i>&nbsp;		
+<b class="nc"><i>83</i>&nbsp;		return emailBuilder;</b>
+<i>84</i>&nbsp;	}
+<i>85</i>&nbsp;	//
+<i>86</i>&nbsp;	
+<i>87</i>&nbsp;	//
+<i>88</i>&nbsp;	//Public methods
+<i>89</i>&nbsp;	//
+<b class="nc"><i>90</i>&nbsp;	public Messaging.SingleEmailMessage[] buildMessages(BuildParameters buildParameters)</b>
+<i>91</i>&nbsp;	{
+<i>92</i>&nbsp;		//check passed parameters
+<b class="nc"><i>93</i>&nbsp;		if (buildParameters == null || !buildParameters.isStateCorrect())</b>
+<i>94</i>&nbsp;		{
+<b class="nc"><i>95</i>&nbsp;			return new Messaging.SingleEmailMessage[0];</b>
+<i>96</i>&nbsp;		}
+<i>97</i>&nbsp;		
+<i>98</i>&nbsp;		//STEP #1: prepare necessary data and helpers
+<i>99</i>&nbsp;		//- initialize a list of result messages
+<b class="nc"><i>100</i>&nbsp;		List&lt;Messaging.SingleEmailMessage&gt; listOfMessages =</b>
+<b class="nc"><i>101</i>&nbsp;			new List&lt;Messaging.SingleEmailMessage&gt;();</b>
+<i>102</i>&nbsp;		
+<i>103</i>&nbsp;		//- create a common &#39;DC_SingleEmailMessageBuilder&#39; object
+<b class="nc"><i>104</i>&nbsp;		DC_SingleEmailMessageBuilder emailBuilder = createCommonEmailBuilder(</b>
+<b class="nc"><i>105</i>&nbsp;			buildParameters.contentBuilder);</b>
+<i>106</i>&nbsp;		
+<i>107</i>&nbsp;		//- create a common templated iCalendar builder
+<b class="nc"><i>108</i>&nbsp;		DC_ICalendarTemplatedBuilder iCalendarBuilder = this.createICalendarBuilder(</b>
+<b class="nc"><i>109</i>&nbsp;			buildParameters.iCalendarTemplate);</b>
+<i>110</i>&nbsp;		
+<i>111</i>&nbsp;		//generate separate email message for an every target (email messages
+<i>112</i>&nbsp;		//differ in address of a receiver and ICS-file)
+<b class="nc"><i>113</i>&nbsp;		for (DC_EventNoticeReceiver noticeReceiver : this.noticeReceivers)</b>
+<b class="nc"><i>114</i>&nbsp;		{</b>
+<i>115</i>&nbsp;			//- clear previous attachments, create and add a new ICalendar-attachment
+<b class="nc"><i>116</i>&nbsp;			emailBuilder.fileAttachments.clear();</b>
+<b class="nc"><i>117</i>&nbsp;			String iCalendarFileBody = iCalendarBuilder.buildContent(</b>
+<b class="nc"><i>118</i>&nbsp;				DC_ICalendarPlaceholder.UID, noticeReceiver.iCalendarUID);</b>
+<i>119</i>&nbsp;
+<b class="nc"><i>120</i>&nbsp;			emailBuilder.addFileAttachment(ICALENDAR_FILE_NAME,</b>
+<b class="nc"><i>121</i>&nbsp;				ICALENDAR_FILE_CONTENT_TYPE, iCalendarFileBody, true);</b>
+<i>122</i>&nbsp;
+<b class="nc"><i>123</i>&nbsp;			emailBuilder.addFileAttachment(ICALENDAR_FILE_NAME,</b>
+<b class="nc"><i>124</i>&nbsp;				ICALENDAR_FILE_CONTENT_TYPE + &#39;; method=REQUEST&#39;, iCalendarFileBody, false);</b>
+<i>125</i>&nbsp;			
+<i>126</i>&nbsp;			//- change a target
+<b class="nc"><i>127</i>&nbsp;			emailBuilder.changeTarget(noticeReceiver);</b>
+<i>128</i>&nbsp;			
+<i>129</i>&nbsp;			//- generate a email message
+<b class="nc"><i>130</i>&nbsp;			Messaging.SingleEmailMessage currentMessage = emailBuilder.buildMessage();</b>
+<b class="nc"><i>131</i>&nbsp;			if (currentMessage != null)</b>
+<i>132</i>&nbsp;			{
+<b class="nc"><i>133</i>&nbsp;				listOfMessages.add(currentMessage);</b>
+<i>134</i>&nbsp;			}
+<i>135</i>&nbsp;		}
+<i>136</i>&nbsp;		
+<b class="nc"><i>137</i>&nbsp;		return listOfMessages;</b>
+<i>138</i>&nbsp;	}
+<i>139</i>&nbsp;	//
+<i>140</i>&nbsp;	
+<i>141</i>&nbsp;	
+<i>142</i>&nbsp;	//
+<i>143</i>&nbsp;	//Data types
+<i>144</i>&nbsp;	//
+<i>145</i>&nbsp;	public class BuildParameters
+<i>146</i>&nbsp;	{
+<i>147</i>&nbsp;		//
+<i>148</i>&nbsp;		//Constructors
+<i>149</i>&nbsp;		//
+<b class="nc"><i>150</i>&nbsp;		public BuildParameters()</b>
+<i>151</i>&nbsp;		{
+<i>152</i>&nbsp;		}
+<i>153</i>&nbsp;		//
+<i>154</i>&nbsp;		
+<i>155</i>&nbsp;		//
+<i>156</i>&nbsp;		//Properties
+<i>157</i>&nbsp;		//
+<b class="nc"><i>158</i>&nbsp;		public DC_EventNoticeContentBuilder contentBuilder {get; set;}</b>
+<b class="nc"><i>159</i>&nbsp;		public String iCalendarTemplate {get; set;}</b>
+<i>160</i>&nbsp;		//
+<i>161</i>&nbsp;		
+<i>162</i>&nbsp;		//
+<i>163</i>&nbsp;		//Public methods
+<i>164</i>&nbsp;		//
+<b class="nc"><i>165</i>&nbsp;		public Boolean isStateCorrect()</b>
+<i>166</i>&nbsp;		{
+<b class="nc"><i>167</i>&nbsp;			return (this.contentBuilder != null);</b>
+<i>168</i>&nbsp;		}
+<i>169</i>&nbsp;		//
+<i>170</i>&nbsp;	}
+<i>171</i>&nbsp;	
+<i>172</i>&nbsp;	/*this interface is used to create a new &#39;DC_EventNoticesBuilder&#39; class*/
+<i>173</i>&nbsp;	public interface ICreator
+<i>174</i>&nbsp;	{
+<i>175</i>&nbsp;		DC_EventNoticesBuilder createBuilder(Event event, DC_EventNoticeReceiver[] noticeReceivers);
+<i>176</i>&nbsp;	}
+<i>177</i>&nbsp;	//
+<i>178</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

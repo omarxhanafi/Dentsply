@@ -1,0 +1,123 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CountryCodeController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CountryCodeController (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CountryCodeController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>CountryCodeController</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/**
+<i>2</i>&nbsp; * @Author          Omar (ohanafi@salesforce.com)
+<i>3</i>&nbsp; * @Description     Apex controller for the CountryCodeMap__mdt metadata
+<i>4</i>&nbsp; * @Test-Class      Test_CountryCodeController
+<i>5</i>&nbsp; *
+<i>6</i>&nbsp; * @History
+<i>7</i>&nbsp; * 22-03-2023   Omar     Created CountryCodeController Class
+<i>8</i>&nbsp; */
+<i>9</i>&nbsp;public with sharing class CountryCodeController {
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;    /**
+<i>12</i>&nbsp;         * getThreeDigitCode Return a the 3-digit code associated to the provided 2-digit code
+<i>13</i>&nbsp;         * @author ohanafi@salesforce.com | 22-03-2023
+<i>14</i>&nbsp;         *
+<i>15</i>&nbsp;         * @param twoDigitCode   2-digit code
+<i>16</i>&nbsp;         *
+<i>17</i>&nbsp;         * @return String - 3 digit code
+<i>18</i>&nbsp;         */
+<i>19</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>20</i>&nbsp;    public static String getThreeDigitCode(String twoDigitCode) {</b>
+<i>21</i>&nbsp;
+<b class="nc"><i>22</i>&nbsp;        List&lt;CountryCodeMap__mdt&gt; codeMaps = [SELECT Country_Code_3_digit__c FROM CountryCodeMap__mdt WHERE Country_Code_2_digit__c = :twoDigitCode LIMIT 1];</b>
+<i>23</i>&nbsp;
+<b class="nc"><i>24</i>&nbsp;        if (!codeMaps.isEmpty()) {</b>
+<b class="nc"><i>25</i>&nbsp;            return codeMaps[0].Country_Code_3_digit__c;</b>
+<i>26</i>&nbsp;        }
+<i>27</i>&nbsp;
+<b class="nc"><i>28</i>&nbsp;        return null;</b>
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    }
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    /**
+<i>33</i>&nbsp;         * getTwoDigitCode Return a the 2-digit code associated to the provided 3-digit code
+<i>34</i>&nbsp;         * @author ohanafi@salesforce.com | 22-03-2023
+<i>35</i>&nbsp;         *
+<i>36</i>&nbsp;         * @param threeDigitCode   3-digit code
+<i>37</i>&nbsp;         *
+<i>38</i>&nbsp;         * @return String - 2 digit code
+<i>39</i>&nbsp;         */
+<i>40</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>41</i>&nbsp;    public static String getTwoDigitCode(String threeDigitCode) {</b>
+<i>42</i>&nbsp;
+<b class="nc"><i>43</i>&nbsp;        List&lt;CountryCodeMap__mdt&gt; codeMaps = [SELECT Country_Code_2_digit__c FROM CountryCodeMap__mdt WHERE Country_Code_3_digit__c = :threeDigitCode LIMIT 1];</b>
+<i>44</i>&nbsp;
+<b class="nc"><i>45</i>&nbsp;        if (!codeMaps.isEmpty()) {</b>
+<b class="nc"><i>46</i>&nbsp;            return codeMaps[0].Country_Code_2_digit__c;</b>
+<i>47</i>&nbsp;        }
+<i>48</i>&nbsp;
+<b class="nc"><i>49</i>&nbsp;        return null;</b>
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;    }
+<i>52</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

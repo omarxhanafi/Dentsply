@@ -1,0 +1,198 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CampMgmtEngagementTrigger</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.triggers</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CampMgmtEngagementTrigger (default.triggers)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CampMgmtEngagementTrigger</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 70)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>CampMgmtEngagementTrigger</h2>
+<div class="sourceCode"><i>1</i>&nbsp;trigger CampMgmtEngagementTrigger on Engagement__c (after delete, after insert, after update)
+<i>2</i>&nbsp;{
+<i>3</i>&nbsp;    // Don&#39;t run unless configured to do so.
+<b class="nc"><i>4</i>&nbsp;    BatchSettings__c settings = BatchSettings__c.getInstance(&#39;Default&#39;);</b>
+<b class="nc"><i>5</i>&nbsp;    if (!Test.isRunningTest() &amp;&amp; !settings.CampMgmtEngagementTriggerIsEnabled__c)</b>
+<b class="nc"><i>6</i>&nbsp;        return;</b>
+<i>7</i>&nbsp;    
+<b class="nc"><i>8</i>&nbsp;    Map&lt;Id, Engagement__c&gt; engagementMap;</b>
+<b class="nc"><i>9</i>&nbsp;    if (trigger.isDelete)</b>
+<b class="nc"><i>10</i>&nbsp;        engagementMap = trigger.oldMap;</b>
+<b class="nc"><i>11</i>&nbsp;    else if (trigger.isInsert || trigger.isUpdate || trigger.isUnDelete)</b>
+<b class="nc"><i>12</i>&nbsp;        engagementMap = trigger.newMap;    </b>
+<i>13</i>&nbsp;    
+<b class="nc"><i>14</i>&nbsp;    List&lt;CampaignMember&gt; membersDelete = new List&lt;CampaignMember&gt;();</b>
+<b class="nc"><i>15</i>&nbsp;    List&lt;CampaignMember&gt; membersUpsert = new List&lt;CampaignMember&gt;();</b>
+<i>16</i>&nbsp;    
+<i>17</i>&nbsp;    //RecordType rtDiCampaignMember = [SELECT Id FROM RecordType WHERE DeveloperName = &#39;DI_Campaign_Member&#39; AND SObjectType = &#39;CampaignMember&#39;];    
+<i>18</i>&nbsp;    
+<b class="nc"><i>19</i>&nbsp;    for (Engagement__c originalEngagement : engagementMap.values())</b>
+<b class="nc"><i>20</i>&nbsp;    {</b>
+<b class="nc"><i>21</i>&nbsp;        Campaign session =</b>
+<b class="nc"><i>22</i>&nbsp;            [SELECT Id, Parent_Event__c</b>
+<i>23</i>&nbsp;             FROM Campaign
+<b class="nc"><i>24</i>&nbsp;             WHERE Id = :originalEngagement.Session__c]; // If there&#39;s more or less than one, we SHOULD surface the error.*/</b>
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;        /*Engagement__c originalEngagement =
+<i>27</i>&nbsp;            [SELECT Id, Speaker__c, Session__r.Parent_Event__c
+<i>28</i>&nbsp;             FROM Engagement__c
+<i>29</i>&nbsp;             WHERE Id = :e.Id]; // If there&#39;s more or less than one, we SHOULD surface the error.*/
+<i>30</i>&nbsp;        
+<i>31</i>&nbsp;        // Find the most prioritized among the related engagements (the ones sharing the same contact and campaign).
+<b class="nc"><i>32</i>&nbsp;        Engagement__c primaryEngagement = null;</b>
+<b class="nc"><i>33</i>&nbsp;        List&lt;Engagement__c&gt; primaryEngagementList =</b>
+<b class="nc"><i>34</i>&nbsp;            [SELECT Id, Speaker__c, Session__r.Parent_Event__c, Request_Status__c, Request_Type__c, CurrencyIsoCode,</b>
+<i>35</i>&nbsp;             Hotel__c, Hotel_Check_Out_Date__c, Hotel_Check_In_Date__c, Hotel_Arrangement_Status__c
+<i>36</i>&nbsp;             FROM Engagement__c
+<b class="nc"><i>37</i>&nbsp;             WHERE Session__r.Parent_Event__c = :session.Parent_Event__c</b>
+<b class="nc"><i>38</i>&nbsp;             AND Speaker__c = :originalEngagement.Speaker__c</b>
+<i>39</i>&nbsp;             ORDER BY Campaign_Member_Prio__c DESC];
+<b class="nc"><i>40</i>&nbsp;        if (primaryEngagementList.size() &gt; 0)</b>
+<b class="nc"><i>41</i>&nbsp;            primaryEngagement = primaryEngagementList[0];</b>
+<i>42</i>&nbsp;        
+<i>43</i>&nbsp;        // Find the related DI campaign member (if any).
+<b class="nc"><i>44</i>&nbsp;        CampaignMember member = null;</b>
+<b class="nc"><i>45</i>&nbsp;        List&lt;CampaignMember&gt; memberList =</b>
+<b class="nc"><i>46</i>&nbsp;            [SELECT Id</b>
+<i>47</i>&nbsp;             FROM CampaignMember
+<b class="nc"><i>48</i>&nbsp;             WHERE CampaignId = :session.Parent_Event__c</b>
+<b class="nc"><i>49</i>&nbsp;             AND ContactId = :originalEngagement.Speaker__c];</b>
+<b class="nc"><i>50</i>&nbsp;        if (memberList.size() == 1)</b>
+<b class="nc"><i>51</i>&nbsp;            member = memberList[0];</b>
+<b class="nc"><i>52</i>&nbsp;        else if (memberList.size() &gt; 1)</b>
+<b class="nc"><i>53</i>&nbsp;            throw new BatchException(&#39;More than one CampaignMember record exists with CampaignId &#39; + session.Parent_Event__c + &#39; and ContactId &#39; + originalEngagement.Speaker__c + &#39;.&#39;);</b>
+<i>54</i>&nbsp;
+<b class="nc"><i>55</i>&nbsp;        if (primaryEngagement != null &amp;&amp; primaryEngagement.Request_Status__c == &#39;Confirmed&#39;)</b>
+<i>56</i>&nbsp;        {
+<b class="nc"><i>57</i>&nbsp;        	if (primaryEngagement.Request_Type__c == &#39;Speaker&#39;)</b>
+<i>58</i>&nbsp;            {
+<b class="nc"><i>59</i>&nbsp;                session.Confirmed_Speaker__c = primaryEngagement.Speaker__c;</b>
+<b class="nc"><i>60</i>&nbsp;            	session.Confirmed_Moderator__c = null;</b>
+<i>61</i>&nbsp;            }
+<b class="nc"><i>62</i>&nbsp;            else if (primaryEngagement.Request_Type__c == &#39;Moderator&#39;)</b>
+<i>63</i>&nbsp;            {
+<b class="nc"><i>64</i>&nbsp;                session.Confirmed_Speaker__c = null;</b>
+<b class="nc"><i>65</i>&nbsp;            	session.Confirmed_Moderator__c = primaryEngagement.Speaker__c;</b>
+<i>66</i>&nbsp;            }
+<b class="nc"><i>67</i>&nbsp;            else if (primaryEngagement.Request_Type__c == &#39;Speaker &amp; Moderator&#39;)</b>
+<i>68</i>&nbsp;            {
+<b class="nc"><i>69</i>&nbsp;                session.Confirmed_Speaker__c = primaryEngagement.Speaker__c;</b>
+<b class="nc"><i>70</i>&nbsp;                session.Confirmed_Moderator__c = primaryEngagement.Speaker__c;</b>
+<i>71</i>&nbsp;            }
+<i>72</i>&nbsp;            else
+<i>73</i>&nbsp;            {
+<b class="nc"><i>74</i>&nbsp;                session.Confirmed_Speaker__c = null;</b>
+<b class="nc"><i>75</i>&nbsp;                session.Confirmed_Moderator__c = null;</b>
+<i>76</i>&nbsp;            }
+<i>77</i>&nbsp;        }
+<i>78</i>&nbsp;        else
+<i>79</i>&nbsp;        {
+<b class="nc"><i>80</i>&nbsp;            session.Confirmed_Speaker__c = null;</b>
+<b class="nc"><i>81</i>&nbsp;            session.Confirmed_Moderator__c = null;</b>
+<i>82</i>&nbsp;        }
+<i>83</i>&nbsp;        
+<b class="nc"><i>84</i>&nbsp;        upsert session;</b>
+<i>85</i>&nbsp;        
+<b class="nc"><i>86</i>&nbsp;        if (primaryEngagement != null &amp;&amp; primaryEngagement.Session__r != null &amp;&amp; primaryEngagement.Request_Status__c != &#39;Confidential&#39;)</b>
+<i>87</i>&nbsp;        {
+<i>88</i>&nbsp;            // Create member if it doesn&#39;t exist.
+<b class="nc"><i>89</i>&nbsp;            if (member == null)</b>
+<i>90</i>&nbsp;            {
+<b class="nc"><i>91</i>&nbsp;                member = new CampaignMember();</b>
+<i>92</i>&nbsp;                // The RecordType cannot be set for a CampaignMember record. It will always be
+<i>93</i>&nbsp;                // the same as the related Campaign.CampaignMemberRecordTypeId. See support case #09929481
+<i>94</i>&nbsp;                // for more information. This means the campaign members that we concern ourselves with
+<i>95</i>&nbsp;                // will never conclict with other types of campaign members, because they cannot coexist
+<i>96</i>&nbsp;                // in the same campaign.
+<i>97</i>&nbsp;                //member.RecordTypeId = rtDiCampaignMember.Id; // This line gives a compiler error - why is CampaignMember.RecordTypeId not writeable?!
+<b class="nc"><i>98</i>&nbsp;                member.ContactId = primaryEngagement.Speaker__c;</b>
+<b class="nc"><i>99</i>&nbsp;                member.CampaignId = primaryEngagement.Session__r.Parent_Event__c;                    </b>
+<i>100</i>&nbsp;            }
+<i>101</i>&nbsp;            
+<b class="nc"><i>102</i>&nbsp;            if (primaryEngagement.Request_Status__c == &#39;Suggested&#39;)</b>
+<b class="nc"><i>103</i>&nbsp;                member.Status = &#39;Suggested&#39;;</b>
+<b class="nc"><i>104</i>&nbsp;            else if (primaryEngagement.Request_Status__c == &#39;Pending&#39;)</b>
+<b class="nc"><i>105</i>&nbsp;                member.Status = &#39;Invited&#39;;</b>
+<b class="nc"><i>106</i>&nbsp;            else if (primaryEngagement.Request_Status__c == &#39;Confirmed&#39;)</b>
+<b class="nc"><i>107</i>&nbsp;                member.Status = &#39;Confirmed&#39;;</b>
+<b class="nc"><i>108</i>&nbsp;            else if (primaryEngagement.Request_Status__c == &#39;Declined&#39; || primaryEngagement.Request_Status__c == &#39;Cancelled (By DI)&#39;)</b>
+<b class="nc"><i>109</i>&nbsp;                member.Status = &#39;Cancelled&#39;;</b>
+<i>110</i>&nbsp;            
+<i>111</i>&nbsp;            //member.Speaker_Engagement__c = primaryEngagement.Id;
+<b class="nc"><i>112</i>&nbsp;            member.Type__c = primaryEngagement.Request_Type__c;</b>
+<b class="nc"><i>113</i>&nbsp;            member.CurrencyIsoCode = primaryEngagement.CurrencyIsoCode;</b>
+<b class="nc"><i>114</i>&nbsp;            member.Hotel__c = primaryEngagement.Hotel__c;</b>
+<b class="nc"><i>115</i>&nbsp;            member.Hotel_Check_Out__c = primaryEngagement.Hotel_Check_Out_Date__c;</b>
+<b class="nc"><i>116</i>&nbsp;            member.Hotel_Check_In__c = primaryEngagement.Hotel_Check_In_Date__c;</b>
+<b class="nc"><i>117</i>&nbsp;            member.Hotel_Arrangement_Status__c = primaryEngagement.Hotel_Arrangement_Status__c;    </b>
+<i>118</i>&nbsp;            
+<b class="nc"><i>119</i>&nbsp;            membersUpsert.add(member);</b>
+<i>120</i>&nbsp;        }
+<b class="nc"><i>121</i>&nbsp;        else if (member != null)</b>
+<b class="nc"><i>122</i>&nbsp;            membersDelete.add(member);</b>
+<i>123</i>&nbsp;    }
+<i>124</i>&nbsp;    
+<b class="nc"><i>125</i>&nbsp;    delete membersDelete;</b>
+<b class="nc"><i>126</i>&nbsp;    upsert membersUpsert;</b>
+<i>127</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,215 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: EventMultiWhoController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: EventMultiWhoController (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">EventMultiWhoController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    84.4%
+  </span>
+  <span class="absValue">
+    (76/ 90)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>EventMultiWhoController</h2>
+<div class="sourceCode"><i>1</i>&nbsp;public with sharing class EventMultiWhoController {
+<b class="fc"><i>2</i>&nbsp;    private final static Integer MAX_RESULTS = 5;</b>
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;    @AuraEnabled(Cacheable=true)
+<b class="fc"><i>5</i>&nbsp;    public static List&lt;LookupSearchResult&gt; search(String searchTerm, List&lt;String&gt; selectedIds) {</b>
+<i>6</i>&nbsp;        // Prepare results
+<b class="fc"><i>7</i>&nbsp;        List&lt;LookupSearchResult&gt; results = new List&lt;LookupSearchResult&gt;();</b>
+<b class="fc"><i>8</i>&nbsp;        try {</b>
+<i>9</i>&nbsp;            // Prepare query paramters
+<b class="fc"><i>10</i>&nbsp;            searchTerm += &#39;*&#39;;</b>
+<i>11</i>&nbsp;    
+<i>12</i>&nbsp;            // Execute search query
+<b class="fc"><i>13</i>&nbsp;            List&lt;List&lt;SObject&gt;&gt; searchResults = [</b>
+<b class="fc"><i>14</i>&nbsp;                FIND :searchTerm</b>
+<i>15</i>&nbsp;                IN ALL FIELDS
+<i>16</i>&nbsp;                RETURNING
+<b class="fc"><i>17</i>&nbsp;                    Contact(Id, Name, Email, Account.Name WHERE Id NOT IN :selectedIds)</b>
+<b class="fc"><i>18</i>&nbsp;                LIMIT :MAX_RESULTS</b>
+<i>19</i>&nbsp;            ];
+<i>20</i>&nbsp;    
+<i>21</i>&nbsp;            // Extract Contacts &amp; convert them into LookupSearchResult
+<b class="fc"><i>22</i>&nbsp;            String contactIcon = &#39;standard:contact&#39;;</b>
+<b class="fc"><i>23</i>&nbsp;            Contact[] contacts = ((List&lt;Contact&gt;) searchResults[0]);</b>
+<b class="fc"><i>24</i>&nbsp;            for (Contact contact : contacts) {</b>
+<b class="fc"><i>25</i>&nbsp;                results.add(new LookupSearchResult(</b>
+<b class="fc"><i>26</i>&nbsp;                        contact.Id</b>
+<b class="fc"><i>27</i>&nbsp;                        , &#39;Contact&#39;</b>
+<b class="fc"><i>28</i>&nbsp;                        , contactIcon</b>
+<b class="fc"><i>29</i>&nbsp;                        , contact.Name</b>
+<b class="fc"><i>30</i>&nbsp;                        , contact.Account.Name/* &#39;Contact • &#39; + contact.Email */</b>
+<b class="fc"><i>31</i>&nbsp;                        , &#39;icon&#39;</b>
+<i>32</i>&nbsp;                ));
+<i>33</i>&nbsp;            }
+<b class="nc"><i>34</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>35</i>&nbsp;            DebugLog.addException(e, &#39;search&#39;);</b>
+<b class="nc"><i>36</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>37</i>&nbsp;        }
+<i>38</i>&nbsp;
+<b class="fc"><i>39</i>&nbsp;        return results;</b>
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    @AuraEnabled(Cacheable=true)
+<b class="fc"><i>43</i>&nbsp;    public static List&lt;LookupSearchResult&gt; getContacts(Id contactId) {</b>
+<b class="fc"><i>44</i>&nbsp;        List&lt;LookupSearchResult&gt; results = new List&lt;LookupSearchResult&gt;();</b>
+<b class="fc"><i>45</i>&nbsp;        try {</b>
+<b class="fc"><i>46</i>&nbsp;            List&lt;Contact&gt; ContactList = new List&lt;Contact&gt;([</b>
+<i>47</i>&nbsp;                SELECT Id, Name, Email, Account.Name 
+<i>48</i>&nbsp;                FROM Contact 
+<b class="fc"><i>49</i>&nbsp;                WHERE Id = :contactId</b>
+<i>50</i>&nbsp;            ]); 
+<i>51</i>&nbsp;            // Prepare results
+<b class="fc"><i>52</i>&nbsp;            for (Contact contactRecord : ContactList) {</b>
+<b class="fc"><i>53</i>&nbsp;                LookupSearchResult searchResult = new LookupSearchResult(</b>
+<b class="fc"><i>54</i>&nbsp;                    contactRecord.Id</b>
+<b class="fc"><i>55</i>&nbsp;                    , &#39;Contact&#39;</b>
+<b class="fc"><i>56</i>&nbsp;                    , &#39;standard:contact&#39;</b>
+<b class="fc"><i>57</i>&nbsp;                    , contactRecord.Name</b>
+<b class="fc"><i>58</i>&nbsp;                    , contactRecord.Account.Name /* &#39;Contact • &#39; + contactRecord.Email */</b>
+<b class="fc"><i>59</i>&nbsp;                    , &#39;icon&#39;</b>
+<i>60</i>&nbsp;                );
+<b class="fc"><i>61</i>&nbsp;                results.add(searchResult);</b>
+<i>62</i>&nbsp;            }
+<b class="nc"><i>63</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>64</i>&nbsp;            DebugLog.addException(e, &#39;getEventWhoids&#39;);</b>
+<b class="nc"><i>65</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>66</i>&nbsp;        }
+<b class="fc"><i>67</i>&nbsp;        return results;</b>
+<i>68</i>&nbsp;    }
+<i>69</i>&nbsp;
+<i>70</i>&nbsp;    @AuraEnabled(Cacheable=true)
+<b class="fc"><i>71</i>&nbsp;    public static List&lt;LookupSearchResult&gt; getEventWhoIds(Id eventId) {</b>
+<b class="fc"><i>72</i>&nbsp;        List&lt;LookupSearchResult&gt; results = new List&lt;LookupSearchResult&gt;();</b>
+<b class="fc"><i>73</i>&nbsp;        try {</b>
+<b class="fc"><i>74</i>&nbsp;            List&lt;EventRelation&gt; eventRelationList = new List&lt;EventRelation&gt;([</b>
+<i>75</i>&nbsp;                SELECT RelationId, Relation.Name, Relation.Email, Account.Name, Event.WhoId 
+<i>76</i>&nbsp;                FROM EventRelation 
+<b class="fc"><i>77</i>&nbsp;                WHERE EventId=:eventId AND isParent=true AND isWhat=false AND Relation.Type=&#39;Contact&#39;</b>
+<i>78</i>&nbsp;            ]); 
+<i>79</i>&nbsp;            
+<b class="fc"><i>80</i>&nbsp;            for (EventRelation eventRelation : eventRelationList) {</b>
+<b class="fc"><i>81</i>&nbsp;                LookupSearchResult searchResult = new LookupSearchResult(</b>
+<b class="fc"><i>82</i>&nbsp;                    eventRelation.RelationId</b>
+<b class="fc"><i>83</i>&nbsp;                    , &#39;Contact&#39;</b>
+<b class="fc"><i>84</i>&nbsp;                    , &#39;standard:contact&#39;</b>
+<b class="fc"><i>85</i>&nbsp;                    , eventRelation.Relation.Name</b>
+<b class="fc"><i>86</i>&nbsp;                    , eventRelation.Account.Name /* &#39;Contact • &#39; + eventRelation.Relation.Email */</b>
+<b class="fc"><i>87</i>&nbsp;                    , &#39;icon&#39;</b>
+<i>88</i>&nbsp;                );
+<b class="fc"><i>89</i>&nbsp;                if (eventRelation.Event.WhoId.equals(eventRelation.RelationId) &amp;&amp; !results.isEmpty()) {</b>
+<b class="nc"><i>90</i>&nbsp;                    results.add(0, searchResult);</b>
+<i>91</i>&nbsp;                } else {
+<b class="fc"><i>92</i>&nbsp;                    results.add(searchResult);</b>
+<i>93</i>&nbsp;                }
+<i>94</i>&nbsp;            }
+<b class="nc"><i>95</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>96</i>&nbsp;            DebugLog.addException(e, &#39;getEventWhoids&#39;);</b>
+<b class="nc"><i>97</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>98</i>&nbsp;        }
+<b class="fc"><i>99</i>&nbsp;        return results;</b>
+<i>100</i>&nbsp;    }
+<i>101</i>&nbsp;
+<i>102</i>&nbsp;    @AuraEnabled
+<b class="fc"><i>103</i>&nbsp;    public static List&lt;EventRelation&gt; setEventWhoIds(Id eventId, List&lt;Id&gt; whoIdList) {</b>
+<b class="fc"><i>104</i>&nbsp;        List&lt;Event&gt; eventList = new List&lt;Event&gt;([SELECT Id, WhoId FROM Event WHERE Id=:eventId]);</b>
+<b class="fc"><i>105</i>&nbsp;        List&lt;EventRelation&gt; existingEventRelationList = new List&lt;EventRelation&gt;([</b>
+<i>106</i>&nbsp;            SELECT Id, EventId, RelationId, IsParent, IsWhat
+<i>107</i>&nbsp;            FROM EventRelation
+<b class="fc"><i>108</i>&nbsp;            WHERE EventId=:eventId AND isParent=true AND isWhat=false</b>
+<i>109</i>&nbsp;        ]);
+<b class="fc"><i>110</i>&nbsp;        Map&lt;String, EventRelation&gt; contactEvRelationMap = new Map&lt;String, EventRelation&gt;();</b>
+<b class="fc"><i>111</i>&nbsp;        for (EventRelation evRelationRecord : existingEventRelationList) {</b>
+<b class="fc"><i>112</i>&nbsp;            contactEvRelationMap.put(evRelationRecord.RelationId, evRelationRecord);</b>
+<i>113</i>&nbsp;        }
+<b class="fc"><i>114</i>&nbsp;        List&lt;EventRelation&gt; deleteEventRelationList = new List&lt;EventRelation&gt;();</b>
+<b class="fc"><i>115</i>&nbsp;        List&lt;EventRelation&gt; newEventRelationList = new List&lt;EventRelation&gt;();</b>
+<b class="fc"><i>116</i>&nbsp;        for (Id whoId : whoIdList) {</b>
+<b class="fc"><i>117</i>&nbsp;            if (null != contactEvRelationMap.get(whoId)) {</b>
+<b class="fc"><i>118</i>&nbsp;                newEventRelationList.add(contactEvRelationMap.get(whoId));</b>
+<i>119</i>&nbsp;            } else {
+<b class="fc"><i>120</i>&nbsp;                newEventRelationList.add(new EventRelation(</b>
+<b class="fc"><i>121</i>&nbsp;                    EventId = eventId</b>
+<b class="fc"><i>122</i>&nbsp;                    , RelationId = whoId</b>
+<b class="fc"><i>123</i>&nbsp;                    , IsParent = true</b>
+<b class="fc"><i>124</i>&nbsp;                    , isWhat = false</b>
+<i>125</i>&nbsp;                ));
+<i>126</i>&nbsp;            }
+<i>127</i>&nbsp;        }
+<b class="fc"><i>128</i>&nbsp;        for (EventRelation existingEvRelation : existingEventRelationList) {</b>
+<b class="fc"><i>129</i>&nbsp;            if (!newEventRelationList.contains(existingEvRelation)) {</b>
+<b class="nc"><i>130</i>&nbsp;                deleteEventRelationList.add(existingEvRelation);</b>
+<i>131</i>&nbsp;            }
+<i>132</i>&nbsp;        }
+<b class="fc"><i>133</i>&nbsp;        try {</b>
+<b class="fc"><i>134</i>&nbsp;            upsert newEventRelationList;</b>
+<b class="fc"><i>135</i>&nbsp;            delete deleteEventRelationList;</b>
+<b class="fc"><i>136</i>&nbsp;            eventList[0].WhoId = newEventRelationList[0].RelationId;</b>
+<b class="fc"><i>137</i>&nbsp;            update eventList;</b>
+<b class="nc"><i>138</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>139</i>&nbsp;            DebugLog.addException(e, &#39;EventMultiWhoController&#39;);</b>
+<b class="nc"><i>140</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>141</i>&nbsp;        }
+<b class="fc"><i>142</i>&nbsp;        return newEventRelationList;</b>
+<i>143</i>&nbsp;    }
+<i>144</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: AccountMergeRequestTriggerHandler</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: AccountMergeRequestTriggerHandler (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AccountMergeRequestTriggerHandler</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>AccountMergeRequestTriggerHandler</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*------------------------------------------------------------  
+<i>2</i>&nbsp;Author:         Roberto Narbona  20200625
+<i>3</i>&nbsp;Description:    Account Merge Request Trigger Handler Class. 
+<i>4</i>&nbsp;History 
+<i>5</i>&nbsp;&lt;Date&gt;      &lt;Authors Name&gt;     &lt;Brief Description of Change&gt;
+<i>6</i>&nbsp;20200625    Roberto Narbona     Migrated AccountMergeRequestTrigger triggers. And fix merge bugs regarding
+<i>7</i>&nbsp;                                account parent relationship and duplicate account contact relationship  (#TFUS-000001782)
+<i>8</i>&nbsp;------------------------------------------------------------*/
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;public with sharing class AccountMergeRequestTriggerHandler extends TriggerHandler{
+<i>11</i>&nbsp;    private List&lt;AccountMergeRequest__c&gt; oldAccountMergeRequestList, newAccountMergeRequestList;
+<i>12</i>&nbsp;    private Map&lt;Id, AccountMergeRequest__c&gt; oldAccountMergeRequestMap, newAccountMergeRequestMap;
+<i>13</i>&nbsp;
+<b class="nc"><i>14</i>&nbsp;    public AccountMergeRequestTriggerHandler() {</b>
+<b class="nc"><i>15</i>&nbsp;        oldAccountMergeRequestList = (List&lt;AccountMergeRequest__c&gt;) Trigger.old;</b>
+<b class="nc"><i>16</i>&nbsp;        newAccountMergeRequestList = (List&lt;AccountMergeRequest__c&gt;) Trigger.new;</b>
+<b class="nc"><i>17</i>&nbsp;        oldAccountMergeRequestMap = (Map&lt;Id, AccountMergeRequest__c&gt;) Trigger.oldMap;</b>
+<b class="nc"><i>18</i>&nbsp;        newAccountMergeRequestMap = (Map&lt;Id, AccountMergeRequest__c&gt;) Trigger.newMap;</b>
+<i>19</i>&nbsp;    }
+<i>20</i>&nbsp;    
+<b class="nc"><i>21</i>&nbsp;    protected override void beforeInsert() {</b>
+<b class="nc"><i>22</i>&nbsp;        AccountMergeRequestTriggerHelper.mergeAccounts(newAccountMergeRequestList);</b>
+<i>23</i>&nbsp;    }
+<i>24</i>&nbsp;    
+<b class="nc"><i>25</i>&nbsp;    protected override void beforeUpdate() {</b>
+<b class="nc"><i>26</i>&nbsp;        AccountMergeRequestTriggerHelper.mergeAccounts(newAccountMergeRequestList);</b>
+<i>27</i>&nbsp;    }
+<i>28</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

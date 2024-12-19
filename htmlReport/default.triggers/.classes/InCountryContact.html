@@ -1,0 +1,92 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: InCountryContact</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.triggers</a> ]
+</div>
+
+<h1>Coverage Summary for Class: InCountryContact (default.triggers)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">InCountryContact</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92.9%
+  </span>
+  <span class="absValue">
+    (13/ 14)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>InCountryContact</h2>
+<div class="sourceCode"><i>1</i>&nbsp;trigger InCountryContact on Contact (before insert, after insert, before update, after update, after delete, after undelete) {
+<b class="fc"><i>2</i>&nbsp;    SObjectType triggerType = trigger.isDelete ? Trigger.old.getSObjectType() : Trigger.new.getSObjectType();</b>
+<i>3</i>&nbsp;
+<b class="fc"><i>4</i>&nbsp;    if (!testInCountry1.InCountryReplicationTriggerHandler.disableTrigger &amp;&amp; !testInCountry1.InCountryReplicationTriggerHandler.alreadyExecuted(triggerType)) {</b>
+<i>5</i>&nbsp;        
+<b class="fc"><i>6</i>&nbsp;        testInCountry1.InCountryReplicationTriggerHandler handler = new testInCountry1.InCountryReplicationTriggerHandler(triggerType.getDescribe().getName());</b>
+<b class="fc"><i>7</i>&nbsp;        if (Trigger.isBefore &amp;&amp; (Trigger.isInsert || Trigger.isUpdate)) {</b>
+<b class="fc"><i>8</i>&nbsp;            handler.handleBeforeInsert();</b>
+<b class="fc"><i>9</i>&nbsp;        } else if (Trigger.isAfter &amp;&amp; (Trigger.isInsert || Trigger.isUpdate)) {</b>
+<b class="fc"><i>10</i>&nbsp;            handler.handleAfterInsert();</b>
+<b class="fc"><i>11</i>&nbsp;            testInCountry1.InCountryReplicationTriggerHandler.registerExecution(triggerType);</b>
+<b class="fc"><i>12</i>&nbsp;        } else if (Trigger.isAfter &amp;&amp; Trigger.isUndelete) {</b>
+<b class="nc"><i>13</i>&nbsp;            handler.handleAfterUndelete();</b>
+<i>14</i>&nbsp;        }
+<i>15</i>&nbsp;    } 
+<b class="fc"><i>16</i>&nbsp;    if (Trigger.isDelete &amp;&amp; Trigger.isAfter) {</b>
+<b class="fc"><i>17</i>&nbsp;        SObjectType triggerType = trigger.isDelete ? Trigger.old.getSObjectType() : Trigger.new.getSObjectType();</b>
+<b class="fc"><i>18</i>&nbsp;        testInCountry1.InCountryReplicationTriggerHandler handler = new testInCountry1.InCountryReplicationTriggerHandler(triggerType.getDescribe().getName());</b>
+<b class="fc"><i>19</i>&nbsp;        handler.handleAfterDelete();</b>
+<i>20</i>&nbsp;    }
+<i>21</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

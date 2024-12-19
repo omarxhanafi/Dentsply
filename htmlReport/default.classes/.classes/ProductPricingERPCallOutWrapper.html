@@ -1,0 +1,110 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ProductPricingERPCallOutWrapper</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ProductPricingERPCallOutWrapper (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ProductPricingERPCallOutWrapper</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/ 6)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>ProductPricingERPCallOutWrapper</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         Roberto Narbona 20210716
+<i>3</i>&nbsp;Description:    ProductPricingERPCallOutWrapper -&gt; This is a wrapper class created to be used for ERP call out
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;History:	Updated By:	Update Description:
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;----------------------------------------------------------------------------------------*/
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;public class ProductPricingERPCallOutWrapper {
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;	public class ProductEntry {
+<i>13</i>&nbsp;		@AuraEnabled
+<b class="nc"><i>14</i>&nbsp;		public String productId{get;set;}</b>
+<i>15</i>&nbsp;		@AuraEnabled
+<b class="nc"><i>16</i>&nbsp;		public Integer quantity{get;set;}</b>
+<i>17</i>&nbsp;	}
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;	public class Entries {
+<i>20</i>&nbsp;		@AuraEnabled
+<b class="nc"><i>21</i>&nbsp;        public Double basePrice{get;set;}</b>
+<i>22</i>&nbsp;		@AuraEnabled
+<b class="nc"><i>23</i>&nbsp;		public ProductEntry productEntry{get;set;}</b>
+<i>24</i>&nbsp;		@AuraEnabled
+<b class="nc"><i>25</i>&nbsp;		public Double retailPrice{get;set;}</b>
+<i>26</i>&nbsp;	}
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    public class ProductPricingResponse {
+<i>29</i>&nbsp;		@AuraEnabled
+<b class="nc"><i>30</i>&nbsp;		public List&lt;Entries&gt; entries{get;set;}</b>
+<i>31</i>&nbsp;	}
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;    public class DeserializeTokenResponse {
+<i>34</i>&nbsp;        public String id;
+<i>35</i>&nbsp;        public String access_token;
+<i>36</i>&nbsp;        public String Name;
+<i>37</i>&nbsp;        public String Description;
+<i>38</i>&nbsp;    }
+<i>39</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

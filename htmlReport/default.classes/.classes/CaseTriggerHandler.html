@@ -1,0 +1,101 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CaseTriggerHandler</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CaseTriggerHandler (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CaseTriggerHandler</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/ 12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>CaseTriggerHandler</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         NISREEN ALSALEH (Avity) 25-March-2021
+<i>3</i>&nbsp;Description:    Case Trigger Handler Class
+<i>4</i>&nbsp;--------------------------------------------------------------------------------------------------------*/
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;public class CaseTriggerHandler extends TriggerHandler {
+<i>7</i>&nbsp;     private List&lt;Case&gt; oldCaseList, newCaseList;
+<i>8</i>&nbsp;     private Map&lt;Id, Case&gt; oldCaseMap, newCaseMap;
+<i>9</i>&nbsp;    
+<b class="fc"><i>10</i>&nbsp;    public CaseTriggerHandler(){</b>
+<b class="fc"><i>11</i>&nbsp;        oldCaseList = (List&lt;Case&gt;) Trigger.old;</b>
+<b class="fc"><i>12</i>&nbsp;        newCaseList = (List&lt;Case&gt;) Trigger.new;</b>
+<b class="fc"><i>13</i>&nbsp;        oldCaseMap = (Map&lt;Id, Case&gt;) Trigger.oldMap;</b>
+<b class="fc"><i>14</i>&nbsp;        newCaseMap = (Map&lt;Id, Case&gt;) Trigger.newMap;</b>
+<i>15</i>&nbsp;    }
+<i>16</i>&nbsp;    
+<b class="fc"><i>17</i>&nbsp;    protected override void beforeInsert() {</b>
+<b class="fc"><i>18</i>&nbsp;        CaseTriggerHelper.defaultEntitlement(newCaseList);</b>
+<i>19</i>&nbsp;	}
+<i>20</i>&nbsp;	
+<b class="fc"><i>21</i>&nbsp;    protected override void beforeUpdate() {</b>
+<b class="fc"><i>22</i>&nbsp;       CaseTriggerHelper.defaultEntitlement(newCaseList);</b>
+<i>23</i>&nbsp;    }
+<b class="fc"><i>24</i>&nbsp;    protected override void afterUpdate() {</b>
+<b class="fc"><i>25</i>&nbsp;         CaseTriggerHelper.completeResolutionTimeMilestone(newCaseList);</b>
+<b class="fc"><i>26</i>&nbsp;         CaseTriggerHelper.completeFirstResponseTime(newCaseList);</b>
+<i>27</i>&nbsp;    }
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

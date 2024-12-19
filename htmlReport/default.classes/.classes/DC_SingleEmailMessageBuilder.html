@@ -1,0 +1,205 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DC_SingleEmailMessageBuilder</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DC_SingleEmailMessageBuilder (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DC_SingleEmailMessageBuilder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 50)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>DC_SingleEmailMessageBuilder</h2>
+<div class="sourceCode"><i>1</i>&nbsp;//
+<i>2</i>&nbsp;//This class builds &#39;SingleEmailMessage&#39; object
+<i>3</i>&nbsp;//
+<i>4</i>&nbsp;//Author: Gennadiy Pervukhin (28-10-2014)
+<i>5</i>&nbsp;public class DC_SingleEmailMessageBuilder
+<i>6</i>&nbsp;{
+<i>7</i>&nbsp;	//
+<i>8</i>&nbsp;	//Constructors
+<i>9</i>&nbsp;	//
+<b class="nc"><i>10</i>&nbsp;	public DC_SingleEmailMessageBuilder()</b>
+<i>11</i>&nbsp;	{
+<b class="nc"><i>12</i>&nbsp;		this.initialize();</b>
+<i>13</i>&nbsp;	}
+<i>14</i>&nbsp;	
+<b class="nc"><i>15</i>&nbsp;	public DC_SingleEmailMessageBuilder(String targetObjectId)</b>
+<i>16</i>&nbsp;	{
+<b class="nc"><i>17</i>&nbsp;		this.initialize();</b>
+<b class="nc"><i>18</i>&nbsp;		this.changeTarget(new DC_SingleEmailTarget(targetObjectId, null));</b>
+<i>19</i>&nbsp;	}
+<i>20</i>&nbsp;	
+<b class="nc"><i>21</i>&nbsp;	public DC_SingleEmailMessageBuilder(String[] toAddresses)</b>
+<i>22</i>&nbsp;	{
+<b class="nc"><i>23</i>&nbsp;		this.initialize();</b>
+<b class="nc"><i>24</i>&nbsp;		this.changeTarget(new DC_SingleEmailTarget(null, toAddresses));</b>
+<i>25</i>&nbsp;	}
+<i>26</i>&nbsp;	
+<b class="nc"><i>27</i>&nbsp;	public DC_SingleEmailMessageBuilder(DC_SingleEmailTarget target)</b>
+<i>28</i>&nbsp;	{
+<b class="nc"><i>29</i>&nbsp;		this.initialize();</b>
+<b class="nc"><i>30</i>&nbsp;		this.changeTarget(target);</b>
+<i>31</i>&nbsp;	}
+<i>32</i>&nbsp;	//
+<i>33</i>&nbsp;	
+<i>34</i>&nbsp;	//
+<i>35</i>&nbsp;	//Properties
+<i>36</i>&nbsp;	//
+<b class="nc"><i>37</i>&nbsp;	public String orgWideEmailAddressId {get; set;}</b>
+<i>38</i>&nbsp;	
+<b class="nc"><i>39</i>&nbsp;	public DC_SingleEmailTarget emailTarget {get; private set;}</b>
+<b class="nc"><i>40</i>&nbsp;	public String replyToAddress {get; set;}</b>
+<i>41</i>&nbsp;	
+<b class="nc"><i>42</i>&nbsp;	public String subject {get;	set;}</b>
+<i>43</i>&nbsp;	
+<b class="nc"><i>44</i>&nbsp;	public String htmlBody {get; set;}</b>
+<b class="nc"><i>45</i>&nbsp;	public String plainTextBody {get; set;}</b>
+<i>46</i>&nbsp;	
+<b class="nc"><i>47</i>&nbsp;	public List&lt;Messaging.EmailFileAttachment&gt; fileAttachments {get; private set;}</b>
+<i>48</i>&nbsp;	
+<b class="nc"><i>49</i>&nbsp;	public Boolean saveAsActivity {get; set;}</b>
+<i>50</i>&nbsp;	//
+<i>51</i>&nbsp;	
+<i>52</i>&nbsp;	//
+<i>53</i>&nbsp;	//Private methods
+<i>54</i>&nbsp;	//
+<b class="nc"><i>55</i>&nbsp;	private void initialize()</b>
+<i>56</i>&nbsp;	{
+<b class="nc"><i>57</i>&nbsp;		this.fileAttachments = new List&lt;Messaging.EmailFileAttachment&gt;();</b>
+<b class="nc"><i>58</i>&nbsp;		this.saveAsActivity = false;</b>
+<i>59</i>&nbsp;	}
+<i>60</i>&nbsp;	//
+<i>61</i>&nbsp;	
+<i>62</i>&nbsp;	//
+<i>63</i>&nbsp;	//Public methods
+<i>64</i>&nbsp;	//
+<b class="nc"><i>65</i>&nbsp;	public void addFileAttachment(String fileName, String contentType,</b>
+<i>66</i>&nbsp;		String fileContent, Boolean isInline)
+<i>67</i>&nbsp;	{
+<b class="nc"><i>68</i>&nbsp;		Messaging.EmailFileAttachment fileAttachment = new Messaging.EmailFileAttachment();</b>
+<b class="nc"><i>69</i>&nbsp;        fileAttachment.setFileName(fileName);</b>
+<b class="nc"><i>70</i>&nbsp;        fileAttachment.setContentType(contentType);</b>
+<b class="nc"><i>71</i>&nbsp;        fileAttachment.setBody(Blob.valueOf(fileContent));</b>
+<b class="nc"><i>72</i>&nbsp;        fileAttachment.setInline(isInline);</b>
+<i>73</i>&nbsp;        
+<b class="nc"><i>74</i>&nbsp;        this.fileAttachments.add(fileAttachment);</b>
+<i>75</i>&nbsp;	}
+<i>76</i>&nbsp;	
+<b class="nc"><i>77</i>&nbsp;	public void changeTarget(DC_SingleEmailTarget newEmailTarget)</b>
+<i>78</i>&nbsp;	{
+<b class="nc"><i>79</i>&nbsp;		this.emailTarget = (newEmailTarget != null</b>
+<b class="nc"><i>80</i>&nbsp;			? newEmailTarget : new DC_SingleEmailTarget(null, null));</b>
+<i>81</i>&nbsp;	}
+<i>82</i>&nbsp;	
+<b class="nc"><i>83</i>&nbsp;	public Messaging.SingleEmailMessage buildMessage()</b>
+<i>84</i>&nbsp;	{
+<i>85</i>&nbsp;		//a target must not be empty
+<b class="nc"><i>86</i>&nbsp;		if (this.emailTarget == null || this.emailTarget.isEmpty())</b>
+<i>87</i>&nbsp;		{
+<b class="nc"><i>88</i>&nbsp;			return null;</b>
+<i>89</i>&nbsp;		}
+<i>90</i>&nbsp;		
+<b class="nc"><i>91</i>&nbsp;		Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();</b>
+<i>92</i>&nbsp;		
+<i>93</i>&nbsp;		//STEP #1: set receivers
+<i>94</i>&nbsp;		//1.1) set receiver by SF Id
+<b class="nc"><i>95</i>&nbsp;     	if (String.isNotBlank(this.emailTarget.targetObjectId))</b>
+<i>96</i>&nbsp;     	{
+<b class="nc"><i>97</i>&nbsp;     		try</b>
+<i>98</i>&nbsp;     		{
+<b class="nc"><i>99</i>&nbsp;     			email.setTargetObjectId(this.emailTarget.targetObjectId);</b>
+<i>100</i>&nbsp;     		}
+<i>101</i>&nbsp;     		catch (Exception e)
+<b class="nc"><i>102</i>&nbsp;     		{</b>
+<i>103</i>&nbsp;     			System.debug(LoggingLevel.WARN, &#39;DC_SingleEmailMessageBuilder.buildMessage: &#39;
+<i>104</i>&nbsp;     				+ &#39;message could not be generated because of incorrect targetObjectId (&#39;
+<i>105</i>&nbsp;     				+ e.getMessage() + &#39;)&#39;);
+<b class="nc"><i>106</i>&nbsp;     			return null;</b>
+<i>107</i>&nbsp;     		}
+<i>108</i>&nbsp;     	}
+<i>109</i>&nbsp;     	
+<i>110</i>&nbsp;     	//1.2) set receivers by direct email addresses
+<b class="nc"><i>111</i>&nbsp;     	email.setToAddresses(this.emailTarget.emailAddresses);</b>
+<i>112</i>&nbsp;     	
+<i>113</i>&nbsp;     	//STEP #2: set sender address
+<b class="nc"><i>114</i>&nbsp;     	email.setOrgWideEmailAddressId(this.orgWideEmailAddressId);</b>
+<i>115</i>&nbsp;     	
+<i>116</i>&nbsp;     	//STEP #3: set Reply-To address
+<b class="nc"><i>117</i>&nbsp;     	email.setReplyTo(this.replyToAddress);</b>
+<i>118</i>&nbsp;     	
+<i>119</i>&nbsp;     	//STEP #4: set subject, body and settings
+<b class="nc"><i>120</i>&nbsp; 	  	email.setSubject(this.subject);</b>
+<b class="nc"><i>121</i>&nbsp; 	  	email.setHtmlBody(this.htmlBody);</b>
+<b class="nc"><i>122</i>&nbsp; 	  	email.setPlainTextBody(this.plainTextBody);</b>
+<i>123</i>&nbsp; 	  	
+<b class="nc"><i>124</i>&nbsp; 	  	email.saveAsActivity = this.saveAsActivity;</b>
+<i>125</i>&nbsp; 	  	//
+<i>126</i>&nbsp; 	  	
+<i>127</i>&nbsp; 	  	//STEP #5: set file attachments
+<b class="nc"><i>128</i>&nbsp;        email.setFileAttachments(this.fileAttachments);</b>
+<i>129</i>&nbsp;        
+<i>130</i>&nbsp;        //return result
+<b class="nc"><i>131</i>&nbsp;        return email;</b>
+<i>132</i>&nbsp;	}
+<i>133</i>&nbsp;	//
+<i>134</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

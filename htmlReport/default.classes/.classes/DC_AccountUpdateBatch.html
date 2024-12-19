@@ -1,0 +1,125 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DC_AccountUpdateBatch</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DC_AccountUpdateBatch (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DC_AccountUpdateBatch</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92.6%
+  </span>
+  <span class="absValue">
+    (25/ 27)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>DC_AccountUpdateBatch</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         Denis Zhdanov (dzhdanov@mycervello.com) (Salesforce) 20170818
+<i>3</i>&nbsp;Description:    DC Account Update Batch This is updating the postal code information in the accounts
+<i>4</i>&nbsp;History
+<i>5</i>&nbsp;20170627   Sergey Legostaev (slegostaev@mycervello.com)
+<i>6</i>&nbsp;20191117   Roberto Narbona -&gt; added country dependency logic
+<i>7</i>&nbsp;----------------------------------------------------------------------------------------*/
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;global class DC_AccountUpdateBatch implements Database.Batchable&lt;sObject&gt;, Database.Stateful {
+<i>10</i>&nbsp;    
+<i>11</i>&nbsp;    private List&lt;Id&gt; postalCodeIds;
+<i>12</i>&nbsp;    global  Map&lt;String, Postal_Codes__c&gt; codeMap;
+<i>13</i>&nbsp;    
+<b class="nc"><i>14</i>&nbsp;    public DC_AccountUpdateBatch(List&lt;Id&gt; postalCodeIds) {    </b>
+<b class="nc"><i>15</i>&nbsp;        this.postalCodeIds = postalCodeIds;</b>
+<b class="nc"><i>16</i>&nbsp;        this.codeMap = new Map&lt;String, Postal_Codes__c&gt;();</b>
+<i>17</i>&nbsp;    }
+<i>18</i>&nbsp;    
+<b class="nc"><i>19</i>&nbsp;    global Database.QueryLocator start(Database.BatchableContext bc) {</b>
+<b class="nc"><i>20</i>&nbsp;        List&lt;Postal_Codes__c&gt; codes = [Select Id, Name, DC_ETM_Code__c,Country_Picklist__c FROM Postal_Codes__c WHERE Id IN :postalCodeIds];</b>
+<b class="nc"><i>21</i>&nbsp;        Set&lt;String&gt; zipCodes = new Set&lt;String&gt;();</b>
+<b class="nc"><i>22</i>&nbsp;        Set&lt;String&gt; countries = new Set&lt;String&gt;();  </b>
+<b class="nc"><i>23</i>&nbsp;        for(Postal_Codes__c postalCode : codes) {</b>
+<b class="nc"><i>24</i>&nbsp;            codeMap.put(postalCode.Name+postalCode.Country_Picklist__c, postalCode);</b>
+<b class="nc"><i>25</i>&nbsp;            zipCodes.add(postalCode.Name);</b>
+<b class="nc"><i>26</i>&nbsp;            countries.add(postalCode.Country_Picklist__c);</b>
+<i>27</i>&nbsp;            
+<i>28</i>&nbsp;        }
+<b class="nc"><i>29</i>&nbsp;        return Database.getQueryLocator(&#39;Select Id, DC_ETM_Code__c, Country__c, Postal_Code_Info__c, Postal_Code_Info__r.DC_ETM_Code__c, ETM2_Zip_Code__c FROM Account WHERE ETM2_Zip_Code__c IN :zipCodes and country__c IN :countries&#39;);</b>
+<i>30</i>&nbsp;    }
+<i>31</i>&nbsp;    
+<b class="nc"><i>32</i>&nbsp;    global void execute(Database.BatchableContext BC, List&lt;Account&gt; scope) {</b>
+<b class="nc"><i>33</i>&nbsp;        List&lt;Account&gt; accountsToUpdate = new List&lt;Account&gt;();</b>
+<b class="nc"><i>34</i>&nbsp;        for(Account tempAccount: scope) {</b>
+<b class="nc"><i>35</i>&nbsp;            if((tempAccount.Postal_Code_Info__c == null || tempAccount.Postal_Code_Info__r.DC_ETM_Code__c != tempAccount.DC_ETM_Code__c) &amp;&amp; codeMap.get(tempAccount.ETM2_Zip_Code__c.toUpperCase()+tempAccount.Country__c) != null) {</b>
+<b class="nc"><i>36</i>&nbsp;                Postal_Codes__c postalCode = codeMap.get(tempAccount.ETM2_Zip_Code__c.toUpperCase()+tempAccount.Country__c);</b>
+<b class="nc"><i>37</i>&nbsp;                tempAccount.Postal_Code_Info__c = postalCode.Id;</b>
+<b class="nc"><i>38</i>&nbsp;                tempAccount.DC_ETM_Code__c = postalCode.DC_ETM_Code__c;</b>
+<b class="nc"><i>39</i>&nbsp;                accountsToUpdate.add(tempAccount);</b>
+<i>40</i>&nbsp;            } 
+<i>41</i>&nbsp;        }  
+<b class="nc"><i>42</i>&nbsp;        try {</b>
+<b class="nc"><i>43</i>&nbsp;            if (accountsToUpdate.isEmpty() == false) {</b>
+<b class="nc"><i>44</i>&nbsp;                update accountsToUpdate;</b>
+<i>45</i>&nbsp;            }
+<b class="nc"><i>46</i>&nbsp;        } catch (DmlException e) {</b>
+<b class="nc"><i>47</i>&nbsp;            DebugLog.addError(e.getMessage());</b>
+<i>48</i>&nbsp;        }
+<i>49</i>&nbsp;    }
+<i>50</i>&nbsp;    
+<b class="nc"><i>51</i>&nbsp;    global void finish(Database.BatchableContext BC) { </b>
+<b class="nc"><i>52</i>&nbsp;        DebugLog.addinfo(&#39;This is the DC_AccountUpdateBatch JobId:&#39;,BC.getJobId());</b>
+<i>53</i>&nbsp;    }
+<i>54</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

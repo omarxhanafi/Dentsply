@@ -1,0 +1,127 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DC_ActivityDTOConverter</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DC_ActivityDTOConverter (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DC_ActivityDTOConverter</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 32)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>DC_ActivityDTOConverter</h2>
+<div class="sourceCode"><i>1</i>&nbsp;//Author: Sergey Legostaev
+<i>2</i>&nbsp;//Date: 05/02/2017
+<i>3</i>&nbsp;public class DC_ActivityDTOConverter {
+<i>4</i>&nbsp;    
+<b class="nc"><i>5</i>&nbsp;    public static DC_ActivityDTO converToDTO(ActivityHistory history) {</b>
+<b class="nc"><i>6</i>&nbsp;        DC_ActivityDTO dto = new DC_ActivityDTO();</b>
+<b class="nc"><i>7</i>&nbsp;        dto.id = history.Id;</b>
+<b class="nc"><i>8</i>&nbsp;        dto.subject = history.Subject;</b>
+<b class="nc"><i>9</i>&nbsp;        dto.activityDate = history.ActivityDate;</b>
+<b class="nc"><i>10</i>&nbsp;        dto.whoId = history.WhoId;</b>
+<b class="nc"><i>11</i>&nbsp;        dto.whoName = history.Who.Name;</b>
+<b class="nc"><i>12</i>&nbsp;        dto.ownerId = history.OwnerId;</b>
+<b class="nc"><i>13</i>&nbsp;        dto.ownerName = history.Owner.Name;</b>
+<b class="nc"><i>14</i>&nbsp;        dto.eventStatus = history.Event_Status__c;</b>
+<b class="nc"><i>15</i>&nbsp;        dto.status = history.Status;</b>
+<b class="nc"><i>16</i>&nbsp;        dto.description = history.Description;</b>
+<b class="nc"><i>17</i>&nbsp;        dto.relatedToId = history.WhatId;</b>
+<b class="nc"><i>18</i>&nbsp;        dto.relatedToName = history.What.Name;</b>
+<b class="nc"><i>19</i>&nbsp;        dto.contactType = history.Contact_Type__c;</b>
+<b class="nc"><i>20</i>&nbsp;        return dto;</b>
+<i>21</i>&nbsp;        //return converToDTO(history);
+<i>22</i>&nbsp;    }
+<i>23</i>&nbsp;    
+<b class="nc"><i>24</i>&nbsp;    public static DC_ActivityDTO converToDTO(Event event) {</b>
+<b class="nc"><i>25</i>&nbsp;        DC_ActivityDTO dto = new DC_ActivityDTO();</b>
+<b class="nc"><i>26</i>&nbsp;        dto.id = event.Id;</b>
+<b class="nc"><i>27</i>&nbsp;        dto.subject = event.Subject;</b>
+<b class="nc"><i>28</i>&nbsp;        dto.activityDate = event.ActivityDate;</b>
+<b class="nc"><i>29</i>&nbsp;        dto.whoId = event.WhoId;</b>
+<b class="nc"><i>30</i>&nbsp;        dto.whoName = event.Who.Name;</b>
+<b class="nc"><i>31</i>&nbsp;        dto.ownerId = event.OwnerId;</b>
+<b class="nc"><i>32</i>&nbsp;        dto.ownerName = event.Owner.Name;</b>
+<b class="nc"><i>33</i>&nbsp;        dto.eventStatus = event.Event_Status__c;</b>
+<b class="nc"><i>34</i>&nbsp;        dto.description = event.Description;</b>
+<b class="nc"><i>35</i>&nbsp;        dto.relatedToId = event.WhatId;</b>
+<b class="nc"><i>36</i>&nbsp;        dto.relatedToName = event.What.Name;</b>
+<b class="nc"><i>37</i>&nbsp;        if (event.Call_Report__r != null) {</b>
+<b class="nc"><i>38</i>&nbsp;            dto.callNote = event.Call_Report__r.Call_Notes__c;</b>
+<i>39</i>&nbsp;        }
+<b class="nc"><i>40</i>&nbsp;        return dto;</b>
+<i>41</i>&nbsp;    }
+<i>42</i>&nbsp;    /*
+<i>43</i>&nbsp;    private static DC_ActivityDTO converToDTO(sObject obj) {
+<i>44</i>&nbsp;        DC_ActivityDTO dto = new DC_ActivityDTO();
+<i>45</i>&nbsp;        dto.id = (String)obj.get(&#39;Id&#39;);
+<i>46</i>&nbsp;        dto.subject = (String)obj.get(&#39;Subject&#39;);
+<i>47</i>&nbsp;        dto.activityDate = (Date)obj.get(&#39;ActivityDate&#39;);
+<i>48</i>&nbsp;        dto.whoId = (String)obj.get(&#39;WhoId&#39;);
+<i>49</i>&nbsp;        dto.whoName = (String)obj.get(&#39;Who.Name&#39;);
+<i>50</i>&nbsp;        dto.ownerId = (String)obj.get(&#39;OwnerId&#39;);
+<i>51</i>&nbsp;        dto.ownerName = (String)obj.get(&#39;Owner.Name&#39;);
+<i>52</i>&nbsp;        dto.eventStatus = (String)obj.get(&#39;Event_Status__c&#39;);
+<i>53</i>&nbsp;        dto.description = (String)obj.get(&#39;Description&#39;);
+<i>54</i>&nbsp;        return dto;
+<i>55</i>&nbsp;	}*/
+<i>56</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: BatchSalesLeadAssignSuggestedOwner</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: BatchSalesLeadAssignSuggestedOwner (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">BatchSalesLeadAssignSuggestedOwner</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95.7%
+  </span>
+  <span class="absValue">
+    (45/ 47)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>BatchSalesLeadAssignSuggestedOwner</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/**
+<i>2</i>&nbsp; * @description       : This batch class updates the Suggested Owner on Sales Leads based on LeadOpportunitySetting__mdt
+<i>3</i>&nbsp; * @author            : kdoruibin@salesforce.com
+<i>4</i>&nbsp; * @group             :
+<i>5</i>&nbsp; * @testClass         : Test_BatchSalesLeadAssignSOwner
+<i>6</i>&nbsp; * Modifications Log
+<i>7</i>&nbsp; * Ver   Date         Author                     Modification
+<i>8</i>&nbsp; * 1.0   06-15-2021   kdoruibin@salesforce.com   Initial Version
+<i>9</i>&nbsp; * 1.1   20-07.2022   Roberto Narbona            TFUS-000004576
+<i>10</i>&nbsp; * 1.2   11-09-2023   Refactor the code to be used for other objects
+<i>11</i>&nbsp; *
+<i>12</i>&nbsp;**/
+<i>13</i>&nbsp;global without sharing class BatchSalesLeadAssignSuggestedOwner implements Database.Batchable&lt;sObject&gt;, Database.Stateful {
+<i>14</i>&nbsp;    private String country;
+<i>15</i>&nbsp;    private String category;
+<i>16</i>&nbsp;
+<b class="nc"><i>17</i>&nbsp;    global BatchSalesLeadAssignSuggestedOwner() {</b>
+<b class="nc"><i>18</i>&nbsp;        this.country = null;</b>
+<b class="nc"><i>19</i>&nbsp;        this.category = null;</b>
+<i>20</i>&nbsp;    }
+<i>21</i>&nbsp;
+<b class="nc"><i>22</i>&nbsp;    global BatchSalesLeadAssignSuggestedOwner(String country) {</b>
+<b class="nc"><i>23</i>&nbsp;        this.country = country;</b>
+<b class="nc"><i>24</i>&nbsp;        this.category = null;</b>
+<i>25</i>&nbsp;    }
+<i>26</i>&nbsp;
+<b class="nc"><i>27</i>&nbsp;    global BatchSalesLeadAssignSuggestedOwner(String country, String category) {</b>
+<b class="nc"><i>28</i>&nbsp;        this.country = country;</b>
+<b class="nc"><i>29</i>&nbsp;        this.category = category;</b>
+<i>30</i>&nbsp;    }
+<i>31</i>&nbsp;    
+<b class="nc"><i>32</i>&nbsp;    global Database.QueryLocator start(Database.BatchableContext bc) {</b>
+<b class="nc"><i>33</i>&nbsp;        String queryTemplate;</b>
+<b class="nc"><i>34</i>&nbsp;        List&lt;Object&gt; queryParameters = new List&lt;Object&gt;{</b>
+<b class="nc"><i>35</i>&nbsp;            String.isBlank(country) ? &#39;&#39; : &#39; AND Account__r.Country__c = \&#39;&#39; + country + &#39;\&#39;&#39;</b>
+<b class="nc"><i>36</i>&nbsp;            , String.isBlank(category) ? &#39;&#39; : &#39;AND Category__c = \&#39;&#39; + category + &#39;\&#39;&#39;</b>
+<i>37</i>&nbsp;        };
+<i>38</i>&nbsp;        
+<b class="nc"><i>39</i>&nbsp;        queryTemplate = &#39;SELECT Id, Account__c, Dealer__c, Account__r.Country__c, Dealer__r.Country__c, Category__c, Brand__c, SuggestedOwner__c &#39; +</b>
+<i>40</i>&nbsp;                &#39;FROM Field_Sales_Project_Members__c &#39; +
+<i>41</i>&nbsp;                &#39;WHERE Status__c != \&#39;Completed\&#39; AND Status__c != \&#39;Cancelled\&#39; AND Status__c != \&#39;Expired\&#39; {0} {1}&#39;;
+<i>42</i>&nbsp;
+<b class="nc"><i>43</i>&nbsp;        return Database.getQueryLocator(String.format(queryTemplate, queryParameters));</b>
+<i>44</i>&nbsp;    }
+<i>45</i>&nbsp;
+<b class="nc"><i>46</i>&nbsp;    global void execute(Database.BatchableContext bc, List&lt;Field_Sales_Project_Members__c&gt; scope) {</b>
+<i>47</i>&nbsp;        
+<b class="nc"><i>48</i>&nbsp;        try {</b>
+<b class="nc"><i>49</i>&nbsp;            Set&lt;Id&gt; accountIdSet                                                            = SuggestedOwnerManager.extractLeadAccountIds(scope);</b>
+<b class="nc"><i>50</i>&nbsp;            Map&lt;String, List&lt;LeadOpportunitySetting__mdt&gt;&gt; leadOpptySettingMap              = SuggestedOwnerManager.getLeadOpportunitySettings();</b>
+<b class="nc"><i>51</i>&nbsp;            Map&lt;Id,List&lt;Id&gt;&gt; accountTerritoryMap                                            = SuggestedOwnerManager.getAccountTerritoryMap(accountIdSet);</b>
+<b class="nc"><i>52</i>&nbsp;            Map&lt;Id, Map&lt;String, UserTerritory2Association&gt;&gt; territoryIdUserAssociationMap   = SuggestedOwnerManager.getTerritoryIdUserAssociationMap(accountTerritoryMap);</b>
+<i>53</i>&nbsp;
+<b class="nc"><i>54</i>&nbsp;            List&lt;Field_Sales_Project_Members__c&gt; salesLeadToUpdateList = new List&lt;Field_Sales_Project_Members__c&gt;();</b>
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;            // Loop through all Sales Leads
+<b class="nc"><i>57</i>&nbsp;            for (Field_Sales_Project_Members__c salesLeadToUpdate : scope) {</b>
+<b class="nc"><i>58</i>&nbsp;                List&lt;LeadOpportunitySetting__mdt&gt; settingList = leadOpptySettingMap.get(salesLeadToUpdate.Account__r.Country__c + salesLeadToUpdate.Category__c);</b>
+<b class="nc"><i>59</i>&nbsp;                Id previousSuggestedUserId = salesLeadToUpdate.SuggestedOwner__c;</b>
+<b class="nc"><i>60</i>&nbsp;                Id suggestedUserId = null;</b>
+<i>61</i>&nbsp;
+<b class="nc"><i>62</i>&nbsp;                if (settingList != null) {</b>
+<i>63</i>&nbsp;                    // Sometimes there are multiple settings per CountryCategory (e.g. US: Prosthetics ATL and US: MIS Implants)
+<b class="nc"><i>64</i>&nbsp;                    for (LeadOpportunitySetting__mdt setting : settingList) {</b>
+<b class="nc"><i>65</i>&nbsp;                        if (suggestedUserId != null) break;</b>
+<i>66</i>&nbsp;                        // Sometimes multiple User Roles are defined
+<b class="nc"><i>67</i>&nbsp;                        List&lt;String&gt; userRoleList = setting?.UserRoles__c.split(&#39;;&#39;);</b>
+<i>68</i>&nbsp;                        // Only assign SuggestedOwner if the setting matches the Brand of the Sales Lead
+<b class="nc"><i>69</i>&nbsp;                        if (salesLeadToUpdate.Brand__c != null &amp;&amp; setting.BrandsList__c.contains(salesLeadToUpdate.Brand__c)) {</b>
+<i>70</i>&nbsp;                            // Find the correct account depending on if the setting suggests that the owner should come from the Account or Dealer
+<b class="nc"><i>71</i>&nbsp;                            Id accountId = setting.AssignOwnerFrom__c == &#39;Dealer&#39; ? salesLeadToUpdate.Dealer__c : salesLeadToUpdate.Account__c;</b>
+<b class="nc"><i>72</i>&nbsp;                            if (accountId != null &amp;&amp; accountTerritoryMap.containsKey(accountId)) {</b>
+<i>73</i>&nbsp;                                // Loop through all territories associated with the Account of the Sales Lead
+<b class="nc"><i>74</i>&nbsp;                                for (Id territoryId : accountTerritoryMap.get(accountId)) {</b>
+<b class="nc"><i>75</i>&nbsp;                                    if (suggestedUserId != null) break;</b>
+<b class="nc"><i>76</i>&nbsp;                                    for (String userRole : userRoleList) {</b>
+<b class="nc"><i>77</i>&nbsp;                                        if (suggestedUserId != null) break;</b>
+<b class="nc"><i>78</i>&nbsp;                                        suggestedUserId = territoryIdUserAssociationMap.get(territoryId)?.get(userRole.trim())?.UserId;</b>
+<i>79</i>&nbsp;                                    }
+<i>80</i>&nbsp;                                }
+<i>81</i>&nbsp;                            }
+<i>82</i>&nbsp;                        }
+<i>83</i>&nbsp;                    }
+<i>84</i>&nbsp;                }
+<i>85</i>&nbsp;
+<i>86</i>&nbsp;                // If suggested owner is different from the previous value, then assign the new suggested owner
+<b class="nc"><i>87</i>&nbsp;                if (previousSuggestedUserId != suggestedUserId) {</b>
+<b class="nc"><i>88</i>&nbsp;                    salesLeadToUpdate.SuggestedOwner__c = suggestedUserId;</b>
+<b class="nc"><i>89</i>&nbsp;                    salesLeadToUpdateList.add(salesLeadToUpdate);</b>
+<i>90</i>&nbsp;                }
+<i>91</i>&nbsp;                
+<i>92</i>&nbsp;            }
+<b class="nc"><i>93</i>&nbsp;            update salesLeadToUpdateList;</b>
+<b class="nc"><i>94</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>95</i>&nbsp;            DebugLog.addException(e, &#39;Error occurred on: BatchAssignSuggestedOwner&#39;);</b>
+<i>96</i>&nbsp;        }
+<i>97</i>&nbsp;
+<i>98</i>&nbsp;    }
+<i>99</i>&nbsp;
+<b class="nc"><i>100</i>&nbsp;    global void finish(Database.BatchableContext bc) {</b>
+<b class="nc"><i>101</i>&nbsp;        DebugLog.addInfo(&#39;Batch successfully finished: BatchAssignSuggestedOwner&#39;, bc.getJobId());</b>
+<i>102</i>&nbsp;    }
+<i>103</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: LoyaltyProgramParticipantTriggerHelper</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: LoyaltyProgramParticipantTriggerHelper (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LoyaltyProgramParticipantTriggerHelper</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/ 6)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>LoyaltyProgramParticipantTriggerHelper</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         Kevin Ruibin Do (Salesforce) 20200903
+<i>3</i>&nbsp;Description:    LoyaltyProgramParticipant__c Trigger Helper Class
+<i>4</i>&nbsp;History 
+<i>5</i>&nbsp;20200903        Kevin Ruibin Do - Created LoyaltyProgramParticipantTriggerHelper
+<i>6</i>&nbsp;20200903        Kevin Ruibin Do - Created Class
+<i>7</i>&nbsp;--------------------------------------------------------------------------------------------------------*/
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;/**
+<i>10</i>&nbsp; * Author: Kevin Ruibin Do
+<i>11</i>&nbsp; * Description: Generates random string and assigns that to ExternalId__c
+<i>12</i>&nbsp; */
+<i>13</i>&nbsp;public with sharing class LoyaltyProgramParticipantTriggerHelper {
+<b class="fc"><i>14</i>&nbsp;    public static void setExternalId(List&lt;LoyaltyProgramParticipant__c&gt; newLoyaltyProgramParticipantList) {</b>
+<b class="fc"><i>15</i>&nbsp;        for(LoyaltyProgramParticipant__c lPParticipant : newLoyaltyProgramParticipantList) {</b>
+<b class="fc"><i>16</i>&nbsp;            Blob b = Crypto.GenerateAESKey(128);</b>
+<b class="fc"><i>17</i>&nbsp;            String h = EncodingUtil.ConvertTohex(b);</b>
+<b class="fc"><i>18</i>&nbsp;            String guid = h.SubString(0,8)+ &#39;-&#39; + h.SubString(8,12) + &#39;-&#39; + h.SubString(12,16) + &#39;-&#39; + h.SubString(16,20) + &#39;-&#39; + h.substring(20);</b>
+<b class="fc"><i>19</i>&nbsp;            lPParticipant.ExternalId__c = guid;</b>
+<i>20</i>&nbsp;        }
+<i>21</i>&nbsp;    }
+<i>22</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: LeadController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: LeadController (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LeadController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (29/ 29)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>LeadController</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*------------------------------------------------------------	
+<i>2</i>&nbsp;Author: 		Richard Trum (Glimt) 2019-11-28 	
+<i>3</i>&nbsp;Description:   	Class for handling CRUD calls related to the Lead__c and Field_Sales_Project__c objects
+<i>4</i>&nbsp;History:
+<i>5</i>&nbsp;23-07-2023   Houssam Adib        Sync the dealer filter with the lookup filter [TFUS-000006089]
+<i>6</i>&nbsp;01-01-2024   Houssam Adib        Refactor the code and change filter logic to use DistributorCategorisation__c rather than DistributorCategories__c
+<i>7</i>&nbsp;31-10-2024   Houssam Adib        Change the order of selected initiatives to order them by title [TFUS-000007049]
+<i>8</i>&nbsp;------------------------------------------------------------*/
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;public with sharing class LeadController {
+<i>11</i>&nbsp;
+<b class="fc"><i>12</i>&nbsp;    private final static Integer MAX_RESULTS = 5;</b>
+<i>13</i>&nbsp;    private final static String DISTRIBUTOR = &#39;Distributor&#39;;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    @AuraEnabled
+<b class="fc"><i>16</i>&nbsp;    public static List&lt;Field_Sales_Project__c&gt; getInitiatives(){</b>
+<i>17</i>&nbsp;
+<b class="fc"><i>18</i>&nbsp;        List&lt;Field_Sales_Project__c&gt; inits = [  SELECT Id, Title__c, Category__c, Brand__c, Status__c</b>
+<i>19</i>&nbsp;                                                FROM Field_Sales_Project__c
+<b class="fc"><i>20</i>&nbsp;                                                WHERE (AllowUsersToAddNewLeads__c =: true AND Status__c=:&#39;Active&#39;)</b>
+<i>21</i>&nbsp;                                                ORDER BY Title__c];
+<b class="fc"><i>22</i>&nbsp;        return inits;</b>
+<i>23</i>&nbsp;    }
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    @AuraEnabled
+<b class="fc"><i>26</i>&nbsp;    public static List&lt;LeadOpportunitySetting__mdt&gt; getSalesLeadSettings(String category, String country){</b>
+<i>27</i>&nbsp;
+<b class="fc"><i>28</i>&nbsp;        List&lt;LeadOpportunitySetting__mdt&gt; settings = [SELECT DeveloperName, Category__c, Country__c, ShowDistributor__c, IsTest__c FROM LeadOpportunitySetting__mdt WHERE (Category__c =:category AND Country__c =: country)];</b>
+<i>29</i>&nbsp;
+<b class="fc"><i>30</i>&nbsp;        return settings;</b>
+<i>31</i>&nbsp;    }
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;    @AuraEnabled(Cacheable=true)
+<b class="fc"><i>34</i>&nbsp;    public static List&lt;LookupSearchResult&gt; search(String searchTerm, List&lt;String&gt; selectedIds, String category)</b>
+<i>35</i>&nbsp;    {
+<i>36</i>&nbsp;        // Prepare query parameters
+<b class="fc"><i>37</i>&nbsp;        searchTerm += &#39;*&#39;;</b>
+<i>38</i>&nbsp;
+<b class="fc"><i>39</i>&nbsp;        List&lt;List&lt;SObject&gt;&gt; searchResults = [</b>
+<b class="fc"><i>40</i>&nbsp;                FIND :searchTerm</b>
+<i>41</i>&nbsp;                IN ALL FIELDS
+<i>42</i>&nbsp;                RETURNING
+<i>43</i>&nbsp;                        Account(Id, Name, ShippingCity
+<i>44</i>&nbsp;                                WHERE
+<b class="fc"><i>45</i>&nbsp;                                Id NOT IN :selectedIds</b>
+<i>46</i>&nbsp;                                AND
+<i>47</i>&nbsp;                                (
+<b class="fc"><i>48</i>&nbsp;                                        OneAccount_Type__c = :DISTRIBUTOR</b>
+<i>49</i>&nbsp;                                        AND
+<b class="fc"><i>50</i>&nbsp;                                        DistributorCategorisation__c EXCLUDES (:category)</b>
+<i>51</i>&nbsp;                                )
+<i>52</i>&nbsp;                        )
+<i>53</i>&nbsp;
+<b class="fc"><i>54</i>&nbsp;                LIMIT :MAX_RESULTS</b>
+<i>55</i>&nbsp;        ];
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;        // Prepare results
+<b class="fc"><i>58</i>&nbsp;        List&lt;LookupSearchResult&gt; results = new List&lt;LookupSearchResult&gt;();</b>
+<i>59</i>&nbsp;
+<i>60</i>&nbsp;        // Extract Accounts &amp; convert them into LookupSearchResult
+<b class="fc"><i>61</i>&nbsp;        String accountIcon = &#39;standard:account&#39;;</b>
+<b class="fc"><i>62</i>&nbsp;        Account[] accounts = (List&lt;Account&gt;) searchResults[0];</b>
+<i>63</i>&nbsp;
+<b class="fc"><i>64</i>&nbsp;        for (Account account : accounts) {</b>
+<b class="fc"><i>65</i>&nbsp;            results.add(</b>
+<b class="fc"><i>66</i>&nbsp;                    new LookupSearchResult(</b>
+<b class="fc"><i>67</i>&nbsp;                            account.Id,</b>
+<b class="fc"><i>68</i>&nbsp;                            &#39;Account&#39;,</b>
+<b class="fc"><i>69</i>&nbsp;                            accountIcon,</b>
+<b class="fc"><i>70</i>&nbsp;                            account.Name,</b>
+<b class="fc"><i>71</i>&nbsp;                            &#39;Account • &#39; + account.ShippingCity</b>
+<i>72</i>&nbsp;                    )
+<i>73</i>&nbsp;            );
+<i>74</i>&nbsp;        }
+<i>75</i>&nbsp;
+<i>76</i>&nbsp;        // Optionally sort all results on title
+<b class="fc"><i>77</i>&nbsp;        results.sort();</b>
+<i>78</i>&nbsp;
+<b class="fc"><i>79</i>&nbsp;        return results;</b>
+<i>80</i>&nbsp;    }
+<i>81</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1237 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: OrderManagement_CC</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: OrderManagement_CC (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">OrderManagement_CC</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    71.3%
+  </span>
+  <span class="absValue">
+    (447/ 627)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>OrderManagement_CC</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         Ahmed loudrassi (Salesforce) 20200215
+<i>3</i>&nbsp;Description:    OrderManagementCmp Controller Class
+<i>4</i>&nbsp;Test Class:     Test_OrderManagement_CC
+<i>5</i>&nbsp;History:
+<i>6</i>&nbsp;210716          modified to support ERP callouts new methods added -&gt; prodPricingERPCallOut, getSourceRecords
+<i>7</i>&nbsp;210426          modified getProducts() to return list ordered on Article__c
+<i>8</i>&nbsp;201015          Added readAccess check on getPriceBooks()
+<i>9</i>&nbsp;230131			TFUS-000005107
+<i>10</i>&nbsp;230420          TFUS-000005506
+<i>11</i>&nbsp;230829          TFUS-000005926
+<i>12</i>&nbsp;231117			TFUS-000006243
+<i>13</i>&nbsp;230712          TFUS-000006293 TFUS-000006294 TFUS-000006228 TFUS-000006320 (Roberto)
+<i>14</i>&nbsp;240103          TFUS-000006379 Adding &quot;AXCustomerPrice__c&quot; to query when fetching items
+<i>15</i>&nbsp;----------------------------------------------------------------------------------------*/
+<i>16</i>&nbsp;public with sharing class OrderManagement_CC {
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    /*----------------------------------------------------------------
+<i>19</i>&nbsp;    Description:    Custom exception for the OrderManagement_CC class
+<i>20</i>&nbsp;    ----------------------------------------------------------------*/
+<i>21</i>&nbsp;    public class OrderManagementException extends Exception {}
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    /*------------------------------------------------------------  
+<i>24</i>&nbsp;    Description:    Method to select the current User uITheme.
+<i>25</i>&nbsp;    Inputs:         
+<i>26</i>&nbsp;    ------------------------------------------------------------*/
+<i>27</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>28</i>&nbsp;    public static string uIThemeDisplayed(){</b>
+<b class="nc"><i>29</i>&nbsp;        try {</b>
+<b class="nc"><i>30</i>&nbsp;            return UserInfo.getUIThemeDisplayed();</b>
+<i>31</i>&nbsp;        }
+<b class="nc"><i>32</i>&nbsp;        catch (Exception e) {</b>
+<b class="nc"><i>33</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.uIThemeDisplayed&#39;);</b>
+<b class="nc"><i>34</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>35</i>&nbsp;        }
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;    /*------------------------------------------------------------  
+<i>39</i>&nbsp;    Description:    Method to select the current User navigation type.
+<i>40</i>&nbsp;    Inputs:         
+<i>41</i>&nbsp;    ------------------------------------------------------------*/
+<i>42</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>43</i>&nbsp;    public static String getNavType() { </b>
+<b class="nc"><i>44</i>&nbsp;        UserAppInfo userAppInfo = [SELECT Id, AppDefinitionId FROM UserAppInfo WHERE UserId = :UserInfo.getUserId() LIMIT 1];</b>
+<b class="nc"><i>45</i>&nbsp;        AppDefinition appDefinition = [SELECT DurableId, NavType FROM AppDefinition Where DurableId = :userAppInfo.AppDefinitionId LIMIT 1];</b>
+<b class="nc"><i>46</i>&nbsp;        return appDefinition.NavType;</b>
+<i>47</i>&nbsp;    }
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;    /*------------------------------------------------------------  
+<i>50</i>&nbsp;    Description:    Method to select the List of the active currencies related to a pricebook.
+<i>51</i>&nbsp;    Inputs:          @param ID pricebookId
+<i>52</i>&nbsp;    ------------------------------------------------------------*/
+<i>53</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>54</i>&nbsp;    public static List&lt;AggregateResult&gt; getPriceBooksEntriesCurrencies(ID pricebookId) {</b>
+<b class="nc"><i>55</i>&nbsp;        try {</b>
+<b class="nc"><i>56</i>&nbsp;            return [SELECT CurrencyIsoCode FROM PricebookEntry</b>
+<b class="nc"><i>57</i>&nbsp;            WHERE Pricebook2Id = : pricebookId</b>
+<i>58</i>&nbsp;            AND IsActive = true
+<i>59</i>&nbsp;            AND Product2.IsActive = true 
+<i>60</i>&nbsp;            GROUP BY CurrencyIsoCode];
+<i>61</i>&nbsp;        }
+<b class="nc"><i>62</i>&nbsp;        catch (Exception e) {</b>
+<b class="nc"><i>63</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.getPriceBooksEntriesCurrencies&#39;);</b>
+<b class="nc"><i>64</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>65</i>&nbsp;        }
+<i>66</i>&nbsp;    }
+<i>67</i>&nbsp;     /*------------------------------------------------------------  
+<i>68</i>&nbsp;    Description:    Method to select the List of the active pricebooks except the Standard Pricebook.
+<i>69</i>&nbsp;    Inputs:         
+<i>70</i>&nbsp;    ------------------------------------------------------------*/
+<i>71</i>&nbsp;    @AuraEnabled(cacheable=true)
+<b class="nc"><i>72</i>&nbsp;    public static List&lt;PriceBook2&gt; getPriceBooks() {</b>
+<b class="nc"><i>73</i>&nbsp;        try {</b>
+<b class="nc"><i>74</i>&nbsp;            Map&lt;Id, Pricebook2&gt; pricebookMap = new Map&lt;Id, Pricebook2&gt;([</b>
+<i>75</i>&nbsp;                SELECT Id, Name, ShowPricingfromMicroServiceOM__c, SourceId__c   
+<i>76</i>&nbsp;                FROM Pricebook2 
+<i>77</i>&nbsp;                WHERE IsActive = true AND Name != &#39;Standard Price Book&#39; AND Name != &#39;Sirona Products&#39; AND ObjectTypeUseOM__c != &#39;Opportunity&#39;
+<i>78</i>&nbsp;                ORDER BY Name ASC
+<i>79</i>&nbsp;            ]);
+<i>80</i>&nbsp;
+<b class="nc"><i>81</i>&nbsp;            List&lt;Pricebook2&gt; pbWithReadAccessList = new List&lt;Pricebook2&gt;();</b>
+<b class="nc"><i>82</i>&nbsp;            for (UserRecordAccess recordAccess : [</b>
+<i>83</i>&nbsp;                SELECT RecordId 
+<i>84</i>&nbsp;                FROM UserRecordAccess 
+<b class="nc"><i>85</i>&nbsp;                WHERE UserId= :UserInfo.getUserId() AND HasReadAccess = true AND RecordId IN :pricebookMap.keySet() </b>
+<i>86</i>&nbsp;                LIMIT 200
+<b class="nc"><i>87</i>&nbsp;            ]) {</b>
+<b class="nc"><i>88</i>&nbsp;                pbWithReadAccessList.add(pricebookMap.get(recordAccess.RecordId));</b>
+<i>89</i>&nbsp;            }
+<b class="nc"><i>90</i>&nbsp;            pbWithReadAccessList.sort();</b>
+<i>91</i>&nbsp;
+<b class="nc"><i>92</i>&nbsp;            return pbWithReadAccessList;</b>
+<i>93</i>&nbsp;        }
+<b class="nc"><i>94</i>&nbsp;        catch (Exception e) {</b>
+<b class="nc"><i>95</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.getPriceBooks&#39;);</b>
+<b class="nc"><i>96</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>97</i>&nbsp;        }
+<i>98</i>&nbsp;    }
+<i>99</i>&nbsp;    /*------------------------------------------------------------  
+<i>100</i>&nbsp;    Description:    Method to select the  total of the Order Items related to an order.
+<i>101</i>&nbsp;    Inputs:          @param orderId
+<i>102</i>&nbsp;    ------------------------------------------------------------*/
+<i>103</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>104</i>&nbsp;    public static Integer getOrderItemsCounter(ID orderId) {</b>
+<b class="nc"><i>105</i>&nbsp;        try {</b>
+<b class="nc"><i>106</i>&nbsp;             return (Integer)((AggregateResult) Database.query(&#39;SELECT Count(Id) total FROM OrderItem WHERE OrderId =:orderId&#39;)).get(&#39;total&#39;);</b>
+<i>107</i>&nbsp;        }
+<b class="nc"><i>108</i>&nbsp;        catch (Exception e) {</b>
+<b class="nc"><i>109</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.getOrderItemsCounter&#39;);</b>
+<b class="nc"><i>110</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>111</i>&nbsp;        }
+<i>112</i>&nbsp;    }
+<i>113</i>&nbsp;    /*------------------------------------------------------------  
+<i>114</i>&nbsp;    Description:    Method to select the Order Items List related to an order with server side pagination.
+<i>115</i>&nbsp;    Inputs:          @param orderId, @param pageNumber, @param pageSize
+<i>116</i>&nbsp;    ------------------------------------------------------------*/
+<i>117</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>118</i>&nbsp;    public static List&lt;OrderItem&gt; getOrderItems(ID orderId, Integer pageNumber, Integer pageSize) {</b>
+<b class="nc"><i>119</i>&nbsp;        try {</b>
+<b class="nc"><i>120</i>&nbsp;            return [SELECT Id, AXCustomerPrice__c, Quantity, Article_Number__c, AXRetailPrice__c, AXDiscount__c, TotalPrice, UnitPrice, Total_Line_Item_Price__c, DiscountedAmount__c, Free_Of_Charge__c,Free_of_Charge_Delivery__c,</b>
+<i>121</i>&nbsp;            Product2.Name, Product2.Article__c, PricebookEntry.LocalProductDescription__c,PricebookEntry.FreeProductThreshold__c, PricebookEntry.Primary__c, PricebookEntry.ApprovalLevel1__c, PricebookEntry.ApprovalLevel2__c, PricebookEntry.ApprovalLevel3__c, 
+<i>122</i>&nbsp;            Order.CurrencyIsoCode, Discount_Percent__c, ApprovalLevel__c, UseCoupon__c, AvailableCouponCode__c, LineApprovalLevel__c, Offer_code_dna__c, Offer_code_dna__r.QuantityLimit__c, PricebookEntry.Pricebook2.ShowPricingfromMicroServiceOM__c FROM OrderItem
+<b class="nc"><i>123</i>&nbsp;            WHERE OrderId =:orderId </b>
+<i>124</i>&nbsp;            ORDER BY CreatedDate DESC
+<b class="nc"><i>125</i>&nbsp;            LIMIT :pageSize OFFSET :(pageNumber-1)* pageSize];</b>
+<i>126</i>&nbsp;       }
+<b class="nc"><i>127</i>&nbsp;       catch (Exception e) {</b>
+<b class="nc"><i>128</i>&nbsp;        DebugLog.addException(e, &#39;OrderManagement_CC.&#39;);</b>
+<b class="nc"><i>129</i>&nbsp;           throw new AuraHandledException(e.getMessage());    </b>
+<i>130</i>&nbsp;       }
+<i>131</i>&nbsp;    }
+<i>132</i>&nbsp;    /*------------------------------------------------------------  
+<i>133</i>&nbsp;    Description:    Method to delete an  Order Item by ID.
+<i>134</i>&nbsp;    Inputs:          @param orderItemId
+<i>135</i>&nbsp;    ------------------------------------------------------------*/
+<i>136</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>137</i>&nbsp;    public static String deleteOrderItem(String orderItemId) {</b>
+<b class="nc"><i>138</i>&nbsp;        try {</b>
+<b class="nc"><i>139</i>&nbsp;            OrderItem orderItem = [SELECT Id FROM OrderItem WHERE ID =:orderItemId];</b>
+<b class="nc"><i>140</i>&nbsp;            delete orderItem;</b>
+<b class="nc"><i>141</i>&nbsp;            return &#39;SUCCESS&#39;;</b>
+<b class="nc"><i>142</i>&nbsp;        } catch(Exception e) {</b>
+<b class="nc"><i>143</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.deleteOrderItem&#39;);</b>
+<b class="nc"><i>144</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>145</i>&nbsp;        }
+<i>146</i>&nbsp;
+<i>147</i>&nbsp;    }
+<i>148</i>&nbsp;    /*------------------------------------------------------------  
+<i>149</i>&nbsp;    Description:    Method to select an  Order by ID.
+<i>150</i>&nbsp;    Inputs:          @param orderItemId
+<i>151</i>&nbsp;    ------------------------------------------------------------*/
+<i>152</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>153</i>&nbsp;    public static Order getOrder(ID orderId) {</b>
+<b class="nc"><i>154</i>&nbsp;        try {</b>
+<b class="nc"><i>155</i>&nbsp;            return [</b>
+<i>156</i>&nbsp;                SELECT 
+<i>157</i>&nbsp;                    Id
+<i>158</i>&nbsp;                    , AccountId
+<i>159</i>&nbsp;                    , CurrencyIsoCode
+<i>160</i>&nbsp;                    , ContractId
+<i>161</i>&nbsp;                    , Contract.Discount__c
+<i>162</i>&nbsp;               		, Distributor_email__c
+<i>163</i>&nbsp;                    , Contract.EndDate
+<i>164</i>&nbsp;                    , OrderNumber
+<i>165</i>&nbsp;                    , Pricebook2Id
+<i>166</i>&nbsp;                    , Pricebook2.ShowPricingfromMicroServiceOM__c
+<i>167</i>&nbsp;                    , Pricebook2.isActive
+<i>168</i>&nbsp;                    , Pricebook2.Show_Discount_OM__c
+<i>169</i>&nbsp;                    , Pricebook2.Show_FOC_OM__c
+<i>170</i>&nbsp;                    , Pricebook2.Show_OfferCode_OM__c
+<i>171</i>&nbsp;                    , Pricebook2.Show_Description_OM__c
+<i>172</i>&nbsp;                    , Pricebook2.Show_Price_OM__c
+<i>173</i>&nbsp;                    , Pricebook2.Pricebook_General_Discount__c
+<i>174</i>&nbsp;                    , Pricebook2.Automatically_Apply_Discount_OM__c
+<i>175</i>&nbsp;                    , Pricebook2.CompanyCode__c
+<i>176</i>&nbsp;                    , Pricebook2.ShowApprovalLevelOrderLine__c
+<i>177</i>&nbsp;                    , Pricebook2.SourceId__c
+<i>178</i>&nbsp;                    , ApprovalLevelInt__c
+<i>179</i>&nbsp;                    , ApprovalLevel__c
+<i>180</i>&nbsp;                    , Order_Amount_global__c
+<i>181</i>&nbsp;                    , ApprovalLevelSecondaryInt__c
+<i>182</i>&nbsp;                    , Total_Order_Discount__c
+<i>183</i>&nbsp;                    , SourceRecord__c
+<i>184</i>&nbsp;                    , SourceRecord__r.Tiered__c
+<i>185</i>&nbsp;                    , SourceRecord__r.Source_Id__c
+<i>186</i>&nbsp;                    , Waive_Shipping_Charges__c
+<i>187</i>&nbsp;                FROM Order 
+<b class="nc"><i>188</i>&nbsp;                WHERE Id =: orderId</b>
+<i>189</i>&nbsp;            ];
+<i>190</i>&nbsp;        }
+<b class="nc"><i>191</i>&nbsp;        catch (Exception e) {</b>
+<b class="nc"><i>192</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.getOrder&#39;);</b>
+<b class="nc"><i>193</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>194</i>&nbsp;        }
+<i>195</i>&nbsp;    }
+<i>196</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>197</i>&nbsp;    public static Order cloneOrder(ID orderId, String contractId) {</b>
+<b class="nc"><i>198</i>&nbsp;        try {</b>
+<b class="nc"><i>199</i>&nbsp;            Order order = [</b>
+<i>200</i>&nbsp;                SELECT Id
+<i>201</i>&nbsp;                    , Contact__c
+<i>202</i>&nbsp;                    , Country__c
+<i>203</i>&nbsp;                    , Dealer__c
+<i>204</i>&nbsp;                    , Distributor__c
+<i>205</i>&nbsp;                    , Distributor_email__c
+<i>206</i>&nbsp;                    , RecordTypeId
+<i>207</i>&nbsp;                    , CurrencyIsoCode
+<i>208</i>&nbsp;                    , Pricebook2Id
+<i>209</i>&nbsp;                    , Pricebook2.ShowPricingfromMicroServiceOM__c
+<i>210</i>&nbsp;                    , AccountId
+<i>211</i>&nbsp;                    , OpportunityId
+<i>212</i>&nbsp;                    , ContractId
+<i>213</i>&nbsp;                    , Status
+<i>214</i>&nbsp;                    , ShippingCity
+<i>215</i>&nbsp;                    , ShippingCountry
+<i>216</i>&nbsp;                    , ShippingPostalCode
+<i>217</i>&nbsp;                    , ShippingState
+<i>218</i>&nbsp;                    , ShippingStreet
+<i>219</i>&nbsp;                    , Contract.EndDate
+<i>220</i>&nbsp;                    , Order_Type__c
+<i>221</i>&nbsp;                    , Order_subtype__c
+<i>222</i>&nbsp;                    , SourceRecord__c
+<i>223</i>&nbsp;                    , (
+<i>224</i>&nbsp;                        SELECT 
+<i>225</i>&nbsp;                            Id
+<i>226</i>&nbsp;                            , Quantity
+<i>227</i>&nbsp;                            , PricebookEntryId
+<i>228</i>&nbsp;                            , UnitPrice
+<i>229</i>&nbsp;                            , Free_Of_Charge__c
+<i>230</i>&nbsp;                            , Free_of_Charge_Delivery__c
+<i>231</i>&nbsp;                            , Product2.Name
+<i>232</i>&nbsp;                            , Product2.Article__c
+<i>233</i>&nbsp;                            , PricebookEntry.IsActive
+<i>234</i>&nbsp;                            , Order.CurrencyIsoCode
+<i>235</i>&nbsp;                            , Discount_Percent__c 
+<i>236</i>&nbsp;                        FROM OrderItems
+<i>237</i>&nbsp;                    ) 
+<i>238</i>&nbsp;                FROM Order
+<b class="nc"><i>239</i>&nbsp;                WHERE Id =: orderId</b>
+<i>240</i>&nbsp;            ];
+<b class="nc"><i>241</i>&nbsp;            Order clonedOrder = order.clone();</b>
+<b class="nc"><i>242</i>&nbsp;            clonedOrder.EffectiveDate = Date.today();</b>
+<b class="nc"><i>243</i>&nbsp;            clonedOrder.Status = &#39;Created&#39;;</b>
+<b class="nc"><i>244</i>&nbsp;            if(String.isNotBlank(contractId)) {</b>
+<b class="nc"><i>245</i>&nbsp;                clonedOrder.ContractId = contractId;</b>
+<b class="nc"><i>246</i>&nbsp;            } else if(clonedOrder.Contract.EndDate &lt; Date.today()) {</b>
+<b class="nc"><i>247</i>&nbsp;                clonedOrder.ContractId = null;</b>
+<i>248</i>&nbsp;            }
+<b class="nc"><i>249</i>&nbsp;            List&lt;OrderItem&gt; clonedOrderItems = order.OrderItems.deepClone();</b>
+<i>250</i>&nbsp;            
+<b class="nc"><i>251</i>&nbsp;            Set&lt;ID&gt; pricebookEntriesIds = new Set&lt;ID&gt;();</b>
+<b class="nc"><i>252</i>&nbsp;            List&lt;OrderItem&gt; clonedOrderItemsToInsert = new List&lt;OrderItem&gt; ();</b>
+<b class="nc"><i>253</i>&nbsp;            List &lt;ProductPricingERPCallOutWrapper.ProductEntry&gt; pricingProdsRequest = new List&lt;ProductPricingERPCallOutWrapper.ProductEntry&gt;();</b>
+<b class="nc"><i>254</i>&nbsp;            List &lt;ProductPricingERPCallOutWrapper.ProductEntry&gt; dupPricingProdsRequest = new List&lt;ProductPricingERPCallOutWrapper.ProductEntry&gt;();</b>
+<i>255</i>&nbsp;
+<b class="nc"><i>256</i>&nbsp;            set&lt;String&gt; uniqueProds = new set&lt;string&gt;();</b>
+<b class="nc"><i>257</i>&nbsp;            set&lt;String&gt; dupProds = new set&lt;string&gt;();</b>
+<i>258</i>&nbsp;
+<i>259</i>&nbsp;
+<b class="nc"><i>260</i>&nbsp;            for(OrderItem orderItem : clonedOrderItems) {</b>
+<i>261</i>&nbsp;
+<b class="nc"><i>262</i>&nbsp;                if(orderItem.PricebookEntry.IsActive &amp;&amp; order.Pricebook2.ShowPricingfromMicroServiceOM__c == false) {</b>
+<b class="nc"><i>263</i>&nbsp;                    pricebookEntriesIds.add(orderItem.PricebookEntryId);</b>
+<i>264</i>&nbsp;                }
+<i>265</i>&nbsp;
+<b class="nc"><i>266</i>&nbsp;                if(orderItem.PricebookEntry.IsActive &amp;&amp; order.Pricebook2.ShowPricingfromMicroServiceOM__c == true) {</b>
+<b class="nc"><i>267</i>&nbsp;                    ProductPricingERPCallOutWrapper.ProductEntry prodRequest = new ProductPricingERPCallOutWrapper.ProductEntry();</b>
+<b class="nc"><i>268</i>&nbsp;                    prodRequest.productId = orderItem.Product2.Article__c;</b>
+<b class="nc"><i>269</i>&nbsp;                    prodRequest.quantity = orderItem.Quantity.intValue();</b>
+<b class="nc"><i>270</i>&nbsp;                    if(uniqueProds.isEmpty() || ! uniqueProds.contains(orderItem.Product2.Article__c)){</b>
+<b class="nc"><i>271</i>&nbsp;                        uniqueProds.add(orderItem.Product2.Article__c);</b>
+<b class="nc"><i>272</i>&nbsp;                        pricingProdsRequest.add(prodRequest);</b>
+<i>273</i>&nbsp;                    } else {
+<b class="nc"><i>274</i>&nbsp;                        if(dupProds.isEmpty() || ! dupProds.contains(orderItem.Product2.Article__c)){</b>
+<b class="nc"><i>275</i>&nbsp;                            dupProds.add(orderItem.Product2.Article__c);</b>
+<b class="nc"><i>276</i>&nbsp;                            dupPricingProdsRequest.add(prodRequest);</b>
+<i>277</i>&nbsp;                        }
+<i>278</i>&nbsp;                        
+<i>279</i>&nbsp;                    }
+<i>280</i>&nbsp;                }
+<i>281</i>&nbsp;            }
+<i>282</i>&nbsp;
+<i>283</i>&nbsp;
+<i>284</i>&nbsp;
+<b class="nc"><i>285</i>&nbsp;            Map&lt;Id, PricebookEntry&gt; pricebookEntries = new Map&lt;Id, PricebookEntry&gt;();</b>
+<b class="nc"><i>286</i>&nbsp;            if(! pricebookEntriesIds.isEmpty()){</b>
+<b class="nc"><i>287</i>&nbsp;                for(PricebookEntry priceEntry : [SELECT Id,Product2Id, UnitPrice FROM PricebookEntry WHERE Id IN :pricebookEntriesIds]){</b>
+<b class="nc"><i>288</i>&nbsp;                    pricebookEntries.put(priceEntry.Id,priceEntry);</b>
+<i>289</i>&nbsp;                }
+<i>290</i>&nbsp;            }
+<i>291</i>&nbsp;
+<i>292</i>&nbsp;
+<i>293</i>&nbsp;
+<b class="nc"><i>294</i>&nbsp;            ProductPricingERPCallOutWrapper.ProductPricingResponse prices = new ProductPricingERPCallOutWrapper.ProductPricingResponse();</b>
+<i>295</i>&nbsp;
+<b class="nc"><i>296</i>&nbsp;            if(! pricingProdsRequest.isEmpty()){</b>
+<b class="nc"><i>297</i>&nbsp;                prices = getProductPricingERPCalloutResponse(Order.Id, pricingProdsRequest );</b>
+<b class="nc"><i>298</i>&nbsp;                Integer i = 0;</b>
+<b class="nc"><i>299</i>&nbsp;                for(ProductPricingERPCallOutWrapper.Entries priceBack: prices.entries){</b>
+<b class="nc"><i>300</i>&nbsp;                    for(ProductPricingERPCallOutWrapper.ProductEntry prod: pricingProdsRequest){</b>
+<b class="nc"><i>301</i>&nbsp;                        if(priceBack.productEntry.productId == prod.productId ){</b>
+<b class="nc"><i>302</i>&nbsp;                            prices.Entries[i].productEntry.quantity = prod.Quantity;</b>
+<b class="nc"><i>303</i>&nbsp;                            continue;</b>
+<i>304</i>&nbsp;                        }
+<i>305</i>&nbsp;                    }
+<i>306</i>&nbsp;                }
+<i>307</i>&nbsp;            }
+<i>308</i>&nbsp;
+<i>309</i>&nbsp;
+<i>310</i>&nbsp;
+<b class="nc"><i>311</i>&nbsp;            ProductPricingERPCallOutWrapper.ProductPricingResponse dupPrices = new ProductPricingERPCallOutWrapper.ProductPricingResponse();</b>
+<b class="nc"><i>312</i>&nbsp;            if(! dupPricingProdsRequest.isEmpty()){</b>
+<b class="nc"><i>313</i>&nbsp;                dupPrices = getProductPricingERPCalloutResponse(Order.Id, dupPricingProdsRequest );</b>
+<b class="nc"><i>314</i>&nbsp;                Integer i = 0;</b>
+<b class="nc"><i>315</i>&nbsp;                for(ProductPricingERPCallOutWrapper.Entries priceBack: dupPrices.entries){</b>
+<b class="nc"><i>316</i>&nbsp;                    for(ProductPricingERPCallOutWrapper.ProductEntry prod: dupPricingProdsRequest){</b>
+<b class="nc"><i>317</i>&nbsp;                        if(priceBack.productEntry.productId == prod.productId ){</b>
+<b class="nc"><i>318</i>&nbsp;                            dupPrices.Entries[i].productEntry.quantity = prod.Quantity;</b>
+<b class="nc"><i>319</i>&nbsp;                            continue;</b>
+<i>320</i>&nbsp;                        }
+<i>321</i>&nbsp;                    }
+<i>322</i>&nbsp;                }
+<b class="nc"><i>323</i>&nbsp;                prices.entries.addAll(dupPrices.entries);</b>
+<i>324</i>&nbsp;            }
+<i>325</i>&nbsp;
+<i>326</i>&nbsp;
+<b class="nc"><i>327</i>&nbsp;            insert clonedOrder;</b>
+<i>328</i>&nbsp;
+<i>329</i>&nbsp;
+<i>330</i>&nbsp;
+<b class="nc"><i>331</i>&nbsp;            for(OrderItem orderItem : clonedOrderItems) {</b>
+<i>332</i>&nbsp;                
+<b class="nc"><i>333</i>&nbsp;                if(orderItem.PricebookEntry.IsActive &amp;&amp; order.Pricebook2.ShowPricingfromMicroServiceOM__c == false){</b>
+<b class="nc"><i>334</i>&nbsp;                    orderItem.OrderId = clonedOrder.Id;</b>
+<b class="nc"><i>335</i>&nbsp;                    PricebookEntry pricebookEntry = pricebookEntries.get(orderItem.PricebookEntryId);</b>
+<b class="nc"><i>336</i>&nbsp;                    orderItem.UnitPrice = pricebookEntry.UnitPrice;</b>
+<i>337</i>&nbsp;                }
+<b class="nc"><i>338</i>&nbsp;                if(orderItem.PricebookEntry.IsActive &amp;&amp; order.Pricebook2.ShowPricingfromMicroServiceOM__c == true){</b>
+<b class="nc"><i>339</i>&nbsp;                    integer j=0;</b>
+<b class="nc"><i>340</i>&nbsp;                    for(ProductPricingERPCallOutWrapper.Entries price: prices.entries){</b>
+<b class="nc"><i>341</i>&nbsp;                        if(orderItem.Product2.Article__c == prices.Entries[j].productEntry.productId &amp;&amp; orderItem.Quantity == prices.Entries[j].productEntry.quantity) {</b>
+<b class="nc"><i>342</i>&nbsp;                            orderItem.OrderId = clonedOrder.Id;</b>
+<b class="nc"><i>343</i>&nbsp;                            orderItem.UnitPrice = prices.Entries[j].basePrice;</b>
+<b class="nc"><i>344</i>&nbsp;                            orderItem.AXCustomerPrice__c = prices.Entries[j].basePrice;</b>
+<b class="nc"><i>345</i>&nbsp;                            orderItem.AXRetailPrice__c = prices.Entries[j].retailPrice;</b>
+<i>346</i>&nbsp;                        }
+<b class="nc"><i>347</i>&nbsp;                        j++;</b>
+<i>348</i>&nbsp;                    }
+<i>349</i>&nbsp;                }
+<i>350</i>&nbsp;               
+<i>351</i>&nbsp;                
+<b class="nc"><i>352</i>&nbsp;                if(orderItem.OrderId == clonedOrder.Id){</b>
+<b class="nc"><i>353</i>&nbsp;                    clonedOrderItemsToInsert.add(orderItem);</b>
+<i>354</i>&nbsp;
+<i>355</i>&nbsp;                }
+<i>356</i>&nbsp;                
+<i>357</i>&nbsp;            }
+<i>358</i>&nbsp;
+<i>359</i>&nbsp;            
+<i>360</i>&nbsp;            
+<b class="nc"><i>361</i>&nbsp;            insert clonedOrderItemsToInsert;</b>
+<b class="nc"><i>362</i>&nbsp;            return  getOrder(clonedOrder.Id);</b>
+<i>363</i>&nbsp;        }
+<b class="nc"><i>364</i>&nbsp;        catch (Exception e) {</b>
+<b class="nc"><i>365</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.cloneOrder&#39;);</b>
+<b class="nc"><i>366</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>367</i>&nbsp;        }
+<i>368</i>&nbsp;    }
+<i>369</i>&nbsp;    /*------------------------------------------------------------  
+<i>370</i>&nbsp;    Description:    Method to insert the Order Items List related to an order.
+<i>371</i>&nbsp;    Inputs:          @param orderItems
+<i>372</i>&nbsp;    ------------------------------------------------------------*/
+<i>373</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>374</i>&nbsp;    public static string insertOrderItems(List&lt;OrderItem&gt;  orderItems){</b>
+<b class="nc"><i>375</i>&nbsp;        try {</b>
+<b class="nc"><i>376</i>&nbsp;            upsert orderItems;</b>
+<b class="nc"><i>377</i>&nbsp;            return &#39;SUCCESS&#39;;</b>
+<b class="nc"><i>378</i>&nbsp;        }catch(Exception e) {</b>
+<b class="nc"><i>379</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.insertOrderItems&#39;);</b>
+<b class="nc"><i>380</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>381</i>&nbsp;        }
+<i>382</i>&nbsp;    }
+<i>383</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>384</i>&nbsp;    public static OrderItem cloneOrderItems(Id orderItemId){</b>
+<b class="nc"><i>385</i>&nbsp;        try {</b>
+<b class="nc"><i>386</i>&nbsp;            OrderItem orderItemToClone = [</b>
+<i>387</i>&nbsp;                SELECT Id, Quantity, PricebookEntryId, UnitPrice, Free_Of_Charge__c, Product2.Name, Product2.Article__c, OrderId,
+<i>388</i>&nbsp;                PricebookEntry.IsActive, Order.CurrencyIsoCode, Discount_Percent__c, Order.Pricebook2.ShowPricingfromMicroServiceOM__c
+<i>389</i>&nbsp;                FROM OrderItem
+<b class="nc"><i>390</i>&nbsp;                WHERE Id = :orderItemId LIMIT 1</b>
+<i>391</i>&nbsp;            ];
+<b class="nc"><i>392</i>&nbsp;            OrderItem clonedOrderItem = orderItemToClone.clone(false, false, false, false);</b>
+<i>393</i>&nbsp;            //microservice call out
+<i>394</i>&nbsp;
+<b class="nc"><i>395</i>&nbsp;            If(orderItemToClone.Order.Pricebook2.ShowPricingfromMicroServiceOM__c == true){</b>
+<b class="nc"><i>396</i>&nbsp;                List &lt;ProductPricingERPCallOutWrapper.ProductEntry&gt; pricingProdsRequest = new List&lt;ProductPricingERPCallOutWrapper.ProductEntry&gt;();</b>
+<b class="nc"><i>397</i>&nbsp;                ProductPricingERPCallOutWrapper.ProductEntry prodRequest = new ProductPricingERPCallOutWrapper.ProductEntry();</b>
+<b class="nc"><i>398</i>&nbsp;                prodRequest.productId = clonedOrderItem.Product2.Article__c;</b>
+<b class="nc"><i>399</i>&nbsp;                prodRequest.quantity = clonedOrderItem.Quantity.intValue();</b>
+<b class="nc"><i>400</i>&nbsp;                pricingProdsRequest.add(prodRequest);</b>
+<b class="nc"><i>401</i>&nbsp;                ProductPricingERPCallOutWrapper.ProductPricingResponse prices = new ProductPricingERPCallOutWrapper.ProductPricingResponse();</b>
+<b class="nc"><i>402</i>&nbsp;                prices = getProductPricingERPCalloutResponse(orderItemToClone.OrderId, pricingProdsRequest);</b>
+<b class="nc"><i>403</i>&nbsp;                clonedOrderItem.UnitPrice = prices.Entries[0].basePrice;</b>
+<b class="nc"><i>404</i>&nbsp;                clonedOrderItem.AXCustomerPrice__c = prices.Entries[0].basePrice;</b>
+<b class="nc"><i>405</i>&nbsp;                clonedOrderItem.AXRetailPrice__c = prices.Entries[0].retailPrice;</b>
+<i>406</i>&nbsp;            }
+<i>407</i>&nbsp;           
+<b class="nc"><i>408</i>&nbsp;            insert clonedOrderItem;</b>
+<b class="nc"><i>409</i>&nbsp;            return clonedOrderItem;</b>
+<b class="nc"><i>410</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>411</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.cloneOrderItems&#39;);</b>
+<b class="nc"><i>412</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>413</i>&nbsp;        }
+<i>414</i>&nbsp;    }
+<i>415</i>&nbsp;    /*------------------------------------------------------------  
+<i>416</i>&nbsp;    Description:    Method to select a contracts List related to the parent(Account,Opportunity, Event, Lead)
+<i>417</i>&nbsp;                    filtred by currencyIsoCode and pricebook discount type.
+<i>418</i>&nbsp;    Inputs:          @param pricebookId, @param parentId, @param currencyIsoCode
+<i>419</i>&nbsp;    ------------------------------------------------------------*/
+<i>420</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>421</i>&nbsp;    public static List&lt;Contract&gt; getContracts(String pricebookId, ID parentId, String currencyIsoCode) {</b>
+<b class="nc"><i>422</i>&nbsp;        try {</b>
+<b class="nc"><i>423</i>&nbsp;            Pricebook2 pricebook = [SELECT Id, Contract_Discount_types__c FROM Pricebook2 WHERE Id =: pricebookId];</b>
+<b class="nc"><i>424</i>&nbsp;            if(String.isNotEmpty(pricebook.Contract_Discount_types__c)) {</b>
+<b class="nc"><i>425</i>&nbsp;                String parentSObjectName = parentId.getSObjectType().getDescribe().getName();</b>
+<b class="nc"><i>426</i>&nbsp;                String query = &#39;SELECT Id, Name, Discount__c, Discount_Type__c FROM Contract WHERE RecordType.DeveloperName=\&#39;Contract\&#39; AND Type_of_Contract__c = \&#39;Contract\&#39; AND Discount_Type__c = \&#39;&#39; + pricebook.Contract_Discount_types__c + &#39;\&#39;&#39;;</b>
+<b class="nc"><i>427</i>&nbsp;                Date todayDate = Date.today();</b>
+<b class="nc"><i>428</i>&nbsp;                query+= &#39; AND StartDate &lt;= :todayDate AND EndDate &gt;= :todayDate&#39;;</b>
+<b class="nc"><i>429</i>&nbsp;                if(String.isNotEmpty(currencyIsoCode)) {</b>
+<b class="nc"><i>430</i>&nbsp;                    query += &#39; AND CurrencyIsoCode =\&#39;&#39; + currencyIsoCode + &#39;\&#39;&#39;; </b>
+<i>431</i>&nbsp;                }
+<b class="nc"><i>432</i>&nbsp;                if(&#39;Account&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>433</i>&nbsp;                    query += &#39; AND AccountId =:parentId&#39;;                 </b>
+<i>434</i>&nbsp;                }
+<b class="nc"><i>435</i>&nbsp;                else if (&#39;Contact&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>436</i>&nbsp;                    Contact parent = [SELECT Id, AccountId FROM Contact WHERE Id=:parentId];</b>
+<b class="nc"><i>437</i>&nbsp;                    query += &#39; AND AccountId =\&#39;&#39; + parent.AccountId + &#39;\&#39;&#39;;</b>
+<i>438</i>&nbsp;                }
+<b class="nc"><i>439</i>&nbsp;                else if (&#39;Opportunity&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>440</i>&nbsp;                    Opportunity parent = [SELECT Id, AccountId FROM Opportunity WHERE Id=:parentId];</b>
+<b class="nc"><i>441</i>&nbsp;                    query += &#39; AND AccountId =\&#39;&#39; + parent.AccountId + &#39;\&#39;&#39;;</b>
+<i>442</i>&nbsp;                }
+<b class="nc"><i>443</i>&nbsp;                else if (&#39;Field_Sales_Project_Members__c&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>444</i>&nbsp;                    Field_Sales_Project_Members__c parent = [SELECT Id, Account__c FROM Field_Sales_Project_Members__c WHERE Id=:parentId];</b>
+<b class="nc"><i>445</i>&nbsp;                    query += &#39; AND AccountId =\&#39;&#39; + parent.Account__c + &#39;\&#39;&#39;;</b>
+<i>446</i>&nbsp;                }
+<b class="nc"><i>447</i>&nbsp;                else if (&#39;Event&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>448</i>&nbsp;                    Event parent = [SELECT Id, AccountId FROM Event WHERE Id=:parentId];</b>
+<b class="nc"><i>449</i>&nbsp;                    query += &#39; AND AccountId =\&#39;&#39; + parent.AccountId + &#39;\&#39;&#39;;</b>
+<i>450</i>&nbsp;                }
+<b class="nc"><i>451</i>&nbsp;                return Database.query(query);</b>
+<i>452</i>&nbsp;            }
+<b class="nc"><i>453</i>&nbsp;            return null;</b>
+<b class="nc"><i>454</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>455</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.getContracts&#39;);</b>
+<b class="nc"><i>456</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>457</i>&nbsp;        }
+<i>458</i>&nbsp;    }
+<i>459</i>&nbsp;    /*------------------------------------------------------------  
+<i>460</i>&nbsp;    Description:    Method to insert a related order to the parent(Opportunity, Event, Lead) related Account
+<i>461</i>&nbsp;    Inputs:          @param pricebookId, @param parentId, @param currencyIsoCode,  @param contractId
+<i>462</i>&nbsp;    ------------------------------------------------------------*/
+<i>463</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>464</i>&nbsp;    public static Order createOrder(String pricebookId, ID parentId, String currencyIsoCode, String contractId, String sourceRecordId, String addressRecordId, string accountId ) {</b>
+<b class="nc"><i>465</i>&nbsp;        try {</b>
+<b class="nc"><i>466</i>&nbsp;            Boolean isParentaLead = false;</b>
+<b class="nc"><i>467</i>&nbsp;            Field_Sales_Project_Members__c salesLead;</b>
+<b class="nc"><i>468</i>&nbsp;            Pricebook2 pricebook = [SELECT Id, PriceBook_Type__c, Pricebook_Subtype__c, Pricebook_Channel__c FROM Pricebook2 WHERE Id =:pricebookId];</b>
+<b class="nc"><i>469</i>&nbsp;            Order order = new Order();</b>
+<b class="nc"><i>470</i>&nbsp;            order.Pricebook2Id = pricebookId;</b>
+<b class="nc"><i>471</i>&nbsp;            order.Order_Type__c = pricebook.PriceBook_Type__c;</b>
+<b class="nc"><i>472</i>&nbsp;            order.Order_subtype__c = pricebook.Pricebook_Subtype__c;</b>
+<b class="nc"><i>473</i>&nbsp;            if (String.isNotEmpty(addressRecordId)) {</b>
+<b class="nc"><i>474</i>&nbsp;                order.ShippingAddress__c = addressRecordId; </b>
+<i>475</i>&nbsp;            }
+<b class="nc"><i>476</i>&nbsp;            order.Status = &#39;Created&#39;;</b>
+<b class="nc"><i>477</i>&nbsp;            if (&#39;Direct&#39;.equals(pricebook.Pricebook_Channel__c)) {</b>
+<b class="nc"><i>478</i>&nbsp;                order.RecordTypeId = GlobalUtils.getRecordTypeId(&#39;Order&#39;, &#39;Direct_global_order&#39;);</b>
+<b class="nc"><i>479</i>&nbsp;            } else if (&#39;Indirect&#39;.equals(pricebook.Pricebook_Channel__c)) {</b>
+<b class="nc"><i>480</i>&nbsp;                order.RecordTypeId = GlobalUtils.getRecordTypeId(&#39;Order&#39;, &#39;Indirect_global_order&#39;);</b>
+<b class="nc"><i>481</i>&nbsp;            } else if (&#39;Free Good Order&#39;.equals(pricebook.Pricebook_Channel__c)) {</b>
+<b class="nc"><i>482</i>&nbsp;                order.RecordTypeId = GlobalUtils.getRecordTypeId(&#39;Order&#39;, &#39;Free_Good_Order&#39;);</b>
+<i>483</i>&nbsp;            }
+<b class="nc"><i>484</i>&nbsp;            order.CurrencyIsoCode = currencyIsoCode;</b>
+<b class="nc"><i>485</i>&nbsp;            order.EffectiveDate = Date.today();</b>
+<b class="nc"><i>486</i>&nbsp;            if (String.isNotEmpty(contractId)) {</b>
+<b class="nc"><i>487</i>&nbsp;                order.contractId = contractId;</b>
+<i>488</i>&nbsp;            }
+<b class="nc"><i>489</i>&nbsp;            String parentSObjectName = parentId.getSObjectType().getDescribe().getName();</b>
+<b class="nc"><i>490</i>&nbsp;            if (&#39;Account&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>491</i>&nbsp;                order.AccountId = parentId;</b>
+<b class="nc"><i>492</i>&nbsp;            } else if (&#39;Contact&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>493</i>&nbsp;                Contact parent = [SELECT Id, AccountId FROM Contact WHERE Id=:parentId LIMIT 1];</b>
+<b class="nc"><i>494</i>&nbsp;                order.Contact__c = parent.Id;</b>
+<b class="nc"><i>495</i>&nbsp;                if(accountId != null ){</b>
+<b class="nc"><i>496</i>&nbsp;                    order.AccountId = accountId;</b>
+<i>497</i>&nbsp;                } else {
+<b class="nc"><i>498</i>&nbsp;                    order.AccountId = parent.AccountId;</b>
+<i>499</i>&nbsp;                }
+<i>500</i>&nbsp;                
+<b class="nc"><i>501</i>&nbsp;            } else if (&#39;Opportunity&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>502</i>&nbsp;                Opportunity parent = [SELECT Id, AccountId FROM Opportunity WHERE Id=:parentId LIMIT 1];</b>
+<b class="nc"><i>503</i>&nbsp;                order.OpportunityId = parent.Id;</b>
+<b class="nc"><i>504</i>&nbsp;                order.AccountId = parent.AccountId;</b>
+<b class="nc"><i>505</i>&nbsp;            } else if (&#39;Field_Sales_Project_Members__c&#39;.equals(parentSObjectName)) {</b>
+<i>506</i>&nbsp;                //salesLead 
+<b class="nc"><i>507</i>&nbsp;                salesLead = [SELECT Id, Account__c FROM Field_Sales_Project_Members__c WHERE Id=:parentId LIMIT 1];</b>
+<b class="nc"><i>508</i>&nbsp;                order.AccountId = salesLead.Account__c;</b>
+<b class="nc"><i>509</i>&nbsp;                order.SalesLead__c = salesLead.Id;</b>
+<b class="nc"><i>510</i>&nbsp;                isParentaLead = true;</b>
+<b class="nc"><i>511</i>&nbsp;            } else if (&#39;Event&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>512</i>&nbsp;                Event parent = [SELECT Id, AccountId, Contact_Id__c, Orders_Related_to_CFE__c, Subject FROM Event WHERE Id=:parentId LIMIT 1];</b>
+<b class="nc"><i>513</i>&nbsp;                order.AccountId = accountId != null &amp;&amp; accountId != &#39;&#39; ? accountId : parent.AccountId;</b>
+<i>514</i>&nbsp;                
+<b class="nc"><i>515</i>&nbsp;                order.Contact__c = parent?.Contact_Id__c != null ? parent?.Contact_Id__c : null;</b>
+<b class="nc"><i>516</i>&nbsp;                if (String.isNotBlank(parent.Orders_Related_to_CFE__c)) {</b>
+<b class="nc"><i>517</i>&nbsp;                    order.Orders_Related_to_CFE__c = parent.Orders_Related_to_CFE__c;</b>
+<i>518</i>&nbsp;                } else {
+<b class="nc"><i>519</i>&nbsp;                    Orders_Related_to_CFE__c orderRelatedToCFE = new Orders_Related_to_CFE__c(</b>
+<b class="nc"><i>520</i>&nbsp;                        Name = parent.Subject.length() &gt; 80 ? parent.Subject.subString(0,80) : parent.Subject</b>
+<i>521</i>&nbsp;                    );
+<b class="nc"><i>522</i>&nbsp;                    insert orderRelatedToCFE;</b>
+<b class="nc"><i>523</i>&nbsp;                    parent.Orders_Related_to_CFE__c = orderRelatedToCFE.Id;</b>
+<b class="nc"><i>524</i>&nbsp;                    update parent;</b>
+<b class="nc"><i>525</i>&nbsp;                    order.Orders_Related_to_CFE__c = orderRelatedToCFE.Id;</b>
+<i>526</i>&nbsp;                }
+<i>527</i>&nbsp;            }
+<b class="nc"><i>528</i>&nbsp;            Account orderAccount = [SELECT Id, RecordType.DeveloperName, Country__c, BillingCity, BillingCountry, BillingPostalCode, BillingState, BillingStreet FROM Account WHERE Id = :order.AccountId LIMIT 1];</b>
+<b class="nc"><i>529</i>&nbsp;            order.ShippingCity = orderAccount?.BillingCity;</b>
+<b class="nc"><i>530</i>&nbsp;            order.ShippingCountry = orderAccount?.BillingCountry;</b>
+<b class="nc"><i>531</i>&nbsp;            order.ShippingPostalCode = orderAccount?.BillingPostalCode;</b>
+<b class="nc"><i>532</i>&nbsp;            order.ShippingState = orderAccount?.BillingState;</b>
+<b class="nc"><i>533</i>&nbsp;            order.ShippingStreet = orderAccount?.BillingStreet;</b>
+<b class="nc"><i>534</i>&nbsp;            order.Country__c = orderAccount?.Country__c;</b>
+<i>535</i>&nbsp;            
+<b class="nc"><i>536</i>&nbsp;            if(sourceRecordId != null &amp;&amp; sourceRecordId.length() &gt; 0 &amp;&amp; orderAccount.RecordType.DeveloperName == &#39;CIM_Account&#39;){ </b>
+<b class="nc"><i>537</i>&nbsp;                order.SourceRecord__c=sourceRecordId;</b>
+<i>538</i>&nbsp;            }
+<b class="nc"><i>539</i>&nbsp;            insert order;</b>
+<b class="nc"><i>540</i>&nbsp;            if(isParentaLead){</b>
+<b class="nc"><i>541</i>&nbsp;                salesLead.Order__c = order.Id;</b>
+<b class="nc"><i>542</i>&nbsp;                salesLead.Status__c = &#39;Completed&#39;;</b>
+<b class="nc"><i>543</i>&nbsp;                update salesLead;</b>
+<i>544</i>&nbsp;                
+<i>545</i>&nbsp;            }
+<b class="nc"><i>546</i>&nbsp;            return getOrder(order.Id);</b>
+<b class="nc"><i>547</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>548</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.createOrder&#39;);</b>
+<b class="nc"><i>549</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>550</i>&nbsp;        }
+<i>551</i>&nbsp;    }
+<i>552</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>553</i>&nbsp;    public static Integer getProductsCounter(ID pricebookId,ID parentId, String keywordSearch, String currencyIsoCode,</b>
+<i>554</i>&nbsp;                                            String valueDesc1,  String valueDesc2,
+<i>555</i>&nbsp;                                             String valueDesc3,  String valueDesc4, Boolean superProducts) {
+<b class="nc"><i>556</i>&nbsp;        try { </b>
+<b class="nc"><i>557</i>&nbsp;            Set&lt;ID&gt; productsIds = new Set&lt;ID&gt;();                                         </b>
+<b class="nc"><i>558</i>&nbsp;            Set&lt;Id&gt; filteredProductsIds = new Set&lt;Id&gt;();</b>
+<b class="nc"><i>559</i>&nbsp;            if(superProducts) {</b>
+<b class="nc"><i>560</i>&nbsp;                productsIds = getSuperProducts(pricebookId, parentId, currencyIsoCode);</b>
+<i>561</i>&nbsp;            } else {
+<b class="nc"><i>562</i>&nbsp;                productsIds = getProductsIdsFromPriceBooksEntries(pricebookId, currencyIsoCode);  </b>
+<i>563</i>&nbsp;            }
+<b class="nc"><i>564</i>&nbsp;            String queryCounter = &#39;SELECT COUNT(Id) total  FROM Product2 WHERE Id IN  :productsIds&#39;;</b>
+<b class="nc"><i>565</i>&nbsp;            queryCounter += queryBuilder(pricebookId, parentId, keywordSearch,</b>
+<b class="nc"><i>566</i>&nbsp;            currencyIsoCode, valueDesc1, valueDesc2, valueDesc3, valueDesc4);</b>
+<b class="nc"><i>567</i>&nbsp;            if (String.isNotEmpty(keywordSearch)) {</b>
+<b class="nc"><i>568</i>&nbsp;                filteredProductsIds = getProductsIdsFromPriceBooksEntries(pricebookId, currencyIsoCode, keywordSearch);</b>
+<i>569</i>&nbsp;            }
+<b class="nc"><i>570</i>&nbsp;            String singleQuote = &#39;\&#39;&#39;;</b>
+<b class="nc"><i>571</i>&nbsp;            String filteredProducts = filteredProductsIds.isEmpty() ? &#39;&#39; : &#39;OR Id IN :filteredProductsIds&#39;;</b>
+<b class="nc"><i>572</i>&nbsp;            queryCounter = String.format(queryCounter, new List&lt;Object&gt;{singleQuote, filteredProducts});</b>
+<b class="nc"><i>573</i>&nbsp;            return (Integer)((AggregateResult) Database.query(queryCounter)).get(&#39;total&#39;);</b>
+<b class="nc"><i>574</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>575</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.getProductsCounter&#39;);</b>
+<b class="nc"><i>576</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>577</i>&nbsp;        }
+<i>578</i>&nbsp;    }
+<i>579</i>&nbsp;
+<b class="nc"><i>580</i>&nbsp;    public static Set&lt;ID&gt; getSuperProducts(ID pricebookId,ID parentId, String currencyIsoCode) {</b>
+<b class="nc"><i>581</i>&nbsp;        try {</b>
+<b class="nc"><i>582</i>&nbsp;            String parentSObjectName = parentId.getSObjectType().getDescribe().getName();</b>
+<b class="nc"><i>583</i>&nbsp;            String accountId = &#39;&#39;;</b>
+<b class="nc"><i>584</i>&nbsp;            if(&#39;Order&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>585</i>&nbsp;                Order parent = [SELECT Id, AccountId FROM Order WHERE Id=:parentId];</b>
+<b class="nc"><i>586</i>&nbsp;                accountId = parent.AccountId;</b>
+<b class="nc"><i>587</i>&nbsp;            } else if(&#39;Account&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>588</i>&nbsp;                accountId = parentId;</b>
+<b class="nc"><i>589</i>&nbsp;            } else if (&#39;Opportunity&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>590</i>&nbsp;                Opportunity parent = [SELECT Id, AccountId FROM Opportunity WHERE Id=:parentId];</b>
+<b class="nc"><i>591</i>&nbsp;                accountId = parent.AccountId;</b>
+<b class="nc"><i>592</i>&nbsp;            } else if (&#39;Field_Sales_Project_Members__c&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>593</i>&nbsp;                Field_Sales_Project_Members__c parent = [SELECT Id, Account__c FROM Field_Sales_Project_Members__c WHERE Id=:parentId];</b>
+<b class="nc"><i>594</i>&nbsp;                accountId = parent.Account__c;</b>
+<b class="nc"><i>595</i>&nbsp;            } else if (&#39;Event&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>596</i>&nbsp;                Event parent = [SELECT Id, AccountId FROM Event WHERE Id=:parentId];</b>
+<b class="nc"><i>597</i>&nbsp;                accountId = parent.AccountId;</b>
+<i>598</i>&nbsp;            }
+<b class="nc"><i>599</i>&nbsp;            List&lt;AggregateResult&gt; orderItemsProducts = [Select count(Id) orderItemNumber, PricebookEntry.Product2Id productId FROM OrderItem </b>
+<b class="nc"><i>600</i>&nbsp;                                        WHERE PricebookEntry.Pricebook2Id = :pricebookId</b>
+<b class="nc"><i>601</i>&nbsp;                                        AND PricebookEntry.CurrencyIsoCode = :currencyIsoCode</b>
+<b class="nc"><i>602</i>&nbsp;                                        AND Order.AccountId = :accountId</b>
+<i>603</i>&nbsp;                                        GROUP BY PricebookEntry.Product2Id];
+<b class="nc"><i>604</i>&nbsp;            Set&lt;ID&gt; productsIds = new Set&lt;ID&gt;();</b>
+<b class="nc"><i>605</i>&nbsp;            for(AggregateResult orderItemProduct : orderItemsProducts) {</b>
+<b class="nc"><i>606</i>&nbsp;                productsIds.add((ID)orderItemProduct.get(&#39;productId&#39;));</b>
+<i>607</i>&nbsp;            }
+<b class="nc"><i>608</i>&nbsp;            return productsIds;</b>
+<b class="nc"><i>609</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>610</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.getSuperProducts&#39;);</b>
+<b class="nc"><i>611</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>612</i>&nbsp;        }                                                            
+<i>613</i>&nbsp;    }
+<i>614</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>615</i>&nbsp;    public static List&lt;Product2&gt; getProducts(ID pricebookId,ID parentId, String keywordSearch, String currencyIsoCode,</b>
+<i>616</i>&nbsp;                                            String valueDesc1,  String valueDesc2,
+<i>617</i>&nbsp;                                             String valueDesc3,  String valueDesc4,
+<i>618</i>&nbsp;                                             Integer pageNumber, Integer pageSize, boolean superProducts) {
+<b class="nc"><i>619</i>&nbsp;        try {</b>
+<b class="nc"><i>620</i>&nbsp;            Set&lt;ID&gt; productsIds = new Set&lt;ID&gt;();</b>
+<b class="nc"><i>621</i>&nbsp;            if(superProducts) {</b>
+<b class="nc"><i>622</i>&nbsp;                productsIds = getSuperProducts(pricebookId, parentId, currencyIsoCode);</b>
+<i>623</i>&nbsp;            } else {
+<b class="nc"><i>624</i>&nbsp;                productsIds = getProductsIdsFromPriceBooksEntries(pricebookId, currencyIsoCode);  </b>
+<i>625</i>&nbsp;            }
+<b class="nc"><i>626</i>&nbsp;            Set&lt;Id&gt; filteredProductsIds = new Set&lt;Id&gt;();                              </b>
+<b class="nc"><i>627</i>&nbsp;            String query = &#39;Select Id, Name, Article__c, GlobalSKUMapping__c,&#39;</b>
+<i>628</i>&nbsp;                            + &#39; (Select Id, UnitPrice, CurrencyIsoCode, LocalProductDescription__c, Product2.Article__c FROM PricebookEntries where Pricebook2Id = :pricebookId AND CurrencyIsoCode = :currencyIsoCode)&#39;;
+<b class="nc"><i>629</i>&nbsp;            query += &#39; FROM Product2 WHERE Id IN  :productsIds&#39;;</b>
+<b class="nc"><i>630</i>&nbsp;            query += queryBuilder(pricebookId, parentId, keywordSearch, currencyIsoCode, </b>
+<b class="nc"><i>631</i>&nbsp;            valueDesc1, valueDesc2, valueDesc3, valueDesc4);</b>
+<i>632</i>&nbsp;            
+<b class="nc"><i>633</i>&nbsp;            query += &#39; ORDER BY Article__c&#39;;</b>
+<b class="nc"><i>634</i>&nbsp;            Integer offset = (pageNumber-1)*pageSize;</b>
+<b class="nc"><i>635</i>&nbsp;            query += &#39; LIMIT :pageSize OFFSET :offset&#39;;</b>
+<b class="nc"><i>636</i>&nbsp;            if (String.isNotEmpty(keywordSearch)) {</b>
+<b class="nc"><i>637</i>&nbsp;                filteredProductsIds = getProductsIdsFromPriceBooksEntries(pricebookId, currencyIsoCode, keywordSearch);</b>
+<i>638</i>&nbsp;            }
+<b class="nc"><i>639</i>&nbsp;            String singleQuote = &#39;\&#39;&#39;;</b>
+<b class="nc"><i>640</i>&nbsp;            String filteredProducts = filteredProductsIds.isEmpty() ? &#39;&#39; : &#39; OR Id IN :filteredProductsIds&#39;;</b>
+<b class="nc"><i>641</i>&nbsp;            query = String.format(query, new List&lt;Object&gt;{singleQuote, filteredProducts});</b>
+<b class="nc"><i>642</i>&nbsp;            return Database.query(query);</b>
+<b class="nc"><i>643</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>644</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.getProducts&#39;);</b>
+<b class="nc"><i>645</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>646</i>&nbsp;        }
+<i>647</i>&nbsp;    }
+<b class="nc"><i>648</i>&nbsp;    public static String queryBuilder(ID pricebookId,ID parentId, String keywordSearch, String currencyIsoCode,</b>
+<i>649</i>&nbsp;                                String valueDesc1,  String valueDesc2,
+<i>650</i>&nbsp;                                String valueDesc3,  String valueDesc4) {                      
+<b class="nc"><i>651</i>&nbsp;        try { </b>
+<b class="nc"><i>652</i>&nbsp;            String queryFilter = &#39; AND isActive = true&#39;;</b>
+<b class="nc"><i>653</i>&nbsp;            if(String.isNotEmpty(keywordSearch)) {  </b>
+<b class="nc"><i>654</i>&nbsp;                keywordSearch = String.escapeSingleQuotes(keywordSearch);</b>
+<b class="nc"><i>655</i>&nbsp;                String regExp = &#39;([^,]*){1}(,[^,]*)+&#39;;</b>
+<b class="nc"><i>656</i>&nbsp;                if(Pattern.matches(regExp, keywordSearch)) {</b>
+<b class="nc"><i>657</i>&nbsp;                    List&lt;String&gt; keywordsArticles = keywordSearch.replaceAll(&#39;\\s&#39;, &#39;&#39;).split(&#39;\\,&#39;);</b>
+<b class="nc"><i>658</i>&nbsp;                    Boolean isFirst = true;</b>
+<b class="nc"><i>659</i>&nbsp;                    queryFilter += &#39; AND (&#39;;</b>
+<b class="nc"><i>660</i>&nbsp;                    for(String word : keywordsArticles) {</b>
+<b class="nc"><i>661</i>&nbsp;                        if(isFirst) {</b>
+<b class="nc"><i>662</i>&nbsp;                            isFirst = false;</b>
+<i>663</i>&nbsp;                        } else {
+<b class="nc"><i>664</i>&nbsp;                            queryFilter += &#39; OR&#39;;</b>
+<i>665</i>&nbsp;                        }
+<b class="nc"><i>666</i>&nbsp;                        queryFilter += &#39; Article__c LIKE {0}&#39; + word+ &#39;{0}&#39;;</b>
+<i>667</i>&nbsp;                    }
+<b class="nc"><i>668</i>&nbsp;                    queryFilter += &#39;)&#39;;</b>
+<i>669</i>&nbsp;                } else {
+<b class="nc"><i>670</i>&nbsp;                    List&lt;String&gt; keywordsSplitted = keywordSearch.split(&#39;(\\+|\\s)&#39;);</b>
+<b class="nc"><i>671</i>&nbsp;                    for(String word : keywordsSplitted) {</b>
+<b class="nc"><i>672</i>&nbsp;                        word = &#39;%&#39; + word + &#39;%&#39;;</b>
+<b class="nc"><i>673</i>&nbsp;                        queryFilter += &#39; AND (Name LIKE {0}&#39;+ word + &#39;{0} OR Article__c LIKE {0}&#39; + word+ &#39;{0}{1})&#39;;</b>
+<i>674</i>&nbsp;                    }
+<i>675</i>&nbsp;                }
+<i>676</i>&nbsp;            }
+<b class="nc"><i>677</i>&nbsp;            if (String.isNotEmpty(valueDesc1)) queryFilter += &#39; AND GlobalSKUMapping__r.PG1_Desc__c =:valueDesc1&#39;;</b>
+<b class="nc"><i>678</i>&nbsp;            if (String.isNotEmpty(valueDesc2)) queryFilter += &#39; AND GlobalSKUMapping__r.PG2_Desc__c =:valueDesc2&#39;;</b>
+<b class="nc"><i>679</i>&nbsp;            if (String.isNotEmpty(valueDesc3)) queryFilter += &#39; AND GlobalSKUMapping__r.PG3_Desc__c =:valueDesc3&#39;;</b>
+<b class="nc"><i>680</i>&nbsp;            if (String.isNotEmpty(valueDesc4)) queryFilter += &#39; AND GlobalSKUMapping__r.PG4_Desc__c =:valueDesc4&#39;;</b>
+<b class="nc"><i>681</i>&nbsp;            return  queryFilter;</b>
+<b class="nc"><i>682</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>683</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.queryBuilder&#39;);</b>
+<b class="nc"><i>684</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>685</i>&nbsp;        }
+<i>686</i>&nbsp;    }
+<i>687</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>688</i>&nbsp;    public static String getSBUDescriptions(String pricebookId, ID parentId, String currencyIsoCode, Boolean superProducts){</b>
+<b class="nc"><i>689</i>&nbsp;        try {</b>
+<b class="nc"><i>690</i>&nbsp;                Set&lt;ID&gt; productsIds = new Set&lt;ID&gt; ();</b>
+<b class="nc"><i>691</i>&nbsp;            if(superProducts) {</b>
+<b class="nc"><i>692</i>&nbsp;                productsIds = getSuperProducts(pricebookId, parentId, currencyIsoCode);</b>
+<i>693</i>&nbsp;            } else {
+<b class="nc"><i>694</i>&nbsp;                productsIds = getProductsIdsFromPriceBooksEntries(pricebookId, currencyIsoCode);  </b>
+<i>695</i>&nbsp;            }  
+<b class="nc"><i>696</i>&nbsp;            List&lt;Product2&gt; products = [SELECT GlobalSKUMapping__c, GlobalSKUMapping__r.PG1_Desc__c, GlobalSKUMapping__r.PG2_Desc__c,GlobalSKUMapping__r.PG3_Desc__c,GlobalSKUMapping__r.PG4_Desc__c </b>
+<i>697</i>&nbsp;            FROM Product2 
+<b class="nc"><i>698</i>&nbsp;            WHERE Id IN :productsIds];</b>
+<b class="nc"><i>699</i>&nbsp;            Description globalDescription = new Description();</b>
+<i>700</i>&nbsp;
+<b class="nc"><i>701</i>&nbsp;            for(Product2 product : products) {</b>
+<b class="nc"><i>702</i>&nbsp;                if(String.isNotBlank(product.GlobalSKUMapping__r.PG1_Desc__c)) {</b>
+<b class="nc"><i>703</i>&nbsp;                    globalDescription.addRelatedDescription(product.GlobalSKUMapping__r.PG1_Desc__c, null);</b>
+<b class="nc"><i>704</i>&nbsp;                    if(String.isNotBlank(product.GlobalSKUMapping__r.PG2_Desc__c)) {</b>
+<b class="nc"><i>705</i>&nbsp;                        Description level1 = globalDescription.relatedDescriptions.get(product.GlobalSKUMapping__r.PG1_Desc__c);</b>
+<b class="nc"><i>706</i>&nbsp;                        level1.addRelatedDescription(product.GlobalSKUMapping__r.PG2_Desc__c, product.GlobalSKUMapping__r.PG1_Desc__c);</b>
+<b class="nc"><i>707</i>&nbsp;                        if(String.isNotBlank(product.GlobalSKUMapping__r.PG3_Desc__c)) {</b>
+<b class="nc"><i>708</i>&nbsp;                            Description level2 = level1.relatedDescriptions.get(product.GlobalSKUMapping__r.PG2_Desc__c);</b>
+<b class="nc"><i>709</i>&nbsp;                            level2.addRelatedDescription(product.GlobalSKUMapping__r.PG3_Desc__c, product.GlobalSKUMapping__r.PG2_Desc__c);</b>
+<b class="nc"><i>710</i>&nbsp;                            if(String.isNotBlank(product.GlobalSKUMapping__r.PG4_Desc__c)) {</b>
+<b class="nc"><i>711</i>&nbsp;                                Description level3 = level2.relatedDescriptions.get(product.GlobalSKUMapping__r.PG3_Desc__c);</b>
+<b class="nc"><i>712</i>&nbsp;                                level3.addRelatedDescription(product.GlobalSKUMapping__r.PG4_Desc__c, product.GlobalSKUMapping__r.PG3_Desc__c);</b>
+<i>713</i>&nbsp;                            }
+<i>714</i>&nbsp;                        }
+<i>715</i>&nbsp;                    }
+<i>716</i>&nbsp;                }
+<i>717</i>&nbsp;            }
+<b class="nc"><i>718</i>&nbsp;            return JSON.serialize(globalDescription);</b>
+<b class="nc"><i>719</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>720</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.getSBUDescriptions&#39;);</b>
+<b class="nc"><i>721</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>722</i>&nbsp;        }
+<i>723</i>&nbsp;    }
+<i>724</i>&nbsp;    /*------------------------------------------------------------  
+<i>725</i>&nbsp;    Description:    Method to select a pricebook related products IDs
+<i>726</i>&nbsp;    filtered by currencyIsoCode
+<i>727</i>&nbsp;    Inputs:          @param pricebookId  @param currencyIsoCode
+<i>728</i>&nbsp;    ------------------------------------------------------------*/
+<b class="nc"><i>729</i>&nbsp;    private static Set&lt;ID&gt; getProductsIdsFromPriceBooksEntries(String pricebookId, String currencyIsoCode) {</b>
+<b class="nc"><i>730</i>&nbsp;        try {</b>
+<b class="nc"><i>731</i>&nbsp;            Set&lt;ID&gt; productsIds = new Set&lt;ID&gt; ();</b>
+<b class="nc"><i>732</i>&nbsp;            for(PriceBookEntry pricebookEntry : [SELECT Id, Product2Id FROM PriceBookEntry WHERE Pricebook2Id =: pricebookId AND CurrencyIsoCode =:currencyIsoCode AND isActive = true]) {</b>
+<b class="nc"><i>733</i>&nbsp;                productsIds.add(pricebookEntry.Product2Id);</b>
+<i>734</i>&nbsp;            }
+<b class="nc"><i>735</i>&nbsp;            return productsIds;</b>
+<b class="nc"><i>736</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>737</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.&#39;);</b>
+<b class="nc"><i>738</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>739</i>&nbsp;        }
+<i>740</i>&nbsp;    }
+<i>741</i>&nbsp;
+<b class="nc"><i>742</i>&nbsp;    private static Set&lt;ID&gt; getProductsIdsFromPriceBooksEntries(String pricebookId, String currencyIsoCode, String keywordSearch) {</b>
+<b class="nc"><i>743</i>&nbsp;        try {</b>
+<b class="nc"><i>744</i>&nbsp;            String query = &#39;SELECT Id, Product2Id FROM PricebookEntry WHERE Pricebook2Id = :pricebookId AND CurrencyIsoCode = :currencyIsoCode AND LocalProductDescription__c != null&#39;;</b>
+<b class="nc"><i>745</i>&nbsp;            keywordSearch = String.escapeSingleQuotes(keywordSearch);</b>
+<b class="nc"><i>746</i>&nbsp;            String regExp = &#39;([^,]*){1}(,[^,]*)+&#39;;</b>
+<b class="nc"><i>747</i>&nbsp;            if (!Pattern.matches(regExp, keywordSearch)) {</b>
+<b class="nc"><i>748</i>&nbsp;                List&lt;String&gt; keywordsSplitted = keywordSearch.split(&#39;(\\+|\\s)&#39;);</b>
+<b class="nc"><i>749</i>&nbsp;                for(String word : keywordsSplitted) {</b>
+<b class="nc"><i>750</i>&nbsp;                    word = &#39;%&#39; + word + &#39;%&#39;;</b>
+<b class="nc"><i>751</i>&nbsp;                    query += &#39; AND LocalProductDescription__c LIKE \&#39;&#39;+ word + &#39;\&#39;&#39;;</b>
+<i>752</i>&nbsp;                }
+<b class="nc"><i>753</i>&nbsp;                Set&lt;ID&gt; productsIds = new Set&lt;ID&gt; ();</b>
+<b class="nc"><i>754</i>&nbsp;                for (PricebookEntry pricebookEntry : (List&lt;PricebookEntry&gt;)Database.query(query)) {</b>
+<b class="nc"><i>755</i>&nbsp;                    productsIds.add(pricebookEntry.Product2Id);</b>
+<i>756</i>&nbsp;                }
+<b class="nc"><i>757</i>&nbsp;                return productsIds;</b>
+<i>758</i>&nbsp;            } else {
+<b class="nc"><i>759</i>&nbsp;                return new Set&lt;Id&gt;();</b>
+<i>760</i>&nbsp;            }
+<b class="nc"><i>761</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>762</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.getProductsIdsFromPriceBooksEntries&#39;);</b>
+<b class="nc"><i>763</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>764</i>&nbsp;        }
+<i>765</i>&nbsp;    }
+<i>766</i>&nbsp;
+<i>767</i>&nbsp;    public class Description {
+<i>768</i>&nbsp;        Map&lt;String, Description&gt; relatedDescriptions;
+<i>769</i>&nbsp;        String parent;
+<b class="nc"><i>770</i>&nbsp;        public void addRelatedDescription(String value, String parent) {</b>
+<b class="nc"><i>771</i>&nbsp;            if(this.relatedDescriptions == null) {</b>
+<b class="nc"><i>772</i>&nbsp;                this.relatedDescriptions = new Map&lt;String, Description&gt; ();</b>
+<b class="nc"><i>773</i>&nbsp;                this.parent = parent;</b>
+<i>774</i>&nbsp;            }
+<b class="nc"><i>775</i>&nbsp;            if(!this.relatedDescriptions.containsKey(value)) {</b>
+<b class="nc"><i>776</i>&nbsp;                this.relatedDescriptions.put(value, new Description());</b>
+<i>777</i>&nbsp;            }
+<i>778</i>&nbsp;        }
+<i>779</i>&nbsp;    }
+<i>780</i>&nbsp;
+<i>781</i>&nbsp;
+<i>782</i>&nbsp;
+<i>783</i>&nbsp;    /*------------------------------------------------------------  
+<i>784</i>&nbsp;    Description:    Method to select a Source Records List related to the parent(Account,Opportunity, Event, Lead)
+<i>785</i>&nbsp;                    filtred by accountID.
+<i>786</i>&nbsp;    Inputs:          @param parentId
+<i>787</i>&nbsp;    ------------------------------------------------------------*/
+<i>788</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>789</i>&nbsp;    public static List&lt;Source_Record__c&gt; getSourceRecords(ID parentId, String pricebookId, String accountId)</b>
+<i>790</i>&nbsp;    {
+<b class="nc"><i>791</i>&nbsp;        try {</b>
+<b class="nc"><i>792</i>&nbsp;            List&lt;Pricebook2&gt; pricebook =  [ SELECT  Id, CompanyCode__c, OMExtraSourceRecordSOQLFilter__c, SourceId__c, Pricebook_Channel__c, ShowPricingfromMicroServiceOM__c</b>
+<i>793</i>&nbsp;                                            FROM Pricebook2
+<b class="nc"><i>794</i>&nbsp;                                            WHERE   Pricebook_Channel__c = &#39;Direct&#39; AND Id = :pricebookId LIMIT 1];</b>
+<i>795</i>&nbsp;            
+<i>796</i>&nbsp;
+<b class="nc"><i>797</i>&nbsp;            if (    (pricebook.size() &gt; 0)  &amp;&amp;      (pricebook[0].ShowPricingfromMicroServiceOM__c == true</b>
+<i>798</i>&nbsp;                                                    ||
+<b class="nc"><i>799</i>&nbsp;                                                    pricebook[0].CompanyCode__c != null))</b>
+<i>800</i>&nbsp;            {
+<b class="nc"><i>801</i>&nbsp;                String parentSObjectName = parentId.getSObjectType().getDescribe().getName();</b>
+<i>802</i>&nbsp;
+<b class="nc"><i>803</i>&nbsp;                if (&#39;Account&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>804</i>&nbsp;                    String query =&#39;SELECT Id, Combined_Fields__c, Customer_Id__c FROM Source_Record__c WHERE CIM_Account__c = \&#39;&#39; + parentId +&#39;\&#39; &#39;;</b>
+<b class="nc"><i>805</i>&nbsp;                    query = query + &#39;AND Source_Id__c    = \&#39;&#39; + pricebook[0].SourceId__c +&#39;\&#39; &#39;; </b>
+<b class="nc"><i>806</i>&nbsp;                    query = query + &#39;AND Company_Code__c = \&#39;&#39; + pricebook[0].CompanyCode__c +&#39;\&#39; &#39;;</b>
+<b class="nc"><i>807</i>&nbsp;                    query = query + &#39;AND Status__c       = \&#39;Active\&#39;&#39;;</b>
+<b class="nc"><i>808</i>&nbsp;                    if(pricebook[0].OMExtraSourceRecordSOQLFilter__c != null)</b>
+<b class="nc"><i>809</i>&nbsp;                        query = query + pricebook[0].OMExtraSourceRecordSOQLFilter__c;</b>
+<i>810</i>&nbsp;                    
+<b class="nc"><i>811</i>&nbsp;                    return(Database.query(query));</b>
+<i>812</i>&nbsp;                    
+<i>813</i>&nbsp;                }
+<b class="nc"><i>814</i>&nbsp;                else if (&#39;Opportunity&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>815</i>&nbsp;                    Opportunity parentOpp = [SELECT Id, AccountId FROM Opportunity WHERE Id = :parentId];</b>
+<b class="nc"><i>816</i>&nbsp;                    String query =&#39;SELECT Id, Combined_Fields__c, Customer_Id__c FROM Source_Record__c WHERE CIM_Account__c = \&#39;&#39; + parentOpp.AccountId +&#39;\&#39; &#39;;</b>
+<b class="nc"><i>817</i>&nbsp;                    query = query + &#39;AND Source_Id__c    = \&#39;&#39; + pricebook[0].SourceId__c +&#39;\&#39; &#39;; </b>
+<b class="nc"><i>818</i>&nbsp;                    query = query + &#39;AND Company_Code__c = \&#39;&#39; + pricebook[0].CompanyCode__c +&#39;\&#39; &#39;;</b>
+<b class="nc"><i>819</i>&nbsp;                    query = query + &#39;AND Status__c       = \&#39;Active\&#39;&#39;;</b>
+<b class="nc"><i>820</i>&nbsp;                    if(pricebook[0].OMExtraSourceRecordSOQLFilter__c != null)</b>
+<b class="nc"><i>821</i>&nbsp;                        query = query + pricebook[0].OMExtraSourceRecordSOQLFilter__c;</b>
+<i>822</i>&nbsp;                    
+<b class="nc"><i>823</i>&nbsp;                    return(Database.query(query));</b>
+<i>824</i>&nbsp;                    
+<i>825</i>&nbsp;                }
+<b class="nc"><i>826</i>&nbsp;                else if (&#39;Field_Sales_Project_Members__c&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>827</i>&nbsp;                    Field_Sales_Project_Members__c parentSalesLead = [SELECT Id, Account__c FROM Field_Sales_Project_Members__c WHERE Id = :parentId];</b>
+<i>828</i>&nbsp;
+<b class="nc"><i>829</i>&nbsp;                    String query =&#39;SELECT Id, Combined_Fields__c, Customer_Id__c FROM Source_Record__c WHERE CIM_Account__c = \&#39;&#39; + parentSalesLead.Account__c +&#39;\&#39; &#39;;</b>
+<b class="nc"><i>830</i>&nbsp;                    query = query + &#39;AND Source_Id__c    = \&#39;&#39; + pricebook[0].SourceId__c +&#39;\&#39; &#39;; </b>
+<b class="nc"><i>831</i>&nbsp;                    query = query + &#39;AND Company_Code__c = \&#39;&#39; + pricebook[0].CompanyCode__c +&#39;\&#39; &#39;;</b>
+<b class="nc"><i>832</i>&nbsp;                    query = query + &#39;AND Status__c       = \&#39;Active\&#39;&#39;;</b>
+<b class="nc"><i>833</i>&nbsp;                    if(pricebook[0].OMExtraSourceRecordSOQLFilter__c != null)</b>
+<b class="nc"><i>834</i>&nbsp;                        query = query + pricebook[0].OMExtraSourceRecordSOQLFilter__c;</b>
+<i>835</i>&nbsp;                    
+<b class="nc"><i>836</i>&nbsp;                    return(Database.query(query));</b>
+<i>837</i>&nbsp;
+<i>838</i>&nbsp;                }
+<b class="nc"><i>839</i>&nbsp;                else if (&#39;Event&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>840</i>&nbsp;                    Event parentEvent = [SELECT Id, WhatId FROM Event WHERE Id = :parentId];</b>
+<b class="nc"><i>841</i>&nbsp;                    String accIDToFilter = accountId == &#39;&#39; ? parentEvent.WhatId : accountId ;</b>
+<i>842</i>&nbsp;
+<b class="nc"><i>843</i>&nbsp;                    String query =&#39;SELECT Id, Combined_Fields__c, Customer_Id__c FROM Source_Record__c  WHERE CIM_Account__c = \&#39;&#39; + accIDToFilter +&#39;\&#39; &#39;;</b>
+<b class="nc"><i>844</i>&nbsp;                    query = query + &#39;AND Source_Id__c    = \&#39;&#39; + pricebook[0].SourceId__c +&#39;\&#39; &#39;; </b>
+<b class="nc"><i>845</i>&nbsp;                    query = query + &#39;AND Company_Code__c = \&#39;&#39; + pricebook[0].CompanyCode__c +&#39;\&#39; &#39;;</b>
+<b class="nc"><i>846</i>&nbsp;                    query = query + &#39;AND Status__c       = \&#39;Active\&#39;&#39;;</b>
+<b class="nc"><i>847</i>&nbsp;                    if(pricebook[0].OMExtraSourceRecordSOQLFilter__c != null)</b>
+<b class="nc"><i>848</i>&nbsp;                        query = query + pricebook[0].OMExtraSourceRecordSOQLFilter__c;</b>
+<i>849</i>&nbsp;                    
+<b class="nc"><i>850</i>&nbsp;                    return(Database.query(query));</b>
+<i>851</i>&nbsp;                    
+<i>852</i>&nbsp;
+<i>853</i>&nbsp;                }
+<b class="nc"><i>854</i>&nbsp;                else if (&#39;Contact&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>855</i>&nbsp;                    if (accountID != null) {</b>
+<b class="nc"><i>856</i>&nbsp;                        String query =&#39;SELECT Id, Combined_Fields__c, Customer_Id__c FROM Source_Record__c  WHERE CIM_Account__c = \&#39;&#39; + accountId +&#39;\&#39; &#39;;</b>
+<b class="nc"><i>857</i>&nbsp;                        query = query + &#39;AND Source_Id__c    = \&#39;&#39; + pricebook[0].SourceId__c +&#39;\&#39; &#39;; </b>
+<b class="nc"><i>858</i>&nbsp;                        query = query + &#39;AND Company_Code__c = \&#39;&#39; + pricebook[0].CompanyCode__c +&#39;\&#39; &#39;;</b>
+<b class="nc"><i>859</i>&nbsp;                        query = query + &#39;AND Status__c       = \&#39;Active\&#39;&#39;;</b>
+<b class="nc"><i>860</i>&nbsp;                        if(pricebook[0].OMExtraSourceRecordSOQLFilter__c != null)</b>
+<b class="nc"><i>861</i>&nbsp;                            query = query + pricebook[0].OMExtraSourceRecordSOQLFilter__c;</b>
+<i>862</i>&nbsp;                    
+<b class="nc"><i>863</i>&nbsp;                        return(Database.query(query));</b>
+<i>864</i>&nbsp;
+<i>865</i>&nbsp;                    }
+<i>866</i>&nbsp;                }
+<i>867</i>&nbsp;
+<i>868</i>&nbsp;            }
+<b class="nc"><i>869</i>&nbsp;            return null;</b>
+<i>870</i>&nbsp;
+<i>871</i>&nbsp;        }
+<b class="nc"><i>872</i>&nbsp;        catch (Exception e) {</b>
+<b class="nc"><i>873</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.getSourceRecords&#39;);</b>
+<b class="nc"><i>874</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>875</i>&nbsp;        }
+<i>876</i>&nbsp;    }
+<i>877</i>&nbsp;
+<i>878</i>&nbsp;
+<i>879</i>&nbsp;    /*------------------------------------------------------------  
+<i>880</i>&nbsp;    Description:    Method to select a getAddressRecords Records List related to the parent(Account,Opportunity, Event, Lead)
+<i>881</i>&nbsp;                    filtred by accountID.
+<i>882</i>&nbsp;    
+<i>883</i>&nbsp;    ------------------------------------------------------------*/
+<i>884</i>&nbsp;
+<i>885</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>886</i>&nbsp;    public static List&lt;Address__c&gt; getAddressRecords(ID parentId, String pricebookId, String accountId, String sourceRecId)</b>
+<i>887</i>&nbsp;    {
+<b class="nc"><i>888</i>&nbsp;        try {</b>
+<b class="nc"><i>889</i>&nbsp;            List&lt;Address__c&gt; addressRecords = new List&lt;Address__c&gt;();</b>
+<b class="nc"><i>890</i>&nbsp;            List&lt;Pricebook2&gt; pricebook =  [ SELECT  Id, CompanyCode__c, SourceId__c, Pricebook_Channel__c, ShowShippingAddresses__c</b>
+<i>891</i>&nbsp;                                            FROM Pricebook2
+<b class="nc"><i>892</i>&nbsp;                                            WHERE   Pricebook_Channel__c = &#39;Direct&#39; AND Id = :pricebookId LIMIT 1];</b>
+<b class="nc"><i>893</i>&nbsp;            List&lt;Source_Record__c&gt; sourceRecordDetail = [SELECT Id, Customer_Id__c, Company_Code__c FROM Source_Record__c WHERE ID =: sourceRecId LIMIT 1];</b>
+<b class="nc"><i>894</i>&nbsp;            if (    (pricebook.size() &gt; 0)  &amp;&amp;      (pricebook[0].ShowShippingAddresses__c == true))</b>
+<i>895</i>&nbsp;            {
+<b class="nc"><i>896</i>&nbsp;                String parentSObjectName = parentId.getSObjectType().getDescribe().getName();</b>
+<i>897</i>&nbsp;
+<b class="nc"><i>898</i>&nbsp;                if (&#39;Account&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>899</i>&nbsp;                    addressRecords = [   SELECT Id, CombinedFieldsOrder__c</b>
+<i>900</i>&nbsp;                                        FROM Address__c
+<b class="nc"><i>901</i>&nbsp;                                        WHERE   Account__c      = :parentId</b>
+<i>902</i>&nbsp;                                                AND Stopped__c    = false
+<i>903</i>&nbsp;                                                AND IsDeleted__c    = false
+<b class="nc"><i>904</i>&nbsp;                                                AND CustomerNumber__c =: sourceRecordDetail[0].Customer_Id__c</b>
+<b class="nc"><i>905</i>&nbsp;                                                AND CompanyCode__c = :pricebook[0].CompanyCode__c];</b>
+<i>906</i>&nbsp;                }
+<b class="nc"><i>907</i>&nbsp;                else if (&#39;Opportunity&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>908</i>&nbsp;                    Opportunity parentOpp = [SELECT Id, AccountId FROM Opportunity WHERE Id = :parentId];</b>
+<i>909</i>&nbsp;
+<b class="nc"><i>910</i>&nbsp;                    addressRecords = [   SELECT Id, CombinedFieldsOrder__c</b>
+<i>911</i>&nbsp;                                        FROM Address__c
+<b class="nc"><i>912</i>&nbsp;                                        WHERE   Account__c      = :parentOpp.AccountId</b>
+<i>913</i>&nbsp;                                                AND Stopped__c    = false
+<i>914</i>&nbsp;                                                AND IsDeleted__c    = false
+<b class="nc"><i>915</i>&nbsp;                                                AND CustomerNumber__c =: sourceRecordDetail[0].Customer_Id__c</b>
+<b class="nc"><i>916</i>&nbsp;                                                AND CompanyCode__c = :pricebook[0].CompanyCode__c];</b>
+<i>917</i>&nbsp;                }
+<b class="nc"><i>918</i>&nbsp;                else if (&#39;Field_Sales_Project_Members__c&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>919</i>&nbsp;                    Field_Sales_Project_Members__c parentSalesLead = [SELECT Id, Account__c FROM Field_Sales_Project_Members__c WHERE Id = :parentId];</b>
+<i>920</i>&nbsp;
+<b class="nc"><i>921</i>&nbsp;                    addressRecords = [   SELECT Id, CombinedFieldsOrder__c</b>
+<i>922</i>&nbsp;                                        FROM Address__c
+<b class="nc"><i>923</i>&nbsp;                                        WHERE   Account__c      = :parentSalesLead.Account__c</b>
+<i>924</i>&nbsp;                                                AND Stopped__c    = false
+<i>925</i>&nbsp;                                                AND IsDeleted__c    = false
+<b class="nc"><i>926</i>&nbsp;                                                AND CustomerNumber__c =: sourceRecordDetail[0].Customer_Id__c</b>
+<b class="nc"><i>927</i>&nbsp;                                                AND CompanyCode__c = :pricebook[0].CompanyCode__c];</b>
+<i>928</i>&nbsp;                }
+<b class="nc"><i>929</i>&nbsp;                else if (&#39;Event&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>930</i>&nbsp;                    Event parentEvent = [SELECT Id, WhatId FROM Event WHERE Id = :parentId];</b>
+<b class="nc"><i>931</i>&nbsp;                    String accIDToFilter = accountId == &#39;&#39; ? parentEvent.WhatId : accountId ;</b>
+<b class="nc"><i>932</i>&nbsp;                    addressRecords = [   SELECT Id, CombinedFieldsOrder__c</b>
+<i>933</i>&nbsp;                                        FROM Address__c
+<b class="nc"><i>934</i>&nbsp;                                        WHERE   Account__c      = :accIDToFilter</b>
+<i>935</i>&nbsp;                                                AND Stopped__c    = false
+<i>936</i>&nbsp;                                                AND IsDeleted__c    = false
+<b class="nc"><i>937</i>&nbsp;                                                AND CustomerNumber__c =: sourceRecordDetail[0].Customer_Id__c</b>
+<b class="nc"><i>938</i>&nbsp;                                                AND CompanyCode__c = :pricebook[0].CompanyCode__c];</b>
+<i>939</i>&nbsp;                }
+<b class="nc"><i>940</i>&nbsp;                else if (&#39;Contact&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>941</i>&nbsp;                    if (accountID != null) {</b>
+<b class="nc"><i>942</i>&nbsp;                        addressRecords =[SELECT Id, CombinedFieldsOrder__c</b>
+<i>943</i>&nbsp;                                        FROM Address__c
+<b class="nc"><i>944</i>&nbsp;                                        WHERE   Account__c = :accountId</b>
+<i>945</i>&nbsp;                                                AND Stopped__c    = false
+<i>946</i>&nbsp;                                                AND IsDeleted__c    = false
+<b class="nc"><i>947</i>&nbsp;                                                AND CustomerNumber__c =: sourceRecordDetail[0].Customer_Id__c</b>
+<b class="nc"><i>948</i>&nbsp;                                                AND CompanyCode__c = :pricebook[0].CompanyCode__c];</b>
+<i>949</i>&nbsp;                    }
+<i>950</i>&nbsp;                }
+<b class="nc"><i>951</i>&nbsp;                if (!addressRecords.isEmpty()) {</b>
+<b class="nc"><i>952</i>&nbsp;                    return addressRecords;</b>
+<i>953</i>&nbsp;                }
+<i>954</i>&nbsp;            }
+<b class="nc"><i>955</i>&nbsp;            return null;</b>
+<i>956</i>&nbsp;
+<i>957</i>&nbsp;        }
+<b class="nc"><i>958</i>&nbsp;        catch (Exception e) {</b>
+<b class="nc"><i>959</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.getAddressRecords&#39;);</b>
+<b class="nc"><i>960</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>961</i>&nbsp;        }
+<i>962</i>&nbsp;    }
+<i>963</i>&nbsp;
+<i>964</i>&nbsp;
+<i>965</i>&nbsp;
+<i>966</i>&nbsp;    /*------------------------------------------------------------  
+<i>967</i>&nbsp;    Description:    Method to select a AccountContactRelation Records List related to the parent(Account,Opportunity, Event, Lead)
+<i>968</i>&nbsp;                    filtred by accountID.
+<i>969</i>&nbsp;    Inputs:          @param parentId
+<i>970</i>&nbsp;    ------------------------------------------------------------*/
+<i>971</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>972</i>&nbsp;    public static List&lt;AccountContactRelation &gt; getRelatedAccountsWithContact(ID parentId) {</b>
+<b class="nc"><i>973</i>&nbsp;        try {</b>
+<b class="nc"><i>974</i>&nbsp;            List&lt;AccountContactRelation&gt; relatedAccountsWithContact = new List&lt;AccountContactRelation&gt;();</b>
+<i>975</i>&nbsp;
+<b class="nc"><i>976</i>&nbsp;            if(parentId!=null){</b>
+<b class="nc"><i>977</i>&nbsp;                String parentSObjectName = parentId.getSObjectType().getDescribe().getName();</b>
+<b class="nc"><i>978</i>&nbsp;                if(&#39;Contact&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>979</i>&nbsp;                    relatedAccountsWithContact = [SELECT AccountId,Account.Name, ContactId FROM AccountContactRelation WHERE ContactId =: parentId ];</b>
+<b class="nc"><i>980</i>&nbsp;                    return relatedAccountsWithContact;</b>
+<i>981</i>&nbsp;                } else {
+<b class="nc"><i>982</i>&nbsp;                    if(&#39;Event&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>983</i>&nbsp;                        Event parentEvent = [SELECT Id, WhoId FROM Event WHERE Id =: parentId LIMIT 1];</b>
+<b class="nc"><i>984</i>&nbsp;                        String whoIdSObjectName = parentEvent.WhoId != null ? parentEvent.WhoId.getSObjectType().getDescribe().getName() :  null;</b>
+<b class="nc"><i>985</i>&nbsp;                        if(whoIdSObjectName != null &amp;&amp; &#39;Contact&#39;.equals(whoIdSObjectName)) {</b>
+<b class="nc"><i>986</i>&nbsp;                            relatedAccountsWithContact = [SELECT AccountId,Account.Name, ContactId FROM AccountContactRelation WHERE ContactId =: parentEvent.WhoId ];</b>
+<b class="nc"><i>987</i>&nbsp;                            return relatedAccountsWithContact;</b>
+<i>988</i>&nbsp;                        }
+<i>989</i>&nbsp;                        
+<i>990</i>&nbsp;                    }
+<i>991</i>&nbsp;                    
+<i>992</i>&nbsp;                }
+<i>993</i>&nbsp;            } 
+<b class="nc"><i>994</i>&nbsp;            return null;</b>
+<i>995</i>&nbsp;
+<b class="nc"><i>996</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>997</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.getSourceRecords&#39;);</b>
+<b class="nc"><i>998</i>&nbsp;            throw new AuraHandledException(e.getMessage());    </b>
+<i>999</i>&nbsp;        }
+<i>1000</i>&nbsp;    }
+<i>1001</i>&nbsp;
+<i>1002</i>&nbsp;
+<i>1003</i>&nbsp;
+<i>1004</i>&nbsp;    /*----------------------------------------------------------------------------------------
+<i>1005</i>&nbsp;    Description:    Method to get product pricings related to the parent based on a callout
+<i>1006</i>&nbsp;    Inputs:          @param parentId
+<i>1007</i>&nbsp;                     @param prodPriceRequests
+<i>1008</i>&nbsp;    ----------------------------------------------------------------------------------------*/
+<i>1009</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>1010</i>&nbsp;    public static ProductPricingERPCallOutWrapper.ProductPricingResponse ProdPricingERPCallOut(ID parentId, list&lt;ProductPricingERPCallOutWrapper.ProductEntry&gt; prodPriceRequests ) {</b>
+<b class="nc"><i>1011</i>&nbsp;        try {</b>
+<b class="nc"><i>1012</i>&nbsp;            return getProductPricingERPCalloutResponse(parentId, prodPriceRequests);</b>
+<b class="nc"><i>1013</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>1014</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.ProdPricingERPCallOut&#39;);</b>
+<b class="nc"><i>1015</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>1016</i>&nbsp;        }
+<i>1017</i>&nbsp;    }
+<i>1018</i>&nbsp;
+<i>1019</i>&nbsp;    /* ERP pricing Callout method*/
+<b class="nc"><i>1020</i>&nbsp;    private static ProductPricingERPCallOutWrapper.ProductPricingResponse getProductPricingERPCalloutResponse(Id parentId, List&lt;ProductPricingERPCallOutWrapper.ProductEntry&gt; prodPriceRequests) {</b>
+<b class="nc"><i>1021</i>&nbsp;        try {</b>
+<b class="nc"><i>1022</i>&nbsp;            string codeERPId = &#39;&#39;;</b>
+<b class="nc"><i>1023</i>&nbsp;            final order orderDetail = [SELECT Id, Account.GDWUniqueKey_CustomerMaster__c, Account.RecordTypeId, Account.RecordType.DeveloperName, </b>
+<i>1024</i>&nbsp;            SourceRecord__r.Customer_Id__c, CurrencyIsoCode, Pricebook2.SalesChannel__c, Pricebook2.CompanyCode__c, Pricebook2.SourceId__c 
+<b class="nc"><i>1025</i>&nbsp;            FROM order WHERE Id = :parentId LIMIT 1];</b>
+<b class="nc"><i>1026</i>&nbsp;            If (Schema.SObjectType.Account.getRecordTypeInfosById().get(orderDetail.Account.RecordTypeId).getDeveloperName() == &#39;CIM_Account&#39;) {</b>
+<i>1027</i>&nbsp;
+<b class="nc"><i>1028</i>&nbsp;                codeERPId = orderDetail.SourceRecord__r.Customer_Id__c;</b>
+<i>1029</i>&nbsp;
+<b class="nc"><i>1030</i>&nbsp;                if (String.isBlank(codeERPId)) {</b>
+<b class="nc"><i>1031</i>&nbsp;                    throw new OrderManagementException(System.label.No_Source_Record);</b>
+<i>1032</i>&nbsp;                }
+<i>1033</i>&nbsp;            }
+<b class="nc"><i>1034</i>&nbsp;            If (Schema.SObjectType.Account.getRecordTypeInfosById().get(orderDetail.Account.RecordTypeId).getDeveloperName() == &#39;ERP_Account&#39;) {</b>
+<b class="nc"><i>1035</i>&nbsp;                List&lt;string&gt; codeERPSplit = orderDetail.Account.GDWUniqueKey_CustomerMaster__c.split(&#39;_&#39;);</b>
+<b class="nc"><i>1036</i>&nbsp;                If (codeERPSplit[0] == &#39;2&#39;) {</b>
+<b class="nc"><i>1037</i>&nbsp;                    codeERPId = codeERPSplit[2];</b>
+<i>1038</i>&nbsp;                }
+<i>1039</i>&nbsp;            }
+<b class="nc"><i>1040</i>&nbsp;            final ProductPricingERPCallOutWrapper.ProductPricingResponse priceResponse = </b>
+<b class="nc"><i>1041</i>&nbsp;            ProductPricingERPCallOutResponse.prodsToPriceERPCallOut(codeERPId, prodPriceRequests, orderDetail);</b>
+<i>1042</i>&nbsp;            
+<b class="nc"><i>1043</i>&nbsp;            return priceResponse;</b>
+<b class="nc"><i>1044</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>1045</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.getProductPricingERPCalloutResponse&#39;);</b>
+<b class="nc"><i>1046</i>&nbsp;            throw new OrderManagementException(e.getMessage());</b>
+<i>1047</i>&nbsp;        }
+<i>1048</i>&nbsp;    }
+<i>1049</i>&nbsp;
+<i>1050</i>&nbsp;
+<i>1051</i>&nbsp;    /* Get account record type */
+<i>1052</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>1053</i>&nbsp;    public static String getAccountRecordType( ID parentId) {</b>
+<b class="nc"><i>1054</i>&nbsp;        try {</b>
+<b class="nc"><i>1055</i>&nbsp;			String accountRecordTypeName = null;</b>
+<b class="nc"><i>1056</i>&nbsp;            String parentSObjectName = parentId.getSObjectType().getDescribe().getName();</b>
+<b class="nc"><i>1057</i>&nbsp;            if (&#39;Account&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>1058</i>&nbsp;                Account accountDetails = [SELECT Id, RecordType.DeveloperName FROM Account WHERE Id=:parentId LIMIT 1];</b>
+<b class="nc"><i>1059</i>&nbsp;                accountRecordTypeName = accountDetails.RecordType.DeveloperName;</b>
+<b class="nc"><i>1060</i>&nbsp;            } else if (&#39;Contact&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>1061</i>&nbsp;                Contact con = [SELECT Id, Account.RecordType.DeveloperName FROM Contact WHERE Id=:parentId LIMIT 1];</b>
+<b class="nc"><i>1062</i>&nbsp;                accountRecordTypeName = con.Account.RecordType.DeveloperName;</b>
+<i>1063</i>&nbsp;                
+<b class="nc"><i>1064</i>&nbsp;            } else if (&#39;Opportunity&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>1065</i>&nbsp;                Opportunity opp = [SELECT Id, Account.RecordType.DeveloperName FROM Opportunity WHERE Id=:parentId LIMIT 1];</b>
+<b class="nc"><i>1066</i>&nbsp;                accountRecordTypeName = opp.Account.RecordType.DeveloperName;</b>
+<b class="nc"><i>1067</i>&nbsp;            } else if (&#39;Field_Sales_Project_Members__c&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>1068</i>&nbsp;                Field_Sales_Project_Members__c salesLead = [SELECT Id, Account__r.RecordType.DeveloperName FROM Field_Sales_Project_Members__c WHERE Id=:parentId LIMIT 1];</b>
+<b class="nc"><i>1069</i>&nbsp;                accountRecordTypeName = salesLead.Account__r.RecordType.DeveloperName;</b>
+<b class="nc"><i>1070</i>&nbsp;            } else if (&#39;Event&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>1071</i>&nbsp;                Event ev = [SELECT Id, Account.RecordType.DeveloperName FROM Event WHERE Id=:parentId LIMIT 1];</b>
+<b class="nc"><i>1072</i>&nbsp;                accountRecordTypeName = ev.Account.RecordType.DeveloperName;</b>
+<i>1073</i>&nbsp;            }
+<b class="nc"><i>1074</i>&nbsp;            return accountRecordTypeName;</b>
+<i>1075</i>&nbsp;        
+<b class="nc"><i>1076</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>1077</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.ProdPricingERPCallOut&#39;);</b>
+<b class="nc"><i>1078</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>1079</i>&nbsp;        
+<i>1080</i>&nbsp;        }
+<i>1081</i>&nbsp;    }
+<i>1082</i>&nbsp;
+<i>1083</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>1084</i>&nbsp;    public static OrderItem refreshFormulas(OrderItem om){</b>
+<i>1085</i>&nbsp;        
+<b class="nc"><i>1086</i>&nbsp;        List&lt;OrderItem&gt; items = new List&lt;OrderItem&gt;();</b>
+<b class="nc"><i>1087</i>&nbsp;        items.add(om);</b>
+<b class="nc"><i>1088</i>&nbsp;        List&lt;FormulaRecalcResult&gt; results = Formula.recalculateFormulas(items);</b>
+<i>1089</i>&nbsp;
+<b class="nc"><i>1090</i>&nbsp;        om = items[0];</b>
+<i>1091</i>&nbsp;
+<b class="nc"><i>1092</i>&nbsp;        return om;</b>
+<i>1093</i>&nbsp;
+<i>1094</i>&nbsp;    }
+<i>1095</i>&nbsp;
+<i>1096</i>&nbsp;    /*------------------------------------------------------------
+<i>1097</i>&nbsp;    Description:    Detects the user decimal separator base on his locale
+<i>1098</i>&nbsp;
+<i>1099</i>&nbsp;    Outputs:        String   The user decimal separator
+<i>1100</i>&nbsp;    ------------------------------------------------------------*/
+<i>1101</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>1102</i>&nbsp;    public static String getUserDecimalSeparator()</b>
+<i>1103</i>&nbsp;    {
+<b class="nc"><i>1104</i>&nbsp;        Decimal value = 1.1;</b>
+<b class="nc"><i>1105</i>&nbsp;        String formattedValue = value.format();</b>
+<b class="nc"><i>1106</i>&nbsp;        return formattedValue.substring(1, 2);</b>
+<i>1107</i>&nbsp;    }
+<i>1108</i>&nbsp;
+<i>1109</i>&nbsp;    /*------------------------------------------------------------
+<i>1110</i>&nbsp;    Description:    Check if is possible to create order for that account
+<i>1111</i>&nbsp;    Outputs:        Boolean
+<i>1112</i>&nbsp;    ------------------------------------------------------------*/
+<i>1113</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>1114</i>&nbsp;    public static Boolean checkIfAllowToCreateOrder(Id parentId)</b>
+<i>1115</i>&nbsp;    {
+<b class="nc"><i>1116</i>&nbsp;        try {</b>
+<b class="nc"><i>1117</i>&nbsp;			Boolean allowed = false;</b>
+<b class="nc"><i>1118</i>&nbsp;            CountryStopRules__mdt countryRules;</b>
+<b class="nc"><i>1119</i>&nbsp;            Account accountToCheck;</b>
+<b class="nc"><i>1120</i>&nbsp;            String parentSObjectName = parentId.getSObjectType().getDescribe().getName();</b>
+<b class="nc"><i>1121</i>&nbsp;            if (&#39;Account&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>1122</i>&nbsp;                accountToCheck = [SELECT Id, Country__c, OneAccount_Type__c, Sub_Account_Type__c FROM Account WHERE Id=:parentId LIMIT 1];</b>
+<b class="nc"><i>1123</i>&nbsp;            } else if (&#39;Contact&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>1124</i>&nbsp;                Contact con = [SELECT Id, AccountId FROM Contact WHERE Id=:parentId LIMIT 1];</b>
+<b class="nc"><i>1125</i>&nbsp;                accountToCheck = [SELECT Id, Country__c, OneAccount_Type__c, Sub_Account_Type__c FROM Account WHERE Id=: con.AccountId LIMIT 1];</b>
+<i>1126</i>&nbsp;                
+<b class="nc"><i>1127</i>&nbsp;            } else if (&#39;Opportunity&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>1128</i>&nbsp;                Opportunity opp = [SELECT Id, AccountId FROM Opportunity WHERE Id=:parentId LIMIT 1];</b>
+<b class="nc"><i>1129</i>&nbsp;                accountToCheck = [SELECT Id, Country__c, OneAccount_Type__c, Sub_Account_Type__c FROM Account WHERE Id=:opp.AccountId LIMIT 1];</b>
+<i>1130</i>&nbsp;
+<b class="nc"><i>1131</i>&nbsp;            } else if (&#39;Field_Sales_Project_Members__c&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>1132</i>&nbsp;                Field_Sales_Project_Members__c salesLead = [SELECT Id, Account__c FROM Field_Sales_Project_Members__c WHERE Id=:parentId LIMIT 1];</b>
+<b class="nc"><i>1133</i>&nbsp;                accountToCheck = [SELECT Id, Country__c, OneAccount_Type__c, Sub_Account_Type__c FROM Account WHERE Id=:salesLead.Account__c LIMIT 1];</b>
+<i>1134</i>&nbsp;                
+<b class="nc"><i>1135</i>&nbsp;            } else if (&#39;Event&#39;.equals(parentSObjectName)) {</b>
+<b class="nc"><i>1136</i>&nbsp;                Event ev = [SELECT Id, AccountId, WhatId, Account.Country__c, Account.OneAccount_Type__c, Account.Sub_Account_Type__c FROM Event WHERE Id=:parentId LIMIT 1];</b>
+<b class="nc"><i>1137</i>&nbsp;                if(ev.WhatId.getSObjectType().getDescribe().getName() == &#39;Account&#39;){//only if whatID is an account</b>
+<b class="nc"><i>1138</i>&nbsp;                    accountToCheck = [SELECT Id, Country__c, OneAccount_Type__c, Sub_Account_Type__c FROM Account WHERE Id=:ev.WhatId LIMIT 1];</b>
+<i>1139</i>&nbsp;                } else {
+<b class="nc"><i>1140</i>&nbsp;                    return false;</b>
+<i>1141</i>&nbsp;                }
+<i>1142</i>&nbsp;            }
+<b class="nc"><i>1143</i>&nbsp;            if(accountToCheck.Country__c != null){</b>
+<b class="nc"><i>1144</i>&nbsp;                countryRules = CountryStopRules__mdt.getInstance(accountToCheck.Country__c);</b>
+<i>1145</i>&nbsp;            } else {
+<b class="nc"><i>1146</i>&nbsp;                return false;</b>
+<i>1147</i>&nbsp;            }
+<b class="nc"><i>1148</i>&nbsp;            if(countryRules != null){</b>
+<b class="nc"><i>1149</i>&nbsp;                allowed = OrderTriggerHelper.calculateSetFlag(accountToCheck, countryRules, &#39;Stop Order&#39;);</b>
+<b class="nc"><i>1150</i>&nbsp;                return allowed;</b>
+<i>1151</i>&nbsp;            } else {
+<b class="nc"><i>1152</i>&nbsp;                return false;</b>
+<i>1153</i>&nbsp;            }
+<i>1154</i>&nbsp;            
+<i>1155</i>&nbsp;        
+<b class="nc"><i>1156</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>1157</i>&nbsp;            DebugLog.addException(e, &#39;OrderManagement_CC.ProdPricingERPCallOut&#39;);</b>
+<b class="nc"><i>1158</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>1159</i>&nbsp;        
+<i>1160</i>&nbsp;        }
+<i>1161</i>&nbsp;        
+<i>1162</i>&nbsp;    }
+<i>1163</i>&nbsp;
+<i>1164</i>&nbsp;     
+<i>1165</i>&nbsp;   
+<i>1166</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

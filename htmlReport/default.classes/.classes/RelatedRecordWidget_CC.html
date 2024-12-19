@@ -1,0 +1,119 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: RelatedRecordWidget_CC</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: RelatedRecordWidget_CC (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">RelatedRecordWidget_CC</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    35.7%
+  </span>
+  <span class="absValue">
+    (5/ 14)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>RelatedRecordWidget_CC</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/**
+<i>2</i>&nbsp; * @description       : Used by callReportQuickACtionPocLwc
+<i>3</i>&nbsp; * @author            : kdoruibin@salesforce.com
+<i>4</i>&nbsp; * @group             : 
+<i>5</i>&nbsp; * @last modified on  : 03-29-2021
+<i>6</i>&nbsp; * @last modified by  : kdoruibin@salesforce.com
+<i>7</i>&nbsp; * Modifications Log 
+<i>8</i>&nbsp; * Ver   Date         Author                     Modification
+<i>9</i>&nbsp; * 1.1   01-14-2021   kdoruibin@salesforce.com   Added permission checks
+<i>10</i>&nbsp; * 1.0   12-09-2020   kdoruibin@salesforce.com   Initial Version
+<i>11</i>&nbsp;**/
+<i>12</i>&nbsp;public with sharing class RelatedRecordWidget_CC {
+<i>13</i>&nbsp;    
+<i>14</i>&nbsp;    /* @AuraEnabled(Cacheable=true)
+<i>15</i>&nbsp;    public static String getLookupFieldValue(Id recordId, String sObjectName, String lookupField) {
+<i>16</i>&nbsp;        String queryString = &#39;SELECT &#39; + lookupField + &#39; FROM &#39; +sObjectName + &#39; WHERE Id = \&#39;&#39; + recordId + &#39;\&#39;&#39;;
+<i>17</i>&nbsp;        List&lt;SObject&gt; queryResultList = Database.query(queryString);
+<i>18</i>&nbsp;        return (String) queryResultList[0].get(lookupField);
+<i>19</i>&nbsp;    } */
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    /* @AuraEnabled(Cacheable=true)
+<i>22</i>&nbsp;    public static String getEventSbuFieldValue(Id recordId) {
+<i>23</i>&nbsp;        return (String) [SELECT SBU__c FROM Event WHERE Id = :recordId LIMIT 1].SBU__c;
+<i>24</i>&nbsp;    } */
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    // Method to replace both above
+<i>27</i>&nbsp;    @AuraEnabled(Cacheable=true)
+<b class="fc"><i>28</i>&nbsp;    public static SObject getEventRecord(Id recordId, String fields) {</b>
+<b class="fc"><i>29</i>&nbsp;        String queryString = &#39;SELECT &#39; + fields + &#39; FROM Event WHERE Id = \&#39;&#39; + recordId + &#39;\&#39;&#39;;</b>
+<b class="fc"><i>30</i>&nbsp;        List&lt;Event&gt; queryResultList = Database.query(queryString);</b>
+<b class="fc"><i>31</i>&nbsp;        SObjectAccessDecision securityDecision = Security.stripInaccessible(AccessType.READABLE, queryResultList);</b>
+<b class="fc"><i>32</i>&nbsp;        return securityDecision.getRecords()[0];</b>
+<i>33</i>&nbsp;    }
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>36</i>&nbsp;    public static string completeEvent(Id recordId) {</b>
+<b class="nc"><i>37</i>&nbsp;        try {</b>
+<b class="nc"><i>38</i>&nbsp;            Event eventToUpdate = [SELECT Id, Event_Status__c FROM Event WHERE Id = :recordId LIMIT 1];</b>
+<b class="nc"><i>39</i>&nbsp;            if (eventToUpdate.Event_Status__c != &#39;Completed&#39;) {</b>
+<b class="nc"><i>40</i>&nbsp;                eventToUpdate.Event_Status__c = &#39;Completed&#39;;</b>
+<b class="nc"><i>41</i>&nbsp;                update eventToUpdate;</b>
+<i>42</i>&nbsp;            }
+<b class="nc"><i>43</i>&nbsp;            return JSON.serialize(eventToUpdate);</b>
+<b class="nc"><i>44</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>45</i>&nbsp;            throw new AuraHandledException(e.getMessage());</b>
+<i>46</i>&nbsp;        }
+<i>47</i>&nbsp;    }
+<i>48</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

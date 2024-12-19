@@ -1,0 +1,144 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DC_StringUtils</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DC_StringUtils (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DC_StringUtils</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 21)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>DC_StringUtils</h2>
+<div class="sourceCode"><i>1</i>&nbsp;//
+<i>2</i>&nbsp;//This class provides utility methods to work with strings.
+<i>3</i>&nbsp;//
+<i>4</i>&nbsp;//Author: Gennadiy Pervukhin [Cervello] (5-11-2014)
+<i>5</i>&nbsp;public class DC_StringUtils
+<i>6</i>&nbsp;{
+<i>7</i>&nbsp;	//
+<i>8</i>&nbsp;	//Variables and constants
+<i>9</i>&nbsp;	//
+<b class="nc"><i>10</i>&nbsp;	public static final String EMPTY_STRING = &#39;&#39;;</b>
+<b class="nc"><i>11</i>&nbsp;	public static final String WHITE_SPACE = &#39; &#39;;</b>
+<b class="nc"><i>12</i>&nbsp;	public static final String HTML_NON_BREAKING_SPACE = &#39;&amp;nbsp;&#39;;</b>
+<i>13</i>&nbsp;	
+<b class="nc"><i>14</i>&nbsp;	public static final String NEW_LINE_SYMBOL_IN_WINDOWS = &#39;\r\n&#39;;</b>
+<b class="nc"><i>15</i>&nbsp;	public static final String NEW_LINE_SYMBOL_IN_UNIX = &#39;\n&#39;;</b>
+<i>16</i>&nbsp;	//
+<i>17</i>&nbsp;	
+<i>18</i>&nbsp;	//
+<i>19</i>&nbsp;	//Public static methods
+<i>20</i>&nbsp;	//
+<b class="nc"><i>21</i>&nbsp;	public static String safeReplace(String sourceString, String replaceableValue,</b>
+<i>22</i>&nbsp;    	String replacement)
+<i>23</i>&nbsp;    {
+<i>24</i>&nbsp;    	//quickly check passed parameters
+<b class="nc"><i>25</i>&nbsp;    	if (sourceString == null || replaceableValue == null)</b>
+<i>26</i>&nbsp;    	{
+<b class="nc"><i>27</i>&nbsp;    		return sourceString;</b>
+<i>28</i>&nbsp;    	}
+<i>29</i>&nbsp;    	
+<i>30</i>&nbsp;    	//if a replacement is null then we consider it&#39;s an empty string
+<b class="nc"><i>31</i>&nbsp;    	if (replacement == null)</b>
+<i>32</i>&nbsp;    	{
+<b class="nc"><i>33</i>&nbsp;    		replacement = DC_StringUtils.EMPTY_STRING;</b>
+<i>34</i>&nbsp;    	}
+<b class="nc"><i>35</i>&nbsp;    	return sourceString.replace(replaceableValue, replacement);</b>
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;    
+<b class="nc"><i>38</i>&nbsp;    public static String replaceLineBreaks(String sourceString, String replacementString)</b>
+<i>39</i>&nbsp;    {
+<b class="nc"><i>40</i>&nbsp;    	if (sourceString == null || replacementString == null)</b>
+<i>41</i>&nbsp;    	{
+<b class="nc"><i>42</i>&nbsp;    		return null;</b>
+<i>43</i>&nbsp;    	}
+<i>44</i>&nbsp;    	
+<i>45</i>&nbsp;    	//at first we should escape \r\n sequence
+<b class="nc"><i>46</i>&nbsp;    	String resultString = sourceString.replace(NEW_LINE_SYMBOL_IN_WINDOWS, replacementString);</b>
+<i>47</i>&nbsp;    	//at second we should escape \n symbol
+<b class="nc"><i>48</i>&nbsp;    	resultString = resultString.replace(NEW_LINE_SYMBOL_IN_UNIX, replacementString);</b>
+<i>49</i>&nbsp;    	
+<b class="nc"><i>50</i>&nbsp;    	return resultString;</b>
+<i>51</i>&nbsp;    }
+<i>52</i>&nbsp;    
+<b class="nc"><i>53</i>&nbsp;    public static String safeJoin(List&lt;Object&gt; values, String separator)</b>
+<i>54</i>&nbsp;	{
+<i>55</i>&nbsp;		//check passed parameters
+<b class="nc"><i>56</i>&nbsp;		if (values == null)</b>
+<i>57</i>&nbsp;		{
+<b class="nc"><i>58</i>&nbsp;			return null;</b>
+<i>59</i>&nbsp;		}
+<b class="nc"><i>60</i>&nbsp;		separator = (separator != null ? separator : EMPTY_STRING);</b>
+<b class="nc"><i>61</i>&nbsp;		return String.join(values, separator);</b>
+<i>62</i>&nbsp;	}
+<i>63</i>&nbsp;	
+<b class="nc"><i>64</i>&nbsp;	public static String truncateString(String sourceString, Integer targetLength)</b>
+<i>65</i>&nbsp;	{
+<b class="nc"><i>66</i>&nbsp;		if (String.isBlank(sourceString) || sourceString.length() &lt;= targetLength)</b>
+<i>67</i>&nbsp;		{
+<b class="nc"><i>68</i>&nbsp;			return sourceString;</b>
+<i>69</i>&nbsp;		}
+<b class="nc"><i>70</i>&nbsp;		return sourceString.substring(0, targetLength);</b>
+<i>71</i>&nbsp;	}
+<i>72</i>&nbsp;    //
+<i>73</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

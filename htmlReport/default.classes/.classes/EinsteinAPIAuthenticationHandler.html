@@ -1,0 +1,97 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: EinsteinAPIAuthenticationHandler</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: EinsteinAPIAuthenticationHandler (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">EinsteinAPIAuthenticationHandler</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 14)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>EinsteinAPIAuthenticationHandler</h2>
+<div class="sourceCode"><i>1</i>&nbsp;public class EinsteinAPIAuthenticationHandler {
+<i>2</i>&nbsp;
+<b class="nc"><i>3</i>&nbsp;    public static String getAccessToken(String cmdtDeveloperName) {</b>
+<i>4</i>&nbsp;
+<b class="nc"><i>5</i>&nbsp;        JSON_Web_Token__mdt jwtMdt = [</b>
+<i>6</i>&nbsp;            SELECT Id,Algorithm__c,Audiences__c,Endpoint__c,Issuer__c,RSA_Key__c,Subscriber__c,Token_Duration__c
+<i>7</i>&nbsp;            FROM JSON_Web_Token__mdt
+<b class="nc"><i>8</i>&nbsp;            WHERE DeveloperName = :cmdtDeveloperName</b>
+<i>9</i>&nbsp;        ];
+<i>10</i>&nbsp;
+<b class="nc"><i>11</i>&nbsp;        JWT jwt = new JWT(jwtMdt.Algorithm__c,Integer.valueOf(jwtMdt.Token_Duration__c));</b>
+<b class="nc"><i>12</i>&nbsp;        String rsaKey = jwtMdt.RSA_Key__c;</b>
+<b class="nc"><i>13</i>&nbsp;        rsaKey = rsaKey.replace(&#39;-----BEGIN RSA PRIVATE KEY-----&#39;, &#39;&#39;);</b>
+<b class="nc"><i>14</i>&nbsp;        rsaKey = rsaKey.replace(&#39;-----END RSA PRIVATE KEY-----&#39;, &#39;&#39;);</b>
+<b class="nc"><i>15</i>&nbsp;        rsaKey = rsaKey.replace(&#39;\n&#39;, &#39;&#39;);</b>
+<i>16</i>&nbsp;
+<b class="nc"><i>17</i>&nbsp;        jwt.pkcs8 =rsaKey;</b>
+<b class="nc"><i>18</i>&nbsp;        jwt.iss = jwtMdt.Issuer__c;</b>
+<b class="nc"><i>19</i>&nbsp;        jwt.sub = jwtMdt.Subscriber__c;</b>
+<b class="nc"><i>20</i>&nbsp;        jwt.aud = jwtMdt.Audiences__c;</b>
+<i>21</i>&nbsp;        
+<i>22</i>&nbsp;        
+<b class="nc"><i>23</i>&nbsp;        String accessToken = JWTBearerFlow.getAccessToken(jwtMdt.Endpoint__c, jwt);</b>
+<b class="nc"><i>24</i>&nbsp;        return accessToken;</b>
+<i>25</i>&nbsp;    }
+<i>26</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

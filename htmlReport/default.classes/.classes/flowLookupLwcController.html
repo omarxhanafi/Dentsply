@@ -1,0 +1,264 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: flowLookupLwcController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: flowLookupLwcController (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">flowLookupLwcController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 58)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>flowLookupLwcController</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/**
+<i>2</i>&nbsp; * Controller for Flow_lookupLwc, help in searching for and retrieving records of different types (Accounts and Contacts)
+<i>3</i>&nbsp; * Can also Retrieve a list of recently viewed records.
+<i>4</i>&nbsp; *
+<i>5</i>&nbsp; * History
+<i>6</i>&nbsp; * 2021-06-23   Richard Trum (richard.trum@glimt.se)     Create New Class
+<i>7</i>&nbsp; * 2022-01-01   Houssam ADIB (hadib@salesforce.com)      Add Support to Account search back - Refactor the class - Comment the class
+<i>8</i>&nbsp; * 2022-01-01   Houssam ADIB (hadib@salesforce.com)      Add prepopulate method TFUS-000006660
+<i>9</i>&nbsp; */
+<i>10</i>&nbsp;public with sharing class flowLookupLwcController {
+<i>11</i>&nbsp;
+<b class="nc"><i>12</i>&nbsp;    private final static Integer MAX_RESULTS = 5;</b>
+<i>13</i>&nbsp;    private final static String STANDARD_ACCOUNT_ICON = &#39;standard:account&#39;;
+<i>14</i>&nbsp;    private final static String STANDARD_CONTACT_ICON = &#39;standard:contact&#39;;
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;    /**
+<i>17</i>&nbsp;     * Searches for records of the specified types (Account or Contact) that match the search term, and it returns the results as a list of LookupSearchResult objects.
+<i>18</i>&nbsp;     * The search results are filtered to exclude any records with IDs in the idsNotToInclude list.
+<i>19</i>&nbsp;     * If Contact is one of the objects being searched, the method also filters the search results to include only contacts that are related to the account specified by contactAccountId.
+<i>20</i>&nbsp;     *
+<i>21</i>&nbsp;     * @author          Richard Trum (richard.trum@glimt.se)
+<i>22</i>&nbsp;     * @refactoredBy    Houssam ADIB (hadib@salesforce.com)
+<i>23</i>&nbsp;     *
+<i>24</i>&nbsp;     * @param searchTerm        A string representing the search term that the user has entered
+<i>25</i>&nbsp;     * @param idsNotToInclude   A list of strings representing the IDs of records that should not be included in the search results
+<i>26</i>&nbsp;     * @param contactAccountId  The contact&#39;s account Id
+<i>27</i>&nbsp;     * @param searchObjects     A list of strings representing the objects that should be searched
+<i>28</i>&nbsp;     *
+<i>29</i>&nbsp;     * @return List&lt;LookupSearchResult&gt; - Returns the search results sorted alphabetically by title.
+<i>30</i>&nbsp;     */
+<i>31</i>&nbsp;    @AuraEnabled(Cacheable=true)
+<b class="nc"><i>32</i>&nbsp;    public static List&lt;LookupSearchResult&gt; search(String searchTerm, List&lt;String&gt; idsNotToInclude, String contactAccountId, List&lt;String&gt; searchObjects)</b>
+<i>33</i>&nbsp;    {
+<b class="nc"><i>34</i>&nbsp;        searchTerm += &#39;*&#39;;</b>
+<i>35</i>&nbsp;
+<b class="nc"><i>36</i>&nbsp;        List&lt;LookupSearchResult&gt; results    = new List&lt;LookupSearchResult&gt;();</b>
+<i>37</i>&nbsp;
+<b class="nc"><i>38</i>&nbsp;        if (searchObjects.contains(&#39;Account&#39;)) {</b>
+<b class="nc"><i>39</i>&nbsp;            results.addAll(searchAccounts(searchTerm, idsNotToInclude));</b>
+<i>40</i>&nbsp;        }
+<b class="nc"><i>41</i>&nbsp;        if (searchObjects.contains(&#39;Contact&#39;)) {</b>
+<b class="nc"><i>42</i>&nbsp;            results.addAll(searchContacts(searchTerm, idsNotToInclude, contactAccountId));</b>
+<i>43</i>&nbsp;        }
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;        // Optionally sort all results by Title
+<b class="nc"><i>46</i>&nbsp;        results.sort();</b>
+<i>47</i>&nbsp;
+<b class="nc"><i>48</i>&nbsp;        return results;</b>
+<i>49</i>&nbsp;    }
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;    /**
+<i>52</i>&nbsp;     * Searches for contacts that match the given search term and are related to the account specified by the given account ID
+<i>53</i>&nbsp;     * Returns the results as a list of LookupSearchResult objects.The search results are filtered to exclude any contacts with IDs in the given list of IDs to exclude.
+<i>54</i>&nbsp;     * @author          Richard Trum (richard.trum@glimt.se)
+<i>55</i>&nbsp;     * @refactoredBy    Houssam ADIB (hadib@salesforce.com)
+<i>56</i>&nbsp;     *
+<i>57</i>&nbsp;     * @param searchTerm        The search term to use when searching for contacts
+<i>58</i>&nbsp;     * @param idsNotToInclude   A list of contact IDs to exclude from the search results
+<i>59</i>&nbsp;     * @param contactAccountId  The ID of an account to which the searched contacts should be related
+<i>60</i>&nbsp;     *
+<i>61</i>&nbsp;     * @return List&lt;LookupSearchResult&gt; - objects representing the search results
+<i>62</i>&nbsp;     */
+<b class="nc"><i>63</i>&nbsp;    private static List&lt;LookupSearchResult&gt; searchContacts(String searchTerm, List&lt;String&gt; idsNotToInclude, String contactAccountId)</b>
+<i>64</i>&nbsp;    {
+<b class="nc"><i>65</i>&nbsp;        List&lt;LookupSearchResult&gt; results = new List&lt;LookupSearchResult&gt;();</b>
+<b class="nc"><i>66</i>&nbsp;        Set&lt;Id&gt; contactIdSet = new Set&lt;Id&gt;();</b>
+<b class="nc"><i>67</i>&nbsp;        for (AccountContactRelation accConRelation : [  SELECT Id, ContactId FROM AccountContactRelation WHERE AccountId = :contactAccountId])</b>
+<b class="nc"><i>68</i>&nbsp;        {</b>
+<b class="nc"><i>69</i>&nbsp;            contactIdSet.add(accConRelation.ContactId);</b>
+<i>70</i>&nbsp;        }
+<i>71</i>&nbsp;
+<b class="nc"><i>72</i>&nbsp;        List&lt;List&lt;SObject&gt;&gt; searchResults = new List&lt;List&lt;SObject&gt;&gt;();</b>
+<b class="nc"><i>73</i>&nbsp;        searchResults = [ FIND :searchTerm</b>
+<i>74</i>&nbsp;        IN ALL FIELDS
+<b class="nc"><i>75</i>&nbsp;        RETURNING Contact(Id, Name, FirstName, LastName, Email, Phone WHERE Id NOT IN :idsNotToInclude AND Id IN :contactIdSet)</b>
+<b class="nc"><i>76</i>&nbsp;        LIMIT :MAX_RESULTS</b>
+<i>77</i>&nbsp;        ];
+<i>78</i>&nbsp;
+<b class="nc"><i>79</i>&nbsp;        Contact[] contacts = (List&lt;Contact&gt;) searchResults[0];</b>
+<b class="nc"><i>80</i>&nbsp;        for (Contact contact : contacts) {</b>
+<b class="nc"><i>81</i>&nbsp;            results.add(new LookupSearchResult(contact.Id, &#39;Contact&#39;, STANDARD_CONTACT_ICON, contact.Name, &#39;Contact • &#39; + contact.Name));</b>
+<i>82</i>&nbsp;        }
+<i>83</i>&nbsp;
+<b class="nc"><i>84</i>&nbsp;        return results;</b>
+<i>85</i>&nbsp;    }
+<i>86</i>&nbsp;
+<i>87</i>&nbsp;    /**
+<i>88</i>&nbsp;     * Helps in pre-populating the contact lookup in New Sales Lead Flow.
+<i>89</i>&nbsp;     * @param contactId The default Contact ID in the context of LWC
+<i>90</i>&nbsp;     * @author Houssam ADIB (hadib@salesforce.com)
+<i>91</i>&nbsp;     *
+<i>92</i>&nbsp;     * @return LookupSearchResult - Search Result
+<i>93</i>&nbsp;     */
+<i>94</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>95</i>&nbsp;    public static LookupSearchResult prePopulateContact(String contactId)</b>
+<i>96</i>&nbsp;    {
+<b class="nc"><i>97</i>&nbsp;        LookupSearchResult result;</b>
+<b class="nc"><i>98</i>&nbsp;        Contact defaultContactValue = [SELECT Id, Name, FirstName, LastName, Email, Phone FROM Contact WHERE Id=:contactId LIMIT 1];</b>
+<b class="nc"><i>99</i>&nbsp;        if(defaultContactValue != null)</b>
+<i>100</i>&nbsp;        {
+<b class="nc"><i>101</i>&nbsp;            result = new LookupSearchResult(defaultContactValue.Id, &#39;Contact&#39;,</b>
+<b class="nc"><i>102</i>&nbsp;                    STANDARD_CONTACT_ICON, defaultContactValue.Name, &#39;Contact • &#39; + defaultContactValue.Name);</b>
+<i>103</i>&nbsp;        }
+<b class="nc"><i>104</i>&nbsp;        return result;</b>
+<i>105</i>&nbsp;    }
+<i>106</i>&nbsp;
+<i>107</i>&nbsp;    /**
+<i>108</i>&nbsp;     * Searches for accounts that match the given search term and returns the results as a list of LookupSearchResult objects.
+<i>109</i>&nbsp;     * The search results are filtered to exclude any accounts with IDs in the given list of IDs to exclude.
+<i>110</i>&nbsp;     * @author          Richard Trum (richard.trum@glimt.se)
+<i>111</i>&nbsp;     * @refactoredBy    Houssam ADIB (hadib@salesforce.com)
+<i>112</i>&nbsp;     *
+<i>113</i>&nbsp;     * @param searchTerm        The search term to use when searching for accounts
+<i>114</i>&nbsp;     * @param idsNotToInclude   A list of account IDs to exclude from the search results
+<i>115</i>&nbsp;     * @return List&lt;LookupSearchResult&gt; - Objects representing the search results
+<i>116</i>&nbsp;     */
+<b class="nc"><i>117</i>&nbsp;    private static List&lt;LookupSearchResult&gt; searchAccounts(String searchTerm, List&lt;String&gt; idsNotToInclude)</b>
+<i>118</i>&nbsp;    {
+<b class="nc"><i>119</i>&nbsp;        List&lt;List&lt;SObject&gt;&gt; searchResults = new List&lt;List&lt;SObject&gt;&gt;();</b>
+<b class="nc"><i>120</i>&nbsp;        List&lt;LookupSearchResult&gt; results = new List&lt;LookupSearchResult&gt;();</b>
+<i>121</i>&nbsp;
+<b class="nc"><i>122</i>&nbsp;        searchResults = [   FIND :searchTerm</b>
+<i>123</i>&nbsp;        IN ALL FIELDS
+<i>124</i>&nbsp;        RETURNING Account(  Id, Name, BillingCity
+<b class="nc"><i>125</i>&nbsp;                WHERE   Id NOT IN :idsNotToInclude</b>
+<i>126</i>&nbsp;                AND
+<b class="nc"><i>127</i>&nbsp;                RecordTypeId = :GlobalUtils.getRecordTypeId(&#39;Account&#39;,&#39;CIM_Account&#39;))</b>
+<b class="nc"><i>128</i>&nbsp;        LIMIT :MAX_RESULTS</b>
+<i>129</i>&nbsp;        ];
+<i>130</i>&nbsp;
+<b class="nc"><i>131</i>&nbsp;        Account[] accounts = (List&lt;Account&gt;) searchResults[0];</b>
+<b class="nc"><i>132</i>&nbsp;        for (Account account : accounts)</b>
+<b class="nc"><i>133</i>&nbsp;        {</b>
+<b class="nc"><i>134</i>&nbsp;            String subtitle = account.BillingCity == null ? &#39;Account&#39; : &#39;Account • &#39; + account.BillingCity;</b>
+<b class="nc"><i>135</i>&nbsp;            results.add(new LookupSearchResult(account.Id, &#39;Account&#39;, STANDARD_ACCOUNT_ICON, account.Name, subtitle));</b>
+<i>136</i>&nbsp;        }
+<i>137</i>&nbsp;
+<b class="nc"><i>138</i>&nbsp;        return results;</b>
+<i>139</i>&nbsp;    }
+<i>140</i>&nbsp;
+<i>141</i>&nbsp;    /**
+<i>142</i>&nbsp;     * Retrieves recently viewed records of type &#39;Account&#39; or &#39;Contact&#39; based on the given account ID and record ID
+<i>143</i>&nbsp;     * And returns the results as a list of LookupSearchResult objects.
+<i>144</i>&nbsp;     * @author          Richard Trum (richard.trum@glimt.se)
+<i>145</i>&nbsp;     * @refactoredBy    Houssam ADIB (hadib@salesforce.com)
+<i>146</i>&nbsp;     *
+<i>147</i>&nbsp;     * @param accountId     The ID of an account
+<i>148</i>&nbsp;     * @param recordId      The ID of a record
+<i>149</i>&nbsp;     * @return List&lt;LookupSearchResult&gt; - Objects representing the recently viewed records
+<i>150</i>&nbsp;     */
+<i>151</i>&nbsp;    @AuraEnabled(Cacheable=true)
+<b class="nc"><i>152</i>&nbsp;    public static List&lt;LookupSearchResult&gt; getRecentlyViewed(String accountId, String recordId)</b>
+<i>153</i>&nbsp;    {
+<b class="nc"><i>154</i>&nbsp;        List&lt;LookupSearchResult&gt; results = new List&lt;LookupSearchResult&gt;();</b>
+<i>155</i>&nbsp;
+<i>156</i>&nbsp;        // Get recently viewed records of type Account or Opportunity
+<i>157</i>&nbsp;        /*List&lt;RecentlyViewed&gt; recentRecords = [
+<i>158</i>&nbsp;            SELECT Id, Name, Type
+<i>159</i>&nbsp;            FROM RecentlyViewed
+<i>160</i>&nbsp;            WHERE Type = &#39;Account&#39; OR Type = &#39;Opportunity&#39;
+<i>161</i>&nbsp;            ORDER BY LastViewedDate DESC
+<i>162</i>&nbsp;            LIMIT 5
+<i>163</i>&nbsp;        ];*/
+<i>164</i>&nbsp;
+<b class="nc"><i>165</i>&nbsp;        List&lt;Contact&gt; recentRecords = new List&lt;Contact&gt;();</b>
+<i>166</i>&nbsp;
+<b class="nc"><i>167</i>&nbsp;        if(recordId != null &amp;&amp; recordId.left(3) == &#39;003&#39;)</b>
+<i>168</i>&nbsp;        {
+<b class="nc"><i>169</i>&nbsp;            recentRecords = [</b>
+<i>170</i>&nbsp;                    SELECT Id, Name, FirstName, LastName
+<i>171</i>&nbsp;                    FROM Contact
+<b class="nc"><i>172</i>&nbsp;                    WHERE Id =: recordId</b>
+<i>173</i>&nbsp;            ];
+<i>174</i>&nbsp;        }
+<b class="nc"><i>175</i>&nbsp;        else if(accountId != null)</b>
+<i>176</i>&nbsp;        {
+<b class="nc"><i>177</i>&nbsp;            recentRecords = [</b>
+<i>178</i>&nbsp;                    SELECT Id, Name, FirstName, LastName
+<i>179</i>&nbsp;                    FROM Contact
+<b class="nc"><i>180</i>&nbsp;                    WHERE AccountId =: accountId</b>
+<i>181</i>&nbsp;            ];
+<i>182</i>&nbsp;        }
+<i>183</i>&nbsp;        // Convert recent records into LookupSearchResult
+<b class="nc"><i>184</i>&nbsp;        for (Contact recentRecord : recentRecords)</b>
+<b class="nc"><i>185</i>&nbsp;        {</b>
+<b class="nc"><i>186</i>&nbsp;            results.add(</b>
+<b class="nc"><i>187</i>&nbsp;                    new LookupSearchResult( recentRecord.Id, &#39;Contact&#39;, STANDARD_CONTACT_ICON, recentRecord.Name, &#39;Contact • &#39; + recentRecord.Name )</b>
+<i>188</i>&nbsp;            );
+<i>189</i>&nbsp;        }
+<b class="nc"><i>190</i>&nbsp;        return results;</b>
+<i>191</i>&nbsp;    }
+<i>192</i>&nbsp;
+<i>193</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

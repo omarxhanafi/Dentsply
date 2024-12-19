@@ -1,0 +1,310 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: AttendeeTempTriggerHelper</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: AttendeeTempTriggerHelper (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AttendeeTempTriggerHelper</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 86)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>AttendeeTempTriggerHelper</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         Houssam ADIB (Salesforce)
+<i>3</i>&nbsp;Description:    Attendee Temp Trigger Helper Class
+<i>4</i>&nbsp;Test class      AttendeeTempTriggerHelperTest
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;History
+<i>7</i>&nbsp;20-03-2023      Houssam ADIB - Create new helper class
+<i>8</i>&nbsp;29-01-2024      Houssam ADIB - TFUS-000005641 - Add Contact Type on campaign member
+<i>9</i>&nbsp;29-01-2024      Houssam ADIB - TFUS-000006858 - Map new fields from Temp to attendee ( static mapping )
+<i>10</i>&nbsp;----------------------------------------------------------------------------------------*/
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;public with sharing class AttendeeTempTriggerHelper {
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    /**
+<i>15</i>&nbsp;     * Synchronize the changes of Temp records so they reflect to their Attendees/Leads
+<i>16</i>&nbsp;     * @author hadib@salesforce.com | 20-03-2023
+<i>17</i>&nbsp;     *
+<i>18</i>&nbsp;     * @param oldTempAttendeeMap Old Map of Temp Records before update
+<i>19</i>&nbsp;     * @param newTempAttendeeMap New Map of Temp Records after update
+<i>20</i>&nbsp;     */
+<b class="nc"><i>21</i>&nbsp;    public static void synchronizeChanges(  Map&lt;Id, CventEvents__AttendeeTemp__c&gt; oldTempAttendeeMap,</b>
+<i>22</i>&nbsp;                                            Map&lt;Id, CventEvents__AttendeeTemp__c&gt; newTempAttendeeMap)
+<i>23</i>&nbsp;    {
+<b class="nc"><i>24</i>&nbsp;        List&lt;AttendeeWrapper&gt; changedTempAttendeesToBeSynced = new List&lt;AttendeeWrapper&gt;();</b>
+<b class="nc"><i>25</i>&nbsp;        List&lt;DynamicMapping__mdt&gt; mappings = MappingManagement.getMapping(CventManagement.SOURCE_OBJECT_TEMP, CventManagement.TARGET_OBJECT_LEAD,true);</b>
+<i>26</i>&nbsp;
+<b class="nc"><i>27</i>&nbsp;        for (CventEvents__AttendeeTemp__c tempAttendee : newTempAttendeeMap.values())</b>
+<b class="nc"><i>28</i>&nbsp;        {</b>
+<b class="nc"><i>29</i>&nbsp;            AttendeeWrapper attendeeWrapper = new AttendeeWrapper();</b>
+<b class="nc"><i>30</i>&nbsp;            if(!String.isBlank(tempAttendee.CventEvents__pkg_AttendeeStub__c))</b>
+<i>31</i>&nbsp;            {
+<b class="nc"><i>32</i>&nbsp;                CventEvents__AttendeeTemp__c oldTempAttendee = oldTempAttendeeMap.get(tempAttendee.Id);</b>
+<i>33</i>&nbsp;
+<b class="nc"><i>34</i>&nbsp;                if(mappedFieldHasChanged(tempAttendee, oldTempAttendee,mappings))</b>
+<i>35</i>&nbsp;                {
+<b class="nc"><i>36</i>&nbsp;                    attendeeWrapper.tempAttendee = tempAttendee;</b>
+<b class="nc"><i>37</i>&nbsp;                    changedTempAttendeesToBeSynced.add(attendeeWrapper);</b>
+<i>38</i>&nbsp;                }
+<i>39</i>&nbsp;            }
+<i>40</i>&nbsp;        }
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;        // We detected changes in mapped fields
+<b class="nc"><i>43</i>&nbsp;        if(!changedTempAttendeesToBeSynced.isEmpty())</b>
+<i>44</i>&nbsp;        {
+<b class="nc"><i>45</i>&nbsp;            Set&lt;String&gt; attendeesStubs = extractStubs(changedTempAttendeesToBeSynced);</b>
+<i>46</i>&nbsp;
+<b class="nc"><i>47</i>&nbsp;            List&lt;CventEvents__Attendee__c&gt; attendees = [    SELECT  Id,CventEvents__AttendeeStub__c,CventEvents__Lead__c</b>
+<i>48</i>&nbsp;                                                            FROM    CventEvents__Attendee__c
+<b class="nc"><i>49</i>&nbsp;                                                            WHERE   CventEvents__AttendeeStub__c IN :attendeesStubs];</b>
+<i>50</i>&nbsp;
+<b class="nc"><i>51</i>&nbsp;            Set&lt;Id&gt; leadsToSync = findAndPopulateAttendeeByStubAndReturnLeadsToSync(attendees, changedTempAttendeesToBeSynced);</b>
+<i>52</i>&nbsp;
+<b class="nc"><i>53</i>&nbsp;            findAndPopulateLeads(leadsToSync, changedTempAttendeesToBeSynced);</b>
+<i>54</i>&nbsp;
+<b class="nc"><i>55</i>&nbsp;            synchronize(changedTempAttendeesToBeSynced,mappings);</b>
+<i>56</i>&nbsp;        }
+<i>57</i>&nbsp;    }
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;    /**
+<i>60</i>&nbsp;     * The method returns a Boolean value indicating whether or not there have been changes in the mapped fields.
+<i>61</i>&nbsp;     * @author hadib@salesforce.com | 20-03-2023
+<i>62</i>&nbsp;     *
+<i>63</i>&nbsp;     * @param tempAttendee      New values of the Temp record
+<i>64</i>&nbsp;     * @param oldTempAttendee   old Temp record
+<i>65</i>&nbsp;     * @param mappings          Fields mapped
+<i>66</i>&nbsp;     *
+<i>67</i>&nbsp;     * @return Boolean - indicating whether or not there have been changes in the mapped fields
+<i>68</i>&nbsp;     */
+<b class="nc"><i>69</i>&nbsp;    public static Boolean mappedFieldHasChanged(CventEvents__AttendeeTemp__c tempAttendee, CventEvents__AttendeeTemp__c oldTempAttendee,</b>
+<i>70</i>&nbsp;            List&lt;DynamicMapping__mdt&gt; mappings)
+<i>71</i>&nbsp;    {
+<b class="nc"><i>72</i>&nbsp;        Boolean mappedFieldHasChanged = false;</b>
+<i>73</i>&nbsp;
+<b class="nc"><i>74</i>&nbsp;        for(DynamicMapping__mdt mapping : mappings)</b>
+<b class="nc"><i>75</i>&nbsp;        {</b>
+<b class="nc"><i>76</i>&nbsp;            if(tempAttendee.get(mapping.SourceFieldApiName__c) != oldTempAttendee.get(mapping.SourceFieldApiName__c))</b>
+<i>77</i>&nbsp;            {
+<b class="nc"><i>78</i>&nbsp;                mappedFieldHasChanged = true;</b>
+<b class="nc"><i>79</i>&nbsp;                break;</b>
+<i>80</i>&nbsp;            }
+<i>81</i>&nbsp;        }
+<i>82</i>&nbsp;
+<i>83</i>&nbsp;        // Manual Field mapped statically for Temp -&gt; Attendee. (+Static Cvent Fields.)
+<b class="nc"><i>84</i>&nbsp;        if( tempAttendee.CventEvents__pkg_AttendeeStatus__c         != oldTempAttendee.CventEvents__pkg_AttendeeStatus__c</b>
+<b class="nc"><i>85</i>&nbsp;            || tempAttendee.CventEvents__pkg_Attended__c            != oldTempAttendee.CventEvents__pkg_Attended__c</b>
+<b class="nc"><i>86</i>&nbsp;            || tempAttendee.CventEvents__pkg_ContactTypeName__c     != oldTempAttendee.CventEvents__pkg_ContactTypeName__c</b>
+<b class="nc"><i>87</i>&nbsp;            || tempAttendee.Doyouhaveanintraoralscannerinyour__c    != oldTempAttendee.Doyouhaveanintraoralscannerinyour__c</b>
+<b class="nc"><i>88</i>&nbsp;            || tempAttendee.Whichsolutionsareyouinterestedin__c     != oldTempAttendee.Whichsolutionsareyouinterestedin__c )</b>
+<i>89</i>&nbsp;        {
+<b class="nc"><i>90</i>&nbsp;            mappedFieldHasChanged = true;</b>
+<i>91</i>&nbsp;        }
+<b class="nc"><i>92</i>&nbsp;        return mappedFieldHasChanged;</b>
+<i>93</i>&nbsp;    }
+<i>94</i>&nbsp;
+<i>95</i>&nbsp;    /**
+<i>96</i>&nbsp;     * Synchronizes the new changes received in the temps records to their related records (lead or attendee)
+<i>97</i>&nbsp;     * @author hadib@salesforce.com | 20-03-2023
+<i>98</i>&nbsp;     * `
+<i>99</i>&nbsp;     * @param changedTempAttendeesToBeSynced    List of Attendees wrapper
+<i>100</i>&nbsp;     * @param mappings                          List fields mappings
+<i>101</i>&nbsp;     */
+<b class="nc"><i>102</i>&nbsp;    public static void synchronize(List&lt;AttendeeWrapper&gt; changedTempAttendeesToBeSynced, List&lt;DynamicMapping__mdt&gt; mappings)</b>
+<i>103</i>&nbsp;    {
+<b class="nc"><i>104</i>&nbsp;        List&lt;Lead&gt; leadsToUpdate = new List&lt;Lead&gt;();</b>
+<b class="nc"><i>105</i>&nbsp;        List&lt;CventEvents__Attendee__c&gt; attendeesToUpdate = new List&lt;CventEvents__Attendee__c&gt;();</b>
+<i>106</i>&nbsp;
+<b class="nc"><i>107</i>&nbsp;        for (AttendeeWrapper wrapper : changedTempAttendeesToBeSynced)</b>
+<b class="nc"><i>108</i>&nbsp;        {</b>
+<b class="nc"><i>109</i>&nbsp;            if(wrapper.lead != null)</b>
+<i>110</i>&nbsp;            {
+<b class="nc"><i>111</i>&nbsp;                for (DynamicMapping__mdt mapping : mappings)</b>
+<b class="nc"><i>112</i>&nbsp;                {</b>
+<b class="nc"><i>113</i>&nbsp;                    Object targetValue = wrapper.tempAttendee.get(mapping.SourceFieldApiName__c);</b>
+<b class="nc"><i>114</i>&nbsp;                    wrapper.lead.put(mapping.TargetFieldApiName__c, targetValue);</b>
+<i>115</i>&nbsp;                }
+<b class="nc"><i>116</i>&nbsp;                leadsToUpdate.add(wrapper.lead);</b>
+<i>117</i>&nbsp;            }
+<i>118</i>&nbsp;
+<b class="nc"><i>119</i>&nbsp;            if(wrapper.attendee != null)</b>
+<i>120</i>&nbsp;            {
+<b class="nc"><i>121</i>&nbsp;                wrapper.attendee.CventEvents__Status__c     = wrapper.tempAttendee.CventEvents__pkg_AttendeeStatus__c;</b>
+<b class="nc"><i>122</i>&nbsp;                wrapper.attendee.CventEvents__Attended__c   = wrapper.tempAttendee.CventEvents__pkg_Attended__c;</b>
+<b class="nc"><i>123</i>&nbsp;                wrapper.attendee.ContactType__c             = wrapper.tempAttendee.CventEvents__pkg_ContactTypeName__c;</b>
+<b class="nc"><i>124</i>&nbsp;                wrapper.attendee.IntraoralScannerInUse__c   = wrapper.tempAttendee.Doyouhaveanintraoralscannerinyour__c;</b>
+<b class="nc"><i>125</i>&nbsp;                wrapper.attendee.SolutionsInterest__c       = wrapper.tempAttendee.Whichsolutionsareyouinterestedin__c;</b>
+<b class="nc"><i>126</i>&nbsp;                attendeesToUpdate.add(wrapper.attendee);</b>
+<i>127</i>&nbsp;            }
+<i>128</i>&nbsp;        }
+<i>129</i>&nbsp;
+<b class="nc"><i>130</i>&nbsp;        updateLeads(leadsToUpdate);</b>
+<i>131</i>&nbsp;
+<b class="nc"><i>132</i>&nbsp;        updateAttendees(attendeesToUpdate);</b>
+<i>133</i>&nbsp;    }
+<i>134</i>&nbsp;
+<i>135</i>&nbsp;    /**
+<i>136</i>&nbsp;     * Updates the attendees records with the new changes received
+<i>137</i>&nbsp;     * @author hadib@salesforce.com | 20-03-2023
+<i>138</i>&nbsp;     *
+<i>139</i>&nbsp;     * @param attendeesToUpdate Attendees records
+<i>140</i>&nbsp;     */
+<b class="nc"><i>141</i>&nbsp;    public static void updateAttendees(List&lt;CventEvents__Attendee__c&gt; attendeesToUpdate)</b>
+<i>142</i>&nbsp;    {
+<b class="nc"><i>143</i>&nbsp;        if(!attendeesToUpdate.isEmpty())</b>
+<i>144</i>&nbsp;        {
+<b class="nc"><i>145</i>&nbsp;            try {</b>
+<b class="nc"><i>146</i>&nbsp;                update attendeesToUpdate;</b>
+<i>147</i>&nbsp;            }
+<b class="nc"><i>148</i>&nbsp;            catch (Exception e) {</b>
+<b class="nc"><i>149</i>&nbsp;                DebugLog.addException(e, &#39;AttendeeTempTriggerHandler.sync(attendees)&#39;);</b>
+<i>150</i>&nbsp;            }
+<i>151</i>&nbsp;        }
+<i>152</i>&nbsp;    }
+<i>153</i>&nbsp;
+<i>154</i>&nbsp;    /**
+<i>155</i>&nbsp;     * Updates the leads with the new changes received
+<i>156</i>&nbsp;     * @author hadib@salesforce.com | 20-03-2023
+<i>157</i>&nbsp;     *
+<i>158</i>&nbsp;     * @param leadsToUpdate     Leads to update
+<i>159</i>&nbsp;     */
+<b class="nc"><i>160</i>&nbsp;    public static void updateLeads(List&lt;Lead&gt; leadsToUpdate)</b>
+<i>161</i>&nbsp;    {
+<b class="nc"><i>162</i>&nbsp;        if(!leadsToUpdate.isEmpty())</b>
+<i>163</i>&nbsp;        {
+<b class="nc"><i>164</i>&nbsp;            try {</b>
+<b class="nc"><i>165</i>&nbsp;                update leadsToUpdate;</b>
+<i>166</i>&nbsp;            }
+<b class="nc"><i>167</i>&nbsp;            catch (Exception e) {</b>
+<b class="nc"><i>168</i>&nbsp;                DebugLog.addException(e, &#39;AttendeeTempTriggerHandler.sync(leads)&#39;);</b>
+<i>169</i>&nbsp;            }
+<i>170</i>&nbsp;        }
+<i>171</i>&nbsp;    }
+<i>172</i>&nbsp;
+<i>173</i>&nbsp;    /**
+<i>174</i>&nbsp;     * Searches for matching Lead records based on a set of Lead ID
+<i>175</i>&nbsp;     * And updates an AttendeeWrapper object with the corresponding Lead object for each attendee.
+<i>176</i>&nbsp;     * @author hadib@salesforce.com | 20-03-2023
+<i>177</i>&nbsp;     *
+<i>178</i>&nbsp;     * @param leadsToSync                       Set of Leads Ids
+<i>179</i>&nbsp;     * @param changedTempAttendeesToBeSynced    Attendees Wrappers
+<i>180</i>&nbsp;     */
+<b class="nc"><i>181</i>&nbsp;    public static void findAndPopulateLeads(Set&lt;Id&gt; leadsToSync, List&lt;AttendeeWrapper&gt; changedTempAttendeesToBeSynced)</b>
+<i>182</i>&nbsp;    {
+<b class="nc"><i>183</i>&nbsp;        List&lt;Lead&gt; leads = [SELECT Id FROM Lead WHERE Id IN :leadsToSync];</b>
+<b class="nc"><i>184</i>&nbsp;        for (Lead lead : leads) {</b>
+<b class="nc"><i>185</i>&nbsp;            for (AttendeeWrapper attendeeWrapper : changedTempAttendeesToBeSynced) {</b>
+<b class="nc"><i>186</i>&nbsp;                if (attendeeWrapper.attendee.CventEvents__Lead__c == lead.Id) {</b>
+<b class="nc"><i>187</i>&nbsp;                    attendeeWrapper.lead = lead;</b>
+<b class="nc"><i>188</i>&nbsp;                    break;</b>
+<i>189</i>&nbsp;                }
+<i>190</i>&nbsp;            }
+<i>191</i>&nbsp;        }
+<i>192</i>&nbsp;    }
+<i>193</i>&nbsp;
+<i>194</i>&nbsp;    /**
+<i>195</i>&nbsp;     * Checks for attendees and matches them with changed AttendeeWrapper objects,
+<i>196</i>&nbsp;     * and if there is a related Lead record, it adds the Lead&#39;s ID to a set.
+<i>197</i>&nbsp;     * @author hadib@salesforce.com | 20-03-2023
+<i>198</i>&nbsp;     *
+<i>199</i>&nbsp;     * @param attendees                         List of Attendees records
+<i>200</i>&nbsp;     * @param changedTempAttendeesToBeSynced    The changed Temp records
+<i>201</i>&nbsp;     *
+<i>202</i>&nbsp;     * @return Set&lt;Id&gt; - Id of Leads to synchronize
+<i>203</i>&nbsp;     */
+<b class="nc"><i>204</i>&nbsp;    public static Set&lt;Id&gt; findAndPopulateAttendeeByStubAndReturnLeadsToSync(List&lt;CventEvents__Attendee__c&gt; attendees, List&lt;AttendeeWrapper&gt; changedTempAttendeesToBeSynced)</b>
+<i>205</i>&nbsp;    {
+<b class="nc"><i>206</i>&nbsp;        Set&lt;Id&gt; leadsToSync = new Set&lt;Id&gt;();</b>
+<b class="nc"><i>207</i>&nbsp;        for (CventEvents__Attendee__c att : attendees) {</b>
+<b class="nc"><i>208</i>&nbsp;            for (AttendeeWrapper attendeeWrapper : changedTempAttendeesToBeSynced) {</b>
+<b class="nc"><i>209</i>&nbsp;                if (attendeeWrapper.tempAttendee.CventEvents__pkg_AttendeeStub__c == att.CventEvents__AttendeeStub__c) {</b>
+<b class="nc"><i>210</i>&nbsp;                    attendeeWrapper.attendee = att;</b>
+<b class="nc"><i>211</i>&nbsp;                    if(att.CventEvents__Lead__c != null)</b>
+<i>212</i>&nbsp;                    {
+<b class="nc"><i>213</i>&nbsp;                        leadsToSync.add(att.CventEvents__Lead__c);</b>
+<i>214</i>&nbsp;                    }
+<b class="nc"><i>215</i>&nbsp;                    break;</b>
+<i>216</i>&nbsp;                }
+<i>217</i>&nbsp;            }
+<i>218</i>&nbsp;        }
+<b class="nc"><i>219</i>&nbsp;        return leadsToSync;</b>
+<i>220</i>&nbsp;    }
+<i>221</i>&nbsp;
+<i>222</i>&nbsp;    /**
+<i>223</i>&nbsp;     * Extracts the set of attendees stubs from attendee wrappers
+<i>224</i>&nbsp;     * @author hadib@salesforce.com | 20-03-2023
+<i>225</i>&nbsp;     *
+<i>226</i>&nbsp;     * @param changedTempAttendeesToBeSynced List of attendees wrappers
+<i>227</i>&nbsp;     *
+<i>228</i>&nbsp;     * @return Set&lt;String&gt; - Set of Attendees Stubs
+<i>229</i>&nbsp;     */
+<b class="nc"><i>230</i>&nbsp;    public static Set&lt;String&gt; extractStubs(List&lt;AttendeeWrapper&gt; changedTempAttendeesToBeSynced)</b>
+<i>231</i>&nbsp;    {
+<b class="nc"><i>232</i>&nbsp;        Set&lt;String&gt; attendeesStubs = new Set&lt;String&gt;();</b>
+<b class="nc"><i>233</i>&nbsp;        for (AttendeeWrapper att : changedTempAttendeesToBeSynced) {</b>
+<b class="nc"><i>234</i>&nbsp;            attendeesStubs.add(att.tempAttendee.CventEvents__pkg_AttendeeStub__c);</b>
+<i>235</i>&nbsp;        }
+<b class="nc"><i>236</i>&nbsp;        return attendeesStubs;</b>
+<i>237</i>&nbsp;    }
+<i>238</i>&nbsp;
+<i>239</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: flowQuestionnaireController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: flowQuestionnaireController (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">flowQuestionnaireController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 19)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>flowQuestionnaireController</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*------------------------------------------------------------	
+<i>2</i>&nbsp;	Author: 		Richard Trum (Glimt) 2019-11-28 	
+<i>3</i>&nbsp;	Description:   	Class for getting Questionnaire_Setup__c records and Questions__c records
+<i>4</i>&nbsp;					that are used within the flow to create new prospects/leads from an account
+<i>5</i>&nbsp;	------------------------------------------------------------*/ 
+<i>6</i>&nbsp;public with sharing class flowQuestionnaireController {
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;	/*------------------------------------------------------------	
+<i>9</i>&nbsp;	Description:   	AuraEnabled method to get questions from a certain questionnaire and related to a certain product line
+<i>10</i>&nbsp;	Inputs:        	@param recordId - the account&#39;s Id
+<i>11</i>&nbsp;					@param questionnaireId - the questionnaire (Questionnaire_Setup__c) Id
+<i>12</i>&nbsp;					@param category - The category/product line to filter the questions on
+<i>13</i>&nbsp;	------------------------------------------------------------*/	
+<i>14</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>15</i>&nbsp;    public static List&lt;QuestionWrapper&gt; getQuestions(String recordId, String questionnaireId, String category) {</b>
+<i>16</i>&nbsp;        
+<b class="nc"><i>17</i>&nbsp;    Account acc = [SELECT Id, Name, Country__c FROM ACCOUNT WHERE Id =: recordId];    </b>
+<i>18</i>&nbsp;	
+<b class="nc"><i>19</i>&nbsp;    List&lt;Questions__c&gt; questions = [SELECT Id, Name, Product_Line__c, Question_Body__c, Question_Order__c, Question_Type__c, Questionnaire_Setup__c, Questionnaire_Setup__r.Product_Line__c, Required_Question__c, Status__c, Responses__c</b>
+<b class="nc"><i>20</i>&nbsp;                                    FROM Questions__c WHERE (Questionnaire_Setup__c =: questionnaireId AND (Product_Line__c =: category OR Product_Line__c=:&#39;Not SBU-Specific&#39;)) AND Status__c = &#39;Active&#39; ORDER BY Question_Order__c ASC NULLS LAST];</b>
+<i>21</i>&nbsp;        
+<b class="nc"><i>22</i>&nbsp;    List&lt;QuestionWrapper&gt; result = new List&lt;QuestionWrapper&gt;();</b>
+<i>23</i>&nbsp;        
+<b class="nc"><i>24</i>&nbsp;    for(Questions__c q: questions){</b>
+<b class="nc"><i>25</i>&nbsp;            result.add(new QuestionWrapper(q));</b>
+<i>26</i>&nbsp;    }
+<i>27</i>&nbsp;        
+<b class="nc"><i>28</i>&nbsp;    return result;</b>
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    }
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;	/*------------------------------------------------------------	
+<i>33</i>&nbsp;	Description:   	Invokable method (used in flows) to get cross-SBU questionnaires related to a certain country
+<i>34</i>&nbsp;					This method is handled in apex to be able to filter on the Country__c field which is a multi-select field
+<i>35</i>&nbsp;	Inputs:        	@param inputs - List of strings to input which country to filter on
+<i>36</i>&nbsp;	------------------------------------------------------------*/	    
+<i>37</i>&nbsp;    
+<i>38</i>&nbsp;    @InvocableMethod
+<b class="nc"><i>39</i>&nbsp;    public static List&lt;Questionnaire_Setup__c&gt; getQuestionnaire(List&lt;String&gt; inputs){</b>
+<i>40</i>&nbsp;    
+<b class="nc"><i>41</i>&nbsp;    String country = inputs[0];</b>
+<b class="nc"><i>42</i>&nbsp;    List&lt;Questionnaire_Setup__c&gt; qList = new List&lt;Questionnaire_Setup__c&gt;();</b>
+<i>43</i>&nbsp;    
+<b class="nc"><i>44</i>&nbsp;        try{  </b>
+<b class="nc"><i>45</i>&nbsp;    		 qList = [SELECT Id, Country__c FROM Questionnaire_Setup__c WHERE (Country__c includes (:country) AND Questionnaire_Type__c =: &#39;xSBU&#39; AND Status__c = &#39;Active&#39;)];</b>
+<i>46</i>&nbsp;        }
+<b class="nc"><i>47</i>&nbsp;        catch(DmlException e){</b>
+<i>48</i>&nbsp;            System.debug(&#39;The following exception has occurred: &#39; + e.getMessage());
+<i>49</i>&nbsp;        }
+<i>50</i>&nbsp; 
+<b class="nc"><i>51</i>&nbsp;    return qList;</b>
+<i>52</i>&nbsp;        
+<i>53</i>&nbsp;    }
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;	/*------------------------------------------------------------	
+<i>56</i>&nbsp;	Description:   	Wrapper class to be able to return both the question details as well as the question options as an array
+<i>57</i>&nbsp;	------------------------------------------------------------*/	     
+<i>58</i>&nbsp;    
+<i>59</i>&nbsp;    public class QuestionWrapper {
+<i>60</i>&nbsp;    @AuraEnabled public Questions__c questionDetails;
+<i>61</i>&nbsp;    @AuraEnabled public List&lt;String&gt; options;
+<i>62</i>&nbsp;        
+<b class="nc"><i>63</i>&nbsp;    QuestionWrapper(Questions__c q) {</b>
+<b class="nc"><i>64</i>&nbsp;        questionDetails = q;</b>
+<b class="nc"><i>65</i>&nbsp;        if(String.isBlank(q.Responses__c)){</b>
+<i>66</i>&nbsp;        }
+<i>67</i>&nbsp;        else{
+<b class="nc"><i>68</i>&nbsp;        options = q.Responses__c.split(&#39;;&#39;);</b>
+<i>69</i>&nbsp;        }    
+<i>70</i>&nbsp;    }
+<i>71</i>&nbsp;	}
+<i>72</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

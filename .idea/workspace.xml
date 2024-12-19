@@ -5,13 +5,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/IlluminatedCloud/Cleanup2/OfflineSymbolTable.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/illuminatedCloud.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/c/6c97435614f83c907271393225091bad979e0b4c" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_BulkCFEsListController.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_CampaignMemberController.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_ContractItemTriggerHelper.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_DC_CampaignMembersDAO.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_DC_OrderDAO.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_DC_OrderDAO.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_EventPathController.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_EventPathController.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_EventRelationsController.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_EventRelationsController.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_GetCases.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_GetCases.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_NavigateToCreateRecordController.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_NavigateToCreateRecordController.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_OrderDealerSearchBoxCopy.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_OrderDealerSearchBoxCopy.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_ProductProfilingBundle.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_ProductProfilingBundle.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_RecordTypePickerController.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_RecordTypePickerController.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_UpdateContract.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_UpdateContract.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_UpdateOpportunityOwnerCTRL.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_UpdateOpportunityOwnerCTRL.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_assetDetailsCtrl.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Test_assetDetailsCtrl.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/241c0e9db6182f0b54e8f3702ace35ae107c2cb6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4cd14365cae38c458babc4e25aadccf14e98498d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/556cdd98ad6c8c5d69a0901966b49588331ba1a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/7295bef49ccade8f3b8fbf66e7e3c1a7b1d124a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7bf285b53fabc12bb4626af92af2822a40fadbca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/4/241c0e9db6182f0b54e8f3702ace35ae107c2cb6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/c/4cd14365cae38c458babc4e25aadccf14e98498d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/5/556cdd98ad6c8c5d69a0901966b49588331ba1a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/2/7295bef49ccade8f3b8fbf66e7e3c1a7b1d124a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/b/7bf285b53fabc12bb4626af92af2822a40fadbca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/d/8dbc5bae7c061598c14fc1c5baa2dfc85a438fbf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/6/b6ba6e98aa44f77463432606c17db19449ca2223" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/c/cc5ff8c41a9e39661dc496805d65337726dc5ef6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/5/d5fafb01bca3825e5588848af7c95caf3a4f7af9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/d/ed9f9b83fd6e53574607f0a6145672b209edf6f0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dentsply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dentsply.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ActivityScorecardController.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/DC_OrderDAO.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/DC_OrderDAO.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ExpertTriggerHandler.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ExpertTriggerHandler.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_CampaignMemberController.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ExpertTriggerHelper.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ExpertTriggerHelper.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_ContractItemTriggerHelper.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/OrderDealerSearchBoxCopy.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/OrderDealerSearchBoxCopy.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/schemasMicrosoftCom200310Serializat.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/schemasMicrosoftCom200310Serializat.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_BulkCFEsListController.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/tempuriOrg.cls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/tempuriOrg.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_DC_CampaignMembersDAO.cls-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/triggers/ExpertTrigger.trigger" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/triggers/ExpertTrigger.trigger-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/triggers/oppTeamMemberTrigger.trigger" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/triggers/oppTeamMemberTrigger.trigger-meta.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +116,9 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
+                  <option name="body" value="System.debug(ActivityHistoryController.getActivityHistory('0016M00002KLicjQAD', true, 1));" />
+                  <option name="connectionName" value="Production" />
+                  <option name="connectionType" value="OAUTH" />
                   <option name="name" value="Anonymous Apex 1" />
                 </AnonymousApexSavedDocument>
               </list>
@@ -75,10 +131,16 @@
             <option name="mruEntries">
               <list>
                 <ConnectionMruEntry>
+                  <option name="connectionName" value="UAT" />
+                  <option name="connectionType" value="OAUTH" />
+                  <option name="lastUsed" value="1733826794666" />
+                  <option name="numUsages" value="3" />
+                </ConnectionMruEntry>
+                <ConnectionMruEntry>
                   <option name="connectionName" value="Production" />
                   <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1732613439965" />
-                  <option name="numUsages" value="61" />
+                  <option name="lastUsed" value="1732710993155" />
+                  <option name="numUsages" value="67" />
                 </ConnectionMruEntry>
                 <ConnectionMruEntry>
                   <option name="connectionName" value="HOTFIX" />
@@ -115,12 +177,6 @@
                   <option name="connectionType" value="OAUTH" />
                   <option name="lastUsed" value="1712577466615" />
                   <option name="numUsages" value="3" />
-                </ConnectionMruEntry>
-                <ConnectionMruEntry>
-                  <option name="connectionName" value="Cleanup2" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="lastUsed" value="1732629090148" />
-                  <option name="numUsages" value="1" />
                 </ConnectionMruEntry>
               </list>
             </option>
@@ -287,7 +343,64 @@
             </entry>
             <entry key="Cleanup2">
               <value>
-                <ConnectionWorkspaceSettings />
+                <ConnectionWorkspaceSettings>
+                  <option name="buildSuccessDatesBySourceRootRelativePath">
+                    <map>
+                      <entry key="APEXCLASS:ACTIVITYSCORECARDCONTROLLER" value="1733843818132" />
+                      <entry key="APEXCLASS:BULKCFESLISTCONTROLLER" value="1732707049042" />
+                      <entry key="APEXCLASS:GETPREFERREDDEALERTEST" value="1732704641939" />
+                      <entry key="APEXCLASS:NAVIGATETOCREATERECORDCONTROLLER" value="1734453426000" />
+                      <entry key="APEXCLASS:ORDERDEALERSEARCHBOXCOPY" value="1732803221226" />
+                      <entry key="APEXCLASS:TEST_ASSETDETAILSCTRL" value="1732799061464" />
+                      <entry key="APEXCLASS:TEST_BULKCFESLISTCONTROLLER" value="1732798767145" />
+                      <entry key="APEXCLASS:TEST_CAMPAIGNMEMBERCONTROLLER" value="1732798872078" />
+                      <entry key="APEXCLASS:TEST_CONTRACTITEMTRIGGERHELPER" value="1732798398724" />
+                      <entry key="APEXCLASS:TEST_DC_CAMPAIGNMEMBERSDAO" value="1732799204260" />
+                      <entry key="APEXCLASS:TEST_DC_ORDERDAO" value="1732799345964" />
+                      <entry key="APEXCLASS:TEST_EVENTPATHCONTROLLER" value="1733842661425" />
+                      <entry key="APEXCLASS:TEST_EVENTRELATIONSCONTROLLER" value="1733841932977" />
+                      <entry key="APEXCLASS:TEST_GETCASES" value="1734449175716" />
+                      <entry key="APEXCLASS:TEST_NAVIGATETOCREATERECORDCONTROLLER" value="1734453624651" />
+                      <entry key="APEXCLASS:TEST_ORDERDEALERSEARCHBOXCOPY" value="1732803221226" />
+                      <entry key="APEXCLASS:TEST_PRODUCTPROFILINGBUNDLE" value="1734454089000" />
+                      <entry key="APEXCLASS:TEST_RECORDTYPEPICKERCONTROLLER" value="1734454649416" />
+                      <entry key="APEXCLASS:TEST_UPDATECONTRACT" value="1734456275492" />
+                      <entry key="APEXCLASS:TEST_UPDATEOPPORTUNITYOWNERCTRL" value="1734456287576" />
+                    </map>
+                  </option>
+                  <option name="lastBuildScope" value="CONTEXT" />
+                  <option name="lastBuildViewToggles">
+                    <map>
+                      <entry key="DEPLOY">
+                        <value>
+                          <BuildViewToggles>
+                            <option name="showLocalAndServer" value="true" />
+                            <option name="showLocalOnly" value="true" />
+                            <option name="showServerOnly" value="false" />
+                            <option name="showSubscribedByParent" value="true" />
+                            <option name="showSubscribedOnly" value="true" />
+                          </BuildViewToggles>
+                        </value>
+                      </entry>
+                      <entry key="RETRIEVE">
+                        <value>
+                          <BuildViewToggles>
+                            <option name="showLocalAndServer" value="true" />
+                            <option name="showLocalOnly" value="false" />
+                            <option name="showServerOnly" value="true" />
+                            <option name="showSubscribedByParent" value="true" />
+                            <option name="showSubscribedOnly" value="true" />
+                          </BuildViewToggles>
+                        </value>
+                      </entry>
+                    </map>
+                  </option>
+                  <option name="lastDeploymentOptions">
+                    <DeploymentOptions>
+                      <option name="ignoreErrors" value="false" />
+                    </DeploymentOptions>
+                  </option>
+                </ConnectionWorkspaceSettings>
               </value>
             </entry>
             <entry key="DentsplyDevOctober">
@@ -18568,6 +18681,7 @@
                       <entry key="APEXCLASS:PRODUCTPROFILINGTRIGGERHELPER" value="1712660028013" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHANDLER" value="1706094605000" />
                       <entry key="APEXCLASS:PRODUCTTRIGGERHELPER" value="1717506342075" />
+                      <entry key="APEXCLASS:TEMPURIORG" value="1733826797000" />
                       <entry key="APEXCLASS:TEST_BATCHUPDATEPRODUCTS" value="1712663502308" />
                       <entry key="APEXCLASS:TEST_PRODUCTPROFILINGTRIGGER" value="1710148374000" />
                       <entry key="APEXCLASS:TEST_PRODUCTTRIGGER" value="1706094629000" />
@@ -19191,20 +19305,19 @@
         <option name="retrieveAndMergeDefault" value="false" />
         <option name="soqlQuerySettings">
           <SoqlQuerySettings>
-            <option name="resultsSplitterProportion" value="0.82340425" />
+            <option name="resultsSplitterProportion" value="0.4341637" />
             <option name="savedDocuments">
               <list>
                 <SoqlQuerySavedDocument>
-                  <option name="body" value="select name, id from ApexPage where name = 'CallReportEventMobile'" />
-                  <option name="connectionName" value="Production" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="SOQL Query 2" />
-                </SoqlQuerySavedDocument>
-                <SoqlQuerySavedDocument>
-                  <option name="body" value="select id, name from ApexClass where name ='" />
-                  <option name="connectionName" value="Production" />
+                  <option name="body" value="SELECT TestMethodName, NumLinesCovered, NumLinesUncovered FROM ApexCodeCoverage" />
+                  <option name="connectionName" value="Cleanup2" />
                   <option name="connectionType" value="OAUTH" />
                   <option name="name" value="SOQL Query 1" />
+                  <option name="useToolingApi" value="true" />
+                </SoqlQuerySavedDocument>
+                <SoqlQuerySavedDocument>
+                  <option name="body" value="select Name, DeveloperName from RecordType where id = '01220000000AvOOAA0'" />
+                  <option name="name" value="SOQL Query 2" />
                 </SoqlQuerySavedDocument>
               </list>
             </option>
@@ -19234,64 +19347,95 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Apex Offline Debugger.DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsUpdated.executor&quot;: &quot;Debug&quot;,
-    &quot;Apex Offline Debugger.Test_CallReportQuickActionPocController.executor&quot;: &quot;Debug&quot;,
-    &quot;Apex Offline Debugger.Test_ProductTrigger.executor&quot;: &quot;Debug&quot;,
-    &quot;Apex Unit Tests.AccountBriefingControllerTest.testGetAttentionPoints.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.CallReportExtensionTest.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.DC_UT_EventNoticesManagement.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsInserted.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsUpdated.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_AccountFlagsController.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_AccountTrigger.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_AccountTrigger.testUpdateAccountsInfo.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_AccountTrigger.testUpdateRecordsType.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ActivityScorecardController.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_BatchUpdateProducts.testBatchUpdateProducts.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_CallReportQuickActionPocController.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ContractPB.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_EventTrigger.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_EventTrigger.testCallReportEvent2.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_OpportunityPB.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_OrderPB.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_OrderTrigger.testGetAddressRecords.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_OrderTrigger.testOrderSetAccountOwner.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductProfilingHierarchyController.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_ProductTrigger.executor&quot;: &quot;Debug&quot;,
-    &quot;Apex Unit Tests.Test_WorkflowProfilingController.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling.executor&quot;: &quot;Run&quot;,
-    &quot;Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ohanafi/IdeaProjects/Dentsply/src/objects&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.29852837&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Apex Offline Debugger.DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsUpdated.executor": "Debug",
+    "Apex Offline Debugger.Test_CallReportQuickActionPocController.executor": "Debug",
+    "Apex Offline Debugger.Test_OrderDealerSearchBoxCopy.testFetchLookUpValues.executor": "Debug",
+    "Apex Offline Debugger.Test_ProductTrigger.executor": "Debug",
+    "Apex Offline Debugger.getPreferredDealerTest.getPreferredDealer_Test.executor": "Debug",
+    "Apex Unit Tests.AccountBriefingControllerTest.testGetAttentionPoints.executor": "Run",
+    "Apex Unit Tests.CallReportExtensionTest.executor": "Run",
+    "Apex Unit Tests.DC_UT_EventNoticesManagement.executor": "Run",
+    "Apex Unit Tests.DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsInserted.executor": "Run",
+    "Apex Unit Tests.DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsUpdated.executor": "Run",
+    "Apex Unit Tests.Test_AccountFlagsController.executor": "Run",
+    "Apex Unit Tests.Test_AccountTrigger.executor": "Run",
+    "Apex Unit Tests.Test_AccountTrigger.testUpdateAccountsInfo.executor": "Run",
+    "Apex Unit Tests.Test_AccountTrigger.testUpdateRecordsType.executor": "Run",
+    "Apex Unit Tests.Test_ActivityScorecardController.executor": "Run",
+    "Apex Unit Tests.Test_BatchUpdateProducts.testBatchUpdateProducts.executor": "Run",
+    "Apex Unit Tests.Test_BulkCFEsListController.executor": "Run",
+    "Apex Unit Tests.Test_BulkCFEsListController.testRedirectWithNonIndianAccount.executor": "Run",
+    "Apex Unit Tests.Test_CallReportQuickActionPocController.executor": "Run",
+    "Apex Unit Tests.Test_CampaignMemberController.executor": "Run",
+    "Apex Unit Tests.Test_ContractItemTriggerHelper.executor": "Run",
+    "Apex Unit Tests.Test_ContractPB.executor": "Run",
+    "Apex Unit Tests.Test_DC_CampaignMembersDAO.executor": "Run",
+    "Apex Unit Tests.Test_DC_OrderDAO.executor": "Run",
+    "Apex Unit Tests.Test_EventPathController.executor": "Run",
+    "Apex Unit Tests.Test_EventRelationsController.executor": "Run",
+    "Apex Unit Tests.Test_EventTrigger.executor": "Run",
+    "Apex Unit Tests.Test_EventTrigger.testCallReportEvent2.executor": "Run",
+    "Apex Unit Tests.Test_GetCases.executor": "Coverage",
+    "Apex Unit Tests.Test_NavigateToCreateRecordController.executor": "Coverage",
+    "Apex Unit Tests.Test_OppTeamMemberTrigger.testOpportunityTeamMemberInsert.executor": "Run",
+    "Apex Unit Tests.Test_OpportunityPB.executor": "Run",
+    "Apex Unit Tests.Test_OrderDealerSearchBoxCopy.executor": "Run",
+    "Apex Unit Tests.Test_OrderDealerSearchBoxCopy.testCheckPermission.executor": "Run",
+    "Apex Unit Tests.Test_OrderDealerSearchBoxCopy.testFetchLookUpValues.executor": "Run",
+    "Apex Unit Tests.Test_OrderDealerSearchBoxCopy.testGetAllPdeList.executor": "Run",
+    "Apex Unit Tests.Test_OrderDealerSearchBoxCopy.testGetUpdateFromOrder.executor": "Run",
+    "Apex Unit Tests.Test_OrderDealerSearchBoxCopy.testInitialize.executor": "Run",
+    "Apex Unit Tests.Test_OrderDealerSearchBoxCopy.testSaveDealer.executor": "Run",
+    "Apex Unit Tests.Test_OrderDealerSearchBoxCopy.testUpdateDealerInfoToOrder.executor": "Run",
+    "Apex Unit Tests.Test_OrderDealerSearchBoxCopy.testUpdateOrder.executor": "Run",
+    "Apex Unit Tests.Test_OrderPB.executor": "Run",
+    "Apex Unit Tests.Test_OrderTrigger.testGetAddressRecords.executor": "Run",
+    "Apex Unit Tests.Test_OrderTrigger.testOrderSetAccountOwner.executor": "Run",
+    "Apex Unit Tests.Test_ProductProfilingBundle.executor": "Coverage",
+    "Apex Unit Tests.Test_ProductProfilingHierarchyController.executor": "Run",
+    "Apex Unit Tests.Test_ProductProfilingTrigger.executor": "Run",
+    "Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier.executor": "Run",
+    "Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor": "Run",
+    "Apex Unit Tests.Test_ProductTrigger.executor": "Debug",
+    "Apex Unit Tests.Test_RecordTypePickerController.executor": "Coverage",
+    "Apex Unit Tests.Test_UpdateContract.executor": "Coverage",
+    "Apex Unit Tests.Test_UpdateOpportunityOwnerCTRL.executor": "Coverage",
+    "Apex Unit Tests.Test_WorkflowProfilingController.executor": "Run",
+    "Apex Unit Tests.Test_WorkflowProfilingController.testCreateProductProfiling.executor": "Run",
+    "Apex Unit Tests.Test_WorkflowProfilingController.testGetProductFamilyListByWorkflowId.executor": "Run",
+    "Apex Unit Tests.Test_assetDetailsCtrl.executor": "Run",
+    "Apex Unit Tests.Test_oppTeamMemberTrigger.executor": "Run",
+    "Apex Unit Tests.UserToReportPackageTest.ReportPackageControllerTest.executor": "Run",
+    "Apex Unit Tests.getPreferredDealerTest.executor": "Run",
+    "Apex Unit Tests.getPreferredDealerTest.getPreferredDealer_Test.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/ohanafi/IdeaProjects/Dentsply/src/objects",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.29852837",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/objects" />
       <recent name="$PROJECT_DIR$/src/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Apex Unit Tests.DC_UT_EventNoticesManagement">
-    <configuration name="DC_UT_EventNoticesManagement" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+  <component name="RunManager" selected="Apex Unit Tests.Test_UpdateOpportunityOwnerCTRL">
+    <configuration name="Test_NavigateToCreateRecordController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
@@ -19307,7 +19451,7 @@
           <entry key="Dentsply">
             <value>
               <set>
-                <option value="DC_UT_EventNoticesManagement" />
+                <option value="Test_NavigateToCreateRecordController" />
               </set>
             </value>
           </entry>
@@ -19330,7 +19474,7 @@
       <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
-    <configuration name="DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsInserted" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="Test_ProductProfilingBundle" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
@@ -19346,101 +19490,7 @@
           <entry key="Dentsply">
             <value>
               <set>
-                <option value="DC_UT_EventNoticesManagement" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map>
-          <entry key="DC_UT_EventNoticesManagement">
-            <value>
-              <set>
-                <option value="test_EventNoticesManager_manageNotices_onEventsInserted" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <method v="2" />
-    </configuration>
-    <configuration name="DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsUpdated" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="FINER" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="Cleanup2" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="ERROR" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="true" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="DC_UT_EventNoticesManagement" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="ERROR" />
-      <option name="profilingLogLevel" value="ERROR" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="ERROR" />
-      <option name="testClassToTestMethodNames">
-        <map>
-          <entry key="DC_UT_EventNoticesManagement">
-            <value>
-              <set>
-                <option value="test_EventNoticesManager_manageNotices_onEventsUpdated" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="ERROR" />
-      <option name="visualforceLogLevel" value="FINE" />
-      <option name="waveLogLevel" value="ERROR" />
-      <option name="workflowLogLevel" value="ERROR" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_OpportunityPB" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="Cleanup2" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_OpportunityPB" />
+                <option value="Test_ProductProfilingBundle" />
               </set>
             </value>
           </entry>
@@ -19463,7 +19513,7 @@
       <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_OrderPB" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="Test_RecordTypePickerController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
       <option name="apexLogLevel" value="DEBUG" />
@@ -19479,7 +19529,85 @@
           <entry key="Dentsply">
             <value>
               <set>
-                <option value="Test_OrderPB" />
+                <option value="Test_RecordTypePickerController" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map />
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_UpdateContract" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="connectionName" value="Cleanup2" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_UpdateContract" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map />
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_UpdateOpportunityOwnerCTRL" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="connectionName" value="Cleanup2" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_UpdateOpportunityOwnerCTRL" />
               </set>
             </value>
           </entry>
@@ -19504,11 +19632,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Apex Unit Tests.DC_UT_EventNoticesManagement" />
-        <item itemvalue="Apex Unit Tests.DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsInserted" />
-        <item itemvalue="Apex Unit Tests.DC_UT_EventNoticesManagement.test_EventNoticesManager_manageNotices_onEventsUpdated" />
-        <item itemvalue="Apex Unit Tests.Test_OpportunityPB" />
-        <item itemvalue="Apex Unit Tests.Test_OrderPB" />
+        <item itemvalue="Apex Unit Tests.Test_UpdateOpportunityOwnerCTRL" />
+        <item itemvalue="Apex Unit Tests.Test_UpdateContract" />
+        <item itemvalue="Apex Unit Tests.Test_RecordTypePickerController" />
+        <item itemvalue="Apex Unit Tests.Test_ProductProfilingBundle" />
+        <item itemvalue="Apex Unit Tests.Test_NavigateToCreateRecordController" />
       </list>
     </recent_temporary>
   </component>
@@ -19669,6 +19797,15 @@
       <workItem from="1731663320736" duration="246000" />
       <workItem from="1731983205388" duration="21334000" />
       <workItem from="1732018684421" duration="730000" />
+      <workItem from="1732797616591" duration="5677000" />
+      <workItem from="1733090812306" duration="58333000" />
+      <workItem from="1733212219120" duration="291000" />
+      <workItem from="1733300758465" duration="686000" />
+      <workItem from="1733736423799" duration="11387000" />
+      <workItem from="1733823883681" duration="2305000" />
+      <workItem from="1733839432568" duration="2717000" />
+      <workItem from="1733960173521" duration="195000" />
+      <workItem from="1734422839004" duration="5928000" />
     </task>
     <servers />
   </component>
@@ -19707,6 +19844,7 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_AccountFlagsController.ic2" NAME="DevSep24 Coverage Results" MODIFIED="1725884884727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevSep24" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$FindLeadMatchTest_executeLeadMatchSearchTest.ic2" NAME="UAT Coverage Results" MODIFIED="1666277861015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$DC_UT_EventNoticesManagement.ic2" NAME="Cleanup Coverage Results" MODIFIED="1730988565248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Agent" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_UpdateOpportunityOwnerCTRL.ic2" NAME="Cleanup2 Coverage Results" MODIFIED="1734456225603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Cleanup2" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMargins.ic2" NAME="Margin Coverage Results" MODIFIED="1677067029631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_UpdateContactsBypassDuplicate_testUpdateContact.ic2" NAME="Lead Coverage Results" MODIFIED="1675421607460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />

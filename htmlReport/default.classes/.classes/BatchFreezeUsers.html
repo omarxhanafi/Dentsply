@@ -1,0 +1,125 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: BatchFreezeUsers</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: BatchFreezeUsers (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">BatchFreezeUsers</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 25)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>BatchFreezeUsers</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*------------------------------------------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         Miguel Coimbra(Salesforce) 2020709
+<i>3</i>&nbsp;Description:    Class to automatically freeze users if they don&#39;t login for more than X number of days and if they are not 
+<i>4</i>&nbsp;                    flagged as &quot;Do not Freeze&quot; 
+<i>5</i>&nbsp;Test Class:     Test_BatchFreezeUsers
+<i>6</i>&nbsp;History 
+<i>7</i>&nbsp;20200326    Miguel Coimbra           Created class.
+<i>8</i>&nbsp;20240827    Omar Hanafi              TFUS-000006405 - Added a new field ExpirationDate__c on the user object to manage user deactivation
+<i>9</i>&nbsp;------------------------------------------------------------------------------------------------------------------------------------------*/
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;global class BatchFreezeUsers implements Database.Batchable&lt;SObject&gt;, Database.Stateful {
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;    /*
+<i>14</i>&nbsp;    FOR TESTING PURPOSE: 
+<i>15</i>&nbsp;    QUERY: 
+<i>16</i>&nbsp;    SELECT Id, LastLoginDate FROM User where isActive = true and Profile.UserLicense.Name = &#39;Salesforce&#39; and isActive = true and DAY_ONLY(LastLoginDate) &lt; 2020-09-02 and 
+<i>17</i>&nbsp;    Id in (SELECT UserId FROM UserLogin where isFrozen = false)
+<i>18</i>&nbsp;    */
+<i>19</i>&nbsp;    
+<b class="nc"><i>20</i>&nbsp;    global Database.QueryLocator start(Database.BatchableContext bc) {</b>
+<b class="nc"><i>21</i>&nbsp;        Integer nrOfDays = [SELECT ofDaysSinceLastLogin__c FROM AdminSetting__mdt </b>
+<b class="nc"><i>22</i>&nbsp;                                                        WHERE DeveloperName = &#39;BatchFreezeUsers&#39; LIMIT 1].ofDaysSinceLastLogin__c.intValue() ; </b>
+<b class="nc"><i>23</i>&nbsp;        if (nrOfDays == null) return null ; </b>
+<b class="nc"><i>24</i>&nbsp;        String limitToFreezeDateAsString = String.valueOf(System.today() - nrOfDays);</b>
+<i>25</i>&nbsp;
+<b class="nc"><i>26</i>&nbsp;        String  query = &#39;SELECT Id, LastLoginDate FROM User WHERE isActive = true AND Profile.UserLicense.Name = \&#39;Salesforce\&#39; AND doNotFreeze__c = false&#39;;</b>
+<b class="nc"><i>27</i>&nbsp;                query += &#39; AND ((LastLoginDate &lt;&gt; null AND DAY_ONLY(LastLoginDate) &lt; &#39;+ limitToFreezeDateAsString + &#39;)&#39;;</b>
+<b class="nc"><i>28</i>&nbsp;                query += &#39; OR ExpirationDate__c &lt; TODAY)&#39;;</b>
+<b class="nc"><i>29</i>&nbsp;                query += &#39; AND Id in (SELECT UserId FROM UserLogin where isFrozen = false)&#39;;</b>
+<b class="nc"><i>30</i>&nbsp;        		if(Test.isRunningTest()) query+= &#39; limit 50&#39;; // Class System.UnexpectedException: No more than one executeBatch can be called from within a test method.</b>
+<b class="nc"><i>31</i>&nbsp;        return Database.getQueryLocator(query);</b>
+<i>32</i>&nbsp;    }
+<i>33</i>&nbsp;
+<b class="nc"><i>34</i>&nbsp;    global void execute(Database.BatchableContext bc, List&lt;User&gt; scope) {</b>
+<b class="nc"><i>35</i>&nbsp;        Set&lt;Id&gt; userIds = (new Map&lt;Id,SObject&gt;(scope)).keySet(); </b>
+<b class="nc"><i>36</i>&nbsp;        try {</b>
+<b class="nc"><i>37</i>&nbsp;            List&lt;UserLogin&gt; usersToFreezeList = new List&lt;userLogin&gt;(); </b>
+<b class="nc"><i>38</i>&nbsp;            List&lt;UserLogin&gt; userLogins =  [SELECT UserId FROM UserLogin WHERE isFrozen = false AND UserId in: userIds]; </b>
+<b class="nc"><i>39</i>&nbsp;            for (UserLogin u : userLogins){</b>
+<b class="nc"><i>40</i>&nbsp;                u.isFrozen = true ; </b>
+<b class="nc"><i>41</i>&nbsp;                usersToFreezeList.add(u); </b>
+<i>42</i>&nbsp;            }
+<b class="nc"><i>43</i>&nbsp;            if (!usersToFreezeList.isEmpty()){</b>
+<b class="nc"><i>44</i>&nbsp;                update usersToFreezeList;</b>
+<i>45</i>&nbsp;            }
+<b class="nc"><i>46</i>&nbsp;        } catch (DmlException e) {</b>
+<b class="nc"><i>47</i>&nbsp;            DebugLog.addException(e, &#39;Error occurred on: BatchFreezeUsers &#39;); </b>
+<i>48</i>&nbsp;        }
+<i>49</i>&nbsp;    }
+<i>50</i>&nbsp;
+<b class="nc"><i>51</i>&nbsp;    global void finish(Database.BatchableContext bc) {</b>
+<b class="nc"><i>52</i>&nbsp;        DebugLog.addinfo(&#39;Batch finished successfuly: BatchFreezeUsers JobId:&#39;, bc.getJobId());</b>
+<i>53</i>&nbsp;    }
+<i>54</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

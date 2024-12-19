@@ -1,0 +1,468 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CampaignMemberTriggerHelper</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CampaignMemberTriggerHelper (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CampaignMemberTriggerHelper</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    46.7%
+  </span>
+  <span class="absValue">
+    (71/ 152)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>CampaignMemberTriggerHelper</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         Ahmed LOUDRASSI (Salesforce) 20191022
+<i>3</i>&nbsp;Description:    Campaign Member Trigger Helper Class
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;History:
+<i>6</i>&nbsp;2019-10-22      Ahmed   LOUDRASSI   Migrated CampMgmtCampaignMemberTrigger and CampMgmtCampaignMemberTrigger2 triggers. (#)
+<i>7</i>&nbsp;2019-10-22      Ahmed   LOUDRASSI   Migrated CampaignMember Workflows. (#)
+<i>8</i>&nbsp;2020-12-22      Richard Trum	    Created method createOpportunities for creating and assigning Opportunities based on Eloqua campaigns
+<i>9</i>&nbsp;2021-02-04      Richard Trum	    Updated method createOpportunities for creating and assigning Sales Leads based on Eloqua campaigns
+<i>10</i>&nbsp;2021-03-18      Roberto Narbona     Updated to send opp ID back into Sales Lead__c field for Campaign Members and have physical relationship. Story TFUS-000002828
+<i>11</i>&nbsp;2021-07-20      Kevin   Ruibin Do   Updated method createOpportunities to also populate Opportunity.ContactId so that an OpportunityContactRole will be created
+<i>12</i>&nbsp;2021-12-08      Roberto Narbona     Updated method createOpportunities to fix account relationship when convertion is from standard lead
+<i>13</i>&nbsp;2022-05-05      Richard Trum	    Updated method createOpportunities to assign Sales Leads based on the related dealer&#39;s account (TFUS-4232)
+<i>14</i>&nbsp;2022-06-02      Miguel  Coimbra     Updated method updateCampaignMembersInfo to assign the CampaignMemberOwner__c field to the Campaign Owner.
+<i>15</i>&nbsp;2007-20-22      Roberto Narbona     TFUS-000004576
+<i>16</i>&nbsp;2022-08-25      Miguel  Coimbra     TFUS-000004715
+<i>17</i>&nbsp;2022-12-05      Roberto Narbona     IDS logic introduced.
+<i>18</i>&nbsp;2023-03-01      Houssam ADIB        Refactored The Trigger
+<i>19</i>&nbsp;2023-11-22      Richard Trum        Removed the method setInternationSpeaker (TFUS-6215)
+<i>20</i>&nbsp;----------------------------------------------------------------------------------------*/
+<i>21</i>&nbsp;public class CampaignMemberTriggerHelper {
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    private     static final String                 SOBJECT_CAMPAIGN        = &#39;Campaign&#39;;
+<b class="fc"><i>24</i>&nbsp;    private     static final Map&lt;String, String&gt;    CAMPAIGN_RECORD_TYPES   = new Map&lt;String, String&gt; {&#39;DI_Campaign&#39; =&gt; &#39;DI_Campaign&#39;};</b>
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    public      static final String                 ELOQUA_INTEGRATION_USER = &#39;Eloqua Integration&#39;;
+<i>27</i>&nbsp;    public      static final String                 IDS_INTEGRATION_USER    = &#39;IDS Integration&#39;;
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;    /**
+<i>30</i>&nbsp;     * Method migrated from CampMgmtCampaignMemberTrigger
+<i>31</i>&nbsp;     * Update Campaign members with their respective accounts. We are getting that info from related ContactId
+<i>32</i>&nbsp;     *
+<i>33</i>&nbsp;     * @param newCampaignMembers New Campaign Members
+<i>34</i>&nbsp;     */
+<b class="fc"><i>35</i>&nbsp;    public static void updateCampaignMemberAccount(List&lt;CampaignMember&gt; newCampaignMembers)</b>
+<i>36</i>&nbsp;    {
+<i>37</i>&nbsp;        // Don&#39;t run unless configured to do so.
+<b class="fc"><i>38</i>&nbsp;        BatchSettings__c settings = BatchSettings__c.getInstance(&#39;Default&#39;);</b>
+<i>39</i>&nbsp;
+<b class="fc"><i>40</i>&nbsp;        if (Test.isRunningTest() || settings.CampMgmtCampaignMemberTriggerIsEnabled__c)</b>
+<i>41</i>&nbsp;        {
+<b class="fc"><i>42</i>&nbsp;            Set&lt;Id&gt; contactIdList = getContactIds(newCampaignMembers);</b>
+<b class="fc"><i>43</i>&nbsp;            setAccountOnCampaignMembers(contactIdList, newCampaignMembers);</b>
+<i>44</i>&nbsp;        }
+<i>45</i>&nbsp;    }
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;    /**
+<i>48</i>&nbsp;     * Sets the custom account field from the contact or the account if its a person account member
+<i>49</i>&nbsp;     * @param contactIdList List of campaign members contact ids
+<i>50</i>&nbsp;     * @param newCampaignMembers List of new campaign members inserted
+<i>51</i>&nbsp;     */
+<b class="fc"><i>52</i>&nbsp;    public static void setAccountOnCampaignMembers(Set&lt;Id&gt; contactIdList, List&lt;CampaignMember&gt; newCampaignMembers)</b>
+<i>53</i>&nbsp;    {
+<b class="fc"><i>54</i>&nbsp;        CampaignMember member;</b>
+<b class="fc"><i>55</i>&nbsp;        Map&lt;Id, Contact&gt; contactMap = new Map&lt;Id, Contact&gt;([SELECT Id, AccountId FROM Contact WHERE Id IN :contactIdList]);</b>
+<i>56</i>&nbsp;
+<b class="fc"><i>57</i>&nbsp;        for (Integer i = 0, j = newCampaignMembers.size(); i &lt; j; i++)</b>
+<b class="fc"><i>58</i>&nbsp;        {</b>
+<b class="fc"><i>59</i>&nbsp;            member = newCampaignMembers[i];</b>
+<i>60</i>&nbsp;
+<b class="fc"><i>61</i>&nbsp;            String accountId = getPersonAccountId(member);</b>
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;            // 1- Set Account for (Contact) Campaign Members
+<b class="fc"><i>64</i>&nbsp;            if (member.ContactId != null)</b>
+<i>65</i>&nbsp;            {
+<i>66</i>&nbsp;
+<b class="fc"><i>67</i>&nbsp;                Contact contact = contactMap.get(member.ContactId);</b>
+<b class="fc"><i>68</i>&nbsp;                if (contact?.AccountId != null) {</b>
+<b class="fc"><i>69</i>&nbsp;                    member.Account__c = contact.AccountId;</b>
+<i>70</i>&nbsp;                }
+<i>71</i>&nbsp;            }
+<i>72</i>&nbsp;            // 2- Set Account for (Person Account) Campaign Members
+<b class="nc"><i>73</i>&nbsp;            else if(String.isNotBlank(accountId))</b>
+<i>74</i>&nbsp;            {
+<b class="nc"><i>75</i>&nbsp;                member.Account__c = accountId;</b>
+<i>76</i>&nbsp;            }
+<i>77</i>&nbsp;        }
+<i>78</i>&nbsp;    }
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;    /**
+<i>81</i>&nbsp;     * The sole method to retrieve the AccountId field is by serializing the object. Attempting to access the field value through the usual means results in an error,
+<i>82</i>&nbsp;     * specifically: &quot;Variable does not exist: AccountId.&quot; This issue persists even though the class is running in system mode.
+<i>83</i>&nbsp;     * @param member New Campaign Member
+<i>84</i>&nbsp;     *
+<i>85</i>&nbsp;     * @return String - Account Id
+<i>86</i>&nbsp;     */
+<b class="fc"><i>87</i>&nbsp;    public static String getPersonAccountId(CampaignMember member)</b>
+<i>88</i>&nbsp;    {
+<b class="fc"><i>89</i>&nbsp;        String memberJson = JSON.serialize(member);</b>
+<b class="fc"><i>90</i>&nbsp;        Map&lt;String, Object&gt; memberMap = (Map&lt;String, Object&gt;) JSON.deserializeUntyped(memberJson);</b>
+<b class="fc"><i>91</i>&nbsp;        String accountId = (String) memberMap.get(&#39;AccountId&#39;);</b>
+<i>92</i>&nbsp;
+<b class="fc"><i>93</i>&nbsp;        return accountId;</b>
+<i>94</i>&nbsp;    }
+<i>95</i>&nbsp;
+<i>96</i>&nbsp;    /**
+<i>97</i>&nbsp;     * Extracts the list of contact ids of a list of campaign members
+<i>98</i>&nbsp;     * @param newCampaignMembers List of new Campaign Members
+<i>99</i>&nbsp;     *
+<i>100</i>&nbsp;     * @return Set&lt;Id&gt; - Set of members contact Ids
+<i>101</i>&nbsp;     */
+<b class="fc"><i>102</i>&nbsp;    public static Set&lt;Id&gt; getContactIds(List&lt;CampaignMember&gt; newCampaignMembers)</b>
+<i>103</i>&nbsp;    {
+<b class="fc"><i>104</i>&nbsp;        Set&lt;Id&gt; contactIdList = new Set&lt;Id&gt;();</b>
+<b class="fc"><i>105</i>&nbsp;        CampaignMember member;</b>
+<b class="fc"><i>106</i>&nbsp;        for (Integer i = 0, j = newCampaignMembers.size(); i &lt; j; i++) {</b>
+<b class="fc"><i>107</i>&nbsp;            member = newCampaignMembers[i];</b>
+<b class="fc"><i>108</i>&nbsp;            if (member.ContactId != null) {</b>
+<b class="fc"><i>109</i>&nbsp;                contactIdList.add(member.ContactId);</b>
+<i>110</i>&nbsp;            }
+<i>111</i>&nbsp;        }
+<b class="fc"><i>112</i>&nbsp;        return contactIdList;</b>
+<i>113</i>&nbsp;    }
+<i>114</i>&nbsp;
+<i>115</i>&nbsp;    /**
+<i>116</i>&nbsp;     * Method migrated from  Workflows
+<i>117</i>&nbsp;     * WF-CAMM-01: Set Account Strategy and W/L status&#39; (Created on 27/05/2014)
+<i>118</i>&nbsp;     * WF-CAMM-02: Set DI Campaign Member Info Based On Campaign&#39; (Created on 23/06/2013)
+<i>119</i>&nbsp;     *
+<i>120</i>&nbsp;     * @param newCampaignMembers List of new campaign members
+<i>121</i>&nbsp;     */
+<b class="fc"><i>122</i>&nbsp;    public static void updateCampaignMembersInfo(List&lt;CampaignMember&gt; newCampaignMembers)</b>
+<i>123</i>&nbsp;    {
+<b class="fc"><i>124</i>&nbsp;        List&lt;Id&gt; campaignIds = new List&lt;Id&gt; ();</b>
+<b class="fc"><i>125</i>&nbsp;        CampaignMember member;</b>
+<i>126</i>&nbsp;
+<b class="fc"><i>127</i>&nbsp;        for(Integer i=0, j= newCampaignMembers.size(); i &lt; j; i++)</b>
+<b class="fc"><i>128</i>&nbsp;        {</b>
+<b class="fc"><i>129</i>&nbsp;            member = newCampaignMembers[i];</b>
+<b class="fc"><i>130</i>&nbsp;            campaignIds.add(member.CampaignId);</b>
+<i>131</i>&nbsp;        }
+<i>132</i>&nbsp;
+<b class="fc"><i>133</i>&nbsp;        if (!campaignIds.isEmpty())</b>
+<i>134</i>&nbsp;        {
+<b class="fc"><i>135</i>&nbsp;            Map&lt;Id, Campaign&gt; campaigns = new Map&lt;Id, Campaign&gt; ([SELECT Id, RecordTypeId, OwnerId FROM Campaign WHERE Id IN :campaignIds]);</b>
+<i>136</i>&nbsp;
+<b class="fc"><i>137</i>&nbsp;            Id DICampaignRTId = GlobalUtils.getRecordTypeId(SOBJECT_CAMPAIGN, CAMPAIGN_RECORD_TYPES.get(&#39;DI_Campaign&#39;));</b>
+<i>138</i>&nbsp;
+<b class="fc"><i>139</i>&nbsp;            for(Integer i=0, j= newCampaignMembers.size(); i &lt; j; i++)</b>
+<b class="fc"><i>140</i>&nbsp;            {</b>
+<b class="fc"><i>141</i>&nbsp;                member = newCampaignMembers[i];</b>
+<i>142</i>&nbsp;                // TFUS-000004342: Fill in the Campaign Owner if needed TFUS-000004715
+<b class="fc"><i>143</i>&nbsp;                if (member.CampaignMemberOwner__c == null) {</b>
+<b class="fc"><i>144</i>&nbsp;                    member.CampaignMemberOwner__c = campaigns.get(member.CampaignId).OwnerId ;</b>
+<i>145</i>&nbsp;                }
+<i>146</i>&nbsp;
+<b class="fc"><i>147</i>&nbsp;                Boolean isDICampaign = campaigns.get(member.CampaignId).RecordTypeId == DICampaignRTId;</b>
+<i>148</i>&nbsp;
+<i>149</i>&nbsp;                // Set Account Strategy and W/L status
+<b class="fc"><i>150</i>&nbsp;                if (isDICampaign) {</b>
+<b class="fc"><i>151</i>&nbsp;                    member.Account_Strategy_ATL_Abut__c = member.Current_Account_Strategy_ATL_Abut__c;</b>
+<b class="fc"><i>152</i>&nbsp;                    member.Account_Strategy_ATL_ISUS__c = member.Current_Account_Strategy_ATL_ISUS__c;</b>
+<b class="fc"><i>153</i>&nbsp;                    member.Account_Strategy_Implants__c = member.Current_Account_Strategy_Implants__c;</b>
+<b class="fc"><i>154</i>&nbsp;                    member.Account_Strategy_SIMPLANT__c = member.Current_Account_Strategy_SIMPLANT__c;</b>
+<b class="fc"><i>155</i>&nbsp;                    member.ATL_Abut_Won_Lost_Status__c  = member.Current_Account_Strategy_ATL_Abut__c;</b>
+<b class="fc"><i>156</i>&nbsp;                    member.ATL_ISUS_Won_Lost_Status__c  = member.Current_Account_Strategy_ATL_ISUS__c;</b>
+<b class="fc"><i>157</i>&nbsp;                    member.Implants_Won_Lost_Status__c  = member.Current_Implants_Won_Lost_Status__c;</b>
+<b class="fc"><i>158</i>&nbsp;                    member.Simplant_Won_Lost_Status__c  = member.Current_WonLostStatus_Simplant__c;</b>
+<i>159</i>&nbsp;
+<i>160</i>&nbsp;                    // Set DI Campaign Member Info Based On Campaign
+<b class="fc"><i>161</i>&nbsp;                    if (&#39;Participant&#39;.equals(member.Type__c)) {</b>
+<b class="fc"><i>162</i>&nbsp;                        if (&#39;Single Room&#39;.equals(member.of_Guests_including_participant__c)) {</b>
+<b class="fc"><i>163</i>&nbsp;                            member.Rate_per_night__c = member.Campaign.Single_Room_Rate_Per_Night__c;</b>
+<i>164</i>&nbsp;                        }
+<b class="fc"><i>165</i>&nbsp;                        else if (&#39;Double Room&#39;.equals(member.of_Guests_including_participant__c)) {</b>
+<b class="fc"><i>166</i>&nbsp;                            member.Rate_per_night__c = member.Campaign.Double_Room_Rate_Per_Night__c;</b>
+<i>167</i>&nbsp;                        }
+<i>168</i>&nbsp;                        else {
+<b class="fc"><i>169</i>&nbsp;                            member.Rate_per_night__c = null;</b>
+<i>170</i>&nbsp;                        }
+<i>171</i>&nbsp;
+<b class="fc"><i>172</i>&nbsp;                        member.Course_Fee__c = member.Campaign.Standard_Participation_Fee__c;</b>
+<b class="fc"><i>173</i>&nbsp;                        member.VAT__c = member.Campaign.VAT__c;</b>
+<i>174</i>&nbsp;                    }
+<i>175</i>&nbsp;                }
+<i>176</i>&nbsp;            }
+<i>177</i>&nbsp;        }
+<i>178</i>&nbsp;    }
+<i>179</i>&nbsp;
+<i>180</i>&nbsp;    /**
+<i>181</i>&nbsp;     * Retrieve List of countries codes from the custom metadata
+<i>182</i>&nbsp;     * @author hadib@salesforce.com | 20-02-2023 (Campaign Refactoring)
+<i>183</i>&nbsp;     *
+<i>184</i>&nbsp;     * @return List&lt;CountryCodeMap__mdt&gt; - List of countries mdt
+<i>185</i>&nbsp;     */
+<b class="fc"><i>186</i>&nbsp;    public static List&lt;CountryCodeMap__mdt&gt; retrieveCountriesCodes()</b>
+<i>187</i>&nbsp;    {
+<b class="fc"><i>188</i>&nbsp;        return [SELECT DeveloperName, Country_Code_2_digit__c, Country_Code_3_digit__c, Campaign_Country__c FROM CountryCodeMap__mdt];</b>
+<i>189</i>&nbsp;    }
+<i>190</i>&nbsp;
+<i>191</i>&nbsp;    /**
+<i>192</i>&nbsp;     * Assigns owners to leads based on campaign member data with the help of a future method
+<i>193</i>&nbsp;     * @author  Roberto | 01-01-2021 | (Campaign Refactoring)
+<i>194</i>&nbsp;     *          Houssam | 01-03-2023 | Made future (Campaign Refactoring)
+<i>195</i>&nbsp;     *
+<i>196</i>&nbsp;     * @param newCampaignMemberList New campaign members
+<i>197</i>&nbsp;     */
+<b class="fc"><i>198</i>&nbsp;    public static void leadOwnerAssignment(List&lt;CampaignMember&gt; newCampaignMemberList)</b>
+<i>199</i>&nbsp;    {
+<b class="fc"><i>200</i>&nbsp;        String currentUser      = UserInfo.getName();</b>
+<i>201</i>&nbsp;
+<b class="fc"><i>202</i>&nbsp;        Boolean isEloquaOrIDSIntegrationUser = (currentUser == ELOQUA_INTEGRATION_USER || currentUser == IDS_INTEGRATION_USER);</b>
+<i>203</i>&nbsp;
+<b class="fc"><i>204</i>&nbsp;        if(isEloquaOrIDSIntegrationUser)</b>
+<i>205</i>&nbsp;        {
+<i>206</i>&nbsp;            // Extract Ids and continue in Async
+<b class="nc"><i>207</i>&nbsp;            Map&lt;Id, CampaignMember&gt; campaignMemberMap = new Map&lt;Id, CampaignMember&gt;(newCampaignMemberList);</b>
+<b class="nc"><i>208</i>&nbsp;            Set&lt;Id&gt; campaignMembersIds = new Set&lt;Id&gt;(campaignMemberMap.keySet());</b>
+<b class="nc"><i>209</i>&nbsp;            futureAssignLeadOwner(campaignMembersIds);</b>
+<i>210</i>&nbsp;        }
+<i>211</i>&nbsp;    }
+<i>212</i>&nbsp;
+<i>213</i>&nbsp;    /**
+<i>214</i>&nbsp;     * Future method that assigns owners to leads based on campaign member data and
+<i>215</i>&nbsp;     * CountryCodeMap__mdt+LeadOpportunitySetting__mdt custom settings
+<i>216</i>&nbsp;     * @author  Roberto | 01-01-2021 | (Campaign Refactoring)
+<i>217</i>&nbsp;     *          Houssam | 01-03-2023 | Made future (Campaign Refactoring)
+<i>218</i>&nbsp;     * @param newMembersIds     Ids of the new members (Future methods only accepts primitive variables)
+<i>219</i>&nbsp;     */
+<i>220</i>&nbsp;    @Future
+<b class="nc"><i>221</i>&nbsp;    public static void futureAssignLeadOwner(Set&lt;Id&gt; newMembersIds)</b>
+<i>222</i>&nbsp;    {
+<b class="nc"><i>223</i>&nbsp;        List&lt;CampaignMember&gt; newCampaignMemberList = [  SELECT Id, RecordTypeId, LeadId, CampaignId, Country_Code_3_digit__c FROM CampaignMember</b>
+<b class="nc"><i>224</i>&nbsp;                                                        WHERE Id IN :newMembersIds];</b>
+<b class="nc"><i>225</i>&nbsp;        Id IDSUserId;</b>
+<b class="nc"><i>226</i>&nbsp;        List&lt;User&gt; userIDS = [ SELECT Id FROM User WHERE Name= :IDS_INTEGRATION_USER LIMIT 1];</b>
+<b class="nc"><i>227</i>&nbsp;        if(!userIDS.isEmpty())</b>
+<i>228</i>&nbsp;        {
+<b class="nc"><i>229</i>&nbsp;            IDSUserId = userIDS[0].Id;</b>
+<i>230</i>&nbsp;        }
+<i>231</i>&nbsp;
+<b class="nc"><i>232</i>&nbsp;        if (!newCampaignMemberList.isEmpty())</b>
+<i>233</i>&nbsp;        {
+<b class="nc"><i>234</i>&nbsp;            String digitalId = GlobalUtils.getRecordTypeId(&#39;CampaignMember&#39;, &#39;Digital_Marketing_Campaign_Member&#39;);</b>
+<b class="nc"><i>235</i>&nbsp;            String recordTypeIDS = GlobalUtils.getRecordTypeId(&#39;CampaignMember&#39;, &#39;InPersonEventCampaignMember&#39;);</b>
+<i>236</i>&nbsp;
+<b class="nc"><i>237</i>&nbsp;            Map&lt;String, CountryCodeMap__mdt&gt; countryCode3DigitKeyMap = getCountryCode3DigitKeyMap();</b>
+<i>238</i>&nbsp;
+<b class="nc"><i>239</i>&nbsp;            Set&lt;String&gt; leadIds = new Set&lt;String&gt;();</b>
+<b class="nc"><i>240</i>&nbsp;            Set&lt;String&gt; campsIds = new Set&lt;String&gt;();</b>
+<b class="nc"><i>241</i>&nbsp;            Set&lt;String&gt; countriesSet2Digit = new Set&lt;String&gt;();</b>
+<i>242</i>&nbsp;
+<b class="nc"><i>243</i>&nbsp;            CampaignMember member;</b>
+<b class="nc"><i>244</i>&nbsp;            for(Integer i=0, j= newCampaignMemberList.size(); i &lt; j; i++)</b>
+<b class="nc"><i>245</i>&nbsp;            {</b>
+<b class="nc"><i>246</i>&nbsp;                member = newCampaignMemberList[i];</b>
+<b class="nc"><i>247</i>&nbsp;                Boolean isDigitalIdOrIDS = (member.RecordTypeId == digitalId || member.RecordTypeId == recordTypeIDS);</b>
+<i>248</i>&nbsp;
+<b class="nc"><i>249</i>&nbsp;                if (member.LeadId != null &amp;&amp; isDigitalIdOrIDS)</b>
+<i>250</i>&nbsp;                {
+<b class="nc"><i>251</i>&nbsp;                    leadIds.add(member.LeadId);</b>
+<b class="nc"><i>252</i>&nbsp;                    campsIds.add(member.CampaignId);</b>
+<b class="nc"><i>253</i>&nbsp;                    if(countryCode3DigitKeyMap.containsKey(member.Country_Code_3_digit__c))</b>
+<i>254</i>&nbsp;                    {
+<b class="nc"><i>255</i>&nbsp;                        countriesSet2Digit.add(countryCode3DigitKeyMap.get(member.Country_Code_3_digit__c).Country_Code_2_digit__c);</b>
+<i>256</i>&nbsp;                    }
+<i>257</i>&nbsp;                }
+<i>258</i>&nbsp;            }
+<i>259</i>&nbsp;
+<b class="nc"><i>260</i>&nbsp;            Map&lt;Id, Lead&gt; leadsData = new Map&lt;Id, Lead&gt; ([</b>
+<i>261</i>&nbsp;                    SELECT Id, OwnerId, Country_Code_3_digit__c
+<i>262</i>&nbsp;                    FROM Lead
+<b class="nc"><i>263</i>&nbsp;                    WHERE Id IN :leadIds</b>
+<i>264</i>&nbsp;            ]);
+<i>265</i>&nbsp;
+<b class="nc"><i>266</i>&nbsp;            if (!leadsData.isEmpty())</b>
+<i>267</i>&nbsp;            {
+<b class="nc"><i>268</i>&nbsp;                Map&lt;Id, Campaign&gt; campaignsData = new Map&lt;Id, Campaign&gt; ([</b>
+<i>269</i>&nbsp;                        SELECT Id, Brands__c, Country_Code_3_digit__c
+<i>270</i>&nbsp;                        FROM Campaign
+<b class="nc"><i>271</i>&nbsp;                        WHERE Id IN :campsIds</b>
+<i>272</i>&nbsp;                ]);
+<i>273</i>&nbsp;
+<b class="nc"><i>274</i>&nbsp;                Map&lt;String, LeadOpportunitySetting__mdt&gt; settingsMap = GlobalUtils.getSettingsMapNumberSignKey(countriesSet2Digit);</b>
+<i>275</i>&nbsp;
+<b class="nc"><i>276</i>&nbsp;                String eloquaIntegrationUserId = UserInfo.getUserId();</b>
+<b class="nc"><i>277</i>&nbsp;                List&lt;Lead&gt; leadsToUpdate = new List&lt;Lead&gt;();</b>
+<i>278</i>&nbsp;
+<b class="nc"><i>279</i>&nbsp;                for(Integer i=0, j= newCampaignMemberList.size(); i &lt; j; i++)</b>
+<b class="nc"><i>280</i>&nbsp;                {</b>
+<b class="nc"><i>281</i>&nbsp;                    member = newCampaignMemberList[i];</b>
+<b class="nc"><i>282</i>&nbsp;                    Boolean isDigitalIdOrIDS = (member.RecordTypeId == digitalId || member.RecordTypeId == recordTypeIDS);</b>
+<i>283</i>&nbsp;
+<b class="nc"><i>284</i>&nbsp;                    Id ownerId;</b>
+<b class="nc"><i>285</i>&nbsp;                    if (leadsData.containsKey(member.LeadId))</b>
+<i>286</i>&nbsp;                    {
+<b class="nc"><i>287</i>&nbsp;                        ownerId = leadsData.get(member.LeadId).OwnerId;</b>
+<i>288</i>&nbsp;                    }
+<i>289</i>&nbsp;
+<b class="nc"><i>290</i>&nbsp;                    if (member.LeadId != null</b>
+<b class="nc"><i>291</i>&nbsp;                            &amp;&amp; isDigitalIdOrIDS</b>
+<b class="nc"><i>292</i>&nbsp;                            &amp;&amp; (ownerId == eloquaIntegrationUserId || ownerId == IDSUserId)) {</b>
+<i>293</i>&nbsp;                        // Initiate variables we will need to set the owner:
+<b class="nc"><i>294</i>&nbsp;                        String campaignBrand = campaignsData.get(member.CampaignId).Brands__c;</b>
+<b class="nc"><i>295</i>&nbsp;                        Lead campaignLead = leadsData.get(member.LeadId);</b>
+<b class="nc"><i>296</i>&nbsp;                        CountryCodeMap__mdt campaignLeadCountry = countryCode3DigitKeyMap.get(campaignLead.Country_Code_3_digit__c);</b>
+<i>297</i>&nbsp;
+<b class="nc"><i>298</i>&nbsp;                        if(campaignLeadCountry != null)</b>
+<i>299</i>&nbsp;                        {
+<b class="nc"><i>300</i>&nbsp;                            String countryKey = campaignLeadCountry.Country_Code_2_digit__c + &#39;#&#39; + campaignBrand;</b>
+<i>301</i>&nbsp;
+<b class="nc"><i>302</i>&nbsp;                            LeadOpportunitySetting__mdt setting;</b>
+<b class="nc"><i>303</i>&nbsp;                            if(settingsMap.containsKey(countryKey))</b>
+<i>304</i>&nbsp;                            {
+<b class="nc"><i>305</i>&nbsp;                                setting = settingsMap.get(campaignLeadCountry.Country_Code_2_digit__c + &#39;#&#39; + campaignBrand);</b>
+<i>306</i>&nbsp;                            }
+<i>307</i>&nbsp;
+<i>308</i>&nbsp;                            // Create New Lead with same id to update the existing one
+<b class="nc"><i>309</i>&nbsp;                            Lead leadToAdd = new Lead();</b>
+<b class="nc"><i>310</i>&nbsp;                            leadToAdd.Id = member.LeadId;</b>
+<b class="nc"><i>311</i>&nbsp;                            if (setting?.DefaultLeadOwner__c != null)</b>
+<i>312</i>&nbsp;                            {
+<b class="nc"><i>313</i>&nbsp;                                leadToAdd.OwnerId = setting.DefaultLeadOwner__c;</b>
+<b class="nc"><i>314</i>&nbsp;                                leadsToUpdate.add(leadToAdd);</b>
+<i>315</i>&nbsp;                            }
+<i>316</i>&nbsp;                            else
+<i>317</i>&nbsp;                            {
+<b class="nc"><i>318</i>&nbsp;                                String leadOwnerId = (settingsMap.get(campaignLeadCountry.Country_Code_2_digit__c + &#39;#DefaultCountryOwner&#39;)?.DefaultLeadOwner__c);</b>
+<b class="nc"><i>319</i>&nbsp;                                if(leadOwnerId != null)</b>
+<i>320</i>&nbsp;                                {
+<b class="nc"><i>321</i>&nbsp;                                    leadToAdd.OwnerId = leadOwnerId;</b>
+<b class="nc"><i>322</i>&nbsp;                                    leadsToUpdate.add(leadToAdd);</b>
+<i>323</i>&nbsp;                                }
+<i>324</i>&nbsp;                            }
+<i>325</i>&nbsp;                        }
+<i>326</i>&nbsp;                    }
+<i>327</i>&nbsp;                }
+<i>328</i>&nbsp;
+<b class="nc"><i>329</i>&nbsp;                if(!leadsToUpdate.isEmpty())</b>
+<i>330</i>&nbsp;                {
+<b class="nc"><i>331</i>&nbsp;                    updateLeads(leadsToUpdate);</b>
+<i>332</i>&nbsp;                }
+<i>333</i>&nbsp;            }
+<i>334</i>&nbsp;        }
+<i>335</i>&nbsp;    }
+<i>336</i>&nbsp;
+<i>337</i>&nbsp;    /**
+<i>338</i>&nbsp;     * Returns Countries Codes in 3 Digits
+<i>339</i>&nbsp;     * @author Roberto
+<i>340</i>&nbsp;     *
+<i>341</i>&nbsp;     * @return Map&lt;String, CountryCodeMap__mdt&gt; - Countries Codes in 3 Digits
+<i>342</i>&nbsp;     */
+<b class="nc"><i>343</i>&nbsp;    public static Map&lt;String, CountryCodeMap__mdt&gt; getCountryCode3DigitKeyMap()</b>
+<i>344</i>&nbsp;    {
+<b class="nc"><i>345</i>&nbsp;        Map&lt;String, CountryCodeMap__mdt&gt; countryCode3DigitKeyMap = new Map&lt;String, CountryCodeMap__mdt&gt;();</b>
+<i>346</i>&nbsp;
+<b class="nc"><i>347</i>&nbsp;        List&lt;CountryCodeMap__mdt&gt; countryCodeMetadata = retrieveCountriesCodes();</b>
+<i>348</i>&nbsp;
+<b class="nc"><i>349</i>&nbsp;        CountryCodeMap__mdt country;</b>
+<b class="nc"><i>350</i>&nbsp;        for(Integer i=0, j= countryCodeMetadata.size(); i &lt; j; i++)</b>
+<b class="nc"><i>351</i>&nbsp;        {</b>
+<b class="nc"><i>352</i>&nbsp;            country = countryCodeMetadata[i];</b>
+<b class="nc"><i>353</i>&nbsp;            countryCode3DigitKeyMap.put(country.Country_Code_3_digit__c, country);</b>
+<i>354</i>&nbsp;        }
+<b class="nc"><i>355</i>&nbsp;        return countryCode3DigitKeyMap;</b>
+<i>356</i>&nbsp;    }
+<i>357</i>&nbsp;
+<i>358</i>&nbsp;    /**
+<i>359</i>&nbsp;     * Updates the list of leads
+<i>360</i>&nbsp;     * @author hadib@salesforce.com | 20-02-2023 (Campaign Refactoring)
+<i>361</i>&nbsp;     *
+<i>362</i>&nbsp;     * @param leadsToUpdate Leads to update
+<i>363</i>&nbsp;     */
+<b class="nc"><i>364</i>&nbsp;    public static void updateLeads(List&lt;Lead&gt; leadsToUpdate)</b>
+<i>365</i>&nbsp;    {
+<b class="nc"><i>366</i>&nbsp;        if (!leadsToUpdate.isEmpty()) {</b>
+<b class="nc"><i>367</i>&nbsp;            try {</b>
+<b class="nc"><i>368</i>&nbsp;                update leadsToUpdate;</b>
+<i>369</i>&nbsp;            }
+<b class="nc"><i>370</i>&nbsp;            catch (Exception e) {</b>
+<b class="nc"><i>371</i>&nbsp;                DebugLog.addException(e, &#39;CampaignMemberTriggerHelper.updateLeads&#39;);</b>
+<i>372</i>&nbsp;            }
+<i>373</i>&nbsp;        }
+<i>374</i>&nbsp;    }
+<i>375</i>&nbsp;
+<i>376</i>&nbsp;    /**
+<i>377</i>&nbsp;     * Execute the conversion to Sales Leads or Opportunities in a queryable
+<i>378</i>&nbsp;     * @author hadib@salesforce.com | 01-03-2023 (Campaign Refactoring)
+<i>379</i>&nbsp;     *
+<i>380</i>&nbsp;     * @param newMembers    The Map of the members with new values
+<i>381</i>&nbsp;     * @param oldMembers    The Map of the members with old values
+<i>382</i>&nbsp;     * @param overrideHasResponded      Override has responded value
+<i>383</i>&nbsp;     */
+<b class="fc"><i>384</i>&nbsp;    public static void convertMemberToSalesLeadOrOpportunity(List&lt;CampaignMember&gt; newMembers, Map&lt;Id, CampaignMember&gt; oldMembers, Boolean overrideHasResponded)</b>
+<i>385</i>&nbsp;    {
+<b class="fc"><i>386</i>&nbsp;        OpportunityInsertAsynch.enqueueJob(newMembers,oldMembers,overrideHasResponded);</b>
+<i>387</i>&nbsp;    }
+<i>388</i>&nbsp;
+<i>389</i>&nbsp;    /**
+<i>390</i>&nbsp;     * Wrapper class Linking Opportunities with Team Members and CampaignMemberIdUpdate
+<i>391</i>&nbsp;     */
+<i>392</i>&nbsp;    public class oppWrapper {
+<i>393</i>&nbsp;        public Opportunity opp;
+<i>394</i>&nbsp;        public List&lt;OpportunityTeamMember&gt; oppMembers;
+<i>395</i>&nbsp;        public String CampaignMemberIdUpdate;
+<i>396</i>&nbsp;    }
+<i>397</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

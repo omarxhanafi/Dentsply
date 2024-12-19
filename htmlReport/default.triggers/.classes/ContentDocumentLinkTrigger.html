@@ -1,0 +1,89 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ContentDocumentLinkTrigger</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.triggers</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ContentDocumentLinkTrigger (default.triggers)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">ContentDocumentLinkTrigger</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>ContentDocumentLinkTrigger</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*------------------------------------------------------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Trigger Name : ContentDocumentLinkTrigger
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;Purpose : This trigger is used to count number of attachments and update Count_Of_Attachments__c to Coaching_Feedback_Report__c record
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;History: 
+<i>7</i>&nbsp;20200928 	Miguel Coimbra		#TFUS 2032 Removed the code as not in use, so that I can fix a salesforce limit bug with OrgFlow when creating new sandnoxes
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;trigger ContentDocumentLinkTrigger on ContentDocumentLink ( after insert) {
+<i>12</i>&nbsp;/*
+<i>13</i>&nbsp;    Set&lt;Id&gt; parentIds=new Set&lt;Id&gt;();
+<i>14</i>&nbsp;    for (ContentDocumentLink cdl : Trigger.new ) {
+<i>15</i>&nbsp;        parentIds.add( cdl.LinkedEntityId );
+<i>16</i>&nbsp;    }
+<i>17</i>&nbsp;    //Query Coaching_Feedback_Report__c records based on attachment&#39;s LinkedEnitityId    
+<i>18</i>&nbsp;    List&lt;Coaching_Feedback_Report__c&gt; coReportWithAttachment = new List&lt;Coaching_Feedback_Report__c&gt;([ SELECT Id, ( SELECT Id FROM ContentDocumentLinks) FROM Coaching_Feedback_Report__c WHERE Id IN :parentIds ]);
+<i>19</i>&nbsp;    List&lt;Coaching_Feedback_Report__c&gt; coReportWithCountToUpdate = new List&lt;Coaching_Feedback_Report__c&gt;();
+<i>20</i>&nbsp;    
+<i>21</i>&nbsp;    for ( Coaching_Feedback_Report__c cr : coReportWithAttachment ) {
+<i>22</i>&nbsp;      //Populate Count_Of_Attachments__c to Coaching_Feedback_Report__c record   
+<i>23</i>&nbsp;         cr.Count_Of_Attachments__c= cr.ContentDocumentLinks.size(); 
+<i>24</i>&nbsp;         coReportWithCountToUpdate.add(cr);
+<i>25</i>&nbsp;    }
+<i>26</i>&nbsp;    
+<i>27</i>&nbsp;    if(!coReportWithCountToUpdate.isEmpty()){
+<i>28</i>&nbsp;       Database.saveresult[] saveResult=Database.update(coReportWithCountToUpdate,false);
+<i>29</i>&nbsp;          for(Database.saveresult sr:saveResult)
+<i>30</i>&nbsp;            {
+<i>31</i>&nbsp;                if(sr.isSuccess()){
+<i>32</i>&nbsp;                    System.debug(&#39;Successfully updated Report Record&#39;+sr.getId());
+<i>33</i>&nbsp;                 }  
+<i>34</i>&nbsp;                 else{
+<i>35</i>&nbsp;                     for(Database.Error err : sr.getErrors()){
+<i>36</i>&nbsp;                        System.debug(&#39;Error Message ----------&#39;+err.getMessage()); 
+<i>37</i>&nbsp;                     }
+<i>38</i>&nbsp;                 } 
+<i>39</i>&nbsp;            }
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;*/
+<i>42</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

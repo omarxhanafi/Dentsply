@@ -1,0 +1,569 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: EventWithCallReportService</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: EventWithCallReportService (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">EventWithCallReportService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    20.4%
+  </span>
+  <span class="absValue">
+    (48/ 235)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>EventWithCallReportService</h2>
+<div class="sourceCode"><i>1</i>&nbsp;public class EventWithCallReportService {
+<b class="nc"><i>2</i>&nbsp;    public void Save(Event eventToSave, </b>
+<i>3</i>&nbsp;                     Call_Report__c callReportToSave, 
+<i>4</i>&nbsp;                     EventRelationPickerState whoIdPickerState, 
+<i>5</i>&nbsp;                     EventRelationPickerState inviteesPickerState, 
+<i>6</i>&nbsp;                     boolean sendCalendarInvites){        
+<i>7</i>&nbsp;                         
+<b class="nc"><i>8</i>&nbsp;        SavePoint savePoint = Database.setSavepoint();  </b>
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;        // This is required in order to restore the original subject in the event of a DML error
+<b class="nc"><i>11</i>&nbsp;        string originalEventSubject = eventToSave.Subject;</b>
+<b class="nc"><i>12</i>&nbsp;        Boolean syncProfile = EventRelationDetails.lightningSyncEnabledProfile();</b>
+<b class="nc"><i>13</i>&nbsp;        try{</b>
+<i>14</i>&nbsp;            system.debug(&#39;Calling into EventWithCallReportService Save():&#39;);
+<i>15</i>&nbsp;            system.debug(eventToSave);
+<i>16</i>&nbsp;            system.debug(&#39;WhoIdPickerState:&#39;);
+<i>17</i>&nbsp;            system.debug(whoIdPickerState);
+<i>18</i>&nbsp;            system.debug(&#39;InviteesPickerState:&#39;);
+<i>19</i>&nbsp;            system.debug(inviteesPickerState);
+<i>20</i>&nbsp;            
+<b class="nc"><i>21</i>&nbsp;            boolean eventIsNew = eventToSave.Id == null;    </b>
+<i>22</i>&nbsp;            
+<b class="nc"><i>23</i>&nbsp;            eventToSave.Bypass_Auto_Invites_When_Creating__c = true;</b>
+<b class="nc"><i>24</i>&nbsp;            eventToSave.Send_Calendar_Invites__c = SendCalendarInvites;</b>
+<b class="nc"><i>25</i>&nbsp;            eventToSave.DurationInMinutes = null;</b>
+<b class="nc"><i>26</i>&nbsp;            If(eventIsNew)</b>
+<b class="nc"><i>27</i>&nbsp;            eventToSave.EventOrigin__c = &#39;Classic&#39;;</b>
+<i>28</i>&nbsp;            
+<b class="nc"><i>29</i>&nbsp;            if(eventToSave.Co_travel__c != &#39;Manager&#39;) {                </b>
+<b class="nc"><i>30</i>&nbsp;                eventToSave.Co_Travel_Manager__c = null;</b>
+<i>31</i>&nbsp;            }
+<i>32</i>&nbsp;           
+<b class="nc"><i>33</i>&nbsp;            if(callReportToSave != null){</b>
+<b class="nc"><i>34</i>&nbsp;                if(eventIsNew) {</b>
+<b class="nc"><i>35</i>&nbsp;                    callReportToSave.Id = null;</b>
+<i>36</i>&nbsp;                }
+<i>37</i>&nbsp;
+<b class="nc"><i>38</i>&nbsp;                User eventOwner = getUserById(eventToSave.OwnerId);</b>
+<b class="nc"><i>39</i>&nbsp;                if(eventOwner != null){</b>
+<i>40</i>&nbsp;                    System.debug(&#39;Setting Call Report Assigned To User Country to &quot;&#39; + eventOwner.User_Country__c + &#39;&quot;&#39;);
+<i>41</i>&nbsp;
+<b class="nc"><i>42</i>&nbsp;                    callReportToSave.Assigned_To_User_Country__c = eventOwner.User_Country__c;</b>
+<i>43</i>&nbsp;                }
+<i>44</i>&nbsp;                
+<i>45</i>&nbsp;                System.debug(&#39;Upsert Call Report object...&#39;);
+<i>46</i>&nbsp;                System.debug(callReportToSave);
+<i>47</i>&nbsp;                
+<b class="nc"><i>48</i>&nbsp;                upsert callReportToSave;</b>
+<b class="nc"><i>49</i>&nbsp;                eventToSave.Call_Report__c = callReportToSave.Id;</b>
+<i>50</i>&nbsp;            }
+<i>51</i>&nbsp;            
+<i>52</i>&nbsp;            
+<i>53</i>&nbsp;            System.debug(&#39;Event Start Date Time is: &#39; + eventToSave.StartDateTime);
+<b class="nc"><i>54</i>&nbsp;            eventToSave.ActivityDate = eventToSave.StartDateTime.Date(); // Explicitly set ActivityDate so that validation rules that use this field wil work as expected</b>
+<i>55</i>&nbsp;            
+<i>56</i>&nbsp;            // Clear out duration and activity date so that they are automatically calculated
+<b class="nc"><i>57</i>&nbsp;            if(eventToSave.IsAllDayEvent){      </b>
+<b class="nc"><i>58</i>&nbsp;                TimeZone tz = UserInfo.getTimeZone();</b>
+<b class="nc"><i>59</i>&nbsp;                eventToSave.StartDateTime = eventToSave.StartDateTime.AddSeconds(tz.getOffset(eventToSave.StartDateTime)/1000);  </b>
+<b class="nc"><i>60</i>&nbsp;                eventToSave.EndDateTime = eventToSave.EndDateTime.AddSeconds(tz.getOffset(eventToSave.EndDateTime)/1000); </b>
+<i>61</i>&nbsp;                
+<b class="nc"><i>62</i>&nbsp;                eventToSave.ActivityDate = null;</b>
+<i>63</i>&nbsp;            }      
+<i>64</i>&nbsp;            
+<b class="nc"><i>65</i>&nbsp;            if(whoIdPickerState != null &amp;&amp; !whoIdPickerState.RelationIds.IsEmpty() &amp;&amp; string.isNotEmpty(whoIdPickerState.RelationIds[0])){</b>
+<i>66</i>&nbsp;                system.debug(&#39;Setting Event WhoId to &quot;&#39; + whoIdPickerState.RelationIds[0] + &#39;&quot;&#39;);
+<b class="nc"><i>67</i>&nbsp;                eventToSave.WhoId = whoIdPickerState.RelationIds[0];</b>
+<i>68</i>&nbsp;            }
+<i>69</i>&nbsp;            
+<i>70</i>&nbsp;            // remove all event relations /todo: we don&#39;t always want to do this. should filter for who ids only
+<b class="nc"><i>71</i>&nbsp;            if(!eventIsNew){</b>
+<b class="nc"><i>72</i>&nbsp;                List&lt;EventRelation&gt; ersToDelete = [select id </b>
+<i>73</i>&nbsp;                                                   from EventRelation 
+<b class="nc"><i>74</i>&nbsp;                                                   where eventId = :eventToSave.Id </b>
+<i>75</i>&nbsp;                                                   and IsInvitee = false];
+<i>76</i>&nbsp;                
+<b class="nc"><i>77</i>&nbsp;                delete ersToDelete;</b>
+<i>78</i>&nbsp;            }
+<i>79</i>&nbsp;            
+<b class="nc"><i>80</i>&nbsp;            if(String.isEmpty(originalEventSubject)) {</b>
+<b class="nc"><i>81</i>&nbsp;                User currentUser = getUserById(UserInfo.getUserId());</b>
+<i>82</i>&nbsp;
+<b class="nc"><i>83</i>&nbsp;                eventToSave.Subject = currentUser.Default_Event_Subject__c;</b>
+<i>84</i>&nbsp;            }
+<i>85</i>&nbsp;            
+<b class="nc"><i>86</i>&nbsp;            if(String.isEmpty(eventToSave.Location)) {</b>
+<b class="nc"><i>87</i>&nbsp;                eventToSave.Location = GetEventLocation(eventToSave);</b>
+<i>88</i>&nbsp;            }           
+<i>89</i>&nbsp;
+<b class="nc"><i>90</i>&nbsp;            ResolveSubjectTokens(eventToSave);</b>
+<i>91</i>&nbsp;            
+<i>92</i>&nbsp;            system.debug(&#39;Saving Event object...&#39;);
+<i>93</i>&nbsp;            system.debug(eventToSave);
+<b class="nc"><i>94</i>&nbsp;            upsert eventToSave;</b>
+<i>95</i>&nbsp;            
+<i>96</i>&nbsp;            system.debug(&#39;Event object saved&#39;);
+<i>97</i>&nbsp;            
+<b class="nc"><i>98</i>&nbsp;            if(inviteesPickerState != null){</b>
+<b class="nc"><i>99</i>&nbsp;                inviteesPickerState.EventId = eventToSave.Id; </b>
+<i>100</i>&nbsp;            }
+<i>101</i>&nbsp;            
+<b class="nc"><i>102</i>&nbsp;            if(whoIdPickerState != null){</b>
+<b class="nc"><i>103</i>&nbsp;                whoIdPickerState.EventId = eventToSave.Id; </b>
+<i>104</i>&nbsp;            }
+<i>105</i>&nbsp;//changed on 20-May-2019 : amitkumar.prabhat@mindtree.com            
+<b class="nc"><i>106</i>&nbsp;            if(!Test.isRunningTest()){</b>
+<b class="nc"><i>107</i>&nbsp;                if(inviteesPickerState != null){</b>
+<b class="nc"><i>108</i>&nbsp;                    if(syncProfile) {</b>
+<b class="nc"><i>109</i>&nbsp;                    if(sendCalendarInvites) {</b>
+<b class="nc"><i>110</i>&nbsp;                    inviteesPickerState.Save(); </b>
+<i>111</i>&nbsp;                    }
+<i>112</i>&nbsp;                    else{
+<b class="nc"><i>113</i>&nbsp;                     inviteesPickerState.Save_Custom();   </b>
+<i>114</i>&nbsp;                    }
+<i>115</i>&nbsp;                    }
+<b class="nc"><i>116</i>&nbsp;                    else inviteesPickerState.Save();</b>
+<i>117</i>&nbsp;                }
+<i>118</i>&nbsp;                
+<b class="nc"><i>119</i>&nbsp;                if(whoIdPickerState != null){</b>
+<b class="nc"><i>120</i>&nbsp;                    whoIdPickerState.Save(); </b>
+<i>121</i>&nbsp;                }
+<i>122</i>&nbsp;            }
+<i>123</i>&nbsp;            
+<b class="nc"><i>124</i>&nbsp;            EventRelationService eventRelationService = new EventRelationService();</b>
+<i>125</i>&nbsp;            
+<b class="nc"><i>126</i>&nbsp;            eventRelationService.SaveEventRelation(eventToSave.Id, eventToSave.WhatId, true, false, true);</b>
+<i>127</i>&nbsp;            
+<b class="nc"><i>128</i>&nbsp;            if(eventToSave.Co_Travel_Manager__c != null){</b>
+<b class="nc"><i>129</i>&nbsp;                eventRelationService.AddEventRelationToSet(eventToSave.Id, eventToSave.Co_Travel_Manager__c, /*isWhat*/ false, /*isInvitee*/ true, /*isParent*/ false);</b>
+<i>130</i>&nbsp;            }
+<i>131</i>&nbsp;            
+<i>132</i>&nbsp;            System.debug(&#39;Event Start Date Time is: &#39; + Event.StartDateTime);
+<i>133</i>&nbsp;             //if syncProfile don&#39;t execute this
+<b class="nc"><i>134</i>&nbsp;            if(eventIsNew &amp;&amp; !syncProfile){</b>
+<i>135</i>&nbsp;                System.Debug(&#39;Event is new; calling into Notices Manager&#39;);
+<b class="nc"><i>136</i>&nbsp;                DC_EventNoticesManager.manageNotices_onEventsInserted(new List&lt;Event&gt; { eventToSave }, false);</b>
+<i>137</i>&nbsp;            }
+<i>138</i>&nbsp;            
+<b class="nc"><i>139</i>&nbsp;            User owner = getUserById(eventToSave.OwnerId);</b>
+<i>140</i>&nbsp;            
+<b class="nc"><i>141</i>&nbsp;            if(owner != null &amp;&amp; string.isBlank(owner.User_Country__c)){</b>
+<b class="nc"><i>142</i>&nbsp;                owner.User_Country__c = eventToSave.Call_Report__r.Assigned_To_User_Country__c;</b>
+<b class="nc"><i>143</i>&nbsp;                update owner;</b>
+<i>144</i>&nbsp;            }            
+<i>145</i>&nbsp;        }
+<b class="nc"><i>146</i>&nbsp;        catch(DmlException ex){            </b>
+<b class="nc"><i>147</i>&nbsp;            Database.rollback(savePoint);</b>
+<i>148</i>&nbsp;
+<b class="nc"><i>149</i>&nbsp;            eventToSave.Subject = originalEventSubject;</b>
+<i>150</i>&nbsp;            
+<b class="nc"><i>151</i>&nbsp;            throw ex;</b>
+<i>152</i>&nbsp;        }
+<i>153</i>&nbsp;        // 210408 kdoruibin TFUS-000002673: Moved SyncClonedEvent() into class
+<i>154</i>&nbsp;        //Amit Prabhat added code for updating cloned Event in case of update_calender set as false ...
+<i>155</i>&nbsp;        //..and Parent Event gets an update
+<b class="nc"><i>156</i>&nbsp;        syncClonedEvent(eventToSave.Id);</b>
+<i>157</i>&nbsp;    }
+<i>158</i>&nbsp;
+<i>159</i>&nbsp;    // 210408 kdoruibin TFUS-000002673: Moved SyncClonedEvent() into class
+<b class="nc"><i>160</i>&nbsp;    public static void syncClonedEvent(Id parEventId) {</b>
+<b class="nc"><i>161</i>&nbsp;        List&lt;Event&gt; childEventUpdate = new List&lt;Event&gt; ();</b>
+<b class="nc"><i>162</i>&nbsp;        List&lt;Id&gt; attendee = new List&lt;Id&gt; ();</b>
+<b class="nc"><i>163</i>&nbsp;        Event parEvent = [select Astra_Tech_Type__c, Call_Report__c, Contact_Id__c, Customer_Facing_Event__c,</b>
+<i>164</i>&nbsp;            Related_to_Account_Opportunity__c, SBU__c, Objective__c, Co_travel__c, Co_Travel_Manager__c,
+<i>165</i>&nbsp;            WhatCount, WhatId, WhoCount, WhoId, AccountId, EventOrigin__c, Activity_Subtype__c,
+<i>166</i>&nbsp;            DurationInMinutes, EventSubtype, Event_Status__c, EndDateTime, Location, Dealer_Customer__c,
+<i>167</i>&nbsp;            IsAllDayEvent, IsArchived, IsDeleted, ActivityDateTime, IsGroupEvent,
+<i>168</i>&nbsp;            ActivityDate, ShowAs, IsPrivate, RecordTypeId,
+<b class="nc"><i>169</i>&nbsp;            StartDateTime, Subject from Event where id =: parEventId limit 1</b>
+<b class="nc"><i>170</i>&nbsp;        ][0];</b>
+<b class="nc"><i>171</i>&nbsp;        List &lt;EventAttendees__c&gt; att = [SELECT Id, EventId__c, RelationId__c</b>
+<i>172</i>&nbsp;            FROM EventAttendees__c
+<b class="nc"><i>173</i>&nbsp;            WHERE EventId__c =: parEventId</b>
+<i>174</i>&nbsp;        ];
+<b class="nc"><i>175</i>&nbsp;        if (att.size() &gt; 0) {</b>
+<b class="nc"><i>176</i>&nbsp;            for (EventAttendees__c chld: att) {</b>
+<b class="nc"><i>177</i>&nbsp;                attendee.add(chld.RelationId__c);</b>
+<i>178</i>&nbsp;            }
+<b class="nc"><i>179</i>&nbsp;            List&lt;Event&gt; childEvents = [select id, OwnerId from Event</b>
+<b class="nc"><i>180</i>&nbsp;                where OwnerId IN: attendee</b>
+<b class="nc"><i>181</i>&nbsp;                and Call_Report__c =: parEvent.Call_Report__c</b>
+<i>182</i>&nbsp;            ];
+<b class="nc"><i>183</i>&nbsp;            for (Event clEvent: childEvents) {</b>
+<b class="nc"><i>184</i>&nbsp;                clEvent.Astra_Tech_Type__c = parEvent.Astra_Tech_Type__c;</b>
+<b class="nc"><i>185</i>&nbsp;                clEvent.Customer_Facing_Event__c = parEvent.Customer_Facing_Event__c;</b>
+<b class="nc"><i>186</i>&nbsp;                clEvent.SBU__c = parEvent.SBU__c;</b>
+<b class="nc"><i>187</i>&nbsp;                clEvent.Co_Travel_Manager__c = parEvent.Co_Travel_Manager__c;</b>
+<b class="nc"><i>188</i>&nbsp;                clEvent.WhatId = parEvent.WhatId;</b>
+<b class="nc"><i>189</i>&nbsp;                clEvent.Co_travel__c = parEvent.Co_travel__c;</b>
+<b class="nc"><i>190</i>&nbsp;                clEvent.WhoId = parEvent.WhoId;</b>
+<b class="nc"><i>191</i>&nbsp;                clEvent.Objective__c = parEvent.Objective__c;</b>
+<b class="nc"><i>192</i>&nbsp;                clEvent.DurationInMinutes = parEvent.DurationInMinutes;</b>
+<b class="nc"><i>193</i>&nbsp;                clEvent.Activity_Subtype__c = parEvent.Activity_Subtype__c;</b>
+<b class="nc"><i>194</i>&nbsp;                clEvent.Event_Status__c = parEvent.Event_Status__c;</b>
+<b class="nc"><i>195</i>&nbsp;                clEvent.IsAllDayEvent = parEvent.IsAllDayEvent;</b>
+<b class="nc"><i>196</i>&nbsp;                clEvent.EventOrigin__c = parEvent.EventOrigin__c;</b>
+<i>197</i>&nbsp;                //clEvent.EventSubtype = parEvent.EventSubtype;
+<b class="nc"><i>198</i>&nbsp;                clEvent.Location = parEvent.Location;</b>
+<b class="nc"><i>199</i>&nbsp;                clEvent.IsPrivate = parEvent.IsPrivate;</b>
+<b class="nc"><i>200</i>&nbsp;                clEvent.RecordTypeId = parEvent.RecordTypeId;</b>
+<b class="nc"><i>201</i>&nbsp;                clEvent.ShowAs = parEvent.ShowAs;</b>
+<b class="nc"><i>202</i>&nbsp;                clEvent.StartDateTime = parEvent.StartDateTime;</b>
+<b class="nc"><i>203</i>&nbsp;                clEvent.Subject = parEvent.Subject;</b>
+<b class="nc"><i>204</i>&nbsp;                clEvent.EndDateTime = parEvent.EndDateTime;</b>
+<b class="nc"><i>205</i>&nbsp;                clEvent.ActivityDate = parEvent.ActivityDate;</b>
+<b class="nc"><i>206</i>&nbsp;                clEvent.ActivityDateTime = parEvent.ActivityDateTime;</b>
+<b class="nc"><i>207</i>&nbsp;                clEvent.Dealer_Customer__c = parEvent.Dealer_Customer__c;</b>
+<b class="nc"><i>208</i>&nbsp;                childEventUpdate.add(clEvent);</b>
+<i>209</i>&nbsp;            }
+<b class="nc"><i>210</i>&nbsp;            database.update(childEvents);</b>
+<i>211</i>&nbsp;        }
+<i>212</i>&nbsp;    }
+<i>213</i>&nbsp;
+<b class="fc"><i>214</i>&nbsp;    public void ResolveSubjectTokens(Event e){</b>
+<b class="fc"><i>215</i>&nbsp;        string subject = e.Subject;</b>
+<i>216</i>&nbsp;
+<i>217</i>&nbsp;        // This is a fail safe to ensure that null is not passed to the pattern matcher.
+<b class="fc"><i>218</i>&nbsp;        if(subject == null){</b>
+<b class="nc"><i>219</i>&nbsp;            subject = &#39;&#39;;</b>
+<i>220</i>&nbsp;        }
+<i>221</i>&nbsp;
+<i>222</i>&nbsp;
+<i>223</i>&nbsp;        // This regex looks more complex than it actually is. It should match the following:
+<i>224</i>&nbsp;        // \{ Matches the character &#39;{&#39; literally
+<i>225</i>&nbsp;        // .*? Matches any number of characters (including none)
+<i>226</i>&nbsp;        // \|\| Matches &#39;||&#39; literally
+<i>227</i>&nbsp;        // .+? Matches a string containing 1 or more characters
+<i>228</i>&nbsp;        // \|\| Matches &#39;||&#39; literally
+<i>229</i>&nbsp;        // .*? Matches any number of characters (including none)
+<i>230</i>&nbsp;        // \} Matches the character &#39;}&#39; literally
+<i>231</i>&nbsp;        //
+<i>232</i>&nbsp;        // Note: all backslash characters have to be escaped in the string, which is the reason the double backslashes are required.
+<i>233</i>&nbsp;        //
+<i>234</i>&nbsp;        // eg: {[0 or more characters]||[1 or more characters]||[0 or more characters]}
+<b class="fc"><i>235</i>&nbsp;        string regex = &#39;\\{.*?\\|\\|.+?\\|\\|.*?\\}&#39;;</b>
+<b class="fc"><i>236</i>&nbsp;        Matcher tokenMatcher = Pattern.Compile(regex).Matcher(subject);</b>
+<i>237</i>&nbsp;        
+<b class="fc"><i>238</i>&nbsp;        while(tokenMatcher.find()){</b>
+<b class="fc"><i>239</i>&nbsp;            string matchedToken = tokenMatcher.group();</b>
+<i>240</i>&nbsp;
+<i>241</i>&nbsp;            // Strip the bounding {} characters from the token and split by ||
+<i>242</i>&nbsp;            // 0 = Prefix
+<i>243</i>&nbsp;            // 1 = Token
+<i>244</i>&nbsp;            // 2 = Suffix
+<b class="fc"><i>245</i>&nbsp;            string[] tokenParts = matchedToken.removeStart(&#39;{&#39;).removeEnd(&#39;}&#39;).split(&#39;\\|\\|&#39;, 3);</b>
+<i>246</i>&nbsp;
+<b class="fc"><i>247</i>&nbsp;            string prefix = tokenParts[0];</b>
+<b class="fc"><i>248</i>&nbsp;            string token = tokenParts[1];</b>
+<b class="fc"><i>249</i>&nbsp;            string suffix = tokenParts[2];</b>
+<i>250</i>&nbsp;
+<b class="fc"><i>251</i>&nbsp;            string resolvedToken;</b>
+<b class="fc"><i>252</i>&nbsp;            boolean replaceToken = true;</b>
+<i>253</i>&nbsp;
+<b class="fc"><i>254</i>&nbsp;            if(token.equalsIgnoreCase(&#39;EventType&#39;)) {</b>
+<b class="fc"><i>255</i>&nbsp;                resolvedToken = getLocalisedEventType(e);</b>
+<i>256</i>&nbsp;            }
+<b class="fc"><i>257</i>&nbsp;            else if(token.equalsIgnoreCase(&#39;WhoName&#39;)) {</b>
+<b class="fc"><i>258</i>&nbsp;                resolvedToken = getNameFromId(e.WhoId);</b>
+<i>259</i>&nbsp;            }
+<b class="fc"><i>260</i>&nbsp;            else if(token.equalsIgnoreCase(&#39;RelatedToName&#39;)) {</b>
+<b class="fc"><i>261</i>&nbsp;                resolvedToken = getNameFromId(e.WhatId);</b>
+<i>262</i>&nbsp;            }
+<b class="fc"><i>263</i>&nbsp;            else if(token.equalsIgnoreCase(&#39;AccountERP&#39;)) {</b>
+<b class="nc"><i>264</i>&nbsp;                resolvedToken = getErpNumberFromAccount(e.WhatId);</b>
+<i>265</i>&nbsp;            }
+<i>266</i>&nbsp;            else {
+<b class="fc"><i>267</i>&nbsp;                replaceToken = false;</b>
+<i>268</i>&nbsp;            }
+<i>269</i>&nbsp;
+<b class="fc"><i>270</i>&nbsp;            if(!String.isEmpty(resolvedToken)) {</b>
+<i>271</i>&nbsp;                // If there is a value supplied for the token, then also apply the prefix and suffix
+<b class="fc"><i>272</i>&nbsp;                resolvedToken = prefix + resolvedToken + suffix;</b>
+<i>273</i>&nbsp;            }
+<i>274</i>&nbsp;
+<b class="fc"><i>275</i>&nbsp;            if(resolvedToken == null){</b>
+<i>276</i>&nbsp;                // This is a fail safe, to ensure that null is never passed into the replace method below.
+<b class="fc"><i>277</i>&nbsp;                resolvedToken = &#39;&#39;;</b>
+<i>278</i>&nbsp;            }
+<i>279</i>&nbsp;
+<b class="fc"><i>280</i>&nbsp;            if(replaceToken) {</b>
+<i>281</i>&nbsp;                System.debug(&#39;Replacing the event subject token &quot;&#39; + matchedToken + &#39;&quot; with the value &quot;&#39; + resolvedToken + &#39;&quot;&#39;);
+<b class="fc"><i>282</i>&nbsp;                subject = subject.replace(matchedToken, resolvedToken);</b>
+<i>283</i>&nbsp;            }
+<i>284</i>&nbsp;        }
+<i>285</i>&nbsp;
+<b class="fc"><i>286</i>&nbsp;        e.Subject = subject;</b>
+<i>287</i>&nbsp;    }
+<i>288</i>&nbsp;
+<b class="nc"><i>289</i>&nbsp;    public string GetEventLocation(Event e){        </b>
+<b class="nc"><i>290</i>&nbsp;        string addressString;</b>
+<i>291</i>&nbsp;        
+<b class="nc"><i>292</i>&nbsp;        List&lt;Contact&gt; contacts = [SELECT mailingstreet, mailingcity, mailingstate, mailingPostalCode, mailingCountry</b>
+<i>293</i>&nbsp;                                  FROM contact 
+<b class="nc"><i>294</i>&nbsp;                                  WHERE id = :e.WhoId </b>
+<i>295</i>&nbsp;                                  LIMIT 1];
+<i>296</i>&nbsp;        
+<b class="nc"><i>297</i>&nbsp;        if(!contacts.IsEmpty()){</b>
+<b class="nc"><i>298</i>&nbsp;            Contact contact = contacts[0];</b>
+<i>299</i>&nbsp;            
+<b class="nc"><i>300</i>&nbsp;            addressString = buildAddressString(new List&lt;string&gt; {contact.mailingstreet, contact.mailingcity, contact.mailingstate, contact.mailingPostalCode, contact.mailingCountry});</b>
+<i>301</i>&nbsp;            
+<i>302</i>&nbsp;            
+<b class="nc"><i>303</i>&nbsp;            if(addressString.Length() &gt; 0){</b>
+<b class="nc"><i>304</i>&nbsp;                return addressString;</b>
+<i>305</i>&nbsp;            }
+<i>306</i>&nbsp;        }
+<i>307</i>&nbsp;        
+<b class="nc"><i>308</i>&nbsp;        List&lt;Account&gt; accounts = [SELECT billingstreet, billingcity, billingstate, billingPostalCode, billingCountry,</b>
+<i>309</i>&nbsp;                                            shippingstreet, shippingcity, shippingstate, shippingPostalCode, shippingCountry
+<i>310</i>&nbsp;                                   FROM account 
+<b class="nc"><i>311</i>&nbsp;                                   WHERE id = :e.WhatId];</b>
+<i>312</i>&nbsp;                           
+<b class="nc"><i>313</i>&nbsp;        if(accounts.IsEmpty()){</b>
+<i>314</i>&nbsp;            system.debug(&#39;Could not calculate location because there is no account with Id &#39; + e.WhatId);       
+<i>315</i>&nbsp;            
+<b class="nc"><i>316</i>&nbsp;            return null;</b>
+<i>317</i>&nbsp;        }
+<i>318</i>&nbsp;        
+<b class="nc"><i>319</i>&nbsp;        Account account = accounts[0];</b>
+<i>320</i>&nbsp;                           
+<b class="nc"><i>321</i>&nbsp;        addressString = buildAddressString(new List&lt;string&gt; {account.billingstreet, account.billingcity, account.billingstate, account.billingPostalCode, account.BillingCountry});</b>
+<i>322</i>&nbsp;    
+<b class="nc"><i>323</i>&nbsp;        if(addressString.Length() == 0){</b>
+<b class="nc"><i>324</i>&nbsp;            addressString = buildAddressString(new List&lt;string&gt; {account.shippingstreet, account.shippingcity, account.shippingstate, account.shippingPostalCode, account.shippingCountry});</b>
+<i>325</i>&nbsp;        }
+<i>326</i>&nbsp;    
+<b class="nc"><i>327</i>&nbsp;        return addressString;</b>
+<i>328</i>&nbsp;    }
+<i>329</i>&nbsp;
+<b class="nc"><i>330</i>&nbsp;    public void SetDefaultSBUs(Event e){</b>
+<b class="nc"><i>331</i>&nbsp;        User owner = [SELECT id, </b>
+<i>332</i>&nbsp;                       Default_CFE_SBUs__c,
+<i>333</i>&nbsp;                       SBU_Ratio_ENDO__c,
+<i>334</i>&nbsp;                       SBU_Ratio_IMPL__c,
+<i>335</i>&nbsp;                       SBU_Ratio_ORTH__c,
+<i>336</i>&nbsp;                       SBU_Ratio_PREV__c,
+<i>337</i>&nbsp;                       SBU_Ratio_PROS__c,
+<i>338</i>&nbsp;                       SBU_Ratio_REST__c,
+<i>339</i>&nbsp;                       SBU_Ratio_CERE__c,
+<i>340</i>&nbsp;                       SBU_Ratio_INST__c,
+<i>341</i>&nbsp;                       SBU_Ratio_TRCE__c,
+<i>342</i>&nbsp;                       SBU_Ratio_IMAG__c,
+<i>343</i>&nbsp;                       Sales_Business_Unit_SBU__c                       
+<i>344</i>&nbsp;                      FROM user 
+<b class="nc"><i>345</i>&nbsp;                      WHERE id = :e.OwnerId][0];</b>
+<i>346</i>&nbsp;        
+<b class="nc"><i>347</i>&nbsp;        if(owner.Default_CFE_SBUs__c != null &amp;&amp; owner.Default_CFE_SBUs__c.length() &gt; 0){</b>
+<b class="nc"><i>348</i>&nbsp;            e.SBU__c = owner.Default_CFE_SBUs__c;</b>
+<i>349</i>&nbsp;
+<b class="nc"><i>350</i>&nbsp;            return;</b>
+<i>351</i>&nbsp;        }
+<i>352</i>&nbsp;        
+<b class="nc"><i>353</i>&nbsp;        string SBU = null;</b>
+<b class="nc"><i>354</i>&nbsp;        double currentSBUPercentage = 0;</b>
+<i>355</i>&nbsp;        
+<b class="nc"><i>356</i>&nbsp;        if(owner.SBU_Ratio_ENDO__c != null &amp;&amp; owner.SBU_Ratio_ENDO__c &gt; currentSBUPercentage){</b>
+<b class="nc"><i>357</i>&nbsp;            SBU = &#39;Endodontics&#39;;</b>
+<b class="nc"><i>358</i>&nbsp;            currentSBUPercentage = owner.SBU_Ratio_ENDO__c;</b>
+<i>359</i>&nbsp;        }
+<i>360</i>&nbsp;        
+<b class="nc"><i>361</i>&nbsp;        if(owner.SBU_Ratio_IMPL__c != null &amp;&amp; owner.SBU_Ratio_IMPL__c &gt; currentSBUPercentage){</b>
+<b class="nc"><i>362</i>&nbsp;            SBU = &#39;Implants&#39;;</b>
+<b class="nc"><i>363</i>&nbsp;            currentSBUPercentage = owner.SBU_Ratio_IMPL__c;</b>
+<i>364</i>&nbsp;        }
+<i>365</i>&nbsp;        
+<b class="nc"><i>366</i>&nbsp;        if(owner.SBU_Ratio_ORTH__c != null &amp;&amp; owner.SBU_Ratio_ORTH__c &gt; currentSBUPercentage){</b>
+<b class="nc"><i>367</i>&nbsp;            SBU = &#39;Orthodontics&#39;;</b>
+<b class="nc"><i>368</i>&nbsp;            currentSBUPercentage = owner.SBU_Ratio_ORTH__c;</b>
+<i>369</i>&nbsp;        }
+<i>370</i>&nbsp;        
+<b class="nc"><i>371</i>&nbsp;        if(owner.SBU_Ratio_PREV__c != null &amp;&amp; owner.SBU_Ratio_PREV__c &gt; currentSBUPercentage){</b>
+<b class="nc"><i>372</i>&nbsp;            SBU = &#39;Preventive&#39;;</b>
+<b class="nc"><i>373</i>&nbsp;            currentSBUPercentage = owner.SBU_Ratio_PREV__c;</b>
+<i>374</i>&nbsp;        }
+<i>375</i>&nbsp;        
+<b class="nc"><i>376</i>&nbsp;        if(owner.SBU_Ratio_PROS__c  != null &amp;&amp; owner.SBU_Ratio_PROS__c &gt; currentSBUPercentage){</b>
+<b class="nc"><i>377</i>&nbsp;            SBU = &#39;Prosthetics&#39;;</b>
+<b class="nc"><i>378</i>&nbsp;            currentSBUPercentage = owner.SBU_Ratio_PROS__c;</b>
+<i>379</i>&nbsp;        }
+<i>380</i>&nbsp;        
+<b class="nc"><i>381</i>&nbsp;        if(owner.SBU_Ratio_REST__c != null &amp;&amp; owner.SBU_Ratio_REST__c &gt; currentSBUPercentage){</b>
+<b class="nc"><i>382</i>&nbsp;            SBU = &#39;Restorative&#39;;</b>
+<b class="nc"><i>383</i>&nbsp;            currentSBUPercentage = owner.SBU_Ratio_REST__c;</b>
+<i>384</i>&nbsp;        }
+<i>385</i>&nbsp;        
+<b class="nc"><i>386</i>&nbsp;        if(owner.SBU_Ratio_CERE__c != null &amp;&amp; owner.SBU_Ratio_CERE__c &gt; currentSBUPercentage){</b>
+<b class="nc"><i>387</i>&nbsp;            SBU = &#39;CAD/CAM&#39;;</b>
+<b class="nc"><i>388</i>&nbsp;            currentSBUPercentage = owner.SBU_Ratio_CERE__c;</b>
+<i>389</i>&nbsp;        }
+<i>390</i>&nbsp;        
+<b class="nc"><i>391</i>&nbsp;        if(owner.SBU_Ratio_INST__c != null &amp;&amp; owner.SBU_Ratio_INST__c &gt; currentSBUPercentage){</b>
+<b class="nc"><i>392</i>&nbsp;            SBU = &#39;Instruments&#39;;</b>
+<b class="nc"><i>393</i>&nbsp;            currentSBUPercentage = owner.SBU_Ratio_INST__c;</b>
+<i>394</i>&nbsp;        }
+<i>395</i>&nbsp;        
+<b class="nc"><i>396</i>&nbsp;        if(owner.SBU_Ratio_TRCE__c != null &amp;&amp; owner.SBU_Ratio_TRCE__c &gt; currentSBUPercentage){</b>
+<b class="nc"><i>397</i>&nbsp;            SBU = &#39;Treatment Centers&#39;;</b>
+<b class="nc"><i>398</i>&nbsp;            currentSBUPercentage = owner.SBU_Ratio_TRCE__c;</b>
+<i>399</i>&nbsp;        }
+<i>400</i>&nbsp;        
+<b class="nc"><i>401</i>&nbsp;        if(owner.SBU_Ratio_IMAG__c != null &amp;&amp; owner.SBU_Ratio_IMAG__c &gt; currentSBUPercentage){</b>
+<b class="nc"><i>402</i>&nbsp;            SBU = &#39;Imaging Systems&#39;;</b>
+<b class="nc"><i>403</i>&nbsp;            currentSBUPercentage = owner.SBU_Ratio_IMAG__c;</b>
+<i>404</i>&nbsp;        }
+<i>405</i>&nbsp;                
+<b class="nc"><i>406</i>&nbsp;        e.SBU__c = SBU;</b>
+<i>407</i>&nbsp;    }
+<i>408</i>&nbsp;      
+<b class="fc"><i>409</i>&nbsp;    private string getNameFromId(Id objectId){</b>
+<b class="fc"><i>410</i>&nbsp;        if(objectId == null) {</b>
+<b class="fc"><i>411</i>&nbsp;            return null;</b>
+<i>412</i>&nbsp;        }
+<i>413</i>&nbsp;
+<b class="fc"><i>414</i>&nbsp;        string objectType = objectId.getSObjectType().getDescribe().getName();</b>
+<i>415</i>&nbsp;
+<i>416</i>&nbsp;        // objectType and objectId are safe and do not need to be escaped
+<b class="fc"><i>417</i>&nbsp;        sObject so = Database.query(&#39;select name from &#39; + objectType + &#39; where id = \&#39;&#39; + objectId + &#39;\&#39; limit 1&#39;);</b>
+<i>418</i>&nbsp;
+<b class="fc"><i>419</i>&nbsp;        if(so == null) {</b>
+<b class="nc"><i>420</i>&nbsp;            return null;</b>
+<i>421</i>&nbsp;        }
+<i>422</i>&nbsp;
+<b class="fc"><i>423</i>&nbsp;        return (string) so.get(&#39;Name&#39;);</b>
+<i>424</i>&nbsp;    }
+<i>425</i>&nbsp;    
+<b class="nc"><i>426</i>&nbsp;    private User getUserById(string userId){</b>
+<b class="nc"><i>427</i>&nbsp;        List&lt;User&gt; owners = [SELECT managerId,</b>
+<i>428</i>&nbsp;                                 Sales_Business_Unit_SBU__c,
+<i>429</i>&nbsp;                                 User_Country__c,
+<i>430</i>&nbsp;                                 Default_Activity_Length_In_Minutes__c,
+<i>431</i>&nbsp;                                 Default_Event_Update_Calendar__c,
+<i>432</i>&nbsp;                                 Default_Event_Subject__c,
+<i>433</i>&nbsp;                                 Name,
+<i>434</i>&nbsp;                                 Id
+<i>435</i>&nbsp;                             FROM user
+<b class="nc"><i>436</i>&nbsp;                             WHERE id = :userId];</b>
+<i>437</i>&nbsp;                             
+<b class="nc"><i>438</i>&nbsp;        if(owners.IsEmpty()){        </b>
+<b class="nc"><i>439</i>&nbsp;            return null;</b>
+<i>440</i>&nbsp;        }
+<i>441</i>&nbsp;        
+<b class="nc"><i>442</i>&nbsp;        return owners[0];</b>
+<i>443</i>&nbsp;    }
+<i>444</i>&nbsp;    
+<i>445</i>&nbsp;    @TestVisible
+<b class="fc"><i>446</i>&nbsp;    private string getErpNumberFromAccount(Id objectId){</b>
+<b class="fc"><i>447</i>&nbsp;        if(objectId == null) {</b>
+<b class="nc"><i>448</i>&nbsp;            return null;</b>
+<i>449</i>&nbsp;        }
+<i>450</i>&nbsp;
+<b class="fc"><i>451</i>&nbsp;        string objectType = objectId.getSObjectType().getDescribe().getName();</b>
+<b class="fc"><i>452</i>&nbsp;        if(objectType != &#39;Account&#39;) {</b>
+<b class="nc"><i>453</i>&nbsp;            return null;</b>
+<i>454</i>&nbsp;        } 
+<i>455</i>&nbsp;
+<b class="fc"><i>456</i>&nbsp;        Account acc = Database.query(&#39;select Movex__c from Account where id = \&#39;&#39; + objectId + &#39;\&#39; limit 1&#39;);</b>
+<i>457</i>&nbsp;
+<b class="fc"><i>458</i>&nbsp;        if(acc == null) {</b>
+<b class="nc"><i>459</i>&nbsp;            return null;</b>
+<i>460</i>&nbsp;        }
+<i>461</i>&nbsp;
+<b class="fc"><i>462</i>&nbsp;        return acc.Movex__c;</b>
+<i>463</i>&nbsp;    }
+<i>464</i>&nbsp;    
+<b class="fc"><i>465</i>&nbsp;    private string getLocalisedEventType(Event eventInstance){        </b>
+<b class="fc"><i>466</i>&nbsp;        List&lt;Schema.PicklistEntry&gt; picklistEntries = Schema.getGlobalDescribe().get(&#39;event&#39;).getDescribe().fields.getMap().get(&#39;Astra_Tech_Type__c&#39;).getDescribe().getPicklistValues(); </b>
+<b class="fc"><i>467</i>&nbsp;        Map&lt;String, String&gt; fieldTranslations = new Map&lt;String, String&gt;(); </b>
+<i>468</i>&nbsp;        
+<b class="fc"><i>469</i>&nbsp;        for(Schema.PicklistEntry ple : picklistEntries){</b>
+<b class="fc"><i>470</i>&nbsp;            fieldTranslations.put(ple.value, ple.label); </b>
+<i>471</i>&nbsp;        }
+<i>472</i>&nbsp;        
+<i>473</i>&nbsp;        system.debug(&#39;Event Type is: &#39; + eventInstance.Astra_Tech_Type__c);
+<i>474</i>&nbsp;        system.debug(fieldTranslations);
+<i>475</i>&nbsp;        
+<b class="fc"><i>476</i>&nbsp;        return fieldTranslations.get(eventInstance.Astra_Tech_Type__c);</b>
+<i>477</i>&nbsp;    }
+<i>478</i>&nbsp;    
+<b class="nc"><i>479</i>&nbsp;    private string buildAddressString(List&lt;String&gt; components){        </b>
+<b class="nc"><i>480</i>&nbsp;        string result = &#39;&#39;;</b>
+<b class="nc"><i>481</i>&nbsp;        boolean firstLine = true;</b>
+<i>482</i>&nbsp;                
+<b class="nc"><i>483</i>&nbsp;        for(string component : components){</b>
+<b class="nc"><i>484</i>&nbsp;            if(component != null){</b>
+<b class="nc"><i>485</i>&nbsp;                if(firstLine){</b>
+<b class="nc"><i>486</i>&nbsp;                    result = component;</b>
+<i>487</i>&nbsp;                    
+<b class="nc"><i>488</i>&nbsp;                    firstLine = false;</b>
+<i>489</i>&nbsp;                }
+<i>490</i>&nbsp;                else{
+<b class="nc"><i>491</i>&nbsp;                    result = result + &#39;, &#39; + component;</b>
+<i>492</i>&nbsp;                }
+<i>493</i>&nbsp;            }
+<i>494</i>&nbsp;        }
+<i>495</i>&nbsp;        
+<b class="nc"><i>496</i>&nbsp;        return result;</b>
+<i>497</i>&nbsp;    }
+<i>498</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

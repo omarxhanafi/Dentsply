@@ -1,0 +1,104 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: flowOpportunityTeamMember</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: flowOpportunityTeamMember (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">flowOpportunityTeamMember</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/ 12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>flowOpportunityTeamMember</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*------------------------------------------------------------
+<i>2</i>&nbsp;Author: 		Richard Trum (Glimt) 2023-09-08
+<i>3</i>&nbsp;Description:   	Invocable class for creating an opportunity team member for the previous owner/creator of an opp
+<i>4</i>&nbsp;Test class:     Test_OpportunityPB
+<i>5</i>&nbsp;History
+<i>6</i>&nbsp;&lt;Date&gt;      &lt;Authors Name&gt;     &lt;Brief Description of Change&gt;
+<i>7</i>&nbsp;20231124 	Miguel coimbra		TFUS-000006272
+<i>8</i>&nbsp;20231124 	Houssam ADIB		TFUS-000006521 - Fix a bug caused by async job that needs to be execute synchronously
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;------------------------------------------------------------*/
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;public without sharing class flowOpportunityTeamMember {
+<i>13</i>&nbsp;    
+<i>14</i>&nbsp;    @InvocableMethod
+<b class="fc"><i>15</i>&nbsp;      public static void createMembers(List&lt;List&lt;String&gt;&gt; input){</b>
+<i>16</i>&nbsp;                
+<b class="fc"><i>17</i>&nbsp;          String oppId = input[0][0];</b>
+<b class="fc"><i>18</i>&nbsp;          String userId = UserInfo.getUserId();</b>
+<b class="fc"><i>19</i>&nbsp;          String newUserId = input[0][1];</b>
+<i>20</i>&nbsp;
+<b class="fc"><i>21</i>&nbsp;            OpportunityTeamMember m = new OpportunityTeamMember();</b>
+<b class="fc"><i>22</i>&nbsp;            m.OpportunityId = oppId;</b>
+<b class="fc"><i>23</i>&nbsp;            m.UserId = userId;</b>
+<b class="fc"><i>24</i>&nbsp;            m.OpportunityAccessLevel = &#39;Edit&#39;;</b>
+<i>25</i>&nbsp;
+<b class="fc"><i>26</i>&nbsp;            try{</b>
+<b class="fc"><i>27</i>&nbsp;                insert m;</b>
+<i>28</i>&nbsp;            }
+<b class="fc"><i>29</i>&nbsp;            catch(DmlException e){</b>
+<b class="fc"><i>30</i>&nbsp;                DebugLog.addException(e, &#39;OppTeamMemberInsertAsynch.execute Opportunity team member not created.&#39;);</b>
+<i>31</i>&nbsp;            }
+<i>32</i>&nbsp;      }
+<i>33</i>&nbsp;  }
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

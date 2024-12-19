@@ -1,0 +1,448 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DC_EventNoticesUtils</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DC_EventNoticesUtils (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DC_EventNoticesUtils</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 162)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>DC_EventNoticesUtils</h2>
+<div class="sourceCode"><i>1</i>&nbsp;//
+<i>2</i>&nbsp;//This class provides utilities related with event notifications.
+<i>3</i>&nbsp;//
+<i>4</i>&nbsp;//Author: Gennadiy Pervukhin (28-10-2014)
+<i>5</i>&nbsp;public class DC_EventNoticesUtils
+<i>6</i>&nbsp;{
+<i>7</i>&nbsp;    //
+<i>8</i>&nbsp;    //Constants
+<i>9</i>&nbsp;    //
+<b class="nc"><i>10</i>&nbsp;    private static final Integer CODE_NEW_ATTENDEES = 1;</b>
+<b class="nc"><i>11</i>&nbsp;    private static final Integer CODE_DELETED_ATTENDEES = 2;</b>
+<b class="nc"><i>12</i>&nbsp;    private static final Integer CODE_UNCHANGED_ATTENDEES = 3;</b>
+<i>13</i>&nbsp;    
+<i>14</i>&nbsp;    private static final String SEPARATOR_IN_UID = &#39;_&#39;;
+<b class="nc"><i>15</i>&nbsp;    private static final String UID_FORMAT = &#39;{0}&#39; + SEPARATOR_IN_UID</b>
+<b class="nc"><i>16</i>&nbsp;        + &#39;{1}&#39; + SEPARATOR_IN_UID + &#39;{2}&#39;;</b>
+<b class="nc"><i>17</i>&nbsp;    private static final Integer NUMBER_OF_PARTS_IN_UID = 3;</b>
+<b class="nc"><i>18</i>&nbsp;    private static final Integer INDEX_OF_EVENT_ID_IN_UID = 0;</b>
+<b class="nc"><i>19</i>&nbsp;    private static final Integer INDEX_OF_PERSON_ID_IN_UID = 1;</b>
+<b class="nc"><i>20</i>&nbsp;    private static final Integer INDEX_OF_HOST_NAME_IN_UID = 2;</b>
+<i>21</i>&nbsp;    
+<i>22</i>&nbsp;    private static final String ALARM_DESCRIPTION_FORMAT = &#39;Reminder for {0}&#39;;
+<i>23</i>&nbsp;    //
+<i>24</i>&nbsp;    
+<i>25</i>&nbsp;    //
+<i>26</i>&nbsp;    //Static variables 
+<i>27</i>&nbsp;    //
+<i>28</i>&nbsp;    @TestVisible
+<i>29</i>&nbsp;    private static Set&lt;Id&gt; idsOfEventRTsForNotices;
+<b class="nc"><i>30</i>&nbsp;    private static String partOfUID_InstanceUrl = getPartOfUID_InstanceUrl();</b>
+<i>31</i>&nbsp;    //
+<i>32</i>&nbsp;    
+<i>33</i>&nbsp;    //
+<i>34</i>&nbsp;    //Private static methods
+<i>35</i>&nbsp;    //
+<b class="nc"><i>36</i>&nbsp;    private static void readIdsOfEventRTsForNotices()</b>
+<i>37</i>&nbsp;    {
+<b class="nc"><i>38</i>&nbsp;        if (idsOfEventRTsForNotices == null)</b>
+<i>39</i>&nbsp;        {
+<b class="nc"><i>40</i>&nbsp;            idsOfEventRTsForNotices = DC_SettingsUtils.getIdsOfEventRTsForNotices();</b>
+<i>41</i>&nbsp;        }
+<i>42</i>&nbsp;    }
+<i>43</i>&nbsp;    
+<b class="nc"><i>44</i>&nbsp;    private static Boolean customNoticesEnabled(Event event)</b>
+<i>45</i>&nbsp;    {
+<i>46</i>&nbsp;        //read Ids of event record types, which support custom notifications,
+<i>47</i>&nbsp;        //from custom settings
+<b class="nc"><i>48</i>&nbsp;        readIdsOfEventRTsForNotices();</b>
+<i>49</i>&nbsp;        
+<i>50</i>&nbsp;        //- check if custom notifications are enabled for the event
+<b class="nc"><i>51</i>&nbsp;        if (event.Send_Calendar_Invites__c != true</b>
+<b class="nc"><i>52</i>&nbsp;            || (event.RecordTypeId != null &amp;&amp; !idsOfEventRTsForNotices.contains(event.RecordTypeId)))</b>
+<i>53</i>&nbsp;        {
+<b class="nc"><i>54</i>&nbsp;            return false;</b>
+<i>55</i>&nbsp;        }
+<i>56</i>&nbsp;        
+<i>57</i>&nbsp;        //- check if the event is not a child recurring event (it has no reference
+<i>58</i>&nbsp;        //to recurrence activity or it&#39;s a main recurring event)
+<b class="nc"><i>59</i>&nbsp;        return (event.RecurrenceActivityId == null || event.IsRecurrence == true);</b>
+<i>60</i>&nbsp;    }
+<i>61</i>&nbsp;    
+<b class="nc"><i>62</i>&nbsp;    private static EventRelation[] findAttendees(Event oldEvent, Event newEvent,</b>
+<i>63</i>&nbsp;        Integer attendeesGroupCode)
+<i>64</i>&nbsp;    {
+<b class="nc"><i>65</i>&nbsp;        if (oldEvent == null || newEvent == null)</b>
+<i>66</i>&nbsp;        {
+<b class="nc"><i>67</i>&nbsp;            return new EventRelation[0];</b>
+<i>68</i>&nbsp;        }
+<i>69</i>&nbsp;        
+<i>70</i>&nbsp;        //find attendees
+<b class="nc"><i>71</i>&nbsp;        if (attendeesGroupCode == CODE_NEW_ATTENDEES)</b>
+<i>72</i>&nbsp;        {
+<i>73</i>&nbsp;            //get attendees who exist after update, but did not exist before update
+<b class="nc"><i>74</i>&nbsp;            return DC_SetUtils.findRelativeComplement(</b>
+<b class="nc"><i>75</i>&nbsp;                newEvent.EventRelations, oldEvent.EventRelations);</b>
+<i>76</i>&nbsp;        }
+<b class="nc"><i>77</i>&nbsp;        else if (attendeesGroupCode == CODE_DELETED_ATTENDEES)</b>
+<i>78</i>&nbsp;        {
+<i>79</i>&nbsp;            //get attendees who existed before update, but do not exist after update
+<b class="nc"><i>80</i>&nbsp;            return DC_SetUtils.findRelativeComplement(</b>
+<b class="nc"><i>81</i>&nbsp;                oldEvent.EventRelations, newEvent.EventRelations);</b>
+<i>82</i>&nbsp;        }
+<i>83</i>&nbsp;        else
+<i>84</i>&nbsp;        {
+<i>85</i>&nbsp;            //get attendees who existed before update and exist after update
+<b class="nc"><i>86</i>&nbsp;            return DC_SetUtils.findIntersection(newEvent.EventRelations,</b>
+<b class="nc"><i>87</i>&nbsp;                oldEvent.EventRelations);</b>
+<i>88</i>&nbsp;        }
+<i>89</i>&nbsp;    }
+<i>90</i>&nbsp;    
+<b class="nc"><i>91</i>&nbsp;    private static DC_SObjectHelper initializeHelperForOrganizers(</b>
+<i>92</i>&nbsp;        DC_EventNoticesBuildersGroup[] buildersGroups)
+<i>93</i>&nbsp;    {
+<i>94</i>&nbsp;        //extract events from groups
+<b class="nc"><i>95</i>&nbsp;        List&lt;Event&gt; events = new List&lt;Event&gt;();</b>
+<b class="nc"><i>96</i>&nbsp;        for (DC_EventNoticesBuildersGroup buildersGroup : buildersGroups)</b>
+<b class="nc"><i>97</i>&nbsp;        { </b>
+<b class="nc"><i>98</i>&nbsp;            events.add(buildersGroup.event);</b>
+<i>99</i>&nbsp;        }
+<i>100</i>&nbsp;        
+<i>101</i>&nbsp;        //extract organizers of events
+<b class="nc"><i>102</i>&nbsp;        String[] organizersIds = DC_SObjectUtils.extractStringFieldValues(</b>
+<b class="nc"><i>103</i>&nbsp;            events, DC_EventDAO.FIELD_ORGANIZER_ID);</b>
+<i>104</i>&nbsp;        //get organizers
+<b class="nc"><i>105</i>&nbsp;        User[] organizers = DC_UserDAO.getUsersByIds(organizersIds);</b>
+<i>106</i>&nbsp;        //initialize and return a helper for organizers
+<b class="nc"><i>107</i>&nbsp;        return DC_SObjectHelper.createHelperForList(organizers);</b>
+<i>108</i>&nbsp;    }
+<i>109</i>&nbsp;    
+<b class="nc"><i>110</i>&nbsp;    private static String getPartOfUID_InstanceUrl()</b>
+<i>111</i>&nbsp;    {
+<b class="nc"><i>112</i>&nbsp;        if (String.isBlank(partOfUID_InstanceUrl))</b>
+<i>113</i>&nbsp;        {
+<b class="nc"><i>114</i>&nbsp;            String instanceUrl = Url.getSalesforceBaseUrl().toExternalForm();</b>
+<b class="nc"><i>115</i>&nbsp;            if (String.isNotBlank(instanceUrl))</b>
+<i>116</i>&nbsp;            {
+<b class="nc"><i>117</i>&nbsp;                partOfUID_InstanceUrl = instanceUrl.replaceAll(&#39;[:./]&#39;, &#39;&#39;);</b>
+<i>118</i>&nbsp;            }
+<i>119</i>&nbsp;        }
+<b class="nc"><i>120</i>&nbsp;        return partOfUID_InstanceUrl;</b>
+<i>121</i>&nbsp;    }
+<i>122</i>&nbsp;    //
+<i>123</i>&nbsp;    
+<i>124</i>&nbsp;    //
+<i>125</i>&nbsp;    //Public static methods
+<i>126</i>&nbsp;    //
+<b class="nc"><i>127</i>&nbsp;    public static Event[] reReadEventsForNotices(Event[] events, Boolean selectAttachments)</b>
+<i>128</i>&nbsp;    {
+<i>129</i>&nbsp;        //check passed parameters
+<b class="nc"><i>130</i>&nbsp;        if (events == null || events.size() == 0)</b>
+<i>131</i>&nbsp;        {
+<b class="nc"><i>132</i>&nbsp;            return new Event[0];</b>
+<i>133</i>&nbsp;        }
+<i>134</i>&nbsp;        
+<i>135</i>&nbsp;        //STEP #1: prepare a filter
+<i>136</i>&nbsp;        //- initialize a new filter
+<b class="nc"><i>137</i>&nbsp;        DC_EventDAO.Filter filter = new DC_EventDAO.Filter();</b>
+<i>138</i>&nbsp;        //- fill Ids of events
+<b class="nc"><i>139</i>&nbsp;        filter.ids = DC_SObjectUtils.extractIds(events, false);</b>
+<i>140</i>&nbsp;        
+<i>141</i>&nbsp;        //- initialize and fill a sub-filter for child event relations
+<b class="nc"><i>142</i>&nbsp;        filter.selectRelations = true;</b>
+<b class="nc"><i>143</i>&nbsp;        filter.relationsFilter = new DC_EventRelationDAO.Filter();</b>
+<i>144</i>&nbsp;        //filter.relationsFilter.relatedSObjectTypes = DC_EventRelationDAO.RELATED_PERSON_OBJECTS;
+<b class="nc"><i>145</i>&nbsp;        filter.relationsFilter.sortingFields.add(</b>
+<b class="nc"><i>146</i>&nbsp;            new DC_SortingField(DC_EventRelationDAO.FIELD_RELATION_NAME));</b>
+<i>147</i>&nbsp;        
+<i>148</i>&nbsp;        //- initialize and fill a sub-filter for child attachments
+<b class="nc"><i>149</i>&nbsp;        filter.selectAttachments = selectAttachments;</b>
+<b class="nc"><i>150</i>&nbsp;        if (selectAttachments)</b>
+<i>151</i>&nbsp;        {
+<b class="nc"><i>152</i>&nbsp;            filter.attachmentsFilter = new DC_AttachmentDAO.Filter();</b>
+<b class="nc"><i>153</i>&nbsp;            filter.attachmentsFilter.sortingFields.add(</b>
+<b class="nc"><i>154</i>&nbsp;                new DC_SortingField( DC_AttachmentDAO.FIELD_NAME));</b>
+<i>155</i>&nbsp;        }
+<i>156</i>&nbsp;        
+<i>157</i>&nbsp;        //STEP #2: get and return events
+<b class="nc"><i>158</i>&nbsp;        return DC_EventDAO.getEventsByFilter(filter);</b>
+<i>159</i>&nbsp;    }
+<i>160</i>&nbsp;    
+<b class="nc"><i>161</i>&nbsp;    public static DC_EventNoticeReceiver[] generateReceivers(EventRelation[] attendees)</b>
+<i>162</i>&nbsp;    {
+<i>163</i>&nbsp;        //check passed parameters
+<b class="nc"><i>164</i>&nbsp;        if (attendees == null)</b>
+<i>165</i>&nbsp;        {
+<b class="nc"><i>166</i>&nbsp;            return null;</b>
+<i>167</i>&nbsp;        }
+<i>168</i>&nbsp;        
+<b class="nc"><i>169</i>&nbsp;        List&lt;DC_EventNoticeReceiver&gt; receivers = new List&lt;DC_EventNoticeReceiver&gt;();</b>
+<b class="nc"><i>170</i>&nbsp;        for (EventRelation attendee : attendees)</b>
+<b class="nc"><i>171</i>&nbsp;        {</b>
+<i>172</i>&nbsp;            //only SF-users should receive emails
+<b class="nc"><i>173</i>&nbsp;            if (attendee.Relation.Type == DC_SObjectUtils.USER_TYPE)</b>
+<i>174</i>&nbsp;            {
+<i>175</i>&nbsp;                //generate iCalendarUID 
+<b class="nc"><i>176</i>&nbsp;                String iCalendarUID = generateICalendarUID(attendee.EventId, attendee.Id);</b>
+<i>177</i>&nbsp;                //generate and add a new receiver
+<b class="nc"><i>178</i>&nbsp;                receivers.add(new DC_EventNoticeReceiver(attendee.RelationId,</b>
+<b class="nc"><i>179</i>&nbsp;                    null, iCalendarUID));</b>
+<i>180</i>&nbsp;            }
+<i>181</i>&nbsp;        }
+<b class="nc"><i>182</i>&nbsp;        return receivers;</b>
+<i>183</i>&nbsp;    }
+<i>184</i>&nbsp;    
+<b class="nc"><i>185</i>&nbsp;    public static DC_EventNoticeReceiver generateReceiverForOrganizer(Event event)</b>
+<i>186</i>&nbsp;    {
+<i>187</i>&nbsp;        //check passed parameters
+<b class="nc"><i>188</i>&nbsp;        if (event == null)</b>
+<i>189</i>&nbsp;        {
+<b class="nc"><i>190</i>&nbsp;            return null;</b>
+<i>191</i>&nbsp;        }
+<i>192</i>&nbsp;        //generate iCalendarUID 
+<b class="nc"><i>193</i>&nbsp;        String iCalendarUID = generateICalendarUID(event.Id, event.OwnerId);</b>
+<i>194</i>&nbsp;        //generate and return a receiver
+<b class="nc"><i>195</i>&nbsp;        return new DC_EventNoticeReceiver(event.OwnerId, null, iCalendarUID);</b>
+<i>196</i>&nbsp;    }
+<i>197</i>&nbsp;    
+<b class="nc"><i>198</i>&nbsp;    public static Event[] selectEventsForNotices(Event[] events)</b>
+<i>199</i>&nbsp;    {
+<i>200</i>&nbsp;        //check passed parameters
+<b class="nc"><i>201</i>&nbsp;        if (events == null)</b>
+<i>202</i>&nbsp;        {
+<b class="nc"><i>203</i>&nbsp;            return null;</b>
+<i>204</i>&nbsp;        }
+<i>205</i>&nbsp;        
+<b class="nc"><i>206</i>&nbsp;        List&lt;Event&gt; selectedEvents = new List&lt;Event&gt;();</b>
+<b class="nc"><i>207</i>&nbsp;        for (Event event : events)</b>
+<b class="nc"><i>208</i>&nbsp;        {</b>
+<b class="nc"><i>209</i>&nbsp;            if (customNoticesEnabled(event))</b>
+<i>210</i>&nbsp;            {
+<b class="nc"><i>211</i>&nbsp;                selectedEvents.add(event);</b>
+<i>212</i>&nbsp;            }
+<i>213</i>&nbsp;        }
+<b class="nc"><i>214</i>&nbsp;        return selectedEvents;</b>
+<i>215</i>&nbsp;    }
+<i>216</i>&nbsp;    
+<b class="nc"><i>217</i>&nbsp;    public static Event [] selectEventsForNoticesWhenCreating(Event[] events, boolean fromTrigger){</b>
+<i>218</i>&nbsp;        //check passed parameters
+<b class="nc"><i>219</i>&nbsp;        if (events == null)</b>
+<i>220</i>&nbsp;        {
+<b class="nc"><i>221</i>&nbsp;            return null;</b>
+<i>222</i>&nbsp;        }
+<i>223</i>&nbsp;        
+<b class="nc"><i>224</i>&nbsp;        List&lt;Event&gt; selectedEvents = new List&lt;Event&gt;();</b>
+<i>225</i>&nbsp;        
+<b class="nc"><i>226</i>&nbsp;        for (Event event : selectEventsForNotices(events))</b>
+<b class="nc"><i>227</i>&nbsp;        {</b>
+<b class="nc"><i>228</i>&nbsp;            if (!fromTrigger || event.Bypass_Auto_Invites_When_Creating__c == null || event.Bypass_Auto_Invites_When_Creating__c == false)</b>
+<i>229</i>&nbsp;            {
+<b class="nc"><i>230</i>&nbsp;                selectedEvents.add(event);</b>
+<i>231</i>&nbsp;            }
+<i>232</i>&nbsp;        }
+<i>233</i>&nbsp;        
+<b class="nc"><i>234</i>&nbsp;        return selectedEvents;</b>
+<i>235</i>&nbsp;    }
+<i>236</i>&nbsp;    
+<b class="nc"><i>237</i>&nbsp;    public static EventRelation[] findNewAttendees(Event oldEvent, Event newEvent)</b>
+<i>238</i>&nbsp;    {
+<b class="nc"><i>239</i>&nbsp;        return findAttendees(oldEvent, newEvent, CODE_NEW_ATTENDEES);</b>
+<i>240</i>&nbsp;    }
+<i>241</i>&nbsp;    
+<b class="nc"><i>242</i>&nbsp;    public static EventRelation[] findDeletedAttendees(Event oldEvent, Event newEvent)</b>
+<i>243</i>&nbsp;    {
+<b class="nc"><i>244</i>&nbsp;        return findAttendees(oldEvent, newEvent, CODE_DELETED_ATTENDEES);</b>
+<i>245</i>&nbsp;    }
+<i>246</i>&nbsp;    
+<b class="nc"><i>247</i>&nbsp;    public static EventRelation[] findUnchangedAttendees(Event oldEvent, Event newEvent)</b>
+<i>248</i>&nbsp;    {
+<b class="nc"><i>249</i>&nbsp;        return findAttendees(oldEvent, newEvent, CODE_UNCHANGED_ATTENDEES);</b>
+<i>250</i>&nbsp;    }
+<i>251</i>&nbsp;    
+<b class="nc"><i>252</i>&nbsp;    public static Boolean isUpdateNoticeRequired(Event oldEvent, Event newEvent,</b>
+<i>253</i>&nbsp;        EventRelation[] newAttendees, EventRelation[] deletedAttendees)
+<i>254</i>&nbsp;    {
+<b class="nc"><i>255</i>&nbsp;        if (oldEvent == null || newEvent == null)</b>
+<i>256</i>&nbsp;        {
+<b class="nc"><i>257</i>&nbsp;            return false;</b>
+<i>258</i>&nbsp;        }
+<i>259</i>&nbsp;        
+<b class="nc"><i>260</i>&nbsp;        Boolean isUpdateNoticeRequired =</b>
+<b class="nc"><i>261</i>&nbsp;            (oldEvent.Subject != newEvent.Subject ||</b>
+<b class="nc"><i>262</i>&nbsp;            oldEvent.Location != newEvent.Location ||</b>
+<b class="nc"><i>263</i>&nbsp;            oldEvent.OwnerId != newEvent.OwnerId ||</b>
+<b class="nc"><i>264</i>&nbsp;            oldEvent.StartDateTime != newEvent.StartDateTime ||</b>
+<b class="nc"><i>265</i>&nbsp;            oldEvent.EndDateTime != newEvent.EndDateTime ||</b>
+<b class="nc"><i>266</i>&nbsp;            oldEvent.IsAllDayEvent != newEvent.IsAllDayEvent ||</b>
+<b class="nc"><i>267</i>&nbsp;            newEvent.IsRecurrence &amp;&amp;</b>
+<b class="nc"><i>268</i>&nbsp;                (oldEvent.RecurrenceType != newEvent.RecurrenceType ||</b>
+<b class="nc"><i>269</i>&nbsp;                oldEvent.RecurrenceInterval != newEvent.RecurrenceInterval ||</b>
+<b class="nc"><i>270</i>&nbsp;                oldEvent.RecurrenceTimeZoneSidKey != newEvent.RecurrenceTimeZoneSidKey ||</b>
+<b class="nc"><i>271</i>&nbsp;                oldEvent.RecurrenceStartDateTime != newEvent.RecurrenceStartDateTime ||</b>
+<b class="nc"><i>272</i>&nbsp;                oldEvent.RecurrenceEndDateOnly != newEvent.RecurrenceEndDateOnly ||</b>
+<b class="nc"><i>273</i>&nbsp;                oldEvent.RecurrenceMonthOfYear != newEvent.RecurrenceMonthOfYear ||</b>
+<b class="nc"><i>274</i>&nbsp;                oldEvent.RecurrenceInstance != newEvent.RecurrenceInstance ||</b>
+<b class="nc"><i>275</i>&nbsp;                oldEvent.RecurrenceDayOfWeekMask != newEvent.RecurrenceDayOfWeekMask ||</b>
+<b class="nc"><i>276</i>&nbsp;                oldEvent.RecurrenceDayOfMonth != newEvent.RecurrenceDayOfMonth) ||</b>
+<b class="nc"><i>277</i>&nbsp;            (oldEvent.Send_Calendar_Invites__c == false &amp;&amp; newEvent.Send_Calendar_Invites__c == true) ||</b>
+<b class="nc"><i>278</i>&nbsp;            (newAttendees != null &amp;&amp; newAttendees.size() &gt; 0) ||</b>
+<b class="nc"><i>279</i>&nbsp;            (deletedAttendees != null &amp;&amp; deletedAttendees.size() &gt; 0)</b>
+<i>280</i>&nbsp;            );
+<i>281</i>&nbsp;        
+<b class="nc"><i>282</i>&nbsp;        return isUpdateNoticeRequired;</b>
+<i>283</i>&nbsp;    }
+<i>284</i>&nbsp;    
+<i>285</i>&nbsp;    
+<b class="nc"><i>286</i>&nbsp;    public static void generateAndSendEmails(DC_EventNoticesBuildersGroup[] buildersGroups)</b>
+<i>287</i>&nbsp;    {
+<i>288</i>&nbsp;        //check passed parameters
+<b class="nc"><i>289</i>&nbsp;        if (buildersGroups == null)</b>
+<i>290</i>&nbsp;        {
+<b class="nc"><i>291</i>&nbsp;            return;</b>
+<i>292</i>&nbsp;        }
+<i>293</i>&nbsp;        
+<i>294</i>&nbsp;        //STEP #1: prepare necessary data
+<b class="nc"><i>295</i>&nbsp;        DC_SObjectHelper organizersHelper = initializeHelperForOrganizers(buildersGroups);</b>
+<i>296</i>&nbsp;        
+<i>297</i>&nbsp;        //STEP #2: generate emails
+<b class="nc"><i>298</i>&nbsp;        List&lt;Messaging.SingleEmailMessage&gt; emails = new List&lt;Messaging.SingleEmailMessage&gt;();</b>
+<b class="nc"><i>299</i>&nbsp;        for (DC_EventNoticesBuildersGroup buildersGroup : buildersGroups)</b>
+<b class="nc"><i>300</i>&nbsp;        {</b>
+<b class="nc"><i>301</i>&nbsp;            Event currentEvent = buildersGroup.event;</b>
+<i>302</i>&nbsp;            
+<i>303</i>&nbsp;            //- get organizer for the event
+<b class="nc"><i>304</i>&nbsp;            User organizer = (User)organizersHelper.getSObjectById(currentEvent.OwnerId);</b>
+<i>305</i>&nbsp;            
+<i>306</i>&nbsp;            //- initialize the build parameters which will be used in all builders
+<b class="nc"><i>307</i>&nbsp;            DC_EventNoticesBuilder.BuildParameters parameters =</b>
+<b class="nc"><i>308</i>&nbsp;                new DC_EventNoticesBuilder.BuildParameters();</b>
+<i>309</i>&nbsp;            //- initialize and set a content builder
+<b class="nc"><i>310</i>&nbsp;            parameters.contentBuilder = new DC_EventNoticeContentBuilder(currentEvent, organizer);</b>
+<i>311</i>&nbsp;            //- build and set a templated ICalendar-content
+<b class="nc"><i>312</i>&nbsp;            DC_ICalendarContentBuilder iCalendarBuilder =</b>
+<b class="nc"><i>313</i>&nbsp;                DC_ICalendarForSfEventUtils.initializeBuilder(currentEvent, organizer);</b>
+<b class="nc"><i>314</i>&nbsp;            parameters.iCalendarTemplate = iCalendarBuilder.buildContent(true);</b>
+<i>315</i>&nbsp;            
+<i>316</i>&nbsp;            //build messages in an every builder
+<b class="nc"><i>317</i>&nbsp;            for (DC_EventNoticesBuilder noticesBuilder : buildersGroup.builders)</b>
+<b class="nc"><i>318</i>&nbsp;            {</b>
+<b class="nc"><i>319</i>&nbsp;                emails.addAll(noticesBuilder.buildMessages(parameters));</b>
+<i>320</i>&nbsp;            }
+<i>321</i>&nbsp;        }
+<i>322</i>&nbsp;        
+<i>323</i>&nbsp;        //STEP #3: send all emails
+<b class="nc"><i>324</i>&nbsp;        DC_EmailUtils.sendEmails(emails, true);</b>
+<i>325</i>&nbsp;    }
+<i>326</i>&nbsp;    
+<b class="nc"><i>327</i>&nbsp;    public static String generateICalendarUID(String eventId, String participantId)</b>
+<i>328</i>&nbsp;    {
+<b class="nc"><i>329</i>&nbsp;        return String.format(UID_FORMAT, new String[] {eventId, participantId, partOfUID_InstanceUrl});</b>
+<i>330</i>&nbsp;    }
+<i>331</i>&nbsp;    
+<b class="nc"><i>332</i>&nbsp;    public static ICalendarUID parseICalendarUID(String keyInString)</b>
+<i>333</i>&nbsp;    {
+<i>334</i>&nbsp;        //check input parameters
+<b class="nc"><i>335</i>&nbsp;        if (String.isBlank(keyInString))</b>
+<i>336</i>&nbsp;        {
+<b class="nc"><i>337</i>&nbsp;            return null;</b>
+<i>338</i>&nbsp;        }
+<i>339</i>&nbsp;        
+<i>340</i>&nbsp;        //extract parts of the key
+<b class="nc"><i>341</i>&nbsp;        String[] partsOfKey = keyInString.split(SEPARATOR_IN_UID);</b>
+<i>342</i>&nbsp;        //analyze parts of the UID and create a UID-object
+<b class="nc"><i>343</i>&nbsp;        ICalendarUID uId = null;</b>
+<b class="nc"><i>344</i>&nbsp;        if (partsOfKey.size() == NUMBER_OF_PARTS_IN_UID</b>
+<b class="nc"><i>345</i>&nbsp;            &amp;&amp; partsOfKey[INDEX_OF_EVENT_ID_IN_UID].length() == DC_SObjectUtils.ID_LENGTH</b>
+<b class="nc"><i>346</i>&nbsp;            &amp;&amp; DC_SObjectUtils.idBelongToSObject(partsOfKey[INDEX_OF_EVENT_ID_IN_UID], Event.SObjectType)</b>
+<b class="nc"><i>347</i>&nbsp;            &amp;&amp; partsOfKey[INDEX_OF_PERSON_ID_IN_UID].length() == DC_SObjectUtils.ID_LENGTH)</b>
+<i>348</i>&nbsp;        {
+<i>349</i>&nbsp;            //in this branch we can create a correct key
+<b class="nc"><i>350</i>&nbsp;            uId = new ICalendarUID();</b>
+<b class="nc"><i>351</i>&nbsp;            uId.eventId = partsOfKey[INDEX_OF_EVENT_ID_IN_UID];</b>
+<b class="nc"><i>352</i>&nbsp;            uId.personId = partsOfKey[INDEX_OF_PERSON_ID_IN_UID];</b>
+<b class="nc"><i>353</i>&nbsp;            uId.hostName = partsOfKey[INDEX_OF_HOST_NAME_IN_UID];</b>
+<i>354</i>&nbsp;        }
+<i>355</i>&nbsp;        
+<b class="nc"><i>356</i>&nbsp;        return uId;</b>
+<i>357</i>&nbsp;    }
+<i>358</i>&nbsp;    //
+<i>359</i>&nbsp;    
+<i>360</i>&nbsp;    
+<i>361</i>&nbsp;    
+<i>362</i>&nbsp;    
+<i>363</i>&nbsp;    //
+<i>364</i>&nbsp;    //Data types
+<i>365</i>&nbsp;    //
+<i>366</i>&nbsp;    public class ICalendarUID
+<i>367</i>&nbsp;    {
+<i>368</i>&nbsp;        //
+<i>369</i>&nbsp;        //Properties
+<i>370</i>&nbsp;        //
+<b class="nc"><i>371</i>&nbsp;        public String eventId {get; set;}</b>
+<b class="nc"><i>372</i>&nbsp;        public String personId {get; set;}</b>
+<b class="nc"><i>373</i>&nbsp;        public String hostName {get; set;}</b>
+<i>374</i>&nbsp;        //
+<i>375</i>&nbsp;    }
+<i>376</i>&nbsp;    //
+<i>377</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

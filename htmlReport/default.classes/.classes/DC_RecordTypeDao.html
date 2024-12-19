@@ -1,0 +1,98 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DC_RecordTypeDao</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DC_RecordTypeDao (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DC_RecordTypeDao</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 8)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>DC_RecordTypeDao</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*
+<i>2</i>&nbsp; * Author: SLegostaev
+<i>3</i>&nbsp; * Created: 9/21/2017
+<i>4</i>&nbsp; */
+<i>5</i>&nbsp;public class DC_RecordTypeDao {
+<i>6</i>&nbsp;    
+<b class="nc"><i>7</i>&nbsp;    public static RecordType getRecordTypeByIdForObject(String recordId, String objectName) {</b>
+<b class="nc"><i>8</i>&nbsp;        RecordType recordType = null;</b>
+<b class="nc"><i>9</i>&nbsp;        try {</b>
+<b class="nc"><i>10</i>&nbsp;            recordType = [select Name from RecordType where id = :recordId and SobjectType = :objectName];</b>
+<b class="nc"><i>11</i>&nbsp;        } catch (Exception e) {}</b>
+<b class="nc"><i>12</i>&nbsp;        return recordType;</b>
+<i>13</i>&nbsp;    }
+<i>14</i>&nbsp;    
+<i>15</i>&nbsp;    /*
+<i>16</i>&nbsp;    public static RecordType getRecordTypeByNameForObject(String recordTypeName, String objectName) {
+<i>17</i>&nbsp;        RecordType recordType = null;
+<i>18</i>&nbsp;        try {
+<i>19</i>&nbsp;            recordType = [select Id from RecordType where Name = :recordTypeName and SobjectType = :objectName];
+<i>20</i>&nbsp;        } catch (Exception e) {}
+<i>21</i>&nbsp;        return recordType;
+<i>22</i>&nbsp;    }*/
+<i>23</i>&nbsp;    
+<b class="nc"><i>24</i>&nbsp;    public static List&lt;RecordType&gt; getRecordTypeByNamesForObject(Set&lt;String&gt; recordTypeNames, String objectName) {</b>
+<b class="nc"><i>25</i>&nbsp;        return [select Id from RecordType where Name IN :recordTypeNames and SobjectType = :objectName];</b>
+<i>26</i>&nbsp;    }
+<i>27</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

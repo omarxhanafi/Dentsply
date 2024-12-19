@@ -1,0 +1,94 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ExpertTriggerHandler</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ExpertTriggerHandler (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ExpertTriggerHandler</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>ExpertTriggerHandler</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         Ahmed LOUDRASSI (Salesforce) 20191127
+<i>3</i>&nbsp;Description:    Expert  Trigger Handler Class
+<i>4</i>&nbsp;History
+<i>5</i>&nbsp;20191023   Ahmed LOUDRASSI   Migrated   setExpertName trigger. (#)
+<i>6</i>&nbsp;----------------------------------------------------------------------------------------*/
+<i>7</i>&nbsp;public with sharing class ExpertTriggerHandler extends TriggerHandler {
+<i>8</i>&nbsp;	private List&lt;Expert__c&gt; oldExpertList, newExpertList;
+<i>9</i>&nbsp;    private Map&lt;Id, Expert__c&gt; oldExpertMap, newExpertMap;
+<i>10</i>&nbsp;
+<b class="nc"><i>11</i>&nbsp;    public ExpertTriggerHandler() {</b>
+<b class="nc"><i>12</i>&nbsp;        oldExpertList = (List&lt;Expert__c&gt;) Trigger.old;</b>
+<b class="nc"><i>13</i>&nbsp;        newExpertList = (List&lt;Expert__c&gt;) Trigger.new;</b>
+<b class="nc"><i>14</i>&nbsp;        oldExpertMap = (Map&lt;Id, Expert__c&gt;) Trigger.oldMap;</b>
+<b class="nc"><i>15</i>&nbsp;        newExpertMap = (Map&lt;Id, Expert__c&gt;) Trigger.newMap;</b>
+<i>16</i>&nbsp;    }
+<b class="nc"><i>17</i>&nbsp;    protected override void beforeInsert() {</b>
+<b class="nc"><i>18</i>&nbsp;        ExpertTriggerHelper.setExpertName(newExpertList);</b>
+<i>19</i>&nbsp;    }
+<b class="nc"><i>20</i>&nbsp;    protected override void beforeUpdate() {</b>
+<b class="nc"><i>21</i>&nbsp;        ExpertTriggerHelper.setExpertName(newExpertList);</b>
+<i>22</i>&nbsp;    }
+<i>23</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,248 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DC_ICalendarForSfEventUtils</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DC_ICalendarForSfEventUtils (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DC_ICalendarForSfEventUtils</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 81)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>DC_ICalendarForSfEventUtils</h2>
+<div class="sourceCode"><i>1</i>&nbsp;//
+<i>2</i>&nbsp;//This class provides utilities to make compatible ICalendar-format and SF-event.
+<i>3</i>&nbsp;//
+<i>4</i>&nbsp;//Author: Gennadiy Pervukhin (11-11-2014)
+<i>5</i>&nbsp;public class DC_ICalendarForSfEventUtils
+<i>6</i>&nbsp;{
+<i>7</i>&nbsp;	//
+<i>8</i>&nbsp;	//Constants
+<i>9</i>&nbsp;	//
+<b class="nc"><i>10</i>&nbsp;	private static final String ALARM_DESCRIPTION_FORMAT = &#39;Reminder for {0}&#39;;</b>
+<i>11</i>&nbsp;	
+<i>12</i>&nbsp;	//all responses should go to this address, not to an address of a real organizer
+<b class="nc"><i>13</i>&nbsp;	private static final String RESPONSE_MANAGER_EMAIL = DC_SettingsUtils.getStringValueByName(</b>
+<b class="nc"><i>14</i>&nbsp;		DC_SettingsUtils.ADDRESS_OF_REPLY_TO_EVENT_NOTICE);</b>
+<i>15</i>&nbsp;	//
+<i>16</i>&nbsp;	
+<i>17</i>&nbsp;	//
+<i>18</i>&nbsp;	//Private static methods
+<i>19</i>&nbsp;	//
+<b class="nc"><i>20</i>&nbsp;	private static void setAlarm(DC_ICalendarContentBuilder iCalendarBuilder, Event event)</b>
+<i>21</i>&nbsp;	{ 
+<i>22</i>&nbsp;		//stop the method if reminder is not set
+<b class="nc"><i>23</i>&nbsp;		if (event.IsReminderSet != true)</b>
+<i>24</i>&nbsp;		{
+<b class="nc"><i>25</i>&nbsp;			return;</b>
+<i>26</i>&nbsp;		}
+<i>27</i>&nbsp;		
+<b class="nc"><i>28</i>&nbsp;		iCalendarBuilder.eventAlarm = new DC_ICalendarContentBuilder.Alarm();</b>
+<i>29</i>&nbsp;		//set alarm description
+<b class="nc"><i>30</i>&nbsp;		iCalendarBuilder.eventAlarm.description = String.format(</b>
+<b class="nc"><i>31</i>&nbsp;			ALARM_DESCRIPTION_FORMAT, new String[] {event.Subject});</b>
+<i>32</i>&nbsp;		//set alarm offset in minutes
+<b class="nc"><i>33</i>&nbsp;		iCalendarBuilder.eventAlarm.offsetInMinutesFromStart =</b>
+<b class="nc"><i>34</i>&nbsp;			DC_DateTimeUtils.calculateOffsetInMinutes(event.StartDateTime,</b>
+<b class="nc"><i>35</i>&nbsp;				event.ReminderDateTime);</b>
+<i>36</i>&nbsp;	}
+<i>37</i>&nbsp;	
+<b class="nc"><i>38</i>&nbsp;	private static void setRecurrenceRule(DC_ICalendarContentBuilder iCalendarBuilder,</b>
+<i>39</i>&nbsp;		Event event)
+<i>40</i>&nbsp;	{
+<i>41</i>&nbsp;		//stop the method if it&#39;s not a recurring event
+<b class="nc"><i>42</i>&nbsp;		if (event.IsRecurrence != true)</b>
+<i>43</i>&nbsp;		{
+<b class="nc"><i>44</i>&nbsp;			return;</b>
+<i>45</i>&nbsp;		}
+<i>46</i>&nbsp;		
+<i>47</i>&nbsp;		//set basic parameters
+<b class="nc"><i>48</i>&nbsp;		DC_ICalendarContentBuilder.RecurrenceRule rule =</b>
+<b class="nc"><i>49</i>&nbsp;			new DC_ICalendarContentBuilder.RecurrenceRule();</b>
+<i>50</i>&nbsp;		//in ICalendar we should set end date and time. That&#39;s why we take end
+<i>51</i>&nbsp;		//date of the recurring event and convert it to datetime, which is equal
+<i>52</i>&nbsp;		//to the end of this day
+<b class="nc"><i>53</i>&nbsp;		DateTime eventEndDateTime = event.RecurrenceEndDateOnly;</b>
+<b class="nc"><i>54</i>&nbsp;		rule.endDateTime = eventEndDateTime.addDays(1).addSeconds(-1);</b>
+<i>55</i>&nbsp;		
+<i>56</i>&nbsp;		//set parameters which depend on recurrence type
+<b class="nc"><i>57</i>&nbsp;		if (event.RecurrenceType == DC_EventRecurrenceType.DAILY)</b>
+<i>58</i>&nbsp;		{
+<b class="nc"><i>59</i>&nbsp;			rule.frequency = DC_ICalendarContentBuilder.FREQUENCY_DAILY;</b>
+<b class="nc"><i>60</i>&nbsp;			rule.interval = event.RecurrenceInterval;</b>
+<i>61</i>&nbsp;		}
+<b class="nc"><i>62</i>&nbsp;		else if (event.RecurrenceType == DC_EventRecurrenceType.EVERY_WEEKDAY)</b>
+<i>63</i>&nbsp;		{
+<b class="nc"><i>64</i>&nbsp;			rule.frequency = DC_ICalendarContentBuilder.FREQUENCY_WEEKLY;</b>
+<b class="nc"><i>65</i>&nbsp;			rule.byDays = DC_ICalendarContentUtils.convertSfWeekDayCodes(</b>
+<b class="nc"><i>66</i>&nbsp;				event.RecurrenceDayOfWeekMask);</b>
+<i>67</i>&nbsp;		}
+<b class="nc"><i>68</i>&nbsp;		else if (event.RecurrenceType == DC_EventRecurrenceType.WEEKLY)</b>
+<i>69</i>&nbsp;		{
+<b class="nc"><i>70</i>&nbsp;			rule.frequency = DC_ICalendarContentBuilder.FREQUENCY_WEEKLY;</b>
+<b class="nc"><i>71</i>&nbsp;			rule.interval = event.RecurrenceInterval;</b>
+<b class="nc"><i>72</i>&nbsp;			rule.byDays = DC_ICalendarContentUtils.convertSfWeekDayCodes(</b>
+<b class="nc"><i>73</i>&nbsp;				event.RecurrenceDayOfWeekMask);</b>
+<i>74</i>&nbsp;		}
+<b class="nc"><i>75</i>&nbsp;		else if (event.RecurrenceType == DC_EventRecurrenceType.MONTHLY)</b>
+<i>76</i>&nbsp;		{
+<b class="nc"><i>77</i>&nbsp;			rule.frequency = DC_ICalendarContentBuilder.FREQUENCY_MONTHLY;</b>
+<b class="nc"><i>78</i>&nbsp;			rule.interval = event.RecurrenceInterval;</b>
+<b class="nc"><i>79</i>&nbsp;			rule.byMonthDays = createSafeIntegerArray(event.RecurrenceDayOfMonth);</b>
+<i>80</i>&nbsp;		}
+<b class="nc"><i>81</i>&nbsp;		else if (event.RecurrenceType == DC_EventRecurrenceType.MONTHLY_Nth)</b>
+<i>82</i>&nbsp;		{
+<b class="nc"><i>83</i>&nbsp;			rule.frequency = DC_ICalendarContentBuilder.FREQUENCY_MONTHLY;</b>
+<b class="nc"><i>84</i>&nbsp;			rule.interval = event.RecurrenceInterval;</b>
+<b class="nc"><i>85</i>&nbsp;			rule.byDays = DC_ICalendarContentUtils.convertSfWeekDayCodes(</b>
+<b class="nc"><i>86</i>&nbsp;				event.RecurrenceDayOfWeekMask);</b>
+<b class="nc"><i>87</i>&nbsp;			rule.positionsOfDays = getPositionsOfDays(event);</b>
+<i>88</i>&nbsp;		}
+<b class="nc"><i>89</i>&nbsp;		else if (event.RecurrenceType == DC_EventRecurrenceType.YEARLY)</b>
+<i>90</i>&nbsp;		{
+<b class="nc"><i>91</i>&nbsp;			rule.frequency = DC_ICalendarContentBuilder.FREQUENCY_YEARLY;</b>
+<b class="nc"><i>92</i>&nbsp;			rule.byMonthDays = createSafeIntegerArray(event.RecurrenceDayOfMonth);</b>
+<b class="nc"><i>93</i>&nbsp;			rule.byMonths = createSafeIntegerArray(</b>
+<b class="nc"><i>94</i>&nbsp;				DC_ICalendarContentUtils.convertSfMonthName(event.RecurrenceMonthOfYear));</b>
+<i>95</i>&nbsp;		}
+<b class="nc"><i>96</i>&nbsp;		else if (event.RecurrenceType == DC_EventRecurrenceType.YEARLY_Nth)</b>
+<i>97</i>&nbsp;		{
+<b class="nc"><i>98</i>&nbsp;			rule.frequency = DC_ICalendarContentBuilder.FREQUENCY_YEARLY;</b>
+<b class="nc"><i>99</i>&nbsp;			rule.byDays = DC_ICalendarContentUtils.convertSfWeekDayCodes(</b>
+<b class="nc"><i>100</i>&nbsp;				event.RecurrenceDayOfWeekMask);</b>
+<b class="nc"><i>101</i>&nbsp;			rule.byMonths = createSafeIntegerArray(</b>
+<b class="nc"><i>102</i>&nbsp;				DC_ICalendarContentUtils.convertSfMonthName(event.RecurrenceMonthOfYear));</b>
+<b class="nc"><i>103</i>&nbsp;			rule.positionsOfDays = getPositionsOfDays(event);</b>
+<i>104</i>&nbsp;		}
+<i>105</i>&nbsp;		
+<i>106</i>&nbsp;		//set a new recurrence rule
+<b class="nc"><i>107</i>&nbsp;		iCalendarBuilder.recurrentRule = rule;</b>
+<i>108</i>&nbsp;	}
+<i>109</i>&nbsp;	
+<b class="nc"><i>110</i>&nbsp;	private static Integer[] getPositionsOfDays(Event event)</b>
+<i>111</i>&nbsp;	{
+<b class="nc"><i>112</i>&nbsp;		Integer frequencyCode = DC_ICalendarContentUtils.convertSfFrequencyCode(</b>
+<b class="nc"><i>113</i>&nbsp;			event.RecurrenceInstance);</b>
+<b class="nc"><i>114</i>&nbsp;		return createSafeIntegerArray(frequencyCode);</b>
+<i>115</i>&nbsp;	}
+<i>116</i>&nbsp;	
+<b class="nc"><i>117</i>&nbsp;	private static Integer[] createSafeIntegerArray(Integer value)</b>
+<i>118</i>&nbsp;	{
+<b class="nc"><i>119</i>&nbsp;		if (value != null)</b>
+<i>120</i>&nbsp;		{
+<b class="nc"><i>121</i>&nbsp;			return (new Integer[] {value});</b>
+<i>122</i>&nbsp;		}
+<b class="nc"><i>123</i>&nbsp;		return null;</b>
+<i>124</i>&nbsp;	}
+<i>125</i>&nbsp;	//
+<i>126</i>&nbsp;	
+<i>127</i>&nbsp;	//
+<i>128</i>&nbsp;	//Public static methods
+<i>129</i>&nbsp;	//
+<b class="nc"><i>130</i>&nbsp;	public static DC_ICalendarContentBuilder initializeBuilder(</b>
+<i>131</i>&nbsp;		Event event, User organizer)
+<i>132</i>&nbsp;	{
+<b class="nc"><i>133</i>&nbsp;		DC_ICalendarContentBuilder iCalendarBuilder = new DC_ICalendarContentBuilder();</b>
+<i>134</i>&nbsp;		
+<i>135</i>&nbsp;		//STEP #1: set parameters of the event
+<b class="nc"><i>136</i>&nbsp;		iCalendarBuilder.summary = event.Subject;</b>
+<b class="nc"><i>137</i>&nbsp;		iCalendarBuilder.startDateTime = event.StartDateTime;</b>
+<b class="nc"><i>138</i>&nbsp;		iCalendarBuilder.isAllDayEvent = event.IsAllDayEvent;</b>
+<b class="nc"><i>139</i>&nbsp;		if (event.IsAllDayEvent == true)</b>
+<i>140</i>&nbsp;		{
+<i>141</i>&nbsp;			//In SF end date of an all-day event is equal to the same one that
+<i>142</i>&nbsp;			//was selected in UI, but ICalendar requires that it is equal to the
+<i>143</i>&nbsp;			//next day after the day, which a user selected
+<b class="nc"><i>144</i>&nbsp;			iCalendarBuilder.endDateTime = event.EndDateTime.addDays(1);</b>
+<i>145</i>&nbsp;		}
+<i>146</i>&nbsp;		else
+<i>147</i>&nbsp;		{
+<b class="nc"><i>148</i>&nbsp;			iCalendarBuilder.endDateTime = event.EndDateTime;</b>
+<i>149</i>&nbsp;		}
+<b class="nc"><i>150</i>&nbsp;		iCalendarBuilder.location = event.Location;</b>
+<b class="nc"><i>151</i>&nbsp;		iCalendarBuilder.description = event.Description;</b>
+<i>152</i>&nbsp;		
+<i>153</i>&nbsp;		//- set an organizer
+<b class="nc"><i>154</i>&nbsp;		iCalendarBuilder.organizer = new DC_ICalendarContentBuilder.Participant(</b>
+<b class="nc"><i>155</i>&nbsp;			organizer.Name, RESPONSE_MANAGER_EMAIL, organizer.Email, false);</b>
+<i>156</i>&nbsp;		//- set attendees
+<b class="nc"><i>157</i>&nbsp;		for (EventRelation eventRelation : event.EventRelations)</b>
+<b class="nc"><i>158</i>&nbsp;		{</b>
+<i>159</i>&nbsp;			//only relations for SF-users should be included as attendees in iCalendar-file
+<b class="nc"><i>160</i>&nbsp;			if (eventRelation.Relation.Type == DC_SObjectUtils.USER_TYPE)</b>
+<i>161</i>&nbsp;			{
+<i>162</i>&nbsp;				//add an attendee (we expect reply from users only)
+<b class="nc"><i>163</i>&nbsp;				iCalendarBuilder.attendees.add(new DC_ICalendarContentBuilder.Participant(</b>
+<b class="nc"><i>164</i>&nbsp;					eventRelation.Relation.Name, eventRelation.Relation.Email, true));</b>
+<i>165</i>&nbsp;			}
+<i>166</i>&nbsp;		}
+<i>167</i>&nbsp;		
+<i>168</i>&nbsp;		//STEP #2: set an recurrence rule
+<b class="nc"><i>169</i>&nbsp;		setRecurrenceRule(iCalendarBuilder, event);</b>
+<i>170</i>&nbsp;		
+<i>171</i>&nbsp;		//STEP #3: set an alarm
+<b class="nc"><i>172</i>&nbsp;		setAlarm(iCalendarBuilder, event);</b>
+<i>173</i>&nbsp;		
+<b class="nc"><i>174</i>&nbsp;		return iCalendarBuilder;</b>
+<i>175</i>&nbsp;	}
+<i>176</i>&nbsp;	//
+<i>177</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

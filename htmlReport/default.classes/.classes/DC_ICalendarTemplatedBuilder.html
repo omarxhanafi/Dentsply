@@ -1,0 +1,127 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DC_ICalendarTemplatedBuilder</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DC_ICalendarTemplatedBuilder (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DC_ICalendarTemplatedBuilder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 15)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>DC_ICalendarTemplatedBuilder</h2>
+<div class="sourceCode"><i>1</i>&nbsp;//
+<i>2</i>&nbsp;//This class is used to work with a templated content of ICS-file. 
+<i>3</i>&nbsp;//
+<i>4</i>&nbsp;//Author: Gennadiy Pervukhin (6-11-2014)
+<i>5</i>&nbsp;public class DC_ICalendarTemplatedBuilder
+<i>6</i>&nbsp;{
+<i>7</i>&nbsp;	//
+<i>8</i>&nbsp;	//Constructors
+<i>9</i>&nbsp;	//
+<b class="nc"><i>10</i>&nbsp;	public DC_ICalendarTemplatedBuilder(String templatedContent)</b>
+<i>11</i>&nbsp;	{
+<b class="nc"><i>12</i>&nbsp;		this.templatedContent = (String.isNotBlank(templatedContent)</b>
+<b class="nc"><i>13</i>&nbsp;			? templatedContent : DC_StringUtils.EMPTY_STRING);</b>
+<i>14</i>&nbsp;	}
+<i>15</i>&nbsp;	//
+<i>16</i>&nbsp;	
+<i>17</i>&nbsp;	//
+<i>18</i>&nbsp;	//Variables
+<i>19</i>&nbsp;	//
+<i>20</i>&nbsp;	private String templatedContent;
+<i>21</i>&nbsp;	//
+<i>22</i>&nbsp;	
+<i>23</i>&nbsp;	//
+<i>24</i>&nbsp;	//Public methods
+<i>25</i>&nbsp;	//
+<i>26</i>&nbsp;	//this method makes a copy of the current template, replace placeholders in
+<i>27</i>&nbsp;	//this copy only and then return it 
+<b class="nc"><i>28</i>&nbsp;	public String buildContent(Map&lt;String, String&gt; mapOfPlaceholderValues)</b>
+<i>29</i>&nbsp;	{
+<i>30</i>&nbsp;		//create a new copy of the template
+<b class="nc"><i>31</i>&nbsp;		String content = (DC_StringUtils.EMPTY_STRING + this.templatedContent);</b>
+<i>32</i>&nbsp;		//replace placeholders in the copy of the template
+<b class="nc"><i>33</i>&nbsp;		if (mapOfPlaceholderValues != null)</b>
+<i>34</i>&nbsp;		{
+<b class="nc"><i>35</i>&nbsp;			for (String placeholder : mapOfPlaceholderValues.keySet())</b>
+<b class="nc"><i>36</i>&nbsp;			{</b>
+<b class="nc"><i>37</i>&nbsp;				content = DC_StringUtils.safeReplace(content, placeholder,</b>
+<b class="nc"><i>38</i>&nbsp;					mapOfPlaceholderValues.get(placeholder));</b>
+<i>39</i>&nbsp;			}
+<i>40</i>&nbsp;		}
+<b class="nc"><i>41</i>&nbsp;		return content;</b>
+<i>42</i>&nbsp;	}
+<i>43</i>&nbsp;	
+<i>44</i>&nbsp;	//this is simply an overloaded version of another &#39;buildContent&#39; method
+<b class="nc"><i>45</i>&nbsp;	public String buildContent(String placeholder, String value)</b>
+<i>46</i>&nbsp;	{
+<b class="nc"><i>47</i>&nbsp;		return this.buildContent(new Map&lt;String, String&gt;{placeholder =&gt; value});</b>
+<i>48</i>&nbsp;	}
+<i>49</i>&nbsp;	
+<i>50</i>&nbsp;	//this method replaces placeholders in the current template
+<b class="nc"><i>51</i>&nbsp;	public void replacePlaceholders(Map&lt;String, String&gt; mapOfPlaceholderValues)</b>
+<i>52</i>&nbsp;	{
+<b class="nc"><i>53</i>&nbsp;		this.templatedContent = buildContent(mapOfPlaceholderValues);</b>
+<i>54</i>&nbsp;	}
+<i>55</i>&nbsp;	//
+<i>56</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

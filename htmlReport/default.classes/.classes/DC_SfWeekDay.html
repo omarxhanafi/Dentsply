@@ -1,0 +1,184 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DC_SfWeekDay</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DC_SfWeekDay (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DC_SfWeekDay</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 48)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>DC_SfWeekDay</h2>
+<div class="sourceCode"><i>1</i>&nbsp;//
+<i>2</i>&nbsp;//This class contains constants for all possible recurrence types of SF-event.
+<i>3</i>&nbsp;//
+<i>4</i>&nbsp;//Author: Gennadiy Pervukhin (11-11-2014)
+<i>5</i>&nbsp;public class DC_SfWeekDay
+<i>6</i>&nbsp;{
+<i>7</i>&nbsp;	//
+<i>8</i>&nbsp;	//Constants
+<i>9</i>&nbsp;	//
+<b class="nc"><i>10</i>&nbsp;	public static final Integer CODE_SUNDAY = 1;</b>
+<b class="nc"><i>11</i>&nbsp;	public static final Integer CODE_MONDAY = 2;</b>
+<b class="nc"><i>12</i>&nbsp;	public static final Integer CODE_TUESDAY = 4;</b>
+<b class="nc"><i>13</i>&nbsp;	public static final Integer CODE_WEDNESDAY = 8;</b>
+<b class="nc"><i>14</i>&nbsp;	public static final Integer CODE_THURSDAY = 16;</b>
+<b class="nc"><i>15</i>&nbsp;	public static final Integer CODE_FRIDAY = 32;</b>
+<b class="nc"><i>16</i>&nbsp;	public static final Integer CODE_SATURDAY = 64;</b>
+<i>17</i>&nbsp;	
+<b class="nc"><i>18</i>&nbsp;	public static final Integer CODE_ALL_DAYS = 127;</b>
+<i>19</i>&nbsp;	
+<b class="nc"><i>20</i>&nbsp;	public static final String NAME_SUNDAY = System.Label.DC_Sunday;</b>
+<b class="nc"><i>21</i>&nbsp;	public static final String NAME_MONDAY = System.Label.DC_Monday;</b>
+<b class="nc"><i>22</i>&nbsp;	public static final String NAME_TUESDAY = System.Label.DC_Tuesday;</b>
+<b class="nc"><i>23</i>&nbsp;	public static final String NAME_WEDNESDAY = System.Label.DC_Wednesday;</b>
+<b class="nc"><i>24</i>&nbsp;	public static final String NAME_THURSDAY = System.Label.DC_Thursday;</b>
+<b class="nc"><i>25</i>&nbsp;	public static final String NAME_FRIDAY = System.Label.DC_Friday;</b>
+<b class="nc"><i>26</i>&nbsp;	public static final String NAME_SATURDAY = System.Label.DC_Saturday;</b>
+<i>27</i>&nbsp;	
+<b class="nc"><i>28</i>&nbsp;	private static final Integer[] ALL_CODES = new Integer[]</b>
+<i>29</i>&nbsp;	{
+<b class="nc"><i>30</i>&nbsp;		CODE_SUNDAY, CODE_MONDAY, CODE_TUESDAY, CODE_WEDNESDAY, CODE_THURSDAY,</b>
+<b class="nc"><i>31</i>&nbsp;		CODE_FRIDAY, CODE_SATURDAY</b>
+<i>32</i>&nbsp;	};
+<i>33</i>&nbsp;	//
+<i>34</i>&nbsp;	
+<i>35</i>&nbsp;	//
+<i>36</i>&nbsp;	//Variables
+<i>37</i>&nbsp;	//
+<i>38</i>&nbsp;	//this map stores mappings between day code and its name
+<i>39</i>&nbsp;	private static Map&lt;Integer, String&gt; MAP_OF_CODE_AND_NAME;
+<i>40</i>&nbsp;	//
+<i>41</i>&nbsp;	
+<i>42</i>&nbsp;	//
+<i>43</i>&nbsp;	//Private static methods
+<i>44</i>&nbsp;	//
+<b class="nc"><i>45</i>&nbsp;	private static Map&lt;Integer, String&gt; getMapOfCodeAndName()</b>
+<i>46</i>&nbsp;	{
+<b class="nc"><i>47</i>&nbsp;		if (MAP_OF_CODE_AND_NAME == null)</b>
+<i>48</i>&nbsp;		{
+<b class="nc"><i>49</i>&nbsp;			MAP_OF_CODE_AND_NAME = new Map&lt;Integer, String&gt;();</b>
+<b class="nc"><i>50</i>&nbsp;			MAP_OF_CODE_AND_NAME.put(CODE_SUNDAY, NAME_SUNDAY);</b>
+<b class="nc"><i>51</i>&nbsp;			MAP_OF_CODE_AND_NAME.put(CODE_MONDAY, NAME_MONDAY);</b>
+<b class="nc"><i>52</i>&nbsp;			MAP_OF_CODE_AND_NAME.put(CODE_TUESDAY, NAME_TUESDAY);</b>
+<b class="nc"><i>53</i>&nbsp;			MAP_OF_CODE_AND_NAME.put(CODE_WEDNESDAY, NAME_WEDNESDAY);</b>
+<b class="nc"><i>54</i>&nbsp;			MAP_OF_CODE_AND_NAME.put(CODE_THURSDAY, NAME_THURSDAY);</b>
+<b class="nc"><i>55</i>&nbsp;			MAP_OF_CODE_AND_NAME.put(CODE_FRIDAY, NAME_FRIDAY);</b>
+<b class="nc"><i>56</i>&nbsp;			MAP_OF_CODE_AND_NAME.put(CODE_SATURDAY, NAME_SATURDAY);</b>
+<i>57</i>&nbsp;		}
+<b class="nc"><i>58</i>&nbsp;		return MAP_OF_CODE_AND_NAME;</b>
+<i>59</i>&nbsp;	}
+<i>60</i>&nbsp;	//
+<i>61</i>&nbsp;	
+<i>62</i>&nbsp;	//
+<i>63</i>&nbsp;	//Public static methods
+<i>64</i>&nbsp;	//
+<b class="nc"><i>65</i>&nbsp;	public static Integer[] extractDayCodesFromMask(Integer bitMask)</b>
+<i>66</i>&nbsp;	{
+<b class="nc"><i>67</i>&nbsp;		if (bitMask &lt;= 0)</b>
+<i>68</i>&nbsp;		{
+<b class="nc"><i>69</i>&nbsp;			return (new Integer[0]);</b>
+<i>70</i>&nbsp;		}
+<i>71</i>&nbsp;		
+<b class="nc"><i>72</i>&nbsp;		List&lt;Integer&gt; selectedCodes = new List&lt;Integer&gt;();</b>
+<b class="nc"><i>73</i>&nbsp;		for (Integer dayCode : ALL_CODES)</b>
+<b class="nc"><i>74</i>&nbsp;		{</b>
+<i>75</i>&nbsp;			//we use bitwise AND operator to check if the code is in the mask
+<b class="nc"><i>76</i>&nbsp;			if ((bitMask &amp; dayCode) &gt; 0)</b>
+<i>77</i>&nbsp;			{
+<b class="nc"><i>78</i>&nbsp;				selectedCodes.add(dayCode);</b>
+<i>79</i>&nbsp;			}
+<i>80</i>&nbsp;		}
+<b class="nc"><i>81</i>&nbsp;		return selectedCodes;</b>
+<i>82</i>&nbsp;	}
+<i>83</i>&nbsp;	
+<b class="nc"><i>84</i>&nbsp;	public static String[] extractDayNamesFromMask(Integer bitMask)</b>
+<i>85</i>&nbsp;	{
+<i>86</i>&nbsp;		//STEP #1: get day codes from the bit mask
+<b class="nc"><i>87</i>&nbsp;		Integer[] dayCodes = extractDayCodesFromMask(bitMask);</b>
+<i>88</i>&nbsp;		
+<i>89</i>&nbsp;		//STEP #2: convert the codes to names
+<b class="nc"><i>90</i>&nbsp;		Map&lt;Integer, String&gt; mapOfCodeAndName = getMapOfCodeAndName();</b>
+<b class="nc"><i>91</i>&nbsp;		List&lt;String&gt; dayNames = new List&lt;String&gt;();</b>
+<b class="nc"><i>92</i>&nbsp;		for (Integer dayCode : dayCodes)</b>
+<b class="nc"><i>93</i>&nbsp;		{</b>
+<b class="nc"><i>94</i>&nbsp;			String dayName = mapOfCodeAndName.get(dayCode);</b>
+<b class="nc"><i>95</i>&nbsp;			if (String.isNotBlank(dayName))</b>
+<i>96</i>&nbsp;			{
+<b class="nc"><i>97</i>&nbsp;				dayNames.add(dayName);</b>
+<i>98</i>&nbsp;			}
+<i>99</i>&nbsp;		}
+<b class="nc"><i>100</i>&nbsp;		return dayNames;</b>
+<i>101</i>&nbsp;	}
+<i>102</i>&nbsp;	//
+<i>103</i>&nbsp;	
+<i>104</i>&nbsp;	
+<i>105</i>&nbsp;	
+<i>106</i>&nbsp;	
+<i>107</i>&nbsp;	
+<i>108</i>&nbsp;	
+<i>109</i>&nbsp;	
+<i>110</i>&nbsp;	
+<i>111</i>&nbsp;	
+<i>112</i>&nbsp;	
+<i>113</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

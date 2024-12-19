@@ -1,0 +1,485 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: AccountFlagsController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: AccountFlagsController (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AccountFlagsController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    89%
+  </span>
+  <span class="absValue">
+    (146/ 164)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>AccountFlagsController</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/**
+<i>2</i>&nbsp; * @Author          Omar (ohanafi@salesforce.com)
+<i>3</i>&nbsp; * @Description     Account Flags Controller.
+<i>4</i>&nbsp; * @Test-Class      Test_AccountFlagsController
+<i>5</i>&nbsp; *
+<i>6</i>&nbsp; * @History
+<i>7</i>&nbsp; * 22-06-2023   Omar     Create new AccountFlagsController class
+<i>8</i>&nbsp; */
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;public with sharing class AccountFlagsController {
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;    /**
+<i>13</i>&nbsp;     * getAccountFlagsJSON Return a map of Account Flags related to the provided account
+<i>14</i>&nbsp;     * @author ohanafi@salesforce.com | 22-06-2023
+<i>15</i>&nbsp;     *
+<i>16</i>&nbsp;     * @param accountId   Id of the account
+<i>17</i>&nbsp;     *
+<i>18</i>&nbsp;     * @return String - Serialized map of flags
+<i>19</i>&nbsp;     */
+<i>20</i>&nbsp;    @AuraEnabled(Cacheable = true)
+<b class="fc"><i>21</i>&nbsp;    public static String getAccountFlagsJSON(Id accountId) {</b>
+<i>22</i>&nbsp;        // Get account data
+<b class="fc"><i>23</i>&nbsp;        Account thisAccount = [SELECT Country__c FROM Account where Id = :accountId];</b>
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;        // Get number of kol contract records related to the account
+<b class="fc"><i>26</i>&nbsp;        Integer kolCount = [</b>
+<i>27</i>&nbsp;                SELECT COUNT()
+<i>28</i>&nbsp;                FROM Contact
+<b class="fc"><i>29</i>&nbsp;                WHERE Active_KOL__c = true AND AccountId = :accountId</b>
+<i>30</i>&nbsp;                LIMIT 1
+<i>31</i>&nbsp;        ];
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;        // Retrieve service contracts related to the account
+<b class="fc"><i>34</i>&nbsp;        List&lt;ServiceContract&gt; serviceContractsList = [</b>
+<i>35</i>&nbsp;                SELECT Status
+<i>36</i>&nbsp;                FROM ServiceContract
+<b class="fc"><i>37</i>&nbsp;                WHERE AccountId = :accountId</b>
+<i>38</i>&nbsp;        ];
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;        // Init lists of active/expired contracts
+<b class="fc"><i>41</i>&nbsp;        List&lt;ServiceContract&gt; activeContracts = new List&lt;ServiceContract&gt;();</b>
+<b class="fc"><i>42</i>&nbsp;        List&lt;ServiceContract&gt; expiredContracts = new List&lt;ServiceContract&gt;();</b>
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;        // Separate the service contracts based on status (active or expired)
+<b class="fc"><i>45</i>&nbsp;        for (ServiceContract contract : serviceContractsList) {</b>
+<b class="fc"><i>46</i>&nbsp;            if (contract.Status == &#39;Active&#39;) {</b>
+<b class="fc"><i>47</i>&nbsp;                activeContracts.add(contract);</b>
+<b class="fc"><i>48</i>&nbsp;            } else if (contract.Status == &#39;Expired&#39;) {</b>
+<b class="fc"><i>49</i>&nbsp;                expiredContracts.add(contract);</b>
+<i>50</i>&nbsp;            }
+<i>51</i>&nbsp;        }
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;        // Init a Map of the results
+<b class="fc"><i>54</i>&nbsp;        Map&lt;String, AccountFlag&gt; results = new Map&lt;String, AccountFlag&gt;();</b>
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;        // KOL flag
+<b class="fc"><i>57</i>&nbsp;        results.put(&#39;kol&#39;, new AccountFlag(kolCount &gt; 0 ? 1 : 0, null));</b>
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;        // Add One DS flag (Only for US and Canada)
+<b class="fc"><i>60</i>&nbsp;        if(new List&lt;String&gt;{&#39;US&#39;, &#39;CA&#39;}.contains(thisAccount?.Country__c)){</b>
+<b class="fc"><i>61</i>&nbsp;            AccountFlag oneDsFlag = getOneDSFlag(accountId);</b>
+<b class="fc"><i>62</i>&nbsp;            results.put(&#39;oneDs&#39;, oneDsFlag);</b>
+<i>63</i>&nbsp;        }
+<i>64</i>&nbsp;
+<b class="fc"><i>65</i>&nbsp;        if(!activeContracts.isEmpty()){</b>
+<i>66</i>&nbsp;            // We first get the flag values from the active contracts
+<b class="fc"><i>67</i>&nbsp;            results.putAll(getContractFlags(activeContracts, true));</b>
+<i>68</i>&nbsp;
+<i>69</i>&nbsp;            // We check the expired contracts
+<b class="fc"><i>70</i>&nbsp;            Map&lt;String, AccountFlag&gt; expiredResults = getContractFlags(expiredContracts, false);</b>
+<i>71</i>&nbsp;
+<i>72</i>&nbsp;            // If no DS Core results were found from the active contracts, we get the expired results
+<b class="fc"><i>73</i>&nbsp;            if(results.get(&#39;dsCoreAccess&#39;).level == 0 &amp;&amp; results.get(&#39;dsCoreLight&#39;).level == 0 &amp;&amp; results.get(&#39;dsCoreStandard&#39;).level == 0 &amp;&amp; results.get(&#39;dsCoreAdvanced&#39;).level == 0){</b>
+<b class="fc"><i>74</i>&nbsp;                results.put(&#39;dsCoreAccess&#39;, expiredResults.get(&#39;dsCoreAccess&#39;));</b>
+<b class="fc"><i>75</i>&nbsp;                results.put(&#39;dsCoreLight&#39;, expiredResults.get(&#39;dsCoreLight&#39;));</b>
+<b class="fc"><i>76</i>&nbsp;                results.put(&#39;dsCoreStandard&#39;, expiredResults.get(&#39;dsCoreStandard&#39;));</b>
+<b class="fc"><i>77</i>&nbsp;                results.put(&#39;dsCoreAdvanced&#39;, expiredResults.get(&#39;dsCoreAdvanced&#39;));</b>
+<i>78</i>&nbsp;            }
+<i>79</i>&nbsp;
+<b class="fc"><i>80</i>&nbsp;            if(results.get(&#39;dsCoreCare&#39;).level == 0){</b>
+<b class="nc"><i>81</i>&nbsp;                results.put(&#39;dsCoreCare&#39;, expiredResults.get(&#39;dsCoreCare&#39;));</b>
+<i>82</i>&nbsp;            }
+<i>83</i>&nbsp;
+<b class="fc"><i>84</i>&nbsp;            if(results.get(&#39;dsCoreLab&#39;).level == 0){</b>
+<b class="fc"><i>85</i>&nbsp;                results.put(&#39;dsCoreLab&#39;, expiredResults.get(&#39;dsCoreLab&#39;));</b>
+<i>86</i>&nbsp;            }
+<i>87</i>&nbsp;
+<i>88</i>&nbsp;        } else {
+<b class="nc"><i>89</i>&nbsp;            results.putAll(getContractFlags(expiredContracts, false));</b>
+<i>90</i>&nbsp;        }
+<i>91</i>&nbsp;
+<i>92</i>&nbsp;        // Retrieve source records  related to the account
+<b class="fc"><i>93</i>&nbsp;        List&lt;Source_Record__c&gt; sourceRecordsList = [</b>
+<i>94</i>&nbsp;                SELECT Name, Status__c, Customer_Id__c, Source_Id__c, SearchInfo__c, Company_Code__c, SuresmileAlignerPlatform__c, SuresmileOrthoPlatform__c, SuresmileAdvancedPlatform__c, Atlantis_Web_Order_Customer__c
+<i>95</i>&nbsp;                FROM Source_Record__c
+<b class="fc"><i>96</i>&nbsp;                WHERE CIM_Account__c = :accountId</b>
+<i>97</i>&nbsp;        ];
+<i>98</i>&nbsp;
+<i>99</i>&nbsp;        // Init lists of active/inactive source records
+<b class="fc"><i>100</i>&nbsp;        List&lt;Source_Record__c&gt; activeSourceRecords = new List&lt;Source_Record__c&gt;();</b>
+<b class="fc"><i>101</i>&nbsp;        List&lt;Source_Record__c&gt; inactiveSourceRecords = new List&lt;Source_Record__c&gt;();</b>
+<i>102</i>&nbsp;
+<i>103</i>&nbsp;        // Separate the source records based on status (active or inactive)
+<b class="fc"><i>104</i>&nbsp;        for (Source_Record__c eachSourceRecord : sourceRecordsList) {</b>
+<b class="fc"><i>105</i>&nbsp;            if (eachSourceRecord.Status__c == &#39;Active&#39;) {</b>
+<b class="fc"><i>106</i>&nbsp;                activeSourceRecords.add(eachSourceRecord);</b>
+<b class="nc"><i>107</i>&nbsp;            } else if (eachSourceRecord.Status__c == &#39;Inactive&#39;) {</b>
+<b class="nc"><i>108</i>&nbsp;                inactiveSourceRecords.add(eachSourceRecord);</b>
+<i>109</i>&nbsp;            }
+<i>110</i>&nbsp;        }
+<i>111</i>&nbsp;
+<b class="fc"><i>112</i>&nbsp;        if(!activeSourceRecords.isEmpty()){</b>
+<i>113</i>&nbsp;            // We first get the flag values from the active source records
+<b class="fc"><i>114</i>&nbsp;            results.putAll(getSourceRecordFlags(activeSourceRecords, true));</b>
+<i>115</i>&nbsp;
+<i>116</i>&nbsp;            // We get the inactive flags
+<b class="fc"><i>117</i>&nbsp;            Map&lt;String, AccountFlag&gt; inactiveResults = getSourceRecordFlags(inactiveSourceRecords, false);</b>
+<i>118</i>&nbsp;
+<b class="fc"><i>119</i>&nbsp;            for(String key : inactiveResults.keySet()){</b>
+<b class="fc"><i>120</i>&nbsp;                if(new List&lt;String&gt;{&#39;customerNumber&#39;, &#39;dsCom&#39;, &#39;sureSmile&#39;, &#39;awo&#39;}.contains(key)){</b>
+<i>121</i>&nbsp;                    // If the flags related to the active source records are empty, we get the flag value from the inactive ones
+<b class="fc"><i>122</i>&nbsp;                    if(results.get(key).level == 0){</b>
+<b class="fc"><i>123</i>&nbsp;                        results.put(key, inactiveResults.get(key));</b>
+<i>124</i>&nbsp;                    }
+<i>125</i>&nbsp;                }
+<i>126</i>&nbsp;            }
+<i>127</i>&nbsp;        } else {
+<b class="nc"><i>128</i>&nbsp;            results.putAll(getSourceRecordFlags(inactiveSourceRecords, false));</b>
+<i>129</i>&nbsp;        }
+<i>130</i>&nbsp;
+<b class="fc"><i>131</i>&nbsp;        AccountFlag cerecClub = getCerecClubFlag(accountId);</b>
+<b class="fc"><i>132</i>&nbsp;        results.put(&#39;cerecClub&#39;, cerecClub);</b>
+<i>133</i>&nbsp;
+<i>134</i>&nbsp;
+<b class="fc"><i>135</i>&nbsp;        return JSON.serialize(results);</b>
+<i>136</i>&nbsp;    }
+<i>137</i>&nbsp;
+<i>138</i>&nbsp;    /**
+<i>139</i>&nbsp;     * getCerecClubFlag Return the CEREC Club flag related to the provided account
+<i>140</i>&nbsp;     * @author ohanafi@salesforce.com | 04-09-2023
+<i>141</i>&nbsp;     *
+<i>142</i>&nbsp;     * @param accountId   Id of the account
+<i>143</i>&nbsp;     *
+<i>144</i>&nbsp;     * @return String - Serialized map of flags
+<i>145</i>&nbsp;     */
+<b class="fc"><i>146</i>&nbsp;    private static AccountFlag getCerecClubFlag(Id accountId) {</b>
+<i>147</i>&nbsp;        // Init CEREC Club Flag
+<b class="fc"><i>148</i>&nbsp;        AccountFlag cerecClub = new AccountFlag(0, null);</b>
+<i>149</i>&nbsp;
+<i>150</i>&nbsp;        // Getting the CEREC Club Contracts
+<b class="fc"><i>151</i>&nbsp;        List&lt;Contract&gt; cerecContracts = [</b>
+<i>152</i>&nbsp;                SELECT
+<i>153</i>&nbsp;                        Id, StartDate, EndDate, Name, Siroforce_Status__c
+<i>154</i>&nbsp;                FROM Contract
+<b class="fc"><i>155</i>&nbsp;                WHERE AccountId = :accountId</b>
+<i>156</i>&nbsp;                AND RecordType.DeveloperName = &#39;siroForceIntegration&#39;
+<i>157</i>&nbsp;                AND Name LIKE &#39;%CEREC CLUB%&#39;
+<i>158</i>&nbsp;        ];
+<i>159</i>&nbsp;
+<b class="fc"><i>160</i>&nbsp;        if (!cerecContracts.isEmpty()) {</b>
+<i>161</i>&nbsp;            // We look for active contracts first, if not found we check for any expired ones
+<b class="nc"><i>162</i>&nbsp;            for (Contract eachContract : cerecContracts) {</b>
+<b class="nc"><i>163</i>&nbsp;                if (eachContract.Siroforce_Status__c == &#39;Active&#39; &amp;&amp; eachContract.StartDate &lt;= System.today() &amp;&amp; eachContract.EndDate &gt;= System.today()) {</b>
+<b class="nc"><i>164</i>&nbsp;                    cerecClub = new AccountFlag(1, eachContract.Id);</b>
+<b class="nc"><i>165</i>&nbsp;                    break;</b>
+<b class="nc"><i>166</i>&nbsp;                } else if (eachContract.Siroforce_Status__c == &#39;Inactive&#39; &amp;&amp; eachContract.EndDate &lt; System.today()) {</b>
+<b class="nc"><i>167</i>&nbsp;                    cerecClub = new AccountFlag(2, eachContract.Id);</b>
+<i>168</i>&nbsp;                }
+<i>169</i>&nbsp;            }
+<i>170</i>&nbsp;        }
+<b class="fc"><i>171</i>&nbsp;        return cerecClub;</b>
+<i>172</i>&nbsp;    }
+<i>173</i>&nbsp;
+<i>174</i>&nbsp;    /**
+<i>175</i>&nbsp;     * getAccountFlagsJSON Return a map of flags from a list of source records
+<i>176</i>&nbsp;     * @author ohanafi@salesforce.com | 22-06-2023
+<i>177</i>&nbsp;     *
+<i>178</i>&nbsp;     * @param sourceRecords   List of source records
+<i>179</i>&nbsp;     * @param isActive   Indicates if the source records are active or expired
+<i>180</i>&nbsp;     *
+<i>181</i>&nbsp;     * @return Map&lt;String, AccountFlag&gt; - Map of flags
+<i>182</i>&nbsp;     */
+<b class="fc"><i>183</i>&nbsp;    private static Map&lt;String, AccountFlag&gt; getSourceRecordFlags(List&lt;Source_Record__c&gt; sourceRecords, Boolean isActive) {</b>
+<i>184</i>&nbsp;        // Init flag values (ranging from 0 to 2, 0 being not found, 1 = active, 2 = inactive)
+<b class="fc"><i>185</i>&nbsp;        AccountFlag customerNumber = new AccountFlag(0, null, null);</b>
+<b class="fc"><i>186</i>&nbsp;        AccountFlag dsCom = new AccountFlag(0, null);</b>
+<b class="fc"><i>187</i>&nbsp;        AccountFlag sureSmile = new AccountFlag(0, null);</b>
+<b class="fc"><i>188</i>&nbsp;        AccountFlag awo = new AccountFlag(0, null);</b>
+<b class="fc"><i>189</i>&nbsp;        AccountFlag siroForce = new AccountFlag(0, null);</b>
+<i>190</i>&nbsp;
+<i>191</i>&nbsp;        // Init SureSmile source record IDs
+<b class="fc"><i>192</i>&nbsp;        Id sureSmileAlignerId = null;</b>
+<b class="fc"><i>193</i>&nbsp;        Id sureSmileOrthoId = null;</b>
+<b class="fc"><i>194</i>&nbsp;        Id sureSmileAdvancedId = null;</b>
+<i>195</i>&nbsp;
+<i>196</i>&nbsp;        // Init list of source records related to an erp customer
+<b class="fc"><i>197</i>&nbsp;        List&lt;Source_Record__c&gt; erpSourceRecords = new List&lt;Source_Record__c&gt;();</b>
+<i>198</i>&nbsp;
+<b class="fc"><i>199</i>&nbsp;        for(Source_Record__c eachSourceRecord : sourceRecords){</b>
+<i>200</i>&nbsp;            // We calculate the flag values
+<b class="fc"><i>201</i>&nbsp;            if(eachSourceRecord.Company_Code__c != null){</b>
+<b class="fc"><i>202</i>&nbsp;                if(eachSourceRecord.Company_Code__c.contains(&#39;BUYDS&#39;)){</b>
+<b class="fc"><i>203</i>&nbsp;                    dsCom = new AccountFlag(isActive ? 1 : 2, eachSourceRecord.Id);</b>
+<i>204</i>&nbsp;                }
+<i>205</i>&nbsp;            }
+<i>206</i>&nbsp;
+<i>207</i>&nbsp;            // Check the Suresmile platform fields
+<b class="fc"><i>208</i>&nbsp;            if (eachSourceRecord.SuresmileAlignerPlatform__c == true || eachSourceRecord.SuresmileOrthoPlatform__c == true || eachSourceRecord.SuresmileAdvancedPlatform__c == true) {</b>
+<b class="fc"><i>209</i>&nbsp;                sureSmileAlignerId = (eachSourceRecord.SuresmileAlignerPlatform__c == true) ? eachSourceRecord.Id : null;</b>
+<b class="fc"><i>210</i>&nbsp;                sureSmileOrthoId = (eachSourceRecord.SuresmileOrthoPlatform__c == true) ? eachSourceRecord.Id : null;</b>
+<b class="fc"><i>211</i>&nbsp;                sureSmileAdvancedId = (eachSourceRecord.SuresmileAdvancedPlatform__c == true) ? eachSourceRecord.Id : null;</b>
+<i>212</i>&nbsp;            }
+<i>213</i>&nbsp;
+<b class="fc"><i>214</i>&nbsp;            if(eachSourceRecord.Atlantis_Web_Order_Customer__c != null){</b>
+<b class="fc"><i>215</i>&nbsp;                awo = new AccountFlag(isActive ? 1 : 2, eachSourceRecord.Id);</b>
+<i>216</i>&nbsp;            }
+<i>217</i>&nbsp;
+<b class="fc"><i>218</i>&nbsp;            if(eachSourceRecord.Company_Code__c == &#39;SIROFORCE&#39;){</b>
+<b class="nc"><i>219</i>&nbsp;                siroForce = new AccountFlag(isActive ? 1 : 2, eachSourceRecord.Id);</b>
+<i>220</i>&nbsp;            }
+<i>221</i>&nbsp;
+<i>222</i>&nbsp;            // If the SourceId is contained within the defined list of ERP codes, we add to the ERP Source records list
+<b class="fc"><i>223</i>&nbsp;            if(new List&lt;String&gt;{&#39;7&#39;, &#39;1&#39;, &#39;2&#39;, &#39;31&#39;, &#39;8&#39;, &#39;58&#39;, &#39;4&#39;, &#39;33&#39;, &#39;37&#39;, &#39;17&#39;, &#39;9&#39;, &#39;39&#39;, &#39;41&#39;, &#39;46&#39;, &#39;49&#39;, &#39;18&#39;, &#39;56&#39;, &#39;3&#39;}.contains(eachSourceRecord.Source_Id__c)){</b>
+<b class="nc"><i>224</i>&nbsp;                erpSourceRecords.add(eachSourceRecord);</b>
+<i>225</i>&nbsp;            }
+<i>226</i>&nbsp;
+<i>227</i>&nbsp;        }
+<i>228</i>&nbsp;
+<i>229</i>&nbsp;        // Creating the SureSmile flag
+<b class="fc"><i>230</i>&nbsp;        if(sureSmileAlignerId != null || sureSmileOrthoId != null || sureSmileAdvancedId != null){</b>
+<b class="fc"><i>231</i>&nbsp;            sureSmile = new AccountFlag(isActive ? 1 : 2,</b>
+<b class="fc"><i>232</i>&nbsp;                    sureSmileAdvancedId != null ? sureSmileAdvancedId : sureSmileOrthoId != null ? sureSmileOrthoId : sureSmileAlignerId,</b>
+<b class="fc"><i>233</i>&nbsp;                    sureSmileAlignerId, sureSmileOrthoId, sureSmileAdvancedId);</b>
+<i>234</i>&nbsp;        }
+<i>235</i>&nbsp;
+<b class="fc"><i>236</i>&nbsp;        if(!erpSourceRecords.isEmpty()){</b>
+<b class="nc"><i>237</i>&nbsp;            if(erpSourceRecords.size() &gt; 1){</b>
+<b class="nc"><i>238</i>&nbsp;                customerNumber = new AccountFlag(isActive ? 1 : 2, null, null);</b>
+<i>239</i>&nbsp;            } else {
+<b class="nc"><i>240</i>&nbsp;                customerNumber = new AccountFlag(isActive ? 1 : 2, erpSourceRecords[0].Id, erpSourceRecords[0].Customer_Id__c);</b>
+<i>241</i>&nbsp;            }
+<i>242</i>&nbsp;        }
+<i>243</i>&nbsp;
+<i>244</i>&nbsp;        // Creating a map to store results
+<b class="fc"><i>245</i>&nbsp;        Map&lt;String, AccountFlag&gt; results = new Map&lt;String, AccountFlag&gt;();</b>
+<b class="fc"><i>246</i>&nbsp;        results.put(&#39;customerNumber&#39;, customerNumber);</b>
+<b class="fc"><i>247</i>&nbsp;        results.put(&#39;dsCom&#39;, dsCom);</b>
+<b class="fc"><i>248</i>&nbsp;        results.put(&#39;sureSmile&#39;, sureSmile);</b>
+<b class="fc"><i>249</i>&nbsp;        results.put(&#39;awo&#39;, awo);</b>
+<b class="fc"><i>250</i>&nbsp;        results.put(&#39;siroForce&#39;, siroForce);</b>
+<i>251</i>&nbsp;
+<b class="fc"><i>252</i>&nbsp;        return results;</b>
+<i>253</i>&nbsp;    }
+<i>254</i>&nbsp;
+<i>255</i>&nbsp;    /**
+<i>256</i>&nbsp;     * getContractFlags Return a map of flags from a list of contracts
+<i>257</i>&nbsp;     * @author ohanafi@salesforce.com | 22-06-2023
+<i>258</i>&nbsp;     *
+<i>259</i>&nbsp;     * @param contractsList   List of contracts
+<i>260</i>&nbsp;     * @param isActive   Indicates if the contracts are active or expired
+<i>261</i>&nbsp;     *
+<i>262</i>&nbsp;     * @return Map&lt;String, AccountFlag&gt; - Map of flags
+<i>263</i>&nbsp;     */
+<b class="fc"><i>264</i>&nbsp;    private static Map&lt;String, AccountFlag&gt; getContractFlags(List&lt;ServiceContract&gt; contractsList, Boolean isActive) {</b>
+<i>265</i>&nbsp;        // Get a global set of service contract ids
+<b class="fc"><i>266</i>&nbsp;        Set&lt;Id&gt; serviceContractIds = new Map&lt;Id, ServiceContract&gt;(contractsList).keySet();</b>
+<i>267</i>&nbsp;
+<i>268</i>&nbsp;        // Init flag values (ranging from 0 to 2, 0 being not found, 1 = active, 2 = expired)
+<b class="fc"><i>269</i>&nbsp;        AccountFlag dsCoreAccess = new AccountFlag(0, null);</b>
+<b class="fc"><i>270</i>&nbsp;        AccountFlag dsCoreLight = new AccountFlag(0, null);</b>
+<b class="fc"><i>271</i>&nbsp;        AccountFlag dsCoreStandard = new AccountFlag(0, null);</b>
+<b class="fc"><i>272</i>&nbsp;        AccountFlag dsCoreAdvanced = new AccountFlag(0, null);</b>
+<b class="fc"><i>273</i>&nbsp;        AccountFlag dsCoreCare = new AccountFlag(0, null);</b>
+<b class="fc"><i>274</i>&nbsp;        AccountFlag dsCoreLab = new AccountFlag(0, null);</b>
+<i>275</i>&nbsp;
+<i>276</i>&nbsp;        // We get the global list of contract line items associated with the provided set of service contracts, we also retrieve the PG1, PG2 and GPP codes
+<b class="fc"><i>277</i>&nbsp;        String queryString = &#39;SELECT Id, &#39; +</b>
+<i>278</i>&nbsp;                &#39;ServiceContractId, &#39; +
+<i>279</i>&nbsp;                &#39;PricebookEntry.Product2.GlobalSKUMapping__r.PG1_Code__c, &#39; +
+<i>280</i>&nbsp;                &#39;PricebookEntry.Product2.GlobalSKUMapping__r.PG2_Code__c, &#39; +
+<i>281</i>&nbsp;                &#39;PricebookEntry.Product2.GlobalSKUMapping__r.GPP_Code__c &#39; +
+<i>282</i>&nbsp;                &#39;FROM ContractLineItem &#39; +
+<i>283</i>&nbsp;                &#39;WHERE ServiceContractId IN :serviceContractIds&#39;;
+<i>284</i>&nbsp;
+<b class="fc"><i>285</i>&nbsp;        queryString += isActive ? &#39; AND StartDate &lt;= TODAY AND EndDate &gt;= TODAY&#39; : &#39; AND EndDate &lt; TODAY&#39;;</b>
+<i>286</i>&nbsp;
+<b class="fc"><i>287</i>&nbsp;        List&lt;ContractLineItem&gt; contractLineItems = Database.query(queryString);</b>
+<i>288</i>&nbsp;
+<i>289</i>&nbsp;        // We group the contract line items by service contract id
+<b class="fc"><i>290</i>&nbsp;        Map&lt;Id, List&lt;ContractLineItem&gt;&gt; contractLineItemsMap = new Map&lt;Id, List&lt;ContractLineItem&gt;&gt;();</b>
+<i>291</i>&nbsp;
+<b class="fc"><i>292</i>&nbsp;        for (ContractLineItem lineItem : contractLineItems) {</b>
+<b class="fc"><i>293</i>&nbsp;            if (!contractLineItemsMap.containsKey(lineItem.ServiceContractId)) {</b>
+<b class="fc"><i>294</i>&nbsp;                contractLineItemsMap.put(lineItem.ServiceContractId, new List&lt;ContractLineItem&gt;());</b>
+<i>295</i>&nbsp;            }
+<i>296</i>&nbsp;
+<b class="fc"><i>297</i>&nbsp;            contractLineItemsMap.get(lineItem.ServiceContractId).add(lineItem);</b>
+<i>298</i>&nbsp;        }
+<i>299</i>&nbsp;
+<b class="fc"><i>300</i>&nbsp;        for (Id serviceContractId : contractLineItemsMap.keySet()) {</b>
+<b class="fc"><i>301</i>&nbsp;            for (ContractLineItem eachLineItem : contractLineItemsMap.get(serviceContractId)) {</b>
+<i>302</i>&nbsp;
+<i>303</i>&nbsp;                // We calculate the flag values
+<b class="fc"><i>304</i>&nbsp;                Integer tempDsCoreAccess = (eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.PG2_Code__c == &#39;DC10&#39; || eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.PG2_Code__c == &#39;DC14&#39;) ? (isActive ? 1 : 2) : 0;</b>
+<b class="fc"><i>305</i>&nbsp;                Integer tempDsCoreLight = eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.PG2_Code__c == &#39;DC11&#39; ? (isActive ? 1 : 2) : 0;</b>
+<b class="fc"><i>306</i>&nbsp;                Integer tempDsCoreStandard = eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.PG2_Code__c == &#39;DC12&#39; ? (isActive ? 1 : 2) : 0;</b>
+<b class="fc"><i>307</i>&nbsp;                Integer tempDsCoreAdvanced = eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.PG2_Code__c == &#39;DC13&#39; ? (isActive ? 1 : 2) : 0;</b>
+<b class="fc"><i>308</i>&nbsp;                Integer tempDsCoreCare = eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.GPP_Code__c == &#39;DT&#39; ? (isActive ? 1 : 2) : 0;</b>
+<b class="fc"><i>309</i>&nbsp;                Integer tempDsCoreLab = eachLineItem.PricebookEntry.Product2.GlobalSKUMapping__r.GPP_Code__c == &#39;DL&#39; ? (isActive ? 1 : 2) : 0;</b>
+<i>310</i>&nbsp;
+<i>311</i>&nbsp;                // We compare the current flag value with the previous one
+<b class="fc"><i>312</i>&nbsp;                dsCoreAccess = (tempDsCoreAccess &gt; dsCoreAccess.level) ? new AccountFlag(tempDsCoreAccess, eachLineItem.Id) : dsCoreAccess;</b>
+<b class="fc"><i>313</i>&nbsp;                dsCoreLight = (tempDsCoreLight &gt; dsCoreLight.level) ? new AccountFlag(tempDsCoreLight, eachLineItem.Id) : dsCoreLight;</b>
+<b class="fc"><i>314</i>&nbsp;                dsCoreStandard = (tempDsCoreStandard &gt; dsCoreStandard.level) ? new AccountFlag(tempDsCoreStandard, eachLineItem.Id) : dsCoreStandard;</b>
+<b class="fc"><i>315</i>&nbsp;                dsCoreAdvanced = (tempDsCoreAdvanced &gt; dsCoreAdvanced.level) ? new AccountFlag(tempDsCoreAdvanced, eachLineItem.Id) : dsCoreAdvanced;</b>
+<b class="fc"><i>316</i>&nbsp;                dsCoreCare = (tempDsCoreCare &gt; dsCoreCare.level) ? new AccountFlag(tempDsCoreCare, eachLineItem.Id) : dsCoreCare;</b>
+<b class="fc"><i>317</i>&nbsp;                dsCoreLab = (tempDsCoreLab &gt; dsCoreLab.level) ? new AccountFlag(tempDsCoreLab, eachLineItem.Id) : dsCoreLab;</b>
+<i>318</i>&nbsp;
+<i>319</i>&nbsp;            }
+<i>320</i>&nbsp;        }
+<i>321</i>&nbsp;
+<i>322</i>&nbsp;        // Creating a map to store results
+<b class="fc"><i>323</i>&nbsp;        Map&lt;String, AccountFlag&gt; results = new Map&lt;String, AccountFlag&gt;();</b>
+<b class="fc"><i>324</i>&nbsp;        results.put(&#39;dsCoreAccess&#39;, dsCoreAccess);</b>
+<b class="fc"><i>325</i>&nbsp;        results.put(&#39;dsCoreLight&#39;, dsCoreLight);</b>
+<b class="fc"><i>326</i>&nbsp;        results.put(&#39;dsCoreStandard&#39;, dsCoreStandard);</b>
+<b class="fc"><i>327</i>&nbsp;        results.put(&#39;dsCoreAdvanced&#39;, dsCoreAdvanced);</b>
+<b class="fc"><i>328</i>&nbsp;        results.put(&#39;dsCoreCare&#39;, dsCoreCare);</b>
+<b class="fc"><i>329</i>&nbsp;        results.put(&#39;dsCoreLab&#39;, dsCoreLab);</b>
+<i>330</i>&nbsp;
+<b class="fc"><i>331</i>&nbsp;        return results;</b>
+<i>332</i>&nbsp;    }
+<i>333</i>&nbsp;
+<i>334</i>&nbsp;    /**
+<i>335</i>&nbsp;     * getOneDSFlag Return the OneDS flag
+<i>336</i>&nbsp;     * @author ohanafi@salesforce.com | 06-09-2024
+<i>337</i>&nbsp;     *
+<i>338</i>&nbsp;     * @param accountId  Id of the account
+<i>339</i>&nbsp;     *
+<i>340</i>&nbsp;     * @return AccountFlag - OneDS flag
+<i>341</i>&nbsp;     */
+<b class="fc"><i>342</i>&nbsp;    private static AccountFlag getOneDSFlag(Id accountId) {</b>
+<i>343</i>&nbsp;        // Initialize the One DS Flag
+<b class="fc"><i>344</i>&nbsp;        AccountFlag loyaltyProgramFlag = new AccountFlag(0, null);</b>
+<i>345</i>&nbsp;
+<i>346</i>&nbsp;        // Query for active loyalty program participants
+<b class="fc"><i>347</i>&nbsp;        List&lt;LoyaltyProgramParticipant__c&gt; activeParticipants = [</b>
+<i>348</i>&nbsp;                SELECT Id, Level__c
+<i>349</i>&nbsp;                FROM LoyaltyProgramParticipant__c
+<b class="fc"><i>350</i>&nbsp;                WHERE Account__c = :accountId</b>
+<i>351</i>&nbsp;                AND LoyaltyProgram__r.Status__c = &#39;Active&#39;
+<i>352</i>&nbsp;                AND LoyaltyEnabled__c = true
+<i>353</i>&nbsp;        ];
+<i>354</i>&nbsp;
+<b class="fc"><i>355</i>&nbsp;        if (!activeParticipants.isEmpty()) {</b>
+<i>356</i>&nbsp;            // If there is an active membership, set the flag to active
+<b class="nc"><i>357</i>&nbsp;            loyaltyProgramFlag = new AccountFlag(1, activeParticipants[0].Id, activeParticipants[0].Level__c);</b>
+<i>358</i>&nbsp;        } else {
+<i>359</i>&nbsp;            // If not, check for inactive memberships
+<b class="fc"><i>360</i>&nbsp;            List&lt;LoyaltyProgramParticipant__c&gt; inactiveParticipants = [</b>
+<i>361</i>&nbsp;                    SELECT Id, Level__c
+<i>362</i>&nbsp;                    FROM LoyaltyProgramParticipant__c
+<b class="fc"><i>363</i>&nbsp;                    WHERE Account__c = :accountId</b>
+<i>364</i>&nbsp;                    AND LoyaltyProgram__r.DEPRecordHash__c != null
+<i>365</i>&nbsp;                    AND (LoyaltyProgram__r.Status__c = &#39;Inactive&#39; OR LoyaltyEnabled__c = false)
+<i>366</i>&nbsp;            ];
+<i>367</i>&nbsp;
+<b class="fc"><i>368</i>&nbsp;            if (!inactiveParticipants.isEmpty()) {</b>
+<i>369</i>&nbsp;                // Set the flag to inactive
+<b class="nc"><i>370</i>&nbsp;                loyaltyProgramFlag = new AccountFlag(2, inactiveParticipants[0].Id, inactiveParticipants[0].Level__c);</b>
+<i>371</i>&nbsp;            }
+<i>372</i>&nbsp;        }
+<i>373</i>&nbsp;
+<b class="fc"><i>374</i>&nbsp;        return loyaltyProgramFlag;</b>
+<i>375</i>&nbsp;    }
+<i>376</i>&nbsp;
+<i>377</i>&nbsp;
+<i>378</i>&nbsp;    // Wrapper class for flag data
+<i>379</i>&nbsp;    public class AccountFlag {
+<i>380</i>&nbsp;        // Flag level (0, 1, 2)
+<i>381</i>&nbsp;        @AuraEnabled public Integer level;
+<i>382</i>&nbsp;
+<i>383</i>&nbsp;        // Id of the Contract Line Item, Contract or Source Record
+<i>384</i>&nbsp;        @AuraEnabled public String itemId;
+<i>385</i>&nbsp;
+<i>386</i>&nbsp;        // Flag value (optional)
+<i>387</i>&nbsp;        @AuraEnabled public String value;
+<i>388</i>&nbsp;
+<i>389</i>&nbsp;        // SureSmile Source record IDs
+<i>390</i>&nbsp;        @AuraEnabled public String sureSmileAlignerId;
+<i>391</i>&nbsp;        @AuraEnabled public String sureSmileOrthoId;
+<i>392</i>&nbsp;        @AuraEnabled public String sureSmileAdvancedId;
+<i>393</i>&nbsp;
+<b class="fc"><i>394</i>&nbsp;        public AccountFlag(Integer level, String itemId) {</b>
+<b class="fc"><i>395</i>&nbsp;            this.level = level;</b>
+<b class="fc"><i>396</i>&nbsp;            this.itemId = itemId;</b>
+<i>397</i>&nbsp;        }
+<i>398</i>&nbsp;
+<b class="fc"><i>399</i>&nbsp;        public AccountFlag(Integer level, String itemId, String value) {</b>
+<b class="fc"><i>400</i>&nbsp;            this.level = level;</b>
+<b class="fc"><i>401</i>&nbsp;            this.itemId = itemId;</b>
+<b class="fc"><i>402</i>&nbsp;            this.value = value;</b>
+<i>403</i>&nbsp;        }
+<i>404</i>&nbsp;
+<b class="fc"><i>405</i>&nbsp;        public AccountFlag(Integer level, String itemId, String sureSmileAlignerId, String sureSmileOrthoId, String sureSmileAdvancedId) {</b>
+<b class="fc"><i>406</i>&nbsp;            this.level = level;</b>
+<b class="fc"><i>407</i>&nbsp;            this.itemId = itemId;</b>
+<b class="fc"><i>408</i>&nbsp;            this.sureSmileAlignerId = sureSmileAlignerId;</b>
+<b class="fc"><i>409</i>&nbsp;            this.sureSmileOrthoId = sureSmileOrthoId;</b>
+<b class="fc"><i>410</i>&nbsp;            this.sureSmileAdvancedId = sureSmileAdvancedId;</b>
+<i>411</i>&nbsp;        }
+<i>412</i>&nbsp;    }
+<i>413</i>&nbsp;
+<i>414</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

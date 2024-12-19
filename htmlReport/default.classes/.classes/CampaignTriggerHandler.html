@@ -1,0 +1,112 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CampaignTriggerHandler</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CampaignTriggerHandler (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CampaignTriggerHandler</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (22/ 22)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>CampaignTriggerHandler</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         Ahmed LOUDRASSI (Salesforce) 20191023
+<i>3</i>&nbsp;Description:    Campaign  Trigger Handler Class
+<i>4</i>&nbsp;History
+<i>5</i>&nbsp;2019-10-23      Ahmed LOUDRASSI     Migrated  CampMgmtCampaignSessionTrigger, CampMgmtCampaignTrigger, CampMgmtCampaignTrigger2, CampMgmtCampaignSharingTrigger triggers. (#)
+<i>6</i>&nbsp;2019-10-23      Ahmed LOUDRASSI     Migrated Campaign Workflows. (#)
+<i>7</i>&nbsp;2024-02-01	    Houssam ADIB	    TFUS-000006365 - Delete Child Session Campaigns if the parent campaign is deleted
+<i>8</i>&nbsp;----------------------------------------------------------------------------------------*/
+<i>9</i>&nbsp;public with sharing class CampaignTriggerHandler extends TriggerHandler{
+<i>10</i>&nbsp;    private List&lt;Campaign&gt; oldCampaignList, newCampaignList;
+<i>11</i>&nbsp;    private Map&lt;Id, Campaign&gt; oldCampaignMap, newCampaignMap;
+<i>12</i>&nbsp;
+<b class="fc"><i>13</i>&nbsp;    public CampaignTriggerHandler() {</b>
+<b class="fc"><i>14</i>&nbsp;        oldCampaignList = (List&lt;Campaign&gt;) Trigger.old;</b>
+<b class="fc"><i>15</i>&nbsp;        newCampaignList = (List&lt;Campaign&gt;) Trigger.new;</b>
+<b class="fc"><i>16</i>&nbsp;        oldCampaignMap = (Map&lt;Id, Campaign&gt;) Trigger.oldMap;</b>
+<b class="fc"><i>17</i>&nbsp;        newCampaignMap = (Map&lt;Id, Campaign&gt;) Trigger.newMap;</b>
+<i>18</i>&nbsp;    }
+<b class="fc"><i>19</i>&nbsp;    protected override void beforeInsert() {</b>
+<b class="fc"><i>20</i>&nbsp;        CampaignTriggerHelper.setCampaignSessionsDefaultValues(newCampaignList);</b>
+<b class="fc"><i>21</i>&nbsp;        CampaignTriggerHelper.ownerAssignment(newCampaignList);</b>
+<b class="fc"><i>22</i>&nbsp;        CampaignTriggerHelper.setAlignmentOnCountryFields(newCampaignList,newCampaignMap, oldCampaignMap);</b>
+<b class="fc"><i>23</i>&nbsp;        CampaignTriggerHelper.processCventSessionCampaign(newCampaignList);</b>
+<i>24</i>&nbsp;    }
+<b class="fc"><i>25</i>&nbsp;    protected override void beforeUpdate() {</b>
+<b class="fc"><i>26</i>&nbsp;        CampaignTriggerHelper.setAlignmentOnCountryFields(newCampaignList,newCampaignMap, oldCampaignMap);</b>
+<b class="fc"><i>27</i>&nbsp;        CampaignTriggerHelper.ownerAssignment(newCampaignList);</b>
+<i>28</i>&nbsp;    }
+<b class="fc"><i>29</i>&nbsp;    protected override void afterInsert() {</b>
+<b class="fc"><i>30</i>&nbsp;        CampaignTriggerHelper.setCampaignMemberStatus(newCampaignMap);</b>
+<b class="fc"><i>31</i>&nbsp;        CampaignTriggerHelper.campaignSharing(newCampaignMap, oldCampaignMap);</b>
+<i>32</i>&nbsp;    }
+<b class="fc"><i>33</i>&nbsp;    protected override void afterUpdate() {</b>
+<b class="fc"><i>34</i>&nbsp;        CampaignTriggerHelper.deactivateCampaignSessions(newCampaignMap, oldCampaignMap);</b>
+<b class="fc"><i>35</i>&nbsp;        CampaignTriggerHelper.campaignSharing(newCampaignMap, oldCampaignMap);</b>
+<i>36</i>&nbsp;    }
+<b class="fc"><i>37</i>&nbsp;    protected override void beforeDelete() {</b>
+<b class="fc"><i>38</i>&nbsp;        CampaignTriggerHelper.deleteChildSessionCampaigns(oldCampaignList);</b>
+<b class="fc"><i>39</i>&nbsp;        CampaignTriggerHelper.tickCventParentEventAsNotConverted(oldCampaignList);</b>
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

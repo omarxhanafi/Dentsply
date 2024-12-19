@@ -1,0 +1,453 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: OrderTriggerHelper</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: OrderTriggerHelper (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">OrderTriggerHelper</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    53.9%
+  </span>
+  <span class="absValue">
+    (97/ 180)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>OrderTriggerHelper</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author: 		Miguel Coimbra (Salesforce) 2020-06-10
+<i>3</i>&nbsp;Description:    Order Trigger Helper Class
+<i>4</i>&nbsp;Test Class:     Test_OrderTrigger
+<i>5</i>&nbsp;History 
+<i>6</i>&nbsp;Updated date:   Updated by:     Description:
+<i>7</i>&nbsp;20231005        Roberto         User Story TFUS-000006097 setERPStopFlag new method created
+<i>8</i>&nbsp;20230712        Roberto         TFUS-000006293 TFUS-000006294 
+<i>9</i>&nbsp;20230219		Roberto			TFUS-000006492
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;----------------------------------------------------------------------------------------*/
+<i>12</i>&nbsp;public class OrderTriggerHelper {
+<i>13</i>&nbsp;    /*------------------------------------------------------------  
+<i>14</i>&nbsp;    Description:    User Story: #1833: Caculate the Allowed Discount for Turkish Orders (Of Type &quot;Implants&quot;)
+<i>15</i>&nbsp;                    This method is called from the Order trigger before updating a new Order and is fired upon adding, editing or deleting 
+<i>16</i>&nbsp;                    a new Order Item (where the parent is updated) If the code on the Order Item trigger is removed. This logic is no longer called! 
+<i>17</i>&nbsp;    ------------------------------------------------------------*/
+<i>18</i>&nbsp;    
+<b class="fc"><i>19</i>&nbsp;    public static void calculateAllowedDiscount(List&lt;Order&gt; ordersList){</b>
+<i>20</i>&nbsp;
+<b class="fc"><i>21</i>&nbsp;        if (ordersList.isEmpty()) return ;</b>
+<i>22</i>&nbsp;
+<b class="fc"><i>23</i>&nbsp;        Set&lt;Id&gt; newOrderIdsSet = (new Map&lt;Id,SObject&gt;(ordersList)).keySet();</b>
+<i>24</i>&nbsp;
+<b class="fc"><i>25</i>&nbsp;        Map&lt;Id, Id&gt; pbId_dmIdMap= new Map&lt;Id,Id&gt;{};</b>
+<i>26</i>&nbsp;
+<b class="fc"><i>27</i>&nbsp;        for (Order o : [SELECT Pricebook2.Discount_Model__c FROM Order WHERE  Country__c = &#39;TR&#39; AND Order_Type__c = &#39;Implants&#39; AND Id in: newOrderIdsSet]){</b>
+<b class="fc"><i>28</i>&nbsp;            pbId_dmIdMap.put(o.Pricebook2Id, o.Pricebook2.Discount_Model__c);</b>
+<i>29</i>&nbsp;        }
+<i>30</i>&nbsp;
+<b class="fc"><i>31</i>&nbsp;        if (pbId_dmIdMap.isEmpty()) return ; </b>
+<i>32</i>&nbsp;
+<b class="fc"><i>33</i>&nbsp;        final String REVENUE_MATERIALS = &#39;Revenue: materials&#39;;</b>
+<b class="fc"><i>34</i>&nbsp;        final String PAYMENT_TYPE = &#39;Payment type&#39;;</b>
+<i>35</i>&nbsp;        // Provide all related Discount Rows (associated with the relevant Discount Models 
+<b class="fc"><i>36</i>&nbsp;        List&lt;Discount_row__c&gt; discountRowsList = [SELECT Id, Max__c, Min__c, Discount_Model__c, Discount_lever__c, Equals__c, Allowed_discount__c, Payment_terms_months__c FROM Discount_row__c WHERE</b>
+<b class="fc"><i>37</i>&nbsp;                                                        (Discount_lever__c =: REVENUE_MATERIALS OR Discount_lever__c =: PAYMENT_TYPE ) and Discount_Model__c in: pbId_dmIdMap.Values()];</b>
+<i>38</i>&nbsp;
+<b class="fc"><i>39</i>&nbsp;        for (Order o: ordersList){</b>
+<i>40</i>&nbsp;            // Order Amount global is calculated with the right value when a field referenced by a Roll Up Summary field is modified. (This happens for instance when a new value is added)
+<b class="fc"><i>41</i>&nbsp;            Double OrderAmountglobal = o.TotalAmount ;</b>
+<b class="fc"><i>42</i>&nbsp;            if (String.isBlank(o.Payment_type__c)){</b>
+<b class="fc"><i>43</i>&nbsp;                o.Payment_type_discount__c = 0 ;</b>
+<i>44</i>&nbsp;            }else{
+<b class="nc"><i>45</i>&nbsp;                for (Discount_row__c dr: discountRowsList){</b>
+<b class="nc"><i>46</i>&nbsp;                    if (dr.Discount_Model__c == pbId_dmIdMap.get(o.Pricebook2Id) &amp;&amp; PAYMENT_TYPE.equals(dr.Discount_Lever__c) &amp;&amp; dr.Equals__c == o.Payment_type__c){</b>
+<b class="nc"><i>47</i>&nbsp;                        o.Payment_type_discount__c = dr.Allowed_Discount__c;</b>
+<b class="nc"><i>48</i>&nbsp;                        break ; </b>
+<i>49</i>&nbsp;                    }
+<i>50</i>&nbsp;                }
+<i>51</i>&nbsp;            }
+<i>52</i>&nbsp;            
+<b class="fc"><i>53</i>&nbsp;            for (Discount_row__c dr: discountRowsList){</b>
+<b class="nc"><i>54</i>&nbsp;                if (dr.Discount_Model__c == pbId_dmIdMap.get(o.Pricebook2Id) &amp;&amp; REVENUE_MATERIALS.equals(dr.Discount_Lever__c) </b>
+<b class="nc"><i>55</i>&nbsp;                &amp;&amp; dr.Max__c &gt;= OrderAmountglobal &amp;&amp; dr.Min__c &lt;= OrderAmountglobal){</b>
+<b class="nc"><i>56</i>&nbsp;                    o.Allowed_Discount__c = dr.Allowed_Discount__c ;</b>
+<b class="nc"><i>57</i>&nbsp;                    o.Allowed_payment_terms_months__c = dr.Payment_terms_months__c ;</b>
+<b class="nc"><i>58</i>&nbsp;                    break ; </b>
+<i>59</i>&nbsp;                }
+<i>60</i>&nbsp;            }
+<i>61</i>&nbsp;        }     
+<i>62</i>&nbsp;    }
+<i>63</i>&nbsp;     /*------------------------------------------------------------  
+<i>64</i>&nbsp;    Description:    Code migrated from OrderSetoAccuntOwner (as a result,  OrderSetAccountOwner.trigger has been removed. )
+<i>65</i>&nbsp;                    Called before Insert and before Update                    
+<i>66</i>&nbsp;    Author:    Miguel Coimbra (20200615)
+<i>67</i>&nbsp;    ------------------------------------------------------------*/
+<i>68</i>&nbsp;
+<b class="fc"><i>69</i>&nbsp;    public static void setAccountOwnerAndRegionalManagerOnOrder(List&lt;Order&gt; newOrdersList){ </b>
+<i>70</i>&nbsp;        
+<i>71</i>&nbsp;        // Don&#39;t run unless configured to do so.
+<b class="fc"><i>72</i>&nbsp;        BatchSettings__c settings = BatchSettings__c.getInstance(&#39;Default&#39;);</b>
+<b class="fc"><i>73</i>&nbsp;        if (!Test.isRunningTest() &amp;&amp; !settings.OrderSetAccountOwnerIsEnabled__c)</b>
+<b class="nc"><i>74</i>&nbsp;            return; </b>
+<i>75</i>&nbsp;
+<b class="fc"><i>76</i>&nbsp;        Set&lt;ID&gt; relatedAccountIds = new Set&lt;ID&gt;();</b>
+<b class="fc"><i>77</i>&nbsp;        for (Order o : newOrdersList)</b>
+<b class="fc"><i>78</i>&nbsp;            if (o.AccountId != null)</b>
+<b class="fc"><i>79</i>&nbsp;                relatedAccountIds.add(o.AccountId);</b>
+<b class="fc"><i>80</i>&nbsp;        Map&lt;ID, Account&gt; accountMap = new Map&lt;Id, Account&gt;([SELECT Id, OwnerId, Owner.ManagerId FROM Account WHERE Id IN :relatedAccountIds]);</b>
+<i>81</i>&nbsp;
+<b class="fc"><i>82</i>&nbsp;        for (Order o : newOrdersList)</b>
+<b class="fc"><i>83</i>&nbsp;        {</b>
+<b class="fc"><i>84</i>&nbsp;            if (o.AccountId != null)</b>
+<i>85</i>&nbsp;            {
+<b class="fc"><i>86</i>&nbsp;                Account a = accountMap.get(o.AccountId);</b>
+<b class="fc"><i>87</i>&nbsp;                if (a != null)</b>
+<i>88</i>&nbsp;                {
+<b class="fc"><i>89</i>&nbsp;                    o.Account_Owner__c = a.OwnerId; </b>
+<b class="fc"><i>90</i>&nbsp;                    o.Regional_Manager__c = a.Owner.ManagerId; </b>
+<i>91</i>&nbsp;                }
+<i>92</i>&nbsp;            }
+<i>93</i>&nbsp;        }
+<i>94</i>&nbsp;    }
+<i>95</i>&nbsp;
+<i>96</i>&nbsp;    /*------------------------------------------------------------  
+<i>97</i>&nbsp;    Description:    This is to apply rules regarding ERP integration
+<i>98</i>&nbsp;                      
+<i>99</i>&nbsp;    Author:    Roberto Narbona 2023/10/05
+<i>100</i>&nbsp;    ------------------------------------------------------------*/
+<i>101</i>&nbsp;
+<b class="fc"><i>102</i>&nbsp;    public static void setERPStopFlag(List&lt;Order&gt; newOrdersList){ </b>
+<i>103</i>&nbsp;        
+<i>104</i>&nbsp;        // Don&#39;t run unless configured to do so.
+<b class="fc"><i>105</i>&nbsp;        BatchSettings__c settings = BatchSettings__c.getInstance(&#39;Default&#39;);</b>
+<b class="fc"><i>106</i>&nbsp;        if (!Test.isRunningTest() &amp;&amp; !settings.OrderSetAccountOwnerIsEnabled__c)</b>
+<b class="nc"><i>107</i>&nbsp;            return; </b>
+<i>108</i>&nbsp;
+<b class="fc"><i>109</i>&nbsp;        Set&lt;ID&gt; relatedAccountIds = new Set&lt;ID&gt;();</b>
+<b class="fc"><i>110</i>&nbsp;        Set&lt;ID&gt; relatedPricebookIds = new Set&lt;ID&gt;();</b>
+<b class="fc"><i>111</i>&nbsp;        for (Order o : newOrdersList){</b>
+<b class="fc"><i>112</i>&nbsp;            if (o.AccountId != null)</b>
+<b class="fc"><i>113</i>&nbsp;                relatedAccountIds.add(o.AccountId);</b>
+<b class="fc"><i>114</i>&nbsp;            if (o.Pricebook2Id != null)</b>
+<b class="fc"><i>115</i>&nbsp;                relatedPricebookIds.add(o.Pricebook2Id);</b>
+<i>116</i>&nbsp;        }
+<i>117</i>&nbsp;            
+<b class="fc"><i>118</i>&nbsp;        Map&lt;ID, Account&gt; accountMap = new Map&lt;Id, Account&gt;([SELECT Id, Country__c, OneAccount_Type__c, Sub_Account_Type__c FROM Account WHERE Id IN :relatedAccountIds]);</b>
+<b class="fc"><i>119</i>&nbsp;        Map&lt;ID, Pricebook2&gt; pricebook2Map = new Map&lt;Id, Pricebook2&gt;([SELECT Id, CompanyCode__c, SendToERPOM__c, StopOrdersinERP__c FROM Pricebook2 WHERE Id IN :relatedPricebookIds]);</b>
+<i>120</i>&nbsp;
+<i>121</i>&nbsp;
+<i>122</i>&nbsp;        
+<b class="fc"><i>123</i>&nbsp;        for (Order o : newOrdersList)</b>
+<b class="fc"><i>124</i>&nbsp;        {</b>
+<b class="fc"><i>125</i>&nbsp;            Account account = new Account();</b>
+<b class="fc"><i>126</i>&nbsp;            CountryStopRules__mdt countryRules = new CountryStopRules__mdt();</b>
+<b class="fc"><i>127</i>&nbsp;            if (o.AccountId != null)</b>
+<i>128</i>&nbsp;            {
+<b class="fc"><i>129</i>&nbsp;                account = accountMap.get(o.AccountId);</b>
+<b class="fc"><i>130</i>&nbsp;                countryRules = CountryStopRules__mdt.getInstance(account.Country__c);</b>
+<i>131</i>&nbsp;            }
+<b class="fc"><i>132</i>&nbsp;            Pricebook2 orderPriceBook = new Pricebook2();</b>
+<b class="fc"><i>133</i>&nbsp;            if (o.Pricebook2Id != null){</b>
+<b class="fc"><i>134</i>&nbsp;                orderPriceBook = pricebook2Map.get(o.Pricebook2Id);</b>
+<i>135</i>&nbsp;            }
+<b class="fc"><i>136</i>&nbsp;            o.ERPStopFlag__c = false;</b>
+<b class="fc"><i>137</i>&nbsp;            if (account != null &amp;&amp; orderPriceBook != null &amp;&amp; orderPriceBook.SendToERPOM__c == true &amp;&amp; countryRules != null)</b>
+<i>138</i>&nbsp;                {
+<b class="nc"><i>139</i>&nbsp;                    o.ERPStopFlag__c = calculateStopFlags(account, o, countryRules, orderPriceBook);</b>
+<i>140</i>&nbsp;                }
+<i>141</i>&nbsp;            
+<i>142</i>&nbsp;        }
+<i>143</i>&nbsp;    }
+<i>144</i>&nbsp;
+<i>145</i>&nbsp;    //This is to check if a quote can be create or if it should be etop in ERP for human interaction in ERP side
+<b class="nc"><i>146</i>&nbsp;    public static Boolean calculateStopFlags(Account account, Order order, CountryStopRules__mdt countryRule, Pricebook2 pricebook){</b>
+<b class="nc"><i>147</i>&nbsp;        if(calculateSetFlag(account, countryRule, &#39;Set Flag&#39;))</b>
+<b class="nc"><i>148</i>&nbsp;            return(true);</b>
+<b class="nc"><i>149</i>&nbsp;        if(countryRule.NotFranceIn116__c == true &amp;&amp; account.Country__c != &#39;FR&#39; &amp;&amp; pricebook.CompanyCode__c == &#39;116&#39;)</b>
+<b class="nc"><i>150</i>&nbsp;            return(true);  </b>
+<b class="nc"><i>151</i>&nbsp;        if(countryRule.HasOfferCode__c == true &amp;&amp; order.Count_Offer_Codes__c &gt; 0)</b>
+<b class="nc"><i>152</i>&nbsp;            return(true);</b>
+<b class="nc"><i>153</i>&nbsp;        if(countryRule.HasDiscount__c == true &amp;&amp; order.Discount_Applied__c &gt; 0)</b>
+<b class="nc"><i>154</i>&nbsp;            return(true);</b>
+<b class="nc"><i>155</i>&nbsp;        if(countryRule.HasParentKitProducts__c == true &amp;&amp; order.ParentKitProduct__c &gt; 0)</b>
+<b class="nc"><i>156</i>&nbsp;            return(true);</b>
+<b class="nc"><i>157</i>&nbsp;        if(countryRule.HasCustomerServiceCommunication__c == true &amp;&amp; order.Communication_to_Customer_Service__c != null &amp;&amp; order.Communication_to_Customer_Service__c != &#39;&#39;)</b>
+<b class="nc"><i>158</i>&nbsp;            return(true);</b>
+<b class="nc"><i>159</i>&nbsp;        if(countryRule.HasPricebookStopOrder__c == true &amp;&amp; pricebook.StopOrdersinERP__c == true)</b>
+<b class="nc"><i>160</i>&nbsp;            return(true);</b>
+<b class="nc"><i>161</i>&nbsp;        return(false);</b>
+<i>162</i>&nbsp;
+<i>163</i>&nbsp;    }
+<i>164</i>&nbsp;
+<i>165</i>&nbsp;    
+<i>166</i>&nbsp;    
+<i>167</i>&nbsp;    /*------------------------------------------------------------  
+<i>168</i>&nbsp;    Description:    here are the account rules to calculate the ERP flag or not allow the order
+<i>169</i>&nbsp;                      
+<i>170</i>&nbsp;    Author:    Roberto Narbona 2023/13/07
+<i>171</i>&nbsp;    ------------------------------------------------------------*/
+<b class="nc"><i>172</i>&nbsp;    public static Boolean calculateSetFlag(Account account, CountryStopRules__mdt countryRule, String stopQuoteOrSetFlag){</b>
+<b class="nc"><i>173</i>&nbsp;        if(calculateSetFlag(countryRule.MedicalPublic__c, stopQuoteOrSetFlag) == true  &amp;&amp; isMedicalPublic(account) == true )</b>
+<b class="nc"><i>174</i>&nbsp;            return(true);</b>
+<b class="nc"><i>175</i>&nbsp;        if(calculateSetFlag(countryRule.EducationPublic__c, stopQuoteOrSetFlag) == true &amp;&amp; isEducational(account) == true)</b>
+<b class="nc"><i>176</i>&nbsp;            return(true);</b>
+<b class="nc"><i>177</i>&nbsp;        if(calculateSetFlag(countryRule.DentalSupportOrganization__c, stopQuoteOrSetFlag) == true  &amp;&amp; account.OneAccount_Type__c == &#39;Dental Support Organization&#39; )</b>
+<b class="nc"><i>178</i>&nbsp;            return(true);             </b>
+<b class="nc"><i>179</i>&nbsp;        if(calculateSetFlag(countryRule.IsMedicalGeneral__c, stopQuoteOrSetFlag) == true  &amp;&amp; account.OneAccount_Type__c == &#39;Medical&#39; &amp;&amp; account.Sub_Account_Type__c == &#39;General Hospital&#39;)</b>
+<b class="nc"><i>180</i>&nbsp;            return(true);</b>
+<b class="nc"><i>181</i>&nbsp;        return(false);</b>
+<i>182</i>&nbsp;    }
+<i>183</i>&nbsp;
+<i>184</i>&nbsp;    /*------------------------------------------------------------  
+<i>185</i>&nbsp;    Description:    here check if account is public medical
+<i>186</i>&nbsp;                      
+<i>187</i>&nbsp;    Author:    Roberto Narbona 2023/13/07
+<i>188</i>&nbsp;    ------------------------------------------------------------*/
+<b class="nc"><i>189</i>&nbsp;    public static Boolean isMedicalPublic(Account account){</b>
+<b class="nc"><i>190</i>&nbsp;        if( account.OneAccount_Type__c == &#39;Medical&#39; &amp;&amp; (account.Sub_Account_Type__c == &#39;Private Hospital&#39; || account.Sub_Account_Type__c == &#39;Public Health&#39; ))</b>
+<b class="nc"><i>191</i>&nbsp;            return(true);</b>
+<b class="nc"><i>192</i>&nbsp;        return(false);</b>
+<i>193</i>&nbsp;    }
+<i>194</i>&nbsp;
+<i>195</i>&nbsp;    /*------------------------------------------------------------  
+<i>196</i>&nbsp;    Description:    here is to check if account is educational hospital or school
+<i>197</i>&nbsp;                      
+<i>198</i>&nbsp;    Author:    Roberto Narbona 2023/13/07
+<i>199</i>&nbsp;    ------------------------------------------------------------*/
+<b class="nc"><i>200</i>&nbsp;    public static Boolean isEducational(Account account){</b>
+<i>201</i>&nbsp;        
+<b class="nc"><i>202</i>&nbsp;        if(account.OneAccount_Type__c == &#39;Education&#39; &amp;&amp; (account.Sub_Account_Type__c == &#39;Teaching Hospital&#39; || account.Sub_Account_Type__c == &#39;Dental School&#39;))</b>
+<b class="nc"><i>203</i>&nbsp;            return(true);</b>
+<b class="nc"><i>204</i>&nbsp;        return(false);</b>
+<i>205</i>&nbsp;    }
+<i>206</i>&nbsp;
+<i>207</i>&nbsp;    
+<i>208</i>&nbsp;    /*------------------------------------------------------------  
+<i>209</i>&nbsp;    Description:    here is to set if we need to evaluate the rule to Set Flag or rules to Stop Order creatation
+<i>210</i>&nbsp;                      
+<i>211</i>&nbsp;    Author:    Roberto Narbona 2023/13/07
+<i>212</i>&nbsp;    ------------------------------------------------------------*/
+<b class="nc"><i>213</i>&nbsp;    public static Boolean calculateSetFlag(String fieldValue, String stopQuoteOrSetFlag){</b>
+<b class="nc"><i>214</i>&nbsp;        if(stopQuoteOrSetFlag == &#39;Set Flag&#39; &amp;&amp; (fieldValue == &#39;Set Flag&#39; || fieldValue == &#39;Stop Order&#39;))</b>
+<b class="nc"><i>215</i>&nbsp;            return(true);</b>
+<b class="nc"><i>216</i>&nbsp;        if(stopQuoteOrSetFlag == &#39;Stop Order&#39; &amp;&amp; fieldValue == &#39;Stop Order&#39;)</b>
+<b class="nc"><i>217</i>&nbsp;            return(true);</b>
+<b class="nc"><i>218</i>&nbsp;        return(false);</b>
+<i>219</i>&nbsp;    }
+<i>220</i>&nbsp;
+<i>221</i>&nbsp;
+<i>222</i>&nbsp;    /*------------------------------------------------------------  
+<i>223</i>&nbsp;    Description:    This is to apply rules regarding ERP integration
+<i>224</i>&nbsp;                      
+<i>225</i>&nbsp;    Author:    Roberto Narbona 2023/10/05
+<i>226</i>&nbsp;    ------------------------------------------------------------*/
+<i>227</i>&nbsp;
+<b class="fc"><i>228</i>&nbsp;    public static void setShipmentAddress(List&lt;Order&gt; newOrdersList){ </b>
+<i>229</i>&nbsp;        
+<i>230</i>&nbsp;        // Don&#39;t run unless configured to do so.
+<b class="fc"><i>231</i>&nbsp;        BatchSettings__c settings = BatchSettings__c.getInstance(&#39;Default&#39;);</b>
+<b class="fc"><i>232</i>&nbsp;        if (!Test.isRunningTest() &amp;&amp; !settings.OrderSetAccountOwnerIsEnabled__c)</b>
+<b class="nc"><i>233</i>&nbsp;            return; </b>
+<i>234</i>&nbsp;
+<b class="fc"><i>235</i>&nbsp;        Set&lt;ID&gt; relatedShipmentAddressIds = new Set&lt;ID&gt;();</b>
+<i>236</i>&nbsp;        
+<b class="fc"><i>237</i>&nbsp;        for (Order o : newOrdersList){</b>
+<b class="fc"><i>238</i>&nbsp;            if (o.ShippingAddress__c != null)</b>
+<b class="nc"><i>239</i>&nbsp;            relatedShipmentAddressIds.add(o.ShippingAddress__c);</b>
+<i>240</i>&nbsp;            
+<i>241</i>&nbsp;        }
+<i>242</i>&nbsp;            
+<b class="fc"><i>243</i>&nbsp;        Map&lt;ID, Address__c&gt; addressMap = new Map&lt;Id, Address__c&gt;([SELECT Id, Street__c, City__c, StateProvince__c, PostalCode__c, Country__c FROM Address__c WHERE Id IN :relatedShipmentAddressIds]);</b>
+<i>244</i>&nbsp;
+<b class="fc"><i>245</i>&nbsp;        for (Order o : newOrdersList)</b>
+<b class="fc"><i>246</i>&nbsp;        {</b>
+<b class="fc"><i>247</i>&nbsp;            Address__c addres = new Address__c();</b>
+<b class="fc"><i>248</i>&nbsp;            if (o.ShippingAddress__c != null)</b>
+<i>249</i>&nbsp;            {
+<b class="nc"><i>250</i>&nbsp;                addres = addressMap.get(o.ShippingAddress__c);</b>
+<i>251</i>&nbsp;            }
+<i>252</i>&nbsp;
+<b class="fc"><i>253</i>&nbsp;            if(addres != null &amp;&amp; o.ShippingAddress__c != null ){</b>
+<b class="nc"><i>254</i>&nbsp;                o.ShippingStreet = addres.Street__c;</b>
+<b class="nc"><i>255</i>&nbsp;                o.ShippingCity = addres.City__c;</b>
+<b class="nc"><i>256</i>&nbsp;                o.ShippingState = addres.StateProvince__c;</b>
+<b class="nc"><i>257</i>&nbsp;                o.ShippingPostalCode = addres.PostalCode__c;</b>
+<b class="nc"><i>258</i>&nbsp;                o.ShippingCountry = addres.Country__c;</b>
+<i>259</i>&nbsp;            }
+<i>260</i>&nbsp;        }
+<i>261</i>&nbsp;    }
+<i>262</i>&nbsp;
+<i>263</i>&nbsp;    /*------------------------------------------------------------  
+<i>264</i>&nbsp;    Description:    Method to evaluate approvals based on underlying order rows
+<i>265</i>&nbsp;                    Called after Insert and after Update                    
+<i>266</i>&nbsp;    Author:         Richard Trum (20220313)
+<i>267</i>&nbsp;    ------------------------------------------------------------*/
+<i>268</i>&nbsp;
+<b class="fc"><i>269</i>&nbsp;    public static void evaluateOrderLineApproval(List&lt;Order&gt; newOrdersList, Map&lt;Id, Order&gt; newOrdersMap){ </b>
+<i>270</i>&nbsp;        
+<i>271</i>&nbsp;        // Don&#39;t run unless configured to do so.
+<b class="fc"><i>272</i>&nbsp;        BatchSettings__c settings = BatchSettings__c.getInstance(&#39;Default&#39;);</b>
+<b class="fc"><i>273</i>&nbsp;        if (!Test.isRunningTest() &amp;&amp; !settings.OrderSetAccountOwnerIsEnabled__c){</b>
+<b class="nc"><i>274</i>&nbsp;            return; </b>
+<i>275</i>&nbsp;        }    
+<i>276</i>&nbsp;
+<b class="fc"><i>277</i>&nbsp;        Map&lt;Id, Order&gt; ordersMap = new Map&lt;Id, Order&gt;([SELECT Id, ApprovalLevelInt__c, UsedCouponsValue__c, Order_Amount_global__c, Total_Order_Discount__c, SourceRecord__c, SourceRecord__r.Source_Id__c, Pricebook2.SourceId__c, (SELECT Id, Quantity, UseCoupon__c, Offer_code_dna__c, Offer_code_dna__r.QuantityLimit__c, Total_Line_Item_Price__c, ApprovalLevelInt__c, PricebookEntry.Primary__c, PricebookEntry.ApprovalLevel1__c, PricebookEntry.ApprovalLevel2__c, PricebookEntry.ApprovalLevel3__c FROM OrderItems) FROM Order WHERE Id IN: newOrdersMap.keySet()]);</b>
+<i>278</i>&nbsp;
+<b class="fc"><i>279</i>&nbsp;        for(Order o: newOrdersList){</b>
+<i>280</i>&nbsp;
+<b class="fc"><i>281</i>&nbsp;            List&lt;OrderItem&gt; items = ordersMap.get(o.Id).OrderItems;</b>
+<b class="fc"><i>282</i>&nbsp;            Decimal approvalLevel = 0;</b>
+<i>283</i>&nbsp;
+<b class="fc"><i>284</i>&nbsp;            Decimal secondaryOrderValue = 0;</b>
+<b class="fc"><i>285</i>&nbsp;            Decimal secondaryLevelOne = 0;</b>
+<b class="fc"><i>286</i>&nbsp;            Decimal secondaryLevelTwo = 0;</b>
+<b class="fc"><i>287</i>&nbsp;            Decimal secondaryLevelThree = 0;</b>
+<i>288</i>&nbsp;            
+<b class="fc"><i>289</i>&nbsp;            for(OrderItem n : items){</b>
+<i>290</i>&nbsp;                
+<b class="fc"><i>291</i>&nbsp;                if(n.PricebookEntry.Primary__c == false &amp;&amp; (n.UseCoupon__c == false || (o.UsedCouponsValue__c &gt; o.Order_Amount_global__c))){</b>
+<b class="fc"><i>292</i>&nbsp;                    if(n.Offer_code_dna__c == null || n.Offer_code_dna__r.QuantityLimit__c &lt; n.Quantity){</b>
+<b class="fc"><i>293</i>&nbsp;                        secondaryOrderValue = secondaryOrderValue + Integer.valueOf(n.Total_Line_Item_Price__c);</b>
+<i>294</i>&nbsp;                        
+<b class="fc"><i>295</i>&nbsp;                        if(n.PricebookEntry.ApprovalLevel1__c != null){</b>
+<b class="nc"><i>296</i>&nbsp;                            secondaryLevelOne = secondaryLevelOne + n.PricebookEntry.ApprovalLevel1__c * n.Quantity;</b>
+<b class="nc"><i>297</i>&nbsp;                            secondaryLevelTwo = secondaryLevelTwo + n.PricebookEntry.ApprovalLevel2__c * n.Quantity;</b>
+<b class="nc"><i>298</i>&nbsp;                            secondaryLevelThree = secondaryLevelThree + n.PricebookEntry.ApprovalLevel3__c * n.Quantity;</b>
+<i>299</i>&nbsp;                        }
+<i>300</i>&nbsp;                    }
+<i>301</i>&nbsp;                }
+<i>302</i>&nbsp;
+<i>303</i>&nbsp;            }
+<i>304</i>&nbsp;            
+<b class="fc"><i>305</i>&nbsp;            Decimal secondaryApprovalLevel = 0;</b>
+<i>306</i>&nbsp;
+<i>307</i>&nbsp;            //Only evaluate for order that do have products with an approval level assigned
+<b class="fc"><i>308</i>&nbsp;            if(secondaryLevelOne != 0){            </b>
+<b class="nc"><i>309</i>&nbsp;            if(secondaryOrderValue &lt; secondaryLevelOne){</b>
+<b class="nc"><i>310</i>&nbsp;                if(secondaryOrderValue &lt; secondaryLevelTwo){</b>
+<b class="nc"><i>311</i>&nbsp;                    if(secondaryOrderValue &lt; secondaryLevelThree){</b>
+<b class="nc"><i>312</i>&nbsp;                        secondaryApprovalLevel = 3;</b>
+<i>313</i>&nbsp;                    }
+<i>314</i>&nbsp;                    else{
+<b class="nc"><i>315</i>&nbsp;                        secondaryApprovalLevel = 2;</b>
+<i>316</i>&nbsp;                    }
+<i>317</i>&nbsp;                }
+<i>318</i>&nbsp;                else{
+<b class="nc"><i>319</i>&nbsp;                    secondaryApprovalLevel = 1;</b>
+<i>320</i>&nbsp;                }
+<i>321</i>&nbsp;            }
+<i>322</i>&nbsp;            }
+<i>323</i>&nbsp;
+<b class="fc"><i>324</i>&nbsp;            o.ApprovalLevelSecondaryInt__c = secondaryApprovalLevel;</b>
+<i>325</i>&nbsp;
+<b class="fc"><i>326</i>&nbsp;            for(OrderItem i : items){</b>
+<i>327</i>&nbsp;
+<b class="fc"><i>328</i>&nbsp;                if(i.PricebookEntry.Primary__c == true){</b>
+<i>329</i>&nbsp;            
+<b class="nc"><i>330</i>&nbsp;                    if(i.ApprovalLevelInt__c &gt; approvalLevel){</b>
+<b class="nc"><i>331</i>&nbsp;                        approvalLevel = i.ApprovalLevelInt__c;</b>
+<i>332</i>&nbsp;                    }
+<i>333</i>&nbsp;                }
+<i>334</i>&nbsp;            }
+<i>335</i>&nbsp;
+<b class="fc"><i>336</i>&nbsp;            if(secondaryApprovalLevel &gt; approvalLevel){</b>
+<b class="nc"><i>337</i>&nbsp;                approvalLevel = secondaryApprovalLevel;</b>
+<i>338</i>&nbsp;            }
+<i>339</i>&nbsp;                
+<i>340</i>&nbsp;            //Adjust approval levels in case the discount percentage is high but the discount value is low
+<i>341</i>&nbsp;            	
+<b class="fc"><i>342</i>&nbsp;                String sourceId = ordersMap.get(o.Id).Pricebook2.SourceId__c;</b>
+<i>343</i>&nbsp;                
+<b class="fc"><i>344</i>&nbsp;                if(sourceId == &#39;1&#39;){</b>
+<i>345</i>&nbsp;                    
+<b class="nc"><i>346</i>&nbsp;                    if(o.Total_Order_Discount__c &lt;10000 &amp;&amp; approvalLevel &gt; 3){</b>
+<b class="nc"><i>347</i>&nbsp;                        approvalLevel = 3;</b>
+<i>348</i>&nbsp;                    }
+<b class="nc"><i>349</i>&nbsp;                    if(o.Total_Order_Discount__c &lt;2000 &amp;&amp; approvalLevel &gt;2){</b>
+<b class="nc"><i>350</i>&nbsp;                        approvalLevel = 2;</b>
+<i>351</i>&nbsp;                    }
+<b class="nc"><i>352</i>&nbsp;                    if(o.Total_Order_Discount__c &lt; 1000 &amp;&amp; approvalLevel &gt; 1){</b>
+<b class="nc"><i>353</i>&nbsp;                        approvalLevel = 1;</b>
+<i>354</i>&nbsp;                    }
+<i>355</i>&nbsp;                    
+<i>356</i>&nbsp;                }
+<i>357</i>&nbsp;                
+<b class="fc"><i>358</i>&nbsp;               	if(sourceId == &#39;2&#39;){</b>
+<b class="nc"><i>359</i>&nbsp;                    if(o.Total_Order_Discount__c &lt;3500 &amp;&amp; approvalLevel &gt; 3){</b>
+<b class="nc"><i>360</i>&nbsp;                        approvalLevel = 3;</b>
+<i>361</i>&nbsp;                    }
+<b class="nc"><i>362</i>&nbsp;                    if(o.Total_Order_Discount__c &lt;900 &amp;&amp; approvalLevel &gt; 2){</b>
+<b class="nc"><i>363</i>&nbsp;                        approvalLevel = 2;</b>
+<i>364</i>&nbsp;                    }
+<b class="nc"><i>365</i>&nbsp;                    if(o.Total_Order_Discount__c &lt; 500 &amp;&amp; approvalLevel &gt; 1){</b>
+<b class="nc"><i>366</i>&nbsp;                        approvalLevel = 1;</b>
+<i>367</i>&nbsp;                    }
+<i>368</i>&nbsp;                }
+<i>369</i>&nbsp;
+<i>370</i>&nbsp;                //Check if shipping is for free
+<i>371</i>&nbsp;
+<b class="fc"><i>372</i>&nbsp;                if(o.Waive_Shipping_Charges__c == true &amp;&amp; approvalLevel == 0){</b>
+<b class="nc"><i>373</i>&nbsp;                    approvalLevel = 1;</b>
+<i>374</i>&nbsp;                }
+<i>375</i>&nbsp;                
+<i>376</i>&nbsp;
+<b class="fc"><i>377</i>&nbsp;            o.ApprovalLevelInt__c = approvalLevel;</b>
+<i>378</i>&nbsp;        }
+<i>379</i>&nbsp;
+<i>380</i>&nbsp;    }
+<i>381</i>&nbsp;
+<i>382</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

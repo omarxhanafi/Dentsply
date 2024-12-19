@@ -1,0 +1,89 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: QuoteTrigger</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.triggers</a> ]
+</div>
+
+<h1>Coverage Summary for Class: QuoteTrigger (default.triggers)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">QuoteTrigger</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>QuoteTrigger</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         Houssam ADIB (Salesforce)
+<i>3</i>&nbsp;Description:    Quote Trigger
+<i>4</i>&nbsp;Test class      Test_QuoteTriggerHandler
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;History
+<i>7</i>&nbsp;8-Sept-2022     Create new Trigger
+<i>8</i>&nbsp;----------------------------------------------------------------------------------------*/
+<i>9</i>&nbsp;trigger QuoteTrigger on Quote (
+<i>10</i>&nbsp;        before insert,
+<i>11</i>&nbsp;        before update,
+<i>12</i>&nbsp;        before delete,
+<i>13</i>&nbsp;        after insert,
+<i>14</i>&nbsp;        after update,
+<i>15</i>&nbsp;        after delete,
+<i>16</i>&nbsp;        after undelete) {
+<b class="nc"><i>17</i>&nbsp;    new QuoteTriggerHandler().run();</b>
+<i>18</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

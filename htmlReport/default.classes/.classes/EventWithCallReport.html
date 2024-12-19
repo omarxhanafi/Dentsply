@@ -1,0 +1,787 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: EventWithCallReport</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: EventWithCallReport (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">EventWithCallReport</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 375)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>EventWithCallReport</h2>
+<div class="sourceCode"><i>1</i>&nbsp;global with sharing class EventWithCallReport {
+<i>2</i>&nbsp;    private final ApexPages.StandardController baseController;
+<i>3</i>&nbsp;     
+<b class="nc"><i>4</i>&nbsp;    public EventRelationPickerState InviteesPickerState { get; set; }</b>
+<b class="nc"><i>5</i>&nbsp;    public EventRelationPickerState WhoIdPickerState { get; set; }</b>
+<i>6</i>&nbsp;    
+<b class="nc"><i>7</i>&nbsp;    public EventRecurrenceState EventRecurrenceState { get; set; }</b>
+<i>8</i>&nbsp;
+<b class="nc"><i>9</i>&nbsp;    public String OrderType {get;set;}</b>
+<i>10</i>&nbsp;    
+<b class="nc"><i>11</i>&nbsp;    public Event Event { get ; set; }</b>
+<i>12</i>&nbsp;    
+<b class="nc"><i>13</i>&nbsp;    public User Owner { get ; set; }</b>
+<b class="nc"><i>14</i>&nbsp;    public User Manager { get ; set; }</b>
+<i>15</i>&nbsp;    
+<b class="nc"><i>16</i>&nbsp;    public string WhatName { get ; set; }    </b>
+<b class="nc"><i>17</i>&nbsp;    public string WhatType { get ; set; }</b>
+<i>18</i>&nbsp;    
+<b class="nc"><i>19</i>&nbsp;    public string DealerName { get ; set; }</b>
+<i>20</i>&nbsp;    
+<b class="nc"><i>21</i>&nbsp;    public Decimal EventLengthInMinutes { get; set; }</b>
+<i>22</i>&nbsp;    
+<b class="nc"><i>23</i>&nbsp;    public list&lt;SelectOption&gt; OtherSBUsDiscussedOptions { get; set; }</b>
+<b class="nc"><i>24</i>&nbsp;    public list&lt;SelectOption&gt; EventStatusOptions { get; set; }</b>
+<i>25</i>&nbsp;    
+<b class="nc"><i>26</i>&nbsp;    public boolean EventIsPlanned { get; set; }</b>
+<b class="nc"><i>27</i>&nbsp;    public string ReturnUrl { get; set; }</b>
+<i>28</i>&nbsp;	
+<b class="nc"><i>29</i>&nbsp;    public boolean IsXHRRequest { get; set; }</b>
+<b class="nc"><i>30</i>&nbsp;    public boolean IsGeopointe { get; set; }</b>
+<b class="nc"><i>31</i>&nbsp;    public boolean ShowHeader { get; set; }</b>
+<b class="nc"><i>32</i>&nbsp;    public boolean ShowSidebar { get; set; }</b>
+<i>33</i>&nbsp;    
+<i>34</i>&nbsp;    public boolean ShowRecurrencePanel { 
+<b class="nc"><i>35</i>&nbsp;        get {</b>
+<b class="nc"><i>36</i>&nbsp;            return Event.Id == null || IsRecurrenceInstance || IsRecurrenceSeries;</b>
+<i>37</i>&nbsp;        }        
+<i>38</i>&nbsp;    }
+<i>39</i>&nbsp;    
+<i>40</i>&nbsp;    public boolean IsRecurrenceInstance { 
+<i>41</i>&nbsp;        // true if the event is a recurrence, and if the event is not a series
+<b class="nc"><i>42</i>&nbsp;        get {</b>
+<b class="nc"><i>43</i>&nbsp;            return Event.RecurrenceActivityId != null &amp;&amp; !IsRecurrenceSeries;</b>
+<i>44</i>&nbsp;        }        
+<i>45</i>&nbsp;    }
+<i>46</i>&nbsp;    
+<i>47</i>&nbsp;    public boolean IsRecurrenceSeries { 
+<i>48</i>&nbsp;        // true if the event is a recurrence, and the event id matches the recurrence activity id 
+<b class="nc"><i>49</i>&nbsp;        get {</b>
+<b class="nc"><i>50</i>&nbsp;            return Event.RecurrenceActivityId != null &amp;&amp; Event.RecurrenceActivityId == Event.Id;</b>
+<i>51</i>&nbsp;        }        
+<i>52</i>&nbsp;    }
+<i>53</i>&nbsp;    
+<b class="nc"><i>54</i>&nbsp;    public List&lt;Schema.PicklistEntry&gt; UserCountriesPicklistValues { get { return GetPicklistValues(&#39;Call_Report__c&#39;, &#39;Assigned_To_User_Country__c&#39;); } }    </b>
+<b class="nc"><i>55</i>&nbsp;    public List&lt;Schema.PicklistEntry&gt; CoTravelPicklistValues { get { return GetPicklistValues(&#39;event&#39;, &#39;Co_travel__c&#39;); } }  </b>
+<b class="nc"><i>56</i>&nbsp;    public List&lt;Schema.PicklistEntry&gt; EventStatusPicklistValues { get { return GetPicklistValues(&#39;event&#39;, &#39;Event_Status__c&#39;); } }  </b>
+<b class="nc"><i>57</i>&nbsp;    public List&lt;Schema.PicklistEntry&gt; ShowTimeAsPicklistValues { get { return GetPicklistValues(&#39;event&#39;, &#39;ShowAs&#39;); } }    </b>
+<b class="nc"><i>58</i>&nbsp;    public List&lt;Schema.PicklistEntry&gt; EventSBUPicklistValues { get { return GetPicklistValues(&#39;event&#39;, &#39;SBU__c&#39;); } }    </b>
+<i>59</i>&nbsp;    //public List&lt;Schema.PicklistEntry&gt; SendMailingPicklistValues { get { return GetPicklistValues(&#39;event&#39;, &#39;Send_Mailing__c&#39;); } }    
+<i>60</i>&nbsp;    //public List&lt;Schema.PicklistEntry&gt; WhichMailingPicklistValues { get { return GetPicklistValues(&#39;event&#39;, &#39;NA_Which_mailing_should_be_sent__c&#39;); } }  
+<b class="nc"><i>61</i>&nbsp;    public List&lt;Schema.PicklistEntry&gt; BusinessInitiativeValues { get { return GetPicklistValues(&#39;event&#39;, &#39;Business_Initiative__c&#39;); } }  </b>
+<b class="nc"><i>62</i>&nbsp;    public List&lt;Schema.PicklistEntry&gt; EventSubtypeValues { get { return GetPicklistValues(&#39;event&#39;, &#39;Activity_Subtype__c&#39;); } }  </b>
+<i>63</i>&nbsp;    
+<i>64</i>&nbsp;    public string DateTimeOffset{
+<b class="nc"><i>65</i>&nbsp;        get{</b>
+<b class="nc"><i>66</i>&nbsp;            DateTime now = DateTime.now();</b>
+<b class="nc"><i>67</i>&nbsp;            Long offset = DateTime.newInstance(now.date(), now.time()).getTime() - DateTime.newInstance(now.dateGmt(), now.timeGmt()).getTime();</b>
+<i>68</i>&nbsp;           
+<b class="nc"><i>69</i>&nbsp;            return string.ValueOf(offset / (60 * 60 * 1000));</b>
+<i>70</i>&nbsp;        }
+<i>71</i>&nbsp;    }
+<i>72</i>&nbsp;    
+<b class="nc"><i>73</i>&nbsp;    public string StartDateString { get { return Event.StartDateTime.Format(&#39;yyyy-MM-dd&#39;); } }</b>
+<b class="nc"><i>74</i>&nbsp;    public string StartTimeString { get { return Event.StartDateTime.Format(&#39;HH:mm&#39;); } }</b>
+<b class="nc"><i>75</i>&nbsp;    public string EndDateString { get { return Event.EndDateTime.Format(&#39;yyyy-MM-dd&#39;); } }</b>
+<b class="nc"><i>76</i>&nbsp;    public string EndTimeString { get { return Event.EndDateTime.Format(&#39;HH:mm&#39;); } }</b>
+<i>77</i>&nbsp;    
+<b class="nc"><i>78</i>&nbsp;    public DateTimePickerVM StartTimePicker { get; set; }</b>
+<b class="nc"><i>79</i>&nbsp;    public DateTimePickerVM EndTimePicker { get; set; }</b>
+<i>80</i>&nbsp;
+<b class="nc"><i>81</i>&nbsp;    public EventWithCallReport(ApexPages.StandardController extendedController) {</b>
+<i>82</i>&nbsp;        system.debug(&#39;Entering constructor.&#39;);
+<i>83</i>&nbsp;        
+<b class="nc"><i>84</i>&nbsp;        baseController = extendedController;</b>
+<i>85</i>&nbsp;        
+<b class="nc"><i>86</i>&nbsp;        if(IsXHRRequest == null){ IsXHRRequest = false; }   </b>
+<b class="nc"><i>87</i>&nbsp;        if(IsGeopointe == null){ IsGeopointe = false; }   </b>
+<b class="nc"><i>88</i>&nbsp;        if(ShowHeader == null){ ShowHeader = true; }   </b>
+<b class="nc"><i>89</i>&nbsp;        if(ShowSidebar == null){ ShowSidebar = true; }   </b>
+<i>90</i>&nbsp;        
+<b class="nc"><i>91</i>&nbsp;        EventIsPlanned = !(ApexPages.currentPage().getParameters().get(&#39;unplannedEvent&#39;) == &#39;1&#39;);</b>
+<b class="nc"><i>92</i>&nbsp;        ReturnUrl = ApexPages.currentPage().getParameters().get(&#39;retURL&#39;);</b>
+<i>93</i>&nbsp;
+<b class="nc"><i>94</i>&nbsp;		if(ApexPages.currentPage().getParameters().get(&#39;context&#39;) == &#39;geopointe&#39;) {</b>
+<b class="nc"><i>95</i>&nbsp;			IsGeopointe = true;</b>
+<b class="nc"><i>96</i>&nbsp;			ShowHeader = false;</b>
+<b class="nc"><i>97</i>&nbsp;			ShowSidebar = false;</b>
+<i>98</i>&nbsp;		}
+<i>99</i>&nbsp;        
+<b class="nc"><i>100</i>&nbsp;        Event = (Event)baseController.getRecord();</b>
+<b class="nc"><i>101</i>&nbsp;		User currentUser = getCurrentUser();</b>
+<i>102</i>&nbsp;        
+<b class="nc"><i>103</i>&nbsp;        EventRecurrenceService eventRecurrenceService = new EventRecurrenceService();</b>
+<b class="nc"><i>104</i>&nbsp;        EventRecurrenceState = eventRecurrenceService.GetEventRecurrenceState(Event);</b>
+<i>105</i>&nbsp;
+<i>106</i>&nbsp;        system.debug(&#39;IsRecurrence: &#39; + Event.IsRecurrence);
+<i>107</i>&nbsp;        
+<b class="nc"><i>108</i>&nbsp;        if(InviteesPickerState == null){</b>
+<i>109</i>&nbsp;            system.debug(&#39;Initializing InviteesPickerState&#39;);
+<i>110</i>&nbsp;            
+<b class="nc"><i>111</i>&nbsp;            InviteesPickerState = new EventRelationPickerState();        </b>
+<b class="nc"><i>112</i>&nbsp;            InviteesPickerState.ForInvitees = true;     </b>
+<b class="nc"><i>113</i>&nbsp;            InviteesPickerState.IsParent = false;        </b>
+<b class="nc"><i>114</i>&nbsp;            InviteesPickerState.EventId = Event.Id;        </b>
+<b class="nc"><i>115</i>&nbsp;            InviteesPickerState.PopulateEventRelationsFromDatabase();</b>
+<i>116</i>&nbsp;        }
+<i>117</i>&nbsp;
+<b class="nc"><i>118</i>&nbsp;        if(WhoIdPickerState == null){</b>
+<i>119</i>&nbsp;            system.debug(&#39;Initializing WhoIdPickerState&#39;);
+<i>120</i>&nbsp;            
+<b class="nc"><i>121</i>&nbsp;            WhoIdPickerState = new EventRelationPickerState();        </b>
+<b class="nc"><i>122</i>&nbsp;            WhoIdPickerState.ForInvitees = false;            </b>
+<b class="nc"><i>123</i>&nbsp;            WhoIdPickerState.IsParent = true;        </b>
+<b class="nc"><i>124</i>&nbsp;            WhoIdPickerState.EventId = Event.Id;</b>
+<i>125</i>&nbsp;        }  
+<i>126</i>&nbsp;        
+<b class="nc"><i>127</i>&nbsp;        boolean populateWhoIdFromDB = true;</b>
+<i>128</i>&nbsp;        
+<b class="nc"><i>129</i>&nbsp;        if(Event.Id == null) {           </b>
+<i>130</i>&nbsp;            system.debug(&#39;Base controller event ID is null. Creating instance of event with default values.&#39;);      
+<i>131</i>&nbsp;            
+<b class="nc"><i>132</i>&nbsp;            Event.OwnerId = UserInfo.getUserId(); </b>
+<b class="nc"><i>133</i>&nbsp;            Event.Customer_Facing_Event__c = true;</b>
+<b class="nc"><i>134</i>&nbsp;            Event.Location_Was_Automatically_Calculated__c = true;</b>
+<b class="nc"><i>135</i>&nbsp;            Event.Astra_Tech_Type__c = &#39;In Person Meeting&#39;;</b>
+<i>136</i>&nbsp;            
+<b class="nc"><i>137</i>&nbsp;            Event.ShowAs = (string) GetDefaultValue(&#39;event&#39;, &#39;showAs&#39;);</b>
+<i>138</i>&nbsp;               
+<b class="nc"><i>139</i>&nbsp;            EventLengthInMinutes = currentUser.Default_Activity_Length_In_Minutes__c;</b>
+<i>140</i>&nbsp;            
+<b class="nc"><i>141</i>&nbsp;            if(EventLengthInMinutes == null){</b>
+<b class="nc"><i>142</i>&nbsp;                EventLengthInMinutes = 60;</b>
+<i>143</i>&nbsp;            }
+<i>144</i>&nbsp;            
+<b class="nc"><i>145</i>&nbsp;            UpdateSBU();</b>
+<b class="nc"><i>146</i>&nbsp;            SeedEventTimes();</b>
+<i>147</i>&nbsp;            
+<b class="nc"><i>148</i>&nbsp;            Event.Send_Calendar_Invites__c = EventIsPlanned &amp;&amp; currentUser.Default_Event_Update_Calendar__c;</b>
+<i>149</i>&nbsp;            
+<b class="nc"><i>150</i>&nbsp;            if(!EventIsPlanned){</b>
+<b class="nc"><i>151</i>&nbsp;                Event.Event_Status__c = &#39;Completed&#39;;</b>
+<b class="nc"><i>152</i>&nbsp;                Event.Astra_Tech_Type__c = &#39;Cold Call&#39;;</b>
+<i>153</i>&nbsp;            }
+<i>154</i>&nbsp;            
+<b class="nc"><i>155</i>&nbsp;            string referringWhoId = ApexPages.currentPage().getParameters().get(&#39;who_id&#39;);</b>
+<b class="nc"><i>156</i>&nbsp;            string referringWhatId = ApexPages.currentPage().getParameters().get(&#39;what_id&#39;);</b>
+<i>157</i>&nbsp;            
+<b class="nc"><i>158</i>&nbsp;            if(referringWhatId != null){     </b>
+<b class="nc"><i>159</i>&nbsp;                Event.WhatId = referringWhatId;</b>
+<i>160</i>&nbsp;                
+<b class="nc"><i>161</i>&nbsp;                UpdateLocation();</b>
+<i>162</i>&nbsp;            }                 
+<b class="nc"><i>163</i>&nbsp;            if(referringWhoId != null){                        </b>
+<b class="nc"><i>164</i>&nbsp;                Event.WhoId = referringWhoId;</b>
+<b class="nc"><i>165</i>&nbsp;                WhoIdPickerState.StringRepresentation = referringWhoId;</b>
+<b class="nc"><i>166</i>&nbsp;                WhoIdPickerState.SetEventRelationsFromString();</b>
+<i>167</i>&nbsp;                
+<b class="nc"><i>168</i>&nbsp;                populateWhoIdFromDB = false;</b>
+<i>169</i>&nbsp;                
+<b class="nc"><i>170</i>&nbsp;                if (referringWhatId == null) UpdateWhatId();</b>
+<i>171</i>&nbsp;            }
+<i>172</i>&nbsp;        }  
+<i>173</i>&nbsp;        else{ // event id is not null
+<b class="nc"><i>174</i>&nbsp;            long eventLengthInMilliseconds = Event.EndDateTime.getTime() - Event.StartDateTime.getTime();</b>
+<b class="nc"><i>175</i>&nbsp;            EventLengthInMinutes = eventLengthInMilliseconds/1000/60;</b>
+<i>176</i>&nbsp;            
+<b class="nc"><i>177</i>&nbsp;            if(Event.IsAllDayEvent){</b>
+<b class="nc"><i>178</i>&nbsp;                Date activityDate = Event.ActivityDate;</b>
+<b class="nc"><i>179</i>&nbsp;                DateTime allDayStartDate = DateTime.NewInstance(activityDate.Year(), activityDate.Month(), activityDate.Day());</b>
+<i>180</i>&nbsp;                
+<b class="nc"><i>181</i>&nbsp;                Event.StartDateTime = allDayStartDate;</b>
+<i>182</i>&nbsp;                // Need to take 1,440 minutes (one day) off the end duration so that the date makes sense in the UI
+<i>183</i>&nbsp;                // eg All Day Event on 26th Oct will end at midnight 27th Oct, but the UI should show 26th Oct for both start date and end date
+<b class="nc"><i>184</i>&nbsp;                Event.EndDateTime = allDayStartDate.AddMinutes(Event.DurationInMinutes - 1440); </b>
+<i>185</i>&nbsp;            }
+<i>186</i>&nbsp;        }
+<i>187</i>&nbsp;            
+<b class="nc"><i>188</i>&nbsp;        if(Event.Call_Report__r == null){</b>
+<i>189</i>&nbsp;            System.debug(&#39;Call Report is null&#39;);
+<b class="nc"><i>190</i>&nbsp;            Event.Call_Report__r = (Call_Report__c)Call_Report__c.sObjectType.newSObject(null, true);</b>
+<i>191</i>&nbsp;        }
+<i>192</i>&nbsp;        
+<b class="nc"><i>193</i>&nbsp;        UpdateOwner();   </b>
+<b class="nc"><i>194</i>&nbsp;        UpdateCoTravel();</b>
+<i>195</i>&nbsp;        
+<b class="nc"><i>196</i>&nbsp;        UpdateOtherSBUsDiscussedOptions(); </b>
+<i>197</i>&nbsp;        
+<b class="nc"><i>198</i>&nbsp;        if(Event.WhoId != null){            </b>
+<i>199</i>&nbsp;            // This is just a hint to the VF component so that it can place the primary value at the top of the list
+<b class="nc"><i>200</i>&nbsp;            WhoIdPickerState.PrimaryValue = Event.WhoId;</b>
+<i>201</i>&nbsp;        }
+<i>202</i>&nbsp;        
+<b class="nc"><i>203</i>&nbsp;        if(Event.WhatId != null){</b>
+<b class="nc"><i>204</i>&nbsp;            WhatType = Event.WhatId.getSObjectType().getDescribe().getName();</b>
+<b class="nc"><i>205</i>&nbsp;            WhatName = getNameFromId(Event.WhatId);</b>
+<i>206</i>&nbsp;        }
+<i>207</i>&nbsp;        
+<b class="nc"><i>208</i>&nbsp;        if(Event.Dealer_Customer__c != null){</b>
+<b class="nc"><i>209</i>&nbsp;            DealerName = getNameFromId(Event.Dealer_Customer__c);</b>
+<i>210</i>&nbsp;        }
+<i>211</i>&nbsp;        
+<b class="nc"><i>212</i>&nbsp;        StartTimePicker = new DateTimePickerVM(Event.StartDateTime);</b>
+<b class="nc"><i>213</i>&nbsp;        EndTimePicker = new DateTimePickerVM(Event.EndDateTime);        </b>
+<i>214</i>&nbsp;        
+<b class="nc"><i>215</i>&nbsp;        if(populateWhoIdFromDB){</b>
+<b class="nc"><i>216</i>&nbsp;            WhoIdPickerState.PopulateEventRelationsFromDatabase();</b>
+<i>217</i>&nbsp;        }
+<i>218</i>&nbsp;        
+<b class="nc"><i>219</i>&nbsp;        if(IsRecurrenceInstance){</b>
+<b class="nc"><i>220</i>&nbsp;            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.WARNING, Label.Recurrence_InstanceWarning));</b>
+<i>221</i>&nbsp;        }
+<i>222</i>&nbsp;        
+<b class="nc"><i>223</i>&nbsp;        if(IsRecurrenceSeries){</b>
+<b class="nc"><i>224</i>&nbsp;            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.WARNING, Label.Recurrence_SeriesWarning));</b>
+<i>225</i>&nbsp;        }
+<i>226</i>&nbsp;        
+<b class="nc"><i>227</i>&nbsp;        UpdateEventStatusOptions();</b>
+<i>228</i>&nbsp;    }
+<i>229</i>&nbsp;    
+<b class="nc"><i>230</i>&nbsp;    public PageReference SaveCallReport(){               </b>
+<i>231</i>&nbsp;        system.debug(&#39;Entering SaveCallReport&#39;);
+<i>232</i>&nbsp;        
+<b class="nc"><i>233</i>&nbsp;        if(!StartTimePicker.IsValid()){</b>
+<b class="nc"><i>234</i>&nbsp;            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, &#39;The value of &quot;&#39;+ StartTimePicker.StringValue +&#39;&quot; is not valid for the event start time&#39;));</b>
+<i>235</i>&nbsp;        }
+<i>236</i>&nbsp;        
+<b class="nc"><i>237</i>&nbsp;        if(!EndTimePicker.IsValid()){</b>
+<b class="nc"><i>238</i>&nbsp;            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, &#39;The value of &quot;&#39;+ EndTimePicker.StringValue +&#39;&quot; is not valid for the event end time&#39;));</b>
+<i>239</i>&nbsp;        }
+<i>240</i>&nbsp;        
+<b class="nc"><i>241</i>&nbsp;        if(!StartTimePicker.IsValid() || !EndTimePicker.IsValid()){</b>
+<b class="nc"><i>242</i>&nbsp;            return null;</b>
+<i>243</i>&nbsp;        }
+<i>244</i>&nbsp;            
+<b class="nc"><i>245</i>&nbsp;        Event.StartDateTime = StartTimePicker.Value;</b>
+<b class="nc"><i>246</i>&nbsp;        Event.EndDateTime = EndTimePicker.Value;</b>
+<i>247</i>&nbsp;        
+<b class="nc"><i>248</i>&nbsp;        EventWithCallReportService eventWithCallReportService = new EventWithCallReportService();</b>
+<b class="nc"><i>249</i>&nbsp;        EventRecurrenceService eventRecurrenceService = new EventRecurrenceService();</b>
+<i>250</i>&nbsp;                    
+<i>251</i>&nbsp;        system.debug(&#39;Setting event recurrence...&#39;);
+<i>252</i>&nbsp;        system.debug(&#39;IsRecurrence before setting: &#39; + Event.IsRecurrence);
+<b class="nc"><i>253</i>&nbsp;        Event = eventRecurrenceService.SetEventRecurrenceFromState(Event, EventRecurrenceState);</b>
+<i>254</i>&nbsp;        system.debug(&#39;IsRecurrence after setting: &#39; + Event.IsRecurrence);
+<i>255</i>&nbsp;		                
+<b class="nc"><i>256</i>&nbsp;        try{            </b>
+<i>257</i>&nbsp;          system.debug(&#39;Saving...&#39;);
+<i>258</i>&nbsp;            system.debug(&#39;IsRecurrence: &#39; + Event.IsRecurrence);
+<b class="nc"><i>259</i>&nbsp;			eventWithCallReportService.Save(Event, Event.Call_Report__r, WhoIdPickerState, InviteesPickerState, Event.Send_Calendar_Invites__c);            </b>
+<i>260</i>&nbsp;        }
+<i>261</i>&nbsp;        catch(DmlException ex){
+<b class="nc"><i>262</i>&nbsp;            ApexPages.addMessages(ex);</b>
+<i>263</i>&nbsp;            
+<i>264</i>&nbsp;          //return ApexPages.currentPage();
+<b class="nc"><i>265</i>&nbsp;            return null;</b>
+<i>266</i>&nbsp;        }
+<i>267</i>&nbsp;
+<b class="nc"><i>268</i>&nbsp;		if(IsGeopointe){</b>
+<b class="nc"><i>269</i>&nbsp;            return new PageReference(&#39;/apex/GeopointeCloseAction&#39;);</b>
+<i>270</i>&nbsp;		}
+<i>271</i>&nbsp;        
+<b class="nc"><i>272</i>&nbsp;        if(returnURL != null){            </b>
+<b class="nc"><i>273</i>&nbsp;            if(OrderType == &#39;Direct&#39;){</b>
+<b class="nc"><i>274</i>&nbsp;                returnURL= (&#39;/apex/orderManagementVF?recordId=&#39; + Event.Id);</b>
+<i>275</i>&nbsp;            }
+<i>276</i>&nbsp;            
+<b class="nc"><i>277</i>&nbsp;            if(OrderType == &#39;Indirect&#39;){</b>
+<b class="nc"><i>278</i>&nbsp;                returnURL= (&#39;/apex/Order_Indirect_CFE?id=&#39; + Event.Id);</b>
+<i>279</i>&nbsp;            } 
+<i>280</i>&nbsp;            
+<b class="nc"><i>281</i>&nbsp;            return new PageReference(returnURL);</b>
+<i>282</i>&nbsp;        }
+<i>283</i>&nbsp;        
+<b class="nc"><i>284</i>&nbsp;        return ApexPages.currentPage();</b>
+<i>285</i>&nbsp;    }
+<i>286</i>&nbsp;
+<b class="nc"><i>287</i>&nbsp;    public PageReference saveNewCallReport(){               </b>
+<i>288</i>&nbsp;        system.debug(&#39;Entering SaveNewCallReport&#39;);
+<i>289</i>&nbsp;        
+<b class="nc"><i>290</i>&nbsp;        if(!StartTimePicker.IsValid()){</b>
+<b class="nc"><i>291</i>&nbsp;            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, &#39;The value of &quot;&#39;+ StartTimePicker.StringValue +&#39;&quot; is not valid for the event start time&#39;));</b>
+<i>292</i>&nbsp;        }
+<i>293</i>&nbsp;        
+<b class="nc"><i>294</i>&nbsp;        if(!EndTimePicker.IsValid()){</b>
+<b class="nc"><i>295</i>&nbsp;            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, &#39;The value of &quot;&#39;+ EndTimePicker.StringValue +&#39;&quot; is not valid for the event end time&#39;));</b>
+<i>296</i>&nbsp;        }
+<i>297</i>&nbsp;        
+<b class="nc"><i>298</i>&nbsp;        if(!StartTimePicker.IsValid() || !EndTimePicker.IsValid()){</b>
+<b class="nc"><i>299</i>&nbsp;            return null;</b>
+<i>300</i>&nbsp;        }
+<i>301</i>&nbsp;            
+<b class="nc"><i>302</i>&nbsp;        Event.StartDateTime = StartTimePicker.Value;</b>
+<b class="nc"><i>303</i>&nbsp;        Event.EndDateTime = EndTimePicker.Value;</b>
+<i>304</i>&nbsp;        
+<b class="nc"><i>305</i>&nbsp;        EventWithCallReportService eventWithCallReportService = new EventWithCallReportService();</b>
+<b class="nc"><i>306</i>&nbsp;        EventRecurrenceService eventRecurrenceService = new EventRecurrenceService();</b>
+<i>307</i>&nbsp;                    
+<i>308</i>&nbsp;        system.debug(&#39;Setting event recurrence...&#39;);
+<i>309</i>&nbsp;        system.debug(&#39;IsRecurrence before setting: &#39; + Event.IsRecurrence);
+<b class="nc"><i>310</i>&nbsp;        Event = eventRecurrenceService.SetEventRecurrenceFromState(Event, EventRecurrenceState);</b>
+<i>311</i>&nbsp;        system.debug(&#39;IsRecurrence after setting: &#39; + Event.IsRecurrence);
+<i>312</i>&nbsp;		                
+<b class="nc"><i>313</i>&nbsp;        try{            </b>
+<i>314</i>&nbsp;          system.debug(&#39;Saving...&#39;);
+<i>315</i>&nbsp;            system.debug(&#39;IsRecurrence: &#39; + Event.IsRecurrence);
+<b class="nc"><i>316</i>&nbsp;			eventWithCallReportService.Save(Event, Event.Call_Report__r, WhoIdPickerState, InviteesPickerState, Event.Send_Calendar_Invites__c);            </b>
+<i>317</i>&nbsp;        }
+<i>318</i>&nbsp;        catch(DmlException ex){
+<b class="nc"><i>319</i>&nbsp;            ApexPages.addMessages(ex);</b>
+<i>320</i>&nbsp;            
+<i>321</i>&nbsp;          //return ApexPages.currentPage();
+<b class="nc"><i>322</i>&nbsp;            return null;</b>
+<i>323</i>&nbsp;        }
+<i>324</i>&nbsp;    
+<b class="nc"><i>325</i>&nbsp;    string referringWhoId = ApexPages.currentPage().getParameters().get(&#39;who_id&#39;);</b>
+<b class="nc"><i>326</i>&nbsp;    string referringWhatId = ApexPages.currentPage().getParameters().get(&#39;what_id&#39;);		</b>
+<i>327</i>&nbsp;        
+<b class="nc"><i>328</i>&nbsp;        if(referringWhatId != null){           </b>
+<b class="nc"><i>329</i>&nbsp;            PageReference pr = new PageReference(&#39;/apex/callreportevent&#39;);        </b>
+<b class="nc"><i>330</i>&nbsp;            pr.setRedirect(true);</b>
+<b class="nc"><i>331</i>&nbsp;            pr.getParameters().put(&#39;what_id&#39;,Event.WhatId);</b>
+<b class="nc"><i>332</i>&nbsp;            pr.getParameters().put(&#39;retUrl&#39;,Event.WhatId);</b>
+<b class="nc"><i>333</i>&nbsp;            return pr;</b>
+<i>334</i>&nbsp;        }
+<b class="nc"><i>335</i>&nbsp;            else if (referringWhoId != null){</b>
+<b class="nc"><i>336</i>&nbsp;                PageReference pr = new PageReference(&#39;/apex/callreportevent&#39;);        </b>
+<b class="nc"><i>337</i>&nbsp;            pr.setRedirect(true);</b>
+<b class="nc"><i>338</i>&nbsp;            pr.getParameters().put(&#39;who_id&#39;,Event.WhoId);</b>
+<b class="nc"><i>339</i>&nbsp;            pr.getParameters().put(&#39;retUrl&#39;,Event.WhoId);</b>
+<b class="nc"><i>340</i>&nbsp;            return pr;</b>
+<i>341</i>&nbsp;            }
+<i>342</i>&nbsp;        else {
+<b class="nc"><i>343</i>&nbsp;            if(Event.WhoId != null &amp;&amp; Event.WhatId != null) {</b>
+<b class="nc"><i>344</i>&nbsp;            PageReference pr = new PageReference(&#39;/apex/callreportevent&#39;);        </b>
+<b class="nc"><i>345</i>&nbsp;            pr.setRedirect(true);</b>
+<b class="nc"><i>346</i>&nbsp;            pr.getParameters().put(&#39;who_id&#39;,Event.WhoId);</b>
+<b class="nc"><i>347</i>&nbsp;            pr.getParameters().put(&#39;what_id&#39;,Event.WhatId);</b>
+<b class="nc"><i>348</i>&nbsp;            pr.getParameters().put(&#39;retUrl&#39;,Event.WhoId);</b>
+<b class="nc"><i>349</i>&nbsp;            return pr;  </b>
+<i>350</i>&nbsp;            }
+<b class="nc"><i>351</i>&nbsp;            else if(Event.WhatId != null) {</b>
+<b class="nc"><i>352</i>&nbsp;            PageReference pr = new PageReference(&#39;/apex/callreportevent&#39;);        </b>
+<b class="nc"><i>353</i>&nbsp;            pr.setRedirect(true);</b>
+<b class="nc"><i>354</i>&nbsp;            pr.getParameters().put(&#39;what_id&#39;,Event.WhatId);</b>
+<b class="nc"><i>355</i>&nbsp;            pr.getParameters().put(&#39;retUrl&#39;,Event.WhatId);</b>
+<b class="nc"><i>356</i>&nbsp;            return pr;  </b>
+<i>357</i>&nbsp;            }
+<b class="nc"><i>358</i>&nbsp;            else if(Event.WhoId != null) {</b>
+<b class="nc"><i>359</i>&nbsp;            PageReference pr = new PageReference(&#39;/apex/callreportevent&#39;);        </b>
+<b class="nc"><i>360</i>&nbsp;            pr.setRedirect(true);</b>
+<b class="nc"><i>361</i>&nbsp;            pr.getParameters().put(&#39;who_id&#39;,Event.WhoId);</b>
+<b class="nc"><i>362</i>&nbsp;            pr.getParameters().put(&#39;retUrl&#39;,Event.WhoId);</b>
+<b class="nc"><i>363</i>&nbsp;            return pr;  </b>
+<i>364</i>&nbsp;            }
+<i>365</i>&nbsp;            else {
+<b class="nc"><i>366</i>&nbsp;            PageReference pr = new PageReference(&#39;/apex/callreportevent&#39;);        </b>
+<b class="nc"><i>367</i>&nbsp;            pr.setRedirect(true);</b>
+<b class="nc"><i>368</i>&nbsp;            return pr;  </b>
+<i>369</i>&nbsp;            }
+<i>370</i>&nbsp;        }
+<i>371</i>&nbsp;            
+<b class="nc"><i>372</i>&nbsp;        return ApexPages.currentPage();</b>
+<i>373</i>&nbsp;    }
+<i>374</i>&nbsp;
+<b class="nc"><i>375</i>&nbsp;    public PageReference CreateDirectOrder(){</b>
+<b class="nc"><i>376</i>&nbsp;        OrderType =&#39;Direct&#39;;</b>
+<b class="nc"><i>377</i>&nbsp;        return SaveCallReport();</b>
+<i>378</i>&nbsp;    }
+<i>379</i>&nbsp;    
+<b class="nc"><i>380</i>&nbsp;    public PageReference CreateIndirectOrder(){</b>
+<b class="nc"><i>381</i>&nbsp;        OrderType =&#39;Indirect&#39;;</b>
+<b class="nc"><i>382</i>&nbsp;        return SaveCallReport();</b>
+<i>383</i>&nbsp;    }
+<i>384</i>&nbsp;    
+<i>385</i>&nbsp;    @RemoteAction
+<b class="nc"><i>386</i>&nbsp;    global static MobileApiResult SaveMobile(Event eventToSave, </b>
+<i>387</i>&nbsp;                            Call_Report__c callReportToSave, 
+<i>388</i>&nbsp;                            List&lt;string&gt; whoIds)
+<i>389</i>&nbsp;    {                        
+<b class="nc"><i>390</i>&nbsp;        MobileApiResult apiResult = new MobileApiResult();</b>
+<i>391</i>&nbsp;        
+<b class="nc"><i>392</i>&nbsp;        EventWithCallReportService eventWithCallReportService = new EventWithCallReportService();        </b>
+<b class="nc"><i>393</i>&nbsp;        EventRelationPickerState whoIdPickerState = null;</b>
+<i>394</i>&nbsp;        
+<b class="nc"><i>395</i>&nbsp;        if(whoIds != null &amp;&amp; !whoIds.IsEmpty()){</b>
+<b class="nc"><i>396</i>&nbsp;            whoIdPickerState = new EventRelationPickerState();</b>
+<b class="nc"><i>397</i>&nbsp;            whoIdPickerState.StringRepresentation = string.join(whoIds, &#39;,&#39;);</b>
+<b class="nc"><i>398</i>&nbsp;            whoIdPickerState.IsParent = true;</b>
+<b class="nc"><i>399</i>&nbsp;            whoIdPickerState.ForInvitees = false;</b>
+<i>400</i>&nbsp;        }
+<i>401</i>&nbsp;        
+<b class="nc"><i>402</i>&nbsp;        try{</b>
+<b class="nc"><i>403</i>&nbsp;            eventWithCallReportService.Save(eventToSave, callReportToSave, whoIdPickerState, null, eventToSave.Send_Calendar_Invites__c);</b>
+<b class="nc"><i>404</i>&nbsp;          apiResult.evnt= eventToSave;  </b>
+<b class="nc"><i>405</i>&nbsp;          apiResult.WasSuccessful = true;</b>
+<i>406</i>&nbsp;        }
+<i>407</i>&nbsp;        catch(DmlException ex){            
+<b class="nc"><i>408</i>&nbsp;            ApexPages.addMessages(ex);</b>
+<i>409</i>&nbsp;            
+<b class="nc"><i>410</i>&nbsp;            for(integer i = 0; i &lt; ex.getNumDML(); i++){</b>
+<i>411</i>&nbsp;                //ex.getDmlFieldNames(i)[0],  
+<b class="nc"><i>412</i>&nbsp;                apiResult.Errors.Add(ex.getDMLMessage(i));</b>
+<i>413</i>&nbsp;            }
+<i>414</i>&nbsp;                      
+<b class="nc"><i>415</i>&nbsp;          apiResult.WasSuccessful = false;</b>
+<i>416</i>&nbsp;        }     
+<i>417</i>&nbsp;        
+<b class="nc"><i>418</i>&nbsp;        return apiResult;</b>
+<i>419</i>&nbsp;    }
+<i>420</i>&nbsp;    
+<b class="nc"><i>421</i>&nbsp;    public PageReference DeleteCallReport(){</b>
+<b class="nc"><i>422</i>&nbsp;        list&lt;EventRelation&gt; ersToDelete = [select id from EventRelation where eventid = :Event.Id];        </b>
+<b class="nc"><i>423</i>&nbsp;        delete ersToDelete;</b>
+<i>424</i>&nbsp;        
+<b class="nc"><i>425</i>&nbsp;        delete Event;</b>
+<i>426</i>&nbsp;        
+<b class="nc"><i>427</i>&nbsp;        return new PageReference(&#39;/00U/c&#39;);</b>
+<i>428</i>&nbsp;    }
+<i>429</i>&nbsp;        
+<b class="nc"><i>430</i>&nbsp;    public void OnCFEChange(){</b>
+<b class="nc"><i>431</i>&nbsp;        if(Event.Customer_Facing_Event__c){</b>
+<b class="nc"><i>432</i>&nbsp;            Event.Astra_Tech_Type__c = &#39;In Person Meeting&#39;;</b>
+<i>433</i>&nbsp;        }
+<i>434</i>&nbsp;        else{
+<b class="nc"><i>435</i>&nbsp;            Event.Astra_Tech_Type__c = &#39;Absence or Holiday&#39;;</b>
+<i>436</i>&nbsp;        }
+<i>437</i>&nbsp;        
+<b class="nc"><i>438</i>&nbsp;        UpdateEventStatus();</b>
+<i>439</i>&nbsp;    }
+<i>440</i>&nbsp;    
+<b class="nc"><i>441</i>&nbsp;    public void OnOwnerIdChanged(){</b>
+<b class="nc"><i>442</i>&nbsp;        UpdateOwner();        </b>
+<b class="nc"><i>443</i>&nbsp;        UpdateSBU();</b>
+<b class="nc"><i>444</i>&nbsp;        UpdateOtherSBUsDiscussedOptions();</b>
+<i>445</i>&nbsp;    }
+<i>446</i>&nbsp;        
+<b class="nc"><i>447</i>&nbsp;    public void UpdateWhatId(){   </b>
+<b class="nc"><i>448</i>&nbsp;        List&lt;Contact&gt; contacts = [SELECT accountid FROM contact WHERE id = :Event.WhoId];</b>
+<i>449</i>&nbsp;        
+<b class="nc"><i>450</i>&nbsp;        if(contacts.size() == 1) {        </b>
+<b class="nc"><i>451</i>&nbsp;            Event.WhatId = contacts[0].AccountId;</b>
+<i>452</i>&nbsp;            
+<b class="nc"><i>453</i>&nbsp;            UpdateLocation();</b>
+<i>454</i>&nbsp;        }
+<i>455</i>&nbsp;    }
+<i>456</i>&nbsp;    
+<b class="nc"><i>457</i>&nbsp;    public void UpdateSBU(){</b>
+<b class="nc"><i>458</i>&nbsp;        EventWithCallReportService eventWithCallReportService = new EventWithCallReportService();</b>
+<i>459</i>&nbsp;
+<b class="nc"><i>460</i>&nbsp;		eventWithCallReportService.SetDefaultSBUs(Event);</b>
+<i>461</i>&nbsp;    }
+<i>462</i>&nbsp;    
+<b class="nc"><i>463</i>&nbsp;    public void UpdateEventStatus(){</b>
+<b class="nc"><i>464</i>&nbsp;        Event.Event_Status__c = &#39;Completed&#39;;</b>
+<i>465</i>&nbsp;    }
+<i>466</i>&nbsp;    
+<b class="nc"><i>467</i>&nbsp;    public void UpdateLocation(){    </b>
+<i>468</i>&nbsp;        // only update location if the event location was automatically calculated
+<b class="nc"><i>469</i>&nbsp;        if(!Event.Location_Was_Automatically_Calculated__c){    </b>
+<i>470</i>&nbsp;            system.debug(&#39;Location not set because it has been manually entered&#39;);
+<i>471</i>&nbsp;
+<b class="nc"><i>472</i>&nbsp;            return;</b>
+<i>473</i>&nbsp;        }
+<b class="nc"><i>474</i>&nbsp;        EventWithCallReportService eventWithCallReportService = new EventWithCallReportService();</b>
+<i>475</i>&nbsp;
+<b class="nc"><i>476</i>&nbsp;		Event.Location = eventWithCallReportService.GetEventLocation(Event);</b>
+<i>477</i>&nbsp;    }
+<i>478</i>&nbsp;    
+<b class="nc"><i>479</i>&nbsp;    public void UpdateCoTravel(){  </b>
+<b class="nc"><i>480</i>&nbsp;        if(Owner != null){</b>
+<b class="nc"><i>481</i>&nbsp;            Manager = getUserById(Owner.ManagerId);</b>
+<i>482</i>&nbsp;            
+<b class="nc"><i>483</i>&nbsp;            if(Event.Co_travel__c == &#39;Manager&#39;){            </b>
+<b class="nc"><i>484</i>&nbsp;                Event.Co_Travel_Manager__c = Owner.ManagerId;</b>
+<i>485</i>&nbsp;            }
+<i>486</i>&nbsp;        }
+<i>487</i>&nbsp;    }
+<i>488</i>&nbsp;    
+<b class="nc"><i>489</i>&nbsp;    public void UpdateOtherSBUsDiscussedOptions(){        </b>
+<b class="nc"><i>490</i>&nbsp;        DescribeFieldResult fieldResult = Call_Report__c.Other_SBU_Discussed__c.getDescribe();</b>
+<b class="nc"><i>491</i>&nbsp;        list&lt;PicklistEntry&gt; picklistValues = fieldResult.getPicklistValues();   </b>
+<i>492</i>&nbsp;        
+<b class="nc"><i>493</i>&nbsp;        OtherSBUsDiscussedOptions = new list&lt;SelectOption&gt;();</b>
+<b class="nc"><i>494</i>&nbsp;        OtherSBUsDiscussedOptions.Add(new SelectOption(&#39;&#39;, &#39;- - None - -&#39;));</b>
+<i>495</i>&nbsp;        
+<b class="nc"><i>496</i>&nbsp;        if(Event.SBU__c == null){</b>
+<b class="nc"><i>497</i>&nbsp;            return;</b>
+<i>498</i>&nbsp;        }
+<i>499</i>&nbsp;        
+<b class="nc"><i>500</i>&nbsp;        for(PicklistEntry picklistEntry : picklistValues){</b>
+<b class="nc"><i>501</i>&nbsp;            if(!Event.SBU__c.contains(picklistEntry.getValue())){</b>
+<b class="nc"><i>502</i>&nbsp;                OtherSBUsDiscussedOptions.Add(new SelectOption(picklistEntry.GetValue(), picklistEntry.GetLabel()));</b>
+<i>503</i>&nbsp;            }
+<i>504</i>&nbsp;        }
+<i>505</i>&nbsp;    }
+<i>506</i>&nbsp;    
+<b class="nc"><i>507</i>&nbsp;    public void UpdateOwner(){           </b>
+<b class="nc"><i>508</i>&nbsp;        Owner = getUserById(Event.OwnerId);</b>
+<b class="nc"><i>509</i>&nbsp;        if(Owner == null){</b>
+<b class="nc"><i>510</i>&nbsp;            return;</b>
+<i>511</i>&nbsp;        }
+<i>512</i>&nbsp;        
+<b class="nc"><i>513</i>&nbsp;        Event.Call_Report__r.Assigned_To_User_Country__c = Owner.User_Country__c;</b>
+<i>514</i>&nbsp;    }
+<i>515</i>&nbsp;    
+<b class="nc"><i>516</i>&nbsp;    private User getCurrentUser(){</b>
+<b class="nc"><i>517</i>&nbsp;        return [SELECT id, </b>
+<i>518</i>&nbsp;                       User_Country__c, 
+<i>519</i>&nbsp;                       Default_Activity_Length_In_Minutes__c,
+<i>520</i>&nbsp;             Default_Event_Update_Calendar__c,
+<i>521</i>&nbsp;             Default_Event_Subject__c               
+<i>522</i>&nbsp;                FROM user 
+<b class="nc"><i>523</i>&nbsp;                WHERE id = :UserInfo.getUserId()</b>
+<i>524</i>&nbsp;        Limit 1];
+<i>525</i>&nbsp;    }
+<i>526</i>&nbsp;    
+<b class="nc"><i>527</i>&nbsp;    private void seedEventTimes(){                    </b>
+<i>528</i>&nbsp;        // pull start time from url (if provided)        
+<b class="nc"><i>529</i>&nbsp;        string dateString = ApexPages.currentPage().getParameters().get(&#39;evt4&#39;);</b>
+<b class="nc"><i>530</i>&nbsp;        string timeString = ApexPages.currentPage().getParameters().get(&#39;evt13&#39;);</b>
+<i>531</i>&nbsp;        
+<b class="nc"><i>532</i>&nbsp;        if(dateString == null){</b>
+<b class="nc"><i>533</i>&nbsp;            seedStartTimeToNow();</b>
+<i>534</i>&nbsp;            
+<b class="nc"><i>535</i>&nbsp;            return;</b>
+<i>536</i>&nbsp;        }
+<i>537</i>&nbsp;        
+<b class="nc"><i>538</i>&nbsp;        if(timeString != null){</b>
+<b class="nc"><i>539</i>&nbsp;            Event.StartDateTime = DateTime.parse(dateString + &#39; &#39; + timeString);</b>
+<b class="nc"><i>540</i>&nbsp;            seedEndTime();</b>
+<i>541</i>&nbsp;            
+<b class="nc"><i>542</i>&nbsp;            return;</b>
+<i>543</i>&nbsp;        }
+<i>544</i>&nbsp;        
+<b class="nc"><i>545</i>&nbsp;        Date datePart;</b>
+<i>546</i>&nbsp;        
+<b class="nc"><i>547</i>&nbsp;        try{</b>
+<b class="nc"><i>548</i>&nbsp;            datePart = Date.Parse(dateString);</b>
+<i>549</i>&nbsp;        }
+<i>550</i>&nbsp;        catch(Exception ex){
+<b class="nc"><i>551</i>&nbsp;            seedStartTimeToNow();</b>
+<i>552</i>&nbsp;            
+<b class="nc"><i>553</i>&nbsp;            return;</b>
+<i>554</i>&nbsp;        }
+<i>555</i>&nbsp;        
+<b class="nc"><i>556</i>&nbsp;        Time timePart;</b>
+<b class="nc"><i>557</i>&nbsp;        Integer hours = DateTime.Now().AddHours(1).hour(); // default to on the hour of the next hour</b>
+<b class="nc"><i>558</i>&nbsp;        Integer minutes = 0;</b>
+<i>559</i>&nbsp;        
+<b class="nc"><i>560</i>&nbsp;        if(timeString != null){            </b>
+<b class="nc"><i>561</i>&nbsp;            String[] timeParts= timeString.Split(&#39;:&#39;);</b>
+<i>562</i>&nbsp;            
+<b class="nc"><i>563</i>&nbsp;            if(timeParts.Size() &gt;= 1 &amp;&amp; timeParts[0].IsNumeric()){</b>
+<b class="nc"><i>564</i>&nbsp;                hours = Integer.ValueOf(timeParts[0]);</b>
+<i>565</i>&nbsp;            }
+<i>566</i>&nbsp;            
+<b class="nc"><i>567</i>&nbsp;            if(timeParts.Size() &gt;= 2 &amp;&amp; timeParts[1].IsNumeric()){</b>
+<b class="nc"><i>568</i>&nbsp;                minutes= Integer.ValueOf(timeParts[1]);</b>
+<i>569</i>&nbsp;            }
+<i>570</i>&nbsp;            
+<b class="nc"><i>571</i>&nbsp;            timePart = Time.NewInstance(hours, minutes, 0, 0);</b>
+<i>572</i>&nbsp;        }   
+<i>573</i>&nbsp;            
+<b class="nc"><i>574</i>&nbsp;        timePart = Time.NewInstance(hours, minutes, 0, 0);     </b>
+<i>575</i>&nbsp;        
+<b class="nc"><i>576</i>&nbsp;        Event.StartDateTime = DateTime.NewInstance(datePart, timePart);    </b>
+<i>577</i>&nbsp;
+<b class="nc"><i>578</i>&nbsp;        seedEndTime();      </b>
+<i>579</i>&nbsp;    }
+<i>580</i>&nbsp;    
+<b class="nc"><i>581</i>&nbsp;    private void seedStartTimeToNow(){</b>
+<b class="nc"><i>582</i>&nbsp;        if(EventIsPlanned){</b>
+<b class="nc"><i>583</i>&nbsp;            Event.StartDateTime = DateTime.Now().AddHours(1);  </b>
+<b class="nc"><i>584</i>&nbsp;            Event.StartDateTime = Event.StartDateTime.AddMinutes(-Event.StartDateTime.Minute());</b>
+<i>585</i>&nbsp;            
+<b class="nc"><i>586</i>&nbsp;            seedEndTime();</b>
+<i>587</i>&nbsp;        }
+<i>588</i>&nbsp;        else{
+<b class="nc"><i>589</i>&nbsp;            Event.EndDateTime = DateTime.Now().AddHours(-1);  </b>
+<b class="nc"><i>590</i>&nbsp;            Event.EndDateTime = Event.EndDateTime.AddMinutes(-Event.EndDateTime.Minute());</b>
+<i>591</i>&nbsp;        
+<b class="nc"><i>592</i>&nbsp;            Event.StartDateTime = Event.EndDateTime.AddMinutes(-EventLengthInMinutes.IntValue());</b>
+<i>593</i>&nbsp;        }
+<i>594</i>&nbsp;    }
+<i>595</i>&nbsp;    
+<b class="nc"><i>596</i>&nbsp;    private void seedEndTime(){             </b>
+<i>597</i>&nbsp;        // add default meeting length to start time in order to determine end time
+<b class="nc"><i>598</i>&nbsp;        Event.EndDateTime = Event.StartDateTime.AddMinutes(EventLengthInMinutes.IntValue());</b>
+<i>599</i>&nbsp;    }
+<i>600</i>&nbsp;    
+<b class="nc"><i>601</i>&nbsp;    private User getUserById(string userId){</b>
+<b class="nc"><i>602</i>&nbsp;        List&lt;User&gt; owners = [SELECT managerId,</b>
+<i>603</i>&nbsp;                                 Sales_Business_Unit_SBU__c,
+<i>604</i>&nbsp;                                 User_Country__c,
+<i>605</i>&nbsp;                                 Name,
+<i>606</i>&nbsp;                                 Id
+<i>607</i>&nbsp;                             FROM user
+<b class="nc"><i>608</i>&nbsp;                             WHERE id = :userId];</b>
+<i>609</i>&nbsp;                             
+<b class="nc"><i>610</i>&nbsp;        if(owners.IsEmpty()){        </b>
+<b class="nc"><i>611</i>&nbsp;            return null;</b>
+<i>612</i>&nbsp;        }
+<i>613</i>&nbsp;        
+<b class="nc"><i>614</i>&nbsp;        return owners[0];</b>
+<i>615</i>&nbsp;    }    
+<i>616</i>&nbsp;    
+<b class="nc"><i>617</i>&nbsp;    private string getNameFromId(Id objectId){</b>
+<b class="nc"><i>618</i>&nbsp;        string objectType = objectId.getSObjectType().getDescribe().getName();</b>
+<i>619</i>&nbsp;        
+<b class="nc"><i>620</i>&nbsp;        if(objectType == &#39;Contact&#39;){</b>
+<b class="nc"><i>621</i>&nbsp;            return [select name from contact where id = :objectId limit 1].Name;</b>
+<i>622</i>&nbsp;        }
+<i>623</i>&nbsp;        
+<b class="nc"><i>624</i>&nbsp;        if(objectType == &#39;Lead&#39;){</b>
+<b class="nc"><i>625</i>&nbsp;            return [select name from lead where id = :objectId limit 1].Name;</b>
+<i>626</i>&nbsp;        }
+<i>627</i>&nbsp;        
+<b class="nc"><i>628</i>&nbsp;        if(objectType == &#39;Account&#39;){</b>
+<b class="nc"><i>629</i>&nbsp;            return [select name from account where id = :objectId limit 1].Name;</b>
+<i>630</i>&nbsp;        }
+<i>631</i>&nbsp;        
+<b class="nc"><i>632</i>&nbsp;        if(objectType == &#39;Opportunity&#39;){</b>
+<b class="nc"><i>633</i>&nbsp;            return [select name from Opportunity where id = :objectId limit 1].Name;</b>
+<i>634</i>&nbsp;        }
+<i>635</i>&nbsp;        
+<b class="nc"><i>636</i>&nbsp;        if(objectType == &#39;Field_Sales_Project_Members__c&#39;){</b>
+<b class="nc"><i>637</i>&nbsp;            return [select name from Field_Sales_Project_Members__c where id = :objectId limit 1].Name;</b>
+<i>638</i>&nbsp;        }
+<i>639</i>&nbsp;        
+<b class="nc"><i>640</i>&nbsp;        return null;</b>
+<i>641</i>&nbsp;    }
+<i>642</i>&nbsp;    
+<b class="nc"><i>643</i>&nbsp;    private void setDefaultEventSubject(){</b>
+<i>644</i>&nbsp;        // Set the subject in the correct locale based on event type and related contacts/ accounts
+<b class="nc"><i>645</i>&nbsp;        String subject = getLocalisedEventType(Event);</b>
+<b class="nc"><i>646</i>&nbsp;        list&lt;Contact&gt; contacts = [SELECT name FROM contact WHERE id = :Event.WhoId LIMIT 1];</b>
+<b class="nc"><i>647</i>&nbsp;        list&lt;Account&gt; accounts= [SELECT name FROM account WHERE id = :Event.WhatId LIMIT 1];</b>
+<i>648</i>&nbsp;        
+<b class="nc"><i>649</i>&nbsp;        if(!contacts.isEmpty()){</b>
+<b class="nc"><i>650</i>&nbsp;            string contactName = contacts[0].Name;</b>
+<i>651</i>&nbsp;            
+<b class="nc"><i>652</i>&nbsp;            if(!string.isBlank(contactName)){</b>
+<b class="nc"><i>653</i>&nbsp;                subject += &#39; - &#39; + contactName;</b>
+<i>654</i>&nbsp;            }
+<i>655</i>&nbsp;        }
+<i>656</i>&nbsp;        
+<b class="nc"><i>657</i>&nbsp;        if(!accounts.isEmpty()){</b>
+<b class="nc"><i>658</i>&nbsp;            string accountName = accounts[0].Name;</b>
+<i>659</i>&nbsp;            
+<b class="nc"><i>660</i>&nbsp;            if(!string.isBlank(accountName)){</b>
+<b class="nc"><i>661</i>&nbsp;                subject += &#39; - &#39; + accountName;</b>
+<i>662</i>&nbsp;            }
+<i>663</i>&nbsp;        }
+<i>664</i>&nbsp;        
+<b class="nc"><i>665</i>&nbsp;        Event.Subject = subject;   </b>
+<i>666</i>&nbsp;    }
+<i>667</i>&nbsp;    
+<b class="nc"><i>668</i>&nbsp;    private string getLocalisedEventType(Event eventInstance){        </b>
+<b class="nc"><i>669</i>&nbsp;        List&lt;Schema.PicklistEntry&gt; picklistEntries = Schema.getGlobalDescribe().get(&#39;event&#39;).getDescribe().fields.getMap().get(&#39;Astra_Tech_Type__c&#39;).getDescribe().getPicklistValues(); </b>
+<b class="nc"><i>670</i>&nbsp;        Map&lt;String, String&gt; fieldTranslations = new Map&lt;String, String&gt;(); </b>
+<i>671</i>&nbsp;        
+<b class="nc"><i>672</i>&nbsp;        for(Schema.PicklistEntry ple : picklistEntries){</b>
+<b class="nc"><i>673</i>&nbsp;            fieldTranslations.put(ple.value, ple.label); </b>
+<i>674</i>&nbsp;        }
+<i>675</i>&nbsp;        
+<i>676</i>&nbsp;        system.debug(&#39;Event Type is: &#39; + eventInstance.Astra_Tech_Type__c);
+<i>677</i>&nbsp;        system.debug(fieldTranslations);
+<i>678</i>&nbsp;        
+<b class="nc"><i>679</i>&nbsp;        return fieldTranslations.get(eventInstance.Astra_Tech_Type__c);</b>
+<i>680</i>&nbsp;    }
+<i>681</i>&nbsp;    
+<b class="nc"><i>682</i>&nbsp;    private List&lt;Schema.PicklistEntry&gt; GetPicklistValues(string objectType, string fieldName){</b>
+<b class="nc"><i>683</i>&nbsp;            return Schema.getGlobalDescribe().get(objectType).getDescribe().fields.getMap().get(fieldName).getDescribe().getPicklistValues();</b>
+<i>684</i>&nbsp;    }
+<i>685</i>&nbsp;    
+<b class="nc"><i>686</i>&nbsp;    private object GetDefaultValue(string objectType, string fieldName){</b>
+<b class="nc"><i>687</i>&nbsp;            return Schema.getGlobalDescribe().get(objectType).getDescribe().fields.getMap().get(fieldName).getDescribe().getDefaultValue();</b>
+<i>688</i>&nbsp;    }
+<i>689</i>&nbsp;
+<b class="nc"><i>690</i>&nbsp;    private void UpdateEventStatusOptions(){        </b>
+<i>691</i>&nbsp;        
+<b class="nc"><i>692</i>&nbsp;        EventStatusOptions = new list&lt;SelectOption&gt;();</b>
+<i>693</i>&nbsp;        
+<b class="nc"><i>694</i>&nbsp;        for(PicklistEntry picklistEntry : EventStatusPicklistValues){</b>
+<b class="nc"><i>695</i>&nbsp;          String picklistEntryValue = picklistEntry.getValue();</b>
+<i>696</i>&nbsp;    
+<b class="nc"><i>697</i>&nbsp;            if((IsRecurrenceSeries &amp;&amp; picklistEntryValue == &#39;Completed&#39;) || picklistEntryValue == &#39;-&#39;) {</b>
+<b class="nc"><i>698</i>&nbsp;        continue;</b>
+<i>699</i>&nbsp;            }
+<b class="nc"><i>700</i>&nbsp;            EventStatusOptions.Add(new SelectOption(picklistEntryValue, picklistEntry.GetLabel()));</b>
+<i>701</i>&nbsp;        }
+<i>702</i>&nbsp;    }
+<i>703</i>&nbsp;    
+<i>704</i>&nbsp;    global class MobileApiResult {
+<i>705</i>&nbsp;        
+<b class="nc"><i>706</i>&nbsp;        public MobileApiResult(){</b>
+<b class="nc"><i>707</i>&nbsp;            WasSuccessful = false;            </b>
+<b class="nc"><i>708</i>&nbsp;            Errors = new List&lt;string&gt;();</b>
+<i>709</i>&nbsp;            
+<i>710</i>&nbsp;        }
+<i>711</i>&nbsp;        
+<b class="nc"><i>712</i>&nbsp;        public boolean WasSuccessful { get; set; }</b>
+<b class="nc"><i>713</i>&nbsp;        public List&lt;string&gt; Errors { get; set; }</b>
+<b class="nc"><i>714</i>&nbsp;        public Event evnt {get; set;} </b>
+<i>715</i>&nbsp;    }
+<i>716</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

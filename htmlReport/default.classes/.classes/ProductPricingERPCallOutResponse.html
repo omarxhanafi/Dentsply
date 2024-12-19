@@ -1,0 +1,149 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ProductPricingERPCallOutResponse</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ProductPricingERPCallOutResponse (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ProductPricingERPCallOutResponse</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    93.9%
+  </span>
+  <span class="absValue">
+    (46/ 49)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>ProductPricingERPCallOutResponse</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author:         Roberto Narbona 20210716
+<i>3</i>&nbsp;Description:    This is a class created to be used for ERP call out
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;History:	Updated By:	Update Description:
+<i>6</i>&nbsp;TFUS-000006850            S4Hana callout introduced
+<i>7</i>&nbsp;----------------------------------------------------------------------------------------*/
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;public with sharing class ProductPricingERPCallOutResponse {
+<i>10</i>&nbsp;    /* this method does a callout against the ERP to get prices */
+<b class="nc"><i>11</i>&nbsp;    public static ProductPricingERPCallOutWrapper.productPricingResponse  prodsToPriceERPCallOut(string accERPId, List&lt;ProductPricingERPCallOutWrapper.ProductEntry&gt; prodsToPrice, order orderDetails) {</b>
+<b class="nc"><i>12</i>&nbsp;        final String S4_COMPANY_CODE = &#39;92&#39;;</b>
+<b class="nc"><i>13</i>&nbsp;        final Integer DEF_QUANTITY = 1;</b>
+<b class="nc"><i>14</i>&nbsp;        String strJson = &#39;&#39;;</b>
+<b class="nc"><i>15</i>&nbsp;        final JSONGenerator jsGen = JSON.createGenerator(true);</b>
+<b class="nc"><i>16</i>&nbsp;        jsGen.writeStartObject();</b>
+<b class="nc"><i>17</i>&nbsp;        jsGen.writeStringField(&#39;accountId&#39;, accERPId); //query in source records to get AX ID</b>
+<b class="nc"><i>18</i>&nbsp;        jsGen.writeStringField(&#39;currency&#39;, orderDetails.CurrencyIsoCode);</b>
+<b class="nc"><i>19</i>&nbsp;        jsGen.writeStringField(&#39;dataAreaId&#39;, orderDetails.Pricebook2.CompanyCode__c); //AX company that only is expose so it could be hard coded but also we should be able to get it from products company code field</b>
+<i>20</i>&nbsp;        
+<b class="nc"><i>21</i>&nbsp;        if(orderDetails.Pricebook2.SourceId__c == S4_COMPANY_CODE){</b>
+<b class="nc"><i>22</i>&nbsp;            jsGen.writeStringField(&#39;salesChannel&#39;, orderDetails.Pricebook2.SalesChannel__c);</b>
+<i>23</i>&nbsp;        }
+<b class="nc"><i>24</i>&nbsp;        jsGen.writeFieldName(&#39;entries&#39;);</b>
+<b class="nc"><i>25</i>&nbsp;        jsGen.writeStartArray();</b>
+<i>26</i>&nbsp;
+<b class="nc"><i>27</i>&nbsp;        for(ProductPricingERPCallOutWrapper.ProductEntry prod :prodsToPrice){ //loop of products that we need to get</b>
+<b class="nc"><i>28</i>&nbsp;            jsGen.writeStartObject();</b>
+<b class="nc"><i>29</i>&nbsp;            jsGen.writeStringField(&#39;productId&#39;, prod.productId); //Article__c in products</b>
+<b class="nc"><i>30</i>&nbsp;            if(prod.quantity &gt; DEF_QUANTITY){</b>
+<b class="nc"><i>31</i>&nbsp;                jsGen.writeNumberField(&#39;quantity&#39;, prod.quantity ); //Quanty of produts to get price</b>
+<i>32</i>&nbsp;            } else{
+<b class="nc"><i>33</i>&nbsp;                jsGen.writeNumberField(&#39;quantity&#39;, 1); //Quanty of produts to get price</b>
+<i>34</i>&nbsp;            }            
+<b class="nc"><i>35</i>&nbsp;            jsGen.writeEndObject();</b>
+<i>36</i>&nbsp;        }
+<b class="nc"><i>37</i>&nbsp;        jsGen.writeEndArray();</b>
+<b class="nc"><i>38</i>&nbsp;        jsGen.writeEndObject();</b>
+<b class="nc"><i>39</i>&nbsp;        strJson = jsGen.getAsString();</b>
+<i>40</i>&nbsp;        
+<b class="nc"><i>41</i>&nbsp;        final PricingMicroServiceCallOut__mdt calloutDetail = [SELECT Client_ID__c, S4HanaPricingLogicAppsURL__c, Logic_Apps_URL__c, Scope__c, </b>
+<i>42</i>&nbsp;                                                              Secret_Id__c, TokenURL__c FROM PricingMicroServiceCallOut__mdt Limit 1];
+<i>43</i>&nbsp;        //Callout to get token ID   
+<b class="nc"><i>44</i>&nbsp;        final Http getToken = new Http();</b>
+<b class="nc"><i>45</i>&nbsp;        final HttpRequest req = new HttpRequest();</b>
+<b class="nc"><i>46</i>&nbsp;        req.setEndpoint(calloutDetail.TokenURL__c);</b>
+<b class="nc"><i>47</i>&nbsp;        req.setMethod(&#39;POST&#39;);</b>
+<b class="nc"><i>48</i>&nbsp;        req.setHeader(&#39;Content-Type&#39;, &#39;application/x-www-form-urlencoded&#39;);</b>
+<b class="nc"><i>49</i>&nbsp;        req.setHeader(&#39;Accept&#39;, &#39;application/json&#39;);</b>
+<b class="nc"><i>50</i>&nbsp;        req.setBody(&#39;grant_type=client_credentials&amp;response_type=token&amp;scope=&#39; + calloutDetail.Scope__c +&#39;&amp;client_id=&#39; + </b>
+<b class="nc"><i>51</i>&nbsp;                    calloutDetail.Client_ID__c +&#39;&amp;client_secret=&#39; + calloutDetail.Secret_Id__c);</b>
+<b class="nc"><i>52</i>&nbsp;        final  HttpResponse res = getToken.send(req);</b>
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;        
+<b class="nc"><i>55</i>&nbsp;        final ProductPricingERPCallOutWrapper.DeserializeTokenResponse resp1 = (ProductPricingERPCallOutWrapper.DeserializeTokenResponse)JSON.deserialize</b>
+<b class="nc"><i>56</i>&nbsp;                                                                         (res.getbody(),ProductPricingERPCallOutWrapper.DeserializeTokenResponse.class);</b>
+<i>57</i>&nbsp;        //Real callout to Logic Apps
+<b class="nc"><i>58</i>&nbsp;        final Http http = new Http();</b>
+<b class="nc"><i>59</i>&nbsp;        final HttpRequest request = new HttpRequest();</b>
+<i>60</i>&nbsp;
+<b class="nc"><i>61</i>&nbsp;        if(orderDetails.Pricebook2.SourceId__c == S4_COMPANY_CODE){</b>
+<b class="nc"><i>62</i>&nbsp;            request.setEndpoint(calloutDetail.S4HanaPricingLogicAppsURL__c);</b>
+<i>63</i>&nbsp;        } else {
+<b class="nc"><i>64</i>&nbsp;            request.setEndpoint(calloutDetail.Logic_Apps_URL__c);</b>
+<i>65</i>&nbsp;        }
+<b class="nc"><i>66</i>&nbsp;        request.setMethod(&#39;POST&#39;);</b>
+<b class="nc"><i>67</i>&nbsp;        request.setHeader(&#39;Content-Type&#39;, &#39;application/json;charset=UTF-8&#39;);</b>
+<b class="nc"><i>68</i>&nbsp;        request.setHeader( &#39;Authorization&#39;, &#39;Bearer &#39; +resp1.access_token );</b>
+<b class="nc"><i>69</i>&nbsp;        request.setTimeout(24000);</b>
+<i>70</i>&nbsp;            // Set the body as a JSON object
+<b class="nc"><i>71</i>&nbsp;        request.setBody(strJson);</b>
+<b class="nc"><i>72</i>&nbsp;        final HttpResponse response = http.send(request);</b>
+<i>73</i>&nbsp;        
+<b class="nc"><i>74</i>&nbsp;        final ProductPricingERPCallOutWrapper.ProductPricingResponse prodResponse = (ProductPricingERPCallOutWrapper.ProductPricingResponse)JSON.deserialize</b>
+<b class="nc"><i>75</i>&nbsp;                                                                              (response.getBody(), ProductPricingERPCallOutWrapper.ProductPricingResponse.class);</b>
+<b class="nc"><i>76</i>&nbsp;        return prodResponse;</b>
+<i>77</i>&nbsp;    }
+<i>78</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

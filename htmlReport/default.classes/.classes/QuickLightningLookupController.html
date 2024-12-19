@@ -1,0 +1,266 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: QuickLightningLookupController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: QuickLightningLookupController (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">QuickLightningLookupController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 77)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>QuickLightningLookupController</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/* 
+<i>2</i>&nbsp;Copyright 2017 OpFocus, Inc
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation 
+<i>5</i>&nbsp;files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, 
+<i>6</i>&nbsp;modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the 
+<i>7</i>&nbsp;Software is furnished to do so, subject to the following conditions:
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+<i>12</i>&nbsp;OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE 
+<i>13</i>&nbsp;LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR 
+<i>14</i>&nbsp;IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.        
+<i>15</i>&nbsp;*/
+<i>16</i>&nbsp;public with sharing class QuickLightningLookupController 
+<i>17</i>&nbsp;{
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;  // Description  : executes the SOQL query and return records.
+<i>21</i>&nbsp;  // @param     : sObjectName - name of SObject 
+<i>22</i>&nbsp;  // @param     : valueFieldName - name of field from object to use as the value of the pick list 
+<i>23</i>&nbsp;  // @param     : displayedFieldName - name of field from object to display in pick list 
+<i>24</i>&nbsp;  // @param     : whereClause - optional where clause to add to the SOQL query 
+<i>25</i>&nbsp;  // @param    : filteredFieldName - optional field name for filter value
+<i>26</i>&nbsp;  // @param    : filterValue - filter value for filter field
+<i>27</i>&nbsp;  @AuraEnabled
+<b class="nc"><i>28</i>&nbsp;  public static LookupRecords getRecords(String sObjectName, String valueFieldName, </b>
+<i>29</i>&nbsp;                      String displayedFieldName, String otherFields, String whereClause,
+<i>30</i>&nbsp;                      String filteredFieldName, String filterFieldValue)
+<i>31</i>&nbsp;  {
+<b class="nc"><i>32</i>&nbsp;    try</b>
+<i>33</i>&nbsp;    {
+<i>34</i>&nbsp;      system.debug(&#39;======&gt; sObjectName = &#39; + sObjectName + &#39;, valueFieldName = &#39; + valueFieldName + 
+<i>35</i>&nbsp;              &#39;, displayedFieldName = &#39; + displayedFieldName + &#39;, whereClause = &#39; + whereClause + 
+<i>36</i>&nbsp;              &#39;, filterField = &#39; + filteredFieldName + &#39;, filterFieldValue = &#39; + filterFieldValue);
+<i>37</i>&nbsp;            
+<b class="nc"><i>38</i>&nbsp;      if(valueFieldName == null || displayedFieldName == null || valueFieldName == &#39;&#39; || displayedFieldName == &#39;&#39;)</b>
+<i>39</i>&nbsp;      {
+<b class="nc"><i>40</i>&nbsp;        return null;</b>
+<i>41</i>&nbsp;      }
+<b class="nc"><i>42</i>&nbsp;      if(sObjectName != null) sObjectName = String.escapeSingleQuotes(sObjectName); </b>
+<b class="nc"><i>43</i>&nbsp;      if(valueFieldName != null) valueFieldName = String.escapeSingleQuotes(valueFieldName); </b>
+<b class="nc"><i>44</i>&nbsp;      if(displayedFieldName != null) displayedFieldName = String.escapeSingleQuotes(displayedFieldName); </b>
+<b class="nc"><i>45</i>&nbsp;      if(otherFields != null) otherFields = String.escapeSingleQuotes(otherFields); </b>
+<i>46</i>&nbsp;      //if(whereClause != null) whereClause = String.escapeSingleQuotes(whereClause); 
+<b class="nc"><i>47</i>&nbsp;      if(filteredFieldName != null) filteredFieldName = String.escapeSingleQuotes(filteredFieldName); </b>
+<b class="nc"><i>48</i>&nbsp;      if(filterFieldValue != null) filterFieldValue = String.escapeSingleQuotes(filterFieldValue); </b>
+<b class="nc"><i>49</i>&nbsp;      LookupRecords retVal = new LookupRecords();</b>
+<i>50</i>&nbsp;
+<b class="nc"><i>51</i>&nbsp;      String soql = &#39;Select &#39; + valueFieldName + &#39;,&#39; + displayedFieldName;</b>
+<b class="nc"><i>52</i>&nbsp;      soql += otherFields == null || otherFields == &#39;&#39; ? &#39;&#39; : &#39;,&#39; + otherFields ;</b>
+<b class="nc"><i>53</i>&nbsp;      soql += &#39; FROM &#39; + sObjectName;</b>
+<i>54</i>&nbsp;      
+<b class="nc"><i>55</i>&nbsp;            Boolean IsWhere = (whereClause != null &amp;&amp; whereClause != &#39;&#39;);</b>
+<b class="nc"><i>56</i>&nbsp;            Boolean IsFilter = (filterFieldValue != null &amp;&amp; filterFieldValue != &#39;&#39; &amp;&amp; filteredFieldName != null &amp;&amp; filteredFieldName != &#39;&#39;);</b>
+<b class="nc"><i>57</i>&nbsp;            if(IsWhere || IsFilter)</b>
+<i>58</i>&nbsp;      {
+<b class="nc"><i>59</i>&nbsp;        soql += &#39; WHERE &#39;;</b>
+<i>60</i>&nbsp;      }
+<b class="nc"><i>61</i>&nbsp;            if(IsWhere)</b>
+<i>62</i>&nbsp;            {
+<b class="nc"><i>63</i>&nbsp;                soql += whereClause;</b>
+<i>64</i>&nbsp;            }
+<b class="nc"><i>65</i>&nbsp;      if(IsWhere &amp;&amp; IsFilter)</b>
+<i>66</i>&nbsp;            {
+<b class="nc"><i>67</i>&nbsp;                soql += &#39; AND &#39;;</b>
+<i>68</i>&nbsp;            }
+<b class="nc"><i>69</i>&nbsp;            if (IsFilter)</b>
+<i>70</i>&nbsp;            {
+<b class="nc"><i>71</i>&nbsp;                soql += filteredFieldName + &#39;=\&#39;&#39; + filterFieldValue + &#39;\&#39;&#39;;</b>
+<i>72</i>&nbsp;            }
+<i>73</i>&nbsp;            
+<b class="nc"><i>74</i>&nbsp;            soql += &#39; ORDER BY &#39; + displayedFieldName + &#39; Limit 100&#39;;</b>
+<i>75</i>&nbsp;      system.debug(&#39;========&gt; soql = &#39; + soql);
+<i>76</i>&nbsp;      // added if..then to accomodate a unique problem specific to Location object, where 
+<i>77</i>&nbsp;            // SF confuses system.Location and schema.Location.  
+<b class="nc"><i>78</i>&nbsp;            if(sObjectName != &#39;Location&#39;){</b>
+<i>79</i>&nbsp;        // this is the previous logic
+<b class="nc"><i>80</i>&nbsp;        SObject[] lstRec = Database.query(soql);</b>
+<b class="nc"><i>81</i>&nbsp;        if(lstRec.isEmpty()){</b>
+<b class="nc"><i>82</i>&nbsp;          retVal.add(Schema.getGlobalDescribe().get(sObjectName).newSObject(),&#39;&#39;,&#39;No records found!&#39;);</b>
+<i>83</i>&nbsp;        }
+<b class="nc"><i>84</i>&nbsp;        for( SObject obj : lstRec)</b>
+<b class="nc"><i>85</i>&nbsp;        {</b>
+<b class="nc"><i>86</i>&nbsp;          retVal.add( obj,</b>
+<b class="nc"><i>87</i>&nbsp;                String.valueOf(obj.get(valueFieldName)), </b>
+<b class="nc"><i>88</i>&nbsp;                String.valueOf(obj.get(displayedFieldName)));</b>
+<i>89</i>&nbsp;        }
+<i>90</i>&nbsp;      } else {
+<i>91</i>&nbsp;              // this is the Location specific logic to overcome SF&#39;s confusion
+<b class="nc"><i>92</i>&nbsp;                List&lt;schema.Location&gt; lstRec = Database.query(soql);</b>
+<b class="nc"><i>93</i>&nbsp;                if(lstRec.isEmpty()){</b>
+<b class="nc"><i>94</i>&nbsp;                    retVal.add(new schema.Location(),&#39;&#39;,&#39;No records found!&#39;);</b>
+<i>95</i>&nbsp;                }
+<b class="nc"><i>96</i>&nbsp;                for(schema.Location l :lstRec){</b>
+<b class="nc"><i>97</i>&nbsp;                    sObject obj = (sObject)l;</b>
+<b class="nc"><i>98</i>&nbsp;                    retVal.add( obj,</b>
+<b class="nc"><i>99</i>&nbsp;                String.valueOf(obj.get(valueFieldName)), </b>
+<b class="nc"><i>100</i>&nbsp;                String.valueOf(obj.get(displayedFieldName)));</b>
+<i>101</i>&nbsp;                }
+<i>102</i>&nbsp;      }
+<b class="nc"><i>103</i>&nbsp;      return retVal;</b>
+<i>104</i>&nbsp;    }
+<i>105</i>&nbsp;    catch (Exception ex)
+<b class="nc"><i>106</i>&nbsp;    {</b>
+<b class="nc"><i>107</i>&nbsp;      throw new AuraHandledException(&#39;Exception occured:\r\n&#39; + ex.getMessage() + &#39;\r\n&#39; + ex.getStackTraceString() + &#39;\r\n&#39;);</b>
+<i>108</i>&nbsp;    }
+<i>109</i>&nbsp;  }
+<i>110</i>&nbsp;
+<i>111</i>&nbsp;  /**
+<i>112</i>&nbsp;   * gets the help text from the field
+<i>113</i>&nbsp;   * @param  field [Full Name of the field to describe]
+<i>114</i>&nbsp;   * @return       [Help text of given field]
+<i>115</i>&nbsp;   */
+<i>116</i>&nbsp;  @AuraEnabled
+<b class="nc"><i>117</i>&nbsp;  public static String getHelpText(String field){</b>
+<b class="nc"><i>118</i>&nbsp;    try{</b>
+<b class="nc"><i>119</i>&nbsp;      String[] data = field.split(&#39;\\.&#39;);</b>
+<b class="nc"><i>120</i>&nbsp;      return Schema.getGlobalDescribe().get(data[0]).getDescribe().fields.getMap().get(data[1]).getDescribe().getInlineHelpText();</b>
+<i>121</i>&nbsp;    }
+<b class="nc"><i>122</i>&nbsp;    catch(Exception ex){</b>
+<b class="nc"><i>123</i>&nbsp;      throw new AuraHandledException(&#39;Exception occured:\r\n&#39; + ex.getMessage() + &#39;\r\n&#39; + ex.getStackTraceString() + &#39;\r\n&#39;);</b>
+<i>124</i>&nbsp;    }
+<i>125</i>&nbsp;  }
+<i>126</i>&nbsp;
+<i>127</i>&nbsp;  /**
+<i>128</i>&nbsp;   * gets the object that the given field is a lookup for
+<i>129</i>&nbsp;   * NOTE: does not support polymorphic fields
+<i>130</i>&nbsp;   * @param  field [Full Name of the field to describe]
+<i>131</i>&nbsp;   * @return       [SObject Name of the lookup reference]
+<i>132</i>&nbsp;   */
+<i>133</i>&nbsp;  @AuraEnabled
+<b class="nc"><i>134</i>&nbsp;  public static String getReference(String field){</b>
+<b class="nc"><i>135</i>&nbsp;    try{</b>
+<b class="nc"><i>136</i>&nbsp;      String[] data = field.split(&#39;\\.&#39;);</b>
+<b class="nc"><i>137</i>&nbsp;      Schema.DescribeFieldResult f = Schema.getGlobalDescribe().get(data[0]).getDescribe().fields.getMap().get(data[1]).getDescribe();</b>
+<b class="nc"><i>138</i>&nbsp;      return f.getReferenceTo()[0].getDescribe().getName();</b>
+<i>139</i>&nbsp;    }
+<b class="nc"><i>140</i>&nbsp;    catch(Exception ex){</b>
+<b class="nc"><i>141</i>&nbsp;      throw new AuraHandledException(&#39;Exception occured:\r\n&#39; + ex.getMessage() + &#39;\r\n&#39; + ex.getStackTraceString() + &#39;\r\n&#39;);</b>
+<i>142</i>&nbsp;    }
+<i>143</i>&nbsp;  }
+<i>144</i>&nbsp;
+<i>145</i>&nbsp;  /**
+<i>146</i>&nbsp;   * gets the data needed for lookup component based on id provided to the component on init
+<i>147</i>&nbsp;   * @param  obj   [SObject API]
+<i>148</i>&nbsp;   * @param  objId [Record Id]
+<i>149</i>&nbsp;   * @param  label [Search label]
+<i>150</i>&nbsp;   * @return       [LookupRecords wrapper]
+<i>151</i>&nbsp;   */
+<i>152</i>&nbsp;  @AuraEnabled
+<b class="nc"><i>153</i>&nbsp;  public static LookupRecords getFieldValue(String obj, String objId, String label){</b>
+<b class="nc"><i>154</i>&nbsp;    try{</b>
+<b class="nc"><i>155</i>&nbsp;      String q = &#39;Select Id, &#39; + label + &#39; from &#39; + obj + &#39; where Id = \&#39;&#39; + objId + &#39;\&#39;&#39;;</b>
+<b class="nc"><i>156</i>&nbsp;      LookupRecords retVal = new LookupRecords();</b>
+<b class="nc"><i>157</i>&nbsp;      for(SObject so :Database.query(q)){</b>
+<b class="nc"><i>158</i>&nbsp;        retVal.add(so,(String)so.get(&#39;Id&#39;),(String)so.get(label));</b>
+<i>159</i>&nbsp;      }
+<b class="nc"><i>160</i>&nbsp;      return retVal;</b>
+<i>161</i>&nbsp;    }
+<b class="nc"><i>162</i>&nbsp;    catch(Exception ex){</b>
+<b class="nc"><i>163</i>&nbsp;      throw new AuraHandledException(&#39;Exception occured:\r\n&#39; + ex.getMessage() + &#39;\r\n&#39; + ex.getStackTraceString() + &#39;\r\n&#39;);</b>
+<i>164</i>&nbsp;    }
+<i>165</i>&nbsp;  }
+<i>166</i>&nbsp;
+<i>167</i>&nbsp;  // Description : Class for return value of getRecords method
+<i>168</i>&nbsp;  public Class LookupRecords
+<i>169</i>&nbsp;  {
+<i>170</i>&nbsp;    @AuraEnabled public List&lt;SObject&gt; lstRecords;
+<i>171</i>&nbsp;    @AuraEnabled public List&lt;String&gt; lstValue; // list of values corresponding to the display values
+<i>172</i>&nbsp;    @AuraEnabled public List&lt;String&gt; lstDisplay; // list of display values
+<i>173</i>&nbsp;
+<b class="nc"><i>174</i>&nbsp;    public void add(SObject obj, String value, String display)</b>
+<i>175</i>&nbsp;    {
+<b class="nc"><i>176</i>&nbsp;      if(lstValue == null)</b>
+<i>177</i>&nbsp;      {
+<b class="nc"><i>178</i>&nbsp;        lstValue = new List&lt;String&gt;();</b>
+<i>179</i>&nbsp;      }
+<b class="nc"><i>180</i>&nbsp;      if(lstDisplay == null)</b>
+<i>181</i>&nbsp;      {
+<b class="nc"><i>182</i>&nbsp;        lstDisplay = new List&lt;String&gt;();</b>
+<i>183</i>&nbsp;      }
+<b class="nc"><i>184</i>&nbsp;      if(lstRecords == null)</b>
+<i>185</i>&nbsp;      {
+<b class="nc"><i>186</i>&nbsp;        lstRecords = new List&lt;SObject&gt;();</b>
+<i>187</i>&nbsp;      }
+<i>188</i>&nbsp;
+<b class="nc"><i>189</i>&nbsp;      lstValue.add(value);  </b>
+<b class="nc"><i>190</i>&nbsp;      lstDisplay.add(display);</b>
+<b class="nc"><i>191</i>&nbsp;      lstRecords.add(obj);</b>
+<i>192</i>&nbsp;    }
+<i>193</i>&nbsp;  }
+<i>194</i>&nbsp;
+<i>195</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

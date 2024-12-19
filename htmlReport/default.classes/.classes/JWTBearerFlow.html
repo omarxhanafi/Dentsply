@@ -1,0 +1,102 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: JWTBearerFlow</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: JWTBearerFlow (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">JWTBearerFlow</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 19)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>JWTBearerFlow</h2>
+<div class="sourceCode"><i>1</i>&nbsp;public class JWTBearerFlow {
+<i>2</i>&nbsp;
+<b class="nc"><i>3</i>&nbsp;    public static String getAccessToken(String tokenEndpoint, JWT jwt) {</b>
+<b class="nc"><i>4</i>&nbsp;    	String access_token = null;</b>
+<b class="nc"><i>5</i>&nbsp;        String body = &#39;grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&amp;assertion=&#39;+jwt.issue();</b>
+<b class="nc"><i>6</i>&nbsp;        HttpRequest req = new HttpRequest();                            </b>
+<b class="nc"><i>7</i>&nbsp;        req.setMethod(&#39;POST&#39;);</b>
+<b class="nc"><i>8</i>&nbsp;        req.setEndpoint(tokenEndpoint);</b>
+<b class="nc"><i>9</i>&nbsp;        req.setHeader(&#39;Content-type&#39;, &#39;application/x-www-form-urlencoded&#39;);</b>
+<b class="nc"><i>10</i>&nbsp;        req.setBody(body);</b>
+<b class="nc"><i>11</i>&nbsp;        Http http = new Http();</b>
+<i>12</i>&nbsp;        
+<b class="nc"><i>13</i>&nbsp;        if(!Test.isRunningTest()){</b>
+<b class="nc"><i>14</i>&nbsp;        HTTPResponse res = http.send(req);</b>
+<i>15</i>&nbsp;        
+<b class="nc"><i>16</i>&nbsp;            if ( res.getStatusCode() == 200 ) {</b>
+<b class="nc"><i>17</i>&nbsp;                System.JSONParser parser = System.JSON.createParser(res.getBody());</b>
+<i>18</i>&nbsp;                
+<b class="nc"><i>19</i>&nbsp;                while (parser.nextToken() != null) {</b>
+<b class="nc"><i>20</i>&nbsp;                    if ((parser.getCurrentToken() == JSONToken.FIELD_NAME) &amp;&amp; (parser.getText() == &#39;access_token&#39;)) {</b>
+<b class="nc"><i>21</i>&nbsp;                        parser.nextToken();</b>
+<b class="nc"><i>22</i>&nbsp;                        access_token = parser.getText();</b>
+<b class="nc"><i>23</i>&nbsp;                        break;</b>
+<i>24</i>&nbsp;                    }
+<i>25</i>&nbsp;                }
+<i>26</i>&nbsp;            }
+<i>27</i>&nbsp;        }
+<b class="nc"><i>28</i>&nbsp;        return access_token;</b>
+<i>29</i>&nbsp;    }
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

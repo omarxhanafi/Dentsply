@@ -1,0 +1,285 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: InsideSalesCampaignTrackerController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: InsideSalesCampaignTrackerController (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">InsideSalesCampaignTrackerController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 113)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>InsideSalesCampaignTrackerController</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-----------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp; * Author            : naoussar@salesforce.com
+<i>3</i>&nbsp; * Description       : InsideSalesCampaignTrackerController Apex controller of InsideSalesCampaignTracker LWC
+<i>4</i>&nbsp; * Test class        : Test_InsideSalesCampaignTrackerCntl
+<i>5</i>&nbsp; * History	
+<i>6</i>&nbsp; * 03-03-2022        : Created (#TFUS-000004085)
+<i>7</i>&nbsp; * 16-05-2024        : Assigning the Campaign to the created task (TFUS-000006250)
+<i>8</i>&nbsp; * 21-06-2024        : Fixing bug when selecting both a campaign and &#39;Activity Unrelated to a Campaign&#39;
+<i>9</i>&nbsp;-----------------------------------------------------------------------------------------------------------*/
+<i>10</i>&nbsp;public with sharing class InsideSalesCampaignTrackerController {
+<i>11</i>&nbsp;	/*------------------------------------------------------------	
+<i>12</i>&nbsp;	Description: Get campaigns related to an account (if campaign members is the account itself or contacts of that account)
+<i>13</i>&nbsp;	Inputs: Id of an account
+<i>14</i>&nbsp;    -------------------------------------------------------------*/	
+<i>15</i>&nbsp;   @AuraEnabled(cacheable=true)
+<b class="nc"><i>16</i>&nbsp;    public static List&lt;Campaign&gt; getCampaignDetails(Id accountId) {</b>
+<b class="nc"><i>17</i>&nbsp;        List&lt;Contact&gt; contactrelated = [SELECT id FROM Contact where Accountid =: accountId];</b>
+<b class="nc"><i>18</i>&nbsp;        List&lt;Campaign&gt; campaignsList = [SELECT Name,</b>
+<b class="nc"><i>19</i>&nbsp;                                        (SELECT Status FROM CampaignMembers where AccountId =: accountId OR ContactId IN:contactrelated),</b>
+<b class="nc"><i>20</i>&nbsp;                        				(SELECT Offer_Code__r.Name from Campaign_Offer_Codes__r) FROM Campaign where IsActive = true AND RecordType.Name = &#39;Inside Sales Campaign&#39; AND id in(SELECT CampaignId FROM CampaignMember where AccountId =: accountId OR ContactId IN:contactrelated ) limit 25];</b>
+<i>21</i>&nbsp;        
+<i>22</i>&nbsp;
+<b class="nc"><i>23</i>&nbsp;        return campaignsList;</b>
+<i>24</i>&nbsp;    }
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    /*------------------------------------------------------------	
+<i>27</i>&nbsp;	Description: get Actity Result Picklist Values from task object
+<i>28</i>&nbsp;	Inputs: No Input
+<i>29</i>&nbsp;    -------------------------------------------------------------*/	
+<i>30</i>&nbsp;    @AuraEnabled(cacheable=true)
+<b class="nc"><i>31</i>&nbsp;    public static List&lt;String&gt; getActityResultPicklistValues() {</b>
+<b class="nc"><i>32</i>&nbsp;        List&lt;String&gt; actityResultPicklist = new List&lt;String&gt;();</b>
+<b class="nc"><i>33</i>&nbsp;        Schema.DescribeFieldResult fieldResult = ActivityHistory.Activity_Result__c.getDescribe();</b>
+<b class="nc"><i>34</i>&nbsp;        List&lt;Schema.PicklistEntry&gt; pickListEntry = fieldResult.getPicklistValues();</b>
+<b class="nc"><i>35</i>&nbsp;        for( Schema.PicklistEntry pickListValue : pickListEntry){</b>
+<b class="nc"><i>36</i>&nbsp;            actityResultPicklist.add(pickListValue.getLabel());</b>
+<i>37</i>&nbsp;        }    
+<b class="nc"><i>38</i>&nbsp;		actityResultPicklist.sort();</b>
+<b class="nc"><i>39</i>&nbsp;        return actityResultPicklist;</b>
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    /*------------------------------------------------------------	
+<i>43</i>&nbsp;	Description: get Members Status Picklist Values from Campaign Member object
+<i>44</i>&nbsp;	Inputs: No Input
+<i>45</i>&nbsp;    -------------------------------------------------------------*/	
+<i>46</i>&nbsp;    @AuraEnabled(cacheable=true)
+<b class="nc"><i>47</i>&nbsp;    public static List &lt; String &gt; getMembersStatusPickValues() {</b>
+<b class="nc"><i>48</i>&nbsp;        List &lt; String &gt; MembersStatusPicklist = new list &lt; String &gt; ();      </b>
+<b class="nc"><i>49</i>&nbsp;        Schema.DescribeFieldResult fieldResult = Inside_Sales_Campaign_Picklist__mdt.Picklist_Value__c.getDescribe();</b>
+<b class="nc"><i>50</i>&nbsp;        List&lt;Schema.PicklistEntry&gt; pickListEntry = fieldResult.getPicklistValues();</b>
+<b class="nc"><i>51</i>&nbsp;        for( Schema.PicklistEntry pickListValue : pickListEntry){</b>
+<b class="nc"><i>52</i>&nbsp;            MembersStatusPicklist.add(pickListValue.getLabel());</b>
+<i>53</i>&nbsp;        }  
+<b class="nc"><i>54</i>&nbsp;        return MembersStatusPicklist;</b>
+<i>55</i>&nbsp;    } 
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;    /*------------------------------------------------------------	
+<i>58</i>&nbsp;	Description: get Contact Type Picklist Values from Task object
+<i>59</i>&nbsp;	Inputs: No Input
+<i>60</i>&nbsp;    -------------------------------------------------------------*/	
+<i>61</i>&nbsp;    @AuraEnabled(cacheable=true)
+<b class="nc"><i>62</i>&nbsp;    public static List&lt;String&gt; getContactTypePicklistValues() {</b>
+<b class="nc"><i>63</i>&nbsp;    List&lt;String&gt; contactTypePicklist = new List&lt;String&gt;();</b>
+<b class="nc"><i>64</i>&nbsp;	Schema.DescribeFieldResult fieldResult = ActivityHistory.Contact_Type__c.getDescribe();</b>
+<b class="nc"><i>65</i>&nbsp;    List&lt;Schema.PicklistEntry&gt; pickListEntry = fieldResult.getPicklistValues();</b>
+<b class="nc"><i>66</i>&nbsp;    for( Schema.PicklistEntry pickListValue : pickListEntry){</b>
+<b class="nc"><i>67</i>&nbsp;        contactTypePicklist.add(pickListValue.getLabel());</b>
+<i>68</i>&nbsp;    }    
+<b class="nc"><i>69</i>&nbsp;    contactTypePicklist.sort();</b>
+<b class="nc"><i>70</i>&nbsp;    return contactTypePicklist;</b>
+<i>71</i>&nbsp;    }
+<i>72</i>&nbsp;
+<i>73</i>&nbsp;    /*------------------------------------------------------------	
+<i>74</i>&nbsp;	Description: createTaskforCampaignMember create task for each selected campaign &amp; update campaign member status
+<i>75</i>&nbsp;	Inputs: String data : details of task: Notes, Contact Type and memeber status
+<i>76</i>&nbsp;			Id accountId : related account to relate it to the task
+<i>77</i>&nbsp;			List&lt;String&gt; selectedCampaignIds : list of selected campaigns to be updated &amp; related to the task
+<i>78</i>&nbsp;    -------------------------------------------------------------*/
+<i>79</i>&nbsp;    @AuraEnabled(Cacheable=false)
+<b class="nc"><i>80</i>&nbsp;    public static String createTaskforCampaignMember(String data, Id accountId, List&lt;String&gt; selectedCampaignIds) {</b>
+<b class="nc"><i>81</i>&nbsp;        String result;//will hold id of task created or size of the list of tasks created</b>
+<b class="nc"><i>82</i>&nbsp;        List&lt;Task&gt; tasksList = new List&lt;Task&gt;();</b>
+<b class="nc"><i>83</i>&nbsp;        List&lt;CampaignMember&gt; campaignMemberListToUpdate = new List&lt;CampaignMember&gt;();</b>
+<b class="nc"><i>84</i>&nbsp;        Map&lt;String,Id&gt; campaignsRelatedToAccount = new Map&lt;String,Id&gt;();</b>
+<b class="nc"><i>85</i>&nbsp;            Map&lt;String,Id&gt; campaignsRelatedToContacts = new Map&lt;String,Id&gt;();</b>
+<b class="nc"><i>86</i>&nbsp;        Map&lt;String,String&gt; campaignMemberStatusMap = new Map&lt;String,String&gt;();</b>
+<b class="nc"><i>87</i>&nbsp;        set&lt;String&gt; selectedMembersIds = new set&lt;String&gt;();</b>
+<b class="nc"><i>88</i>&nbsp;        List&lt;Object&gt; tasksData = (List&lt;Object&gt;)JSON.deserializeUntyped(data);</b>
+<b class="nc"><i>89</i>&nbsp;        for(Object dataItem: tasksData){</b>
+<b class="nc"><i>90</i>&nbsp;            Map&lt;String,Object&gt; mappedData = (Map&lt;String,Object&gt;)dataItem;</b>
+<b class="nc"><i>91</i>&nbsp;            selectedMembersIds.add((String)mappedData.get(&#39;memberId&#39;));</b>
+<i>92</i>&nbsp;        }
+<i>93</i>&nbsp;
+<i>94</i>&nbsp;        //get campaign members and filter the ones related to account and the ones related to contact
+<b class="nc"><i>95</i>&nbsp;        List&lt;CampaignMember&gt; campaignsMembers = [SELECT Id, Status, Campaign.Name, CampaignId, AccountId, ContactId FROM CampaignMember where Id IN:selectedMembersIds ];</b>
+<i>96</i>&nbsp;
+<b class="nc"><i>97</i>&nbsp;        for(CampaignMember member:campaignsMembers){</b>
+<b class="nc"><i>98</i>&nbsp;            if(member.AccountId != null){</b>
+<b class="nc"><i>99</i>&nbsp;                if(campaignsRelatedToAccount.get(member.Campaign.Name) == null){</b>
+<b class="nc"><i>100</i>&nbsp;                    campaignsRelatedToAccount.put(member.Campaign.Name,member.AccountId);</b>
+<i>101</i>&nbsp;                }
+<b class="nc"><i>102</i>&nbsp;            }else if(member.ContactId != null){</b>
+<b class="nc"><i>103</i>&nbsp;                if(campaignsRelatedToAccount.get(member.Campaign.Name) == null &amp;&amp; campaignsRelatedToContacts.get(member.Campaign.Name) == null){</b>
+<b class="nc"><i>104</i>&nbsp;                    campaignsRelatedToContacts.put(member.Campaign.Name,member.ContactId);</b>
+<i>105</i>&nbsp;                }
+<i>106</i>&nbsp;            }
+<i>107</i>&nbsp;        }
+<b class="nc"><i>108</i>&nbsp;        if(selectedCampaignIds.contains(&#39;Unrelated&#39;)){</b>
+<i>109</i>&nbsp;                //relate unrelated compaign to the current account 
+<b class="nc"><i>110</i>&nbsp;                campaignsRelatedToAccount.put(&#39;Activity Unrelated to a Campaign&#39;,accountId);</b>
+<i>111</i>&nbsp;        }      
+<b class="nc"><i>112</i>&nbsp;        Id DNARecordTypeId = [Select Id From RecordType where developerName =&#39;DNA_Campaign_Response&#39; and SobjectType =&#39;Task&#39; limit 1].Id;</b>
+<b class="nc"><i>113</i>&nbsp;        List&lt;Campaign&gt; campaigns = [Select Id, Name FROM Campaign where Id IN:selectedCampaignIds];</b>
+<b class="nc"><i>114</i>&nbsp;        Map&lt;String,String&gt; camapignsDetails = new Map&lt;String,String&gt;();</b>
+<b class="nc"><i>115</i>&nbsp;        for(Campaign campaign: Campaigns){</b>
+<b class="nc"><i>116</i>&nbsp;             camapignsDetails.put(campaign.name,campaign.Id);</b>
+<i>117</i>&nbsp;        }
+<i>118</i>&nbsp;
+<b class="nc"><i>119</i>&nbsp;		for(Object taskdata : tasksData){</b>
+<b class="nc"><i>120</i>&nbsp;            Map&lt;String,Object&gt; mappedData = (Map&lt;String,Object&gt;)taskdata;</b>
+<b class="nc"><i>121</i>&nbsp;            Task tasktoBeCreated =  new Task();</b>
+<b class="nc"><i>122</i>&nbsp;            tasktoBeCreated.OwnerId = UserInfo.getUserId();</b>
+<b class="nc"><i>123</i>&nbsp;            tasktoBeCreated.Priority = &#39;Normal&#39;;</b>
+<b class="nc"><i>124</i>&nbsp;            tasktoBeCreated.Status = &#39;Completed&#39;;</b>
+<b class="nc"><i>125</i>&nbsp;            tasktoBeCreated.subject = &#39;Call - &#39;+(String)mappedData.get(&#39;name&#39;);</b>
+<b class="nc"><i>126</i>&nbsp;            tasktoBeCreated.RecordTypeId = DNARecordTypeId;</b>
+<i>127</i>&nbsp;         	//tasktoBeCreated.Description = (String)mappedData.get(&#39;name&#39;)+&#39; - &#39;+DateTime.now()+&#39;\n&#39;+(String)mappedData.get(&#39;note&#39;);
+<b class="nc"><i>128</i>&nbsp;           	tasktoBeCreated.Description = (String)mappedData.get(&#39;note&#39;);</b>
+<i>129</i>&nbsp;            // if there is account as a member
+<b class="nc"><i>130</i>&nbsp;            if(campaignsRelatedToAccount.get((String)mappedData.get(&#39;name&#39;)) != null){</b>
+<b class="nc"><i>131</i>&nbsp;            	tasktoBeCreated.WhatId = accountId;</b>
+<b class="nc"><i>132</i>&nbsp;            }else if(campaignsRelatedToContacts.get((String)mappedData.get(&#39;name&#39;))!= null){</b>
+<b class="nc"><i>133</i>&nbsp;                tasktoBeCreated.WhatId = camapignsDetails.get((String)mappedData.get(&#39;name&#39;));</b>
+<b class="nc"><i>134</i>&nbsp;                tasktoBeCreated.WhoId =  campaignsRelatedToContacts.get((String)mappedData.get(&#39;name&#39;));</b>
+<i>135</i>&nbsp;            }
+<b class="nc"><i>136</i>&nbsp;            tasktoBeCreated.Contact_Type__c = (String)mappedData.get(&#39;contactType&#39;);</b>
+<b class="nc"><i>137</i>&nbsp;            tasktoBeCreated.Activity_Result__c = (String)mappedData.get(&#39;activityResult&#39;);</b>
+<b class="nc"><i>138</i>&nbsp;            tasktoBeCreated.ActivityDate = System.Today();</b>
+<b class="nc"><i>139</i>&nbsp;            tasktoBeCreated.TaskSubtype = &#39;Call&#39;;</b>
+<i>140</i>&nbsp;
+<i>141</i>&nbsp;            // Assign campaign to task - TFUS-000006250
+<b class="nc"><i>142</i>&nbsp;            if((String)mappedData.get(&#39;memberId&#39;) != null){</b>
+<b class="nc"><i>143</i>&nbsp;                for(CampaignMember eachCampaignMember : campaignsMembers){</b>
+<b class="nc"><i>144</i>&nbsp;                    if(String.valueOf(eachCampaignMember.Id) == (String)mappedData.get(&#39;memberId&#39;)){</b>
+<b class="nc"><i>145</i>&nbsp;                        tasktoBeCreated.Campaign__c = eachCampaignMember.CampaignId;</b>
+<i>146</i>&nbsp;                    }
+<i>147</i>&nbsp;                }
+<i>148</i>&nbsp;            }
+<i>149</i>&nbsp;
+<i>150</i>&nbsp;            // Don&#39;t create an activity when the campaign member&#39;s status is Canceled - TFUS-000005230
+<b class="nc"><i>151</i>&nbsp;            if((String)mappedData.get(&#39;memberStatus&#39;) != &#39;Canceled&#39;){</b>
+<b class="nc"><i>152</i>&nbsp;                tasksList.add(tasktoBeCreated);</b>
+<i>153</i>&nbsp;            }
+<i>154</i>&nbsp;
+<b class="nc"><i>155</i>&nbsp;            campaignMemberStatusMap.put((String)mappedData.get(&#39;name&#39;), (String)mappedData.get(&#39;memberStatus&#39;));</b>
+<i>156</i>&nbsp;        }
+<b class="nc"><i>157</i>&nbsp;        List&lt;Contact&gt; contactrelated = [SELECT id FROM Contact where Accountid =: accountId];</b>
+<b class="nc"><i>158</i>&nbsp;		for(CampaignMember member : campaignsMembers ){</b>
+<b class="nc"><i>159</i>&nbsp;            member.status = campaignMemberStatusMap.get(member.Campaign.Name);</b>
+<b class="nc"><i>160</i>&nbsp;            campaignMemberListToUpdate.add(member);</b>
+<i>161</i>&nbsp;        }
+<b class="nc"><i>162</i>&nbsp;        try{</b>
+<b class="nc"><i>163</i>&nbsp;        	update campaignMemberListToUpdate;</b>
+<i>164</i>&nbsp;
+<b class="nc"><i>165</i>&nbsp;            if(!tasksList.isEmpty()){</b>
+<i>166</i>&nbsp;
+<b class="nc"><i>167</i>&nbsp;                insert tasksList;</b>
+<i>168</i>&nbsp;
+<b class="nc"><i>169</i>&nbsp;                if(tasksList.size() == 1)</b>
+<b class="nc"><i>170</i>&nbsp;                    result = tasksList[0].Id;</b>
+<b class="nc"><i>171</i>&nbsp;                if(tasksList.size() &gt; 1)</b>
+<b class="nc"><i>172</i>&nbsp;                    result = String.valueOf(tasksList.size());</b>
+<i>173</i>&nbsp;            } else {
+<b class="nc"><i>174</i>&nbsp;                result = &#39;Campaign members updated successfully, no tasks were created&#39;;</b>
+<i>175</i>&nbsp;            }
+<i>176</i>&nbsp;
+<b class="nc"><i>177</i>&nbsp;            return result;</b>
+<b class="nc"><i>178</i>&nbsp;        }catch(Exception ex){</b>
+<b class="nc"><i>179</i>&nbsp;            DebugLog.addException(ex,&#39;###InsideSalesCampaignTrackerController:createTaskforCampaignMember exception&#39;);</b>
+<b class="nc"><i>180</i>&nbsp;            return &#39;error&#39;;</b>
+<i>181</i>&nbsp;        }
+<i>182</i>&nbsp;    }
+<i>183</i>&nbsp;    
+<i>184</i>&nbsp;    /*------------------------------------------------------------	
+<i>185</i>&nbsp;	Description: createFollowUpTask create a follow up task for sales rep to remind him to complete his job
+<i>186</i>&nbsp;	Inputs: Id accountId : related account to relate it to the task
+<i>187</i>&nbsp;			Date dueDate : due date of the follow up task
+<i>188</i>&nbsp;			Date reminderDate : reminder date of the follow up task
+<i>189</i>&nbsp;			String subject : subject of the the follow up task
+<i>190</i>&nbsp;			String comments : description of the follow up task
+<i>191</i>&nbsp;			all this inputs are coming from the UI where the user chose convenient data to the task
+<i>192</i>&nbsp;    -------------------------------------------------------------*/
+<i>193</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>194</i>&nbsp;    public static void createFollowUpTask (Id accountId, Date dueDate, DateTime reminderDate, String subject, String comments){</b>
+<b class="nc"><i>195</i>&nbsp;        Task followUptask = new Task();</b>
+<b class="nc"><i>196</i>&nbsp;        followUptask.OwnerId = UserInfo.getUserId();</b>
+<b class="nc"><i>197</i>&nbsp;        followUptask.Priority = &#39;Normal&#39;;</b>
+<b class="nc"><i>198</i>&nbsp;        followUptask.Status = &#39;Not Started&#39;;</b>
+<b class="nc"><i>199</i>&nbsp;        followUptask.RecordTypeId = [Select Id From RecordType where developerName =&#39;Task_DI_New&#39; and SobjectType =&#39;Task&#39; limit 1].Id;</b>
+<b class="nc"><i>200</i>&nbsp;        followUptask.WhatId = accountId;</b>
+<b class="nc"><i>201</i>&nbsp;        followUptask.IsReminderSet = true;</b>
+<b class="nc"><i>202</i>&nbsp;        followUptask.ReminderDateTime = reminderDate;</b>
+<b class="nc"><i>203</i>&nbsp;        followUptask.ActivityDate = dueDate;</b>
+<b class="nc"><i>204</i>&nbsp;        followUptask.subject = subject;</b>
+<b class="nc"><i>205</i>&nbsp;        followUptask.Description = comments;</b>
+<b class="nc"><i>206</i>&nbsp;        try{</b>
+<b class="nc"><i>207</i>&nbsp;            insert followUptask;</b>
+<i>208</i>&nbsp;        }
+<b class="nc"><i>209</i>&nbsp;        catch (Exception ex){</b>
+<i>210</i>&nbsp;     		System.debug(&#39;###InsideSalesCampaignTrackerController:createFollowUpTask exception&#39; + ex);
+<i>211</i>&nbsp;        }
+<i>212</i>&nbsp;    
+<i>213</i>&nbsp;    }
+<i>214</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

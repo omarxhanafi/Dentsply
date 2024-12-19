@@ -1,0 +1,147 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: JWT</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: JWT (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">JWT</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 51)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>JWT</h2>
+<div class="sourceCode"><i>1</i>&nbsp;public class JWT {
+<i>2</i>&nbsp;    
+<b class="nc"><i>3</i>&nbsp;    public String alg {get;set;}</b>
+<b class="nc"><i>4</i>&nbsp;    public String iss {get;set;}</b>
+<b class="nc"><i>5</i>&nbsp;    public String sub {get;set;}</b>
+<b class="nc"><i>6</i>&nbsp;    public String aud {get;set;}</b>
+<b class="nc"><i>7</i>&nbsp;    public String exp {get;set;}</b>
+<b class="nc"><i>8</i>&nbsp;    public String iat {get;set;}</b>
+<b class="nc"><i>9</i>&nbsp;    public Map&lt;String,String&gt; claims {get;set;}</b>
+<b class="nc"><i>10</i>&nbsp;    public Integer validFor {get;set;}</b>
+<b class="nc"><i>11</i>&nbsp;    public String cert {get;set;}</b>
+<b class="nc"><i>12</i>&nbsp;    public String pkcs8 {get;set;}</b>
+<b class="nc"><i>13</i>&nbsp;    public String privateKey {get;set;}</b>
+<i>14</i>&nbsp;    
+<i>15</i>&nbsp;    public static final String HS256 = &#39;HS256&#39;;
+<i>16</i>&nbsp;    public static final String RS256 = &#39;RS256&#39;;
+<i>17</i>&nbsp;    public static final String NONE = &#39;none&#39;;
+<i>18</i>&nbsp;    
+<b class="nc"><i>19</i>&nbsp;    public JWT(String alg, Integer duration) {</b>
+<b class="nc"><i>20</i>&nbsp;        this.alg = alg;</b>
+<b class="nc"><i>21</i>&nbsp;        this.validFor = duration;</b>
+<i>22</i>&nbsp;    }
+<i>23</i>&nbsp;    
+<b class="nc"><i>24</i>&nbsp;    public String issue() {</b>
+<i>25</i>&nbsp;        
+<b class="nc"><i>26</i>&nbsp;        String jwt = &#39;&#39;;</b>
+<i>27</i>&nbsp;        
+<b class="nc"><i>28</i>&nbsp;        JSONGenerator header = JSON.createGenerator(false);</b>
+<b class="nc"><i>29</i>&nbsp;        header.writeStartObject();</b>
+<b class="nc"><i>30</i>&nbsp;        header.writeStringField(&#39;alg&#39;, this.alg);</b>
+<b class="nc"><i>31</i>&nbsp;        header.writeEndObject();</b>
+<b class="nc"><i>32</i>&nbsp;        blob b = Blob.valueOf(header.getAsString());</b>
+<b class="nc"><i>33</i>&nbsp;        String encodedHeader = base64URLencode(b);</b>
+<i>34</i>&nbsp;        
+<b class="nc"><i>35</i>&nbsp;        JSONGenerator body = JSON.createGenerator(false);</b>
+<b class="nc"><i>36</i>&nbsp;        body.writeStartObject();</b>
+<b class="nc"><i>37</i>&nbsp;        body.writeStringField(&#39;iss&#39;, this.iss);</b>
+<b class="nc"><i>38</i>&nbsp;        body.writeStringField(&#39;sub&#39;, this.sub);</b>
+<b class="nc"><i>39</i>&nbsp;        body.writeStringField(&#39;aud&#39;, this.aud);</b>
+<b class="nc"><i>40</i>&nbsp;        Long rightNow = (dateTime.now().getTime()/1000)+1;</b>
+<b class="nc"><i>41</i>&nbsp;        body.writeNumberField(&#39;iat&#39;, rightNow);</b>
+<b class="nc"><i>42</i>&nbsp;        body.writeNumberField(&#39;exp&#39;, (rightNow + validFor));</b>
+<i>43</i>&nbsp;        
+<b class="nc"><i>44</i>&nbsp;        body.writeEndObject();</b>
+<i>45</i>&nbsp;        
+<b class="nc"><i>46</i>&nbsp;        jwt = encodedHeader + &#39;.&#39; + base64URLencode(Blob.valueOf(body.getAsString()));</b>
+<i>47</i>&nbsp;        
+<b class="nc"><i>48</i>&nbsp;        if ( this.alg == HS256 ) {</b>
+<b class="nc"><i>49</i>&nbsp;            Blob key = EncodingUtil.base64Decode(privateKey);</b>
+<b class="nc"><i>50</i>&nbsp;            Blob signature = Crypto.generateMac(&#39;hmacSHA256&#39;,Blob.valueof(jwt),key);</b>
+<b class="nc"><i>51</i>&nbsp;            jwt += &#39;.&#39; + base64URLencode(signature);  </b>
+<i>52</i>&nbsp;        } 
+<b class="nc"><i>53</i>&nbsp;        else if ( this.alg == RS256 ) {</b>
+<b class="nc"><i>54</i>&nbsp;            Blob signature = null;</b>
+<b class="nc"><i>55</i>&nbsp;            Blob privateKey = EncodingUtil.base64Decode(pkcs8);</b>
+<b class="nc"><i>56</i>&nbsp;            signature = Crypto.sign(&#39;rsa-sha256&#39;, Blob.valueOf(jwt), privateKey);</b>
+<i>57</i>&nbsp;            
+<b class="nc"><i>58</i>&nbsp;            jwt += &#39;.&#39; + base64URLencode(signature);  </b>
+<i>59</i>&nbsp;        } 
+<b class="nc"><i>60</i>&nbsp;        else if ( this.alg == NONE ) {</b>
+<b class="nc"><i>61</i>&nbsp;            jwt += &#39;.&#39;;</b>
+<i>62</i>&nbsp;        }
+<i>63</i>&nbsp;        //system.debug(&#39;JWT: &#39;+jwt);
+<b class="nc"><i>64</i>&nbsp;        return jwt;</b>
+<i>65</i>&nbsp;    }
+<i>66</i>&nbsp;    
+<b class="nc"><i>67</i>&nbsp;    public String base64URLencode(Blob input){ </b>
+<b class="nc"><i>68</i>&nbsp;        String output = encodingUtil.base64Encode(input);</b>
+<b class="nc"><i>69</i>&nbsp;        output = output.replace(&#39;+&#39;, &#39;-&#39;);</b>
+<b class="nc"><i>70</i>&nbsp;        output = output.replace(&#39;/&#39;, &#39;_&#39;);</b>
+<b class="nc"><i>71</i>&nbsp;        while ( output.endsWith(&#39;=&#39;)){</b>
+<b class="nc"><i>72</i>&nbsp;            output = output.subString(0,output.length()-1);</b>
+<i>73</i>&nbsp;        }
+<b class="nc"><i>74</i>&nbsp;        return output;</b>
+<i>75</i>&nbsp;    }
+<i>76</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

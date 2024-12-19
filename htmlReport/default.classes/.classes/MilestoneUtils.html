@@ -1,0 +1,108 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MilestoneUtils</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MilestoneUtils (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MilestoneUtils</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>MilestoneUtils</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*---------------------------------------------------------
+<i>2</i>&nbsp;    Author: Nisreen Al Saleh (support@avity.com)
+<i>3</i>&nbsp;    Original Author: Salesforce
+<i>4</i>&nbsp;    Description: Marks milestones as completed based on different criterias  (#TFUS-000001231) 
+<i>5</i>&nbsp;    Test Class: Test_CaseTrigger
+<i>6</i>&nbsp;    Reference: https://help.salesforce.com/articleView?id=entitlements_milestones_trigger.htm&amp;type=5
+<i>7</i>&nbsp;------------------------------------------------------------*/
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;public class MilestoneUtils {
+<b class="nc"><i>10</i>&nbsp;    public static void completeMilestone(List&lt;Id&gt; caseIds, String milestoneName, DateTime complDate){ </b>
+<i>11</i>&nbsp;        
+<b class="nc"><i>12</i>&nbsp;       List&lt;CaseMilestone&gt; cmsToUpdate = [select Id, completionDate</b>
+<i>13</i>&nbsp;                                           from CaseMilestone cm
+<b class="nc"><i>14</i>&nbsp;                                           where caseId in :caseIds and cm.MilestoneType.Name=:milestoneName </b>
+<i>15</i>&nbsp;                                           and completionDate = null limit 1];
+<i>16</i>&nbsp;               
+<b class="nc"><i>17</i>&nbsp;                   for (CaseMilestone cm : cmsToUpdate){</b>
+<b class="nc"><i>18</i>&nbsp;                      cm.completionDate = complDate;</b>
+<i>19</i>&nbsp;                           }
+<i>20</i>&nbsp;                                             
+<b class="nc"><i>21</i>&nbsp;                       update cmsToUpdate;</b>
+<i>22</i>&nbsp;                                         }
+<i>23</i>&nbsp;    
+<b class="nc"><i>24</i>&nbsp;    public static void completeWOMilestone(List&lt;Id&gt; WOIds, String milestoneName, DateTime complDate){ </b>
+<i>25</i>&nbsp;        
+<b class="nc"><i>26</i>&nbsp;       List&lt;EntityMilestone&gt; woToUpdate = [select Id, completionDate</b>
+<i>27</i>&nbsp;                                           from EntityMilestone em
+<b class="nc"><i>28</i>&nbsp;                                           where ParentEntityId in :WOIds and em.MilestoneType.Name=:milestoneName </b>
+<i>29</i>&nbsp;                                           and completionDate = null limit 1];
+<i>30</i>&nbsp;               
+<b class="nc"><i>31</i>&nbsp;                   for (EntityMilestone em : woToUpdate){</b>
+<b class="nc"><i>32</i>&nbsp;                      em.completionDate = complDate;</b>
+<i>33</i>&nbsp;                           }
+<i>34</i>&nbsp;                                             
+<b class="nc"><i>35</i>&nbsp;                       update woToUpdate;</b>
+<i>36</i>&nbsp;                                         }
+<i>37</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

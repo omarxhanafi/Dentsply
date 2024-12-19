@@ -1,0 +1,494 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: WorkflowProfilingController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: WorkflowProfilingController (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">WorkflowProfilingController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    78.8%
+  </span>
+  <span class="absValue">
+    (104/ 132)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>WorkflowProfilingController</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/**
+<i>2</i>&nbsp; * @Author          Omar (ohanafi@salesforce.com)
+<i>3</i>&nbsp; * @Description     Workflow Profiling Controller Class.
+<i>4</i>&nbsp; * @Test-Class      Test_WorkflowProfilingController
+<i>5</i>&nbsp; *
+<i>6</i>&nbsp; * @History
+<i>7</i>&nbsp; * 15-09-2023   Omar     TFUS-000006118 - Create Workflow Profiling Controller Class
+<i>8</i>&nbsp; * 07-12-2023   Omar     Added the deleteWorkflowProfilings method
+<i>9</i>&nbsp; * 21-05-2024   Omar     TFUS-000006676 - Excluding Germany, Austria and Switzerland from the global definition
+<i>10</i>&nbsp; * 05-08-2024   Omar     TFUS-000006810 / TFUS-000006847 - Creating a PP record from the WP component &amp; Prioritizing displaying PP records that are linked to the account
+<i>11</i>&nbsp; */
+<i>12</i>&nbsp;public with sharing class WorkflowProfilingController {
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    /**
+<i>15</i>&nbsp;     * getWorkflows Return a list of workflows based on the provided account Id
+<i>16</i>&nbsp;     * @author ohanafi@salesforce.com | 15-09-2023
+<i>17</i>&nbsp;     *
+<i>18</i>&nbsp;     * @param accountId   Account Id to fetch workflows
+<i>19</i>&nbsp;     *
+<i>20</i>&nbsp;     * @return List&lt;Workflow__c&gt; - List of workflows
+<i>21</i>&nbsp;     */
+<i>22</i>&nbsp;    @AuraEnabled(cacheable=true)
+<b class="fc"><i>23</i>&nbsp;    public static List&lt;Workflow__c&gt; getWorkflows(Id accountId) {</b>
+<b class="fc"><i>24</i>&nbsp;        Account acc = [SELECT Id, Country__c from Account where id = :accountId LIMIT 1];</b>
+<i>25</i>&nbsp;
+<b class="fc"><i>26</i>&nbsp;        if (acc != null) {</b>
+<b class="fc"><i>27</i>&nbsp;            String country = acc.Country__c;</b>
+<i>28</i>&nbsp;
+<b class="fc"><i>29</i>&nbsp;            if (!new List&lt;String&gt;{&#39;AT&#39;, &#39;DE&#39;, &#39;CH&#39;}.contains(country)) {</b>
+<b class="fc"><i>30</i>&nbsp;                return [SELECT Id, WorkflowLabel__c FROM Workflow__c WHERE Countries__c INCLUDES (:country) OR GlobalProductShowtoallcountries__c = TRUE];</b>
+<i>31</i>&nbsp;            } else {
+<b class="nc"><i>32</i>&nbsp;                return [</b>
+<i>33</i>&nbsp;                        SELECT Id, WorkflowLabel__c
+<i>34</i>&nbsp;                        FROM Workflow__c
+<b class="nc"><i>35</i>&nbsp;                        WHERE ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT(Countries__c INCLUDES (:country))))))</b>
+<i>36</i>&nbsp;                ];
+<i>37</i>&nbsp;            }
+<i>38</i>&nbsp;        }
+<i>39</i>&nbsp;
+<b class="nc"><i>40</i>&nbsp;        return null;</b>
+<i>41</i>&nbsp;    }
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;    /**
+<i>44</i>&nbsp;     * getWorkflowProfilingsByAccount Return a list of Workflow Profiling records based on the provided account Id
+<i>45</i>&nbsp;     * @author ohanafi@salesforce.com | 15-09-2023
+<i>46</i>&nbsp;     *
+<i>47</i>&nbsp;     * @param accountId   Account Id to fetch Workflow Profilings
+<i>48</i>&nbsp;     *
+<i>49</i>&nbsp;     * @return List&lt;WorkflowProfiling__c&gt; - List of Workflow Profiling records
+<i>50</i>&nbsp;     */
+<i>51</i>&nbsp;    @AuraEnabled(cacheable=true)
+<b class="fc"><i>52</i>&nbsp;    public static List&lt;WorkflowProfiling__c&gt; getWorkflowProfilingsByAccount(Id accountId) {</b>
+<b class="fc"><i>53</i>&nbsp;        return [SELECT Id, Name, Rating__c, Account__c, Inactive__c, Workflow__c FROM WorkflowProfiling__c WHERE Account__c = :accountId];</b>
+<i>54</i>&nbsp;    }
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;    /**
+<i>57</i>&nbsp;     * createOrUpdateWorkflowProfilings Upsert or insert Workflow Profiling records based on the provided list of records
+<i>58</i>&nbsp;     * @author ohanafi@salesforce.com | 15-09-2023
+<i>59</i>&nbsp;     *
+<i>60</i>&nbsp;     * @param newRecords   List of Workflow Profiling records to upsert or insert
+<i>61</i>&nbsp;     */
+<i>62</i>&nbsp;    @AuraEnabled
+<b class="fc"><i>63</i>&nbsp;    public static void createOrUpdateWorkflowProfilings(List&lt;WorkflowProfiling__c&gt; newRecords) {</b>
+<i>64</i>&nbsp;        // Fetch existing records
+<b class="fc"><i>65</i>&nbsp;        Map&lt;Id, WorkflowProfiling__c&gt; existingRecordsMap = new Map&lt;Id, WorkflowProfiling__c&gt;();</b>
+<i>66</i>&nbsp;
+<b class="fc"><i>67</i>&nbsp;        if (!newRecords.isEmpty()) {</b>
+<i>68</i>&nbsp;
+<b class="fc"><i>69</i>&nbsp;            Set&lt;Id&gt; accountIds = new Set&lt;Id&gt;();</b>
+<i>70</i>&nbsp;
+<b class="fc"><i>71</i>&nbsp;            for (WorkflowProfiling__c eachWorkflowProfiling : newRecords) {</b>
+<b class="fc"><i>72</i>&nbsp;                accountIds.add(eachWorkflowProfiling.Account__c);</b>
+<i>73</i>&nbsp;            }
+<i>74</i>&nbsp;
+<b class="fc"><i>75</i>&nbsp;            for (WorkflowProfiling__c existingRecord : [</b>
+<i>76</i>&nbsp;                    SELECT Id, Workflow__c, Rating__c
+<i>77</i>&nbsp;                    FROM WorkflowProfiling__c
+<b class="fc"><i>78</i>&nbsp;                    WHERE Account__c = :accountIds</b>
+<i>79</i>&nbsp;            ]
+<b class="fc"><i>80</i>&nbsp;            ) {</b>
+<b class="fc"><i>81</i>&nbsp;                existingRecordsMap.put(existingRecord.Workflow__c, existingRecord);</b>
+<i>82</i>&nbsp;            }
+<i>83</i>&nbsp;
+<b class="fc"><i>84</i>&nbsp;            List&lt;WorkflowProfiling__c&gt; recordsToUpsert = new List&lt;WorkflowProfiling__c&gt;();</b>
+<i>85</i>&nbsp;
+<i>86</i>&nbsp;            // Iterate through new records
+<b class="fc"><i>87</i>&nbsp;            for (WorkflowProfiling__c newRecord : newRecords) {</b>
+<i>88</i>&nbsp;                // Check if there&#39;s a matching existing record
+<b class="fc"><i>89</i>&nbsp;                WorkflowProfiling__c existingRecord = existingRecordsMap.get(newRecord.Workflow__c);</b>
+<i>90</i>&nbsp;
+<b class="fc"><i>91</i>&nbsp;                if (existingRecord != null) {</b>
+<i>92</i>&nbsp;                    // Update the existing record&#39;s rating
+<b class="fc"><i>93</i>&nbsp;                    existingRecord.Rating__c = newRecord.Rating__c;</b>
+<b class="fc"><i>94</i>&nbsp;                    existingRecord.Inactive__c = newRecord.Inactive__c;</b>
+<b class="fc"><i>95</i>&nbsp;                    recordsToUpsert.add(existingRecord);</b>
+<i>96</i>&nbsp;                } else {
+<i>97</i>&nbsp;                    // No matching record found, insert a new record
+<b class="nc"><i>98</i>&nbsp;                    recordsToUpsert.add(newRecord);</b>
+<i>99</i>&nbsp;                }
+<i>100</i>&nbsp;            }
+<i>101</i>&nbsp;
+<i>102</i>&nbsp;            // Perform the upsert operation to either insert or update records
+<b class="fc"><i>103</i>&nbsp;            if (!recordsToUpsert.isEmpty()) {</b>
+<b class="fc"><i>104</i>&nbsp;                upsert recordsToUpsert;</b>
+<i>105</i>&nbsp;            }
+<i>106</i>&nbsp;        }
+<i>107</i>&nbsp;
+<i>108</i>&nbsp;    }
+<i>109</i>&nbsp;
+<i>110</i>&nbsp;    /**
+<i>111</i>&nbsp;     * getProductFamilyListByWorkflowId Get a list of ProductFamily__c records and its associated Non_ERP_Products__c
+<i>112</i>&nbsp;     * @author ohanafi@salesforce.com | 22-12-2023
+<i>113</i>&nbsp;     *
+<i>114</i>&nbsp;     * @param workflowId   Workflow ID
+<i>115</i>&nbsp;     * @param accountId   Account ID
+<i>116</i>&nbsp;     *
+<i>117</i>&nbsp;     * @return List&lt;ProductFamilyWrapper&gt; - List of ProductFamily__c records
+<i>118</i>&nbsp;     */
+<i>119</i>&nbsp;    @AuraEnabled
+<b class="fc"><i>120</i>&nbsp;    public static List&lt;ProductFamilyWrapper&gt; getProductFamilyListByWorkflowId(Id workflowId, Id accountId) {</b>
+<b class="fc"><i>121</i>&nbsp;        List&lt;ProductFamilyWrapper&gt; productFamilyWrapperList = new List&lt;ProductFamilyWrapper&gt;();</b>
+<i>122</i>&nbsp;
+<b class="fc"><i>123</i>&nbsp;        Account acc = [SELECT Id, Country__c from Account where id = :accountId LIMIT 1];</b>
+<i>124</i>&nbsp;
+<b class="fc"><i>125</i>&nbsp;        String country = &#39;&#39;;</b>
+<i>126</i>&nbsp;
+<b class="fc"><i>127</i>&nbsp;        if (acc != null) {</b>
+<b class="fc"><i>128</i>&nbsp;            country = acc.Country__c;</b>
+<i>129</i>&nbsp;        }
+<i>130</i>&nbsp;
+<i>131</i>&nbsp;        // Getting the list of product families
+<b class="fc"><i>132</i>&nbsp;        List&lt;ProductFamily__c&gt; productFamilyList = getProductFamilyList(country, workflowId);</b>
+<i>133</i>&nbsp;
+<i>134</i>&nbsp;        // Collect Non_ERP_Products__c Ids
+<b class="fc"><i>135</i>&nbsp;        Set&lt;String&gt; nonERPProductIds = new Set&lt;String&gt;();</b>
+<b class="fc"><i>136</i>&nbsp;        for (ProductFamily__c productFamily : productFamilyList) {</b>
+<b class="fc"><i>137</i>&nbsp;            for (Non_ERP_Products__c nonERPProduct : productFamily.Non_ERP_Products__r) {</b>
+<b class="fc"><i>138</i>&nbsp;                nonERPProductIds.add(nonERPProduct.Id);</b>
+<i>139</i>&nbsp;            }
+<i>140</i>&nbsp;        }
+<i>141</i>&nbsp;
+<b class="fc"><i>142</i>&nbsp;        List&lt;Product_Profiling__c&gt; productProfilingList = [</b>
+<i>143</i>&nbsp;                SELECT Id, Product_Name__c, Inactive__c, Contact__c
+<i>144</i>&nbsp;                FROM Product_Profiling__c
+<b class="fc"><i>145</i>&nbsp;                WHERE Product_Name__c IN :nonERPProductIds AND Account__c = :accountId</b>
+<i>146</i>&nbsp;        ];
+<i>147</i>&nbsp;
+<i>148</i>&nbsp;        // Get the order values for each ProductFamily__c in a map
+<b class="fc"><i>149</i>&nbsp;        Map&lt;Id, Integer&gt; familyOrderMap = new Map&lt;Id, Integer&gt;();</b>
+<b class="fc"><i>150</i>&nbsp;        for (WorkflowLine__c line : [SELECT ProductFamily__c, Order__c FROM WorkflowLine__c WHERE Workflow__c = :workflowId]) {</b>
+<b class="fc"><i>151</i>&nbsp;            familyOrderMap.put(line.ProductFamily__c, (Integer) line.Order__c);</b>
+<i>152</i>&nbsp;        }
+<i>153</i>&nbsp;
+<i>154</i>&nbsp;        // Populate ProductFamilyWrapperList
+<b class="fc"><i>155</i>&nbsp;        for (ProductFamily__c productFamily : productFamilyList) {</b>
+<b class="fc"><i>156</i>&nbsp;            ProductFamilyWrapper wrapper = new ProductFamilyWrapper(familyOrderMap, productFamily);</b>
+<i>157</i>&nbsp;
+<b class="fc"><i>158</i>&nbsp;            for (Non_ERP_Products__c nonERPProduct : productFamily.Non_ERP_Products__r) {</b>
+<b class="fc"><i>159</i>&nbsp;                Product_Profiling__c selectedPPRecord = findProductProfilingRecord(productProfilingList, nonERPProduct);</b>
+<i>160</i>&nbsp;
+<b class="fc"><i>161</i>&nbsp;                if(!nonERPProduct.Competitor_Product__c){</b>
+<b class="fc"><i>162</i>&nbsp;                    if(selectedPPRecord != null){</b>
+<b class="fc"><i>163</i>&nbsp;                        wrapper.dsProducts.add(new NonERPProductWrapper(nonERPProduct, !selectedPPRecord.Inactive__c, selectedPPRecord.Inactive__c, selectedPPRecord.Id));</b>
+<i>164</i>&nbsp;                    } else {
+<b class="nc"><i>165</i>&nbsp;                        wrapper.dsProducts.add(new NonERPProductWrapper(nonERPProduct, false, false, null));</b>
+<i>166</i>&nbsp;                    }
+<i>167</i>&nbsp;
+<i>168</i>&nbsp;                } else {
+<b class="nc"><i>169</i>&nbsp;                    if(selectedPPRecord != null){</b>
+<b class="nc"><i>170</i>&nbsp;                        wrapper.competitorProducts.add(new NonERPProductWrapper(nonERPProduct, !selectedPPRecord.Inactive__c, selectedPPRecord.Inactive__c, selectedPPRecord.Id));</b>
+<i>171</i>&nbsp;                    } else {
+<b class="nc"><i>172</i>&nbsp;                        wrapper.competitorProducts.add(new NonERPProductWrapper(nonERPProduct, false, false, null));</b>
+<i>173</i>&nbsp;                    }
+<i>174</i>&nbsp;                }
+<i>175</i>&nbsp;
+<i>176</i>&nbsp;            }
+<i>177</i>&nbsp;
+<i>178</i>&nbsp;            // Sorting the Non ERP Products alphabetically (asc)
+<b class="fc"><i>179</i>&nbsp;            wrapper.dsProducts.sort();</b>
+<b class="fc"><i>180</i>&nbsp;            wrapper.competitorProducts.sort();</b>
+<i>181</i>&nbsp;
+<b class="fc"><i>182</i>&nbsp;            productFamilyWrapperList.add(wrapper);</b>
+<i>183</i>&nbsp;        }
+<i>184</i>&nbsp;
+<i>185</i>&nbsp;        // Sorting Product Families based on the Workflow Lines order
+<b class="fc"><i>186</i>&nbsp;        productFamilyWrapperList.sort();</b>
+<i>187</i>&nbsp;
+<b class="fc"><i>188</i>&nbsp;        return productFamilyWrapperList;</b>
+<i>189</i>&nbsp;
+<i>190</i>&nbsp;    }
+<i>191</i>&nbsp;
+<i>192</i>&nbsp;    /**
+<i>193</i>&nbsp;     * findProductProfilingRecord Find the corresponding PP record from a Non ERP Product by prioritizing the ones that are linked to the account instead of the contact
+<i>194</i>&nbsp;     * @author ohanafi@salesforce.com | 05-08-2024
+<i>195</i>&nbsp;     *
+<i>196</i>&nbsp;     * @param productProfilingList   List of PP records
+<i>197</i>&nbsp;     * @param nonERPProduct   Non ERP Product
+<i>198</i>&nbsp;     *
+<i>199</i>&nbsp;     * @return Product_Profiling__c - Selected PP record
+<i>200</i>&nbsp;     */
+<b class="fc"><i>201</i>&nbsp;    private static Product_Profiling__c findProductProfilingRecord(List&lt;Product_Profiling__c&gt; productProfilingList, Non_ERP_Products__c nonERPProduct) {</b>
+<b class="fc"><i>202</i>&nbsp;        List&lt;Product_Profiling__c&gt; matchingPPRecords = new List&lt;Product_Profiling__c&gt;();</b>
+<b class="fc"><i>203</i>&nbsp;        Product_Profiling__c selectedPPRecord = null;</b>
+<i>204</i>&nbsp;
+<b class="fc"><i>205</i>&nbsp;        for (Product_Profiling__c eachProductProfiling : productProfilingList) {</b>
+<b class="fc"><i>206</i>&nbsp;            if (eachProductProfiling.Product_Name__c == nonERPProduct.Id) {</b>
+<b class="fc"><i>207</i>&nbsp;                matchingPPRecords.add(eachProductProfiling);</b>
+<i>208</i>&nbsp;            }
+<i>209</i>&nbsp;        }
+<i>210</i>&nbsp;
+<b class="fc"><i>211</i>&nbsp;        if (!matchingPPRecords.isEmpty()) {</b>
+<i>212</i>&nbsp;            // Prioritize records linked to the Account (Contact__c == null)
+<b class="fc"><i>213</i>&nbsp;            List&lt;Product_Profiling__c&gt; accountPPRecords = new List&lt;Product_Profiling__c&gt;();</b>
+<b class="fc"><i>214</i>&nbsp;            for (Product_Profiling__c record : matchingPPRecords) {</b>
+<b class="fc"><i>215</i>&nbsp;                if (record.Contact__c == null) {</b>
+<b class="fc"><i>216</i>&nbsp;                    accountPPRecords.add(record);</b>
+<i>217</i>&nbsp;                }
+<i>218</i>&nbsp;            }
+<i>219</i>&nbsp;
+<b class="fc"><i>220</i>&nbsp;            if (!accountPPRecords.isEmpty()) {</b>
+<i>221</i>&nbsp;                // From accountPPRecords, prioritize active ones
+<b class="fc"><i>222</i>&nbsp;                List&lt;Product_Profiling__c&gt; activeRecords = new List&lt;Product_Profiling__c&gt;();</b>
+<b class="fc"><i>223</i>&nbsp;                for (Product_Profiling__c record : accountPPRecords) {</b>
+<b class="fc"><i>224</i>&nbsp;                    if (!record.Inactive__c) {</b>
+<b class="fc"><i>225</i>&nbsp;                        activeRecords.add(record);</b>
+<i>226</i>&nbsp;                    }
+<i>227</i>&nbsp;                }
+<i>228</i>&nbsp;
+<b class="fc"><i>229</i>&nbsp;                if (!activeRecords.isEmpty()) {</b>
+<i>230</i>&nbsp;                    // Choose the first active record
+<b class="fc"><i>231</i>&nbsp;                    selectedPPRecord = activeRecords[0];</b>
+<i>232</i>&nbsp;                } else {
+<i>233</i>&nbsp;                    // If no active record, choose the first record with Contact__c == null
+<b class="fc"><i>234</i>&nbsp;                    selectedPPRecord = accountPPRecords[0];</b>
+<i>235</i>&nbsp;                }
+<i>236</i>&nbsp;            } else {
+<i>237</i>&nbsp;                // If no records with Contact__c == null, prioritize active ones from matching records
+<b class="nc"><i>238</i>&nbsp;                List&lt;Product_Profiling__c&gt; activeRecords = new List&lt;Product_Profiling__c&gt;();</b>
+<b class="nc"><i>239</i>&nbsp;                for (Product_Profiling__c record : matchingPPRecords) {</b>
+<b class="nc"><i>240</i>&nbsp;                    if (!record.Inactive__c) {</b>
+<b class="nc"><i>241</i>&nbsp;                        activeRecords.add(record);</b>
+<i>242</i>&nbsp;                    }
+<i>243</i>&nbsp;                }
+<i>244</i>&nbsp;
+<b class="nc"><i>245</i>&nbsp;                if (!activeRecords.isEmpty()) {</b>
+<i>246</i>&nbsp;                    // Choose the first active record
+<b class="nc"><i>247</i>&nbsp;                    selectedPPRecord = activeRecords[0];</b>
+<i>248</i>&nbsp;                } else {
+<i>249</i>&nbsp;                    // If no active record, choose the first matching record
+<b class="nc"><i>250</i>&nbsp;                    selectedPPRecord = matchingPPRecords[0];</b>
+<i>251</i>&nbsp;                }
+<i>252</i>&nbsp;            }
+<i>253</i>&nbsp;        }
+<b class="fc"><i>254</i>&nbsp;        return selectedPPRecord;</b>
+<i>255</i>&nbsp;    }
+<i>256</i>&nbsp;
+<i>257</i>&nbsp;    /**
+<i>258</i>&nbsp;     * getProductFamilyList Get a list of ProductFamily__c records based on the country and the workflow
+<i>259</i>&nbsp;     * @author ohanafi@salesforce.com | 05-08-2024
+<i>260</i>&nbsp;     *
+<i>261</i>&nbsp;     * @param country   Country
+<i>262</i>&nbsp;     * @param workflowId   Workflow ID
+<i>263</i>&nbsp;     *
+<i>264</i>&nbsp;     * @return List&lt;ProductFamily__c&gt; - List of ProductFamily__c records
+<i>265</i>&nbsp;     */
+<b class="fc"><i>266</i>&nbsp;    private static List&lt;ProductFamily__c&gt; getProductFamilyList(String country, Id workflowId) {</b>
+<b class="fc"><i>267</i>&nbsp;        List&lt;ProductFamily__c&gt; productFamilyList = new List&lt;ProductFamily__c&gt;();</b>
+<i>268</i>&nbsp;
+<b class="fc"><i>269</i>&nbsp;        if (!new List&lt;String&gt;{&#39;AT&#39;, &#39;DE&#39;, &#39;CH&#39;}.contains(country)) {</b>
+<b class="fc"><i>270</i>&nbsp;            productFamilyList = [</b>
+<i>271</i>&nbsp;                    SELECT Id, ProductFamilyLabel__c, (
+<i>272</i>&nbsp;                            SELECT Id, Name, Competitor_Product__c
+<i>273</i>&nbsp;                            FROM Non_ERP_Products__r
+<b class="fc"><i>274</i>&nbsp;                            WHERE GlobalProductShowtoallcountries__c = true OR Countries__c INCLUDES (:country)</b>
+<i>275</i>&nbsp;                    )
+<i>276</i>&nbsp;                    FROM ProductFamily__c
+<i>277</i>&nbsp;                    WHERE Id IN (
+<i>278</i>&nbsp;                            SELECT ProductFamily__c
+<i>279</i>&nbsp;                            FROM WorkflowLine__c
+<b class="fc"><i>280</i>&nbsp;                            WHERE Workflow__c = :workflowId</b>
+<i>281</i>&nbsp;                    )
+<i>282</i>&nbsp;            ];
+<i>283</i>&nbsp;        } else {
+<b class="nc"><i>284</i>&nbsp;            productFamilyList = [</b>
+<i>285</i>&nbsp;                    SELECT Id, ProductFamilyLabel__c, (
+<i>286</i>&nbsp;                            SELECT Id, Name, Competitor_Product__c
+<i>287</i>&nbsp;                            FROM Non_ERP_Products__r
+<b class="nc"><i>288</i>&nbsp;                            WHERE ((GlobalProductShowtoallcountries__c = false AND Countries__c INCLUDES (:country)) OR (GlobalProductShowtoallcountries__c = true AND (Countries__c = null OR (NOT (Countries__c INCLUDES (:country))))))</b>
+<i>289</i>&nbsp;                    )
+<i>290</i>&nbsp;                    FROM ProductFamily__c
+<i>291</i>&nbsp;                    WHERE Id IN (
+<i>292</i>&nbsp;                            SELECT ProductFamily__c
+<i>293</i>&nbsp;                            FROM WorkflowLine__c
+<b class="nc"><i>294</i>&nbsp;                            WHERE Workflow__c = :workflowId</b>
+<i>295</i>&nbsp;                    )
+<i>296</i>&nbsp;            ];
+<i>297</i>&nbsp;        }
+<i>298</i>&nbsp;
+<b class="fc"><i>299</i>&nbsp;        return productFamilyList;</b>
+<i>300</i>&nbsp;    }
+<i>301</i>&nbsp;
+<i>302</i>&nbsp;    /**
+<i>303</i>&nbsp;     * createProductProfiling Creates a new Product Profiling record for the given Account and Non ERP Product Id
+<i>304</i>&nbsp;     * @author ohanafi@salesforce.com | 28-06-2024
+<i>305</i>&nbsp;     *
+<i>306</i>&nbsp;     * @param accountId          Account Id
+<i>307</i>&nbsp;     * @param nonErpProductId    Non ERP Product Id
+<i>308</i>&nbsp;     */
+<i>309</i>&nbsp;    @AuraEnabled
+<b class="fc"><i>310</i>&nbsp;    public static void createProductProfiling(Id accountId, Id nonErpProductId) {</b>
+<b class="fc"><i>311</i>&nbsp;        Product_Profiling__c newPPRecord = new Product_Profiling__c();</b>
+<b class="fc"><i>312</i>&nbsp;        newPPRecord.Account__c = accountId;</b>
+<b class="fc"><i>313</i>&nbsp;        newPPRecord.Product_Name__c = nonErpProductId;</b>
+<i>314</i>&nbsp;
+<b class="fc"><i>315</i>&nbsp;        try {</b>
+<b class="fc"><i>316</i>&nbsp;            insert newPPRecord;</b>
+<b class="nc"><i>317</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i>318</i>&nbsp;            DebugLog.addException(e, &#39;WorkflowProfilingController.createProductProfiling&#39;);</b>
+<i>319</i>&nbsp;        }
+<i>320</i>&nbsp;    }
+<i>321</i>&nbsp;
+<i>322</i>&nbsp;
+<i>323</i>&nbsp;    /**
+<i>324</i>&nbsp;     * Wrapper class for Non_ERP_Products__c.
+<i>325</i>&nbsp;     */
+<i>326</i>&nbsp;    public class NonERPProductWrapper implements Comparable {
+<i>327</i>&nbsp;        //The product associated with the wrapper.
+<i>328</i>&nbsp;        @AuraEnabled public Non_ERP_Products__c product;
+<i>329</i>&nbsp;
+<i>330</i>&nbsp;        //Indicates if the product is active.
+<i>331</i>&nbsp;        @AuraEnabled public Boolean active;
+<i>332</i>&nbsp;
+<i>333</i>&nbsp;        //Indicates if the product is inactive.
+<i>334</i>&nbsp;        @AuraEnabled public Boolean inactive;
+<i>335</i>&nbsp;
+<i>336</i>&nbsp;        //The ID of the product profiling record.
+<i>337</i>&nbsp;        @AuraEnabled public String productProfilingId;
+<i>338</i>&nbsp;
+<i>339</i>&nbsp;        /**
+<i>340</i>&nbsp;         * Constructor for NonERPProductWrapper.
+<i>341</i>&nbsp;         *
+<i>342</i>&nbsp;         * @param product The Non_ERP_Products__c object.
+<i>343</i>&nbsp;         * @param active Boolean indicating if the product is active.
+<i>344</i>&nbsp;         * @param inactive Boolean indicating if the product is inactive.
+<i>345</i>&nbsp;         * @param productProfilingId The ID of the product profiling record.
+<i>346</i>&nbsp;         */
+<b class="fc"><i>347</i>&nbsp;        public NonERPProductWrapper(Non_ERP_Products__c product, Boolean active, Boolean inactive, String productProfilingId) {</b>
+<b class="fc"><i>348</i>&nbsp;            this.product = product;</b>
+<b class="fc"><i>349</i>&nbsp;            this.active = active;</b>
+<b class="fc"><i>350</i>&nbsp;            this.inactive = inactive;</b>
+<b class="fc"><i>351</i>&nbsp;            this.productProfilingId = productProfilingId;</b>
+<i>352</i>&nbsp;        }
+<i>353</i>&nbsp;
+<i>354</i>&nbsp;        /**
+<i>355</i>&nbsp;         * Compares this NonERPProductWrapper to another based on product name.
+<i>356</i>&nbsp;         *
+<i>357</i>&nbsp;         * @param other
+<i>358</i>&nbsp;         * @return Integer Comparison result.
+<i>359</i>&nbsp;         */
+<b class="nc"><i>360</i>&nbsp;        public Integer compareTo(Object other) {</b>
+<b class="nc"><i>361</i>&nbsp;            NonERPProductWrapper otherWrapper = (NonERPProductWrapper) other;</b>
+<b class="nc"><i>362</i>&nbsp;            return this.product.Name.compareTo(otherWrapper.product.Name);</b>
+<i>363</i>&nbsp;        }
+<i>364</i>&nbsp;    }
+<i>365</i>&nbsp;
+<i>366</i>&nbsp;    /**
+<i>367</i>&nbsp;     * Wrapper class for ProductFamily__c.
+<i>368</i>&nbsp;     */
+<i>369</i>&nbsp;    public class ProductFamilyWrapper implements Comparable {
+<i>370</i>&nbsp;
+<i>371</i>&nbsp;        //The product family associated with the wrapper.
+<i>372</i>&nbsp;        @AuraEnabled public ProductFamily__c productFamily;
+<i>373</i>&nbsp;
+<i>374</i>&nbsp;        //List of competitor products.
+<i>375</i>&nbsp;        @AuraEnabled public List&lt;NonERPProductWrapper&gt; competitorProducts;
+<i>376</i>&nbsp;
+<i>377</i>&nbsp;        //List of DS products.
+<i>378</i>&nbsp;        @AuraEnabled public List&lt;NonERPProductWrapper&gt; dsProducts;
+<i>379</i>&nbsp;
+<i>380</i>&nbsp;        //Map to hold the order of product families.
+<i>381</i>&nbsp;        private Map&lt;Id, Integer&gt; orderMap;
+<i>382</i>&nbsp;
+<i>383</i>&nbsp;        /**
+<i>384</i>&nbsp;         * Constructor for ProductFamilyWrapper.
+<i>385</i>&nbsp;         *
+<i>386</i>&nbsp;         * @param orderMap Map containing the order of product families.
+<i>387</i>&nbsp;         * @param productFamily The ProductFamily__c object.
+<i>388</i>&nbsp;         */
+<b class="fc"><i>389</i>&nbsp;        public ProductFamilyWrapper(Map&lt;Id, Integer&gt; orderMap, ProductFamily__c productFamily) {</b>
+<b class="fc"><i>390</i>&nbsp;            this.competitorProducts = new List&lt;NonERPProductWrapper&gt;();</b>
+<b class="fc"><i>391</i>&nbsp;            this.dsProducts = new List&lt;NonERPProductWrapper&gt;();</b>
+<b class="fc"><i>392</i>&nbsp;            this.orderMap = orderMap;</b>
+<b class="fc"><i>393</i>&nbsp;            this.productFamily = productFamily;</b>
+<i>394</i>&nbsp;        }
+<i>395</i>&nbsp;
+<i>396</i>&nbsp;        /**
+<i>397</i>&nbsp;         * Default constructor for ProductFamilyWrapper.
+<i>398</i>&nbsp;         */
+<b class="nc"><i>399</i>&nbsp;        public ProductFamilyWrapper() {</b>
+<b class="nc"><i>400</i>&nbsp;            this.competitorProducts = new List&lt;NonERPProductWrapper&gt;();</b>
+<b class="nc"><i>401</i>&nbsp;            this.dsProducts = new List&lt;NonERPProductWrapper&gt;();</b>
+<i>402</i>&nbsp;        }
+<i>403</i>&nbsp;
+<i>404</i>&nbsp;        /**
+<i>405</i>&nbsp;         * Method to sort Product Families based on the order retrieved from the Workflow Lines
+<i>406</i>&nbsp;         *
+<i>407</i>&nbsp;         * @param other
+<i>408</i>&nbsp;         * @return Integer Comparison result.
+<i>409</i>&nbsp;         */
+<b class="fc"><i>410</i>&nbsp;        public Integer compareTo(Object other) {</b>
+<b class="fc"><i>411</i>&nbsp;            Integer thisOrder = orderMap.containsKey(this.productFamily.Id) ? orderMap.get(this.productFamily.Id) : 99999999;</b>
+<b class="fc"><i>412</i>&nbsp;            Integer otherOrder = orderMap.containsKey(((ProductFamilyWrapper)other).productFamily.Id) ? orderMap.get(((ProductFamilyWrapper)other).productFamily.Id) : 99999999;</b>
+<b class="fc"><i>413</i>&nbsp;            if (thisOrder == otherOrder){</b>
+<b class="nc"><i>414</i>&nbsp;                return 0;</b>
+<i>415</i>&nbsp;            }
+<b class="fc"><i>416</i>&nbsp;            if (thisOrder &gt; otherOrder){</b>
+<b class="nc"><i>417</i>&nbsp;                return 1;</b>
+<i>418</i>&nbsp;            }
+<b class="fc"><i>419</i>&nbsp;            return -1;</b>
+<i>420</i>&nbsp;        }
+<i>421</i>&nbsp;
+<i>422</i>&nbsp;    }
+<i>423</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

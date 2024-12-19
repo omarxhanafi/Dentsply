@@ -1,0 +1,259 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CventEventInternalTriggerHelper</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CventEventInternalTriggerHelper (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">CventEventInternalTriggerHelper</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>CventEventInternalTriggerHelper</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author: 		Richard Trum (Glimt) 2020-03-03
+<i>3</i>&nbsp;Description:   	Cvent Event Trigger Helper Class
+<i>4</i>&nbsp;Test Class:      
+<i>5</i>&nbsp;History	
+<i>6</i>&nbsp;20200303 		Richard Trum			Created triggers in the trigger framework for the Cvent Event object
+<i>7</i>&nbsp;--------------------------------------------------------------------------------------------------------*/
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;public with sharing class CventEventInternalTriggerHelper {
+<i>10</i>&nbsp;    
+<i>11</i>&nbsp;    /*------------------------------------------------------------	
+<i>12</i>&nbsp;	Description:   	Method to replicate Cvent Events as Campaigns
+<i>13</i>&nbsp;    Inputs:        	@param
+<i>14</i>&nbsp;	------------------------------------------------------------*/
+<i>15</i>&nbsp;    
+<i>16</i>&nbsp;    /*public static void createCampaign(List&lt;CVENT__Cvent_Event__c&gt; newEventList){
+<i>17</i>&nbsp;        
+<i>18</i>&nbsp;    BatchSettings__c settings = BatchSettings__c.getInstance(&#39;Default&#39;);    
+<i>19</i>&nbsp;    if (Test.isRunningTest() || settings.CventEventInternalTriggerIsEnabled__c){
+<i>20</i>&nbsp;    
+<i>21</i>&nbsp;        
+<i>22</i>&nbsp;    for(CVENT__Cvent_Event__c ev : newEventList){
+<i>23</i>&nbsp;        
+<i>24</i>&nbsp;			CVENT__Cvent_Event__c eventToCopy = 
+<i>25</i>&nbsp;                							 [SELECT Id, 
+<i>26</i>&nbsp;                                             CVENT__Agenda__c,
+<i>27</i>&nbsp;                                             CVENT__Allow_Invitation__c, 
+<i>28</i>&nbsp;                                             CVENT__Allow_Registration__c,
+<i>29</i>&nbsp;                                             CVENT__AllowAddInvitationList__c,
+<i>30</i>&nbsp;                                             CVENT__Campaign__c,
+<i>31</i>&nbsp;                                             CVENT__Country_Name__c,
+<i>32</i>&nbsp;                                             CVENT__CurrencyCode__c,
+<i>33</i>&nbsp;                                             CVENT__StartDate__c,
+<i>34</i>&nbsp;                                             CVENT__EndDate__c,
+<i>35</i>&nbsp;                                             CVENT__EndDateTimeStr__c,
+<i>36</i>&nbsp;                                             CVENT__Event_Category__c,
+<i>37</i>&nbsp;                                             CVENT__Event_Address_City__c,
+<i>38</i>&nbsp;                                             CVENT__StartDateTimeStr__c,
+<i>39</i>&nbsp;                                             CVENT__Status__c,
+<i>40</i>&nbsp;                                         	 CVENT__Event_Status__c, //Primary_Specialty_Focus__c,
+<i>41</i>&nbsp;                                             Name,
+<i>42</i>&nbsp;                                             OwnerId
+<i>43</i>&nbsp;                                             FROM CVENT__Cvent_Event__c WHERE Id =: ev.Id];
+<i>44</i>&nbsp;        
+<i>45</i>&nbsp;        //Create new Campaign
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;        Campaign newCampaign = new Campaign();
+<i>48</i>&nbsp;        RecordType recType = [SELECT Id FROM RecordType WHERE DeveloperName=&#39;CventCampaign&#39; AND SObjectType = &#39;Campaign&#39;];
+<i>49</i>&nbsp;        newCampaign.RecordTypeId = recType.Id;
+<i>50</i>&nbsp;        newCampaign.Type = &#39;Event&#39;;
+<i>51</i>&nbsp;        newCampaign.Name = eventToCopy.Name;
+<i>52</i>&nbsp;        newCampaign.Campaign_Coordinator__c = eventToCopy.OwnerId;
+<i>53</i>&nbsp;        newCampaign.Campaign_Approver__c = eventToCopy.OwnerId;
+<i>54</i>&nbsp;        newCampaign.Campaign_City__c = eventToCopy.CVENT__Event_Address_City__c;
+<i>55</i>&nbsp;        newCampaign.StartDate = eventToCopy.CVENT__StartDate__c;
+<i>56</i>&nbsp;        newCampaign.EndDate = eventToCopy.CVENT__EndDate__c;
+<i>57</i>&nbsp;		newCampaign.Campaign_Country__c = eventToCopy.CVENT__Country_Name__c;
+<i>58</i>&nbsp;        newCampaign.IsActive = true;
+<i>59</i>&nbsp;        //newCampaign.SBU_Focus__c = ev.Primary_Specialty_Focus__c;
+<i>60</i>&nbsp;        List&lt;CVENT_CampaignEventMapping__c&gt; cmpStatus = new List&lt;CVENT_CampaignEventMapping__c&gt;();
+<i>61</i>&nbsp;        try{
+<i>62</i>&nbsp;        	cmpStatus = [SELECT CampaignStatus__c, CventEventStatus__c FROM CVENT_CampaignEventMapping__c WHERE CventEventStatus__c =: eventToCopy.CVENT__Event_Status__c];
+<i>63</i>&nbsp;        }
+<i>64</i>&nbsp;        catch(exception e){
+<i>65</i>&nbsp;            System.debug(e);
+<i>66</i>&nbsp;        }
+<i>67</i>&nbsp;        if(!cmpStatus.IsEmpty()){
+<i>68</i>&nbsp;        newCampaign.Status = cmpStatus[0].CampaignStatus__c;
+<i>69</i>&nbsp;        }
+<i>70</i>&nbsp;        
+<i>71</i>&nbsp;        try{
+<i>72</i>&nbsp;        	insert newCampaign;            
+<i>73</i>&nbsp;        }
+<i>74</i>&nbsp;        catch(DmlException e){
+<i>75</i>&nbsp;              DebugLog.addException(e, &#39;Method: CventEventInternalTrigger.createCampaign&#39;); 
+<i>76</i>&nbsp;        }
+<i>77</i>&nbsp;        
+<i>78</i>&nbsp;        //update Cvent Event with Campaign Id        
+<i>79</i>&nbsp;        CVENT__Cvent_Event__c eventToUpdate = [SELECT Id FROM CVENT__Cvent_Event__c WHERE Id =: eventToCopy.Id];              
+<i>80</i>&nbsp;        eventToUpdate.CVENT__Campaign__c = newCampaign.Id;        
+<i>81</i>&nbsp;        update eventToUpdate;
+<i>82</i>&nbsp;        
+<i>83</i>&nbsp;        //Map campaign statuses        
+<i>84</i>&nbsp;        List&lt;CVENT_CampaignAttendeeMapping__c&gt; statusTemplate = [SELECT Id, CampaignStatus__c, CVENTAtteendeStatus__c FROM CVENT_CampaignAttendeeMapping__c];       
+<i>85</i>&nbsp;        List&lt;CVENT__Attendee_Status_Mapping__c&gt; statusMap = new List&lt;CVENT__Attendee_Status_Mapping__c&gt;();
+<i>86</i>&nbsp;        
+<i>87</i>&nbsp;        for(CVENT_CampaignAttendeeMapping__c currentStatus : statusTemplate){
+<i>88</i>&nbsp;            
+<i>89</i>&nbsp;            CVENT__Attendee_Status_Mapping__c newStatusMap = new CVENT__Attendee_Status_Mapping__c();
+<i>90</i>&nbsp;            newStatusMap.CVENT__Campaign_Member_Status__c = currentStatus.CampaignStatus__c;
+<i>91</i>&nbsp;            newStatusMap.CVENT__Attendee_Status__c = currentStatus.CVENTAtteendeStatus__c;
+<i>92</i>&nbsp;            newStatusMap.CVENT__Campaign__c = newCampaign.Id;
+<i>93</i>&nbsp;            statusMap.add(newStatusMap);
+<i>94</i>&nbsp;        }
+<i>95</i>&nbsp;        
+<i>96</i>&nbsp;        try{
+<i>97</i>&nbsp;         	insert statusMap;   
+<i>98</i>&nbsp;        }    
+<i>99</i>&nbsp;            catch(DmlException e){
+<i>100</i>&nbsp;                DebugLog.addException(e, &#39;Method: CventEventInternalTrigger.createCampaign, Action: Add status mappings&#39;);
+<i>101</i>&nbsp;            }
+<i>102</i>&nbsp;    }   
+<i>103</i>&nbsp;    }
+<i>104</i>&nbsp;        
+<i>105</i>&nbsp;   }*/
+<i>106</i>&nbsp;    
+<i>107</i>&nbsp;    /*------------------------------------------------------------	
+<i>108</i>&nbsp;	Description:   	Method to update Campaign based on Cvent Event
+<i>109</i>&nbsp;    Inputs:        	@param
+<i>110</i>&nbsp;	------------------------------------------------------------*/
+<i>111</i>&nbsp;    
+<i>112</i>&nbsp;    /*public static void updateCampaign(List&lt;CVENT__Cvent_Event__c&gt; newEventList){
+<i>113</i>&nbsp;        
+<i>114</i>&nbsp;    BatchSettings__c settings = BatchSettings__c.getInstance(&#39;Default&#39;);    
+<i>115</i>&nbsp;    if (Test.isRunningTest() || settings.CventEventInternalTriggerIsEnabled__c){
+<i>116</i>&nbsp;           
+<i>117</i>&nbsp;    for(CVENT__Cvent_Event__c eventToUpdate : newEventList){    
+<i>118</i>&nbsp;        	
+<i>119</i>&nbsp;        CVENT__Cvent_Event__c ev = [SELECT Id, 
+<i>120</i>&nbsp;                                             CVENT__Agenda__c,
+<i>121</i>&nbsp;                                             CVENT__Allow_Invitation__c, 
+<i>122</i>&nbsp;                                             CVENT__Allow_Registration__c,
+<i>123</i>&nbsp;                                             CVENT__AllowAddInvitationList__c,
+<i>124</i>&nbsp;                                             CVENT__Campaign__c,
+<i>125</i>&nbsp;                                             CVENT__Country_Name__c,
+<i>126</i>&nbsp;                                             CVENT__CurrencyCode__c,
+<i>127</i>&nbsp;                                             CVENT__StartDate__c,
+<i>128</i>&nbsp;                                             CVENT__EndDate__c,
+<i>129</i>&nbsp;                                             CVENT__EndDateTimeStr__c,
+<i>130</i>&nbsp;                                             CVENT__Event_Category__c,
+<i>131</i>&nbsp;                                             CVENT__Event_Address_City__c,
+<i>132</i>&nbsp;                                             CVENT__StartDateTimeStr__c,
+<i>133</i>&nbsp;                                             CVENT__Status__c,
+<i>134</i>&nbsp;                                    		 CVENT__Event_Status__c, //Primary_Specialty_Focus__c,
+<i>135</i>&nbsp;                                             Name,
+<i>136</i>&nbsp;                                             OwnerId
+<i>137</i>&nbsp;                                             FROM CVENT__Cvent_Event__c WHERE Id =: eventToUpdate.Id];
+<i>138</i>&nbsp;        
+<i>139</i>&nbsp;        if(!String.isBlank(ev.CVENT__Campaign__c)){
+<i>140</i>&nbsp;        Campaign campaignToUpdate = [SELECT Id, Name FROM Campaign WHERE Id =: ev.CVENT__Campaign__c];
+<i>141</i>&nbsp;        campaignToUpdate.Name = ev.Name;
+<i>142</i>&nbsp;        campaignToUpdate.Campaign_City__c = ev.CVENT__Event_Address_City__c;
+<i>143</i>&nbsp;        campaignToUpdate.StartDate = ev.CVENT__StartDate__c;
+<i>144</i>&nbsp;        campaignToUpdate.EndDate = ev.CVENT__EndDate__c;
+<i>145</i>&nbsp;		campaignToUpdate.Campaign_Country__c = ev.CVENT__Country_Name__c;
+<i>146</i>&nbsp;        //campaignToUpdate.SBU_Focus__c = ev.Primary_Specialty_Focus__c;
+<i>147</i>&nbsp;        
+<i>148</i>&nbsp;        List&lt;CVENT_CampaignEventMapping__c&gt; cmpStatus = new List&lt;CVENT_CampaignEventMapping__c&gt;();
+<i>149</i>&nbsp;        try{
+<i>150</i>&nbsp;        	cmpStatus = [SELECT CampaignStatus__c, CventEventStatus__c FROM CVENT_CampaignEventMapping__c WHERE CventEventStatus__c =: ev.CVENT__Event_Status__c];
+<i>151</i>&nbsp;        }
+<i>152</i>&nbsp;        catch(exception e){
+<i>153</i>&nbsp;            System.debug(e);
+<i>154</i>&nbsp;        }
+<i>155</i>&nbsp;        if(!cmpStatus.IsEmpty()){
+<i>156</i>&nbsp;        campaignToUpdate.Status = cmpStatus[0].CampaignStatus__c;
+<i>157</i>&nbsp;        }    
+<i>158</i>&nbsp;            
+<i>159</i>&nbsp;        update campaignToUpdate;
+<i>160</i>&nbsp;        }    
+<i>161</i>&nbsp;    }    
+<i>162</i>&nbsp;        
+<i>163</i>&nbsp;    }
+<i>164</i>&nbsp;        
+<i>165</i>&nbsp;    }*/
+<i>166</i>&nbsp;    
+<i>167</i>&nbsp;    /*------------------------------------------------------------	
+<i>168</i>&nbsp;	Description:   	Method to assign an owner to a Cvent Event
+<i>169</i>&nbsp;    Inputs:        	@param
+<i>170</i>&nbsp;	------------------------------------------------------------*/ 
+<i>171</i>&nbsp;    
+<i>172</i>&nbsp;    /*public static void setEventOwner(List&lt;CVENT__Cvent_Event__c&gt; newEventList){    
+<i>173</i>&nbsp;       
+<i>174</i>&nbsp;    BatchSettings__c settings = BatchSettings__c.getInstance(&#39;Default&#39;);    
+<i>175</i>&nbsp;    if (Test.isRunningTest() || settings.CventEventInternalTriggerIsEnabled__c){
+<i>176</i>&nbsp;     	
+<i>177</i>&nbsp;            for(CVENT__Cvent_Event__c eventToUpdate : newEventList){
+<i>178</i>&nbsp;                
+<i>179</i>&nbsp;                        CVENT__Cvent_Event__c ev = [SELECT Id,
+<i>180</i>&nbsp;                                             CVENT__Status__c,
+<i>181</i>&nbsp;                                    		 CVENT__Event_Status__c,
+<i>182</i>&nbsp;                                             Email_of_Meeting_Planner_KOL_Manager__c,       
+<i>183</i>&nbsp;                                             Name,
+<i>184</i>&nbsp;                                             OwnerId
+<i>185</i>&nbsp;                                             FROM CVENT__Cvent_Event__c WHERE Id =: eventToUpdate.Id];
+<i>186</i>&nbsp;                
+<i>187</i>&nbsp;                	List&lt;User&gt; usersToAssign = new List&lt;User&gt;();
+<i>188</i>&nbsp;                	try{
+<i>189</i>&nbsp;                		usersToAssign = [SELECT Id, Email, Name FROM User WHERE Email =: ev.Email_of_Meeting_Planner_KOL_Manager__c];
+<i>190</i>&nbsp;                    }
+<i>191</i>&nbsp;                	catch(exception e){
+<i>192</i>&nbsp;                    	System.debug(&#39;Assign owner to Cvent Event - no matching user could be found: &#39; + e);
+<i>193</i>&nbsp;                	}
+<i>194</i>&nbsp;                
+<i>195</i>&nbsp;                	if(!usersToAssign.IsEmpty()){
+<i>196</i>&nbsp;                        if(usersToAssign[0].Id != ev.OwnerId){
+<i>197</i>&nbsp;                    		ev.OwnerId = usersToAssign[0].Id;
+<i>198</i>&nbsp;                            System.debug(&#39;Updating owner&#39;);
+<i>199</i>&nbsp;                            try{
+<i>200</i>&nbsp;                            	update ev;
+<i>201</i>&nbsp;                            }
+<i>202</i>&nbsp;                            catch(exception e){
+<i>203</i>&nbsp;                                System.debug(e);
+<i>204</i>&nbsp;                            }
+<i>205</i>&nbsp;                		}
+<i>206</i>&nbsp;                	}
+<i>207</i>&nbsp;            }    
+<i>208</i>&nbsp;        
+<i>209</i>&nbsp;    }    
+<i>210</i>&nbsp;    }*/
+<i>211</i>&nbsp;
+<i>212</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

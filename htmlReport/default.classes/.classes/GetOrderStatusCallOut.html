@@ -1,0 +1,152 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: GetOrderStatusCallOut</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: GetOrderStatusCallOut (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">GetOrderStatusCallOut</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    85.7%
+  </span>
+  <span class="absValue">
+    (48/ 56)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>GetOrderStatusCallOut</h2>
+<div class="sourceCode"><i>1</i>&nbsp;public with sharing class GetOrderStatusCallOut {
+<i>2</i>&nbsp;    @AuraEnabled
+<b class="fc"><i>3</i>&nbsp;    public static Map&lt;String, Object&gt; getOrderStatusCallOut(string country,string orderNumber) {</b>
+<b class="fc"><i>4</i>&nbsp;        HttpRequest req = new HttpRequest();</b>
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;
+<b class="fc"><i>7</i>&nbsp;        PricingMicroServiceCallOut__mdt calloutDetail = [SELECT Client_ID__c, GetOrderDetailsLogicAppsURL__c, Scope__c, Secret_Id__c, TokenURL__c FROM PricingMicroServiceCallOut__mdt Limit 1];</b>
+<b class="fc"><i>8</i>&nbsp;        string token = getTokenId(calloutDetail);</b>
+<b class="fc"><i>9</i>&nbsp;        string orderDetailsEndpoint = calloutDetail.GetOrderDetailsLogicAppsURL__c;</b>
+<b class="fc"><i>10</i>&nbsp;        orderDetailsEndpoint = orderDetailsEndpoint.replace(&#39;#param1#&#39;, orderNumber);</b>
+<b class="fc"><i>11</i>&nbsp;        orderDetailsEndpoint = orderDetailsEndpoint.replace(&#39;#param2#&#39;, country);</b>
+<b class="fc"><i>12</i>&nbsp;        req.setEndpoint(orderDetailsEndpoint);</b>
+<b class="fc"><i>13</i>&nbsp;        req.setHeader(&#39;Content-Type&#39;, &#39;application/json;charset=UTF-8&#39;);</b>
+<b class="fc"><i>14</i>&nbsp;        req.setHeader( &#39;Authorization&#39;, &#39;Bearer &#39; +token );</b>
+<b class="fc"><i>15</i>&nbsp;        req.setMethod(&#39;GET&#39;);</b>
+<b class="fc"><i>16</i>&nbsp;        req.setTimeout(30000);</b>
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;        // Create a new http object to send the request object
+<i>19</i>&nbsp;        // A response object is generated as a result of the request  
+<b class="fc"><i>20</i>&nbsp;        Http http = new Http();</b>
+<b class="fc"><i>21</i>&nbsp;        if(!Test.isRunningTest()){</b>
+<b class="nc"><i>22</i>&nbsp;            HTTPResponse res = http.send(req);</b>
+<b class="nc"><i>23</i>&nbsp;            Integer calloutStatus = res.getStatusCode();</b>
+<b class="nc"><i>24</i>&nbsp;                Map&lt;String, Object&gt; results = (Map&lt;String, Object&gt;) </b>
+<b class="nc"><i>25</i>&nbsp;                JSON.deserializeUntyped(res.getBody());</b>
+<b class="nc"><i>26</i>&nbsp;            return results;</b>
+<i>27</i>&nbsp;        } else {
+<b class="fc"><i>28</i>&nbsp;            Map&lt;String, Object&gt; fakeResponse = new Map&lt;String, Object&gt;();</b>
+<b class="fc"><i>29</i>&nbsp;            fakeResponse.put(&#39;hello&#39;,&#39;goodbye&#39;);</b>
+<b class="fc"><i>30</i>&nbsp;            return fakeResponse;</b>
+<i>31</i>&nbsp;        }
+<i>32</i>&nbsp;    }
+<b class="fc"><i>33</i>&nbsp;    public static string getTokenId( PricingMicroServiceCallOut__mdt calloutDetail){</b>
+<b class="fc"><i>34</i>&nbsp;        Http h = new Http();</b>
+<b class="fc"><i>35</i>&nbsp;        HttpRequest req1 = new HttpRequest();</b>
+<b class="fc"><i>36</i>&nbsp;        req1.setEndpoint(calloutDetail.TokenURL__c);</b>
+<b class="fc"><i>37</i>&nbsp;        req1.setMethod(&#39;POST&#39;);</b>
+<b class="fc"><i>38</i>&nbsp;        req1.setHeader(&#39;Content-Type&#39;, &#39;application/x-www-form-urlencoded&#39;);</b>
+<b class="fc"><i>39</i>&nbsp;        req1.setHeader(&#39;Accept&#39;, &#39;application/json&#39;);</b>
+<b class="fc"><i>40</i>&nbsp;        req1.setBody(&#39;grant_type=client_credentials&amp;response_type=token&amp;scope=&#39; + calloutDetail.Scope__c +&#39;&amp;client_id=&#39; + calloutDetail.Client_ID__c +&#39;&amp;client_secret=&#39; + calloutDetail.Secret_Id__c);</b>
+<i>41</i>&nbsp;        
+<b class="fc"><i>42</i>&nbsp;        if(!Test.isRunningTest()){</b>
+<b class="nc"><i>43</i>&nbsp;            HttpResponse res2 = h.send(req1);</b>
+<b class="nc"><i>44</i>&nbsp;            ProductPricingERPCallOutWrapper.DeserializeTokenResponse resp1 = (ProductPricingERPCallOutWrapper.DeserializeTokenResponse)JSON.deserialize(res2.getbody(),ProductPricingERPCallOutWrapper.DeserializeTokenResponse.class);</b>
+<b class="nc"><i>45</i>&nbsp;            return resp1.access_token;</b>
+<i>46</i>&nbsp;        } else {
+<b class="fc"><i>47</i>&nbsp;            String fakeResponse = &#39;eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Imwzc1EtNTBjQ0g0eEJWWkxIVEd3blNSNzY4MCIsImtpZCI6Imwzc1EtNTBjQ0g0eEJWWkxIVEd3blNSNzY4MCJ9.eyJhdWQiOiJhcGk6Ly81N2NjNTQwNS1lZTlmLTQyZGEtYmE4ZC0zZGMyOWRlOTIyZTUiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9iYzc0ZTU5Yy01ZmEzLTQxNTctOWMzNy02ZTUwNjNkMTFhNjIvIiwiaWF0IjoxNjM0ODU1OTYxLCJuYmYiOjE2MzQ4NTU5NjEsImV4cCI6MTYzNDg1OTg2MSwiYWlvIjoiRTJaZ1lHaHVDWGwydHVIRWdSL1BPamkzL1Rza0FRQT0iLCJhcHBpZCI6IjU3Y2M1NDA1LWVlOWYtNDJkYS1iYThkLTNkYzI5ZGU5MjJlNSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0L2JjNzRlNTljLTVmYTMtNDE1Ny05YzM3LTZlNTA2M2QxMWE2Mi8iLCJvaWQiOiI1ZjNiNmE3My1lM2FhLTRjNmUtYTMxYS1mNGE2ZGU0OTQwMTAiLCJyaCI6IjAuQVE0QW5PVjB2S05mVjBHY04yNVFZOUVhWWdWVXpGZWY3dHBDdW8wOXdwM3BJdVVPQUFBLiIsInN1YiI6IjVmM2I2YTczLWUzYWEtNGM2ZS1hMzFhLWY0YTZkZTQ5NDAxMCIsInRpZCI6ImJjNzRlNTljLTVmYTMtNDE1Ny05YzM3LTZlNTA2M2QxMWE2MiIsInV0aSI6ImpxZUlrNXU1dDBhRjE0SDF6Q0ZaQUEiLCJ2ZXIiOiIxLjAifQ.YvG6eanyC09s3ysVo7Gn41S1HbrBKQQoFwnudM2zDA-ROqmK5W-UmAtb90Y9mkmREGb9b6lo5zNVtwtOqxf72pTrNwEU7MmNNdtGgC42MX22CDDPN26y7UIysB0zZS7RlJmmaq0rVIhmxBmdC5HnylpUrYv02KgbIBaabcmkuLZmgCR7aF3zZL5McoaqtHKWXxZV_09u48yzx8uHYQsH5f8e0zxEyBA2DLqj62kOhFhl06R3k9xqonWWJFud1RuWtm1YspYBiY3ALqrCaUlxsZzT2vRCkLcZDbtg3R4EgRSjb1dnOnKpoBp2ZGplmBPdhuim9HqlRNWu6FhZlWU9fA&#39;;</b>
+<b class="fc"><i>48</i>&nbsp;            return fakeResponse;</b>
+<i>49</i>&nbsp;        }
+<i>50</i>&nbsp;    }
+<i>51</i>&nbsp;    @AuraEnabled
+<b class="fc"><i>52</i>&nbsp;    public static string getCountryCode() {</b>
+<b class="fc"><i>53</i>&nbsp;        Map&lt;String, CountryCodeMap__mdt&gt; userCountryAndCountryCodeMapping = new Map&lt;String, CountryCodeMap__mdt&gt;();</b>
+<i>54</i>&nbsp;        //User country and Campaign Country mathc so we can use the same
+<b class="fc"><i>55</i>&nbsp;        List&lt;CountryCodeMap__mdt&gt; countryMetadataList = [SELECT Campaign_Country__c, Country_Code_2_digit__c FROM CountryCodeMap__mdt];</b>
+<b class="fc"><i>56</i>&nbsp;        for (CountryCodeMap__mdt countryMetadata : countryMetadataList) {</b>
+<b class="fc"><i>57</i>&nbsp;            userCountryAndCountryCodeMapping.put(countryMetadata.Campaign_Country__c, countryMetadata);</b>
+<i>58</i>&nbsp;        }
+<b class="fc"><i>59</i>&nbsp;        user userDetails = new user();</b>
+<b class="fc"><i>60</i>&nbsp;        userDetails = [ SELECT Id, User_Country__c FROM user WHERE Id =: UserInfo.getUserId() LIMIT 1];</b>
+<b class="fc"><i>61</i>&nbsp;        string twoDigitsCountryCode = userCountryAndCountryCodeMapping.get(userDetails.User_Country__c).Country_Code_2_digit__c;</b>
+<b class="fc"><i>62</i>&nbsp;        return(twoDigitsCountryCode);</b>
+<i>63</i>&nbsp;    }
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;    @AuraEnabled
+<b class="fc"><i>66</i>&nbsp;    public static string getOrderNumber(String openOrderId , String objectType) {</b>
+<b class="fc"><i>67</i>&nbsp;        String idToReturn;</b>
+<b class="fc"><i>68</i>&nbsp;        if(objectType == &#39;OpenOrderLine__c&#39;){</b>
+<b class="fc"><i>69</i>&nbsp;            OpenOrderLine__c openOrderLine = new OpenOrderLine__c();</b>
+<b class="fc"><i>70</i>&nbsp;            openOrderLine = [ SELECT CustomerOrderNo__c FROM OpenOrderLine__c WHERE Id =: openOrderId LIMIT 1];</b>
+<b class="fc"><i>71</i>&nbsp;            idToReturn = openOrderLine.CustomerOrderNo__c;</b>
+<i>72</i>&nbsp;        }
+<b class="fc"><i>73</i>&nbsp;        if(objectType == &#39;Order&#39;){</b>
+<b class="fc"><i>74</i>&nbsp;            Order order = new Order();</b>
+<b class="fc"><i>75</i>&nbsp;            order = [ SELECT AX_Order_Number__c FROM order WHERE Id =: openOrderId LIMIT 1];</b>
+<b class="fc"><i>76</i>&nbsp;            idToReturn = order.AX_Order_Number__c;</b>
+<i>77</i>&nbsp;        }
+<i>78</i>&nbsp;
+<b class="fc"><i>79</i>&nbsp;        return(idToReturn);</b>
+<i>80</i>&nbsp;    }
+<i>81</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

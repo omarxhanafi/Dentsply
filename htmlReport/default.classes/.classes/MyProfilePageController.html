@@ -1,0 +1,124 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MyProfilePageController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MyProfilePageController (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MyProfilePageController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 24)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>MyProfilePageController</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/**
+<i>2</i>&nbsp; * An apex class that updates portal user details.
+<i>3</i>&nbsp;   Guest users are never able to access this page.
+<i>4</i>&nbsp; */
+<i>5</i>&nbsp;public with sharing class MyProfilePageController {
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;    private User user;
+<b class="nc"><i>8</i>&nbsp;    private boolean isEdit = false;</b>
+<i>9</i>&nbsp;
+<b class="nc"><i>10</i>&nbsp;    public User getUser() {</b>
+<b class="nc"><i>11</i>&nbsp;        return user;</b>
+<i>12</i>&nbsp;    }
+<i>13</i>&nbsp;
+<b class="nc"><i>14</i>&nbsp;    public MyProfilePageController() {</b>
+<b class="nc"><i>15</i>&nbsp;        user = [SELECT id, email, username, usertype, communitynickname, timezonesidkey, languagelocalekey, firstname, lastname, phone, title,</b>
+<i>16</i>&nbsp;                street, city, country, postalcode, state, localesidkey, mobilephone, extension, fax, contact.email
+<i>17</i>&nbsp;                FROM User
+<b class="nc"><i>18</i>&nbsp;                WHERE id = :UserInfo.getUserId()];</b>
+<i>19</i>&nbsp;        // guest users should never be able to access this page
+<b class="nc"><i>20</i>&nbsp;        if (user.usertype == &#39;GUEST&#39;) {</b>
+<b class="nc"><i>21</i>&nbsp;            throw new NoAccessException();</b>
+<i>22</i>&nbsp;        }
+<i>23</i>&nbsp;    }
+<i>24</i>&nbsp;
+<b class="nc"><i>25</i>&nbsp;    public Boolean getIsEdit() {</b>
+<b class="nc"><i>26</i>&nbsp;        return isEdit;</b>
+<i>27</i>&nbsp;    }
+<i>28</i>&nbsp;
+<b class="nc"><i>29</i>&nbsp;    public void edit() {</b>
+<b class="nc"><i>30</i>&nbsp;        isEdit=true;</b>
+<i>31</i>&nbsp;    }
+<i>32</i>&nbsp;
+<b class="nc"><i>33</i>&nbsp;    public void save() {</b>
+<b class="nc"><i>34</i>&nbsp;        try {</b>
+<b class="nc"><i>35</i>&nbsp;            update user;</b>
+<b class="nc"><i>36</i>&nbsp;            isEdit=false;</b>
+<b class="nc"><i>37</i>&nbsp;        } catch(DmlException e) {</b>
+<b class="nc"><i>38</i>&nbsp;            ApexPages.addMessages(e);</b>
+<i>39</i>&nbsp;        }
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;
+<b class="nc"><i>42</i>&nbsp;    public PageReference changePassword() {</b>
+<b class="nc"><i>43</i>&nbsp;        return Page.ChangePassword;</b>
+<i>44</i>&nbsp;    }
+<i>45</i>&nbsp;
+<b class="nc"><i>46</i>&nbsp;    public void cancel() {</b>
+<b class="nc"><i>47</i>&nbsp;        isEdit=false;</b>
+<b class="nc"><i>48</i>&nbsp;        user = [SELECT id, email, username, communitynickname, timezonesidkey, languagelocalekey, firstname, lastname, phone, title,</b>
+<i>49</i>&nbsp;                street, city, country, postalcode, state, localesidkey, mobilephone, extension, fax, contact.email
+<i>50</i>&nbsp;                FROM User
+<b class="nc"><i>51</i>&nbsp;                WHERE id = :UserInfo.getUserId()];</b>
+<i>52</i>&nbsp;    }    
+<i>53</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

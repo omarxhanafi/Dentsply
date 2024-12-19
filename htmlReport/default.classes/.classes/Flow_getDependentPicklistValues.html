@@ -1,0 +1,151 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Flow_getDependentPicklistValues</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Flow_getDependentPicklistValues (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Flow_getDependentPicklistValues</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (40/ 40)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>Flow_getDependentPicklistValues</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*------------------------------------------------------------	
+<i>2</i>&nbsp;	Author: 		Richard Trum (Glimt) 2022-02-24	
+<i>3</i>&nbsp;	Description:   	Class used for getting data on picklist values dependencies inside flows
+<i>4</i>&nbsp;	Test class: 	Test_FlowGenericMethods
+<i>5</i>&nbsp;	------------------------------------------------------------*/ 
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;public class Flow_getDependentPicklistValues {
+<i>8</i>&nbsp;     
+<i>9</i>&nbsp;    @InvocableMethod
+<b class="fc"><i>10</i>&nbsp;    public static List&lt;List&lt;String&gt;&gt; checkParentValues(List&lt;List&lt;String&gt;&gt; input){</b>
+<i>11</i>&nbsp;    
+<b class="fc"><i>12</i>&nbsp;        List&lt;String&gt; inputList = input[0];</b>
+<b class="fc"><i>13</i>&nbsp;    	List&lt;String&gt; objectInput = new List&lt;String&gt;();</b>
+<b class="fc"><i>14</i>&nbsp;		objectInput.add(inputList[0]);</b>
+<i>15</i>&nbsp;        
+<b class="fc"><i>16</i>&nbsp;        String fieldInput = inputList[1];</b>
+<i>17</i>&nbsp;        
+<b class="fc"><i>18</i>&nbsp;		List&lt;DescribeSObjectResult&gt; res = Schema.describeSObjects(objectInput);</b>
+<i>19</i>&nbsp;		
+<b class="fc"><i>20</i>&nbsp;		DescribeSObjectResult obj = res[0];</b>
+<b class="fc"><i>21</i>&nbsp;		Map&lt;String, Schema.SObjectField&gt; flds = obj.fields.getMap();</b>
+<i>22</i>&nbsp;
+<b class="fc"><i>23</i>&nbsp;		Schema.SObjectField F = flds.get(fieldInput);</b>
+<b class="fc"><i>24</i>&nbsp;		Schema.DescribeFieldResult Fdes = F.getDescribe();</b>
+<b class="fc"><i>25</i>&nbsp;		Schema.sObjectField dependentField = Fdes.getSObjectField(); </b>
+<b class="fc"><i>26</i>&nbsp;        Map&lt;Object,List&lt;String&gt;&gt; dependentPicklistValues = new Map&lt;Object,List&lt;String&gt;&gt;();</b>
+<i>27</i>&nbsp;        //Get dependent field result
+<b class="fc"><i>28</i>&nbsp;        Schema.DescribeFieldResult dependentFieldResult = dependentField.getDescribe();</b>
+<i>29</i>&nbsp;        //Get dependent field controlling field 
+<b class="fc"><i>30</i>&nbsp;        Schema.sObjectField controllerField = dependentFieldResult.getController();</b>
+<i>31</i>&nbsp;        //Check controlling field is not null
+<b class="fc"><i>32</i>&nbsp;        if(controllerField == null){</b>
+<i>33</i>&nbsp;           	System.debug(&#39;Controller field null&#39;);
+<i>34</i>&nbsp;        } 
+<i>35</i>&nbsp;        //Get controlling field result
+<b class="fc"><i>36</i>&nbsp;        Schema.DescribeFieldResult controllerFieldResult = controllerField.getDescribe();</b>
+<i>37</i>&nbsp;        //Get controlling field picklist values if controlling field is not a checkbox
+<b class="fc"><i>38</i>&nbsp;        List&lt;Schema.PicklistEntry&gt; controllerValues = (controllerFieldResult.getType() == Schema.DisplayType.Boolean ? null : controllerFieldResult.getPicklistValues());</b>
+<i>39</i>&nbsp;         
+<i>40</i>&nbsp;        //It is used to decode the characters of the validFor fields. 
+<b class="fc"><i>41</i>&nbsp;        String base64map = &#39;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#39;;</b>
+<i>42</i>&nbsp;         
+<b class="fc"><i>43</i>&nbsp;        for (Schema.PicklistEntry entry : dependentFieldResult.getPicklistValues()){</b>
+<b class="fc"><i>44</i>&nbsp;            if (entry.isActive()){</b>
+<i>45</i>&nbsp;            //The PicklistEntry is serialized and deserialized using the Apex JSON class and it will check to have a &#39;validFor&#39; field
+<b class="fc"><i>46</i>&nbsp;                List&lt;String&gt; base64chars = String.valueOf(((Map&lt;String,Object&gt;)JSON.deserializeUntyped(JSON.serialize(entry))).get(&#39;validFor&#39;)).split(&#39;&#39;);</b>
+<b class="fc"><i>47</i>&nbsp;                for (Integer i = 0; i &lt; controllerValues.size(); i++){</b>
+<b class="fc"><i>48</i>&nbsp;                    Object controllerValue = (controllerValues == null ? (Object) (i == 1) : (Object) (controllerValues[i].isActive() ? controllerValues[i].getLabel() : null));</b>
+<b class="fc"><i>49</i>&nbsp;                    Integer bitIndex = i / 6;</b>
+<b class="fc"><i>50</i>&nbsp;                    Integer bitShift = 5 - Math.mod(i, 6 );</b>
+<b class="fc"><i>51</i>&nbsp;                    if(bitIndex &lt;= (base64chars.size()-1)){</b>
+<b class="fc"><i>52</i>&nbsp;                        if(controllerValue == null || (base64map.indexOf(base64chars[bitIndex]) &amp; (1 &lt;&lt; bitShift)) == 0){</b>
+<b class="fc"><i>53</i>&nbsp;                            continue;</b>
+<i>54</i>&nbsp;                        }
+<i>55</i>&nbsp;                    }    
+<b class="fc"><i>56</i>&nbsp;                    if (!dependentPicklistValues.containsKey(controllerValue)){</b>
+<b class="fc"><i>57</i>&nbsp;                        dependentPicklistValues.put(controllerValue, new List&lt;String&gt;());</b>
+<i>58</i>&nbsp;                    }
+<b class="fc"><i>59</i>&nbsp;                    dependentPicklistValues.get(controllerValue).add(entry.getLabel());</b>
+<i>60</i>&nbsp;                }
+<i>61</i>&nbsp;            }
+<i>62</i>&nbsp;        }
+<i>63</i>&nbsp;		System.debug(dependentPicklistValues.keySet());
+<i>64</i>&nbsp;        
+<b class="fc"><i>65</i>&nbsp;        Set&lt;Object&gt; parentValuesSet = dependentPicklistValues.keySet();</b>
+<i>66</i>&nbsp;        
+<b class="fc"><i>67</i>&nbsp;        List&lt;Object&gt; parentValuesList = new List&lt;Object&gt;(parentValuesSet);</b>
+<i>68</i>&nbsp;        
+<b class="fc"><i>69</i>&nbsp;        List&lt;String&gt; rsult = new List&lt;String&gt;(); </b>
+<b class="fc"><i>70</i>&nbsp;        for(Object o : parentValuesList){</b>
+<b class="fc"><i>71</i>&nbsp;            String r = (String)o;</b>
+<b class="fc"><i>72</i>&nbsp;            rsult.add(r);</b>
+<i>73</i>&nbsp;        }
+<i>74</i>&nbsp;        
+<b class="fc"><i>75</i>&nbsp;        List&lt;List&lt;String&gt;&gt; resultList = new List&lt;List&lt;String&gt;&gt;();</b>
+<b class="fc"><i>76</i>&nbsp;        resultList.add(rsult);</b>
+<i>77</i>&nbsp;        System.debug(resultList);
+<b class="fc"><i>78</i>&nbsp;        return resultList;</b>
+<i>79</i>&nbsp;    }
+<i>80</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

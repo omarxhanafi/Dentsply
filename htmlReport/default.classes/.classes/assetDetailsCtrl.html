@@ -1,0 +1,87 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: assetDetailsCtrl</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: assetDetailsCtrl (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">assetDetailsCtrl</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>assetDetailsCtrl</h2>
+<div class="sourceCode"><i>1</i>&nbsp;public class assetDetailsCtrl {
+<i>2</i>&nbsp;    
+<i>3</i>&nbsp;    @AuraEnabled
+<b class="nc"><i>4</i>&nbsp;    public static Asset getAsset(String recordId, String objectType){</b>
+<b class="nc"><i>5</i>&nbsp;        String query = &#39;SELECT AssetId FROM &#39; + objectType + &#39; WHERE Id = \&#39;&#39; + recordId + &#39;\&#39;&#39;;</b>
+<b class="nc"><i>6</i>&nbsp;        List&lt;sObject&gt; sobjList = Database.query(query);</b>
+<i>7</i>&nbsp;        
+<b class="nc"><i>8</i>&nbsp;        String assetIdNum = String.valueOf(sobjList[0].get(&#39;AssetId&#39;));</b>
+<i>9</i>&nbsp;        System.debug(assetIDNum);
+<i>10</i>&nbsp;
+<b class="nc"><i>11</i>&nbsp;        Asset thisAsset = [SELECT Name, Status,Contact.Name, ContactId, SerialNumber</b>
+<b class="nc"><i>12</i>&nbsp;                           FROM Asset WHERE Id = :assetIDNum];        </b>
+<b class="nc"><i>13</i>&nbsp;        return thisAsset;</b>
+<i>14</i>&nbsp;    }
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>

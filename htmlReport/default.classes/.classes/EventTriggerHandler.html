@@ -1,0 +1,116 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: EventTriggerHandler</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">default.classes</a> ]
+</div>
+
+<h1>Coverage Summary for Class: EventTriggerHandler (default.classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">EventTriggerHandler</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (23/ 23)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+<h2>EventTriggerHandler</h2>
+<div class="sourceCode"><i>1</i>&nbsp;/*-------------------------------------------------------------------------------------------------------
+<i>2</i>&nbsp;Author: 		Ahmed LOUDRASSI (Salesforce) 20191107
+<i>3</i>&nbsp;Description:   	Event Trigger Handler Class
+<i>4</i>&nbsp;History	
+<i>5</i>&nbsp;20191107 	Ahmed LOUDRASSI			CallReportEventTrigger, CallReportEventTriggerAfterInsert, DC_EventBackgroundJobs an DeleteClonedChildEvent triggers. (#)
+<i>6</i>&nbsp;20230426    Roberto Narbona         TFUS-000005610
+<i>7</i>&nbsp;20231128	Miguel	Coimbra			TFUS-000005745
+<i>8</i>&nbsp;20240911    Omar Hanafi             TFUS-000006941
+<i>9</i>&nbsp;--------------------------------------------------------------------------------------------------------*/
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;public class EventTriggerHandler extends TriggerHandler {
+<i>12</i>&nbsp;    private List&lt;Event&gt; oldEventList, newEventList;
+<i>13</i>&nbsp;    private Map&lt;Id, Event&gt; oldEventMap, newEventMap;
+<i>14</i>&nbsp;    
+<b class="fc"><i>15</i>&nbsp;    public EventTriggerHandler() {</b>
+<b class="fc"><i>16</i>&nbsp;        oldEventList = (List&lt;Event&gt;) Trigger.old;</b>
+<b class="fc"><i>17</i>&nbsp;        newEventList = (List&lt;Event&gt;) Trigger.new;</b>
+<b class="fc"><i>18</i>&nbsp;        oldEventMap = (Map&lt;Id, Event&gt;) Trigger.oldMap;</b>
+<b class="fc"><i>19</i>&nbsp;        newEventMap = (Map&lt;Id, Event&gt;) Trigger.newMap;</b>
+<i>20</i>&nbsp;    }
+<b class="fc"><i>21</i>&nbsp;    protected override void beforeInsert() {</b>
+<b class="fc"><i>22</i>&nbsp;        EventTriggerHelper.preventRecurringCFE(newEventList);</b>
+<b class="fc"><i>23</i>&nbsp;        EventTriggerHelper.callReportEvent(newEventList);</b>
+<b class="fc"><i>24</i>&nbsp;        EventTriggerHelper.callReportEvent2(newEventList);</b>
+<b class="fc"><i>25</i>&nbsp;        EventTriggerHelper.updateNewOutlookEvent(newEventList);</b>
+<b class="fc"><i>26</i>&nbsp;        EventTriggerHelper.setEventDescription(newEventList, oldEventMap);</b>
+<i>27</i>&nbsp;    }
+<b class="fc"><i>28</i>&nbsp;    protected override void beforeUpdate() {</b>
+<b class="fc"><i>29</i>&nbsp;        EventTriggerHelper.preventRecurringCFE(newEventList);</b>
+<b class="fc"><i>30</i>&nbsp;        EventTriggerHelper.outlookReccurenceCheck(newEventList, oldEventMap);</b>
+<b class="fc"><i>31</i>&nbsp;        EventTriggerHelper.setEventDescription(newEventList, oldEventMap);</b>
+<i>32</i>&nbsp;    }
+<b class="fc"><i>33</i>&nbsp;    protected override void afterInsert() {</b>
+<b class="fc"><i>34</i>&nbsp;        EventTriggerHelper.setEventSubject(newEventMap, oldEventMap);</b>
+<i>35</i>&nbsp;    }
+<b class="fc"><i>36</i>&nbsp;    protected override void afterUpdate() {</b>
+<b class="fc"><i>37</i>&nbsp;        EventTriggerHelper.deleteClonedChildEventOnUpdate(newEventMap);</b>
+<b class="fc"><i>38</i>&nbsp;        EventTriggerHelper.setEventSubject(newEventMap, oldEventMap);</b>
+<i>39</i>&nbsp;    }
+<b class="fc"><i>40</i>&nbsp;    protected override void beforeDelete() {</b>
+<i>41</i>&nbsp;    }
+<b class="fc"><i>42</i>&nbsp;    protected override void afterDelete() {</b>
+<b class="fc"><i>43</i>&nbsp;        EventTriggerHelper.deleteClonedChildEventOnDelete(oldEventMap);</b>
+<i>44</i>&nbsp;    }
+<i>45</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-10 16:19</div>
+</div>
+</body>
+</html>
