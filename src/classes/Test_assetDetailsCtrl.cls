@@ -9,6 +9,9 @@
 @isTest(seeAllData=false)
 public without sharing class Test_assetDetailsCtrl {
 
+    /**
+    * Test setup
+    */
     @testSetup
     private static void setup() {
         // Create a test user
@@ -19,6 +22,9 @@ public without sharing class Test_assetDetailsCtrl {
         TestDataFactory.createDefaultOrgLevelBypassPB();
     }
 
+    /**
+    * Test method for getAsset
+    */
     @isTest
     private static void testGetAsset() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];

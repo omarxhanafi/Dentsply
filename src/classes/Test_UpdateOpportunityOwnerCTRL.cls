@@ -37,9 +37,9 @@ public class Test_UpdateOpportunityOwnerCTRL {
             UpdateOpportunityOwnerCTRL controllerClass = new UpdateOpportunityOwnerCTRL(controller);
 
             // Verify that the controller's methods are working
-            System.assertEquals(controllerClass.getIsSuccess(), false);
-            System.assertEquals(controllerClass.getMySelectedSize(), oppList.size());
-            System.assertEquals(controllerClass.getMyRecordsSize(), oppList.size());
+            System.assertEquals(controllerClass.getIsSuccess(), false, 'IsSuccess should be false');
+            System.assertEquals(controllerClass.getMySelectedSize(), oppList.size(), 'Selected size should be the same');
+            System.assertEquals(controllerClass.getMyRecordsSize(), oppList.size(), 'Records size should be the same');
         }
     }
 }

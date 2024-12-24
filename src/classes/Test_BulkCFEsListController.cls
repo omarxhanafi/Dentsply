@@ -9,6 +9,9 @@
 @isTest(seeAllData=false)
 public class Test_BulkCFEsListController {
 
+    /**
+    * Test setup
+    */
     @testSetup
     private static void setup() {
         TestDataFactory.createBypassCustomSetting();
@@ -25,6 +28,9 @@ public class Test_BulkCFEsListController {
         insert testAccounts;
     }
 
+    /**
+    * Test method for Non-Indian Accounts
+    */
     @isTest
     private static void testRedirectWithNonIndianAccount() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
@@ -54,6 +60,9 @@ public class Test_BulkCFEsListController {
         }
     }
 
+    /**
+    * Test method for Indian Accounts
+    */
     @isTest
     private static void testRedirectWithOnlyIndianAccounts() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];

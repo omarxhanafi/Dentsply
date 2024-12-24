@@ -9,6 +9,9 @@
 @isTest(seeAllData=false)
 public class Test_ContractItemTriggerHelper {
 
+    /**
+    * Test setup
+    */
     @testSetup
     private static void setup() {
         TestDataFactory.createBypassCustomSetting();
@@ -37,6 +40,9 @@ public class Test_ContractItemTriggerHelper {
         insert contractItemActivated;
     }
 
+    /**
+    * Test method with NoDelete__c = true
+    */
     @isTest
     private static void testCanBeDeletedWithNoDeleteTrue() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
@@ -60,6 +66,9 @@ public class Test_ContractItemTriggerHelper {
         }
     }
 
+    /**
+    * Test method with NoDelete__c = false
+    */
     @isTest
     private static void testCanBeDeletedWithNoDeleteFalse() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];

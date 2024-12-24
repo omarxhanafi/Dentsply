@@ -9,6 +9,9 @@
 @isTest(seeAllData=false)
 public class Test_DC_CampaignMembersDAO {
 
+    /**
+    * Test setup
+    */
     @testSetup
     private static void setup() {
         TestDataFactory.createBypassCustomSetting();
@@ -43,6 +46,9 @@ public class Test_DC_CampaignMembersDAO {
         insert campaignMembersList;
     }
 
+    /**
+    * Test method for getActiveCampaignMembersByContactId
+    */
     @isTest
     private static void testGetActiveCampaignMembersByContactId() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
@@ -62,22 +68,25 @@ public class Test_DC_CampaignMembersDAO {
         }
     }
 
+    /**
+    * Test method for getCampaignMemberById
+    */
     @isTest
     private static void testGetCampaignMemberById() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
 
         System.runAs(testUser) {
             // Fetch one campaign member
-            CampaignMember cm = [SELECT Id FROM CampaignMember LIMIT 1];
+            CampaignMember testCampaignMember = [SELECT Id FROM CampaignMember LIMIT 1];
 
             Test.startTest();
             // Get the campaign member by ID
-            CampaignMember fetchedCM = DC_CampaignMembersDAO.getCampaignMemberById(cm.Id);
+            CampaignMember fetchedCM = DC_CampaignMembersDAO.getCampaignMemberById(testCampaignMember.Id);
             Test.stopTest();
 
             // Assertions
             System.assertNotEquals(fetchedCM, null, 'The campaign member should not be null.');
-            System.assertEquals(cm.Id, fetchedCM.Id, 'The campaign member fetched should have the same ID.');
+            System.assertEquals(testCampaignMember.Id, fetchedCM.Id, 'The campaign member fetched should have the same ID.');
         }
     }
 }

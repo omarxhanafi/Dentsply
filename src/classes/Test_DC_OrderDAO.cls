@@ -9,6 +9,9 @@
 @isTest(seeAllData=false)
 public class Test_DC_OrderDAO {
 
+    /**
+    * Test setup
+    */
     @testSetup
     private static void setup() {
         TestDataFactory.createBypassCustomSetting();
@@ -26,6 +29,9 @@ public class Test_DC_OrderDAO {
         insert testOrders;
     }
 
+    /**
+    * Test method for getOrdersByAccountId
+    */
     @isTest
     private static void testGetOrdersByAccountId() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];

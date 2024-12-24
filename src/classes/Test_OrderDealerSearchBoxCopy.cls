@@ -9,6 +9,9 @@
 @isTest
 public class Test_OrderDealerSearchBoxCopy {
 
+    /**
+    * Test method for getOrdersByAccountId
+    */
     @testSetup
     private static void setupTestData() {
 
@@ -46,105 +49,169 @@ public class Test_OrderDealerSearchBoxCopy {
         insert dealer1;
     }
 
+    /**
+    * Test method for saveDealer
+    */
     @isTest
     private static void testSaveDealer() {
-        // Fetch test data
-        Account testAccount = [SELECT Id FROM Account WHERE Name = 'Test Account 1' LIMIT 1];
-        Order order1 = [SELECT Id FROM Order WHERE Name = 'Test Order 1' LIMIT 1];
+        // Retrieve the test user
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
 
-        Test.startTest();
-        // Invoke saveDealer method
-        List<Preferred_dealer_item__c> result = OrderDealerSearchBoxCopy.saveDealer(new List<Account>{testAccount}, order1.Id);
-        Test.stopTest();
+        System.runAs(testUser) {
+            // Fetch test data
+            Account testAccount = [SELECT Id FROM Account WHERE Name = 'Test Account 1' LIMIT 1];
+            Order order1 = [SELECT Id FROM Order WHERE Name = 'Test Order 1' LIMIT 1];
 
-        // Assertions
-        System.assertEquals(1, result.size(), 'Expected one Preferred Dealer item.');
+            Test.startTest();
+            // Invoke saveDealer method
+            List<Preferred_dealer_item__c> result = OrderDealerSearchBoxCopy.saveDealer(new List<Account>{testAccount}, order1.Id);
+            Test.stopTest();
+
+            // Assertions
+            System.assertEquals(1, result.size(), 'Expected one Preferred Dealer item.');
+        }
     }
 
+    /**
+    * Test method for CheckPermission
+    */
     @isTest
     private static void testCheckPermission() {
-        Test.startTest();
-        Boolean hasPermission = OrderDealerSearchBoxCopy.CheckPermission();
-        Test.stopTest();
+        // Retrieve the test user
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
 
-        // Assertions
-        System.assertNotEquals(null, hasPermission, 'Permission check should return a value.');
+        System.runAs(testUser) {
+            Test.startTest();
+            Boolean hasPermission = OrderDealerSearchBoxCopy.CheckPermission();
+            Test.stopTest();
+
+            // Assertions
+            System.assertNotEquals(null, hasPermission, 'Permission check should return a value.');
+        }
     }
 
+    /**
+    * Test method for getAllPdeList
+    */
     @isTest
     private static void testGetAllPdeList() {
-        Order order1 = [SELECT Id FROM Order WHERE Name = 'Test Order 1' LIMIT 1];
+        // Retrieve the test user
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
 
-        Test.startTest();
-        List<Preferred_dealer_item__c> pdeList = OrderDealerSearchBoxCopy.getAllPdeList(order1.Id);
-        Test.stopTest();
+        System.runAs(testUser) {
+            Order order1 = [SELECT Id FROM Order WHERE Name = 'Test Order 1' LIMIT 1];
 
-        // Assertions
-        System.assertEquals(1, pdeList.size(), 'Expected 1 preferred dealer item associated with the Order.');
+            Test.startTest();
+            List<Preferred_dealer_item__c> pdeList = OrderDealerSearchBoxCopy.getAllPdeList(order1.Id);
+            Test.stopTest();
+
+            // Assertions
+            System.assertEquals(1, pdeList.size(), 'Expected 1 preferred dealer item associated with the Order.');
+        }
     }
 
+    /**
+    * Test method for getUpdateFromOrder
+    */
     @isTest
     private static void testGetUpdateFromOrder() {
-        Order order1 = [SELECT Id FROM Order WHERE Name = 'Test Order 1' LIMIT 1];
+        // Retrieve the test user
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
 
-        Test.startTest();
-        Order result = OrderDealerSearchBoxCopy.getUpdateFromOrder(order1.Id);
-        Test.stopTest();
+        System.runAs(testUser) {
+            Order order1 = [SELECT Id FROM Order WHERE Name = 'Test Order 1' LIMIT 1];
 
-        // Assertions
-        System.assertNotEquals(null, result, 'Result should not be null');
-        System.assertEquals(order1.Id, result.Id, 'Order Id should match');
+            Test.startTest();
+            Order result = OrderDealerSearchBoxCopy.getUpdateFromOrder(order1.Id);
+            Test.stopTest();
+
+            // Assertions
+            System.assertNotEquals(null, result, 'Result should not be null');
+            System.assertEquals(order1.Id, result.Id, 'Order Id should match');
+        }
     }
 
+    /**
+    * Test method for fetchLookUpValues
+    */
     @isTest
     private static void testFetchLookUpValues() {
-        Order order1 = [SELECT Id FROM Order WHERE Name = 'Test Order 1' LIMIT 1];
+        // Retrieve the test user
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
 
-        Test.startTest();
-        OrderDealerSearchBoxCopy.AccountDataTableWrapper wrapper =
-                OrderDealerSearchBoxCopy.fetchLookUpValues(1, 10, 'Test', order1.Id);
-        Test.stopTest();
+        System.runAs(testUser) {
+            Order order1 = [SELECT Id FROM Order WHERE Name = 'Test Order 1' LIMIT 1];
 
-        // Assertions
-        System.assertNotEquals(null, wrapper, 'Wrapper should not be null.');
-        System.assert(wrapper.accountList.size() > 0, 'Expected accounts in the returned wrapper.');
+            Test.startTest();
+            OrderDealerSearchBoxCopy.AccountDataTableWrapper wrapper =
+                    OrderDealerSearchBoxCopy.fetchLookUpValues(1, 10, 'Test', order1.Id);
+            Test.stopTest();
+
+            // Assertions
+            System.assertNotEquals(null, wrapper, 'Wrapper should not be null.');
+            System.assert(wrapper.accountList.size() > 0, 'Expected accounts in the returned wrapper.');
+        }
     }
 
+    /**
+    * Test method for updateDealerInfoToOrder
+    */
     @isTest
     private static void testUpdateDealerInfoToOrder() {
-        Preferred_dealer_item__c dealer = [SELECT Id FROM Preferred_dealer_item__c LIMIT 1];
-        Order order = [SELECT Id, Name FROM Order LIMIT 1];
+        // Retrieve the test user
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
 
-        Test.startTest();
-        Order updatedOrder = OrderDealerSearchBoxCopy.updateDealerInfoToOrder(dealer.Id, order);
-        Test.stopTest();
+        System.runAs(testUser) {
+            Preferred_dealer_item__c dealer = [SELECT Id FROM Preferred_dealer_item__c LIMIT 1];
+            Order order = [SELECT Id, Name FROM Order LIMIT 1];
 
-        // Assertions
-        System.assertNotEquals(null, updatedOrder.Distributor__c, 'Distributor should be updated.');
+            Test.startTest();
+            Order updatedOrder = OrderDealerSearchBoxCopy.updateDealerInfoToOrder(dealer.Id, order);
+            Test.stopTest();
+
+            // Assertions
+            System.assertNotEquals(null, updatedOrder.Distributor__c, 'Distributor should be updated.');
+        }
     }
 
+    /**
+    * Test method for updateOrder
+    */
     @isTest
     private static void testUpdateOrder() {
-        Order order = [SELECT Id FROM Order LIMIT 1];
-        order.Status = 'Activated';
+        // Retrieve the test user
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
 
-        Test.startTest();
-        Order updatedOrder = OrderDealerSearchBoxCopy.updateOrder(order);
-        Test.stopTest();
+        System.runAs(testUser) {
+            Order order = [SELECT Id FROM Order LIMIT 1];
+            order.Status = 'Activated';
 
-        // Assertions
-        System.assertEquals('Activated', updatedOrder.Status, 'Order status should be updated.');
+            Test.startTest();
+            Order updatedOrder = OrderDealerSearchBoxCopy.updateOrder(order);
+            Test.stopTest();
+
+            // Assertions
+            System.assertEquals('Activated', updatedOrder.Status, 'Order status should be updated.');
+        }
     }
 
+    /**
+    * Test method for Initialize
+    */
     @isTest
     private static void testInitialize() {
-        Order order = [SELECT Id FROM Order LIMIT 1];
+        // Retrieve the test user
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
 
-        Test.startTest();
-        Order initializedOrder = OrderDealerSearchBoxCopy.Initialize(order.Id);
-        Test.stopTest();
+        System.runAs(testUser) {
+            Order order = [SELECT Id FROM Order LIMIT 1];
 
-        // Assertions
-        System.assertNotEquals(null, initializedOrder, 'Initialized Order should not be null.');
+            Test.startTest();
+            Order initializedOrder = OrderDealerSearchBoxCopy.Initialize(order.Id);
+            Test.stopTest();
+
+            // Assertions
+            System.assertNotEquals(null, initializedOrder, 'Initialized Order should not be null.');
+        }
     }
 }

@@ -9,6 +9,9 @@
 @isTest(seeAllData=false)
 public class Test_CampaignMemberController {
 
+    /**
+    * Test setup
+    */
     @testSetup
     private static void setup() {
         TestDataFactory.createBypassCustomSetting();
@@ -41,6 +44,9 @@ public class Test_CampaignMemberController {
         insert campaignMembersList;
     }
 
+    /**
+    * Test method for getMemberList
+    */
     @isTest
     private static void testGetMemberList() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];

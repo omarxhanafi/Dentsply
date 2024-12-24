@@ -10,7 +10,7 @@
 public class Test_EventPathController {
 
     // Setup method to create necessary data
-    @testSetup
+    @testSetup444444
     static void setup() {
         TestDataFactory.createBypassCustomSetting();
         List<User> userList = TestDataFactory.returnUsers(1, '#System: System Administrator');
