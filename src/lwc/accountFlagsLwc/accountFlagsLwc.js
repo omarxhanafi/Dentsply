@@ -21,6 +21,7 @@ import AWO from '@salesforce/label/c.AccountFlagsAWO';
 import DS_COM from '@salesforce/label/c.AccountFlagsDSCom';
 import CEREC_CLUB from '@salesforce/label/c.AccountFlagsCerecClub';
 import SIRO_FORCE from '@salesforce/label/c.AccountFlagsSiroForce';
+import ONE_DS from '@salesforce/label/c.AccountFlagsOneDs';
 import FORM_FACTOR from '@salesforce/client/formFactor';
 
 
@@ -35,6 +36,7 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
     sureSmileAlignerId;
     sureSmileOrthoId;
     sureSmileAdvancedId;
+    oneDs;
 
     showAccess = false;
     showLight = false;
@@ -54,6 +56,7 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
     sureSmileId;
     awoId;
     siroForceId;
+    oneDsId;
 
     isMouseOverCustomerNumber = false;
     isMouseOverDSCoreAccess = false;
@@ -67,6 +70,7 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
     isMouseOverSureSmile = false;
     isMouseOverAwo = false;
     isMouseOverSiroForce = false;
+    isMouseOverOneDs = false;
 
     labels = {
         HEADER,
@@ -88,7 +92,8 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
         AWO,
         DS_COM,
         CEREC_CLUB,
-        SIRO_FORCE
+        SIRO_FORCE,
+        ONE_DS
     };
 
     @wire(getAccountFlagsJSON, { accountId: '$recordId' })
@@ -145,11 +150,16 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
                 this.sureSmileId = this.accountFlagsResult?.sureSmile?.itemId;
             }
 
+            if(this.accountFlagsResult?.oneDs?.level > 0){
+                this.oneDs = this.accountFlagsResult?.oneDs?.value;
+                this.oneDsId = this.accountFlagsResult?.oneDs?.itemId;
+            }
+
             if(this.accountFlagsResult?.awo?.level > 0){
                 this.awoId = this.accountFlagsResult?.awo?.itemId;
             }
 
-            if(this.accountFlagsResult?.awo?.level > 0){
+            if(this.accountFlagsResult?.siroForce?.level > 0){
                 this.siroForceId = this.accountFlagsResult?.siroForce?.itemId;
             }
 
@@ -210,6 +220,14 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
         return this.getFlag(this.accountFlagsResult?.siroForce?.level);
     }
 
+    get oneDsClass() {
+        return this.getFlag(this.accountFlagsResult?.oneDs?.level);
+    }
+
+    get showOneDsFlag(){
+        return this.accountFlagsResult.hasOwnProperty('oneDs');
+    }
+
     getFlag(flagValue){
         return 'flag-square ' + (flagValue == 1 ? 'flag-green' : (flagValue == 2 ? 'flag-red' : 'flag-white'));
     }
@@ -260,6 +278,9 @@ export default class AccountFlagsLwc extends NavigationMixin(LightningElement) {
                 break;
             case 'siroForce':
                 this.isMouseOverSiroForce = isOver;
+                break;
+            case 'oneDs':
+                this.isMouseOverOneDs = isOver;
                 break;
         }
     }

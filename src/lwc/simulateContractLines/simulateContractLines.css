@@ -9,3 +9,13 @@ table{
 .td90{
     width: 90%;
 }
+
+.slds-form-element {
+    margin-bottom: 1rem;
+}
+.slds-form-element__label {
+    margin-bottom: .5rem;
+}
+.slds-box {
+    margin-bottom: .5rem;
+}

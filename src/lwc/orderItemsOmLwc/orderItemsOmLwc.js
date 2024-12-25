@@ -2,14 +2,15 @@ import { LightningElement, track, api, wire} from 'lwc';
 import { showToast } from 'c/utils';
 import { getObjectInfo } from 'lightning/uiObjectInfoApi';
 import { updateRecord } from 'lightning/uiRecordApi';
-import { refreshApex } from '@salesforce/apex';
 import ORDER_ITEM_OBJECT from '@salesforce/schema/OrderItem';
 import DISCOUNT_FIELD from '@salesforce/schema/OrderItem.Discount_Percent__c';
 import COUPON_FIELD from '@salesforce/schema/OrderItem.UseCoupon__c';
 import QUANTITY_FIELD from '@salesforce/schema/OrderItem.Quantity';
 import ID_FIELD from '@salesforce/schema/OrderItem.Id';
-//Form Factor
-import FORM_FACTOR from '@salesforce/client/formFactor';
+import AX_CUSTOMER_FIELD from '@salesforce/schema/OrderItem.AXCustomerPrice__c';
+import AX_RETAIL_FIELD from '@salesforce/schema/OrderItem.AXRetailPrice__c';
+import UNIT_PRICE_FIELD from '@salesforce/schema/OrderItem.UnitPrice';
+
 //Apex Controllers
 import getOrderItemsCounter from '@salesforce/apex/OrderManagement_CC.getOrderItemsCounter';
 import getOrderItems from '@salesforce/apex/OrderManagement_CC.getOrderItems';
@@ -17,7 +18,8 @@ import updateOrderItems from '@salesforce/apex/OrderManagement_CC.insertOrderIte
 import deleteOrderItem from '@salesforce/apex/OrderManagement_CC.deleteOrderItem';
 import refreshFormulas from '@salesforce/apex/OrderManagement_CC.refreshFormulas';
 import getUserDecimalSeparator from '@salesforce/apex/OrderManagement_CC.getUserDecimalSeparator';
-//import refreshOrderFormulas from '@salesforce/apex/OrderManagement_CC.refreshFormulasOrder';
+import getPriceCall from '@salesforce/apex/OrderManagement_CC.ProdPricingERPCallOut';
+
 //Custom Labels
 import selectAll from '@salesforce/label/c.OM_Select_All';
 import applyDiscount from '@salesforce/label/c.OM_Apply_Discount';
@@ -64,6 +66,7 @@ export default class OrderItemsOmLwc extends LightningElement {
     patternMismatch = false;
     decimalSeparator = '.';
     discountPattern = "^\\d*\\.?\\d+$";
+    isPricingMicroserviceNeeded = false;
 
     @track labels = {
         selectAll,
@@ -88,7 +91,7 @@ export default class OrderItemsOmLwc extends LightningElement {
         orderItemCancel,
         messageWhenPatternMisMatch
     };
-    // new
+
     @track orderItemTileActions = [
         {
             label: this.labels.orderItemEdit,
@@ -108,7 +111,6 @@ export default class OrderItemsOmLwc extends LightningElement {
     ];
     currentTileAction;
     @track orderItemObjectInfo;
-    // end new
 
     connectedCallback() {
         this.getOrderItemsCounter();
@@ -169,7 +171,7 @@ export default class OrderItemsOmLwc extends LightningElement {
             showToast(this, this.userUiTheme, 'ERROR', error.body.message + error.body.stackTrace, 'error');
         });
     }
-    // test
+
     getOrderItems() {
         this.loading = true;
         let orderTotal = this.orderTotal;
@@ -179,6 +181,7 @@ export default class OrderItemsOmLwc extends LightningElement {
 			.then(result => {
                 if(result.length > 0) {
                     this.orderItems = [];
+                    this.isPricingMicroserviceNeeded = result[0].PricebookEntry.Pricebook2.ShowPricingfromMicroServiceOM__c;
                     for(let i = 0; i < result.length; i++) {
                         
                         let orderItem = { Id : result[i].Id,
@@ -190,10 +193,9 @@ export default class OrderItemsOmLwc extends LightningElement {
                                         Free_of_Charge_Delivery__c : result[i].Free_of_Charge_Delivery__c,
                                         Discount_Percent__c : result[i].Discount_Percent__c,
                                         Total_Line_Item_Price__c : result[i].Total_Line_Item_Price__c,
-                                        //UnitPrice : parseFloat(result[i].UnitPrice).toFixed(2),
-                                        //AXRetailPrice__c : parseFloat(result[i].AXRetailPrice__c).toFixed(2),
                                         UnitPrice : result[i].UnitPrice,
                                         AXRetailPrice__c : result[i].AXRetailPrice__c,
+                                        AXCustomerPrice__c : result[i].AXCustomerPrice__c,
                                         AXDiscount__c : result[i].AXDiscount__c,
                                         DiscountedAmount : result[i].DiscountedAmount__c,
                                         LocalProductDescription__c : result[i].PricebookEntry.LocalProductDescription__c,
@@ -210,7 +212,6 @@ export default class OrderItemsOmLwc extends LightningElement {
                                         AppLev3 : result[i].PricebookEntry.ApprovalLevel3__c,
                                         CustomUnitPrice : Math.round(result[i].UnitPrice * (1-result[i].Discount_Percent__c/100)*100)/100
                                         };
-
                                         if(this.order.Pricebook2.ShowApprovalLevelOrderLine__c){
                                             orderItem.Threshold = result[i].PricebookEntry.FreeProductThreshold__c;
                                         }
@@ -222,10 +223,7 @@ export default class OrderItemsOmLwc extends LightningElement {
                                             orderItem.Offer_Code_dna__c = result[i].Offer_Code_dna__c;
                                             orderItem.OfferQuantity = result[i].Offer_Code_dna__r.QuantityLimit__c;
                                         }
-                                        else{
-                                            //orderItem.Offer_Code_dna__c = null;
-                                            //orderItem.OfferQuantity = null;
-                                        }
+
 
                                         if(orderItem.Free_of_Charge_Delivery__c != null){
                                             orderItem.FOC = true;
@@ -245,7 +243,6 @@ export default class OrderItemsOmLwc extends LightningElement {
                                         }
 
                                         if(orderItem.Primary == false){
-                                            //console.log(this.secondaryApprovalLevel);
                                             if(this.secondaryApprovalLevel === 'No approval needed'){
                                                 orderItem.NoApprovalNeeded = true;
                                             }
@@ -309,7 +306,6 @@ export default class OrderItemsOmLwc extends LightningElement {
     }
     updateOrderItems(orderItems) {
         this.loading = true;
-        console.log('Updating order items: ' + JSON.stringify(orderItems));
         updateOrderItems({ orderItems : orderItems })
         .then(result => {
             if(result === 'SUCCESS') {
@@ -381,13 +377,13 @@ export default class OrderItemsOmLwc extends LightningElement {
         return !this.orderItems.some(orderItem => orderItem.isSelected);
     }
     get isDiscountSelected(){
-        return !(this.discountInput && !this.isOrderItemsSelected) || this.discountInput > this.maxDiscount || this.patternMismatch;
+        return !(this.discountInput>=0 && !this.isOrderItemsSelected) || this.discountInput > this.maxDiscount || this.patternMismatch;
     }
     get isContractSelected() {
         return !this.order.Contract;
     }
     get enableSelection() {
-        return false;//this.isDiscountSelected && this.isContractSelected;
+        return false;
     }
     get orderItemsCounter() {
         const selectedOrderItems = this.orderItems ? this.orderItems.filter(orderItem => orderItem.isSelected).length : 0;
@@ -442,15 +438,12 @@ export default class OrderItemsOmLwc extends LightningElement {
             this.deleteOrderItem(index);
         }
     }
-    // goToOrderItem(event) {
-    //     window.open('/' + this.orderItems[event.target.dataset.index].Id);
-    // }
+
 
     get getTotalPages() {
         let total = Math.ceil(this.totalOrderItems / this.pageSize);
         return total > 0 ? total : 1;
     }
-    // new stuff 201005
     get isMobile() {
         return this.userUiTheme === 'Theme4t';
     }
@@ -467,34 +460,42 @@ export default class OrderItemsOmLwc extends LightningElement {
         }
     }
 
-    handleQuantityChange(event) {
-        let quantity = event.target.value;
-        let index = event.target.dataset.index;
-        if(quantity > 0) {
-            this.orderItems[index].Quantity = quantity;
-            
-            this.loading = true;
-            
-                let orderItem = this.orderItems[index];
-                orderItem.Product2Id = null;
+    async handleQuantityChange(event) {
+        try{
+            let quantity = event.target.value;
+            let index = event.target.dataset.index;
+            if(quantity > 0) {
+                this.orderItems[index].Quantity = quantity;
+                
+                this.loading = true;
+                if(this.isPricingMicroserviceNeeded){
+                    await this.getPriceFromMicroservice(event);
+                }   
+                
+                    let orderItem = this.orderItems[index];
+                    orderItem.Product2Id = null;
 
-                refreshFormulas({om : orderItem})
-                .then(result => {
+                    refreshFormulas({om : orderItem})
+                    .then(result => {
 
-                    this.orderItems[index].DiscountedAmount = result.DiscountedAmount__c;
-                    this.orderItems[index].Total_Line_Item_Price__c = result.Total_Line_Item_Price__c;
-                    this.orderItems[index].ApprovalLevel__c = result.ApprovalLevel__c;
-                    this.orderItems[index].LineApprovalLevel__c = result.LineApprovalLevel__c;
+                        this.orderItems[index].DiscountedAmount = result.DiscountedAmount__c;
+                        this.orderItems[index].Total_Line_Item_Price__c = result.Total_Line_Item_Price__c;
+                        this.orderItems[index].ApprovalLevel__c = result.ApprovalLevel__c;
+                        this.orderItems[index].LineApprovalLevel__c = result.LineApprovalLevel__c;
 
-                    this.handleCouponApproval();
+                        this.handleCouponApproval();
 
-                })
-                .catch(error => {
-                    showToast(this, this.userUiTheme, 'Error',  error.body.message + error.body.stackTrace,'error');
-                    this.loading = false;
-                });   
-
+                    })
+                    .catch(error => {
+                        showToast(this, this.userUiTheme, 'Error',  error.body.message + error.body.stackTrace,'error');
+                        this.loading = false;
+                    });   
+            }
+        } catch (error) {
+            this.loading = false;
+            showToast(this, this.userUiTheme, 'ERROR',  error.body.message + error.body.stackTrace, 'error');
         }
+            
     }
 
     handleDiscountChange(event) {
@@ -545,7 +546,6 @@ export default class OrderItemsOmLwc extends LightningElement {
             this.orderItems[index].UseCoupon__c = true;
             this.orderItems[index].Discount_Percent__c = 100;
             this.orderItems[index].CustomUnitPrice = 0;
-            //this.orderItems[index].DiscountedAmount = result.DiscountedAmount__c;
             this.orderItems[index].Total_Line_Item_Price__c = 0;
         }
         else{
@@ -555,7 +555,6 @@ export default class OrderItemsOmLwc extends LightningElement {
             this.orderItems[index].Total_Line_Item_Price__c = this.orderItems[index].UnitPrice * this.orderItems[index].Quantity;
         }
         
-        console.log('Line item price after coupon: ' + this.orderItems[index].Total_Line_Item_Price__c);
 
         this.loading = true;
         let orderItem = this.orderItems[index];
@@ -564,7 +563,6 @@ export default class OrderItemsOmLwc extends LightningElement {
         refreshFormulas({om : orderItem})
         .then(result => {
 
-            //this.orderItems[index].Total_Line_Item_Price__c = result.Total_Line_Item_Price__c;
             this.orderItems[index].ApprovalLevel__c = result.ApprovalLevel__c;
             this.orderItems[index].AvailableCouponCode__c = result.AvailableCouponCode__c;
             this.orderItems[index].LineApprovalLevel__c = result.LineApprovalLevel__c;
@@ -591,7 +589,7 @@ export default class OrderItemsOmLwc extends LightningElement {
             discount = 100;                
         }
 
-        this.orderItems[index].Discount_Percent__c = Math.round(100*discount)/100;
+        this.orderItems[index].Discount_Percent__c = Math.round(10000*discount)/10000;
 
         this.loading = true;
         
@@ -680,7 +678,6 @@ export default class OrderItemsOmLwc extends LightningElement {
         let secondaryApprovalLevel = "No approval needed";
         let secondaryApprovalLevelInt = 0;
 
-        //console.log('Secondary order value: ' + secondaryOrderValue);
 
         if(secondaryOrderValue < secondaryApprovalLevel1){
 
@@ -699,8 +696,6 @@ export default class OrderItemsOmLwc extends LightningElement {
                 secondaryApprovalLevelInt = 1;
             }
         }
-
-        console.log('Secondary approval level: ' + secondaryApprovalLevel);
 
         this.secondaryApprovalLevel = secondaryApprovalLevel;
 
@@ -767,28 +762,22 @@ export default class OrderItemsOmLwc extends LightningElement {
         this.approvalLevel = approvalLevel;
 
         for(var j in this.orderItems){
-            //console.log('Check threshold: ' + this.orderItems[j].Threshold);
             if(this.orderItems[j].Threshold >0){
-                //console.log('After threshold check');
                 if((orderTotal - this.orderItems[j].Total_Line_Item_Price__c >= this.orderItems[j].Threshold* this.orderItems[j].Quantity) || this.orderItems[j].UseCoupon__c == true){
-                    //console.log('Set show coupon');
                     this.orderItems[j].showCoupon = true;
                     if(this.orderItems[j].UseCoupon__c == true){
                         if(orderTotal - this.orderItems[j].Total_Line_Item_Price__c >= this.orderItems[j].Threshold* this.orderItems[j].Quantity){
                             this.orderItems[j].couponApproval = true;
-                            //console.log('No approval needed for coupon code');
                         }
                         else{
                             this.orderItems[j].couponApproval = false;
                         }
                     }
                     else{
-                        //console.log('Set hide coupon');
                         this.orderItems[j].couponApproval = false;
                     }
                 }
                 else{
-                    //console.log('Set hide coupon');
                     this.orderItems[j].showCoupon = false;
                     this.orderItems[j].couponApproval = false;
                 }
@@ -863,74 +852,89 @@ export default class OrderItemsOmLwc extends LightningElement {
         let index = event.target.dataset.index;
         const fields = {};
         fields[ID_FIELD.fieldApiName] = this.orderItems[index].Id;
+        let recordToupdate = { Id : this.orderItems[index].Id }
         fields[DISCOUNT_FIELD.fieldApiName] = this.orderItems[index].Discount_Percent__c;
+        recordToupdate.Discount_Percent__c = this.orderItems[index].Discount_Percent__c;
         fields[QUANTITY_FIELD.fieldApiName] = this.orderItems[index].Quantity;
+        recordToupdate.Quantity = this.orderItems[index].Quantity;
+
+        if(this.isPricingMicroserviceNeeded){
+            fields[AX_CUSTOMER_FIELD.fieldApiName] = this.orderItems[index].AXCustomerPrice__c;
+            recordToupdate.AXCustomerPrice__c = this.orderItems[index].AXCustomerPrice__c;
+            fields[AX_RETAIL_FIELD.fieldApiName] = this.orderItems[index].AXRetailPrice__c;
+            recordToupdate.AXRetailPrice__c = this.orderItems[index].AXRetailPrice__c;
+            fields[UNIT_PRICE_FIELD.fieldApiName] = this.orderItems[index].UnitPrice;
+            recordToupdate.UnitPrice = this.orderItems[index].UnitPrice;
+        }
 
         if(this.order.Pricebook2.ShowApprovalLevelOrderLine__c == true){
             fields[COUPON_FIELD.fieldApiName] = this.orderItems[index].UseCoupon__c;
+            recordToupdate.UseCoupon__c = this.orderItems[index].UseCoupon__c;
         }
 
         const recordInput = { fields };
 
         this.loading = true;
-
         const allValid = [
             ...this.template.querySelectorAll('lightning-input'),
         ].reduce((validSoFar, inputCmp) => {
             inputCmp.reportValidity();
             return validSoFar && inputCmp.checkValidity();
             }, true);
-        
         if (!allValid) {
-            //alert('Please update the invalid form entries and try again.');
             this.loading = false;
         }
         else{    
-            updateRecord(recordInput)
-            .then((result) => {
-
-                this.orderItems_origin[index] = this.orderItems[index];
-                // Display fresh data in the form
-                if (this.orderItems[index].EditMode == false){
-                    this.orderItems[index].EditMode = true;
-                }
-                else{
-                    this.orderItems[index].EditMode = false;
-                }
-
-                this.loading = false;
-                
-            })
-            .catch(error => {
-                let errorDetail = error.body.stackTrace ? error.body.stackTrace : error.body.output.errors[0].message;
-                showToast(this, this.userUiTheme, 'ERROR', error.body.message + errorDetail, 'error');
-                this.loading = false;
-            });
+            this.updateOrderItemClass(recordToupdate, index);
+            
         }
 
     }
 
-    /*refreshOrderFormulas(){
-
-        console.log('Refreshing order');
-        let order = this.order;
-
-        refreshOrderFormulas({o : order})
+    updateOrderItemClass(orderItemToUpdate, itemPosition){
+		let itemRecordToUpdate = [];
+        itemRecordToUpdate.push(orderItemToUpdate);
+        updateOrderItems({ orderItems : itemRecordToUpdate })
         .then(result => {
+            this.orderItems_origin[itemPosition] = this.orderItems[itemPosition];
+             //Display fresh data in the form
+            if (this.orderItems[itemPosition].EditMode == false){
+                this.orderItems[itemPosition].EditMode = true;
+            }
+            else{
+                this.orderItems[itemPosition].EditMode = false;
+            }
 
-            //this.orderItems[index].DiscountedAmount = result.DiscountedAmount__c;
-            //this.orderItems[i].Total_Line_Item_Price__c = result.Total_Line_Item_Price__c;
-            //this.orderItems[i].ApprovalLevel__c = result.ApprovalLevel__c;
-            //this.orderItems[i].AvailableCouponCode__c = result.AvailableCouponCode__c;
-            this.order.Order_Amount_global__c = result.Order_Amount_global__c;
-            this.order.ApprovalLevel__c = result.ApprovalLevel__c;
             this.loading = false;
         })
         .catch(error => {
-            showToast(this, this.userUiTheme, 'Error',  error.body.message + error.body.stackTrace,'error');
+            let errorDetail = error.body.stackTrace ? error.body.stackTrace : error.body.output.errors[0].message;
+            showToast(this, this.userUiTheme, 'ERROR', error.body.message + errorDetail, 'error');
             this.loading = false;
         });
+    }
 
-    }*/
 
+    /* here we are doing a callout against microservice to update the prices */
+    async getPriceFromMicroservice(event) {
+        try{
+            let index = event.target.dataset.index;
+            let prodRequest = { productId : this.orderItems[index].Article__c, quantity : this.orderItems[index].Quantity};
+            let priceRequest = [];
+            priceRequest.push(prodRequest);
+            const prices = await getPriceCall({parentId : this.order.Id, prodPriceRequests : priceRequest });
+            this.orderItems[index].UnitPrice = prices.entries[0].basePrice ; 
+            this.orderItems[index].AXCustomerPrice__c = prices.entries[0].basePrice ;
+            this.orderItems[index].AXRetailPrice__c = prices.entries[0].retailPrice ;
+            this.orderItems[index].Total_Line_Item_Price__c = this.orderItems[index].UnitPrice * this.orderItems[index].Quantity;
+            this.orderItems[index].CustomUnitPrice = Math.round(this.orderItems[index].UnitPrice * (1-this.orderItems[index].Discount_Percent__c/100)*100)/100;
+            return prices;
+
+        }
+        catch (error){
+                this.loading = false;
+                showToast(this, this.userUiTheme, 'ERROR',  error.body.message + error.body.stackTrace, 'error');
+            }
+    }
+    
 }

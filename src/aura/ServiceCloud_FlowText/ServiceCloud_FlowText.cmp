@@ -14,7 +14,7 @@
     <br/>
     </td>
     <td>    
-    <p class="slds-p-horizontal_small"><lightning:input type="toggle" label="FMV extension approved?" checked="{!v.approvedExtension}" disabled="true"/></p>    
+    <p class="slds-p-horizontal_small"><lightning:input type="toggle" label="FMV exception approved?" checked="{!v.approvedExtension}" disabled="true"/></p>    
     </td>
     </tr>
     </table>

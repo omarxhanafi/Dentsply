@@ -1,0 +1,6 @@
+.THIS.mymodal .slds-modal__container{
+    max-width:100% !important;
+    width:99%;
+    margin: 0.1rem;
+    min-height:95%;
+}

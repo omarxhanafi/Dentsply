@@ -55,6 +55,7 @@
         });
 
         action.setCallback(this, function(response) {
+            console.log('Updating stage: ' + response.getState());
             if (response.getState() === "SUCCESS") {
                 component.set("v.currentStage", stepName);
                 $A.get("e.force:refreshView").fire();
@@ -113,6 +114,70 @@
                        closeCallback: function() {
                             if (component.get("v.modalSuccess")) {
                                 helper.setStage(component, event, helper, stepName);
+                            } else {
+                                helper.setStage(component, event, helper, component.get("v.currentStage"));
+                            }
+
+                       }
+                   })
+               }
+           });
+    },
+    createCancelledModal: function (component, event, helper, stepName) {
+        var stepName = stepName
+        var modalBody;
+        $A.createComponent("c:OppStageGuidanceModalContent", { recordId: component.get("v.recordId"), objectType: component.get("v.objectType"), modalSuccess: component.getReference("v.modalSuccess"), stepName: stepName },
+           function(content, status) {
+               if (status === "SUCCESS") {
+                   modalBody = content;
+                   component.find('overlayLib').showCustomModal({
+                       header: "Cancelled Reason",
+                       body: modalBody,
+                       showCloseButton: false,
+                       cssClass: "mymodal",
+                       closeCallback: function() {
+                            if (component.get("v.modalSuccess") === true) {
+                                helper.setStage(component, event, helper, stepName);
+                            } else {
+                                helper.setStage(component, event, helper, component.get("v.currentStage"));
+                            }
+
+                       }
+                   })
+               }
+           });
+    },
+
+    createCompletedModal: function (component, event, helper, stepName) {
+        var stepName = stepName
+        var modalBody;
+
+        var isPhone = $A.get("$Browser.isPhone");
+        
+        var customCss = '';
+
+        if(isPhone === true){
+            customCss = 'cOpportunityStageGuidance mymodal';
+        }
+        else{
+            customCss = 'slds-modal_medium';
+        }
+        
+        $A.createComponent("c:OppStageGuidanceModalContent", { recordId: component.get("v.recordId"), objectType: component.get("v.objectType"), modalSuccess: component.getReference("v.modalSuccess"), stepName: stepName, completedSalesLead: true },
+           function(content, status) {
+               if (status === "SUCCESS") {
+                   modalBody = content;
+                   component.find('overlayLib').showCustomModal({
+                       header: "Complete",
+                       body: modalBody,
+                       showCloseButton: true,
+                       cssClass: customCss,
+                       closeCallback: function() {
+                            console.log('Changing step: ' + component.get("v.modalSuccess"));
+                            if (component.get("v.modalSuccess")===true) {
+                                console.log(stepName);
+                                helper.setStage(component, event, helper, stepName);
+                                component.set("v.showSpinner", false);
                             } else {
                                 helper.setStage(component, event, helper, component.get("v.currentStage"));
                             }

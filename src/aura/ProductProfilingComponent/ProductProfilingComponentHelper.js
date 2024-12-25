@@ -103,8 +103,6 @@
                            				childToAdd.contactName = record.Contact__r.FirstName + ' ' + record.Contact__r.LastName;
                            				childToAdd.contactUrl = '/' + record.Contact__c;
                                 	}
-
-                                    childToAdd.inactive = record.Inactive__c;
                                     
                                 	childrenToAdd.push(childToAdd);
                                 }
@@ -116,7 +114,7 @@
                                     var subChild ={};
                                     
                                     if(productAdded[productId]>0){
-
+                    					
                                         var childNode={};
                                         
                                         for(var child in childrenToAdd){

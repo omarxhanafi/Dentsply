@@ -17,6 +17,7 @@
     <aura:attribute name="dealerOutput" type="String"/>
     <aura:attribute name="country" type="String" default="US"/>
     <aura:attribute name="hideDealer" type="Boolean" default="true"/>
+    <aura:attribute name="dealerRequired" type="Boolean" default="false"/>
     <aura:attribute name="isVisible" type="Boolean" default="false"/>
     <aura:attribute name="isManualAssignmentVisible" type="Boolean" default="false"/>
     <aura:attribute name="validate" type="Aura.Action"/>
@@ -26,12 +27,14 @@
     <aura:attribute name="ChoosenUserId" type="String"/>
     <aura:attribute name="isManualAssignmentChecked" type="Boolean" default="false"/>
     <aura:attribute name="isDealerMandatoryOutput" type="Boolean" default="false"/>
+    <aura:attribute name="loaded" type="Boolean" default="false"/>
     <!--Declare Event Handlers-->
     <aura:handler name="init" value="{!this}" action="{!c.init}"/>
     <!-- User interface -->
     <lightning:recordEditForm aura:id="recordViewForm"
                               objectApiName="Field_Sales_Project_Members__c"
-                              recordTypeId="{!v.recordTypeId}">
+                              recordTypeId="{!v.recordTypeId}"
+                              onload="{!c.hideSpinner}">
         <!-- Field_Sales_Project_Members__c-->
         <lightning:inputField class="slds-hide" aura:id="userCountry" fieldName="UserCountry__c"/>
         <lightning:inputField aura:id="catField" fieldName="Category__c" onchange="{!c.submitForm}" required="true"/>
@@ -42,7 +45,7 @@
         <aura:if isTrue="{!v.hideDealer == false}">
             <!--<lightning:inputField aura:id="dealerField" fieldName="Dealer__c" onchange="{!c.submitForm}"/> -->
             <c:dealerLookup aura:id="dealerField" recordId="{!v.accountId}" category="{!v.categoryOutput}"
-                            onvaluechange="{!c.submitDealer}"/>
+                            onvaluechange="{!c.submitDealer}" required="{!v.dealerRequired}" />
         </aura:if>
 
         <aura:if isTrue="{!v.objType != 'Opportunity'}">
@@ -124,4 +127,11 @@
             <lightning:inputField aura:id="Owner-manual" fieldName="Sales_Rep__c" onchange="{!c.testlookup}"/>
         </aura:if>
     </lightning:recordEditForm>
+
+    <aura:if isTrue="{! v.loaded }">
+        <aura:set attribute="else">
+            <lightning:spinner alternativeText="Loading" />
+        </aura:set>
+    </aura:if>
+
 </aura:component>

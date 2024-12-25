@@ -11,6 +11,8 @@
         <property name="stageName" type="String" label="Stage Name" required="false"/>
         <property name="winLossReason" type="String" label="Win Loss Reason" required="false"/>
         <property name="winLossDescription" type="String" label="Win Loss Description" required="false"/>
+        <property name="category" type="String" label="Category" required="false"/>
+        <property name="brand" type="String" label="Brand" required="false"/>
     </targetConfig>
 </targetConfigs>
 </LightningComponentBundle>

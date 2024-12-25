@@ -8,20 +8,31 @@
     	<aura:attribute name="resId" type="String" access="global" />
 		<aura:attribute name="recordTypeId" type="String" access="global"/>
 		<aura:attribute name="readOnly" type="Boolean" default="false" access="global"/>
+		<aura:attribute name="required" type="Boolean" default="false" access="global"/>
+		<aura:attribute name="loaded" type="Boolean" default="false"/>
+		<aura:attribute name="validate" type="Aura.Action"/>
+		<aura:attribute name="firstScreenVisit" type="Boolean" default="true"/>
   
     	<aura:attribute name="accountId" type="String" access="global" />
     
     	<aura:handler name="init" value="{!this}" action="{!c.init}"/>
-    	
         <lightning:recordEditForm aura:id="recordViewForm" 
                                      objectApiName="{!v.objType}"
                                      recordId="{!v.caseId}"
                                   	 recordTypeId = "{!v.recordTypeId}"
                                   	 class="slds-m-top_x-small slds-m-bottom_large"
+									 onload="{!c.hideSpinner}"
+									 onsubmit="{!c.upd}"
                                      >
-            
-            <lightning:inputField aura:id="fieldValue" disabled="{!v.readOnly}" fieldName="{!v.fieldN}" onchange="{!c.update}"/>
+			<lightning:messages aura:id="errMessage" />
+            <lightning:inputField aura:id="fieldValue" required="{!v.required}" disabled="{!v.readOnly}" fieldName="{!v.fieldN}" onchange="{!c.upd}" onblur="{!c.upd}"/>
             
     </lightning:recordEditForm>
+
+	<aura:if isTrue="{! v.loaded }">
+		<aura:set attribute="else">
+			<lightning:spinner alternativeText="Loading" />
+		</aura:set>
+	</aura:if>
     
 </aura:component>

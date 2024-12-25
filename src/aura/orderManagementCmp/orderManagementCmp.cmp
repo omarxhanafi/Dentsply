@@ -1,4 +1,17 @@
-<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName,flexipage:availableForAllPageTypes">
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName,flexipage:availableForAllPageTypes,lightning:actionOverride,lightning:hasPageReference,lightning:isUrlAddressable">
+    
+    <!-- Attributes -->
+    <aura:attribute name="lightningOut" type="Boolean" />
+    <aura:attribute name="pageReference" type="Object" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="sObjectName" type="String" />
+    <aura:attribute name="showModal" type="Boolean" default="false"/>
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+
+    <!-- Handlers -->
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.pageRefChange}"/>
+
     <aura:html tag="style">
         .cuf-content {
             padding: 0 0rem !important;
@@ -19,7 +32,18 @@
             width: 70rem !important;
         }
     </aura:html>
-    <aura:attribute name="lightningOut" type="Boolean" />
-    <!-- <ltng:require styles="{!$Resource.OrderManagementCss}"/> -->
-    <c:orderManagementLwc recordId="{! v.recordId}" sobjectName="{! v.sObjectName}" lightningOut="{! v.lightningOut}" onclose="{!c.closeQA}"></c:orderManagementLwc>
+
+    <aura:if isTrue="{!AND(v.showModal == true, $Browser.formFactor == 'DESKTOP')}">
+        <!--<section role="dialog" tabindex="-1" class="slds-modal slds-backdrop slds-fade-in-open slds-modal_large" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+            <div class="slds-modal__container">                
+                    <div class="slds-modal__content slds-p-around- -medium" style="overflow: auto">
+                        <c:orderManagementLwc recordId="{! v.recordId}" sobjectName="{! v.sObjectName}" lightningOut="{! v.lightningOut}" onclose="{!c.closeQA}"></c:orderManagementLwc>
+                    </div>
+            </div>
+        </section> -->
+        <div/>
+        <aura:set attribute="else">
+            <c:orderManagementLwc recordId="{! v.recordId}" sobjectName="{! v.sObjectName}" lightningOut="{! v.lightningOut}" onclose="{!c.closeQA}"></c:orderManagementLwc>
+        </aura:set>
+    </aura:if>           
 </aura:component>

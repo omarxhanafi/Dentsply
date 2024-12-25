@@ -23,6 +23,7 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
     @track selectedCurrency = '';
     @track selectedAccountsWithContactId = '';
     @track selectedSourceRecordId = '';
+    @track selectedAddressRecordId = '';
     @track order;
     @track showSelectProducts = false;
     @track showOrderItems = false;
@@ -47,7 +48,7 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
         uIThemeDisplayed()
         .then(result => {
             this.userUiTheme = result;
-            if(this.isOrder) {
+            if(this.isOrder && this.recordId) {
                 this.getOrder();
             } else {
                 this.orderCreationSkip = false;
@@ -58,6 +59,7 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
             showToast(this, this.userUiTheme, 'Error', JSON.stringify(error) , 'error');
         });
     }
+
     handleSelectedPriceBook(event) {
         this.seletedPricebookId = event.detail;
     }
@@ -68,9 +70,13 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
     handleOrderCreation(event) {
         this.selectContractId = event.detail.contractId;
         this.seletedPricebookId = event.detail.pricebookId;
-        this.selectedrelatedAccountsWithContactId = event.detail.accountId; 
+        this.selectedrelatedAccountsWithContactId = event.detail.selectedAccountsWithContactId; 
         this.selectedSourceRecordId = event.detail.sourceRecordId; 
+        this.selectedAddressRecordId = event.detail.addressRecordId;
         this.selectedCurrency = event.detail.currency;
+        if(event.detail.accountId){
+            this.recordId = event.detail.accountId;
+        }
         this.insertOrder();
     }
     insertOrder() {
@@ -79,6 +85,7 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
                     contractId : this.selectContractId,
                     currencyIsoCode : this.selectedCurrency,
                     sourceRecordId : this.selectedSourceRecordId,
+                    addressRecordId : this.selectedAddressRecordId,
                     accountId : this.selectedrelatedAccountsWithContactId })
         .then(result => {
             this.order = result;
@@ -116,7 +123,14 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
         this.dispatchEvent(closeQA);
     }
     goToOrder() {
-        goToRecord(this.userUiTheme,this.order.Id, this, /*this.lightningOut*/ false);
+        this[NavigationMixin.Navigate]({
+            type: 'standard__recordPage',
+            attributes: {
+                recordId: this.order.Id,
+                actionName: 'view',
+            },
+        });
+        this.closeQuickAction();
     }
 
     goToNewOrder(event) {

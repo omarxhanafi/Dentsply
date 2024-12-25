@@ -56,7 +56,12 @@
             var brandOutput = cmp.find("brandField").get("v.value");
             var subCategoryOutput = cmp.find("subCatField").get("v.value");
 
-            cmp.set("v.categoryOutput", categoryOutput);
+            if(cmp.get("v.categoryOutput") !== categoryOutput)
+            {
+                cmp.set("v.categoryOutput", categoryOutput);
+                helper.clearDealerLookup(cmp,event);
+            }
+
             cmp.set("v.brandOutput", brandOutput);
             cmp.set("v.subCategoryOutput", subCategoryOutput);
 
@@ -168,6 +173,16 @@
     {
         var isManualAssignmentChecked = component.find("isManualAssignmentNeeded").get("v.checked");
         component.set("v.isManualAssignmentChecked", isManualAssignmentChecked);
+    },
+
+    /**
+     * @owner @author richard.trum@glimt.se | 2023-08-29
+     */
+
+    hideSpinner : function(component, event){
+
+        component.set('v.loaded', true);
+
     }
 
 })

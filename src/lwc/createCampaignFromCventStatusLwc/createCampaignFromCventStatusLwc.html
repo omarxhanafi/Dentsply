@@ -1,0 +1,56 @@
+<!--
+ - Created by hadib on 18/1/2023.
+ -->
+
+<!-- Create Campaign From Cvent Status Lwc -->
+<template>
+
+
+    <template if:true={stage.notStarted}>
+        <span   class="slds-timeline__actions slds-timeline__actions_inline"
+                style="margin-left: 1rem;margin-right: 0.5rem">
+            <span class="slds-timeline__date">{labels.NOT_STARTED}</span>
+                <span class="slds-button__icon">
+                <span><img src="/img/icon/t4v35/utility/clock_120.png"/></span>
+            </span>
+        </span>
+    </template>
+
+    <template if:true={stage.inProgress}>
+        <div class="slds-timeline__actions slds-timeline__actions_inline">
+            <p class="slds-timeline__date">{labels.IN_PROGRESS}</p>
+            <div class="slds-spinner_inline" style="margin-left: .75rem;margin-right: .75rem">
+                <div role="status" class="slds-spinner slds-spinner_x-small">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template if:true={stage.completed}>
+        <div class="slds-timeline__actions slds-timeline__actions_inline"
+             style="margin-left: 1rem;margin-right: 0.5rem">
+            <p class="slds-timeline__date">{labels.COMPLETED}</p>
+            <div class="slds-button__icon">
+                <img src="/img/msg_icons/confirm24.png"/>
+            </div>
+        </div>
+    </template>
+
+    <template if:true={stage.error}>
+        <span class="slds-timeline__actions slds-timeline__actions_inline"
+              style="margin-left: 1rem;margin-right: 0.5rem">
+             <template if:true={isSystemError}>
+                 <span class="slds-timeline__date"><a href="#" onclick={handleRedirectToErrorLog}>{labels.VIEW_ERROR_LOGS}</a></span>
+             </template>
+            <template if:false={isSystemError}>
+                 <span class="slds-timeline__date">{labels.ERROR}</span>
+             </template>
+                <span class="slds-button__icon">
+                <span><img src="/EXT/theme/sfdc/images/window/icon-error.gif"/></span>
+            </span>
+        </span>
+    </template>
+</template>

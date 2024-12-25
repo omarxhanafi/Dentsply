@@ -1,11 +1,25 @@
 import { LightningElement, api } from 'lwc';
+import STAGE_FIELD from '@salesforce/schema/Opportunity.StageName';
+import WLREASON_FIELD from '@salesforce/schema/Opportunity.Win_Loss_Reason__c';
+import WLDESC_FIELD from '@salesforce/schema/Opportunity.Win_Loss_Description__c';
+import CATEGORY_FIELD from '@salesforce/schema/Opportunity.NA_Category__c';
+import BRAND_FIELD from '@salesforce/schema/Opportunity.NA_Brand__c';
 
 export default class OpportunityWinLossLwc extends LightningElement {
+
+    stageField = STAGE_FIELD;
+    wlReasonField = WLREASON_FIELD;
+    wlDescriptionField = WLDESC_FIELD;
+    categoryField = CATEGORY_FIELD;
+    brandField = BRAND_FIELD;
+
 
     @api recordTypeId;
     @api stageName;
     @api winLossReason;
     @api winLossDescription;
+    @api category;
+    @api brand; 
 
     showWinLossFields = false;
 
@@ -46,8 +60,10 @@ export default class OpportunityWinLossLwc extends LightningElement {
     }
 
     validateFields(){
+        
         this.template.querySelectorAll('lightning-input-field').forEach(element => {
             element.reportValidity();
+            console.log(element.reportValidity());
             if(element.reportValidity() == false){
                 element.focus();
             }           
@@ -61,6 +77,7 @@ export default class OpportunityWinLossLwc extends LightningElement {
         let validity = true;
         this.template.querySelectorAll('lightning-input-field').forEach(element => {
                 let elValidity = element.reportValidity();
+                console.log(elValidity);
                 if(elValidity === false){
                     validity = false;
                 }
@@ -76,6 +93,6 @@ export default class OpportunityWinLossLwc extends LightningElement {
         else{
             sessionStorage.setItem('showErrors', false);
         }
-     
+
     }
 }

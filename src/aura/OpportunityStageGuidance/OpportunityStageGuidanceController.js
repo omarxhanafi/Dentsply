@@ -31,6 +31,7 @@
     },
     
     updateStage: function(component, event, helper){
+
         if (event) {
             component.set("v.showSpinner", true);
             var stepName = event.getParam("detail").value;
@@ -38,7 +39,15 @@
             if (component.get("v.objectType") === 'Opportunity') {
                 helper.checkStageType(component, event, helper, stepName);
             } else {
-                helper.setStage(component, event, helper, stepName);
+                if(stepName === 'Cancelled'){
+                    helper.createCancelledModal(component, event, helper, stepName);
+                }
+                else if(stepName === 'Completed'){
+                    helper.createCompletedModal(component, event, helper, stepName);
+                }
+                else{
+                    helper.setStage(component, event, helper, stepName);
+                }
             }
         } 
     },

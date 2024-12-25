@@ -21,9 +21,43 @@
     width: 6em;
     display: inline-block !important;
 }
-dt {
-    width: 40% !important;
+
+
+.inline-block {
+    display: inline-block;
 }
+
+.slds-slider {
+    max-width: 15rem!important;
+}
+
+.dynamic-width {
+    max-width: 100%;
+
+}
+
+.dynamic-truncate {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 dd {
-    width: 60% !important;
+    padding-left: 1rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .dynamic-width {
+        max-width: 78vw;
+    }
+
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+    .dynamic-width {
+        max-width: 30rem;
+    }
 }

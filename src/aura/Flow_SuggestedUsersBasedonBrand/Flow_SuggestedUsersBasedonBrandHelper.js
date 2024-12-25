@@ -4,6 +4,17 @@
         cmp.find('dealerField').reportValidity();
     },
 
+    clearDealerLookup : function(cmp, event) {
+        var dealerLookupCmp = cmp.find("dealerField");
+        if(dealerLookupCmp)
+        {
+            dealerLookupCmp.clearSelection();
+            cmp.set("v.dealerOutput", null);
+            cmp.set("v.dealerId", null);
+            this.retrieveSuggestedUsers(cmp, event);
+        }
+    },
+
     checkDealerVisible : function(cmp, event){
 
         var action = cmp.get("c.getSalesLeadSettings");

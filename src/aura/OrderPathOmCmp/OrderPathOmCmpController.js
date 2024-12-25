@@ -40,6 +40,7 @@
 
     handleFormLoad: function (component, event, helper) {
         var record = event.getParams().records[component.get("v.recordId")];
+        var orderStatus = component.get("v.orderRecord.Status");
         
         if (record) {
             var keyFields = component.get("v.keyFieldsAllRequied");
@@ -53,7 +54,7 @@
                  return disableApprobalButton;
             });
     
-            if (record.fields.Status.value === "Created") {
+            if (orderStatus === "Created") {
                 component.set("v.disableSubmit", hasNullFields);
             }
         }

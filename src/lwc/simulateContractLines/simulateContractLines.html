@@ -6,50 +6,62 @@
     </template>
     
   </template>
+
   <template if:true={showSelectDiscountModel}>
     <template if:true={noDiscountsToSelect}>
-      {labels.SELECT_PRODUCT}
-      <template for:each={discountModelOptionsToSelect} for:item="discountModel" for:index="index">
-        <div key={discountModel.Id} >
-            <lightning-tile class="slds-box slds-box_small">
-                <lightning-input type="checkbox" data-index={index}
-                                variant="label-hidden" class="slds-m-left_xx-small slds-float_left .slds-align_absolute-center"
-                                checked={discountModel.isSelected} onchange={handleSelectChange} > </lightning-input>
-                                {discountModel.Product__c}
-            </lightning-tile>
+
+      <!-- DISCOUNT -->
+      <div class="slds-form-element">
+        <label class="slds-form-element__label">{labels.SELECT_PRODUCT} <span style="color: red;">*</span>
+        </label>
+        <div class="slds-form-element__control">
+          <template for:each={discountModelOptionsToSelect} for:item="discountModel" for:index="index">
+            <div key={discountModel.Id}>
+              <lightning-tile class="slds-box slds-box_small">
+                <lightning-input type="checkbox" data-index={index} variant="label-hidden" class="slds-m-left_xx-small slds-float_left .slds-align_absolute-center" checked={discountModel.isSelected} onchange={handleSelectChange}></lightning-input> {discountModel.Product__c}
+              </lightning-tile>
+            </div>
+          </template>
+        </div>
+      </div>
+      <!-- SOURCE RECORDS -->
+      <template if:true={showSelectDiscounSourceRecords}>
+        <div class="slds-form-element">
+          <label class="slds-form-element__label">{labels.SELECT_SOURCE_RECORD} <span style="color: red;">*</span>
+          </label>
+          <div class="slds-form-element__control">
+            <template for:each={sourceRecords} for:item="sourceRecord" for:index="index">
+
+              <div key={sourceRecord.Id}>
+                <lightning-tile class="slds-box slds-box_small">
+                  <lightning-input type="checkbox" data-index={index} variant="label-hidden" class="slds-m-left_xx-small slds-float_left .slds-align_absolute-center"
+                                   checked={sourceRecord.isSelected} onchange={handleSelectChangeRecords}></lightning-input> {sourceRecord.Combined_Fields__c}
+                </lightning-tile>
+              </div>
+
+            </template>
+
+          </div>
         </div>
       </template>
-      {labels.SELECT_SOURCE_RECORD}
-      <template for:each={sourceRecords} for:item="sourceRecord" for:index="index">
-        <div key={sourceRecord.Id} >
-            <lightning-tile class="slds-box slds-box_small">
-                <lightning-input type="checkbox" data-index={index}
-                                variant="label-hidden" class="slds-m-left_xx-small slds-float_left .slds-align_absolute-center"
-                                checked={sourceRecord.isSelected} onchange={handleSelectChangeRecords} > </lightning-input>
-                                {sourceRecord.Combined_Fields__c}
-            </lightning-tile>
-        </div>    
-      </template>
+      <!-- BUTTONS TO SIMULATE DISCOUNT -->
       <template if:true={showButtons}>
         <button class="slds-button slds-button_brand slds-button_stretch" onclick={simulateContract} disabled={disableSimulateButton}>{labels.SIMULATE_CONTRACT}</button>
       </template>
-      
-
-
-      
-
     </template>
+
     <template if:true={showCurrentlyAddedItems}>
-      {labels.ALREADY_ADDED_iTEMS}
-      <template for:each={currentlyAddedItems} for:item="ContractItem">
-        <div key={ContractItem.Id}>
-            <a onclick={goToContractItem} data-id={ContractItem.Id} >{ContractItem.Name}</a>
+      <div class="slds-form-element">
+        <label class="slds-form-element__label">{labels.ALREADY_ADDED_iTEMS}</label>
+        <div class="slds-form-element__control">
+          <template for:each={currentlyAddedItems} for:item="ContractItem">
+            <div key={ContractItem.Id}>
+              <a onclick={goToContractItem} data-id={ContractItem.Id} >{ContractItem.Name}</a>
+            </div>
+          </template>
         </div>
-      </template>
-
+      </div>
     </template>
-    
-    
   </template>
 
   <template if:true={showSimulationTable}>

@@ -1,0 +1,15 @@
+/**
+ * Created by hadib on 18/1/2023.
+ */
+
+.slds-timeline__actions {
+    position: relative;
+}
+
+.slds-button__icon img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1.25rem;
+    width: 1.25rem;
+}

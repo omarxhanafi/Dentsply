@@ -106,37 +106,6 @@
                                         <div class={sureSmileClass}></div>
                                     </td>
                                 </tr>
-                                <!-- // TFD-000000374: Temporarely disabled - to be enabled at a later stage -->
-                                <!--
-                                <tr>
-                                    <td>
-                                        <template if:true={awoId}>
-                                            <a class="flag-text"
-                                               onclick={handleRedirection}
-                                               onmouseover={handleMouseOver}
-                                               onmouseout={handleMouseOut}
-                                               data-itemid={awoId}
-                                               data-flagtype='awo'
-                                            >
-                                                {labels.AWO}
-                                            </a>
-                                            <template if:true={isMouseOverAwo}>
-                                                <div class="slds-is-relative slds-float_right">
-                                                    <c-popover-record-info
-                                                            record-id={awoId} url={awoId}
-                                                            title={labels.AWO} object-api-name="Source_Record__c"
-                                                            icon-name="custom:custom43"></c-popover-record-info>
-                                                </div>
-                                            </template>
-                                        </template>
-                                        <template if:false={awoId}>
-                                            <div class="flag-text">{labels.AWO}</div>
-                                        </template>
-                                    </td>
-                                    <td>
-                                        <div class={awoClass}></div>
-                                    </td>
-                                </tr>-->
                                 <tr>
                                     <td>
                                         <template if:true={dsComId}>
@@ -164,6 +133,40 @@
                                     </td>
                                     <td>
                                         <div class={dsComCLass}></div>
+                                    </td>
+                                </tr>
+                                <tr if:true={showOneDsFlag}>
+                                    <td>
+                                        <template if:true={oneDsId}>
+                                            <a class="flag-text"
+                                               onclick={handleRedirection}
+                                               onmouseover={handleMouseOver}
+                                               onmouseout={handleMouseOut}
+                                               data-itemid={oneDsId}
+                                               data-flagtype='oneDs'
+                                            >
+                                                {labels.ONE_DS}
+                                            </a>
+                                            <template if:true={isMouseOverOneDs}>
+                                                <div class="slds-is-relative slds-float_right">
+                                                    <c-popover-record-info
+                                                            record-id={oneDsId} url={oneDsId}
+                                                            title={labels.ONE_DS} object-api-name="LoyaltyProgramParticipant__c"
+                                                            icon-name="custom:custom43"></c-popover-record-info>
+                                                </div>
+                                            </template>
+                                            <template if:true={oneDs}>
+                                                <div class="flag-value slds-text-title_bold">
+                                                    <span>{oneDs}</span>
+                                                </div>
+                                            </template>
+                                        </template>
+                                        <template if:false={oneDsId}>
+                                            <div class="flag-text">{labels.ONE_DS}</div>
+                                        </template>
+                                    </td>
+                                    <td>
+                                        <div class={oneDsClass}></div>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -494,35 +497,6 @@
                             <div class={sureSmileClass}></div>
                         </td>
                     </tr>
-                    <!-- // TFD-000000374: Temporarely disabled - to be enabled at a later stage -->
-<!--                        <td>-->
-<!--                            <template if:true={awoId}>-->
-<!--                                <a class="flag-text"-->
-<!--                                   onclick={handleRedirection}-->
-<!--                                   onmouseover={handleMouseOver}-->
-<!--                                   onmouseout={handleMouseOut}-->
-<!--                                   data-itemid={awoId}-->
-<!--                                   data-flagtype='awo'-->
-<!--                                >-->
-<!--                                    {labels.AWO}-->
-<!--                                </a>-->
-<!--                                <template if:true={isMouseOverAwo}>-->
-<!--                                    <div class="slds-is-relative slds-float_right">-->
-<!--                                        <c-popover-record-info-->
-<!--                                                record-id={awoId} url={awoId}-->
-<!--                                                title={labels.AWO} object-api-name="Source_Record__c"-->
-<!--                                                icon-name="custom:custom43"></c-popover-record-info>-->
-<!--                                    </div>-->
-<!--                                </template>-->
-<!--                            </template>-->
-<!--                            <template if:false={awoId}>-->
-<!--                                <div class="flag-text">{labels.AWO}</div>-->
-<!--                            </template>-->
-<!--                        </td>-->
-<!--                        <td>-->
-<!--                            <div class={awoClass}></div>-->
-<!--                        </td>-->
-<!--                    </tr>-->
                     <tr>
                         <td>
                             <template if:true={dsComId}>
@@ -550,6 +524,32 @@
                         </td>
                         <td>
                             <div class={dsComCLass}></div>
+                        </td>
+                    </tr>
+                    <tr if:true={showOneDsFlag}>
+                        <td>
+                            <template if:true={oneDsId}>
+                                <a class="flag-text"
+                                   onclick={handleRedirection}
+                                   onmouseover={handleMouseOver}
+                                   onmouseout={handleMouseOut}
+                                   data-itemid={oneDsId}
+                                   data-flagtype='oneDs'
+                                >
+                                    {labels.ONE_DS}
+                                </a>
+                                <template if:true={oneDs}>
+                                    <div class="flag-value slds-text-title_bold">
+                                        <span>{oneDs}</span>
+                                    </div>
+                                </template>
+                            </template>
+                            <template if:false={oneDsId}>
+                                <div class="flag-text">{labels.ONE_DS}</div>
+                            </template>
+                        </td>
+                        <td>
+                            <div class={oneDsClass}></div>
                         </td>
                     </tr>
                     <tr if:true={showDSCoreInactive}>

@@ -7,5 +7,7 @@
    <design:attribute name="objType" label="Object type" />
     <design:attribute name="recordTypeId" label="Record type Id" />
     <design:attribute name="readOnly" label="Read only" />
+    <design:attribute name="required" label="Required" />
+    <design:attribute name="firstScreenVisit" label="First time screen is visited" />
     
 </design:component>

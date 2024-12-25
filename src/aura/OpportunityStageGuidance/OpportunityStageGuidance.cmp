@@ -1,11 +1,14 @@
 <aura:component controller="OpportunityStageGuidanceClass"
     implements="flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes,force:hasRecordId,force:appHostable"
     access="global">
+
+    <!--Declare Event Handlers-->
     <aura:handler name="init" value="{!this}" action="{!c.init}" />
     <aura:dependency resource="markup://force:recordSaveSuccess" type="EVENT" />
     <aura:handler event="force:refreshView" action="{!c.init}" />
     <aura:handler event="force:showToast" action="{!c.init}" />
 
+    <!--Declare Attributes-->
     <aura:attribute name="recordId" type="String" />
     <aura:attribute name="objectType" type="String" default="Opportunity" />
     <aura:attribute name="stageField" type="String" default="StageName" />
@@ -28,7 +31,8 @@
     <aura:attribute name="error" type="Object" />
     <aura:attribute name="modalSuccess" type="Boolean" default="false" />
 
-    
+    <!--User Interface-->
+    <lightning:flow aura:id="flowData"/>
     <div class="slds-is-relative">
         <aura:if isTrue="{!v.showSpinner}">
             <lightning:spinner alternativeText="Loading" size="small"></lightning:spinner>
