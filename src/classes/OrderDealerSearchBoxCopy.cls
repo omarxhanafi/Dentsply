@@ -10,9 +10,8 @@ public with sharing class OrderDealerSearchBoxCopy {
     public static List<Preferred_dealer_item__c> saveDealer(List<Account> accList,Id orderId) {
         Order currentOrder=[select Id,name,Account.Id,  AccountId from Order where Id=:orderId];
         Account OrderAcc = [Select Id, Name, Country__c FROM Account WHERE Id =: currentOrder.Account.Id];
-
+        //List<Preferred_dealer_item__c> =[Select Id, Name, Account__r.Id, Dealer__c, Dealer__r.Name, Default_dealer__c, Dealer_email__c FROM Preferred_dealer_item__c where Account__r.Id=: currentOrder.Account.Id];
         List<Preferred_dealer_item__c> cust = [Select Id, Name, Account__r.Id, Dealer__c, Dealer__r.Name, Default_dealer__c, Dealer_email__c FROM Preferred_dealer_item__c WHERE (Account__r.Id=: currentOrder.Account.Id) AND Dealer__r.OneAccount_Type__c='Distributor'];
-
         Map<Id,Preferred_dealer_item__c> pdMap= new Map<Id,Preferred_dealer_item__c>();
         for(Preferred_dealer_item__c pd:cust){
             pdMap.put(pd.Dealer__c, pd);
@@ -25,7 +24,7 @@ public with sharing class OrderDealerSearchBoxCopy {
             Preferred_dealer_item__c prefDealer= new Preferred_dealer_item__c();
             prefDealer.Dealer__c=acc.Id;
             prefDealer.Account__c=OrderAcc.Id;
-
+            //prefDealer.Dealer_email__c=acc.email
             prefDealerList.add(prefDealer);
             If (cust.size()>0){
                 prefDealer.Default_dealer__c = false;
@@ -33,7 +32,8 @@ public with sharing class OrderDealerSearchBoxCopy {
                 prefDealer.Default_dealer__c = true;
             }
         }
-
+        System.debug('OrderAcc-->>>>'+OrderAcc);
+        System.debug('prefDealerList---->>>'+prefDealerList); 
         if(prefDealerList.size()>0){
             insert prefDealerList;
         }
@@ -53,7 +53,9 @@ public with sharing class OrderDealerSearchBoxCopy {
         user currentUser = [select id, country from User where Id=:userInfo.getUserId()];
         Order ordr = [Select Id, Account.Id, Distributor__r.Id FROM Order Where Id =:orderId];
         List<Account> acc = [Select Id, Name, Country__c FROM Account WHERE Id =: ordr.Account.Id];
+        System.debug('account for order--->>>'+acc);
         List<Preferred_dealer_item__c> cust = [Select Id, Name, Account__r.Id, Dealer__c, Dealer__r.Name,Dealer__r.ShippingCity,Dealer__r.ShippingState,Dealer__r.ShippingPostalCode, Default_dealer__c, Dealer_email__c FROM Preferred_dealer_item__c WHERE (Account__r.Id=: ordr.Account.Id) AND Dealer__r.OneAccount_Type__c='Distributor' ];
+        System.debug('Preferred_dealer_item__c list ---->>>'+cust);
         return cust;
     }
     @AuraEnabled
@@ -85,7 +87,8 @@ public with sharing class OrderDealerSearchBoxCopy {
         objDT.recordStart = offset + 1;
         objDT.recordEnd = totalRecords >= recordEnd ? recordEnd : totalRecords;
         objDT.totalRecords = totalRecords;
-        objDT.accountList = [select id, Name,OneAccount_Type__c,BillingStreet, ShippingCity, ShippingState, ShippingPostalCode, BillingCity, BillingState, BillingPostalCode, BillingCountry from account
+        system.debug('searchKey---->>> '+searchKey);
+        objDT.accountList = [select id, Name,OneAccount_Type__c,BillingStreet, ShippingCity, ShippingState, ShippingPostalCode, BillingCity, BillingState, BillingPostalCode, BillingCountry from account 
                              where ( 
                                  Name LIKE: searchKey OR
                                  ShippingStreet LIKE: searchKey OR
@@ -94,12 +97,16 @@ public with sharing class OrderDealerSearchBoxCopy {
                                  ShippingPostalCode LIKE: searchKey OR
                                  ShippingCountry LIKE: searchKey )
                              AND OneAccount_Type__c = 'Distributor'
+                             // AND (Country__c =:currentUser.Country)
                              LIMIT :pSize OFFSET :offset];
         return objDT;
     }
     @AuraEnabled
     public static Order updateDealerInfoToOrder(String dealrId,Order orderRec) {
+       
+       System.debug('Order Record inside Update -----'+ orderRec);
         Preferred_dealer_item__c dealer=[Select id,name,Dealer__c,Dealer_email__c from Preferred_dealer_item__c where Id=:dealrId];
+        system.debug('dealer in apex-----'+dealer);
         orderRec.Dealer__c = dealer.Id;
         orderRec.Distributor__c = dealer.Dealer__c;
         orderRec.Distributor_email__c = dealer.Dealer_email__c;
@@ -118,12 +125,16 @@ public with sharing class OrderDealerSearchBoxCopy {
     }   
     @AuraEnabled
     public static Order Initialize(String ordrId) {
+        System.debug('orderId ---------'+ordrId);
         Order orderRec=[Select Name,Dealer__c,Distributor__c,Distributor_email__c,Status from Order where Id=:ordrId];
+        system.debug('orderRecord initialize in apex :'+orderRec);
         return orderRec;
     }
     @AuraEnabled
     public static Order getUpdateFromOrder(String recordId) {
+        System.debug('orderId ---------'+recordId);
         Order orderRec=[Select Name,Dealer__c,Distributor__c,Distributor_email__c from Order where Id=:recordId];
+        system.debug('orderRecord initialize in apex :'+orderRec);
         return orderRec;
     }
     public class AccountDataTableWrapper {

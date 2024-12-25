@@ -7,3 +7,4 @@ public with sharing class DC_OrderDAO {
                  Order_Amount_global__c, Distributor__c, Distributor__r.Name from Order where AccountId = :accountId 
                order by EffectiveDate desc];
     }
+}

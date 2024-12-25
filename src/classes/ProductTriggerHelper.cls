@@ -1,11 +1,10 @@
-/*-------------------------------------------------------------------------------------------------------
+/*-------------------------------------------------------------------------------------------------	
  * Author            : ohanafi@salesforce.com
  * Description       : Product trigger helper
  * Test class        : Test_ProductTrigger
  * History	
  * 17-01-2024         Created ProductTriggerHelper class (TFUS-000006278)
- * 24-12-2024         Including GPP Codes when matching Products to Non-ERP Products (TFUS-000007260)
---------------------------------------------------------------------------------------------------------*/
+--------------------------------------------------------------------------------------------------*/
 public with sharing class ProductTriggerHelper {
 
     /**
@@ -59,7 +58,7 @@ public with sharing class ProductTriggerHelper {
 
             // For updates, check if any of the PG codes have been updated
             if (oldProduct != null) {
-                for (String pgField : new List<String>{'PG4_Code__c', 'PG3_Code__c', 'PG2_Code__c', 'PG1_Code__c', 'GPP_Code__c'}) {
+                for (String pgField : new List<String>{'PG4_Code__c', 'PG3_Code__c', 'PG2_Code__c', 'PG1_Code__c'}) {
                     if (newProduct.get(pgField) != oldProduct.get(pgField)) {
                         shouldProcess = true;
                         break; // If any PG code has changed, we should process this record
@@ -69,7 +68,7 @@ public with sharing class ProductTriggerHelper {
 
             // We check the PG codes by order
             if (shouldProcess) {
-                for (String pgField : new List<String>{'PG4_Code__c', 'PG3_Code__c', 'PG2_Code__c', 'PG1_Code__c', 'GPP_Code__c'}) {
+                for (String pgField : new List<String>{'PG4_Code__c', 'PG3_Code__c', 'PG2_Code__c', 'PG1_Code__c'}) {
                     String pgCode = (String)newProduct.get(pgField);
                     String parentPgCode = (globalSkuMappingMap.containsKey(newProduct.GlobalSKUMapping__c)) ?
                             (String)globalSkuMappingMap.get(newProduct.GlobalSKUMapping__c).get(pgField) : null;
