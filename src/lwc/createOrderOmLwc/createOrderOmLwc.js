@@ -180,7 +180,6 @@ export default class CreateOrderOmLwc extends LightningElement {
         accId = this.selectedAccountsWithContactId? this.selectedAccountsWithContactId : this.parentId;
         checkIfAllowToCreateOrder({parentId : accId})
         .then(result => {
-            console.log(result);
             if(result) {
                 this.allowedToCreateOrder = result;
                 if(! this.allowedToCreateOrder){

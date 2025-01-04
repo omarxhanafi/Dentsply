@@ -72,7 +72,7 @@ public with sharing class OrderManagement_CC {
     public static List<PriceBook2> getPriceBooks() {
         try {
             Map<Id, Pricebook2> pricebookMap = new Map<Id, Pricebook2>([
-                SELECT Id, Name, ShowPricingfromMicroServiceOM__c, SourceId__c   
+                SELECT Id, Name, ShowPricingfromMicroServiceOM__c, SourceId__c, IsAdvanced__c
                 FROM Pricebook2 
                 WHERE IsActive = true AND Name != 'Standard Price Book' AND Name != 'Sirona Products' AND ObjectTypeUseOM__c != 'Opportunity'
                 ORDER BY Name ASC
@@ -465,7 +465,7 @@ public with sharing class OrderManagement_CC {
         try {
             Boolean isParentaLead = false;
             Field_Sales_Project_Members__c salesLead;
-            Pricebook2 pricebook = [SELECT Id, PriceBook_Type__c, Pricebook_Subtype__c, Pricebook_Channel__c FROM Pricebook2 WHERE Id =:pricebookId];
+            Pricebook2 pricebook = [SELECT Id, PriceBook_Type__c, Pricebook_Subtype__c, Pricebook_Channel__c, IsAdvanced__c FROM Pricebook2 WHERE Id =:pricebookId];
             Order order = new Order();
             order.Pricebook2Id = pricebookId;
             order.Order_Type__c = pricebook.PriceBook_Type__c;
@@ -474,13 +474,20 @@ public with sharing class OrderManagement_CC {
                 order.ShippingAddress__c = addressRecordId; 
             }
             order.Status = 'Created';
-            if ('Direct'.equals(pricebook.Pricebook_Channel__c)) {
-                order.RecordTypeId = GlobalUtils.getRecordTypeId('Order', 'Direct_global_order');
-            } else if ('Indirect'.equals(pricebook.Pricebook_Channel__c)) {
-                order.RecordTypeId = GlobalUtils.getRecordTypeId('Order', 'Indirect_global_order');
-            } else if ('Free Good Order'.equals(pricebook.Pricebook_Channel__c)) {
-                order.RecordTypeId = GlobalUtils.getRecordTypeId('Order', 'Free_Good_Order');
+
+            // RLM: If the Pricebook is advanced, the Order should be as well
+            if(pricebook.IsAdvanced__c){
+                order.RecordTypeId = GlobalUtils.getRecordTypeId('Order', 'Advanced_Order');
+            } else {
+                if ('Direct'.equals(pricebook.Pricebook_Channel__c)) {
+                    order.RecordTypeId = GlobalUtils.getRecordTypeId('Order', 'Direct_global_order');
+                } else if ('Indirect'.equals(pricebook.Pricebook_Channel__c)) {
+                    order.RecordTypeId = GlobalUtils.getRecordTypeId('Order', 'Indirect_global_order');
+                } else if ('Free Good Order'.equals(pricebook.Pricebook_Channel__c)) {
+                    order.RecordTypeId = GlobalUtils.getRecordTypeId('Order', 'Free_Good_Order');
+                }
             }
+
             order.CurrencyIsoCode = currencyIsoCode;
             order.EffectiveDate = Date.today();
             if (String.isNotEmpty(contractId)) {
