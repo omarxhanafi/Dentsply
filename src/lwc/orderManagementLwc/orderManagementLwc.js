@@ -77,9 +77,9 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
         if(event.detail.accountId){
             this.recordId = event.detail.accountId;
         }
-        this.insertOrder();
+        this.insertOrder(event.detail.isAdvanced);
     }
-    insertOrder() {
+    insertOrder(isAdvanced) {
         createOrder({pricebookId: this.seletedPricebookId,
                     parentId : this.recordId,
                     contractId : this.selectContractId,
@@ -89,7 +89,11 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
                     accountId : this.selectedrelatedAccountsWithContactId })
         .then(result => {
             this.order = result;
-            this.showSelectProducts = true;
+            if(isAdvanced){ // Skip the product selection if the order/pricebook are advanced (RLM)
+                this.goToOrder(isAdvanced);
+            } else {
+                this.showSelectProducts = true;
+            }
             showToast(this, this.userUiTheme, 'Success', this.order.OrderNumber + ' : ' + this.labels.orderCreatedSuccess, 'success');
         })
         .catch(error => {
@@ -122,12 +126,13 @@ export default class OrderManagementLwc  extends NavigationMixin(LightningElemen
         const closeQA = new CustomEvent('close');
         this.dispatchEvent(closeQA);
     }
-    goToOrder() {
+    goToOrder(isAdvanced) {
+        let actionName = isAdvanced ? 'Order.BrowseCatalog' : 'view';
         this[NavigationMixin.Navigate]({
             type: 'standard__recordPage',
             attributes: {
                 recordId: this.order.Id,
-                actionName: 'view',
+                actionName: actionName,
             },
         });
         this.closeQuickAction();

@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/OrderManagement_CC.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/OrderManagement_CC.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lwc/createOrderOmLwc/createOrderOmLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/createOrderOmLwc/createOrderOmLwc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwc/orderManagementLwc/orderManagementLwc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwc/orderManagementLwc/orderManagementLwc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18576,7 +18576,8 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1735898373000" />
-                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CREATEORDEROMLWC" value="1735903539000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CREATEORDEROMLWC" value="1736001901000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ORDERMANAGEMENTLWC" value="1736326211405" />
                     </map>
                   </option>
                   <option name="lastBuildScope" value="CONTEXT" />
@@ -20056,7 +20057,8 @@
       <workItem from="1735037667524" duration="1763000" />
       <workItem from="1735122297023" duration="3848000" />
       <workItem from="1735343413216" duration="5739000" />
-      <workItem from="1735897873406" duration="2792000" />
+      <workItem from="1735897873406" duration="5263000" />
+      <workItem from="1736343810706" duration="202000" />
     </task>
     <servers />
   </component>

@@ -37,6 +37,7 @@ export default class CreateOrderOmLwc extends LightningElement {
     @track selectedCurrency = '';
     @track currencies = [];
     @track selectedPricebookId = '';
+    @track isAdvanced = false;
     @track pricebooks = [];
     @track contracts = [];
     @track selectedContractId = '';
@@ -326,6 +327,8 @@ export default class CreateOrderOmLwc extends LightningElement {
     //store user pricebook selection from UI in variable
     handlePricebookChange(event) {
         this.selectedPricebookId = event.detail.value;
+        const selectedPricebook = this.pricebooks.find(eachPricebook => eachPricebook.Id === this.selectedPricebookId);
+        this.isAdvanced = selectedPricebook ? selectedPricebook.IsAdvanced__c : false;
         this.loading = true;
         this.currencies = [];
         this.selectedCurrency = '';
@@ -461,6 +464,7 @@ export default class CreateOrderOmLwc extends LightningElement {
         const objectDetails = {
             detail : {'contractId' : this.selectedContractId,
                       'pricebookId' : this.selectedPricebookId,
+                      'isAdvanced' : this.isAdvanced,
                       'currency' : this.selectedCurrency,
                       'sourceRecordId' : this.selectedSourceRecordId,
                       'addressRecordId' : this.selectedAddressRecordId,
