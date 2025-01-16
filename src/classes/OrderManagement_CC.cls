@@ -12,7 +12,8 @@ History:
 231117			TFUS-000006243
 230712          TFUS-000006293 TFUS-000006294 TFUS-000006228 TFUS-000006320 (Roberto)
 240103          TFUS-000006379 Adding "AXCustomerPrice__c" to query when fetching items
-----------------------------------------------------------------------------------------*/
+250104          CPQ-262 - Create an advanced order when the selected pricebook is advanced (RLM)
+-------------------------------------------------------------------------------------------------------*/
 public with sharing class OrderManagement_CC {
 
     /*----------------------------------------------------------------
