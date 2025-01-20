@@ -13,6 +13,7 @@ History:
 230712          TFUS-000006293 TFUS-000006294 TFUS-000006228 TFUS-000006320 (Roberto)
 240103          TFUS-000006379 Adding "AXCustomerPrice__c" to query when fetching items
 250104          CPQ-262 - Create an advanced order when the selected pricebook is advanced (RLM)
+250115          CPQ-XXX - Clone order code refactoring
 -------------------------------------------------------------------------------------------------------*/
 public with sharing class OrderManagement_CC {
 
@@ -194,179 +195,164 @@ public with sharing class OrderManagement_CC {
             throw new AuraHandledException(e.getMessage());    
         }
     }
+
+    /**
+     * assignPricing Order and Order Items deep cloning method
+     * @author ohanafi@salesforce.com | 15-01-2025
+     *
+     * @param orderId - Id of the Order
+     * @param contractId - Id of the Contract
+     *
+     * @return Order - cloned Order
+     */
     @AuraEnabled
     public static Order cloneOrder(ID orderId, String contractId) {
         try {
+            // Fetch the order and its related items
             Order order = [
-                SELECT Id
-                    , Contact__c
-                    , Country__c
-                    , Dealer__c
-                    , Distributor__c
-                    , Distributor_email__c
-                    , RecordTypeId
-                    , CurrencyIsoCode
-                    , Pricebook2Id
-                    , Pricebook2.ShowPricingfromMicroServiceOM__c
-                    , AccountId
-                    , OpportunityId
-                    , ContractId
-                    , Status
-                    , ShippingCity
-                    , ShippingCountry
-                    , ShippingPostalCode
-                    , ShippingState
-                    , ShippingStreet
-                    , Contract.EndDate
-                    , Order_Type__c
-                    , Order_subtype__c
-                    , SourceRecord__c
-                    , (
-                        SELECT 
-                            Id
-                            , Quantity
-                            , PricebookEntryId
-                            , UnitPrice
-                            , Free_Of_Charge__c
-                            , Free_of_Charge_Delivery__c
-                            , Product2.Name
-                            , Product2.Article__c
-                            , PricebookEntry.IsActive
-                            , Order.CurrencyIsoCode
-                            , Discount_Percent__c 
-                        FROM OrderItems
-                    ) 
-                FROM Order
-                WHERE Id =: orderId
+                    SELECT Id, Contact__c, Country__c, Dealer__c, Distributor__c, Distributor_email__c, RecordTypeId,
+                            CurrencyIsoCode, Pricebook2Id, Pricebook2.ShowPricingfromMicroServiceOM__c, AccountId,
+                            OpportunityId, ContractId, Status, ShippingCity, ShippingCountry, ShippingPostalCode,
+                            ShippingState, ShippingStreet, Contract.EndDate, Order_Type__c, Order_subtype__c,
+                            SourceRecord__c,
+                    (SELECT Id, Quantity, PricebookEntryId, UnitPrice, Free_Of_Charge__c, Free_of_Charge_Delivery__c,
+                            Product2.Name, Product2.Article__c, PricebookEntry.IsActive, Order.CurrencyIsoCode,
+                            Discount_Percent__c
+                    FROM OrderItems)
+                    FROM Order
+                    WHERE Id = :orderId
             ];
+
+            // Clone the order
             Order clonedOrder = order.clone();
             clonedOrder.EffectiveDate = Date.today();
             clonedOrder.Status = 'Created';
-            if(String.isNotBlank(contractId)) {
-                clonedOrder.ContractId = contractId;
-            } else if(clonedOrder.Contract.EndDate < Date.today()) {
-                clonedOrder.ContractId = null;
-            }
+            clonedOrder.ContractId = String.isNotBlank(contractId) ? contractId : (order.Contract.EndDate < Date.today() ? null : clonedOrder.ContractId);
+
+            // Deep clone order items
             List<OrderItem> clonedOrderItems = order.OrderItems.deepClone();
-            
             Set<ID> pricebookEntriesIds = new Set<ID>();
-            List<OrderItem> clonedOrderItemsToInsert = new List<OrderItem> ();
-            List <ProductPricingERPCallOutWrapper.ProductEntry> pricingProdsRequest = new List<ProductPricingERPCallOutWrapper.ProductEntry>();
-            List <ProductPricingERPCallOutWrapper.ProductEntry> dupPricingProdsRequest = new List<ProductPricingERPCallOutWrapper.ProductEntry>();
+            List<OrderItem> clonedOrderItemsToInsert = new List<OrderItem>();
 
-            set<String> uniqueProds = new set<string>();
-            set<String> dupProds = new set<string>();
+            List<ProductPricingERPCallOutWrapper.ProductEntry> pricingProdsRequest = new List<ProductPricingERPCallOutWrapper.ProductEntry>();
+            List<ProductPricingERPCallOutWrapper.ProductEntry> dupPricingProdsRequest = new List<ProductPricingERPCallOutWrapper.ProductEntry>();
 
+            Set<String> uniqueProds = new Set<String>();
+            Set<String> dupProds = new Set<String>();
 
-            for(OrderItem orderItem : clonedOrderItems) {
-
-                if(orderItem.PricebookEntry.IsActive && order.Pricebook2.ShowPricingfromMicroServiceOM__c == false) {
-                    pricebookEntriesIds.add(orderItem.PricebookEntryId);
-                }
-
-                if(orderItem.PricebookEntry.IsActive && order.Pricebook2.ShowPricingfromMicroServiceOM__c == true) {
-                    ProductPricingERPCallOutWrapper.ProductEntry prodRequest = new ProductPricingERPCallOutWrapper.ProductEntry();
-                    prodRequest.productId = orderItem.Product2.Article__c;
-                    prodRequest.quantity = orderItem.Quantity.intValue();
-                    if(uniqueProds.isEmpty() || ! uniqueProds.contains(orderItem.Product2.Article__c)){
-                        uniqueProds.add(orderItem.Product2.Article__c);
-                        pricingProdsRequest.add(prodRequest);
+            // Process each order item
+            for (OrderItem orderItem : clonedOrderItems) {
+                if (orderItem.PricebookEntry.IsActive) {
+                    if (!order.Pricebook2.ShowPricingfromMicroServiceOM__c) {
+                        pricebookEntriesIds.add(orderItem.PricebookEntryId);
                     } else {
-                        if(dupProds.isEmpty() || ! dupProds.contains(orderItem.Product2.Article__c)){
-                            dupProds.add(orderItem.Product2.Article__c);
+                        ProductPricingERPCallOutWrapper.ProductEntry prodRequest = new ProductPricingERPCallOutWrapper.ProductEntry();
+                        prodRequest.productId = orderItem.Product2.Article__c;
+                        prodRequest.quantity = orderItem.Quantity.intValue();
+
+                        if (uniqueProds.add(orderItem.Product2.Article__c)) {
+                            pricingProdsRequest.add(prodRequest);
+                        } else if (dupProds.add(orderItem.Product2.Article__c)) {
                             dupPricingProdsRequest.add(prodRequest);
                         }
-                        
                     }
                 }
             }
 
-
-
+            // Fetch pricebook entries
             Map<Id, PricebookEntry> pricebookEntries = new Map<Id, PricebookEntry>();
-            if(! pricebookEntriesIds.isEmpty()){
-                for(PricebookEntry priceEntry : [SELECT Id,Product2Id, UnitPrice FROM PricebookEntry WHERE Id IN :pricebookEntriesIds]){
-                    pricebookEntries.put(priceEntry.Id,priceEntry);
+            if (!pricebookEntriesIds.isEmpty()) {
+                for (PricebookEntry priceEntry : [SELECT Id, Product2Id, UnitPrice FROM PricebookEntry WHERE Id IN :pricebookEntriesIds]) {
+                    pricebookEntries.put(priceEntry.Id, priceEntry);
                 }
             }
 
+            // Fetch product pricing responses
+            ProductPricingERPCallOutWrapper.ProductPricingResponse prices = fetchPricingResponse(order.Id, pricingProdsRequest);
+            ProductPricingERPCallOutWrapper.ProductPricingResponse dupPrices = fetchPricingResponse(order.Id, dupPricingProdsRequest);
 
-
-            ProductPricingERPCallOutWrapper.ProductPricingResponse prices = new ProductPricingERPCallOutWrapper.ProductPricingResponse();
-
-            if(! pricingProdsRequest.isEmpty()){
-                prices = getProductPricingERPCalloutResponse(Order.Id, pricingProdsRequest );
-                Integer i = 0;
-                for(ProductPricingERPCallOutWrapper.Entries priceBack: prices.entries){
-                    for(ProductPricingERPCallOutWrapper.ProductEntry prod: pricingProdsRequest){
-                        if(priceBack.productEntry.productId == prod.productId ){
-                            prices.Entries[i].productEntry.quantity = prod.Quantity;
-                            continue;
-                        }
-                    }
-                }
-            }
-
-
-
-            ProductPricingERPCallOutWrapper.ProductPricingResponse dupPrices = new ProductPricingERPCallOutWrapper.ProductPricingResponse();
-            if(! dupPricingProdsRequest.isEmpty()){
-                dupPrices = getProductPricingERPCalloutResponse(Order.Id, dupPricingProdsRequest );
-                Integer i = 0;
-                for(ProductPricingERPCallOutWrapper.Entries priceBack: dupPrices.entries){
-                    for(ProductPricingERPCallOutWrapper.ProductEntry prod: dupPricingProdsRequest){
-                        if(priceBack.productEntry.productId == prod.productId ){
-                            dupPrices.Entries[i].productEntry.quantity = prod.Quantity;
-                            continue;
-                        }
-                    }
-                }
+            if (dupPrices != null) {
                 prices.entries.addAll(dupPrices.entries);
             }
 
-
+            // Insert cloned order
             insert clonedOrder;
 
-
-
-            for(OrderItem orderItem : clonedOrderItems) {
-                
-                if(orderItem.PricebookEntry.IsActive && order.Pricebook2.ShowPricingfromMicroServiceOM__c == false){
-                    orderItem.OrderId = clonedOrder.Id;
-                    PricebookEntry pricebookEntry = pricebookEntries.get(orderItem.PricebookEntryId);
-                    orderItem.UnitPrice = pricebookEntry.UnitPrice;
-                }
-                if(orderItem.PricebookEntry.IsActive && order.Pricebook2.ShowPricingfromMicroServiceOM__c == true){
-                    integer j=0;
-                    for(ProductPricingERPCallOutWrapper.Entries price: prices.entries){
-                        if(orderItem.Product2.Article__c == prices.Entries[j].productEntry.productId && orderItem.Quantity == prices.Entries[j].productEntry.quantity) {
-                            orderItem.OrderId = clonedOrder.Id;
-                            orderItem.UnitPrice = prices.Entries[j].basePrice;
-                            orderItem.AXCustomerPrice__c = prices.Entries[j].basePrice;
-                            orderItem.AXRetailPrice__c = prices.Entries[j].retailPrice;
-                        }
-                        j++;
+            // Process and prepare order items for insertion
+            for (OrderItem orderItem : clonedOrderItems) {
+                if (orderItem.PricebookEntry.IsActive) {
+                    if (!order.Pricebook2.ShowPricingfromMicroServiceOM__c) {
+                        orderItem.OrderId = clonedOrder.Id;
+                        orderItem.UnitPrice = pricebookEntries.get(orderItem.PricebookEntryId).UnitPrice;
+                    } else {
+                        assignPricing(orderItem, prices, clonedOrder.Id);
                     }
                 }
-               
-                
-                if(orderItem.OrderId == clonedOrder.Id){
-                    clonedOrderItemsToInsert.add(orderItem);
 
+                if (orderItem.OrderId == clonedOrder.Id) {
+                    clonedOrderItemsToInsert.add(orderItem);
                 }
-                
             }
 
-            
-            
+            // Insert cloned order items
             insert clonedOrderItemsToInsert;
-            return  getOrder(clonedOrder.Id);
-        }
-        catch (Exception e) {
+
+            return getOrder(clonedOrder.Id);
+        } catch (Exception e) {
             DebugLog.addException(e, 'OrderManagement_CC.cloneOrder');
-            throw new AuraHandledException(e.getMessage());    
+            throw new AuraHandledException(e.getMessage());
         }
     }
+
+    /**
+     * fetchPricingResponse Helper method to fetch pricing response
+     * @author ohanafi@salesforce.com | 15-01-2025
+     *
+     * @param orderId   Id of the Order
+     * @param pricingProdsRequest List of Pricing Requests
+     *
+     * @return ProductPricingERPCallOutWrapper.ProductPricingResponse - Pricing Response
+     */
+    private static ProductPricingERPCallOutWrapper.ProductPricingResponse fetchPricingResponse(Id orderId, List<ProductPricingERPCallOutWrapper.ProductEntry> pricingProdsRequest) {
+        if (pricingProdsRequest.isEmpty()) return null;
+
+        ProductPricingERPCallOutWrapper.ProductPricingResponse prices = getProductPricingERPCalloutResponse(orderId, pricingProdsRequest);
+        Integer i = 0;
+
+        for(ProductPricingERPCallOutWrapper.Entries priceBack: prices.entries){
+            for(ProductPricingERPCallOutWrapper.ProductEntry prod: pricingProdsRequest){
+                if(priceBack.productEntry.productId == prod.productId ){
+                    prices.Entries[i].productEntry.quantity = prod.Quantity;
+                    continue;
+                }
+            }
+        }
+
+        return prices;
+    }
+
+    /**
+     * assignPricing Helper method to assign pricing to order items
+     * @author ohanafi@salesforce.com | 15-01-2025
+     *
+     * @param orderItem Order Item record
+     * @param prices   Pricing Response
+     * @param clonedOrderId Id of the Cloned Order
+     *
+     */
+    private static void assignPricing(OrderItem orderItem, ProductPricingERPCallOutWrapper.ProductPricingResponse prices, Id clonedOrderId) {
+        Integer j=0;
+        for(ProductPricingERPCallOutWrapper.Entries price: prices.entries){
+            if(orderItem.Product2.Article__c == prices.Entries[j].productEntry.productId && orderItem.Quantity == prices.Entries[j].productEntry.quantity) {
+                orderItem.OrderId = clonedOrderId;
+                orderItem.UnitPrice = prices.Entries[j].basePrice;
+                orderItem.AXCustomerPrice__c = prices.Entries[j].basePrice;
+                orderItem.AXRetailPrice__c = prices.Entries[j].retailPrice;
+            }
+            j++;
+        }
+    }
+
     /*------------------------------------------------------------  
     Description:    Method to insert the Order Items List related to an order.
     Inputs:          @param orderItems
