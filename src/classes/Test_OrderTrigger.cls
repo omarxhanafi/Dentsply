@@ -7,6 +7,7 @@ History
 18102020    Miguel                  Added testSetDiscountAllowedforTurkey User Story: #1833
 12072024    Roberto                 Added Turkey support
 07112024    Omar HANAFI             Fixing the test failures as part of the clean-up project
+29012025    Omar HANAFI             Created test method for setShippingAndBillingAddress CPQ-117
 
 --------------------------------------------------------------------------------------------------------*/
 
@@ -54,6 +55,149 @@ public with sharing class Test_OrderTrigger {
         system.assertEquals(ad.PostalCode__c ,[SELECT Id, ShippingPostalCode FROM Order WHERE Id =: orders[0].Id LIMIT 1].ShippingPostalCode);
         system.assertEquals(ad.StateProvince__c ,[SELECT Id, ShippingState FROM Order WHERE Id =: orders[0].Id LIMIT 1].ShippingState);
     }
+
+    @isTest
+    public static void testSetShippingAndBillingAddressOnInsert() {
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
+
+        // Create test accounts
+        List<Account> accounts = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
+
+        // Create initial address record
+        Address__c shippingAd = new Address__c(
+                Name = 'Shipping Address',
+                Account__c = accounts[0].Id,
+                CustomerNumber__c = '555',
+                CompanyCode__c = '057',
+                Country__c = 'US',
+                Street__c = '123 Main St',
+                City__c = 'New York',
+                PostalCode__c = '10001',
+                StateProvince__c = 'NY'
+        );
+
+        Address__c billingAd = new Address__c(
+                Name = 'Billing Address',
+                Account__c = accounts[0].Id,
+                CustomerNumber__c = '555',
+                CompanyCode__c = '057',
+                Country__c = 'US',
+                Street__c = '456 Elm St',
+                City__c = 'Los Angeles',
+                PostalCode__c = '90001',
+                StateProvince__c = 'CA'
+        );
+
+        insert new List<Address__c>{ shippingAd, billingAd };
+
+        // Create an Order with the shipping and billing addresses
+        List<Order> orders = TestDataFactory.returnOrders(1, 'Advanced_Order', accounts);
+
+        orders[0].RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Order' AND DeveloperName = 'Advanced_Order' LIMIT 1].Id;
+        orders[0].ShippingAddress__c = shippingAd.Id;
+        orders[0].BillingAddress__c = billingAd.Id;
+
+        Test.startTest();
+        insert orders[0];
+        Test.stopTest();
+
+        // Retrieve updated Order
+        Order insertedOrder = [SELECT ShippingStreet, ShippingCity, ShippingState, ShippingPostalCode, ShippingCountry,
+                BillingStreet, BillingCity, BillingState, BillingPostalCode, BillingCountry
+        FROM Order WHERE Id = :orders[0].Id LIMIT 1];
+
+        // Assert Shipping Address fields
+        system.assertEquals(shippingAd.Street__c, insertedOrder.ShippingStreet);
+        system.assertEquals(shippingAd.City__c, insertedOrder.ShippingCity);
+        system.assertEquals(shippingAd.StateProvince__c, insertedOrder.ShippingState);
+        system.assertEquals(shippingAd.PostalCode__c, insertedOrder.ShippingPostalCode);
+        system.assertEquals(shippingAd.Country__c, insertedOrder.ShippingCountry);
+
+        // Assert Billing Address fields
+        system.assertEquals(billingAd.Street__c, insertedOrder.BillingStreet);
+        system.assertEquals(billingAd.City__c, insertedOrder.BillingCity);
+        system.assertEquals(billingAd.StateProvince__c, insertedOrder.BillingState);
+        system.assertEquals(billingAd.PostalCode__c, insertedOrder.BillingPostalCode);
+        system.assertEquals(billingAd.Country__c, insertedOrder.BillingCountry);
+    }
+
+    @isTest
+    public static void testSetShippingAndBillingAddressOnUpdate() {
+        User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
+
+        // Create test accounts
+        List<Account> accounts = TestDataFactory.createAccounts(1, 'CIM_Account', testUser.Id);
+
+        // Create initial address record
+        Address__c shippingAd = new Address__c(
+                Name = 'Shipping Address',
+                Account__c = accounts[0].Id,
+                CustomerNumber__c = '555',
+                CompanyCode__c = '057',
+                Country__c = 'US',
+                Street__c = '123 Main St',
+                City__c = 'New York',
+                PostalCode__c = '10001',
+                StateProvince__c = 'NY'
+        );
+
+        Address__c billingAd = new Address__c(
+                Name = 'Billing Address',
+                Account__c = accounts[0].Id,
+                CustomerNumber__c = '555',
+                CompanyCode__c = '057',
+                Country__c = 'US',
+                Street__c = '456 Elm St',
+                City__c = 'Los Angeles',
+                PostalCode__c = '90001',
+                StateProvince__c = 'CA'
+        );
+
+        insert new List<Address__c>{ shippingAd, billingAd };
+
+        // Create an Order with the shipping and billing addresses
+        List<Order> orders = TestDataFactory.returnOrders(1, 'Advanced_Order', accounts);
+
+        orders[0].RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Order' AND DeveloperName = 'Advanced_Order' LIMIT 1].Id;
+        orders[0].ShippingAddress__c = shippingAd.Id;
+        orders[0].BillingAddress__c = billingAd.Id;
+
+        insert orders[0];
+
+        // Create a new address to simulate an update
+        Address__c newShippingAd = new Address__c(
+                Name = 'New Shipping Address',
+                Account__c = accounts[0].Id,
+                CustomerNumber__c = '555',
+                CompanyCode__c = '057',
+                Country__c = 'FR',
+                Street__c = '789 New St',
+                City__c = 'Paris',
+                PostalCode__c = '75001',
+                StateProvince__c = 'Île-de-France'
+        );
+
+        insert newShippingAd;
+
+        // Update order with new shipping address
+        orders[0].ShippingAddress__c = newShippingAd.Id;
+
+        Test.startTest();
+        update orders[0];
+        Test.stopTest();
+
+        // Retrieve updated order again
+        Order updatedOrder = [SELECT ShippingStreet, ShippingCity, ShippingState, ShippingPostalCode, ShippingCountry
+        FROM Order WHERE Id = :orders[0].Id LIMIT 1];
+
+        // Assert updated Shipping Address fields
+        system.assertEquals(newShippingAd.Street__c, updatedOrder.ShippingStreet);
+        system.assertEquals(newShippingAd.City__c, updatedOrder.ShippingCity);
+        system.assertEquals(newShippingAd.StateProvince__c, updatedOrder.ShippingState);
+        system.assertEquals(newShippingAd.PostalCode__c, updatedOrder.ShippingPostalCode);
+        system.assertEquals(newShippingAd.Country__c, updatedOrder.ShippingCountry);
+    }
+
 
     @isTest
     public static void setERPStopFlag1() {

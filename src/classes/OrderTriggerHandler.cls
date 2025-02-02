@@ -12,7 +12,7 @@ public class OrderTriggerHandler extends TriggerHandler {
     private Map<Id, Order> oldOrderMap, newOrderMap;
 
     // Advanced orders (RLM)
-    private List<Order> oldRLMOrders, newRLMOrders;
+    private List<Order> oldRLMOrderList, newRLMOrderList;
     private Map<Id, Order> oldRLMOrderMap, newRLMOrderMap;
 
     public OrderTriggerHandler() {
@@ -22,8 +22,8 @@ public class OrderTriggerHandler extends TriggerHandler {
         oldOrderMap = new Map<Id, Order>();
         newOrderMap = new Map<Id, Order>();
 
-        oldRLMOrders = new List<Order>();
-        newRLMOrders = new List<Order>();
+        oldRLMOrderList = new List<Order>();
+        newRLMOrderList = new List<Order>();
         oldRLMOrderMap = new Map<Id, Order>();
         newRLMOrderMap = new Map<Id, Order>();
 
@@ -33,36 +33,56 @@ public class OrderTriggerHandler extends TriggerHandler {
 
     protected override void beforeInsert() {
         // Regular order-specific helper calls
-        OrderTriggerHelper.setAccountOwnerAndRegionalManagerOnOrder(oldOrderList);
-        OrderTriggerHelper.setShipmentAddress(oldOrderList);
-        //OrderTriggerHelper.evaluateOrderLineApproval(newOrderList, newOrderMap);
+        if(!newOrderList.isEmpty()){
+            OrderTriggerHelper.setShipmentAddress(newOrderList);
+        }
+
+        // Helper methods to call for both regular & advanced orders
+        if(!newOrderList.isEmpty() || !newRLMOrderList.isEmpty()){
+            OrderTriggerHelper.setAccountOwnerAndRegionalManagerOnOrder(aggregateLists(newOrderList, newRLMOrderList));
+        }
+
+        System.debug('Testing');
+
+        System.debug('newRLMOrderList' + newRLMOrderList);
+
+        // RLM order-specific helper calls
+        if(!newRLMOrderList.isEmpty()){
+            OrderTriggerHelper.setAccountOwnerAndRegionalManagerOnOrder(newRLMOrderList);
+            OrderTriggerHelper.setShippingAndBillingAddress(newRLMOrderList, null);
+        }
     }
     
     protected override void beforeUpdate() {
         // Regular order-specific helper calls
-        OrderTriggerHelper.setShipmentAddress(newOrderList);
-        OrderTriggerHelper.setERPStopFlag(newOrderList);
-        OrderTriggerHelper.setAccountOwnerAndRegionalManagerOnOrder(newOrderList);
-        OrderTriggerHelper.calculateAllowedDiscount(newOrderList);
-        OrderTriggerHelper.evaluateOrderLineApproval(newOrderList, newOrderMap);
-    }
+        if(!newOrderList.isEmpty()){
+            OrderTriggerHelper.setShipmentAddress(newOrderList);
+            OrderTriggerHelper.calculateAllowedDiscount(newOrderList);
+            OrderTriggerHelper.setERPStopFlag(newOrderList); // TODO Ask Richard/Roberto
+            OrderTriggerHelper.evaluateOrderLineApproval(newOrderList, newOrderMap); // TODO ??
 
-    /*
-    protected override void afterInsert() {
+        }
+
+        if(!newOrderList.isEmpty() || !newRLMOrderList.isEmpty()){
+            OrderTriggerHelper.setAccountOwnerAndRegionalManagerOnOrder(aggregateLists(newOrderList, newRLMOrderList));
+        }
+
+        if(!newRLMOrderList.isEmpty()){
+            OrderTriggerHelper.setShippingAndBillingAddress(newRLMOrderList, oldRLMOrderMap);
+        }
+
     }
-    protected override void afterUpdate() {
-    }
-    protected override void afterDelete() {
-    }*/
 
     /**
      * separateOrdersByRecordType Helper method creating Order lists and maps for both regular and advanced orders (Old and new) based on the record type
      */
     private void separateOrdersByRecordType() {
+        Id advancedRecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Order' AND DeveloperName = 'Advanced_Order' LIMIT 1].Id;
+
         if (Trigger.old != null) {
             for (Order eachOrder : (List<Order>) Trigger.old) {
-                if (eachOrder.RecordType.DeveloperName == 'Advanced_Order') {
-                    oldRLMOrders.add(eachOrder);
+                if (eachOrder.RecordTypeId == advancedRecordTypeId) {
+                    oldRLMOrderList.add(eachOrder);
                     oldRLMOrderMap.put(eachOrder.Id, eachOrder);
                 } else {
                     oldOrderList.add(eachOrder);
@@ -73,8 +93,8 @@ public class OrderTriggerHandler extends TriggerHandler {
 
         if (Trigger.new != null) {
             for (Order eachOrder : (List<Order>) Trigger.new) {
-                if (eachOrder.RecordType.DeveloperName == 'Advanced_Order') {
-                    newRLMOrders.add(eachOrder);
+                if (eachOrder.RecordTypeId == advancedRecordTypeId) {
+                    newRLMOrderList.add(eachOrder);
                     newRLMOrderMap.put(eachOrder.Id, eachOrder);
                 } else {
                     newOrderList.add(eachOrder);
@@ -82,6 +102,19 @@ public class OrderTriggerHandler extends TriggerHandler {
                 }
             }
         }
+    }
+
+    /**
+     * Helper method to aggregate two lists into one.
+     * @param list1 The first list.
+     * @param list2 The second list.
+     * @return Aggregated list.
+     */
+    private static List<Order> aggregateLists(List<Order> list1, List<Order> list2) {
+        List<Order> aggregatedList = new List<Order>();
+        if (list1 != null) aggregatedList.addAll(list1);
+        if (list2 != null) aggregatedList.addAll(list2);
+        return aggregatedList;
     }
 
 }

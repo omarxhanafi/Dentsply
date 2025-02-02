@@ -33,6 +33,7 @@ public class OrderItemTriggerHandler extends TriggerHandler {
     }
 
 
+    // TODO add conditions checking if lists/maps are empty
     protected override void beforeInsert() {
         // Regular order item-specific helper calls
         OrderItemTriggerHelper.set100PercentForFOC(newOrderItemList);
@@ -40,6 +41,7 @@ public class OrderItemTriggerHandler extends TriggerHandler {
         OrderItemTriggerHelper.orderProductEvaluation(newOrderItemList);
         OrderItemTriggerHelper.setParentKitProduct(newOrderItemList);
     }
+
     protected override void beforeUpdate() {
         // Regular order item-specific helper calls
         OrderItemTriggerHelper.set100PercentForFOC(newOrderItemList);
@@ -64,6 +66,8 @@ public class OrderItemTriggerHandler extends TriggerHandler {
      * separateOrderItemsByRecordType Helper method creating Order Item lists and maps for both regular and advanced orders (Old and new) based on the Order's record type
      */
     private void separateOrderItemsByRecordType() {
+        Id advancedRecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Order' AND DeveloperName = 'Advanced_Order' LIMIT 1].Id;
+
         // Collect all OrderIds from Trigger.old and Trigger.new
         Set<Id> orderIds = new Set<Id>();
 
@@ -87,8 +91,8 @@ public class OrderItemTriggerHandler extends TriggerHandler {
         // Separate orders by record type
         if (Trigger.old != null) {
             for (OrderItem eachOrderItem : (List<OrderItem>) Trigger.old) {
-                String parentRecordType = orderList.get(eachOrderItem.OrderId).RecordType.DeveloperName;
-                if (parentRecordType == 'Advanced_Order') {
+                String parentRecordTypeId = orderList.get(eachOrderItem.OrderId).RecordTypeId;
+                if (parentRecordTypeId == advancedRecordTypeId) {
                     oldRLMOrderItemList.add(eachOrderItem);
                     oldRLMOrderItemMap.put(eachOrderItem.Id, eachOrderItem);
                 } else {
@@ -100,8 +104,8 @@ public class OrderItemTriggerHandler extends TriggerHandler {
 
         if (Trigger.new != null) {
             for (OrderItem eachOrderItem : (List<OrderItem>) Trigger.new) {
-                String parentRecordType = orderList.get(eachOrderItem.OrderId).RecordType.DeveloperName;
-                if (parentRecordType == 'Advanced_Order') {
+                String parentRecordTypeId = orderList.get(eachOrderItem.OrderId).RecordTypeId;
+                if (parentRecordTypeId == advancedRecordTypeId) {
                     newRLMOrderItemList.add(eachOrderItem);
                     newRLMOrderItemMap.put(eachOrderItem.Id, eachOrderItem);
                 } else {

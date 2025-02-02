@@ -233,7 +233,7 @@ public class OrderTriggerHelper {
             return; 
 
         Set<ID> relatedShipmentAddressIds = new Set<ID>();
-        
+
         for (Order o : newOrdersList){
             if (o.ShippingAddress__c != null)
             relatedShipmentAddressIds.add(o.ShippingAddress__c);
@@ -259,6 +259,82 @@ public class OrderTriggerHelper {
             }
         }
     }
+
+    /**
+     * Sets the Shipping and Billing Address fields on Order records based on related Address__c records.
+     *
+     * @param newOrdersList List of Order records being inserted or updated.
+     * @param oldOrderMap (Optional) Map of old Order records before the update.
+     */
+    public static void setShippingAndBillingAddress(List<Order> newOrdersList, Map<Id, Order> oldOrderMap) {
+        // Don't run unless configured to do so.
+        BatchSettings__c settings = BatchSettings__c.getInstance('Default');
+        if (!Test.isRunningTest() && !settings.OrderSetAccountOwnerIsEnabled__c)
+            return;
+
+        // Collect all related Address IDs (both Shipping and Billing)
+        Set<ID> relatedAddressIds = new Set<ID>();
+        for (Order o : newOrdersList) {
+            // In the case of an update, check if Shipping/Billing addresses have changed
+            if (oldOrderMap != null && oldOrderMap.containsKey(o.Id)) {
+                Order oldOrder = oldOrderMap.get(o.Id);
+                if (o.ShippingAddress__c != oldOrder.ShippingAddress__c) {
+                    relatedAddressIds.add(o.ShippingAddress__c);
+                }
+                if (o.BillingAddress__c != oldOrder.BillingAddress__c) {
+                    relatedAddressIds.add(o.BillingAddress__c);
+                }
+            } else { // In the case of an insert: Always add
+                if (o.ShippingAddress__c != null) {
+                    relatedAddressIds.add(o.ShippingAddress__c);
+                }
+                if (o.BillingAddress__c != null) {
+                    relatedAddressIds.add(o.BillingAddress__c);
+                }
+            }
+        }
+
+        // Query all related Address records
+        if (relatedAddressIds.isEmpty()) return; // No changes, no need to query
+
+        Map<ID, Address__c> addressMap = new Map<ID, Address__c>([
+                SELECT Id, Street__c, City__c, StateProvince__c, PostalCode__c, Country__c
+                FROM Address__c
+                WHERE Id IN :relatedAddressIds
+        ]);
+
+        // Update Shipping and Billing Address fields on Orders
+        for (Order o : newOrdersList) {
+            // BeforeUpdate: Only update if changed
+            Boolean isUpdate = oldOrderMap != null && oldOrderMap.containsKey(o.Id);
+            Order oldOrder = isUpdate ? oldOrderMap.get(o.Id) : null;
+
+            // Update Shipping Address if changed or if it's an insert
+            if (!isUpdate || o.ShippingAddress__c != oldOrder.ShippingAddress__c) {
+                Address__c shippingAddress = addressMap.get(o.ShippingAddress__c);
+                if (shippingAddress != null) {
+                    o.ShippingStreet = shippingAddress.Street__c;
+                    o.ShippingCity = shippingAddress.City__c;
+                    o.ShippingState = shippingAddress.StateProvince__c;
+                    o.ShippingPostalCode = shippingAddress.PostalCode__c;
+                    o.ShippingCountry = shippingAddress.Country__c;
+                }
+            }
+
+            // Update Billing Address if changed or if it's an insert
+            if (!isUpdate || o.BillingAddress__c != oldOrder.BillingAddress__c) {
+                Address__c billingAddress = addressMap.get(o.BillingAddress__c);
+                if (billingAddress != null) {
+                    o.BillingStreet = billingAddress.Street__c;
+                    o.BillingCity = billingAddress.City__c;
+                    o.BillingState = billingAddress.StateProvince__c;
+                    o.BillingPostalCode = billingAddress.PostalCode__c;
+                    o.BillingCountry = billingAddress.Country__c;
+                }
+            }
+        }
+    }
+
 
     /*------------------------------------------------------------  
     Description:    Method to evaluate approvals based on underlying order rows
