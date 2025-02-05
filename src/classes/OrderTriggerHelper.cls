@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------------------------
+/*--------------------------------------------------------------------------------------------------------------------------
 Author: 		Miguel Coimbra (Salesforce) 2020-06-10
 Description:    Order Trigger Helper Class
 Test Class:     Test_OrderTrigger
@@ -7,8 +7,8 @@ Updated date:   Updated by:     Description:
 20231005        Roberto         User Story TFUS-000006097 setERPStopFlag new method created
 20230712        Roberto         TFUS-000006293 TFUS-000006294 
 20230219		Roberto			TFUS-000006492
-
-----------------------------------------------------------------------------------------*/
+20250120        Omar            CPQ-230 - Separation of logic between regular orders and advanced orders (RLM)
+--------------------------------------------------------------------------------------------------------------------------*/
 public class OrderTriggerHelper {
     /*------------------------------------------------------------  
     Description:    User Story: #1833: Caculate the Allowed Discount for Turkish Orders (Of Type "Implants")
@@ -331,6 +331,23 @@ public class OrderTriggerHelper {
                     o.BillingPostalCode = billingAddress.PostalCode__c;
                     o.BillingCountry = billingAddress.Country__c;
                 }
+            }
+
+            // If the related address is null, we empty the address fields
+            if (o.ShippingAddress__c == null){
+                o.ShippingStreet = null;
+                o.ShippingCity = null;
+                o.ShippingState = null;
+                o.ShippingPostalCode = null;
+                o.ShippingCountry = null;
+            }
+
+            if (o.BillingAddress__c == null){
+                o.BillingStreet = null;
+                o.BillingCity = null;
+                o.BillingState = null;
+                o.BillingPostalCode = null;
+                o.BillingCountry = null;
             }
         }
     }

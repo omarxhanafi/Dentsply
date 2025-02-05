@@ -42,10 +42,6 @@ public class OrderTriggerHandler extends TriggerHandler {
             OrderTriggerHelper.setAccountOwnerAndRegionalManagerOnOrder(aggregateLists(newOrderList, newRLMOrderList));
         }
 
-        System.debug('Testing');
-
-        System.debug('newRLMOrderList' + newRLMOrderList);
-
         // RLM order-specific helper calls
         if(!newRLMOrderList.isEmpty()){
             OrderTriggerHelper.setAccountOwnerAndRegionalManagerOnOrder(newRLMOrderList);
@@ -58,19 +54,19 @@ public class OrderTriggerHandler extends TriggerHandler {
         if(!newOrderList.isEmpty()){
             OrderTriggerHelper.setShipmentAddress(newOrderList);
             OrderTriggerHelper.calculateAllowedDiscount(newOrderList);
-            OrderTriggerHelper.setERPStopFlag(newOrderList); // TODO Ask Richard/Roberto
-            OrderTriggerHelper.evaluateOrderLineApproval(newOrderList, newOrderMap); // TODO ??
-
+            OrderTriggerHelper.setERPStopFlag(newOrderList);
+            OrderTriggerHelper.evaluateOrderLineApproval(newOrderList, newOrderMap);
         }
 
+        // Helper methods to call for both regular & advanced orders
         if(!newOrderList.isEmpty() || !newRLMOrderList.isEmpty()){
             OrderTriggerHelper.setAccountOwnerAndRegionalManagerOnOrder(aggregateLists(newOrderList, newRLMOrderList));
         }
 
+        // RLM order-specific helper calls
         if(!newRLMOrderList.isEmpty()){
             OrderTriggerHelper.setShippingAndBillingAddress(newRLMOrderList, oldRLMOrderMap);
         }
-
     }
 
     /**

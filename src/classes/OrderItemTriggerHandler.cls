@@ -32,34 +32,42 @@ public class OrderItemTriggerHandler extends TriggerHandler {
         separateOrderItemsByRecordType();
     }
 
-
-    // TODO add conditions checking if lists/maps are empty
     protected override void beforeInsert() {
         // Regular order item-specific helper calls
-        OrderItemTriggerHelper.set100PercentForFOC(newOrderItemList);
-        OrderItemTriggerHelper.totalAmountOfSamplesAndFreeProducts(newOrderItemList);
-        OrderItemTriggerHelper.orderProductEvaluation(newOrderItemList);
-        OrderItemTriggerHelper.setParentKitProduct(newOrderItemList);
+        if(!newOrderItemList.isEmpty()){
+            OrderItemTriggerHelper.set100PercentForFOC(newOrderItemList);
+            OrderItemTriggerHelper.totalAmountOfSamplesAndFreeProducts(newOrderItemList);
+            OrderItemTriggerHelper.orderProductEvaluation(newOrderItemList);
+            OrderItemTriggerHelper.setParentKitProduct(newOrderItemList);
+        }
     }
 
     protected override void beforeUpdate() {
         // Regular order item-specific helper calls
-        OrderItemTriggerHelper.set100PercentForFOC(newOrderItemList);
-        OrderItemTriggerHelper.totalAmountOfSamplesAndFreeProducts(newOrderItemList);
-        OrderItemTriggerHelper.orderProductEvaluation(newOrderItemList);
-        OrderItemTriggerHelper.setParentKitProduct(newOrderItemList);
+        if(!newOrderItemList.isEmpty()){
+            OrderItemTriggerHelper.set100PercentForFOC(newOrderItemList);
+            OrderItemTriggerHelper.totalAmountOfSamplesAndFreeProducts(newOrderItemList);
+            OrderItemTriggerHelper.orderProductEvaluation(newOrderItemList);
+            OrderItemTriggerHelper.setParentKitProduct(newOrderItemList);
+        }
     }
     protected override void afterInsert() {
         // Regular order item-specific helper calls
-        OrderItemTriggerHelper.setDiscountAllowedforTurkey(newOrderItemList);
+        if(!newOrderItemList.isEmpty()){
+            OrderItemTriggerHelper.setDiscountAllowedforTurkey(newOrderItemList);
+        }
     }
     protected override void afterUpdate() {
         // Regular order item-specific helper calls
-        OrderItemTriggerHelper.setDiscountAllowedforTurkey(newOrderItemList);
+        if(!newOrderItemList.isEmpty()){
+            OrderItemTriggerHelper.setDiscountAllowedforTurkey(newOrderItemList);
+        }
     }
     protected override void afterDelete() {
         // Regular order item-specific helper calls
-        OrderItemTriggerHelper.setDiscountAllowedforTurkey(oldOrderItemList);
+        if(!newOrderItemList.isEmpty()){
+            OrderItemTriggerHelper.setDiscountAllowedforTurkey(oldOrderItemList);
+        }
     }
 
     /**

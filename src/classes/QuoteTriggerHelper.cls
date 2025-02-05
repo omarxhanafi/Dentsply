@@ -1,11 +1,12 @@
-/*-------------------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------------------
 Author:         Houssam ADIB (Salesforce)
 Description:    Quote Trigger Helper Class
 Test class      Test_QuoteTriggerHandler
 
 History
-8-Sept-2022     Create new Class
-----------------------------------------------------------------------------------------*/
+8-Sept-2022     Houssam     Create new Class
+20-Jan-2025     Omar        CPQ-230 - Separation of logic between regular orders and advanced orders (RLM)
+------------------------------------------------------------------------------------------------------------*/
 public with sharing class QuoteTriggerHelper {
 
     /*------------------------------------------------------------
@@ -187,4 +188,92 @@ public with sharing class QuoteTriggerHelper {
         }
         return (new Map<Id, Opportunity>([SELECT Id, Account.Country__c,Opportunity.Owner.Manager.ManagerId FROM Opportunity WHERE Id IN :opportunitiesIds]));
     }
+
+    /**
+     * Sets the Shipping and Billing Address fields on Quote records based on related Address__c records.
+     *
+     * @param newQuotesList List of Quote records being inserted or updated.
+     * @param oldQuoteMap (Optional) Map of old Quote records before the update.
+     */
+    public static void setShippingAndBillingAddress(List<Quote> newQuotesList, Map<Id, Quote> oldQuoteMap) {
+        // Collect all related Address IDs (both Shipping and Billing)
+        Set<ID> relatedAddressIds = new Set<ID>();
+        for (Quote q : newQuotesList) {
+            // In the case of an update, check if Shipping/Billing addresses have changed
+            if (oldQuoteMap != null && oldQuoteMap.containsKey(q.Id)) {
+                Quote oldQuote = oldQuoteMap.get(q.Id);
+                if (q.ShippingAddress__c != oldQuote.ShippingAddress__c) {
+                    relatedAddressIds.add(q.ShippingAddress__c);
+                }
+                if (q.BillingAddress__c != oldQuote.BillingAddress__c) {
+                    relatedAddressIds.add(q.BillingAddress__c);
+                }
+            } else { // In the case of an insert: Always add
+                if (q.ShippingAddress__c != null) {
+                    relatedAddressIds.add(q.ShippingAddress__c);
+                }
+                if (q.BillingAddress__c != null) {
+                    relatedAddressIds.add(q.BillingAddress__c);
+                }
+            }
+        }
+
+        // Query all related Address records
+        if (relatedAddressIds.isEmpty()) return; // No changes, no need to query
+
+        Map<ID, Address__c> addressMap = new Map<ID, Address__c>([
+                SELECT Id, Street__c, City__c, StateProvince__c, PostalCode__c, Country__c
+                FROM Address__c
+                WHERE Id IN :relatedAddressIds
+        ]);
+
+        // Update Shipping and Billing Address fields on Quotes
+        for (Quote q : newQuotesList) {
+            // BeforeUpdate: Only update if changed
+            Boolean isUpdate = oldQuoteMap != null && oldQuoteMap.containsKey(q.Id);
+            Quote oldQuote = isUpdate ? oldQuoteMap.get(q.Id) : null;
+
+            // Update Shipping Address if changed or if it's an insert
+            if (!isUpdate || q.ShippingAddress__c != oldQuote.ShippingAddress__c) {
+                Address__c shippingAddress = addressMap.get(q.ShippingAddress__c);
+                if (shippingAddress != null) {
+                    q.ShippingStreet = shippingAddress.Street__c;
+                    q.ShippingCity = shippingAddress.City__c;
+                    q.ShippingState = shippingAddress.StateProvince__c;
+                    q.ShippingPostalCode = shippingAddress.PostalCode__c;
+                    q.ShippingCountry = shippingAddress.Country__c;
+                }
+            }
+
+            // Update Billing Address if changed or if it's an insert
+            if (!isUpdate || q.BillingAddress__c != oldQuote.BillingAddress__c) {
+                Address__c billingAddress = addressMap.get(q.BillingAddress__c);
+                if (billingAddress != null) {
+                    q.BillingStreet = billingAddress.Street__c;
+                    q.BillingCity = billingAddress.City__c;
+                    q.BillingState = billingAddress.StateProvince__c;
+                    q.BillingPostalCode = billingAddress.PostalCode__c;
+                    q.BillingCountry = billingAddress.Country__c;
+                }
+            }
+
+            // If the related address is null, we empty the address fields
+            if (q.ShippingAddress__c == null){
+                q.ShippingStreet = null;
+                q.ShippingCity = null;
+                q.ShippingState = null;
+                q.ShippingPostalCode = null;
+                q.ShippingCountry = null;
+            }
+
+            if (q.BillingAddress__c == null){
+                q.BillingStreet = null;
+                q.BillingCity = null;
+                q.BillingState = null;
+                q.BillingPostalCode = null;
+                q.BillingCountry = null;
+            }
+        }
+    }
+
 }

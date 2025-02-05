@@ -9,7 +9,9 @@
       <change beforePath="$PROJECT_DIR$/src/classes/OrderItemTriggerHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/OrderItemTriggerHandler.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/OrderTriggerHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/OrderTriggerHandler.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/OrderTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/OrderTriggerHelper.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Test_OrderTrigger.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_OrderTrigger.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/QuoteTriggerHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/QuoteTriggerHandler.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/QuoteTriggerHelper.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/QuoteTriggerHelper.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Test_QuoteTriggerHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_QuoteTriggerHandler.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18591,11 +18593,14 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ORDERITEMTRIGGERHANDLER" value="1738503090861" />
+                      <entry key="APEXCLASS:ORDERITEMTRIGGERHANDLER" value="1738745353807" />
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1737034166879" />
-                      <entry key="APEXCLASS:ORDERTRIGGERHANDLER" value="1738504104539" />
-                      <entry key="APEXCLASS:ORDERTRIGGERHELPER" value="1738504068015" />
-                      <entry key="APEXCLASS:TEST_ORDERTRIGGER" value="1738505346199" />
+                      <entry key="APEXCLASS:ORDERTRIGGERHANDLER" value="1738691564152" />
+                      <entry key="APEXCLASS:ORDERTRIGGERHELPER" value="1738691632949" />
+                      <entry key="APEXCLASS:QUOTETRIGGERHANDLER" value="1738691710442" />
+                      <entry key="APEXCLASS:QUOTETRIGGERHELPER" value="1738691710442" />
+                      <entry key="APEXCLASS:TEST_ORDERTRIGGER" value="1738505690538" />
+                      <entry key="APEXCLASS:TEST_QUOTETRIGGERHANDLER" value="1738693563596" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CREATEORDEROMLWC" value="1736001901000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ORDERMANAGEMENTLWC" value="1736326211405" />
                     </map>
@@ -19437,6 +19442,9 @@
     "Apex Unit Tests.Test_ProductProfilingTrigger.testAssignUniqueKeyIdentifier.executor": "Run",
     "Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor": "Run",
     "Apex Unit Tests.Test_ProductTrigger.executor": "Debug",
+    "Apex Unit Tests.Test_QuoteTriggerHandler.executor": "Run",
+    "Apex Unit Tests.Test_QuoteTriggerHandler.testSetShippingAndBillingAddressOnInsert.executor": "Run",
+    "Apex Unit Tests.Test_QuoteTriggerHandler.testSetShippingAndBillingAddressOnUpdate.executor": "Run",
     "Apex Unit Tests.Test_RecordTypePickerController.executor": "Coverage",
     "Apex Unit Tests.Test_UpdateContract.executor": "Coverage",
     "Apex Unit Tests.Test_UpdateOpportunityOwnerCTRL.executor": "Run",
@@ -19472,7 +19480,7 @@
       <recent name="$PROJECT_DIR$/src/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Apex Unit Tests.Test_OrderTrigger">
+  <component name="RunManager" selected="Apex Unit Tests.Test_QuoteTriggerHandler.testSetShippingAndBillingAddressOnUpdate">
     <configuration name="Test_AccountFlagsController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -19710,291 +19718,6 @@
       <option name="workflowLogLevel" value="ERROR" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_OrderTrigger.testOrderSetAccountOwner" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="changedOnly" value="false" />
-      <option name="connectionName" value="RLMDev" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="dependencyUniqueFullName" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_OrderTrigger" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map>
-          <entry key="Test_OrderTrigger">
-            <value>
-              <set>
-                <option value="testOrderSetAccountOwner" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="changedOnly" value="false" />
-      <option name="connectionName" value="RLMDev" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="dependencyUniqueFullName" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_OrderTrigger" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map>
-          <entry key="Test_OrderTrigger">
-            <value>
-              <set>
-                <option value="testOrderSetAccountOwner" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_OrderTrigger.testSetShipmentAndBillingAddress" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="changedOnly" value="false" />
-      <option name="connectionName" value="RLMDev" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="dependencyUniqueFullName" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_OrderTrigger" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map>
-          <entry key="Test_OrderTrigger">
-            <value>
-              <set>
-                <option value="testSetShipmentAndBillingAddress" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="changedOnly" value="false" />
-      <option name="connectionName" value="RLMDev" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="dependencyUniqueFullName" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_OrderTrigger" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map>
-          <entry key="Test_OrderTrigger">
-            <value>
-              <set>
-                <option value="testSetShipmentAndBillingAddress" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_OrderTrigger.testSetShippingAndBillingAddressOnInsert" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="changedOnly" value="false" />
-      <option name="connectionName" value="RLMDev" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="dependencyUniqueFullName" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_OrderTrigger" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map>
-          <entry key="Test_OrderTrigger">
-            <value>
-              <set>
-                <option value="testSetShippingAndBillingAddressOnInsert" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="changedOnly" value="false" />
-      <option name="connectionName" value="RLMDev" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="dependencyUniqueFullName" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_OrderTrigger" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map>
-          <entry key="Test_OrderTrigger">
-            <value>
-              <set>
-                <option value="testSetShippingAndBillingAddressOnInsert" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <method v="2" />
-    </configuration>
     <configuration name="Test_OrderTrigger.testSetShippingAndBillingAddressOnUpdate" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -20090,13 +19813,282 @@
       <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
+    <configuration name="Test_QuoteTriggerHandler" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="changedOnly" value="false" />
+      <option name="connectionName" value="RLMDev" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="dependencyUniqueFullName" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_QuoteTriggerHandler" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map />
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="changedOnly" value="false" />
+      <option name="connectionName" value="RLMDev" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="dependencyUniqueFullName" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_QuoteTriggerHandler" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map />
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_QuoteTriggerHandler.testSetShippingAndBillingAddressOnInsert" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="FINEST" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="changedOnly" value="false" />
+      <option name="connectionName" value="RLMDev" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="dependencyUniqueFullName" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="true" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_QuoteTriggerHandler" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="ERROR" />
+      <option name="profilingLogLevel" value="ERROR" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="FINEST" />
+      <option name="testClassToTestMethodNames">
+        <map>
+          <entry key="Test_QuoteTriggerHandler">
+            <value>
+              <set>
+                <option value="testSetShippingAndBillingAddressOnInsert" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="ERROR" />
+      <option name="visualforceLogLevel" value="FINE" />
+      <option name="waveLogLevel" value="ERROR" />
+      <option name="workflowLogLevel" value="ERROR" />
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="FINEST" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="changedOnly" value="false" />
+      <option name="connectionName" value="RLMDev" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="dependencyUniqueFullName" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="true" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_QuoteTriggerHandler" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="ERROR" />
+      <option name="profilingLogLevel" value="ERROR" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="FINEST" />
+      <option name="testClassToTestMethodNames">
+        <map>
+          <entry key="Test_QuoteTriggerHandler">
+            <value>
+              <set>
+                <option value="testSetShippingAndBillingAddressOnInsert" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="ERROR" />
+      <option name="visualforceLogLevel" value="FINE" />
+      <option name="waveLogLevel" value="ERROR" />
+      <option name="workflowLogLevel" value="ERROR" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_QuoteTriggerHandler.testSetShippingAndBillingAddressOnUpdate" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="changedOnly" value="false" />
+      <option name="connectionName" value="RLMDev" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="dependencyUniqueFullName" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_QuoteTriggerHandler" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map>
+          <entry key="Test_QuoteTriggerHandler">
+            <value>
+              <set>
+                <option value="testSetShippingAndBillingAddressOnUpdate" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="changedOnly" value="false" />
+      <option name="connectionName" value="RLMDev" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="dependencyUniqueFullName" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_QuoteTriggerHandler" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map>
+          <entry key="Test_QuoteTriggerHandler">
+            <value>
+              <set>
+                <option value="testSetShippingAndBillingAddressOnUpdate" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Apex Unit Tests.Test_QuoteTriggerHandler.testSetShippingAndBillingAddressOnUpdate" />
+        <item itemvalue="Apex Unit Tests.Test_QuoteTriggerHandler.testSetShippingAndBillingAddressOnInsert" />
+        <item itemvalue="Apex Unit Tests.Test_QuoteTriggerHandler" />
         <item itemvalue="Apex Unit Tests.Test_OrderTrigger" />
         <item itemvalue="Apex Unit Tests.Test_OrderTrigger.testSetShippingAndBillingAddressOnUpdate" />
-        <item itemvalue="Apex Unit Tests.Test_OrderTrigger.testSetShippingAndBillingAddressOnInsert" />
-        <item itemvalue="Apex Unit Tests.Test_OrderTrigger.testSetShipmentAndBillingAddress" />
-        <item itemvalue="Apex Unit Tests.Test_OrderTrigger.testOrderSetAccountOwner" />
       </list>
     </recent_temporary>
   </component>
@@ -20279,7 +20271,8 @@
       <workItem from="1737386184220" duration="440000" />
       <workItem from="1737466309690" duration="2511000" />
       <workItem from="1737617031086" duration="563000" />
-      <workItem from="1737619986347" duration="14237000" />
+      <workItem from="1737619986347" duration="17662000" />
+      <workItem from="1738692260410" duration="1886000" />
     </task>
     <servers />
   </component>
@@ -20318,6 +20311,7 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMargins.ic2" NAME="Margin Coverage Results" MODIFIED="1677067029631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_CallReportQuickActionPocController.ic2" NAME="DevSep24 Coverage Results" MODIFIED="1724764321078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Agent" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_QuoteTriggerHandler_testSetShippingAndBillingAddressOnUpdate.ic2" NAME="RLMDev Coverage Results" MODIFIED="1738693568610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="RLMDev" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_GuidanceRendererController.ic2" NAME="Tracker Coverage Results" MODIFIED="1681118187685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ObjectivesController_OGSM.ic2" NAME="StgJan25 Coverage Results" MODIFIED="1737386246886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan25" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchUpdateProducts_testBatchUpdateProducts.ic2" NAME="acc360 Coverage Results" MODIFIED="1712663235319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJul24" CONNECTION_TYPE="OAUTH" />
@@ -20330,7 +20324,6 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_ObjectivesController_OGSM_cloneObjectiveTest.ic2" NAME="HOTFIX Coverage Results" MODIFIED="1737387935734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="HOTFIX" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$DC_UT_EventNoticesManagement.ic2" NAME="Cleanup Coverage Results" MODIFIED="1730988565248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Agent" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_UpdateOpportunityOwnerCTRL.ic2" NAME="Cleanup2 Coverage Results" MODIFIED="1734456225603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Cleanup2" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_OrderTrigger.ic2" NAME="RLMDev Coverage Results" MODIFIED="1738505437582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="RLMDev" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_UpdateContactsBypassDuplicate_testUpdateContact.ic2" NAME="Lead Coverage Results" MODIFIED="1675421607460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJun" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ProductProfilingHierarchyController.ic2" NAME="acc360 Coverage Results" MODIFIED="1715854183266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevJul24" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$EventRelationsUpdateTest.ic2" NAME="UAT Coverage Results" MODIFIED="1732187714776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="RLMDev" CONNECTION_TYPE="OAUTH" />
