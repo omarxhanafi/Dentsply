@@ -1,0 +1,67 @@
+// DO NOT EDIT: This file is managed by Illuminated Cloud. Any external changes will be discarded.
+
+declare interface OmniDataTransform extends SObject 
+{
+    BatchSize: number;
+    ContextRecord: FlowExecutionErrorEvent;
+    CreatedBy: User;
+    CreatedById: string;
+    CreatedDate: string;
+    CurrencyIsoCode: string;
+    Description: string;
+    ExpectedInputJson: string;
+    ExpectedInputOtherData: string;
+    ExpectedInputXml: string;
+    ExpectedOutputJson: string;
+    ExpectedOutputOtherData: string;
+    ExpectedOutputXml: string;
+    GlobalKey: string;
+    InputParsingClass: string;
+    InputType: string;
+    IsActive: boolean;
+    IsAssignmentRulesUsed: boolean;
+    IsDeleted: boolean;
+    IsDeletedOnSuccess: boolean;
+    IsErrorIgnored: boolean;
+    IsFieldLevelSecurityEnabled: boolean;
+    IsNullInputsIncludedInOutput: boolean;
+    IsProcessSuperBulk: boolean;
+    IsRollbackOnError: boolean;
+    IsSourceObjectDefault: boolean;
+    IsXmlDeclarationRemoved: boolean;
+    LastModifiedBy: User;
+    LastModifiedById: string;
+    LastModifiedDate: string;
+    LastReferencedDate: string;
+    LastViewedDate: string;
+    Name: string;
+    Namespace: string;
+    OmniDataTransformItems: OmniDataTransformItem[];
+    OutputParsingClass: string;
+    OutputType: string;
+    OverrideKey: string;
+    Owner: SObject;
+    OwnerId: string;
+    PreprocessorClassName: string;
+    PreviewJsonData: string;
+    PreviewOtherData: string;
+    PreviewSourceObjectData: string;
+    PreviewXmlData: string;
+    RelatedRecord: FlowRecordRelation;
+    RequiredPermission: string;
+    ResponseCacheTtlMinutes: number;
+    ResponseCacheType: string;
+    Shares: OmniDataTransformShare[];
+    SobjectLookupValue: AIInsightValue;
+    SourceObject: string;
+    SynchronousProcessThreshold: number;
+    SystemModstamp: string;
+    Target: AIRecordInsight;
+    TargetObject: PendingServiceRoutingInteractionInfo;
+    TargetOutputDocumentIdentifier: string;
+    TargetOutputFileName: string;
+    Type: string;
+    UniqueName: string;
+    VersionNumber: number;
+    XmlOutputTagsOrder: string;
+}

@@ -1,0 +1,232 @@
+// DO NOT EDIT: This file is managed by Illuminated Cloud. Any external changes will be discarded.
+{
+  "include": [
+    "../../**/lwc/**/*.ts",
+    "types/**/*.d.ts"
+  ],
+  "exclude": [
+    "../../.sfdx/**/*.d.ts"
+  ],
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "Node",
+    "baseUrl": "../..",
+    "paths": {
+      "c/accountAttentionPoint": [
+        "src/lwc/accountAttentionPoint/accountAttentionPoint"
+      ],
+      "c/accountBriefing": [
+        "src/lwc/accountBriefing/accountBriefing"
+      ],
+      "c/accountContainerLwc": [
+        "src/lwc/accountContainerLwc/accountContainerLwc"
+      ],
+      "c/accountFlagsLwc": [
+        "src/lwc/accountFlagsLwc/accountFlagsLwc"
+      ],
+      "c/activityScorecardLwc": [
+        "src/lwc/activityScorecardLwc/activityScorecardLwc"
+      ],
+      "c/addBundles": [
+        "src/lwc/addBundles/addBundles"
+      ],
+      "c/approvalOrderRelatedProductsDetails": [
+        "src/lwc/approvalOrderRelatedProductsDetails/approvalOrderRelatedProductsDetails"
+      ],
+      "c/bestPracticesLwc": [
+        "src/lwc/bestPracticesLwc/bestPracticesLwc"
+      ],
+      "c/callReportQuickActionPocLwc": [
+        "src/lwc/callReportQuickActionPocLwc/callReportQuickActionPocLwc"
+      ],
+      "c/campaignLeadOpWarningLwc": [
+        "src/lwc/campaignLeadOpWarningLwc/campaignLeadOpWarningLwc"
+      ],
+      "c/cloneOrderOmLwc": [
+        "src/lwc/cloneOrderOmLwc/cloneOrderOmLwc"
+      ],
+      "c/colors": [
+        "src/lwc/colors/colors"
+      ],
+      "c/compareLeadContact": [
+        "src/lwc/compareLeadContact/compareLeadContact"
+      ],
+      "c/contractPricingDiscounts": [
+        "src/lwc/contractPricingDiscounts/contractPricingDiscounts"
+      ],
+      "c/cotravelelement": [
+        "src/lwc/cotravelelement/cotravelelement"
+      ],
+      "c/createCampaignFromCventStatusLwc": [
+        "src/lwc/createCampaignFromCventStatusLwc/createCampaignFromCventStatusLwc"
+      ],
+      "c/createContractAction": [
+        "src/lwc/createContractAction/createContractAction"
+      ],
+      "c/createNewRecordLWC": [
+        "src/lwc/createNewRecordLWC/createNewRecordLWC"
+      ],
+      "c/createOrderOmLwc": [
+        "src/lwc/createOrderOmLwc/createOrderOmLwc"
+      ],
+      "c/customDatatable": [
+        "src/lwc/customDatatable/customDatatable"
+      ],
+      "c/dealerCategorisation": [
+        "src/lwc/dealerCategorisation/dealerCategorisation"
+      ],
+      "c/dealerLookup": [
+        "src/lwc/dealerLookup/dealerLookup"
+      ],
+      "c/doFieldServiceCallout": [
+        "src/lwc/doFieldServiceCallout/doFieldServiceCallout"
+      ],
+      "c/emptyCompoenent": [
+        "src/lwc/emptyCompoenent/emptyCompoenent"
+      ],
+      "c/eventCallReportWidget": [
+        "src/lwc/eventCallReportWidget/eventCallReportWidget"
+      ],
+      "c/eventMultiWhoLwc": [
+        "src/lwc/eventMultiWhoLwc/eventMultiWhoLwc"
+      ],
+      "c/flow_ContactUpdate": [
+        "src/lwc/flow_ContactUpdate/flow_ContactUpdate"
+      ],
+      "c/flow_lookupLwc": [
+        "src/lwc/flow_lookupLwc/flow_lookupLwc"
+      ],
+      "c/flow_progressIndicator": [
+        "src/lwc/flow_progressIndicator/flow_progressIndicator"
+      ],
+      "c/flow_recordEditForm": [
+        "src/lwc/flow_recordEditForm/flow_recordEditForm"
+      ],
+      "c/flow_recordForm": [
+        "src/lwc/flow_recordForm/flow_recordForm"
+      ],
+      "c/flow_recordVisualPicker": [
+        "src/lwc/flow_recordVisualPicker/flow_recordVisualPicker"
+      ],
+      "c/getOrderDetails": [
+        "src/lwc/getOrderDetails/getOrderDetails"
+      ],
+      "c/guidanceRenderer": [
+        "src/lwc/guidanceRenderer/guidanceRenderer"
+      ],
+      "c/insideSalesCampaignTracker": [
+        "src/lwc/insideSalesCampaignTracker/insideSalesCampaignTracker"
+      ],
+      "c/insideSalesMyCallsToMake": [
+        "src/lwc/insideSalesMyCallsToMake/insideSalesMyCallsToMake"
+      ],
+      "c/leadConvertSuccess": [
+        "src/lwc/leadConvertSuccess/leadConvertSuccess"
+      ],
+      "c/leadMatchContactHandling": [
+        "src/lwc/leadMatchContactHandling/leadMatchContactHandling"
+      ],
+      "c/leadMatchRecord": [
+        "src/lwc/leadMatchRecord/leadMatchRecord"
+      ],
+      "c/lightningCard": [
+        "src/lwc/lightningCard/lightningCard"
+      ],
+      "c/lightningPagePaddingUtilityLwc": [
+        "src/lwc/lightningPagePaddingUtilityLwc/lightningPagePaddingUtilityLwc"
+      ],
+      "c/lookup": [
+        "src/lwc/lookup/lookup"
+      ],
+      "c/lookupLwc": [
+        "src/lwc/lookupLwc/lookupLwc"
+      ],
+      "c/navigateToCreateRecord": [
+        "src/lwc/navigateToCreateRecord/navigateToCreateRecord"
+      ],
+      "c/ogsmNewObjectives": [
+        "src/lwc/ogsmNewObjectives/ogsmNewObjectives"
+      ],
+      "c/ogsmObjectivesTable": [
+        "src/lwc/ogsmObjectivesTable/ogsmObjectivesTable"
+      ],
+      "c/opportunityWinLossLwc": [
+        "src/lwc/opportunityWinLossLwc/opportunityWinLossLwc"
+      ],
+      "c/orderDealerLwc": [
+        "src/lwc/orderDealerLwc/orderDealerLwc"
+      ],
+      "c/orderItemsOmLwc": [
+        "src/lwc/orderItemsOmLwc/orderItemsOmLwc"
+      ],
+      "c/orderManagementLwc": [
+        "src/lwc/orderManagementLwc/orderManagementLwc"
+      ],
+      "c/page_recordForm": [
+        "src/lwc/page_recordForm/page_recordForm"
+      ],
+      "c/permissionChecker": [
+        "src/lwc/permissionChecker/permissionChecker"
+      ],
+      "c/popoverRecordInfo": [
+        "src/lwc/popoverRecordInfo/popoverRecordInfo"
+      ],
+      "c/productProfilingEditLwc": [
+        "src/lwc/productProfilingEditLwc/productProfilingEditLwc"
+      ],
+      "c/pubsub": [
+        "src/lwc/pubsub/pubsub"
+      ],
+      "c/quickCreateCampaignFromCventLwc": [
+        "src/lwc/quickCreateCampaignFromCventLwc/quickCreateCampaignFromCventLwc"
+      ],
+      "c/recordTypePicker": [
+        "src/lwc/recordTypePicker/recordTypePicker"
+      ],
+      "c/refreshOrderManagementLwc": [
+        "src/lwc/refreshOrderManagementLwc/refreshOrderManagementLwc"
+      ],
+      "c/richText": [
+        "src/lwc/richText/richText"
+      ],
+      "c/scanBusinessCard": [
+        "src/lwc/scanBusinessCard/scanBusinessCard"
+      ],
+      "c/selectProductsOmLwc": [
+        "src/lwc/selectProductsOmLwc/selectProductsOmLwc"
+      ],
+      "c/showDuplicateCasesWarning": [
+        "src/lwc/showDuplicateCasesWarning/showDuplicateCasesWarning"
+      ],
+      "c/showMessage": [
+        "src/lwc/showMessage/showMessage"
+      ],
+      "c/simulateContractLines": [
+        "src/lwc/simulateContractLines/simulateContractLines"
+      ],
+      "c/updateOrderItemOmLwc": [
+        "src/lwc/updateOrderItemOmLwc/updateOrderItemOmLwc"
+      ],
+      "c/utils": [
+        "src/lwc/utils/utils"
+      ],
+      "c/viewAllActivitiesHistory": [
+        "src/lwc/viewAllActivitiesHistory/viewAllActivitiesHistory"
+      ],
+      "c/viewAllActivitiesHistoryAction": [
+        "src/lwc/viewAllActivitiesHistoryAction/viewAllActivitiesHistoryAction"
+      ],
+      "c/workflowProfilingLwc": [
+        "src/lwc/workflowProfilingLwc/workflowProfilingLwc"
+      ]
+    }
+  }
+}

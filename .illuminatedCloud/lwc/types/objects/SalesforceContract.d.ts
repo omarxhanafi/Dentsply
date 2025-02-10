@@ -1,0 +1,59 @@
+// DO NOT EDIT: This file is managed by Illuminated Cloud. Any external changes will be discarded.
+
+declare interface SalesforceContract extends SObject 
+{
+    AttachedContentDocuments: AttachedContentDocument[];
+    AttachedContentNotes: AttachedContentNote[];
+    AutoRenewCode: string;
+    BillingAddressCity: string;
+    BillingAddressCountry: string;
+    BillingAddressPostalCode: string;
+    BillingAddressState: string;
+    BillingAddressStreet: string;
+    BillingCompany: string;
+    BillingEmail: string;
+    BillingFirstName: string;
+    BillingFrequency: string;
+    BillingLastName: string;
+    BillingName: string;
+    BillingPhone: string;
+    CombinedAttachments: CombinedAttachment[];
+    ConfirmAutoRenewal: string;
+    ContentDocumentLinks: ContentDocumentLink[];
+    ContractCurrency: string;
+    ContractId: string;
+    ContractNumber: string;
+    CreditCardExpirationMonth: string;
+    CreditCardExpirationYear: string;
+    CreditCardNumber: string;
+    CreditCardType: string;
+    EditAutoRenewal: string;
+    EndDate: Date;
+    ExternalId: string;
+    Feeds: SalesforceContractFeed[];
+    FeedSubscriptionsForEntity: EntitySubscription[];
+    FirstNameOnCreditCard: string;
+    FirstPublishLocation: ContentVersion;
+    FulfillmentProviders: string;
+    IsAddOnEligible: boolean;
+    LastNameOnCreditCard: string;
+    LinkedEntity: ContentDocumentLinkChangeEvent;
+    Parent: FeedComment;
+    ParentEntities: NetworkActivityAudit[];
+    ParentRecord: NetworkFeedResponseMetric;
+    PaymentTerm: string;
+    PaymentType: string;
+    SalesforceContractStatus: string;
+    SalesforceInvoices: SalesforceInvoice[];
+    SalesforceQuotes: SalesforceQuote[];
+    SelfServiceRenewalStatus: string;
+    ShippingAddressCity: string;
+    ShippingAddressCountry: string;
+    ShippingAddressPostalCode: string;
+    ShippingAddressState: string;
+    ShippingAddressStreet: string;
+    StartDate: Date;
+    StopAutoRenewal: string;
+    SubscriptionDaysLeft: number;
+    ViewRenewalProducts: string;
+}

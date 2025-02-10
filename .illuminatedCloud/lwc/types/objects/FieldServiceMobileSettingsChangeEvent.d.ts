@@ -1,0 +1,66 @@
+// DO NOT EDIT: This file is managed by Illuminated Cloud. Any external changes will be discarded.
+
+declare interface FieldServiceMobileSettingsChangeEvent extends SObject 
+{
+    AscAutomaticMode: string;
+    AscCancellationTimerInSec: number;
+    AscCompletedStatus: string;
+    AscOnSiteStatus: string;
+    AscRadiusInMeters: number;
+    AscTimeLimitationInMin: number;
+    AscTravelStatus: string;
+    BgGeoLocationAccuracy: string;
+    BgGeoLocationMinUpdateFreqMins: number;
+    BrandInvertedColor: string;
+    ChangeEventHeader: ChangeEventHeader;
+    ContrastInvertedColor: string;
+    ContrastPrimaryColor: string;
+    ContrastQuaternaryColor: string;
+    ContrastQuinaryColor: string;
+    ContrastSecondaryColor: string;
+    ContrastTertiaryColor: string;
+    CreatedBy: User;
+    CreatedById: string;
+    CreatedDate: string;
+    DaysAfterCurrentServiceDate: number;
+    DaysBeforeCurrentServiceDate: number;
+    DefaultListViewDeveloperName: string;
+    DestinationType: string;
+    DeveloperName: string;
+    FeedbackPrimaryColor: string;
+    FeedbackSecondaryColor: string;
+    FeedbackSelectedColor: string;
+    FutureDaysInDatePicker: number;
+    GeoLocationAccuracy: string;
+    GeoLocationMinUpdateFreqMins: number;
+    IsAscTimeLimitEnabled: boolean;
+    IsAssignmentNotification: boolean;
+    IsDefault: boolean;
+    IsDispatchNotification: boolean;
+    IsLimitedLocTrackingEnabled: boolean;
+    IsOptimizedImageUploadEnabled: boolean;
+    IsScheduleViewResourceAbsences: boolean;
+    IsSendLocationHistory: boolean;
+    IsShowEditFullRecord: boolean;
+    IsTimeSheetEnabled: boolean;
+    IsTimeZoneEnabled: boolean;
+    IsUseSalesforceMobileActions: boolean;
+    Language: string;
+    LastModifiedBy: User;
+    LastModifiedById: string;
+    LastModifiedDate: string;
+    MasterLabel: string;
+    MaxNumberOfServiceAppointments: number;
+    MetadataCacheTimeDays: number;
+    NavbarBackgroundColor: string;
+    NavbarInvertedColor: string;
+    OptimizeImageSizeInMb: string;
+    PastDaysInDatePicker: number;
+    PrimaryBrandColor: string;
+    QuickStatusChangeFlowName: string;
+    RecordDataCacheTimeMins: number;
+    ReplayId: string;
+    SecondaryBrandColor: string;
+    TimeIntervalSetupMins: string;
+    UpdateScheduleTimeMins: number;
+}

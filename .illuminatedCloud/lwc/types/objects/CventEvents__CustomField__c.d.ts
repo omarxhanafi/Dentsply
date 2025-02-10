@@ -1,0 +1,239 @@
+// DO NOT EDIT: This file is managed by Illuminated Cloud. Any external changes will be discarded.
+
+/**
+ * <h3><b>Cvent Custom Field</b></h3>
+ * <p>Stores information about Cvent Event/Contact custom fields and their mapping on SF data model.</p>
+ */
+declare interface CventEvents__CustomField__c extends SObject 
+{
+    /**
+     * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
+     */
+    ApprovalSubmissions: ApprovalSubmission[];
+    /**
+     * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
+     */
+    ApprovalWorkItems: ApprovalWorkItem[];
+    AttachedContentDocuments: AttachedContentDocument[];
+    AttachedContentNotes: AttachedContentNote[];
+    /**
+     * The reciprocal relationship for {@link ProcessException.AttachedToId}.
+     */
+    AttachedTo: ProcessException;
+    Attachments: Attachment[];
+    CombinedAttachments: CombinedAttachment[];
+    ConnectionReceived: PartnerNetworkConnection;
+    ConnectionReceivedId: string;
+    ConnectionSent: PartnerNetworkConnection;
+    ConnectionSentId: string;
+    /**
+     * The reciprocal relationship for {@link ContactRequest.WhatId}.
+     */
+    ContactRequests: ContactRequest[];
+    ContentDocumentLinks: ContentDocumentLink[];
+    ContextRecord: FlowExecutionErrorEvent;
+    CreatedBy: User;
+    CreatedById: string;
+    CreatedDate: string;
+    CurrencyIsoCode: string;
+    /**
+     * <h3><b>Allowed Values</b></h3>
+     * <p>Stores values which are allowed on the Cvent side.</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
+     * </table>
+     */
+    CventEvents__AllowedValues__c: string;
+    /**
+     * <h3><b>Error Message</b></h3>
+     * <p>Stores the error message of the metadata sync.</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text(255)</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    CventEvents__ErrorMessage__c: string;
+    /**
+     * <h3><b>Field API Name</b></h3>
+     * <p>Stores SF field API name.</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text(60)</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
+     * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    CventEvents__FieldApiName__c: string;
+    /**
+     * <h3><b>Field Label</b></h3>
+     * <p>Stores the SF field label.</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text(40)</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
+     * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    CventEvents__FieldLabel__c: string;
+    /**
+     * <h3><b>Field Stub</b></h3>
+     * <p>Stores the Cvent field stub.</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text(36), case-insensitive</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
+     * <tr><td nowrap><b>Unique:</b></td><td nowrap>true</td></tr>
+     * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
+     * </table>
+     */
+    CventEvents__FieldStub__c: string;
+    /**
+     * <h3><b>Has Error</b></h3>
+     * <p>Represents whether the error is occurred during metadata sync.</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Checkbox</td></tr>
+     * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
+     * </table>
+     */
+    CventEvents__HasError__c: boolean;
+    /**
+     * <h3><b>Cvent Object</b></h3>
+     * <p>Stores mnemonic Cvent object name (either &#39;EVENT&#39;, or &#39;CONTACT&#39;). Has been previously used to store SF object API name.</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text(60)</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
+     * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    CventEvents__ObjectApiName__c: string;
+    /**
+     * <h3><b>Salesforce Type</b></h3>
+     * <p>Stores the Salesforce field type.</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text(255)</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
+     * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    CventEvents__SalesforceType__c: string;
+    /**
+     * <h3><b>Sync As Long Text Area</b></h3>
+     * <p>Indicates if Cvent open ended text field is processed as SF long text area in order to avoid value truncation on data sync.</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Checkbox</td></tr>
+     * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
+     * </table>
+     */
+    CventEvents__SyncAsLongTextArea__c: boolean;
+    /**
+     * <h3><b>Type</b></h3>
+     * <p>Stores the Cvent field type.</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Picklist</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
+     * </table>
+     * <h4>Picklist Values</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>API Name</b></td><td nowrap><b>Label</b></td><td nowrap><b>Default</b></td><td nowrap><b>Active</b></td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OpenEndedText</code></td><td>OpenEndedText</td><td nowrap>true</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">AutoIncrement</code></td><td>AutoIncrement</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SingleChoice</code></td><td>SingleChoice</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">MultiChoice</code></td><td>MultiChoice</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OpenEndedDateTime</code></td><td>OpenEndedDateTime</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
+     * </table>
+     */
+    CventEvents__Type__c: string;
+    /**
+     * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
+     */
+    DocEnvelopeRefObjects: DocumentEnvelope[];
+    /**
+     * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
+     */
+    DuplicateRecordItems: DuplicateRecordItem[];
+    EngagementInitiatedTopic: EngagementTopic[];
+    EventRelations: EventRelation[];
+    FeedSubscriptionsForEntity: EntitySubscription[];
+    FirstPublishLocation: ContentVersion;
+    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    /**
+     * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
+     */
+    GeneratedDocRefObjects: GeneratedDocument[];
+    IsDeleted: boolean;
+    LastModifiedBy: User;
+    LastModifiedById: string;
+    LastModifiedDate: string;
+    LastReferencedDate: string;
+    LastViewedDate: string;
+    LinkedEntity: ContentDocumentLinkChangeEvent;
+    LocalRecord: PartnerNetworkRecordConnection;
+    Name: string;
+    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
+    Notes: Note[];
+    NotesAndAttachments: NoteAndAttachment[];
+    Owner: SObject;
+    OwnerId: string;
+    Parent: Case__hd;
+    ParentEntities: NetworkActivityAudit[];
+    ParentRecord: NetworkFeedResponseMetric;
+    PartnerRecord: PartnerNetworkRecordConnection;
+    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    /**
+     * The reciprocal relationship for {@link ProcessException.AttachedToId}.
+     */
+    ProcessExceptions: ProcessException[];
+    ProcessInstances: ProcessInstance[];
+    ProcessSteps: ProcessInstanceHistory[];
+    Record: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories: RecordActionHistory[];
+    /**
+     * The reciprocal relationship for {@link RecordAction.RecordId}.
+     */
+    RecordActions: RecordAction[];
+    RecordAlertParent: RecordAlert[];
+    RecordAlertWhat: RecordAlert[];
+    RecordAssociatedGroups: CollaborationGroupRecord[];
+    RelatedRecord: ContentDistribution;
+    /**
+     * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
+     */
+    RelatedRecords: VoiceCall[];
+    /**
+     * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
+     */
+    RelatedTo: EmailMessage;
+    Relation: EventRelationChangeEvent;
+    Shares: CustomField__Share[];
+    SobjectLookupValue: AIInsightValue;
+    SystemModstamp: string;
+    Tags: CustomField__Tag[];
+    Target: AIRecordInsight;
+    TargetObject: PendingServiceRoutingInteractionInfo;
+    TaskRelations: TaskRelation[];
+    Topic: EngagementTopicChangeEvent;
+    TopicAssignments: TopicAssignment[];
+    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    /**
+     * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
+     */
+    VideoRelatedRecords: VideoCall[];
+    What: EventChangeEvent;
+    /**
+     * The reciprocal relationship for {@link AgentWork.WorkItemId}.
+     */
+    WorkItem: AgentWork;
+}
