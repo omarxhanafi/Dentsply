@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/classes/QuoteCloneController.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/QuoteCloneController.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/quoteCloneLwc/quoteCloneLwc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/quoteCloneLwc/quoteCloneLwc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lwc/quoteCloneLwc/quoteCloneLwc.js-meta.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.illuminatedCloud/lwc/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/.illuminatedCloud/lwc/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/OrderManagement_CC.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/OrderManagement_CC.cls-meta.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,11 +23,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Apex Unit Test Class" />
-        <option value="Lightning Web Component HTML" />
-        <option value="Lightning Web Component JavaScript" />
         <option value="Lightning Web Component CSS" />
         <option value="Apex Trigger" />
         <option value="Apex Class" />
+        <option value="Lightning Web Component HTML" />
+        <option value="Lightning Web Component JavaScript" />
         <option value="Apex Metadata" />
       </list>
     </option>
@@ -62,22 +69,12 @@
             <option name="savedDocuments">
               <list>
                 <AnonymousApexSavedDocument>
-                  <option name="apexLogLevel" value="FINEST" />
-                  <option name="body" value="System.debug(ActivityHistoryController.getActivityHistory('0016M00002KLicjQAD', true, 1));" />
-                  <option name="connectionName" value="Production" />
-                  <option name="connectionType" value="OAUTH" />
-                  <option name="name" value="Anonymous Apex 1" />
-                  <option name="nbaLogLevel" value="ERROR" />
-                  <option name="profilingLogLevel" value="ERROR" />
-                  <option name="systemLogLevel" value="FINEST" />
-                  <option name="validationLogLevel" value="ERROR" />
-                  <option name="visualforceLogLevel" value="FINE" />
-                  <option name="waveLogLevel" value="ERROR" />
-                  <option name="workflowLogLevel" value="ERROR" />
+                  <option name="body" value="QuoteCloneController.cloneQuote('0Q0KN000000PNaL0AW');" />
+                  <option name="name" value="Anonymous Apex 2" />
                 </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="0" />
+            <option name="selectedSavedDocumentIndex" value="1" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionMruWorkspaceSettings">
@@ -18594,14 +18591,17 @@
                     <map>
                       <entry key="APEXCLASS:ORDERITEMTRIGGERHANDLER" value="1738745353807" />
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1737034166879" />
-                      <entry key="APEXCLASS:ORDERTRIGGERHANDLER" value="1738691564152" />
+                      <entry key="APEXCLASS:ORDERTRIGGERHANDLER" value="1739264251710" />
                       <entry key="APEXCLASS:ORDERTRIGGERHELPER" value="1738691632949" />
+                      <entry key="APEXCLASS:QUOTECLONECONTROLLER" value="1739268393521" />
                       <entry key="APEXCLASS:QUOTETRIGGERHANDLER" value="1738691710442" />
                       <entry key="APEXCLASS:QUOTETRIGGERHELPER" value="1738691710442" />
                       <entry key="APEXCLASS:TEST_ORDERTRIGGER" value="1738505690538" />
                       <entry key="APEXCLASS:TEST_QUOTETRIGGERHANDLER" value="1738693563596" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTFLAGSLWC" value="1739266490000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:CREATEORDEROMLWC" value="1736001901000" />
                       <entry key="LIGHTNINGCOMPONENTBUNDLE:ORDERMANAGEMENTLWC" value="1736326211405" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:QUOTECLONELWC" value="1739268122760" />
                     </map>
                   </option>
                   <option name="lastBuildScope" value="CONTEXT" />
@@ -19457,6 +19457,7 @@
     "Apex Unit Tests.getPreferredDealerTest.getPreferredDealer_Test.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "WebServerToolWindowFactoryState": "false",
     "extract.method.default.visibility": "private",
     "git-widget-placeholder": "RLMDev",
@@ -20092,6 +20093,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.117" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.117" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -20273,6 +20282,7 @@
       <workItem from="1737617031086" duration="563000" />
       <workItem from="1737619986347" duration="17662000" />
       <workItem from="1738692260410" duration="1886000" />
+      <workItem from="1739441163012" duration="207000" />
     </task>
     <servers />
   </component>

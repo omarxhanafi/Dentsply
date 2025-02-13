@@ -41,6 +41,7 @@
     </content>
     <orderEntry type="jdk" jdkName="IlluminatedCloud (Dentsply/RLMDev)" jdkType="IlluminatedCloud" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dentsply/lwc_types" level="project" />
   </component>
   <component name="SonarLintModuleSettings">
     <option name="idePathPrefix" value="src" />

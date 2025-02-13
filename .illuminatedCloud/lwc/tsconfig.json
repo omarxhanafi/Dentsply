@@ -188,6 +188,9 @@
       "c/quickCreateCampaignFromCventLwc": [
         "src/lwc/quickCreateCampaignFromCventLwc/quickCreateCampaignFromCventLwc"
       ],
+      "c/quoteCloneLwc": [
+        "src/lwc/quoteCloneLwc/quoteCloneLwc"
+      ],
       "c/recordTypePicker": [
         "src/lwc/recordTypePicker/recordTypePicker"
       ],
